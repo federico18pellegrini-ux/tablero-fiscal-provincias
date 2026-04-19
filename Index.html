@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tablero dinámico fiscal - Provincias</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --text:#0f172a; --muted:#64748b; --line:#dbe2ea;
+  --green:#1a7a4d; --red:#c0392b; --amber:#b7690e; --blue:#185FA5; --slate:#334155;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);}
+.wrap{max-width:1320px;margin:0 auto;padding:20px;}
+.topbar{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:4px}
+h1{font-size:28px;line-height:1.1;margin:0}
+.meta{font-size:12px;color:var(--muted);line-height:1.5;text-align:right}
+.controlbar{display:grid;grid-template-columns:280px 1fr;gap:12px;margin-bottom:14px}
+.control, .note, .card, .chart, .tablebox {background:var(--card);border:1px solid var(--line);border-radius:14px}
+.control{padding:14px}
+.select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;background:#fff}
+.note{padding:14px;font-size:13px;color:var(--slate);line-height:1.5}
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.card{padding:14px}
+.k-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;font-weight:700}
+.k-value{font-size:26px;font-weight:800;line-height:1.05}
+.k-sub{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+.green{color:var(--green)} .red{color:var(--red)} .amber{color:var(--amber)} .blue{color:var(--blue)} .slate{color:var(--slate)}
+.grid2{display:grid;grid-template-columns:1.25fr .95fr;gap:12px;margin-bottom:14px}
+.grid2b{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.chart{padding:14px}
+.chart-wrap{position:relative;height:320px;min-height:320px;max-height:320px;width:100%;overflow:hidden}
+.chart canvas{display:block;width:100% !important;height:100% !important}
+.chart h3,.tablebox h3{margin:0 0 10px 0;font-size:14px}
+.small{font-size:12px;color:var(--muted)}
+.tablebox{padding:14px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;border-bottom:1px solid #edf2f7;vertical-align:top}
+th{text-align:left;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:2px 7px;border-radius:999px;font-size:11px;font-weight:700}
+.badge-gray{background:#eef2f7;color:#475569}
+.footer{margin-top:12px;font-size:12px;color:var(--muted);line-height:1.6}
+.links a{color:var(--blue);text-decoration:none;margin-right:10px}
+@media(max-width:1100px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr));}.grid2,.grid2b,.controlbar{grid-template-columns:1fr;}}
+@media(max-width:700px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr));} h1{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div>
+      <div class="eyebrow">Sistema fiscal provincial · capa intermedia normalizada</div>
+      <h1>Tablero dinámico de provincias</h1>
+    </div>
+    <div class="meta" id="metaBox">Cargando base...</div>
+  </div>
+
+  <div class="controlbar">
+    <div class="control">
+      <div class="k-label">Provincia</div>
+      <select id="provinceSelect" class="select"></select>
+    </div>
+    <div class="note" id="availabilityNote">
+      Este tablero lee archivos normalizados en JSON/CSV. La capa mensual 2026 sale de TOP mensual e información consolidada. La capa comparativa 3T2025 sale de 1816. Algunas jurisdicciones tienen datos incompletos en 1816, por lo que ciertos KPI pueden aparecer como N/D.
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="card"><div class="k-label">Ranking fiscal 1816</div><div class="k-value amber" id="kRanking">-</div><div class="k-sub">3T2025 · comparables</div></div>
+    <div class="card"><div class="k-label">Resultado financiero LTM</div><div class="k-value" id="kResFin">-</div><div class="k-sub">3T2025 · % ingresos</div></div>
+    <div class="card"><div class="k-label">Resultado primario LTM</div><div class="k-value" id="kResPri">-</div><div class="k-sub">3T2025 · % ingresos</div></div>
+    <div class="card"><div class="k-label">Deuda total</div><div class="k-value" id="kDebt">-</div><div class="k-sub">stock homogéneo · USD millones</div></div>
+    <div class="card"><div class="k-label">TOP 2026 acumulado</div><div class="k-value blue" id="kTopYtd">-</div><div class="k-sub">base mensual normalizada</div></div>
+    <div class="card"><div class="k-label">RON 2026 acumulado</div><div class="k-value blue" id="kRonYtd">-</div><div class="k-sub">incluye compensación</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="chart">
+      <h3>Recaudación propia mensual 2026 por impuesto</h3>
+      <div class="chart-wrap"><canvas id="chartTopMensual"></canvas></div>
+      <div class="small">Fuente: top_mensual_20262 normalizado.</div>
+    </div>
+    <div class="chart">
+      <h3>RON mensual 2026</h3>
+      <div class="chart-wrap"><canvas id="chartRonMensual"></canvas></div>
+      <div class="small">Fuente: informacion_consolidada_2026_0 normalizado.</div>
+    </div>
+  </div>
+
+  <div class="grid2b">
+    <div class="chart">
+      <h3>Composición TOP 2025</h3>
+      <div class="chart-wrap"><canvas id="chartTopTrim"></canvas></div>
+      <div class="small">I trim, acum II trim y acum III trim 2025.</div>
+    </div>
+    <div class="chart">
+      <h3>Serie histórica TOP total</h3>
+      <div class="chart-wrap"><canvas id="chartTopHist"></canvas></div>
+      <div class="small">Serie 1984-2024. Se muestra desde 2010 para lectura rápida.</div>
+    </div>
+  </div>
+
+  <div class="grid2b">
+    <div class="tablebox">
+      <h3>Indicadores estructurales 1816</h3>
+      <table>
+        <tbody id="metricsBody"></tbody>
+      </table>
+    </div>
+    <div class="tablebox">
+      <h3>Composición de deuda 1816</h3>
+      <table>
+        <tbody id="debtBody"></tbody>
+      </table>
+      <div class="small" id="debtNote"></div>
+    </div>
+  </div>
+
+  <div class="tablebox">
+    <h3>Archivos que alimentan el tablero</h3>
+    <div class="links">
+      <a href="./dashboard_manifest.json" target="_blank">Manifest</a>
+      <a href="./top_mensual_2026_normalizado.csv" target="_blank">TOP mensual 2026</a>
+      <a href="./top_trim_2025_normalizado.csv" target="_blank">TOP trim 2025</a>
+      <a href="./serie_top_1984_2024_normalizado.csv" target="_blank">Serie TOP 1984-2024</a>
+      <a href="./serie_ron_2003_2025_normalizado.csv" target="_blank">Serie RON 2003-2025</a>
+      <a href="./informacion_consolidada_2026_normalizado.csv" target="_blank">Info consolidada 2026</a>
+      <a href="./dashboard_cross_section_1816.json" target="_blank">Cross section 1816</a>
+    </div>
+    <div class="footer">
+      V1 automática. El HTML no tiene números fijos: calcula y pinta desde la capa intermedia. Para una actualización mensual, alcanza con reemplazar/renormalizar los CSV/JSON y mantener la misma estructura de columnas.
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const FMT_AR = new Intl.NumberFormat('es-AR');
+const moneyShort = (v) => {
+  if (v === null || v === undefined || isNaN(v)) return 'N/D';
+  if (Math.abs(v) >= 1000000) return (v/1000000).toFixed(2).replace('.',',') + ' B';
+  if (Math.abs(v) >= 1000) return (v/1000).toFixed(1).replace('.',',') + ' mil M';
+  return FMT_AR.format(Math.round(v));
+};
+const pct = (v) => v===null || v===undefined || isNaN(v) ? 'N/D' : v.toFixed(1).replace('.',',') + '%';
+const valClass = (v, positiveIsGood=true) => {
+  if (v===null || v===undefined || isNaN(v)) return 'slate';
+  if (positiveIsGood) return v >= 0 ? 'green' : 'red';
+  return v <= 0 ? 'green' : 'red';
+};
+
+function parseCSV(text){
+  const lines = text.trim().split(/\r?\n/);
+  const headers = splitCSV(lines[0]);
+  return lines.slice(1).filter(Boolean).map(line=>{
+    const cols = splitCSV(line);
+    const obj = {};
+    headers.forEach((h,i)=> obj[h]=cols[i] ?? '');
+    return obj;
+  });
+}
+function splitCSV(line){
+  const out=[]; let cur=''; let q=false;
+  for(let i=0;i<line.length;i++){
+    const ch=line[i];
+    if(ch === '"'){
+      if(q && line[i+1] === '"'){ cur+='"'; i++; }
+      else { q=!q; }
+    } else if(ch === ',' && !q){
+      out.push(cur); cur='';
+    } else {
+      cur+=ch;
+    }
+  }
+  out.push(cur);
+  return out;
+}
+function groupBy(arr,keyFn){
+  return arr.reduce((acc,x)=>{ const k=keyFn(x); (acc[k]=acc[k]||[]).push(x); return acc; },{});
+}
+function toNum(v){
+  if(v===null || v===undefined || v==='') return null;
+  const n=Number(v);
+  return Number.isFinite(n) ? n : null;
+}
+
+let manifest, topMensual, topTrim, serieTop, info2026, ronSeries, cross1816;
+let charts={};
+
+async function loadAll(){
+  const files = await Promise.all([
+    fetch('./dashboard_manifest.json').then(r=>r.json()),
+    fetch('./top_mensual_2026_normalizado.csv').then(r=>r.text()),
+    fetch('./top_trim_2025_normalizado.csv').then(r=>r.text()),
+    fetch('./serie_top_1984_2024_normalizado.csv').then(r=>r.text()),
+    fetch('./informacion_consolidada_2026_normalizado.csv').then(r=>r.text()),
+    fetch('./serie_ron_2003_2025_normalizado.csv').then(r=>r.text()),
+    fetch('./dashboard_cross_section_1816.json').then(r=>r.json())
+  ]);
+  manifest = files[0];
+  topMensual = parseCSV(files[1]);
+  topTrim = parseCSV(files[2]);
+  serieTop = parseCSV(files[3]);
+  info2026 = parseCSV(files[4]);
+  ronSeries = parseCSV(files[5]);
+  cross1816 = files[6].provinces || {};
+
+  document.getElementById('metaBox').innerHTML =
+    'Provincias disponibles: ' + manifest.province_universe.length +
+    '<br>Archivos leídos: ' + Object.keys(manifest.files).length +
+    '<br>Actualizado: ' + manifest.generated_at.slice(0,19).replace('T',' ');
+
+  const sel = document.getElementById('provinceSelect');
+  manifest.province_universe.forEach(p=>{
+    const o=document.createElement('option');
+    o.value=p; o.textContent=p; sel.appendChild(o);
+  });
+  sel.value='Buenos Aires';
+  sel.addEventListener('change', ()=> renderProvince(sel.value));
+  renderProvince(sel.value);
+}
+
+function destroyCharts(){
+  Object.values(charts).forEach(ch=>ch && ch.destroy());
+  charts={};
+}
+
+function renderProvince(province){
+  destroyCharts();
+  const cross = cross1816[province] || {};
+  const provinceTop = topMensual.filter(r=>r.province===province);
+  const provinceTrim = topTrim.filter(r=>r.province===province);
+  const provinceHist = serieTop.filter(r=>r.province===province && r.tax==='Total');
+  const provinceInfo = info2026.filter(r=>r.province===province);
+
+  const topYtd = provinceTop.reduce((a,b)=>a + (toNum(b.value_millions)||0),0);
+  const ronYtd = provinceInfo
+    .filter(r=>r.category==='Total | (1) + (2)' && r.period_type==='month')
+    .reduce((a,b)=>a + (toNum(b.value_millions)||0),0);
+
+  setKpi('kRanking', cross.ranking_general ? '#'+cross.ranking_general : 'N/D', 'amber');
+  setMetricKpi('kResFin', cross.resultado_financiero_ltm_pct, true);
+  setMetricKpi('kResPri', cross.resultado_primario_ltm_pct, true);
+  document.getElementById('kDebt').textContent = cross.deuda_stock_total_usd_m ? 'USD ' + FMT_AR.format(Math.round(cross.deuda_stock_total_usd_m)) + ' M' : 'N/D';
+  document.getElementById('kTopYtd').textContent = topYtd ? moneyShort(topYtd) : 'N/D';
+  document.getElementById('kRonYtd').textContent = ronYtd ? moneyShort(ronYtd) : 'N/D';
+
+  renderTopMensualChart(provinceTop, province);
+  renderRonMensualChart(provinceInfo, province);
+  renderTopTrimChart(provinceTrim, province);
+  renderTopHistChart(provinceHist, province);
+  renderMetricsTable(province, cross, topYtd, ronYtd);
+  renderDebtTable(province, cross);
+}
+
+function setKpi(id, value, klass){
+  const el=document.getElementById(id);
+  el.className='k-value '+klass;
+  el.textContent=value;
+}
+function setMetricKpi(id, value, positiveIsGood=true){
+  const el=document.getElementById(id);
+  el.className='k-value '+valClass(value, positiveIsGood);
+  el.textContent = pct(value);
+}
+
+function renderTopMensualChart(rows, province){
+  const months=['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10','2026-11','2026-12'];
+  const taxes=['Iibb','Inmobiliario','Sellos','Automotores','Otros'];
+  const map={}; months.forEach(m=>{map[m]={}; taxes.forEach(t=>map[m][t]=0);});
+  rows.forEach(r=>{
+    if(map[r.period] && taxes.includes(r.tax)) map[r.period][r.tax]+=toNum(r.value_millions)||0;
+  });
+  charts.topMensual = new Chart(document.getElementById('chartTopMensual'), {
+    type:'line',
+    data:{
+      labels:months.map(m=>m.slice(5)),
+      datasets: taxes.map((tax,i)=>({
+        label:tax,
+        data:months.map(m=>map[m][tax]),
+        borderWidth:2,
+        tension:.25
+      }))
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false, resizeDelay:200,
+      plugins:{legend:{position:'bottom'}},
+      scales:{y:{ticks:{callback:(v)=>moneyShort(v)}}}
+    }
+  });
+}
+
+function renderRonMensualChart(rows, province){
+  const months=['2026-01','2026-02','2026-03'];
+  const totalCat='Total | (1) + (2)';
+  const cfiCat='C.F.I. | Neta De | Ley Nº 26.075';
+  const compCat='Compensación | Consenso Fiscal | II. a y b; II. d y e | (2)';
+  const valFor=(period,cat)=> {
+    const hit=rows.find(r=>r.period===period && r.category===cat);
+    return hit ? (toNum(hit.value_millions)||0) : 0;
+  };
+  charts.ronMensual = new Chart(document.getElementById('chartRonMensual'), {
+    type:'bar',
+    data:{
+      labels:months.map(m=>m.slice(5)),
+      datasets:[
+        {label:'RON total', data:months.map(m=>valFor(m,totalCat))},
+        {label:'CFI', data:months.map(m=>valFor(m,cfiCat))},
+        {label:'Compensación', data:months.map(m=>valFor(m,compCat))}
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false, resizeDelay:200,
+      plugins:{legend:{position:'bottom'}},
+      scales:{y:{ticks:{callback:(v)=>moneyShort(v)}}}
+    }
+  });
+}
+
+function renderTopTrimChart(rows, province){
+  const periods=['2025-Q1','2025-Q2_YTD','2025-Q3_YTD'];
+  const labels={'2025-Q1':'I trim','2025-Q2_YTD':'Acum II','2025-Q3_YTD':'Acum III'};
+  const taxes=['Ingresos Brutos','Inmobiliario','Sellos','Automotores','Otros'];
+  const map={}; periods.forEach(p=>{map[p]={}; taxes.forEach(t=>map[p][t]=0);});
+  rows.forEach(r=>{
+    if(map[r.period] && taxes.includes(r.tax)) map[r.period][r.tax]+=toNum(r.value_millions)||0;
+  });
+  charts.topTrim = new Chart(document.getElementById('chartTopTrim'), {
+    type:'bar',
+    data:{
+      labels:periods.map(p=>labels[p]),
+      datasets: taxes.map(t=>({
+        label:t,
+        data:periods.map(p=>map[p][t]),
+        stack:'top'
+      }))
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false, resizeDelay:200,
+      plugins:{legend:{position:'bottom'}},
+      scales:{x:{stacked:true}, y:{stacked:true, ticks:{callback:(v)=>moneyShort(v)}}}
+    }
+  });
+}
+
+function renderTopHistChart(rows, province){
+  const hist = rows
+    .map(r=>({year:+r.year, value:toNum(r.value_millions)||0}))
+    .filter(r=>r.year>=2010)
+    .sort((a,b)=>a.year-b.year);
+  charts.topHist = new Chart(document.getElementById('chartTopHist'), {
+    type:'line',
+    data:{
+      labels:hist.map(r=>r.year),
+      datasets:[{label:'TOP total', data:hist.map(r=>r.value), borderWidth:2, tension:.2, fill:false}]
+    },
+    options:{responsive:true, maintainAspectRatio:false, resizeDelay:200, plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:(v)=>moneyShort(v)}}}}
+  });
+}
+
+function renderMetricsTable(province, cross, topYtd, ronYtd){
+  const items = [
+    ['Autonomía fiscal (1816)', pct(cross.autonomia_fiscal_pct), cross.rank_autonomia_fiscal ? '#'+cross.rank_autonomia_fiscal : 'N/D'],
+    ['Salarios / gasto primario ex SS', pct(cross.gasto_salarios_gasto_primario_ex_ss_pct), cross.rank_gasto_salarios ? '#'+cross.rank_gasto_salarios : 'N/D'],
+    ['Capital / gasto primario ex SS', pct(cross.gasto_capital_gasto_primario_ex_ss_pct), cross.rank_gasto_capital ? '#'+cross.rank_gasto_capital : 'N/D'],
+    ['IIBB / recaudación propia', pct(cross.iibb_sobre_reca_propia_pct), cross.rank_concentracion_iibb ? '#'+cross.rank_concentracion_iibb : 'N/D'],
+    ['Deuda total / ingresos', pct(cross.deuda_total_sobre_ingresos_pct), cross.rank_deuda_total ? '#'+cross.rank_deuda_total : 'N/D'],
+    ['Deuda bonos+bancos / deuda total', pct(cross.deuda_bonos_bancos_sobre_deuda_total_pct), cross.rank_deuda_bonos_bancos ? '#'+cross.rank_deuda_bonos_bancos : 'N/D'],
+    ['TOP 2026 acumulado', moneyShort(topYtd), 'base 2026'],
+    ['RON 2026 acumulado', moneyShort(ronYtd), 'base 2026']
+  ];
+  document.getElementById('metricsBody').innerHTML = items.map(([a,b,c])=>`
+    <tr><td>${a}</td><td><strong>${b}</strong></td><td><span class="badge badge-gray">${c}</span></td></tr>
+  `).join('');
+}
+
+function renderDebtTable(province, cross){
+  const items = [
+    ['Bonos', cross.deuda_stock_bonos_usd_m ? 'USD '+FMT_AR.format(Math.round(cross.deuda_stock_bonos_usd_m))+' M' : 'N/D', pct(cross.deuda_comp_bonos_pct)],
+    ['Nación', cross.deuda_stock_nacion_usd_m!==undefined ? 'USD '+FMT_AR.format(Math.round(cross.deuda_stock_nacion_usd_m||0))+' M' : 'N/D', pct(cross.deuda_comp_nacion_pct)],
+    ['Organismos', cross.deuda_stock_organismos_usd_m!==undefined ? 'USD '+FMT_AR.format(Math.round(cross.deuda_stock_organismos_usd_m||0))+' M' : 'N/D', pct(cross.deuda_comp_organismos_pct)],
+    ['Bancos', cross.deuda_stock_bancos_usd_m!==undefined ? 'USD '+FMT_AR.format(Math.round(cross.deuda_stock_bancos_usd_m||0))+' M' : 'N/D', pct(cross.deuda_comp_bancos_pct)],
+    ['Consolidada', cross.deuda_stock_consolidada_usd_m!==undefined ? 'USD '+FMT_AR.format(Math.round(cross.deuda_stock_consolidada_usd_m||0))+' M' : 'N/D', pct(cross.deuda_comp_consolidada_pct)]
+  ];
+  document.getElementById('debtBody').innerHTML = items.map(([a,b,c])=>`
+    <tr><td>${a}</td><td><strong>${b}</strong></td><td>${c}</td></tr>
+  `).join('');
+  document.getElementById('debtNote').textContent = cross.deuda_stock_total_usd_m ? 'Stock total: USD '+FMT_AR.format(Math.round(cross.deuda_stock_total_usd_m))+' M.' : 'Sin dato comparable 1816 para esta jurisdicción.';
+}
+
+loadAll().catch(err=>{
+  console.error(err);
+  document.getElementById('availabilityNote').textContent =
+    'No se pudo cargar la capa intermedia. Si abrís este archivo fuera de ChatGPT, corré un servidor simple en la carpeta y volvé a abrirlo.';
+});
+</script>
+</body>
+</html>
