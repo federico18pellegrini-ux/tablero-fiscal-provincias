@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f0d0b">
+<title>Entre Mates y Mercados · Tablero Fiscal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* ── TOKENS ─────────────────────────────────────────────────────── */
+:root{
+  --bg:#0f0d0b;
+  --s1:#1a1714;
+  --s2:#22201c;
+  --s3:#2c2925;
+  --border:#2e2b26;
+  --border2:#3a3630;
+  --text:#f0ede8;
+  --muted:#9a9186;
+  --dim:#5a5348;
+
+  --gold:#c9a95a;
+  --gold-dim:#a08540;
+  --gold-bg:rgba(201,169,90,.1);
+  --gold-border:rgba(201,169,90,.25);
+
+  --green:#4ade80;
+  --green-bg:rgba(74,222,128,.08);
+  --green-border:rgba(74,222,128,.2);
+  --red:#f87171;
+  --red-bg:rgba(248,113,113,.08);
+  --red-border:rgba(248,113,113,.2);
+  --amber:#fbbf24;
+  --amber-bg:rgba(251,191,36,.08);
+  --blue:#60a5fa;
+  --blue-bg:rgba(96,165,250,.08);
+
+  --r:12px;
+  --rs:8px;
+  --font:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono','Courier New',monospace;
+  --serif:'Playfair Display',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  font-size:14px;
+  line-height:1.5;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────────── */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(15,13,11,.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 16px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-logo{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:15px;font-weight:700;
+  color:#0f0d0b;flex-shrink:0;letter-spacing:-.02em;
+}
+.brand-text{}
+.brand-name{font-size:13px;font-weight:600;color:var(--text);line-height:1.1;letter-spacing:-.01em}
+.brand-sub{font-size:10px;color:var(--gold);letter-spacing:.04em;line-height:1}
+.header-meta{font-size:10px;color:var(--dim);text-align:right;line-height:1.5}
+
+/* ── WRAP ────────────────────────────────────────────────────────── */
+.wrap{padding:14px 14px 32px;max-width:900px;margin:0 auto}
+
+/* ── HERO ────────────────────────────────────────────────────────── */
+.hero{
+  background:linear-gradient(135deg,var(--s1) 0%,var(--s2) 100%);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:18px 16px 14px;
+  margin-bottom:12px;
+}
+.hero-eyebrow{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:500}
+.hero-title{font-family:var(--serif);font-size:22px;color:var(--text);line-height:1.15;margin-bottom:4px}
+.hero-sub{font-size:12px;color:var(--muted);line-height:1.5}
+.hero-podcast{
+  margin-top:10px;padding-top:10px;border-top:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+}
+.podcast-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--gold-bg);border:1px solid var(--gold-border);
+  border-radius:20px;padding:4px 10px;
+  font-size:11px;color:var(--gold);font-weight:500;
+}
+.podcast-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+
+/* ── CONTROL BAR ─────────────────────────────────────────────────── */
+.ctrl-row{display:flex;gap:10px;margin-bottom:12px;align-items:stretch}
+.ctrl-select-wrap{flex:1}
+.ctrl-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);margin-bottom:5px;font-weight:600}
+select.psel{
+  width:100%;padding:12px 14px;
+  background:var(--s1);border:1px solid var(--border2);
+  border-radius:var(--rs);color:var(--text);
+  font-size:15px;font-family:var(--font);
+  cursor:pointer;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a5348' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;
+  padding-right:36px;
+}
+select.psel:focus{outline:none;border-color:var(--gold)}
+.avail-badge{
+  display:flex;align-items:center;gap:6px;
+  background:var(--s1);border:1px solid var(--border);
+  border-radius:var(--rs);padding:10px 12px;
+  font-size:10px;color:var(--dim);line-height:1.5;flex-shrink:0;max-width:140px;
+}
+
+/* ── SECTION HEADER ──────────────────────────────────────────────── */
+.sh{
+  display:flex;align-items:center;gap:8px;
+  font-size:9px;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--dim);font-weight:600;
+  margin:16px 0 8px;
+}
+.sh::after{content:'';flex:1;height:1px;background:var(--border)}
+.sh-gold{color:var(--gold-dim)}
+
+/* ── KPI CARDS ───────────────────────────────────────────────────── */
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+@media(min-width:540px){.kpi-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:800px){.kpi-grid{grid-template-columns:repeat(6,1fr)}}
+.kcard{
+  background:var(--s1);border:1px solid var(--border);
+  border-radius:var(--r);padding:12px 13px;
+}
+.k-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-bottom:5px;font-weight:600;line-height:1.3}
+.k-val{font-family:var(--mono);font-size:22px;font-weight:500;line-height:1;letter-spacing:-.02em}
+.k-sub{font-size:9px;color:var(--dim);margin-top:3px;line-height:1.3}
+.g{color:var(--green)}.r{color:var(--red)}.a{color:var(--amber)}.au{color:var(--gold)}.b{color:var(--blue)}.m{color:var(--muted)}
+
+/* ── BUDGET STRIP ────────────────────────────────────────────────── */
+.bstrip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+@media(max-width:480px){.bstrip{grid-template-columns:1fr}}
+.bc{
+  background:var(--s1);border:1px solid var(--border);
+  border-radius:var(--r);padding:12px 13px;
+  border-left:3px solid var(--gold-dim);
+}
+.bc-val{font-family:var(--mono);font-size:18px;font-weight:500;line-height:1;margin-bottom:3px}
+.bc-lbl{font-size:10px;color:var(--muted);line-height:1.3}
+.bc-src{font-size:9px;color:var(--dim);margin-top:4px}
+
+/* ── COMPARATIVO ─────────────────────────────────────────────────── */
+.comp-wrap{
+  background:var(--s1);border:1px solid var(--border);
+  border-radius:var(--r);padding:14px;margin-bottom:10px;
+}
+.comp-wrap h3{font-size:12px;font-weight:600;margin-bottom:4px}
+.comp-note{font-size:10px;color:var(--dim);margin-bottom:12px;line-height:1.4}
+.comp-rows{display:flex;flex-direction:column;gap:6px}
+.comp-row{display:grid;grid-template-columns:110px 1fr 52px;align-items:center;gap:7px}
+@media(max-width:360px){.comp-row{grid-template-columns:90px 1fr 46px}}
+.cn{font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cn.pba{color:var(--text);font-weight:600}
+.bar-wrap{height:12px;background:var(--s2);border-radius:3px;position:relative;overflow:visible}
+.bar-zero{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--border2)}
+.bar-fill{height:100%;border-radius:3px;position:absolute;top:0}
+.cv{font-family:var(--mono);font-size:10px;text-align:right;font-weight:500;white-space:nowrap}
+
+/* ── CHARTS ──────────────────────────────────────────────────────── */
+.charts-col{display:flex;flex-direction:column;gap:10px;margin-bottom:10px}
+.charts-row{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px}
+@media(min-width:640px){.charts-row{grid-template-columns:1fr 1fr}}
+@media(min-width:640px){.charts-row3{grid-template-columns:1fr 1fr 1fr!important}}
+.cc{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px}
+.cc h3{font-size:12px;font-weight:600;margin-bottom:3px;line-height:1.3}
+.cc-note{font-size:10px;color:var(--dim);margin-bottom:8px;line-height:1.4}
+.cw{position:relative;height:200px}
+@media(min-width:640px){.cw{height:240px}}
+canvas{display:block}
+.leg{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:7px}
+.li{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--muted)}
+.ld{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.nodata{display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:6px;color:var(--dim);font-size:11px}
+
+/* ── BALANCE ─────────────────────────────────────────────────────── */
+.balance-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px}
+@media(min-width:600px){.balance-grid{grid-template-columns:1fr 1fr}}
+.bal{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px}
+.bal.pro{border-top:2px solid var(--green)}
+.bal.con{border-top:2px solid var(--red)}
+.bal-title{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.bal-title.pro{color:var(--green)}.bal-title.con{color:var(--red)}
+.bi{padding:8px 0;border-bottom:1px solid var(--border);font-size:11px;line-height:1.5}
+.bi:last-child{border-bottom:none;padding-bottom:0}
+.bi-t{font-weight:600;margin-bottom:2px;display:flex;align-items:flex-start;gap:4px}
+.bi-b{color:var(--muted);font-size:10px}
+.bh{background:rgba(96,165,250,.15);color:#93c5fd;font-size:9px;font-weight:700;padding:1px 4px;border-radius:3px;flex-shrink:0;margin-top:1px}
+.bi2{background:rgba(251,191,36,.15);color:#fcd34d;font-size:9px;font-weight:700;padding:1px 4px;border-radius:3px;flex-shrink:0;margin-top:1px}
+
+/* ── TABLES ──────────────────────────────────────────────────────── */
+.tables-col{display:flex;flex-direction:column;gap:10px;margin-bottom:10px}
+.tables-row{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px}
+@media(min-width:640px){.tables-row{grid-template-columns:1fr 1fr}}
+.tb{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:auto}
+.tb h3{font-size:12px;font-weight:600;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;min-width:280px}
+th,td{padding:7px 8px;border-bottom:1px solid var(--border);font-size:11px;vertical-align:middle;text-align:left}
+th{color:var(--dim);font-size:9px;text-transform:uppercase;letter-spacing:.07em;font-weight:600}
+tr:last-child td{border-bottom:none}
+.mono{font-family:var(--mono)}
+.rank-pill{background:var(--s2);color:var(--muted);font-size:10px;padding:2px 7px;border-radius:20px;font-family:var(--mono);white-space:nowrap}
+
+/* ── FOOTER ──────────────────────────────────────────────────────── */
+.footer{
+  margin-top:20px;padding:14px;
+  background:var(--s1);border:1px solid var(--border);
+  border-radius:var(--r);
+  font-size:10px;color:var(--dim);line-height:1.7;
+}
+.footer a{color:var(--muted);text-decoration:none}
+.footer a:hover{color:var(--gold)}
+.footer-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+
+/* ── SAFE AREA (iOS) ─────────────────────────────────────────────── */
+@supports(padding:max(0px)){
+  .wrap{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<div class="header">
+  <div class="brand">
+    <div class="brand-logo">FP</div>
+    <div class="brand-text">
+      <div class="brand-name">Federico Pellegrini</div>
+      <div class="brand-sub">Entre Mates y Mercados</div>
+    </div>
+  </div>
+  <div class="header-meta" id="metaBox">Cargando...</div>
+</div>
+
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Tablero fiscal provincial · Argentina</div>
+  <div class="hero-title">Análisis fiscal de<br>provincias argentinas</div>
+  <div class="hero-sub">Una vista simple y comparada para seguir resultado fiscal, deuda, recaudación propia y transferencias nacionales. Pensado para consulta rápida y lectura desde el celular.</div>
+  <div class="hero-podcast">
+    <div class="podcast-pill"><span class="podcast-dot"></span>Podcast: Entre Mates y Mercados</div>
+    <span style="font-size:10px;color:var(--dim)">Federico Pellegrini</span>
+  </div>
+</div>
+
+<!-- PROVINCE SELECTOR -->
+<div class="sh sh-gold">Provincia</div>
+<div class="ctrl-row">
+  <div class="ctrl-select-wrap">
+    <select id="psel" class="psel"></select>
+  </div>
+</div>
+<div id="availNote" style="font-size:10px;color:var(--dim);margin-bottom:12px;padding:8px 10px;background:var(--s1);border:1px solid var(--border);border-radius:var(--rs);line-height:1.6">
+  Cargando cobertura de datos...
+</div>
+
+<!-- KPIs -->
+<div class="sh">Indicadores clave</div>
+<div class="kpi-grid">
+  <div class="kcard"><div class="k-lbl">Ranking fiscal</div><div class="k-val au" id="kRank">—</div><div class="k-sub">sobre comparables</div></div>
+  <div class="kcard"><div class="k-lbl">Res. financiero</div><div class="k-val" id="kResFin">—</div><div class="k-sub">LTM · % ingresos</div></div>
+  <div class="kcard"><div class="k-lbl">Res. primario</div><div class="k-val" id="kResPri">—</div><div class="k-sub">LTM · % ingresos</div></div>
+  <div class="kcard"><div class="k-lbl">Deuda total</div><div class="k-val" id="kDebt">—</div><div class="k-sub">stock · USD M</div></div>
+  <div class="kcard"><div class="k-lbl">Recaud. propia 2026</div><div class="k-val b" id="kTopYtd">—</div><div class="k-sub">acumulado disponible</div></div>
+  <div class="kcard"><div class="k-lbl">Transf. nación 2026</div><div class="k-val b" id="kRonYtd">—</div><div class="k-sub">acumulado disponible</div></div>
+</div>
+
+<!-- BUDGET STRIP (PBA only) -->
+<div id="budgetSection" style="display:none">
+  <div class="sh sh-gold">Presupuesto 2026 · Ley 15.557</div>
+  <div class="bstrip">
+    <div class="bc"><div class="bc-val b" id="bRes">—</div><div class="bc-lbl">Recursos presupuestados</div><div class="bc-src">Ley 15.557</div></div>
+    <div class="bc"><div class="bc-val r" id="bEro">—</div><div class="bc-lbl">Erogaciones presupuestadas</div><div class="bc-src">Ley 15.557</div></div>
+    <div class="bc"><div class="bc-val a" id="bNec">—</div><div class="bc-lbl">Necesidad de financiamiento</div><div class="bc-src">Ley 15.557</div></div>
+  </div>
+</div>
+
+<!-- COMPARATIVO -->
+<div class="sh">Comparativo interprovincial · resultado financiero</div>
+<div class="comp-wrap">
+  <h3>Resultado financiero LTM — todas las jurisdicciones</h3>
+  <div class="comp-note">Provincia seleccionada resaltada. El diferencial entre provincias es una señal de comparación útil, pero no una prueba concluyente: cada jurisdicción tiene una estructura fiscal distinta.</div>
+  <div id="compRows" class="comp-rows"></div>
+</div>
+
+<!-- CHARTS ROW 1: Recaudación 2026 -->
+<div class="sh">Recaudación 2026</div>
+<div class="charts-row">
+  <div class="cc">
+    <h3>Recaudación propia mensual 2026</h3>
+    <div class="cc-note" id="topMNote">Por impuesto · meses disponibles</div>
+    <div class="leg" id="topMLeg"></div>
+    <div class="cw"><canvas id="cTopM" role="img" aria-label="Recaudación propia mensual 2026 por impuesto"></canvas></div>
+  </div>
+  <div class="cc">
+    <h3>Transferencias de Nación 2026</h3>
+    <div class="cc-note">CFI + Compensación Consenso Fiscal · meses disponibles</div>
+    <div class="leg">
+      <span class="li"><span class="ld" style="background:#60a5fa"></span>CFI neta</span>
+      <span class="li"><span class="ld" style="background:#4ade80"></span>Compensación</span>
+      <span class="li"><span class="ld" style="background:#fbbf24;border:1px dashed #fbbf24"></span>Total RON</span>
+    </div>
+    <div class="cw"><canvas id="cRonM" role="img" aria-label="Transferencias nacionales mensuales 2026"></canvas></div>
+  </div>
+</div>
+
+<!-- CHARTS ROW 2: Evolución histórica -->
+<div class="sh">Evolución histórica</div>
+<div class="charts-col">
+  <div class="cc">
+    <h3>Composición de recaudación propia 2025 (acumulado trimestral)</h3>
+    <div class="cc-note">Por tipo de impuesto.</div>
+    <div class="leg" id="topTLeg"></div>
+    <div class="cw"><canvas id="cTopT" role="img" aria-label="Composición recaudación propia 2025 trimestral"></canvas></div>
+  </div>
+  <div class="charts-row" style="margin-bottom:0">
+    <div class="cc">
+      <h3>Serie histórica recaudación propia</h3>
+      <div class="cc-note">Valores nominales · no comparables entre años por inflación.</div>
+      <div class="cw"><canvas id="cTopH" role="img" aria-label="Serie histórica recaudación propia"></canvas></div>
+    </div>
+    <div class="cc">
+      <h3>Transferencias de Nación · histórico anual</h3>
+      <div class="cc-note">Total + CFI · valores nominales 2003-2025.</div>
+      <div class="leg">
+        <span class="li"><span class="ld" style="background:#60a5fa"></span>RON total</span>
+        <span class="li"><span class="ld" style="background:#4ade80;border:1px dashed #4ade80"></span>CFI neta</span>
+      </div>
+      <div class="cw"><canvas id="cRonH" role="img" aria-label="Transferencias nacionales histórico anual"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- BALANCE (PBA only) -->
+<div id="balanceSection" style="display:none">
+  <div class="sh sh-gold">Evaluación de gestión · Buenos Aires</div>
+  <div class="balance-grid">
+    <div class="bal pro">
+      <div class="bal-title pro">A favor</div>
+      <div id="balPro"></div>
+    </div>
+    <div class="bal con">
+      <div class="bal-title con">En contra</div>
+      <div id="balCon"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TABLES -->
+<div class="sh">Indicadores estructurales · <span id="tProvName" style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">—</span></div>
+<div class="tables-row">
+  <div class="tb">
+    <h3>Estructura fiscal</h3>
+    <table><tbody id="metricsBody"></tbody></table>
+  </div>
+  <div class="tb">
+    <h3>Composición de deuda (USD)</h3>
+    <table><tbody id="debtBody"></tbody></table>
+    <div style="font-size:10px;color:var(--dim);margin-top:8px" id="debtNote"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong style="color:var(--muted)">Federico Pellegrini · Podcast: Entre Mates y Mercados</strong><br>
+  Tablero público de seguimiento fiscal provincial.
+  La vista compara resultado, deuda, recaudación propia y transferencias nacionales.
+  Para actualizarlo, alcanza con reemplazar los archivos de datos manteniendo la misma estructura.
+
+</div>
+
+</div><!-- /wrap -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+'use strict';
+
+/* ── FORMATTING ─────────────────────────────────────────────────── */
+const FMT=new Intl.NumberFormat('es-AR');
+function mShort(v){
+  if(v===null||v===undefined||isNaN(v))return'N/D';
+  const a=Math.abs(v);
+  if(a>=1e12)return(v/1e12).toFixed(2).replace('.',',')+'B';
+  if(a>=1e9)return(v/1e9).toFixed(1).replace('.',',')+'mil M';
+  if(a>=1e6)return(v/1e6).toFixed(1).replace('.',',')+'M';
+  return FMT.format(Math.round(v));
+}
+function pct(v,dec=1){if(v===null||v===undefined||isNaN(v))return'N/D';return(v>=0?'+':'')+Number(v).toFixed(dec).replace('.',',')+'%';}
+function pctN(v,dec=1){if(v===null||v===undefined||isNaN(v))return'N/D';return Number(v).toFixed(dec).replace('.',',')+'%';}
+function toN(v){if(v===null||v===undefined||v==='')return null;const n=Number(v);return Number.isFinite(n)?n:null;}
+function vCls(v,pg=true){if(v===null||v===undefined||isNaN(v))return'm';if(pg)return v>=0?'g':'r';return v<=0?'g':'r';}
+function setK(id,txt,cls){const el=document.getElementById(id);if(!el)return;el.className='k-val '+(cls||'');el.textContent=txt;}
+
+function parseCSV(txt){
+  const lines=txt.trim().split(/\r?\n/);
+  const hdrs=splitL(lines[0]);
+  return lines.slice(1).filter(Boolean).map(l=>{const c=splitL(l);const o={};hdrs.forEach((h,i)=>o[h]=c[i]??'');return o;});
+}
+function splitL(line){
+  const out=[];let cur='';let q=false;
+  for(let i=0;i<line.length;i++){
+    const c=line[i];
+    if(c==='"'){if(q&&line[i+1]==='"'){cur+='"';i++;}else{q=!q;}}
+    else if(c===','&&!q){out.push(cur.trim());cur='';}
+    else{cur+=c;}
+  }out.push(cur.trim());return out;
+}
+
+/* ── CHART DEFAULTS ─────────────────────────────────────────────── */
+const TAX_COLORS={'Iibb':'#60a5fa','Ingresos Brutos':'#60a5fa','Sellos':'#4ade80','Automotores':'#fbbf24','Inmobiliario':'#a78bfa','Otros':'#64748b'};
+const TAX_ORDER=['Iibb','Ingresos Brutos','Sellos','Automotores','Inmobiliario','Otros'];
+const BASE_OPTS={
+  responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false}},
+  scales:{
+    x:{ticks:{color:'#5a5348',font:{size:9}},grid:{color:'rgba(46,43,38,.6)'},border:{color:'rgba(46,43,38,.8)'}},
+    y:{ticks:{color:'#5a5348',font:{size:9}},grid:{color:'rgba(46,43,38,.6)'},border:{color:'rgba(46,43,38,.8)'}}
+  }
+};
+
+/* ── DATA GLOBALS ────────────────────────────────────────────────── */
+let manifest,topMensual=[],topTrim=[],serieTop=[],info2026=[],ronSeries=[],cross1816={},budgetPBA=null;
+let charts={};
+
+/* ── LOAD ALL ────────────────────────────────────────────────────── */
+async function loadAll(){
+  const tryFetchJSON=(a,b)=>fetch(a).then(r=>r.ok?r.json():fetch(b).then(r2=>r2.json()));
+  const tryFetchText=(a,b)=>fetch(a).then(r=>r.ok?r.text():fetch(b).then(r2=>r2.text()));
+  const res=await Promise.allSettled([
+    tryFetchJSON('./dashboard_manifest_corregido.json','./dashboard_manifest.json'),
+    fetch('./top_mensual_2026_normalizado.csv').then(r=>r.text()),
+    fetch('./top_trim_2025_normalizado.csv').then(r=>r.text()),
+    fetch('./serie_top_1984_2024_normalizado.csv').then(r=>r.text()),
+    tryFetchText('./informacion_consolidada_2026_normalizado_corregido.csv','./informacion_consolidada_2026_normalizado.csv'),
+    tryFetchText('./serie_ron_2003_2025_normalizado_corregido.csv','./serie_ron_2003_2025_normalizado.csv'),
+    tryFetchJSON('./dashboard_cross_section_1816_corregido.json','./dashboard_cross_section_1816.json'),
+    fetch('./budget_anchors_pba_2026.json').then(r=>r.json()),
+  ]);
+  const ok=r=>r.status==='fulfilled'?r.value:null;
+  manifest=ok(res[0]);
+  topMensual=res[1].status==='fulfilled'?parseCSV(res[1].value):[];
+  topTrim=res[2].status==='fulfilled'?parseCSV(res[2].value):[];
+  serieTop=res[3].status==='fulfilled'?parseCSV(res[3].value):[];
+  info2026=res[4].status==='fulfilled'?parseCSV(res[4].value):[];
+  ronSeries=res[5].status==='fulfilled'?parseCSV(res[5].value):[];
+  cross1816=res[6].status==='fulfilled'?(res[6].value.provinces||{}):null;
+  budgetPBA=ok(res[7]);
+
+  if(!manifest&&!cross1816){
+    document.getElementById('availNote').textContent='No se pudo cargar la capa de datos. Abrí desde un servidor local o GitHub Pages.';
+    return;
+  }
+
+  const provs=manifest?.province_universe||Object.keys(cross1816||{});
+  const ts=manifest?.generated_at?.slice(0,10)||'—';
+  document.getElementById('metaBox').innerHTML=`${provs.length} jurisdicciones<br><span style="color:var(--dim)">Actualizado ${ts}</span>`;
+
+  const sel=document.getElementById('psel');
+  provs.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;if(p==='Buenos Aires')o.selected=true;sel.appendChild(o);});
+  sel.addEventListener('change',()=>render(sel.value));
+
+  buildComparativo();
+  render('Buenos Aires');
+}
+
+/* ── COMPARATIVO ─────────────────────────────────────────────────── */
+let currentProvince='Buenos Aires';
+function buildComparativo(){
+  if(!cross1816)return;
+  const data=Object.entries(cross1816)
+    .map(([p,d])=>({p,rank:d.ranking_general,rf:toN(d.resultado_financiero_ltm_pct)}))
+    .filter(d=>d.rf!==null).sort((a,b)=>b.rf-a.rf);
+  const max=Math.max(...data.map(d=>Math.abs(d.rf)));
+  const half=45;
+  const container=document.getElementById('compRows');
+  container.innerHTML='';
+  data.forEach(d=>{
+    const isProv=d.p===currentProvince;
+    const isPos=d.rf>=0;
+    const bw=Math.abs(d.rf)*(half/max);
+    const bColor=isProv?(isPos?'#4ade80':'#f87171'):(isPos?'#4ade8055':'#f8717155');
+    const bLeft=isPos?half+'%':(half-bw)+'%';
+    const row=document.createElement('div');
+    row.className='comp-row';
+    row.innerHTML=`
+      <div class="cn${isProv?' pba':''}" title="${d.p}">
+        <span style="color:var(--dim);font-size:9px;margin-right:3px">#${d.rank||'?'}</span>${d.p}${isProv?' ◀':''}
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-zero" style="left:${half}%"></div>
+        <div class="bar-fill" style="width:${bw}%;left:${bLeft};background:${bColor}"></div>
+      </div>
+      <div class="cv ${isPos?'g':'r'}">${pct(d.rf)}</div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+/* ── RENDER PROVINCE ─────────────────────────────────────────────── */
+function destroyCharts(){Object.keys(charts).forEach(k=>{if(charts[k]){charts[k].destroy();charts[k]=null;}});}
+
+function render(province){
+  currentProvince=province;
+  destroyCharts();
+  // Remove old nodata divs
+  document.querySelectorAll('.nodata').forEach(el=>el.remove());
+  document.querySelectorAll('canvas').forEach(el=>el.style.display='');
+
+  const cross=(cross1816&&cross1816[province])||{};
+  const isPBA=province==='Buenos Aires';
+
+  const pTopM=topMensual.filter(r=>r.province===province);
+  const pTopT=topTrim.filter(r=>r.province===province);
+  const pTopH=serieTop.filter(r=>r.province===province&&r.tax==='Total');
+  const pInfo=info2026.filter(r=>r.province===province);
+  const pRon=ronSeries.filter(r=>r.province===province);
+
+  const topYtd=pTopM.reduce((a,b)=>a+(toN(b.value_millions)||0),0);
+  const ronYtd=pInfo.filter(r=>r.category==='Total | (1) + (2)'&&r.period_type==='month')
+    .reduce((a,b)=>a+(toN(b.value_millions)||0),0);
+
+  // KPIs
+  setK('kRank',cross.ranking_general?'#'+cross.ranking_general:'N/D','au');
+  const rf=toN(cross.resultado_financiero_ltm_pct);
+  const rp=toN(cross.resultado_primario_ltm_pct);
+  setK('kResFin',pct(rf),vCls(rf,true));
+  setK('kResPri',pct(rp),vCls(rp,true));
+  setK('kDebt',cross.deuda_stock_total_usd_m?'USD '+FMT.format(Math.round(cross.deuda_stock_total_usd_m))+'M':'N/D','r');
+  setK('kTopYtd',topYtd?mShort(topYtd):'N/D','b');
+  setK('kRonYtd',ronYtd?mShort(ronYtd):'N/D','b');
+
+  // Availability note
+  const mP=[...new Set(pTopM.map(r=>r.period))].sort();
+  const rP=[...new Set(pInfo.filter(r=>r.period_type==='month').map(r=>r.period))].sort();
+  document.getElementById('availNote').innerHTML=
+    `<strong style="color:var(--muted)">${province}</strong> — `+
+    `Recaudación 2026: ${mP.length?mP.join(', '):'sin datos'} · `+
+    `Transferencias 2026: ${rP.length?rP.join(', '):'sin datos'} · `+
+    `Serie histórica propia: ${pTopH.length?'disponible':'no disponible'} · `+
+    `Base comparada: ${cross.ranking_general?'disponible':'parcial'}`;
+
+  // Budget (PBA only)
+  document.getElementById('budgetSection').style.display=isPBA&&budgetPBA?'block':'none';
+  if(isPBA&&budgetPBA){
+    document.getElementById('bRes').textContent=mShort(budgetPBA.recursos_total_pesos);
+    document.getElementById('bEro').textContent=mShort(budgetPBA.erogaciones_total_pesos);
+    document.getElementById('bNec').textContent=mShort(budgetPBA.necesidad_financiamiento_pesos);
+  }
+
+  // Balance (PBA only)
+  document.getElementById('balanceSection').style.display=isPBA?'block':'none';
+  if(isPBA)renderBalance(cross,topYtd,ronYtd);
+
+  // Update comparativo highlight
+  buildComparativo();
+
+  document.getElementById('tProvName').textContent=province;
+  chartTopMensual(pTopM);
+  chartRonMensual(pInfo);
+  chartTopTrim(pTopT);
+  chartTopHist(pTopH);
+  chartRonHist(pRon);
+  renderMetrics(cross,topYtd,ronYtd);
+  renderDebt(cross);
+}
+
+/* ── CHARTS ──────────────────────────────────────────────────────── */
+function noData(canvasId,msg){
+  const canvas=document.getElementById(canvasId);
+  if(!canvas)return;
+  canvas.style.display='none';
+  const d=document.createElement('div');
+  d.className='nodata';
+  d.innerHTML=`<span style="font-size:24px;opacity:.25">◌</span><span>${msg}</span>`;
+  canvas.parentElement.appendChild(d);
+}
+
+function chartTopMensual(rows){
+  const periods=[...new Set(rows.map(r=>r.period))].sort();
+  if(!periods.length){noData('cTopM','Sin datos de recaudación 2026');return;}
+  const taxes=TAX_ORDER.filter(t=>rows.some(r=>r.tax===t));
+  const map={};periods.forEach(p=>{map[p]={};taxes.forEach(t=>map[p][t]=0);});
+  rows.forEach(r=>{if(map[r.period]&&TAX_COLORS[r.tax])map[r.period][r.tax]=(map[r.period][r.tax]||0)+(toN(r.value_millions)||0);});
+  document.getElementById('topMLeg').innerHTML=taxes.map(t=>`<span class="li"><span class="ld" style="background:${TAX_COLORS[t]}"></span>${t}</span>`).join('');
+  document.getElementById('topMNote').textContent=`${periods.length} mes(es): ${periods.join(', ')}`;
+  charts.cTopM=new Chart(document.getElementById('cTopM'),{
+    type:'bar',
+    data:{
+      labels:periods.map(p=>p.slice(5)),
+      datasets:taxes.map(t=>({label:t,data:periods.map(p=>map[p][t]||0),backgroundColor:TAX_COLORS[t]+'cc',borderColor:TAX_COLORS[t],borderWidth:1,stack:'s',borderRadius:2}))
+    },
+    options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,x:{...BASE_OPTS.scales.x,stacked:true},y:{...BASE_OPTS.scales.y,stacked:true,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>mShort(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+mShort(ctx.parsed.y)}}}}
+  });
+}
+
+function chartRonMensual(rows){
+  const months=[...new Set(rows.filter(r=>r.period_type==='month').map(r=>r.period))].sort();
+  if(!months.length){noData('cRonM','Sin datos de transferencias 2026');return;}
+  const cCFI='CFI | Neta';
+  const cComp='Compensación Consenso Fiscal';
+  const cTot='Total | (1) + (2)';
+  const v=(p,c)=>{
+    const h=rows.find(r=>r.period===p&&(r.category_normalized===c||r.category===c));
+    return h?toN(h.value_millions)||0:0;
+  };
+  charts.cRonM=new Chart(document.getElementById('cRonM'),{
+    type:'bar',
+    data:{
+      labels:months.map(m=>m.slice(5)),
+      datasets:[
+        {label:'CFI neta',data:months.map(m=>v(m,cCFI)),backgroundColor:'#60a5facc',borderColor:'#60a5fa',borderWidth:1,stack:'s',borderRadius:2},
+        {label:'Compensación',data:months.map(m=>v(m,cComp)),backgroundColor:'#4ade80cc',borderColor:'#4ade80',borderWidth:1,stack:'s',borderRadius:2},
+        {label:'Total RON',type:'line',data:months.map(m=>v(m,cTot)),borderColor:'#fbbf24',borderWidth:2.5,pointRadius:5,pointBackgroundColor:'#fbbf24',fill:false,tension:.2,yAxisID:'y'},
+      ]
+    },
+    options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,x:{...BASE_OPTS.scales.x,stacked:true},y:{...BASE_OPTS.scales.y,stacked:true,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>mShort(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+mShort(ctx.parsed.y)}}}}
+  });
+}
+
+function chartTopTrim(rows){
+  if(!rows.length){noData('cTopT','Sin datos de recaudación 2025');return;}
+  const periods=['2025-Q1','2025-Q2_YTD','2025-Q3_YTD'];
+  const pLbl={'2025-Q1':'I trim','2025-Q2_YTD':'Acum. I-II','2025-Q3_YTD':'Acum. I-III'};
+  const taxes=['Ingresos Brutos','Sellos','Automotores','Inmobiliario','Otros'];
+  const map={};periods.forEach(p=>{map[p]={};taxes.forEach(t=>map[p][t]=0);});
+  rows.forEach(r=>{if(map[r.period]&&taxes.includes(r.tax))map[r.period][r.tax]+=toN(r.value_millions)||0;});
+  document.getElementById('topTLeg').innerHTML=taxes.map(t=>`<span class="li"><span class="ld" style="background:${TAX_COLORS[t]||'#64748b'}"></span>${t}</span>`).join('');
+  charts.cTopT=new Chart(document.getElementById('cTopT'),{
+    type:'bar',
+    data:{labels:periods.map(p=>pLbl[p]),datasets:taxes.map(t=>({label:t,data:periods.map(p=>map[p][t]||0),backgroundColor:(TAX_COLORS[t]||'#64748b')+'cc',borderColor:TAX_COLORS[t]||'#64748b',borderWidth:1,stack:'s',borderRadius:2}))},
+    options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,x:{...BASE_OPTS.scales.x,stacked:true},y:{...BASE_OPTS.scales.y,stacked:true,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>mShort(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+mShort(ctx.parsed.y)}}}}
+  });
+}
+
+function chartTopHist(rows){
+  const hist=rows.map(r=>({year:+r.year,value:toN(r.value_millions)||0})).filter(r=>r.year>=2010).sort((a,b)=>a.year-b.year);
+  if(!hist.length){noData('cTopH','Sin datos históricos');return;}
+  charts.cTopH=new Chart(document.getElementById('cTopH'),{
+    type:'line',
+    data:{labels:hist.map(r=>r.year),datasets:[{label:'Recaud. propia (nominal)',data:hist.map(r=>r.value),borderColor:'#60a5fa',backgroundColor:'rgba(96,165,250,.08)',borderWidth:2,pointRadius:2,pointBackgroundColor:'#60a5fa',fill:true,tension:.2}]},
+    options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,y:{...BASE_OPTS.scales.y,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>mShort(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>'Recaud.: '+mShort(ctx.parsed.y)}}}}
+  });
+}
+
+function chartRonHist(rows){
+  const years=[...new Set(rows.map(r=>r.year))].sort();
+  if(!years.length){noData('cRonH','Sin datos históricos de transferencias');return;}
+
+  const getVal=(year,cat)=>{
+    const h=rows.find(r=>String(r.year)===String(year)&&(r.category_normalized===cat||r.category===cat));
+    return h?toN(h.value_millions):null;
+  };
+  const getFallback=(year,list)=>{
+    const h=rows.find(r=>String(r.year)===String(year)&&list.includes(r.category));
+    return h?toN(h.value_millions):null;
+  };
+  const totalVals=years.map(y=>getVal(y,'Total | (1) + (2)') ?? getFallback(y,['Total | (1) + (2)','T O T A L | (1) + (2)','T O T A L | (1) + (2) + (3)','T O T A L']));
+  const cfiVals=years.map(y=>getVal(y,'CFI | Neta') ?? getFallback(y,['C.F.I. | Neta De | Ley Nº 26.075','COPARTIC. | FEDERAL DE | IMPUESTOS | LEY N° 23.548']));
+
+  charts.cRonH=new Chart(document.getElementById('cRonH'),{type:'line',
+    data:{
+      labels:years,
+      datasets:[
+        {label:'RON total',data:years.map(y=>vFor(y,'tot')),borderColor:'#60a5fa',backgroundColor:'rgba(96,165,250,.07)',borderWidth:2.5,pointRadius:2,pointBackgroundColor:'#60a5fa',fill:true,tension:.25,spanGaps:true},
+        {label:'CFI neta',data:years.map(y=>vFor(y,'cfi')),borderColor:'#4ade80',borderWidth:1.5,pointRadius:2,pointBackgroundColor:'#4ade80',fill:false,tension:.25,spanGaps:true,borderDash:[4,3]},
+      ]
+    },
+    options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,x:{...BASE_OPTS.scales.x,ticks:{...BASE_OPTS.scales.x.ticks,maxTicksLimit:10,maxRotation:45}},y:{...BASE_OPTS.scales.y,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>mShort(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+mShort(ctx.parsed.y)}}}}
+  });
+}
+
