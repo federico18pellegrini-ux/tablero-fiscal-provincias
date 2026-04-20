@@ -1,5 +1,5 @@
 province,period,income_total_current_millions,income_total_prev_year_millions,auto_transfers_current_millions,auto_transfers_prev_year_millions,tna_expected_current_millions,tna_received_current_millions,own_base_proxy_current_millions,own_base_proxy_prev_year_millions,primary_expenditure_current_millions,primary_expenditure_prev_year_millions,macro_proxy_method,status,notes
-Buenos Aires,2026-03,,,,,,,,,,,Proxy base propia mensual deflactada; cargar desde top_mensual_2025_normalizado + top_mensual_2026_normalizado (homogéneo).,partial,"Pendiente carga auditable mensual (ingresos, transferencias y gasto primario) para activar atribución completa."
+Buenos Aires,2026-03,,,,,,,,,,,Proxy base propia mensual deflactada; cargar desde top_mensual_2025_normalizado + top_mensual_2026_normalizado (homogéneo).,partial,No hay todavía archivo de datos cargado para este bloque.
 CABA,2026-03,,,,,,,,,,,,missing,Plantilla inicial. Completar con fuente homogénea mensual para habilitar cálculo auditable.
 Catamarca,2026-03,,,,,,,,,,,,missing,Plantilla inicial. Completar con fuente homogénea mensual para habilitar cálculo auditable.
 Chaco,2026-03,,,,,,,,,,,,missing,Plantilla inicial. Completar con fuente homogénea mensual para habilitar cálculo auditable.

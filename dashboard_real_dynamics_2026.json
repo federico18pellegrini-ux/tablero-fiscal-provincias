@@ -1,6 +1,6 @@
 {
   "source": "dinámica real 2026",
-  "generated_at": "2026-04-20T19:23:07.226263Z",
+  "generated_at": "2026-04-20T21:07:58.883202Z",
   "methodology": {
     "real_yoy_pct": "((nominal_current / nominal_prev_year) / (ipc_index_current / ipc_index_prev_year) - 1) * 100",
     "real_ytd_pct": "sumas deflactadas a último mes disponible del período",
@@ -8,7 +8,7 @@
   },
   "provinces": {
     "Buenos Aires": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-01",
@@ -25,21 +25,21 @@
           "status": "current_without_homogeneous_base"
         },
         "primary_expenditure": {
-          "last_available_period": "2026-03",
+          "last_available_period": null,
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "missing"
         },
         "wages": {
-          "last_available_period": "2026-03",
+          "last_available_period": null,
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "missing"
         },
         "capital_expenditure": {
-          "last_available_period": "2026-03",
+          "last_available_period": null,
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
@@ -48,7 +48,7 @@
       }
     },
     "CABA": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -88,7 +88,7 @@
       }
     },
     "Catamarca": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -128,7 +128,7 @@
       }
     },
     "Chaco": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -168,7 +168,7 @@
       }
     },
     "Chubut": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -208,7 +208,7 @@
       }
     },
     "Corrientes": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -248,7 +248,7 @@
       }
     },
     "Córdoba": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -288,7 +288,7 @@
       }
     },
     "Entre Ríos": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -328,7 +328,7 @@
       }
     },
     "Formosa": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -368,7 +368,7 @@
       }
     },
     "Jujuy": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -408,7 +408,7 @@
       }
     },
     "La Pampa": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": null,
@@ -448,7 +448,7 @@
       }
     },
     "La Rioja": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -488,7 +488,7 @@
       }
     },
     "Mendoza": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -528,7 +528,7 @@
       }
     },
     "Misiones": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": null,
@@ -568,7 +568,7 @@
       }
     },
     "Neuquén": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -608,7 +608,7 @@
       }
     },
     "Río Negro": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -648,7 +648,7 @@
       }
     },
     "Salta": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": null,
@@ -688,7 +688,7 @@
       }
     },
     "San Juan": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -728,7 +728,7 @@
       }
     },
     "San Luis": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -768,7 +768,7 @@
       }
     },
     "Santa Cruz": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -808,7 +808,7 @@
       }
     },
     "Santa Fe": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": null,
@@ -848,7 +848,7 @@
       }
     },
     "Santiago del Estero": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",
@@ -888,7 +888,7 @@
       }
     },
     "Tierra del Fuego": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-01",
@@ -928,7 +928,7 @@
       }
     },
     "Tucumán": {
-      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.",
+      "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
           "last_available_period": "2026-02",

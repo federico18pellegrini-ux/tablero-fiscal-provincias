@@ -1,6 +1,6 @@
 {
   "source": "capa liquidez y riesgo inmediato",
-  "generated_at": "2026-04-20T19:34:16.276490Z",
+  "generated_at": "2026-04-20T21:07:58.128908Z",
   "methodology": {
     "intereses_sobre_ingresos": "resultado_primario_ltm_pct - resultado_financiero_ltm_pct",
     "ahorro_corriente": "manual_or_external_source",
@@ -12,7 +12,7 @@
   "provinces": {
     "Buenos Aires": {
       "as_of": "2026-03",
-      "coverage_note": "Bloque parcial. El repo actual permite derivar intereses/ingresos y anclas presupuestarias, pero no trae aún caja, aguinaldo ni perfil de vencimientos en formato normalizado.",
+      "coverage_note": "Bloque parcial. El repositorio permite derivar intereses/ingresos y anclas presupuestarias. Para habilitar semáforo completo se requiere carga auditada en dashboard_liquidity_risk_inputs.csv.",
       "metrics": {
         "ahorro_corriente_pct": {
           "value": null,

@@ -8,7 +8,10 @@ from pathlib import Path
 ROOT = Path('.')
 INDEX_HTML = ROOT / 'index.html'
 TOP_FILE = ROOT / 'top_mensual_2026_normalizado.csv'
+TOP_2025_FILE = ROOT / 'top_mensual_2025_normalizado.csv'
 INFO_FILE = ROOT / 'informacion_consolidada_2026_normalizado.csv'
+INFO_2025_FILE = ROOT / 'informacion_consolidada_2025_normalizado.csv'
+EXPENSES_FILE = ROOT / 'gasto_mensual_2025_2026_normalizado.csv'
 MANIFEST_FILE = ROOT / 'dashboard_manifest.json'
 DEFLACTOR_CSV = ROOT / 'deflactor_mensual.csv'
 INPUTS_CSV = ROOT / 'dashboard_real_dynamics_inputs.csv'
@@ -83,9 +86,11 @@ def to_float(value):
 def prefill_inputs():
     rows = []
 
-    # A) own_revenue
+    # A) own_revenue (2026 vs mismo período 2025)
     top_rows = read_csv(TOP_FILE)
+    top_2025_rows = read_csv(TOP_2025_FILE) if TOP_2025_FILE.exists() else []
     own_totals = defaultdict(float)
+    own_totals_2025 = defaultdict(float)
     for r in top_rows:
         if r.get('period_type') != 'month':
             continue
@@ -96,22 +101,37 @@ def prefill_inputs():
             continue
         own_totals[(province, period)] += val
 
+    for r in top_2025_rows:
+        if r.get('period_type') != 'month':
+            continue
+        province = (r.get('province') or '').strip()
+        period = (r.get('period') or '').strip()
+        val = to_float(r.get('value_millions'))
+        if not province or not period or val is None:
+            continue
+        own_totals_2025[(province, period)] += val
+
     for (province, period), value in sorted(own_totals.items()):
+        prev_period = f"{int(period[:4]) - 1:04d}-{period[5:7]}"
+        prev_value = own_totals_2025.get((province, prev_period))
         rows.append({
             'province': province,
             'period': period,
             'metric': 'own_revenue',
             'current_nominal_millions': f"{value:.6f}",
-            'prev_year_nominal_millions': '',
+            'prev_year_nominal_millions': '' if prev_value is None else f"{prev_value:.6f}",
             'source_current': TOP_FILE.name,
-            'source_prev_year': '',
-            'status': 'prefilled_current_only',
+            'source_prev_year': TOP_2025_FILE.name if prev_value is not None else '',
+            'status': 'prefilled_current_only' if prev_value is None else 'prefilled_comparable',
             'notes': '',
         })
 
-    # B) ron_total (prefer Total | (1) + (2), fallback Total | Recursos | Origen Nacional | (1))
+    # B) ron_total (2026 vs mismo período 2025)
     info_rows = read_csv(INFO_FILE)
+    info_2025_rows = read_csv(INFO_2025_FILE) if INFO_2025_FILE.exists() else []
     by_key_cat = defaultdict(list)
+    by_key_cat_2025 = defaultdict(list)
+
     for r in info_rows:
         if r.get('period_type') != 'month':
             continue
@@ -121,6 +141,16 @@ def prefill_inputs():
         province = (r.get('province') or '').strip()
         cat = (r.get('category_normalized') or r.get('category') or '').strip()
         by_key_cat[(province, period, cat)].append(r)
+
+    for r in info_2025_rows:
+        if r.get('period_type') != 'month':
+            continue
+        period = (r.get('period') or '').strip()
+        if period == 'CONS' or not period:
+            continue
+        province = (r.get('province') or '').strip()
+        cat = (r.get('category_normalized') or r.get('category') or '').strip()
+        by_key_cat_2025[(province, period, cat)].append(r)
 
     all_keys = sorted({(k[0], k[1]) for k in by_key_cat})
     for province, period in all_keys:
@@ -132,33 +162,65 @@ def prefill_inputs():
                 break
         if not pick:
             continue
+
         value = to_float(pick.get('value_millions'))
+        prev_period = f"{int(period[:4]) - 1:04d}-{period[5:7]}"
+        prev_pick = None
+        for category in ['Total | (1) + (2)', 'Total | Recursos | Origen Nacional | (1)']:
+            candidates = by_key_cat_2025.get((province, prev_period, category), [])
+            if candidates:
+                prev_pick = candidates[0]
+                break
+        prev_value = to_float(prev_pick.get('value_millions')) if prev_pick else None
+
         rows.append({
             'province': province,
             'period': period,
             'metric': 'ron_total',
             'current_nominal_millions': '' if value is None else f"{value:.6f}",
-            'prev_year_nominal_millions': '',
+            'prev_year_nominal_millions': '' if prev_value is None else f"{prev_value:.6f}",
             'source_current': INFO_FILE.name,
-            'source_prev_year': '',
-            'status': 'prefilled_current_only',
+            'source_prev_year': INFO_2025_FILE.name if prev_value is not None else '',
+            'status': 'prefilled_current_only' if prev_value is None else 'prefilled_comparable',
             'notes': '',
         })
 
-    # C) placeholders gastos for Buenos Aires 2026-01..03
-    for period in ['2026-01', '2026-02', '2026-03']:
-        for metric in ['primary_expenditure', 'wages', 'capital_expenditure']:
-            rows.append({
-                'province': 'Buenos Aires',
-                'period': period,
-                'metric': metric,
-                'current_nominal_millions': '',
-                'prev_year_nominal_millions': '',
-                'source_current': '',
-                'source_prev_year': '',
-                'status': 'missing',
-                'notes': 'Requiere fuente mensual de ejecución 2025-2026',
-            })
+    # C) gastos (2026 vs 2025)
+    metric_map = {
+        'gasto_primario': 'primary_expenditure',
+        'salarios': 'wages',
+        'gasto_capital': 'capital_expenditure',
+    }
+    expense_rows = read_csv(EXPENSES_FILE) if EXPENSES_FILE.exists() else []
+    exp = defaultdict(float)
+    for r in expense_rows:
+        if r.get('period_type') != 'month':
+            continue
+        province = (r.get('province') or '').strip()
+        period = (r.get('period') or '').strip()
+        metric = metric_map.get((r.get('metric') or '').strip())
+        value = to_float(r.get('value_millions'))
+        if not province or not period or not metric or value is None:
+            continue
+        exp[(province, period, metric)] += value
+
+    for province, period, metric in sorted(exp):
+        if not period.startswith('2026-'):
+            continue
+        curr = exp.get((province, period, metric))
+        prev_period = f"{int(period[:4]) - 1:04d}-{period[5:7]}"
+        prev = exp.get((province, prev_period, metric))
+        rows.append({
+            'province': province,
+            'period': period,
+            'metric': metric,
+            'current_nominal_millions': '' if curr is None else f"{curr:.6f}",
+            'prev_year_nominal_millions': '' if prev is None else f"{prev:.6f}",
+            'source_current': EXPENSES_FILE.name if curr is not None else '',
+            'source_prev_year': EXPENSES_FILE.name if prev is not None else '',
+            'status': 'prefilled_current_only' if prev is None else 'prefilled_comparable',
+            'notes': '',
+        })
 
     with INPUTS_CSV.open('w', encoding='utf-8', newline='') as f:
         fields = [
@@ -194,8 +256,8 @@ def calc_real_dynamics():
     for province, metric_rows in sorted(grouped.items()):
         p_out = {
             'coverage_note': (
-                'La dinámica real 2026 requiere base mensual homogénea. Hoy el repo prefill ingresos corrientes 2026, '
-                'pero no trae aún base mensual comparable 2025 ni ejecución mensual de gasto normalizada.'
+                'La dinámica real 2026 requiere base mensual homogénea. '
+                'Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.'
             ),
             'metrics': {}
         }
@@ -220,14 +282,9 @@ def calc_real_dynamics():
                 yoy_by_period[period] = round(yoy, 1)
                 comparable.append((period, c, p))
 
-            if yoy_by_period:
-                latest_comp_period = sorted(yoy_by_period)[-1]
-                last_real = yoy_by_period[latest_comp_period]
-            else:
-                latest_comp_period = None
-                last_real = None
+            latest_comp_period = sorted(yoy_by_period)[-1] if yoy_by_period else None
+            last_real = yoy_by_period.get(latest_comp_period)
 
-            # ytd: only if comparable consecutive periods in same year
             ytd_through = None
             ytd_val = None
             if comparable:
@@ -259,47 +316,44 @@ def calc_real_dynamics():
                             ytd_val = round(((sum_c / sum_p) - 1.0) * 100.0, 1)
                             ytd_through = lastp
 
-            if last_real is not None:
-                status = 'calculated'
-            elif rows and any(to_float(r['current_nominal_millions']) is not None for r in rows):
-                status = 'current_without_homogeneous_base'
-            else:
-                status = 'missing'
-
+            status = 'calculated' if last_real is not None else ('current_without_homogeneous_base' if rows else 'missing')
             p_out['metrics'][metric] = {
-                'last_available_period': latest_comp_period or last_period,
+                'last_available_period': last_period,
                 'last_available_real_yoy_pct': last_real,
                 'ytd_available_through': ytd_through,
                 'real_ytd_pct': ytd_val,
-                'status': status,
+                'status': status
             }
+
         output['provinces'][province] = p_out
 
-    OUTPUT_JSON.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-
-
-def update_manifest():
-    manifest = json.loads(MANIFEST_FILE.read_text(encoding='utf-8'))
-    files = manifest.setdefault('files', {})
-    files['deflactor_mensual'] = DEFLACTOR_CSV.name
-    files['real_dynamics_inputs'] = INPUTS_CSV.name
-    files['real_dynamics_2026'] = OUTPUT_JSON.name
-
-    notes = manifest.setdefault('notes', {})
-    notes['real_dynamics_scope'] = (
-        'Bloque de dinámica real 2026. Requiere base mensual homogénea actual vs mismo período del año previo. '
-        'El repo actual prefill ingresos 2026, pero no contiene aún toda la base comparable 2025 ni ejecución mensual de gasto 2026 normalizada.'
-    )
-
-    MANIFEST_FILE.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    with OUTPUT_JSON.open('w', encoding='utf-8') as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+        f.write('\n')
 
 
 def main():
-    raw = parse_deflator_from_index_html()
-    build_deflator_csv(raw)
-    prefill_inputs()
+    if not DEFLACTOR_CSV.exists():
+        raw = parse_deflator_from_index_html()
+        build_deflator_csv(raw)
+
+    if not INPUTS_CSV.exists() or INPUTS_CSV.stat().st_size == 0:
+        prefill_inputs()
+    else:
+        # Re-sincroniza con fuentes 2025/2026 para mantener consistencia de esquema.
+        prefill_inputs()
+
     calc_real_dynamics()
-    update_manifest()
+
+    if MANIFEST_FILE.exists():
+        with MANIFEST_FILE.open(encoding='utf-8') as f:
+            manifest = json.load(f)
+        manifest.setdefault('files', {})['real_dynamics_2026'] = OUTPUT_JSON.name
+        manifest.setdefault('files', {})['real_dynamics_inputs'] = INPUTS_CSV.name
+        manifest['generated_at'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+        with MANIFEST_FILE.open('w', encoding='utf-8') as f:
+            json.dump(manifest, f, ensure_ascii=False, indent=2)
+            f.write('\n')
 
 
 if __name__ == '__main__':
