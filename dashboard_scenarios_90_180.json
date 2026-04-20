@@ -1,0 +1,91 @@
+{
+  "source": "bloque escenarios 90 180 dias",
+  "generated_at": "2026-04-20T00:00:00Z",
+  "methodology": {
+    "cash_end": "cash_start + own_revenue + nation_revenue + other_income + financing_available - primary_expenditure - interest_outflow - debt_maturities - aguinaldo_outflow",
+    "coverage_ratio": "(cash_start + revenues + financing_available) / (primary_expenditure + interest_outflow + debt_maturities + aguinaldo_outflow)",
+    "financing_gap": "max(0, total_outflows - total_available_resources)",
+    "risk_rule": "usar semaforo en base a coverage_ratio y financing_gap"
+  },
+  "provinces": {
+    "Buenos Aires": {
+      "as_of_date": "2026-03-31",
+      "status": "partial",
+      "coverage_note": "Los escenarios requieren caja inicial, vencimientos y supuestos explícitos. Si faltan inputs críticos, no calcular.",
+      "scenarios": {
+        "Base": {
+          "horizon_90d": {
+            "cash_end_millions": null,
+            "coverage_ratio": null,
+            "financing_gap_millions": null,
+            "traffic_light": "not_available",
+            "key_risk": null,
+            "decision_hint": null
+          },
+          "horizon_180d": {
+            "cash_end_millions": null,
+            "coverage_ratio": null,
+            "financing_gap_millions": null,
+            "traffic_light": "not_available",
+            "key_risk": null,
+            "decision_hint": null
+          }
+        },
+        "Nación adverso": {
+          "horizon_90d": {
+            "cash_end_millions": null,
+            "coverage_ratio": null,
+            "financing_gap_millions": null,
+            "traffic_light": "not_available",
+            "key_risk": null,
+            "decision_hint": null
+          },
+          "horizon_180d": {
+            "cash_end_millions": null,
+            "coverage_ratio": null,
+            "financing_gap_millions": null,
+            "traffic_light": "not_available",
+            "key_risk": null,
+            "decision_hint": null
+          }
+        },
+        "Macro adverso": {
+          "horizon_90d": {
+            "cash_end_millions": null,
+            "coverage_ratio": null,
+            "financing_gap_millions": null,
+            "traffic_light": "not_available",
+            "key_risk": null,
+            "decision_hint": null
+          },
+          "horizon_180d": {
+            "cash_end_millions": null,
+            "coverage_ratio": null,
+            "financing_gap_millions": null,
+            "traffic_light": "not_available",
+            "key_risk": null,
+            "decision_hint": null
+          }
+        },
+        "Estrés combinado": {
+          "horizon_90d": {
+            "cash_end_millions": null,
+            "coverage_ratio": null,
+            "financing_gap_millions": null,
+            "traffic_light": "not_available",
+            "key_risk": null,
+            "decision_hint": null
+          },
+          "horizon_180d": {
+            "cash_end_millions": null,
+            "coverage_ratio": null,
+            "financing_gap_millions": null,
+            "traffic_light": "not_available",
+            "key_risk": null,
+            "decision_hint": null
+          }
+        }
+      }
+    }
+  }
+}

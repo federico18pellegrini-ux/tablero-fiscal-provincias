@@ -42,7 +42,9 @@
     "attribution_inputs": "dashboard_deterioration_attribution_inputs.csv",
     "attribution_output": "dashboard_deterioration_attribution.json",
     "federal_fairness_inputs": "dashboard_federal_fairness_inputs.csv",
-    "federal_fairness_output": "dashboard_federal_fairness.json"
+    "federal_fairness_output": "dashboard_federal_fairness.json",
+    "scenarios_inputs": "dashboard_scenarios_inputs.csv",
+    "scenarios_output": "dashboard_scenarios_90_180.json"
   },
   "notes": {
     "cross_section_1816_scope": "21-22 jurisdicciones comparables; algunas provincias tienen datos incompletos en 1816",
@@ -55,7 +57,8 @@
     "liquidity_risk_scope": "Bloque de caja y riesgo inmediato. Hoy deriva intereses/ingresos y anclas presupuestarias. Caja disponible, cobertura de aguinaldo y vencimientos 90/180d requieren fuente operativa adicional.",
     "real_dynamics_scope": "Bloque de dinámica real 2026. Requiere base mensual homogénea actual vs mismo período del año previo. El repo actual prefill ingresos 2026, pero no contiene aún toda la base comparable 2025 ni ejecución mensual de gasto 2026 normalizada.",
     "attribution_scope": "Bloque de atribución del deterioro. Separa presión Nación, macro y gestión con fórmula visible. Requiere inputs homogéneos de ingresos, transferencias, proxy macro y gasto primario.",
-    "federal_fairness_scope": "Bloque de comparación federal justa. Calcula RON per cápita vs promedio provincial y aporte estimado vs participación recibida, con método visible."
+    "federal_fairness_scope": "Bloque de comparación federal justa. Calcula RON per cápita vs promedio provincial y aporte estimado vs participación recibida, con método visible.",
+    "scenarios_scope": "Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible."
   },
   "missing_top_mensual_2026_provinces": [
     "La Pampa",
