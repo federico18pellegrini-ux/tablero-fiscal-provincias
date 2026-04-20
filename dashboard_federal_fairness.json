@@ -1,6 +1,6 @@
 {
   "source": "bloque comparación federal justa",
-  "generated_at": "2026-04-20T19:23:08.371557Z",
+  "generated_at": "2026-04-20T19:33:19.117828Z",
   "methodology": {
     "ron_per_capita": "ron_total_annual_millions * 1000000 / population",
     "avg_ron_per_capita_23_provinces": "promedio simple de las 23 provincias excluyendo CABA",
@@ -12,9 +12,16 @@
   "provinces": {
     "Buenos Aires": {
       "year": 2025,
-      "status": "partial",
+      "status": "ok",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 17569053.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 699337.4809032629,
           "status": "ok",
@@ -63,31 +70,31 @@
           ]
         },
         "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
+          "value": 21.8187,
+          "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
+          "value": 0.8555425322908192,
+          "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
+          "value": 103.92114347917529,
+          "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
+          "value": 103.92114347917529,
+          "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
             "dashboard_federal_fairness_inputs.csv"
@@ -104,7 +111,7 @@
         }
       },
       "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+        "contribution_method": "Proxy recaudación propia 2026 YTD: participación de Buenos Aires en la suma provincial de top_mensual_2026_normalizado.csv."
       }
     },
     "CABA": {
@@ -112,6 +119,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 3120612.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": null,
           "status": "missing",
@@ -209,6 +223,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 429562.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 3541463.451370989,
           "status": "ok",
@@ -306,6 +327,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 1142963.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 2422040.338224745,
           "status": "ok",
@@ -403,6 +431,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 603120.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1496280.9241424291,
           "status": "ok",
@@ -500,6 +535,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 1197553.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1742754.0089265998,
           "status": "ok",
@@ -597,6 +639,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 3978984.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1247557.359334924,
           "status": "ok",
@@ -694,6 +743,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 1426426.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1908948.7702593424,
           "status": "ok",
@@ -791,6 +847,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 606041.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 3336320.833277071,
           "status": "ok",
@@ -888,6 +951,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 811611.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1937268.2239558848,
           "status": "ok",
@@ -985,6 +1055,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 361859.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 2966835.7290574475,
           "status": "ok",
@@ -1082,6 +1159,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 384607.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 2990270.1757288007,
           "status": "ok",
@@ -1179,6 +1263,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 2014533.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1142959.1851965596,
           "status": "ok",
@@ -1276,6 +1367,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 1280960.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1441932.787869493,
           "status": "ok",
@@ -1373,6 +1471,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 726590.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1362420.3586575284,
           "status": "ok",
@@ -1470,6 +1575,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 762067.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1850497.1786013877,
           "status": "ok",
@@ -1567,6 +1679,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 1440672.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1471116.6976133205,
           "status": "ok",
@@ -1664,6 +1783,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 818234.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 2282319.956897214,
           "status": "ok",
@@ -1761,6 +1887,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 540905.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 2352420.1022615423,
           "status": "ok",
@@ -1858,6 +1991,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 337226.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 2674803.227894697,
           "status": "ok",
@@ -1955,6 +2095,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 3556522.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1431277.345754057,
           "status": "ok",
@@ -2052,6 +2199,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 1060906.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": null,
           "status": "missing",
@@ -2149,6 +2303,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 190641.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 3655405.5641686562,
           "status": "ok",
@@ -2246,6 +2407,13 @@
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
+        "population": {
+          "value": 1731820.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
         "ron_per_capita_pesos": {
           "value": 1512274.7342516836,
           "status": "ok",

@@ -5,6 +5,7 @@ from pathlib import Path
 
 MANIFEST_PATH = Path('dashboard_manifest.json')
 RON_PATH = Path('serie_ron_2003_2025_normalizado.csv')
+TOP_MENSUAL_PATH = Path('top_mensual_2026_normalizado.csv')
 INPUTS_PATH = Path('dashboard_federal_fairness_inputs.csv')
 OUTPUT_PATH = Path('dashboard_federal_fairness.json')
 
@@ -72,6 +73,18 @@ province_universe = manifest.get('province_universe', [])
 
 with RON_PATH.open(encoding='utf-8', newline='') as f:
     ron_rows = list(csv.DictReader(f))
+
+top_2026_by_prov = {}
+if TOP_MENSUAL_PATH.exists():
+    with TOP_MENSUAL_PATH.open(encoding='utf-8', newline='') as f:
+        for row in csv.DictReader(f):
+            province = row.get('province')
+            period = (row.get('period') or '').strip()
+            val = to_float(row.get('value_millions'))
+            if not province or val is None or not period.startswith('2026-'):
+                continue
+            top_2026_by_prov[province] = top_2026_by_prov.get(province, 0.0) + val
+top_2026_total = sum(v for v in top_2026_by_prov.values() if v is not None)
 
 latest_year = max(int(r['year']) for r in ron_rows if str(r.get('year', '')).isdigit())
 
@@ -157,6 +170,16 @@ for row in input_rows:
     if to_float(row.get('estimated_contribution_share_pct')) is None:
         row['status'] = 'partial'
         row['source_contribution'] = row.get('source_contribution') or ''
+        if province == 'Buenos Aires':
+            share_proxy = safe_div(top_2026_by_prov.get('Buenos Aires', 0.0) * 100, top_2026_total)
+            if share_proxy is not None:
+                row['estimated_contribution_share_pct'] = f'{share_proxy:.4f}'
+                row['contribution_method'] = (
+                    'Proxy recaudación propia 2026 YTD: participación de Buenos Aires en la suma '
+                    'provincial de top_mensual_2026_normalizado.csv.'
+                )
+                row['source_contribution'] = row.get('source_contribution') or 'top_mensual_2026_normalizado.csv'
+                row['status'] = 'ok'
     if to_float(row.get('estimated_contribution_share_pct')) is None and not (row.get('contribution_method') or '').strip():
         row['contribution_method'] = ''
     input_map[(province, int(year))] = row
@@ -222,6 +245,7 @@ for province in province_universe:
         input_status = 'partial'
 
     metrics = {
+        'population': metric(population, 'ok' if population is not None else 'missing', ['dashboard_federal_fairness_inputs.csv']),
         'ron_per_capita_pesos': metric(ron_pc, 'ok' if ron_pc is not None else 'missing', ['serie_ron_2003_2025_normalizado.csv', 'dashboard_federal_fairness_inputs.csv']),
         'avg_ron_per_capita_23_provinces_pesos': metric(avg_23, 'ok' if avg_23 is not None else 'missing', ['serie_ron_2003_2025_normalizado.csv', 'dashboard_federal_fairness_inputs.csv']),
         'avg_ron_per_capita_24_jurisdictions_pesos': metric(avg_24, 'ok' if avg_24 is not None else 'missing', ['serie_ron_2003_2025_normalizado.csv', 'dashboard_federal_fairness_inputs.csv']),

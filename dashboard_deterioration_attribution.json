@@ -1,6 +1,6 @@
 {
   "source": "bloque atribución del deterioro",
-  "generated_at": "2026-04-20T19:23:06.695440Z",
+  "generated_at": "2026-04-20T19:34:15.602330Z",
   "methodology": {
     "unit": "pct_of_current_income",
     "nation_effect": "max(0, auto_transfers_prev_real - auto_transfers_current_real) + max(0, tna_expected_current_real - tna_received_current_real), todo dividido por income_total_current_real * 100",
@@ -46,7 +46,7 @@
         "own_base_proxy_prev_year_millions": null,
         "primary_expenditure_current_millions": null,
         "primary_expenditure_prev_year_millions": null,
-        "macro_proxy_method": null
+        "macro_proxy_method": "Proxy base propia mensual deflactada; cargar desde top_mensual_2025_normalizado + top_mensual_2026_normalizado (homogéneo)."
       }
     },
     "CABA": {

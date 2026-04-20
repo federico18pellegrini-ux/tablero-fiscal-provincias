@@ -44,7 +44,10 @@
     "federal_fairness_inputs": "dashboard_federal_fairness_inputs.csv",
     "federal_fairness_output": "dashboard_federal_fairness.json",
     "scenarios_inputs": "dashboard_scenarios_inputs.csv",
-    "scenarios_output": "dashboard_scenarios_90_180.json"
+    "scenarios_output": "dashboard_scenarios_90_180.json",
+    "top_mensual_2025": "top_mensual_2025_normalizado.csv",
+    "informacion_consolidada_2025": "informacion_consolidada_2025_normalizado.csv",
+    "gasto_mensual_2025_2026": "gasto_mensual_2025_2026_normalizado.csv"
   },
   "notes": {
     "cross_section_1816_scope": "21-22 jurisdicciones comparables; algunas provincias tienen datos incompletos en 1816",
@@ -58,7 +61,9 @@
     "real_dynamics_scope": "Bloque de dinámica real 2026. Requiere base mensual homogénea actual vs mismo período del año previo. El repo actual prefill ingresos 2026, pero no contiene aún toda la base comparable 2025 ni ejecución mensual de gasto 2026 normalizada.",
     "attribution_scope": "Bloque de atribución del deterioro. Separa presión Nación, macro y gestión con fórmula visible. Requiere inputs homogéneos de ingresos, transferencias, proxy macro y gasto primario.",
     "federal_fairness_scope": "Bloque de comparación federal justa. Calcula RON per cápita vs promedio provincial y aporte estimado vs participación recibida, con método visible.",
-    "scenarios_scope": "Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible."
+    "scenarios_scope": "Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible.",
+    "load_priority_2025_2026": "a) comparación federal justa; b) caja y riesgo inmediato; c) atribución del deterioro; d) escenarios; e) dinámica real completa.",
+    "monthly_scope_2025_prepared": "Se agregan archivos placeholder 2025 (top mensual, consolidado mensual RON y gasto mensual 2025-2026) para futura carga auditada sin imputar valores."
   },
   "missing_top_mensual_2026_provinces": [
     "La Pampa",

@@ -1,13 +1,44 @@
+import csv
 import json
 from datetime import datetime, timezone
 
 CROSS_FILE = 'dashboard_cross_section_1816.json'
 BUDGET_FILE = 'budget_anchors_pba_2026.json'
+SCENARIOS_INPUTS_FILE = 'dashboard_scenarios_inputs.csv'
 OUTPUT_FILE = 'dashboard_liquidity_risk.json'
 
 
 def round1(value):
     return round(float(value), 1)
+
+
+def to_float(value):
+    if value is None:
+        return None
+    txt = str(value).strip()
+    if txt == '':
+        return None
+    try:
+        return float(txt)
+    except ValueError:
+        return None
+
+
+def pick_base_scenario_inputs(province='Buenos Aires'):
+    try:
+        with open(SCENARIOS_INPUTS_FILE, encoding='utf-8', newline='') as f:
+            rows = [r for r in csv.DictReader(f) if (r.get('province') or '').strip() == province and (r.get('scenario_name') or '').strip() == 'Base']
+    except FileNotFoundError:
+        return None, None
+
+    if not rows:
+        return None, None
+
+    rows = sorted(rows, key=lambda r: (r.get('as_of_date') or '', r.get('horizon_days') or ''))
+    row_90 = next((r for r in reversed(rows) if (r.get('horizon_days') or '').strip() == '90'), None)
+    row_180 = next((r for r in reversed(rows) if (r.get('horizon_days') or '').strip() == '180'), None)
+    row_latest = row_90 or row_180
+    return row_latest, row_180
 
 
 def build():
@@ -24,6 +55,13 @@ def build():
     intereses_sobre_ingresos = None
     if rp is not None and rf is not None:
         intereses_sobre_ingresos = round1(rp - rf)
+
+    row_base, row_180 = pick_base_scenario_inputs('Buenos Aires')
+    caja_disponible = to_float(row_base.get('cash_start_millions')) * 1_000_000 if row_base and to_float(row_base.get('cash_start_millions')) is not None else None
+    aguinaldo = to_float(row_base.get('expected_aguinaldo_outflow_millions')) * 1_000_000 if row_base and to_float(row_base.get('expected_aguinaldo_outflow_millions')) is not None else None
+    cobertura_aguinaldo = round1((caja_disponible / aguinaldo) * 100) if caja_disponible is not None and aguinaldo not in (None, 0) else None
+    venc_90 = to_float(row_base.get('expected_debt_maturities_millions')) * 1_000_000 if row_base and to_float(row_base.get('expected_debt_maturities_millions')) is not None else None
+    venc_180 = to_float(row_180.get('expected_debt_maturities_millions')) * 1_000_000 if row_180 and to_float(row_180.get('expected_debt_maturities_millions')) is not None else None
 
     payload = {
         'source': 'capa liquidez y riesgo inmediato',
@@ -58,28 +96,28 @@ def build():
                         'source': 'dashboard_cross_section_1816.json',
                     },
                     'caja_disponible_pesos': {
-                        'value': None,
+                        'value': caja_disponible,
                         'unit': 'ars',
-                        'status': 'missing',
-                        'source': None,
+                        'status': 'source' if caja_disponible is not None else 'missing',
+                        'source': SCENARIOS_INPUTS_FILE if caja_disponible is not None else None,
                     },
                     'cobertura_aguinaldo_pct': {
-                        'value': None,
+                        'value': cobertura_aguinaldo,
                         'unit': 'pct',
-                        'status': 'missing',
-                        'source': None,
+                        'status': 'derived' if cobertura_aguinaldo is not None else 'missing',
+                        'source': SCENARIOS_INPUTS_FILE if cobertura_aguinaldo is not None else None,
                     },
                     'vencimientos_90d_pesos': {
-                        'value': None,
+                        'value': venc_90,
                         'unit': 'ars',
-                        'status': 'missing',
-                        'source': None,
+                        'status': 'source' if venc_90 is not None else 'missing',
+                        'source': SCENARIOS_INPUTS_FILE if venc_90 is not None else None,
                     },
                     'vencimientos_180d_pesos': {
-                        'value': None,
+                        'value': venc_180,
                         'unit': 'ars',
-                        'status': 'missing',
-                        'source': None,
+                        'status': 'source' if venc_180 is not None else 'missing',
+                        'source': SCENARIOS_INPUTS_FILE if venc_180 is not None else None,
                     },
                     'necesidad_financiamiento_presupuestada_pesos': {
                         'value': budget.get('necesidad_financiamiento_pesos'),
