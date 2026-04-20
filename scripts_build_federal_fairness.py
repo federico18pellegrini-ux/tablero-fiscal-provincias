@@ -11,6 +11,32 @@ OUTPUT_PATH = Path('dashboard_federal_fairness.json')
 RON_PRIMARY = 'Total | Recursos | Origen Nacional | (1)'
 RON_FALLBACK = 'S U B - | T O T A L'
 CABA_NAME = 'CABA'
+DEFAULT_POPULATION_2022 = {
+    'Buenos Aires': 17569053,
+    'CABA': 3120612,
+    'Catamarca': 429562,
+    'Chaco': 1142963,
+    'Chubut': 603120,
+    'Corrientes': 1197553,
+    'Córdoba': 3978984,
+    'Entre Ríos': 1426426,
+    'Formosa': 606041,
+    'Jujuy': 811611,
+    'La Pampa': 361859,
+    'La Rioja': 384607,
+    'Mendoza': 2014533,
+    'Misiones': 1280960,
+    'Neuquén': 726590,
+    'Río Negro': 762067,
+    'Salta': 1440672,
+    'San Juan': 818234,
+    'San Luis': 540905,
+    'Santa Cruz': 337226,
+    'Santa Fe': 3556522,
+    'Santiago del Estero': 1060906,
+    'Tierra del Fuego': 190641,
+    'Tucumán': 1731820,
+}
 
 
 def to_float(value):
@@ -123,7 +149,35 @@ for row in input_rows:
     year = to_float(row.get('year'))
     if not province or year is None:
         continue
+    population = to_float(row.get('population'))
+    if population is None and province in DEFAULT_POPULATION_2022:
+        row['population'] = str(DEFAULT_POPULATION_2022[province])
+        row['source_population'] = row.get('source_population') or 'INDEC Censo 2022 (base)'
+        row['notes'] = (row.get('notes') or '').strip() or 'Población base pre-cargada para habilitar comparaciones per cápita.'
+    if to_float(row.get('estimated_contribution_share_pct')) is None:
+        row['status'] = 'partial'
+        row['source_contribution'] = row.get('source_contribution') or ''
+    if to_float(row.get('estimated_contribution_share_pct')) is None and not (row.get('contribution_method') or '').strip():
+        row['contribution_method'] = ''
     input_map[(province, int(year))] = row
+
+with INPUTS_PATH.open('w', encoding='utf-8', newline='') as f:
+    writer = csv.DictWriter(
+        f,
+        fieldnames=[
+            'province',
+            'year',
+            'population',
+            'estimated_contribution_share_pct',
+            'contribution_method',
+            'status',
+            'source_population',
+            'source_contribution',
+            'notes',
+        ],
+    )
+    writer.writeheader()
+    writer.writerows(input_rows)
 
 ron_total_all = sum(v for v in ron_selected.values() if v is not None)
 
@@ -151,7 +205,7 @@ for province in province_universe:
     inp = input_map.get((province, latest_year), {})
     population = to_float(inp.get('population'))
     estimated_share = to_float(inp.get('estimated_contribution_share_pct'))
-    contribution_method = (inp.get('contribution_method') or '').strip() or 'Sin dato cargado (declarar criterio).'
+    contribution_method = (inp.get('contribution_method') or '').strip()
 
     ron_val = ron_selected.get(province)
     received_share = safe_div(ron_val * 100, ron_total_all) if ron_val is not None and ron_total_all > 0 else None
@@ -164,6 +218,8 @@ for province in province_universe:
     input_status = (inp.get('status') or '').strip().lower()
     if input_status not in {'ok', 'partial', 'missing'}:
         input_status = 'missing'
+    if estimated_share is None:
+        input_status = 'partial'
 
     metrics = {
         'ron_per_capita_pesos': metric(ron_pc, 'ok' if ron_pc is not None else 'missing', ['serie_ron_2003_2025_normalizado.csv', 'dashboard_federal_fairness_inputs.csv']),

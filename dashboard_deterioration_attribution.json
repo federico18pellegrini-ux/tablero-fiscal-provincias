@@ -1,6 +1,6 @@
 {
   "source": "bloque atribución del deterioro",
-  "generated_at": "2026-04-20T18:21:56.317310Z",
+  "generated_at": "2026-04-20T19:23:06.695440Z",
   "methodology": {
     "unit": "pct_of_current_income",
     "nation_effect": "max(0, auto_transfers_prev_real - auto_transfers_current_real) + max(0, tna_expected_current_real - tna_received_current_real), todo dividido por income_total_current_real * 100",
