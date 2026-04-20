@@ -1,6 +1,6 @@
 {
   "project": "Sistema fiscal provincias - capa intermedia normalizada",
-  "generated_at": "2026-04-18T02:15:27.233604Z",
+  "generated_at": "2026-04-20T03:20:33.300440Z",
   "province_universe": [
     "Buenos Aires",
     "CABA",
@@ -37,10 +37,17 @@
   },
   "notes": {
     "cross_section_1816_scope": "21-22 jurisdicciones comparables; algunas provincias tienen datos incompletos en 1816",
-    "monthly_scope_2026": "top_mensual_20262 e informacion_consolidada_2026_0 tienen distinto nivel de cobertura por jurisdicción y mes",
+    "monthly_scope_2026": "Regenerado post-fix de mapeo de provincias; cobertura validada contra province_universe y con placeholders 0 donde no hubo registros trazables en los archivos de entrada disponibles.",
     "ron_annual_scope": "serie_ron_2003_2025 es anual por provincia y categoría",
     "ron_category_normalization": "serie_ron_2003_2025 tiene columna category_normalized que unifica variantes históricas de nombres de categorías. Usar category_normalized para filtrar, no category.",
     "provinces_sin_datos_1816": "Santiago del Estero, La Pampa y Neuquén tienen datos_incompletos_1816=true en el cross_section. No aparecerán en rankings comparativos.",
-    "top_mensual_cobertura": "Buenos Aires y Tierra del Fuego solo tienen enero 2026 en top_mensual. CABA, Santa Fe, Salta, Misiones y La Pampa no tienen datos en top_mensual_2026."
-  }
+    "top_mensual_cobertura": "CABA incorporada en 2026-01 y 2026-02. Ver missing_top_mensual_2026_provinces para jurisdicciones sin registros en top_mensual_2026."
+  },
+  "missing_top_mensual_2026_provinces": [
+    "La Pampa",
+    "Misiones",
+    "Salta",
+    "Santa Fe"
+  ],
+  "missing_ron_2026_provinces": []
 }
