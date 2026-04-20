@@ -1,5 +1,5 @@
 province,year,population,estimated_contribution_share_pct,contribution_method,status,source_population,source_contribution,notes
-Buenos Aires,2025,17569053,,Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro).,partial,INDEC Censo 2022 (base),,Input manual pendiente. El aporte estimado no equivale a una obligación legal de distribución.
+Buenos Aires,2025,17569053,21.8187,Proxy recaudación propia 2026 YTD: participación de Buenos Aires en la suma provincial de top_mensual_2026_normalizado.csv.,ok,INDEC Censo 2022 (base),top_mensual_2026_normalizado.csv,Input manual pendiente. El aporte estimado no equivale a una obligación legal de distribución.
 CABA,2025,3120612,,Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro).,partial,INDEC Censo 2022 (base),,Input manual pendiente. El aporte estimado no equivale a una obligación legal de distribución.
 Catamarca,2025,429562,,Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro).,partial,INDEC Censo 2022 (base),,Input manual pendiente. El aporte estimado no equivale a una obligación legal de distribución.
 Chaco,2025,1142963,,Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro).,partial,INDEC Censo 2022 (base),,Input manual pendiente. El aporte estimado no equivale a una obligación legal de distribución.
