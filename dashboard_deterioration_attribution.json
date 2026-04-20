@@ -1,0 +1,996 @@
+{
+  "source": "bloque atribución del deterioro",
+  "generated_at": "2026-04-20T18:21:56.317310Z",
+  "methodology": {
+    "unit": "pct_of_current_income",
+    "nation_effect": "max(0, auto_transfers_prev_real - auto_transfers_current_real) + max(0, tna_expected_current_real - tna_received_current_real), todo dividido por income_total_current_real * 100",
+    "macro_effect": "max(0, own_base_proxy_prev_real - own_base_proxy_current_real), dividido por income_total_current_real * 100",
+    "management_effect": "max(0, primary_expenditure_current_real - primary_expenditure_prev_real * (income_total_current_real / income_total_prev_real)), dividido por income_total_current_real * 100"
+  },
+  "provinces": {
+    "Buenos Aires": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "CABA": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Catamarca": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Chaco": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Chubut": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Corrientes": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Córdoba": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Entre Ríos": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Formosa": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Jujuy": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "La Pampa": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "La Rioja": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Mendoza": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Misiones": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Neuquén": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Río Negro": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Salta": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "San Juan": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "San Luis": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Santa Cruz": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Santa Fe": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Santiago del Estero": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Tierra del Fuego": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    },
+    "Tucumán": {
+      "period": "2026-03",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "bars": {
+        "nation_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "macro_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        },
+        "management_effect_pct_income": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_deterioration_attribution_inputs.csv"
+          ]
+        }
+      },
+      "inputs_used": {
+        "income_total_current_millions": null,
+        "income_total_prev_year_millions": null,
+        "auto_transfers_current_millions": null,
+        "auto_transfers_prev_year_millions": null,
+        "tna_expected_current_millions": null,
+        "tna_received_current_millions": null,
+        "own_base_proxy_current_millions": null,
+        "own_base_proxy_prev_year_millions": null,
+        "primary_expenditure_current_millions": null,
+        "primary_expenditure_prev_year_millions": null,
+        "macro_proxy_method": null
+      }
+    }
+  }
+}
