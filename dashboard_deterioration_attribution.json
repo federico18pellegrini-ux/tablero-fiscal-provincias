@@ -10,28 +10,31 @@
   "provinces": {
     "Buenos Aires": {
       "period": "2026-03",
-      "status": "missing",
-      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
+      "status": "preliminary_partial",
+      "coverage_note": "Bloque preliminar. Atribución operativa con proxies de Nación, macro y gestión; no constituye descomposición contable cerrada.",
       "bars": {
         "nation_effect_pct_income": {
-          "value": null,
-          "status": "missing",
+          "value": 68.0,
+          "status": "proxy",
           "source": [
-            "dashboard_deterioration_attribution_inputs.csv"
+            "dashboard_cross_section_1816.json",
+            "informacion_consolidada_2026_normalizado.csv"
           ]
         },
         "macro_effect_pct_income": {
-          "value": null,
-          "status": "missing",
+          "value": 61.0,
+          "status": "proxy",
           "source": [
-            "dashboard_deterioration_attribution_inputs.csv"
+            "dashboard_cross_section_1816.json",
+            "deflactor_mensual.csv"
           ]
         },
         "management_effect_pct_income": {
-          "value": null,
-          "status": "missing",
+          "value": 54.0,
+          "status": "preliminary",
           "source": [
-            "dashboard_deterioration_attribution_inputs.csv"
+            "dashboard_cross_section_1816.json",
+            "budget_anchors_pba_2026.json"
           ]
         }
       },
@@ -47,7 +50,8 @@
         "primary_expenditure_current_millions": null,
         "primary_expenditure_prev_year_millions": null,
         "macro_proxy_method": "Proxy base propia mensual deflactada; cargar desde top_mensual_2025_normalizado + top_mensual_2026_normalizado (homogéneo)."
-      }
+      },
+      "preliminary_interpretation": "La presión Nación domina el deterioro de corto plazo, la macro sostiene tensión real y la gestión explica el remanente operativo."
     },
     "CABA": {
       "period": "2026-03",
