@@ -1,6 +1,6 @@
 {
   "source": "pipeline_fiscal_v2",
-  "generated_at": "2026-04-20T03:31:20.525079Z",
+  "generated_at": "2026-04-20T03:57:33.111643Z",
   "provinces": {
     "Buenos Aires": {
       "ranking_general": 11,
@@ -87,10 +87,10 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "verde",
       "riesgo_aguinaldo": "alto",
-      "dependencia_nacion_pct": 27.500000000000004,
+      "dependencia_nacion_pct": 14.521744821986,
       "gasto_personal_ratio": 0.43799999999999994,
       "gasto_corriente_ratio": null,
-      "ahorro_corriente": null,
+      "ahorro_corriente": 56469.66669999999,
       "ahorro_corriente_ratio": 0.023,
       "estres_fiscal_score": 0.17099999999999999,
       "estres_fiscal_categoria": "medio",
