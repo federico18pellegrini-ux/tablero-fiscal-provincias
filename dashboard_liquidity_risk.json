@@ -1,0 +1,74 @@
+{
+  "source": "capa liquidez y riesgo inmediato",
+  "generated_at": "2026-04-20T16:52:36.480962Z",
+  "methodology": {
+    "intereses_sobre_ingresos": "resultado_primario_ltm_pct - resultado_financiero_ltm_pct",
+    "ahorro_corriente": "manual_or_external_source",
+    "caja_disponible": "manual_or_external_source",
+    "cobertura_aguinaldo": "manual_or_external_source",
+    "vencimientos_90d": "manual_or_external_source",
+    "vencimientos_180d": "manual_or_external_source"
+  },
+  "provinces": {
+    "Buenos Aires": {
+      "as_of": "2026-03",
+      "coverage_note": "Bloque parcial. El repo actual permite derivar intereses/ingresos y anclas presupuestarias, pero no trae aún caja, aguinaldo ni perfil de vencimientos en formato normalizado.",
+      "metrics": {
+        "ahorro_corriente_pct": {
+          "value": null,
+          "unit": "pct",
+          "status": "missing",
+          "source": null
+        },
+        "intereses_sobre_ingresos_pct": {
+          "value": 3.2,
+          "unit": "pct",
+          "status": "derived",
+          "source": "dashboard_cross_section_1816.json"
+        },
+        "caja_disponible_pesos": {
+          "value": null,
+          "unit": "ars",
+          "status": "missing",
+          "source": null
+        },
+        "cobertura_aguinaldo_pct": {
+          "value": null,
+          "unit": "pct",
+          "status": "missing",
+          "source": null
+        },
+        "vencimientos_90d_pesos": {
+          "value": null,
+          "unit": "ars",
+          "status": "missing",
+          "source": null
+        },
+        "vencimientos_180d_pesos": {
+          "value": null,
+          "unit": "ars",
+          "status": "missing",
+          "source": null
+        },
+        "necesidad_financiamiento_presupuestada_pesos": {
+          "value": 1536724209000,
+          "unit": "ars",
+          "status": "source",
+          "source": "budget_anchors_pba_2026.json"
+        },
+        "fuentes_financieras_presupuestadas_pesos": {
+          "value": 3968701077000,
+          "unit": "ars",
+          "status": "source",
+          "source": "budget_anchors_pba_2026.json"
+        },
+        "aplicaciones_financieras_presupuestadas_pesos": {
+          "value": 2431976868000,
+          "unit": "ars",
+          "status": "source",
+          "source": "budget_anchors_pba_2026.json"
+        }
+      }
+    }
+  }
+}
