@@ -1,1 +1,7 @@
-province,source,year,period_type,period,expense_category,value_millions,category_normalized
+province,source,year,period_type,period,metric,value_millions
+Buenos Aires,pendiente_ejecucion_mensual,2025,month,2025-01,gasto_primario,
+Buenos Aires,pendiente_ejecucion_mensual,2026,month,2026-01,gasto_primario,
+Buenos Aires,pendiente_ejecucion_mensual,2025,month,2025-01,salarios,
+Buenos Aires,pendiente_ejecucion_mensual,2026,month,2026-01,salarios,
+Buenos Aires,pendiente_ejecucion_mensual,2025,month,2025-01,gasto_capital,
+Buenos Aires,pendiente_ejecucion_mensual,2026,month,2026-01,gasto_capital,
