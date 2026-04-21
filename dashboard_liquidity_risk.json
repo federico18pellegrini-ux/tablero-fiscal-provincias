@@ -12,7 +12,7 @@
   "provinces": {
     "Buenos Aires": {
       "as_of": "2026-03",
-      "coverage_note": "Bloque parcial. El repositorio permite derivar intereses/ingresos y anclas presupuestarias. Para habilitar semáforo completo se requiere carga auditada en dashboard_liquidity_risk_inputs.csv.",
+      "coverage_note": "Bloque con cierre operativo para Buenos Aires: liquidez observada (BCRA/FUCO), servicios acumulados y composición de deuda cargados como dato observado.",
       "metrics": {
         "ahorro_corriente_pct": {
           "value": null,
@@ -27,10 +27,10 @@
           "source": "dashboard_cross_section_1816.json"
         },
         "caja_disponible_pesos": {
-          "value": null,
+          "value": 2300690000000,
           "unit": "ars",
-          "status": "missing",
-          "source": null
+          "status": "source",
+          "source": "dashboard_liquidity_risk_inputs.csv"
         },
         "cobertura_aguinaldo_pct": {
           "value": null,
@@ -67,6 +67,48 @@
           "unit": "ars",
           "status": "source",
           "source": "budget_anchors_pba_2026.json"
+        },
+        "liquidez_fuco_pesos": {
+          "value": 1476200000000,
+          "unit": "ars",
+          "status": "source",
+          "source": "dashboard_liquidity_risk_inputs.csv"
+        },
+        "servicios_deuda_acumulados_pesos": {
+          "value": 1943834000000,
+          "unit": "ars",
+          "status": "source",
+          "source": "dashboard_liquidity_risk_inputs.csv"
+        },
+        "servicios_intereses_pct": {
+          "value": 45,
+          "unit": "pct",
+          "status": "source",
+          "source": "dashboard_liquidity_risk_inputs.csv"
+        },
+        "servicios_amortizacion_pct": {
+          "value": 55,
+          "unit": "pct",
+          "status": "source",
+          "source": "dashboard_liquidity_risk_inputs.csv"
+        },
+        "deuda_moneda_extranjera_pct": {
+          "value": 93,
+          "unit": "pct",
+          "status": "source",
+          "source": "dashboard_liquidity_risk_inputs.csv"
+        },
+        "cobertura_simple_bcra_servicios_x": {
+          "value": 1.1835835776100223,
+          "unit": "x",
+          "status": "derived",
+          "source": "dashboard_liquidity_risk_inputs.csv"
+        },
+        "cobertura_simple_fuco_servicios_x": {
+          "value": 0.7594269881070091,
+          "unit": "x",
+          "status": "derived",
+          "source": "dashboard_liquidity_risk_inputs.csv"
         }
       }
     }
