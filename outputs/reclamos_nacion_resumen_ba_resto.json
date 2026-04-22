@@ -1,0 +1,28 @@
+{
+  "buenos_aires": {
+    "provincia": "Buenos Aires",
+    "deuda_total_reclamada": 0.0,
+    "deuda_total_robusta": 0.0,
+    "anclas_principales": [],
+    "principal_tipo_reclamo": null,
+    "principal_organismo_nacional": "ANSES",
+    "porcentaje_cubierto_con_dato_robusto": 0.0,
+    "fecha_ultima_actualizacion": "2026-03-31",
+    "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+    "deuda_por_tipo": {},
+    "cantidad_de_reclamos": 8,
+    "cantidad_de_reclamos_judicializados": 1,
+    "estado_cobertura": "parcial_proxy",
+    "observaciones": [
+      "Sin monto público homogéneo al corte; requiere carga manual auditada.",
+      "Monto comunicado sin serie homogénea completa; proxy hasta consolidar ejecución mensual.",
+      "Falta base homogénea por jurisdicción/mes."
+    ]
+  },
+  "resto_provincias": {
+    "cantidad_provincias": 23,
+    "deuda_total_reclamada": 0.0,
+    "deuda_total_robusta": 0.0,
+    "provincias_con_carga": 23
+  }
+}

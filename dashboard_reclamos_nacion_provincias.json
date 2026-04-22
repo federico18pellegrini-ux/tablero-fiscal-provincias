@@ -1,0 +1,452 @@
+{
+  "source": "pipeline_reclamos_nacion_v1",
+  "generated_at": "2026-04-22T20:02:24.951269Z",
+  "cutoff_date": "2026-04-22",
+  "methodology": {
+    "deuda_total_reclamada": "Suma de montos_actualizados disponibles por provincia.",
+    "deuda_total_robusta": "Suma de montos_actualizados con calidad_dato observado o estimado_robusto.",
+    "calidad_dato": {
+      "observado": "Monto documentado en fuente primaria con expediente o acto.",
+      "estimado_robusto": "Monto calculado con fórmula homogénea y base trazable.",
+      "proxy": "Aproximación parcial sin base homogénea completa.",
+      "no_disponible": "No existe monto validado al corte."
+    },
+    "double_count_guard": "No sumar reclamos superpuestos por expediente/objeto cuando refieren al mismo hecho generador."
+  },
+  "provinces": {
+    "Buenos Aires": {
+      "provincia": "Buenos Aires",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "ANSES",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 8,
+      "cantidad_de_reclamos_judicializados": 1,
+      "estado_cobertura": "parcial_proxy",
+      "observaciones": [
+        "Sin monto público homogéneo al corte; requiere carga manual auditada.",
+        "Monto comunicado sin serie homogénea completa; proxy hasta consolidar ejecución mensual.",
+        "Falta base homogénea por jurisdicción/mes."
+      ]
+    },
+    "CABA": {
+      "provincia": "CABA",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Catamarca": {
+      "provincia": "Catamarca",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Chaco": {
+      "provincia": "Chaco",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Chubut": {
+      "provincia": "Chubut",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Corrientes": {
+      "provincia": "Corrientes",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Córdoba": {
+      "provincia": "Córdoba",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Entre Ríos": {
+      "provincia": "Entre Ríos",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Formosa": {
+      "provincia": "Formosa",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Jujuy": {
+      "provincia": "Jujuy",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "La Pampa": {
+      "provincia": "La Pampa",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "La Rioja": {
+      "provincia": "La Rioja",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Mendoza": {
+      "provincia": "Mendoza",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Misiones": {
+      "provincia": "Misiones",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Neuquén": {
+      "provincia": "Neuquén",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Río Negro": {
+      "provincia": "Río Negro",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Salta": {
+      "provincia": "Salta",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "San Juan": {
+      "provincia": "San Juan",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "San Luis": {
+      "provincia": "San Luis",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Santa Cruz": {
+      "provincia": "Santa Cruz",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Santa Fe": {
+      "provincia": "Santa Fe",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Santiago del Estero": {
+      "provincia": "Santiago del Estero",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Tierra del Fuego": {
+      "provincia": "Tierra del Fuego",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    },
+    "Tucumán": {
+      "provincia": "Tucumán",
+      "deuda_total_reclamada": 0.0,
+      "deuda_total_robusta": 0.0,
+      "anclas_principales": [],
+      "principal_tipo_reclamo": null,
+      "principal_organismo_nacional": "No disponible",
+      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "fecha_ultima_actualizacion": "2026-03-31",
+      "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
+      "deuda_por_tipo": {},
+      "cantidad_de_reclamos": 1,
+      "cantidad_de_reclamos_judicializados": 0,
+      "estado_cobertura": "cobertura_minima",
+      "observaciones": [
+        "Provincia incluida en tabla maestra con cobertura pendiente."
+      ]
+    }
+  }
+}
