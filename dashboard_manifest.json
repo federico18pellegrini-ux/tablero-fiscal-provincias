@@ -47,7 +47,12 @@
     "scenarios_output": "dashboard_scenarios_90_180.json",
     "top_mensual_2025": "top_mensual_2025_normalizado.csv",
     "informacion_consolidada_2025": "informacion_consolidada_2025_normalizado.csv",
-    "gasto_mensual_2025_2026": "gasto_mensual_2025_2026_normalizado.csv"
+    "gasto_mensual_2025_2026": "gasto_mensual_2025_2026_normalizado.csv",
+    "reclamos_nacion_maestra": "data/reclamos_nacion/reclamos_nacion_provincias_maestra.csv",
+    "reclamos_nacion_catalogo": "data/reclamos_nacion/catalogo_tipos_reclamo.csv",
+    "reclamos_nacion_provincial_csv": "outputs/reclamos_nacion_agregado_provincial.csv",
+    "reclamos_nacion_dashboard_json": "dashboard_reclamos_nacion_provincias.json",
+    "reclamos_nacion_resumen": "outputs/reclamos_nacion_resumen_ba_resto.json"
   },
   "notes": {
     "cross_section_1816_scope": "21-22 jurisdicciones comparables; algunas provincias tienen datos incompletos en 1816",
@@ -63,7 +68,8 @@
     "federal_fairness_scope": "Bloque de comparación federal justa. Calcula RON per cápita vs promedio provincial y aporte estimado vs participación recibida, con método visible.",
     "scenarios_scope": "Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible.",
     "load_priority_2025_2026": "a) comparación federal justa; b) caja y riesgo inmediato; c) atribución del deterioro; d) escenarios; e) dinámica real completa.",
-    "monthly_scope_2025_prepared": "Se agregan archivos placeholder 2025 (top mensual, consolidado mensual RON y gasto mensual 2025-2026) para futura carga auditada sin imputar valores."
+    "monthly_scope_2025_prepared": "Se agregan archivos placeholder 2025 (top mensual, consolidado mensual RON y gasto mensual 2025-2026) para futura carga auditada sin imputar valores.",
+    "reclamos_nacion_scope": "Matriz Nación→provincias con deuda total reclamada y robusta; distingue observado, estimado robusto, proxy y no disponible."
   },
   "missing_top_mensual_2026_provinces": [
     "La Pampa",

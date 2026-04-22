@@ -1,0 +1,9 @@
+tipo_reclamo,descripcion,formula_base,frecuencia,requiere_carga_manual,nivel_automatizacion
+ANSES / cajas previsionales no transferidas,Déficits previsionales y compensaciones de cajas no transferidas.,sum(monto_observado_o_estimado_actualizado),mensual,sí,medio
+FONID / conectividad / material didáctico,Fondos educativos nacionales no girados o discontinuados.,sum(monto_reclamo_programas_educativos),mensual,sí,medio
+Transporte interior / fondo compensador,Compensaciones al transporte automotor interior y fondos asociados.,sum(certificados_o_liquidaciones_impagas),mensual,sí,bajo
+Consenso Fiscal / compensaciones bilaterales,Compensaciones derivadas de consensos y acuerdos Nación-provincias.,sum(compensaciones_devengadas - transferidas),mensual,sí,medio
+Obras públicas paralizadas / certificados impagos,Certificados de obra nacional pendientes con ejecución provincial.,sum(certificados_impagos_actualizados),mensual,sí,bajo
+Programas nacionales discontinuados,Programas con convenios activos y financiamiento interrumpido.,sum(devengado_no_transferido),mensual,sí,bajo
+"Fondos específicos (bosques, salud, vivienda, etc.)",Fondos con asignación legal específica y transferencias parciales.,sum(fondo_especifico_devengado_no_girado),mensual,sí,medio
+Otros reclamos administrativos o judiciales,"Reclamos no encuadrados en categorías previas, con expediente propio.",sum(reclamo_identificado_no_duplicado),mensual,sí,bajo
