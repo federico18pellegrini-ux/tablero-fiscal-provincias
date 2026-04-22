@@ -3,6 +3,13 @@
     "provincia": "Buenos Aires",
     "deuda_total_reclamada": 319680000000.0,
     "deuda_total_robusta": 307680000000.0,
+    "deuda_nacion_con_provincia": {
+      "status": "pendiente_diseno_funcional",
+      "ready_for_render": false,
+      "component_key": "deuda_nacion_con_provincia",
+      "cards": [],
+      "last_update": "2026-03-31"
+    },
     "anclas_principales": [
       "ANSES / cajas previsionales no transferidas · Compensación por déficit de caja no transferida · ANSES",
       "FONID / conectividad / material didáctico · FONID adeudado 2024-2026 · Ministerio de Capital Humano",

@@ -9,6 +9,7 @@ TOP_MENSUAL_FILE = 'top_mensual_2026_normalizado.csv'
 INFO_2026_FILE = 'informacion_consolidada_2026_normalizado.csv'
 SERIE_RON_FILE = 'serie_ron_2003_2025_normalizado.csv'
 OUTPUT_FILE = 'dashboard_fiscal_provincias.json'
+RECLAMOS_FILE = 'dashboard_reclamos_nacion_provincias.json'
 
 PROVINCE_MAP = {
     'C.A.B.A.': 'CABA',
@@ -165,6 +166,12 @@ def build():
 
     with open(CROSS_FILE, encoding='utf-8') as f:
         cross = json.load(f).get('provinces', {})
+    try:
+        with open(RECLAMOS_FILE, encoding='utf-8') as f:
+            reclamos_payload = json.load(f)
+    except FileNotFoundError:
+        reclamos_payload = {'provinces': {}, 'methodology': {}, 'integration_ready': {}}
+    reclamos_by_province = reclamos_payload.get('provinces', {})
 
     top_rows = read_csv(TOP_MENSUAL_FILE)
     info_rows = read_csv(INFO_2026_FILE)
@@ -203,6 +210,17 @@ def build():
     payload = {
         'source': 'pipeline_fiscal_v2',
         'generated_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
+        'integrations': {
+            'reclamos_nacion': {
+                'source_file': RECLAMOS_FILE,
+                'selector_keys': (reclamos_payload.get('integration_ready') or {}).get('selector_keys', ['deuda_total_reclamada', 'deuda_total_robusta']),
+                'future_block_key': (reclamos_payload.get('integration_ready') or {}).get('future_block_key', 'deuda_nacion_con_provincia'),
+                'methodology_note': (
+                    (reclamos_payload.get('methodology') or {}).get('deuda_total_robusta')
+                    or 'deuda_total_robusta incluye solo observado/estimado_robusto.'
+                ),
+            }
+        },
         'provinces': {}
     }
 
@@ -295,6 +313,19 @@ def build():
                 'gasto_primario': None,
             },
             'mensaje_clave': mensaje_clave,
+            'reclamos_nacion': {
+                'deuda_total_reclamada': to_float((reclamos_by_province.get(province) or {}).get('deuda_total_reclamada')),
+                'deuda_total_robusta': to_float((reclamos_by_province.get(province) or {}).get('deuda_total_robusta')),
+                'estado_cobertura': (reclamos_by_province.get(province) or {}).get('estado_cobertura', 'sin_carga'),
+                'porcentaje_cubierto_con_dato_robusto': to_float((reclamos_by_province.get(province) or {}).get('porcentaje_cubierto_con_dato_robusto')),
+                'deuda_nacion_con_provincia': (reclamos_by_province.get(province) or {}).get('deuda_nacion_con_provincia', {
+                    'status': 'pendiente_diseno_funcional',
+                    'ready_for_render': False,
+                    'component_key': 'deuda_nacion_con_provincia',
+                    'cards': [],
+                    'last_update': None,
+                }),
+            },
         })
 
         payload['provinces'][province] = base

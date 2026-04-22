@@ -28,3 +28,18 @@
 ## Regla anti doble conteo
 No sumar dos filas si comparten mismo hecho generador, expediente y período base.
 Primero se consolida por `expediente_o_causa` y luego se agrega por tipo/provincia.
+
+## Integración con tablero fiscal provincial (sin rediseño)
+- Dataset agregado por provincia: `dashboard_reclamos_nacion_provincias.json` (objeto `provinces`).
+- Selectores/hook esperados por front:
+  - `deuda_total_reclamada`
+  - `deuda_total_robusta`
+- Espacio futuro reservado para bloque visual:
+  - `deuda_nacion_con_provincia.status`
+  - `deuda_nacion_con_provincia.ready_for_render`
+  - `deuda_nacion_con_provincia.component_key`
+
+### Ejemplo de lectura (Buenos Aires)
+- `deuda_total_reclamada`: total de montos actualizados trazables al corte.
+- `deuda_total_robusta`: subcomponente robusto (observado + estimado_robusto).
+- Referencia lista para UI: `example_buenos_aires` dentro del JSON de salida.

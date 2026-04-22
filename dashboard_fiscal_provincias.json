@@ -1,6 +1,17 @@
 {
   "source": "pipeline_fiscal_v2",
-  "generated_at": "2026-04-20T19:23:07.788273Z",
+  "generated_at": "2026-04-22T20:21:53.736347Z",
+  "integrations": {
+    "reclamos_nacion": {
+      "source_file": "dashboard_reclamos_nacion_provincias.json",
+      "selector_keys": [
+        "deuda_total_reclamada",
+        "deuda_total_robusta"
+      ],
+      "future_block_key": "deuda_nacion_con_provincia",
+      "methodology_note": "Suma de montos_actualizados con calidad_dato observado o estimado_robusto."
+    }
+  },
   "provinces": {
     "Buenos Aires": {
       "ranking_general": 11,
@@ -53,7 +64,20 @@
         "coparticipacion": -3.173530799076729,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -7.4%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -7.4%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 319680000000.0,
+        "deuda_total_robusta": 307680000000.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 25.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "CABA": {
       "ranking_general": 2,
@@ -106,7 +130,20 @@
         "coparticipacion": null,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 2.3%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es baja. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con superávit de 2.3%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es baja. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Catamarca": {
       "ranking_general": 8,
@@ -159,7 +196,20 @@
         "coparticipacion": 4.010467770407544,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -2.6%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -2.6%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Chaco": {
       "ranking_general": 18,
@@ -212,7 +262,20 @@
         "coparticipacion": 2.7908053486105144,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -9.4%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -9.4%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Chubut": {
       "ranking_general": 21,
@@ -265,7 +328,20 @@
         "coparticipacion": 1.3739026924787234,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -9.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -9.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Corrientes": {
       "ranking_general": 9,
@@ -318,7 +394,20 @@
         "coparticipacion": 1.880208416061957,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -6.2%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -6.2%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Córdoba": {
       "ranking_general": 4,
@@ -371,7 +460,20 @@
         "coparticipacion": 2.393634452638449,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -0.9%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -0.9%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Entre Ríos": {
       "ranking_general": 14,
@@ -424,7 +526,20 @@
         "coparticipacion": 3.4506004138053825,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -3.1%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -3.1%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Formosa": {
       "ranking_general": 7,
@@ -477,7 +592,20 @@
         "coparticipacion": 3.797914116895429,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -8.6%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -8.6%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Jujuy": {
       "ranking_general": 12,
@@ -530,7 +658,20 @@
         "coparticipacion": 2.943824946570217,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 5.0%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con superávit de 5.0%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "La Pampa": {
       "autonomia_fiscal_pct": null,
@@ -583,7 +724,20 @@
         "coparticipacion": 10566.963328748705,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de N/D. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es medio."
+      "mensaje_clave": "Provincia con déficit de N/D. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es medio.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "La Rioja": {
       "ranking_general": 20,
@@ -636,7 +790,20 @@
         "coparticipacion": 3.8937481040896227,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -3.7%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -3.7%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Mendoza": {
       "ranking_general": 5,
@@ -689,7 +856,20 @@
         "coparticipacion": 0.2541822967705665,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Misiones": {
       "ranking_general": 10,
@@ -742,7 +922,20 @@
         "coparticipacion": -0.4239209563124069,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 0.5%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con superávit de 0.5%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Neuquén": {
       "autonomia_fiscal_pct": null,
@@ -795,7 +988,20 @@
         "coparticipacion": 1.1385710898536905,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de N/D. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es media. El riesgo de caja es medio."
+      "mensaje_clave": "Provincia con déficit de N/D. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es media. El riesgo de caja es medio.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Río Negro": {
       "ranking_general": 13,
@@ -848,7 +1054,20 @@
         "coparticipacion": 2.8751272784687254,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Salta": {
       "ranking_general": 17,
@@ -901,7 +1120,20 @@
         "coparticipacion": 0.7173090684127637,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -0.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -0.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "San Juan": {
       "ranking_general": 3,
@@ -954,7 +1186,20 @@
         "coparticipacion": 2.6437242396345706,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 1.5%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con superávit de 1.5%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "San Luis": {
       "ranking_general": 1,
@@ -1007,7 +1252,20 @@
         "coparticipacion": 3.4430066115012092,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 4.2%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con superávit de 4.2%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Santa Cruz": {
       "ranking_general": 15,
@@ -1060,7 +1318,20 @@
         "coparticipacion": 4.529212706129249,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -4.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -4.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Santa Fe": {
       "ranking_general": 6,
@@ -1113,7 +1384,20 @@
         "coparticipacion": 9063.68690330239,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -3.0%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -3.0%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Santiago del Estero": {
       "resultado_financiero_ltm_pct": 10.2,
@@ -1166,7 +1450,20 @@
         "coparticipacion": null,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 10.2%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es baja. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con superávit de 10.2%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es baja. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Tierra del Fuego": {
       "ranking_general": 19,
@@ -1219,7 +1516,20 @@
         "coparticipacion": 5.663801103480393,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -9.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -9.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     },
     "Tucumán": {
       "ranking_general": 16,
@@ -1272,7 +1582,20 @@
         "coparticipacion": 1.7685294926893524,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -5.5%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto."
+      "mensaje_clave": "Provincia con déficit de -5.5%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. El riesgo de caja es alto.",
+      "reclamos_nacion": {
+        "deuda_total_reclamada": 0.0,
+        "deuda_total_robusta": 0.0,
+        "estado_cobertura": "cobertura_insuficiente",
+        "porcentaje_cubierto_con_dato_robusto": 0.0,
+        "deuda_nacion_con_provincia": {
+          "status": "pendiente_diseno_funcional",
+          "ready_for_render": false,
+          "component_key": "deuda_nacion_con_provincia",
+          "cards": [],
+          "last_update": null
+        }
+      }
     }
   }
 }
