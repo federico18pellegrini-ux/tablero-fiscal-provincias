@@ -54,7 +54,13 @@
     "reclamos_nacion_dashboard_json": "dashboard_reclamos_nacion_provincias.json",
     "reclamos_nacion_resumen": "outputs/reclamos_nacion_resumen_ba_resto.json",
     "reclamos_nacion_ba_caso_testigo": "data/reclamos_nacion/reclamos_nacion_buenos_aires_caso_testigo.csv",
-    "reclamos_nacion_ba_resumen": "outputs/reclamos_nacion_buenos_aires_resumen.json"
+    "reclamos_nacion_ba_resumen": "outputs/reclamos_nacion_buenos_aires_resumen.json",
+    "pba_budget_execution_quarterly": "pba_budget_execution_quarterly.csv",
+    "pba_ron_monthly": "pba_ron_monthly.csv",
+    "pba_ron_daily": "pba_ron_daily.csv",
+    "pba_top_monthly": "pba_top_monthly.csv",
+    "national_debt_monthly": "national_debt_monthly.csv",
+    "municipios_pba_annual": "municipios_pba_annual.csv"
   },
   "notes": {
     "cross_section_1816_scope": "21-22 jurisdicciones comparables; algunas provincias tienen datos incompletos en 1816",
@@ -71,7 +77,9 @@
     "scenarios_scope": "Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible.",
     "load_priority_2025_2026": "a) comparación federal justa; b) caja y riesgo inmediato; c) atribución del deterioro; d) escenarios; e) dinámica real completa.",
     "monthly_scope_2025_prepared": "Se agregan archivos placeholder 2025 (top mensual, consolidado mensual RON y gasto mensual 2025-2026) para futura carga auditada sin imputar valores.",
-    "reclamos_nacion_scope": "Matriz Nación→provincias con deuda total reclamada y robusta; distingue observado, estimado robusto, proxy y no disponible."
+    "reclamos_nacion_scope": "Matriz Nación→provincias con deuda total reclamada y robusta; distingue observado, estimado robusto, proxy y no disponible.",
+    "pba_new_sources_2026_scope": "PBA: TOP mensual, RON mensual/diario y ejecución trimestral se integran como prioridad para 2025-2026 sin romper series históricas nacionales.",
+    "national_debt_scope": "Serie mensual de deuda nacional (USD) para contexto macro del bloque Nación."
   },
   "missing_top_mensual_2026_provinces": [
     "La Pampa",
