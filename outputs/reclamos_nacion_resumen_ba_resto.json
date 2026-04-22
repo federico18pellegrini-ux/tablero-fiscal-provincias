@@ -20,7 +20,8 @@
     },
     "cantidad_de_reclamos": 8,
     "cantidad_de_reclamos_judicializados": 1,
-    "estado_cobertura": "con_datos",
+    "estado_cobertura": "cobertura_insuficiente",
+    "cobertura_insuficiente": true,
     "observaciones": [
       "Ejemplo mínimo validado para iniciar serie BA; sujeto a actualización mensual.",
       "Estimación robusta con regla homogénea por mes devengado no transferido.",
