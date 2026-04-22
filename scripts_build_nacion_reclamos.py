@@ -183,6 +183,130 @@ def claim_anchor(row):
     return ' · '.join(parts)
 
 
+def claim_dedup_key(row):
+    expediente = normalize_text(row.get('expediente_o_causa')).lower()
+    if expediente:
+        return f'expediente::{expediente}'
+    provincia = normalize_text(row.get('provincia')).lower()
+    tipo = normalize_text(row.get('tipo_reclamo')).lower()
+    subtipo = normalize_text(row.get('subtipo_reclamo')).lower()
+    organismo = normalize_text(row.get('organismo_nacional')).lower()
+    return f'fallback::{provincia}::{tipo}::{subtipo}::{organismo}'
+
+
+def deduplicate_claims(claims):
+    unique = {}
+    for claim in claims:
+        key = claim_dedup_key(claim)
+        current = unique.get(key)
+        if current is None:
+            unique[key] = claim
+            continue
+
+        current_amount = current.get('monto_actualizado_calculado')
+        candidate_amount = claim.get('monto_actualizado_calculado')
+        current_quality = normalize_text(current.get('calidad_dato'))
+        candidate_quality = normalize_text(claim.get('calidad_dato'))
+
+        if candidate_amount is not None and current_amount is None:
+            unique[key] = claim
+        elif candidate_amount is not None and current_amount is not None:
+            if candidate_quality in ROBUST_QUALITIES and current_quality not in ROBUST_QUALITIES:
+                unique[key] = claim
+            elif candidate_quality == current_quality and candidate_amount > current_amount:
+                unique[key] = claim
+
+    return list(unique.values())
+
+
+def aggregate_province_claims(claims):
+    deduped_claims = deduplicate_claims(claims)
+    total_reclamada = 0.0
+    total_robusta = 0.0
+    debt_by_type = defaultdict(float)
+    claim_count = len(deduped_claims)
+    judicialized = 0
+    latest_date = None
+    observed_anchors = []
+    principal_org = None
+    observations = []
+
+    for claim in deduped_claims:
+        amount = claim.get('monto_actualizado_calculado')
+        amount = amount if amount is not None else parse_float(claim.get('monto_actualizado'))
+
+        estado = normalize_text(claim.get('estado_reclamo')).lower()
+        if 'judicial' in estado:
+            judicialized += 1
+
+        cut = normalize_text(claim.get('fecha_corte_monto'))
+        if cut:
+            try:
+                d = datetime.fromisoformat(cut).date()
+            except ValueError:
+                d = None
+            if d and (latest_date is None or d > latest_date):
+                latest_date = d
+
+        if amount is not None:
+            total_reclamada += amount
+            debt_by_type[normalize_text(claim.get('tipo_reclamo'))] += amount
+            observed_anchors.append((amount, claim_anchor(claim)))
+
+            if normalize_text(claim.get('calidad_dato')) in ROBUST_QUALITIES:
+                total_robusta += amount
+
+        if not principal_org:
+            principal_org = normalize_text(claim.get('organismo_nacional')) or None
+
+        obs = normalize_text(claim.get('observaciones'))
+        if obs:
+            observations.append(obs)
+
+    principal_type = None
+    if debt_by_type:
+        principal_type = sorted(debt_by_type.items(), key=lambda kv: kv[1], reverse=True)[0][0]
+
+    observed_anchors.sort(key=lambda x: x[0], reverse=True)
+    anchors = [item[1] for item in observed_anchors[:3]]
+
+    robust_pct = round(robust_share(deduped_claims), 2)
+    missing_amounts = any(
+        normalize_text(c.get('calidad_dato')) in ROBUST_QUALITIES and c.get('monto_actualizado_calculado') is None
+        for c in deduped_claims
+    )
+    coverage_insufficient = (
+        claim_count > 0 and (
+            robust_pct < 100
+            or missing_amounts
+            or total_reclamada == 0
+        )
+    )
+
+    if not deduped_claims:
+        estado_cobertura = 'sin_carga'
+    elif coverage_insufficient:
+        estado_cobertura = 'cobertura_insuficiente'
+    else:
+        estado_cobertura = 'con_datos'
+
+    return {
+        'deuda_total_reclamada': round(total_reclamada, 2),
+        'deuda_total_robusta': round(total_robusta, 2),
+        'anclas_principales': anchors,
+        'principal_tipo_reclamo': principal_type,
+        'principal_organismo_nacional': principal_org,
+        'porcentaje_cubierto_con_dato_robusto': robust_pct,
+        'fecha_ultima_actualizacion': latest_date.isoformat() if latest_date else None,
+        'deuda_por_tipo': {k: round(v, 2) for k, v in debt_by_type.items()},
+        'cantidad_de_reclamos': claim_count,
+        'cantidad_de_reclamos_judicializados': judicialized,
+        'estado_cobertura': estado_cobertura,
+        'cobertura_insuficiente': coverage_insufficient,
+        'observaciones': observations[:3],
+    }
+
+
 def build():
     with MANIFEST_FILE.open(encoding='utf-8') as f:
         manifest = json.load(f)
@@ -216,85 +340,29 @@ def build():
 
     for province in province_universe:
         claims = grouped.get(province, [])
-        total_reclamada = 0.0
-        total_robusta = 0.0
-        debt_by_type = defaultdict(float)
-        claim_count = len(claims)
-        judicialized = 0
-        latest_date = None
-        observed_anchors = []
-        principal_org = None
-        observations = []
-
-        for claim in claims:
-            amount = claim.get('monto_actualizado_calculado')
-            amount = amount if amount is not None else parse_float(claim.get('monto_actualizado'))
-
-            estado = normalize_text(claim.get('estado_reclamo')).lower()
-            if 'judicial' in estado:
-                judicialized += 1
-
-            cut = normalize_text(claim.get('fecha_corte_monto'))
-            if cut:
-                try:
-                    d = datetime.fromisoformat(cut).date()
-                except ValueError:
-                    d = None
-                if d and (latest_date is None or d > latest_date):
-                    latest_date = d
-
-            if amount is not None:
-                total_reclamada += amount
-                debt_by_type[normalize_text(claim.get('tipo_reclamo'))] += amount
-                observed_anchors.append((amount, claim_anchor(claim)))
-
-                if normalize_text(claim.get('calidad_dato')) in ROBUST_QUALITIES:
-                    total_robusta += amount
-
-            if not principal_org:
-                principal_org = normalize_text(claim.get('organismo_nacional')) or None
-
-            obs = normalize_text(claim.get('observaciones'))
-            if obs:
-                observations.append(obs)
-
-        principal_type = None
-        if debt_by_type:
-            principal_type = sorted(debt_by_type.items(), key=lambda kv: kv[1], reverse=True)[0][0]
-
-        observed_anchors.sort(key=lambda x: x[0], reverse=True)
-        anchors = [item[1] for item in observed_anchors[:3]]
+        aggregate = aggregate_province_claims(claims)
 
         methodology_note = (
             'deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye '
             'solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.'
         )
 
-        qualities = [normalize_text(c.get('calidad_dato')) for c in claims]
-        if not claims:
-            estado_cobertura = 'sin_carga'
-        elif all(q == 'no_disponible' for q in qualities):
-            estado_cobertura = 'cobertura_minima'
-        elif robust_share(claims) == 0:
-            estado_cobertura = 'parcial_proxy'
-        else:
-            estado_cobertura = 'con_datos'
-
         payload_row = {
             'provincia': province,
-            'deuda_total_reclamada': round(total_reclamada, 2),
-            'deuda_total_robusta': round(total_robusta, 2),
-            'anclas_principales': anchors,
-            'principal_tipo_reclamo': principal_type,
-            'principal_organismo_nacional': principal_org,
-            'porcentaje_cubierto_con_dato_robusto': round(robust_share(claims), 2),
-            'fecha_ultima_actualizacion': latest_date.isoformat() if latest_date else None,
+            'deuda_total_reclamada': aggregate['deuda_total_reclamada'],
+            'deuda_total_robusta': aggregate['deuda_total_robusta'],
+            'anclas_principales': aggregate['anclas_principales'],
+            'principal_tipo_reclamo': aggregate['principal_tipo_reclamo'],
+            'principal_organismo_nacional': aggregate['principal_organismo_nacional'],
+            'porcentaje_cubierto_con_dato_robusto': aggregate['porcentaje_cubierto_con_dato_robusto'],
+            'fecha_ultima_actualizacion': aggregate['fecha_ultima_actualizacion'],
             'observaciones_metodologicas': methodology_note,
-            'deuda_por_tipo': {k: round(v, 2) for k, v in debt_by_type.items()},
-            'cantidad_de_reclamos': claim_count,
-            'cantidad_de_reclamos_judicializados': judicialized,
-            'estado_cobertura': estado_cobertura,
-            'observaciones': observations[:3],
+            'deuda_por_tipo': aggregate['deuda_por_tipo'],
+            'cantidad_de_reclamos': aggregate['cantidad_de_reclamos'],
+            'cantidad_de_reclamos_judicializados': aggregate['cantidad_de_reclamos_judicializados'],
+            'estado_cobertura': aggregate['estado_cobertura'],
+            'cobertura_insuficiente': aggregate['cobertura_insuficiente'],
+            'observaciones': aggregate['observaciones'],
         }
 
         province_rows.append(payload_row)
@@ -306,7 +374,7 @@ def build():
             'provincia', 'deuda_total_reclamada', 'deuda_total_robusta', 'anclas_principales',
             'principal_tipo_reclamo', 'principal_organismo_nacional', 'porcentaje_cubierto_con_dato_robusto',
             'fecha_ultima_actualizacion', 'observaciones_metodologicas', 'cantidad_de_reclamos',
-            'cantidad_de_reclamos_judicializados', 'estado_cobertura'
+            'cantidad_de_reclamos_judicializados', 'estado_cobertura', 'cobertura_insuficiente'
         ]
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
