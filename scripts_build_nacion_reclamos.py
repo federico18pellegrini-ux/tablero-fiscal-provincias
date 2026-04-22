@@ -14,6 +14,15 @@ OUTPUT_SUMMARY_JSON = Path('outputs/reclamos_nacion_resumen_ba_resto.json')
 
 ROBUST_QUALITIES = {'observado', 'estimado_robusto'}
 ALL_QUALITIES = {'observado', 'estimado_robusto', 'proxy', 'no_disponible'}
+ALLOWED_INDEXERS = {'ipc_nacional', 'sin_actualizacion', 'none', ''}
+ALLOWED_CURRENCIES = {'ARS', 'USD', 'EUR'}
+ALLOWED_STATUS = {
+    'administrativo',
+    'judicializado',
+    'acuerdo_parcial',
+    'cerrado',
+    'pendiente_relevamiento',
+}
 
 
 def normalize_text(value):
@@ -40,6 +49,80 @@ def month_key(date_like):
     if len(txt) >= 7:
         return txt[:7]
     return None
+
+
+def is_iso_date(value):
+    txt = normalize_text(value)
+    if txt == '':
+        return False
+    try:
+        datetime.fromisoformat(txt)
+        return True
+    except ValueError:
+        return False
+
+
+def validate_master_row(row, province_universe):
+    errors = []
+    provincia = normalize_text(row.get('provincia'))
+    if provincia == '':
+        errors.append('provincia: obligatorio')
+    elif province_universe and provincia not in province_universe:
+        errors.append(f'provincia: fuera de universo ({provincia})')
+
+    tipo = normalize_text(row.get('tipo_reclamo'))
+    if tipo == '':
+        errors.append('tipo_reclamo: obligatorio')
+
+    expediente = normalize_text(row.get('expediente_o_causa'))
+    if expediente == '':
+        errors.append('expediente_o_causa: obligatorio')
+
+    estado = normalize_text(row.get('estado_reclamo')).lower()
+    if estado and estado not in ALLOWED_STATUS:
+        errors.append(f'estado_reclamo: inválido ({estado})')
+
+    calidad = normalize_text(row.get('calidad_dato'))
+    if calidad and calidad not in ALL_QUALITIES:
+        errors.append(f'calidad_dato: inválida ({calidad})')
+
+    moneda = normalize_text(row.get('moneda'))
+    if moneda and moneda not in ALLOWED_CURRENCIES:
+        errors.append(f'moneda: inválida ({moneda})')
+
+    indexador = normalize_text(row.get('indexador')).lower()
+    if indexador not in ALLOWED_INDEXERS:
+        errors.append(f'indexador: inválido ({indexador})')
+
+    periodo_desde = normalize_text(row.get('periodo_desde'))
+    periodo_hasta = normalize_text(row.get('periodo_hasta'))
+    if periodo_desde and not is_iso_date(periodo_desde):
+        errors.append(f'periodo_desde: fecha inválida ({periodo_desde})')
+    if periodo_hasta and not is_iso_date(periodo_hasta):
+        errors.append(f'periodo_hasta: fecha inválida ({periodo_hasta})')
+    if periodo_desde and periodo_hasta and periodo_desde > periodo_hasta:
+        errors.append('periodo_desde > periodo_hasta')
+
+    fecha_corte = normalize_text(row.get('fecha_corte_monto'))
+    if fecha_corte and not is_iso_date(fecha_corte):
+        errors.append(f'fecha_corte_monto: fecha inválida ({fecha_corte})')
+
+    monto_nominal = parse_float(row.get('monto_nominal'))
+    monto_actualizado = parse_float(row.get('monto_actualizado'))
+    tasa_interes = parse_float(row.get('tasa_interes'))
+    if monto_nominal is not None and monto_nominal < 0:
+        errors.append('monto_nominal: debe ser >= 0')
+    if monto_actualizado is not None and monto_actualizado < 0:
+        errors.append('monto_actualizado: debe ser >= 0')
+    if tasa_interes is not None and (tasa_interes < 0 or tasa_interes > 5):
+        errors.append('tasa_interes: fuera de rango [0, 5]')
+
+    if calidad in {'observado', 'estimado_robusto'} and monto_actualizado is None and monto_nominal is None:
+        errors.append('monto: obligatorio para calidad observado/estimado_robusto')
+    if monto_actualizado is None and monto_nominal is not None and fecha_corte == '':
+        errors.append('fecha_corte_monto: obligatoria cuando hay monto_nominal sin monto_actualizado')
+
+    return errors
 
 
 def load_deflator_table():
@@ -108,6 +191,18 @@ def build():
     rows = read_csv(MASTER_FILE)
     _ = read_csv(CATALOG_FILE)
     deflator_table = load_deflator_table()
+
+    validation_errors = []
+    for idx, row in enumerate(rows, start=2):
+        errs = validate_master_row(row, province_universe)
+        for err in errs:
+            validation_errors.append(f'fila {idx}: {err}')
+
+    if validation_errors:
+        joined = '\n'.join(validation_errors[:30])
+        total = len(validation_errors)
+        extra = '' if total <= 30 else f'\n... {total - 30} errores adicionales'
+        raise ValueError(f'Validación fallida de tabla maestra ({total} errores):\n{joined}{extra}')
 
     grouped = defaultdict(list)
     for row in rows:
