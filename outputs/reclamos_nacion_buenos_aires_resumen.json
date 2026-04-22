@@ -1,0 +1,20 @@
+{
+  "provincia": "Buenos Aires",
+  "fecha_corte_reporte": "2026-03-31",
+  "cantidad_reclamos": 8,
+  "cantidad_reclamos_con_monto": 3,
+  "deuda_total_reclamada": 319680000000.0,
+  "deuda_total_robusta": 307680000000.0,
+  "conteo_por_calidad_dato": {
+    "observado": 1,
+    "no_disponible": 3,
+    "estimado_robusto": 1,
+    "proxy": 3
+  },
+  "deuda_con_monto_por_tipo_reclamo": {
+    "ANSES / cajas previsionales no transferidas": 252000000000.0,
+    "FONID / conectividad / material didáctico": 55680000000.0,
+    "Transporte interior / fondo compensador": 12000000000.0
+  },
+  "nota": "Caso testigo BA armado con evidencia disponible en el repositorio; donde la evidencia no cuantifica, se conserva calidad proxy o no_disponible."
+}

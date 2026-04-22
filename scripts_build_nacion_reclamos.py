@@ -11,6 +11,8 @@ DEFLATOR_FILE = Path('deflactor_mensual.csv')
 OUTPUT_CSV = Path('outputs/reclamos_nacion_agregado_provincial.csv')
 OUTPUT_JSON = Path('dashboard_reclamos_nacion_provincias.json')
 OUTPUT_SUMMARY_JSON = Path('outputs/reclamos_nacion_resumen_ba_resto.json')
+OUTPUT_BA_CASE_CSV = Path('data/reclamos_nacion/reclamos_nacion_buenos_aires_caso_testigo.csv')
+OUTPUT_BA_SUMMARY_JSON = Path('outputs/reclamos_nacion_buenos_aires_resumen.json')
 
 ROBUST_QUALITIES = {'observado', 'estimado_robusto'}
 ALL_QUALITIES = {'observado', 'estimado_robusto', 'proxy', 'no_disponible'}
@@ -307,6 +309,94 @@ def aggregate_province_claims(claims):
     }
 
 
+def select_amount_for_export(claim):
+    calculated = claim.get('monto_actualizado_calculado')
+    if calculated is not None:
+        return round(calculated, 2)
+    updated = parse_float(claim.get('monto_actualizado'))
+    if updated is not None:
+        return round(updated, 2)
+    nominal = parse_float(claim.get('monto_nominal'))
+    if nominal is not None:
+        return round(nominal, 2)
+    return None
+
+
+def build_ba_case_outputs(ba_claims):
+    deduped = deduplicate_claims(ba_claims)
+    sorted_claims = sorted(
+        deduped,
+        key=lambda c: (
+            normalize_text(c.get('tipo_reclamo')),
+            normalize_text(c.get('expediente_o_causa')),
+        ),
+    )
+
+    OUTPUT_BA_CASE_CSV.parent.mkdir(parents=True, exist_ok=True)
+    with OUTPUT_BA_CASE_CSV.open('w', encoding='utf-8', newline='') as f:
+        fields = [
+            'provincia',
+            'tipo_reclamo',
+            'organismo_nacional',
+            'expediente_o_referencia',
+            'monto',
+            'fecha_corte',
+            'calidad_dato',
+            'observaciones',
+        ]
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        for claim in sorted_claims:
+            writer.writerow(
+                {
+                    'provincia': normalize_text(claim.get('provincia')),
+                    'tipo_reclamo': normalize_text(claim.get('tipo_reclamo')),
+                    'organismo_nacional': normalize_text(claim.get('organismo_nacional')),
+                    'expediente_o_referencia': normalize_text(claim.get('expediente_o_causa')),
+                    'monto': select_amount_for_export(claim),
+                    'fecha_corte': normalize_text(claim.get('fecha_corte_monto')),
+                    'calidad_dato': normalize_text(claim.get('calidad_dato')),
+                    'observaciones': normalize_text(claim.get('observaciones')),
+                }
+            )
+
+    with_amount = [c for c in sorted_claims if select_amount_for_export(c) is not None]
+    by_quality = defaultdict(int)
+    by_type = defaultdict(float)
+    for claim in sorted_claims:
+        quality = normalize_text(claim.get('calidad_dato')) or 'no_informado'
+        by_quality[quality] += 1
+        amount = select_amount_for_export(claim)
+        if amount is not None:
+            by_type[normalize_text(claim.get('tipo_reclamo'))] += amount
+
+    total_reclamado = round(sum(select_amount_for_export(c) or 0.0 for c in sorted_claims), 2)
+    total_robusto = round(
+        sum(
+            (select_amount_for_export(c) or 0.0)
+            for c in sorted_claims
+            if normalize_text(c.get('calidad_dato')) in ROBUST_QUALITIES
+        ),
+        2,
+    )
+
+    summary_payload = {
+        'provincia': 'Buenos Aires',
+        'fecha_corte_reporte': max((normalize_text(c.get('fecha_corte_monto')) for c in sorted_claims), default=''),
+        'cantidad_reclamos': len(sorted_claims),
+        'cantidad_reclamos_con_monto': len(with_amount),
+        'deuda_total_reclamada': total_reclamado,
+        'deuda_total_robusta': total_robusto,
+        'conteo_por_calidad_dato': dict(by_quality),
+        'deuda_con_monto_por_tipo_reclamo': {k: round(v, 2) for k, v in by_type.items()},
+        'nota': 'Caso testigo BA armado con evidencia disponible en el repositorio; donde la evidencia no cuantifica, se conserva calidad proxy o no_disponible.',
+    }
+    OUTPUT_BA_SUMMARY_JSON.parent.mkdir(parents=True, exist_ok=True)
+    with OUTPUT_BA_SUMMARY_JSON.open('w', encoding='utf-8') as f:
+        json.dump(summary_payload, f, ensure_ascii=False, indent=2)
+        f.write('\n')
+
+
 def build():
     with MANIFEST_FILE.open(encoding='utf-8') as f:
         manifest = json.load(f)
@@ -416,12 +506,15 @@ def build():
     with OUTPUT_SUMMARY_JSON.open('w', encoding='utf-8') as f:
         json.dump({'buenos_aires': ba, 'resto_provincias': resto}, f, ensure_ascii=False, indent=2)
         f.write('\n')
+    build_ba_case_outputs(grouped.get('Buenos Aires', []))
 
     manifest.setdefault('files', {})['reclamos_nacion_maestra'] = str(MASTER_FILE)
     manifest['files']['reclamos_nacion_catalogo'] = str(CATALOG_FILE)
     manifest['files']['reclamos_nacion_provincial_csv'] = str(OUTPUT_CSV)
     manifest['files']['reclamos_nacion_dashboard_json'] = str(OUTPUT_JSON)
     manifest['files']['reclamos_nacion_resumen'] = str(OUTPUT_SUMMARY_JSON)
+    manifest['files']['reclamos_nacion_ba_caso_testigo'] = str(OUTPUT_BA_CASE_CSV)
+    manifest['files']['reclamos_nacion_ba_resumen'] = str(OUTPUT_BA_SUMMARY_JSON)
     notes = manifest.setdefault('notes', {})
     notes['reclamos_nacion_scope'] = (
         'Matriz Nación→provincias con deuda total reclamada y robusta; distingue observado, estimado robusto, proxy y no disponible.'

@@ -52,7 +52,9 @@
     "reclamos_nacion_catalogo": "data/reclamos_nacion/catalogo_tipos_reclamo.csv",
     "reclamos_nacion_provincial_csv": "outputs/reclamos_nacion_agregado_provincial.csv",
     "reclamos_nacion_dashboard_json": "dashboard_reclamos_nacion_provincias.json",
-    "reclamos_nacion_resumen": "outputs/reclamos_nacion_resumen_ba_resto.json"
+    "reclamos_nacion_resumen": "outputs/reclamos_nacion_resumen_ba_resto.json",
+    "reclamos_nacion_ba_caso_testigo": "data/reclamos_nacion/reclamos_nacion_buenos_aires_caso_testigo.csv",
+    "reclamos_nacion_ba_resumen": "outputs/reclamos_nacion_buenos_aires_resumen.json"
   },
   "notes": {
     "cross_section_1816_scope": "21-22 jurisdicciones comparables; algunas provincias tienen datos incompletos en 1816",
