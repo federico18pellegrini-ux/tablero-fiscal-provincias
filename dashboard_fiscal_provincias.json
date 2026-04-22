@@ -1,6 +1,6 @@
 {
   "source": "pipeline_fiscal_v2",
-  "generated_at": "2026-04-22T20:21:53.736347Z",
+  "generated_at": "2026-04-22T22:00:03.856924Z",
   "integrations": {
     "reclamos_nacion": {
       "source_file": "dashboard_reclamos_nacion_provincias.json",
@@ -45,10 +45,10 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "rojo",
       "riesgo_aguinaldo": "alto",
-      "dependencia_nacion_pct": 71.52895637863031,
+      "dependencia_nacion_pct": 63.702375898828954,
       "gasto_personal_ratio": 0.505,
       "gasto_corriente_ratio": null,
-      "ahorro_corriente": -341617.5182130804,
+      "ahorro_corriente": -535914.2645677944,
       "ahorro_corriente_ratio": -0.07400000000000001,
       "estres_fiscal_score": 0.3311,
       "estres_fiscal_categoria": "alto",
@@ -75,7 +75,44 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
+        }
+      },
+      "pba_context_2025_2026": {
+        "latest_budget_execution_quarter": {
+          "periodo": "3T2025",
+          "fecha_corte": "2025-09-30",
+          "ingresos_totales_ars_m": 24807785.0,
+          "gastos_totales_ars_m": 26209682.0,
+          "resultado_primario_ars_m": -520374.0,
+          "resultado_financiero_ars_m": -1401897.0,
+          "source": "pba_budget_execution_quarterly.csv"
+        },
+        "national_debt_context": {
+          "fecha_corte": "2026-03-31",
+          "deuda_bruta_total_usd_m": 483830.0,
+          "pct_moneda_extranjera": 54.0,
+          "pagos_mes_usd_m": 13703.0,
+          "source": "national_debt_monthly.csv"
+        },
+        "municipal_context": {
+          "fecha_corte": "2024-12-31",
+          "autonomia_pct": 47.1,
+          "gasto_personal_pct_gasto_corr": 46.1,
+          "resultado_financiero_ars_m": 628812.0,
+          "deuda_consolidada_ars_m": 37741.0,
+          "source": "municipios_pba_annual.csv"
+        },
+        "source_priority": {
+          "top": [
+            "pba_top_monthly.csv",
+            "top_mensual_2026_normalizado.csv"
+          ],
+          "ron": [
+            "pba_ron_monthly.csv",
+            "informacion_consolidada_2026_normalizado.csv",
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
         }
       }
     },
@@ -141,7 +178,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -207,7 +244,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -273,7 +310,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -339,7 +376,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -405,7 +442,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -471,7 +508,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -537,7 +574,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -603,7 +640,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -669,7 +706,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -735,7 +772,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -801,7 +838,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -867,7 +904,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -933,7 +970,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -999,7 +1036,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -1065,7 +1102,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -1131,7 +1168,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -1197,7 +1234,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -1263,7 +1300,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -1329,7 +1366,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -1395,7 +1432,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -1461,7 +1498,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -1527,7 +1564,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     },
@@ -1593,7 +1630,7 @@
           "ready_for_render": false,
           "component_key": "deuda_nacion_con_provincia",
           "cards": [],
-          "last_update": null
+          "last_update": "2026-03-31"
         }
       }
     }

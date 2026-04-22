@@ -8,6 +8,11 @@ CROSS_FILE = 'dashboard_cross_section_1816.json'
 TOP_MENSUAL_FILE = 'top_mensual_2026_normalizado.csv'
 INFO_2026_FILE = 'informacion_consolidada_2026_normalizado.csv'
 SERIE_RON_FILE = 'serie_ron_2003_2025_normalizado.csv'
+PBA_TOP_MONTHLY_FILE = 'pba_top_monthly.csv'
+PBA_RON_MONTHLY_FILE = 'pba_ron_monthly.csv'
+PBA_BUDGET_QUARTERLY_FILE = 'pba_budget_execution_quarterly.csv'
+NATIONAL_DEBT_MONTHLY_FILE = 'national_debt_monthly.csv'
+MUNICIPIOS_PBA_ANNUAL_FILE = 'municipios_pba_annual.csv'
 OUTPUT_FILE = 'dashboard_fiscal_provincias.json'
 RECLAMOS_FILE = 'dashboard_reclamos_nacion_provincias.json'
 
@@ -44,6 +49,18 @@ def to_float(value):
 def read_csv(path):
     with open(path, encoding='utf-8', newline='') as f:
         return list(csv.DictReader(f))
+
+
+def read_csv_optional(path):
+    try:
+        return read_csv(path)
+    except FileNotFoundError:
+        return []
+
+
+def month_from_date(raw):
+    txt = (raw or '').strip()
+    return txt[:7] if len(txt) >= 7 else ''
 
 
 def classify_dependencia(value):
@@ -174,8 +191,13 @@ def build():
     reclamos_by_province = reclamos_payload.get('provinces', {})
 
     top_rows = read_csv(TOP_MENSUAL_FILE)
+    pba_top_rows = read_csv_optional(PBA_TOP_MONTHLY_FILE)
     info_rows = read_csv(INFO_2026_FILE)
+    pba_ron_monthly_rows = read_csv_optional(PBA_RON_MONTHLY_FILE)
     ron_rows = read_csv(SERIE_RON_FILE)
+    pba_budget_rows = read_csv_optional(PBA_BUDGET_QUARTERLY_FILE)
+    national_debt_rows = read_csv_optional(NATIONAL_DEBT_MONTHLY_FILE)
+    municipios_pba_rows = read_csv_optional(MUNICIPIOS_PBA_ANNUAL_FILE)
 
     top_2026 = defaultdict(float)
     info_nacional_2026 = defaultdict(float)
@@ -198,6 +220,34 @@ def build():
         if cat == 'Compensación Consenso Fiscal':
             info_tna_2026[prov] += val
 
+    for row in pba_top_rows:
+        period = month_from_date(row.get('fecha_corte'))
+        if not period.startswith('2026-'):
+            continue
+        total = to_float(row.get('top_total_ars_m'))
+        if total is not None:
+            top_2026['Buenos Aires'] += total
+
+    pba_total_nacional_2026 = 0.0
+    pba_comp_2026 = 0.0
+    for row in pba_ron_monthly_rows:
+        period = month_from_date(row.get('fecha_corte'))
+        if not period.startswith('2026-'):
+            continue
+        total = to_float(row.get('total_ron_ars_m_xlsx'))
+        if total is None:
+            total = to_float(row.get('total_ron_ars_m_daily'))
+        comp = to_float(row.get('compensacion_consenso_fiscal_ars_m_xlsx'))
+        if comp is None:
+            comp = to_float(row.get('compensacion_consenso_fiscal_ars_m_daily'))
+        if total is not None:
+            pba_total_nacional_2026 += total
+        if comp is not None:
+            pba_comp_2026 += comp
+    if pba_total_nacional_2026 > 0:
+        info_nacional_2026['Buenos Aires'] = pba_total_nacional_2026
+        info_tna_2026['Buenos Aires'] = pba_comp_2026
+
     ron_by_prov_cat_year = defaultdict(lambda: defaultdict(lambda: defaultdict(float)))
     for row in ron_rows:
         prov = normalize(row.get('province'))
@@ -206,6 +256,10 @@ def build():
             continue
         cat = (row.get('category_normalized') or row.get('category') or '').strip()
         ron_by_prov_cat_year[prov][cat][year] += to_float(row.get('value_millions')) or 0.0
+
+    latest_budget_quarter = sorted(pba_budget_rows, key=lambda r: r.get('fecha_corte') or '')[-1] if pba_budget_rows else None
+    latest_debt_nation = sorted(national_debt_rows, key=lambda r: r.get('fecha_corte') or '')[-1] if national_debt_rows else None
+    latest_municipios = sorted(municipios_pba_rows, key=lambda r: r.get('fecha_corte') or '')[-1] if municipios_pba_rows else None
 
     payload = {
         'source': 'pipeline_fiscal_v2',
@@ -327,6 +381,38 @@ def build():
                 }),
             },
         })
+
+        if province == 'Buenos Aires':
+            base['pba_context_2025_2026'] = {
+                'latest_budget_execution_quarter': {
+                    'periodo': (latest_budget_quarter or {}).get('periodo'),
+                    'fecha_corte': (latest_budget_quarter or {}).get('fecha_corte'),
+                    'ingresos_totales_ars_m': to_float((latest_budget_quarter or {}).get('ingresos_totales_ars_m')),
+                    'gastos_totales_ars_m': to_float((latest_budget_quarter or {}).get('gastos_totales_ars_m')),
+                    'resultado_primario_ars_m': to_float((latest_budget_quarter or {}).get('resultado_primario_ars_m')),
+                    'resultado_financiero_ars_m': to_float((latest_budget_quarter or {}).get('resultado_financiero_ars_m')),
+                    'source': PBA_BUDGET_QUARTERLY_FILE if latest_budget_quarter else None,
+                },
+                'national_debt_context': {
+                    'fecha_corte': (latest_debt_nation or {}).get('fecha_corte'),
+                    'deuda_bruta_total_usd_m': to_float((latest_debt_nation or {}).get('deuda_bruta_total_usd_m')),
+                    'pct_moneda_extranjera': to_float((latest_debt_nation or {}).get('pct_moneda_extranjera')),
+                    'pagos_mes_usd_m': to_float((latest_debt_nation or {}).get('pagos_mes_usd_m')),
+                    'source': NATIONAL_DEBT_MONTHLY_FILE if latest_debt_nation else None,
+                },
+                'municipal_context': {
+                    'fecha_corte': (latest_municipios or {}).get('fecha_corte'),
+                    'autonomia_pct': to_float((latest_municipios or {}).get('autonomia_pct')),
+                    'gasto_personal_pct_gasto_corr': to_float((latest_municipios or {}).get('gasto_personal_pct_gasto_corr')),
+                    'resultado_financiero_ars_m': to_float((latest_municipios or {}).get('resultado_financiero_ars_m')),
+                    'deuda_consolidada_ars_m': to_float((latest_municipios or {}).get('deuda_consolidada_ars_m')),
+                    'source': MUNICIPIOS_PBA_ANNUAL_FILE if latest_municipios else None,
+                },
+                'source_priority': {
+                    'top': [PBA_TOP_MONTHLY_FILE, TOP_MENSUAL_FILE],
+                    'ron': [PBA_RON_MONTHLY_FILE, INFO_2026_FILE, SERIE_RON_FILE],
+                }
+            }
 
         payload['provinces'][province] = base
 

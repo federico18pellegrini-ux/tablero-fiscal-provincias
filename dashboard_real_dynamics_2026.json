@@ -1,6 +1,6 @@
 {
   "source": "dinámica real 2026",
-  "generated_at": "2026-04-20T21:07:58.883202Z",
+  "generated_at": "2026-04-22T22:00:03.685699Z",
   "methodology": {
     "real_yoy_pct": "((nominal_current / nominal_prev_year) / (ipc_index_current / ipc_index_prev_year) - 1) * 100",
     "real_ytd_pct": "sumas deflactadas a último mes disponible del período",
@@ -18,7 +18,7 @@
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-03",
+          "last_available_period": "2026-04",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
