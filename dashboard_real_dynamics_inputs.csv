@@ -1,5 +1,4 @@
 province,period,metric,current_nominal_millions,prev_year_nominal_millions,source_current,source_prev_year,status,notes
-Buenos Aires,2026-01,own_revenue,1314352.332820,,top_mensual_2026_normalizado.csv,,prefilled_current_only,
 CABA,2026-01,own_revenue,1124942.900000,,top_mensual_2026_normalizado.csv,,prefilled_current_only,
 CABA,2026-02,own_revenue,973721.700000,,top_mensual_2026_normalizado.csv,,prefilled_current_only,
 Catamarca,2026-01,own_revenue,23332.945586,,top_mensual_2026_normalizado.csv,,prefilled_current_only,
@@ -37,9 +36,7 @@ Santiago del Estero,2026-02,own_revenue,20785.314478,,top_mensual_2026_normaliza
 Tierra del Fuego,2026-01,own_revenue,30622.400000,,top_mensual_2026_normalizado.csv,,prefilled_current_only,
 Tucumán,2026-01,own_revenue,113499.019431,,top_mensual_2026_normalizado.csv,,prefilled_current_only,
 Tucumán,2026-02,own_revenue,99218.207187,,top_mensual_2026_normalizado.csv,,prefilled_current_only,
-Buenos Aires,2026-01,ron_total,1359359.689457,,informacion_consolidada_2026_normalizado.csv,,prefilled_current_only,
-Buenos Aires,2026-02,ron_total,1254277.977634,,informacion_consolidada_2026_normalizado.csv,,prefilled_current_only,
-Buenos Aires,2026-03,ron_total,1183103.706294,,informacion_consolidada_2026_normalizado.csv,,prefilled_current_only,
+Buenos Aires,2026-01,own_revenue,1314352.332820,,pba_top_monthly.csv,,prefilled_current_only,prioridad_fuente_pba_2026
 CABA,2026-01,ron_total,128756.200000,,informacion_consolidada_2026_normalizado.csv,,prefilled_current_only,
 CABA,2026-02,ron_total,119022.300000,,informacion_consolidada_2026_normalizado.csv,,prefilled_current_only,
 CABA,2026-03,ron_total,108759.800000,,informacion_consolidada_2026_normalizado.csv,,prefilled_current_only,
@@ -109,3 +106,7 @@ Tierra del Fuego,2026-03,ron_total,58579.758267,,informacion_consolidada_2026_no
 Tucumán,2026-01,ron_total,261453.187499,,informacion_consolidada_2026_normalizado.csv,,prefilled_current_only,
 Tucumán,2026-02,ron_total,252771.069225,,informacion_consolidada_2026_normalizado.csv,,prefilled_current_only,
 Tucumán,2026-03,ron_total,224599.866179,,informacion_consolidada_2026_normalizado.csv,,prefilled_current_only,
+Buenos Aires,2026-01,ron_total,1359359.689457,,pba_ron_monthly.csv,,prefilled_current_only,prioridad_fuente_pba_2026
+Buenos Aires,2026-02,ron_total,1254277.977634,,pba_ron_monthly.csv,,prefilled_current_only,prioridad_fuente_pba_2026
+Buenos Aires,2026-03,ron_total,1183103.706294,,pba_ron_monthly.csv,,prefilled_current_only,prioridad_fuente_pba_2026
+Buenos Aires,2026-04,ron_total,816638.617296,,pba_ron_monthly.csv,,prefilled_current_only,prioridad_fuente_pba_2026

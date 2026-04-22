@@ -12,6 +12,8 @@ TOP_2025_FILE = ROOT / 'top_mensual_2025_normalizado.csv'
 INFO_FILE = ROOT / 'informacion_consolidada_2026_normalizado.csv'
 INFO_2025_FILE = ROOT / 'informacion_consolidada_2025_normalizado.csv'
 EXPENSES_FILE = ROOT / 'gasto_mensual_2025_2026_normalizado.csv'
+PBA_TOP_MONTHLY_FILE = ROOT / 'pba_top_monthly.csv'
+PBA_RON_MONTHLY_FILE = ROOT / 'pba_ron_monthly.csv'
 MANIFEST_FILE = ROOT / 'dashboard_manifest.json'
 DEFLACTOR_CSV = ROOT / 'deflactor_mensual.csv'
 INPUTS_CSV = ROOT / 'dashboard_real_dynamics_inputs.csv'
@@ -83,6 +85,11 @@ def to_float(value):
         return None
 
 
+def month_from_date(raw):
+    txt = (raw or '').strip()
+    return txt[:7] if len(txt) >= 7 else ''
+
+
 def prefill_inputs():
     rows = []
 
@@ -125,6 +132,29 @@ def prefill_inputs():
             'status': 'prefilled_current_only' if prev_value is None else 'prefilled_comparable',
             'notes': '',
         })
+
+    if PBA_TOP_MONTHLY_FILE.exists():
+        for r in read_csv(PBA_TOP_MONTHLY_FILE):
+            period = month_from_date(r.get('fecha_corte'))
+            if not period.startswith('2026-'):
+                continue
+            value = to_float(r.get('top_total_ars_m'))
+            if value is None:
+                continue
+            prev_period = f"{int(period[:4]) - 1:04d}-{period[5:7]}"
+            prev_value = own_totals_2025.get(('Buenos Aires', prev_period))
+            rows = [x for x in rows if not (x['province'] == 'Buenos Aires' and x['period'] == period and x['metric'] == 'own_revenue')]
+            rows.append({
+                'province': 'Buenos Aires',
+                'period': period,
+                'metric': 'own_revenue',
+                'current_nominal_millions': f"{value:.6f}",
+                'prev_year_nominal_millions': '' if prev_value is None else f"{prev_value:.6f}",
+                'source_current': PBA_TOP_MONTHLY_FILE.name,
+                'source_prev_year': TOP_2025_FILE.name if prev_value is not None else '',
+                'status': 'prefilled_current_only' if prev_value is None else 'prefilled_comparable',
+                'notes': 'prioridad_fuente_pba_2026',
+            })
 
     # B) ron_total (2026 vs mismo período 2025)
     info_rows = read_csv(INFO_FILE)
@@ -184,6 +214,37 @@ def prefill_inputs():
             'status': 'prefilled_current_only' if prev_value is None else 'prefilled_comparable',
             'notes': '',
         })
+
+    if PBA_RON_MONTHLY_FILE.exists():
+        for r in read_csv(PBA_RON_MONTHLY_FILE):
+            period = month_from_date(r.get('fecha_corte'))
+            if not period.startswith('2026-'):
+                continue
+            value = to_float(r.get('total_ron_ars_m_xlsx'))
+            if value is None:
+                value = to_float(r.get('total_ron_ars_m_daily'))
+            if value is None:
+                continue
+            prev_period = f"{int(period[:4]) - 1:04d}-{period[5:7]}"
+            prev_pick = None
+            for category in ['Total | (1) + (2)', 'Total | Recursos | Origen Nacional | (1)']:
+                candidates = by_key_cat_2025.get(('Buenos Aires', prev_period, category), [])
+                if candidates:
+                    prev_pick = candidates[0]
+                    break
+            prev_value = to_float(prev_pick.get('value_millions')) if prev_pick else None
+            rows = [x for x in rows if not (x['province'] == 'Buenos Aires' and x['period'] == period and x['metric'] == 'ron_total')]
+            rows.append({
+                'province': 'Buenos Aires',
+                'period': period,
+                'metric': 'ron_total',
+                'current_nominal_millions': f"{value:.6f}",
+                'prev_year_nominal_millions': '' if prev_value is None else f"{prev_value:.6f}",
+                'source_current': PBA_RON_MONTHLY_FILE.name,
+                'source_prev_year': INFO_2025_FILE.name if prev_value is not None else '',
+                'status': 'prefilled_current_only' if prev_value is None else 'prefilled_comparable',
+                'notes': 'prioridad_fuente_pba_2026',
+            })
 
     # C) gastos (2026 vs 2025)
     metric_map = {
