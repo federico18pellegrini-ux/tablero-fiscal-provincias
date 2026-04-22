@@ -1,6 +1,6 @@
 {
   "source": "pipeline_reclamos_nacion_v1",
-  "generated_at": "2026-04-22T20:02:24.951269Z",
+  "generated_at": "2026-04-22T20:08:14.189399Z",
   "cutoff_date": "2026-04-22",
   "methodology": {
     "deuda_total_reclamada": "Suma de montos_actualizados disponibles por provincia.",
@@ -16,21 +16,29 @@
   "provinces": {
     "Buenos Aires": {
       "provincia": "Buenos Aires",
-      "deuda_total_reclamada": 0.0,
-      "deuda_total_robusta": 0.0,
-      "anclas_principales": [],
-      "principal_tipo_reclamo": null,
+      "deuda_total_reclamada": 319680000000.0,
+      "deuda_total_robusta": 307680000000.0,
+      "anclas_principales": [
+        "ANSES / cajas previsionales no transferidas · Compensación por déficit de caja no transferida · ANSES",
+        "FONID / conectividad / material didáctico · FONID adeudado 2024-2026 · Ministerio de Capital Humano",
+        "Transporte interior / fondo compensador · Compensaciones al transporte automotor interior · Secretaría de Transporte"
+      ],
+      "principal_tipo_reclamo": "ANSES / cajas previsionales no transferidas",
       "principal_organismo_nacional": "ANSES",
-      "porcentaje_cubierto_con_dato_robusto": 0.0,
+      "porcentaje_cubierto_con_dato_robusto": 25.0,
       "fecha_ultima_actualizacion": "2026-03-31",
       "observaciones_metodologicas": "deuda_total_reclamada suma montos actualizados disponibles; deuda_total_robusta incluye solo calidad observado/estimado_robusto y excluye proxy/no_disponible para evitar doble conteo.",
-      "deuda_por_tipo": {},
+      "deuda_por_tipo": {
+        "ANSES / cajas previsionales no transferidas": 252000000000.0,
+        "FONID / conectividad / material didáctico": 55680000000.0,
+        "Transporte interior / fondo compensador": 12000000000.0
+      },
       "cantidad_de_reclamos": 8,
       "cantidad_de_reclamos_judicializados": 1,
-      "estado_cobertura": "parcial_proxy",
+      "estado_cobertura": "con_datos",
       "observaciones": [
-        "Sin monto público homogéneo al corte; requiere carga manual auditada.",
-        "Monto comunicado sin serie homogénea completa; proxy hasta consolidar ejecución mensual.",
+        "Ejemplo mínimo validado para iniciar serie BA; sujeto a actualización mensual.",
+        "Estimación robusta con regla homogénea por mes devengado no transferido.",
         "Falta base homogénea por jurisdicción/mes."
       ]
     },

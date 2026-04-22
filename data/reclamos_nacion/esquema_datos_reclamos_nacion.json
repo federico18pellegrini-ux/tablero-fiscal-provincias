@@ -1,0 +1,43 @@
+{
+  "version": "2026-04-22",
+  "descripcion": "Esquema de capa de datos para deuda reclamada de Nación con provincias.",
+  "tablas": {
+    "reclamos_nacion_provincias_maestra": {
+      "archivo": "data/reclamos_nacion/reclamos_nacion_provincias_maestra.csv",
+      "clave_recomendada": ["provincia", "expediente_o_causa"],
+      "columnas": [
+        {"nombre": "provincia", "tipo": "string", "requerido": true, "validacion": "Debe existir en province_universe del manifest"},
+        {"nombre": "tipo_reclamo", "tipo": "string", "requerido": true, "validacion": "Debe existir en catálogo de tipos"},
+        {"nombre": "subtipo_reclamo", "tipo": "string", "requerido": true},
+        {"nombre": "organismo_nacional", "tipo": "string", "requerido": true},
+        {"nombre": "norma_o_convenio", "tipo": "string", "requerido": false},
+        {"nombre": "expediente_o_causa", "tipo": "string", "requerido": true, "validacion": "Identificador único por hecho generador"},
+        {"nombre": "estado_reclamo", "tipo": "enum", "requerido": true, "valores": ["administrativo", "judicializado", "acuerdo_parcial", "cerrado", "pendiente_relevamiento"]},
+        {"nombre": "periodo_desde", "tipo": "date", "requerido": false, "formato": "YYYY-MM-DD"},
+        {"nombre": "periodo_hasta", "tipo": "date", "requerido": false, "formato": "YYYY-MM-DD"},
+        {"nombre": "monto_nominal", "tipo": "number", "requerido": false, "validacion": ">= 0"},
+        {"nombre": "moneda", "tipo": "enum", "requerido": true, "valores": ["ARS", "USD", "EUR"]},
+        {"nombre": "fecha_corte_monto", "tipo": "date", "requerido": false, "formato": "YYYY-MM-DD"},
+        {"nombre": "indexador", "tipo": "enum", "requerido": true, "valores": ["ipc_nacional", "sin_actualizacion", "none", ""]},
+        {"nombre": "tasa_interes", "tipo": "number", "requerido": false, "validacion": "0 <= tasa_interes <= 5"},
+        {"nombre": "monto_actualizado", "tipo": "number", "requerido": false, "validacion": ">= 0"},
+        {"nombre": "calidad_dato", "tipo": "enum", "requerido": true, "valores": ["observado", "estimado_robusto", "proxy", "no_disponible"]},
+        {"nombre": "fuente_primaria", "tipo": "string", "requerido": true},
+        {"nombre": "link_fuente", "tipo": "string", "requerido": false},
+        {"nombre": "observaciones", "tipo": "string", "requerido": false}
+      ]
+    },
+    "catalogo_tipos_reclamo": {
+      "archivo": "data/reclamos_nacion/catalogo_tipos_reclamo.csv",
+      "clave_recomendada": ["tipo_reclamo"],
+      "columnas": [
+        {"nombre": "tipo_reclamo", "tipo": "string", "requerido": true},
+        {"nombre": "descripcion", "tipo": "string", "requerido": true},
+        {"nombre": "formula_base", "tipo": "string", "requerido": true},
+        {"nombre": "frecuencia", "tipo": "enum", "requerido": true, "valores": ["mensual", "trimestral", "anual"]},
+        {"nombre": "requiere_carga_manual", "tipo": "enum", "requerido": true, "valores": ["sí", "no"]},
+        {"nombre": "nivel_automatizacion", "tipo": "enum", "requerido": true, "valores": ["alto", "medio", "bajo"]}
+      ]
+    }
+  }
+}
