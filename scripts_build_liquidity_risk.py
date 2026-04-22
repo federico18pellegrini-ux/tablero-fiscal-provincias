@@ -82,15 +82,35 @@ def build():
 
     ron_monthly_sorted = sorted(ron_monthly_rows, key=lambda r: r.get('fecha_corte') or '')
     latest_ron_month = None
+    latest_ron_month_xlsx = None
     for row in reversed(ron_monthly_sorted):
-        if to_float(row.get('total_ron_ars_m_xlsx')) is not None or to_float(row.get('total_ron_ars_m_daily')) is not None:
+        if latest_ron_month is None and (
+            to_float(row.get('total_ron_ars_m_xlsx')) is not None or to_float(row.get('total_ron_ars_m_daily')) is not None
+        ):
             latest_ron_month = row
+        if latest_ron_month_xlsx is None and to_float(row.get('total_ron_ars_m_xlsx')) is not None:
+            latest_ron_month_xlsx = row
+        if latest_ron_month is not None and latest_ron_month_xlsx is not None:
             break
     latest_budget = sorted(budget_quarterly_rows, key=lambda r: r.get('fecha_corte') or '')[-1] if budget_quarterly_rows else None
     latest_period = month_from_date((latest_ron_month or {}).get('fecha_corte'))
-    ron_monthly_xlsx = to_float((latest_ron_month or {}).get('total_ron_ars_m_xlsx'))
+    latest_xlsx_period = month_from_date((latest_ron_month_xlsx or {}).get('fecha_corte'))
+    ron_monthly_xlsx = to_float((latest_ron_month_xlsx or {}).get('total_ron_ars_m_xlsx'))
     ron_monthly_daily = to_float((latest_ron_month or {}).get('total_ron_ars_m_daily'))
-    ron_monthly_diff = (ron_monthly_xlsx - ron_monthly_daily) if (ron_monthly_xlsx is not None and ron_monthly_daily is not None) else None
+    ron_monthly_daily_same_period = None
+    if latest_xlsx_period:
+        for row in ron_daily_rows:
+            if month_from_date(row.get('fecha')) != latest_xlsx_period:
+                continue
+            val = to_float(row.get('total_ron_ars_m'))
+            if val is None:
+                continue
+            ron_monthly_daily_same_period = (ron_monthly_daily_same_period or 0.0) + val
+    ron_monthly_diff = (
+        ron_monthly_xlsx - ron_monthly_daily_same_period
+        if (ron_monthly_xlsx is not None and ron_monthly_daily_same_period is not None)
+        else None
+    )
     ron_daily_acc = 0.0
     ron_daily_count = 0
     for row in ron_daily_rows:
@@ -131,6 +151,7 @@ def build():
                         'unit': 'pct',
                         'status': 'missing',
                         'source': None,
+                        'missing_detail': 'pendiente_integracion',
                     },
                     'intereses_sobre_ingresos_pct': {
                         'value': intereses_sobre_ingresos,
@@ -143,30 +164,36 @@ def build():
                         'unit': 'ars',
                         'status': 'source' if caja_disponible is not None else 'missing',
                         'source': LIQUIDITY_INPUTS_FILE if caja_disponible is not None else None,
+                        'missing_detail': None if caja_disponible is not None else 'no_cargado_fuente_auditada',
                     },
                     'cobertura_aguinaldo_pct': {
                         'value': cobertura_aguinaldo,
                         'unit': 'pct',
                         'status': 'derived' if cobertura_aguinaldo is not None else 'missing',
                         'source': LIQUIDITY_INPUTS_FILE if cobertura_aguinaldo is not None else None,
+                        'missing_detail': None if cobertura_aguinaldo is not None else 'no_derivable_respaldo_suficiente',
                     },
                     'vencimientos_90d_pesos': {
                         'value': venc_90,
                         'unit': 'ars',
                         'status': 'source' if venc_90 is not None else 'missing',
                         'source': LIQUIDITY_INPUTS_FILE if venc_90 is not None else None,
+                        'missing_detail': None if venc_90 is not None else 'no_cargado_fuente_auditada',
                     },
                     'vencimientos_180d_pesos': {
                         'value': venc_180,
                         'unit': 'ars',
                         'status': 'source' if venc_180 is not None else 'missing',
                         'source': LIQUIDITY_INPUTS_FILE if venc_180 is not None else None,
+                        'missing_detail': None if venc_180 is not None else 'no_cargado_fuente_auditada',
                     },
                     'ron_total_ultimo_mes_xlsx_ars_m': {
                         'value': ron_monthly_xlsx,
                         'unit': 'ars_m',
                         'status': 'source' if ron_monthly_xlsx is not None else 'missing',
                         'source': PBA_RON_MONTHLY_FILE if ron_monthly_xlsx is not None else None,
+                        'as_of': latest_xlsx_period or None,
+                        'missing_detail': None if ron_monthly_xlsx is not None else 'pendiente_integracion',
                     },
                     'ron_total_ultimo_mes_daily_ars_m': {
                         'value': ron_monthly_daily,
@@ -178,7 +205,9 @@ def build():
                         'value': ron_monthly_diff,
                         'unit': 'ars_m',
                         'status': 'derived' if ron_monthly_diff is not None else 'missing',
-                        'source': PBA_RON_MONTHLY_FILE if ron_monthly_diff is not None else None,
+                        'source': f'{PBA_RON_MONTHLY_FILE}+{PBA_RON_DAILY_FILE}' if ron_monthly_diff is not None else None,
+                        'as_of': latest_xlsx_period or None,
+                        'missing_detail': None if ron_monthly_diff is not None else 'no_derivable_respaldo_suficiente',
                     },
                     'ron_diario_acumulado_ultimo_mes_ars_m': {
                         'value': ron_daily_total_month,
@@ -191,6 +220,35 @@ def build():
                         'unit': 'ars_m',
                         'status': 'derived' if resultado_financiero_trim is not None else 'missing',
                         'source': PBA_BUDGET_QUARTERLY_FILE if resultado_financiero_trim is not None else None,
+                        'missing_detail': None if resultado_financiero_trim is not None else 'pendiente_integracion',
+                    },
+                    'deuda_moneda_extranjera_pct': {
+                        'value': None,
+                        'unit': 'pct',
+                        'status': 'missing',
+                        'source': None,
+                        'missing_detail': 'no_cargado_fuente_auditada',
+                    },
+                    'servicios_deuda_acumulados_pesos': {
+                        'value': None,
+                        'unit': 'ars',
+                        'status': 'missing',
+                        'source': None,
+                        'missing_detail': 'no_derivable_respaldo_suficiente',
+                    },
+                    'servicios_intereses_pct': {
+                        'value': None,
+                        'unit': 'pct',
+                        'status': 'missing',
+                        'source': None,
+                        'missing_detail': 'no_cargado_fuente_auditada',
+                    },
+                    'servicios_amortizacion_pct': {
+                        'value': None,
+                        'unit': 'pct',
+                        'status': 'missing',
+                        'source': None,
+                        'missing_detail': 'no_cargado_fuente_auditada',
                     },
                     'necesidad_financiamiento_presupuestada_pesos': {
                         'value': budget.get('necesidad_financiamiento_pesos'),
