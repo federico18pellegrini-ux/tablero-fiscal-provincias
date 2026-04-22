@@ -1,6 +1,6 @@
 {
   "source": "capa liquidez y riesgo inmediato",
-  "generated_at": "2026-04-22T22:27:51.073686Z",
+  "generated_at": "2026-04-22T22:57:33.561164Z",
   "methodology": {
     "intereses_sobre_ingresos": "resultado_primario_ltm_pct - resultado_financiero_ltm_pct",
     "ahorro_corriente": "manual_or_external_source",
@@ -14,7 +14,7 @@
   "provinces": {
     "Buenos Aires": {
       "as_of": "2026-03",
-      "coverage_note": "Bloque parcial. El repositorio permite derivar intereses/ingresos y anclas presupuestarias. Para habilitar semáforo completo se requiere carga auditada en dashboard_liquidity_risk_inputs.csv.",
+      "coverage_note": "Bloque parcial. El repositorio permite derivar intereses/ingresos y anclas presupuestarias. Se incorporan referencias nacionales para moneda y servicios de deuda. Para habilitar semáforo completo se requiere carga auditada en dashboard_liquidity_risk_inputs.csv.",
       "metrics": {
         "ahorro_corriente_pct": {
           "value": null,
@@ -93,32 +93,43 @@
           "missing_detail": null
         },
         "deuda_moneda_extranjera_pct": {
-          "value": null,
+          "value": 54.0,
           "unit": "pct",
-          "status": "missing",
-          "source": null,
-          "missing_detail": "no_cargado_fuente_auditada"
+          "status": "source",
+          "source": "national_debt_monthly.csv",
+          "as_of": "2026-03",
+          "missing_detail": null
         },
         "servicios_deuda_acumulados_pesos": {
           "value": null,
           "unit": "ars",
           "status": "missing",
           "source": null,
-          "missing_detail": "no_derivable_respaldo_suficiente"
+          "missing_detail": "pendiente_integracion"
+        },
+        "servicios_deuda_acumulados_usd": {
+          "value": 43159000000.0,
+          "unit": "usd",
+          "status": "source",
+          "source": "national_debt_monthly.csv",
+          "as_of": "2026-03",
+          "missing_detail": null
         },
         "servicios_intereses_pct": {
-          "value": null,
+          "value": 7.6,
           "unit": "pct",
-          "status": "missing",
-          "source": null,
-          "missing_detail": "no_cargado_fuente_auditada"
+          "status": "source",
+          "source": "national_debt_monthly.csv",
+          "as_of": "2026-03",
+          "missing_detail": null
         },
         "servicios_amortizacion_pct": {
-          "value": null,
+          "value": 92.4,
           "unit": "pct",
-          "status": "missing",
-          "source": null,
-          "missing_detail": "no_cargado_fuente_auditada"
+          "status": "source",
+          "source": "national_debt_monthly.csv",
+          "as_of": "2026-03",
+          "missing_detail": null
         },
         "necesidad_financiamiento_presupuestada_pesos": {
           "value": 1536724209000,

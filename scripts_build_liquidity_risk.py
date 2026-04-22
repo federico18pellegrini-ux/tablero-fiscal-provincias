@@ -8,6 +8,7 @@ LIQUIDITY_INPUTS_FILE = 'dashboard_liquidity_risk_inputs.csv'
 PBA_RON_MONTHLY_FILE = 'pba_ron_monthly.csv'
 PBA_RON_DAILY_FILE = 'pba_ron_daily.csv'
 PBA_BUDGET_QUARTERLY_FILE = 'pba_budget_execution_quarterly.csv'
+NATIONAL_DEBT_MONTHLY_FILE = 'national_debt_monthly.csv'
 OUTPUT_FILE = 'dashboard_liquidity_risk.json'
 
 
@@ -79,6 +80,7 @@ def build():
     ron_monthly_rows = read_csv_optional(PBA_RON_MONTHLY_FILE)
     ron_daily_rows = read_csv_optional(PBA_RON_DAILY_FILE)
     budget_quarterly_rows = read_csv_optional(PBA_BUDGET_QUARTERLY_FILE)
+    national_debt_rows = read_csv_optional(NATIONAL_DEBT_MONTHLY_FILE)
 
     ron_monthly_sorted = sorted(ron_monthly_rows, key=lambda r: r.get('fecha_corte') or '')
     latest_ron_month = None
@@ -123,6 +125,18 @@ def build():
         ron_daily_count += 1
     ron_daily_total_month = ron_daily_acc if ron_daily_count else None
     resultado_financiero_trim = to_float((latest_budget or {}).get('resultado_financiero_ars_m'))
+    debt_rows_2026 = sorted(
+        [r for r in national_debt_rows if (r.get('fecha_corte') or '').startswith('2026-')],
+        key=lambda r: r.get('fecha_corte') or ''
+    )
+    latest_debt_row = debt_rows_2026[-1] if debt_rows_2026 else None
+    deuda_fx_pct = to_float((latest_debt_row or {}).get('pct_moneda_extranjera'))
+    pagos_mes_ytd_usd = sum(to_float(r.get('pagos_mes_usd_m')) or 0.0 for r in debt_rows_2026)
+    pagos_capital_ytd_usd = sum(to_float(r.get('pagos_capital_usd_m')) or 0.0 for r in debt_rows_2026)
+    pagos_intereses_ytd_usd = sum(to_float(r.get('pagos_intereses_usd_m')) or 0.0 for r in debt_rows_2026)
+    servicios_total_usd = pagos_mes_ytd_usd * 1_000_000 if pagos_mes_ytd_usd > 0 else None
+    servicios_intereses_pct = round1((pagos_intereses_ytd_usd / pagos_mes_ytd_usd) * 100) if pagos_mes_ytd_usd > 0 else None
+    servicios_amort_pct = round1((pagos_capital_ytd_usd / pagos_mes_ytd_usd) * 100) if pagos_mes_ytd_usd > 0 else None
 
     payload = {
         'source': 'capa liquidez y riesgo inmediato',
@@ -142,7 +156,8 @@ def build():
                 'as_of': '2026-03',
                 'coverage_note': (
                     'Bloque parcial. El repositorio permite derivar intereses/ingresos y anclas '
-                    'presupuestarias. Para habilitar semáforo completo se requiere carga auditada en '
+                    'presupuestarias. Se incorporan referencias nacionales para moneda y servicios de deuda. '
+                    'Para habilitar semáforo completo se requiere carga auditada en '
                     'dashboard_liquidity_risk_inputs.csv.'
                 ),
                 'metrics': {
@@ -223,32 +238,43 @@ def build():
                         'missing_detail': None if resultado_financiero_trim is not None else 'pendiente_integracion',
                     },
                     'deuda_moneda_extranjera_pct': {
-                        'value': None,
+                        'value': deuda_fx_pct,
                         'unit': 'pct',
-                        'status': 'missing',
-                        'source': None,
-                        'missing_detail': 'no_cargado_fuente_auditada',
+                        'status': 'source' if deuda_fx_pct is not None else 'missing',
+                        'source': NATIONAL_DEBT_MONTHLY_FILE if deuda_fx_pct is not None else None,
+                        'as_of': month_from_date((latest_debt_row or {}).get('fecha_corte')) or None,
+                        'missing_detail': None if deuda_fx_pct is not None else 'no_cargado_fuente_auditada',
                     },
                     'servicios_deuda_acumulados_pesos': {
                         'value': None,
                         'unit': 'ars',
                         'status': 'missing',
                         'source': None,
-                        'missing_detail': 'no_derivable_respaldo_suficiente',
+                        'missing_detail': 'pendiente_integracion',
+                    },
+                    'servicios_deuda_acumulados_usd': {
+                        'value': servicios_total_usd,
+                        'unit': 'usd',
+                        'status': 'source' if servicios_total_usd is not None else 'missing',
+                        'source': NATIONAL_DEBT_MONTHLY_FILE if servicios_total_usd is not None else None,
+                        'as_of': month_from_date((latest_debt_row or {}).get('fecha_corte')) or None,
+                        'missing_detail': None if servicios_total_usd is not None else 'no_cargado_fuente_auditada',
                     },
                     'servicios_intereses_pct': {
-                        'value': None,
+                        'value': servicios_intereses_pct,
                         'unit': 'pct',
-                        'status': 'missing',
-                        'source': None,
-                        'missing_detail': 'no_cargado_fuente_auditada',
+                        'status': 'source' if servicios_intereses_pct is not None else 'missing',
+                        'source': NATIONAL_DEBT_MONTHLY_FILE if servicios_intereses_pct is not None else None,
+                        'as_of': month_from_date((latest_debt_row or {}).get('fecha_corte')) or None,
+                        'missing_detail': None if servicios_intereses_pct is not None else 'no_cargado_fuente_auditada',
                     },
                     'servicios_amortizacion_pct': {
-                        'value': None,
+                        'value': servicios_amort_pct,
                         'unit': 'pct',
-                        'status': 'missing',
-                        'source': None,
-                        'missing_detail': 'no_cargado_fuente_auditada',
+                        'status': 'source' if servicios_amort_pct is not None else 'missing',
+                        'source': NATIONAL_DEBT_MONTHLY_FILE if servicios_amort_pct is not None else None,
+                        'as_of': month_from_date((latest_debt_row or {}).get('fecha_corte')) or None,
+                        'missing_detail': None if servicios_amort_pct is not None else 'no_cargado_fuente_auditada',
                     },
                     'necesidad_financiamiento_presupuestada_pesos': {
                         'value': budget.get('necesidad_financiamiento_pesos'),
