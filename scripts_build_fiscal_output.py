@@ -220,13 +220,16 @@ def build():
         if cat == 'Compensación Consenso Fiscal':
             info_tna_2026[prov] += val
 
+    pba_top_total_2026 = 0.0
     for row in pba_top_rows:
         period = month_from_date(row.get('fecha_corte'))
         if not period.startswith('2026-'):
             continue
         total = to_float(row.get('top_total_ars_m'))
         if total is not None:
-            top_2026['Buenos Aires'] += total
+            pba_top_total_2026 += total
+    if pba_top_total_2026 > 0:
+        top_2026['Buenos Aires'] = pba_top_total_2026
 
     pba_total_nacional_2026 = 0.0
     pba_comp_2026 = 0.0
