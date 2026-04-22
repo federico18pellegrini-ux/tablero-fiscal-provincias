@@ -1,6 +1,6 @@
 {
   "source": "capa liquidez y riesgo inmediato",
-  "generated_at": "2026-04-22T22:08:00.133772Z",
+  "generated_at": "2026-04-22T22:27:51.073686Z",
   "methodology": {
     "intereses_sobre_ingresos": "resultado_primario_ltm_pct - resultado_financiero_ltm_pct",
     "ahorro_corriente": "manual_or_external_source",
@@ -20,7 +20,8 @@
           "value": null,
           "unit": "pct",
           "status": "missing",
-          "source": null
+          "source": null,
+          "missing_detail": "pendiente_integracion"
         },
         "intereses_sobre_ingresos_pct": {
           "value": 3.2,
@@ -32,31 +33,37 @@
           "value": null,
           "unit": "ars",
           "status": "missing",
-          "source": null
+          "source": null,
+          "missing_detail": "no_cargado_fuente_auditada"
         },
         "cobertura_aguinaldo_pct": {
           "value": null,
           "unit": "pct",
           "status": "missing",
-          "source": null
+          "source": null,
+          "missing_detail": "no_derivable_respaldo_suficiente"
         },
         "vencimientos_90d_pesos": {
           "value": null,
           "unit": "ars",
           "status": "missing",
-          "source": null
+          "source": null,
+          "missing_detail": "no_cargado_fuente_auditada"
         },
         "vencimientos_180d_pesos": {
           "value": null,
           "unit": "ars",
           "status": "missing",
-          "source": null
+          "source": null,
+          "missing_detail": "no_cargado_fuente_auditada"
         },
         "ron_total_ultimo_mes_xlsx_ars_m": {
-          "value": null,
+          "value": 1183103.706294375,
           "unit": "ars_m",
-          "status": "missing",
-          "source": null
+          "status": "source",
+          "source": "pba_ron_monthly.csv",
+          "as_of": "2026-03",
+          "missing_detail": null
         },
         "ron_total_ultimo_mes_daily_ars_m": {
           "value": 816638.617296045,
@@ -65,10 +72,12 @@
           "source": "pba_ron_monthly.csv"
         },
         "ron_total_ultimo_mes_diff_xlsx_daily_ars_m": {
-          "value": null,
+          "value": 1219.9685813914984,
           "unit": "ars_m",
-          "status": "missing",
-          "source": null
+          "status": "derived",
+          "source": "pba_ron_monthly.csv+pba_ron_daily.csv",
+          "as_of": "2026-03",
+          "missing_detail": null
         },
         "ron_diario_acumulado_ultimo_mes_ars_m": {
           "value": 816638.6172960448,
@@ -80,7 +89,36 @@
           "value": -1401897.0,
           "unit": "ars_m",
           "status": "derived",
-          "source": "pba_budget_execution_quarterly.csv"
+          "source": "pba_budget_execution_quarterly.csv",
+          "missing_detail": null
+        },
+        "deuda_moneda_extranjera_pct": {
+          "value": null,
+          "unit": "pct",
+          "status": "missing",
+          "source": null,
+          "missing_detail": "no_cargado_fuente_auditada"
+        },
+        "servicios_deuda_acumulados_pesos": {
+          "value": null,
+          "unit": "ars",
+          "status": "missing",
+          "source": null,
+          "missing_detail": "no_derivable_respaldo_suficiente"
+        },
+        "servicios_intereses_pct": {
+          "value": null,
+          "unit": "pct",
+          "status": "missing",
+          "source": null,
+          "missing_detail": "no_cargado_fuente_auditada"
+        },
+        "servicios_amortizacion_pct": {
+          "value": null,
+          "unit": "pct",
+          "status": "missing",
+          "source": null,
+          "missing_detail": "no_cargado_fuente_auditada"
         },
         "necesidad_financiamiento_presupuestada_pesos": {
           "value": 1536724209000,
