@@ -441,6 +441,13 @@ def build():
             'provincia': province,
             'deuda_total_reclamada': aggregate['deuda_total_reclamada'],
             'deuda_total_robusta': aggregate['deuda_total_robusta'],
+            'deuda_nacion_con_provincia': {
+                'status': 'pendiente_diseno_funcional',
+                'ready_for_render': False,
+                'component_key': 'deuda_nacion_con_provincia',
+                'cards': [],
+                'last_update': aggregate['fecha_ultima_actualizacion'],
+            },
             'anclas_principales': aggregate['anclas_principales'],
             'principal_tipo_reclamo': aggregate['principal_tipo_reclamo'],
             'principal_organismo_nacional': aggregate['principal_organismo_nacional'],
@@ -477,6 +484,11 @@ def build():
         'source': 'pipeline_reclamos_nacion_v1',
         'generated_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
         'cutoff_date': date.today().isoformat(),
+        'integration_ready': {
+            'selector_keys': ['deuda_total_reclamada', 'deuda_total_robusta'],
+            'future_block_key': 'deuda_nacion_con_provincia',
+            'future_block_status': 'pendiente_diseno_funcional',
+        },
         'methodology': {
             'deuda_total_reclamada': 'Suma de montos_actualizados disponibles por provincia.',
             'deuda_total_robusta': 'Suma de montos_actualizados con calidad_dato observado o estimado_robusto.',
@@ -487,6 +499,15 @@ def build():
                 'no_disponible': 'No existe monto validado al corte.'
             },
             'double_count_guard': 'No sumar reclamos superpuestos por expediente/objeto cuando refieren al mismo hecho generador.'
+        },
+        'example_buenos_aires': {
+            'title': 'Ejemplo de salida para Buenos Aires',
+            'province': 'Buenos Aires',
+            'selector_preview': {
+                'deuda_total_reclamada': provinces_payload.get('Buenos Aires', {}).get('deuda_total_reclamada'),
+                'deuda_total_robusta': provinces_payload.get('Buenos Aires', {}).get('deuda_total_robusta'),
+            },
+            'ui_hint': 'Mostrar dos tarjetas: Total reclamado y Total robusto, más un callout de cobertura.',
         },
         'provinces': provinces_payload,
     }
