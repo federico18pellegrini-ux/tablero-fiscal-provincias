@@ -1,6 +1,6 @@
 {
   "source": "capa liquidez y riesgo inmediato",
-  "generated_at": "2026-04-22T22:00:28.370432Z",
+  "generated_at": "2026-04-22T22:08:00.133772Z",
   "methodology": {
     "intereses_sobre_ingresos": "resultado_primario_ltm_pct - resultado_financiero_ltm_pct",
     "ahorro_corriente": "manual_or_external_source",
@@ -79,7 +79,7 @@
         "resultado_financiero_ultimo_trimestre_ars_m": {
           "value": -1401897.0,
           "unit": "ars_m",
-          "status": "source",
+          "status": "derived",
           "source": "pba_budget_execution_quarterly.csv"
         },
         "necesidad_financiamiento_presupuestada_pesos": {

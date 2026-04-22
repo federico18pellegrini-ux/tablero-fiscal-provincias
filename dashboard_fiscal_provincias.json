@@ -1,6 +1,6 @@
 {
   "source": "pipeline_fiscal_v2",
-  "generated_at": "2026-04-22T22:00:03.856924Z",
+  "generated_at": "2026-04-22T22:06:55.449577Z",
   "integrations": {
     "reclamos_nacion": {
       "source_file": "dashboard_reclamos_nacion_provincias.json",
@@ -45,10 +45,10 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "rojo",
       "riesgo_aguinaldo": "alto",
-      "dependencia_nacion_pct": 63.702375898828954,
+      "dependencia_nacion_pct": 77.82706335086814,
       "gasto_personal_ratio": 0.505,
       "gasto_corriente_ratio": null,
-      "ahorro_corriente": -535914.2645677944,
+      "ahorro_corriente": -438652.1919391077,
       "ahorro_corriente_ratio": -0.07400000000000001,
       "estres_fiscal_score": 0.3311,
       "estres_fiscal_categoria": "alto",

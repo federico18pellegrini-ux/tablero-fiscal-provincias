@@ -189,7 +189,7 @@ def build():
                     'resultado_financiero_ultimo_trimestre_ars_m': {
                         'value': resultado_financiero_trim,
                         'unit': 'ars_m',
-                        'status': 'source' if resultado_financiero_trim is not None else 'missing',
+                        'status': 'derived' if resultado_financiero_trim is not None else 'missing',
                         'source': PBA_BUDGET_QUARTERLY_FILE if resultado_financiero_trim is not None else None,
                     },
                     'necesidad_financiamiento_presupuestada_pesos': {
