@@ -1,0 +1,9 @@
+provincia,tipo_reclamo,organismo_nacional,expediente_o_referencia,monto,fecha_corte,calidad_dato,observaciones
+Buenos Aires,ANSES / cajas previsionales no transferidas,ANSES,pendiente_carga_ba_anses_001,252000000000.0,2026-03-31,observado,Ejemplo mínimo validado para iniciar serie BA; sujeto a actualización mensual.
+Buenos Aires,Consenso Fiscal / compensaciones bilaterales,Ministerio de Economía de la Nación,pendiente_carga_ba_consenso_001,,2026-03-31,no_disponible,"Rubros con reclamo vigente, sin monto único validado."
+Buenos Aires,FONID / conectividad / material didáctico,Ministerio de Capital Humano,pendiente_carga_ba_fonid_001,55680000000.0,2026-03-31,estimado_robusto,Estimación robusta con regla homogénea por mes devengado no transferido.
+Buenos Aires,"Fondos específicos (bosques, salud, vivienda, etc.)",Ministerios sectoriales nacionales,pendiente_carga_ba_fondos_001,,2026-03-31,proxy,Existen trazas parciales; faltan montos homogéneos por fondo.
+Buenos Aires,Obras públicas paralizadas / certificados impagos,Ministerio de Economía de la Nación,pendiente_carga_ba_obras_001,,2026-03-31,proxy,Requiere conciliación certificado por certificado para evitar doble conteo.
+Buenos Aires,Otros reclamos administrativos o judiciales,Estado Nacional,pendiente_carga_ba_judicial_001,,2026-03-31,no_disponible,Sin sentencia firme al corte; no computable en robusto.
+Buenos Aires,Programas nacionales discontinuados,Jefatura de Gabinete / ministerios sectoriales,pendiente_carga_ba_programas_001,,2026-03-31,no_disponible,Sin base consolidada transversal; carga manual requerida.
+Buenos Aires,Transporte interior / fondo compensador,Secretaría de Transporte,pendiente_carga_ba_transporte_001,12000000000.0,2026-03-31,proxy,Falta base homogénea por jurisdicción/mes.

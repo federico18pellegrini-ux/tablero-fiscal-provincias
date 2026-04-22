@@ -18,6 +18,11 @@ Se dejan tres filas de ejemplo para Buenos Aires:
 - FONID (`estimado_robusto`)
 - Transporte interior (`proxy`)
 
+## Caso testigo Buenos Aires
+- Archivo de filas simplificadas: `data/reclamos_nacion/reclamos_nacion_buenos_aires_caso_testigo.csv`.
+- Resumen agregado: `outputs/reclamos_nacion_buenos_aires_resumen.json`.
+- Nota metodológica de límites de evidencia: `docs/reclamos_nacion_buenos_aires_nota_metodologica.md`.
+
 ## Validación de filas
 - Función: `validate_master_row` en `scripts_build_nacion_reclamos.py`.
 - Runner CLI: `python scripts_validate_reclamos_nacion.py`.
