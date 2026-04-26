@@ -25,6 +25,23 @@ def load_top_totals() -> dict[tuple[str, str], float]:
     return totals
 
 
+def load_iibb_totals() -> dict[tuple[str, str], float]:
+    iibb_totals: dict[tuple[str, str], float] = defaultdict(float)
+    with TOP_FILE.open(encoding='utf-8', newline='') as fh:
+        for row in csv.DictReader(fh):
+            province = row['province']
+            period = row['period']
+            tax = (row.get('tax') or '').strip().lower()
+            if tax != 'iibb':
+                continue
+            try:
+                value = float(row['value_millions'])
+            except (TypeError, ValueError):
+                continue
+            iibb_totals[(province, period)] += value
+    return iibb_totals
+
+
 def load_published_own_revenue() -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     with REAL_DYN_FILE.open(encoding='utf-8', newline='') as fh:
@@ -39,6 +56,7 @@ def load_published_own_revenue() -> list[dict[str, str]]:
 
 def main() -> int:
     totals = load_top_totals()
+    iibb_totals = load_iibb_totals()
     published = load_published_own_revenue()
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
@@ -47,13 +65,15 @@ def main() -> int:
         writer = csv.writer(fh)
         writer.writerow([
             'province', 'period', 'published_millions', 'reconstructed_millions',
-            'delta_millions', 'delta_pct', 'source_current', 'status'
+            'delta_millions', 'delta_pct', 'iibb_millions', 'iibb_share_pct', 'source_current', 'status'
         ])
         for row in published:
             province = row['province']
             period = row['period']
             published_value = float(row['current_nominal_millions'])
             reconstructed = totals.get((province, period), 0.0)
+            iibb_value = iibb_totals.get((province, period), 0.0)
+            iibb_share_pct = (iibb_value / reconstructed * 100.0) if reconstructed else None
             delta = published_value - reconstructed
             delta_pct = (delta / reconstructed * 100.0) if reconstructed else None
             status = 'ok' if abs(delta) < 1e-6 else 'mismatch'
@@ -66,13 +86,21 @@ def main() -> int:
                 f'{reconstructed:.6f}',
                 f'{delta:.6f}',
                 '' if delta_pct is None else f'{delta_pct:.6f}',
+                f'{iibb_value:.6f}',
+                '' if iibb_share_pct is None else f'{iibb_share_pct:.6f}',
                 row.get('source_current', ''),
                 status,
             ])
 
+    ba_jan_iibb = iibb_totals.get(('Buenos Aires', '2026-01'), 0.0)
+    ba_jan_total = totals.get(('Buenos Aires', '2026-01'), 0.0)
+    ba_jan_share = (ba_jan_iibb / ba_jan_total * 100.0) if ba_jan_total else None
+
     print(f'Reporte generado: {OUT_FILE}')
     print(f'Filas auditadas: {len(published)}')
     print(f'Diferencias: {mismatches}')
+    if ba_jan_share is not None:
+        print(f'Buenos Aires 2026-01 IIBB/total: {ba_jan_iibb:.6f}/{ba_jan_total:.6f} = {ba_jan_share:.1f}%')
     return 1 if mismatches else 0
 
 
