@@ -69,6 +69,9 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("gov-federal-summary", frontend)
         self.assertNotIn('id="federalSectionReading"', frontend)
         self.assertNotIn("Análisis integral IA · inferencia político-fiscal", frontend)
+        self.assertIn("Recursos que llegan desde Nación", frontend)
+        self.assertIn("% nominal", frontend)
+        self.assertIn("Esto no permite afirmar una mejora real", frontend)
 
 
 if __name__ == "__main__":
