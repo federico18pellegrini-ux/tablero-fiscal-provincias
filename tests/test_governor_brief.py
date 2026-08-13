@@ -72,6 +72,12 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("Recursos que llegan desde Nación", frontend)
         self.assertIn("% nominal", frontend)
         self.assertIn("Esto no permite afirmar una mejora real", frontend)
+        self.assertIn('id="exResFinRank"', frontend)
+        self.assertIn('id="exAutonomiaRank"', frontend)
+        self.assertIn('id="exRigidezRank"', frontend)
+        self.assertIn('id="exCapitalRank"', frontend)
+        self.assertIn("Puesto ${Math.round(rank)} de ${Math.round(total)}", frontend)
+        self.assertIn("Ranking comparable: 23 jurisdicciones", frontend)
 
 
 if __name__ == "__main__":
