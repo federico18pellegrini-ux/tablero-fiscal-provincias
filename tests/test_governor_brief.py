@@ -95,6 +95,9 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertNotIn('id="budgetSection"', frontend)
         self.assertIn("if(comparison) layer2.appendChild(comparison)", frontend)
         self.assertIn("Ordena las 23 jurisdicciones por resultado financiero", frontend)
+        self.assertIn("const replacementKeys=new Set(additionalRows.map(row=>keyFn(row)))", frontend)
+        self.assertIn("replacementKeys.has(key)", frontend)
+        self.assertIn("if(!additionalRows.length) return baseRows.slice()", frontend)
 
     def test_latest_pba_debt_profile_reconciles(self):
         profile = json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8"))

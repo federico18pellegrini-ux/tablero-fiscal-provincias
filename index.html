@@ -1984,11 +1984,14 @@ function toMonthPeriodFromDate(dateRaw){
 }
 
 function mergeRowsReplacingPBA2025_2026(baseRows, additionalRows, keyFn){
+  if(!additionalRows.length) return baseRows.slice();
   const map=new Map();
   const shouldReplace=(row)=>normalizeProvinceName(row?.province)==='buenos aires' && String(row?.period||'').startsWith('202');
+  const replacementKeys=new Set(additionalRows.map(row=>keyFn(row)));
   baseRows.forEach(row=>{
-    if(shouldReplace(row) && +String(row.period).slice(0,4)>=2025) return;
-    map.set(keyFn(row),row);
+    const key=keyFn(row);
+    if(shouldReplace(row) && +String(row.period).slice(0,4)>=2025 && replacementKeys.has(key)) return;
+    map.set(key,row);
   });
   additionalRows.forEach(row=>map.set(keyFn(row),row));
   return Array.from(map.values());
