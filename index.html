@@ -331,6 +331,7 @@ select.psel:focus{outline:none;border-color:var(--gold)}
 .debt-fact{padding:9px 10px;border:1px solid var(--border);border-radius:9px;background:var(--s2)}
 .debt-fact-label{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);margin-bottom:3px}
 .debt-fact-value{font-family:var(--mono);font-size:14px;color:var(--text)}
+.debt-fact-help{font-size:10px;line-height:1.35;color:var(--dim);margin-top:4px}
 .debt-reading{margin-top:12px;padding-left:10px;border-left:2px solid var(--gold);font-size:12px;line-height:1.5;color:var(--muted)}
 .debt-chart{display:grid;grid-template-columns:118px minmax(0,1fr);gap:13px;align-items:center}
 .debt-donut{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;position:relative}
@@ -847,16 +848,18 @@ tr:last-child td{border-bottom:none}
 </section>
 <section class="layer" id="layer3">
   <div class="layer-title">Sección 3 · Sostenibilidad y Alertas de Riesgo</div>
-  <div class="layer-sub">Perfil de deuda, liquidez observada y escenarios 90/180 días.</div>
+  <div class="layer-sub">Cuánto debemos, cuánto cuesta pagar la deuda y qué riesgo genera para la Provincia.</div>
   <div class="kcard" id="debtProfileCard">
-    <div class="k-lbl">Ficha de perfil de deuda <span class="info-dot" title="Unifica stock total, exposición en moneda extranjera y acreedores principales.">i</span></div>
+    <div class="k-lbl">Deuda: peso y principales acreedores <span class="info-dot" title="Unifica stock total, costo anual, exposición cambiaria y acreedores principales.">i</span></div>
     <div class="debt-profile-grid">
       <div>
         <div class="k-val r" id="debtProfileTotal">—</div>
         <div class="debt-stock-meta" id="debtProfileUsd">—</div>
         <div class="debt-facts">
-          <div class="debt-fact"><div class="debt-fact-label">Exposición cambiaria</div><div class="debt-fact-value" id="debtProfileFx">—</div></div>
-          <div class="debt-fact"><div class="debt-fact-label">Deuda / ingresos LTM</div><div class="debt-fact-value" id="debtProfileRatio">—</div></div>
+          <div class="debt-fact"><div class="debt-fact-label">¿Cuánto pesa?</div><div class="debt-fact-value" id="debtProfileRatio">—</div><div class="debt-fact-help">del ingreso de un año · 31/03/2026</div></div>
+          <div class="debt-fact"><div class="debt-fact-label">¿Cuánto se pagó?</div><div class="debt-fact-value" id="debtProfileService">—</div><div class="debt-fact-help">capital + intereses · año 2025</div></div>
+          <div class="debt-fact"><div class="debt-fact-label">¿Cuánto fueron intereses?</div><div class="debt-fact-value" id="debtProfileInterest">—</div><div class="debt-fact-help">sobre recursos totales · año 2025</div></div>
+          <div class="debt-fact"><div class="debt-fact-label">¿Cuánto depende del dólar?</div><div class="debt-fact-value" id="debtProfileFx">—</div><div class="debt-fact-help">pagadera en moneda extranjera · 31/12/2025</div></div>
         </div>
         <div class="debt-reading" id="debtProfileReading">—</div>
       </div>
@@ -867,7 +870,7 @@ tr:last-child td{border-bottom:none}
         <div class="debt-creditor-legend" id="debtProfileCreditors">—</div>
       </div>
     </div>
-    <details class="debt-method-details"><summary>Cómo se calcula y fuentes</summary><div id="debtProfileMethodNote" class="cc-note" style="margin-top:8px"></div></details>
+    <details class="debt-method-details"><summary>Ver fuentes y diferencias de fecha</summary><div id="debtProfileMethodNote" class="cc-note" style="margin-top:8px"></div></details>
   </div>
 </section>
 <!-- KPIs -->
@@ -2507,6 +2510,12 @@ function renderLiquidity(province){
   const liquidityMethodNote=document.getElementById('liquidityMethodNote');
   if(!section||!cards){return;}
 
+  // Para PBA, estos indicadores ya están explicados dentro de la ficha principal de deuda.
+  if(province==='Buenos Aires'&&pbaDebtProfile){
+    section.style.display='none';
+    return;
+  }
+
   section.style.display='block';
   if(cov){
     cov.style.display='block';
@@ -3898,15 +3907,20 @@ function renderDebtProfile(province, c){
     const fxPayable=toN(currency.payable_foreign_currency_pct);
     const usdPayableArs=toN(currency.usd_payable_ars_pct);
     const debtRatio=toN(stock.debt_to_ltm_income_pct);
+    const officialIndicators=official.official_pba_2025_indicators||{};
+    const interestRatio=toN(officialIndicators.interest_paid_to_total_resources_pct);
+    const serviceRatio=toN(officialIndicators.debt_service_paid_to_total_resources_pct);
     document.getElementById('debtProfileTotal').textContent=totalArs===null?ND:`AR$ ${(totalArs/1e6).toFixed(2).replace('.',',')} billones`;
     document.getElementById('debtProfileUsd').textContent=totalUsd===null
       ? 'Corte 31/03/2026'
       : `≈ USD ${Math.round(totalUsd).toLocaleString('es-AR')} M · corte 31/03/2026`;
     document.getElementById('debtProfileFx').textContent=fxPayable===null
       ? 'No disponible'
-      : `${pctN(fxPayable)} pagadera en moneda extranjera`;
+      : pctN(fxPayable);
     document.getElementById('debtProfileRatio').textContent=debtRatio===null?ND:pctN(debtRatio);
-    document.getElementById('debtProfileReading').textContent=`La deuda está concentrada en bonos y mantiene una exposición cambiaria alta. El ${pctN(usdPayableArs)} adicional está denominado en dólares pero se paga en pesos. La baja nominal frente al cierre de 2025 no equivale a caja disponible.`;
+    document.getElementById('debtProfileInterest').textContent=interestRatio===null?ND:pctN(interestRatio);
+    document.getElementById('debtProfileService').textContent=serviceRatio===null?ND:pctN(serviceRatio);
+    document.getElementById('debtProfileReading').textContent=`Lectura: el riesgo no es sólo cuánto se debe. Ocho de cada diez pesos están en bonos y casi el 79% debe pagarse en moneda extranjera. Una devaluación o un cierre del crédito puede encarecer su manejo. Otro ${pctN(usdPayableArs)} está denominado en dólares, aunque se paga en pesos.`;
     const donut=document.getElementById('debtCreditorsDonut');
     if(donut) donut.style.background=`conic-gradient(${segments.join(',')})`;
     document.getElementById('debtDonutValue').textContent=pctN(toN(creditors[0]?.pct));
@@ -3918,14 +3932,17 @@ function renderDebtProfile(province, c){
       debtProfileMethodNote.innerText=`Stock y acreedores: DNAP, 31/03/2026; dato preliminar, sin deuda flotante ni contingente. Equivalente en USD: A3500 BCRA de $${Number(stock.a3500_ars_per_usd).toLocaleString('es-AR',{minimumFractionDigits:4,maximumFractionDigits:4})}. Exposición cambiaria: informe oficial PBA al 31/12/2025. Deuda / ingresos: stock DNAP sobre ingresos LTM al 1T26. ${official.methodology_note}`;
     }
     [
-      ['Deuda total (ARS M)',totalArs,'ars'],
-      ['Deuda en moneda extranjera pagadera en ME (%)',fxPayable,'pct']
-    ].forEach(([kpi,value,unit])=>pushAuditCell({
+      ['Deuda total (ARS M)',totalArs,'ars',stock.source?.url,'1T2026'],
+      ['Deuda / Ingresos LTM (%)',debtRatio,'pct',stock.source?.url,'1T2026'],
+      ['Deuda en moneda extranjera pagadera en ME (%)',fxPayable,'pct',currency.source?.url,'4T2025'],
+      ['Intereses pagados / Recursos totales (%)',interestRatio,'pct',officialIndicators.source?.url,'4T2025'],
+      ['Servicios pagados / Recursos totales (%)',serviceRatio,'pct',officialIndicators.source?.url,'4T2025']
+    ].forEach(([kpi,value,unit,source,period])=>pushAuditCell({
       province,bloque:'Perfil de deuda',kpi,
       valor_mostrado:unit==='ars'?`AR$ ${Math.round(value).toLocaleString('es-AR')} M`:pctN(value),
       tipo_dato:DATA_STATUS.numerico,
-      fuente:unit==='ars'?stock.source?.url:currency.source?.url,
-      periodo:unit==='ars'?'1T2026':'4T2025'
+      fuente:source,
+      periodo:period
     }));
     return;
   }
@@ -3949,6 +3966,10 @@ function renderDebtProfile(province, c){
   document.getElementById('debtProfileFx').textContent=deudaFx===null?'Moneda extranjera: SD':`Moneda extranjera: ${pctN(deudaFx)} · ${debtSourceNote}`;
   const debtProfileRatio=document.getElementById('debtProfileRatio');
   if(debtProfileRatio) debtProfileRatio.textContent=pctN(toN(c.deuda_total_sobre_ingresos_pct));
+  const debtProfileInterest=document.getElementById('debtProfileInterest');
+  if(debtProfileInterest) debtProfileInterest.textContent=ND;
+  const debtProfileService=document.getElementById('debtProfileService');
+  if(debtProfileService) debtProfileService.textContent=ND;
   const debtProfileReading=document.getElementById('debtProfileReading');
   if(debtProfileReading) debtProfileReading.textContent='Lectura comparativa disponible; falta una ficha oficial equivalente para este corte.';
   document.getElementById('debtProfileCreditors').innerHTML=acreedores.length
