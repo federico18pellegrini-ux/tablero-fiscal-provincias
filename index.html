@@ -1077,9 +1077,9 @@ tr:last-child td{border-bottom:none}
 <div class="charts-col">
   <div class="cc">
     <h3>Composición de la recaudación propia</h3>
-    <div class="cc-note">Muestra de qué impuestos vive la provincia y qué tan concentrada o diversificada está su recaudación.</div>
+    <div class="cc-note" id="topTNote">Muestra de qué impuestos vive la provincia y qué tan concentrada o diversificada está su recaudación.</div>
     <div class="leg" id="topTLeg"></div>
-    <div class="cw"><canvas id="cTopT" role="img" aria-label="Composición recaudación propia 2025 trimestral"></canvas></div>
+    <div class="cw"><canvas id="cTopT" role="img" aria-label="Composición porcentual de la recaudación propia en el último corte disponible"></canvas></div>
   </div>
   <div class="charts-row" style="margin-bottom:0">
     <div class="cc">
@@ -3372,16 +3372,47 @@ function chartRonMensual(rows){
 function chartTopTrim(rows){
   if(!hasChartLib()){noData('cTopT','No se pudo cargar la librería de gráficos');return;}
   if(!rows.length){noData('cTopT','Sin datos de recaudación 2025');return;}
-  const periods=['2025-Q1','2025-Q2_YTD','2025-Q3_YTD'];
-  const pLbl={'2025-Q1':'I trim','2025-Q2_YTD':'Acum. I-II','2025-Q3_YTD':'Acum. I-III'};
   const taxes=['Ingresos Brutos','Sellos','Automotores','Inmobiliario','Otros'];
-  const map={};periods.forEach(p=>{map[p]={};taxes.forEach(t=>map[p][t]=0);});
-  rows.forEach(r=>{if(map[r.period]&&taxes.includes(r.tax))map[r.period][r.tax]+=toN(r.value_millions)||0;});
-  document.getElementById('topTLeg').innerHTML=taxes.map(t=>`<span class="li"><span class="ld" style="background:${TAX_COLORS[t]||'#64748b'}"></span>${t}</span>`).join('');
+  const periodOrder={'2025-Q1':1,'2025-Q2_YTD':2,'2025-Q3_YTD':3};
+  const availablePeriods=[...new Set(rows.filter(r=>taxes.includes(r.tax)&&hasValidValue(r.value_millions)).map(r=>r.period))]
+    .sort((a,b)=>(periodOrder[a]||0)-(periodOrder[b]||0));
+  const latestPeriod=availablePeriods[availablePeriods.length-1];
+  if(!latestPeriod){noData('cTopT','Sin composición tributaria disponible');return;}
+  const values=taxes.map(t=>rows
+    .filter(r=>r.period===latestPeriod&&r.tax===t)
+    .reduce((sum,r)=>sum+(toN(r.value_millions)||0),0));
+  const total=values.reduce((sum,value)=>sum+value,0);
+  if(!total){noData('cTopT','Sin composición tributaria disponible');return;}
+  const shares=values.map(value=>(value/total)*100);
+  const dominantIndex=shares.indexOf(Math.max(...shares));
+  const periodLabel={'2025-Q1':'enero-marzo 2025','2025-Q2_YTD':'enero-junio 2025','2025-Q3_YTD':'enero-septiembre 2025'}[latestPeriod]||latestPeriod;
+  const topTNote=document.getElementById('topTNote');
+  if(topTNote) topTNote.textContent=`Foto acumulada ${periodLabel}. El centro muestra el impuesto de mayor peso.`;
+  document.getElementById('topTLeg').innerHTML=taxes.map((tax,index)=>`<span class="li"><span class="ld" style="background:${TAX_COLORS[tax]||'#64748b'}"></span>${tax} · ${shares[index].toFixed(1).replace('.',',')}%</span>`).join('');
+  const centerLabelPlugin={
+    id:'compositionCenterLabel',
+    afterDraw(chart){
+      const meta=chart.getDatasetMeta(0);
+      if(!meta?.data?.length)return;
+      const {x,y}=meta.data[0];
+      const ctx=chart.ctx;
+      ctx.save();
+      ctx.textAlign='center';
+      ctx.textBaseline='middle';
+      ctx.fillStyle='#f3f4f6';
+      ctx.font='700 22px ui-monospace, SFMono-Regular, Menlo, monospace';
+      ctx.fillText(`${shares[dominantIndex].toFixed(1).replace('.',',')}%`,x,y-7);
+      ctx.fillStyle='#9ca3af';
+      ctx.font='600 10px system-ui, sans-serif';
+      ctx.fillText(taxes[dominantIndex],x,y+14);
+      ctx.restore();
+    }
+  };
   charts.cTopT=new Chart(document.getElementById('cTopT'),{
-    type:'bar',
-    data:{labels:periods.map(p=>pLbl[p]),datasets:taxes.map(t=>({label:t,data:periods.map(p=>map[p][t]||0),backgroundColor:(TAX_COLORS[t]||'#64748b')+'cc',borderColor:TAX_COLORS[t]||'#64748b',borderWidth:1,stack:'s',borderRadius:2}))},
-    options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,x:{...BASE_OPTS.scales.x,stacked:true},y:{...BASE_OPTS.scales.y,stacked:true,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>fmtPesosEje(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+fmtPesosNarrativo(ctx.parsed.y)}}}}
+    type:'doughnut',
+    data:{labels:taxes,datasets:[{data:shares,backgroundColor:taxes.map(t=>(TAX_COLORS[t]||'#64748b')+'dd'),borderColor:'#111827',borderWidth:2,hoverOffset:5}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'66%',animation:{duration:500},plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${Number(ctx.raw).toFixed(1).replace('.',',')}%`}}}},
+    plugins:[centerLabelPlugin]
   });
 }
 

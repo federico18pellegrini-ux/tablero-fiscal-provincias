@@ -98,6 +98,9 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("const replacementKeys=new Set(additionalRows.map(row=>keyFn(row)))", frontend)
         self.assertIn("replacementKeys.has(key)", frontend)
         self.assertIn("if(!additionalRows.length) return baseRows.slice()", frontend)
+        self.assertIn("type:'doughnut'", frontend)
+        self.assertIn("compositionCenterLabel", frontend)
+        self.assertIn("Foto acumulada ${periodLabel}", frontend)
 
     def test_latest_pba_debt_profile_reconciles(self):
         profile = json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8"))
