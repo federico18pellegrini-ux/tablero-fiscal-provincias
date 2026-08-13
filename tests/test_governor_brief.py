@@ -79,7 +79,10 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("Puesto ${Math.round(rank)} de ${Math.round(total)}", frontend)
         self.assertIn("Ranking comparable: 23 jurisdicciones", frontend)
         self.assertIn('id="debtCreditorsDonut"', frontend)
+        self.assertIn('id="debtProfileInterest"', frontend)
+        self.assertIn('id="debtProfileService"', frontend)
         self.assertIn("pba_debt_profile_2026q1", frontend)
+        self.assertIn("estos indicadores ya están explicados dentro de la ficha principal de deuda", frontend)
 
     def test_latest_pba_debt_profile_reconciles(self):
         profile = json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8"))
