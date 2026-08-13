@@ -1148,10 +1148,10 @@ tr:last-child td{border-bottom:none}
     <div class="cc">
       <div class="toggle-row">
         <div class="toggle-pill">
-          <button class="toggle-btn active" id="modeReal">Pesos constantes</button>
-          <button class="toggle-btn" id="modeNominal">Pesos corrientes</button>
+          <button class="toggle-btn" id="modeReal">Pesos constantes</button>
+          <button class="toggle-btn active" id="modeNominal">Pesos corrientes</button>
         </div>
-        <div class="toggle-note" id="modeNote">Modo actual: pesos constantes. Es la vista recomendada para comparar la evolución real porque descuenta inflación.</div>
+        <div class="toggle-note" id="modeNote">Modo actual: pesos corrientes. Estás viendo los montos nominales de cada período, sin descontar inflación.</div>
       </div>
       <h3>Transferencias de Nación · histórico anual</h3>
       <div class="cc-note">Muestra cómo evolucionaron los fondos nacionales recibidos por la provincia. Podés comparar total de recursos nacionales y CFI neta.</div>
@@ -1195,6 +1195,7 @@ tr:last-child td{border-bottom:none}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
+var CONSTANT_PRICE_BASE = 'abril de 2026';
 'use strict';
 
 /* ── FORMATTING ─────────────────────────────────────────────────── */
@@ -1665,125 +1666,6 @@ function alertaFiscal(resultado,iibb,deuda){
   if(resultado<-3||iibb>85||deuda>40)return 'Existen señales fiscales adversas';
   return 'Sin señal dominante';
 }
-function scoreShockNacion(ronRealYoY){
-  if(ronRealYoY===null||ronRealYoY===undefined||isNaN(ronRealYoY)) return null;
-  if(ronRealYoY>-1) return 20;
-  if(ronRealYoY>=-5) return 45;
-  if(ronRealYoY>=-12) return 70;
-  return 90;
-}
-function weightedAverageSafe(components){
-  const safe=(Array.isArray(components)?components:[]).filter(c=>Number.isFinite(toN(c?.score))&&Number.isFinite(toN(c?.weight))&&toN(c.weight)>0);
-  if(!safe.length) return {score:null, used:[], weightUsed:0};
-  const totalW=safe.reduce((a,b)=>a+toN(b.weight),0);
-  const val=safe.reduce((a,b)=>a+(toN(b.score)*toN(b.weight)),0)/totalW;
-  return {
-    score:Math.max(0,Math.min(100,val)),
-    used:safe.map(c=>c.name),
-    weightUsed:totalW
-  };
-}
-function scoreVulnerableFunds(v){
-  if(!Number.isFinite(toN(v))) return null;
-  if(v<2) return 25;
-  if(v<5) return 45;
-  if(v<10) return 65;
-  return 82;
-}
-function scoreTnaShock(v){
-  if(!Number.isFinite(toN(v))) return null;
-  if(v<1) return 20;
-  if(v<3) return 45;
-  if(v<6) return 70;
-  return 88;
-}
-function scoreReclamos(v){
-  if(!Number.isFinite(toN(v))) return null;
-  if(v<1) return 20;
-  if(v<4) return 45;
-  if(v<8) return 68;
-  return 90;
-}
-function scoreObraFrenada(v){
-  if(!Number.isFinite(toN(v))) return null;
-  if(v<1) return 20;
-  if(v<2.5) return 45;
-  if(v<5) return 70;
-  return 90;
-}
-function scoreBrechaAporteRecibe(aporta,recibe){
-  if(!Number.isFinite(toN(aporta))||!Number.isFinite(toN(recibe))) return null;
-  const gap=toN(aporta)-toN(recibe);
-  if(gap<=0) return 15;
-  if(gap<4) return 35;
-  if(gap<10) return 60;
-  if(gap<16) return 80;
-  return 95;
-}
-function scoreSubrepresentacion(popShare,econShare,recibeShare){
-  const pop=toN(popShare); const econ=toN(econShare); const recibe=toN(recibeShare);
-  if(!Number.isFinite(pop)&&!Number.isFinite(econ)) return null;
-  if(!Number.isFinite(recibe)) return null;
-  const demanda=Number.isFinite(pop)&&Number.isFinite(econ)?(pop+econ)/2:(Number.isFinite(pop)?pop:econ);
-  const gap=demanda-recibe;
-  if(gap<=0) return 20;
-  if(gap<3) return 45;
-  if(gap<8) return 65;
-  if(gap<14) return 82;
-  return 95;
-}
-function calcIANDebug(data){
-  const estructural = weightedAverageSafe([
-    {name:'castigoEstructuralFederal', score:weightedAverageSafe([
-      {name:'brechaAporteRecibe', score:scoreBrechaAporteRecibe(data.shareAportaNacion,data.shareRecibeNacion), weight:0.45},
-      {name:'subrepresentacionReparto', score:scoreSubrepresentacion(data.populationShare,data.economicShare,data.shareRecibeNacion), weight:0.35},
-      {name:'desbalancePoblacionRecibe', score:scoreBrechaAporteRecibe(data.populationShare,data.shareRecibeNacion), weight:0.20}
-    ]).score, weight:0.70},
-    {name:'fondosNacionalesVulnerables', score:scoreVulnerableFunds(data.vulnerableFundsShare), weight:0.30}
-  ]);
-  const coyuntural = weightedAverageSafe([
-    {name:'ronReal', score:scoreShockNacion(data.ronRealYoY), weight:0.30},
-    {name:'shockTnaFondosRecortados', score:scoreTnaShock(data.tnaShockShare), weight:0.25},
-    {name:'deudaReclamosNacion', score:scoreReclamos(data.reclamosNacionShare), weight:0.30},
-    {name:'obraPublicaNacionalFrenada', score:scoreObraFrenada(data.obraFrenadaShare), weight:0.15}
-  ]);
-  const final = weightedAverageSafe([
-    {name:'estructural', score:estructural.score, weight:0.65},
-    {name:'coyuntural', score:coyuntural.score, weight:0.35}
-  ]);
-  return {
-    ian:final.score===null?null:Math.round(final.score),
-    scoreEstructural:estructural.score===null?null:Math.round(estructural.score*10)/10,
-    scoreCoyuntural:coyuntural.score===null?null:Math.round(coyuntural.score*10)/10,
-    componentesUsados:{estructural:estructural.used,coyuntural:coyuntural.used,final:final.used},
-    pesosEfectivos:{estructural:estructural.weightUsed,coyuntural:coyuntural.weightUsed,final:final.weightUsed}
-  };
-}
-function calcIANSeguro(data){
-  return calcIANDebug(data).ian;
-}
-function semaforoIAN(ian){
-  if(ian===null||ian===undefined||isNaN(ian)) return {label:'N/D',cls:'m'};
-  if(ian<=24) return {label:'VERDE',cls:'g'};
-  if(ian<=49) return {label:'AMARILLO',cls:'a'};
-  if(ian<=74) return {label:'NARANJA',cls:'a'};
-  return {label:'ROJO',cls:'r'};
-}
-function textoIAN(ian){
-  if(ian===null||ian===undefined||isNaN(ian)) return 'No hay datos suficientes para medir la presión de Nación';
-  if(ian<=24) return 'la presión de Nación sobre la caja provincial es baja';
-  if(ian<=49) return 'la presión de Nación sobre la caja provincial es media';
-  if(ian<=74) return 'la presión de Nación sobre la caja provincial es alta';
-  return 'la presión de Nación sobre la caja provincial es muy alta';
-}
-function diagnostico(resultado,ian){
-  if(resultado==='ROJO' && ian<=30) return 'Problema principalmente de gestión provincial';
-  if(resultado==='ROJO' && ian>60) return 'Crisis fiscal con fuerte componente nacional';
-  if(resultado==='AMARILLO' && ian>60) return 'Deterioro fiscal fuertemente influido por Nación';
-  if(resultado==='VERDE' && ian>60) return 'La provincia compensa presión nacional elevada';
-  return 'Situación mixta';
-}
-
 function parseCSV(txt){
   const lines=txt.trim().split(/\r?\n/);
   const hdrs=splitL(lines[0]);
@@ -1815,19 +1697,23 @@ const BASE_OPTS={
 /* ── DATA GLOBALS ────────────────────────────────────────────────── */
 let manifest,topMensual=[],topTrim=[],serieTop=[],info2026=[],info2025=[],topMensual2025=[],ronSeries=[],cross1816={},latestRanking1816={},fiscalProvinciasData={},budgetPBA=null,budgetPBAQuarterly=[],pbaRonMonthlyRaw=[],pbaRonDailyRaw=[],pbaTopMonthlyRaw=[],nationalDebtMonthlyRaw=[],municipiosPBAAnnualRaw=[],liquidityRisk=null,realDynamics=null,deteriorationAttribution=null,federalFairness=null,scenariosData=null,reclamosNacionData=null,governorBrief=null,pbaDebtProfile=null;
 let charts={};
-const YEAR_DEFLATOR = {"2000": 721.1810727471235, "2001": 731.4071700983172, "2002": 520.5193149801797, "2003": 502.69596820298784, "2004": 476.82015402982523, "2005": 426.1269174334221, "2006": 386.9036977328477, "2007": 356.55520309355893, "2008": 330.87979867163995, "2009": 310.1179740041745, "2010": 280.44892578759163, "2011": 256.9074772650836, "2012": 232.78731530656742, "2013": 211.14325572424374, "2014": 170.01976130602242, "2015": 147.64221779144523, "2016": 108.06298963888307, "2017": 88.28538001398147, "2018": 59.50968976749627, "2019": 39.063076372251324, "2020": 28.80141241349951, "2021": 19.064686403078348, "2022": 9.91168252000688, "2023": 3.8032155238550325, "2024": 1.4297180188843337, "2025": 1.088488548, "2026": 1.0};
-function deflateAnnual(year,value){ if(value===null||value===undefined||isNaN(value)) return null; const f=YEAR_DEFLATOR[String(year)]; return f? value*f : value; }
+const YEAR_DEFLATOR = {"2000": 739.9317806385487, "2001": 750.4237565208736, "2002": 534.0528171696644, "2003": 515.7660633762655, "2004": 489.2174780346007, "2005": 437.20621728669107, "2006": 396.9631938739018, "2007": 365.82563837399147, "2008": 339.4826734371026, "2009": 318.1810413282831, "2010": 287.740597858069, "2011": 216.227945, "2012": 197.468443, "2013": 178.220617, "2014": 160.703892, "2015": 139.96332, "2016": 109.561777, "2017": 89.510381, "2018": 60.454927, "2019": 39.991267, "2020": 29.80609, "2021": 19.730775, "2022": 10.228741, "2023": 3.924874, "2024": 1.475452, "2025": 1.123307, "2026": 1.0};
+function deflateAnnual(year,value){
+  if(value===null||value===undefined||isNaN(value)) return null;
+  const f=ACTIVE_DEFLATOR_YEAR[String(year)] ?? YEAR_DEFLATOR[String(year)];
+  return f ? value*f : null;
+}
 
 function hasChartLib(){ return typeof Chart !== 'undefined'; }
 
-const DEFLACTOR_MONTH = {"2011-12": 209.5255726984706, "2012-12": 191.34755497577225, "2013-12": 172.69634925611211, "2014-12": 155.7225872462688, "2015-01": 154.02827620798104, "2015-02": 152.35239981007027, "2015-03": 150.9934586819329, "2015-04": 149.05573413813713, "2015-05": 147.43396057184682, "2015-06": 145.97421838796714, "2015-07": 144.52892909699716, "2015-08": 142.6741649526132, "2015-09": 140.98237643538855, "2015-10": 139.3106486515697, "2015-11": 137.79490469987113, "2015-12": 135.62490620066055, "2016-01": 134.016705731878, "2016-02": 132.29684672446004, "2016-03": 129.0700943653269, "2016-04": 126.04501402863954, "2016-05": 122.85089086612041, "2016-06": 117.89912751067217, "2016-07": 114.35414889492937, "2016-08": 112.00210469630693, "2016-09": 111.7785476011047, "2016-10": 110.45311027777144, "2016-11": 107.86436550563617, "2016-12": 106.16571408035057, "2017-01": 104.90683209520806, "2017-02": 103.56054501007708, "2017-03": 101.03467805861179, "2017-04": 98.66667779161307, "2017-05": 96.16635262340455, "2017-06": 94.93223358677646, "2017-07": 93.62153213686041, "2017-08": 92.05657043939078, "2017-09": 90.69612851171507, "2017-10": 88.91777305070106, "2017-11": 87.77667625932978, "2017-12": 86.73584610605708, "2018-01": 83.88379700779214, "2018-02": 82.56279233050407, "2018-03": 80.47055782700203, "2018-04": 78.50786129463613, "2018-05": 76.51838332810539, "2018-06": 75.09164212767948, "2018-07": 72.27299531056735, "2018-08": 70.3044701464663, "2018-09": 67.5355140696122, "2018-10": 63.354140778247846, "2018-11": 60.279867534013185, "2018-12": 58.58101801167462, "2019-01": 56.985426081395545, "2019-02": 55.43329385349761, "2019-03": 53.40394398217496, "2019-04": 50.95796181505244, "2019-05": 49.37786997582601, "2019-06": 47.93967958818059, "2019-07": 46.72483390660876, "2019-08": 45.76379422782445, "2019-09": 44.04600021927281, "2019-10": 41.631380169445, "2019-11": 40.34048466031492, "2019-12": 38.75166634036016, "2020-01": 37.3330118885936, "2020-02": 36.636910587432396, "2020-03": 35.98910666741885, "2020-04": 34.738519949246, "2020-05": 34.25889541345759, "2020-06": 33.75260631867743, "2020-07": 33.09079050850728, "2020-08": 32.56967569734969, "2020-09": 31.68256390792771, "2020-10": 30.819614696427735, "2020-11": 29.7486628343897, "2020-12": 28.88219692659194, "2021-01": 27.851684596520677, "2021-02": 26.96194055810327, "2021-03": 26.025039148748327, "2021-04": 24.73863036953263, "2021-05": 23.764294303105313, "2021-06": 22.982876502036085, "2021-07": 22.291829778890477, "2021-08": 21.62156137622743, "2021-09": 21.07364656552381, "2021-10": 20.30216432131388, "2021-11": 19.558925165042275, "2021-12": 19.11918393454768, "2022-01": 18.366170926558773, "2022-02": 17.676776637688906, "2022-03": 16.899404051327828, "2022-04": 15.83824184754248, "2022-05": 14.91359872649951, "2022-06": 14.230533135972815, "2022-07": 13.488657000922098, "2022-08": 12.559270950579235, "2022-09": 11.737636402410498, "2022-10": 11.052388326186911, "2022-11": 10.397354963487217, "2022-12": 9.91168252000688, "2023-01": 9.430716003812446, "2023-02": 8.896901890389099, "2023-03": 8.346061810871575, "2023-04": 7.749361012879827, "2023-05": 7.14885702295187, "2023-06": 6.631592785669637, "2023-07": 6.2562196091223, "2023-08": 5.8854370734922865, "2023-09": 5.2361539799753425, "2023-10": 4.6460993611138806, "2023-11": 4.290027110908477, "2023-12": 3.8032155238550325, "2024-01": 3.0304506166175558, "2024-02": 2.5128114565651374, "2024-03": 2.219798106506305, "2024-04": 1.9998181139696438, "2024-05": 1.8380681194573933, "2024-06": 1.7639809207844466, "2024-07": 1.6864062340195471, "2024-08": 1.621544455788026, "2024-09": 1.5561846984530001, "2024-10": 1.5035600951236716, "2024-11": 1.4640312513375577, "2024-12": 1.4297180188843337, "2025-01": 1.3921304955056804, "2025-02": 1.3621629114536988, "2025-03": 1.330237218216503, "2025-04": 1.2827745595144677, "2025-05": 1.2478351746249685, "2025-06": 1.2293942607142547, "2025-07": 1.2100337211754475, "2025-08": 1.1874717577776719, "2025-09": 1.1653304786827008, "2025-10": 1.1413618792190998, "2025-11": 1.1157007616999999, "2025-12": 1.088488548, "2026-01": 1.058841, "2026-02": 1.029, "2026-03": 1.0};
-const DEFLACTOR_YEAR = {"2011": 209.5255726984706, "2012": 191.34755497577225, "2013": 172.69634925611211, "2014": 155.7225872462688, "2015": 135.62490620066055, "2016": 106.16571408035057, "2017": 86.73584610605708, "2018": 58.58101801167462, "2019": 38.75166634036016, "2020": 28.88219692659194, "2021": 19.11918393454768, "2022": 9.91168252000688, "2023": 3.8032155238550325, "2024": 1.4297180188843337, "2025": 1.088488548, "2026": 1.0};
+const DEFLACTOR_MONTH = {"2011-12": 216.227945, "2012-12": 197.468443, "2013-12": 178.220617, "2014-12": 160.703892, "2015-01": 158.955383, "2015-02": 157.225899, "2015-03": 155.823488, "2015-04": 153.823778, "2015-05": 152.150127, "2015-06": 150.643689, "2015-07": 149.152168, "2015-08": 147.238073, "2015-09": 145.492167, "2015-10": 143.766963, "2015-11": 142.202733, "2015-12": 139.96332, "2016-01": 138.303676, "2016-02": 136.528802, "2016-03": 133.198831, "2016-04": 130.076984, "2016-05": 126.780685, "2016-06": 121.670523, "2016-07": 118.012146, "2016-08": 115.584865, "2016-09": 115.354156, "2016-10": 113.986321, "2016-11": 111.314766, "2016-12": 109.561777, "2017-01": 108.262626, "2017-02": 106.873273, "2017-03": 104.266608, "2017-04": 101.82286, "2017-05": 99.242553, "2017-06": 97.968957, "2017-07": 96.616329, "2017-08": 95.001306, "2017-09": 93.597346, "2017-10": 91.762104, "2017-11": 90.584505, "2017-12": 89.510381, "2018-01": 86.5671, "2018-02": 85.203838, "2018-03": 83.044677, "2018-04": 81.019197, "2018-05": 78.966079, "2018-06": 77.493698, "2018-07": 74.584888, "2018-08": 72.553393, "2018-09": 69.695862, "2018-10": 65.380734, "2018-11": 62.20812, "2018-12": 60.454927, "2019-01": 58.808295, "2019-02": 57.206512, "2019-03": 55.112247, "2019-04": 52.588022, "2019-05": 50.957386, "2019-06": 49.47319, "2019-07": 48.219483, "2019-08": 47.227702, "2019-09": 45.454958, "2019-10": 42.963098, "2019-11": 41.630909, "2019-12": 39.991267, "2020-01": 38.527233, "2020-02": 37.808864, "2020-03": 37.140338, "2020-04": 35.849747, "2020-05": 35.35478, "2020-06": 34.832296, "2020-07": 34.14931, "2020-08": 33.611525, "2020-09": 32.696036, "2020-10": 31.805483, "2020-11": 30.700273, "2020-12": 29.80609, "2021-01": 28.742613, "2021-02": 27.824408, "2021-03": 26.857537, "2021-04": 25.529978, "2021-05": 24.524474, "2021-06": 23.71806, "2021-07": 23.004908, "2021-08": 22.313199, "2021-09": 21.747757, "2021-10": 20.951597, "2021-11": 20.184582, "2021-12": 19.730775, "2022-01": 18.953674, "2022-02": 18.242227, "2022-03": 17.439988, "2022-04": 16.344881, "2022-05": 15.39066, "2022-06": 14.685744, "2022-07": 13.920137, "2022-08": 12.961021, "2022-09": 12.113104, "2022-10": 11.405936, "2022-11": 10.729949, "2022-12": 10.228741, "2023-01": 9.732389, "2023-02": 9.181499, "2023-03": 8.613038, "2023-04": 7.99725, "2023-05": 7.377537, "2023-06": 6.843726, "2023-07": 6.456346, "2023-08": 6.073702, "2023-09": 5.40365, "2023-10": 4.79472, "2023-11": 4.427258, "2023-12": 3.924874, "2024-01": 3.12739, "2024-02": 2.593192, "2024-03": 2.290806, "2024-04": 2.063789, "2024-05": 1.896865, "2024-06": 1.820408, "2024-07": 1.740352, "2024-08": 1.673415, "2024-09": 1.605964, "2024-10": 1.551656, "2024-11": 1.510863, "2024-12": 1.475452, "2025-01": 1.436662, "2025-02": 1.405736, "2025-03": 1.372789, "2025-04": 1.323808, "2025-05": 1.287751, "2025-06": 1.268721, "2025-07": 1.248741, "2025-08": 1.225457, "2025-09": 1.202607, "2025-10": 1.177872, "2025-11": 1.15139, "2025-12": 1.123307, "2026-01": 1.09165, "2026-02": 1.060884, "2026-03": 1.026, "2026-04": 1.0};
+const DEFLACTOR_YEAR = {"2011": 216.227945, "2012": 197.468443, "2013": 178.220617, "2014": 160.703892, "2015": 139.96332, "2016": 109.561777, "2017": 89.510381, "2018": 60.454927, "2019": 39.991267, "2020": 29.80609, "2021": 19.730775, "2022": 10.228741, "2023": 3.924874, "2024": 1.475452, "2025": 1.123307, "2026": 1.0};
 const DEFLACTOR_TRIM = {"2025-Q1": 1.330237218216503, "2025-Q2_YTD": 1.2293942607142547, "2025-Q3_YTD": 1.1653304786827008};
-let displayMode = 'real';
+let displayMode = 'nominal';
 
 function deflateValue(value, factor){
   if(value===null || value===undefined || isNaN(value)) return null;
-  if(!factor || isNaN(factor)) return value;
+  if(!factor || isNaN(factor)) return null;
   return value * factor;
 }
 function valueForMode(value, factor){
@@ -1840,10 +1726,9 @@ function setModeButtons(){
   if(nom) nom.classList.toggle('active', displayMode==='nominal');
   if(real) real.classList.toggle('active', displayMode==='real');
   if(note) note.textContent = displayMode==='real'
-    ? 'Modo actual: pesos constantes. Es la vista recomendada para comparar la evolución real porque descuenta inflación.'
+    ? `Modo actual: pesos constantes de ${CONSTANT_PRICE_BASE}. Sirve para comparar evolución real; si falta el IPC de un mes, ese dato no se transforma.`
     : 'Modo actual: pesos corrientes. Estás viendo los montos nominales de cada período, sin descontar inflación.';
 }
-
 
 /* ── LOAD ALL ────────────────────────────────────────────────────── */
 const EMBEDDED_MANIFEST = {"project": "Sistema fiscal provincias - capa intermedia normalizada", "generated_at": "2026-04-18T02:15:27.233604Z", "province_universe": ["Buenos Aires", "CABA", "Catamarca", "Chaco", "Chubut", "Corrientes", "Córdoba", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán"], "files": {"top_mensual_2026": "top_mensual_2026_normalizado.csv", "top_trim_2025": "top_trim_2025_normalizado.csv", "serie_top_1984_2024": "serie_top_1984_2024_normalizado.csv", "serie_ron_2003_2025": "serie_ron_2003_2025_normalizado.csv", "informacion_consolidada_2026": "informacion_consolidada_2026_normalizado.csv", "cross_section_1816": "dashboard_cross_section_1816.json"}, "notes": {"cross_section_1816_scope": "21-22 jurisdicciones comparables; algunas provincias tienen datos incompletos en 1816", "monthly_scope_2026": "top_mensual_20262 e informacion_consolidada_2026_0 tienen distinto nivel de cobertura por jurisdicción y mes", "ron_annual_scope": "serie_ron_2003_2025 es anual por provincia y categoría", "ron_category_normalization": "serie_ron_2003_2025 tiene columna category_normalized que unifica variantes históricas de nombres de categorías. Usar category_normalized para filtrar, no category.", "provinces_sin_datos_1816": "Santiago del Estero, La Pampa y Neuquén tienen datos_incompletos_1816=true en el cross_section. No aparecerán en rankings comparativos.", "top_mensual_cobertura": "Buenos Aires y Tierra del Fuego solo tienen enero 2026 en top_mensual. CABA, Santa Fe, Salta, Misiones y La Pampa no tienen datos en top_mensual_2026."}};
@@ -2101,12 +1986,20 @@ async function loadAll(){
     latestRanking1816['Buenos Aires'].resultado_primario_ltm_pct=-2.7;
     latestRanking1816['Buenos Aires'].rank_resultado_primario=null;
   }
-  topMensual = normalizeDatasetProvinceRows(EMBEDDED_TOP_M);
-  topTrim = normalizeDatasetProvinceRows(EMBEDDED_TOP_T);
-  serieTop = normalizeDatasetProvinceRows(EMBEDDED_SERIE_TOP);
-  info2026 = normalizeDatasetProvinceRows(EMBEDDED_INFO2026);
-  ronSeries = normalizeDatasetProvinceRows(EMBEDDED_RON);
-  cross1816 = normalizeCrossSectionProvinces(EMBEDDED_CROSS.provinces || {});
+  const [topMensualLoaded,topTrimLoaded,serieTopLoaded,info2026Loaded,ronSeriesLoaded,crossLoaded]=await Promise.all([
+    loadCSV(manifest?.files?.top_mensual_2026 || 'top_mensual_2026_normalizado.csv'),
+    loadCSV(manifest?.files?.top_trim_2025 || 'top_trim_2025_normalizado.csv'),
+    loadCSV(manifest?.files?.serie_top_1984_2024 || 'serie_top_1984_2024_normalizado.csv'),
+    loadCSV(manifest?.files?.informacion_consolidada_2026 || 'informacion_consolidada_2026_normalizado.csv'),
+    loadCSV(manifest?.files?.serie_ron_2003_2025 || 'serie_ron_2003_2025_normalizado.csv'),
+    loadJSON(manifest?.files?.cross_section_1816 || 'dashboard_cross_section_1816.json')
+  ]);
+  topMensual = normalizeDatasetProvinceRows(topMensualLoaded.length?topMensualLoaded:EMBEDDED_TOP_M);
+  topTrim = normalizeDatasetProvinceRows(topTrimLoaded.length?topTrimLoaded:EMBEDDED_TOP_T);
+  serieTop = normalizeDatasetProvinceRows(serieTopLoaded.length?serieTopLoaded:EMBEDDED_SERIE_TOP);
+  info2026 = normalizeDatasetProvinceRows(info2026Loaded.length?info2026Loaded:EMBEDDED_INFO2026);
+  ronSeries = normalizeDatasetProvinceRows(ronSeriesLoaded.length?ronSeriesLoaded:EMBEDDED_RON);
+  cross1816 = normalizeCrossSectionProvinces(crossLoaded?.provinces || EMBEDDED_CROSS.provinces || {});
   fiscalProvinciasData = normalizeProvincePayloadMap((await loadJSON('dashboard_fiscal_provincias.json'))?.provinces || {});
   budgetPBA = EMBEDDED_BUDGET;
   liquidityRisk = await loadJSON(manifest?.files?.liquidity_risk) || EMBEDDED_LIQUIDITY;
@@ -2140,7 +2033,7 @@ async function loadAll(){
   const provs = (manifest?.province_universe || Object.keys(cross1816 || {})).map(canonicalProvinceName);
   const ts = manifest?.data_cutoff || manifest?.generated_at?.slice(0,10) || '—';
   const comparables1816=Object.values(cross1816||{}).filter(v=>!v?.datos_incompletos_1816).length;
-  document.getElementById('metaBox').innerHTML=`${provs.length} jurisdicciones · PBA: 23 comparables 1T2026<br><span style="color:var(--dim)">Base general: ${comparables1816} comparables 3T2025 · corte ${ts}</span>`;
+  document.getElementById('metaBox').innerHTML=`${provs.length} jurisdicciones · PBA: 23 comparables 1T2026<br><span style="color:var(--dim)">Referencia histórica: ${comparables1816} comparables 3T2025 · corte de datos ${ts}</span>`;
 
   const sel=document.getElementById('psel');
   sel.innerHTML='';
@@ -2406,71 +2299,7 @@ function render(province){
     const el=document.getElementById(id); if(el){el.className='bc-val '+cls; el.textContent=val;}
     const tx=document.getElementById(textId); if(tx) tx.textContent=text;
   };
-  const ronAnual=pRon
-    .filter(r=>r.period_type==='year'&&(r.category_normalized==='Total | (1) + (2)'||r.category==='Total | (1) + (2)'||r.category==='T O T A L'))
-    .map(r=>({year:+r.year,val:toN(r.value_millions)}))
-    .filter(r=>Number.isFinite(r.year)&&r.val!==null)
-    .sort((a,b)=>a.year-b.year);
-  let ronRealYoY=null;
-  if(ronAnual.length>=2){
-    const last=ronAnual[ronAnual.length-1];
-    const prev=ronAnual[ronAnual.length-2];
-    const lastReal=deflateAnnual(last.year,last.val);
-    const prevReal=deflateAnnual(prev.year,prev.val);
-    if(prevReal&&lastReal!==null) ronRealYoY=((lastReal/prevReal)-1)*100;
-  }
-  if((ronRealYoY===null||ronRealYoY===undefined) && province==='CABA' && !pInfo.length){
-    ronRealYoY=0;
-  }
-  const totalNac=pInfo
-    .filter(r=>r.period_type==='month'&&(r.category_normalized==='Total | Recursos | Origen Nacional | (1)'||r.category==='Total | Recursos | Origen Nacional | (1)'))
-    .reduce((a,b)=>a+((valueForMode(toN(b.value_millions), DEFLACTOR_MONTH[b.period])) ?? 0),0);
-  const tnaMonto=pInfo
-    .filter(r=>r.period_type==='month'&&(r.category_normalized==='Compensación Consenso Fiscal'||r.category==='Compensación Consenso Fiscal'))
-    .reduce((a,b)=>a+((valueForMode(toN(b.value_millions), DEFLACTOR_MONTH[b.period])) ?? 0),0);
-  const transferNoAutoShare=totalNac>0?(tnaMonto/totalNac)*100:(province==='CABA'&&!pInfo.length?0:null);
-  const totalTopAll=topMensual.reduce((acc,r)=>acc+(valueForMode(toN(r.value_millions)||0, DEFLACTOR_MONTH[r.period])||0),0);
-  const totalRonAll=info2026
-    .filter(r=>r.period_type==='month'&&(r.category_normalized==='Total | Recursos | Origen Nacional | (1)'||r.category==='Total | Recursos | Origen Nacional | (1)'))
-    .reduce((acc,r)=>acc+(valueForMode(toN(r.value_millions)||0, DEFLACTOR_MONTH[r.period])||0),0);
-  const shareAportaNacion=totalTopAll>0?(topYtd/totalTopAll)*100:null;
-  const shareRecibeNacion=totalRonAll>0?(totalNac/totalRonAll)*100:null;
-  const latestYearRON=(ronSeries||[])
-    .map(r=>toN(r.year))
-    .filter(y=>Number.isFinite(y))
-    .sort((a,b)=>a-b)
-    .pop();
-  const cfiProv=(pRon||[])
-    .filter(r=>toN(r.year)===latestYearRON&&(r.category_normalized==='CFI | Neta'||r.category==='CFI | Neta'))
-    .reduce((a,b)=>a+(toN(b.value_millions)||0),0);
-  const cfiAll=(ronSeries||[])
-    .filter(r=>toN(r.year)===latestYearRON&&(r.category_normalized==='CFI | Neta'||r.category==='CFI | Neta'))
-    .reduce((a,b)=>a+(toN(b.value_millions)||0),0);
-  const vulnerableFundsShare=totalNac>0?(tnaMonto/totalNac)*100:null;
   const aut=toN(cross.autonomia_fiscal_pct);
-  const ianData={
-    provincia:province,
-    shareAportaNacion,
-    shareRecibeNacion,
-    populationShare:shareAportaNacion,
-    economicShare:shareAportaNacion,
-    vulnerableFundsShare,
-    ronRealYoY,
-    tnaShockShare:transferNoAutoShare,
-    reclamosNacionShare:toN(cross.deuda_comp_nacion_pct),
-    obraFrenadaShare:cfiAll>0?(cfiProv/cfiAll)*100:null
-  };
-  const ianDebug=calcIANDebug(ianData);
-  const ian=ianDebug.ian;
-  const semIan=semaforoIAN(ian);
-  const resultadoFiscal=rf===null?ND:(rf>=0?'VERDE':(rf<=-5?'ROJO':'AMARILLO'));
-  const semTxt=ian===null
-    ? 'Qué mide: cuánto del problema fiscal viene del esquema nacional. Qué implica hoy: no hay datos suficientes para esta provincia.'
-    : `Qué mide: cuánto del problema fiscal viene del esquema nacional. Qué implica hoy: ${textoIAN(ian)} (IAN ${ian}/100).`;
-  setQuick('qSemaforo', partialStructural?ND:semIan.label, partialStructural?'m':semIan.cls, 'qSemaforoTxt', partialStructural
-    ? 'Qué mide: cuánto del problema fiscal viene del esquema nacional. Qué implica hoy: base estructural parcial, lectura prudente.'
-    : semTxt);
-  console.debug('[IAN]', province, ianDebug);
 
   const autRankTxt=calcularRanking(Object.values(cross1816||{}).map(v=>toN(v.autonomia_fiscal_pct)), aut, 'desc');
   const autRank=autRankTxt==='N/D'?null:Number(autRankTxt.split('/')[0]);
@@ -2482,16 +2311,6 @@ function render(province){
   setQuick('qNacion', partialStructural?ND:dep, partialStructural?'m':depCls, 'qNacionTxt', partialStructural
     ? 'Qué mide: cuánto puede sostenerse la provincia con recursos propios. Qué implica hoy: faltan datos estructurales para una lectura concluyente.'
     : depTxt);
-
-  const castScore=ianDebug.scoreEstructural;
-  const castLbl=castScore===null?'N/D':(castScore>=75?'ALTO':(castScore>=50?'MEDIO-ALTO':(castScore>=25?'MEDIO':'BAJO')));
-  const castCls=castScore===null?'m':(castScore>=75?'r':(castScore>=50?'a':'g'));
-  const castTxt=castScore===null
-    ? 'Qué mide: si la provincia recibe menos de lo que le correspondería por su peso económico y poblacional. Qué implica hoy: no hay datos suficientes para estimarlo.'
-    : `Qué mide: si la provincia recibe menos de lo que le correspondería por su peso económico y poblacional. Qué implica hoy: el castigo estructural es ${castLbl.toLowerCase()} (${Math.round(castScore)}/100).`;
-  setQuick('qCastigo', partialStructural?ND:castLbl, partialStructural?'m':castCls, 'qCastigoTxt', partialStructural
-    ? 'Qué mide: si la provincia recibe menos de lo que le correspondería. Qué implica hoy: lectura en revisión por datos estructurales parciales.'
-    : castTxt);
 
   let deudaTxt='Qué mide: cuánto condiciona la deuda a las finanzas provinciales. Qué implica hoy: la deuda limita parte del margen fiscal de la provincia.'; let deudaLbl='MEDIA'; let deudaCls='a';
   if(debt!==null){ if(debt>=35){{deudaLbl='ALTA'; deudaCls='r'; deudaTxt='Qué mide: cuánto condiciona la deuda a las finanzas provinciales. Qué implica hoy: una parte muy grande de los ingresos ya está comprometida por deuda.';}} else if(debt<=15){{deudaLbl='BAJA'; deudaCls='g'; deudaTxt='Qué mide: cuánto condiciona la deuda a las finanzas provinciales. Qué implica hoy: la deuda hoy deja más margen para salarios, obra y caja.';}} else {{deudaTxt='Qué mide: cuánto condiciona la deuda a las finanzas provinciales. Qué implica hoy: la deuda reduce el margen para sostener salarios, obra y caja.';}}}
@@ -2522,7 +2341,7 @@ function render(province){
     `Recaudación propia 2026: ${mP.length?mP.map(monthLabel).join(', '):'sin datos'} · `+
     `Recursos de Nación 2026: ${rP.length?rP.map(monthLabel).join(', '):'sin datos'} · `+
     `Serie histórica: ${(pTopH.length||pRon.length)?'disponible':'no disponible'} · `+
-    `Datos estructurales: ${partialStructural?'parciales':'disponibles al 3T2025'} · Universo estructural: ${structuralUniverseCount()} comparables · Universo RON anual: 24 jurisdicciones`+
+    `Datos estructurales: ${partialStructural?'parciales':(latestRanking1816?.[province]?'disponibles al 1T2026':'disponibles al 3T2025')} · Universo estructural: ${structuralUniverseCount()} comparables · Universo RON anual: 24 jurisdicciones`+
     (isPBA?' · Prioridad PBA 2025-2026 activa (TOP/RON mensual, RON diario, ejecución trimestral, deuda nacional y contexto municipal).':'');
 
   safeRunRender('liquidity',()=>renderLiquidity(province));
@@ -3168,25 +2987,16 @@ function renderTransfersDependency(province){
   const intro=document.getElementById('transfersDependencyIntro');
   if(!section||!cards) return;
   const pdata=federalFairness?.provinces?.[province]||{};
-  const pop=toN(pdata?.metrics?.population?.value) ?? toN(POPULATION_OVERRIDE[province]) ?? (province==='CABA'?3120612:null);
+  const pop=toN(pdata?.metrics?.population?.value) ?? toN(POPULATION_OVERRIDE[province]) ?? (province==='CABA'?3121707:null);
   const ron2025=latestRonTotalYearValue(province);
   const cross=(cross1816||{})[province]||{};
   const fiscal=(fiscalProvinciasData||{})[province]||{};
   const incompleto1816=!!cross?.datos_incompletos_1816;
-  const ingresosTot=toN(cross.ingresos_totales_ltm_ars_m) ?? toN(INGRESOS_TOTALES_LTM_1816_ARS_M[province]);
-  const ronShareFromPeriod=(ron2025&&ingresosTot&&ingresosTot>0)?((ron2025.value/ingresosTot)*100):null;
-  const ronShareCandidate=ronShareFromPeriod
-    ?? toN(cross.ron_sobre_ingresos_totales_pct)
-    ?? toN(fiscal.dependencia_nacion_pct);
-  const autonomiaPct=toN(cross.autonomia_fiscal_pct);
-  const nonOwnMaxPct=autonomiaPct!==null?Math.max(0,100-autonomiaPct):null;
-  const denominatorMissing=!Number.isFinite(ingresosTot) || ingresosTot<=0;
-  const equalNumDen=ron2025 && Number.isFinite(ingresosTot) && Math.abs(ingresosTot-ron2025.value)<0.0001;
-  const exactHundred=ronShareCandidate!==null && Math.abs(ronShareCandidate-100)<0.0001;
-  const exactZero=ronShareCandidate!==null && Math.abs(ronShareCandidate)<0.0001;
-  const applyShield=incompleto1816 || denominatorMissing || (exactHundred && equalNumDen) || exactZero;
-  const ronShareRaw=applyShield?null:ronShareCandidate;
-  const ronShare=(ronShareRaw!==null && nonOwnMaxPct!==null)?Math.min(ronShareRaw,nonOwnMaxPct):ronShareRaw;
+  const pbaNationalTaxShare=province==='Buenos Aires'
+    ? toN(governorBrief?.federal_metrics?.national_tax_share_pct)
+    : null;
+  const ronShareCandidate=pbaNationalTaxShare ?? toN(cross.ron_sobre_ingresos_totales_pct);
+  const ronShare=incompleto1816?null:ronShareCandidate;
   const ronPc=(ron2025&&pop&&pop>0)
     ? ((ron2025.value*1_000_000)/pop)
     : toN(pdata?.metrics?.ron_per_capita_pesos?.value);
@@ -3212,9 +3022,9 @@ function renderTransfersDependency(province){
       : `$${FMT.format(Math.round(value))} millones`;
   };
   const items=[
-    {label:'RON / Ingresos Totales (%)',question:'¿Cuánto pesa Nación en la caja?',value:ronShare,display:ronShare===null?null:`$${Number(ronShare).toFixed(1).replace('.',',')} de cada $100`,period:'Últimos 12 meses · 3T25',meaning:'Es la parte de los ingresos provinciales explicada por recursos de origen nacional.',source:'1816 fiscal histórico pág. 8 · Ingresos Total'},
+    {label:'Impuestos nacionales / Ingresos Totales (%)',question:'¿Cuánto pesa Nación en la caja?',value:ronShare,display:ronShare===null?null:`$${Number(ronShare).toFixed(1).replace('.',',')} de cada $100`,period:'Últimos 12 meses · 1T26',meaning:'Es la parte de los ingresos provinciales explicada por impuestos de origen nacional, con numerador y denominador del mismo período.',source:'Informe Provincias 1T26, pág. 8'},
     ...(territorialFlow?[{kind:'flow',label:'Recaudación nacional registrada vs RON recibido',question:'¿Cuánto registra Nación en Buenos Aires y cuánto vuelve?',value:territorialReturn,period:territorialFlow.period,meaning:'Es una comparación territorial de caja. No mide el aporte jurídico bonaerense a la coparticipación porque ARCA incluye seguridad social y aduana, y asigna impuestos por domicilio fiscal.',source:`${territorialFlow.source_collection} + ${territorialFlow.source_ron}`}]:[]),
-    {label:'RON per cápita ($)',question:'¿Cuánto recibió por habitante?',value:ronPc,display:ronPc===null?null:fmtPesosPerCapita(ronPc),period:'Año 2025',meaning:'Recursos nacionales de 2025 divididos por la población proyectada por INDEC.',source:'serie_ron_2003_2025.xlsx col AC + INDEC 2022-2040'},
+    {label:'RON per cápita ($)',question:'¿Cuánto recibió por habitante?',value:ronPc,display:ronPc===null?null:fmtPesosPerCapita(ronPc),period:'Año 2025',meaning:'Recursos nacionales de 2025 divididos por la población definitiva del Censo 2022.',source:'serie_ron_2003_2025.xlsx col AC + INDEC Censo 2022 definitivo'},
     {label:'RON acum marzo 2026 ($)',question:'¿Cuánto llegó en el primer trimestre?',value:ronMar26,display:formatQuarterTotal(ronMar26),period:'Enero–marzo 2026',meaning:'Total acumulado de recursos nacionales durante los primeros tres meses del año.',source:'Dir_nacional_asuntos_provinciales.pdf pág. 8'},
     {label:'Variación RON 2026 vs 2025 (%)',question:'¿Creció frente al mismo período de 2025?',value:ronVar,display:ronVar===null?null:`${ronVar>=0?'+':''}${Number(ronVar).toFixed(1).replace('.',',')}% nominal`,period:'1T26 vs 1T25',meaning:'Es una variación en pesos corrientes. Para saber si hubo mejora real hay que descontar la inflación.',source:'Dir_nacional_asuntos_provinciales.pdf pág. 8 (Var % i.a.)'},
   ];
@@ -3238,7 +3048,7 @@ function renderTransfersDependency(province){
         <div class="transfer-meaning">${meaning}</div>
       </article>`;
     }
-    const forcedStatus=(label==='RON / Ingresos Totales (%)' && missing)
+    const forcedStatus=(label==='Impuestos nacionales / Ingresos Totales (%)' && missing)
       ? (KPI_MISSING_STATUS_BY_PROVINCE[province] || DATA_STATUS.sin_fuente)
       : KPI_MISSING_STATUS_BY_PROVINCE[province];
     const status=missing ? (forcedStatus||resolveDataStatus({value:val,province,source:fuente})) : DATA_STATUS.numerico;
@@ -3426,12 +3236,12 @@ function chartTopMensual(rows){
   const map={};periods.forEach(p=>{map[p]={};taxes.forEach(t=>map[p][t]=0);});
   validRows.forEach(r=>{if(map[r.period]&&TAX_COLORS[r.tax])map[r.period][r.tax]=(map[r.period][r.tax]||0)+(toN(r.value_millions)||0);});
   document.getElementById('topMLeg').innerHTML=taxes.map(t=>`<span class="li"><span class="ld" style="background:${TAX_COLORS[t]}"></span>${t}</span>`).join('');
-  document.getElementById('topMNote').textContent=`${periods.length} mes(es): ${periods.join(', ')}`;
+  document.getElementById('topMNote').textContent=`${periods.length} mes(es): ${periods.join(', ')} · ${displayMode==='real'?`pesos constantes de ${CONSTANT_PRICE_BASE}`:'pesos corrientes'}`;
   charts.cTopM=new Chart(document.getElementById('cTopM'),{
     type:'bar',
     data:{
       labels:periods.map(p=>monthLabel(p)),
-      datasets:taxes.map(t=>({label:t,data:periods.map(p=>map[p][t]||0),backgroundColor:TAX_COLORS[t]+'cc',borderColor:TAX_COLORS[t],borderWidth:1,stack:'s',borderRadius:2}))
+      datasets:taxes.map(t=>({label:t,data:periods.map(p=>valueForMode(map[p][t]||0,DEFLACTOR_MONTH[p])),backgroundColor:TAX_COLORS[t]+'cc',borderColor:TAX_COLORS[t],borderWidth:1,stack:'s',borderRadius:2}))
     },
     options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,x:{...BASE_OPTS.scales.x,stacked:true},y:{...BASE_OPTS.scales.y,stacked:true,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>fmtPesosEje(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+fmtPesosNarrativo(ctx.parsed.y)}}}}
   });
@@ -3557,13 +3367,20 @@ function renderBalance(province,c,topYtd,ronYtd,mP=[],rP=[]){
   const salarios=toN(c.gasto_salarios_gasto_primario_ex_ss_pct);
   const capital=toN(c.gasto_capital_gasto_primario_ex_ss_pct);
   const iibb=toN(c.iibb_sobre_reca_propia_pct);
-  const rankAutonomia=calcularRanking(Object.values(cross1816||{}).map(v=>toN(v.autonomia_fiscal_pct)),aut,'desc');
-  const rankResFin=calcularRanking(Object.values(cross1816||{}).map(v=>toN(v.resultado_financiero_ltm_pct)),rf,'desc');
-  const rankResPri=calcularRanking(Object.values(cross1816||{}).map(v=>toN(v.resultado_primario_ltm_pct)),rp,'desc');
-  const rankDeuda=calcularRanking(Object.values(cross1816||{}).map(v=>toN(v.deuda_total_sobre_ingresos_pct)),debt,'asc');
-  const rankSalarios=calcularRanking(Object.values(cross1816||{}).map(v=>toN(v.gasto_salarios_gasto_primario_ex_ss_pct)),salarios,'asc');
-  const rankCapital=calcularRanking(Object.values(cross1816||{}).map(v=>toN(v.gasto_capital_gasto_primario_ex_ss_pct)),capital,'desc');
-  const nRank=(txt)=>txt==='N/D'?null:Number(txt.split('/')[0]);
+  const storedOrCalculatedRank=(stored,field,value,order)=>Number.isFinite(toN(stored))
+    ? toN(stored)
+    : calcularRanking(Object.values(cross1816||{}).map(v=>toN(v[field])),value,order);
+  const rankAutonomia=storedOrCalculatedRank(c.rank_autonomia_fiscal,'autonomia_fiscal_pct',aut,'desc');
+  const rankResFin=storedOrCalculatedRank(c.rank_resultado_financiero,'resultado_financiero_ltm_pct',rf,'desc');
+  const rankResPri=storedOrCalculatedRank(c.rank_resultado_primario,'resultado_primario_ltm_pct',rp,'desc');
+  const rankDeuda=storedOrCalculatedRank(c.rank_deuda_total,'deuda_total_sobre_ingresos_pct',debt,'asc');
+  const rankSalarios=storedOrCalculatedRank(c.rank_gasto_salarios,'gasto_salarios_gasto_primario_ex_ss_pct',salarios,'asc');
+  const rankCapital=storedOrCalculatedRank(c.rank_gasto_capital,'gasto_capital_gasto_primario_ex_ss_pct',capital,'desc');
+  const nRank=(txt)=>{
+    if(txt===null||txt===undefined||txt==='N/D')return null;
+    const rank=Number(String(txt).split('/')[0]);
+    return Number.isFinite(rank)?rank:null;
+  };
   const partialStructural=isPartialStructural(c);
 
   const addP=(itemData)=>positives.push(itemData);

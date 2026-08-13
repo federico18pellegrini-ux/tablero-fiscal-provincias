@@ -292,18 +292,11 @@ def build():
     for province in universe:
         base = dict(cross.get(province, {}))
 
-        recaudacion_propia_2026 = top_2026.get(province, 0.0)
-        impuestos_nacionales = max(info_nacional_2026.get(province, 0.0) - info_tna_2026.get(province, 0.0), 0.0)
-        transferencias_no_auto = info_tna_2026.get(province, 0.0)
-        ingresos_totales = recaudacion_propia_2026 + info_nacional_2026.get(province, 0.0)
-
+        # No se calcula dependencia con acumulados mensuales de distinta
+        # cobertura. TOP y RON 2026 no tienen hoy el mismo corte para todas las
+        # jurisdicciones; mezclar meses producía porcentajes falsos. La interfaz
+        # usa un ratio contable homogéneo sólo cuando existe en la fuente 1816.
         dependencia_nacion = None
-        if ingresos_totales > 0:
-            dependencia_nacion = (impuestos_nacionales + transferencias_no_auto) / ingresos_totales
-        else:
-            autonomia = to_float(base.get('autonomia_fiscal_pct'))
-            if autonomia is not None:
-                dependencia_nacion = max(0.0, min(1.0, 1 - (autonomia / 100.0)))
 
         gasto_personal_ratio = None
         if to_float(base.get('gasto_salarios_gasto_primario_ex_ss_pct')) is not None:

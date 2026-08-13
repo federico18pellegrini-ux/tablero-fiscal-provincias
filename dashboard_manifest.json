@@ -1,6 +1,6 @@
 {
   "project": "Sistema fiscal provincias - capa intermedia normalizada",
-  "generated_at": "2026-08-13T15:31:46.834671Z",
+  "generated_at": "2026-08-13T21:18:24.626824Z",
   "data_cutoff": "2026-04-30",
   "province_universe": [
     "Buenos Aires",
@@ -61,11 +61,11 @@
     "pba_ron_daily": "pba_ron_daily.csv",
     "pba_top_monthly": "pba_top_monthly.csv",
     "national_debt_monthly": "national_debt_monthly.csv",
-    "municipios_pba_annual": "municipios_pba_annual.csv"
-    ,"governor_brief": "dashboard_governor_brief.json"
-    ,"pba_1816_snapshots": "data/1816/pba_fiscal_snapshots.csv"
-    ,"ranking_1816_1t26": "data/1816/ranking_1t26.csv"
-    ,"pba_debt_profile_2026q1": "data/debt/pba_debt_profile_2026q1.json"
+    "municipios_pba_annual": "municipios_pba_annual.csv",
+    "governor_brief": "dashboard_governor_brief.json",
+    "pba_1816_snapshots": "data/1816/pba_fiscal_snapshots.csv",
+    "ranking_1816_1t26": "data/1816/ranking_1t26.csv",
+    "pba_debt_profile_2026q1": "data/debt/pba_debt_profile_2026q1.json"
   },
   "notes": {
     "cross_section_1816_scope": "La capa estructural general conserva el corte 3T25. La nueva sala del gobernador usa 4T25 y 1T26 y un ranking homogéneo de 23 jurisdicciones; La Pampa no integra esos informes.",

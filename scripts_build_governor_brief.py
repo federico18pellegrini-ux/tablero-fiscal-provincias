@@ -69,11 +69,19 @@ def main() -> None:
             "y la obra que realmente hacen falta, reclamar por las vías institucionales los recursos que debe Nación y fortalecer la "
             "producción bonaerense. El problema urgente es financiero; la respuesta tiene que ser gradual, productiva y federal."
         ),
+        "federal_metrics": {
+            "national_tax_share_pct": number(latest, "national_tax_share_pct"),
+            "autonomy_ex_ss_pct": number(latest, "autonomy_ex_ss_pct"),
+            "ron_per_capita_vs_average_pct": 37,
+            "ron_per_capita_rank": 23,
+            "ron_per_capita_universe": 23,
+        },
         "federal_reading": (
             "Buenos Aires hace un esfuerzo fiscal propio importante, pero sigue muy condicionada por el esquema federal. "
-            "Recauda por sí misma casi la mitad de sus ingresos no previsionales, aunque los recursos de origen nacional todavía "
-            "equivalen al 42,3% de los ingresos totales. A la vez, recibe por habitante apenas 37 cuando el promedio comparable "
-            "recibe 100 y queda 22 de 22 en ese ranking. Eso muestra una desventaja estructural en el reparto por habitante."
+            "Recauda por sí misma el 48,5% de sus ingresos no previsionales, mientras que los impuestos de origen nacional "
+            "representan el 39,3% de los ingresos totales en los últimos 12 meses al 31 de marzo de 2026. A la vez, recibe por "
+            "habitante apenas 37 cuando el promedio comparable recibe 100 y queda 23 de 23 entre las provincias. Eso muestra "
+            "una desventaja estructural en el reparto por habitante."
         ),
         "federal_conclusion": (
             "Hay un problema federal real que debe reclamarse y cuantificarse, pero estos datos no alcanzan para atribuirle a Nación "

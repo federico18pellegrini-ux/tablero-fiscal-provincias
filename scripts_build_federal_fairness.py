@@ -14,29 +14,29 @@ RON_PRIMARY = 'Total | (1) + (2)'
 RON_FALLBACK = 'Total | Recursos | Origen Nacional | (1)'
 CABA_NAME = 'CABA'
 DEFAULT_POPULATION_2022 = {
-    'Buenos Aires': 17569053,
-    'CABA': 3120612,
+    'Buenos Aires': 17523996,
+    'CABA': 3121707,
     'Catamarca': 429562,
-    'Chaco': 1142963,
-    'Chubut': 603120,
-    'Corrientes': 1197553,
-    'Córdoba': 3978984,
-    'Entre Ríos': 1426426,
-    'Formosa': 606041,
+    'Chaco': 1129606,
+    'Chubut': 592621,
+    'Corrientes': 1212696,
+    'Córdoba': 3840905,
+    'Entre Ríos': 1425578,
+    'Formosa': 607419,
     'Jujuy': 811611,
     'La Pampa': 361859,
-    'La Rioja': 384607,
-    'Mendoza': 2014533,
-    'Misiones': 1280960,
-    'Neuquén': 726590,
-    'Río Negro': 762067,
-    'Salta': 1440672,
-    'San Juan': 818234,
-    'San Luis': 540905,
+    'La Rioja': 383865,
+    'Mendoza': 2043540,
+    'Misiones': 1278873,
+    'Neuquén': 710814,
+    'Río Negro': 750768,
+    'Salta': 1441351,
+    'San Juan': 822853,
+    'San Luis': 542069,
     'Santa Cruz': 337226,
-    'Santa Fe': 3556522,
+    'Santa Fe': 3544908,
     'Santiago del Estero': 1060906,
-    'Tierra del Fuego': 190641,
+    'Tierra del Fuego': 185732,
     'Tucumán': 1731820,
 }
 
@@ -155,7 +155,7 @@ for row in input_rows:
     population = to_float(row.get('population'))
     if population is None and province in DEFAULT_POPULATION_2022:
         row['population'] = str(DEFAULT_POPULATION_2022[province])
-        row['source_population'] = row.get('source_population') or 'INDEC Censo 2022 (base)'
+        row['source_population'] = row.get('source_population') or 'INDEC Censo 2022, resultados definitivos'
         row['notes'] = (row.get('notes') or '').strip() or 'Población base pre-cargada para habilitar comparaciones per cápita.'
     contribution_method = (row.get('contribution_method') or '').strip()
     contribution_source = (row.get('source_contribution') or '').strip()
@@ -292,7 +292,7 @@ output = {
     'generated_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
     'methodology': {
         'ron_per_capita': 'ron_total_annual_millions * 1000000 / population',
-        'avg_ron_per_capita_23_provinces': 'promedio simple de jurisdicciones con dato válido, excluyendo CABA',
+        'avg_ron_per_capita_23_provinces': 'promedio simple de las 23 provincias, excluyendo CABA',
         'avg_ron_per_capita_24_jurisdictions': 'promedio simple de jurisdicciones con dato válido, incluyendo CABA',
         'received_share_pct': 'ron_total_province / suma_ron_total_all * 100',
         'return_ratio': 'received_share_pct / estimated_contribution_share_pct * 100',
