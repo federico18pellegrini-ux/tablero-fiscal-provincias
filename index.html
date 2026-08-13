@@ -681,6 +681,7 @@ tr:last-child td{border-bottom:none}
 .gov-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--gold);font-weight:700}
 .gov-title{font-size:24px;line-height:1.16;margin-top:5px;letter-spacing:-.025em}
 .gov-verdict{margin-top:13px;max-width:920px;padding:14px;border-left:3px solid var(--gold);background:rgba(201,169,90,.07);border-radius:0 9px 9px 0;color:var(--muted);font-size:13px;line-height:1.7}
+.governor-room>.gov-verdict{margin:14px 18px 0}
 .gov-summary-label{font-size:10px;text-transform:uppercase;letter-spacing:.11em;color:var(--gold);font-weight:800;margin-bottom:6px}
 .gov-verdict p{color:var(--muted);font-size:13px;line-height:1.7}
 .gov-federal-summary{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
@@ -688,15 +689,21 @@ tr:last-child td{border-bottom:none}
 .gov-federal-conclusion{margin-top:6px}
 .gov-federal-conclusion strong{color:var(--text)}
 .gov-status{display:inline-flex;margin-top:12px;padding:6px 10px;border-radius:999px;background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-.gov-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
-.gov-metric{background:var(--s1);padding:15px;min-width:0}
-.gov-metric-label{font-size:11px;color:var(--muted);font-weight:700;min-height:34px}
-.gov-metric-value{font-family:var(--mono);font-size:24px;font-weight:700;margin:3px 0}
-.gov-metric-value.red{color:var(--red)}.gov-metric-value.amber{color:var(--amber)}.gov-metric-value.green{color:var(--green)}
-.gov-metric-window,.gov-metric-change{font-size:10px;color:var(--dim);line-height:1.45}
-.gov-metric-basis{display:inline-flex;margin-top:7px;padding:3px 6px;border:1px solid var(--border);border-radius:999px;font-size:9px;color:var(--dim);line-height:1.3}
-.gov-metric-change{margin-top:5px;color:var(--muted)}
-.gov-metric-meaning{font-size:11px;color:var(--muted);line-height:1.5;margin-top:7px}
+.executive-pulse{padding:15px 18px 17px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.12)}
+.executive-pulse-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:10px}
+.executive-pulse-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:800}
+.executive-pulse-title{font-size:17px;line-height:1.2;margin-top:3px}
+.executive-pulse-period{font-size:11px;color:var(--dim);text-align:right;line-height:1.4}
+.executive-pulse-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.executive-pulse-grid .kcard{min-width:0;padding:14px;background:rgba(18,18,18,.84)}
+.executive-pulse-grid .pulse-wide{grid-column:span 2}
+.executive-pulse-grid .pulse-rank{border-color:var(--gold-border);background:linear-gradient(145deg,rgba(201,169,90,.16),rgba(18,18,18,.92))}
+.executive-pulse-grid .pulse-rank .k-val{font-size:34px}
+.executive-pulse-grid .k-val.b{font-size:20px;line-height:1.15}
+.pulse-reading{margin-top:8px;font-size:11px;line-height:1.45;color:var(--muted)}
+.pulse-reading strong{color:var(--text)}
+.pulse-tag{display:inline-flex;margin-top:8px;padding:3px 7px;border:1px solid var(--border2);border-radius:999px;color:var(--dim);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.pulse-caution{margin-top:10px;color:var(--dim);font-size:11px;line-height:1.5}
 .gov-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px}
 .gov-panel{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:10px;padding:13px}
 .gov-panel h4{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold);margin-bottom:9px}
@@ -707,8 +714,13 @@ tr:last-child td{border-bottom:none}
 .gov-horizon{display:inline-block;color:var(--gold);font-family:var(--mono);font-size:10px;margin-right:5px}
 .gov-method{margin:0 14px 14px;padding:11px 13px;border:1px dashed var(--border2);border-radius:9px;color:var(--dim);font-size:11px;line-height:1.6}
 .gov-missing{margin-top:9px;padding-top:9px;border-top:1px solid var(--border);color:var(--dim)}
-@media(max-width:700px){.gov-metrics{grid-template-columns:1fr 1fr}.gov-columns{grid-template-columns:1fr}.gov-title{font-size:21px}}
-@media(max-width:420px){.gov-metrics{grid-template-columns:1fr}.gov-metric-label{min-height:0}}
+@media(max-width:700px){
+  .executive-pulse-head{display:block}.executive-pulse-period{text-align:left;margin-top:5px}
+  .executive-pulse-grid{grid-template-columns:1fr 1fr}
+  .executive-pulse-grid .pulse-wide{grid-column:span 2}
+  .gov-columns{grid-template-columns:1fr}.gov-title{font-size:21px}
+}
+@media(max-width:440px){.executive-pulse-grid{grid-template-columns:1fr}.executive-pulse-grid .pulse-wide{grid-column:auto}.executive-pulse-grid .pulse-rank .k-val{font-size:30px}}
 @media(max-width:700px){
   .key-indicators-row .tb{overflow:hidden;padding:12px}
   .key-indicators-row .tb>table{display:block;min-width:0;width:100%}
@@ -784,18 +796,65 @@ tr:last-child td{border-bottom:none}
   <div class="gov-head">
     <div class="gov-kicker">Informe Ejecutivo · corte 31/03/2026</div>
     <h2 class="gov-title" id="governorRoomTitle">Cargando diagnóstico...</h2>
-    <div class="gov-verdict">
-      <div class="gov-summary-label">Resumen ejecutivo</div>
-      <p id="governorVerdict"></p>
-      <div class="gov-federal-summary">
-        <strong class="gov-federal-title">Equidad y esfuerzo federal</strong>
-        <p id="governorFederalReading"></p>
-        <p class="gov-federal-conclusion"><strong>Conclusión:</strong> <span id="governorFederalConclusion"></span></p>
-      </div>
-    </div>
     <div class="gov-status" id="governorStatus">Evaluando</div>
   </div>
-  <div class="gov-metrics" id="governorMetrics"></div>
+  <section class="executive-pulse" aria-labelledby="executivePulseTitle">
+    <div class="executive-pulse-head">
+      <div>
+        <div class="executive-pulse-kicker">La foto en 30 segundos</div>
+        <h3 class="executive-pulse-title" id="executivePulseTitle">Posición fiscal de Buenos Aires</h3>
+      </div>
+      <div class="executive-pulse-period">Últimos 12 meses al 1T26<br>salvo flujos 2026</div>
+    </div>
+    <div class="executive-pulse-grid">
+      <article class="kcard pulse-wide pulse-rank">
+        <div class="k-lbl">Ranking fiscal general</div>
+        <div class="k-val au" id="kRank">—</div>
+        <div class="pulse-reading" id="kRankSub">Comparación homogénea entre provincias.</div>
+        <div class="pulse-tag">1 = mejor posición</div>
+      </article>
+      <article class="kcard">
+        <div class="k-lbl">Resultado financiero</div>
+        <div class="k-val" id="kResFin">—</div>
+        <div class="pulse-reading">Después de intereses. <strong>En el 1T26 también fue negativo: −3,9%.</strong></div>
+        <div class="pulse-tag">LTM · nominal</div>
+      </article>
+      <article class="kcard">
+        <div class="k-lbl">Resultado primario</div>
+        <div class="k-val" id="kResPri">—</div>
+        <div class="pulse-reading">Antes de intereses. <strong>El rojo no se explica sólo por la deuda.</strong></div>
+        <div class="pulse-tag">LTM · nominal</div>
+      </article>
+      <article class="kcard pulse-wide">
+        <div class="k-lbl">Deuda / ingresos</div>
+        <div class="k-val" id="kDebt">—</div>
+        <div class="pulse-reading"><strong id="kDebtStock">Stock actualizado no disponible.</strong><br><span id="kDebtRank">Comparación no disponible.</span></div>
+        <div class="pulse-tag">Stock al 31/03/2026</div>
+      </article>
+      <article class="kcard">
+        <div class="k-lbl">Recaudación propia 2026</div>
+        <div class="k-val b" id="kTopYtd">—</div>
+        <div class="pulse-reading" id="kTopSub">Corte mensual no disponible.</div>
+        <div class="pulse-tag">Flujo acumulado</div>
+      </article>
+      <article class="kcard">
+        <div class="k-lbl">Recursos de Nación 2026</div>
+        <div class="k-val b" id="kRonYtd">—</div>
+        <div class="pulse-reading" id="kRonSub">Corte mensual no disponible.</div>
+        <div class="pulse-tag">Flujo acumulado</div>
+      </article>
+    </div>
+    <div id="fiscalRatiosMethodNote" class="pulse-caution"></div>
+  </section>
+  <div class="gov-verdict">
+    <div class="gov-summary-label">Resumen ejecutivo</div>
+    <p id="governorVerdict"></p>
+    <div class="gov-federal-summary">
+      <strong class="gov-federal-title">Equidad y esfuerzo federal</strong>
+      <p id="governorFederalReading"></p>
+      <p class="gov-federal-conclusion"><strong>Conclusión:</strong> <span id="governorFederalConclusion"></span></p>
+    </div>
+  </div>
   <div class="gov-columns">
     <article class="gov-panel"><h4>3 riesgos que requieren atención</h4><ul class="gov-list" id="governorRisks"></ul></article>
     <article class="gov-panel"><h4>3 decisiones sugeridas</h4><ul class="gov-list" id="governorDecisions"></ul></article>
@@ -873,18 +932,17 @@ tr:last-child td{border-bottom:none}
     <details class="debt-method-details"><summary>Ver fuentes y diferencias de fecha</summary><div id="debtProfileMethodNote" class="cc-note" style="margin-top:8px"></div></details>
   </div>
 </section>
-<!-- KPIs -->
-<div class="sh">Indicadores clave</div>
-<div class="kpi-grid">
-  <div class="kcard"><div class="k-lbl">Ranking fiscal</div><div class="k-val au" id="kRank">—</div><div class="k-sub" id="kRankSub">jurisdicciones con información homogénea</div></div>
-  <div class="kcard"><div class="k-lbl">Res. financiero</div><div class="k-val" id="kResFin">—</div><div class="k-sub">últimos 12 meses · % ingresos</div></div>
-  <div class="kcard"><div class="k-lbl">Res. primario</div><div class="k-val" id="kResPri">—</div><div class="k-sub">últimos 12 meses · % ingresos</div></div>
-  <div class="kcard"><div class="k-lbl">Deuda total</div><div class="k-val" id="kDebt">—</div><div class="k-sub">stock · USD M</div></div>
-  <div class="kcard"><div class="k-lbl">Recaud. propia 2026</div><div class="k-val b" id="kTopYtd">—</div><div class="k-sub" id="kTopSub">Recaudación propia: sin datos 2026</div></div>
-  <div class="kcard"><div class="k-lbl">Transf. nación 2026</div><div class="k-val b" id="kRonYtd">—</div><div class="k-sub" id="kRonSub">Nación: sin datos 2026</div></div>
-</div>
-<div id="fiscalRatiosMethodNote" class="cc-note" style="margin-top:8px"></div>
-
+<section id="genericKpiSection">
+  <div class="sh">Indicadores clave</div>
+  <div class="kpi-grid">
+    <div class="kcard"><div class="k-lbl">Ranking fiscal</div><div class="k-val au" id="gRank">—</div><div class="k-sub" id="gRankSub">jurisdicciones comparables</div></div>
+    <div class="kcard"><div class="k-lbl">Res. financiero</div><div class="k-val" id="gResFin">—</div><div class="k-sub">últimos 12 meses · % ingresos</div></div>
+    <div class="kcard"><div class="k-lbl">Res. primario</div><div class="k-val" id="gResPri">—</div><div class="k-sub">últimos 12 meses · % ingresos</div></div>
+    <div class="kcard"><div class="k-lbl">Deuda total</div><div class="k-val" id="gDebt">—</div><div class="k-sub">stock · USD M</div></div>
+    <div class="kcard"><div class="k-lbl">Recaudación propia 2026</div><div class="k-val b" id="gTopYtd">—</div><div class="k-sub" id="gTopSub">Corte no disponible</div></div>
+    <div class="kcard"><div class="k-lbl">Recursos de Nación 2026</div><div class="k-val b" id="gRonYtd">—</div><div class="k-sub" id="gRonSub">Corte no disponible</div></div>
+  </div>
+</section>
 <!-- LECTURA POLÍTICA RÁPIDA -->
 <div class="sh sh-gold">Lectura rápida · provincia</div>
 <div class="bstrip" id="quickStrip">
@@ -1310,6 +1368,17 @@ function fmtPesosKPI(valorEnMillones){
     return `AR$ ${fmtNum(n,0)} millones (= ${fmtNum(bn,2)} Bn)`;
   }
   return `AR$ ${fmtNum(n,0)} M`;
+}
+function fmtPesosExecutive(valorEnMillones){
+  const n=toN(valorEnMillones);
+  if(n===null)return ND;
+  if(Math.abs(n)>=1_000_000) return `AR$ ${fmtNum(n/1_000_000,2)} billones`;
+  return `AR$ ${fmtNum(n,0)} millones`;
+}
+function fmtARSBillions(valorEnMillones){
+  const n=toN(valorEnMillones);
+  if(n===null)return ND;
+  return `AR$ ${fmtNum(n/1_000_000,2)} billones`;
 }
 function fmtPesosNarrativo(valorEnMillones){
   const n=toN(valorEnMillones);
@@ -2211,17 +2280,6 @@ function renderGovernorBrief(province){
   document.getElementById('governorFederalReading').textContent=governorBrief.federal_reading||'';
   document.getElementById('governorFederalConclusion').textContent=governorBrief.federal_conclusion||'';
   document.getElementById('governorStatus').textContent='CONCLUSIÓN · SE DETERIORA';
-  document.getElementById('governorMetrics').innerHTML=(governorBrief.key_metrics||[]).map(metric=>{
-    const direction=metric.comparison>0?'+':'';
-    return `<article class="gov-metric">
-      <div class="gov-metric-label">${metric.label}</div>
-      <div class="gov-metric-value ${metric.signal}">${formatGovNumber(metric.value,metric.unit)} <span style="font-size:11px;color:var(--dim)">${formatGovUnit(metric.unit)}</span></div>
-      <div class="gov-metric-window">${metric.window}</div>
-      <div class="gov-metric-change">${direction}${Number(metric.comparison).toFixed(1).replace('.',',')} ${metric.comparison_unit}</div>
-      <div class="gov-metric-basis">${metric.measurement||'Base no informada'}</div>
-      <div class="gov-metric-meaning">${metric.interpretation}</div>
-    </article>`;
-  }).join('');
   document.getElementById('governorRisks').innerHTML=(governorBrief.risks||[]).map(item=>
     `<li><strong>${item.title}</strong>${item.evidence}<br>${item.political_meaning}</li>`
   ).join('');
@@ -2248,6 +2306,8 @@ function render(province){
 
   const cross={...((cross1816&&cross1816[province])||{}),...((latestRanking1816&&latestRanking1816[province])||{})};
   const isPBA=province==='Buenos Aires';
+  const genericKpiSection=document.getElementById('genericKpiSection');
+  if(genericKpiSection) genericKpiSection.style.display=isPBA?'none':'block';
   renderGovernorBrief(province);
 
   const pTopM=sanitizeTopMensualRows(getProvinceRows(topMensual, province));
@@ -2279,21 +2339,39 @@ function render(province){
   // KPIs
   const rankingGeneral = partialStructural ? ND : formatRank(cross.ranking_general, structuralTotal);
   setK('kRank',rankingGeneral===ND?ND:'#'+rankingGeneral,'au');
+  setK('gRank',rankingGeneral===ND?ND:'#'+rankingGeneral,'au');
   const kRankSub=document.getElementById('kRankSub');
-  if(kRankSub){kRankSub.textContent=`Ranking sobre ${structuralTotal} jurisdicciones con información homogénea en el informe 1816 al 1T2026. No incluye La Pampa, ausente en la fuente.`;}
+  if(kRankSub){kRankSub.innerHTML=`<strong>${rankingGeneral===ND?'Sin posición comparable':`Puesto ${rankingGeneral.replace('/', ' de ')}`}.</strong> Último tercio del ranking; perdió un lugar frente al 4T25. Universo homogéneo: ${structuralTotal} jurisdicciones.`;}
+  const gRankSub=document.getElementById('gRankSub');
+  if(gRankSub){gRankSub.textContent=`Ranking sobre ${structuralTotal} jurisdicciones homogéneas.`;}
   const rf=toN(cross.resultado_financiero_ltm_pct);
   const rp=toN(cross.resultado_primario_ltm_pct);
   const debt=toN(cross.deuda_total_sobre_ingresos_pct);
   const salarios=toN(cross.gasto_salarios_gasto_primario_ex_ss_pct);
   setK('kResFin',pct(rf),vCls(rf,true));
   setK('kResPri',pct(rp),vCls(rp,true));
-  setK('kDebt',formatUSDMillions(cross.deuda_stock_total_usd_m),'r');
-  setK('kTopYtd',hasTop2026?fmtPesosKPI(ownRevenue2026Ytd):ND,'b');
-  setK('kRonYtd',hasRon2026?fmtPesosKPI(ronYtd):ND,'b');
+  setK('gResFin',pct(rf),vCls(rf,true));
+  setK('gResPri',pct(rp),vCls(rp,true));
+  const latestPbaDebt=province==='Buenos Aires'?pbaDebtProfile?.latest_stock:null;
+  const currentDebtRatio=toN(latestPbaDebt?.debt_to_ltm_income_pct) ?? debt;
+  setK('kDebt',pctN(currentDebtRatio),'r');
+  setK('gDebt',formatUSDMillions(cross.deuda_stock_total_usd_m),'r');
+  const kDebtStock=document.getElementById('kDebtStock');
+  const kDebtRank=document.getElementById('kDebtRank');
+  if(kDebtStock){
+    kDebtStock.textContent=latestPbaDebt
+      ? `${fmtARSBillions(latestPbaDebt.total_ars_m)} (≈ ${formatUSDMillions(latestPbaDebt.total_usd_m_equivalent)})`
+      : formatUSDMillions(cross.deuda_stock_total_usd_m);
+  }
+  if(kDebtRank){kDebtRank.textContent=province==='Buenos Aires'?'Puesto 23 de 23: es la mayor carga relativa del conjunto.':'Peso del stock sobre los ingresos anuales.';}
+  setK('kTopYtd',hasTop2026?fmtPesosExecutive(ownRevenue2026Ytd):ND,'b');
+  setK('kRonYtd',hasRon2026?fmtPesosExecutive(ronYtd):ND,'b');
+  setK('gTopYtd',hasTop2026?fmtPesosKPI(ownRevenue2026Ytd):ND,'b');
+  setK('gRonYtd',hasRon2026?fmtPesosKPI(ronYtd):ND,'b');
   const fiscalRatiosMethodNote=document.getElementById('fiscalRatiosMethodNote');
   if(fiscalRatiosMethodNote){
     fiscalRatiosMethodNote.innerText = province==='Buenos Aires'
-      ? 'Período: últimos 12 meses al 1T2026.\nFuente: Informe 1816 al 1T2026.\nLa lectura trimestral y la ventana LTM se muestran por separado para no confundir coyuntura con tendencia.'
+      ? 'Importante: la recaudación propia tiene corte enero y los recursos de Nación corte enero-abril. Se muestran para conocer magnitudes, pero no deben compararse entre sí hasta igualar los meses.'
       : '';
   }
   // Lectura política rápida
@@ -2407,8 +2485,10 @@ function render(province){
   const topSub = mP.length===1 ? `${monthLabel(mP[0])}` : (hayDatos(mP)?`${monthLabel(mP[0])}-${monthLabel(mP[mP.length-1])}`:'sin datos 2026');
   const ronSub = rP.length===1 ? `${monthLabel(rP[0])}` : (hayDatos(rP)?`${monthLabel(rP[0])}-${monthLabel(rP[rP.length-1])}`:'sin datos 2026');
   const warnEl=document.getElementById('metodoWarn');
-  if(document.getElementById('kTopSub')) document.getElementById('kTopSub').textContent=`Recaudación propia: ${topSub}`;
-  if(document.getElementById('kRonSub')) document.getElementById('kRonSub').textContent=`Nación: ${ronSub}`;
+  if(document.getElementById('kTopSub')) document.getElementById('kTopSub').innerHTML=`<strong>Corte: ${topSub}.</strong> La serie 2026 todavía es parcial.`;
+  if(document.getElementById('kRonSub')) document.getElementById('kRonSub').innerHTML=`<strong>Corte: ${ronSub}.</strong> Recursos de origen nacional acumulados.`;
+  if(document.getElementById('gTopSub')) document.getElementById('gTopSub').textContent=`Recaudación propia: ${topSub}`;
+  if(document.getElementById('gRonSub')) document.getElementById('gRonSub').textContent=`Nación: ${ronSub}`;
   if(warnEl){
     warnEl.style.display='block';
     warnEl.textContent='Advertencia de comparabilidad 2026: recaudación propia y recursos de Nación pueden tener distinto corte mensual. Usar solo meses compartidos para contrastes directos.';

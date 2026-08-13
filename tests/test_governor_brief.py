@@ -83,6 +83,11 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn('id="debtProfileService"', frontend)
         self.assertIn("pba_debt_profile_2026q1", frontend)
         self.assertIn("estos indicadores ya están explicados dentro de la ficha principal de deuda", frontend)
+        self.assertIn('id="executivePulseTitle"', frontend)
+        self.assertIn('id="genericKpiSection"', frontend)
+        self.assertLess(frontend.index('id="kRank"'), frontend.index('id="governorVerdict"'))
+        self.assertIn("latestPbaDebt.total_usd_m_equivalent", frontend)
+        self.assertNotIn('<div class="sh">Indicadores clave</div>\n<div class="kpi-grid">', frontend)
 
     def test_latest_pba_debt_profile_reconciles(self):
         profile = json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8"))
