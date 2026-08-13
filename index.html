@@ -325,6 +325,19 @@ select.psel:focus{outline:none;border-color:var(--gold)}
 .liq-tag{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border2);border-radius:999px;padding:1px 6px}
 .liq-tag.derived{color:var(--blue);border-color:rgba(96,165,250,.35)}
 .liq-tag.source{color:var(--gold);border-color:var(--gold-border)}
+.transfer-intro{margin-bottom:10px;font-size:13px;color:var(--muted);line-height:1.55}
+.transfer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.transfer-card{padding:14px;border:1px solid var(--border);border-radius:10px;background:var(--s1);min-width:0}
+.transfer-card.missing{border-style:dashed;opacity:.78}
+.transfer-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px}
+.transfer-question{font-size:12px;color:var(--text);font-weight:700;line-height:1.35}
+.transfer-source-tag{flex:0 0 auto;padding:2px 6px;border:1px solid var(--border2);border-radius:999px;color:var(--dim);font-size:9px;text-transform:uppercase;letter-spacing:.06em}
+.transfer-value{font-family:var(--mono);font-size:23px;font-weight:700;color:var(--gold);line-height:1.15;overflow-wrap:anywhere}
+.transfer-period{margin-top:5px;color:var(--dim);font-size:10px;text-transform:uppercase;letter-spacing:.06em}
+.transfer-meaning{margin-top:8px;color:var(--muted);font-size:12px;line-height:1.5}
+.transfer-reading{margin-top:10px;padding:11px 12px;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;background:rgba(201,169,90,.07);font-size:12px;color:var(--muted);line-height:1.6}
+.transfer-reading strong{color:var(--text)}
+@media(max-width:620px){.transfer-grid{grid-template-columns:1fr}.transfer-value{font-size:21px}}
 .attr-stack{display:flex;flex-direction:column;gap:8px}
 .attr-card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:12px 13px}
 .attr-card.missing{border-color:#3a3a3a;background:#131313}
@@ -859,9 +872,14 @@ tr:last-child td{border-bottom:none}
 
 <!-- DEPENDENCIA TRANSFERENCIAS NACIÓN -->
 <div id="transfersDependencySection" style="display:none">
-  <div class="sh sh-gold">Dependencia de transferencias Nación</div>
-  <div class="cc-note" style="margin-bottom:8px">Mide peso estructural y dinámica reciente de transferencias de origen nacional. Fuente: Subsecretaría de Coordinación Fiscal Provincial, Ministerio de Economía de la Nación.</div>
-  <div id="transfersDependencyCards" class="liq-grid"></div>
+  <div class="sh sh-gold">Recursos que llegan desde Nación</div>
+  <div class="transfer-intro">Dos preguntas para leer este bloque: <strong>cuánto pesa Nación en la caja provincial</strong> y <strong>si los giros crecieron por encima de la inflación</strong>.</div>
+  <div id="transfersDependencyCards" class="transfer-grid"></div>
+  <div id="transfersDependencyReading" class="transfer-reading"></div>
+  <details class="method-details">
+    <summary>Fuente y forma de lectura</summary>
+    <div class="cc-note" style="margin-top:8px">Fuente: Subsecretaría de Coordinación Fiscal Provincial, Ministerio de Economía de la Nación, e INDEC para población. Los montos acumulados y su variación interanual están expresados en pesos corrientes salvo aclaración expresa. Una suba nominal no implica por sí sola una mejora real.</div>
+  </details>
 </div>
 
 <!-- RECLAMOS NACIÓN → PROVINCIA (solo Buenos Aires) -->
@@ -2974,6 +2992,7 @@ function renderFederalFairness(province){
 function renderTransfersDependency(province){
   const section=document.getElementById('transfersDependencySection');
   const cards=document.getElementById('transfersDependencyCards');
+  const reading=document.getElementById('transfersDependencyReading');
   if(!section||!cards) return;
   const pdata=federalFairness?.provinces?.[province]||{};
   const pop=toN(pdata?.metrics?.population?.value) ?? toN(POPULATION_OVERRIDE[province]) ?? (province==='CABA'?3120612:null);
@@ -2995,30 +3014,49 @@ function renderTransfersDependency(province){
   const applyShield=incompleto1816 || denominatorMissing || (exactHundred && equalNumDen) || exactZero;
   const ronShareRaw=applyShield?null:ronShareCandidate;
   const ronShare=(ronShareRaw!==null && nonOwnMaxPct!==null)?Math.min(ronShareRaw,nonOwnMaxPct):ronShareRaw;
-  const ronPc=(ron2025&&pop&&pop>0)?((ron2025.value*1_000_000)/pop):null;
+  const ronPc=(ron2025&&pop&&pop>0)
+    ? ((ron2025.value*1_000_000)/pop)
+    : toN(pdata?.metrics?.ron_per_capita_pesos?.value);
   const ronMar26=toN(RON_MARZO_2026_OFICIAL_MILLIONS[province]);
   const ronVar=toN(RON_VAR_MARZO_2026_OFICIAL_PCT[province]);
+  const formatQuarterTotal=(millions)=>{
+    const value=toN(millions);
+    if(value===null) return null;
+    const billones=value/1_000_000;
+    return billones>=1
+      ? `$${billones.toFixed(2).replace('.',',')} billones`
+      : `$${FMT.format(Math.round(value))} millones`;
+  };
   const items=[
-    ['RON / Ingresos Totales (%)', ronShare, 'pct', 'AUDITADO', 'Mayor valor = mayor dependencia de Nación.', 'LTM 3T25', '1816 fiscal histórico pág. 8 · Ingresos Total'],
-    ['RON per cápita ($)', ronPc, 'ars', 'AUDITADO', 'RON 2025 sobre población INDEC 2022-2040.', '2025 anual', 'serie_ron_2003_2025.xlsx col AC + INDEC 2022-2040'],
-    ['RON acum marzo 2026 ($)', ronMar26, 'ars', 'AUDITADO', 'Total de recursos nacionales acumulado a marzo 2026.', 'ene-mar 2026', 'Dir_nacional_asuntos_provinciales.pdf pág. 8'],
-    ['Variación RON 2026 vs 2025 (%)', ronVar, 'pct', 'AUDITADO', 'Var % i.a. acum marzo en fuente DNAP.', 'ene-mar 2026 vs ene-mar 2025', 'Dir_nacional_asuntos_provinciales.pdf pág. 8 (Var % i.a.)'],
+    {label:'RON / Ingresos Totales (%)',question:'¿Cuánto pesa Nación en la caja?',value:ronShare,display:ronShare===null?null:`$${Number(ronShare).toFixed(1).replace('.',',')} de cada $100`,period:'Últimos 12 meses · 3T25',meaning:'Es la parte de los ingresos provinciales explicada por recursos de origen nacional.',source:'1816 fiscal histórico pág. 8 · Ingresos Total'},
+    {label:'RON per cápita ($)',question:'¿Cuánto recibió por habitante?',value:ronPc,display:ronPc===null?null:fmtPesosPerCapita(ronPc),period:'Año 2025',meaning:'Recursos nacionales de 2025 divididos por la población proyectada por INDEC.',source:'serie_ron_2003_2025.xlsx col AC + INDEC 2022-2040'},
+    {label:'RON acum marzo 2026 ($)',question:'¿Cuánto llegó en el primer trimestre?',value:ronMar26,display:formatQuarterTotal(ronMar26),period:'Enero–marzo 2026',meaning:'Total acumulado de recursos nacionales durante los primeros tres meses del año.',source:'Dir_nacional_asuntos_provinciales.pdf pág. 8'},
+    {label:'Variación RON 2026 vs 2025 (%)',question:'¿Creció frente al mismo período de 2025?',value:ronVar,display:ronVar===null?null:`${ronVar>=0?'+':''}${Number(ronVar).toFixed(1).replace('.',',')}% nominal`,period:'1T26 vs 1T25',meaning:'Es una variación en pesos corrientes. Para saber si hubo mejora real hay que descontar la inflación.',source:'Dir_nacional_asuntos_provinciales.pdf pág. 8 (Var % i.a.)'},
   ];
   section.style.display='block';
-  cards.innerHTML=items.map(([label,val,unit,tag,micro,periodo,fuente])=>{
+  cards.innerHTML=items.map(({label,question,value:val,display,period,meaning,source:fuente})=>{
     const missing=val===null||val===undefined;
     const forcedStatus=(label==='RON / Ingresos Totales (%)' && missing)
       ? (KPI_MISSING_STATUS_BY_PROVINCE[province] || DATA_STATUS.sin_fuente)
       : KPI_MISSING_STATUS_BY_PROVINCE[province];
     const status=missing ? (forcedStatus||resolveDataStatus({value:val,province,source:fuente})) : DATA_STATUS.numerico;
-    const shown=missing
-      ? semanticValueForDisplay({value:val,status})
-      : (label==='RON per cápita ($)'
-        ? `${fmtPesosPerCapita(val)} · ${periodo}`
-        : (unit==='ars'?`${fmtPesosKPI(val)} · ${periodo}`:`${Number(val).toFixed(1).replace('.',',')}% · ${periodo}`));
-    pushAuditCell({province,bloque:'Dependencia de transferencias Nación',kpi:label,valor_mostrado:shown,tipo_dato:missing?status:DATA_STATUS.numerico,fuente,periodo});
-    return `<div class="liq-card ${missing?'missing':''}"><div class="liq-head"><div class="k-lbl">${label}</div><span class="liq-tag audited">[${tag}]</span></div><div class="k-val ${missing?'m':'au'}" style="font-size:21px">${shown}</div><div class="k-sub">${micro}</div></div>`;
+    const shown=missing?semanticValueForDisplay({value:val,status}):display;
+    pushAuditCell({province,bloque:'Dependencia de transferencias Nación',kpi:label,valor_mostrado:shown,tipo_dato:missing?status:DATA_STATUS.numerico,fuente,periodo:period});
+    return `<article class="transfer-card ${missing?'missing':''}">
+      <div class="transfer-card-head"><div class="transfer-question">${question}</div><span class="transfer-source-tag">Dato oficial</span></div>
+      <div class="transfer-value ${missing?'m':''}">${shown}</div>
+      <div class="transfer-period">${period}</div>
+      <div class="transfer-meaning">${meaning}</div>
+    </article>`;
   }).join('');
+  if(reading){
+    const shareText=ronShare===null?'una participación todavía no cuantificada':`$${Number(ronShare).toFixed(1).replace('.',',')} de cada $100 de ingresos`;
+    const quarterText=ronMar26===null?'sin un total trimestral disponible':formatQuarterTotal(ronMar26);
+    const variationText=ronVar===null
+      ? 'sin variación interanual disponible'
+      : `${Math.abs(Number(ronVar)).toFixed(1).replace('.',',')}% ${ronVar>=0?'más':'menos'} que en el 1T25, medido en pesos corrientes`;
+    reading.innerHTML=`<strong>Lectura rápida:</strong> Nación explica ${shareText}. En el primer trimestre llegaron ${quarterText}, ${variationText}. ${ronVar===null?'':'Esto no permite afirmar una mejora real hasta descontar la inflación.'}`;
+  }
 }
 
 function renderNationDebt(province){
