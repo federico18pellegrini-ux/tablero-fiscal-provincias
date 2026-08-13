@@ -35,6 +35,8 @@ class GovernorBriefTests(unittest.TestCase):
     def test_decision_layer_has_required_shape(self):
         self.assertEqual(self.payload["status"], "se_deteriora")
         self.assertIn("gradual, productiva y federal", self.payload["plain_language_verdict"])
+        self.assertIn("37", self.payload["federal_reading"])
+        self.assertIn("problema federal real", self.payload["federal_conclusion"])
         self.assertEqual(len(self.payload["risks"]), 3)
         self.assertEqual(len(self.payload["decisions"]), 3)
         self.assertGreaterEqual(len(self.payload["missing_for_decision"]), 3)
@@ -64,7 +66,8 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("Situación fiscal de la Provincia de Buenos Aires", frontend)
         self.assertIn("CONCLUSIÓN · SE DETERIORA", frontend)
         self.assertIn("prepareInfoDots", frontend)
-        self.assertIn("Lectura de conjunto · Equidad y esfuerzo federal", frontend)
+        self.assertIn("gov-federal-summary", frontend)
+        self.assertNotIn('id="federalSectionReading"', frontend)
         self.assertNotIn("Análisis integral IA · inferencia político-fiscal", frontend)
 
 

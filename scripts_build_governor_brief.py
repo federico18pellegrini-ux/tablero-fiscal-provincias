@@ -69,6 +69,18 @@ def main() -> None:
             "y la obra que realmente hacen falta, reclamar por las vías institucionales los recursos que debe Nación y fortalecer la "
             "producción bonaerense. El problema urgente es financiero; la respuesta tiene que ser gradual, productiva y federal."
         ),
+        "federal_reading": (
+            "Buenos Aires hace un esfuerzo fiscal propio importante, pero sigue muy condicionada por el esquema federal. "
+            "Recauda por sí misma casi la mitad de sus ingresos no previsionales, aunque los recursos de origen nacional todavía "
+            "equivalen al 42,3% de los ingresos totales. A la vez, recibe por habitante apenas 37 cuando el promedio comparable "
+            "recibe 100 y queda 22 de 22 en ese ranking. Eso muestra una desventaja estructural en el reparto por habitante."
+        ),
+        "federal_conclusion": (
+            "Hay un problema federal real que debe reclamarse y cuantificarse, pero estos datos no alcanzan para atribuirle a Nación "
+            "todo el déficit provincial. Las series de 2026 tienen cortes distintos y la matriz de reclamos todavía cubre sólo una "
+            "parte del universo. La posición más sólida es defender los recursos bonaerenses con firmeza y datos, mientras la "
+            "Provincia ordena su caja y el ritmo del gasto."
+        ),
         "key_metrics": [
             {
                 "id": "financial_ltm",
