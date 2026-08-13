@@ -65,7 +65,7 @@ def month_from_date(raw):
 
 def classify_dependencia(value):
     if value is None:
-        return 'media'
+        return 'sin_dato'
     pct = value * 100
     if pct >= 60:
         return 'alta'
@@ -76,7 +76,7 @@ def classify_dependencia(value):
 
 def classify_estres(score):
     if score is None:
-        return 'medio'
+        return 'sin_dato'
     if score >= 0.30:
         return 'alto'
     if score >= 0.15:
@@ -86,7 +86,7 @@ def classify_estres(score):
 
 def classify_rigidez(gasto_personal_ratio):
     if gasto_personal_ratio is None:
-        return 'intermedio'
+        return 'sin_dato'
     if gasto_personal_ratio >= 0.55:
         return 'rígido'
     if gasto_personal_ratio <= 0.45:
@@ -96,7 +96,7 @@ def classify_rigidez(gasto_personal_ratio):
 
 def classify_riesgo_aguinaldo(meses_cobertura):
     if meses_cobertura is None:
-        return 'medio'
+        return 'sin_dato'
     if meses_cobertura < 1:
         return 'alto'
     if meses_cobertura < 2:
@@ -106,7 +106,7 @@ def classify_riesgo_aguinaldo(meses_cobertura):
 
 def classify_semaforo(resultado_ratio, ahorro_ratio):
     if resultado_ratio is None or ahorro_ratio is None:
-        return 'amarillo'
+        return 'sin_dato'
     if resultado_ratio < -0.05 and ahorro_ratio < 0:
         return 'rojo'
     if -0.05 <= resultado_ratio <= -0.01:
@@ -116,7 +116,7 @@ def classify_semaforo(resultado_ratio, ahorro_ratio):
 
 def classify_level(value, high=-5, medium=-1):
     if value is None:
-        return 'medio'
+        return 'sin_dato'
     if value <= high:
         return 'alto'
     if value <= medium:
@@ -147,13 +147,18 @@ def annual_real_variation(series_by_year):
 
 
 def classify_deterioro(coparticipacion_var, ingresos_var, propia_var, resultado_ratio, gasto_personal_ratio):
-    nacion = 'alto' if (coparticipacion_var is not None and coparticipacion_var <= -5) else ('medio' if coparticipacion_var is not None and coparticipacion_var < -1 else 'bajo')
+    nacion = 'sin_dato' if coparticipacion_var is None else ('alto' if coparticipacion_var <= -5 else ('medio' if coparticipacion_var < -1 else 'bajo'))
 
-    gasto_presion = (resultado_ratio is not None and resultado_ratio < -0.01 and (gasto_personal_ratio or 0) >= 0.50)
-    provincia = 'alto' if gasto_presion else 'medio'
+    if resultado_ratio is None or gasto_personal_ratio is None:
+        provincia = 'sin_dato'
+    else:
+        gasto_presion = resultado_ratio < -0.01 and gasto_personal_ratio >= 0.50
+        provincia = 'alto' if gasto_presion else 'bajo'
 
-    ambos_caen = (ingresos_var is not None and propia_var is not None and ingresos_var < -1 and propia_var < -1)
-    macro = 'alto' if ambos_caen else 'medio'
+    if ingresos_var is None or propia_var is None:
+        macro = 'sin_dato'
+    else:
+        macro = 'alto' if ingresos_var < -1 and propia_var < -1 else 'bajo'
 
     return {
         'nacion': nacion,
@@ -164,10 +169,13 @@ def classify_deterioro(coparticipacion_var, ingresos_var, propia_var, resultado_
 
 def pick_main_driver(deterioro):
     if not deterioro:
-        return 'macro'
+        return 'sin evidencia suficiente'
     order = ['nacion', 'provincia', 'macro']
     score = {'alto': 3, 'medio': 2, 'bajo': 1}
-    return sorted(order, key=lambda k: score.get(deterioro.get(k, 'medio'), 2), reverse=True)[0]
+    available = [key for key in order if deterioro.get(key) in score]
+    if not available:
+        return 'sin evidencia suficiente'
+    return sorted(available, key=lambda k: score[deterioro[k]], reverse=True)[0]
 
 
 def fmt_pct(value):
@@ -305,23 +313,28 @@ def build():
         if to_float(base.get('resultado_financiero_ltm_pct')) is not None:
             resultado_ratio = to_float(base.get('resultado_financiero_ltm_pct')) / 100.0
 
-        ahorro_corriente_ratio = resultado_ratio
-        ahorro_corriente = ingresos_totales * ahorro_corriente_ratio if (ingresos_totales and ahorro_corriente_ratio is not None) else None
+        # Ahorro corriente y resultado financiero no son equivalentes. Sin
+        # ingresos y gastos corrientes auditados, este indicador debe quedar N/D.
+        ahorro_corriente_ratio = None
+        ahorro_corriente = None
 
         deuda_sobre_ingresos = None
         if to_float(base.get('deuda_total_sobre_ingresos_pct')) is not None:
             deuda_sobre_ingresos = to_float(base.get('deuda_total_sobre_ingresos_pct')) / 100.0
 
-        stress_rf = max(0.0, -(resultado_ratio or 0.0))
-        stress_deuda = max(0.0, deuda_sobre_ingresos or 0.0)
-        stress_sueldos = max(0.0, gasto_personal_ratio or 0.0)
-        estres_fiscal_score = 0.4 * stress_rf + 0.3 * stress_deuda + 0.3 * stress_sueldos
+        stress_inputs = (resultado_ratio, deuda_sobre_ingresos, gasto_personal_ratio)
+        if all(value is not None for value in stress_inputs):
+            stress_rf = max(0.0, -resultado_ratio)
+            stress_deuda = max(0.0, deuda_sobre_ingresos)
+            stress_sueldos = max(0.0, gasto_personal_ratio)
+            estres_fiscal_score = 0.4 * stress_rf + 0.3 * stress_deuda + 0.3 * stress_sueldos
+        else:
+            estres_fiscal_score = None
         estres_fiscal_categoria = classify_estres(estres_fiscal_score)
 
+        # La cobertura de aguinaldo requiere caja disponible y necesidad SAC.
+        # No se aproxima a partir de un resultado contable anual.
         meses_cobertura = None
-        if ahorro_corriente_ratio is not None:
-            # Proxy sin dato de caja: ahorro_corriente / 6 -> aproximado en meses sobre ingreso mensual
-            meses_cobertura = ahorro_corriente_ratio * 2
         riesgo_aguinaldo = classify_riesgo_aguinaldo(meses_cobertura)
 
         total_series = ron_by_prov_cat_year[province].get('Total | (1) + (2)', {})
@@ -348,7 +361,7 @@ def build():
             f"Provincia con {signo} de {fmt_pct(resultado_ratio)}. "
             f"El desequilibrio se explica principalmente por {driver}. "
             f"El gasto es {rigidez} y la dependencia de Nación es {dependencia_categoria}. "
-            f"El riesgo de caja es {riesgo_aguinaldo}."
+            + (f"El riesgo de caja es {riesgo_aguinaldo}." if riesgo_aguinaldo != 'sin_dato' else "No hay base auditada para medir cobertura de caja o aguinaldo.")
         )
 
         base.update({

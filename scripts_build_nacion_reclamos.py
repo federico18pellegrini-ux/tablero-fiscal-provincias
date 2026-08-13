@@ -1,7 +1,7 @@
 import csv
 import json
 from collections import defaultdict
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 
 MANIFEST_FILE = Path('dashboard_manifest.json')
@@ -480,10 +480,14 @@ def build():
             row_copy['anclas_principales'] = ' | '.join(row_copy['anclas_principales'])
             writer.writerow({k: row_copy.get(k) for k in fields})
 
+    source_cutoff = max(
+        (normalize_text(row.get('fecha_corte_monto')) for row in rows if normalize_text(row.get('fecha_corte_monto'))),
+        default=None,
+    )
     payload = {
         'source': 'pipeline_reclamos_nacion_v1',
         'generated_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
-        'cutoff_date': date.today().isoformat(),
+        'cutoff_date': source_cutoff,
         'integration_ready': {
             'selector_keys': ['deuda_total_reclamada', 'deuda_total_robusta'],
             'future_block_key': 'deuda_nacion_con_provincia',

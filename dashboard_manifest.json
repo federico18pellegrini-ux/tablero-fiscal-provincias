@@ -1,6 +1,7 @@
 {
   "project": "Sistema fiscal provincias - capa intermedia normalizada",
-  "generated_at": "2026-04-22T22:06:55.449577Z",
+  "generated_at": "2026-08-13T15:31:46.834671Z",
+  "data_cutoff": "2026-04-30",
   "province_universe": [
     "Buenos Aires",
     "CABA",
@@ -61,9 +62,12 @@
     "pba_top_monthly": "pba_top_monthly.csv",
     "national_debt_monthly": "national_debt_monthly.csv",
     "municipios_pba_annual": "municipios_pba_annual.csv"
+    ,"governor_brief": "dashboard_governor_brief.json"
+    ,"pba_1816_snapshots": "data/1816/pba_fiscal_snapshots.csv"
+    ,"ranking_1816_1t26": "data/1816/ranking_1t26.csv"
   },
   "notes": {
-    "cross_section_1816_scope": "21-22 jurisdicciones comparables; algunas provincias tienen datos incompletos en 1816",
+    "cross_section_1816_scope": "La capa estructural general conserva el corte 3T25. La nueva sala del gobernador usa 4T25 y 1T26 y un ranking homogéneo de 23 jurisdicciones; La Pampa no integra esos informes.",
     "monthly_scope_2026": "Regenerado post-fix de mapeo de provincias; cobertura validada contra province_universe y con placeholders 0 donde no hubo registros trazables en los archivos de entrada disponibles.",
     "ron_annual_scope": "serie_ron_2003_2025 es anual por provincia y categoría",
     "ron_category_normalization": "serie_ron_2003_2025 tiene columna category_normalized que unifica variantes históricas de nombres de categorías. Usar category_normalized para filtrar, no category.",

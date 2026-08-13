@@ -1,6 +1,6 @@
 {
   "source": "bloque atribución del deterioro",
-  "generated_at": "2026-04-20T21:07:59.592136Z",
+  "generated_at": "2026-08-13T15:33:48.793525Z",
   "methodology": {
     "unit": "pct_of_current_income",
     "nation_effect": "max(0, auto_transfers_prev_real - auto_transfers_current_real) + max(0, tna_expected_current_real - tna_received_current_real), todo dividido por income_total_current_real * 100",
@@ -10,31 +10,28 @@
   "provinces": {
     "Buenos Aires": {
       "period": "2026-03",
-      "status": "preliminary_partial",
-      "coverage_note": "Bloque preliminar. Atribución operativa con proxies de Nación, macro y gestión; no constituye descomposición contable cerrada.",
+      "status": "missing",
+      "coverage_note": "Sin dato suficiente. Faltan ingresos comparables deflactados para el período.",
       "bars": {
         "nation_effect_pct_income": {
-          "value": 68.0,
-          "status": "proxy",
+          "value": null,
+          "status": "missing",
           "source": [
-            "dashboard_cross_section_1816.json",
-            "informacion_consolidada_2026_normalizado.csv"
+            "dashboard_deterioration_attribution_inputs.csv"
           ]
         },
         "macro_effect_pct_income": {
-          "value": 61.0,
-          "status": "proxy",
+          "value": null,
+          "status": "missing",
           "source": [
-            "dashboard_cross_section_1816.json",
-            "deflactor_mensual.csv"
+            "dashboard_deterioration_attribution_inputs.csv"
           ]
         },
         "management_effect_pct_income": {
-          "value": 54.0,
-          "status": "preliminary",
+          "value": null,
+          "status": "missing",
           "source": [
-            "dashboard_cross_section_1816.json",
-            "budget_anchors_pba_2026.json"
+            "dashboard_deterioration_attribution_inputs.csv"
           ]
         }
       },
@@ -50,8 +47,7 @@
         "primary_expenditure_current_millions": null,
         "primary_expenditure_prev_year_millions": null,
         "macro_proxy_method": "Proxy base propia mensual deflactada; cargar desde top_mensual_2025_normalizado + top_mensual_2026_normalizado (homogéneo)."
-      },
-      "preliminary_interpretation": "La presión Nación domina el deterioro de corto plazo, la macro sostiene tensión real y la gestión explica el remanente operativo."
+      }
     },
     "CABA": {
       "period": "2026-03",

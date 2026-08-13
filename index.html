@@ -42,7 +42,7 @@
   --mono:'DM Mono','Courier New',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
 body{
   font-family:var(--font);
   background:var(--bg);
@@ -52,6 +52,8 @@ body{
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
   font-weight:500;
+  max-width:100%;
+  overflow-x:hidden;
 }
 
 /* ── HEADER ─────────────────────────────────────────────────────── */
@@ -79,7 +81,7 @@ body{
 .header-meta{font-size:12px;color:var(--dim);text-align:right;line-height:1.5}
 
 /* ── WRAP ────────────────────────────────────────────────────────── */
-.wrap{padding:14px 14px 32px;max-width:900px;margin:0 auto}
+.wrap{padding:18px 18px 40px;max-width:1120px;margin:0 auto}
 
 /* ── HERO ────────────────────────────────────────────────────────── */
 .hero{
@@ -90,7 +92,7 @@ body{
   margin-bottom:12px;
 }
 .hero-eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:600}
-.hero-title{font-family:var(--font);font-size:26px;color:var(--text);line-height:1.12;margin-bottom:6px;letter-spacing:-.02em}
+.hero-title{font-family:var(--font);font-size:clamp(28px,4vw,42px);color:var(--text);line-height:1.08;margin-bottom:8px;letter-spacing:-.035em}
 .hero-sub{font-size:14px;color:var(--muted);line-height:1.6}
 .hero-credit{
   margin-top:8px;
@@ -102,6 +104,10 @@ body{
   text-decoration:none;
 }
 .hero-credit a:hover{color:var(--gold)}
+.dashboard-nav{display:flex;gap:7px;overflow-x:auto;padding:0 0 12px;margin:-2px 0 4px;scrollbar-width:none}
+.dashboard-nav::-webkit-scrollbar{display:none}
+.dashboard-nav a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-size:11px;font-weight:700;padding:7px 10px;border:1px solid var(--border);border-radius:999px;background:var(--s1)}
+.dashboard-nav a:hover{color:var(--gold);border-color:var(--gold-border)}
 
 /* ── CONTROL BAR ─────────────────────────────────────────────────── */
 .ctrl-row{display:flex;gap:10px;margin-bottom:12px;align-items:stretch}
@@ -220,6 +226,13 @@ select.psel:focus{outline:none;border-color:var(--gold)}
   margin-bottom:12px;
 }
 .btn-export:hover{background:var(--gold);color:#000}
+.secondary-tools,.data-context{margin:0 0 12px;background:var(--s1);border:1px solid var(--border);border-radius:var(--rs);padding:10px 12px}
+.secondary-tools>summary,.data-context>summary{cursor:pointer;color:var(--muted);font-size:12px;font-weight:700;list-style:none}
+.secondary-tools>summary::-webkit-details-marker,.data-context>summary::-webkit-details-marker{display:none}
+.secondary-tools>summary::after,.data-context>summary::after{content:'＋';float:right;color:var(--dim)}
+.secondary-tools[open]>summary::after,.data-context[open]>summary::after{content:'−'}
+.secondary-tools-body,.data-context-body{padding-top:12px}
+.secondary-tools .btn-export{margin:0 6px 6px 0;font-size:12px;padding:8px 12px}
 .export-status{
   font-size:12px;
   color:var(--dim);
@@ -301,9 +314,10 @@ select.psel:focus{outline:none;border-color:var(--gold)}
 @media(max-width:520px){.exec-grid{grid-template-columns:1fr}}
 .method-list{margin:8px 0 0 16px;padding:0;display:flex;flex-direction:column;gap:6px}
 .method-list li{margin:0;color:var(--dim);line-height:1.5}
-.liq-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
-@media(min-width:640px){.liq-grid{grid-template-columns:repeat(3,1fr)}}
-.liq-card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:12px 13px}
+.liq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px;min-width:0}
+@media(min-width:640px){.liq-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.liq-grid{grid-template-columns:minmax(0,1fr)}}
+.liq-card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:12px 13px;min-width:0}
 .liq-card.missing{border-color:#3a3a3a;background:#131313}
 .liq-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .liq-tag{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border2);border-radius:999px;padding:1px 6px}
@@ -360,7 +374,7 @@ select.psel:focus{outline:none;border-color:var(--gold)}
 .comp-note{font-size:12px;color:var(--dim);margin-bottom:12px;line-height:1.4}
 .comp-rows{display:flex;flex-direction:column;gap:6px}
 .comp-row{display:grid;grid-template-columns:110px 1fr 52px;align-items:center;gap:7px}
-@media(max-width:700px){body{font-size:17px}.wrap{padding:12px}.hero-title{font-size:30px}.hero-sub{font-size:15px}.k-val{font-size:26px}.k-lbl{font-size:12px}.k-sub{font-size:12px}.header-meta{font-size:12px}.brand-name{font-size:15px}.brand-sub{font-size:12px}.toggle-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+@media(max-width:700px){body{font-size:16px}.wrap{padding:12px}.hero-title{font-size:30px}.hero-sub{font-size:15px}.k-val{font-size:26px}.k-lbl{font-size:12px}.k-sub{font-size:12px}.header-meta{font-size:12px}.brand-name{font-size:15px}.brand-sub{font-size:12px}.toggle-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
 .toggle-pill{display:inline-flex;align-items:center;background:var(--s1);border:1px solid var(--border);border-radius:999px;padding:3px;gap:4px}
 .toggle-btn{border:0;background:transparent;color:var(--muted);padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer}
 .toggle-btn.active{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-border)}
@@ -409,9 +423,10 @@ canvas{display:block}
 
 /* ── TABLES ──────────────────────────────────────────────────────── */
 .tables-col{display:flex;flex-direction:column;gap:10px;margin-bottom:10px}
-.tables-row{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px}
+.tables-row{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px;min-width:0}
 @media(min-width:640px){.tables-row{grid-template-columns:1fr 1fr}}
-.tb{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:visible}
+.key-indicators-row{grid-template-columns:minmax(0,1fr)!important;width:100%}
+.tb{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px;overflow-x:auto;max-width:100%;min-width:0;width:100%}
 .tb h3{font-size:13px;font-weight:600;margin-bottom:10px}
 table{width:100%;border-collapse:collapse;min-width:280px}
 th,td{padding:7px 8px;border-bottom:1px solid var(--border);font-size:12px;vertical-align:middle;text-align:left}
@@ -545,6 +560,10 @@ tr:last-child td{border-bottom:none}
 .kpi-details-table th,.kpi-details-table td{
   font-size:11px;
 }
+#metricsDetails,#metricsDetailsTableWrap{max-width:100%;min-width:0;contain:inline-size}
+#metricsDetailsTableWrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+#metricsDetails:not([open]) #metricsDetailsTableWrap{display:none}
+.indicators-meta-table{width:780px;max-width:none}
 .export-a4-root .kpi-details-table th{
   white-space:nowrap !important;
   word-break:keep-all !important;
@@ -599,6 +618,55 @@ tr:last-child td{border-bottom:none}
 .footer a:hover{color:var(--gold)}
 .footer-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
 
+/* ── SALA DEL GOBERNADOR ───────────────────────────────────────── */
+.governor-room{margin:0 0 14px;border:1px solid var(--gold-border);border-radius:16px;background:linear-gradient(145deg,rgba(201,169,90,.13),var(--s1) 38%);overflow:hidden}
+.gov-head{padding:18px 18px 14px;border-bottom:1px solid var(--border)}
+.gov-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--gold);font-weight:700}
+.gov-title{font-size:24px;line-height:1.16;margin-top:5px;letter-spacing:-.025em}
+.gov-verdict{margin-top:9px;max-width:760px;color:var(--muted);font-size:14px;line-height:1.65}
+.gov-status{display:inline-flex;margin-top:12px;padding:6px 10px;border-radius:999px;background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.gov-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.gov-metric{background:var(--s1);padding:15px;min-width:0}
+.gov-metric-label{font-size:11px;color:var(--muted);font-weight:700;min-height:34px}
+.gov-metric-value{font-family:var(--mono);font-size:24px;font-weight:700;margin:3px 0}
+.gov-metric-value.red{color:var(--red)}.gov-metric-value.amber{color:var(--amber)}.gov-metric-value.green{color:var(--green)}
+.gov-metric-window,.gov-metric-change{font-size:10px;color:var(--dim);line-height:1.45}
+.gov-metric-change{margin-top:5px;color:var(--muted)}
+.gov-metric-meaning{font-size:11px;color:var(--muted);line-height:1.5;margin-top:7px}
+.gov-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px}
+.gov-panel{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:10px;padding:13px}
+.gov-panel h4{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold);margin-bottom:9px}
+.gov-list{list-style:none;display:grid;gap:9px}
+.gov-list li{font-size:12px;color:var(--muted);line-height:1.5;padding-left:14px;position:relative}
+.gov-list li::before{content:'•';position:absolute;left:0;color:var(--gold)}
+.gov-list strong{display:block;color:var(--text);font-size:13px;margin-bottom:2px}
+.gov-horizon{display:inline-block;color:var(--gold);font-family:var(--mono);font-size:10px;margin-right:5px}
+.gov-method{margin:0 14px 14px;padding:11px 13px;border:1px dashed var(--border2);border-radius:9px;color:var(--dim);font-size:11px;line-height:1.6}
+.gov-missing{margin-top:9px;padding-top:9px;border-top:1px solid var(--border);color:var(--dim)}
+@media(max-width:700px){.gov-metrics{grid-template-columns:1fr 1fr}.gov-columns{grid-template-columns:1fr}.gov-title{font-size:21px}}
+@media(max-width:420px){.gov-metrics{grid-template-columns:1fr}.gov-metric-label{min-height:0}}
+@media(max-width:700px){
+  .key-indicators-row .tb{overflow:hidden;padding:12px}
+  .key-indicators-row .tb>table{display:block;min-width:0;width:100%}
+  .key-indicators-row .tb>table>tbody{display:block}
+  .key-indicators-row .tb>table>tbody>tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 10px;padding:11px 0;border-bottom:1px solid var(--border)}
+  .key-indicators-row .tb>table>tbody>tr:first-child{display:none}
+  .key-indicators-row .tb>table>tbody>tr:last-child{border-bottom:0}
+  .key-indicators-row .tb>table td{display:block;border:0;padding:0;min-width:0}
+  .key-indicators-row .tb>table td:nth-child(1){grid-column:1;font-size:13px}
+  .key-indicators-row .tb>table td:nth-child(2){grid-column:1/-1;grid-row:2;color:var(--dim)!important;font-size:11px!important}
+  .key-indicators-row .tb>table td:nth-child(3){grid-column:2;grid-row:1;text-align:right;align-self:start}
+  .key-indicators-row .metrics-value{white-space:nowrap;overflow-wrap:normal}
+  .key-indicators-row .tb>table td:nth-child(4){grid-column:1/-1;grid-row:3;padding-top:5px}
+  .key-indicators-row .metrics-ranking-bar{width:min(100px,35vw)}
+}
+@media(max-width:480px){
+  .header{height:64px;padding:0 10px;gap:8px}
+  .brand{min-width:0;gap:7px}.brand-logo{width:32px;height:32px}
+  .brand-name{font-size:12px}.brand-sub{display:none}
+  .header-meta{font-size:9px;line-height:1.35;max-width:210px}
+}
+
 /* ── SAFE AREA (iOS) ─────────────────────────────────────────────── */
 @supports(padding:max(0px)){
   .wrap{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}
@@ -627,51 +695,73 @@ tr:last-child td{border-bottom:none}
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Tablero fiscal provincial · Argentina</div>
-  <div class="hero-title">Análisis fiscal de<br>provincias argentinas</div>
-  <div class="hero-sub">Compara cómo están las cuentas provinciales y cómo evolucionan sus ingresos, gastos y deuda.</div>
+  <div class="hero-eyebrow">Sala de situación fiscal · Provincia de Buenos Aires</div>
+  <div class="hero-title">Lo esencial para<br>tomar decisiones</div>
+  <div class="hero-sub">Qué está pasando, por qué importa y qué decisiones requiere. Después, el detalle técnico y la comparación con las demás provincias.</div>
   <div class="hero-credit">Federico Pellegrini · Podcast Entre Mates y Mercados <a href="https://open.spotify.com/show/6kY1P5uQ8Z4WVVKJdA9Qiv" target="_blank" rel="noopener noreferrer">[link]</a></div>
 </div>
 
+<nav class="dashboard-nav" aria-label="Navegación del tablero">
+  <a href="#governorRoom">Diagnóstico</a>
+  <a href="#layer1">Nación</a>
+  <a href="#layer2">Gestión</a>
+  <a href="#comparisonSection">Comparación</a>
+  <a href="#structuralIndicators">Indicadores</a>
+</nav>
+
 <!-- PROVINCE SELECTOR -->
 <div class="sh sh-gold">Provincia</div>
-<button id="downloadPdf" class="btn-export">
-  <span aria-hidden="true">📥</span> Exportar informe PDF · provincia actual
-</button>
-<button id="downloadPdfAll" class="btn-export">
-  <span aria-hidden="true">🗂️</span> Descargar informe completo · 21 comparables + 3 con dato incompleto (PDF consolidado)
-</button>
-<div id="exportStatus" class="export-status" role="status" aria-live="polite"></div>
 <div class="ctrl-row">
   <div class="ctrl-select-wrap">
     <select id="psel" class="psel"></select>
   </div>
 </div>
-<div id="availNote" style="font-size:12px;color:var(--dim);margin-bottom:10px;padding:8px 10px;background:var(--s1);border:1px solid var(--border);border-radius:var(--rs);line-height:1.6">
-  Cargando cobertura de datos...
-</div>
-<div class="money-glossary" aria-label="Convención monetaria">
-  <strong>Convención monetaria</strong>
-  <ul>
-    <li>M = millones de pesos argentinos (10^6)</li>
-    <li>Bn = billones argentinos = mil millones de millones (10^12)</li>
-    <li>Todos los montos se expresan en pesos corrientes salvo aclaración</li>
-  </ul>
-</div>
-<div id="partialDataBadge" class="inline-badge">Datos estructurales parciales</div>
-<section class="coverage-map" id="coverageMapSection">
-  <h3>Mapa de cobertura</h3>
-  <table class="coverage-map-table">
-    <thead>
-      <tr>
-        <th>Bloque</th>
-        <th>Estado</th>
-        <th>Motivo</th>
-      </tr>
-    </thead>
-    <tbody id="coverageMapBody"></tbody>
-  </table>
+<section class="governor-room" id="governorRoom" aria-labelledby="governorRoomTitle">
+  <div class="gov-head">
+    <div class="gov-kicker">Informe ejecutivo para la Gobernación · corte 31/03/2026</div>
+    <h2 class="gov-title" id="governorRoomTitle">Cargando diagnóstico...</h2>
+    <p class="gov-verdict" id="governorVerdict"></p>
+    <div class="gov-status" id="governorStatus">Evaluando</div>
+  </div>
+  <div class="gov-metrics" id="governorMetrics"></div>
+  <div class="gov-columns">
+    <article class="gov-panel"><h4>3 riesgos que requieren atención</h4><ul class="gov-list" id="governorRisks"></ul></article>
+    <article class="gov-panel"><h4>3 decisiones sugeridas</h4><ul class="gov-list" id="governorDecisions"></ul></article>
+  </div>
+  <details class="gov-method">
+    <summary>Qué sabemos, qué falta y cómo leerlo</summary>
+    <div id="governorMethod" style="margin-top:8px"></div>
+  </details>
 </section>
+
+<details class="secondary-tools">
+  <summary>Descargar o exportar</summary>
+  <div class="secondary-tools-body">
+    <button id="downloadPdf" class="btn-export"><span aria-hidden="true">↓</span> PDF de la provincia</button>
+    <button id="downloadPdfAll" class="btn-export"><span aria-hidden="true">↓</span> Informe de 24 jurisdicciones</button>
+    <div id="exportStatus" class="export-status" role="status" aria-live="polite"></div>
+  </div>
+</details>
+
+<details class="data-context">
+  <summary>Fuentes, unidades y cobertura</summary>
+  <div class="data-context-body">
+    <div id="availNote" style="font-size:12px;color:var(--dim);margin-bottom:10px;line-height:1.6">Cargando cobertura de datos...</div>
+    <div class="money-glossary" aria-label="Convención monetaria">
+      <strong>Convención monetaria</strong>
+      <ul>
+        <li>M = millones de pesos argentinos (10^6)</li>
+        <li>Bn = billones argentinos = mil millones de millones (10^12)</li>
+        <li>Todos los montos se expresan en pesos corrientes salvo aclaración</li>
+      </ul>
+    </div>
+    <div id="partialDataBadge" class="inline-badge">Datos estructurales parciales</div>
+    <section class="coverage-map" id="coverageMapSection">
+      <h3>Mapa de cobertura</h3>
+      <table class="coverage-map-table"><thead><tr><th>Bloque</th><th>Estado</th><th>Motivo</th></tr></thead><tbody id="coverageMapBody"></tbody></table>
+    </section>
+  </div>
+</details>
 <section class="executive-summary" id="executiveSummarySection">
   <h3>Resumen ejecutivo</h3>
   <p id="executiveSummaryMain" class="executive-summary-main">Cargando resumen...</p>
@@ -840,10 +930,10 @@ tr:last-child td{border-bottom:none}
 </div>
 
 <!-- COMPARATIVO -->
-<div class="sh">Comparativo interprovincial · resultado financiero</div>
+<div class="sh" id="comparisonSection">Comparativo interprovincial · resultado financiero</div>
 <div class="comp-wrap">
   <h3>Cómo cierra cada provincia sus cuentas</h3>
-  <div class="comp-note">Este gráfico compara si cada provincia termina el período con superávit o déficit, después de sumar ingresos y restar todos sus gastos, incluidos los intereses de deuda. Valores positivos: margen fiscal. Valores negativos: gastó más de lo que ingresó. La provincia elegida aparece resaltada para ubicarla rápido dentro del ranking. Esta comparación muestra posición relativa, no prueba por sí sola buena o mala gestión. Corte metodológico: tercer trimestre de 2025.</div>
+  <div class="comp-note">Este gráfico compara si cada provincia termina el período con superávit o déficit, después de sumar ingresos y restar todos sus gastos, incluidos los intereses de deuda. Valores positivos: margen fiscal. Valores negativos: gastó más de lo que ingresó. La provincia elegida aparece resaltada para ubicarla rápido dentro del ranking. Esta comparación muestra posición relativa, no prueba por sí sola buena o mala gestión. Corte metodológico: últimos 12 meses al 1T2026; 23 jurisdicciones.</div>
   <div id="compRows" class="comp-rows"></div>
 </div>
 
@@ -923,7 +1013,7 @@ tr:last-child td{border-bottom:none}
 </div>
 
 <!-- TABLES -->
-<div class="sh">Indicadores estructurales · <span id="tProvName" style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">—</span></div>
+<div class="sh" id="structuralIndicators">Indicadores estructurales · <span id="tProvName" style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">—</span></div>
 <div class="tables-row key-indicators-row">
   <div class="tb">
     <h3>Cómo está armada fiscalmente la provincia</h3><div class="cc-note" style="margin:0 0 8px 0">Estos indicadores muestran de dónde salen los ingresos, en qué se gasta, cuánto pesa la deuda y cómo cierra la provincia frente al resto.</div>
@@ -1212,7 +1302,7 @@ function computeOwnRevenue2026YtdFromTopRows(rows, province){
     if(!TAX_ORDER.includes(row?.tax)) return false;
     return hasValidValue(row?.value_millions);
   });
-  return sumMaybe(validRows,(row)=>row.value_millions);
+  return sumMaybe(validRows,(row)=>valueForMode(toN(row.value_millions),DEFLACTOR_MONTH[row.period]));
 }
 function shortCallout(text=BLOCK_CONSTRUCTION){
   return `<div class="compact-callout">${text}</div>`;
@@ -1234,11 +1324,10 @@ function formatRank(rankValue,total){
   if(Number.isFinite(t) && t>0)return `${Math.round(rank)}/${Math.round(t)}`;
   return `${Math.round(rank)}`;
 }
-const EXCLUDED_RANKING_PROVINCES_1816=['La Pampa','Neuquén','Santiago del Estero'];
+const EXCLUDED_RANKING_PROVINCES_1816=['La Pampa'];
 const OWN_REVENUE_NOT_PUBLISHED_2026=new Set(['La Pampa','Misiones','Salta','Santa Fe','Tierra del Fuego']);
 function structuralUniverseCount(){
-  // Ranking 1816 sobre 21 jurisdicciones homogéneas.
-  // Excluidas explícitamente por datos incompletos en la fuente oficial 1816: La Pampa, Neuquén y Santiago del Estero.
+  if(Object.keys(latestRanking1816||{}).length) return Object.keys(latestRanking1816).length;
   return Object.values(cross1816||{}).filter(v=>!v?.datos_incompletos_1816).length;
 }
 function isPartialStructural(cross){return !!cross?.datos_incompletos_1816;}
@@ -1504,7 +1593,7 @@ const BASE_OPTS={
 };
 
 /* ── DATA GLOBALS ────────────────────────────────────────────────── */
-let manifest,topMensual=[],topTrim=[],serieTop=[],info2026=[],info2025=[],topMensual2025=[],ronSeries=[],cross1816={},fiscalProvinciasData={},budgetPBA=null,budgetPBAQuarterly=[],pbaRonMonthlyRaw=[],pbaRonDailyRaw=[],pbaTopMonthlyRaw=[],nationalDebtMonthlyRaw=[],municipiosPBAAnnualRaw=[],liquidityRisk=null,realDynamics=null,deteriorationAttribution=null,federalFairness=null,scenariosData=null,reclamosNacionData=null;
+let manifest,topMensual=[],topTrim=[],serieTop=[],info2026=[],info2025=[],topMensual2025=[],ronSeries=[],cross1816={},latestRanking1816={},fiscalProvinciasData={},budgetPBA=null,budgetPBAQuarterly=[],pbaRonMonthlyRaw=[],pbaRonDailyRaw=[],pbaTopMonthlyRaw=[],nationalDebtMonthlyRaw=[],municipiosPBAAnnualRaw=[],liquidityRisk=null,realDynamics=null,deteriorationAttribution=null,federalFairness=null,scenariosData=null,reclamosNacionData=null,governorBrief=null;
 let charts={};
 const YEAR_DEFLATOR = {"2000": 721.1810727471235, "2001": 731.4071700983172, "2002": 520.5193149801797, "2003": 502.69596820298784, "2004": 476.82015402982523, "2005": 426.1269174334221, "2006": 386.9036977328477, "2007": 356.55520309355893, "2008": 330.87979867163995, "2009": 310.1179740041745, "2010": 280.44892578759163, "2011": 256.9074772650836, "2012": 232.78731530656742, "2013": 211.14325572424374, "2014": 170.01976130602242, "2015": 147.64221779144523, "2016": 108.06298963888307, "2017": 88.28538001398147, "2018": 59.50968976749627, "2019": 39.063076372251324, "2020": 28.80141241349951, "2021": 19.064686403078348, "2022": 9.91168252000688, "2023": 3.8032155238550325, "2024": 1.4297180188843337, "2025": 1.088488548, "2026": 1.0};
 function deflateAnnual(year,value){ if(value===null||value===undefined||isNaN(value)) return null; const f=YEAR_DEFLATOR[String(year)]; return f? value*f : value; }
@@ -1768,6 +1857,26 @@ function normalizePBARonMonthlyRows(rows){
 
 async function loadAll(){
   manifest = await loadJSON('dashboard_manifest.json') || EMBEDDED_MANIFEST;
+  governorBrief = await loadJSON(manifest?.files?.governor_brief || 'dashboard_governor_brief.json');
+  const latestRankingRows = await loadCSV(manifest?.files?.ranking_1816_1t26 || 'data/1816/ranking_1t26.csv');
+  latestRanking1816=Object.fromEntries(latestRankingRows.map(row=>[
+    canonicalProvinceName(row.province),
+    {
+      ranking_general:toN(row.general_rank),
+      gasto_salarios_gasto_primario_ex_ss_pct:toN(row.salary_primary_ex_ss_pct),rank_gasto_salarios:toN(row.salary_rank),
+      gasto_capital_gasto_primario_ex_ss_pct:toN(row.capital_primary_ex_ss_pct),rank_gasto_capital:toN(row.capital_rank),
+      autonomia_fiscal_pct:toN(row.autonomy_ex_ss_pct),rank_autonomia_fiscal:toN(row.autonomy_rank),
+      iibb_sobre_reca_propia_pct:toN(row.iibb_own_tax_pct),rank_concentracion_iibb:toN(row.iibb_rank),
+      deuda_total_sobre_ingresos_pct:toN(row.debt_income_pct),rank_deuda_total:toN(row.debt_rank),
+      deuda_bonos_bancos_sobre_deuda_total_pct:toN(row.bonds_banks_debt_pct),rank_deuda_bonos_bancos:toN(row.bonds_banks_rank),
+      resultado_financiero_ltm_pct:toN(row.financial_result_pct),rank_resultado_financiero:toN(row.financial_result_rank),
+      datos_incompletos_1816:false
+    }
+  ]));
+  if(latestRanking1816['Buenos Aires']){
+    latestRanking1816['Buenos Aires'].resultado_primario_ltm_pct=-2.7;
+    latestRanking1816['Buenos Aires'].rank_resultado_primario=null;
+  }
   topMensual = normalizeDatasetProvinceRows(EMBEDDED_TOP_M);
   topTrim = normalizeDatasetProvinceRows(EMBEDDED_TOP_T);
   serieTop = normalizeDatasetProvinceRows(EMBEDDED_SERIE_TOP);
@@ -1805,9 +1914,9 @@ async function loadAll(){
   ronSeries = normalizeDatasetProvinceRows(ronSeries);
 
   const provs = (manifest?.province_universe || Object.keys(cross1816 || {})).map(canonicalProvinceName);
-  const ts = manifest?.generated_at?.slice(0,10) || '—';
+  const ts = manifest?.data_cutoff || manifest?.generated_at?.slice(0,10) || '—';
   const comparables1816=Object.values(cross1816||{}).filter(v=>!v?.datos_incompletos_1816).length;
-  document.getElementById('metaBox').innerHTML=`${provs.length} jurisdicciones · ${comparables1816} comparables 3T2025<br><span style="color:var(--dim)">Actualizado ${ts}</span>`;
+  document.getElementById('metaBox').innerHTML=`${provs.length} jurisdicciones · PBA: 23 comparables 1T2026<br><span style="color:var(--dim)">Base general: ${comparables1816} comparables 3T2025 · corte ${ts}</span>`;
 
   const sel=document.getElementById('psel');
   sel.innerHTML='';
@@ -1831,8 +1940,9 @@ async function loadAll(){
 /* ── COMPARATIVO ─────────────────────────────────────────────────── */
 let currentProvince='Buenos Aires';
 function buildComparativo(){
-  if(!cross1816)return;
-  const data=Object.entries(cross1816)
+  const comparisonBase=Object.keys(latestRanking1816||{}).length?latestRanking1816:cross1816;
+  if(!comparisonBase)return;
+  const data=Object.entries(comparisonBase)
     .map(([p,d])=>({p,rf:toN(d.resultado_financiero_ltm_pct),incompleto:!!d.datos_incompletos_1816}))
     .filter(d=>d.rf!==null && !d.incompleto).sort((a,b)=>b.rf-a.rf);
   const max=Math.max(...data.map(d=>Math.abs(d.rf)));
@@ -1890,6 +2000,55 @@ function renderExecutiveCards(cross){
   setK('exCapital',pctN(capital),capital!==null&&capital>=10?'g':'a');
 }
 
+function formatGovNumber(value,unit){
+  if(value===null||value===undefined) return 'N/D';
+  const number=Number(value);
+  if(unit?.startsWith('de ')) return `${number}°`;
+  return `${number.toFixed(1).replace('.',',')}${unit==='%'||unit?.startsWith('%')?'%':''}`;
+}
+
+function formatGovUnit(unit){
+  if(unit==='%') return '';
+  if(unit==='% de ingresos') return 'de ingresos';
+  return unit||'';
+}
+
+function renderGovernorBrief(province){
+  const section=document.getElementById('governorRoom');
+  const legacySummary=document.getElementById('executiveSummarySection');
+  if(!section) return;
+  const show=province==='Buenos Aires' && governorBrief;
+  section.style.display=show?'block':'none';
+  if(legacySummary) legacySummary.style.display=show?'none':'block';
+  if(!show) return;
+  document.getElementById('governorRoomTitle').textContent=governorBrief.headline;
+  document.getElementById('governorVerdict').textContent=governorBrief.plain_language_verdict;
+  document.getElementById('governorStatus').textContent='Juicio final · se deteriora';
+  document.getElementById('governorMetrics').innerHTML=(governorBrief.key_metrics||[]).map(metric=>{
+    const direction=metric.comparison>0?'+':'';
+    return `<article class="gov-metric">
+      <div class="gov-metric-label">${metric.label}</div>
+      <div class="gov-metric-value ${metric.signal}">${formatGovNumber(metric.value,metric.unit)} <span style="font-size:11px;color:var(--dim)">${formatGovUnit(metric.unit)}</span></div>
+      <div class="gov-metric-window">${metric.window}</div>
+      <div class="gov-metric-change">${direction}${Number(metric.comparison).toFixed(1).replace('.',',')} ${metric.comparison_unit}</div>
+      <div class="gov-metric-meaning">${metric.interpretation}</div>
+    </article>`;
+  }).join('');
+  document.getElementById('governorRisks').innerHTML=(governorBrief.risks||[]).map(item=>
+    `<li><strong>${item.title}</strong>${item.evidence}<br>${item.political_meaning}</li>`
+  ).join('');
+  document.getElementById('governorDecisions').innerHTML=(governorBrief.decisions||[]).map(item=>
+    `<li><strong><span class="gov-horizon">${item.horizon}</span>${item.action}</strong>${item.why}</li>`
+  ).join('');
+  const missing=(governorBrief.missing_for_decision||[]).join(' · ');
+  document.getElementById('governorMethod').innerHTML=
+    `<strong style="color:var(--muted)">Dos relojes:</strong> ${governorBrief.methodology.quarter_vs_ltm}<br>`+
+    `<strong style="color:var(--muted)">Regla:</strong> ${governorBrief.methodology.facts_inferences_actions}<br>`+
+    `<strong style="color:var(--muted)">Universo:</strong> ${governorBrief.methodology.ranking_universe}`+
+    `<div class="gov-missing"><strong>Dato faltante para decidir caja:</strong> ${missing}.</div>`+
+    `<div style="margin-top:7px">Fuente: Informes 1816 4T25 y 1T26, páginas 7, 8, 23 y 27.</div>`;
+}
+
 function render(province){
   enforceHierarchy();
   resetAuditCells();
@@ -1899,8 +2058,9 @@ function render(province){
   document.querySelectorAll('.nodata').forEach(el=>el.remove());
   document.querySelectorAll('canvas').forEach(el=>el.style.display='');
 
-  const cross=(cross1816&&cross1816[province])||{};
+  const cross={...((cross1816&&cross1816[province])||{}),...((latestRanking1816&&latestRanking1816[province])||{})};
   const isPBA=province==='Buenos Aires';
+  renderGovernorBrief(province);
 
   const pTopM=sanitizeTopMensualRows(getProvinceRows(topMensual, province));
   const pTopTBase=getProvinceRows(topTrim, province);
@@ -1932,7 +2092,7 @@ function render(province){
   const rankingGeneral = partialStructural ? ND : formatRank(cross.ranking_general, structuralTotal);
   setK('kRank',rankingGeneral===ND?ND:'#'+rankingGeneral,'au');
   const kRankSub=document.getElementById('kRankSub');
-  if(kRankSub){kRankSub.textContent=`Ranking sobre ${structuralTotal} jurisdicciones con información homogénea en informe 1816 al III TRIM 2025. Excluye: ${EXCLUDED_RANKING_PROVINCES_1816.join(', ')}. Motivo: datos incompletos en la fuente oficial, no en este informe.`;}
+  if(kRankSub){kRankSub.textContent=`Ranking sobre ${structuralTotal} jurisdicciones con información homogénea en el informe 1816 al 1T2026. No incluye La Pampa, ausente en la fuente.`;}
   const rf=toN(cross.resultado_financiero_ltm_pct);
   const rp=toN(cross.resultado_primario_ltm_pct);
   const debt=toN(cross.deuda_total_sobre_ingresos_pct);
@@ -1945,7 +2105,7 @@ function render(province){
   const fiscalRatiosMethodNote=document.getElementById('fiscalRatiosMethodNote');
   if(fiscalRatiosMethodNote){
     fiscalRatiosMethodNote.innerText = province==='Buenos Aires'
-      ? 'Período: últimos 12 meses (LTM, octubre 2024 a septiembre 2025).\nFuente: Informe 1816 al III TRIM 2025.\nNota: la DNAP publica para acumulado III TRIM 2025 ratios distintos\n(-5,6% financiero y -2,1% primario). La diferencia se debe a la ventana\nLTM versus acumulado parcial, no a metodología divergente.'
+      ? 'Período: últimos 12 meses al 1T2026.\nFuente: Informe 1816 al 1T2026.\nLa lectura trimestral y la ventana LTM se muestran por separado para no confundir coyuntura con tendencia.'
       : '';
   }
   // Lectura política rápida
@@ -2625,6 +2785,7 @@ function renderFederalFairness(province){
     hasUsefulValue(m.federal_gap_pp?.value)
   ]);
   const fairMode=blockModeFromCoverage(fairCoverage);
+  if(footnotes) footnotes.innerHTML='';
   if(province==='CABA'){
     if(cardPC) cardPC.style.display='none';
   }
@@ -2873,18 +3034,24 @@ function renderDeterioration(province){
   cov.textContent = pdata.coverage_note || '';
 
   const bars=pdata.bars||{};
+  const barSpecs = [
+    ['Efecto Nación',toN(bars.nation_effect_pct_income?.value),'Pérdida atribuible a transferencias automáticas y no automáticas, sobre ingresos corrientes.'],
+    ['Efecto macroeconómico',toN(bars.macro_effect_pct_income?.value),'Pérdida real de la base propia, sobre ingresos corrientes.'],
+    ['Efecto gestión provincial',toN(bars.management_effect_pct_income?.value),'Exceso de gasto primario frente a la evolución de ingresos, sobre ingresos corrientes.']
+  ];
+  if(!barSpecs.some(([,value])=>value!==null)){
+    cards.innerHTML=shortCallout('No hay base homogénea suficiente para atribuir el deterioro entre Nación, macroeconomía y gestión provincial.');
+    if(details) details.style.display='none';
+    method.innerHTML = `<div><strong>Período solicitado:</strong> ${pdata.period||'2026-03'}.</div><div style="margin-top:6px"><strong>Estado:</strong> no disponible hasta completar ingresos, transferencias, recaudación propia y gasto primario comparables.</div>`;
+    return;
+  }
   const toIntensity=(v)=>v>=70?'alta':(v>=45?'media/alta':'media');
-  const iN=toIntensity(toN(bars.nation_effect_pct_income?.value)||50);
-  const iM=toIntensity(toN(bars.macro_effect_pct_income?.value)||50);
-  const iG=toIntensity(toN(bars.management_effect_pct_income?.value)||50);
-  if(details) details.style.display = true;
-  cards.innerHTML = [
-    ['Efecto Nación',iN,'Lectura preliminar','Proxy: dependencia de recursos nacionales y sensibilidad de giros automáticos.'],
-    ['Efecto macroeconómico',iM,'Lectura preliminar','Proxy: deuda/recursos, inflación y tensión sobre base imponible real.'],
-    ['Efecto gestión provincial',iG,'Lectura preliminar','Lectura preliminar sobre rigidez del gasto y margen de administración.']
-  ].map(([label,inten,tag,micro])=>{
-    const pct=inten==='alta'?85:(inten==='media/alta'?65:45);
-    return `<div class="attr-card"><div class="attr-title">${label}</div><div class="attr-meta"><div class="k-val au" style="font-size:22px">${String(inten).toUpperCase()}</div><span class="liq-tag derived">${tag}</span></div><div class="attr-bar"><div class="attr-fill" style="width:${pct}%"></div></div><div class="k-sub" style="margin-top:6px">${micro}</div></div>`;
+  if(details) details.style.display='block';
+  cards.innerHTML = barSpecs.map(([label,value,micro])=>{
+    if(value===null) return `<div class="attr-card"><div class="attr-title">${label}</div><div class="k-val m" style="font-size:22px">N/D</div><div class="k-sub" style="margin-top:6px">${micro}</div></div>`;
+    const inten=toIntensity(value);
+    const width=Math.max(0,Math.min(100,value));
+    return `<div class="attr-card"><div class="attr-title">${label}</div><div class="attr-meta"><div class="k-val au" style="font-size:22px">${String(inten).toUpperCase()} · ${pctN(value)}</div><span class="liq-tag derived">Estimación analítica</span></div><div class="attr-bar"><div class="attr-fill" style="width:${width}%"></div></div><div class="k-sub" style="margin-top:6px">${micro}</div></div>`;
   }).join('');
   method.innerHTML = `<div><strong>Período usado:</strong> ${pdata.period||'2026-03'}.</div><div style="margin-top:6px"><strong>Marco:</strong> atribución analítica Nación / macro / gestión.</div><div style="margin-top:6px"><strong>Etiqueta:</strong> Atribución analítica, no descomposición econométrica.</div><div style="margin-top:6px"><strong>Límite de la evidencia:</strong> combina datos observados, estimaciones e inferencias.</div>`;
 }
@@ -3392,22 +3559,27 @@ function renderMetrics(c,topYtd,ronYtd){
   const transferPeriod=ronYtdResolved!==null
     ? (ronPeriods.length===1?`${monthLabel(ronPeriods[0]).toLowerCase()} 2026`:`${rangoRon} 2026`)
     : 'sin datos 2026';
+  const latestStructural=!!latestRanking1816?.[province];
+  const structuralSource=latestStructural?'data/1816/ranking_1t26.csv':'dashboard_cross_section_1816.json';
+  const structuralPeriod=latestStructural?'LTM 1T26':'LTM 3T25';
+  const primarySource=(province==='Buenos Aires'&&latestStructural)?'data/1816/pba_fiscal_snapshots.csv':'dashboard_cross_section_1816.json';
+  const primaryPeriod=(province==='Buenos Aires'&&latestStructural)?'LTM 1T26':'LTM 3T25';
   const rows=[
-    ['Autonomía fiscal','Mide qué parte de los ingresos de la provincia viene de recursos propios.',pctN(toN(c.autonomia_fiscal_pct)),partial?null:toN(c.rank_autonomia_fiscal),structuralTotal,'Más alta = menos dependencia de Nación.','g',{fuente:'dashboard_cross_section_1816.json',periodo:'LTM 3T25',cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'autonomia_fiscal_pct'}],
-    ['Salarios / gasto primario','Mide cuánto del gasto primario se va en personal.',pctN(toN(c.gasto_salarios_gasto_primario_ex_ss_pct)),partial?null:toN(c.rank_gasto_salarios),structuralTotal,'Más alto = menor margen para ajustar gasto corriente.','r',{fuente:'dashboard_cross_section_1816.json',periodo:'LTM 3T25',cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'gasto_salarios_gasto_primario_ex_ss_pct'}],
-    ['Capital / gasto primario','Mide qué parte del gasto se destina a obra e inversión.',pctN(toN(c.gasto_capital_gasto_primario_ex_ss_pct)),partial?null:toN(c.rank_gasto_capital),structuralTotal,'Más alto = mayor esfuerzo en infraestructura.','g',{fuente:'dashboard_cross_section_1816.json',periodo:'3T2025 / LTM 2025',cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'gasto_capital_gasto_primario_ex_ss_pct'}],
-    ['IIBB / recaudación propia','Mide cuánto depende la provincia de Ingresos Brutos.',pctN(toN(c.iibb_sobre_reca_propia_pct)),partial?null:toN(c.rank_concentracion_iibb),structuralTotal,'Más alto = estructura tributaria más concentrada.','a',{fuente:'dashboard_cross_section_1816.json',periodo:'3T2025 / LTM 2025',cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'iibb_sobre_reca_propia_pct'}],
-    ['Deuda / ingresos','Mide cuánto representa la deuda total frente a los ingresos anuales.',pctN(toN(c.deuda_total_sobre_ingresos_pct)),partial?null:toN(c.rank_deuda_total),structuralTotal,'Más alto = mayor presión sobre la caja futura.','r',{fuente:'dashboard_cross_section_1816.json',periodo:'3T2025 / LTM 2025',cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'deuda_total_sobre_ingresos_pct'}],
-    ['Bonos + bancos / deuda','Mide qué parte de la deuda está más expuesta al mercado financiero.',pctN(toN(c.deuda_bonos_bancos_sobre_deuda_total_pct)),partial?null:toN(c.rank_deuda_bonos_bancos),structuralTotal,'Más alto = mayor sensibilidad a tasas y refinanciación.','a',{fuente:'dashboard_cross_section_1816.json',periodo:'3T2025 / LTM 2025',cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'deuda_bonos_bancos_sobre_deuda_total_pct'}],
-    ['Resultado financiero (últimos 12 meses)','Mide si cerró con superávit o déficit después de pagar todos sus gastos.',pct(toN(c.resultado_financiero_ltm_pct)),partial?null:toN(c.rank_resultado_financiero),structuralTotal,'Positivo = margen fiscal. Negativo = desequilibrio.','',{fuente:'dashboard_cross_section_1816.json',periodo:'LTM 3T25',cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'resultado_financiero_ltm_pct'}],
-    ['Resultado primario (últimos 12 meses)','Mide si puede sostener sus cuentas antes de pagar intereses.',pct(toN(c.resultado_primario_ltm_pct)),partial?null:toN(c.rank_resultado_primario),structuralTotal,'Sirve para separar presión financiera de presión operativa.','',{fuente:'dashboard_cross_section_1816.json',periodo:'LTM 3T25',cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'resultado_primario_ltm_pct'}],
+    ['Autonomía fiscal','Mide qué parte de los ingresos de la provincia viene de recursos propios.',pctN(toN(c.autonomia_fiscal_pct)),partial?null:toN(c.rank_autonomia_fiscal),structuralTotal,'Más alta = menos dependencia de Nación.','g',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'autonomia_fiscal_pct'}],
+    ['Salarios / gasto primario','Mide cuánto del gasto primario se va en personal.',pctN(toN(c.gasto_salarios_gasto_primario_ex_ss_pct)),partial?null:toN(c.rank_gasto_salarios),structuralTotal,'Más alto = menor margen para ajustar gasto corriente.','r',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'gasto_salarios_gasto_primario_ex_ss_pct'}],
+    ['Capital / gasto primario','Mide qué parte del gasto se destina a obra e inversión.',pctN(toN(c.gasto_capital_gasto_primario_ex_ss_pct)),partial?null:toN(c.rank_gasto_capital),structuralTotal,'Más alto = mayor esfuerzo en infraestructura.','g',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'gasto_capital_gasto_primario_ex_ss_pct'}],
+    ['IIBB / recaudación propia','Mide cuánto depende la provincia de Ingresos Brutos.',pctN(toN(c.iibb_sobre_reca_propia_pct)),partial?null:toN(c.rank_concentracion_iibb),structuralTotal,'Más alto = estructura tributaria más concentrada.','a',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'iibb_sobre_reca_propia_pct'}],
+    ['Deuda / ingresos','Mide cuánto representa la deuda total frente a los ingresos anuales.',pctN(toN(c.deuda_total_sobre_ingresos_pct)),partial?null:toN(c.rank_deuda_total),structuralTotal,'Más alto = mayor presión sobre la caja futura.','r',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'deuda_total_sobre_ingresos_pct'}],
+    ['Bonos + bancos / deuda','Mide qué parte de la deuda está más expuesta al mercado financiero.',pctN(toN(c.deuda_bonos_bancos_sobre_deuda_total_pct)),partial?null:toN(c.rank_deuda_bonos_bancos),structuralTotal,'Más alto = mayor sensibilidad a tasas y refinanciación.','a',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'deuda_bonos_bancos_sobre_deuda_total_pct'}],
+    ['Resultado financiero (últimos 12 meses)','Mide si cerró con superávit o déficit después de pagar todos sus gastos.',pct(toN(c.resultado_financiero_ltm_pct)),partial?null:toN(c.rank_resultado_financiero),structuralTotal,'Positivo = margen fiscal. Negativo = desequilibrio.','',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'resultado_financiero_ltm_pct'}],
+    ['Resultado primario (últimos 12 meses)','Mide si puede sostener sus cuentas antes de pagar intereses.',pct(toN(c.resultado_primario_ltm_pct)),partial?null:toN(c.rank_resultado_primario),structuralTotal,'Sirve para separar presión financiera de presión operativa.','',{fuente:primarySource,periodo:primaryPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'resultado_primario_ltm_pct'}],
     ['Recaudación propia 2026','Muestra el total recaudado con impuestos propios en los meses disponibles.',hasUsefulValue(topYtdResolved)?`${fmtPesosKPI(topYtdResolved)} · ${ownRevenuePeriod}`:DATA_LABEL[OWN_REVENUE_NOT_PUBLISHED_2026.has(province)?DATA_STATUS.dato_no_publicado:DATA_STATUS.sin_fuente],null,null,'Sirve para seguir la evolución más reciente de la caja provincial.','b',{fuente:'top_mensual_2026_normalizado.csv',periodo:ownRevenuePeriod,cobertura:'parcial',unidad:'millones de pesos',estado:hasUsefulValue(topYtdResolved)?'parcial':'fuente incompleta',tipo:KPI_TIPO_DATO.observado}],
     ['Transferencias Nación 2026','Muestra el total recibido desde Nación en los meses disponibles.',hasUsefulValue(ronYtdResolved)?`${fmtPesosKPI(ronYtdResolved)} · ${transferPeriod}`:DATA_LABEL[DATA_STATUS.sin_fuente],null,null,'Sirve para medir el flujo más reciente de apoyo nacional.','b',{fuente:'informacion_consolidada_2026_normalizado.csv',periodo:transferPeriod,cobertura:'parcial',unidad:'millones de pesos',estado:hasUsefulValue(ronYtdResolved)?'parcial':'fuente incompleta',tipo:KPI_TIPO_DATO.observado}],
   ];
   if(incomplete1816){
     rows.push(['Nota metodológica 1816','Advertencia metodológica oficial para esta jurisdicción.','Dato incompleto en fuente',null,null,'El informe 1816 al III TRIM 2025 marca datos incompletos para La Pampa, Neuquén y Santiago del Estero. No es hueco del tablero; es advertencia metodológica de la fuente oficial.','a',{fuente:'dashboard_cross_section_1816.json',periodo:'LTM 3T25',cobertura:'parcial',unidad:'texto',estado:'metodologico',tipo:KPI_TIPO_DATO.lectura}]);
   }
-  const structuralRows=rows.filter(([,,,,,,,meta])=>meta?.fuente==='dashboard_cross_section_1816.json');
+  const structuralRows=rows.filter(([,,,,,,,meta])=>!!meta?.indicatorKey);
 
   const commonMeta=META_FIELDS.reduce((acc,[field])=>{
     acc[field]=allRowsShareSameValue(structuralRows,field)?structuralRows[0][7][field]:null;
@@ -3651,6 +3823,13 @@ function buildCoverageReport(province){
     const estado=rows.length?mapStatus(rows):'PARCIAL';
     return {nombre,estado,motivo:BLOCK_POLICY_LINE[nombre]||'-'};
   });
+  const dynamicStatus=realDynamics?.provinces?.[province]?.metrics||{};
+  const dynamicMetrics=Object.values(dynamicStatus);
+  const dynamicComplete=dynamicMetrics.length>0 && dynamicMetrics.every((metric)=>metric?.status==='ok');
+  if(!dynamicComplete){
+    const dynamicBlock=report.bloques.find((block)=>block.nombre==='Dinámica fiscal 2026');
+    if(dynamicBlock) dynamicBlock.estado='PARCIAL';
+  }
   if(province==='CABA'){
     report.bloques=report.bloques.filter((b)=>b.nombre!=='Equidad federal (RON, castigo, IAN)' || b.estado!=='NO APLICA');
   }
