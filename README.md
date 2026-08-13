@@ -1,6 +1,10 @@
 # tablero-fiscal-provincias
 Tablero dinámico fiscal de provincias.
 
+La apertura incluye una **Sala de situación del gobernador** para Buenos Aires con datos 4T25/1T26, doble lectura trimestral/LTM, tres riesgos, tres decisiones y faltantes críticos de caja. La metodología y sus límites están documentados en `docs/metodologia_sala_gobernador.md`.
+
+Para regenerar esa capa: `python3 scripts_build_governor_brief.py`.
+
 ## Estado para cierre interno v1
 
 ### Bloques sólidos

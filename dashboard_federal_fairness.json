@@ -1,10 +1,10 @@
 {
   "source": "bloque comparación federal justa",
-  "generated_at": "2026-04-20T19:33:19.117828Z",
+  "generated_at": "2026-08-13T15:34:57.235053Z",
   "methodology": {
     "ron_per_capita": "ron_total_annual_millions * 1000000 / population",
-    "avg_ron_per_capita_23_provinces": "promedio simple de las 23 provincias excluyendo CABA",
-    "avg_ron_per_capita_24_jurisdictions": "promedio simple incluyendo CABA",
+    "avg_ron_per_capita_23_provinces": "promedio simple de jurisdicciones con dato válido, excluyendo CABA",
+    "avg_ron_per_capita_24_jurisdictions": "promedio simple de jurisdicciones con dato válido, incluyendo CABA",
     "received_share_pct": "ron_total_province / suma_ron_total_all * 100",
     "return_ratio": "received_share_pct / estimated_contribution_share_pct * 100",
     "federal_gap_pp": "received_share_pct - estimated_contribution_share_pct"
@@ -12,7 +12,7 @@
   "provinces": {
     "Buenos Aires": {
       "year": 2025,
-      "status": "ok",
+      "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
@@ -23,7 +23,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 699337.4809032629,
+          "value": 779316.5594044205,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -31,7 +31,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -39,7 +39,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -47,7 +47,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 33.83903110934755,
+          "value": 36.93682050129161,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -55,7 +55,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -1367321.8115670844,
+          "value": -1330547.1181613547,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -63,38 +63,38 @@
           ]
         },
         "received_share_pct": {
-          "value": 22.67424253229082,
+          "value": 24.182465785355923,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
           ]
         },
         "estimated_contribution_share_pct": {
-          "value": 21.8187,
-          "status": "ok",
+          "value": null,
+          "status": "missing",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "federal_gap_pp": {
-          "value": 0.8555425322908192,
-          "status": "ok",
+          "value": null,
+          "status": "missing",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "return_ratio_pct": {
-          "value": 103.92114347917529,
-          "status": "ok",
+          "value": null,
+          "status": "missing",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "pesos_recibidos_cada_100_aportados": {
-          "value": 103.92114347917529,
-          "status": "ok",
+          "value": null,
+          "status": "missing",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
             "dashboard_federal_fairness_inputs.csv"
@@ -111,7 +111,7 @@
         }
       },
       "method": {
-        "contribution_method": "Proxy recaudación propia 2026 YTD: participación de Buenos Aires en la suma provincial de top_mensual_2026_normalizado.csv."
+        "contribution_method": "Sin estimación robusta y homogénea del aporte a la masa nacional."
       }
     },
     "CABA": {
@@ -135,7 +135,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -143,7 +143,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -231,7 +231,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 3541463.451370989,
+          "value": 3579649.06589462,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -239,7 +239,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -247,7 +247,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -255,7 +255,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 171.36174618980175,
+          "value": 169.66257602124267,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -263,7 +263,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 1474804.1589006418,
+          "value": 1469785.3883288447,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -271,7 +271,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 2.8074126327814093,
+          "value": 2.71584282690814,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -335,7 +335,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 2422040.338224745,
+          "value": 2511070.298015219,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -343,7 +343,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -351,7 +351,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -359,7 +359,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 117.19591841041195,
+          "value": 119.01576034108186,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -367,7 +367,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 355381.04575439775,
+          "value": 401206.6204494438,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -375,7 +375,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 5.10870909590412,
+          "value": 5.069082590405606,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -439,7 +439,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1496280.9241424291,
+          "value": 1524725.3911506531,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -447,7 +447,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -455,7 +455,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -463,7 +463,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 72.40094821599135,
+          "value": 72.26653586025913,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -471,7 +471,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -570378.368327918,
+          "value": -585138.2864151222,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -479,7 +479,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 1.6653844277201768,
+          "value": 1.6241782390700223,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -517,7 +517,7 @@
           ]
         },
         "ron_per_capita_rank_23_provinces": {
-          "value": 15,
+          "value": 16,
           "total": 22,
           "status": "ok",
           "source": [
@@ -543,7 +543,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1742754.0089265998,
+          "value": 1812031.782344561,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -551,7 +551,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -559,7 +559,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -567,7 +567,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 84.32710777611666,
+          "value": 85.88383228793087,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -575,7 +575,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -323905.2835437474,
+          "value": -297831.8952212143,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -583,7 +583,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 3.851487240200762,
+          "value": 3.832647505317269,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -647,7 +647,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1247557.359334924,
+          "value": 1262015.719205685,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -655,7 +655,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -663,7 +663,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -671,7 +671,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 60.36589407263531,
+          "value": 59.81503604354748,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -679,7 +679,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -819101.9331354231,
+          "value": -847847.9583600904,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -687,7 +687,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 9.160735527997392,
+          "value": 8.869012799853838,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -751,7 +751,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1908948.7702593424,
+          "value": 1941420.7897710446,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -759,7 +759,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -767,7 +767,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -775,7 +775,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 92.36881847019457,
+          "value": 92.01640894690081,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -783,7 +783,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -157710.52221100475,
+          "value": -168442.88779473072,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -791,7 +791,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 5.025058820887157,
+          "value": 4.891107935225645,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -855,7 +855,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 3336320.833277071,
+          "value": 3407563.037949691,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -863,7 +863,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -871,7 +871,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -879,7 +879,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 161.4354550569898,
+          "value": 161.5063131415731,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -887,7 +887,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 1269661.5408067238,
+          "value": 1297699.3603839157,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -895,7 +895,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 3.7313625073229555,
+          "value": 3.6474070183189875,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -959,7 +959,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1937268.2239558848,
+          "value": 1992608.578554307,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -967,7 +967,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -975,7 +975,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -983,7 +983,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 93.73911950625414,
+          "value": 94.4425272467485,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -991,7 +991,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -129391.06851446233,
+          "value": -117255.09901146824,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -999,7 +999,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 2.901585080154552,
+          "value": 2.856329101989721,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1071,7 +1071,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1079,7 +1079,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1087,7 +1087,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 143.5570797695971,
+          "value": 140.61741337148337,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1095,7 +1095,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 900176.4365871004,
+          "value": 856972.0514916722,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1103,7 +1103,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 1.9812099895958166,
+          "value": 1.8961435091037646,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1167,7 +1167,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 2990270.1757288007,
+          "value": 3024042.624181377,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1175,7 +1175,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1183,7 +1183,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1191,7 +1191,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 144.6910086545727,
+          "value": 143.3288158062573,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1199,7 +1199,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 923610.8832584536,
+          "value": 914178.9466156014,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1207,7 +1207,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 2.12239025805552,
+          "value": 2.054203274296996,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1271,7 +1271,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1142959.1851965596,
+          "value": 1180030.6935692795,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1279,7 +1279,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1287,7 +1287,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1295,7 +1295,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 55.30467403895793,
+          "value": 55.929238752084814,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1303,7 +1303,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -923700.1072737875,
+          "value": -929832.9839964958,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1311,7 +1311,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 4.2491566093140785,
+          "value": 4.198614625644684,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1375,7 +1375,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1441932.787869493,
+          "value": 1515423.3994092753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1383,7 +1383,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1391,7 +1391,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1399,7 +1399,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 69.77119030326003,
+          "value": 71.8256546867366,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1407,7 +1407,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -624726.5046008541,
+          "value": -594440.2781565001,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1415,7 +1415,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 3.4086170784069227,
+          "value": 3.428529430381354,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1479,7 +1479,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1362420.3586575284,
+          "value": 1401557.3490895466,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1487,7 +1487,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1495,7 +1495,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1503,7 +1503,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 65.92380096813064,
+          "value": 66.42881073276607,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1511,7 +1511,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -704238.9338128187,
+          "value": -708306.3284762288,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1519,7 +1519,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 1.826830151721485,
+          "value": 1.7986166686197245,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1583,7 +1583,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1850497.1786013877,
+          "value": 1877942.5565169777,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1591,7 +1591,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1599,7 +1599,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1607,7 +1607,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 89.54050555616385,
+          "value": 89.00776749157684,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1615,7 +1615,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -216162.11386895948,
+          "value": -231921.12104879762,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1623,7 +1623,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 2.6024309356556627,
+          "value": 2.5276316447771214,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1687,7 +1687,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1471116.6976133205,
+          "value": 1585212.7261416742,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1695,7 +1695,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1703,7 +1703,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1711,7 +1711,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 71.18332000698797,
+          "value": 75.13341942407342,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1719,7 +1719,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -595542.5948570266,
+          "value": -524650.9514241011,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1727,7 +1727,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 3.9111986142364423,
+          "value": 4.03358292902666,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1765,7 +1765,7 @@
           ]
         },
         "ron_per_capita_rank_23_provinces": {
-          "value": 16,
+          "value": 14,
           "total": 22,
           "status": "ok",
           "source": [
@@ -1791,7 +1791,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 2282319.956897214,
+          "value": 2325450.0894509824,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1799,7 +1799,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1807,7 +1807,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1815,7 +1815,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 110.43523067457726,
+          "value": 110.21802565623277,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1823,7 +1823,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 215660.66442686692,
+          "value": 215586.41188520705,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1831,7 +1831,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 3.446288885840511,
+          "value": 3.3606467846979857,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1903,7 +1903,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1911,7 +1911,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1919,7 +1919,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 113.82718529524118,
+          "value": 111.49630790249032,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1927,7 +1927,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 285760.8097911952,
+          "value": 242556.424695767,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1935,7 +1935,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 2.348191479394721,
+          "value": 2.2473680504182276,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1999,7 +1999,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 2674803.227894697,
+          "value": 2685262.1531673633,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2007,7 +2007,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2015,7 +2015,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2023,7 +2023,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 129.42642445419318,
+          "value": 127.27183190647871,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2031,7 +2031,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 608143.9354243497,
+          "value": 575398.4756015879,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2039,7 +2039,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 1.664602412564471,
+          "value": 1.5993593976130378,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -2103,7 +2103,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1431277.345754057,
+          "value": 1449691.396345618,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2111,7 +2111,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2119,7 +2119,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2127,7 +2127,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 69.25560255474927,
+          "value": 68.71019259491582,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2135,7 +2135,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -635381.9467162902,
+          "value": -660172.2812201574,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2143,7 +2143,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 9.393921501296942,
+          "value": 9.10624614980544,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -2215,7 +2215,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2223,7 +2223,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2311,7 +2311,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 3655405.5641686562,
+          "value": 3664598.264605603,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2319,7 +2319,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2327,7 +2327,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2335,7 +2335,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 176.87509390090264,
+          "value": 173.68886452576785,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2343,7 +2343,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 1588746.271698309,
+          "value": 1554734.5870398278,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2351,7 +2351,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 1.2860252803366052,
+          "value": 1.2339029528722938,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -2415,7 +2415,7 @@
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1512274.7342516836,
+          "value": 1578132.6003601705,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2423,7 +2423,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2431,7 +2431,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2066659.2924703471,
+          "value": 2109863.6775657753,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2439,7 +2439,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 73.17484501492314,
+          "value": 74.79784675856017,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2447,7 +2447,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -554384.5582186636,
+          "value": -531731.0772056049,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2455,7 +2455,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 4.833158938321469,
+          "value": 4.82708078029754,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -2493,7 +2493,7 @@
           ]
         },
         "ron_per_capita_rank_23_provinces": {
-          "value": 14,
+          "value": 15,
           "total": 22,
           "status": "ok",
           "source": [

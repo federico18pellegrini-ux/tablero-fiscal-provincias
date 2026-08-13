@@ -5,12 +5,13 @@ from pathlib import Path
 
 MANIFEST_PATH = Path('dashboard_manifest.json')
 RON_PATH = Path('serie_ron_2003_2025_normalizado.csv')
-TOP_MENSUAL_PATH = Path('top_mensual_2026_normalizado.csv')
 INPUTS_PATH = Path('dashboard_federal_fairness_inputs.csv')
 OUTPUT_PATH = Path('dashboard_federal_fairness.json')
 
-RON_PRIMARY = 'Total | Recursos | Origen Nacional | (1)'
-RON_FALLBACK = 'S U B - | T O T A L'
+# El tablero y su nota metodológica comparan RON con Compensación Consenso
+# Fiscal. El total sin compensación queda sólo como fallback explícito.
+RON_PRIMARY = 'Total | (1) + (2)'
+RON_FALLBACK = 'Total | Recursos | Origen Nacional | (1)'
 CABA_NAME = 'CABA'
 DEFAULT_POPULATION_2022 = {
     'Buenos Aires': 17569053,
@@ -74,18 +75,6 @@ province_universe = manifest.get('province_universe', [])
 with RON_PATH.open(encoding='utf-8', newline='') as f:
     ron_rows = list(csv.DictReader(f))
 
-top_2026_by_prov = {}
-if TOP_MENSUAL_PATH.exists():
-    with TOP_MENSUAL_PATH.open(encoding='utf-8', newline='') as f:
-        for row in csv.DictReader(f):
-            province = row.get('province')
-            period = (row.get('period') or '').strip()
-            val = to_float(row.get('value_millions'))
-            if not province or val is None or not period.startswith('2026-'):
-                continue
-            top_2026_by_prov[province] = top_2026_by_prov.get(province, 0.0) + val
-top_2026_total = sum(v for v in top_2026_by_prov.values() if v is not None)
-
 latest_year = max(int(r['year']) for r in ron_rows if str(r.get('year', '')).isdigit())
 
 ron_by_prov_year = {}
@@ -125,6 +114,7 @@ if not INPUTS_PATH.exists():
     with INPUTS_PATH.open('w', encoding='utf-8', newline='') as f:
         writer = csv.DictWriter(
             f,
+            lineterminator='\n',
             fieldnames=[
                 'province',
                 'year',
@@ -167,19 +157,20 @@ for row in input_rows:
         row['population'] = str(DEFAULT_POPULATION_2022[province])
         row['source_population'] = row.get('source_population') or 'INDEC Censo 2022 (base)'
         row['notes'] = (row.get('notes') or '').strip() or 'Población base pre-cargada para habilitar comparaciones per cápita.'
-    if to_float(row.get('estimated_contribution_share_pct')) is None:
+    contribution_method = (row.get('contribution_method') or '').strip()
+    contribution_source = (row.get('source_contribution') or '').strip()
+    legacy_own_revenue_proxy = (
+        contribution_method.startswith('Proxy recaudación propia 2026 YTD')
+        or contribution_source == 'top_mensual_2026_normalizado.csv'
+    )
+    if legacy_own_revenue_proxy:
+        row['estimated_contribution_share_pct'] = ''
+        row['contribution_method'] = 'Sin estimación robusta y homogénea del aporte a la masa nacional.'
+        row['source_contribution'] = ''
         row['status'] = 'partial'
-        row['source_contribution'] = row.get('source_contribution') or ''
-        if province == 'Buenos Aires':
-            share_proxy = safe_div(top_2026_by_prov.get('Buenos Aires', 0.0) * 100, top_2026_total)
-            if share_proxy is not None:
-                row['estimated_contribution_share_pct'] = f'{share_proxy:.4f}'
-                row['contribution_method'] = (
-                    'Proxy recaudación propia 2026 YTD: participación de Buenos Aires en la suma '
-                    'provincial de top_mensual_2026_normalizado.csv.'
-                )
-                row['source_contribution'] = row.get('source_contribution') or 'top_mensual_2026_normalizado.csv'
-                row['status'] = 'ok'
+    elif to_float(row.get('estimated_contribution_share_pct')) is None:
+        row['status'] = 'partial'
+        row['source_contribution'] = contribution_source
     if to_float(row.get('estimated_contribution_share_pct')) is None and not (row.get('contribution_method') or '').strip():
         row['contribution_method'] = ''
     input_map[(province, int(year))] = row
@@ -187,6 +178,7 @@ for row in input_rows:
 with INPUTS_PATH.open('w', encoding='utf-8', newline='') as f:
     writer = csv.DictWriter(
         f,
+        lineterminator='\n',
         fieldnames=[
             'province',
             'year',
@@ -300,8 +292,8 @@ output = {
     'generated_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
     'methodology': {
         'ron_per_capita': 'ron_total_annual_millions * 1000000 / population',
-        'avg_ron_per_capita_23_provinces': 'promedio simple de las 23 provincias excluyendo CABA',
-        'avg_ron_per_capita_24_jurisdictions': 'promedio simple incluyendo CABA',
+        'avg_ron_per_capita_23_provinces': 'promedio simple de jurisdicciones con dato válido, excluyendo CABA',
+        'avg_ron_per_capita_24_jurisdictions': 'promedio simple de jurisdicciones con dato válido, incluyendo CABA',
         'received_share_pct': 'ron_total_province / suma_ron_total_all * 100',
         'return_ratio': 'received_share_pct / estimated_contribution_share_pct * 100',
         'federal_gap_pp': 'received_share_pct - estimated_contribution_share_pct',

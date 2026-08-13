@@ -1,0 +1,121 @@
+{
+  "province": "Buenos Aires",
+  "as_of": "2026-03-31",
+  "status": "se_deteriora",
+  "headline": "El trimestre todavía deja margen primario, pero la Provincia gasta más de lo que ingresa en la mirada anual.",
+  "plain_language_verdict": "La Provincia no está sin recursos: recauda casi la mitad de sus ingresos no previsionales por cuenta propia. El problema es que el gasto supera a los ingresos y los intereses agrandan el déficit.",
+  "key_metrics": [
+    {
+      "id": "financial_ltm",
+      "label": "Resultado financiero",
+      "value": -6.6,
+      "unit": "% de ingresos",
+      "window": "últimos 12 meses",
+      "comparison": -0.7,
+      "comparison_unit": "p.p. vs 4T25",
+      "signal": "red",
+      "interpretation": "Por cada $100 que ingresaron, faltaron $6,60 después de intereses."
+    },
+    {
+      "id": "quarter_financial",
+      "label": "Resultado del 1T",
+      "value": -3.9,
+      "unit": "% de ingresos",
+      "window": "enero-marzo 2026",
+      "comparison": -3.9,
+      "comparison_unit": "p.p. vs 1T25",
+      "signal": "red",
+      "interpretation": "El primario fue positivo, pero los intereses llevaron el trimestre a déficit."
+    },
+    {
+      "id": "debt_income",
+      "label": "Deuda / ingresos",
+      "value": 45.2,
+      "unit": "%",
+      "window": "último dato homogéneo",
+      "comparison": -6.7,
+      "comparison_unit": "p.p. vs 4T25",
+      "signal": "amber",
+      "interpretation": "La relación bajó, pero PBA sigue última entre las 23 jurisdicciones comparadas."
+    },
+    {
+      "id": "general_rank",
+      "label": "Ranking fiscal",
+      "value": 16,
+      "unit": "de 23",
+      "window": "últimos 12 meses",
+      "comparison": 1,
+      "comparison_unit": "puesto vs 4T25",
+      "signal": "amber",
+      "interpretation": "Perdió un lugar: del puesto 15 al 16."
+    }
+  ],
+  "risks": [
+    {
+      "title": "Déficit persistente",
+      "evidence": "Resultado financiero de -6,6% de los ingresos en los últimos 12 meses.",
+      "political_meaning": "Reduce margen para salarios, obra y respuesta ante una emergencia."
+    },
+    {
+      "title": "Ingresos débiles frente al gasto",
+      "evidence": "En el 1T26 los ingresos reales cayeron 0,8% y el gasto primario creció 2,0% interanual.",
+      "political_meaning": "Sin corrección, la brecha vuelve a presionar caja y financiamiento."
+    },
+    {
+      "title": "Deuda todavía condicionante",
+      "evidence": "Deuda equivalente a 45,2% de los ingresos; puesto 23 de 23 en este indicador.",
+      "political_meaning": "La baja del ratio ayuda, pero no resuelve vencimientos ni exposición financiera."
+    }
+  ],
+  "decisions": [
+    {
+      "horizon": "30 días",
+      "action": "Cerrar un parte semanal de caja, salarios, aguinaldo y vencimientos.",
+      "why": "El informe fiscal no contiene saldo de Tesorería ni calendario 90/180 días."
+    },
+    {
+      "horizon": "90 días",
+      "action": "Fijar un límite real al gasto primario y proteger servicios esenciales y obra prioritaria.",
+      "why": "El gasto crece por encima de los ingresos y el capital bajó de 8,4% a 8,1% del gasto comparable."
+    },
+    {
+      "horizon": "180 días",
+      "action": "Separar la negociación con Nación del plan de ordenamiento propio.",
+      "why": "La autonomía es alta para el conjunto provincial, pero no alcanza para absorber déficit e intereses."
+    }
+  ],
+  "missing_for_decision": [
+    "Caja disponible consolidada y fondos con afectación específica",
+    "Cobertura exacta de salarios y aguinaldo",
+    "Vencimientos de capital e intereses a 90 y 180 días",
+    "Compromisos salariales y de proveedores ya devengados"
+  ],
+  "methodology": {
+    "quarter_vs_ltm": "El trimestre mide la coyuntura; los últimos 12 meses muestran la tendencia estructural. No se mezclan.",
+    "facts_inferences_actions": "Las cifras son hechos publicados; su lectura política es una inferencia; las decisiones son propuestas.",
+    "ranking_universe": "23 jurisdicciones con información homogénea. La Pampa no integra el informe.",
+    "money_unit": "Millones de pesos corrientes en las tablas absolutas."
+  },
+  "sources": [
+    {
+      "report": "Provincias 4T25",
+      "pages": [
+        7,
+        8,
+        23,
+        27
+      ],
+      "cutoff": "2025-12-31"
+    },
+    {
+      "report": "Provincias 1T26",
+      "pages": [
+        7,
+        8,
+        23,
+        27
+      ],
+      "cutoff": "2026-03-31"
+    }
+  ]
+}
