@@ -1042,12 +1042,14 @@ tr:last-child td{border-bottom:none}
 </div>
 
 <!-- COMPARATIVO -->
-<div class="sh" id="comparisonSection">Comparativo interprovincial · resultado financiero</div>
-<div class="comp-wrap">
-  <h3>Cómo cierra cada provincia sus cuentas</h3>
-  <div class="comp-note">Este gráfico compara si cada provincia termina el período con superávit o déficit, después de sumar ingresos y restar todos sus gastos, incluidos los intereses de deuda. Valores positivos: margen fiscal. Valores negativos: gastó más de lo que ingresó. La provincia elegida aparece resaltada para ubicarla rápido dentro del ranking. Esta comparación muestra posición relativa, no prueba por sí sola buena o mala gestión. Corte metodológico: últimos 12 meses al 1T2026; 23 jurisdicciones.</div>
-  <div id="compRows" class="comp-rows"></div>
-</div>
+<section id="comparisonSection" class="management-comparison">
+  <div class="sh">Comparativo interprovincial · resultado financiero</div>
+  <div class="comp-wrap">
+    <h3>Cómo cierra cada provincia sus cuentas</h3>
+    <div class="comp-note">Ordena las 23 jurisdicciones por resultado financiero después de intereses. Positivo = superávit; negativo = gastó más de lo que ingresó. La provincia elegida aparece resaltada. Últimos 12 meses al 1T26.</div>
+    <div id="compRows" class="comp-rows"></div>
+  </div>
+</section>
 
 <!-- CHARTS ROW 1: Recaudación 2026 -->
 <div class="sh">Recaudación 2026</div>
@@ -2168,13 +2170,16 @@ function buildComparativo(){
 function destroyCharts(){Object.keys(charts).forEach(k=>{if(charts[k]){charts[k].destroy();charts[k]=null;}});}
 function enforceHierarchy(){
   const layer1=document.getElementById('layer1');
+  const layer2=document.getElementById('layer2');
   const layer3=document.getElementById('layer3');
-  if(!layer1||!layer3)return;
+  if(!layer1||!layer2||!layer3)return;
   ['federalFairnessSection','transfersDependencySection','realDynamicsSection','nationDebtSection']
     .forEach(id=>{
       const el=document.getElementById(id);
       if(el) layer1.appendChild(el);
     });
+  const comparison=document.getElementById('comparisonSection');
+  if(comparison) layer2.appendChild(comparison);
   ['liquiditySection','scenariosSection']
     .forEach(id=>{
       const el=document.getElementById(id);

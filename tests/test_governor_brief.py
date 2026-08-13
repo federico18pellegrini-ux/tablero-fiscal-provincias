@@ -93,6 +93,8 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertNotIn("Advertencia de comparabilidad 2026", frontend)
         self.assertNotIn("Marco presupuestario 2026", frontend)
         self.assertNotIn('id="budgetSection"', frontend)
+        self.assertIn("if(comparison) layer2.appendChild(comparison)", frontend)
+        self.assertIn("Ordena las 23 jurisdicciones por resultado financiero", frontend)
 
     def test_latest_pba_debt_profile_reconciles(self):
         profile = json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8"))
