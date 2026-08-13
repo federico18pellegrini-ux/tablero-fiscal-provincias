@@ -688,6 +688,15 @@ tr:last-child td{border-bottom:none}
 .gov-federal-title{display:block;color:var(--text);font-size:12px;margin-bottom:4px}
 .gov-federal-conclusion{margin-top:6px}
 .gov-federal-conclusion strong{color:var(--text)}
+.gov-balance{margin:14px 18px 0;padding:14px;background:rgba(0,0,0,.16);border:1px solid var(--border);border-radius:12px}
+.gov-balance .sh{margin:0 0 5px}
+.gov-balance .cc-note{margin-bottom:8px}
+.gov-balance .balance-grid{margin:11px 0 9px}
+.gov-balance .bal{background:rgba(18,18,18,.72)}
+.gov-balance-footer{display:grid;grid-template-columns:1fr 1fr auto;gap:8px 14px;padding-top:10px;border-top:1px solid var(--border)}
+.gov-balance-footer .cc-note{margin:0}
+.gov-balance-verdict{white-space:nowrap}
+.balance-standalone{margin:0 0 10px;padding:14px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r)}
 .gov-status{display:inline-flex;margin-top:12px;padding:6px 10px;border-radius:999px;background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
 .executive-pulse{padding:15px 18px 17px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.12)}
 .executive-pulse-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:10px}
@@ -719,8 +728,10 @@ tr:last-child td{border-bottom:none}
   .executive-pulse-grid{grid-template-columns:1fr 1fr}
   .executive-pulse-grid .pulse-wide{grid-column:span 2}
   .gov-columns{grid-template-columns:1fr}.gov-title{font-size:21px}
+  .gov-balance-footer{grid-template-columns:1fr}
+  .gov-balance-verdict{white-space:normal}
 }
-@media(max-width:440px){.executive-pulse-grid{grid-template-columns:1fr}.executive-pulse-grid .pulse-wide{grid-column:auto}.executive-pulse-grid .pulse-rank .k-val{font-size:30px}}
+@media(max-width:440px){.executive-pulse-grid{grid-template-columns:1fr}.executive-pulse-grid .pulse-wide{grid-column:auto}.executive-pulse-grid .pulse-rank .k-val{font-size:30px}.gov-balance{margin-left:12px;margin-right:12px;padding:12px}}
 @media(max-width:700px){
   .key-indicators-row .tb{overflow:hidden;padding:12px}
   .key-indicators-row .tb>table{display:block;min-width:0;width:100%}
@@ -855,6 +866,26 @@ tr:last-child td{border-bottom:none}
       <p class="gov-federal-conclusion"><strong>Conclusión:</strong> <span id="governorFederalConclusion"></span></p>
     </div>
   </div>
+  <section id="balanceSection" class="gov-balance" aria-labelledby="balanceTitle">
+    <div class="sh sh-gold" id="balanceTitle">Balance ejecutivo · <span id="balanceProv" style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">Provincia</span></div>
+    <div class="cc-note">Los principales puntos fuertes y débiles de la provincia</div>
+    <div id="balanceSummary" class="cc-note" style="color:var(--muted)"></div>
+    <div class="balance-grid">
+      <div class="bal pro">
+        <div class="bal-title pro">A favor</div>
+        <div id="balPro"></div>
+      </div>
+      <div class="bal con">
+        <div class="bal-title con">En contra</div>
+        <div id="balCon"></div>
+      </div>
+    </div>
+    <div class="gov-balance-footer">
+      <div class="cc-note"><strong style="color:var(--muted)">Riesgo principal:</strong> <span id="balanceRisk">—</span></div>
+      <div class="cc-note"><strong style="color:var(--muted)">Amortiguador:</strong> <span id="balanceBuffer">—</span></div>
+      <div class="cc-note gov-balance-verdict"><strong style="color:var(--muted)">Conclusión:</strong> <span id="balanceVerdict">—</span></div>
+    </div>
+  </section>
   <div class="gov-columns">
     <article class="gov-panel"><h4>3 riesgos que requieren atención</h4><ul class="gov-list" id="governorRisks"></ul></article>
     <article class="gov-panel"><h4>3 decisiones sugeridas</h4><ul class="gov-list" id="governorDecisions"></ul></article>
@@ -1106,26 +1137,7 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- BALANCE -->
-<div id="balanceSection">
-  <div class="sh sh-gold">Balance ejecutivo · <span id="balanceProv" style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">Provincia</span></div>
-  <div class="cc-note" style="margin-bottom:8px">Los principales puntos fuertes y débiles de la provincia</div>
-  <div id="balanceSummary" class="cc-note" style="margin-bottom:10px;color:var(--muted)"></div>
-  <div class="balance-grid">
-    <div class="bal pro">
-      <div class="bal-title pro">A favor</div>
-      <div id="balPro"></div>
-    </div>
-    <div class="bal con">
-      <div class="bal-title con">En contra</div>
-      <div id="balCon"></div>
-    </div>
-  </div>
-  <div class="cc-note" style="margin-top:6px"><strong style="color:var(--muted)">Riesgo principal:</strong> <span id="balanceRisk">—</span></div>
-  <div class="cc-note"><strong style="color:var(--muted)">Amortiguador:</strong> <span id="balanceBuffer">—</span></div>
-  <div class="cc-note"><strong style="color:var(--muted)">Conclusión:</strong> <span id="balanceVerdict">—</span></div>
-</div>
-
+<div id="balanceFallbackAnchor" aria-hidden="true"></div>
 <!-- TABLES -->
 <div class="sh" id="structuralIndicators">Indicadores estructurales · <span id="tProvName" style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">—</span></div>
 <div class="tables-row key-indicators-row">
@@ -2243,8 +2255,22 @@ function formatGovUnit(unit){
 function renderGovernorBrief(province){
   const section=document.getElementById('governorRoom');
   const legacySummary=document.getElementById('executiveSummarySection');
+  const balance=document.getElementById('balanceSection');
+  const balanceFallback=document.getElementById('balanceFallbackAnchor');
   if(!section) return;
   const show=province==='Buenos Aires' && governorBrief;
+  if(balance){
+    if(show){
+      const columns=section.querySelector('.gov-columns');
+      if(columns) section.insertBefore(balance,columns);
+      balance.classList.add('gov-balance');
+      balance.classList.remove('balance-standalone');
+    }else if(balanceFallback){
+      balanceFallback.after(balance);
+      balance.classList.remove('gov-balance');
+      balance.classList.add('balance-standalone');
+    }
+  }
   section.style.display=show?'block':'none';
   if(legacySummary) legacySummary.style.display=show?'none':'block';
   if(!show) return;
