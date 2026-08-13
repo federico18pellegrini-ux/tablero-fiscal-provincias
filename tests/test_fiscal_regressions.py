@@ -8,6 +8,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class FiscalRegressionTests(unittest.TestCase):
+    def test_pba_nation_flow_is_presented_as_territorial_comparison(self):
+        html = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('national_collection_registered_millions:25805282', html)
+        self.assertIn('ron_received_millions:9990745', html)
+        self.assertIn('No equivale al aporte jurídico a la masa coparticipable', html)
+        self.assertIn('ARCA incluye seguridad social y aduana', html)
+
     def test_federal_fairness_uses_ron_with_consensus_compensation(self):
         with (ROOT / 'serie_ron_2003_2025_normalizado.csv').open(encoding='utf-8', newline='') as source:
             expected_millions = sum(
