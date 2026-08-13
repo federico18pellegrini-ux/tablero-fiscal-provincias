@@ -497,7 +497,7 @@ tr:last-child td{border-bottom:none}
 .metrics-table th:nth-child(4),.metrics-table td:nth-child(4){width:33%}
 .metrics-ranking-cell{display:flex;align-items:center;gap:8px;min-width:0}
 .metrics-ranking-bar{width:100px;height:6px;background:var(--border);border-radius:999px;overflow:hidden;flex:0 0 auto}
-.metrics-ranking-fill{height:100%;border-radius:999px}
+.metrics-ranking-fill{display:block;height:100%;min-width:6px;max-width:100%;border-radius:999px;transition:width .35s ease}
 .metrics-ranking-fill.top{background:var(--green)}
 .metrics-ranking-fill.mid{background:var(--gold)}
 .metrics-ranking-fill.bottom{background:var(--red)}
@@ -697,6 +697,11 @@ tr:last-child td{border-bottom:none}
 .gov-balance-footer .cc-note{margin:0}
 .gov-balance-verdict{white-space:nowrap}
 .balance-standalone{margin:0 0 10px;padding:14px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r)}
+.gov-structural{margin:14px 18px 0}
+.gov-structural>.sh{margin:0 0 8px}
+.gov-structural .key-indicators-row{margin-bottom:0}
+.gov-structural .tb{background:rgba(18,18,18,.72)}
+.structural-standalone{margin:0}
 .gov-status{display:inline-flex;margin-top:12px;padding:6px 10px;border-radius:999px;background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
 .executive-pulse{padding:15px 18px 17px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.12)}
 .executive-pulse-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:10px}
@@ -731,7 +736,7 @@ tr:last-child td{border-bottom:none}
   .gov-balance-footer{grid-template-columns:1fr}
   .gov-balance-verdict{white-space:normal}
 }
-@media(max-width:440px){.executive-pulse-grid{grid-template-columns:1fr}.executive-pulse-grid .pulse-wide{grid-column:auto}.executive-pulse-grid .pulse-rank .k-val{font-size:30px}.gov-balance{margin-left:12px;margin-right:12px;padding:12px}}
+@media(max-width:440px){.executive-pulse-grid{grid-template-columns:1fr}.executive-pulse-grid .pulse-wide{grid-column:auto}.executive-pulse-grid .pulse-rank .k-val{font-size:30px}.gov-balance{margin-left:12px;margin-right:12px;padding:12px}.gov-structural{margin-left:12px;margin-right:12px}}
 @media(max-width:700px){
   .key-indicators-row .tb{overflow:hidden;padding:12px}
   .key-indicators-row .tb>table{display:block;min-width:0;width:100%}
@@ -884,6 +889,21 @@ tr:last-child td{border-bottom:none}
       <div class="cc-note"><strong style="color:var(--muted)">Riesgo principal:</strong> <span id="balanceRisk">—</span></div>
       <div class="cc-note"><strong style="color:var(--muted)">Amortiguador:</strong> <span id="balanceBuffer">—</span></div>
       <div class="cc-note gov-balance-verdict"><strong style="color:var(--muted)">Conclusión:</strong> <span id="balanceVerdict">—</span></div>
+    </div>
+  </section>
+  <section id="structuralIndicatorsSection" class="gov-structural" aria-labelledby="structuralIndicators">
+    <div class="sh" id="structuralIndicators">Indicadores estructurales · <span id="tProvName" style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">—</span></div>
+    <div class="tables-row key-indicators-row">
+      <div class="tb">
+        <h3>Cómo está armada fiscalmente la provincia</h3><div class="cc-note" style="margin:0 0 8px 0">Estos indicadores muestran de dónde salen los ingresos, en qué se gasta, cuánto pesa la deuda y cómo cierra la provincia frente al resto.</div>
+        <div id="metricsCommonMeta"></div>
+        <table><tbody id="metricsBody"></tbody></table>
+        <details id="metricsDetails" style="margin-top:8px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px">
+          <summary style="cursor:pointer;color:var(--muted);font-size:12px;font-weight:700">Metadata detallada por indicador</summary>
+          <div id="metricsDetailsTableWrap" style="margin-top:8px"></div>
+        </details>
+      </div>
+      <div class="tb" style="display:none"></div>
     </div>
   </section>
   <div class="gov-columns">
@@ -1138,21 +1158,8 @@ tr:last-child td{border-bottom:none}
 </div>
 
 <div id="balanceFallbackAnchor" aria-hidden="true"></div>
+<div id="structuralFallbackAnchor" aria-hidden="true"></div>
 <!-- TABLES -->
-<div class="sh" id="structuralIndicators">Indicadores estructurales · <span id="tProvName" style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">—</span></div>
-<div class="tables-row key-indicators-row">
-  <div class="tb">
-    <h3>Cómo está armada fiscalmente la provincia</h3><div class="cc-note" style="margin:0 0 8px 0">Estos indicadores muestran de dónde salen los ingresos, en qué se gasta, cuánto pesa la deuda y cómo cierra la provincia frente al resto.</div>
-    <div id="metricsCommonMeta"></div>
-    <table><tbody id="metricsBody"></tbody></table>
-    <details id="metricsDetails" style="margin-top:8px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px">
-      <summary style="cursor:pointer;color:var(--muted);font-size:12px;font-weight:700">Metadata detallada por indicador</summary>
-      <div id="metricsDetailsTableWrap" style="margin-top:8px"></div>
-    </details>
-  </div>
-  <div class="tb" style="display:none"></div>
-</div>
-
 <details class="secondary-tools">
   <summary>Descargar o exportar</summary>
   <div class="secondary-tools-body">
@@ -2257,6 +2264,8 @@ function renderGovernorBrief(province){
   const legacySummary=document.getElementById('executiveSummarySection');
   const balance=document.getElementById('balanceSection');
   const balanceFallback=document.getElementById('balanceFallbackAnchor');
+  const structural=document.getElementById('structuralIndicatorsSection');
+  const structuralFallback=document.getElementById('structuralFallbackAnchor');
   if(!section) return;
   const show=province==='Buenos Aires' && governorBrief;
   if(balance){
@@ -2269,6 +2278,18 @@ function renderGovernorBrief(province){
       balanceFallback.after(balance);
       balance.classList.remove('gov-balance');
       balance.classList.add('balance-standalone');
+    }
+  }
+  if(structural){
+    if(show){
+      const columns=section.querySelector('.gov-columns');
+      if(columns) section.insertBefore(structural,columns);
+      structural.classList.add('gov-structural');
+      structural.classList.remove('structural-standalone');
+    }else if(structuralFallback){
+      structuralFallback.after(structural);
+      structural.classList.remove('gov-structural');
+      structural.classList.add('structural-standalone');
     }
   }
   section.style.display=show?'block':'none';
