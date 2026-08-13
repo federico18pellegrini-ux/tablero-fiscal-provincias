@@ -72,6 +72,29 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertIn("storedOrCalculatedRank(c.rank_autonomia_fiscal", frontend)
         self.assertIn("storedOrCalculatedRank(c.rank_resultado_financiero", frontend)
         self.assertIn("storedOrCalculatedRank(c.rank_deuda_total", frontend)
+        self.assertIn("ocupa el puesto ${nRank(rankAutonomia)} de 23", frontend)
+        self.assertIn("los impuestos de origen nacional todavía equivalen al", frontend)
+
+    def test_flow_values_separate_amount_from_period(self):
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn("periodo:ownRevenuePeriod,periodoEnFila:true", frontend)
+        self.assertIn("periodo:transferPeriod,periodoEnFila:true", frontend)
+        self.assertIn("province!=='Buenos Aires'||r.period<='2026-03'", frontend)
+        self.assertNotIn("`${fmtPesosKPI(topYtdResolved)} · ${ownRevenuePeriod}`", frontend)
+        self.assertNotIn("`${fmtPesosKPI(ronYtdResolved)} · ${transferPeriod}`", frontend)
+
+        with (ROOT / 'deflactor_mensual.csv').open(encoding='utf-8', newline='') as source:
+            factors = {row['period']: float(row['factor_to_latest']) for row in csv.DictReader(source)}
+        with (ROOT / 'informacion_consolidada_2026_normalizado.csv').open(encoding='utf-8', newline='') as source:
+            pba_q1 = [
+                row for row in csv.DictReader(source)
+                if row['province'] == 'Buenos Aires'
+                and row['period_type'] == 'month'
+                and row['period'] <= '2026-03'
+                and row['category_normalized'] == 'Total | (1) + (2)'
+            ]
+        q1_constant_april = sum(float(row['value_millions']) * factors[row['period']] for row in pba_q1)
+        self.assertEqual(round(q1_constant_april), 4_028_453)
 
     def test_deflator_uses_official_2026_ipc_and_april_base(self):
         with (ROOT / 'deflactor_mensual.csv').open(encoding='utf-8', newline='') as source:

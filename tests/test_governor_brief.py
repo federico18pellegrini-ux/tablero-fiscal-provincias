@@ -105,14 +105,17 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("const replacementKeys=new Set(additionalRows.map(row=>keyFn(row)))", frontend)
         self.assertIn("replacementKeys.has(key)", frontend)
         self.assertIn("if(!additionalRows.length) return baseRows.slice()", frontend)
-        self.assertIn("type:'doughnut'", frontend)
-        self.assertIn("compositionCenterLabel", frontend)
-        self.assertIn("Foto acumulada ${periodLabel}", frontend)
         self.assertIn("currentTaxCompositionCenterLabel", frontend)
         self.assertIn("Composición de la recaudación propia 2026", frontend)
         current_chart = frontend[frontend.index("function chartTopMensual"):frontend.index("function chartRonMensual")]
         self.assertIn("type:'doughnut'", current_chart)
         self.assertNotIn("type:'bar'", current_chart)
+        self.assertNotIn('id="cTopT"', frontend)
+        self.assertNotIn("function chartTopTrim", frontend)
+        self.assertIn("const f=DEFLACTOR_YEAR[String(year)] ?? YEAR_DEFLATOR[String(year)]", frontend)
+        historical_chart = frontend[frontend.index("function chartTopHist"):frontend.index("function chartRonHist")]
+        self.assertIn("displayMode==='real'", historical_chart)
+        self.assertIn("Serie anual ${hist[0].year}–${hist[hist.length-1].year}", historical_chart)
 
     def test_latest_pba_debt_profile_reconciles(self):
         profile = json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8"))

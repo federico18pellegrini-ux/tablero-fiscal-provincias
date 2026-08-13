@@ -514,6 +514,7 @@ tr:last-child td{border-bottom:none}
 .fair-item-note .fair-label{font-size:10px;color:var(--dim)}
 .fair-item-note .fair-value{font-size:10px;color:var(--dim);font-style:italic}
 .metrics-value{font-size:14px;font-weight:700;white-space:normal;overflow-wrap:anywhere}
+.metrics-period{display:block;margin-top:5px;color:var(--dim);font-size:11px;font-weight:500;line-height:1.35}
 .export-a4-root{
   width:794px !important;
   min-width:794px !important;
@@ -1133,26 +1134,21 @@ tr:last-child td{border-bottom:none}
 <!-- CHARTS ROW 2: Evolución histórica -->
 <div class="sh">Evolución histórica</div>
 <div class="charts-col">
-  <div class="cc">
-    <h3>Composición de la recaudación propia</h3>
-    <div class="cc-note" id="topTNote">Muestra de qué impuestos vive la provincia y qué tan concentrada o diversificada está su recaudación.</div>
-    <div class="leg" id="topTLeg"></div>
-    <div class="cw"><canvas id="cTopT" role="img" aria-label="Composición porcentual de la recaudación propia en el último corte disponible"></canvas></div>
+  <div class="toggle-row">
+    <div class="toggle-pill">
+      <button class="toggle-btn" id="modeReal">Pesos constantes</button>
+      <button class="toggle-btn active" id="modeNominal">Pesos corrientes</button>
+    </div>
+    <div class="toggle-note" id="modeNote">Modo actual: pesos corrientes. Estás viendo los montos nominales de cada período, sin descontar inflación.</div>
   </div>
   <div class="charts-row" style="margin-bottom:0">
     <div class="cc">
       <h3>Serie histórica recaudación propia</h3>
-      <div class="cc-note">Muestra cómo evolucionó la recaudación propia en el tiempo. Vista recomendada: pesos constantes para comparar evolución real.</div>
-      <div class="leg"><span class="li"><span class="ld" style="background:#60a5fa"></span>Pesos corrientes</span><span class="li"><span class="ld" style="background:#fbbf24;border:1px dashed #fbbf24"></span>Pesos constantes</span></div><div class="cw"><canvas id="cTopH" role="img" aria-label="Serie histórica recaudación propia"></canvas></div>
+      <div class="cc-note" id="topHNote">Muestra cómo evolucionó la recaudación propia en los años completos disponibles.</div>
+      <div class="leg" id="topHLeg"></div>
+      <div class="cw"><canvas id="cTopH" role="img" aria-label="Serie histórica de recaudación propia, en pesos corrientes o constantes según la vista seleccionada"></canvas></div>
     </div>
     <div class="cc">
-      <div class="toggle-row">
-        <div class="toggle-pill">
-          <button class="toggle-btn" id="modeReal">Pesos constantes</button>
-          <button class="toggle-btn active" id="modeNominal">Pesos corrientes</button>
-        </div>
-        <div class="toggle-note" id="modeNote">Modo actual: pesos corrientes. Estás viendo los montos nominales de cada período, sin descontar inflación.</div>
-      </div>
       <h3>Transferencias de Nación · histórico anual</h3>
       <div class="cc-note">Muestra cómo evolucionaron los fondos nacionales recibidos por la provincia. Podés comparar total de recursos nacionales y CFI neta.</div>
       <div class="leg">
@@ -1700,7 +1696,7 @@ let charts={};
 const YEAR_DEFLATOR = {"2000": 739.9317806385487, "2001": 750.4237565208736, "2002": 534.0528171696644, "2003": 515.7660633762655, "2004": 489.2174780346007, "2005": 437.20621728669107, "2006": 396.9631938739018, "2007": 365.82563837399147, "2008": 339.4826734371026, "2009": 318.1810413282831, "2010": 287.740597858069, "2011": 216.227945, "2012": 197.468443, "2013": 178.220617, "2014": 160.703892, "2015": 139.96332, "2016": 109.561777, "2017": 89.510381, "2018": 60.454927, "2019": 39.991267, "2020": 29.80609, "2021": 19.730775, "2022": 10.228741, "2023": 3.924874, "2024": 1.475452, "2025": 1.123307, "2026": 1.0};
 function deflateAnnual(year,value){
   if(value===null||value===undefined||isNaN(value)) return null;
-  const f=ACTIVE_DEFLATOR_YEAR[String(year)] ?? YEAR_DEFLATOR[String(year)];
+  const f=DEFLACTOR_YEAR[String(year)] ?? YEAR_DEFLATOR[String(year)];
   return f ? value*f : null;
 }
 
@@ -2391,7 +2387,6 @@ function render(province){
   }
   safeRunRender('chartTopMensual',()=>chartTopMensual(topMensualRowsValid));
   safeRunRender('chartRonMensual',()=>chartRonMensual(ronMensualRowsValid));
-  safeRunRender('chartTopTrim',()=>chartTopTrim(pTopT));
   safeRunRender('chartTopHist',()=>chartTopHist(pTopH));
   safeRunRender('chartRonHist',()=>chartRonHist(pRon));
   safeRunRender('metrics',()=>renderMetrics(cross,hasTop2026?ownRevenue2026Ytd:null,hasRon2026?ronYtd:null));
@@ -3327,61 +3322,22 @@ function chartRonMensual(rows){
   });
 }
 
-function chartTopTrim(rows){
-  if(!hasChartLib()){noData('cTopT','No se pudo cargar la librería de gráficos');return;}
-  if(!rows.length){noData('cTopT','Sin datos de recaudación 2025');return;}
-  const taxes=['Ingresos Brutos','Sellos','Automotores','Inmobiliario','Otros'];
-  const periodOrder={'2025-Q1':1,'2025-Q2_YTD':2,'2025-Q3_YTD':3};
-  const availablePeriods=[...new Set(rows.filter(r=>taxes.includes(r.tax)&&hasValidValue(r.value_millions)).map(r=>r.period))]
-    .sort((a,b)=>(periodOrder[a]||0)-(periodOrder[b]||0));
-  const latestPeriod=availablePeriods[availablePeriods.length-1];
-  if(!latestPeriod){noData('cTopT','Sin composición tributaria disponible');return;}
-  const values=taxes.map(t=>rows
-    .filter(r=>r.period===latestPeriod&&r.tax===t)
-    .reduce((sum,r)=>sum+(toN(r.value_millions)||0),0));
-  const total=values.reduce((sum,value)=>sum+value,0);
-  if(!total){noData('cTopT','Sin composición tributaria disponible');return;}
-  const shares=values.map(value=>(value/total)*100);
-  const dominantIndex=shares.indexOf(Math.max(...shares));
-  const periodLabel={'2025-Q1':'enero-marzo 2025','2025-Q2_YTD':'enero-junio 2025','2025-Q3_YTD':'enero-septiembre 2025'}[latestPeriod]||latestPeriod;
-  const topTNote=document.getElementById('topTNote');
-  if(topTNote) topTNote.textContent=`Foto acumulada ${periodLabel}. El centro muestra el impuesto de mayor peso.`;
-  document.getElementById('topTLeg').innerHTML=taxes.map((tax,index)=>`<span class="li"><span class="ld" style="background:${TAX_COLORS[tax]||'#64748b'}"></span>${tax} · ${shares[index].toFixed(1).replace('.',',')}%</span>`).join('');
-  const centerLabelPlugin={
-    id:'compositionCenterLabel',
-    afterDraw(chart){
-      const meta=chart.getDatasetMeta(0);
-      if(!meta?.data?.length)return;
-      const {x,y}=meta.data[0];
-      const ctx=chart.ctx;
-      ctx.save();
-      ctx.textAlign='center';
-      ctx.textBaseline='middle';
-      ctx.fillStyle='#f3f4f6';
-      ctx.font='700 22px ui-monospace, SFMono-Regular, Menlo, monospace';
-      ctx.fillText(`${shares[dominantIndex].toFixed(1).replace('.',',')}%`,x,y-7);
-      ctx.fillStyle='#9ca3af';
-      ctx.font='600 10px system-ui, sans-serif';
-      ctx.fillText(taxes[dominantIndex],x,y+14);
-      ctx.restore();
-    }
-  };
-  charts.cTopT=new Chart(document.getElementById('cTopT'),{
-    type:'doughnut',
-    data:{labels:taxes,datasets:[{data:shares,backgroundColor:taxes.map(t=>(TAX_COLORS[t]||'#64748b')+'dd'),borderColor:'#111827',borderWidth:2,hoverOffset:5}]},
-    options:{responsive:true,maintainAspectRatio:false,cutout:'66%',animation:{duration:500},plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${Number(ctx.raw).toFixed(1).replace('.',',')}%`}}}},
-    plugins:[centerLabelPlugin]
-  });
-}
-
 function chartTopHist(rows){
   if(!hasChartLib()){noData('cTopH','No se pudo cargar la librería de gráficos');return;}
   const hist=rows.map(r=>({year:+r.year,value:toN(r.value_millions)||0})).filter(r=>r.year>=2010).sort((a,b)=>a.year-b.year);
   if(!hist.length){noData('cTopH','Sin datos históricos');return;}
+  const isReal=displayMode==='real';
+  const values=hist.map(r=>isReal?deflateAnnual(r.year,r.value):r.value);
+  const lineColor=isReal?'#fbbf24':'#60a5fa';
+  const modeLabel=isReal?`Pesos constantes de ${CONSTANT_PRICE_BASE}`:'Pesos corrientes';
+  const topHNote=document.getElementById('topHNote');
+  const topHLeg=document.getElementById('topHLeg');
+  if(topHNote) topHNote.textContent=`Serie anual ${hist[0].year}–${hist[hist.length-1].year} · ${modeLabel.toLowerCase()}. En pesos constantes se descuenta la inflación y se puede comparar capacidad real de recaudación.`;
+  if(topHLeg) topHLeg.innerHTML=`<span class="li"><span class="ld" style="background:${lineColor}"></span>${modeLabel}</span>`;
   charts.cTopH=new Chart(document.getElementById('cTopH'),{
     type:'line',
-    data:{labels:hist.map(r=>r.year),datasets:[{label:'Recaud. propia (nominal)',data:hist.map(r=>r.value),borderColor:'#60a5fa',backgroundColor:'rgba(96,165,250,.06)',borderWidth:2,pointRadius:2,pointBackgroundColor:'#60a5fa',fill:false,tension:.2},{label:'Recaud. propia (real)',data:hist.map(r=>deflateAnnual(r.year,r.value)),borderColor:'#fbbf24',backgroundColor:'rgba(251,191,36,.05)',borderWidth:2,pointRadius:2,pointBackgroundColor:'#fbbf24',fill:false,tension:.2,borderDash:[4,3]}]},
-    options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,y:{...BASE_OPTS.scales.y,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>fmtPesosEje(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>'Recaud.: '+fmtPesosNarrativo(ctx.parsed.y)}}}}
+    data:{labels:hist.map(r=>r.year),datasets:[{label:modeLabel,data:values,borderColor:lineColor,backgroundColor:isReal?'rgba(251,191,36,.08)':'rgba(96,165,250,.08)',borderWidth:2.5,pointRadius:2,pointBackgroundColor:lineColor,fill:true,tension:.2,spanGaps:false}]},
+    options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,x:{...BASE_OPTS.scales.x,ticks:{...BASE_OPTS.scales.x.ticks,maxTicksLimit:8}},y:{...BASE_OPTS.scales.y,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>fmtPesosEje(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>`${modeLabel}: ${fmtPesosNarrativo(ctx.parsed.y)}`}}}}
   });
 }
 
@@ -3460,8 +3416,8 @@ function renderBalance(province,c,topYtd,ronYtd,mP=[],rP=[]){
     addP(buildItem(
       'Autonomía de ingresos',
       `${pctN(aut)} de recursos propios (${ratioToWords(aut)})`,
-      'La provincia financia una porción alta de su presupuesto con impuestos propios',
-      'Depende menos de giros nacionales para sostener funcionamiento básico',
+      `El ${pctN(aut)} de sus ingresos no previsionales proviene de recursos propios; ocupa el puesto ${nRank(rankAutonomia)} de 23 en autonomía fiscal`,
+      `Le da más margen que a la mayoría para sostener servicios ante demoras nacionales. No la vuelve independiente: los impuestos de origen nacional todavía equivalen al ${pctN(toN(governorBrief?.federal_metrics?.national_tax_share_pct) ?? 39.3)} de los ingresos totales`,
       92
     ));
   else if(nRank(rankAutonomia)!==null && nRank(rankAutonomia)>=15)
@@ -3788,9 +3744,17 @@ function renderMetrics(c,topYtd,ronYtd){
   const partial=isPartialStructural(c);
   const province=currentProvince;
   const topYtdResolved=(province==='CABA' && !hasUsefulValue(topYtd)) ? 2098665 : topYtd;
-  const ronYtdResolved=(province==='CABA' && !hasUsefulValue(ronYtd)) ? 356538 : ronYtd;
   const topPeriods=[...new Set(sanitizeTopMensualRows(getProvinceRows(topMensual,province)).map(r=>r.period).filter(Boolean))].sort();
-  const ronPeriods=[...new Set(getProvinceRows(info2026,province).filter(r=>r.period_type==='month'&&(r.category_normalized==='Total | Recursos | Origen Nacional | (1)'||r.category==='Total | Recursos | Origen Nacional | (1)')).map(r=>r.period).filter(Boolean))].sort();
+  const ronRowsForMetrics=getProvinceRows(info2026,province).filter(r=>
+    r.period_type==='month' &&
+    (r.category_normalized==='Total | (1) + (2)'||r.category==='Total | (1) + (2)') &&
+    (province!=='Buenos Aires'||r.period<='2026-03')
+  );
+  const ronYtdForMetrics=province==='Buenos Aires'
+    ? sumMaybe(ronRowsForMetrics,r=>valueForMode(toN(r.value_millions),DEFLACTOR_MONTH[r.period]))
+    : ronYtd;
+  const ronYtdResolved=(province==='CABA' && !hasUsefulValue(ronYtdForMetrics)) ? 356538 : ronYtdForMetrics;
+  const ronPeriods=[...new Set(ronRowsForMetrics.map(r=>r.period).filter(Boolean))].sort();
   const rangoTop=topPeriods.length===1
     ? monthLabel(topPeriods[0]).toLowerCase()
     : (topPeriods.length?`${monthLabel(topPeriods[0]).toLowerCase()}-${monthLabel(topPeriods[topPeriods.length-1]).toLowerCase()}`:'sin datos 2026');
@@ -3819,8 +3783,8 @@ function renderMetrics(c,topYtd,ronYtd){
     ['Bonos + bancos / deuda','Mide qué parte de la deuda está más expuesta al mercado financiero.',pctN(toN(c.deuda_bonos_bancos_sobre_deuda_total_pct)),partial?null:toN(c.rank_deuda_bonos_bancos),structuralTotal,'Más alto = mayor sensibilidad a tasas y refinanciación.','a',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'deuda_bonos_bancos_sobre_deuda_total_pct'}],
     ['Resultado financiero (últimos 12 meses)','Mide si cerró con superávit o déficit después de pagar todos sus gastos.',pct(toN(c.resultado_financiero_ltm_pct)),partial?null:toN(c.rank_resultado_financiero),structuralTotal,'Positivo = margen fiscal. Negativo = desequilibrio.','',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'resultado_financiero_ltm_pct'}],
     ['Resultado primario (últimos 12 meses)','Mide si puede sostener sus cuentas antes de pagar intereses.',pct(toN(c.resultado_primario_ltm_pct)),partial?null:toN(c.rank_resultado_primario),structuralTotal,'Sirve para separar presión financiera de presión operativa.','',{fuente:primarySource,periodo:primaryPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'resultado_primario_ltm_pct'}],
-    ['Recaudación propia 2026','Muestra el total recaudado con impuestos propios en los meses disponibles.',hasUsefulValue(topYtdResolved)?`${fmtPesosKPI(topYtdResolved)} · ${ownRevenuePeriod}`:DATA_LABEL[OWN_REVENUE_NOT_PUBLISHED_2026.has(province)?DATA_STATUS.dato_no_publicado:DATA_STATUS.sin_fuente],null,null,'Sirve para seguir la evolución más reciente de la caja provincial.','b',{fuente:'top_mensual_2026_normalizado.csv',periodo:ownRevenuePeriod,cobertura:'parcial',unidad:'millones de pesos',estado:hasUsefulValue(topYtdResolved)?'parcial':'fuente incompleta',tipo:KPI_TIPO_DATO.observado}],
-    ['Transferencias Nación 2026','Muestra el total recibido desde Nación en los meses disponibles.',hasUsefulValue(ronYtdResolved)?`${fmtPesosKPI(ronYtdResolved)} · ${transferPeriod}`:DATA_LABEL[DATA_STATUS.sin_fuente],null,null,'Sirve para medir el flujo más reciente de apoyo nacional.','b',{fuente:'informacion_consolidada_2026_normalizado.csv',periodo:transferPeriod,cobertura:'parcial',unidad:'millones de pesos',estado:hasUsefulValue(ronYtdResolved)?'parcial':'fuente incompleta',tipo:KPI_TIPO_DATO.observado}],
+    ['Recaudación propia 2026','Muestra el total recaudado con impuestos propios en los meses disponibles.',hasUsefulValue(topYtdResolved)?fmtPesosKPI(topYtdResolved):DATA_LABEL[OWN_REVENUE_NOT_PUBLISHED_2026.has(province)?DATA_STATUS.dato_no_publicado:DATA_STATUS.sin_fuente],null,null,'Sirve para seguir la evolución más reciente de la caja provincial.','b',{fuente:'top_mensual_2026_normalizado.csv',periodo:ownRevenuePeriod,periodoEnFila:true,cobertura:'parcial',unidad:'millones de pesos',estado:hasUsefulValue(topYtdResolved)?'parcial':'fuente incompleta',tipo:KPI_TIPO_DATO.observado}],
+    ['Transferencias Nación 2026','Muestra el total recibido desde Nación en los meses disponibles.',hasUsefulValue(ronYtdResolved)?fmtPesosKPI(ronYtdResolved):DATA_LABEL[DATA_STATUS.sin_fuente],null,null,'Sirve para medir el flujo más reciente de apoyo nacional.','b',{fuente:'informacion_consolidada_2026_normalizado.csv',periodo:transferPeriod,periodoEnFila:true,cobertura:'parcial',unidad:'millones de pesos',estado:hasUsefulValue(ronYtdResolved)?'parcial':'fuente incompleta',tipo:KPI_TIPO_DATO.observado}],
   ];
   if(incomplete1816){
     rows.push(['Nota metodológica 1816','Advertencia metodológica oficial para esta jurisdicción.','Dato incompleto en fuente',null,null,'El informe 1816 al III TRIM 2025 marca datos incompletos para La Pampa, Neuquén y Santiago del Estero. No es hueco del tablero; es advertencia metodológica de la fuente oficial.','a',{fuente:'dashboard_cross_section_1816.json',periodo:'LTM 3T25',cobertura:'parcial',unidad:'texto',estado:'metodologico',tipo:KPI_TIPO_DATO.lectura}]);
@@ -3852,7 +3816,7 @@ function renderMetrics(c,topYtd,ronYtd){
       return `
       <tr>
         <td style="font-size:12px"><strong title="${note||''}">${n}</strong></td>
-        <td style="font-size:12px;color:var(--dim)">${d}</td>
+        <td style="font-size:12px;color:var(--dim)">${d}${meta?.periodoEnFila?`<span class="metrics-period">Período: ${meta.periodo}</span>`:''}</td>
         <td style="font-size:12px"><span class="mono metrics-value ${cls}">${rendered}</span></td>
         <td>${meta?.indicatorKey?renderRankingVisual(meta.indicatorKey,rank,total):'<span style="color:var(--dim)">—</span>'}</td>
       </tr>
