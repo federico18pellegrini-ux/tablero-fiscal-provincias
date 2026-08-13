@@ -635,10 +635,12 @@ tr:last-child td{border-bottom:none}
 .gov-head{padding:18px 18px 14px;border-bottom:1px solid var(--border)}
 .gov-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--gold);font-weight:700}
 .gov-title{font-size:24px;line-height:1.16;margin-top:5px;letter-spacing:-.025em}
-.gov-verdict{margin-top:9px;max-width:760px;color:var(--muted);font-size:14px;line-height:1.65}
-.gov-ai{margin-top:13px;max-width:900px;padding:13px 14px;border-left:3px solid var(--gold);background:rgba(201,169,90,.07);border-radius:0 9px 9px 0}
-.gov-ai-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:800;margin-bottom:5px}
-.gov-ai p{font-size:13px;color:var(--muted);line-height:1.65}
+.gov-verdict{margin-top:13px;max-width:900px;padding:13px 14px;border-left:3px solid var(--gold);background:rgba(201,169,90,.07);border-radius:0 9px 9px 0;color:var(--muted);font-size:13px;line-height:1.7}
+.section-reading{margin-top:14px;padding:14px;border:1px solid var(--gold-border);border-radius:10px;background:linear-gradient(135deg,rgba(201,169,90,.09),rgba(201,169,90,.03))}
+.section-reading-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:800;margin-bottom:6px}
+.section-reading p{font-size:13px;color:var(--muted);line-height:1.65}
+.section-reading-conclusion{margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.section-reading-conclusion strong{color:var(--text)}
 .gov-status{display:inline-flex;margin-top:12px;padding:6px 10px;border-radius:999px;background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
 .gov-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
 .gov-metric{background:var(--s1);padding:15px;min-width:0}
@@ -737,10 +739,6 @@ tr:last-child td{border-bottom:none}
     <div class="gov-kicker">Informe Ejecutivo · corte 31/03/2026</div>
     <h2 class="gov-title" id="governorRoomTitle">Cargando diagnóstico...</h2>
     <p class="gov-verdict" id="governorVerdict"></p>
-    <div class="gov-ai">
-      <div class="gov-ai-label">Análisis integral IA · inferencia político-fiscal</div>
-      <p id="governorPoliticalReading"></p>
-    </div>
     <div class="gov-status" id="governorStatus">Evaluando</div>
   </div>
   <div class="gov-metrics" id="governorMetrics"></div>
@@ -781,8 +779,13 @@ tr:last-child td{border-bottom:none}
 </section>
 <section class="layer" id="layer1">
   <div class="layer-title">Sección 1 · Equidad y Esfuerzo Federal</div>
-  <div class="layer-sub">Esta sección responde tres preguntas: cuánto depende la caja de recursos nacionales, si Buenos Aires queda rezagada en el reparto por habitante y cómo evolucionan los giros descontando la inflación. Los índices orientan la discusión; no prueban por sí solos una deuda legal de Nación.</div>
+  <div class="layer-sub">Esta sección responde tres preguntas: cuánto depende la caja de recursos nacionales, si Buenos Aires queda rezagada en el reparto por habitante y si los giros alcanzan a acompañar la inflación. Los índices orientan la discusión; no prueban por sí solos una deuda legal de Nación.</div>
 </section>
+<article class="section-reading" id="federalSectionReading" style="display:none">
+  <div class="section-reading-title">Lectura de conjunto · Equidad y esfuerzo federal</div>
+  <p>Buenos Aires hace un esfuerzo fiscal propio importante, pero sigue muy condicionada por el esquema federal. Recauda por sí misma casi la mitad de sus ingresos no previsionales, aunque los recursos de origen nacional todavía equivalen al 42,3% de los ingresos totales. A la vez, recibe por habitante apenas 37 cuando el promedio comparable recibe 100 y queda 22 de 22 en ese ranking. Eso muestra una desventaja estructural en el reparto por habitante.</p>
+  <p class="section-reading-conclusion"><strong>Conclusión:</strong> hay un problema federal real que debe reclamarse y cuantificarse, pero estos datos no alcanzan para atribuirle a Nación todo el déficit provincial. Las series de 2026 tienen cortes distintos y la matriz de reclamos todavía cubre sólo una parte del universo. La posición más sólida es defender los recursos bonaerenses con firmeza y datos, mientras la Provincia ordena su caja y el ritmo del gasto.</p>
+</article>
 <section class="layer" id="layer2">
   <div class="layer-title">Sección 2 · Solvencia y Gestión Provincial</div>
   <div class="layer-sub">Resultado financiero, autonomía fiscal, rigidez salarial y gasto en capital.</div>
@@ -2061,7 +2064,7 @@ function enforceHierarchy(){
   const layer1=document.getElementById('layer1');
   const layer3=document.getElementById('layer3');
   if(!layer1||!layer3)return;
-  ['quickStrip','federalFairnessSection','transfersDependencySection','realDynamicsSection','nationDebtSection']
+  ['quickStrip','federalFairnessSection','transfersDependencySection','realDynamicsSection','nationDebtSection','federalSectionReading']
     .forEach(id=>{
       const el=document.getElementById(id);
       if(el) layer1.appendChild(el);
@@ -2107,7 +2110,6 @@ function renderGovernorBrief(province){
   if(!show) return;
   document.getElementById('governorRoomTitle').textContent=governorBrief.headline;
   document.getElementById('governorVerdict').textContent=governorBrief.plain_language_verdict;
-  document.getElementById('governorPoliticalReading').textContent=governorBrief.political_reading||'';
   document.getElementById('governorStatus').textContent='CONCLUSIÓN · SE DETERIORA';
   document.getElementById('governorMetrics').innerHTML=(governorBrief.key_metrics||[]).map(metric=>{
     const direction=metric.comparison>0?'+':'';
@@ -2146,6 +2148,8 @@ function render(province){
 
   const cross={...((cross1816&&cross1816[province])||{}),...((latestRanking1816&&latestRanking1816[province])||{})};
   const isPBA=province==='Buenos Aires';
+  const federalReading=document.getElementById('federalSectionReading');
+  if(federalReading) federalReading.style.display=isPBA?'block':'none';
   renderGovernorBrief(province);
 
   const pTopM=sanitizeTopMensualRows(getProvinceRows(topMensual, province));
