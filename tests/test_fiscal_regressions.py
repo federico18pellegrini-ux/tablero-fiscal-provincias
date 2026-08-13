@@ -54,6 +54,18 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertIn("national_tax_share_pct", frontend)
         self.assertNotIn('calcIANDebug', frontend)
         self.assertNotIn('shareAportaNacion', frontend)
+        self.assertIn('PBA_AUDITED_FEDERAL_FALLBACK', frontend)
+        self.assertIn('national_tax_share_ltm_1t26_pct:39.3', frontend)
+        self.assertIn('ron_per_capita_2025_pesos:781320.3070780153', frontend)
+
+    def test_pba_debt_has_audited_local_fallback(self):
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('|| EMBEDDED_PBA_DEBT_PROFILE', frontend)
+        self.assertIn('total_usd_m_equivalent:12056.758559', frontend)
+        self.assertIn('debt_to_ltm_income_pct:45.232757', frontend)
+        self.assertIn('payable_foreign_currency_pct:78.6', frontend)
+        self.assertIn('interest_paid_to_total_resources_pct:3.5', frontend)
+        self.assertIn('debt_service_paid_to_total_resources_pct:7.0', frontend)
 
     def test_executive_balance_uses_same_period_ranks_as_structural_cards(self):
         frontend = (ROOT / 'index.html').read_text(encoding='utf-8')

@@ -108,6 +108,11 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("type:'doughnut'", frontend)
         self.assertIn("compositionCenterLabel", frontend)
         self.assertIn("Foto acumulada ${periodLabel}", frontend)
+        self.assertIn("currentTaxCompositionCenterLabel", frontend)
+        self.assertIn("Composición de la recaudación propia 2026", frontend)
+        current_chart = frontend[frontend.index("function chartTopMensual"):frontend.index("function chartRonMensual")]
+        self.assertIn("type:'doughnut'", current_chart)
+        self.assertNotIn("type:'bar'", current_chart)
 
     def test_latest_pba_debt_profile_reconciles(self):
         profile = json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8"))
@@ -126,6 +131,10 @@ class GovernorBriefTests(unittest.TestCase):
             stock["debt_to_ltm_income_pct"],
             delta=0.001,
         )
+        self.assertAlmostEqual(stock["debt_to_ltm_income_pct"], 45.2, delta=0.1)
+        self.assertAlmostEqual(profile["currency_composition"]["payable_foreign_currency_pct"], 78.6)
+        self.assertAlmostEqual(profile["official_pba_2025_indicators"]["interest_paid_to_total_resources_pct"], 3.5)
+        self.assertAlmostEqual(profile["official_pba_2025_indicators"]["debt_service_paid_to_total_resources_pct"], 7.0)
 
 
 if __name__ == "__main__":
