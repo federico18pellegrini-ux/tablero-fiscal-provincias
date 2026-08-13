@@ -1,9 +1,9 @@
 {
   "source": "bloque comparación federal justa",
-  "generated_at": "2026-08-13T15:34:57.235053Z",
+  "generated_at": "2026-08-13T21:18:24.545620Z",
   "methodology": {
     "ron_per_capita": "ron_total_annual_millions * 1000000 / population",
-    "avg_ron_per_capita_23_provinces": "promedio simple de jurisdicciones con dato válido, excluyendo CABA",
+    "avg_ron_per_capita_23_provinces": "promedio simple de las 23 provincias, excluyendo CABA",
     "avg_ron_per_capita_24_jurisdictions": "promedio simple de jurisdicciones con dato válido, incluyendo CABA",
     "received_share_pct": "ron_total_province / suma_ron_total_all * 100",
     "return_ratio": "received_share_pct / estimated_contribution_share_pct * 100",
@@ -16,14 +16,14 @@
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 17569053.0,
+          "value": 17523996.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 779316.5594044205,
+          "value": 781320.3070780153,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -31,7 +31,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -39,7 +39,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -47,7 +47,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 36.93682050129161,
+          "value": 36.789565602811834,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -55,7 +55,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -1330547.1181613547,
+          "value": -1342434.8780560514,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -63,7 +63,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 24.182465785355923,
+          "value": 22.71180315445706,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -101,8 +101,8 @@
           ]
         },
         "ron_per_capita_rank_23_provinces": {
-          "value": 22,
-          "total": 22,
+          "value": 23,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -120,22 +120,22 @@
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 3120612.0,
+          "value": 3121707.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": null,
-          "status": "missing",
+          "value": 419705.6122819982,
+          "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -143,7 +143,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -151,24 +151,24 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": null,
-          "status": "missing",
+          "value": 19.762429079390493,
+          "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": null,
-          "status": "missing",
+          "value": -1704049.5728520686,
+          "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "received_share_pct": {
-          "value": null,
-          "status": "missing",
+          "value": 2.17333299223032,
+          "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
           ]
@@ -239,7 +239,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -247,7 +247,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -255,7 +255,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 169.66257602124267,
+          "value": 168.55281112209016,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -263,7 +263,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 1469785.3883288447,
+          "value": 1455893.8807605533,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -271,7 +271,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 2.71584282690814,
+          "value": 2.550678174453748,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -310,7 +310,7 @@
         },
         "ron_per_capita_rank_23_provinces": {
           "value": 2,
-          "total": 22,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -328,14 +328,14 @@
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 1142963.0,
+          "value": 1129606.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 2511070.298015219,
+          "value": 2540762.390630334,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -343,7 +343,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -351,7 +351,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -359,7 +359,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 119.01576034108186,
+          "value": 119.63537080051638,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -367,7 +367,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 401206.6204494438,
+          "value": 417007.2054962674,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -375,7 +375,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 5.069082590405606,
+          "value": 4.7608050803774935,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -414,7 +414,7 @@
         },
         "ron_per_capita_rank_23_provinces": {
           "value": 7,
-          "total": 22,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -432,14 +432,14 @@
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 603120.0,
+          "value": 592621.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1524725.3911506531,
+          "value": 1551737.751295992,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -447,7 +447,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -455,7 +455,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -463,7 +463,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 72.26653586025913,
+          "value": 73.06575457274445,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -471,7 +471,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -585138.2864151222,
+          "value": -572017.4338380748,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -479,943 +479,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 1.6241782390700223,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 16,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Corrientes": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 1197553.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 1812031.782344561,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 85.88383228793087,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": -297831.8952212143,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 3.832647505317269,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 13,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Córdoba": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 3978984.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 1262015.719205685,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 59.81503604354748,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": -847847.9583600904,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 8.869012799853838,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 20,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Entre Ríos": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 1426426.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 1941420.7897710446,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 92.01640894690081,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": -168442.88779473072,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 4.891107935225645,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 11,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Formosa": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 606041.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 3407563.037949691,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 161.5063131415731,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": 1297699.3603839157,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 3.6474070183189875,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 3,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Jujuy": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 811611.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 1992608.578554307,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 94.4425272467485,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": -117255.09901146824,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 2.856329101989721,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 10,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "La Pampa": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 361859.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 2966835.7290574475,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 140.61741337148337,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": 856972.0514916722,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 1.8961435091037646,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 5,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "La Rioja": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 384607.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 3024042.624181377,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 143.3288158062573,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": 914178.9466156014,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 2.054203274296996,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 4,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Mendoza": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 2014533.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 1180030.6935692795,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 55.929238752084814,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": -929832.9839964958,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 4.198614625644684,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 21,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Misiones": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 1280960.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 1515423.3994092753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 71.8256546867366,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": -594440.2781565001,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 3.428529430381354,
+          "value": 1.5254034382155177,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1454,7 +518,7 @@
         },
         "ron_per_capita_rank_23_provinces": {
           "value": 17,
-          "total": 22,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1466,20 +530,20 @@
         "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
       }
     },
-    "Neuquén": {
+    "Corrientes": {
       "year": 2025,
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 726590.0,
+          "value": 1212696.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1401557.3490895466,
+          "value": 1789404.844282554,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1487,7 +551,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1495,7 +559,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1503,7 +567,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 66.42881073276607,
+          "value": 84.2566439299638,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1511,7 +575,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -708306.3284762288,
+          "value": -334350.34085151274,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1519,215 +583,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 1.7986166686197245,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 19,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Río Negro": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 762067.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 1877942.5565169777,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 89.00776749157684,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": -231921.12104879762,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 2.5276316447771214,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": 12,
-          "total": 22,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Salta": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 1440672.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 1585212.7261416742,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": 75.13341942407342,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": -524650.9514241011,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": 4.03358292902666,
+          "value": 3.5995641004441747,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1766,7 +622,7 @@
         },
         "ron_per_capita_rank_23_provinces": {
           "value": 14,
-          "total": 22,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1778,20 +634,20 @@
         "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
       }
     },
-    "San Juan": {
+    "Córdoba": {
       "year": 2025,
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 818234.0,
+          "value": 3840905.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 2325450.0894509824,
+          "value": 1307384.6800345005,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1799,7 +655,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1807,7 +663,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1815,7 +671,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 110.21802565623277,
+          "value": 61.56004652447589,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1823,7 +679,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 215586.41188520705,
+          "value": -816370.5050995662,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1831,7 +687,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 3.3606467846979857,
+          "value": 8.329641595383558,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1869,8 +725,8 @@
           ]
         },
         "ron_per_capita_rank_23_provinces": {
-          "value": 9,
-          "total": 22,
+          "value": 21,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1882,20 +738,20 @@
         "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
       }
     },
-    "San Luis": {
+    "Entre Ríos": {
       "year": 2025,
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 540905.0,
+          "value": 1425578.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 2352420.1022615423,
+          "value": 1942575.6370187756,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1903,7 +759,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1911,7 +767,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1919,7 +775,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 111.49630790249032,
+          "value": 91.46890614400766,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1927,7 +783,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 242556.424695767,
+          "value": -181179.54811529117,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1935,7 +791,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 2.2473680504182276,
+          "value": 4.593653997820089,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -1973,8 +829,8 @@
           ]
         },
         "ron_per_capita_rank_23_provinces": {
-          "value": 8,
-          "total": 22,
+          "value": 12,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -1986,20 +842,20 @@
         "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
       }
     },
-    "Santa Cruz": {
+    "Formosa": {
       "year": 2025,
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 337226.0,
+          "value": 607419.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 2685262.1531673633,
+          "value": 3399832.5885131494,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2007,7 +863,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2015,7 +871,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2023,7 +879,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 127.27183190647871,
+          "value": 160.0858993687885,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2031,7 +887,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 575398.4756015879,
+          "value": 1276077.4033790827,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2039,7 +895,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 1.5993593976130378,
+          "value": 3.4255890594254694,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -2077,8 +933,8 @@
           ]
         },
         "ron_per_capita_rank_23_provinces": {
-          "value": 6,
-          "total": 22,
+          "value": 3,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2090,20 +946,20 @@
         "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
       }
     },
-    "Santa Fe": {
+    "Jujuy": {
       "year": 2025,
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 3556522.0,
+          "value": 811611.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1449691.396345618,
+          "value": 1992608.578554307,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2111,7 +967,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2119,7 +975,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2127,7 +983,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 68.71019259491582,
+          "value": 93.82477756863108,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2135,7 +991,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -660172.2812201574,
+          "value": -131146.60657975962,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2143,7 +999,423 @@
           ]
         },
         "received_share_pct": {
-          "value": 9.10624614980544,
+          "value": 2.6826207420097807,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 11,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "La Pampa": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 361859.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 2966835.7290574475,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 139.69763322179526,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": 843080.5439233808,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 1.7808290731644396,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 5,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "La Rioja": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 383865.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 3029888.011562729,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 142.66653862796622,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": 906132.826428662,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 1.929276394689536,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 4,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "Mendoza": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 2043540.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 1163280.7643638984,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 54.774710969826955,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": -960474.4207701683,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 3.943274839938452,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 22,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "Misiones": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 1278873.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 1517896.4273288317,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 71.47228823519087,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": -605858.757805235,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 3.2200225660709236,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -2182,7 +1454,7 @@
         },
         "ron_per_capita_rank_23_provinces": {
           "value": 18,
-          "total": 22,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2194,124 +1466,20 @@
         "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
       }
     },
-    "Santiago del Estero": {
+    "Neuquén": {
       "year": 2025,
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 1060906.0,
+          "value": 710814.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
-          "status": "ok",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ratio_vs_avg_23_provinces_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "gap_vs_avg_23_provinces_pesos": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "received_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv"
-          ]
-        },
-        "estimated_contribution_share_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "federal_gap_pp": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "return_ratio_pct": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "pesos_recibidos_cada_100_aportados": {
-          "value": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_rank_23_provinces": {
-          "value": null,
-          "total": null,
-          "status": "missing",
-          "source": [
-            "serie_ron_2003_2025_normalizado.csv",
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        }
-      },
-      "method": {
-        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
-      }
-    },
-    "Tierra del Fuego": {
-      "year": 2025,
-      "status": "partial",
-      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
-      "metrics": {
-        "population": {
-          "value": 190641.0,
-          "status": "ok",
-          "source": [
-            "dashboard_federal_fairness_inputs.csv"
-          ]
-        },
-        "ron_per_capita_pesos": {
-          "value": 3664598.264605603,
+          "value": 1432663.895583055,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2319,7 +1487,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2327,7 +1495,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2335,7 +1503,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 173.68886452576785,
+          "value": 67.45899459652713,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2343,7 +1511,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": 1554734.5870398278,
+          "value": -691091.2895510118,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2351,7 +1519,7 @@
           ]
         },
         "received_share_pct": {
-          "value": 1.2339029528722938,
+          "value": 1.6892333515779756,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -2389,8 +1557,8 @@
           ]
         },
         "ron_per_capita_rank_23_provinces": {
-          "value": 1,
-          "total": 22,
+          "value": 20,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2402,20 +1570,20 @@
         "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
       }
     },
-    "Tucumán": {
+    "Río Negro": {
       "year": 2025,
       "status": "partial",
       "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
       "metrics": {
         "population": {
-          "value": 1731820.0,
+          "value": 750768.0,
           "status": "ok",
           "source": [
             "dashboard_federal_fairness_inputs.csv"
           ]
         },
         "ron_per_capita_pesos": {
-          "value": 1578132.6003601705,
+          "value": 1906205.4459130166,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2423,7 +1591,7 @@
           ]
         },
         "avg_ron_per_capita_23_provinces_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2123755.1851340667,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2431,7 +1599,7 @@
           ]
         },
         "avg_ron_per_capita_24_jurisdictions_pesos": {
-          "value": 2109863.6775657753,
+          "value": 2052753.1195985635,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2439,7 +1607,7 @@
           ]
         },
         "ratio_vs_avg_23_provinces_pct": {
-          "value": 74.79784675856017,
+          "value": 89.75636454032639,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2447,7 +1615,7 @@
           ]
         },
         "gap_vs_avg_23_provinces_pesos": {
-          "value": -531731.0772056049,
+          "value": -217549.73922105017,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",
@@ -2455,7 +1623,111 @@
           ]
         },
         "received_share_pct": {
-          "value": 4.82708078029754,
+          "value": 2.3739131018606994,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 13,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "Salta": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 1441351.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 1584465.954924219,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 74.60680807351136,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": -539289.2302098477,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 3.7882795867205443,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv"
@@ -2494,7 +1766,735 @@
         },
         "ron_per_capita_rank_23_provinces": {
           "value": 15,
-          "total": 22,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "San Juan": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 822853.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 2312396.416482452,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 108.8824377060427,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": 188641.2313483851,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 3.156268220254872,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 9,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "San Luis": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 542069.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 2347368.684454893,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 110.52915613278233,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": 223613.4993208265,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 2.110693807230521,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 8,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "Santa Cruz": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 337226.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 2685262.1531673633,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 126.43934536163829,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": 561506.9680332965,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 1.5020939607331156,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 6,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "Santa Fe": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 3544908.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 1454440.9458056204,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 68.48439763615248,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": -669314.2393284463,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 8.552447540550489,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 19,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "Santiago del Estero": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 1060906.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 2220800.7520543872,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 104.56952701514861,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": 97045.5669203205,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 3.9081917122911247,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 10,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "Tierra del Fuego": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 185732.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 3761455.6337231966,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 177.11342908319943,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": 1637700.4485891298,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 1.1588628399635457,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 1,
+          "total": 23,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        }
+      },
+      "method": {
+        "contribution_method": "Sin dato cargado (declarar criterio: PIB / recaudación / base tributaria / otro)."
+      }
+    },
+    "Tucumán": {
+      "year": 2025,
+      "status": "partial",
+      "coverage_note": "La comparación federal usa RON anual por provincia y población. El aporte a la masa nacional es una estimación y debe mostrar siempre su método.",
+      "metrics": {
+        "population": {
+          "value": 1731820.0,
+          "status": "ok",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_pesos": {
+          "value": 1578132.6003601705,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_23_provinces_pesos": {
+          "value": 2123755.1851340667,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "avg_ron_per_capita_24_jurisdictions_pesos": {
+          "value": 2052753.1195985635,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ratio_vs_avg_23_provinces_pct": {
+          "value": 74.3085931658619,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "gap_vs_avg_23_provinces_pesos": {
+          "value": -545622.5847738963,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "received_share_pct": {
+          "value": 4.533520670136539,
+          "status": "ok",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv"
+          ]
+        },
+        "estimated_contribution_share_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "federal_gap_pp": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "return_ratio_pct": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "pesos_recibidos_cada_100_aportados": {
+          "value": null,
+          "status": "missing",
+          "source": [
+            "serie_ron_2003_2025_normalizado.csv",
+            "dashboard_federal_fairness_inputs.csv"
+          ]
+        },
+        "ron_per_capita_rank_23_provinces": {
+          "value": 16,
+          "total": 23,
           "status": "ok",
           "source": [
             "serie_ron_2003_2025_normalizado.csv",

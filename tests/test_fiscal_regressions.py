@@ -30,6 +30,50 @@ class FiscalRegressionTests(unittest.TestCase):
         actual = pba['metrics']['ron_per_capita_pesos']['value']
         self.assertAlmostEqual(actual, expected_millions * 1_000_000 / population, places=6)
 
+    def test_federal_fairness_has_all_23_provinces_and_caba(self):
+        payload = json.loads((ROOT / 'dashboard_federal_fairness.json').read_text(encoding='utf-8'))
+        pba = payload['provinces']['Buenos Aires']['metrics']
+        self.assertEqual(pba['ron_per_capita_rank_23_provinces']['value'], 23)
+        self.assertEqual(pba['ron_per_capita_rank_23_provinces']['total'], 23)
+        self.assertAlmostEqual(pba['received_share_pct']['value'], 22.71180315445706, places=6)
+        self.assertEqual(pba['population']['value'], 17523996)
+        with (ROOT / 'serie_ron_2003_2025_normalizado.csv').open(encoding='utf-8', newline='') as source:
+            rows = list(csv.DictReader(source))
+        provinces = {
+            row['province'] for row in rows
+            if row['year'] == '2025' and row['category_normalized'] == 'Total | (1) + (2)'
+        }
+        self.assertIn('CABA', provinces)
+        self.assertIn('Santiago del Estero', provinces)
+
+    def test_dependency_never_combines_incompatible_monthly_windows(self):
+        payload = json.loads((ROOT / 'dashboard_fiscal_provincias.json').read_text(encoding='utf-8'))
+        self.assertIsNone(payload['provinces']['Buenos Aires']['dependencia_nacion_pct'])
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertNotIn('ron2025.value/ingresosTot', frontend)
+        self.assertIn("national_tax_share_pct", frontend)
+        self.assertNotIn('calcIANDebug', frontend)
+        self.assertNotIn('shareAportaNacion', frontend)
+
+    def test_executive_balance_uses_same_period_ranks_as_structural_cards(self):
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn("storedOrCalculatedRank(c.rank_autonomia_fiscal", frontend)
+        self.assertIn("storedOrCalculatedRank(c.rank_resultado_financiero", frontend)
+        self.assertIn("storedOrCalculatedRank(c.rank_deuda_total", frontend)
+
+    def test_deflator_uses_official_2026_ipc_and_april_base(self):
+        with (ROOT / 'deflactor_mensual.csv').open(encoding='utf-8', newline='') as source:
+            rows = {row['period']: row for row in csv.DictReader(source)}
+        self.assertEqual(float(rows['2026-01']['ipc_mom']), 0.029)
+        self.assertEqual(float(rows['2026-02']['ipc_mom']), 0.029)
+        self.assertEqual(float(rows['2026-03']['ipc_mom']), 0.034)
+        self.assertEqual(float(rows['2026-04']['ipc_mom']), 0.026)
+        self.assertEqual(float(rows['2026-04']['factor_to_latest']), 1.0)
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn("let displayMode = 'nominal'", frontend)
+        self.assertIn("if(!factor || isNaN(factor)) return null", frontend)
+        self.assertNotIn("if(!factor || isNaN(factor)) return value", frontend)
+
     def test_federal_contribution_is_not_proxied_with_own_revenue(self):
         payload = json.loads((ROOT / 'dashboard_federal_fairness.json').read_text(encoding='utf-8'))
         pba = payload['provinces']['Buenos Aires']

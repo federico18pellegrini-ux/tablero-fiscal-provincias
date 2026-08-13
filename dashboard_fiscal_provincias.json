@@ -1,6 +1,6 @@
 {
   "source": "pipeline_fiscal_v2",
-  "generated_at": "2026-08-13T15:31:46.834671Z",
+  "generated_at": "2026-08-13T21:18:24.626824Z",
   "integrations": {
     "reclamos_nacion": {
       "source_file": "dashboard_reclamos_nacion_provincias.json",
@@ -45,7 +45,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 77.82706335086814,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.505,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -64,7 +64,7 @@
         "coparticipacion": -3.173530799076729,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -7.4%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -7.4%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 319680000000.0,
         "deuda_total_robusta": 307680000000.0,
@@ -148,7 +148,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 14.521744821986,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.43799999999999994,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -167,7 +167,7 @@
         "coparticipacion": null,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 2.3%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es baja. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con superávit de 2.3%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -214,7 +214,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 90.24443197401564,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.48,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -233,7 +233,7 @@
         "coparticipacion": 4.010467770407544,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -2.6%. El desequilibrio se explica principalmente por nacion. El gasto es intermedio y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -2.6%. El desequilibrio se explica principalmente por nacion. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -280,7 +280,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 89.0489813590006,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.622,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -299,7 +299,7 @@
         "coparticipacion": 2.7908053486105144,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -9.4%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -9.4%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -346,7 +346,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 89.8036305000456,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.679,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -365,7 +365,7 @@
         "coparticipacion": 1.3739026924787234,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -9.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -9.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -412,7 +412,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 88.70088273958935,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.522,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -431,7 +431,7 @@
         "coparticipacion": 1.880208416061957,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -6.2%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -6.2%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -478,7 +478,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 63.99735409303358,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.429,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -497,7 +497,7 @@
         "coparticipacion": 2.393634452638449,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -0.9%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -0.9%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -544,7 +544,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 79.8214363875306,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.633,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -563,7 +563,7 @@
         "coparticipacion": 3.4506004138053825,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -3.1%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -3.1%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -610,7 +610,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 94.7365821786735,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.449,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -629,7 +629,7 @@
         "coparticipacion": 3.797914116895429,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -8.6%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -8.6%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -676,7 +676,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 87.65088314806717,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.536,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -695,7 +695,7 @@
         "coparticipacion": 2.943824946570217,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 5.0%. El desequilibrio se explica principalmente por nacion. El gasto es intermedio y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con superávit de 5.0%. El desequilibrio se explica principalmente por nacion. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -742,7 +742,7 @@
       "resultado_primario_ltm_pct": null,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 100.0,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": null,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -761,7 +761,7 @@
         "coparticipacion": 10566.963328748705,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de N/D. El desequilibrio se explica principalmente por nacion. El gasto es sin_dato y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de N/D. El desequilibrio se explica principalmente por nacion. El gasto es sin_dato y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -808,7 +808,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 91.87978189054667,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.496,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -827,7 +827,7 @@
         "coparticipacion": 3.8937481040896227,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -3.7%. El desequilibrio se explica principalmente por nacion. El gasto es intermedio y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -3.7%. El desequilibrio se explica principalmente por nacion. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -874,7 +874,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 68.45765780215325,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.429,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -893,7 +893,7 @@
         "coparticipacion": 0.2541822967705665,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -940,7 +940,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 100.0,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.434,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -959,7 +959,7 @@
         "coparticipacion": -0.4239209563124069,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 0.5%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con superávit de 0.5%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1006,7 +1006,7 @@
       "resultado_primario_ltm_pct": null,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 43.075961165237175,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": null,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1025,7 +1025,7 @@
         "coparticipacion": 1.1385710898536905,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de N/D. El desequilibrio se explica principalmente por nacion. El gasto es sin_dato y la dependencia de Nación es media. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de N/D. El desequilibrio se explica principalmente por nacion. El gasto es sin_dato y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1072,7 +1072,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 68.7397269659008,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.6609999999999999,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1091,7 +1091,7 @@
         "coparticipacion": 2.8751272784687254,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1138,7 +1138,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 100.0,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.5720000000000001,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1157,7 +1157,7 @@
         "coparticipacion": 0.7173090684127637,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -0.8%. El desequilibrio se explica principalmente por nacion. El gasto es rígido y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -0.8%. El desequilibrio se explica principalmente por nacion. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1204,7 +1204,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 88.65365855823212,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.51,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1223,7 +1223,7 @@
         "coparticipacion": 2.6437242396345706,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 1.5%. El desequilibrio se explica principalmente por nacion. El gasto es intermedio y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con superávit de 1.5%. El desequilibrio se explica principalmente por nacion. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1270,7 +1270,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 82.02673114174979,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.40700000000000003,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1289,7 +1289,7 @@
         "coparticipacion": 3.4430066115012092,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 4.2%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con superávit de 4.2%. El desequilibrio se explica principalmente por nacion. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1336,7 +1336,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 74.21772961784242,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.677,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1355,7 +1355,7 @@
         "coparticipacion": 4.529212706129249,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -4.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -4.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1402,7 +1402,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 100.0,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.518,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1421,7 +1421,7 @@
         "coparticipacion": 9063.68690330239,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -3.0%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -3.0%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1468,7 +1468,7 @@
       "ranking_general": null,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 0.0,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": null,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1487,7 +1487,7 @@
         "coparticipacion": null,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con superávit de 10.2%. El desequilibrio se explica principalmente por sin evidencia suficiente. El gasto es sin_dato y la dependencia de Nación es baja. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con superávit de 10.2%. El desequilibrio se explica principalmente por sin evidencia suficiente. El gasto es sin_dato y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1534,7 +1534,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 85.99924191945573,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.622,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1553,7 +1553,7 @@
         "coparticipacion": 5.663801103480393,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -9.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -9.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
@@ -1600,7 +1600,7 @@
       "datos_incompletos_1816": false,
       "semaforo_fiscal": "sin_dato",
       "riesgo_aguinaldo": "sin_dato",
-      "dependencia_nacion_pct": 76.83975027040965,
+      "dependencia_nacion_pct": null,
       "gasto_personal_ratio": 0.521,
       "gasto_corriente_ratio": null,
       "ahorro_corriente": null,
@@ -1619,7 +1619,7 @@
         "coparticipacion": 1.7685294926893524,
         "gasto_primario": null
       },
-      "mensaje_clave": "Provincia con déficit de -5.5%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es alta. No hay base auditada para medir cobertura de caja o aguinaldo.",
+      "mensaje_clave": "Provincia con déficit de -5.5%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
         "deuda_total_reclamada": 0.0,
         "deuda_total_robusta": 0.0,
