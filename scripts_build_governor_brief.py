@@ -65,6 +65,14 @@ def main() -> None:
             "La Provincia no está sin recursos: recauda casi la mitad de sus ingresos no previsionales por cuenta propia. "
             "El problema es que el gasto supera a los ingresos y los intereses agrandan el déficit."
         ),
+        "political_reading": (
+            "Buenos Aires conserva una fortaleza decisiva: escala económica, recaudación propia y capacidad de gestión. "
+            "Pero hoy combina déficit persistente, intereses crecientes y una recuperación de ingresos más débil que el gasto. "
+            "La respuesta razonable no es un ajuste indiscriminado sobre salud, educación, seguridad, salarios y actividad, "
+            "ni una ruptura unilateral del sistema federal. La prioridad es ordenar la caja, proteger servicios y obra estratégica, "
+            "reclamar por vías institucionales los recursos adeudados por Nación y ampliar la base productiva. "
+            "La urgencia es financiera; la salida debe ser productiva, federal y gradual."
+        ),
         "key_metrics": [
             {
                 "id": "financial_ltm",
@@ -75,6 +83,7 @@ def main() -> None:
                 "comparison": round(number(latest, "financial_result_pct") - number(previous, "financial_result_pct"), 1),
                 "comparison_unit": "p.p. vs 4T25",
                 "signal": "red",
+                "measurement": "Ratio nominal · acumulado móvil · sin desestacionalizar",
                 "interpretation": "Por cada $100 que ingresaron, faltaron $6,60 después de intereses.",
             },
             {
@@ -86,6 +95,7 @@ def main() -> None:
                 "comparison": round(number(latest, "quarter_financial_pct") - number(latest, "quarter_comparator_financial_pct"), 1),
                 "comparison_unit": "p.p. vs 1T25",
                 "signal": "red",
+                "measurement": "Ratio nominal · trimestre · sin desestacionalizar",
                 "interpretation": "El primario fue positivo, pero los intereses llevaron el trimestre a déficit.",
             },
             {
@@ -97,6 +107,7 @@ def main() -> None:
                 "comparison": round(number(latest, "debt_income_pct") - number(previous, "debt_income_pct"), 1),
                 "comparison_unit": "p.p. vs 4T25",
                 "signal": "amber",
+                "measurement": "Stock / ingresos nominales · sin desestacionalizar",
                 "interpretation": "La relación bajó, pero PBA sigue última entre las 23 jurisdicciones comparadas.",
             },
             {
@@ -108,41 +119,42 @@ def main() -> None:
                 "comparison": int(latest["general_rank"]) - int(previous["general_rank"]),
                 "comparison_unit": "puesto vs 4T25",
                 "signal": "amber",
+                "measurement": "Indicador relativo · universo de 23 jurisdicciones",
                 "interpretation": "Perdió un lugar: del puesto 15 al 16.",
             },
         ],
         "risks": [
             {
-                "title": "Déficit persistente",
-                "evidence": "Resultado financiero de -6,6% de los ingresos en los últimos 12 meses.",
-                "political_meaning": "Reduce margen para salarios, obra y respuesta ante una emergencia.",
+                "title": "La caja anual no alcanza para cubrir todo el gasto",
+                "evidence": "En 12 meses se gastaron $106,60 por cada $100 ingresados: faltaron $2,70 antes de intereses y otros $3,90 después.",
+                "political_meaning": "Por qué importa: si se repite, obliga a postergar pagos, obra o servicios, o a buscar financiamiento más caro.",
             },
             {
-                "title": "Ingresos débiles frente al gasto",
-                "evidence": "En el 1T26 los ingresos reales cayeron 0,8% y el gasto primario creció 2,0% interanual.",
-                "political_meaning": "Sin corrección, la brecha vuelve a presionar caja y financiamiento.",
+                "title": "El gasto crece más rápido que los ingresos",
+                "evidence": "En el 1T26 los ingresos reales cayeron 0,8% y el gasto primario real creció 2,0% contra el 1T25. Son variaciones interanuales reales, no desestacionalizadas.",
+                "political_meaning": "Por qué importa: la inflación puede hacer subir los montos nominales y ocultar que el poder de compra de los recursos está cayendo.",
             },
             {
-                "title": "Deuda todavía condicionante",
-                "evidence": "Deuda equivalente a 45,2% de los ingresos; puesto 23 de 23 en este indicador.",
-                "political_meaning": "La baja del ratio ayuda, pero no resuelve vencimientos ni exposición financiera.",
+                "title": "La deuda bajó, pero todavía condiciona decisiones",
+                "evidence": "Equivale a 45,2% de los ingresos y ubica a PBA 23 de 23 en este indicador comparativo.",
+                "political_meaning": "Por qué importa: una mejora del ratio no demuestra que haya caja para aguinaldo y vencimientos; esos datos todavía faltan.",
             },
         ],
         "decisions": [
             {
                 "horizon": "30 días",
-                "action": "Cerrar un parte semanal de caja, salarios, aguinaldo y vencimientos.",
-                "why": "El informe fiscal no contiene saldo de Tesorería ni calendario 90/180 días.",
+                "action": "Instalar una mesa semanal de caja y prioridades.",
+                "why": "Ordenar cada pago por fecha y criticidad: salarios y aguinaldo, salud, educación, seguridad, proveedores pyme y obra estratégica. Sin saldo de Tesorería y vencimientos no debe prometerse cobertura.",
             },
             {
                 "horizon": "90 días",
-                "action": "Fijar un límite real al gasto primario y proteger servicios esenciales y obra prioritaria.",
-                "why": "El gasto crece por encima de los ingresos y el capital bajó de 8,4% a 8,1% del gasto comparable.",
+                "action": "Defender los recursos bonaerenses por vías institucionales.",
+                "why": "Consolidar cada deuda de Nación, cuantificar su efecto por municipio y servicio, y avanzar por gestión administrativa, CFI y justicia. Retener unilateralmente coparticipación no es una herramienta operativa ni jurídicamente prudente.",
             },
             {
                 "horizon": "180 días",
-                "action": "Separar la negociación con Nación del plan de ordenamiento propio.",
-                "why": "La autonomía es alta para el conjunto provincial, pero no alcanza para absorber déficit e intereses.",
+                "action": "Acordar un programa productivo y de gasto con resultados medibles.",
+                "why": "Revisar compras y programas de bajo impacto, mejorar cumplimiento tributario sin subir alícuotas de forma general y concentrar la inversión en empleo, pymes e infraestructura que amplíe la base económica.",
             },
         ],
         "missing_for_decision": [

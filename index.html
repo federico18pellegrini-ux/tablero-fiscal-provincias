@@ -306,7 +306,9 @@ select.psel:focus{outline:none;border-color:var(--gold)}
 .bc-val{font-family:var(--mono);font-size:18px;font-weight:500;line-height:1;margin-bottom:3px}
 .bc-lbl{font-size:12px;color:var(--muted);line-height:1.3;display:flex;align-items:center;gap:6px}
 .bc-src{display:none}
-.info-dot{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--border2);border-radius:999px;font-size:11px;color:var(--gold-dim);cursor:help;flex-shrink:0}
+.info-dot{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border:1px solid var(--border2);border-radius:999px;font-size:11px;color:var(--gold);cursor:pointer;flex-shrink:0;background:transparent}
+.info-dot:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.info-popover{position:fixed;z-index:1000;width:min(320px,calc(100vw - 24px));padding:10px 12px;border:1px solid var(--gold-border);border-radius:10px;background:#191713;color:var(--text);font-size:12px;line-height:1.5;box-shadow:0 14px 40px rgba(0,0,0,.45)}
 .layer{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-bottom:10px}
 .layer-title{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .layer-sub{font-size:12px;color:var(--muted);margin-bottom:8px}
@@ -339,6 +341,16 @@ select.psel:focus{outline:none;border-color:var(--gold)}
 .fair-item:last-child{border-bottom:none}
 .fair-label{font-size:12px;color:var(--muted)}
 .fair-value{font-family:var(--mono);font-size:12px;color:var(--text);text-align:right}
+.federal-visual{margin:10px 0;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--s2)}
+.federal-visual-number{font-family:var(--mono);font-size:28px;color:var(--gold);line-height:1.1}
+.federal-visual-copy{font-size:12px;color:var(--muted);line-height:1.45;margin-top:4px}
+.people-row{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin:12px 0 7px}
+.person-unit{height:28px;position:relative;opacity:.22}
+.person-unit::before{content:'';position:absolute;left:50%;top:1px;width:8px;height:8px;border-radius:50%;background:var(--gold);transform:translateX(-50%)}
+.person-unit::after{content:'';position:absolute;left:50%;top:11px;width:12px;height:15px;border-radius:7px 7px 3px 3px;background:var(--gold);transform:translateX(-50%)}
+.person-unit.on{opacity:1}
+.method-details{margin-top:8px;padding:10px 12px;border:1px dashed var(--border2);border-radius:9px;color:var(--dim);font-size:11px;line-height:1.6}
+.method-details summary{cursor:pointer;color:var(--muted);font-size:12px;font-weight:700}
 .claim-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px}
 @media(min-width:760px){.claim-grid{grid-template-columns:1fr 1fr}}
 .claim-card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:12px 13px}
@@ -624,6 +636,9 @@ tr:last-child td{border-bottom:none}
 .gov-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--gold);font-weight:700}
 .gov-title{font-size:24px;line-height:1.16;margin-top:5px;letter-spacing:-.025em}
 .gov-verdict{margin-top:9px;max-width:760px;color:var(--muted);font-size:14px;line-height:1.65}
+.gov-ai{margin-top:13px;max-width:900px;padding:13px 14px;border-left:3px solid var(--gold);background:rgba(201,169,90,.07);border-radius:0 9px 9px 0}
+.gov-ai-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:800;margin-bottom:5px}
+.gov-ai p{font-size:13px;color:var(--muted);line-height:1.65}
 .gov-status{display:inline-flex;margin-top:12px;padding:6px 10px;border-radius:999px;background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
 .gov-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
 .gov-metric{background:var(--s1);padding:15px;min-width:0}
@@ -631,6 +646,7 @@ tr:last-child td{border-bottom:none}
 .gov-metric-value{font-family:var(--mono);font-size:24px;font-weight:700;margin:3px 0}
 .gov-metric-value.red{color:var(--red)}.gov-metric-value.amber{color:var(--amber)}.gov-metric-value.green{color:var(--green)}
 .gov-metric-window,.gov-metric-change{font-size:10px;color:var(--dim);line-height:1.45}
+.gov-metric-basis{display:inline-flex;margin-top:7px;padding:3px 6px;border:1px solid var(--border);border-radius:999px;font-size:9px;color:var(--dim);line-height:1.3}
 .gov-metric-change{margin-top:5px;color:var(--muted)}
 .gov-metric-meaning{font-size:11px;color:var(--muted);line-height:1.5;margin-top:7px}
 .gov-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px}
@@ -695,8 +711,8 @@ tr:last-child td{border-bottom:none}
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Sala de situación fiscal · Provincia de Buenos Aires</div>
-  <div class="hero-title">Lo esencial para<br>tomar decisiones</div>
+  <div class="hero-eyebrow">Sala de situación fiscal</div>
+  <div class="hero-title">Situación fiscal de la Provincia de Buenos Aires</div>
   <div class="hero-sub">Qué está pasando, por qué importa y qué decisiones requiere. Después, el detalle técnico y la comparación con las demás provincias.</div>
   <div class="hero-credit">Federico Pellegrini · Podcast Entre Mates y Mercados <a href="https://open.spotify.com/show/6kY1P5uQ8Z4WVVKJdA9Qiv" target="_blank" rel="noopener noreferrer">[link]</a></div>
 </div>
@@ -718,9 +734,13 @@ tr:last-child td{border-bottom:none}
 </div>
 <section class="governor-room" id="governorRoom" aria-labelledby="governorRoomTitle">
   <div class="gov-head">
-    <div class="gov-kicker">Informe ejecutivo para la Gobernación · corte 31/03/2026</div>
+    <div class="gov-kicker">Informe Ejecutivo · corte 31/03/2026</div>
     <h2 class="gov-title" id="governorRoomTitle">Cargando diagnóstico...</h2>
     <p class="gov-verdict" id="governorVerdict"></p>
+    <div class="gov-ai">
+      <div class="gov-ai-label">Análisis integral IA · inferencia político-fiscal</div>
+      <p id="governorPoliticalReading"></p>
+    </div>
     <div class="gov-status" id="governorStatus">Evaluando</div>
   </div>
   <div class="gov-metrics" id="governorMetrics"></div>
@@ -733,15 +753,6 @@ tr:last-child td{border-bottom:none}
     <div id="governorMethod" style="margin-top:8px"></div>
   </details>
 </section>
-
-<details class="secondary-tools">
-  <summary>Descargar o exportar</summary>
-  <div class="secondary-tools-body">
-    <button id="downloadPdf" class="btn-export"><span aria-hidden="true">↓</span> PDF de la provincia</button>
-    <button id="downloadPdfAll" class="btn-export"><span aria-hidden="true">↓</span> Informe de 24 jurisdicciones</button>
-    <div id="exportStatus" class="export-status" role="status" aria-live="polite"></div>
-  </div>
-</details>
 
 <details class="data-context">
   <summary>Fuentes, unidades y cobertura</summary>
@@ -770,7 +781,7 @@ tr:last-child td{border-bottom:none}
 </section>
 <section class="layer" id="layer1">
   <div class="layer-title">Sección 1 · Equidad y Esfuerzo Federal</div>
-  <div class="layer-sub">Presión de Nación, castigo estructural y dinámica real de transferencias.</div>
+  <div class="layer-sub">Esta sección responde tres preguntas: cuánto depende la caja de recursos nacionales, si Buenos Aires queda rezagada en el reparto por habitante y cómo evolucionan los giros descontando la inflación. Los índices orientan la discusión; no prueban por sí solos una deuda legal de Nación.</div>
 </section>
 <section class="layer" id="layer2">
   <div class="layer-title">Sección 2 · Solvencia y Gestión Provincial</div>
@@ -920,13 +931,16 @@ tr:last-child td{border-bottom:none}
       <div id="fairPanelPerCapitaNote" class="cc-note" style="margin-top:8px"></div>
     </div>
     <div class="fair-card">
-      <div class="fair-title">Aporte estimado vs participación recibida</div>
-      <div class="k-sub" style="margin-bottom:6px">Compara el peso estimado de la provincia en la masa nacional con la porción de recursos que efectivamente recibe.</div>
+      <div class="fair-title">Cuánto recibe Buenos Aires</div>
+      <div class="k-sub" style="margin-bottom:6px">Muestra el retorno por habitante. La relación exacta entre aporte y devolución sólo se publica cuando existe una estimación homogénea y verificable.</div>
       <div id="fairPanelReturn"></div>
     </div>
   </div>
-  <div id="federalFairnessMethod" class="cc-note" style="margin-top:8px"></div>
-  <div id="federalFairnessFootnotes" class="cc-note" style="margin-top:8px"></div>
+  <details class="method-details">
+    <summary>Ver método, universo y fuentes</summary>
+    <div id="federalFairnessMethod" class="cc-note" style="margin-top:8px"></div>
+    <div id="federalFairnessFootnotes" class="cc-note" style="margin-top:8px"></div>
+  </details>
 </div>
 
 <!-- COMPARATIVO -->
@@ -1009,7 +1023,7 @@ tr:last-child td{border-bottom:none}
   </div>
   <div class="cc-note" style="margin-top:6px"><strong style="color:var(--muted)">Riesgo principal:</strong> <span id="balanceRisk">—</span></div>
   <div class="cc-note"><strong style="color:var(--muted)">Amortiguador:</strong> <span id="balanceBuffer">—</span></div>
-  <div class="cc-note"><strong style="color:var(--muted)">Juicio final:</strong> <span id="balanceVerdict">—</span></div>
+  <div class="cc-note"><strong style="color:var(--muted)">Conclusión:</strong> <span id="balanceVerdict">—</span></div>
 </div>
 
 <!-- TABLES -->
@@ -1027,6 +1041,15 @@ tr:last-child td{border-bottom:none}
   <div class="tb" style="display:none"></div>
 </div>
 
+<details class="secondary-tools">
+  <summary>Descargar o exportar</summary>
+  <div class="secondary-tools-body">
+    <button id="downloadPdf" class="btn-export"><span aria-hidden="true">↓</span> PDF de la provincia</button>
+    <button id="downloadPdfAll" class="btn-export"><span aria-hidden="true">↓</span> Informe de 24 jurisdicciones</button>
+    <div id="exportStatus" class="export-status" role="status" aria-live="polite"></div>
+  </div>
+</details>
+
 <!-- FOOTER -->
 <div class="footer">
   <strong style="color:var(--muted)">Federico Pellegrini · Entre Mates y Mercados</strong><br>
@@ -1037,6 +1060,8 @@ tr:last-child td{border-bottom:none}
 </div>
 
 </div><!-- /wrap -->
+
+<div id="infoPopover" class="info-popover" role="tooltip" hidden></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -1109,6 +1134,65 @@ function resolveDataStatus({value,province,source,explicitStatus}){
   if(OWN_REVENUE_NOT_PUBLISHED_2026.has(province)) return DATA_STATUS.dato_no_publicado;
   return DATA_STATUS.ND;
 }
+
+function prepareInfoDots(root=document){
+  root.querySelectorAll('.info-dot').forEach(dot=>{
+    const copy=dot.dataset.info||dot.getAttribute('title')||'';
+    if(copy) dot.dataset.info=copy;
+    dot.removeAttribute('title');
+    dot.setAttribute('role','button');
+    dot.setAttribute('tabindex','0');
+    dot.setAttribute('aria-label','Ver explicación');
+    dot.setAttribute('aria-expanded','false');
+  });
+}
+
+function closeInfoPopover(){
+  const popover=document.getElementById('infoPopover');
+  if(!popover) return;
+  document.querySelectorAll('.info-dot[aria-expanded="true"]').forEach(dot=>dot.setAttribute('aria-expanded','false'));
+  popover.hidden=true;
+  popover.textContent='';
+}
+
+function openInfoPopover(dot){
+  const popover=document.getElementById('infoPopover');
+  const copy=dot.dataset.info||dot.getAttribute('title')||'';
+  if(!popover||!copy) return;
+  prepareInfoDots(dot.parentElement||document);
+  document.querySelectorAll('.info-dot[aria-expanded="true"]').forEach(item=>item.setAttribute('aria-expanded','false'));
+  dot.setAttribute('aria-expanded','true');
+  popover.textContent=copy;
+  popover.hidden=false;
+  const rect=dot.getBoundingClientRect();
+  const width=Math.min(320,window.innerWidth-24);
+  const left=Math.max(12,Math.min(rect.left,window.innerWidth-width-12));
+  popover.style.left=`${left}px`;
+  popover.style.top=`${Math.min(rect.bottom+8,window.innerHeight-popover.offsetHeight-12)}px`;
+}
+
+document.addEventListener('click',event=>{
+  const dot=event.target.closest?.('.info-dot');
+  if(dot){
+    event.preventDefault();
+    const wasOpen=dot.getAttribute('aria-expanded')==='true';
+    closeInfoPopover();
+    if(!wasOpen) openInfoPopover(dot);
+    return;
+  }
+  if(!event.target.closest?.('#infoPopover')) closeInfoPopover();
+});
+document.addEventListener('keydown',event=>{
+  const dot=event.target.closest?.('.info-dot');
+  if(dot&&(event.key==='Enter'||event.key===' ')){
+    event.preventDefault();
+    const wasOpen=dot.getAttribute('aria-expanded')==='true';
+    closeInfoPopover();
+    if(!wasOpen) openInfoPopover(dot);
+  }else if(event.key==='Escape') closeInfoPopover();
+});
+window.addEventListener('resize',closeInfoPopover);
+window.addEventListener('scroll',closeInfoPopover,{passive:true});
 function semanticValueForDisplay({value,status}){
   if(status===DATA_STATUS.numerico) return value;
   return DATA_LABEL[status] || DATA_LABEL[DATA_STATUS.ND];
@@ -2023,7 +2107,8 @@ function renderGovernorBrief(province){
   if(!show) return;
   document.getElementById('governorRoomTitle').textContent=governorBrief.headline;
   document.getElementById('governorVerdict').textContent=governorBrief.plain_language_verdict;
-  document.getElementById('governorStatus').textContent='Juicio final · se deteriora';
+  document.getElementById('governorPoliticalReading').textContent=governorBrief.political_reading||'';
+  document.getElementById('governorStatus').textContent='CONCLUSIÓN · SE DETERIORA';
   document.getElementById('governorMetrics').innerHTML=(governorBrief.key_metrics||[]).map(metric=>{
     const direction=metric.comparison>0?'+':'';
     return `<article class="gov-metric">
@@ -2031,6 +2116,7 @@ function renderGovernorBrief(province){
       <div class="gov-metric-value ${metric.signal}">${formatGovNumber(metric.value,metric.unit)} <span style="font-size:11px;color:var(--dim)">${formatGovUnit(metric.unit)}</span></div>
       <div class="gov-metric-window">${metric.window}</div>
       <div class="gov-metric-change">${direction}${Number(metric.comparison).toFixed(1).replace('.',',')} ${metric.comparison_unit}</div>
+      <div class="gov-metric-basis">${metric.measurement||'Base no informada'}</div>
       <div class="gov-metric-meaning">${metric.interpretation}</div>
     </article>`;
   }).join('');
@@ -2299,6 +2385,7 @@ function render(province){
   safeRunRender('metrics',()=>renderMetrics(cross,hasTop2026?ownRevenue2026Ytd:null,hasRon2026?ronYtd:null));
   safeRunRender('debtProfile',()=>renderDebtProfile(province, cross));
   renderCoverageMap(province);
+  prepareInfoDots();
 }
 
 function liquiditySemaphore(metrics){
@@ -2759,8 +2846,8 @@ function renderFederalFairness(province){
 
   const m=pdata.metrics||{};
   section.style.display='block';
-  coverage.style.display = pdata.coverage_note ? 'block' : 'none';
-  coverage.textContent = pdata.coverage_note || '';
+  coverage.style.display='none';
+  coverage.textContent='';
   const fallbackPc=fallbackRonPerCapitaForProvince(province,pdata);
   const ronPerCapitaValue=ronPerCapitaFromTotal2025(province,pdata) ?? (hasUsefulValue(m.ron_per_capita_pesos?.value) ? toN(m.ron_per_capita_pesos?.value) : toN(fallbackPc?.value));
   const avgPerCapita=toN(m.avg_ron_per_capita_23_provinces_pesos?.value);
@@ -2797,7 +2884,7 @@ function renderFederalFairness(province){
     return;
   }
   if(cardPC && province!=='CABA') cardPC.style.display = hasPerCapitaPanel ? 'block' : 'none';
-  if(cardRet) cardRet.style.display = hasReturnComplete ? 'block' : 'none';
+  if(cardRet) cardRet.style.display = (hasReturnComplete || (province==='Buenos Aires'&&hasReturnCore)) ? 'block' : 'none';
 
   panelRet.innerHTML='';
   method.innerHTML='';
@@ -2822,11 +2909,7 @@ function renderFederalFairness(province){
     ['Ranking (si aplica)', rankValue!==null&&rankValue!==undefined ? `<span class="fair-value-block">${rankTxt}<span class="info-dot" title="${rankTooltip}">ⓘ</span></span>` : rankTxt],
   ].map(([label,val])=>`<div class="fair-item"><span class="fair-label">${label}</span><span class="fair-value">${val}</span></div>`).join('') + (rankContextNote?`<div class="fair-item fair-item-note"><span class="fair-label"></span><span class="fair-value">${rankTxt} · ${rankContextNote}</span></div>`:'') : '';
 
-  if(panelPCNote){
-    panelPCNote.innerText = (hasPerCapitaPanel && province==='Buenos Aires')
-      ? 'Universo comparable: 22 jurisdicciones provinciales.\nExclusiones: detallar en código según el cálculo efectivo.\nPromedio: simple, no ponderado por población.\nRON: con Compensación Consenso Fiscal (columna AC / Total (1)+(2) de serie_ron_2003_2025.xlsx).\nPoblación: Proyecciones INDEC (Estimaciones y Proyecciones de Población\n2022-2040), en línea con la metodología de la Subsecretaría de\nCoordinación Fiscal Provincial - Ministerio de Economía de la Nación.\nFuente citada: tablero RON DNAP III TRIM 2025.'
-      : '';
-  }
+  if(panelPCNote) panelPCNote.innerText='';
 
   const returnItems = [
     ['Aporte estimado %', formatFairValue(m.estimated_contribution_share_pct?.value,'pct')],
@@ -2836,15 +2919,25 @@ function renderFederalFairness(province){
     ['Por cada 100 aportados, vuelven', `$ ${formatFairValue(m.pesos_recibidos_cada_100_aportados?.value,'ratio')}`],
   ];
   if(hasReturnComplete){
-    panelRet.innerHTML = returnItems.map(([label,val])=>`<div class="fair-item"><span class="fair-label">${label}</span><span class="fair-value">${val}</span></div>`).join('');
+    const peopleCount=Math.max(0,Math.min(10,Math.round(toN(m.pesos_recibidos_cada_100_aportados?.value)/10)));
+    const people=Array.from({length:10},(_,index)=>`<span class="person-unit ${index<peopleCount?'on':''}" aria-hidden="true"></span>`).join('');
+    panelRet.innerHTML = `<div class="federal-visual"><div class="federal-visual-number">$ ${formatFairValue(m.pesos_recibidos_cada_100_aportados?.value,'ratio')}</div><div class="federal-visual-copy">vuelven por cada $100 de aporte estimado</div><div class="people-row">${people}</div><div class="k-sub">Cada figura representa aproximadamente $10.</div></div>`+
+      returnItems.map(([label,val])=>`<div class="fair-item"><span class="fair-label">${label}</span><span class="fair-value">${val}</span></div>`).join('');
     method.innerHTML = `<strong>Método de aporte declarado:</strong> ${contributionMethod || SIN_DATO}.`;
+  }else if(province==='Buenos Aires'&&hasReturnCore){
+    const peopleCount=Number.isFinite(ratioVsAvg)?Math.max(0,Math.min(10,Math.round(ratioVsAvg/10))):0;
+    const people=Array.from({length:10},(_,index)=>`<span class="person-unit ${index<peopleCount?'on':''}" aria-hidden="true"></span>`).join('');
+    panelRet.innerHTML=`<div class="federal-visual"><div class="federal-visual-number">${Number(ratioVsAvg).toFixed(0)} de 100</div><div class="federal-visual-copy">recibe por habitante Buenos Aires cuando el promedio comparable recibe 100</div><div class="people-row">${people}</div><div class="k-sub">Cada figura representa aproximadamente 10 puntos del promedio.</div></div>`+
+      `<div class="fair-item"><span class="fair-label">Participación en recursos distribuidos</span><span class="fair-value">${formatFairValue(m.received_share_pct?.value,'pct')}</span></div>`+
+      `<div class="fair-item"><span class="fair-label">Cuánto vuelve por cada $100 aportados</span><span class="fair-value">Pendiente de fuente sólida</span></div>`;
+    method.innerHTML='El tablero no inventa el aporte bonaerense: falta una estimación homogénea y verificable de cuánto aporta cada jurisdicción a la masa nacional. Hasta contar con ella, muestra la comparación por habitante y la participación efectivamente recibida.';
   }else if(hasReturnCore && hasEstimatedContribution){
     method.innerHTML = 'El aporte provincial a la masa nacional sólo puede aproximarse con métodos indirectos; por eso este bloque no presenta una estimación robusta ni homogénea y no implica una obligación legal de distribución.';
   }
   const year=pdata.year||'—';
   const rankExpl = rankValue!==null&&rankValue!==undefined ? `Cómo leer el ranking: ${rankTxt} ubica a ${province} dentro del conjunto comparado por RON per cápita.` : 'Ranking no disponible para esta provincia.';
   if(footnotes){
-    footnotes.innerHTML = `<strong>Base temporal:</strong> corte anual ${year}. · <strong>Fuente:</strong> serie_ron_2003_2025_normalizado.csv + dashboard_federal_fairness_inputs.csv. · <strong>Universo de este módulo:</strong> 24 jurisdicciones para serie RON anual; ranking per cápita calculado sobre jurisdicciones con dato poblacional y RON válido. · <strong>Nota metodológica:</strong> La Pampa, Neuquén y Santiago del Estero presentan datos incompletos en la capa 1816 y no deben extrapolarse como faltante del módulo RON anual. · ${rankExpl} · <strong>Alcance:</strong> comparación relativa per cápita; no mide obligación legal de reparto.`;
+    footnotes.innerHTML = `<strong>Corte:</strong> ${year}. · <strong>Fuente:</strong> serie RON normalizada e INDEC. · <strong>Universo:</strong> ${perCapitaUniverse} jurisdicciones con RON y población válidos. · ${rankExpl} · <strong>Alcance:</strong> comparación relativa por habitante; no determina una obligación legal de reparto.`;
   }
   [
     ['RON per cápita vs promedio', ronPerCapitaValue, 'ars'],
