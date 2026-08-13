@@ -325,6 +325,26 @@ select.psel:focus{outline:none;border-color:var(--gold)}
 .exec-rank-fill.bottom{background:var(--red)}
 .exec-rank-reading{margin-top:6px;font-size:11px;line-height:1.35;color:var(--dim)}
 .exec-rank-note{margin:9px 2px 0;font-size:11px;line-height:1.45;color:var(--dim)}
+.debt-profile-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(220px,.65fr);gap:18px;align-items:center}
+.debt-stock-meta{font-size:12px;color:var(--muted);margin-top:6px}
+.debt-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}
+.debt-fact{padding:9px 10px;border:1px solid var(--border);border-radius:9px;background:var(--s2)}
+.debt-fact-label{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);margin-bottom:3px}
+.debt-fact-value{font-family:var(--mono);font-size:14px;color:var(--text)}
+.debt-reading{margin-top:12px;padding-left:10px;border-left:2px solid var(--gold);font-size:12px;line-height:1.5;color:var(--muted)}
+.debt-chart{display:grid;grid-template-columns:118px minmax(0,1fr);gap:13px;align-items:center}
+.debt-donut{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;position:relative}
+.debt-donut::after{content:'';position:absolute;inset:24px;border-radius:50%;background:var(--s1);border:1px solid var(--border)}
+.debt-donut-center{position:relative;z-index:1;text-align:center;line-height:1.05}
+.debt-donut-value{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--text)}
+.debt-donut-label{font-size:10px;color:var(--dim);margin-top:4px}
+.debt-creditor-legend{display:flex;flex-direction:column;gap:7px}
+.debt-legend-row{display:grid;grid-template-columns:8px minmax(0,1fr) auto;gap:7px;align-items:center;font-size:11px;color:var(--muted)}
+.debt-legend-dot{width:8px;height:8px;border-radius:50%}
+.debt-legend-value{font-family:var(--mono);color:var(--text)}
+.debt-method-details{margin-top:12px;border-top:1px solid var(--border);padding-top:9px}
+.debt-method-details summary{cursor:pointer;font-size:11px;color:var(--dim)}
+@media(max-width:640px){.debt-profile-grid{grid-template-columns:1fr}.debt-chart{grid-template-columns:108px minmax(0,1fr)}.debt-donut{width:108px;height:108px}.debt-facts{grid-template-columns:1fr}}
 .method-list{margin:8px 0 0 16px;padding:0;display:flex;flex-direction:column;gap:6px}
 .method-list li{margin:0;color:var(--dim);line-height:1.5}
 .liq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px;min-width:0}
@@ -830,10 +850,24 @@ tr:last-child td{border-bottom:none}
   <div class="layer-sub">Perfil de deuda, liquidez observada y escenarios 90/180 días.</div>
   <div class="kcard" id="debtProfileCard">
     <div class="k-lbl">Ficha de perfil de deuda <span class="info-dot" title="Unifica stock total, exposición en moneda extranjera y acreedores principales.">i</span></div>
-    <div class="k-val r" id="debtProfileTotal">—</div>
-    <div class="k-sub" id="debtProfileFx">—</div>
-    <div class="k-sub" id="debtProfileCreditors">—</div>
-    <div id="debtProfileMethodNote" class="cc-note" style="margin-top:8px"></div>
+    <div class="debt-profile-grid">
+      <div>
+        <div class="k-val r" id="debtProfileTotal">—</div>
+        <div class="debt-stock-meta" id="debtProfileUsd">—</div>
+        <div class="debt-facts">
+          <div class="debt-fact"><div class="debt-fact-label">Exposición cambiaria</div><div class="debt-fact-value" id="debtProfileFx">—</div></div>
+          <div class="debt-fact"><div class="debt-fact-label">Deuda / ingresos LTM</div><div class="debt-fact-value" id="debtProfileRatio">—</div></div>
+        </div>
+        <div class="debt-reading" id="debtProfileReading">—</div>
+      </div>
+      <div class="debt-chart">
+        <div class="debt-donut" id="debtCreditorsDonut" role="img" aria-label="Composición de la deuda por acreedor">
+          <div class="debt-donut-center"><div class="debt-donut-value" id="debtDonutValue">—</div><div class="debt-donut-label">bonos</div></div>
+        </div>
+        <div class="debt-creditor-legend" id="debtProfileCreditors">—</div>
+      </div>
+    </div>
+    <details class="debt-method-details"><summary>Cómo se calcula y fuentes</summary><div id="debtProfileMethodNote" class="cc-note" style="margin-top:8px"></div></details>
   </div>
 </section>
 <!-- KPIs -->
@@ -1714,7 +1748,7 @@ const BASE_OPTS={
 };
 
 /* ── DATA GLOBALS ────────────────────────────────────────────────── */
-let manifest,topMensual=[],topTrim=[],serieTop=[],info2026=[],info2025=[],topMensual2025=[],ronSeries=[],cross1816={},latestRanking1816={},fiscalProvinciasData={},budgetPBA=null,budgetPBAQuarterly=[],pbaRonMonthlyRaw=[],pbaRonDailyRaw=[],pbaTopMonthlyRaw=[],nationalDebtMonthlyRaw=[],municipiosPBAAnnualRaw=[],liquidityRisk=null,realDynamics=null,deteriorationAttribution=null,federalFairness=null,scenariosData=null,reclamosNacionData=null,governorBrief=null;
+let manifest,topMensual=[],topTrim=[],serieTop=[],info2026=[],info2025=[],topMensual2025=[],ronSeries=[],cross1816={},latestRanking1816={},fiscalProvinciasData={},budgetPBA=null,budgetPBAQuarterly=[],pbaRonMonthlyRaw=[],pbaRonDailyRaw=[],pbaTopMonthlyRaw=[],nationalDebtMonthlyRaw=[],municipiosPBAAnnualRaw=[],liquidityRisk=null,realDynamics=null,deteriorationAttribution=null,federalFairness=null,scenariosData=null,reclamosNacionData=null,governorBrief=null,pbaDebtProfile=null;
 let charts={};
 const YEAR_DEFLATOR = {"2000": 721.1810727471235, "2001": 731.4071700983172, "2002": 520.5193149801797, "2003": 502.69596820298784, "2004": 476.82015402982523, "2005": 426.1269174334221, "2006": 386.9036977328477, "2007": 356.55520309355893, "2008": 330.87979867163995, "2009": 310.1179740041745, "2010": 280.44892578759163, "2011": 256.9074772650836, "2012": 232.78731530656742, "2013": 211.14325572424374, "2014": 170.01976130602242, "2015": 147.64221779144523, "2016": 108.06298963888307, "2017": 88.28538001398147, "2018": 59.50968976749627, "2019": 39.063076372251324, "2020": 28.80141241349951, "2021": 19.064686403078348, "2022": 9.91168252000688, "2023": 3.8032155238550325, "2024": 1.4297180188843337, "2025": 1.088488548, "2026": 1.0};
 function deflateAnnual(year,value){ if(value===null||value===undefined||isNaN(value)) return null; const f=YEAR_DEFLATOR[String(year)]; return f? value*f : value; }
@@ -1979,6 +2013,7 @@ function normalizePBARonMonthlyRows(rows){
 async function loadAll(){
   manifest = await loadJSON('dashboard_manifest.json') || EMBEDDED_MANIFEST;
   governorBrief = await loadJSON(manifest?.files?.governor_brief || 'dashboard_governor_brief.json');
+  pbaDebtProfile = await loadJSON(manifest?.files?.pba_debt_profile_2026q1 || 'data/debt/pba_debt_profile_2026q1.json');
   const latestRankingRows = await loadCSV(manifest?.files?.ranking_1816_1t26 || 'data/1816/ranking_1t26.csv');
   latestRanking1816=Object.fromEntries(latestRankingRows.map(row=>[
     canonicalProvinceName(row.province),
@@ -2478,7 +2513,9 @@ function renderLiquidity(province){
     cov.textContent='Mide presión financiera estructural de cada provincia. No refleja caja diaria (dato no disponible públicamente por provincia). Para Buenos Aires ver informe específico con datos de depósitos BCRA y FUCO publicados por DNAP.';
   }
   if(sem) sem.textContent='';
-  if(liquidityMethodNote) liquidityMethodNote.textContent='Fuente: 1816 fiscal histórico (LTM III TRIM 2025) + tableros DNAP por provincia (III TRIM 2025).';
+  if(liquidityMethodNote) liquidityMethodNote.textContent=province==='Buenos Aires'&&pbaDebtProfile
+    ? 'Fuentes: informe oficial de deuda PBA al 31/12/2025 + stock DNAP al 31/03/2026 + ingresos LTM del informe 1816 1T26.'
+    : 'Fuente: 1816 fiscal histórico (LTM III TRIM 2025) + tableros DNAP por provincia (III TRIM 2025).';
 
   const cross=(cross1816||{})[province]||{};
   const metrics=(liquidityRisk?.provinces?.[province]?.metrics)||{};
@@ -2490,12 +2527,20 @@ function renderLiquidity(province){
   const ingresosTot=toN(cross.ingresos_totales_ltm_ars_m) ?? toN(INGRESOS_TOTALES_LTM_1816_ARS_M[province]);
   const serviciosSobreIng=(serviciosAcum!==null&&ingresosTot!==null&&ingresosTot>0)?((serviciosAcum/ingresosTot)*100):null;
   const deudaRec=toN(cross.deuda_total_sobre_ingresos_pct);
-  const items=[
-    ['Intereses / Ingresos Corrientes (%)', intIng, 'pct', 'Fuente: 1816 fiscal histórico, pág. 8 (LTM III TRIM 2025).'],
-    ['Servicios de deuda acumulados / Ingresos anuales (%)', serviciosSobreIng, 'pct', 'Fuente: tableros DNAP por provincia, III TRIM 2025.'],
-    ['Stock de deuda / Ingresos Totales (%)', deudaRec, 'pct', 'Fuente: 1816 fiscal histórico, pág. 21 + DNAP tipo de cambio A3500.'],
-  ];
-  cards.innerHTML=items.map(([label,val,unit,micro])=>{
+  const pbaIndicators=pbaDebtProfile?.official_pba_2025_indicators;
+  const pbaLatestStock=pbaDebtProfile?.latest_stock;
+  const items=province==='Buenos Aires'&&pbaIndicators&&pbaLatestStock
+    ? [
+      ['Intereses pagados / Recursos totales (%)',toN(pbaIndicators.interest_paid_to_total_resources_pct),'Fuente: informe oficial PBA, año 2025.','4T2025',pbaIndicators.source?.url],
+      ['Servicios pagados / Recursos totales (%)',toN(pbaIndicators.debt_service_paid_to_total_resources_pct),'Fuente: informe oficial PBA, año 2025.','4T2025',pbaIndicators.source?.url],
+      ['Stock de deuda / Ingresos LTM (%)',toN(pbaLatestStock.debt_to_ltm_income_pct),'Fuente: stock DNAP al 31/03/2026 sobre ingresos LTM al 1T26.','1T2026',pbaLatestStock.source?.url],
+    ]
+    : [
+      ['Intereses / Ingresos Corrientes (%)',intIng,'Fuente: 1816 fiscal histórico, pág. 8 (LTM III TRIM 2025).','3T2025','dashboard_liquidity_risk.json'],
+      ['Servicios de deuda acumulados / Ingresos anuales (%)',serviciosSobreIng,'Fuente: tableros DNAP por provincia, III TRIM 2025.','3T2025','dashboard_liquidity_risk.json'],
+      ['Stock de deuda / Ingresos Totales (%)',deudaRec,'Fuente: 1816 fiscal histórico, pág. 21 + DNAP tipo de cambio A3500.','3T2025','dashboard_liquidity_risk.json'],
+    ];
+  cards.innerHTML=items.map(([label,val,micro,period,source])=>{
     const missing=val===null||val===undefined;
     const status=missing
       ? (province==='La Pampa' || province==='Neuquén' || province==='Santiago del Estero'
@@ -2503,7 +2548,7 @@ function renderLiquidity(province){
         : 'sin_fuente_dnap_tablero')
       : DATA_STATUS.numerico;
     const shown=missing?semanticMissingLabel(status):`${Number(val).toFixed(1).replace('.',',')}%`;
-    pushAuditCell({province,bloque:'Sostenibilidad y presión de deuda',kpi:label,valor_mostrado:shown,tipo_dato:status,fuente:'dashboard_liquidity_risk.json',periodo:'3T2025'});
+    pushAuditCell({province,bloque:'Sostenibilidad y presión de deuda',kpi:label,valor_mostrado:shown,tipo_dato:status,fuente:source,periodo:period});
     return `<div class="liq-card ${missing?'missing':''}"><div class="liq-head"><div class="k-lbl">${label}</div><span class="liq-tag audited">[AUDITADO]</span></div><div class="k-val ${missing?'m':'au'}" style="font-size:21px">${shown}</div><div class="k-sub">${micro}</div></div>`;
   }).join('');
 }
@@ -2650,8 +2695,12 @@ function renderScenarios(province){
     });
   });
   if(!hasScenarioCore){
-    const debt=toN((cross1816?.[province]||{}).deuda_total_sobre_ingresos_pct);
-    const intIng=toN(liquidityRisk?.provinces?.[province]?.metrics?.intereses_sobre_ingresos_pct?.value);
+    const debt=province==='Buenos Aires'
+      ? toN(pbaDebtProfile?.latest_stock?.debt_to_ltm_income_pct)
+      : toN((cross1816?.[province]||{}).deuda_total_sobre_ingresos_pct);
+    const intIng=province==='Buenos Aires'
+      ? toN(pbaDebtProfile?.official_pba_2025_indicators?.interest_paid_to_total_resources_pct)
+      : toN(liquidityRisk?.provinces?.[province]?.metrics?.intereses_sobre_ingresos_pct?.value);
     grid.innerHTML = `
       <div class="scn-card"><div class="scn-title">Escenario base (90/180 días)</div><div class="scn-micro">Lectura preliminar con continuidad del patrón actual de Nación y recaudación propia.</div><div class="k-sub">90 días: administrable con monitoreo semanal de caja.</div><div class="k-sub" style="margin-top:6px">180 días: ${debt!==null&&debt>45?'fragilidad creciente por deuda y refinanciación':'estable condicional a continuidad de giros'}.</div></div>
       <div class="scn-card"><div class="scn-title">Escenario adverso (90/180 días)</div><div class="scn-micro">Proxy cualitativo: menor flujo de Nación + desaceleración real de recursos propios.</div><div class="k-sub">90 días: aumenta riesgo de tensión y administración diaria de pagos.</div><div class="k-sub" style="margin-top:6px">180 días: probabilidad alta de reprogramación financiera y recorte de gasto flexible.</div></div>
@@ -3824,6 +3873,62 @@ function renderMetrics(c,topYtd,ronYtd){
   if(metricsTable) metricsTable.classList.add('metrics-table','indicators-structural-table');
 }
 function renderDebtProfile(province, c){
+  const official=province==='Buenos Aires'?pbaDebtProfile:null;
+  if(official?.latest_stock){
+    const stock=official.latest_stock;
+    const currency=official.currency_composition||{};
+    const rawCreditors=(stock.creditors||[]).filter(item=>toN(item.pct)!==null&&toN(item.pct)>0);
+    const creditors=rawCreditors.length>3
+      ? [
+        rawCreditors[0],
+        rawCreditors[1],
+        {label:'Bancos y otros',pct:rawCreditors.slice(2).reduce((sum,item)=>sum+(toN(item.pct)||0),0)}
+      ]
+      : rawCreditors;
+    const colors=['var(--gold)','var(--blue)','var(--amber)','var(--muted)'];
+    const segments=[];
+    let cursor=0;
+    creditors.forEach((item,index)=>{
+      const pctValue=toN(item.pct)||0;
+      segments.push(`${colors[index%colors.length]} ${cursor.toFixed(3)}% ${(cursor+pctValue).toFixed(3)}%`);
+      cursor+=pctValue;
+    });
+    const totalArs=toN(stock.total_ars_m);
+    const totalUsd=toN(stock.total_usd_m_equivalent);
+    const fxPayable=toN(currency.payable_foreign_currency_pct);
+    const usdPayableArs=toN(currency.usd_payable_ars_pct);
+    const debtRatio=toN(stock.debt_to_ltm_income_pct);
+    document.getElementById('debtProfileTotal').textContent=totalArs===null?ND:`AR$ ${(totalArs/1e6).toFixed(2).replace('.',',')} billones`;
+    document.getElementById('debtProfileUsd').textContent=totalUsd===null
+      ? 'Corte 31/03/2026'
+      : `≈ USD ${Math.round(totalUsd).toLocaleString('es-AR')} M · corte 31/03/2026`;
+    document.getElementById('debtProfileFx').textContent=fxPayable===null
+      ? 'No disponible'
+      : `${pctN(fxPayable)} pagadera en moneda extranjera`;
+    document.getElementById('debtProfileRatio').textContent=debtRatio===null?ND:pctN(debtRatio);
+    document.getElementById('debtProfileReading').textContent=`La deuda está concentrada en bonos y mantiene una exposición cambiaria alta. El ${pctN(usdPayableArs)} adicional está denominado en dólares pero se paga en pesos. La baja nominal frente al cierre de 2025 no equivale a caja disponible.`;
+    const donut=document.getElementById('debtCreditorsDonut');
+    if(donut) donut.style.background=`conic-gradient(${segments.join(',')})`;
+    document.getElementById('debtDonutValue').textContent=pctN(toN(creditors[0]?.pct));
+    document.getElementById('debtProfileCreditors').innerHTML=creditors.slice(0,4).map((item,index)=>`
+      <div class="debt-legend-row"><span class="debt-legend-dot" style="background:${colors[index%colors.length]}"></span><span>${item.label}</span><span class="debt-legend-value">${pctN(toN(item.pct))}</span></div>
+    `).join('');
+    const debtProfileMethodNote=document.getElementById('debtProfileMethodNote');
+    if(debtProfileMethodNote){
+      debtProfileMethodNote.innerText=`Stock y acreedores: DNAP, 31/03/2026; dato preliminar, sin deuda flotante ni contingente. Equivalente en USD: A3500 BCRA de $${Number(stock.a3500_ars_per_usd).toLocaleString('es-AR',{minimumFractionDigits:4,maximumFractionDigits:4})}. Exposición cambiaria: informe oficial PBA al 31/12/2025. Deuda / ingresos: stock DNAP sobre ingresos LTM al 1T26. ${official.methodology_note}`;
+    }
+    [
+      ['Deuda total (ARS M)',totalArs,'ars'],
+      ['Deuda en moneda extranjera pagadera en ME (%)',fxPayable,'pct']
+    ].forEach(([kpi,value,unit])=>pushAuditCell({
+      province,bloque:'Perfil de deuda',kpi,
+      valor_mostrado:unit==='ars'?`AR$ ${Math.round(value).toLocaleString('es-AR')} M`:pctN(value),
+      tipo_dato:DATA_STATUS.numerico,
+      fuente:unit==='ars'?stock.source?.url:currency.source?.url,
+      periodo:unit==='ars'?'1T2026':'4T2025'
+    }));
+    return;
+  }
   const deudaTotal=toN(c.deuda_stock_total_usd_m);
   const deudaFxCross=toN(c.deuda_moneda_extranjera_pct);
   const deudaFxLiquidity=toN(liquidityRisk?.provinces?.[province]?.metrics?.deuda_moneda_extranjera_pct?.value);
@@ -3839,9 +3944,15 @@ function renderDebtProfile(province, c){
     ? 'Fuente corta: informe oficial de deuda PBA (stock/composición) + serie homogénea 1816 para comparación interprovincial.'
     : 'Fuente corta: serie homogénea 1816 para comparación interprovincial.';
   document.getElementById('debtProfileTotal').textContent=deudaTotal===null?ND:formatUSDMillions(deudaTotal);
+  const debtProfileUsd=document.getElementById('debtProfileUsd');
+  if(debtProfileUsd) debtProfileUsd.textContent='Serie homogénea comparativa';
   document.getElementById('debtProfileFx').textContent=deudaFx===null?'Moneda extranjera: SD':`Moneda extranjera: ${pctN(deudaFx)} · ${debtSourceNote}`;
-  document.getElementById('debtProfileCreditors').textContent=acreedores.length
-    ? `Acreedores principales: ${acreedores.map(([n,v])=>`${n} ${pctN(v)}`).join(' · ')} · Nota metodológica: no mezclar stock oficial PBA con stock homogéneo comparativo como si fuera el mismo número.`
+  const debtProfileRatio=document.getElementById('debtProfileRatio');
+  if(debtProfileRatio) debtProfileRatio.textContent=pctN(toN(c.deuda_total_sobre_ingresos_pct));
+  const debtProfileReading=document.getElementById('debtProfileReading');
+  if(debtProfileReading) debtProfileReading.textContent='Lectura comparativa disponible; falta una ficha oficial equivalente para este corte.';
+  document.getElementById('debtProfileCreditors').innerHTML=acreedores.length
+    ? acreedores.map(([n,v],index)=>`<div class="debt-legend-row"><span class="debt-legend-dot" style="background:${['var(--gold)','var(--blue)','var(--amber)'][index]}"></span><span>${n}</span><span class="debt-legend-value">${pctN(v)}</span></div>`).join('')
     : 'Acreedores principales: SD';
   const debtProfileMethodNote=document.getElementById('debtProfileMethodNote');
   if(debtProfileMethodNote){

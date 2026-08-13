@@ -78,6 +78,26 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn('id="exCapitalRank"', frontend)
         self.assertIn("Puesto ${Math.round(rank)} de ${Math.round(total)}", frontend)
         self.assertIn("Ranking comparable: 23 jurisdicciones", frontend)
+        self.assertIn('id="debtCreditorsDonut"', frontend)
+        self.assertIn("pba_debt_profile_2026q1", frontend)
+
+    def test_latest_pba_debt_profile_reconciles(self):
+        profile = json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8"))
+        stock = profile["latest_stock"]
+        creditor_total = sum(item["ars_m"] for item in stock["creditors"])
+        creditor_pct = sum(item["pct"] for item in stock["creditors"])
+        self.assertAlmostEqual(creditor_total, stock["total_ars_m"], delta=0.01)
+        self.assertAlmostEqual(creditor_pct, 100, delta=0.001)
+        self.assertAlmostEqual(
+            stock["total_ars_m"] / stock["a3500_ars_per_usd"],
+            stock["total_usd_m_equivalent"],
+            delta=0.01,
+        )
+        self.assertAlmostEqual(
+            stock["total_ars_m"] / stock["ltm_total_income_ars_m"] * 100,
+            stock["debt_to_ltm_income_pct"],
+            delta=0.001,
+        )
 
 
 if __name__ == "__main__":

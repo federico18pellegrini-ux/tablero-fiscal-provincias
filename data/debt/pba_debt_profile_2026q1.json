@@ -1,0 +1,60 @@
+{
+  "province": "Buenos Aires",
+  "latest_stock": {
+    "cutoff": "2026-03-31",
+    "status": "preliminar_sujeto_a_revision",
+    "scope": "Deuda provincial total sin deuda flotante ni contingente",
+    "total_ars_m": 16671576.940707,
+    "a3500_ars_per_usd": 1382.7578,
+    "total_usd_m_equivalent": 12056.758559,
+    "ltm_total_income_ars_m": 36857309,
+    "debt_to_ltm_income_pct": 45.232757,
+    "change_vs_2025q4_nominal_pct": -6.971513,
+    "creditors": [
+      {"id": "bonds", "label": "Bonos", "ars_m": 13412388.24449, "pct": 80.450627},
+      {"id": "international_organizations", "label": "Organismos", "ars_m": 3180371.301905, "pct": 19.076608},
+      {"id": "banks", "label": "Bancos", "ars_m": 75393.911391, "pct": 0.45223},
+      {"id": "fffir", "label": "FFFIR", "ars_m": 3423.482922, "pct": 0.020535},
+      {"id": "national_government", "label": "Nación", "ars_m": 0, "pct": 0}
+    ],
+    "source": {
+      "publisher": "Subsecretaría de Coordinación Fiscal Provincial, Ministerio de Economía de la Nación",
+      "title": "Stock de deuda provincial al 31 de marzo de 2026",
+      "url": "https://www.argentina.gob.ar/sites/default/files/stock_i_trim_2026.xlsx"
+    },
+    "exchange_rate_source": {
+      "publisher": "Banco Central de la República Argentina",
+      "title": "Tipo de Cambio de Referencia Comunicación A 3500",
+      "url": "https://www.bcra.gob.ar/Pdfs/PublicacionesEstadisticas/com3500.xls"
+    }
+  },
+  "currency_composition": {
+    "cutoff": "2025-12-31",
+    "payable_foreign_currency_pct": 78.6,
+    "usd_payable_usd_pct": 72.9,
+    "eur_pct": 5.3,
+    "other_foreign_pct": 0.4,
+    "usd_payable_ars_pct": 9.4,
+    "ars_pct": 7.7,
+    "ars_cer_pct": 4.2,
+    "source": {
+      "publisher": "Dirección Provincial de Deuda y Crédito Público, Ministerio de Economía de la Provincia de Buenos Aires",
+      "title": "Informe de Deuda PBA al 31 de diciembre de 2025",
+      "url": "https://www.ec.gba.gov.ar/areas/finanzas/deuda/archivos/Informe%20de%20Deuda%20PBA%20al%2031-dic-2025.pdf"
+    }
+  },
+  "official_pba_2025_indicators": {
+    "cutoff": "2025-12-31",
+    "interest_paid_to_total_resources_pct": 3.5,
+    "debt_service_paid_to_total_resources_pct": 7.0,
+    "debt_to_total_resources_pct": 52.4,
+    "average_life_including_interest_years": 5.3,
+    "rollover_next_year_pct": 12.7,
+    "source": {
+      "publisher": "Dirección Provincial de Deuda y Crédito Público, Ministerio de Economía de la Provincia de Buenos Aires",
+      "title": "Informe de Deuda PBA al 31 de diciembre de 2025 - Anexo Indicadores de Deuda",
+      "url": "https://www.ec.gba.gov.ar/areas/finanzas/deuda/archivos/Informe%20de%20Deuda%20PBA%20al%2031-dic-2025.pdf"
+    }
+  },
+  "methodology_note": "El stock y los acreedores usan el consolidado DNAP al 31/03/2026. La composición por moneda usa el último informe específico publicado por PBA, al 31/12/2025. El equivalente en USD es sólo una unidad de comparación y se calcula con A3500 al cierre; no implica que toda la deuda sea pagadera en dólares."
+}
