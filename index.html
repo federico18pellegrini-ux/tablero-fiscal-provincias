@@ -314,6 +314,17 @@ select.psel:focus{outline:none;border-color:var(--gold)}
 .layer-sub{font-size:12px;color:var(--muted);margin-bottom:8px}
 .exec-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 @media(max-width:520px){.exec-grid{grid-template-columns:1fr}}
+.exec-rank{margin-top:11px;padding-top:9px;border-top:1px solid var(--border)}
+.exec-rank-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:6px}
+.exec-rank-position{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--text)}
+.exec-rank-band{font-size:11px;color:var(--muted);white-space:nowrap}
+.exec-rank-track{height:6px;background:var(--border);border-radius:999px;overflow:hidden}
+.exec-rank-fill{height:100%;border-radius:999px}
+.exec-rank-fill.top{background:var(--green)}
+.exec-rank-fill.mid{background:var(--gold)}
+.exec-rank-fill.bottom{background:var(--red)}
+.exec-rank-reading{margin-top:6px;font-size:11px;line-height:1.35;color:var(--dim)}
+.exec-rank-note{margin:9px 2px 0;font-size:11px;line-height:1.45;color:var(--dim)}
 .method-list{margin:8px 0 0 16px;padding:0;display:flex;flex-direction:column;gap:6px}
 .method-list li{margin:0;color:var(--dim);line-height:1.5}
 .liq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px;min-width:0}
@@ -805,13 +816,14 @@ tr:last-child td{border-bottom:none}
 </section>
 <section class="layer" id="layer2">
   <div class="layer-title">Sección 2 · Solvencia y Gestión Provincial</div>
-  <div class="layer-sub">Resultado financiero, autonomía fiscal, rigidez salarial y gasto en capital.</div>
+  <div class="layer-sub">Cómo está Buenos Aires y qué lugar ocupa frente al resto de las provincias.</div>
   <div class="exec-grid">
-    <div class="kcard"><div class="k-lbl">Resultado financiero <span class="info-dot" title="Resultado financiero de últimos 12 meses sobre ingresos.">i</span></div><div class="k-val" id="exResFin">—</div></div>
-    <div class="kcard"><div class="k-lbl">Autonomía fiscal <span class="info-dot" title="Porción de ingresos provinciales que proviene de recursos propios.">i</span></div><div class="k-val" id="exAutonomia">—</div></div>
-    <div class="kcard"><div class="k-lbl">Rigidez salarial <span class="info-dot" title="Participación de salarios sobre gasto primario.">i</span></div><div class="k-val" id="exRigidez">—</div></div>
-    <div class="kcard"><div class="k-lbl">Gasto en capital <span class="info-dot" title="Participación de gasto en capital sobre gasto primario.">i</span></div><div class="k-val" id="exCapital">—</div></div>
+    <div class="kcard"><div class="k-lbl">Resultado financiero <span class="info-dot" title="Resultado financiero de últimos 12 meses sobre ingresos.">i</span></div><div class="k-val" id="exResFin">—</div><div class="exec-rank" id="exResFinRank">—</div></div>
+    <div class="kcard"><div class="k-lbl">Autonomía fiscal <span class="info-dot" title="Porción de ingresos provinciales que proviene de recursos propios.">i</span></div><div class="k-val" id="exAutonomia">—</div><div class="exec-rank" id="exAutonomiaRank">—</div></div>
+    <div class="kcard"><div class="k-lbl">Rigidez salarial <span class="info-dot" title="Participación de salarios sobre gasto primario.">i</span></div><div class="k-val" id="exRigidez">—</div><div class="exec-rank" id="exRigidezRank">—</div></div>
+    <div class="kcard"><div class="k-lbl">Gasto en capital <span class="info-dot" title="Participación de gasto en capital sobre gasto primario.">i</span></div><div class="k-val" id="exCapital">—</div><div class="exec-rank" id="exCapitalRank">—</div></div>
   </div>
+  <div class="exec-rank-note">Ranking comparable: 23 jurisdicciones · 1.er puesto = mejor posición según el criterio de cada indicador · últimos 12 meses al 1T26.</div>
 </section>
 <section class="layer" id="layer3">
   <div class="layer-title">Sección 3 · Sostenibilidad y Alertas de Riesgo</div>
@@ -2107,6 +2119,32 @@ function renderExecutiveCards(cross){
   setK('exAutonomia',pctN(aut),aut!==null&&aut>=45?'g':'a');
   setK('exRigidez',pctN(salarios),salarios!==null&&salarios>=55?'r':'a');
   setK('exCapital',pctN(capital),capital!==null&&capital>=10?'g':'a');
+  const total=structuralUniverseCount();
+  renderExecutiveRank('exResFinRank',cross.rank_resultado_financiero,total,'Más alto = mejor cierre fiscal.');
+  renderExecutiveRank('exAutonomiaRank',cross.rank_autonomia_fiscal,total,'Más alto = mayor margen propio.');
+  renderExecutiveRank('exRigidezRank',cross.rank_gasto_salarios,total,'Menor peso salarial = más flexibilidad.');
+  renderExecutiveRank('exCapitalRank',cross.rank_gasto_capital,total,'Más alto = mayor esfuerzo de inversión.');
+}
+
+function renderExecutiveRank(targetId,rankValue,totalValue,reading){
+  const target=document.getElementById(targetId);
+  if(!target)return;
+  const rank=toN(rankValue);
+  const total=toN(totalValue);
+  if(rank===null||total===null||total<=0){
+    target.innerHTML='<div class="exec-rank-position">Ranking no disponible</div>';
+    return;
+  }
+  const quality=rankingQuality(rank,total);
+  const bandText=quality.band==='top'?'Primer tercio':(quality.band==='mid'?'Zona media':'Último tercio');
+  target.innerHTML=`
+    <div class="exec-rank-head">
+      <span class="exec-rank-position">Puesto ${Math.round(rank)} de ${Math.round(total)}</span>
+      <span class="exec-rank-band">${bandText}</span>
+    </div>
+    <div class="exec-rank-track" aria-hidden="true"><div class="exec-rank-fill ${quality.band}" style="width:${quality.goodnessPct.toFixed(1)}%"></div></div>
+    <div class="exec-rank-reading">${reading}</div>
+  `;
 }
 
 function formatGovNumber(value,unit){
