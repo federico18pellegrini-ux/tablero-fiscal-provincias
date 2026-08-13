@@ -34,9 +34,18 @@ class GovernorBriefTests(unittest.TestCase):
 
     def test_decision_layer_has_required_shape(self):
         self.assertEqual(self.payload["status"], "se_deteriora")
+        self.assertIn("productiva, federal y gradual", self.payload["political_reading"])
         self.assertEqual(len(self.payload["risks"]), 3)
         self.assertEqual(len(self.payload["decisions"]), 3)
         self.assertGreaterEqual(len(self.payload["missing_for_decision"]), 3)
+
+    def test_each_metric_declares_measurement_basis(self):
+        for metric in self.payload["key_metrics"]:
+            self.assertTrue(metric["measurement"])
+            self.assertTrue(
+                any(word in metric["measurement"].lower() for word in ("nominal", "relativo")),
+                metric["measurement"],
+            )
 
     def test_ranking_universe_is_complete(self):
         with (ROOT / "data/1816/ranking_1t26.csv").open(encoding="utf-8", newline="") as source:
@@ -52,6 +61,9 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("ranking_1816_1t26", frontend)
         self.assertIn("key-indicators-row{grid-template-columns:minmax(0,1fr)!important", frontend)
         self.assertIn("#metricsDetails:not([open]) #metricsDetailsTableWrap{display:none}", frontend)
+        self.assertIn("Situación fiscal de la Provincia de Buenos Aires", frontend)
+        self.assertIn("CONCLUSIÓN · SE DETERIORA", frontend)
+        self.assertIn("prepareInfoDots", frontend)
 
 
 if __name__ == "__main__":
