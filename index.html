@@ -371,6 +371,7 @@ select.psel:focus{outline:none;border-color:var(--gold)}
 .transfer-flow-box{min-width:0;padding:9px 10px;border:1px solid var(--border);border-radius:8px;background:var(--s2)}
 .transfer-flow-label{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);line-height:1.3}
 .transfer-flow-amount{margin-top:4px;font-family:var(--mono);font-size:17px;font-weight:700;color:var(--text);overflow-wrap:anywhere}
+.transfer-flow-share{margin-top:4px;font-size:11px;font-weight:700;color:var(--gold)}
 .transfer-flow-arrow{color:var(--gold);font-size:18px;font-weight:700}
 .transfer-flow-result{padding:9px 10px;border-radius:8px;background:rgba(201,169,90,.09);border:1px solid var(--gold-border)}
 .transfer-flow-result .transfer-value{font-size:21px}
@@ -1010,7 +1011,7 @@ tr:last-child td{border-bottom:none}
   <div id="transfersDependencyReading" class="transfer-reading"></div>
   <details class="method-details">
     <summary>Fuente y forma de lectura</summary>
-    <div class="cc-note" style="margin-top:8px">Fuentes: Subsecretaría de Coordinación Fiscal Provincial, Ministerio de Economía de la Nación; ARCA; e INDEC para población. La comparación territorial toma la recaudación nacional registrada por ARCA según domicilio fiscal o ubicación aduanera y la contrasta con los recursos de origen nacional recibidos por la Provincia en el mismo período. No equivale al aporte jurídico a la masa coparticipable. Los montos y variaciones están expresados en pesos corrientes salvo aclaración expresa.</div>
+    <div class="cc-note" style="margin-top:8px">Fuentes: Subsecretaría de Coordinación Fiscal Provincial, Ministerio de Economía de la Nación; Anuario 2025 del Gobierno de la Provincia de Buenos Aires; e INDEC para población. El aporte bonaerense es la estimación territorial oficial publicada por la Provincia para el total de impuestos nacionales generado por su actividad económica. El retorno es el total de recursos automáticos de origen nacional efectivamente recibido en 2025. No debe confundirse con la recaudación de ARBA ni con una obligación de devolver a la Provincia cada impuesto en el lugar donde se originó. Montos en pesos corrientes.</div>
   </details>
 </div>
 
@@ -2714,12 +2715,15 @@ const RON_MARZO_2026_OFICIAL_MILLIONS={
 const RON_VAR_MARZO_2026_OFICIAL_PCT={
   'Buenos Aires':26,'CABA':22,'Catamarca':25,'Córdoba':23,'Corrientes':24,'Chaco':23,'Chubut':24,'Entre Ríos':23,'Formosa':23,'Jujuy':23,'La Pampa':23,'La Rioja':23,'Mendoza':23,'Misiones':24,'Neuquén':24,'Río Negro':23,'Salta':29,'San Juan':23,'San Luis':23,'Santa Cruz':24,'Santa Fe':23,'Santiago del Estero':23,'Tierra del Fuego':24,'Tucumán':24
 };
-const PBA_NATION_TERRITORIAL_FLOW_2025_9M={
-  period:'Enero–septiembre 2025',
-  national_collection_registered_millions:25805282,
-  ron_received_millions:9990745,
-  source_collection:'ARCA · Informes de Recaudación I, II y III trimestre 2025 · Recaudación por jurisdicción política',
-  source_ron:'DNAP · Planillas de cierre septiembre 2025 · Total RON con Compensación Consenso Fiscal'
+const PBA_FEDERAL_CONTRIBUTION_2025={
+  period:'Año 2025',
+  national_collection_total_millions:200400000,
+  pba_generated_national_taxes_millions:76100000,
+  pba_generated_share_pct:38.0,
+  pba_automatic_resources_received_millions:13691853.935953911,
+  pba_received_share_of_national_total_pct:6.8,
+  source_contribution:'Gobierno de la Provincia de Buenos Aires · Anuario 2025 · Aporte y asignación de la recaudación nacional',
+  source_received:'DNAP · Serie de Recursos de Origen Nacional 2003–2025 · Total 2025 con Compensación Consenso Fiscal'
 };
 const PBA_AUDITED_FEDERAL_FALLBACK={
   national_tax_share_ltm_1t26_pct:39.3,
@@ -3023,15 +3027,15 @@ function renderTransfersDependency(province){
     : (toN(pdata?.metrics?.ron_per_capita_pesos?.value) ?? (province==='Buenos Aires'?PBA_AUDITED_FEDERAL_FALLBACK.ron_per_capita_2025_pesos:null));
   const ronMar26=toN(RON_MARZO_2026_OFICIAL_MILLIONS[province]);
   const ronVar=toN(RON_VAR_MARZO_2026_OFICIAL_PCT[province]);
-  const territorialFlow=province==='Buenos Aires'?PBA_NATION_TERRITORIAL_FLOW_2025_9M:null;
-  const territorialRegistered=toN(territorialFlow?.national_collection_registered_millions);
-  const territorialReceived=toN(territorialFlow?.ron_received_millions);
-  const territorialReturn=(territorialRegistered&&territorialReceived!==null)
-    ? (territorialReceived/territorialRegistered)*100
+  const federalContribution=province==='Buenos Aires'?PBA_FEDERAL_CONTRIBUTION_2025:null;
+  const pbaGenerated=toN(federalContribution?.pba_generated_national_taxes_millions);
+  const pbaReceived=toN(federalContribution?.pba_automatic_resources_received_millions);
+  const pbaReturnPer100=(pbaGenerated&&pbaReceived!==null)
+    ? (pbaReceived/pbaGenerated)*100
     : null;
   if(intro){
-    intro.innerHTML=territorialFlow
-      ? 'Tres preguntas para leer este bloque: <strong>cuánto pesa Nación en la caja provincial</strong>, <strong>cuánto registra en Buenos Aires y cuánto vuelve</strong>, y <strong>si los giros le ganaron a la inflación</strong>.'
+    intro.innerHTML=federalContribution
+      ? 'Tres preguntas para leer este bloque: <strong>cuánto pesa Nación en la caja provincial</strong>, <strong>cuánto aporta Buenos Aires al sistema nacional y cuánto vuelve</strong>, y <strong>si los giros le ganaron a la inflación</strong>.'
       : 'Dos preguntas para leer este bloque: <strong>cuánto pesa Nación en la caja provincial</strong> y <strong>si los giros le ganaron a la inflación</strong>.';
   }
   const formatQuarterTotal=(millions)=>{
@@ -3044,7 +3048,7 @@ function renderTransfersDependency(province){
   };
   const items=[
     {label:'Impuestos nacionales / Ingresos Totales (%)',question:'¿Cuánto pesa Nación en la caja?',value:ronShare,display:ronShare===null?null:`$${Number(ronShare).toFixed(1).replace('.',',')} de cada $100`,period:'Últimos 12 meses · 1T26',meaning:'Es la parte de los ingresos provinciales explicada por impuestos de origen nacional, con numerador y denominador del mismo período.',source:'Informe Provincias 1T26, pág. 8'},
-    ...(territorialFlow?[{kind:'flow',label:'Recaudación nacional registrada vs RON recibido',question:'¿Cuánto registra Nación en Buenos Aires y cuánto vuelve?',value:territorialReturn,period:territorialFlow.period,meaning:'Es una comparación territorial de caja. No mide el aporte jurídico bonaerense a la coparticipación porque ARCA incluye seguridad social y aduana, y asigna impuestos por domicilio fiscal.',source:`${territorialFlow.source_collection} + ${territorialFlow.source_ron}`}]:[]),
+    ...(federalContribution?[{kind:'flow',label:'Aporte bonaerense estimado vs recursos automáticos recibidos',question:'¿Cuánto aporta Buenos Aires y cuánto vuelve?',value:pbaReturnPer100,period:federalContribution.period,meaning:'Los $100 son IVA, Ganancias y otros impuestos nacionales generados por la actividad bonaerense y cobrados por Nación. De cada $100 atribuidos a Buenos Aires, $18 ingresaron a la Provincia por coparticipación y otros recursos automáticos. Los $82 restantes se distribuyeron entre el Tesoro nacional, ANSES, fondos específicos y otras jurisdicciones.',source:`${federalContribution.source_contribution} + ${federalContribution.source_received}`}]:[]),
     {label:'RON per cápita ($)',question:'¿Cuánto recibió por habitante?',value:ronPc,display:ronPc===null?null:fmtPesosPerCapita(ronPc),period:'Año 2025',meaning:'Recursos nacionales de 2025 divididos por la población definitiva del Censo 2022.',source:'serie_ron_2003_2025.xlsx col AC + INDEC Censo 2022 definitivo'},
     {label:'RON acum marzo 2026 ($)',question:'¿Cuánto llegó en el primer trimestre?',value:ronMar26,display:formatQuarterTotal(ronMar26),period:'Enero–marzo 2026',meaning:'Total acumulado de recursos nacionales durante los primeros tres meses del año.',source:'Dir_nacional_asuntos_provinciales.pdf pág. 8'},
     {label:'Variación RON 2026 vs 2025 (%)',question:'¿Creció frente al mismo período de 2025?',value:ronVar,display:ronVar===null?null:`${ronVar>=0?'+':''}${Number(ronVar).toFixed(1).replace('.',',')}% nominal`,period:'1T26 vs 1T25',meaning:'Es una variación en pesos corrientes. Para saber si hubo mejora real hay que descontar la inflación.',source:'Dir_nacional_asuntos_provinciales.pdf pág. 8 (Var % i.a.)'},
@@ -3054,17 +3058,17 @@ function renderTransfersDependency(province){
     const missing=val===null||val===undefined;
     if(kind==='flow'){
       const shown=missing?SIN_DATO:`$${Number(val).toFixed(1).replace('.',',')} de cada $100`;
-      pushAuditCell({province,bloque:'Dependencia de transferencias Nación',kpi:'Recaudación nacional registrada en PBA',valor_mostrado:formatQuarterTotal(territorialRegistered),tipo_dato:DATA_STATUS.numerico,fuente:territorialFlow.source_collection,periodo:period});
-      pushAuditCell({province,bloque:'Dependencia de transferencias Nación',kpi:'RON recibido por PBA',valor_mostrado:formatQuarterTotal(territorialReceived),tipo_dato:DATA_STATUS.numerico,fuente:territorialFlow.source_ron,periodo:period});
-      pushAuditCell({province,bloque:'Dependencia de transferencias Nación',kpi:label,valor_mostrado:shown,tipo_dato:'inferencia',fuente,periodo:period});
+      pushAuditCell({province,bloque:'Dependencia de transferencias Nación',kpi:'Impuestos nacionales generados en PBA',valor_mostrado:formatQuarterTotal(pbaGenerated),tipo_dato:'estimación oficial',fuente:federalContribution.source_contribution,periodo:period});
+      pushAuditCell({province,bloque:'Dependencia de transferencias Nación',kpi:'Recursos automáticos recibidos por PBA',valor_mostrado:formatQuarterTotal(pbaReceived),tipo_dato:DATA_STATUS.numerico,fuente:federalContribution.source_received,periodo:period});
+      pushAuditCell({province,bloque:'Dependencia de transferencias Nación',kpi:label,valor_mostrado:shown,tipo_dato:'cálculo',fuente,periodo:period});
       return `<article class="transfer-card transfer-flow-card ${missing?'missing':''}">
-        <div class="transfer-card-head"><div class="transfer-question">${question}</div><span class="transfer-source-tag">Oficial · comparación</span></div>
+        <div class="transfer-card-head"><div class="transfer-question">${question}</div><span class="transfer-source-tag">Estimación oficial PBA</span></div>
         <div class="transfer-flow-pair">
-          <div class="transfer-flow-box"><div class="transfer-flow-label">Nación registra en PBA</div><div class="transfer-flow-amount">${formatQuarterTotal(territorialRegistered)}</div></div>
+          <div class="transfer-flow-box"><div class="transfer-flow-label">PBA genera en impuestos nacionales</div><div class="transfer-flow-amount">${formatQuarterTotal(pbaGenerated)}</div><div class="transfer-flow-share">38% del total nacional</div></div>
           <div class="transfer-flow-arrow" aria-hidden="true">→</div>
-          <div class="transfer-flow-box"><div class="transfer-flow-label">PBA recibe de Nación</div><div class="transfer-flow-amount">${formatQuarterTotal(territorialReceived)}</div></div>
+          <div class="transfer-flow-box"><div class="transfer-flow-label">PBA recibe automáticamente</div><div class="transfer-flow-amount">${formatQuarterTotal(pbaReceived)}</div><div class="transfer-flow-share">6,8% del total nacional</div></div>
         </div>
-        <div class="transfer-flow-result"><div class="transfer-flow-label">Relación observada</div><div class="transfer-value ${missing?'m':''}">${shown}</div></div>
+        <div class="transfer-flow-result"><div class="transfer-flow-label">Por cada $100 generados en Buenos Aires</div><div class="transfer-value ${missing?'m':''}">Vuelven ${shown}</div></div>
         <div class="transfer-period">${period}</div>
         <div class="transfer-meaning">${meaning}</div>
       </article>`;
@@ -3088,10 +3092,10 @@ function renderTransfersDependency(province){
     const variationText=ronVar===null
       ? 'sin variación interanual disponible'
       : `${Math.abs(Number(ronVar)).toFixed(1).replace('.',',')}% ${ronVar>=0?'más':'menos'} que en el 1T25, medido en pesos corrientes`;
-    const territorialText=territorialReturn===null
+    const contributionText=pbaReturnPer100===null
       ? ''
-      : ` En enero–septiembre de 2025, ARCA registró ${formatQuarterTotal(territorialRegistered)} en Buenos Aires y la Provincia recibió ${formatQuarterTotal(territorialReceived)}: una relación territorial de $${Number(territorialReturn).toFixed(1).replace('.',',')} por cada $100 registrados.`;
-    reading.innerHTML=`<strong>Lectura rápida:</strong> Nación explica ${shareText}.${territorialText} En el primer trimestre llegaron ${quarterText}, ${variationText}. ${ronVar===null?'':'Esto no permite afirmar una mejora real hasta descontar la inflación.'}`;
+      : ` En 2025, la actividad bonaerense generó una estimación de ${formatQuarterTotal(pbaGenerated)} en impuestos nacionales y recibió ${formatQuarterTotal(pbaReceived)} en recursos automáticos: volvieron $${Number(pbaReturnPer100).toFixed(1).replace('.',',')} por cada $100 aportados.`;
+    reading.innerHTML=`<strong>Lectura rápida:</strong> Nación explica ${shareText}.${contributionText} En el primer trimestre llegaron ${quarterText}, ${variationText}. ${ronVar===null?'':'Esto no permite afirmar una mejora real hasta descontar la inflación.'}`;
   }
 }
 

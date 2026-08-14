@@ -8,12 +8,31 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class FiscalRegressionTests(unittest.TestCase):
-    def test_pba_nation_flow_is_presented_as_territorial_comparison(self):
+    def test_pba_nation_flow_answers_contribution_and_return_question(self):
         html = (ROOT / 'index.html').read_text(encoding='utf-8')
-        self.assertIn('national_collection_registered_millions:25805282', html)
-        self.assertIn('ron_received_millions:9990745', html)
-        self.assertIn('No equivale al aporte jurídico a la masa coparticipable', html)
-        self.assertIn('ARCA incluye seguridad social y aduana', html)
+        self.assertIn('pba_generated_national_taxes_millions:76100000', html)
+        self.assertIn('pba_automatic_resources_received_millions:13691853.935953911', html)
+        self.assertIn('¿Cuánto aporta Buenos Aires y cuánto vuelve?', html)
+        self.assertIn('Vuelven ${shown}', html)
+        self.assertNotIn('Nación registra en PBA', html)
+        self.assertNotIn('$38,7 de cada $100', html)
+
+        with (ROOT / 'data/federal/pba_aporte_asignacion_2025.csv').open(encoding='utf-8', newline='') as source:
+            row = next(csv.DictReader(source))
+        generated = float(row['pba_generated_national_taxes_millions'])
+        received = float(row['pba_automatic_resources_received_millions'])
+        self.assertAlmostEqual(received / generated * 100, float(row['return_to_pba_per_100']), places=9)
+        self.assertAlmostEqual(received / generated * 100, 17.991923700333654, places=9)
+
+        with (ROOT / 'serie_ron_2003_2025_normalizado.csv').open(encoding='utf-8', newline='') as source:
+            official_ron = next(
+                float(item['value_millions'])
+                for item in csv.DictReader(source)
+                if item['province'] == 'Buenos Aires'
+                and item['year'] == '2025'
+                and item['category_normalized'] == 'Total | (1) + (2)'
+            )
+        self.assertAlmostEqual(received, official_ron, places=6)
 
     def test_federal_fairness_uses_ron_with_consensus_compensation(self):
         with (ROOT / 'serie_ron_2003_2025_normalizado.csv').open(encoding='utf-8', newline='') as source:
