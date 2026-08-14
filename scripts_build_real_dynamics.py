@@ -63,7 +63,11 @@ def build_deflator_csv(raw_map):
         prev_period = period
 
     with DEFLACTOR_CSV.open('w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=['period', 'ipc_mom', 'ipc_index', 'factor_to_latest'])
+        writer = csv.DictWriter(
+            f,
+            fieldnames=['period', 'ipc_mom', 'ipc_index', 'factor_to_latest'],
+            lineterminator='\n',
+        )
         writer.writeheader()
         writer.writerows(rows)
 
@@ -288,7 +292,7 @@ def prefill_inputs():
             'province', 'period', 'metric', 'current_nominal_millions', 'prev_year_nominal_millions',
             'source_current', 'source_prev_year', 'status', 'notes'
         ]
-        writer = csv.DictWriter(f, fieldnames=fields)
+        writer = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
 

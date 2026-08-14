@@ -138,7 +138,7 @@ def load_deflator_table():
     return table
 
 
-def update_amount(row, deflator_table):
+def update_amount(row, deflator_table, target_month=None):
     base = parse_float(row.get('monto_nominal'))
     if base is None:
         return None
@@ -154,8 +154,8 @@ def update_amount(row, deflator_table):
     if indexador in {'sin_actualizacion', 'none', ''}:
         factor = 1.0
     elif indexador == 'ipc_nacional' and fecha_corte in deflator_table:
-        latest_month = max(deflator_table)
-        latest_idx = deflator_table.get(latest_month)
+        report_month = target_month or max(deflator_table)
+        latest_idx = deflator_table.get(report_month)
         cut_idx = deflator_table.get(fecha_corte)
         if latest_idx and cut_idx:
             factor = latest_idx / cut_idx
@@ -405,6 +405,11 @@ def build():
     rows = read_csv(MASTER_FILE)
     _ = read_csv(CATALOG_FILE)
     deflator_table = load_deflator_table()
+    source_cutoff = max(
+        (normalize_text(row.get('fecha_corte_monto')) for row in rows if normalize_text(row.get('fecha_corte_monto'))),
+        default=None,
+    )
+    report_month = month_key(source_cutoff)
 
     validation_errors = []
     for idx, row in enumerate(rows, start=2):
@@ -422,7 +427,7 @@ def build():
     for row in rows:
         province = normalize_text(row.get('provincia'))
         if province:
-            row['monto_actualizado_calculado'] = update_amount(row, deflator_table)
+            row['monto_actualizado_calculado'] = update_amount(row, deflator_table, report_month)
             grouped[province].append(row)
 
     province_rows = []
@@ -480,10 +485,6 @@ def build():
             row_copy['anclas_principales'] = ' | '.join(row_copy['anclas_principales'])
             writer.writerow({k: row_copy.get(k) for k in fields})
 
-    source_cutoff = max(
-        (normalize_text(row.get('fecha_corte_monto')) for row in rows if normalize_text(row.get('fecha_corte_monto'))),
-        default=None,
-    )
     payload = {
         'source': 'pipeline_reclamos_nacion_v1',
         'generated_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
