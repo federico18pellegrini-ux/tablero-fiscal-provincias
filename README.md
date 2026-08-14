@@ -1,46 +1,73 @@
-# tablero-fiscal-provincias
-Tablero dinámico fiscal de provincias.
+# Tablero fiscal de provincias
 
-La apertura incluye una **Sala de situación del gobernador** para Buenos Aires con datos 4T25/1T26, doble lectura trimestral/LTM, tres riesgos, tres decisiones y faltantes críticos de caja. La metodología y sus límites están documentados en `docs/metodologia_sala_gobernador.md`.
+Tablero político-fiscal orientado a un decisor no técnico. La portada prioriza Buenos Aires y separa cinco preguntas: diagnóstico, solvencia y deuda, ingresos y gasto, relación con Nación y comparación interprovincial.
 
-Para regenerar esa capa: `python3 scripts_build_governor_brief.py`.
+## Cortes vigentes
 
-## Estado para cierre interno v1
+- Resultados y ranking homogéneo: últimos 12 meses al 31/03/2026, 23 jurisdicciones. La Pampa no integra el informe 1816 1T26.
+- Deuda PBA: stock al 31/03/2026; composición por moneda al 31/12/2025.
+- Recaudación propia 2026: hasta julio según provincia; Buenos Aires hasta junio.
+- Recursos de origen nacional 2026: 24 jurisdicciones hasta julio.
+- Pesos constantes: base junio de 2026, con IPC nacional INDEC.
 
-### Bloques sólidos
-- **Base comparativa estructural (1816)**: ranking fiscal, resultado financiero/primario, autonomía, rigidez, gasto de capital y perfil de deuda con corte metodológico homogéneo en 3T 2025.
-- **Series históricas normalizadas**: RON anual 2003–2025 y recaudación/transferencias con pipeline de lectura desde CSV/JSON embebidos.
-- **Presupuesto PBA 2026**: lectura de recursos, erogaciones y necesidad de financiamiento (Ley 15.557).
+Cada vista muestra su fecha de corte. Los flujos con meses distintos no se comparan directamente y los faltantes no se completan con cero.
 
-### Bloques en construcción
-- **Dinámica real 2026**: lectura preliminar con cobertura parcial por provincia/mes.
-- **Matriz de reclamos Nación → provincia**: cobertura parcial y profundización metodológica en curso.
-- **Escenarios 90/180 y atribución de deterioro**: operativos, pero aún en fase de calibración para cierre analítico final.
+## Experiencia de uso
 
-### Fuentes nuevas integradas (PBA 2025–2026)
-- `pba_top_monthly.csv` (recaudación mensual PBA, integración prioritaria 2025–2026).
-- `pba_ron_monthly.csv` y `pba_ron_daily.csv` (transferencias nacionales mensuales/diarias).
-- `pba_budget_execution_quarterly.csv` (ejecución trimestral PBA).
-- `national_debt_monthly.csv` (contexto de deuda nacional para lectura comparada).
-- `municipios_pba_annual.csv` (contexto municipal agregado para PBA).
+- Perfil **Gobernador / decisor**: síntesis, riesgos y decisiones.
+- Perfil **Ministro de Hacienda**: caja, estructura, deuda y flujos.
+- Perfil **Analista / prensa**: metodología y detalle.
+- Selector de últimos 12 meses o trimestre para el resultado PBA.
+- Selector de pesos corrientes o constantes.
+- Módulos visibles y perfil guardados en el navegador.
+- Enlaces directos: `#summary`, `#debt`, `#income`, `#federal` y `#comparison`.
 
-## Nombre de versión propuesto
-**`v1-interna · Línea de base consolidada`**
+## Capa canónica de datos
 
-## Changelog corto de esta iteración
-- Se consolidó la redacción de estado del tablero para cierre interno sin cambios estructurales.
-- Se depuró etiquetado textual/metodológico en `index.html` para evitar superposición de mensajes.
-- Se documentó en este README el estado de madurez por bloque y las fuentes PBA 2025–2026 integradas.
+- `data/recaudacion_propia.csv`: impuesto, provincia, mes, monto, estado y fuente.
+- `data/transferencias_nac.csv`: CFI, Compensación y RON total por provincia y mes.
+- `data/cobertura.csv`: primer/último mes y estado de cobertura por jurisdicción.
+- `data/gasto_rigido.csv`: piso observable PBA; se mantiene **parcial** porque faltan transferencias automáticas y otros compromisos no discrecionales.
+- `data/meta.json`: fuentes, fechas de corte y reglas de faltantes.
+- `dashboard_manifest.json`: inventario de archivos consumidos por el frente.
 
-## Capa de reclamos Nación → provincias
-- Tabla maestra: `data/reclamos_nacion/reclamos_nacion_provincias_maestra.csv`
-- Catálogo de tipos: `data/reclamos_nacion/catalogo_tipos_reclamo.csv`
-- Esquema de datos (JSON): `data/reclamos_nacion/esquema_datos_reclamos_nacion.json`
-- README metodológico corto: `data/reclamos_nacion/README_metodologico.md`
-- Validador de filas: `python scripts_validate_reclamos_nacion.py`
-- Pipeline: `python scripts_build_nacion_reclamos.py`
-- Salidas:
-  - `outputs/reclamos_nacion_agregado_provincial.csv`
-  - `dashboard_reclamos_nacion_provincias.json`
-  - `outputs/reclamos_nacion_resumen_ba_resto.json`
-- Metodología: `docs/reclamos_nacion_metodologia.md`
+Los CSV históricos y archivos especializados anteriores siguen disponibles por compatibilidad.
+
+## Actualización 2026
+
+El importador lee directamente las planillas oficiales DNAP, reconcilia el total de recaudación propia con IIBB + Sellos + Automotores + Inmobiliario + Otros, normaliza provincias y genera la capa canónica.
+
+```bash
+python3 scripts_regenerate_2026.py \
+  --top-source /ruta/top_mensual_2026.xlsx \
+  --ron-source /ruta/informacion_consolidada_2026.xlsx
+python3 scripts_update_deflator.py
+python3 scripts_sync_deflator_html.py
+python3 scripts_build_fiscal_output.py
+python3 scripts_build_liquidity_risk.py
+python3 scripts_build_real_dynamics.py
+python3 scripts_build_governor_brief.py
+python3 scripts_build_nacion_reclamos.py
+python3 scripts_sync_embedded_data.py
+```
+
+Los fallbacks embebidos se sincronizan al final para que una falla de red o caché no vuelva a mostrar cifras antiguas.
+
+## Controles de calidad
+
+```bash
+python3 scripts_validate_reclamos_nacion.py
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+Las pruebas cubren reconciliaciones, universo y ranking, identidad RON, composición tributaria, IPC, deuda PBA, separación trimestre/LTM, falta de inferencias de caja/aguinaldo y navegación modular.
+
+## Límites de decisión todavía abiertos
+
+- Caja consolidada y fondos con afectación específica.
+- Cobertura exacta de salarios y aguinaldo.
+- Vencimientos de capital e intereses a 90/180 días.
+- Transferencias automáticas necesarias para completar el gasto rígido total.
+- Series mensuales 2025 homogéneas para medir variaciones reales 2026 en todas las provincias.
+
+Los escenarios 90/180 días permanecen deshabilitados mientras esos datos sigan faltando; no se presentan como proyecciones de caja.

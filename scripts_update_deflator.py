@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Actualiza el deflactor mensual con IPC oficial y una base explícita.
-
-La tabla resultante expresa todos los montos en pesos de abril de 2026, el
-último mes con datos monetarios cargados en el tablero.
-"""
+"""Actualiza el deflactor mensual con IPC oficial y una base explícita."""
 from __future__ import annotations
 
 import csv
@@ -12,12 +8,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PATH = ROOT / "deflactor_mensual.csv"
-BASE_PERIOD = "2026-04"
+BASE_PERIOD = "2026-06"
 OFFICIAL_IPC_MOM = {
     "2026-01": 0.029,
     "2026-02": 0.029,
     "2026-03": 0.034,
     "2026-04": 0.026,
+    "2026-05": 0.021,
+    "2026-06": 0.019,
 }
 
 

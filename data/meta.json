@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-14T16:08:37.478643Z",
+  "structural_cutoff": "2026-03-31",
+  "sources": {
+    "recaudacion_propia_2026": {
+      "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_12.xlsx",
+      "max_period": "2026-07",
+      "pba_max_period": "2026-06"
+    },
+    "transferencias_nacion_2026": {
+      "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_4.xlsx",
+      "max_period": "2026-07",
+      "pba_max_period": "2026-07"
+    }
+  },
+  "rules": {
+    "missing_values": "No se imputan. Los meses sin total oficial no se publican.",
+    "top_reconciliation": "Cada total mensual fue reconciliado con IIBB + Sellos + Automotores + Inmobiliario + Otros.",
+    "mixed_vintages": "Cada vista y tarjeta debe mostrar su fecha de corte específica."
+  }
+}

@@ -1,6 +1,6 @@
 {
   "source": "capa liquidez y riesgo inmediato",
-  "generated_at": "2026-04-22T22:57:33.561164Z",
+  "generated_at": "2026-08-14T16:08:37.676508Z",
   "methodology": {
     "intereses_sobre_ingresos": "resultado_primario_ltm_pct - resultado_financiero_ltm_pct",
     "ahorro_corriente": "manual_or_external_source",
@@ -58,32 +58,32 @@
           "missing_detail": "no_cargado_fuente_auditada"
         },
         "ron_total_ultimo_mes_xlsx_ars_m": {
-          "value": 1183103.706294375,
+          "value": 1638032.3689408773,
           "unit": "ars_m",
           "status": "source",
           "source": "pba_ron_monthly.csv",
-          "as_of": "2026-03",
+          "as_of": "2026-07",
           "missing_detail": null
         },
         "ron_total_ultimo_mes_daily_ars_m": {
-          "value": 816638.617296045,
+          "value": null,
           "unit": "ars_m",
-          "status": "source",
-          "source": "pba_ron_monthly.csv"
+          "status": "missing",
+          "source": null
         },
         "ron_total_ultimo_mes_diff_xlsx_daily_ars_m": {
-          "value": 1219.9685813914984,
+          "value": null,
           "unit": "ars_m",
-          "status": "derived",
-          "source": "pba_ron_monthly.csv+pba_ron_daily.csv",
-          "as_of": "2026-03",
-          "missing_detail": null
+          "status": "missing",
+          "source": null,
+          "as_of": "2026-07",
+          "missing_detail": "no_derivable_respaldo_suficiente"
         },
         "ron_diario_acumulado_ultimo_mes_ars_m": {
-          "value": 816638.6172960448,
+          "value": null,
           "unit": "ars_m",
-          "status": "derived",
-          "source": "pba_ron_daily.csv"
+          "status": "missing",
+          "source": null
         },
         "resultado_financiero_ultimo_trimestre_ars_m": {
           "value": -1401897.0,
