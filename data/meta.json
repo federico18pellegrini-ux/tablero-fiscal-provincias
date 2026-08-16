@@ -11,6 +11,20 @@
       "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_4.xlsx",
       "max_period": "2026-07",
       "pba_max_period": "2026-07"
+    },
+    "pba_transferencias_legales_municipios_ltm_1t26": {
+      "url": "https://www.gba.gob.ar/economia/direccion_provincial_de_coordinacion_municipal_y_programas_de_desarrollo/transferencias_municipios",
+      "period": "2025-04/2026-03",
+      "scope": "Coparticipación, descentralización y fondos legales mensuales publicados por municipio"
+    },
+    "pba_debt_service_schedule": {
+      "url": "https://www.ec.gba.gov.ar/areas/finanzas/deuda/archivos/Informe%20de%20Deuda%20PBA%20al%2031-dic-2025.pdf",
+      "valuation_date": "2025-12-31",
+      "period": "2026-2041"
+    },
+    "pba_government_results": {
+      "url": "https://catalogo.datos.gba.gob.ar/",
+      "cutoffs": "Seguridad 2025; educación 2025; salud 2024; infraestructura 2026-08-10"
     }
   },
   "rules": {

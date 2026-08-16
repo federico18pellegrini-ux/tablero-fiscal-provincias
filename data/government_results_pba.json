@@ -1,0 +1,131 @@
+{
+  "province": "Buenos Aires",
+  "generated_at": "2026-08-14",
+  "methodology": "Indicadores faro de resultado o producción pública. Cada cifra conserva su propio corte y alcance. No se calcula costo por resultado hasta contar con gasto y producto de igual período y perímetro institucional.",
+  "pillars": [
+    {
+      "id": "security",
+      "label": "Seguridad",
+      "question": "¿Bajó la violencia letal?",
+      "metrics": [
+        {
+          "label": "Víctimas de homicidio doloso",
+          "value": 4.44294830150959,
+          "display": "4,4 cada 100.000",
+          "period": "2025",
+          "change_yoy_pct": -5.552422684687697,
+          "direction": "lower_is_better",
+          "status": "auditado",
+          "interpretation": "La tasa bajó frente a 2024. Es una señal favorable, aunque no resume robos, violencia de género ni percepción de inseguridad.",
+          "source_title": "SNIC - tasa de víctimas de homicidios dolosos, Buenos Aires",
+          "source_url": "https://apis.datos.gob.ar/series/api/series?ids=t_snic_1_victimas_06&limit=100"
+        },
+        {
+          "label": "Víctimas registradas",
+          "value": 775,
+          "display": "775 personas",
+          "period": "2025",
+          "status": "auditado",
+          "source_title": "SNIC - víctimas de homicidios dolosos, Buenos Aires",
+          "source_url": "https://apis.datos.gob.ar/series/api/series?ids=snic_1_victimas_06&limit=100"
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "label": "Educación",
+      "question": "¿Cuántos estudiantes sostiene el sistema?",
+      "metrics": [
+        {
+          "label": "Matrícula total",
+          "value": 5001493,
+          "display": "5.001.493 estudiantes",
+          "period": "2025",
+          "change_yoy_pct": -1.014378911115088,
+          "direction": "context_required",
+          "status": "auditado",
+          "interpretation": "La matrícula cayó 1,0% frente a 2024. Para juzgar gestión hay que separar demografía, abandono, migración entre gestión estatal y privada y nivel educativo.",
+          "source_title": "DGCyE PBA - Unidades de servicio y matrícula 2015-2025",
+          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/unidades-de-servicio-y-matricula"
+        },
+        {
+          "label": "Unidades de servicio",
+          "value": 21519,
+          "display": "21.519",
+          "period": "2025",
+          "status": "auditado",
+          "source_title": "DGCyE PBA - Unidades de servicio y matrícula 2015-2025",
+          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/unidades-de-servicio-y-matricula"
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "label": "Salud",
+      "question": "¿Qué volumen atendió la red pública?",
+      "metrics": [
+        {
+          "label": "Consultas médicas",
+          "value": 100061869,
+          "display": "100,1 millones",
+          "period": "2024",
+          "change_yoy_pct": 2.211424244371839,
+          "direction": "context_required",
+          "status": "auditado",
+          "interpretation": "La red pública provincial, municipal y nacional registró 2,2% más consultas que en 2023. Más actividad puede reflejar mejor acceso o mayor presión de demanda.",
+          "source_title": "Ministerio de Salud PBA - Rendimiento de establecimientos 2024",
+          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/rendimientos-establecimientos-salud"
+        },
+        {
+          "label": "Egresos hospitalarios",
+          "value": 1301934,
+          "display": "1.301.934",
+          "period": "2024",
+          "change_yoy_pct": -3.56259194240128,
+          "direction": "context_required",
+          "status": "auditado",
+          "source_title": "Ministerio de Salud PBA - Rendimiento de establecimientos 2024",
+          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/rendimientos-establecimientos-salud"
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "label": "Infraestructura educativa",
+      "question": "¿Qué capacidad física se agregó o reemplazó?",
+      "metrics": [
+        {
+          "label": "Edificios escolares finalizados",
+          "value": 315,
+          "display": "315 edificios",
+          "period": "al 10/08/2026",
+          "status": "auditado",
+          "interpretation": "Incluye 112 creaciones y 203 sustituciones. Es producción de obra; todavía falta vincular costo, plazo, matrícula beneficiada y estado edilicio posterior.",
+          "source_title": "DGCyE PBA - Nuevos edificios escolares",
+          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/nuevos-edificios-escolares"
+        },
+        {
+          "label": "Creaciones / sustituciones",
+          "value": 315,
+          "display": "112 / 203",
+          "period": "al 10/08/2026",
+          "status": "auditado",
+          "source_title": "DGCyE PBA - Nuevos edificios escolares",
+          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/nuevos-edificios-escolares"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "label": "Desarrollo social",
+      "question": "¿La política social mejora resultados?",
+      "metrics": [],
+      "status": "faltante",
+      "interpretation": "Falta una serie provincial abierta, periódica y atribuible con cobertura de beneficiarios y resultado. No se reemplaza con pobreza de aglomerados ni con presupuesto ejecutado porque miden otra cosa."
+    }
+  ],
+  "cost_per_result": {
+    "status": "not_calculated",
+    "reason": "Los gastos disponibles no comparten todavía período y perímetro institucional con los productos. Dividirlos produciría un costo unitario engañoso."
+  }
+}

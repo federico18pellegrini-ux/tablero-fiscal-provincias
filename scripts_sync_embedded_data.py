@@ -19,7 +19,13 @@ HTML = ROOT / "index.html"
 def csv_rows(path: Path) -> list[dict[str, object]]:
     with path.open(encoding="utf-8", newline="") as source:
         rows: list[dict[str, object]] = list(csv.DictReader(source))
-    numeric_fields = {"year", "value_millions"}
+    numeric_fields = {
+        "year",
+        "value_millions",
+        "amortization_ars_m",
+        "interest_ars_m",
+        "total_service_ars_m",
+    }
     for row in rows:
         for field in numeric_fields:
             if field not in row or row[field] in (None, ""):
@@ -50,6 +56,8 @@ def main() -> None:
         "EMBEDDED_TOP_M": csv_rows(ROOT / "top_mensual_2026_normalizado.csv"),
         "EMBEDDED_INFO2026": csv_rows(ROOT / "informacion_consolidada_2026_normalizado.csv"),
         "EMBEDDED_PBA_DEBT_PROFILE": json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8")),
+        "EMBEDDED_PBA_DEBT_SCHEDULE": csv_rows(ROOT / "data/debt/pba_debt_service_schedule_2026_2041.csv"),
+        "EMBEDDED_GOVERNMENT_RESULTS": json.loads((ROOT / "data/government_results_pba.json").read_text(encoding="utf-8")),
         "EMBEDDED_RECLAMOS_NACION": json.loads((ROOT / "dashboard_reclamos_nacion_provincias.json").read_text(encoding="utf-8")),
     }
     for name, payload in payloads.items():

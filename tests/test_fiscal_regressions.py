@@ -175,17 +175,98 @@ class FiscalRegressionTests(unittest.TestCase):
 
     def test_modular_decision_views_and_rigid_floor_are_explicit(self):
         frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
-        for view in ('summary', 'debt', 'income', 'federal', 'comparison'):
+        for view in ('summary', 'debt', 'income', 'federal', 'comparison', 'results'):
             self.assertIn(f'data-view="{view}"', frontend)
             self.assertIn(view, frontend)
         self.assertIn("localStorage.setItem('dashboard_profile'", frontend)
-        self.assertIn("localStorage.setItem('dashboard_modules'", frontend)
-        self.assertIn('Piso observable de gasto rígido', frontend)
+        self.assertIn("localStorage.setItem('dashboard_modules_v2'", frontend)
+        self.assertIn('Cuánto del ingreso ya está comprometido', frontend)
         with (ROOT / 'data/gasto_rigido.csv').open(encoding='utf-8', newline='') as source:
-            row = next(csv.DictReader(source))
-        self.assertEqual(row['evidence_status'], 'parcial')
-        self.assertAlmostEqual(float(row['observed_floor_pct']), 66.4, places=6)
-        self.assertEqual(row['total_rigid_pct'], '')
+            rows = list(csv.DictReader(source))
+        self.assertEqual(len(rows), 23)
+        row = rows[0]
+        self.assertEqual(row['evidence_status'], 'auditado_ampliado')
+        self.assertAlmostEqual(float(row['observed_floor_pct']), 66.399937, places=6)
+        self.assertAlmostEqual(float(row['automatic_transfers_pct']), 13.342013, places=6)
+        self.assertAlmostEqual(float(row['total_rigid_pct']), 79.741950, places=6)
+
+        with (ROOT / 'data/1816/rigid_spending_components_1t26.csv').open(encoding='utf-8', newline='') as source:
+            raw = next(csv.DictReader(source))
+        numerator = sum(float(raw[key]) for key in (
+            'personnel_ars_m', 'social_security_spending_ars_m', 'interest_ars_m'
+        ))
+        self.assertAlmostEqual(
+            numerator / float(raw['total_income_ars_m']) * 100,
+            float(row['observed_floor_pct']),
+            places=6,
+        )
+        rigid_by_province = {item['province']: item for item in rows}
+        with (ROOT / 'data/1816/rigid_spending_components_1t26.csv').open(encoding='utf-8', newline='') as source:
+            raw_rows = list(csv.DictReader(source))
+        self.assertEqual(set(rigid_by_province), {item['province'] for item in raw_rows})
+        for raw_item in raw_rows:
+            result = rigid_by_province[raw_item['province']]
+            income = float(raw_item['total_income_ars_m'])
+            expected_components = {
+                'personnel_pct': float(raw_item['personnel_ars_m']) / income * 100,
+                'social_security_spending_pct': float(raw_item['social_security_spending_ars_m']) / income * 100,
+                'interest_pct': float(raw_item['interest_ars_m']) / income * 100,
+            }
+            for field, expected in expected_components.items():
+                self.assertAlmostEqual(float(result[field]), expected, places=6)
+            expected_floor = sum(expected_components.values())
+            self.assertAlmostEqual(float(result['observed_floor_pct']), expected_floor, places=6)
+        self.assertEqual(round(float(row['interest_pct']), 1), 3.8)
+
+    def test_pba_municipal_transfer_extension_reconciles(self):
+        with (ROOT / 'data/pba_municipal_transfers_ltm_1t26.csv').open(encoding='utf-8', newline='') as source:
+            rows = list(csv.DictReader(source))
+        detail = [row for row in rows if row['category'] != 'TOTAL']
+        total = next(row for row in rows if row['category'] == 'TOTAL')
+        self.assertAlmostEqual(
+            sum(float(row['amount_ars_m']) for row in detail),
+            float(total['amount_ars_m']),
+            delta=0.002,
+        )
+        self.assertAlmostEqual(float(total['pct_ltm_total_income']), 13.342013, places=6)
+
+    def test_pba_debt_schedule_reconciles_and_is_not_called_monthly_cash(self):
+        with (ROOT / 'data/debt/pba_debt_service_schedule_2026_2041.csv').open(encoding='utf-8', newline='') as source:
+            rows = list(csv.DictReader(source))
+        self.assertEqual([int(row['year']) for row in rows], list(range(2026, 2042)))
+        for row in rows:
+            self.assertAlmostEqual(
+                float(row['amortization_ars_m']) + float(row['interest_ars_m']),
+                float(row['total_service_ars_m']),
+                delta=1,
+            )
+        first = rows[0]
+        self.assertEqual(float(first['total_service_ars_m']), 3637755)
+        with (ROOT / 'data/gasto_rigido.csv').open(encoding='utf-8', newline='') as source:
+            rigid = next(csv.DictReader(source))
+        income = 36_857_309
+        amortization_pct = float(first['amortization_ars_m']) / income * 100
+        indicative_residual = 100 - float(rigid['total_rigid_pct']) - amortization_pct
+        self.assertEqual(round(amortization_pct, 1), 6.2)
+        self.assertEqual(round(indicative_residual, 1), 14.1)
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('Calendario anual de servicios de deuda', frontend)
+        self.assertIn('no el calendario mensual', frontend)
+        self.assertIn('31/12/2025</span>', frontend)
+        self.assertIn('Es una referencia de presión, no un porcentaje discrecional', frontend)
+
+    def test_government_results_preserve_scope_and_missing_social_outcome(self):
+        payload = json.loads((ROOT / 'data/government_results_pba.json').read_text(encoding='utf-8'))
+        pillars = {pillar['id']: pillar for pillar in payload['pillars']}
+        self.assertAlmostEqual(pillars['security']['metrics'][0]['value'], 4.44294830150959)
+        self.assertEqual(pillars['education']['metrics'][0]['value'], 5001493)
+        self.assertEqual(pillars['health']['metrics'][0]['value'], 100061869)
+        self.assertEqual(pillars['infrastructure']['metrics'][0]['value'], 315)
+        self.assertEqual(pillars['social']['status'], 'faltante')
+        self.assertEqual(payload['cost_per_result']['status'], 'not_calculated')
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('Resultados de gobierno', frontend)
+        self.assertIn('CABA y Santiago del Estero', frontend)
 
     def test_federal_contribution_is_not_proxied_with_own_revenue(self):
         payload = json.loads((ROOT / 'dashboard_federal_fairness.json').read_text(encoding='utf-8'))

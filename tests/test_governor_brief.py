@@ -24,6 +24,8 @@ class GovernorBriefTests(unittest.TestCase):
         financial = float(latest["financial_result_m"])
         self.assertAlmostEqual(income - spending, primary, delta=1)
         self.assertAlmostEqual(primary + interest, financial, delta=1)
+        self.assertEqual(round(abs(interest) / income * 100, 1), 3.8)
+        self.assertIn("otros $3,80", self.payload["risks"][0]["evidence"])
 
     def test_quarter_and_ltm_are_explicitly_separated(self):
         metrics = {item["id"]: item for item in self.payload["key_metrics"]}
