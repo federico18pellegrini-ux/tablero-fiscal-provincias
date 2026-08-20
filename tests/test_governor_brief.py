@@ -72,6 +72,8 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("Situación fiscal de las provincias argentinas", frontend)
         self.assertIn('id="heroProvinceSubtitle"', frontend)
         self.assertIn("rf<0?'SE DETERIORA':'MARGEN POSITIVO'", frontend)
+        self.assertIn("rf<0?'negative':'positive'", frontend)
+        self.assertIn('.gov-status.positive', frontend)
         self.assertIn("prepareInfoDots", frontend)
         self.assertIn("gov-federal-summary", frontend)
         self.assertNotIn('id="federalSectionReading"', frontend)
