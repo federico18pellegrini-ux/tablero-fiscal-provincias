@@ -791,6 +791,8 @@ tr:last-child td{border-bottom:none}
 .gov-structural .tb{background:rgba(18,18,18,.72)}
 .structural-standalone{margin:0}
 .gov-status{display:inline-flex;margin-top:12px;padding:6px 10px;border-radius:999px;background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.gov-status.positive{background:var(--green-bg);border-color:var(--green-border);color:var(--green)}
+.gov-status.partial{background:var(--amber-bg);border-color:rgba(251,191,36,.24);color:var(--amber)}
 .executive-pulse{padding:15px 18px 17px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.12)}
 .executive-pulse-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:10px}
 .executive-pulse-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:800}
@@ -2673,7 +2675,11 @@ function renderGovernorBrief(province,cross={}){
   document.getElementById('governorFederalReading').textContent=brief.federal_reading||'';
   document.getElementById('governorFederalConclusion').textContent=brief.federal_conclusion||'';
   const rf=toN(cross.resultado_financiero_ltm_pct);
-  document.getElementById('governorStatus').textContent=rf===null?'CONCLUSIÓN · DATOS PARCIALES':`CONCLUSIÓN · ${rf<0?'SE DETERIORA':'MARGEN POSITIVO'}`;
+  const governorStatus=document.getElementById('governorStatus');
+  if(governorStatus){
+    governorStatus.textContent=rf===null?'CONCLUSIÓN · DATOS PARCIALES':`CONCLUSIÓN · ${rf<0?'SE DETERIORA':'MARGEN POSITIVO'}`;
+    governorStatus.className=`gov-status ${rf===null?'partial':(rf<0?'negative':'positive')}`;
+  }
   document.getElementById('governorRisks').innerHTML=(brief.risks||[]).map(item=>
     `<li><strong>${item.title}</strong>${item.evidence}<br>${item.political_meaning}</li>`
   ).join('');
