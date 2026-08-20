@@ -1,6 +1,6 @@
 {
   "project": "Sistema fiscal provincias - capa intermedia normalizada",
-  "generated_at": "2026-08-14T17:14:17.312270Z",
+  "generated_at": "2026-08-20T02:06:40Z",
   "data_cutoff": "2026-07-31",
   "province_universe": [
     "Buenos Aires",
@@ -74,6 +74,8 @@
     "rigid_spending_components_1t26": "data/1816/rigid_spending_components_1t26.csv",
     "pba_municipal_transfers_ltm_1t26": "data/pba_municipal_transfers_ltm_1t26.csv",
     "pba_debt_service_schedule": "data/debt/pba_debt_service_schedule_2026_2041.csv",
+    "government_results": "data/government_results_provinces.json",
+    "government_results_audit_csv": "data/government_results/official_metrics.csv",
     "government_results_pba": "data/government_results_pba.json"
   },
   "notes": {
@@ -97,7 +99,7 @@
     "rigid_spending_scope": "Piso comparable de 23 jurisdicciones: personal + gasto previsional + intereses / ingresos LTM al 1T26. Para PBA se suma un piso ampliado con transferencias legales mensuales a municipios del mismo período. No equivale a gasto rígido total ni a caja libre.",
     "debt_schedule_scope": "Servicios anuales PBA 2026-2041 valuados a tipo de cambio y tasas vigentes al 31/12/2025. No existe en el informe público un calendario mensual 90/180 días.",
     "historical_series_gaps": "CABA y Santiago del Estero no tienen serie propia homogénea de recaudación 1984-2024 en la fuente histórica principal; sus datos corrientes se muestran por separado.",
-    "government_results_scope": "Primera capa PBA con indicadores faro oficiales de seguridad, educación, salud e infraestructura. Desarrollo social y costo por resultado quedan explícitamente pendientes hasta tener numerador y denominador de igual alcance.",
+    "government_results_scope": "Capa federal comparable para las 24 jurisdicciones: homicidios 2025, Aprender 2024, mortalidad infantil 2024, NBI 2022 y esfuerzo presupuestario APNF 2024. Se separan resultados, contexto estructural y gasto; no se calcula un ranking compuesto ni se atribuye causalidad.",
     "mixed_vintages": "Estructura/ranking: 1T26; deuda moneda y cronograma: 4T25; TOP: hasta julio según provincia (PBA junio); RON: julio."
   },
   "missing_top_mensual_2026_provinces": [],

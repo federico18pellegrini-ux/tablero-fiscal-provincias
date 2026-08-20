@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T16:08:37.478643Z",
+  "generated_at": "2026-08-20T02:06:40Z",
   "structural_cutoff": "2026-03-31",
   "sources": {
     "recaudacion_propia_2026": {
@@ -25,6 +25,17 @@
     "pba_government_results": {
       "url": "https://catalogo.datos.gba.gob.ar/",
       "cutoffs": "Seguridad 2025; educación 2025; salud 2024; infraestructura 2026-08-10"
+    },
+    "federal_government_results": {
+      "urls": [
+        "https://www.argentina.gob.ar/seguridad/estadisticascriminales",
+        "https://www.argentina.gob.ar/educacion/evaluacion-informacion-educativa/aprender/aprender-2024/informes-jurisdiccionales-de-aprender-secundaria-2024",
+        "https://www.argentina.gob.ar/sites/default/files/serie_5_nro_68_anuario_vitales_v4_revisada_ok.pdf",
+        "https://www.indec.gob.ar/ftp/cuadros/sociedad/serie_nbi_2022.xlsx",
+        "https://www.argentina.gob.ar/economia/sechacienda/coordinacion-fiscal-provincial/ejecucion-presupuestaria-provincial/gastos-por"
+      ],
+      "cutoffs": "Seguridad 2025; educación 2024; salud 2024; NBI 2022; gasto por finalidad APNF 2024",
+      "coverage": "24 jurisdicciones; educación: 24 publicadas y 22 elegibles para ranking por participación estudiantil de al menos 50%"
     }
   },
   "rules": {
