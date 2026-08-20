@@ -218,6 +218,39 @@ class FiscalRegressionTests(unittest.TestCase):
             self.assertAlmostEqual(float(result['observed_floor_pct']), expected_floor, places=6)
         self.assertEqual(round(float(row['interest_pct']), 1), 3.8)
 
+    def test_profiles_have_distinct_modules_order_and_detail(self):
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        for profile in ('governor', 'hacienda', 'press', 'deep'):
+            self.assertIn(f'{profile}:{{', frontend)
+            self.assertIn(f'value="{profile}"', frontend)
+        self.assertIn("governor:{label:'Gobernador / decisor'", frontend)
+        self.assertIn("views:['summary','comparison','results']", frontend)
+        self.assertIn("views:['summary','debt','income','comparison','federal']", frontend)
+        self.assertIn("views:['summary','federal','comparison','results']", frontend)
+        self.assertIn('id="governorDecisionPanel"', frontend)
+        self.assertIn('id="governorRiskPanel"', frontend)
+        self.assertLess(frontend.index('id="governorDecisionPanel"'), frontend.index('id="governorRiskPanel"'))
+        self.assertIn('data-press-source="financial"', frontend)
+        self.assertIn('id="pressQuoteGrid"', frontend)
+
+    def test_coverage_gaps_and_unified_flow_format_are_visible(self):
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn("CROSS_SECTION_GAPS_3T25=new Set(['Santiago del Estero','La Pampa','Neuquén'])", frontend)
+        self.assertIn("HISTORICAL_REVENUE_GAPS=new Set(['CABA','Santiago del Estero'])", frontend)
+        self.assertIn('sólo está disponible para Buenos Aires', frontend)
+        self.assertIn('return `AR$ ${fmtNum(billones,2)} billones`', frontend)
+        self.assertNotIn('millones (= ${fmtNum(bn,2)} Bn)', frontend)
+
+    def test_charts_are_lazy_and_province_rows_are_cached(self):
+        frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('const provinceRenderCache=new Map()', frontend)
+        self.assertIn('function renderActiveViewCharts()', frontend)
+        self.assertIn("if(dashboardView==='income')", frontend)
+        self.assertNotIn('function destroyCharts()', frontend)
+        render_body = frontend[frontend.index('function render(province)'):frontend.index('function liquiditySemaphore')]
+        self.assertNotIn("chartTopMensual(topMensualRowsValid)", render_body)
+        self.assertNotIn('buildComparativo();', render_body)
+
     def test_pba_municipal_transfer_extension_reconciles(self):
         with (ROOT / 'data/pba_municipal_transfers_ltm_1t26.csv').open(encoding='utf-8', newline='') as source:
             rows = list(csv.DictReader(source))
