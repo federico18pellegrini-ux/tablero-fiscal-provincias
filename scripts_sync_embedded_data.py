@@ -57,7 +57,7 @@ def main() -> None:
         "EMBEDDED_INFO2026": csv_rows(ROOT / "informacion_consolidada_2026_normalizado.csv"),
         "EMBEDDED_PBA_DEBT_PROFILE": json.loads((ROOT / "data/debt/pba_debt_profile_2026q1.json").read_text(encoding="utf-8")),
         "EMBEDDED_PBA_DEBT_SCHEDULE": csv_rows(ROOT / "data/debt/pba_debt_service_schedule_2026_2041.csv"),
-        "EMBEDDED_GOVERNMENT_RESULTS": json.loads((ROOT / "data/government_results_pba.json").read_text(encoding="utf-8")),
+        "EMBEDDED_GOVERNMENT_RESULTS": json.loads((ROOT / "data/government_results_provinces.json").read_text(encoding="utf-8")),
         "EMBEDDED_RECLAMOS_NACION": json.loads((ROOT / "dashboard_reclamos_nacion_provincias.json").read_text(encoding="utf-8")),
     }
     for name, payload in payloads.items():
