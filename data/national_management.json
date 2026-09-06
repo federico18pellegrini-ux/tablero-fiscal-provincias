@@ -30,7 +30,7 @@
       "meaning": "Acumulado oficial del año; primario: aproximadamente 0,9% del PIB."
     }
   ],
-  "reading": "En julio hubo superávit antes y después de intereses. Los intereses absorbieron aproximadamente el 92% del resultado primario mensual. Ese saldo no permite concluir, por sí solo, que estén cubiertos los vencimientos de capital.",
+  "reading": "En julio hubo superávit antes y después de pagar intereses. Ahora, los intereses se llevaron aproximadamente el 92% del resultado primario del mes. Así que queda otra cuenta por mirar: cuánto capital vence y con qué plata se va a pagar.",
   "reviewed_at": "2026-09-06",
   "activity_history": {
     "source_url": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_emae_mensual_base2004.xls",
@@ -1955,7 +1955,7 @@
           "meaning": "Separa el movimiento mensual de los patrones habituales de cada mes."
         }
       ],
-      "reading": "La variación mensual ayuda a detectar cambios de ritmo; la interanual muestra la distancia frente a un año atrás. Las series se revisan."
+      "reading": "El dato mensual te muestra si la economía ganó o perdió ritmo. El interanual te dice dónde está frente a un año atrás. Conviene mirar los dos, porque pueden moverse en direcciones distintas. Las series se revisan."
     },
     {
       "id": "prices",
@@ -2001,7 +2001,7 @@
           "publication_date": "2026-08-20"
         }
       ],
-      "reading": "El salario real mide poder de compra promedio, no la situación de cada trabajador. La comparación usa salarios e inflación del mismo mes; el dato salarial se publica con más demora."
+      "reading": "El tema es cuánto podés comprar con el salario. Por eso comparamos su aumento con la inflación del mismo mes. Es un promedio: no describe la situación de cada trabajador. El dato salarial llega con más demora que el de precios."
     },
     {
       "id": "households",
@@ -2047,7 +2047,7 @@
           "publication_date": "2026-03-31"
         }
       ],
-      "reading": "Los períodos no son simultáneos. La pobreza disponible corresponde al segundo semestre de 2025; no describe por sí sola la situación actual."
+      "reading": "Ojo con las fechas: la pobreza disponible corresponde al segundo semestre de 2025. Sirve para entender ese período, pero no alcanza para describir lo que está pasando hoy."
     },
     {
       "id": "trade",
@@ -2081,7 +2081,7 @@
           "meaning": "Exportaciones menos importaciones de bienes."
         }
       ],
-      "reading": "El superávit comercial no equivale a acumulación de reservas: también influyen servicios, deuda, capitales y el momento de cobro y pago."
+      "reading": "Exportar más de lo que se importa deja un superávit comercial. Pero esos dólares no se transforman automáticamente en reservas: también hay pagos de servicios y deuda, movimientos de capitales y diferencias entre cuándo se vende y cuándo se cobra."
     },
     {
       "id": "monetary",
@@ -2118,7 +2118,7 @@
           "source_variable_id": 44
         }
       ],
-      "reading": "Las fechas difieren por disponibilidad de cada serie. Observaciones verificadas al 6 de septiembre de 2026; no son cotizaciones en tiempo real."
+      "reading": "Cada serie llega hasta una fecha distinta. Son los datos que se verificaron al 6 de septiembre de 2026; para una decisión de hoy hay que comprobar si ya se publicó una actualización."
     },
     {
       "id": "debt",
@@ -2160,7 +2160,7 @@
           "meaning": "Intereses efectivamente pagados, en la cobertura del informe de deuda."
         }
       ],
-      "reading": "El stock puede cambiar por nueva deuda y por valuación. Para decidir una licitación hacen falta vencimientos futuros, caja y refinanciación; los pagos ya realizados no reemplazan esos datos."
+      "reading": "La deuda puede subir porque se toma deuda nueva o porque cambia su valuación. Para preparar una licitación hay que mirar cuánto vence, cuánta caja hay y cuánto se puede refinanciar. Saber lo que ya se pagó ayuda, pero no resuelve la cuenta de los próximos pagos."
     }
   ],
   "missing_blocks": [

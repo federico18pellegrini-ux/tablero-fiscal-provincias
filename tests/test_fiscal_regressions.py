@@ -315,7 +315,7 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertIsNone(pba['meses_cobertura'])
         self.assertEqual(pba['riesgo_aguinaldo'], 'sin_dato')
         frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
-        self.assertIn('Escenarios 90/180 días: no calculables', frontend)
+        self.assertIn('todavía no podemos calcular cómo llegará la caja a los próximos 90 o 180 días', frontend)
         self.assertNotIn('90 días: administrable', frontend)
 
     def test_claims_cutoff_comes_from_source_rows(self):

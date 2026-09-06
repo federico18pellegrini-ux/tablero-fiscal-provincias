@@ -60,7 +60,7 @@ def main() -> None:
         "province": "Buenos Aires",
         "as_of": latest["report_cutoff"],
         "status": "se_deteriora",
-        "headline": "El trimestre todavía deja margen primario, pero la Provincia gasta más de lo que ingresa en la mirada anual.",
+        "headline": "En el trimestre alcanzó para cubrir el gasto antes de intereses. En los últimos doce meses, la Provincia gastó más de lo que ingresó.",
         "plain_language_verdict": (
             "Buenos Aires tiene recursos, escala económica y capacidad de gestión: recauda por su cuenta casi la mitad de sus "
             "ingresos no previsionales. Aun así, hoy gasta más de lo que le entra, paga cada vez más intereses y los ingresos vienen "
@@ -84,10 +84,10 @@ def main() -> None:
             "una desventaja estructural en el reparto por habitante."
         ),
         "federal_conclusion": (
-            "Hay un problema federal real que debe reclamarse y cuantificarse, pero estos datos no alcanzan para atribuirle a Nación "
-            "todo el déficit provincial. Las series de 2026 tienen cortes distintos y la matriz de reclamos todavía cubre sólo una "
-            "parte del universo. La posición más sólida es defender los recursos bonaerenses con firmeza y datos, mientras la "
-            "Provincia ordena su caja y el ritmo del gasto."
+            "Hay un problema federal real y hay que reclamar los recursos que correspondan. "
+            "Pero con estos datos no podemos decir que todo el déficit venga de Nación: "
+            "los ingresos tienen cortes distintos y todavía falta completar los reclamos. "
+            "Hay que trabajar en las dos cosas a la vez: defender los recursos bonaerenses y ordenar la caja y el gasto provincial."
         ),
         "key_metrics": [
             {
