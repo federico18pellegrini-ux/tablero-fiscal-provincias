@@ -874,6 +874,7 @@ tr:last-child td{border-bottom:none}
 }
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
+<link rel="stylesheet" href="management-design.css?v=20260906-3">
 </head>
 <body>
 
@@ -1052,7 +1053,7 @@ tr:last-child td{border-bottom:none}
         <div id="metricsCommonMeta"></div>
         <table><tbody id="metricsBody"></tbody></table>
         <details id="metricsDetails" style="margin-top:8px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px">
-          <summary style="cursor:pointer;color:var(--muted);font-size:12px;font-weight:700">Metadata detallada por indicador</summary>
+          <summary style="cursor:pointer;color:var(--muted);font-size:12px;font-weight:700">Fuentes y cálculo de cada indicador</summary>
           <div id="metricsDetailsTableWrap" style="margin-top:8px"></div>
         </details>
       </div>
@@ -1076,8 +1077,8 @@ tr:last-child td{border-bottom:none}
     <div class="money-glossary" aria-label="Convención monetaria">
       <strong>Convención monetaria</strong>
       <ul>
-        <li>M = millones de pesos argentinos (10^6)</li>
-        <li>Bn = billones argentinos = mil millones de millones (10^12)</li>
+        <li>Un millón = 1.000.000 (10^6). La moneda se indica junto al dato.</li>
+        <li>Un billón = un millón de millones (10^12). Los montos en dólares se identifican con USD.</li>
         <li>Todos los montos se expresan en pesos corrientes salvo aclaración</li>
       </ul>
     </div>
@@ -1278,7 +1279,7 @@ tr:last-child td{border-bottom:none}
   <div class="fair-grid">
     <div class="fair-card">
       <div class="fair-title">RON por habitante vs promedio simple provincial</div>
-      <div class="k-sub" style="margin-bottom:6px">Compara cuánto recibe por habitante la provincia frente al promedio del resto del país.</div>
+      <div class="k-sub" style="margin-bottom:6px">Compara los recursos de origen nacional por habitante con el promedio simple de 23 provincias, sin CABA.</div>
       <div id="fairPanelPerCapita"></div>
       <div id="fairPanelPerCapitaNote" class="cc-note" style="margin-top:8px"></div>
     </div>
@@ -1408,10 +1409,10 @@ const DATA_QUALITY_TAG = {
   missing: '[Faltante]'
 };
 const KPI_TIPO_DATO = {
-  observado: 'HECHO',
-  derivado: 'INFERENCIA',
-  proxy: 'INFERENCIA',
-  lectura: 'OPINION',
+  observado: 'Dato observado',
+  derivado: 'Cálculo',
+  proxy: 'Aproximación',
+  lectura: 'Interpretación',
 };
 const DATA_STATUS = {
   numerico:'numerico',
@@ -1567,7 +1568,7 @@ function fmtPesosEje(valorEnMillones){
   const n=toN(valorEnMillones);
   if(n===null)return '';
   if(Math.abs(n)>=1_000_000){
-    return `${fmtNum(n/1_000_000,2)} Bn`;
+    return `${fmtNum(n/1_000_000,2)} billones`;
   }
   return `${fmtNum(n,0)} millones`;
 }
@@ -1588,7 +1589,7 @@ function formatARSMatrixPartial(v){
   if(n===null)return SIN_DATO;
   const millones=n/1e6;
   const billones=Math.abs(n/1e12);
-  return `AR$ ${fmtNum(millones,0)} M (${fmtNum(billones,2)} Bn)`;
+  return `AR$ ${fmtNum(millones,0)} millones (${fmtNum(billones,2)} billones)`;
 }
 function formatUSDMillions(v){
   const n=toN(v);
@@ -2102,8 +2103,8 @@ function renderRigidSpend(province){
   if(residual)residual.textContent=pctN(margin);
   if(residualLabel)residualLabel.textContent=expanded===null?'Margen observable antes de otros compromisos':'Residual observable, no caja libre';
   status.textContent=expanded===null
-    ? '[Auditado base] ingresos LTM al 31/03/2026'
-    : '[Auditado ampliado] ingresos LTM al 31/03/2026';
+    ? '[Auditado base] ingresos de los últimos 12 meses al 31/03/2026'
+    : '[Auditado ampliado] ingresos de los últimos 12 meses al 31/03/2026';
   components.innerHTML=items.map(([label,item])=>`<div class="rigid-component"><strong>${pctN(item)}</strong><span>${label}</span></div>`).join('');
   if(stack){
     const committed=items.map(([,item,color])=>`<span style="width:${Math.max(0,item||0)}%;background:${color}"></span>`).join('');
@@ -2126,7 +2127,7 @@ function renderRigidSpend(province){
     if(amortizationPct!==null&&margin!==null){
       const indicative=Math.max(0,margin-amortizationPct);
       debtBridge.style.display='block';
-      debtBridge.innerHTML=`<strong>Puente con la deuda 2026:</strong> la amortización anual prevista suma AR$ ${(amortization/1e6).toFixed(2).replace('.',',')} Bn, equivalente a ${pctN(amortizationPct)} del ingreso LTM. Si se la descuenta de forma mecánica, el residual baja de ${pctN(margin)} a <strong>${pctN(indicative)}</strong>. Es una referencia de presión, no un porcentaje discrecional: el calendario anual y el ingreso LTM no tienen el mismo flujo mensual y todavía faltan otros compromisos.`;
+      debtBridge.innerHTML=`<strong>Puente con la deuda 2026:</strong> la amortización anual prevista suma AR$ ${(amortization/1e6).toFixed(2).replace('.',',')} billones, equivalente a ${pctN(amortizationPct)} del ingreso LTM. Si se la descuenta de forma mecánica, el residual baja de ${pctN(margin)} a <strong>${pctN(indicative)}</strong>. Es una referencia de presión, no un porcentaje discrecional: el calendario anual y el ingreso LTM no tienen el mismo flujo mensual y todavía faltan otros compromisos.`;
     }else{
       debtBridge.style.display='none';
     }
@@ -2134,7 +2135,7 @@ function renderRigidSpend(province){
 }
 
 /* ── LOAD ALL ────────────────────────────────────────────────────── */
-const EMBEDDED_MANIFEST = {"project":"Sistema fiscal provincias - capa intermedia normalizada","generated_at":"2026-09-06T21:01:57.872076Z","data_cutoff":"2026-07-31","province_universe":["Buenos Aires","CABA","Catamarca","Chaco","Chubut","Corrientes","Córdoba","Entre Ríos","Formosa","Jujuy","La Pampa","La Rioja","Mendoza","Misiones","Neuquén","Río Negro","Salta","San Juan","San Luis","Santa Cruz","Santa Fe","Santiago del Estero","Tierra del Fuego","Tucumán"],"files":{"top_mensual_2026":"top_mensual_2026_normalizado.csv","top_trim_2025":"top_trim_2025_normalizado.csv","serie_top_1984_2024":"serie_top_1984_2024_normalizado.csv","serie_ron_2003_2025":"serie_ron_2003_2025_normalizado.csv","informacion_consolidada_2026":"informacion_consolidada_2026_normalizado.csv","cross_section_1816":"dashboard_cross_section_1816.json","fiscal_provincias":"dashboard_fiscal_provincias.json","liquidity_risk":"dashboard_liquidity_risk.json","deflactor_mensual":"deflactor_mensual.csv","real_dynamics_inputs":"dashboard_real_dynamics_inputs.csv","real_dynamics_2026":"dashboard_real_dynamics_2026.json","attribution_inputs":"dashboard_deterioration_attribution_inputs.csv","attribution_output":"dashboard_deterioration_attribution.json","federal_fairness_inputs":"dashboard_federal_fairness_inputs.csv","federal_fairness_output":"dashboard_federal_fairness.json","scenarios_inputs":"dashboard_scenarios_inputs.csv","scenarios_output":"dashboard_scenarios_90_180.json","top_mensual_2025":"top_mensual_2025_normalizado.csv","informacion_consolidada_2025":"informacion_consolidada_2025_normalizado.csv","gasto_mensual_2025_2026":"gasto_mensual_2025_2026_normalizado.csv","reclamos_nacion_maestra":"data/reclamos_nacion/reclamos_nacion_provincias_maestra.csv","reclamos_nacion_catalogo":"data/reclamos_nacion/catalogo_tipos_reclamo.csv","reclamos_nacion_provincial_csv":"outputs/reclamos_nacion_agregado_provincial.csv","reclamos_nacion_dashboard_json":"dashboard_reclamos_nacion_provincias.json","reclamos_nacion_resumen":"outputs/reclamos_nacion_resumen_ba_resto.json","reclamos_nacion_ba_caso_testigo":"data/reclamos_nacion/reclamos_nacion_buenos_aires_caso_testigo.csv","reclamos_nacion_ba_resumen":"outputs/reclamos_nacion_buenos_aires_resumen.json","pba_budget_execution_quarterly":"pba_budget_execution_quarterly.csv","pba_ron_monthly":"pba_ron_monthly.csv","pba_ron_daily":"pba_ron_daily.csv","pba_top_monthly":"pba_top_monthly.csv","national_debt_monthly":"national_debt_monthly.csv","municipios_pba_annual":"municipios_pba_annual.csv","governor_brief":"dashboard_governor_brief.json","pba_1816_snapshots":"data/1816/pba_fiscal_snapshots.csv","ranking_1816_1t26":"data/1816/ranking_1t26.csv","pba_debt_profile_2026q1":"data/debt/pba_debt_profile_2026q1.json","canonical_recaudacion_propia":"data/recaudacion_propia.csv","canonical_transferencias_nacion":"data/transferencias_nac.csv","coverage":"data/cobertura.csv","canonical_meta":"data/meta.json","gasto_rigido":"data/gasto_rigido.csv","rigid_spending_components_1t26":"data/1816/rigid_spending_components_1t26.csv","pba_municipal_transfers_ltm_1t26":"data/pba_municipal_transfers_ltm_1t26.csv","pba_debt_service_schedule":"data/debt/pba_debt_service_schedule_2026_2041.csv","government_results":"data/government_results_provinces.json","government_results_audit_csv":"data/government_results/official_metrics.csv","government_results_pba":"data/government_results_pba.json"},"notes":{"cross_section_1816_scope":"La capa estructural general conserva el corte 3T25. La nueva sala del gobernador usa 4T25 y 1T26 y un ranking homogéneo de 23 jurisdicciones; La Pampa no integra esos informes.","monthly_scope_2026":"Importación directa desde planillas oficiales DNAP. No se imputan datos ni se crean placeholders en cero.","ron_annual_scope":"serie_ron_2003_2025 es anual por provincia y categoría","ron_category_normalization":"serie_ron_2003_2025 tiene columna category_normalized que unifica variantes históricas de nombres de categorías. Usar category_normalized para filtrar, no category.","provinces_sin_datos_1816":"Santiago del Estero, La Pampa y Neuquén tienen datos_incompletos_1816=true en el cross_section. No aparecerán en rankings comparativos.","top_mensual_cobertura":"Cobertura dispar por jurisdicción; consultar data/cobertura.csv y mostrar el corte propio de cada provincia.","fiscal_pipeline_v2":"Se agregan indicadores de dependencia, rigidez, ahorro corriente, estrés fiscal, riesgo aguinaldo, atribución del deterioro y semáforo fiscal para consumo directo de frontend.","liquidity_risk_scope":"Bloque de caja y riesgo inmediato. El perfil anual oficial de deuda 2026-2041 está integrado. Caja de libre disponibilidad, calendario operativo de salarios/aguinaldo y financiamiento efectivamente disponible requieren una fuente operativa adicional.","real_dynamics_scope":"Bloque de dinámica real 2026. Requiere base mensual homogénea actual vs mismo período del año previo. El repo actual prefill ingresos 2026, pero no contiene aún toda la base comparable 2025 ni ejecución mensual de gasto 2026 normalizada.","attribution_scope":"Bloque de atribución del deterioro. Separa presión Nación, macro y gestión con fórmula visible. Requiere inputs homogéneos de ingresos, transferencias, proxy macro y gasto primario.","federal_fairness_scope":"Bloque de comparación federal justa. Calcula RON por habitante vs promedio simple provincial y aporte estimado vs participación recibida, con método visible.","scenarios_scope":"Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible.","load_priority_2025_2026":"a) comparación federal justa; b) caja y riesgo inmediato; c) atribución del deterioro; d) escenarios; e) dinámica real completa.","monthly_scope_2025_prepared":"Se agregan archivos placeholder 2025 (top mensual, consolidado mensual RON y gasto mensual 2025-2026) para futura carga auditada sin imputar valores.","reclamos_nacion_scope":"Matriz Nación→provincias con deuda total reclamada y robusta; distingue observado, estimado robusto, proxy y no disponible.","pba_new_sources_2026_scope":"PBA: TOP mensual, RON mensual/diario y ejecución trimestral se integran como prioridad para 2025-2026 sin romper series históricas nacionales.","national_debt_scope":"Serie mensual de deuda nacional (USD) para contexto macro del bloque Nación.","rigid_spending_scope":"Piso comparable de 23 jurisdicciones: personal + gasto previsional + intereses / ingresos LTM al 1T26. Para PBA se suma un piso ampliado con transferencias legales mensuales a municipios del mismo período. No equivale a gasto rígido total ni a caja libre.","debt_schedule_scope":"Servicios anuales PBA 2026-2041 valuados a tipo de cambio y tasas vigentes al 31/12/2025. No existe en el informe público un calendario mensual 90/180 días.","historical_series_gaps":"CABA y Santiago del Estero no tienen serie propia homogénea de recaudación 1984-2024 en la fuente histórica principal; sus datos corrientes se muestran por separado.","government_results_scope":"Capa federal comparable para las 24 jurisdicciones: homicidios 2025, Aprender 2024, mortalidad infantil 2024, NBI 2022 y esfuerzo presupuestario APNF 2024. Se separan resultados, contexto estructural y gasto; no se calcula un ranking compuesto ni se atribuye causalidad.","mixed_vintages":"Estructura/ranking: 1T26; deuda moneda y cronograma: 4T25; TOP: hasta julio según provincia (PBA junio); RON: julio."},"missing_top_mensual_2026_provinces":[],"missing_ron_2026_provinces":[],"as_of_by_block":{"structural_and_ranking":"2026-03-31","recaudacion_propia_2026_max":"2026-07-31","recaudacion_propia_pba":"2026-06-30","transferencias_nacion_2026":"2026-07-31","debt_stock_pba":"2026-03-31","debt_currency_composition_pba":"2025-12-31","debt_service_schedule_pba":"2025-12-31","municipal_legal_transfers_pba":"2026-03-31"}};
+const EMBEDDED_MANIFEST = {"project":"Sistema fiscal provincias - capa intermedia normalizada","generated_at":"2026-09-06T21:01:57.872076Z","data_cutoff":"2026-07-31","province_universe":["Buenos Aires","CABA","Catamarca","Chaco","Chubut","Corrientes","Córdoba","Entre Ríos","Formosa","Jujuy","La Pampa","La Rioja","Mendoza","Misiones","Neuquén","Río Negro","Salta","San Juan","San Luis","Santa Cruz","Santa Fe","Santiago del Estero","Tierra del Fuego","Tucumán"],"files":{"top_mensual_2026":"top_mensual_2026_normalizado.csv","top_trim_2025":"top_trim_2025_normalizado.csv","serie_top_1984_2024":"serie_top_1984_2024_normalizado.csv","serie_ron_2003_2025":"serie_ron_2003_2025_normalizado.csv","informacion_consolidada_2026":"informacion_consolidada_2026_normalizado.csv","cross_section_1816":"dashboard_cross_section_1816.json","fiscal_provincias":"dashboard_fiscal_provincias.json","liquidity_risk":"dashboard_liquidity_risk.json","deflactor_mensual":"deflactor_mensual.csv","real_dynamics_inputs":"dashboard_real_dynamics_inputs.csv","real_dynamics_2026":"dashboard_real_dynamics_2026.json","attribution_inputs":"dashboard_deterioration_attribution_inputs.csv","attribution_output":"dashboard_deterioration_attribution.json","federal_fairness_inputs":"dashboard_federal_fairness_inputs.csv","federal_fairness_output":"dashboard_federal_fairness.json","scenarios_inputs":"dashboard_scenarios_inputs.csv","scenarios_output":"dashboard_scenarios_90_180.json","top_mensual_2025":"top_mensual_2025_normalizado.csv","informacion_consolidada_2025":"informacion_consolidada_2025_normalizado.csv","gasto_mensual_2025_2026":"gasto_mensual_2025_2026_normalizado.csv","reclamos_nacion_maestra":"data/reclamos_nacion/reclamos_nacion_provincias_maestra.csv","reclamos_nacion_catalogo":"data/reclamos_nacion/catalogo_tipos_reclamo.csv","reclamos_nacion_provincial_csv":"outputs/reclamos_nacion_agregado_provincial.csv","reclamos_nacion_dashboard_json":"dashboard_reclamos_nacion_provincias.json","reclamos_nacion_resumen":"outputs/reclamos_nacion_resumen_ba_resto.json","reclamos_nacion_ba_caso_testigo":"data/reclamos_nacion/reclamos_nacion_buenos_aires_caso_testigo.csv","reclamos_nacion_ba_resumen":"outputs/reclamos_nacion_buenos_aires_resumen.json","pba_budget_execution_quarterly":"pba_budget_execution_quarterly.csv","pba_ron_monthly":"pba_ron_monthly.csv","pba_ron_daily":"pba_ron_daily.csv","pba_top_monthly":"pba_top_monthly.csv","national_debt_monthly":"national_debt_monthly.csv","municipios_pba_annual":"municipios_pba_annual.csv","governor_brief":"dashboard_governor_brief.json","pba_1816_snapshots":"data/1816/pba_fiscal_snapshots.csv","ranking_1816_1t26":"data/1816/ranking_1t26.csv","pba_debt_profile_2026q1":"data/debt/pba_debt_profile_2026q1.json","canonical_recaudacion_propia":"data/recaudacion_propia.csv","canonical_transferencias_nacion":"data/transferencias_nac.csv","coverage":"data/cobertura.csv","canonical_meta":"data/meta.json","gasto_rigido":"data/gasto_rigido.csv","rigid_spending_components_1t26":"data/1816/rigid_spending_components_1t26.csv","pba_municipal_transfers_ltm_1t26":"data/pba_municipal_transfers_ltm_1t26.csv","pba_debt_service_schedule":"data/debt/pba_debt_service_schedule_2026_2041.csv","government_results":"data/government_results_provinces.json","government_results_audit_csv":"data/government_results/official_metrics.csv","government_results_pba":"data/government_results_pba.json"},"notes":{"cross_section_1816_scope":"La capa estructural general conserva el corte 3T25. La nueva sala del gobernador usa 4T25 y 1T26 y un ranking homogéneo de 23 jurisdicciones; La Pampa no integra esos informes.","monthly_scope_2026":"Importación directa desde planillas oficiales DNAP. No se imputan datos ni se crean placeholders en cero.","ron_annual_scope":"serie_ron_2003_2025 es anual por provincia y categoría","ron_category_normalization":"serie_ron_2003_2025 tiene columna category_normalized que unifica variantes históricas de nombres de categorías. Usar category_normalized para filtrar, no category.","provinces_sin_datos_1816":"Santiago del Estero, La Pampa y Neuquén tienen datos_incompletos_1816=true en el cross_section. No aparecerán en rankings comparativos.","top_mensual_cobertura":"Cobertura dispar por jurisdicción; consultar data/cobertura.csv y mostrar el corte propio de cada provincia.","fiscal_pipeline_v2":"Se agregan indicadores de dependencia, rigidez, ahorro corriente, estrés fiscal, riesgo aguinaldo, atribución del deterioro y semáforo fiscal para consumo directo de frontend.","liquidity_risk_scope":"Bloque de caja y riesgo inmediato. El perfil anual oficial de deuda 2026-2041 está integrado. Caja de libre disponibilidad, calendario operativo de salarios/aguinaldo y financiamiento efectivamente disponible requieren una fuente operativa adicional.","real_dynamics_scope":"Bloque de dinámica real 2026. Requiere base mensual homogénea actual vs mismo período del año previo. El repo actual prefill ingresos 2026, pero no contiene aún toda la base comparable 2025 ni ejecución mensual de gasto 2026 normalizada.","attribution_scope":"Bloque de atribución del deterioro. Separa presión Nación, macro y gestión con fórmula visible. Requiere inputs homogéneos de ingresos, transferencias, proxy macro y gasto primario.","federal_fairness_scope":"Bloque de comparación federal justa. Calcula RON por habitante vs promedio simple provincial y aporte estimado vs participación recibida, con método visible.","scenarios_scope":"Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible.","load_priority_2025_2026":"a) comparación federal justa; b) caja y riesgo inmediato; c) atribución del deterioro; d) escenarios; e) dinámica real completa.","monthly_scope_2025_prepared":"Se agregan archivos placeholder 2025 (top mensual, consolidado mensual RON y gasto mensual 2025-2026) para futura carga auditada sin imputar valores.","reclamos_nacion_scope":"Matriz Nación→provincias con deuda total reclamada y robusta; distingue observado, estimado robusto, proxy y no disponible.","pba_new_sources_2026_scope":"PBA: TOP mensual, RON mensual/diario y ejecución trimestral se integran como prioridad para 2025-2026 sin romper series históricas nacionales.","national_debt_scope":"Serie mensual de deuda nacional (USD) para contexto macro del bloque Nación.","rigid_spending_scope":"Piso comparable de 23 jurisdicciones: personal + gasto previsional + intereses / ingresos de los últimos 12 meses al 1T26. Para PBA se suma un piso ampliado con transferencias legales mensuales a municipios del mismo período. No equivale a gasto rígido total ni a caja libre.","debt_schedule_scope":"Servicios anuales PBA 2026-2041 valuados a tipo de cambio y tasas vigentes al 31/12/2025. No existe en el informe público un calendario mensual 90/180 días.","historical_series_gaps":"CABA y Santiago del Estero no tienen serie propia homogénea de recaudación 1984-2024 en la fuente histórica principal; sus datos corrientes se muestran por separado.","government_results_scope":"Capa federal comparable para las 24 jurisdicciones: homicidios 2025, Aprender 2024, mortalidad infantil 2024, NBI 2022 y esfuerzo presupuestario APNF 2024. Se separan resultados, contexto estructural y gasto; no se calcula un ranking compuesto ni se atribuye causalidad.","mixed_vintages":"Estructura/ranking: 1T26; deuda moneda y cronograma: 4T25; TOP: hasta julio según provincia (PBA junio); RON: julio."},"missing_top_mensual_2026_provinces":[],"missing_ron_2026_provinces":[],"as_of_by_block":{"structural_and_ranking":"2026-03-31","recaudacion_propia_2026_max":"2026-07-31","recaudacion_propia_pba":"2026-06-30","transferencias_nacion_2026":"2026-07-31","debt_stock_pba":"2026-03-31","debt_currency_composition_pba":"2025-12-31","debt_service_schedule_pba":"2025-12-31","municipal_legal_transfers_pba":"2026-03-31"}};
 const EMBEDDED_TOP_M = [];
 const EMBEDDED_TOP_T = [];
 const EMBEDDED_SERIE_TOP = [];
@@ -2964,7 +2965,7 @@ function renderLiquidity(province){
   }
   if(sem) sem.textContent='';
   if(liquidityMethodNote) liquidityMethodNote.textContent=province==='Buenos Aires'&&pbaDebtProfile
-    ? 'Fuentes: informe oficial de deuda PBA al 31/12/2025 + stock DNAP al 31/03/2026 + ingresos LTM del informe 1816 1T26.'
+    ? 'Fuentes: informe oficial de deuda PBA al 31/12/2025 + stock DNAP al 31/03/2026 + ingresos de los últimos 12 meses del informe 1816 1T26.'
     : 'Fuente: 1816 fiscal histórico (LTM III TRIM 2025) + tableros DNAP por provincia (III TRIM 2025).';
 
   const cross=(cross1816||{})[province]||{};
@@ -2983,7 +2984,7 @@ function renderLiquidity(province){
     ? [
       ['Intereses pagados / Recursos totales (%)',toN(pbaIndicators.interest_paid_to_total_resources_pct),'Fuente: informe oficial PBA, año 2025.','4T2025',pbaIndicators.source?.url],
       ['Servicios pagados / Recursos totales (%)',toN(pbaIndicators.debt_service_paid_to_total_resources_pct),'Fuente: informe oficial PBA, año 2025.','4T2025',pbaIndicators.source?.url],
-      ['Stock de deuda / Ingresos LTM (%)',toN(pbaLatestStock.debt_to_ltm_income_pct),'Fuente: stock DNAP al 31/03/2026 sobre ingresos LTM al 1T26.','1T2026',pbaLatestStock.source?.url],
+      ['Stock de deuda / Ingresos de los últimos 12 meses (%)',toN(pbaLatestStock.debt_to_ltm_income_pct),'Fuente: stock DNAP al 31/03/2026 sobre ingresos de los últimos 12 meses al 1T26.','1T2026',pbaLatestStock.source?.url],
     ]
     : [
       ['Intereses / Ingresos Corrientes (%)',intIng,'Fuente: 1816 fiscal histórico, pág. 8 (LTM III TRIM 2025).','3T2025','dashboard_liquidity_risk.json'],
@@ -4306,13 +4307,13 @@ function renderMetrics(c,topYtd,ronYtd){
     : 'sin datos 2026';
   const latestStructural=!!latestRanking1816?.[province];
   const structuralSource=latestStructural?'data/1816/ranking_1t26.csv':'dashboard_cross_section_1816.json';
-  const structuralPeriod=latestStructural?'LTM 1T26':'LTM 3T25';
-  const primarySource=(province==='Buenos Aires'&&latestStructural)?'data/1816/pba_fiscal_snapshots.csv':'dashboard_cross_section_1816.json';
-  const primaryPeriod=(province==='Buenos Aires'&&latestStructural)?'LTM 1T26':'LTM 3T25';
+  const structuralPeriod=latestStructural?'Últimos 12 meses al 1T26':'Últimos 12 meses al 3T25';
+  const primarySource=latestStructural?'data/fiscal_history.json':'dashboard_cross_section_1816.json';
+  const primaryPeriod=latestStructural?'Últimos 12 meses al 1T26':'Últimos 12 meses al 3T25';
   const rows=[
-    ['Autonomía fiscal','Mide qué parte de los ingresos de la provincia viene de recursos propios.',pctN(toN(c.autonomia_fiscal_pct)),partial?null:toN(c.rank_autonomia_fiscal),structuralTotal,'Más alta = menos dependencia de Nación.','g',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'autonomia_fiscal_pct'}],
-    ['Salarios / gasto primario','Mide cuánto del gasto primario se va en personal.',pctN(toN(c.gasto_salarios_gasto_primario_ex_ss_pct)),partial?null:toN(c.rank_gasto_salarios),structuralTotal,'Más alto = menor margen para ajustar gasto corriente.','r',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'gasto_salarios_gasto_primario_ex_ss_pct'}],
-    ['Capital / gasto primario','Mide qué parte del gasto se destina a obra e inversión.',pctN(toN(c.gasto_capital_gasto_primario_ex_ss_pct)),partial?null:toN(c.rank_gasto_capital),structuralTotal,'Más alto = mayor esfuerzo en infraestructura.','g',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'gasto_capital_gasto_primario_ex_ss_pct'}],
+    ['Autonomía fiscal','Tributos propios más regalías, sobre ingresos sin seguridad social.',pctN(toN(c.autonomia_fiscal_pct)),partial?null:toN(c.rank_autonomia_fiscal),structuralTotal,'Más alta = menos dependencia de Nación.','g',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'autonomia_fiscal_pct'}],
+    ['Salarios / gasto primario','Personal sobre gasto primario, excluida seguridad social.',pctN(toN(c.gasto_salarios_gasto_primario_ex_ss_pct)),partial?null:toN(c.rank_gasto_salarios),structuralTotal,'Más alto = menor margen para ajustar gasto corriente.','r',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'gasto_salarios_gasto_primario_ex_ss_pct'}],
+    ['Capital / gasto primario','Gasto de capital sobre gasto primario, excluida seguridad social. No todo gasto de capital es obra pública.',pctN(toN(c.gasto_capital_gasto_primario_ex_ss_pct)),partial?null:toN(c.rank_gasto_capital),structuralTotal,'Más alto = mayor esfuerzo en infraestructura.','g',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'gasto_capital_gasto_primario_ex_ss_pct'}],
     ['IIBB / recaudación propia','Mide cuánto depende la provincia de Ingresos Brutos.',pctN(toN(c.iibb_sobre_reca_propia_pct)),partial?null:toN(c.rank_concentracion_iibb),structuralTotal,'Más alto = estructura tributaria más concentrada.','a',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'iibb_sobre_reca_propia_pct'}],
     ['Deuda / ingresos','Mide cuánto representa la deuda total frente a los ingresos anuales.',pctN(toN(c.deuda_total_sobre_ingresos_pct)),partial?null:toN(c.rank_deuda_total),structuralTotal,'Más alto = mayor presión sobre la caja futura.','r',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'deuda_total_sobre_ingresos_pct'}],
     ['Bonos + bancos / deuda','Mide qué parte de la deuda está más expuesta al mercado financiero.',pctN(toN(c.deuda_bonos_bancos_sobre_deuda_total_pct)),partial?null:toN(c.rank_deuda_bonos_bancos),structuralTotal,'Más alto = mayor sensibilidad a tasas y refinanciación.','a',{fuente:structuralSource,periodo:structuralPeriod,cobertura:partial?'parcial':'completa',unidad:'%',estado:'auditado',tipo:KPI_TIPO_DATO.observado,indicatorKey:'deuda_bonos_bancos_sobre_deuda_total_pct'}],
@@ -4322,7 +4323,7 @@ function renderMetrics(c,topYtd,ronYtd){
     ['Transferencias Nación 2026','Muestra el total recibido desde Nación en los meses disponibles.',hasUsefulValue(ronYtdResolved)?fmtPesosKPI(ronYtdResolved):DATA_LABEL[DATA_STATUS.sin_fuente],null,null,'Sirve para medir el flujo más reciente de apoyo nacional.','b',{fuente:'informacion_consolidada_2026_normalizado.csv',periodo:transferPeriod,periodoEnFila:true,cobertura:'parcial',unidad:'millones de pesos',estado:hasUsefulValue(ronYtdResolved)?'parcial':'fuente incompleta',tipo:KPI_TIPO_DATO.observado}],
   ];
   if(incomplete1816){
-    rows.push(['Nota metodológica 1816','Advertencia metodológica oficial para esta jurisdicción.','Dato incompleto en fuente',null,null,'El informe 1816 al III TRIM 2025 marca datos incompletos para La Pampa, Neuquén y Santiago del Estero. No es hueco del tablero; es advertencia metodológica de la fuente oficial.','a',{fuente:'dashboard_cross_section_1816.json',periodo:'LTM 3T25',cobertura:'parcial',unidad:'texto',estado:'metodologico',tipo:KPI_TIPO_DATO.lectura}]);
+    rows.push(['Nota metodológica 1816','Advertencia metodológica oficial para esta jurisdicción.','Dato incompleto en fuente',null,null,'El informe 1816 al III TRIM 2025 marca datos incompletos para La Pampa, Neuquén y Santiago del Estero. No es hueco del tablero; es advertencia metodológica de la fuente oficial.','a',{fuente:'dashboard_cross_section_1816.json',periodo:'Últimos 12 meses al 3T25',cobertura:'parcial',unidad:'texto',estado:'metodologico',tipo:KPI_TIPO_DATO.lectura}]);
   }
   const structuralRows=rows.filter(([,,,,,,,meta])=>!!meta?.indicatorKey);
 
@@ -4481,8 +4482,8 @@ function renderDebtSchedule(province){
   const first=rows.find(row=>row.year===2026)||rows[0];
   const income=toN(pbaDebtProfile?.latest_stock?.ltm_total_income_ars_m);
   const serviceRatio=income&&first.total!==null?first.total/income*100:null;
-  document.getElementById('debtSchedule2026').textContent=`AR$ ${(first.total/1e6).toFixed(2).replace('.',',')} Bn`;
-  document.getElementById('debtScheduleReading').innerHTML=`<strong>Lectura 2026:</strong> el perfil oficial prevé AR$ ${(first.amortization/1e6).toFixed(2).replace('.',',')} Bn de capital y AR$ ${(first.interest/1e6).toFixed(2).replace('.',',')} Bn de intereses. En conjunto equivalen a ${pctN(serviceRatio)} de los ingresos de los últimos 12 meses. Es presión anual, no prueba de que todo venza junto ni de que la caja esté cubierta.`;
+  document.getElementById('debtSchedule2026').textContent=`AR$ ${(first.total/1e6).toFixed(2).replace('.',',')} billones`;
+  document.getElementById('debtScheduleReading').innerHTML=`<strong>Lectura 2026:</strong> el perfil oficial prevé AR$ ${(first.amortization/1e6).toFixed(2).replace('.',',')} billones de capital y AR$ ${(first.interest/1e6).toFixed(2).replace('.',',')} billones de intereses. En conjunto equivalen a ${pctN(serviceRatio)} de los ingresos de los últimos 12 meses. Es presión anual, no prueba de que todo venza junto ni de que la caja esté cubierta.`;
   if(!hasChartLib()){noData('cDebtSchedule','No se pudo cargar la librería de gráficos');return;}
   charts.cDebtSchedule=new Chart(document.getElementById('cDebtSchedule'),{
     type:'bar',
@@ -4559,11 +4560,11 @@ function renderDebtProfile(province, c){
     `).join('');
     const debtProfileMethodNote=document.getElementById('debtProfileMethodNote');
     if(debtProfileMethodNote){
-      debtProfileMethodNote.innerText=`Stock y acreedores: DNAP, 31/03/2026; dato preliminar, sin deuda flotante ni contingente. Equivalente en USD: A3500 BCRA de $${Number(stock.a3500_ars_per_usd).toLocaleString('es-AR',{minimumFractionDigits:4,maximumFractionDigits:4})}. Exposición cambiaria: informe oficial PBA al 31/12/2025. Deuda / ingresos: stock DNAP sobre ingresos LTM al 1T26. ${official.methodology_note}`;
+      debtProfileMethodNote.innerText=`Stock y acreedores: DNAP, 31/03/2026; dato preliminar, sin deuda flotante ni contingente. Equivalente en USD: A3500 BCRA de $${Number(stock.a3500_ars_per_usd).toLocaleString('es-AR',{minimumFractionDigits:4,maximumFractionDigits:4})}. Exposición cambiaria: informe oficial PBA al 31/12/2025. Deuda / ingresos: stock DNAP sobre ingresos de los últimos 12 meses al 1T26. ${official.methodology_note}`;
     }
     [
       ['Deuda total (ARS M)',totalArs,'ars',stock.source?.url,'1T2026'],
-      ['Deuda / Ingresos LTM (%)',debtRatio,'pct',stock.source?.url,'1T2026'],
+      ['Deuda / Ingresos de los últimos 12 meses (%)',debtRatio,'pct',stock.source?.url,'1T2026'],
       ['Deuda en moneda extranjera pagadera en ME (%)',fxPayable,'pct',currency.source?.url,'4T2025'],
       ['Intereses pagados / Recursos totales (%)',interestRatio,'pct',officialIndicators.source?.url,'4T2025'],
       ['Servicios pagados / Recursos totales (%)',serviceRatio,'pct',officialIndicators.source?.url,'4T2025']
@@ -5173,7 +5174,8 @@ document.getElementById('downloadPdfAll')?.addEventListener('click',exportAllPro
 document.getElementById('downloadPng')?.addEventListener('click',exportCurrentProvincePng);
 
 </script>
-<script src="federal-tools.js?v=20260906-2"></script>
+<script src="management-tools.js?v=20260906-3"></script>
+<script src="federal-tools.js?v=20260906-3"></script>
 <script>
 /* ── BOOT ────────────────────────────────────────────────────────── */
 loadAll().catch(err=>{
