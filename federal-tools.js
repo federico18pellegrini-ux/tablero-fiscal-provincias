@@ -29,6 +29,7 @@ function initFederalTools(){
   document.getElementById('mapPeriod').onchange=renderFiscalMap;
   document.getElementById('mapMetric').onchange=renderFiscalMap;
   initCompositionExplorer();
+  initManagementDesign();
   renderFiscalHistory(currentProvince);renderFiscalMap();renderNationalPanel();
   fetch('data/debt_history.json').then(r=>{if(!r.ok)throw Error('debt');return r.json();}).then(d=>{debtHistory=d;renderComposition(currentProvince);}).catch(()=>{debtHistory={rows:[],failed:true};renderComposition(currentProvince);});
   for(const [id,all] of [['downloadPdf',false],['downloadPdfAll',true]]){
@@ -71,7 +72,7 @@ function renderFiscalMap(){
 async function renderNationalPanel(){
   const host=document.getElementById('nationalContent');
   try{
-    const response=await fetch('data/national_management.json?v=20260906-2');if(!response.ok)throw Error('source');const d=await response.json();
+    const response=await fetch('data/national_management.json?v=20260906-3');if(!response.ok)throw Error('source');const d=await response.json();
     host.replaceChildren();
     const paragraph=(parent,text)=>{const p=document.createElement('p');p.textContent=text;parent.append(p);return p;};
     const source=(parent,url,date,label='Fuente oficial')=>{const p=document.createElement('p');p.className='federal-note';const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.textContent=date?`${label} · publicación: ${date}`:label;p.append(a);parent.append(p);};
@@ -80,12 +81,14 @@ async function renderNationalPanel(){
     const title=document.createElement('h3');title.textContent='Resultado fiscal: ingresos, gastos e intereses';host.append(title);
     paragraph(host,`${d.scope} · ${d.period_label}. Base caja, pesos corrientes. No se suma a las provincias sin consolidar transferencias entre gobiernos.`);
     cards(host,d.metrics,d.period_label);paragraph(host,d.reading);source(host,d.source_url,d.publication_date,'Hacienda');
-    for(const s of d.sections||[]){const section=document.createElement('section');section.className='national-section';const h=document.createElement('h3');h.textContent=s.title;section.append(h);paragraph(section,s.scope);cards(section,s.metrics);paragraph(section,s.reading);source(section,s.source_url,s.publication_date);host.append(section);
+    await renderNationalOperations(host);
+    for(const s of d.sections||[]){const section=document.createElement('section');section.id='national-'+s.id;section.className='national-section';const h=document.createElement('h3');h.textContent=s.title;section.append(h);paragraph(section,s.scope);cards(section,s.metrics);paragraph(section,s.reading);source(section,s.source_url,s.publication_date);host.append(section);
       if(s.id==='activity'&&d.activity_history?.rows.length){const detail=document.createElement('details');detail.className='national-history';const summary=document.createElement('summary');summary.textContent='Ver historia de actividad desde 2004';detail.append(summary);paragraph(detail,'EMAE desestacionalizado, índice 2004=100. Permite comparar niveles entre meses. Versión de la serie publicada el 20/08/2026.');const box=document.createElement('div');box.className='history-chart';const canvas=document.createElement('canvas');canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Historia mensual de actividad económica desde 2004');box.append(canvas);detail.append(box);source(detail,d.activity_history.source_url,d.activity_history.publication_date,'Serie INDEC');section.append(detail);
         detail.addEventListener('toggle',()=>{if(!detail.open||nationalActivityChart||typeof Chart==='undefined')return;const rows=d.activity_history.rows;nationalActivityChart=new Chart(canvas,{type:'line',data:{labels:rows.map(r=>r.period),datasets:[{label:'Actividad sin estacionalidad',data:rows.map(r=>r.seasonally_adjusted),borderColor:'#68b7ff',pointRadius:0,spanGaps:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#d9e1ee'}}},scales:{x:{ticks:{color:'#c4ccd8',maxTicksLimit:12}},y:{ticks:{color:'#c4ccd8'}}}}});});
       }
     }
-    const h=document.createElement('h3');h.textContent='Información que falta para decisiones operativas';host.append(h);const ul=document.createElement('ul');for(const item of d.missing_blocks||[]){const li=document.createElement('li');li.textContent=item;ul.append(li);}host.append(ul);source(host,'data/national_management.json',null,'Descargar indicadores, historia y referencias');
+    const nav=document.createElement('nav');nav.className='national-section-nav';nav.setAttribute('aria-label','Temas de economía nacional');for(const section of host.querySelectorAll('.national-section')){const a=document.createElement('a');a.href='#'+section.id;a.textContent=section.querySelector('h3').textContent.split(':')[0];nav.append(a);}host.firstElementChild.after(nav);
+    const h=document.createElement('h3');h.textContent='Información que requiere actualización operativa';host.append(h);const ul=document.createElement('ul');for(const item of d.missing_blocks||[]){const li=document.createElement('li');li.textContent=item;ul.append(li);}host.append(ul);source(host,'data/national_management.json',null,'Descargar indicadores, historia y referencias');
   }catch{host.textContent='No se pudo cargar la fuente nacional. No se reemplaza por el agregado de provincias.';}
 }
 

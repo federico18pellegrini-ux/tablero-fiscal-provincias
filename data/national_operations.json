@@ -1,0 +1,1028 @@
+{
+  "reviewed_at": "2026-09-06",
+  "spending": {
+    "period": "2026-07",
+    "publication_date": "2026-08-18",
+    "scope": "Sector Público Nacional, base caja",
+    "unit": "ARS millones",
+    "source_url": "https://www.argentina.gob.ar/sites/default/files/2026/08/imig_julio_2026.xlsx",
+    "sha256": "92405ceb92523f1c7a8c039fea3321bfee7a8b7f989af7af76ea4e2172d32572",
+    "rows": [
+      {
+        "id": "income",
+        "label": "INGRESOS TOTALES",
+        "value": 17092373.7,
+        "previous": 13105874.100000001,
+        "nominal_yoy_pct": 30.417655240561146,
+        "real_yoy_pct": -2.546618729883554,
+        "ytd": 97348309.7,
+        "composition": false,
+        "source_sheet": "Julio",
+        "source_range": "G8:H8"
+      },
+      {
+        "id": "primary_spend",
+        "label": "GASTOS PRIMARIOS",
+        "value": 14132041,
+        "previous": 11356488.600000001,
+        "nominal_yoy_pct": 24.44023410546108,
+        "real_yoy_pct": -7.013191141544195,
+        "ytd": 87060947.80000001,
+        "composition": false,
+        "source_sheet": "Julio",
+        "source_range": "G28:H28"
+      },
+      {
+        "id": "social",
+        "label": "Prestaciones sociales",
+        "value": 8687143.5,
+        "previous": 7066464,
+        "nominal_yoy_pct": 22.93480162072572,
+        "real_yoy_pct": -8.138111579967367,
+        "ytd": 58869088.7,
+        "composition": true,
+        "source_sheet": "Julio",
+        "source_range": "G30:H30"
+      },
+      {
+        "id": "pensions",
+        "label": "Jubilaciones y pensiones contributivas",
+        "value": 5567928.8,
+        "previous": 4370060.3,
+        "nominal_yoy_pct": 27.41080025829392,
+        "real_yoy_pct": -4.793463181045743,
+        "ytd": 38425277.6,
+        "composition": false,
+        "source_sheet": "Julio",
+        "source_range": "G31:H31"
+      },
+      {
+        "id": "auh",
+        "label": "Asignación Universal para Protección Social",
+        "value": 653691.6,
+        "previous": 470717.19999999995,
+        "nominal_yoy_pct": 38.87140729083196,
+        "real_yoy_pct": 3.7703689524854367,
+        "ytd": 4575793.1,
+        "composition": false,
+        "source_sheet": "Julio",
+        "source_range": "G32:H32"
+      },
+      {
+        "id": "subsidies",
+        "label": "Subsidios económicos",
+        "value": 1180615.3,
+        "previous": 1082467.2,
+        "nominal_yoy_pct": 9.067073810642956,
+        "real_yoy_pct": -18.500642351843076,
+        "ytd": 6083087.8,
+        "composition": true,
+        "source_sheet": "Julio",
+        "source_range": "G37:H37"
+      },
+      {
+        "id": "operating",
+        "label": "Gastos de funcionamiento y otros",
+        "value": 2824750.4000000004,
+        "previous": 2154998.4000000004,
+        "nominal_yoy_pct": 31.07900219322668,
+        "real_yoy_pct": -2.0524333635613234,
+        "ytd": 14757154.2,
+        "composition": true,
+        "source_sheet": "Julio",
+        "source_range": "G41:H41"
+      },
+      {
+        "id": "salaries",
+        "label": "Salarios",
+        "value": 2178519.5,
+        "previous": 1693146.3,
+        "nominal_yoy_pct": 28.66693799584832,
+        "real_yoy_pct": -3.8548259264511,
+        "ytd": 11533398.8,
+        "composition": false,
+        "source_sheet": "Julio",
+        "source_range": "G42:H42"
+      },
+      {
+        "id": "provinces",
+        "label": "Transferencias corrientes a provincias",
+        "value": 181356.9,
+        "previous": 167825.2,
+        "nominal_yoy_pct": 8.062972664415113,
+        "real_yoy_pct": -19.250947605043724,
+        "ytd": 1088959.3,
+        "composition": true,
+        "source_sheet": "Julio",
+        "source_range": "G44:H44"
+      },
+      {
+        "id": "universities",
+        "label": "Transferencias a universidades",
+        "value": 697606,
+        "previous": 481412.8,
+        "nominal_yoy_pct": 44.90807057892936,
+        "real_yoy_pct": 8.281209512600828,
+        "ytd": 3097752.3999999994,
+        "composition": true,
+        "source_sheet": "Julio",
+        "source_range": "G49:H49"
+      },
+      {
+        "id": "other",
+        "label": "Otros Gastos Corrientes",
+        "value": 279618.4,
+        "previous": 206114.80000000002,
+        "nominal_yoy_pct": 35.661485735134015,
+        "real_yoy_pct": 1.371784890859784,
+        "ytd": 1495914.7,
+        "composition": true,
+        "source_sheet": "Julio",
+        "source_range": "G50:H50"
+      },
+      {
+        "id": "capital",
+        "label": "Gastos de capital",
+        "value": 280950.5,
+        "previous": 197206.2,
+        "nominal_yoy_pct": 42.465348452533426,
+        "real_yoy_pct": 6.4559080970715055,
+        "ytd": 1668990.7,
+        "composition": true,
+        "source_sheet": "Julio",
+        "source_range": "G52:H52"
+      },
+      {
+        "id": "primary",
+        "label": "RESULTADO PRIMARIO",
+        "value": 2960332.6999999993,
+        "previous": 1749385.5,
+        "nominal_yoy_pct": 69.22128941848433,
+        "real_yoy_pct": 26.449036415365313,
+        "ytd": 10287361.899999991,
+        "composition": false,
+        "source_sheet": "Julio",
+        "source_range": "G72:H72"
+      },
+      {
+        "id": "interest",
+        "label": "Intereses Netos",
+        "value": 2715435.5999999996,
+        "previous": 1917900.7000000002,
+        "nominal_yoy_pct": 41.583743099942524,
+        "real_yoy_pct": 5.797136687653492,
+        "ytd": 8586270.7,
+        "composition": false,
+        "source_sheet": "Julio",
+        "source_range": "G74:H74"
+      },
+      {
+        "id": "financial",
+        "label": "RESULTADO FINANCIERO",
+        "value": 244897.09999999963,
+        "previous": -168515.2000000002,
+        "nominal_yoy_pct": -245.32641565864645,
+        "real_yoy_pct": -208.59381398690263,
+        "ytd": 1701091.1999999918,
+        "composition": false,
+        "source_sheet": "Julio",
+        "source_range": "G76:H76"
+      }
+    ],
+    "monthly_2026": [
+      {
+        "id": "income",
+        "period": "2026-01",
+        "value": 14517257.600000001,
+        "real_july2026": 16836223.75709239,
+        "source_cell": "G8"
+      },
+      {
+        "id": "income",
+        "period": "2026-02",
+        "value": 11793011.5,
+        "real_july2026": 13291836.451271914,
+        "source_cell": "H8"
+      },
+      {
+        "id": "income",
+        "period": "2026-03",
+        "value": 11841366.899999999,
+        "real_july2026": 12909652.769130647,
+        "source_cell": "I8"
+      },
+      {
+        "id": "income",
+        "period": "2026-04",
+        "value": 13411787.3,
+        "real_july2026": 14253694.8976011,
+        "source_cell": "J8"
+      },
+      {
+        "id": "income",
+        "period": "2026-05",
+        "value": 14531657.1,
+        "real_july2026": 15118812.783355515,
+        "source_cell": "K8"
+      },
+      {
+        "id": "income",
+        "period": "2026-06",
+        "value": 14160855.600000001,
+        "real_july2026": 14460183.861069808,
+        "source_cell": "L8"
+      },
+      {
+        "id": "income",
+        "period": "2026-07",
+        "value": 17092373.7,
+        "real_july2026": 17092373.7,
+        "source_cell": "M8"
+      },
+      {
+        "id": "primary_spend",
+        "period": "2026-01",
+        "value": 11391520.3,
+        "real_july2026": 13211185.61017063,
+        "source_cell": "G28"
+      },
+      {
+        "id": "primary_spend",
+        "period": "2026-02",
+        "value": 10382371.8,
+        "real_july2026": 11701912.43703083,
+        "source_cell": "H28"
+      },
+      {
+        "id": "primary_spend",
+        "period": "2026-03",
+        "value": 10911082.8,
+        "real_july2026": 11895441.757085813,
+        "source_cell": "I28"
+      },
+      {
+        "id": "primary_spend",
+        "period": "2026-04",
+        "value": 12778943.200000001,
+        "real_july2026": 13581124.827902263,
+        "source_cell": "J28"
+      },
+      {
+        "id": "primary_spend",
+        "period": "2026-05",
+        "value": 12607290.200000003,
+        "real_july2026": 13116691.298697982,
+        "source_cell": "K28"
+      },
+      {
+        "id": "primary_spend",
+        "period": "2026-06",
+        "value": 14857698.5,
+        "real_july2026": 15171756.434148023,
+        "source_cell": "L28"
+      },
+      {
+        "id": "primary_spend",
+        "period": "2026-07",
+        "value": 14132041,
+        "real_july2026": 14132041.0,
+        "source_cell": "M28"
+      },
+      {
+        "id": "social",
+        "period": "2026-01",
+        "value": 7400740.800000001,
+        "real_july2026": 8582924.648043921,
+        "source_cell": "G30"
+      },
+      {
+        "id": "social",
+        "period": "2026-02",
+        "value": 7187186.299999999,
+        "real_july2026": 8100636.961510815,
+        "source_cell": "H30"
+      },
+      {
+        "id": "social",
+        "period": "2026-03",
+        "value": 8054193.399999999,
+        "real_july2026": 8780813.989424124,
+        "source_cell": "I30"
+      },
+      {
+        "id": "social",
+        "period": "2026-04",
+        "value": 8094858.7,
+        "real_july2026": 8603002.982979894,
+        "source_cell": "J30"
+      },
+      {
+        "id": "social",
+        "period": "2026-05",
+        "value": 8381418.000000002,
+        "real_july2026": 8720071.546489082,
+        "source_cell": "K30"
+      },
+      {
+        "id": "social",
+        "period": "2026-06",
+        "value": 11063548,
+        "real_july2026": 11297406.227048254,
+        "source_cell": "L30"
+      },
+      {
+        "id": "social",
+        "period": "2026-07",
+        "value": 8687143.5,
+        "real_july2026": 8687143.5,
+        "source_cell": "M30"
+      },
+      {
+        "id": "pensions",
+        "period": "2026-01",
+        "value": 4699344.1,
+        "real_july2026": 5450010.667246956,
+        "source_cell": "G31"
+      },
+      {
+        "id": "pensions",
+        "period": "2026-02",
+        "value": 4830096.899999999,
+        "real_july2026": 5443974.852275474,
+        "source_cell": "H31"
+      },
+      {
+        "id": "pensions",
+        "period": "2026-03",
+        "value": 4934590.1,
+        "real_july2026": 5379771.2111251,
+        "source_cell": "I31"
+      },
+      {
+        "id": "pensions",
+        "period": "2026-04",
+        "value": 5127453.3,
+        "real_july2026": 5449322.547778394,
+        "source_cell": "J31"
+      },
+      {
+        "id": "pensions",
+        "period": "2026-05",
+        "value": 5253081.9,
+        "real_july2026": 5465334.148418179,
+        "source_cell": "K31"
+      },
+      {
+        "id": "pensions",
+        "period": "2026-06",
+        "value": 8012782.5,
+        "real_july2026": 8182154.487103349,
+        "source_cell": "L31"
+      },
+      {
+        "id": "pensions",
+        "period": "2026-07",
+        "value": 5567928.8,
+        "real_july2026": 5567928.8,
+        "source_cell": "M31"
+      },
+      {
+        "id": "auh",
+        "period": "2026-01",
+        "value": 557077.9,
+        "real_july2026": 646064.7343291021,
+        "source_cell": "G32"
+      },
+      {
+        "id": "auh",
+        "period": "2026-02",
+        "value": 621439.3,
+        "real_july2026": 700420.7144199683,
+        "source_cell": "H32"
+      },
+      {
+        "id": "auh",
+        "period": "2026-03",
+        "value": 789413.9,
+        "real_july2026": 860632.0052565236,
+        "source_cell": "I32"
+      },
+      {
+        "id": "auh",
+        "period": "2026-04",
+        "value": 623151.7,
+        "real_july2026": 662269.2418274073,
+        "source_cell": "J32"
+      },
+      {
+        "id": "auh",
+        "period": "2026-05",
+        "value": 615417.7,
+        "real_july2026": 640283.8248821085,
+        "source_cell": "K32"
+      },
+      {
+        "id": "auh",
+        "period": "2026-06",
+        "value": 715601,
+        "real_july2026": 730727.1766238062,
+        "source_cell": "L32"
+      },
+      {
+        "id": "auh",
+        "period": "2026-07",
+        "value": 653691.6,
+        "real_july2026": 653691.6,
+        "source_cell": "M32"
+      },
+      {
+        "id": "subsidies",
+        "period": "2026-01",
+        "value": 1067174.7,
+        "real_july2026": 1237643.6743195865,
+        "source_cell": "G37"
+      },
+      {
+        "id": "subsidies",
+        "period": "2026-02",
+        "value": 554487.1,
+        "real_july2026": 624959.2691010311,
+        "source_cell": "H37"
+      },
+      {
+        "id": "subsidies",
+        "period": "2026-03",
+        "value": 258209,
+        "real_july2026": 281503.6946338058,
+        "source_cell": "I37"
+      },
+      {
+        "id": "subsidies",
+        "period": "2026-04",
+        "value": 1175127.7999999998,
+        "real_july2026": 1248894.9274411176,
+        "source_cell": "J37"
+      },
+      {
+        "id": "subsidies",
+        "period": "2026-05",
+        "value": 784177.5,
+        "real_july2026": 815862.4119626227,
+        "source_cell": "K37"
+      },
+      {
+        "id": "subsidies",
+        "period": "2026-06",
+        "value": 1063296.4,
+        "real_july2026": 1085772.06611821,
+        "source_cell": "L37"
+      },
+      {
+        "id": "subsidies",
+        "period": "2026-07",
+        "value": 1180615.3,
+        "real_july2026": 1180615.3,
+        "source_cell": "M37"
+      },
+      {
+        "id": "operating",
+        "period": "2026-01",
+        "value": 1990312.5,
+        "real_july2026": 2308242.1983431596,
+        "source_cell": "G41"
+      },
+      {
+        "id": "operating",
+        "period": "2026-02",
+        "value": 1790101.4,
+        "real_july2026": 2017613.1465650552,
+        "source_cell": "H41"
+      },
+      {
+        "id": "operating",
+        "period": "2026-03",
+        "value": 1735625.6,
+        "real_july2026": 1892207.548540198,
+        "source_cell": "I41"
+      },
+      {
+        "id": "operating",
+        "period": "2026-04",
+        "value": 2217476.0999999996,
+        "real_july2026": 2356675.2935399134,
+        "source_cell": "J41"
+      },
+      {
+        "id": "operating",
+        "period": "2026-05",
+        "value": 2089388.1000000003,
+        "real_july2026": 2173810.412555833,
+        "source_cell": "K41"
+      },
+      {
+        "id": "operating",
+        "period": "2026-06",
+        "value": 2109500.1,
+        "real_july2026": 2154090.131456827,
+        "source_cell": "L41"
+      },
+      {
+        "id": "operating",
+        "period": "2026-07",
+        "value": 2824750.4000000004,
+        "real_july2026": 2824750.4000000004,
+        "source_cell": "M41"
+      },
+      {
+        "id": "salaries",
+        "period": "2026-01",
+        "value": 1582285,
+        "real_july2026": 1835036.963695604,
+        "source_cell": "G42"
+      },
+      {
+        "id": "salaries",
+        "period": "2026-02",
+        "value": 1481389.8,
+        "real_july2026": 1669666.0511339626,
+        "source_cell": "H42"
+      },
+      {
+        "id": "salaries",
+        "period": "2026-03",
+        "value": 1441914.8,
+        "real_july2026": 1571999.2081885803,
+        "source_cell": "I42"
+      },
+      {
+        "id": "salaries",
+        "period": "2026-04",
+        "value": 1620998.7,
+        "real_july2026": 1722754.7963878023,
+        "source_cell": "J42"
+      },
+      {
+        "id": "salaries",
+        "period": "2026-05",
+        "value": 1618197,
+        "real_july2026": 1683580.7039231297,
+        "source_cell": "K42"
+      },
+      {
+        "id": "salaries",
+        "period": "2026-06",
+        "value": 1610094,
+        "real_july2026": 1644127.7230173387,
+        "source_cell": "L42"
+      },
+      {
+        "id": "salaries",
+        "period": "2026-07",
+        "value": 2178519.5,
+        "real_july2026": 2178519.5,
+        "source_cell": "M42"
+      },
+      {
+        "id": "provinces",
+        "period": "2026-01",
+        "value": 246034.3,
+        "real_july2026": 285335.47043482895,
+        "source_cell": "G44"
+      },
+      {
+        "id": "provinces",
+        "period": "2026-02",
+        "value": 100603.5,
+        "real_july2026": 113389.63490585369,
+        "source_cell": "H44"
+      },
+      {
+        "id": "provinces",
+        "period": "2026-03",
+        "value": 112508.7,
+        "real_july2026": 122658.83345834755,
+        "source_cell": "I44"
+      },
+      {
+        "id": "provinces",
+        "period": "2026-04",
+        "value": 154978.00000000003,
+        "real_july2026": 164706.5434627362,
+        "source_cell": "J44"
+      },
+      {
+        "id": "provinces",
+        "period": "2026-05",
+        "value": 160298.9,
+        "real_july2026": 166775.82204150877,
+        "source_cell": "K44"
+      },
+      {
+        "id": "provinces",
+        "period": "2026-06",
+        "value": 133179,
+        "real_july2026": 135994.10098026955,
+        "source_cell": "L44"
+      },
+      {
+        "id": "provinces",
+        "period": "2026-07",
+        "value": 181356.9,
+        "real_july2026": 181356.89999999997,
+        "source_cell": "M44"
+      },
+      {
+        "id": "universities",
+        "period": "2026-01",
+        "value": 387689,
+        "real_july2026": 449617.89147857996,
+        "source_cell": "G49"
+      },
+      {
+        "id": "universities",
+        "period": "2026-02",
+        "value": 400465.8,
+        "real_july2026": 451362.73444045807,
+        "source_cell": "H49"
+      },
+      {
+        "id": "universities",
+        "period": "2026-03",
+        "value": 369370.1,
+        "real_july2026": 402693.3524286849,
+        "source_cell": "I49"
+      },
+      {
+        "id": "universities",
+        "period": "2026-04",
+        "value": 412546.19999999995,
+        "real_july2026": 438443.25401467725,
+        "source_cell": "J49"
+      },
+      {
+        "id": "universities",
+        "period": "2026-05",
+        "value": 779999.9999999999,
+        "real_july2026": 811516.1189027298,
+        "source_cell": "K49"
+      },
+      {
+        "id": "universities",
+        "period": "2026-06",
+        "value": 50075.3,
+        "real_july2026": 51133.77788403046,
+        "source_cell": "L49"
+      },
+      {
+        "id": "universities",
+        "period": "2026-07",
+        "value": 697606,
+        "real_july2026": 697606.0,
+        "source_cell": "M49"
+      },
+      {
+        "id": "other",
+        "period": "2026-01",
+        "value": 155696,
+        "real_july2026": 180566.65840828343,
+        "source_cell": "G50"
+      },
+      {
+        "id": "other",
+        "period": "2026-02",
+        "value": 130426.7,
+        "real_july2026": 147003.1946699201,
+        "source_cell": "H50"
+      },
+      {
+        "id": "other",
+        "period": "2026-03",
+        "value": 184742.39999999997,
+        "real_july2026": 201409.20012670508,
+        "source_cell": "I50"
+      },
+      {
+        "id": "other",
+        "period": "2026-04",
+        "value": 303295.30000000005,
+        "real_july2026": 322334.2700995859,
+        "source_cell": "J50"
+      },
+      {
+        "id": "other",
+        "period": "2026-05",
+        "value": 228488.69999999998,
+        "real_july2026": 237720.85004760284,
+        "source_cell": "K50"
+      },
+      {
+        "id": "other",
+        "period": "2026-06",
+        "value": 213647.2,
+        "real_july2026": 218163.21560420073,
+        "source_cell": "L50"
+      },
+      {
+        "id": "other",
+        "period": "2026-07",
+        "value": 279618.4,
+        "real_july2026": 279618.4,
+        "source_cell": "M50"
+      },
+      {
+        "id": "capital",
+        "period": "2026-01",
+        "value": 143872.99999999997,
+        "real_july2026": 166855.06914227054,
+        "source_cell": "G52"
+      },
+      {
+        "id": "capital",
+        "period": "2026-02",
+        "value": 219100.99999999997,
+        "real_july2026": 246947.49583769398,
+        "source_cell": "H52"
+      },
+      {
+        "id": "capital",
+        "period": "2026-03",
+        "value": 196433.59999999998,
+        "real_july2026": 214155.13847394608,
+        "source_cell": "I52"
+      },
+      {
+        "id": "capital",
+        "period": "2026-04",
+        "value": 420661.1,
+        "real_july2026": 447067.55636433815,
+        "source_cell": "J52"
+      },
+      {
+        "id": "capital",
+        "period": "2026-05",
+        "value": 183519.00000000003,
+        "real_july2026": 190934.13669860273,
+        "source_cell": "K52"
+      },
+      {
+        "id": "capital",
+        "period": "2026-06",
+        "value": 224452.5,
+        "real_july2026": 229196.91505623228,
+        "source_cell": "L52"
+      },
+      {
+        "id": "capital",
+        "period": "2026-07",
+        "value": 280950.5,
+        "real_july2026": 280950.5,
+        "source_cell": "M52"
+      },
+      {
+        "id": "primary",
+        "period": "2026-01",
+        "value": 3125737.3000000007,
+        "real_july2026": 3625038.1469217595,
+        "source_cell": "G72"
+      },
+      {
+        "id": "primary",
+        "period": "2026-02",
+        "value": 1410639.6999999993,
+        "real_july2026": 1589924.014241084,
+        "source_cell": "H72"
+      },
+      {
+        "id": "primary",
+        "period": "2026-03",
+        "value": 930284.0999999978,
+        "real_july2026": 1014211.0120448327,
+        "source_cell": "I72"
+      },
+      {
+        "id": "primary",
+        "period": "2026-04",
+        "value": 632844.0999999996,
+        "real_july2026": 672570.0696988353,
+        "source_cell": "J72"
+      },
+      {
+        "id": "primary",
+        "period": "2026-05",
+        "value": 1924366.8999999966,
+        "real_july2026": 2002121.4846575325,
+        "source_cell": "K72"
+      },
+      {
+        "id": "primary",
+        "period": "2026-06",
+        "value": -696842.9,
+        "real_july2026": -711572.5730782172,
+        "source_cell": "L72"
+      },
+      {
+        "id": "primary",
+        "period": "2026-07",
+        "value": 2960332.6999999993,
+        "real_july2026": 2960332.6999999993,
+        "source_cell": "M72"
+      },
+      {
+        "id": "interest",
+        "period": "2026-01",
+        "value": 2020578.3,
+        "real_july2026": 2343342.6143464833,
+        "source_cell": "G74"
+      },
+      {
+        "id": "interest",
+        "period": "2026-02",
+        "value": 1266218.4,
+        "real_july2026": 1427147.5851940957,
+        "source_cell": "H74"
+      },
+      {
+        "id": "interest",
+        "period": "2026-03",
+        "value": 445495,
+        "real_july2026": 485685.9692763897,
+        "source_cell": "I74"
+      },
+      {
+        "id": "interest",
+        "period": "2026-04",
+        "value": 364741.20000000007,
+        "real_july2026": 387637.35698260757,
+        "source_cell": "J74"
+      },
+      {
+        "id": "interest",
+        "period": "2026-05",
+        "value": 1445753.7000000002,
+        "real_july2026": 1504169.7839913617,
+        "source_cell": "K74"
+      },
+      {
+        "id": "interest",
+        "period": "2026-06",
+        "value": 328048.49999999994,
+        "real_july2026": 334982.6987394856,
+        "source_cell": "L74"
+      },
+      {
+        "id": "interest",
+        "period": "2026-07",
+        "value": 2715435.5999999996,
+        "real_july2026": 2715435.5999999996,
+        "source_cell": "M74"
+      },
+      {
+        "id": "financial",
+        "period": "2026-01",
+        "value": 1105159.0000000007,
+        "real_july2026": 1281695.5325752762,
+        "source_cell": "G76"
+      },
+      {
+        "id": "financial",
+        "period": "2026-02",
+        "value": 144421.3,
+        "real_july2026": 162776.42904698907,
+        "source_cell": "H76"
+      },
+      {
+        "id": "financial",
+        "period": "2026-03",
+        "value": 484789.1,
+        "real_july2026": 528525.0427684454,
+        "source_cell": "I76"
+      },
+      {
+        "id": "financial",
+        "period": "2026-04",
+        "value": 268102.89999999956,
+        "real_july2026": 284932.71271622775,
+        "source_cell": "J76"
+      },
+      {
+        "id": "financial",
+        "period": "2026-05",
+        "value": 478613.19999999646,
+        "real_july2026": 497951.70066617086,
+        "source_cell": "K76"
+      },
+      {
+        "id": "financial",
+        "period": "2026-06",
+        "value": -1024891.3999999985,
+        "real_july2026": -1046555.2718177014,
+        "source_cell": "L76"
+      },
+      {
+        "id": "financial",
+        "period": "2026-07",
+        "value": 244897.09999999963,
+        "real_july2026": 244897.0999999996,
+        "source_cell": "M76"
+      }
+    ],
+    "real_method": "Variación julio/julio deflactada con IPC nacional. Serie mensual 2026 a precios de julio 2026; no desestacionalizada.",
+    "transfer_scope": "La fila de transferencias corrientes a provincias del IMIG corresponde a Administración Nacional. No equivale al total SPN ni incluye coparticipación. Los componentes se muestran según la clasificación del archivo."
+  },
+  "maturities": {
+    "as_of": "2026-03-31",
+    "scope": "Deuda bruta de la Administración Central en situación de pago normal",
+    "unit": "USD millones equivalentes",
+    "source_url": "https://www.argentina.gob.ar/sites/default/files/deuda_publica_31-03-2026.xlsx",
+    "source_sheet": "A.3.1",
+    "sha256": "fad7687446da2e312d5f442e4d8e4fe53af87303a5fbdbe1030e8b241473aeee",
+    "includes_bcra_advances": true,
+    "reading": "Perfil estático del stock al 31/03/2026, con tipos de cambio de esa fecha. Incluye adelantos BCRA. No incorpora nuevas emisiones, canjes ni pagos posteriores. Excluye pagos eventuales vinculados al PIB. No constituye un calendario actualizado al día de hoy.",
+    "rows": [
+      {
+        "period": "2026-04",
+        "total": 23095.262251202126,
+        "capital": 22790.981383110626,
+        "interest": 304.28086809149755,
+        "source_range": "C59:C61"
+      },
+      {
+        "period": "2026-05",
+        "total": 20213.849413819447,
+        "capital": 18951.271695240805,
+        "interest": 1262.577718578644,
+        "source_range": "D59:D61"
+      },
+      {
+        "period": "2026-06",
+        "total": 14623.137872735735,
+        "capital": 14170.201182507635,
+        "interest": 452.9366902280991,
+        "source_range": "E59:E61"
+      },
+      {
+        "period": "2026-07",
+        "total": 10339.899029551574,
+        "capital": 8292.62813545123,
+        "interest": 2047.2708941003436,
+        "source_range": "F59:F61"
+      },
+      {
+        "period": "2026-08",
+        "total": 7839.214802285399,
+        "capital": 6956.589213756883,
+        "interest": 882.6255885285168,
+        "source_range": "G59:G61"
+      },
+      {
+        "period": "2026-09",
+        "total": 6873.731295409403,
+        "capital": 6515.378627474317,
+        "interest": 358.35266793508583,
+        "source_range": "H59:H61"
+      },
+      {
+        "period": "2026-10",
+        "total": 10856.657327053232,
+        "capital": 10579.136093844556,
+        "interest": 277.52123320867764,
+        "source_range": "I59:I61"
+      },
+      {
+        "period": "2026-11",
+        "total": 8568.539872729652,
+        "capital": 7306.493039097224,
+        "interest": 1262.0468336324266,
+        "source_range": "J59:J61"
+      },
+      {
+        "period": "2026-12",
+        "total": 39328.4301554737,
+        "capital": 38883.7390846576,
+        "interest": 444.69107081609883,
+        "source_range": "K59:K61"
+      },
+      {
+        "period": "2027-01",
+        "total": 10324.820628756837,
+        "capital": 8290.403807449118,
+        "interest": 2034.4168213077207,
+        "source_range": "M59:M61"
+      },
+      {
+        "period": "2027-02",
+        "total": 4128.983031682275,
+        "capital": 3265.548937790172,
+        "interest": 863.4340938921032,
+        "source_range": "N59:N61"
+      },
+      {
+        "period": "2027-03",
+        "total": 4742.33597200872,
+        "capital": 4402.321624499982,
+        "interest": 340.01434750873756,
+        "source_range": "O59:O61"
+      }
+    ]
+  }
+}

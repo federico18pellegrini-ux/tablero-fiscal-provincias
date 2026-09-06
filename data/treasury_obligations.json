@@ -1,0 +1,49 @@
+{
+  "reviewed_at": "2026-09-06",
+  "payables": {
+    "period": "2026-07",
+    "cutoff": "2026-08-20",
+    "scope": "Deuda exigible de la Administración Central",
+    "unit": "ARS millones",
+    "source_url": "https://www.argentina.gob.ar/sites/default/files/deuda_clase_julio2026.pdf",
+    "history_source_url": "https://www.argentina.gob.ar/sites/default/files/deuda_serie_julio2026.pdf",
+    "total": 2226644.96,
+    "components": [
+      {"label":"Personal","value":378828.13},
+      {"label":"Bienes y servicios","value":193616.48},
+      {"label":"Bienes de uso","value":33259.06},
+      {"label":"Transferencias","value":783389.11},
+      {"label":"Adquisición de títulos y valores","value":28393.70},
+      {"label":"Disminución del patrimonio","value":0.18},
+      {"label":"Gastos figurativos corrientes y de capital","value":798652.71},
+      {"label":"Gastos figurativos para aplicaciones financieras","value":10505.59}
+    ],
+    "monthly": [
+      {"period":"2026-01","value":1582757.61},
+      {"period":"2026-02","value":1950414.55},
+      {"period":"2026-03","value":4044758.20},
+      {"period":"2026-04","value":2791422.03},
+      {"period":"2026-05","value":1422736.19},
+      {"period":"2026-06","value":3634796.22},
+      {"period":"2026-07","value":2226644.96}
+    ],
+    "limitation":"Excluye deuda pública y registros anteriores a 2025. Incluye gastos figurativos entre organismos. Son saldos de obligaciones exigibles, no gasto mensual, caja libre ni un total consolidado de atrasos de todo el Estado. Los meses no se suman."
+  },
+  "bcra_advances": {
+    "as_of":"2026-08-31",
+    "scope":"Adelantos transitorios ordinarios del BCRA al Tesoro Nacional",
+    "unit":"ARS millones",
+    "source_url":"https://www.argentina.gob.ar/sites/default/files/adelantos-transitorios-2026-08.pdf",
+    "september_2026":104000,
+    "q4_2026":1163000,
+    "remaining_2026":1267000,
+    "year_2027":2824100.37,
+    "limitation":"Calendario de este instrumento únicamente. Septiembre y III trimestre son el mismo importe y no se suman. No se adiciona al perfil de marzo, que ya incluye adelantos BCRA y usa otra fecha y moneda."
+  },
+  "free_cash": {
+    "value":null,
+    "status":"Requiere conciliación de Tesorería",
+    "required_inputs":["Saldos bancarios conciliados por cuenta y moneda","Fondos afectados y saldos de terceros no utilizables","Pagos pendientes, reservas de crédito y compromisos exigibles","Financiamiento aprobado y efectivamente desembolsable"],
+    "reading":"Las fuentes revisadas publican pagos y obligaciones, pero no acreditan un saldo de libre disponibilidad. No se usa el resultado fiscal ni las reservas del BCRA como sustituto."
+  }
+}

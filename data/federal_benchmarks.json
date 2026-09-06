@@ -1,0 +1,131 @@
+{
+  "flow_period": "2025",
+  "population_period": "Censo 2022",
+  "scope": "23 provincias, sin CABA",
+  "simple_mean": 2123755.1851340663,
+  "median": 1942575.6370187756,
+  "population_weighted_mean": 1378868.2762518225,
+  "unit": "Pesos corrientes de 2025 por habitante del Censo 2022",
+  "rows": [
+    {
+      "province": "Buenos Aires",
+      "population": 17523996.0,
+      "per_capita": 781320.3070780153
+    },
+    {
+      "province": "Catamarca",
+      "population": 429562.0,
+      "per_capita": 3579649.06589462
+    },
+    {
+      "province": "Chaco",
+      "population": 1129606.0,
+      "per_capita": 2540762.390630334
+    },
+    {
+      "province": "Chubut",
+      "population": 592621.0,
+      "per_capita": 1551737.751295992
+    },
+    {
+      "province": "Corrientes",
+      "population": 1212696.0,
+      "per_capita": 1789404.844282554
+    },
+    {
+      "province": "Córdoba",
+      "population": 3840905.0,
+      "per_capita": 1307384.6800345005
+    },
+    {
+      "province": "Entre Ríos",
+      "population": 1425578.0,
+      "per_capita": 1942575.6370187756
+    },
+    {
+      "province": "Formosa",
+      "population": 607419.0,
+      "per_capita": 3399832.5885131494
+    },
+    {
+      "province": "Jujuy",
+      "population": 811611.0,
+      "per_capita": 1992608.578554307
+    },
+    {
+      "province": "La Pampa",
+      "population": 361859.0,
+      "per_capita": 2966835.7290574475
+    },
+    {
+      "province": "La Rioja",
+      "population": 383865.0,
+      "per_capita": 3029888.011562729
+    },
+    {
+      "province": "Mendoza",
+      "population": 2043540.0,
+      "per_capita": 1163280.7643638984
+    },
+    {
+      "province": "Misiones",
+      "population": 1278873.0,
+      "per_capita": 1517896.4273288317
+    },
+    {
+      "province": "Neuquén",
+      "population": 710814.0,
+      "per_capita": 1432663.895583055
+    },
+    {
+      "province": "Río Negro",
+      "population": 750768.0,
+      "per_capita": 1906205.4459130166
+    },
+    {
+      "province": "Salta",
+      "population": 1441351.0,
+      "per_capita": 1584465.954924219
+    },
+    {
+      "province": "San Juan",
+      "population": 822853.0,
+      "per_capita": 2312396.416482452
+    },
+    {
+      "province": "San Luis",
+      "population": 542069.0,
+      "per_capita": 2347368.684454893
+    },
+    {
+      "province": "Santa Cruz",
+      "population": 337226.0,
+      "per_capita": 2685262.1531673633
+    },
+    {
+      "province": "Santa Fe",
+      "population": 3544908.0,
+      "per_capita": 1454440.9458056204
+    },
+    {
+      "province": "Santiago del Estero",
+      "population": 1060906.0,
+      "per_capita": 2220800.7520543872
+    },
+    {
+      "province": "Tierra del Fuego",
+      "population": 185732.0,
+      "per_capita": 3761455.6337231966
+    },
+    {
+      "province": "Tucumán",
+      "population": 1731820.0,
+      "per_capita": 1578132.6003601705
+    }
+  ],
+  "source_files": [
+    "dashboard_federal_fairness.json",
+    "dashboard_federal_fairness_inputs.csv",
+    "serie_ron_2003_2025_normalizado.csv"
+  ]
+}
