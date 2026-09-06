@@ -71,7 +71,7 @@ function renderFiscalMap(){
 async function renderNationalPanel(){
   const host=document.getElementById('nationalContent');
   try{
-    const response=await fetch('data/national_management.json');if(!response.ok)throw Error('source');const d=await response.json();
+    const response=await fetch('data/national_management.json?v=20260906-2');if(!response.ok)throw Error('source');const d=await response.json();
     host.replaceChildren();
     const paragraph=(parent,text)=>{const p=document.createElement('p');p.textContent=text;parent.append(p);return p;};
     const source=(parent,url,date,label='Fuente oficial')=>{const p=document.createElement('p');p.className='federal-note';const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.textContent=date?`${label} · publicación: ${date}`:label;p.append(a);parent.append(p);};
