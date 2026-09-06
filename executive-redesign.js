@@ -22,7 +22,7 @@ function initExecutiveRedesign(){
   const pulse=document.querySelector('.executive-pulse');pulse.append(extras);
   const overview=document.createElement('section');overview.className='overview-charts';overview.setAttribute('aria-label','Evolución y comparación');overview.innerHTML='<article><h3>¿Cómo evolucionó?</h3><p>Resultado financiero por cada $100 de ingresos. Cada punto acumula doce meses.</p><div class="overview-canvas"><canvas id="overviewTrend" role="img" aria-label="Evolución del resultado financiero"></canvas></div><p id="overviewTrendReading"></p><button type="button" id="overviewHistoryLink">Explorar la historia y sus fuentes →</button></article><article><h3>¿Cómo se compara?</h3><p>Mismo indicador y cierre para las jurisdicciones con dato. La seleccionada aparece en azul.</p><div class="overview-canvas"><canvas id="overviewPeers" role="img" aria-label="Comparación provincial del resultado financiero"></canvas></div><p id="overviewPeersReading"></p><button type="button" id="overviewCompareLink">Ver la comparación completa →</button></article>';pulse.after(overview);
   document.getElementById('overviewHistoryLink').onclick=()=>document.getElementById('openHistory').click();document.getElementById('overviewCompareLink').onclick=()=>{applyDashboardView('comparison');sync();window.scrollTo({top:0,behavior:'smooth'});};
-  document.getElementById('psel').addEventListener('change',renderExecutiveOverview);renderExecutiveOverview();sync();
+  document.getElementById('psel').addEventListener('change',renderExecutiveOverview);renderExecutiveOverview();sync();initInflationHistory();
 }
 let overviewTrend=null,overviewPeers=null;
 function renderExecutiveOverview(){
