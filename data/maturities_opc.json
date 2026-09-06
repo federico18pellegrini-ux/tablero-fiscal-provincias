@@ -1,0 +1,46 @@
+{
+  "reviewed_at": "2026-09-06",
+  "as_of": "2026-06-30",
+  "published_at": "2026-07-23",
+  "source_url": "https://opc.gob.ar/download/51591/?tmstv=1785257757",
+  "source_sha256": "5d07baa126a6fdae34387aeea4a783428f0b18bda65e41834158136b81724d84",
+  "source_locator": "Cuadro 6, página impresa 13, página 16 del PDF",
+  "reading": "Proyección OPC del informe de junio, publicada el 23/07/2026. Incluye capital e intereses. Es una referencia más reciente que el perfil de marzo, pero requiere incorporar operaciones posteriores para representar la agenda vigente. Los meses transcurridos no son pagos pendientes. No sumar pesos y dólares ni agregar nuevamente los adelantos BCRA incluidos.",
+  "reconciliation_note": "Se transcribe el cuadro 6: total publicado ARS 120.235.000 millones y USD 10.004 millones. Los meses en USD suman 10.003 por redondeo. El resumen ejecutivo publica ARS 120.273.000 millones y el cuadro diario difiere en agosto en USD 2 millones; se conserva el cuadro mensual sin ajustar esas diferencias. La página web resume cifras distintas del PDF.",
+  "rows": [
+    {
+      "period": "2026-07",
+      "ars_millions": 13676000,
+      "usd_millions": 4924
+    },
+    {
+      "period": "2026-08",
+      "ars_millions": 17338000,
+      "usd_millions": 1005
+    },
+    {
+      "period": "2026-09",
+      "ars_millions": 16910000,
+      "usd_millions": 1671
+    },
+    {
+      "period": "2026-10",
+      "ars_millions": 17061000,
+      "usd_millions": 443
+    },
+    {
+      "period": "2026-11",
+      "ars_millions": 16476000,
+      "usd_millions": 1309
+    },
+    {
+      "period": "2026-12",
+      "ars_millions": 38774000,
+      "usd_millions": 651
+    }
+  ],
+  "published_totals": {
+    "ars_millions": 120235000,
+    "usd_millions": 10004
+  }
+}

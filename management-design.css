@@ -85,3 +85,18 @@ body{font-weight:400;background:var(--bg)}
  .federal-content{padding:0 13px 16px}.national-kpis,.ops-grid,.scenario-grid{grid-template-columns:1fr}.national-kpis article>strong{font-size:24px}.management-table{min-width:560px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+/* Operational additions: readable links, controls and stacked targets on mobile. */
+.targets-download a,.targets-download a:visited,#updatedMaturities a,#updatedMaturities a:visited{color:#b8d7ff;text-decoration:underline;text-underline-offset:3px}
+#proposalProvince,#cashEvidence{display:block;box-sizing:border-box;width:100%;max-width:36rem;background:#0b1220;color:#e9f0fa;border:1px solid #63738b;border-radius:6px;padding:10px;margin-top:8px;font:inherit}
+#cashReconciliation .management-action{margin:10px 8px 0 0;white-space:normal}
+@media(max-width:640px){
+.targets-download .federal-table{overflow:visible}
+.targets-download .management-table{display:block;min-width:0!important;width:100%}
+.targets-download .management-table caption{display:block;text-align:left;margin:12px 0}
+.targets-download .management-table thead{display:none}
+.targets-download .management-table tbody{display:block}
+.targets-download .management-table tr{display:block;border:1px solid #415168;border-radius:6px;margin:12px 0;padding:10px}
+.targets-download .management-table th,.targets-download .management-table td{display:block;white-space:normal!important;min-width:0!important;width:auto!important;text-align:left;text-transform:none;letter-spacing:normal;padding:6px 0;border:0;line-height:1.5}
+.targets-download .management-table td:nth-child(2)::before{content:'Meta y plazo: ';font-weight:700}
+.targets-download .management-table td:nth-child(3)::before{content:'Responsabilidad: ';font-weight:700}
+}
