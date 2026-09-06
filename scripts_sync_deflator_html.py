@@ -25,30 +25,16 @@ def main() -> None:
     with CSV.open(encoding="utf-8", newline="") as source:
         rows = list(csv.DictReader(source))
     monthly = {row["period"]: float(row["factor_to_latest"]) for row in rows}
-    annual = {
-        period[:4]: factor
-        for period, factor in monthly.items()
-        if period.endswith("-12")
-    }
-    latest_year = max(monthly)[0:4]
-    annual[latest_year] = 1.0
-
+    # An annual flow cannot be deflated accurately with a December index.
+    # Annual real series remain unavailable until monthly flows are matched.
+    annual = {}
+    own_revenue_year = {}
     text = HTML.read_text(encoding="utf-8")
-    old_year_match = re.search(r"const YEAR_DEFLATOR = (\{.*?\});", text)
-    if not old_year_match:
-        raise ValueError("No se encontró YEAR_DEFLATOR")
-    own_revenue_year = json.loads(old_year_match.group(1))
-    for year in list(own_revenue_year):
-        if year in annual:
-            own_revenue_year[year] = annual[year]
-        elif int(year) < 2011:
-            own_revenue_year[year] = float(own_revenue_year[year]) * 1.026
-
     text = replace_constant(text, "YEAR_DEFLATOR", own_revenue_year)
     text = replace_constant(text, "DEFLACTOR_MONTH", monthly)
     text = replace_constant(text, "DEFLACTOR_YEAR", annual)
     HTML.write_text(text, encoding="utf-8")
-    print(f"HTML sincronizado: {len(monthly)} meses, base {max(monthly)}")
+    print(f"HTML sincronizado: {len(monthly)} meses, último mes {max(monthly)}; base junio 2026")
 
 
 if __name__ == "__main__":

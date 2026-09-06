@@ -1,6 +1,7 @@
 import csv
 import json
 import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -11,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class GovernorBriefTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        subprocess.run(["python3", "scripts_build_governor_brief.py"], cwd=ROOT, check=True)
+        subprocess.run([sys.executable, "scripts_build_governor_brief.py"], cwd=ROOT, check=True)
         cls.payload = json.loads((ROOT / "dashboard_governor_brief.json").read_text(encoding="utf-8"))
 
     def test_latest_snapshot_reconciles(self):
@@ -71,7 +72,7 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("#metricsDetails:not([open]) #metricsDetailsTableWrap{display:none}", frontend)
         self.assertIn("Situación fiscal de las provincias argentinas", frontend)
         self.assertIn('id="heroProvinceSubtitle"', frontend)
-        self.assertIn("rf<0?'SE DETERIORA':'MARGEN POSITIVO'", frontend)
+        self.assertIn("rf<0?'DÉFICIT FINANCIERO':'SUPERÁVIT FINANCIERO'", frontend)
         self.assertIn("rf<0?'negative':'positive'", frontend)
         self.assertIn('.gov-status.positive', frontend)
         self.assertIn("prepareInfoDots", frontend)

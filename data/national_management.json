@@ -1,0 +1,14 @@
+{
+  "scope":"Sector Público Nacional no Financiero",
+  "period":"2026-07",
+  "period_label":"julio de 2026",
+  "publication_date":"18/08/2026",
+  "source_url":"https://www.argentina.gob.ar/noticias/en-julio-el-sector-publico-nacional-volvio-registrar-superavit-financiero-244897-millones-y",
+  "metrics":[
+    {"label":"Resultado primario mensual","value":2960333,"unit":"millones de $","meaning":"Saldo antes de pagar intereses."},
+    {"label":"Intereses mensuales","value":2715436,"unit":"millones de $","meaning":"Intereses netos de operaciones dentro del sector público."},
+    {"label":"Resultado financiero mensual","value":244897,"unit":"millones de $","meaning":"Saldo después de intereses; no mide amortizaciones de capital."},
+    {"label":"Resultado financiero enero–julio","value":0.1,"unit":"% del PIB, aprox.","meaning":"Acumulado oficial del año; primario: aproximadamente 0,9% del PIB."}
+  ],
+  "reading":"En julio hubo superávit antes y después de intereses. Los intereses absorbieron aproximadamente el 92% del resultado primario mensual. Ese saldo no permite concluir, por sí solo, que estén cubiertos los vencimientos de capital."
+}
