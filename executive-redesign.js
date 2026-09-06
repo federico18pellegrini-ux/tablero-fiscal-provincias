@@ -1,5 +1,9 @@
 /* Presentation only: reuse the observed data and existing navigation actions. */
 function initExecutiveRedesign(){
+  const header=document.querySelector('.header'),title=document.getElementById('heroTitle');
+  title.classList.add('fixed-dashboard-title');header.append(title);document.querySelector('.hero').classList.add('title-relocated');
+  const measureHeader=()=>document.documentElement.style.setProperty('--fixed-header-height',header.getBoundingClientRect().height+'px');
+  new ResizeObserver(measureHeader).observe(header);measureHeader();
   const aside=document.createElement('aside');aside.className='executive-sidebar';aside.setAttribute('aria-label','Secciones del tablero');
   const heading=document.createElement('p');heading.className='sidebar-title';heading.textContent='Explorar la gestión';aside.append(heading);
   const nav=document.querySelector('.dashboard-nav'),tools=document.querySelector('.federal-shortcuts');
