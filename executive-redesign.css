@@ -56,3 +56,40 @@ body{font-family:var(--font);font-weight:400;font-size:16px;background:var(--bg)
 .federal-tools button:hover,.federal-tools button:focus-visible{background:var(--s3);color:var(--text)}
 .federal-tools .management-action{background:#235c9e;color:#fff;border-color:#235c9e}
 .federal-tools .management-action:hover{background:#16477f;color:#fff}
+/* Fixed title and touch layouts, including iPad in both orientations. */
+:root{--fixed-header-height:104px}
+html{scroll-padding-top:calc(var(--fixed-header-height) + 16px)}
+body{padding-top:var(--fixed-header-height)}
+.header{position:fixed;inset:0 0 auto;z-index:100;height:auto;min-height:104px;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:56px auto;padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));backdrop-filter:none}
+.header .brand{grid-column:1;grid-row:1;min-width:0}.header .header-meta,.header .mobile-theme{grid-column:2;grid-row:1}
+.header .fixed-dashboard-title{grid-column:1/-1;grid-row:2;margin:0;padding:8px 0 14px;font:600 23px/1.3 var(--font);letter-spacing:-.025em;color:#fff;overflow-wrap:break-word}
+.hero.title-relocated{display:none!important}.executive-sidebar{top:var(--fixed-header-height)}
+.overview-charts,.national-section,.federal-tools>details,[data-view-panel]{scroll-margin-top:calc(var(--fixed-header-height) + 16px)}
+@media(max-width:1366px){
+ .executive-sidebar{display:none}.wrap{margin:0;padding:24px;max-width:none}
+ .header-meta{display:none}.header .mobile-theme{display:block;margin:0;background:transparent;color:#fff;border-color:#8196af;font-size:13px;min-height:44px;padding:10px}
+ .mobile-view-picker{display:block;margin:0 0 16px;font-size:14px}
+ .mobile-view-picker select{width:100%;display:block;margin-top:6px;padding:12px;border:1px solid var(--border2);border-radius:7px;background:var(--s1);color:var(--text);font:500 16px var(--font);min-height:48px}
+ .dashboard-command-bar select,.federal-tools select,.federal-tools input,#proposalProvince,#cashEvidence{font-size:16px!important;min-height:44px}
+ button.management-action,.national-section-nav a,.overview-charts button,.reading-options>summary,.history-values>summary{min-height:44px}
+ .federal-content,.national-kpis article,.ops-card,.scenario-grid label,.federal-map-grid>div{min-width:0}
+ .federal-table{max-width:100%;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+ .federal-map-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
+}
+@media(min-width:641px) and (max-width:1000px){.overview-charts{grid-template-columns:1fr}.national-kpis,.ops-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.scenario-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.federal-map-grid{grid-template-columns:1fr}.federal-map-grid svg{height:500px}}
+@media(max-width:640px){
+ .wrap{padding:16px}.header{grid-template-rows:52px auto;min-height:100px}
+ .header .fixed-dashboard-title{font-size:20px!important;padding:8px 0 12px;line-height:1.3}
+ .header .brand-name{font-size:13px}.header .mobile-theme{font-size:12px;padding:8px}
+ .dashboard-command-bar{gap:8px!important}.dashboard-command-bar>.command-field{max-width:none;min-width:0;flex:1 1 100%}
+ .reading-options{margin-left:0;width:100%}.reading-options>summary{display:flex;align-items:center;font-size:14px;padding:8px 0}
+ .reading-options-grid{grid-template-columns:1fr}.federal-map-grid{grid-template-columns:1fr}
+ .scenario-grid,.ops-grid,.national-kpis{grid-template-columns:1fr}
+ .federal-filter{gap:12px}.federal-filter label{min-width:0;flex:1 1 140px}
+ .federal-content select{max-width:100%}.overview-canvas{height:390px}
+}
+@media print{body{padding-top:0}.header{position:static}.header .fixed-dashboard-title{color:#162b46}.header .mobile-theme{display:none!important}}
+.federal-filter select{width:100%;min-width:0}
+@media(max-width:640px){.reading-options>summary::after{content:'▾';margin-left:8px}.federal-filter label{flex-basis:100%}}
+.charts-row>.cc{min-width:0}.cw,.history-chart,.overview-canvas{min-width:0;max-width:100%}canvas{max-width:100%}
+@media(max-height:500px) and (max-width:1366px){.header{min-height:80px;grid-template-rows:44px auto}.header .fixed-dashboard-title{font-size:18px!important;padding:4px 0 8px;line-height:24px}.header .brand-logo{width:32px;height:32px}.header .brand-sub{display:none}}
