@@ -875,7 +875,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260906-8">
+<link rel="stylesheet" href="executive-redesign.css?v=20260906-9">
 </head>
 <body>
 
@@ -1174,7 +1174,7 @@ tr:last-child td{border-bottom:none}
     <div class="debt-schedule-chart"><canvas id="cDebtSchedule" role="img" aria-label="Perfil anual de amortización e intereses de la deuda de Buenos Aires entre 2026 y 2041"></canvas></div>
     <div class="debt-reading" id="debtScheduleReading">—</div>
   </div>
-  <div class="compact-callout" id="debtDecisionGap"><strong>Lo que todavía falta para decidir caja:</strong> el informe oficial publica el perfil anual 2026–2041, pero no el calendario mensual de los próximos 90/180 días. Sin caja de libre disponibilidad, fechas de salarios/aguinaldo y financiamiento efectivamente utilizable, no corresponde afirmar que “alcanza” o “no alcanza”.</div>
+  <div class="compact-callout" id="debtDecisionGap"><strong>Lo que todavía falta para decidir caja:</strong> el informe oficial publica el perfil anual 2026–2041, pero no el calendario mensual de los próximos 90/180 días. Para saber si la plata alcanza hay que conocer la caja que se puede usar, cuándo se pagan salarios y aguinaldo y qué financiamiento está disponible.</div>
 </section>
 <section class="layer dashboard-view" id="resultsView" data-view-panel="results" hidden>
   <div class="layer-title">Resultados de gobierno</div>
@@ -2664,16 +2664,16 @@ function genericGovernorBrief(province,cross){
   return {
     headline:`${province}: ${rf===null?'la información estructural no alcanza para un diagnóstico completo':(isDeficit?'las cuentas cierran con déficit':'las cuentas cierran con superávit')}`,
     plain_language_verdict:rf===null
-      ? 'Hay flujos 2026 disponibles, pero faltan indicadores homogéneos para afirmar cómo está cerrando fiscalmente la jurisdicción.'
-      : `En los últimos 12 meses, el resultado financiero fue ${pct(rf)} de los ingresos y el resultado antes de intereses fue ${pct(rp)}. ${isDeficit?'La prioridad es corregir el desequilibrio sin confundir el dato contable con una crisis inmediata de caja.':'El cierre deja margen, aunque debe leerse junto con deuda, composición del gasto y calidad de los ingresos.'}`,
+      ? 'Tenemos datos de ingresos de 2026, pero todavía falta información comparable para saber cómo cierran las cuentas de la provincia.'
+      : `En los últimos 12 meses, el resultado financiero fue ${pct(rf)} de los ingresos y el resultado antes de intereses fue ${pct(rp)}. ${isDeficit?'Hay que corregir esa diferencia. Para saber si pone en riesgo los próximos pagos, además necesitamos ver la caja y los vencimientos.':'Ese saldo ayuda. Ahora hay que ver cuánto pesa la deuda, en qué se gasta y si los ingresos que lo sostienen pueden mantenerse.'}`,
     federal_reading:autonomy===null
       ? 'No hay una medición estructural homogénea de autonomía fiscal para este corte.'
       : `${province}: los impuestos propios y regalías equivalen al ${pctN(autonomy)} de los ingresos excluyendo seguridad social. Este indicador no mide la proporción sobre los ingresos totales.`,
-    federal_conclusion:'El esquema federal condiciona la caja, pero estos indicadores no alcanzan por sí solos para atribuir a Nación el resultado provincial.',
+    federal_conclusion:'Lo que llega de Nación condiciona la caja provincial. Pero con estos datos solos no podemos decir que el déficit o el superávit se explique por el reparto federal.',
     risks:[
       {title:'Resultado fiscal',evidence:rf===null?' sin dato homogéneo.':` ${pct(rf)} de los ingresos.`,political_meaning:rf===null?'No corresponde clasificar el riesgo sin completar la fuente.':(isDeficit?'Un déficit persistente reduce el margen para sostener servicios y obra.':'El superávit debe contrastarse con inversión, deuda y pagos postergados.')},
-      {title:'Resultado antes de intereses',evidence:rp===null?' sin dato homogéneo.':` ${pct(rp)} de los ingresos.`,political_meaning:rp!==null&&rp<0?'El desequilibrio no se explica solamente por el costo de la deuda.':'Permite separar el funcionamiento corriente del costo financiero.'},
-      {title:'Carga de deuda',evidence:debt===null?' sin ficha comparable.':` ${pctN(debt)} de los ingresos de un año.`,political_meaning:debt===null?'La ficha detallada de vencimientos no está publicada en este tablero.':'Una carga alta vuelve más sensible la caja a tasas, dólar y acceso al crédito.'}
+      {title:'Resultado antes de intereses',evidence:rp===null?' sin dato homogéneo.':` ${pct(rp)} de los ingresos.`,political_meaning:rp!==null&&rp<0?'Si ya falta plata antes de pagar intereses, el problema no se explica solamente por la deuda.':'Muestra cómo cierran los ingresos y gastos antes de pagar intereses.'},
+      {title:'Carga de deuda',evidence:debt===null?' sin ficha comparable.':` ${pctN(debt)} de los ingresos de un año.`,political_meaning:debt===null?'Todavía falta el detalle de los próximos vencimientos.':'Cuanto más pesa la deuda, más importa qué pasa con las tasas, el dólar y la posibilidad de refinanciar.'}
     ],
     decisions:[
       {horizon:'Ahora · ',action:'igualar los cortes antes de comparar flujos.',why:'Recaudación propia y recursos de Nación pueden cerrar en meses distintos.'},
@@ -3070,7 +3070,7 @@ function renderRealDynamics(province, topYtdShared, ronYtdShared, hasTopShared, 
   const rangoRon=rangoMeses(ronPeriods);
 
   cov.style.display='block';
-  cov.textContent=hasComparableBase?'Variación frente a los mismos meses de 2025, con cada flujo ajustado por IPC.':'Todavía falta la base mensual homogénea de 2025 para medir cambios reales. Los montos disponibles y sus cortes están en la tabla de indicadores y en los gráficos de abajo.';
+  cov.textContent=hasComparableBase?'Variación frente a los mismos meses de 2025, con cada flujo ajustado por IPC.':'Para saber si los ingresos le ganaron a la inflación, falta compararlos con los mismos meses de 2025. Abajo podés ver los montos disponibles y hasta qué mes llega cada fuente.';
   const items=[
     ...(varRon!==null?[[`Recursos de Nación · variación real ${rangoRon}`,varRon,'pct','Dato observado','Mismos meses del año anterior.']]:[]),
     ...(varTop!==null?[[`Recaudación propia · variación real ${rangoTop}`,varTop,'pct','Dato observado','Mismos meses del año anterior.']]:[]),
@@ -3140,7 +3140,7 @@ function renderScenarios(province){
     coverage.style.display='none';
     grid.innerHTML = `
       <div class="callout warn" style="grid-column:1/-1">
-        <strong>Escenarios 90/180 días: no calculables con la información pública disponible.</strong><br>
+        <strong>Con la información pública disponible todavía no podemos calcular cómo llegará la caja a los próximos 90 o 180 días.</strong><br>
         <button type="button" class="editorial-link" data-editorial-view="openOperations">Completar supuestos y calcular un escenario en Caja y vencimientos →</button>
       </div>
     `;
@@ -3609,7 +3609,7 @@ function renderTransfersDependency(province){
     </article>`;
   }).join('');
   if(reading){
-    reading.innerHTML='<strong>Para la gestión:</strong> el reparto por habitante, el aporte tributario y los reclamos miden cuestiones distintas. Una brecha en el reparto no equivale a una deuda legal; un aumento nominal tampoco demuestra una mejora del poder de compra.';
+    reading.innerHTML='<strong>Para la gestión:</strong> el reparto por habitante, el aporte tributario y los reclamos miden cuestiones distintas. Recibir menos por habitante no significa, por sí solo, que exista una deuda legal. Y un aumento nominal tampoco demuestra una mejora del poder de compra: hay que descontar la inflación.';
   }
 }
 
@@ -3865,7 +3865,7 @@ function chartTopHist(rows){
   const topHLeg=document.getElementById('topHLeg');
   if(topHNote) topHNote.textContent=hasMainHistoricalGap
     ? `${selectedProvince} no tiene serie homogénea 1984–2024 en la fuente principal. Se muestran sólo puntos suplementarios disponibles · ${modeLabel.toLowerCase()}; no deben leerse como una serie anual completa.`
-    : `Serie anual ${hist[0].year}–${hist[hist.length-1].year} · ${modeLabel.toLowerCase()}. La conversión anual a precios constantes requiere una apertura mensual que esta fuente no incluye.`;
+    : `Serie anual ${hist[0].year}–${hist[hist.length-1].year} · ${modeLabel.toLowerCase()}. Para descontar bien la inflación necesitamos saber cuánto se recaudó cada mes. Esta fuente sólo trae el total anual.`;
   if(topHLeg) topHLeg.innerHTML=`<span class="li"><span class="ld" style="background:${lineColor}"></span>${modeLabel}</span>`;
   charts.cTopH=new Chart(document.getElementById('cTopH'),{
     type:'line',
@@ -5169,11 +5169,11 @@ document.getElementById('downloadPdfAll')?.addEventListener('click',exportAllPro
 document.getElementById('downloadPng')?.addEventListener('click',exportCurrentProvincePng);
 
 </script>
-<script src="inflation-history.js?v=20260906-8"></script>
-<script src="executive-redesign.js?v=20260906-8"></script>
+<script src="inflation-history.js?v=20260906-9"></script>
+<script src="executive-redesign.js?v=20260906-9"></script>
 <script src="closing-tools.js?v=20260906-4"></script>
 <script src="management-tools.js?v=20260906-5"></script>
-<script src="federal-tools.js?v=20260906-4"></script>
+<script src="federal-tools.js?v=20260906-9"></script>
 <script>
 /* ── BOOT ────────────────────────────────────────────────────────── */
 loadAll().catch(err=>{
