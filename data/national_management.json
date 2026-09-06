@@ -2164,8 +2164,8 @@
     }
   ],
   "missing_blocks": [
-    "Caja libre: requiere saldos bancarios conciliados, afectaciones y compromisos. El módulo Caja y vencimientos permite construir escenarios con esos inputs.",
-    "Calendario vigente completo: el perfil publicado al 31/03/2026 es histórico. Deben incorporarse canjes, emisiones y pagos posteriores; el calendario de adelantos BCRA tiene corte 31/08/2026.",
-    "Metas de gobierno: los resultados observados no fijan objetivos. Se necesitan metas, plazos y responsables definidos por la gestión."
+    "Caja: conciliación y descarga de escenarios disponibles. El saldo real requiere documentación de Tesorería; no se infiere del superávit ni de depósitos brutos.",
+    "Vencimientos: perfil OPC de junio incorporado, con diferencias documentadas. Falta conciliar las operaciones posteriores para obtener una agenda vigente completa.",
+    "Metas: 96 propuestas con base, método, horizonte y área responsable en Resultados de gobierno. Son hipótesis de planificación; requieren actualización de bases, costeo y decisión de la gestión."
   ]
 }
