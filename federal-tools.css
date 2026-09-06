@@ -14,3 +14,11 @@ body.profile-governor .pulse-reading{display:block!important}
 @media(max-width:640px){.hero{padding:14px 0!important}.hero-title{font-size:25px!important}.hero-sub,.hero-credit{display:none}.federal-shortcuts{display:grid;grid-template-columns:1fr 1fr}.federal-content{padding:0 12px 14px}.federal-map-grid,.federal-guide-grid,.national-kpis{grid-template-columns:1fr}.federal-map-grid svg{height:470px}}
 
 #federalTools details:not([open]){display:none}
+@media(max-width:640px){
+ .dashboard-command-bar{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important;padding:10px!important}
+ .dashboard-command-bar .command-field{min-width:0}.dashboard-command-bar select{font-size:12px!important;padding:7px!important}
+ .profile-purpose{display:none}.hero-title{font-size:21px!important}.hero-province{font-size:15px!important}
+ .hero{margin-bottom:10px!important}.view-vintage{padding:8px!important;font-size:11px!important}
+ .federal-tools{margin:8px 0 12px}.federal-shortcuts button{font-size:12px;padding:7px}
+ .gov-head{padding:14px!important}.gov-title{font-size:19px!important}.executive-pulse{padding:12px!important}
+}
