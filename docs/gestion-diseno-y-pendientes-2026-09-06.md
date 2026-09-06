@@ -18,7 +18,7 @@ Cada archivo de datos identifica sus fuentes. `scripts_import_national_operation
 
 ## Herramientas listas, inputs que requieren a la gestión
 
-El escenario de caja permite trabajar con Nación o una provincia a 30, 90 o 365 días. Exige fecha y seis importes no negativos; un casillero vacío no equivale a cero. Separa caja libre, ingresos, pagos operativos, capital, intereses y financiamiento confirmado. Al cambiar jurisdicción u horizonte se borran importes para impedir reutilizar supuestos de otro escenario. No guarda ni envía los datos ingresados.
+El escenario de caja permite trabajar con Nación o una provincia a 30, 90 o 365 días. Exige fecha y seis importes no negativos; un casillero vacío no equivale a cero. Separa caja libre, ingresos, pagos primarios incluida inversión, capital de deuda, intereses y financiamiento confirmado. Al cambiar jurisdicción u horizonte se borran importes para impedir reutilizar supuestos de otro escenario. No guarda ni envía los datos ingresados.
 
 La caja libre no puede acreditarse con los informes revisados. Requiere conciliación bancaria, afectaciones, compromisos exigibles y financiamiento desembolsable. El saldo fiscal y las reservas del BCRA no la sustituyen.
 
