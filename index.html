@@ -875,7 +875,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260906-6">
+<link rel="stylesheet" href="executive-redesign.css?v=20260906-7">
 </head>
 <body>
 
@@ -1710,7 +1710,7 @@ function computeOwnRevenue2026YtdFromTopRows(rows, province){
     return hasValidValue(row?.value_millions);
   });
   if(displayMode==='real' && validRows.some(row=>!DEFLACTOR_MONTH[row.period]))return null;
-  return sumMaybe(validRows,(row)=>valueForMode(toN(row.value_millions),DEFLACTOR_MONTH[row.period]));
+  return sumConvertedValues(validRows.map(row=>valueForMode(toN(row.value_millions),DEFLACTOR_MONTH[row.period])));
 }
 function shortCallout(text=BLOCK_CONSTRUCTION){
   return `<div class="compact-callout">${text}</div>`;
@@ -1895,28 +1895,32 @@ function hasChartLib(){ return typeof Chart !== 'undefined'; }
 
 const DEFLACTOR_MONTH = {"2016-12": 118.264103, "2017-01": 116.4178325929, "2017-02": 114.0599666879, "2017-03": 111.4147686806, "2017-04": 108.5323341902, "2017-05": 106.9971917152, "2017-06": 105.7367321814, "2017-07": 103.9362790591, "2017-08": 102.4979680522, "2017-09": 100.5887486721, "2017-10": 99.0878328787, "2017-11": 97.7437748979, "2017-12": 94.7662441625, "2018-01": 93.1296272818, "2018-02": 90.9299995541, "2018-03": 88.8499662673, "2018-04": 86.4812177151, "2018-05": 84.7228999644, "2018-06": 81.6711149385, "2018-07": 79.2141971083, "2018-08": 76.2485561245, "2018-09": 71.5718468418, "2018-10": 67.9103856333, "2018-11": 65.8343871146, "2018-12": 64.1849472905, "2019-01": 62.3722591782, "2019-02": 60.1087892713, "2019-03": 57.4217169498, "2019-04": 55.5095795997, "2019-05": 53.8619063429, "2019-06": 52.436674692, "2019-07": 51.3089724678, "2019-08": 49.3573883477, "2019-09": 46.6138543109, "2019-10": 45.1275853687, "2019-11": 43.2859677222, "2019-12": 41.7239453127, "2020-01": 40.8046592156, "2020-02": 39.9992231099, "2020-03": 38.7051292499, "2020-04": 38.1344199729, "2020-05": 37.5550446844, "2020-06": 36.7309709672, "2020-07": 36.0340032066, "2020-08": 35.0866255943, "2020-09": 34.1191691668, "2020-10": 32.8824694084, "2020-11": 31.8753038574, "2020-12": 30.6476899969, "2021-01": 29.4550464986, "2021-02": 28.4384757352, "2021-03": 27.1331520237, "2021-04": 26.0694422554, "2021-05": 25.2310209611, "2021-06": 24.454694938, "2021-07": 23.7431061354, "2021-08": 23.1711298835, "2021-09": 22.3774492107, "2021-10": 21.6173246628, "2021-11": 21.0840120417, "2021-12": 20.3043317324, "2022-01": 19.5467614342, "2022-02": 18.6703088766, "2022-03": 17.4932251235, "2022-04": 16.495678787, "2022-05": 15.7026587107, "2022-06": 14.9129832523, "2022-07": 13.8846581377, "2022-08": 12.979914537, "2022-09": 12.2261112184, "2022-10": 11.4963947911, "2022-11": 10.9576982294, "2022-12": 10.4235330462, "2023-01": 9.8309366165, "2023-02": 9.2198693375, "2023-03": 8.5626643139, "2023-04": 7.8989408132, "2023-05": 7.3292558609, "2023-06": 6.9176010456, "2023-07": 6.5048763429, "2023-08": 5.7851134813, "2023-09": 5.1309324185, "2023-10": 4.7376269743, "2023-11": 4.1996259103, "2023-12": 3.3472309545, "2024-01": 2.7751543787, "2024-02": 2.4506692078, "2024-03": 2.2076171761, "2024-04": 2.0284647746, "2024-05": 1.9471455903, "2024-06": 1.8619240994, "2024-07": 1.7897792832, "2024-08": 1.718095638, "2024-09": 1.6604897916, "2024-10": 1.6169653209, "2024-11": 1.5786582922, "2024-12": 1.5370936797, "2025-01": 1.5038429892, "2025-02": 1.4685733293, "2025-03": 1.4157743563, "2025-04": 1.3774691991, "2025-05": 1.3570976885, "2025-06": 1.335477314, "2025-07": 1.310554708, "2025-08": 1.2864240492, "2025-09": 1.26026152, "2025-10": 1.2314223102, "2025-11": 1.2017051082, "2025-12": 1.1684592646, "2026-01": 1.1357317974, "2026-02": 1.1037632907, "2026-03": 1.0676487665, "2026-04": 1.0407741102, "2026-05": 1.0188687147, "2026-06": 1.0, "2026-07": 0.9792998302};
 const DEFLACTOR_YEAR = {};
-const DEFLACTOR_TRIM = {"2025-Q1": 1.330237218216503, "2025-Q2_YTD": 1.2293942607142547, "2025-Q3_YTD": 1.1653304786827008};
+// Quarterly/YTD aggregate factors are intentionally not used: monthly flows are required.
 let displayMode = 'nominal';
 let dashboardView = 'summary';
 let dashboardProfile = 'governor';
 let dashboardPeriod = 'ltm';
 
 function deflateValue(value, factor){
-  if(value===null || value===undefined || isNaN(value)) return null;
-  if(!factor || isNaN(factor)) return null;
+  if(typeof value!=='number'||!Number.isFinite(value)||typeof factor!=='number'||!Number.isFinite(factor)||factor<=0)return null;
   return value * factor;
+}
+function sumConvertedValues(values){
+  if(!values.length||values.some(v=>typeof v!=='number'||!Number.isFinite(v)))return null;
+  return values.reduce((sum,value)=>sum+value,0);
 }
 function valueForMode(value, factor){
   return displayMode==='real' ? deflateValue(value, factor) : value;
 }
 function setModeButtons(){
+  if(typeof updatePriceBasisNotice==='function')updatePriceBasisNotice();
   const nom=document.getElementById('modeNominal');
   const real=document.getElementById('modeReal');
   const note=document.getElementById('modeNote');
   if(nom) nom.classList.toggle('active', displayMode==='nominal');
   if(real) real.classList.toggle('active', displayMode==='real');
   if(note) note.textContent = displayMode==='real'
-    ? `Modo actual: pesos constantes de ${CONSTANT_PRICE_BASE}. Sirve para comparar evolución real; si falta el IPC de un mes, ese dato no se transforma.`
+    ? `Modo actual: pesos constantes de ${CONSTANT_PRICE_BASE}. Sirve para comparar evolución real; si falta el IPC de un mes, se muestra sin dato y no se calcula un acumulado parcial.`
     : 'Modo actual: pesos corrientes. Estás viendo los montos nominales de cada período, sin descontar inflación.';
 }
 
@@ -2842,6 +2846,7 @@ function render(province){
   if(kDebtRank){kDebtRank.textContent=province==='Buenos Aires'?'Puesto 23 de 23: es la mayor carga relativa del conjunto.':'Peso del stock sobre los ingresos anuales.';}
   setK('kTopYtd',hasTop2026?fmtPesosExecutive(ownRevenue2026Ytd):ND,'b');
   setK('kRonYtd',hasRon2026?fmtPesosExecutive(ronYtd):ND,'b');
+  if(typeof updatePriceBasisNotice==='function')updatePriceBasisNotice();
   setK('gTopYtd',hasTop2026?fmtPesosKPI(ownRevenue2026Ytd):ND,'b');
   setK('gRonYtd',hasRon2026?fmtPesosKPI(ronYtd):ND,'b');
   const fiscalRatiosMethodNote=document.getElementById('fiscalRatiosMethodNote');
@@ -3781,10 +3786,11 @@ function chartTopMensual(rows){
   const taxLabel=(tax)=>tax==='Iibb'?'Ingresos Brutos':tax;
   const taxes=['Ingresos Brutos','Sellos','Automotores','Inmobiliario','Otros']
     .filter(t=>validRows.some(r=>taxLabel(r.tax)===t));
-  const values=taxes.map(t=>validRows
+  const values=taxes.map(t=>sumConvertedValues(validRows
     .filter(r=>taxLabel(r.tax)===t)
-    .reduce((sum,r)=>sum+((valueForMode(toN(r.value_millions),DEFLACTOR_MONTH[r.period]))||0),0));
-  const total=values.reduce((sum,value)=>sum+value,0);
+    .map(r=>valueForMode(toN(r.value_millions),DEFLACTOR_MONTH[r.period]))));
+  const total=sumConvertedValues(values);
+  if(total===null){document.getElementById('topMNote').textContent='Falta el IPC o un importe necesario: no se suma un acumulado parcial.';noData('cTopM','Acumulado no disponible: falta un dato requerido.');return;}
   if(!total){noData('cTopM','Sin datos de recaudación 2026');return;}
   const shares=values.map(value=>(value/total)*100);
   const dominantIndex=shares.indexOf(Math.max(...shares));
@@ -4289,7 +4295,7 @@ function renderMetrics(c,topYtd,ronYtd){
     r.period_type==='month' &&
     (r.category_normalized==='Total | (1) + (2)'||r.category==='Total | (1) + (2)')
   );
-  const ronYtdForMetrics=sumMaybe(ronRowsForMetrics,r=>valueForMode(toN(r.value_millions),DEFLACTOR_MONTH[r.period]));
+  const ronYtdForMetrics=sumConvertedValues(ronRowsForMetrics.map(r=>valueForMode(toN(r.value_millions),DEFLACTOR_MONTH[r.period])));
   const ronYtdResolved=ronYtdForMetrics;
   const ronPeriods=[...new Set(ronRowsForMetrics.map(r=>r.period).filter(Boolean))].sort();
   const rangoTop=topPeriods.length===1
@@ -5175,7 +5181,8 @@ document.getElementById('downloadPdfAll')?.addEventListener('click',exportAllPro
 document.getElementById('downloadPng')?.addEventListener('click',exportCurrentProvincePng);
 
 </script>
-<script src="executive-redesign.js?v=20260906-6"></script>
+<script src="inflation-history.js?v=20260906-7"></script>
+<script src="executive-redesign.js?v=20260906-7"></script>
 <script src="closing-tools.js?v=20260906-4"></script>
 <script src="management-tools.js?v=20260906-5"></script>
 <script src="federal-tools.js?v=20260906-4"></script>

@@ -127,7 +127,7 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertEqual(float(rows['2026-06']['factor_to_latest']), 1.0)
         frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
         self.assertIn("let displayMode = 'nominal'", frontend)
-        self.assertIn("if(!factor || isNaN(factor)) return null", frontend)
+        self.assertIn("!Number.isFinite(factor)||factor<=0", frontend)
         self.assertNotIn("if(!factor || isNaN(factor)) return value", frontend)
 
     def test_current_2026_sources_reconcile_and_do_not_impute_missing_months(self):
