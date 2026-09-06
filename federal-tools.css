@@ -14,6 +14,15 @@ body.profile-governor .pulse-reading{display:block!important}
 @media(max-width:640px){.hero{padding:14px 0!important}.hero-title{font-size:25px!important}.hero-sub,.hero-credit{display:none}.federal-shortcuts{display:grid;grid-template-columns:1fr 1fr}.federal-content{padding:0 12px 14px}.federal-map-grid,.federal-guide-grid,.national-kpis{grid-template-columns:1fr}.federal-map-grid svg{height:470px}}
 
 #federalTools details:not([open]){display:none}
+#federalTools details.national-history:not([open]){display:block}
+#federalTools details.history-values:not([open]){display:block}
+.history-values summary{cursor:pointer;padding:12px 0}
+.national-section,.composition-explorer{border-top:1px solid #344357;margin-top:24px;padding-top:16px}
+.national-section>h3,.composition-explorer>h3{font-size:19px;line-height:1.4}
+.national-kpis article p{line-height:1.5}
+#compositionMode{max-width:100%;padding:8px;background:#142235;color:#e6edf8;border:1px solid #52637a;border-radius:6px}
+#compositionTable{min-width:720px}
+.national-history summary{cursor:pointer;padding:12px 0}
 @media(max-width:640px){
  .dashboard-command-bar{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important;padding:10px!important}
  .dashboard-command-bar .command-field{min-width:0}.dashboard-command-bar select{font-size:12px!important;padding:7px!important}
