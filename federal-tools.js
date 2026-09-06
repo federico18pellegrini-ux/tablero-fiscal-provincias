@@ -1,5 +1,5 @@
 /* Federal management tools. Observations remain separate from interpretation. */
-let fiscalHistoryChart=null, provinceGeometry=null;
+let fiscalHistoryChart=null, provinceGeometry=null, debtHistory=null, compositionChart=null, nationalActivityChart=null;
 const fiscalNumber=new Intl.NumberFormat('es-AR',{maximumFractionDigits:2});
 const fnum=value=>Number.isFinite(value)?fiscalNumber.format(value):'Sin dato';
 const historyPeriods=()=>[...new Set((fiscalHistory?.rows||[]).map(r=>r.period))].sort();
@@ -15,18 +15,22 @@ function initFederalTools(){
   const rank=document.querySelector('.pulse-rank');if(rank)rank.parentElement.append(rank);
   const host=document.createElement('section');host.id='federalTools';host.className='federal-tools';
   host.innerHTML=`<nav class="federal-shortcuts" aria-label="Herramientas de gestión"><button type="button" id="openHistory">Historia fiscal</button><button type="button" id="openMap">Mapa y comparación</button><button type="button" id="openNation">Economía nacional</button><button type="button" id="openGuide">Cómo leer los datos</button></nav>
-  <details id="fiscalHistoryPanel"><summary>Historia fiscal · <span id="historyProvince"></span></summary><div class="federal-content"><p>¿La provincia está mejorando o empeorando? Cada punto muestra los <strong>últimos 12 meses</strong> al cierre indicado. No es el resultado de ese trimestre.</p><div class="history-chart"><canvas id="fiscalHistoryChart" aria-label="Evolución del resultado primario y financiero" role="img"></canvas></div><p id="historyReading" aria-live="polite"></p><div class="federal-table"><table><caption>Resultados por cada $100 de ingresos · última versión publicada en cada informe</caption><thead><tr><th>Cierre</th><th>Primario</th><th>Financiero</th><th>Cambio financiero</th></tr></thead><tbody id="historyRows"></tbody></table></div><p class="federal-note">Fuente: 1816, informes fiscales provinciales, cuadro de la página 8. Compilación de ejecuciones provinciales. Los cambios pueden incluir revisiones de la fuente. Un espacio sin dato no representa cero.</p><a href="data/fiscal_history.json" download>Descargar datos y referencias</a></div></details>
+  <details id="fiscalHistoryPanel"><summary>Historia fiscal · <span id="historyProvince"></span></summary><div class="federal-content"><p>¿La provincia está mejorando o empeorando? Cada punto muestra los <strong>últimos 12 meses</strong> al cierre indicado. No es el resultado de ese trimestre.</p><div class="history-chart"><canvas id="fiscalHistoryChart" aria-label="Evolución del resultado primario y financiero" role="img"></canvas></div><p id="historyReading" aria-live="polite"></p><details class="history-values"><summary>Ver los valores de cada período</summary><div class="federal-table"><table><caption>Resultados por cada $100 de ingresos · última versión publicada en cada informe</caption><thead><tr><th>Cierre</th><th>Primario</th><th>Financiero</th><th>Cambio financiero</th></tr></thead><tbody id="historyRows"></tbody></table></div></details><p class="federal-note">Fuente: 1816, informes fiscales provinciales, cuadro de la página 8. Compilación de ejecuciones provinciales. Los cambios pueden incluir revisiones de la fuente. Un espacio sin dato no representa cero.</p><a href="data/fiscal_history.json" download>Descargar datos y referencias</a></div></details>
   <details id="fiscalMapPanel"><summary>Argentina · comparación fiscal</summary><div class="federal-content"><div class="federal-filter"><label>Cierre <select id="mapPeriod"></select></label><label>Indicador <select id="mapMetric"><option value="financial_pct">Resultado después de intereses</option><option value="primary_pct">Resultado antes de intereses</option></select></label></div><p>Por cada $100 de ingresos, últimos 12 meses. Seleccioná una jurisdicción para abrir su tablero.</p><div class="federal-map-grid"><div><div id="argentinaFiscalMap"></div><p class="federal-note">Azul: superávit · naranja: déficit · gris: sin dato. El color muestra el saldo, no la calidad de gestión. CABA tiene acceso separado por su tamaño.</p></div><div><p id="federalAggregate"></p><div class="federal-table"><table><thead><tr><th>Jurisdicción</th><th>Saldo / ingresos</th></tr></thead><tbody id="mapRanking"></tbody></table></div></div></div></div></details>
   <details id="nationalPanel"><summary>Economía nacional · situación fiscal y agenda del ministro</summary><div class="federal-content" id="nationalContent"><p>Cargando fuentes nacionales…</p></div></details>
   <details id="fiscalGuide"><summary>Cómo leer el tablero y preparar una gestión</summary><div class="federal-content"><div class="federal-guide-grid"><div><h3>1. El punto de partida</h3><p>El resultado primario compara ingresos con gastos antes de intereses. El financiero incorpora los intereses. Un déficit es un nivel; para afirmar que la situación empeoró hay que compararlo con otro período.</p></div><div><h3>2. La capacidad de pagar</h3><p>Un superávit no garantiza dinero disponible. Para decidir hacen falta caja libre, vencimientos, deuda flotante y compromisos de salarios y transferencias. Donde no hay información, el tablero debe decirlo.</p></div><div><h3>3. La calidad del gasto</h3><p>El gasto en salud, educación o seguridad debe leerse junto con cobertura y resultados. Un ranking fiscal no mide por sí solo el desempeño de un gobernador.</p></div><div><h3>4. Una comparación válida</h3><p>Comparar la misma fecha, unidad y cobertura. Los pesos corrientes incorporan inflación. Los flujos mensuales reales usan el IPC nacional del mes; los totales anuales sin apertura mensual no tienen una conversión real validada.</p></div></div><p><strong>Primeros 100 días:</strong> reconciliar caja y obligaciones; identificar servicios críticos; construir escenarios con supuestos explícitos; fijar metas de ejecución y resultados con responsables.</p></div></details>`;
   document.getElementById('summaryView').before(host);
   for(const [button,panel] of [['openHistory','fiscalHistoryPanel'],['openMap','fiscalMapPanel'],['openNation','nationalPanel'],['openGuide','fiscalGuide']]){
-    document.getElementById(button).onclick=()=>{const p=document.getElementById(panel);p.open=!p.open;if(p.open)p.scrollIntoView({behavior:'smooth',block:'start'});};
+    const trigger=document.getElementById(button);trigger.setAttribute('aria-controls',panel);trigger.setAttribute('aria-expanded','false');
+    document.getElementById(panel).addEventListener('toggle',()=>trigger.setAttribute('aria-expanded',String(document.getElementById(panel).open)));
+    trigger.onclick=()=>{const p=document.getElementById(panel),open=!p.open;for(const other of host.querySelectorAll(':scope > details'))other.open=false;p.open=open;if(open)p.scrollIntoView({behavior:'smooth',block:'start'});};
   }
   const periods=historyPeriods();document.getElementById('mapPeriod').innerHTML=periods.map(p=>`<option value="${p}">${periodName(p)}</option>`).join('');document.getElementById('mapPeriod').value=periods.at(-1)||'';
   document.getElementById('mapPeriod').onchange=renderFiscalMap;
   document.getElementById('mapMetric').onchange=renderFiscalMap;
+  initCompositionExplorer();
   renderFiscalHistory(currentProvince);renderFiscalMap();renderNationalPanel();
+  fetch('data/debt_history.json').then(r=>{if(!r.ok)throw Error('debt');return r.json();}).then(d=>{debtHistory=d;renderComposition(currentProvince);}).catch(()=>{debtHistory={rows:[],failed:true};renderComposition(currentProvince);});
   for(const [id,all] of [['downloadPdf',false],['downloadPdfAll',true]]){
     const old=document.getElementById(id);if(!old)continue;
     const button=old.cloneNode(true);old.replaceWith(button);
@@ -37,6 +41,7 @@ function initFederalTools(){
 
 function renderFiscalHistory(province){
   const name=document.getElementById('historyProvince');if(!name)return;name.textContent=province;
+  renderComposition(province);
   const periods=historyPeriods(), rows=periods.map(p=>historyRow(province,p));
   const latest=rows.at(-1),change=fiscalChange(province,periods.at(-1));
   document.getElementById('historyReading').textContent=latest?`Al ${periodName(latest.period)}, el saldo después de intereses fue ${fnum(latest.financial_pct)}% de los ingresos. ${change===null?'No hay un corte anterior comparable.':`Cambió ${fnum(change)} puntos porcentuales frente al corte anterior (${change>0?'mejoró':change<0?'empeoró':'sin cambio'}).`}`:'Sin información para esta jurisdicción en el último corte. Los datos anteriores se conservan abajo.';
@@ -65,8 +70,22 @@ function renderFiscalMap(){
 
 async function renderNationalPanel(){
   const host=document.getElementById('nationalContent');
-  try{const r=await fetch('data/national_management.json');if(!r.ok)throw Error('source');const d=await r.json();
-    host.innerHTML=`<p><strong>${d.scope}</strong> · ${d.period_label}. Base caja, pesos corrientes. No se suma a los resultados provinciales sin consolidar las transferencias entre gobiernos.</p><div class="national-kpis">${d.metrics.map(m=>`<article><h3>${m.label}</h3><strong>${fnum(m.value)} ${m.unit}</strong><p>${m.meaning}</p></article>`).join('')}</div><p>${d.reading}</p><p><a href="${d.source_url}" target="_blank" rel="noopener">Hacienda · publicación del ${d.publication_date}</a></p><h3>Para completar la decisión del ministro</h3><ul><li>Caja del Tesoro, vencimientos y refinanciación: calendario de los próximos 30, 90 y 365 días.</li><li>Actividad, empleo, pobreza y salarios reales: recuperar cobertura nacional comparable.</li><li>Reservas, sector externo y tasas: evaluar restricciones al financiamiento.</li><li>Subsidios, prestaciones sociales y transferencias: identificar compromisos y sensibilidad a inflación y actividad.</li></ul><p class="federal-note">Estos cuatro bloques aún no cuentan con una base nacional integrada en el tablero. No se generan pronósticos ni recomendaciones de financiamiento con esos faltantes.</p>`;
+  try{
+    const response=await fetch('data/national_management.json');if(!response.ok)throw Error('source');const d=await response.json();
+    host.replaceChildren();
+    const paragraph=(parent,text)=>{const p=document.createElement('p');p.textContent=text;parent.append(p);return p;};
+    const source=(parent,url,date,label='Fuente oficial')=>{const p=document.createElement('p');p.className='federal-note';const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.textContent=date?`${label} · publicación: ${date}`:label;p.append(a);parent.append(p);};
+    const cards=(parent,metrics,fallback)=>{const grid=document.createElement('div');grid.className='national-kpis';parent.append(grid);for(const m of metrics){const card=document.createElement('article'),title=document.createElement('h3'),value=document.createElement('strong');title.textContent=m.label;value.textContent=`${fnum(m.value)} ${m.unit}`;card.append(title,value);paragraph(card,m.period||fallback);paragraph(card,m.meaning);if(m.source_url)source(card,m.source_url,m.publication_date);grid.append(card);}};
+    paragraph(host,`Lectura para la gestión · fuentes revisadas al ${d.reviewed_at}. Cada bloque tiene su propio período y cobertura. Las cifras son observadas, salvo el cálculo salarial identificado como estimación.`);
+    const title=document.createElement('h3');title.textContent='Resultado fiscal: ingresos, gastos e intereses';host.append(title);
+    paragraph(host,`${d.scope} · ${d.period_label}. Base caja, pesos corrientes. No se suma a las provincias sin consolidar transferencias entre gobiernos.`);
+    cards(host,d.metrics,d.period_label);paragraph(host,d.reading);source(host,d.source_url,d.publication_date,'Hacienda');
+    for(const s of d.sections||[]){const section=document.createElement('section');section.className='national-section';const h=document.createElement('h3');h.textContent=s.title;section.append(h);paragraph(section,s.scope);cards(section,s.metrics);paragraph(section,s.reading);source(section,s.source_url,s.publication_date);host.append(section);
+      if(s.id==='activity'&&d.activity_history?.rows.length){const detail=document.createElement('details');detail.className='national-history';const summary=document.createElement('summary');summary.textContent='Ver historia de actividad desde 2004';detail.append(summary);paragraph(detail,'EMAE desestacionalizado, índice 2004=100. Permite comparar niveles entre meses. Versión de la serie publicada el 20/08/2026.');const box=document.createElement('div');box.className='history-chart';const canvas=document.createElement('canvas');canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Historia mensual de actividad económica desde 2004');box.append(canvas);detail.append(box);source(detail,d.activity_history.source_url,d.activity_history.publication_date,'Serie INDEC');section.append(detail);
+        detail.addEventListener('toggle',()=>{if(!detail.open||nationalActivityChart||typeof Chart==='undefined')return;const rows=d.activity_history.rows;nationalActivityChart=new Chart(canvas,{type:'line',data:{labels:rows.map(r=>r.period),datasets:[{label:'Actividad sin estacionalidad',data:rows.map(r=>r.seasonally_adjusted),borderColor:'#68b7ff',pointRadius:0,spanGaps:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#d9e1ee'}}},scales:{x:{ticks:{color:'#c4ccd8',maxTicksLimit:12}},y:{ticks:{color:'#c4ccd8'}}}}});});
+      }
+    }
+    const h=document.createElement('h3');h.textContent='Información que falta para decisiones operativas';host.append(h);const ul=document.createElement('ul');for(const item of d.missing_blocks||[]){const li=document.createElement('li');li.textContent=item;ul.append(li);}host.append(ul);source(host,'data/national_management.json',null,'Descargar indicadores, historia y referencias');
   }catch{host.textContent='No se pudo cargar la fuente nacional. No se reemplaza por el agregado de provincias.';}
 }
 
@@ -114,3 +133,32 @@ async function exportFiscalTextPdf(all=false){
   finally{trigger.disabled=false;}
 }
 
+function initCompositionExplorer(){
+  const section=document.createElement('section');section.className='composition-explorer';
+  section.innerHTML=`<h3>Qué explica el resultado y cuánto pesa la deuda</h3><label>Explorar <select id="compositionMode"><option value="income">De dónde vienen los ingresos</option><option value="spend">En qué se gasta</option><option value="debt">Deuda y capacidad de pago</option></select></label><p id="compositionReading" aria-live="polite"></p><div class="history-chart"><canvas id="compositionChart" role="img" aria-label="Evolución de la composición fiscal"></canvas></div><details class="history-values"><summary>Ver datos y composición por período</summary><div class="federal-table"><table id="compositionTable"></table></div></details><p id="compositionSource" class="federal-note"></p>`;
+  document.querySelector('#fiscalHistoryPanel .federal-content').append(section);
+  document.getElementById('compositionMode').onchange=()=>renderComposition(currentProvince);
+}
+function renderComposition(province){
+  const select=document.getElementById('compositionMode');if(!select)return;
+  const mode=select.value,periods=historyPeriods(),debt=mode==='debt';
+  const rows=periods.map(p=>debt?debtHistory?.rows.find(r=>r.province===province&&r.period===p):historyRow(province,p));
+  const fields=mode==='income'?[['tax','Tributos propios'],['royalties','Regalías'],['national_tax','Tributos nacionales'],['social_income','Seguridad social'],['other_income','Otros ingresos']]:[['personnel','Personal'],['current_transfers','Transferencias corrientes'],['capital','Capital'],['social_spend','Seguridad social'],['other_spend','Otros gastos']];
+  const ratio=(r,k)=>r&&r.income>0&&Number.isFinite(r[k])?100*r[k]/r.income:null;
+  const series=debt?[{label:'Deuda / ingresos',data:rows.map(r=>r?.ratios?.debt_income_pct??null)}]:fields.map(([key,label])=>({label,data:rows.map(r=>ratio(r,key))}));
+  const colors=['#68b7ff','#ffb05c','#6bd5b5','#d6a3ff','#f6d273'];
+  compositionChart?.destroy();
+  if(typeof Chart!=='undefined')compositionChart=new Chart(document.getElementById('compositionChart'),{type:'line',data:{labels:periods.map(periodName),datasets:series.map((s,i)=>({...s,borderColor:colors[i],spanGaps:false,pointRadius:2}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#d9e1ee'}}},scales:{x:{ticks:{color:'#c4ccd8'}},y:{title:{display:true,text:'% de ingresos',color:'#c4ccd8'},ticks:{color:'#c4ccd8'}}}}});
+  document.getElementById('compositionReading').textContent=debt?(debtHistory?.failed?'No se pudo cargar la historia de deuda. No se reemplaza por cero.':!debtHistory?'Cargando historia de deuda…':'El gráfico compara el stock de deuda con los ingresos de los últimos 12 meses. Un 50% equivale a la mitad de los ingresos de un año; no indica cuánto vence ni qué caja hay disponible.'):mode==='income'?'Por cada $100 de ingresos, cuánto aporta cada fuente. La dependencia de tributos nacionales ayuda a evaluar la exposición a cambios en la recaudación y distribución federal.':'Por cada $100 de ingresos, cuánto se destina a cada componente del gasto primario. La suma puede superar $100 si hay déficit; los intereses se muestran aparte. Capital no equivale exclusivamente a obra pública.';
+  const headers=debt?['Cierre','Deuda / ingresos (%)','Stock (millones)','Moneda del stock','Bonos','Nación','Organismos','Bancos','Consolidada']:['Cierre',...fields.map(f=>f[1]),...(mode==='spend'?['Intereses']:[])];
+  const table=document.getElementById('compositionTable');table.replaceChildren();
+  const caption=table.createCaption();caption.textContent=debt?'Stock al cierre y composición por acreedor, en millones de la moneda indicada':'Últimos 12 meses · por cada $100 de ingresos';
+  const head=table.createTHead().insertRow();for(const title of headers){const th=document.createElement('th');th.scope='col';th.textContent=title;head.append(th);}
+  const body=table.createTBody();
+  periods.forEach((p,i)=>{const r=rows[i],tr=body.insertRow(),th=document.createElement('th');th.scope='row';th.textContent=periodName(p);tr.append(th);
+    const values=debt?[fnum(r?.ratios?.debt_income_pct),fnum(r?.total),r?.currency??'Sin dato',...['bonds','nation','multilateral','banks','consolidated'].map(k=>fnum(r?.[k]))]:[...fields.map(([k])=>fnum(ratio(r,k))),...(mode==='spend'?[fnum(r? -ratio(r,'interest_signed'):null)]:[])];
+    for(const v of values)tr.insertCell().textContent=v;
+  });
+  const source=document.getElementById('compositionSource');source.textContent=debt?'Fuente: 1816, páginas 21 (stock) y 23 (deuda / ingresos) de cada informe. Hasta 2T24 el stock se publica en ARS; desde 3T24, en USD equivalentes. No se comparan ni se suman montos de distinta moneda. Los huecos conservan faltantes de la fuente. ':'Fuente: 1816, página 8 de cada informe. Cociente de cada componente sobre ingresos totales, incluida seguridad social. No es una variación real del gasto ni una apertura por función (salud, educación o seguridad). ';
+  const link=document.createElement('a');link.href=debt?'data/debt_history.json':'data/fiscal_history.json';link.download='';link.textContent='Descargar datos y referencias';source.append(link);
+}
