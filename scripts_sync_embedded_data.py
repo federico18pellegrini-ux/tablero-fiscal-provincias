@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Sincroniza fallbacks embebidos con los archivos publicados.
 
-GitHub Pages carga primero CSV/JSON externos. Estos fallbacks evitan que una
-falla de red o caché vuelva a mostrar cifras antiguas.
+Los archivos externos son la fuente canónica. Las bases grandes no se duplican
+en HTML. Si no cargan, quedan sin dato; no se recupera una copia antigua.
 """
 from __future__ import annotations
 
@@ -60,6 +60,10 @@ def main() -> None:
         "EMBEDDED_GOVERNMENT_RESULTS": json.loads((ROOT / "data/government_results_provinces.json").read_text(encoding="utf-8")),
         "EMBEDDED_RECLAMOS_NACION": json.loads((ROOT / "dashboard_reclamos_nacion_provincias.json").read_text(encoding="utf-8")),
     }
+    # Large datasets load once from their canonical external files.
+    for name in ['EMBEDDED_TOP_M','EMBEDDED_TOP_T','EMBEDDED_SERIE_TOP','EMBEDDED_INFO2026','EMBEDDED_RON']:
+        payloads[name]=[]
+    payloads['EMBEDDED_GOVERNMENT_RESULTS']={}
     for name, payload in payloads.items():
         text = replace_constant(text, name, payload)
     HTML.write_text(text, encoding="utf-8")
