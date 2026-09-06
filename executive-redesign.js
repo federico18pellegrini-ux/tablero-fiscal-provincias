@@ -3,7 +3,7 @@ function initExecutiveRedesign(){
   const aside=document.createElement('aside');aside.className='executive-sidebar';aside.setAttribute('aria-label','Secciones del tablero');
   const heading=document.createElement('p');heading.className='sidebar-title';heading.textContent='Explorar la gestión';aside.append(heading);
   const nav=document.querySelector('.dashboard-nav'),tools=document.querySelector('.federal-shortcuts');
-  aside.append(nav,tools);tools.append(document.getElementById('openGuide'));document.body.append(aside);
+  aside.append(nav,tools);tools.append(tools.querySelector('#openGuide'));document.body.append(aside);
   const picker=document.querySelector('.mobile-view-picker');document.querySelector('.hero').after(picker);
   const theme=document.createElement('button');theme.type='button';theme.id='themeToggle';theme.className='theme-toggle';aside.append(theme);
   let stored='light';try{stored=localStorage.getItem('fiscal-theme')||'light';}catch{}
