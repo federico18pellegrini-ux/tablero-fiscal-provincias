@@ -875,7 +875,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260906-7">
+<link rel="stylesheet" href="executive-redesign.css?v=20260906-8">
 </head>
 <body>
 
@@ -1017,14 +1017,9 @@ tr:last-child td{border-bottom:none}
     <div id="fiscalRatiosMethodNote" class="pulse-caution"></div>
   </section>
   <details class="gov-verdict" id="governorNarrativeDetails">
-    <summary class="role-detail-summary">Lectura ampliada y contexto federal</summary>
-    <div class="gov-summary-label">Resumen ejecutivo</div>
+    <summary class="role-detail-summary">Conclusión y siguiente paso</summary>
     <p id="governorVerdict"></p>
-    <div class="gov-federal-summary">
-      <strong class="gov-federal-title">Equidad y esfuerzo federal</strong>
-      <p id="governorFederalReading"></p>
-      <p class="gov-federal-conclusion"><strong>Conclusión:</strong> <span id="governorFederalConclusion"></span></p>
-    </div>
+    <button type="button" class="editorial-link" data-editorial-view="federal">Ver reparto federal, aporte y reclamos →</button>
   </details>
   <section id="balanceSection" class="gov-balance" aria-labelledby="balanceTitle">
     <div class="sh sh-gold" id="balanceTitle">Balance ejecutivo · <span id="balanceProv" style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">Provincia</span></div>
@@ -1246,7 +1241,7 @@ tr:last-child td{border-bottom:none}
 <!-- REAL DYNAMICS -->
 <div id="realDynamicsSection" style="display:none">
   <div class="sh sh-gold">Dinámica fiscal 2026</div>
-  <div class="cc-note" style="margin-bottom:8px">Dinámica fiscal 2026 con variaciones interanuales auditadas y nota específica cuando la provincia no publicó recaudación propia completa.</div>
+  <div class="cc-note" style="margin-bottom:8px">¿Los ingresos ganaron o perdieron poder de compra frente al año anterior?</div>
   <div id="realDynamicsCoverage" class="cc-note" style="display:none;margin-bottom:8px;padding:8px 10px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.18);border-radius:8px;color:#d6b977"></div>
   <div id="realDynamicsCards" class="liq-grid"></div>
 </div>
@@ -2705,9 +2700,7 @@ function renderGovernorBrief(province,cross={}){
   section.style.display='block';
   if(legacySummary)legacySummary.style.display='none';
   document.getElementById('governorRoomTitle').textContent=brief.headline;
-  document.getElementById('governorVerdict').textContent=brief.plain_language_verdict;
-  document.getElementById('governorFederalReading').textContent=brief.federal_reading||'';
-  document.getElementById('governorFederalConclusion').textContent=brief.federal_conclusion||'';
+  document.getElementById('governorVerdict').textContent=brief.federal_conclusion||brief.plain_language_verdict;
   const rf=toN(cross.resultado_financiero_ltm_pct);
   const governorStatus=document.getElementById('governorStatus');
   if(governorStatus){
@@ -2846,6 +2839,10 @@ function render(province){
   if(kDebtRank){kDebtRank.textContent=province==='Buenos Aires'?'Puesto 23 de 23: es la mayor carga relativa del conjunto.':'Peso del stock sobre los ingresos anuales.';}
   setK('kTopYtd',hasTop2026?fmtPesosExecutive(ownRevenue2026Ytd):ND,'b');
   setK('kRonYtd',hasRon2026?fmtPesosExecutive(ronYtd):ND,'b');
+  const commonPeriods=[...commonFlowMonths].sort();
+  const commonLabel=commonPeriods.length?(commonPeriods.length===1?monthLabel(commonPeriods[0]):monthLabel(commonPeriods[0])+'–'+monthLabel(commonPeriods.at(-1)))+' 2026':'sin período común';
+  for(const [id,label] of [['kTopYtd','Recaudación propia'],['kRonYtd','Recursos de Nación']])document.getElementById(id).closest('.kcard').querySelector('.k-lbl').textContent=label+' · '+commonLabel;
+
   if(typeof updatePriceBasisNotice==='function')updatePriceBasisNotice();
   setK('gTopYtd',hasTop2026?fmtPesosKPI(ownRevenue2026Ytd):ND,'b');
   setK('gRonYtd',hasRon2026?fmtPesosKPI(ronYtd):ND,'b');
@@ -3072,12 +3069,11 @@ function renderRealDynamics(province, topYtdShared, ronYtdShared, hasTopShared, 
   const rangoTop=rangoMeses(topPeriods);
   const rangoRon=rangoMeses(ronPeriods);
 
-  const recursosNacionLabel=`Recursos Nación 2026 acum. ${rangoRon}`;
+  cov.style.display='block';
+  cov.textContent=hasComparableBase?'Variación frente a los mismos meses de 2025, con cada flujo ajustado por IPC.':'Todavía falta la base mensual homogénea de 2025 para medir cambios reales. Los montos disponibles y sus cortes están en la tabla de indicadores y en los gráficos de abajo.';
   const items=[
-    [recursosNacionLabel, ronYtd, 'ars', 'Dato observado', `Cobertura efectiva usada: ${rangoRon}`],
-    [`Recaudación propia 2026 acum. ${rangoTop}`, topYtd, 'ars', 'Dato observado', `Cobertura efectiva usada: ${rangoTop}`],
-    [`Composición acumulada ${rangoTop}`, composition, 'text', 'Dato observado', `Recaudación propia acumulada ${rangoTop}`],
-    ['Lectura ejecutiva 2026', lectura, 'text', 'Lectura preliminar', hasComparableBase?`Comparación interanual disponible parcialmente.`:`Nación ${rangoRon} + propia ${rangoTop}; falta la misma base mensual de 2025 para medir variación real.`],
+    ...(varRon!==null?[[`Recursos de Nación · variación real ${rangoRon}`,varRon,'pct','Dato observado','Mismos meses del año anterior.']]:[]),
+    ...(varTop!==null?[[`Recaudación propia · variación real ${rangoTop}`,varTop,'pct','Dato observado','Mismos meses del año anterior.']]:[]),
   ];
   cards.innerHTML = items.map(([label,val,unit,tag,micro])=>{
     const missing=val===null||val===undefined;
@@ -3141,10 +3137,11 @@ function renderScenarios(province){
     });
   });
   if(!hasScenarioCore){
+    coverage.style.display='none';
     grid.innerHTML = `
       <div class="callout warn" style="grid-column:1/-1">
         <strong>Escenarios 90/180 días: no calculables con la información pública disponible.</strong><br>
-        Para estimarlos sin falsa precisión faltan caja de libre disponibilidad, calendario mensual de salarios y aguinaldo, vencimientos de capital e intereses y financiamiento efectivamente disponible. Los datos de déficit y deuda describen presión estructural, pero no alcanzan para afirmar si la caja será suficiente.
+        <button type="button" class="editorial-link" data-editorial-view="openOperations">Completar supuestos y calcular un escenario en Caja y vencimientos →</button>
       </div>
     `;
     return;
@@ -3575,7 +3572,6 @@ function renderTransfersDependency(province){
   const items=[
     {label:'Impuestos nacionales / Ingresos Totales (%)',question:'¿Cuánto pesa Nación en la caja?',value:ronShare,display:ronShare===null?null:`$${Number(ronShare).toFixed(1).replace('.',',')} de cada $100`,period:'Últimos 12 meses · 1T26',meaning:'Es la parte de los ingresos provinciales explicada por impuestos de origen nacional, con numerador y denominador del mismo período.',source:'Informe Provincias 1T26, pág. 8'},
     ...(federalContribution?[{kind:'flow',label:'Aporte bonaerense estimado vs recursos automáticos recibidos',question:'¿Cuánto aporta Buenos Aires y cuánto vuelve?',value:pbaReturnPer100,period:federalContribution.period,meaning:'Los $100 son IVA, Ganancias y otros impuestos nacionales generados por la actividad bonaerense y cobrados por Nación. De cada $100 atribuidos a Buenos Aires, $18 ingresaron a la Provincia por coparticipación y otros recursos automáticos. Los $82 restantes se distribuyeron entre el Tesoro nacional, ANSES, fondos específicos y otras jurisdicciones.',source:`${federalContribution.source_contribution} + ${federalContribution.source_received}`}]:[]),
-    {label:'RON per cápita ($)',question:'¿Cuánto recibió por habitante?',value:ronPc,display:ronPc===null?null:fmtPesosPerCapita(ronPc),period:'Año 2025',meaning:'Recursos nacionales de 2025 divididos por la población definitiva del Censo 2022.',source:'serie_ron_2003_2025.xlsx col AC + INDEC Censo 2022 definitivo'},
     {label:'RON acum marzo 2026 ($)',question:'¿Cuánto llegó en el primer trimestre?',value:ronMar26,display:formatQuarterTotal(ronMar26),period:'Enero–marzo 2026',meaning:'Total acumulado de recursos nacionales durante los primeros tres meses del año.',source:'Dir_nacional_asuntos_provinciales.pdf pág. 8'},
     {label:'Variación RON 2026 vs 2025 (%)',question:'¿Creció frente al mismo período de 2025?',value:ronVar,display:ronVar===null?null:`${ronVar>=0?'+':''}${Number(ronVar).toFixed(1).replace('.',',')}% nominal`,period:'1T26 vs 1T25',meaning:'Es una variación en pesos corrientes. Para saber si hubo mejora real hay que descontar la inflación.',source:'Dir_nacional_asuntos_provinciales.pdf pág. 8 (Var % i.a.)'},
   ];
@@ -3613,15 +3609,7 @@ function renderTransfersDependency(province){
     </article>`;
   }).join('');
   if(reading){
-    const shareText=ronShare===null?'una participación todavía no cuantificada':`$${Number(ronShare).toFixed(1).replace('.',',')} de cada $100 de ingresos`;
-    const quarterText=ronMar26===null?'sin un total trimestral disponible':formatQuarterTotal(ronMar26);
-    const variationText=ronVar===null
-      ? 'sin variación interanual disponible'
-      : `${Math.abs(Number(ronVar)).toFixed(1).replace('.',',')}% ${ronVar>=0?'más':'menos'} que en el 1T25, medido en pesos corrientes`;
-    const contributionText=pbaReturnPer100===null
-      ? ''
-      : ` En 2025, la actividad bonaerense generó una estimación de ${formatQuarterTotal(pbaGenerated)} en impuestos nacionales y recibió ${formatQuarterTotal(pbaReceived)} en recursos automáticos: volvieron $${Number(pbaReturnPer100).toFixed(1).replace('.',',')} por cada $100 aportados.`;
-    reading.innerHTML=`<strong>Lectura rápida:</strong> Nación explica ${shareText}.${contributionText} En el primer trimestre llegaron ${quarterText}, ${variationText}. ${ronVar===null?'':'Esto no permite afirmar una mejora real hasta descontar la inflación.'}`;
+    reading.innerHTML='<strong>Para la gestión:</strong> el reparto por habitante, el aporte tributario y los reclamos miden cuestiones distintas. Una brecha en el reparto no equivale a una deuda legal; un aumento nominal tampoco demuestra una mejora del poder de compra.';
   }
 }
 
@@ -3877,7 +3865,7 @@ function chartTopHist(rows){
   const topHLeg=document.getElementById('topHLeg');
   if(topHNote) topHNote.textContent=hasMainHistoricalGap
     ? `${selectedProvince} no tiene serie homogénea 1984–2024 en la fuente principal. Se muestran sólo puntos suplementarios disponibles · ${modeLabel.toLowerCase()}; no deben leerse como una serie anual completa.`
-    : `Serie anual ${hist[0].year}–${hist[hist.length-1].year} · ${modeLabel.toLowerCase()}. En pesos constantes se descuenta la inflación y se puede comparar capacidad real de recaudación.`;
+    : `Serie anual ${hist[0].year}–${hist[hist.length-1].year} · ${modeLabel.toLowerCase()}. La conversión anual a precios constantes requiere una apertura mensual que esta fuente no incluye.`;
   if(topHLeg) topHLeg.innerHTML=`<span class="li"><span class="ld" style="background:${lineColor}"></span>${modeLabel}</span>`;
   charts.cTopH=new Chart(document.getElementById('cTopH'),{
     type:'line',
@@ -5181,8 +5169,8 @@ document.getElementById('downloadPdfAll')?.addEventListener('click',exportAllPro
 document.getElementById('downloadPng')?.addEventListener('click',exportCurrentProvincePng);
 
 </script>
-<script src="inflation-history.js?v=20260906-7"></script>
-<script src="executive-redesign.js?v=20260906-7"></script>
+<script src="inflation-history.js?v=20260906-8"></script>
+<script src="executive-redesign.js?v=20260906-8"></script>
 <script src="closing-tools.js?v=20260906-4"></script>
 <script src="management-tools.js?v=20260906-5"></script>
 <script src="federal-tools.js?v=20260906-4"></script>
