@@ -81,7 +81,7 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertNotIn("Análisis integral IA · inferencia político-fiscal", frontend)
         self.assertIn("Recursos que llegan desde Nación", frontend)
         self.assertIn("% nominal", frontend)
-        self.assertIn("Esto no permite afirmar una mejora real", frontend)
+        self.assertIn("un aumento nominal tampoco demuestra una mejora del poder de compra", frontend)
         self.assertIn('id="exResFinRank"', frontend)
         self.assertIn('id="exAutonomiaRank"', frontend)
         self.assertIn('id="exRigidezRank"', frontend)

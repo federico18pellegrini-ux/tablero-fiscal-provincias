@@ -6,7 +6,7 @@ function updatePriceBasisNotice(){
   for(const id of ['kTopYtd','kRonYtd']){const card=document.getElementById(id)?.closest('.kcard');if(!card)continue;const tag=card.querySelector('.pulse-tag');if(tag)tag.textContent='Flujo acumulado · '+basis;}
 }
 function initInflationHistory(){
-  const note=document.createElement('p');note.id='priceBasisNotice';note.className='federal-note';note.setAttribute('aria-live','polite');document.querySelector('.view-vintage').after(note);updatePriceBasisNotice();
+  const note=document.createElement('p');note.id='priceBasisNotice';note.className='federal-note';note.setAttribute('aria-live','polite');document.querySelector('.reading-options').append(note);updatePriceBasisNotice();
   const selector=document.getElementById('valueModeSelector');selector.setAttribute('aria-label','Unidad de los ingresos provinciales mensuales');
   const details=document.createElement('details');details.className='history-values';details.id='archive1816Panel';details.innerHTML='<summary>Archivo completo 1816 · ranking desde 2015 y cuentas anuales desde 2017</summary><div id="archive1816Content"><p>Se cargan las series al abrir esta sección.</p></div>';
   document.querySelector('#fiscalHistoryPanel .federal-content').append(details);
