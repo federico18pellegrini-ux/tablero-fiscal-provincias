@@ -125,25 +125,8 @@ def classify_level(value, high=-5, medium=-1):
 
 
 def annual_real_variation(series_by_year):
-    # prefer 2025 vs 2024, fallback to latest two years
-    years = sorted(y for y, v in series_by_year.items() if v is not None)
-    pair = None
-    if 2024 in series_by_year and 2025 in series_by_year:
-        pair = (2024, 2025)
-    elif len(years) >= 2:
-        pair = (years[-2], years[-1])
-    if not pair:
-        return None
-    y0, y1 = pair
-    v0 = series_by_year.get(y0)
-    v1 = series_by_year.get(y1)
-    if not v0 or v1 is None:
-        return None
-    r0 = v0 * YEAR_DEFLATOR.get(y0, 1.0)
-    r1 = v1 * YEAR_DEFLATOR.get(y1, 1.0)
-    if r0 == 0:
-        return None
-    return ((r1 / r0) - 1) * 100
+    # Annual nominal totals cannot establish real growth without monthly flows.
+    return None
 
 
 def classify_deterioro(coparticipacion_var, ingresos_var, propia_var, resultado_ratio, gasto_personal_ratio):
@@ -191,6 +174,12 @@ def build():
 
     with open(CROSS_FILE, encoding='utf-8') as f:
         cross = json.load(f).get('provinces', {})
+    with open('data/1816/ranking_1t26.csv', encoding='utf-8') as source:
+        for row in csv.DictReader(source):
+            entry=cross.setdefault(row['province'],{})
+            entry['gasto_salarios_gasto_primario_ex_ss_pct']=float(row['salary_primary_ex_ss_pct'])
+            entry['resultado_financiero_ltm_pct']=float(row['financial_result_pct'])
+
     try:
         with open(RECLAMOS_FILE, encoding='utf-8') as f:
             reclamos_payload = json.load(f)

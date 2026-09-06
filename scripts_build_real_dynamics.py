@@ -37,39 +37,7 @@ def parse_deflator_from_index_html():
 
 
 def build_deflator_csv(raw_map):
-    periods = sorted(raw_map.keys())
-    latest_period = periods[-1]
-    latest_factor = raw_map[latest_period]
-
-    rows = []
-    base_index = 100.0
-    first_factor = raw_map[periods[0]]
-
-    prev_period = None
-    for period in periods:
-        factor = float(raw_map[period])
-        ipc_index = base_index * (first_factor / factor)
-        if prev_period is None:
-            ipc_mom = ''
-        else:
-            prev_factor = float(raw_map[prev_period])
-            ipc_mom = f"{(prev_factor / factor) - 1:.6f}"
-        rows.append({
-            'period': period,
-            'ipc_mom': ipc_mom,
-            'ipc_index': f"{ipc_index:.6f}",
-            'factor_to_latest': f"{(factor / latest_factor):.6f}",
-        })
-        prev_period = period
-
-    with DEFLACTOR_CSV.open('w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(
-            f,
-            fieldnames=['period', 'ipc_mom', 'ipc_index', 'factor_to_latest'],
-            lineterminator='\n',
-        )
-        writer.writeheader()
-        writer.writerows(rows)
+    raise RuntimeError('Importar índices oficiales con scripts_update_deflator.py; no reconstruir IPC desde HTML.')
 
 
 def read_csv(path):

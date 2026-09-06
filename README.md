@@ -1,6 +1,28 @@
 # Tablero fiscal de provincias
 
-Tablero político-fiscal orientado a un decisor no técnico. La portada prioriza Buenos Aires y separa cinco preguntas: diagnóstico, solvencia y deuda, ingresos y gasto, relación con Nación y comparación interprovincial.
+Tablero fiscal para gobernadores y ministros. Las 24 jurisdicciones comparten navegación; las cifras conservan sus cortes y faltantes. El módulo nacional distingue al Sector Público Nacional de la suma de provincias.
+
+## Actualización federal del 6 de septiembre de 2026
+
+- Historia: 422 observaciones de 18 informes, desde 4T21 hasta 1T26. Cada punto es una ventana de últimos 12 meses, no un trimestre aislado. Los valores conservan la versión publicada en cada informe.
+- Mapa interactivo IGN/Georef con selección de provincia, corte e indicador. Resultado agregado ponderado por ingresos; faltantes en gris, tabla y teclado como alternativas.
+- Primario, financiero, resultado trimestral y composición de deuda: 23 jurisdicciones al 1T26. La Pampa queda sin dato en este corte.
+- IPC nacional reconstruido desde los índices publicados por INDEC, diciembre de 2016 a julio de 2026. Base de pesos constantes: junio de 2026. No se deflactan totales anuales con el IPC de diciembre.
+- Exportación PDF con texto seleccionable, datos, períodos y referencias; incluye opción de las 24 jurisdicciones.
+- Vista nacional inicial: resultado fiscal SPN de julio de 2026, base caja. Caja, vencimientos, actividad, empleo y sector externo requieren una ampliación de fuentes; su ausencia se muestra explícitamente.
+
+La implementación mantiene el trabajo anterior sobre resultados de gobierno, reclamos nacionales y fuentes oficiales. Los informes PDF suministrados localmente no se publican. Se incorporan los datos numéricos con referencia al informe y página.
+
+### Importaciones reproducibles
+
+```bash
+python scripts_build_fiscal_history.py /ruta/extraccion_auditada.csv
+python scripts_import_latest_fiscal.py /ruta/informe_1T26.pdf
+python scripts_update_deflator.py /ruta/sh_ipc_08_26.xls
+python scripts_sync_deflator_html.py
+```
+
+El importador del IPC requiere pandas/xlrd; el del PDF requiere pdfplumber. Sin argumento, el actualizador del IPC usa la serie oficial incluida en `data/ipc_national_index.csv`. La extracción trimestral verifica el diseño del informe 1T26; una edición con otro diseño exige revisión, no importación automática.
 
 ## Cortes vigentes
 
@@ -18,7 +40,7 @@ Cada vista muestra su fecha de corte. Los flujos con meses distintos no se compa
 - Perfil **Gobernador / decisor**: síntesis, riesgos y decisiones.
 - Perfil **Ministro de Hacienda**: caja, estructura, deuda y flujos.
 - Perfil **Analista / prensa**: metodología y detalle.
-- Selector de últimos 12 meses o trimestre para el resultado PBA.
+- Selector de últimos 12 meses o trimestre para las 23 jurisdicciones comparables.
 - Selector de pesos corrientes o constantes.
 - Módulos visibles y perfil guardados en el navegador.
 - Enlaces directos: `#summary`, `#debt`, `#income`, `#federal` y `#comparison`.

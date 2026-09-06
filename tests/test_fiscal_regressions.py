@@ -113,17 +113,17 @@ class FiscalRegressionTests(unittest.TestCase):
                 and row['category_normalized'] == 'Total | (1) + (2)'
             ]
         q1_constant_june = sum(float(row['value_millions']) * factors[row['period']] for row in pba_q1)
-        self.assertEqual(round(q1_constant_june), 4_191_198)
+        self.assertEqual(round(q1_constant_june), 4_191_433)
 
     def test_deflator_uses_official_2026_ipc_and_june_base(self):
         with (ROOT / 'deflactor_mensual.csv').open(encoding='utf-8', newline='') as source:
             rows = {row['period']: row for row in csv.DictReader(source)}
-        self.assertEqual(float(rows['2026-01']['ipc_mom']), 0.029)
-        self.assertEqual(float(rows['2026-02']['ipc_mom']), 0.029)
-        self.assertEqual(float(rows['2026-03']['ipc_mom']), 0.034)
-        self.assertEqual(float(rows['2026-04']['ipc_mom']), 0.026)
-        self.assertEqual(float(rows['2026-05']['ipc_mom']), 0.021)
-        self.assertEqual(float(rows['2026-06']['ipc_mom']), 0.019)
+        self.assertAlmostEqual(float(rows['2026-01']['ipc_mom']), 0.029, delta=0.0005)
+        self.assertAlmostEqual(float(rows['2026-02']['ipc_mom']), 0.029, delta=0.0005)
+        self.assertAlmostEqual(float(rows['2026-03']['ipc_mom']), 0.034, delta=0.0005)
+        self.assertAlmostEqual(float(rows['2026-04']['ipc_mom']), 0.026, delta=0.0005)
+        self.assertAlmostEqual(float(rows['2026-05']['ipc_mom']), 0.021, delta=0.0005)
+        self.assertAlmostEqual(float(rows['2026-06']['ipc_mom']), 0.019, delta=0.0005)
         self.assertEqual(float(rows['2026-06']['factor_to_latest']), 1.0)
         frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
         self.assertIn("let displayMode = 'nominal'", frontend)
@@ -224,8 +224,8 @@ class FiscalRegressionTests(unittest.TestCase):
             self.assertIn(f'{profile}:{{', frontend)
             self.assertIn(f'value="{profile}"', frontend)
         self.assertIn("governor:{label:'Gobernador / decisor'", frontend)
-        self.assertIn("views:['summary','comparison','results']", frontend)
-        self.assertIn("views:['summary','debt','income','comparison','federal']", frontend)
+        self.assertIn("views:['summary','debt','income','federal','comparison','results']", frontend)
+        self.assertIn("views:['summary','debt','income','comparison','federal','results']", frontend)
         self.assertIn("views:['summary','federal','comparison','results']", frontend)
         self.assertIn('id="governorDecisionPanel"', frontend)
         self.assertIn('id="governorRiskPanel"', frontend)
