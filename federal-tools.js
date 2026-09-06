@@ -74,7 +74,7 @@ async function exportFiscalTextPdf(all=false){
   const trigger=document.getElementById(all?'downloadPdfAll':'downloadPdf');trigger.disabled=true;
   setExportStatus('Preparando informe con texto seleccionable…','loading');
   try{
-    await ensurePdfDependencies();
+    if(!window.jspdf?.jsPDF)await loadScriptOnce(EXPORT_LIB_URLS.jspdf);
     const doc=new window.jspdf.jsPDF({unit:'mm',format:'a4'});
     const provinces=all?[...document.getElementById('psel').options].map(o=>o.value):[currentProvince];
     const period=historyPeriods().at(-1);let y=20;

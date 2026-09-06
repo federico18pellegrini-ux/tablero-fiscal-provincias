@@ -45,3 +45,8 @@ class FederalManagementTests(unittest.TestCase):
         self.assertEqual(len(d['features']),24)
         self.assertEqual(len({f['province'] for f in d['features']}),24)
         self.assertTrue(all(f['path'].startswith('M') for f in d['features']))
+    def test_page_does_not_duplicate_large_datasets(self):
+        self.assertLess((ROOT/'index.html').stat().st_size,500_000)
+        text=(ROOT/'index.html').read_text(encoding='utf-8')
+        self.assertIn('const EMBEDDED_RON = [];',text)
+        self.assertIn('const EMBEDDED_SERIE_TOP = [];',text)
