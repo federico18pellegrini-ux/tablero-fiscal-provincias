@@ -48,4 +48,4 @@ La dimensión territorial —mapa de municipios y transferencias— queda como s
 
 ## Autorización de publicación
 
-Los informes 1816 entregados indican uso exclusivo del Banco de la Provincia de Buenos Aires. El responsable del repositorio autorizó expresamente el 13 de agosto de 2026 la publicación productiva de esta versión y de los datos derivados incorporados al tablero.
+Los informes fiscales entregados indican uso exclusivo del Banco de la Provincia de Buenos Aires. El responsable del repositorio autorizó expresamente el 13 de agosto de 2026 la publicación productiva de esta versión y de los datos derivados incorporados al tablero.

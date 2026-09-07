@@ -1,5 +1,5 @@
 {
-  "source": "1816 fiscal historico.pdf",
+  "source": "Informe fiscal histórico, corte 3T2025",
   "corte": "3T2025",
   "provinces": {
     "San Luis": {
@@ -31,7 +31,7 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 2,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "CABA": {
       "ranking_general": 2,
@@ -62,7 +62,7 @@
       "deuda_comp_bancos_pct": 6.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 3,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "San Juan": {
       "ranking_general": 3,
@@ -93,7 +93,7 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 4,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Córdoba": {
       "ranking_general": 4,
@@ -124,7 +124,7 @@
       "deuda_comp_bancos_pct": 4.7,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 7,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Mendoza": {
       "ranking_general": 5,
@@ -155,7 +155,7 @@
       "deuda_comp_bancos_pct": 7.1,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 8,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Santa Fe": {
       "ranking_general": 6,
@@ -186,7 +186,7 @@
       "deuda_comp_bancos_pct": 2.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 11,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Formosa": {
       "ranking_general": 7,
@@ -217,7 +217,7 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 20,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Catamarca": {
       "ranking_general": 8,
@@ -248,7 +248,7 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 12,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Corrientes": {
       "ranking_general": 9,
@@ -279,7 +279,7 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 18,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Misiones": {
       "ranking_general": 10,
@@ -310,7 +310,7 @@
       "deuda_comp_bancos_pct": 19.7,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 6,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Buenos Aires": {
       "ranking_general": 11,
@@ -341,7 +341,7 @@
       "deuda_comp_bancos_pct": 0.5,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 14,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Jujuy": {
       "ranking_general": 12,
@@ -372,7 +372,7 @@
       "deuda_comp_bancos_pct": 14.0,
       "deuda_comp_consolidada_pct": 1.1,
       "rank_resultado_primario": 1,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Río Negro": {
       "ranking_general": 13,
@@ -403,7 +403,7 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 9,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Entre Ríos": {
       "ranking_general": 14,
@@ -434,7 +434,7 @@
       "deuda_comp_bancos_pct": 17.3,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 10,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Santa Cruz": {
       "ranking_general": 15,
@@ -465,7 +465,7 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 15,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Tucumán": {
       "ranking_general": 16,
@@ -496,7 +496,7 @@
       "deuda_comp_bancos_pct": 81.7,
       "deuda_comp_consolidada_pct": 8.4,
       "rank_resultado_primario": 16,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Salta": {
       "ranking_general": 17,
@@ -527,7 +527,7 @@
       "deuda_comp_bancos_pct": 12.6,
       "deuda_comp_consolidada_pct": 3.3,
       "rank_resultado_primario": 5,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Chaco": {
       "ranking_general": 18,
@@ -558,7 +558,7 @@
       "deuda_comp_bancos_pct": 16.2,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 17,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Tierra del Fuego": {
       "ranking_general": 19,
@@ -589,7 +589,7 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 3.2,
       "rank_resultado_primario": 21,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "La Rioja": {
       "ranking_general": 20,
@@ -620,7 +620,7 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 13,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Chubut": {
       "ranking_general": 21,
@@ -651,13 +651,13 @@
       "deuda_comp_bancos_pct": 0.0,
       "deuda_comp_consolidada_pct": 0.0,
       "rank_resultado_primario": 19,
-      "datos_incompletos_1816": false
+      "datos_incompletos_fuente": false
     },
     "Santiago del Estero": {
       "resultado_financiero_ltm_pct": 10.2,
       "resultado_primario_ltm_pct": 10.3,
       "rank_resultado_primario": null,
-      "datos_incompletos_1816": true,
+      "datos_incompletos_fuente": true,
       "autonomia_fiscal_pct": null,
       "deuda_bonos_bancos_sobre_deuda_total_pct": null,
       "deuda_comp_bancos_pct": null,
@@ -686,7 +686,7 @@
     },
     "La Pampa": {
       "autonomia_fiscal_pct": null,
-      "datos_incompletos_1816": true,
+      "datos_incompletos_fuente": true,
       "deuda_bonos_bancos_sobre_deuda_total_pct": null,
       "deuda_comp_bancos_pct": null,
       "deuda_comp_bonos_pct": null,
@@ -717,7 +717,7 @@
     },
     "Neuquén": {
       "autonomia_fiscal_pct": null,
-      "datos_incompletos_1816": true,
+      "datos_incompletos_fuente": true,
       "deuda_bonos_bancos_sobre_deuda_total_pct": null,
       "deuda_comp_bancos_pct": null,
       "deuda_comp_bonos_pct": null,

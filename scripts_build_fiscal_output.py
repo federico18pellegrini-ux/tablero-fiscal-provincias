@@ -4,7 +4,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 
 MANIFEST_FILE = 'dashboard_manifest.json'
-CROSS_FILE = 'dashboard_cross_section_1816.json'
+CROSS_FILE = 'dashboard_cross_section_fiscal.json'
 TOP_MENSUAL_FILE = 'top_mensual_2026_normalizado.csv'
 INFO_2026_FILE = 'informacion_consolidada_2026_normalizado.csv'
 SERIE_RON_FILE = 'serie_ron_2003_2025_normalizado.csv'
@@ -174,7 +174,7 @@ def build():
 
     with open(CROSS_FILE, encoding='utf-8') as f:
         cross = json.load(f).get('provinces', {})
-    with open('data/1816/ranking_1t26.csv', encoding='utf-8') as source:
+    with open('data/fiscal/ranking_1t26.csv', encoding='utf-8') as source:
         for row in csv.DictReader(source):
             entry=cross.setdefault(row['province'],{})
             entry['gasto_salarios_gasto_primario_ex_ss_pct']=float(row['salary_primary_ex_ss_pct'])
@@ -284,7 +284,7 @@ def build():
         # No se calcula dependencia con acumulados mensuales de distinta
         # cobertura. TOP y RON 2026 no tienen hoy el mismo corte para todas las
         # jurisdicciones; mezclar meses producía porcentajes falsos. La interfaz
-        # usa un ratio contable homogéneo sólo cuando existe en la fuente 1816.
+        # usa un ratio contable homogéneo sólo cuando existe en la fuente fiscal.
         dependencia_nacion = None
 
         gasto_personal_ratio = None

@@ -26,7 +26,7 @@ El importador del IPC requiere pandas/xlrd; el del PDF requiere pdfplumber. Sin 
 
 ## Cortes vigentes
 
-- Resultados y ranking homogéneo: últimos 12 meses al 31/03/2026, 23 jurisdicciones. La Pampa no integra el informe 1816 1T26.
+- Resultados y ranking homogéneo: últimos 12 meses al 31/03/2026, 23 jurisdicciones. La Pampa no integra el informe fiscal 1T26.
 - Deuda PBA: stock al 31/03/2026; composición por moneda al 31/12/2025.
 - Recaudación propia 2026: hasta julio según provincia; Buenos Aires hasta junio.
 - Recursos de origen nacional 2026: 24 jurisdicciones hasta julio.

@@ -14,7 +14,7 @@ function initManagementDesign(){
   const bar=document.querySelector('.dashboard-command-bar'),options=document.createElement('section');options.className='reading-options';options.innerHTML='<h2>Lectura y unidades</h2><div class="reading-options-grid"></div>';
   for(const id of ['profileSelector','periodSelector','valueModeSelector'])options.lastElementChild.append(document.getElementById(id).closest('.command-field'));
   bar.append(options);
-  const rank=document.querySelector('.pulse-rank .k-lbl');if(rank)rank.textContent='Ranking fiscal 1816';
+  const rank=document.querySelector('.pulse-rank .k-lbl');if(rank)rank.textContent='Ranking fiscal';
   const nav=document.querySelector('.federal-shortcuts'),button=document.createElement('button');button.id='openOperations';button.type='button';button.textContent='Caja y vencimientos';button.setAttribute('aria-controls','operationsPanel');button.setAttribute('aria-expanded','false');nav.append(button);
   const panel=document.createElement('details');panel.id='operationsPanel';panel.innerHTML='<summary>Caja, obligaciones y escenarios de pago</summary><div class="federal-content" id="operationsContent"><p>Cargando fuentes de Tesorería…</p></div>';document.querySelector('#federalTools').append(panel);
   panel.addEventListener('toggle',()=>button.setAttribute('aria-expanded',String(panel.open)));

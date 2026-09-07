@@ -2,7 +2,7 @@ import csv
 import json
 from datetime import datetime, timezone
 
-CROSS_FILE = 'dashboard_cross_section_1816.json'
+CROSS_FILE = 'dashboard_cross_section_fiscal.json'
 BUDGET_FILE = 'budget_anchors_pba_2026.json'
 LIQUIDITY_INPUTS_FILE = 'dashboard_liquidity_risk_inputs.csv'
 PBA_RON_MONTHLY_FILE = 'pba_ron_monthly.csv'
@@ -172,7 +172,7 @@ def build():
                         'value': intereses_sobre_ingresos,
                         'unit': 'pct',
                         'status': 'derived',
-                        'source': 'dashboard_cross_section_1816.json',
+                        'source': 'dashboard_cross_section_fiscal.json',
                     },
                     'caja_disponible_pesos': {
                         'value': caja_disponible,

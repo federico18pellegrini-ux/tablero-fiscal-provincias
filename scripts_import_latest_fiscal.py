@@ -30,6 +30,6 @@ def extract(path):
             if abs(v[0]-sum(v[1:]))>2:raise ValueError('Debt components do not reconcile')
             debt[n]=dict(zip(['total','bonds','nation','multilateral','banks','consolidated'],v))
         if len(debt)!=23:raise ValueError('Incomplete debt extraction')
-        return {'period':'2026-Q1','source':'1816, Informe fiscal provincias 1T26','quarter_source_page':6,'debt_source_page':21,'debt_unit':'USD millions, translated at quarter-end official exchange rate','quarters':quarters,'debt':debt}
+        return {'period':'2026-Q1','source':'Informe fiscal provincias 1T26','quarter_source_page':6,'debt_source_page':21,'debt_unit':'USD millions, translated at quarter-end official exchange rate','quarters':quarters,'debt':debt}
 if __name__=='__main__':
     result=extract(sys.argv[1]);(Path(__file__).parent/'data/fiscal_latest_details.json').write_text(json.dumps(result,ensure_ascii=False,separators=(',',':')),encoding='utf-8');print('23 quarterly results and 23 debt compositions validated')

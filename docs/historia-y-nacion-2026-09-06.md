@@ -6,9 +6,9 @@ Verificación de fuentes: 6 de septiembre de 2026.
 
 `data/fiscal_history.json`: 422 observaciones de ejecuciones de los últimos 12 meses, en 18 cortes (4T21–1T26). El explorador calcula cada componente sobre ingresos totales, incluida seguridad social. No convierte montos anuales a pesos constantes sin flujos mensuales. Personal, transferencias, capital, seguridad social y otros gastos explican el gasto primario; intereses se muestran aparte.
 
-`data/debt_history.json`: 420 observaciones, de las páginas 21 y 23 de los 18 informes 1816 aportados por el titular. El importador `scripts_build_debt_history.py` requiere pdfplumber y recibe el directorio de los informes. Guarda la referencia y el hash de cada documento; no distribuye los PDF. Verifica componentes, unidades, filas y duplicados.
+`data/debt_history.json`: 420 observaciones, de las páginas 21 y 23 de los 18 informes fiscales aportados por el titular. El importador `scripts_build_debt_history.py` requiere pdfplumber y recibe el directorio de los informes. Guarda la referencia y el hash de cada documento; no distribuye los PDF. Verifica componentes, unidades, filas y duplicados.
 
-Los stocks hasta 2T24 están expresados en millones de ARS. Desde 3T24 están en millones de USD equivalentes al tipo de cambio oficial del cierre. El gráfico utiliza el cociente deuda / ingresos publicado por 1816; los montos originales permanecen en la tabla con su moneda. No se une una serie de pesos con una de dólares. El cociente no mide vencimientos ni liquidez. Los faltantes no se imputan.
+Los stocks hasta 2T24 están expresados en millones de ARS. Desde 3T24 están en millones de USD equivalentes al tipo de cambio oficial del cierre. El gráfico utiliza el cociente deuda / ingresos publicado en los informes fiscales; los montos originales permanecen en la tabla con su moneda. No se une una serie de pesos con una de dólares. El cociente no mide vencimientos ni liquidez. Los faltantes no se imputan.
 
 ## Fuentes nacionales
 
