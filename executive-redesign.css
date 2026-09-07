@@ -1,6 +1,7 @@
 /* Light institutional theme with an optional dark reading mode. */
 /* Reference records remain in data and exports, outside the dashboard reading. */
 .source-reference,.result-source,#liquidityMethodNote{display:none!important}
+.profile-reading[data-reading=debt] .profile-explanation{white-space:pre-line}
 /* Consistent card headings, including content that previously used accordions. */
 .gov-panel>h4,.gov-panel>summary,.expanded-content>summary,.cc>h3,.tb>h3,.overview-charts article>h3,.profile-reading>h3,.federal-guide-grid h3,.national-kpis article>h3{font:600 16px/1.4 var(--font)!important;letter-spacing:0!important;text-transform:none!important;color:var(--text)!important}
 .gov-panel>h4,.gov-panel>summary{margin:0 0 12px!important;padding:0!important}
