@@ -58,5 +58,16 @@
       "sha256": "6291cbe4b96cc98e233ec1124e8ee1c906be06cdef2799c16568475d912ac8d8"
     }
   ],
-  "coverage": 135
+  "repositoryInputs": [
+    {
+      "file": "municipios/data/fiscal_verified.json",
+      "sha256": "092c0d5443e2b6c39044f0dc9668837d7e32d57e79cf0e9cd56c8e790c0156fb"
+    }
+  ],
+  "coverage": 135,
+  "fiscalCoverage": {
+    "fiscal": 17,
+    "budgetOnly": 1,
+    "verifiedAt": "2026-09-07"
+  }
 }

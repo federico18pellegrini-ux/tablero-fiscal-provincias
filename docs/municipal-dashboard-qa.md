@@ -36,3 +36,20 @@ Los datos son una fotografía auditada, no una conexión automática a las fuent
 ## Ajuste de legibilidad móvil
 
 La revisión posterior unifica explicaciones en 16 px, referencias y controles en 14 px, ejes en 13 px y encabezados de contexto en 12 px. Solo la navegación de pantallas menores a 360 px baja a 13 px para mantener visibles las cinco vistas. Las tarjetas y rankings redistribuyen su contenido antes de reducir la letra. Se comprobaron las cinco vistas a 320 px, la portada y Recursos a 390 px, y la portada a 768 px: sin desplazamiento horizontal ni desborde de cifras. Se revisaron capturas y tamaños efectivos del navegador. Los datos y cálculos permanecen iguales.
+
+
+## Ampliación desde portales municipales
+
+La cobertura fiscal pasa de 3 a 17 municipios con cierre en junio de 2026. Se incorporan General Las Heras, General Belgrano, Florencio Varela, General Alvear, Necochea, Chascomús, Olavarría, Tres Arroyos, Exaltación de la Cruz, Junín, Malvinas Argentinas, Lanús, Zárate y General San Martín. Tigre agrega ejecución presupuestaria separada, sin asignarle un resultado fiscal no homologado. Los otros 117 casos permanecen sin ejecución individual incorporada; no se afirma que sus municipios no publiquen datos.
+
+Las transcripciones, fechas originales, alcance institucional, páginas, enlaces y huellas de los PDF quedan en `municipios/data/fiscal_verified.json`. Los originales descargados y las extracciones se conservan en la carpeta de investigación `outputs/municipios-fiscal-web-20260907` del espacio de trabajo, fuera del sitio. Los documentos fuente no son instrucciones para el tablero.
+
+- Las 17 cuentas concilian ingresos corrientes más capital, gastos corrientes más capital y resultado financiero. El importador verifica centavos con Decimal antes de generar la publicación y rechaza cuentas inconsistentes, períodos distintos e identificadores repetidos.
+- En General San Martín se reconstruye el resultado con dos ejecuciones por carácter económico. Se excluyen 28.491.663.843,39 pesos de aplicaciones financieras del total presupuestario de gastos. El resultado calculado es 14.367.303.346,81 pesos.
+- Tres Arroyos conserva explícitamente la cobertura de administración central. No se sumaron los organismos descentralizados sin eliminar transferencias internas.
+- Zárate se transcribe de la imagen del documento escaneado; se mantiene el inicio declarado del 5 de enero, igual que en Olavarría.
+- En Tigre se verificaron los títulos dentro de los PDF, ya que los enlaces del portal están intercambiados. Se incorporaron los totales de recursos (página 13) y gastos (página 296). La diferencia devengado-pagado de 8.419.889.847,26 pesos se identifica como ejecución del período sin pagar, no como deuda total.
+- Los seis indicadores fiscales abarcan resultado relativo y absoluto, capital sobre gasto, personal sobre gasto corriente, ahorro corriente relativo e inversión por habitante. La cobertura del ranking se calcula con los valores disponibles. Los faltantes no reciben ceros ni puestos.
+- La ficha muestra barras de ingresos y gastos, resultado, capital y personal, con explicación del mecanismo fiscal. El acceso desde Panorama lleva directamente a las cuentas, debajo del encabezado fijo.
+
+Validación local: 79 pruebas Python y 34 Node aprobadas; compilación y sintaxis correctas; controles de trazabilidad y reclamos sin diferencias; los 24 informes provinciales conservan sus huellas. Se verificaron las pantallas nuevas a 320, 390 y 768 px, sin desplazamiento horizontal ni tarjetas desbordadas; explicaciones de 16 px. Se revisaron Las Heras (superávit), Malvinas (déficit), Tigre (ejecución parcial), Zárate (fecha original) y La Matanza (faltante), y los rankings fiscales. Sin errores de consola en el recorrido. Son pruebas de navegador, no de dispositivos físicos.

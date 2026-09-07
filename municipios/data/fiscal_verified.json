@@ -1,0 +1,494 @@
+{
+  "version": 1,
+  "verifiedAt": "2026-09-07",
+  "periodEnd": "2026-06-30",
+  "currency": "ARS",
+  "priceBasis": "nominal",
+  "records": [
+    {
+      "id": "06329",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/",
+      "amounts": {
+        "ingresos_corrientes": "10208185556.34",
+        "gastos_corrientes": "7630969990.20",
+        "ingresos_capital": "232822769.26",
+        "gastos_capital": "1222470368.11",
+        "ingresos_totales": "10441008325.60",
+        "gastos_totales": "8853440358.31",
+        "resultado_financiero": "1587567967.29",
+        "personal_devengado": "4727411019.57"
+      },
+      "documents": [
+        {
+          "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/07/SITECOFIN-1SEM-2026.pdf",
+          "sha256": "135ed8813ecbdc9fb40b32da86a34c0c9e240ceec5017726419014f65124dbfc",
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 319494
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06301",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://gestion.generalbelgrano.gob.ar/",
+      "amounts": {
+        "ingresos_corrientes": "12188607384.62",
+        "gastos_corrientes": "11311071976.96",
+        "ingresos_capital": "163439275.96",
+        "gastos_capital": "491349673.48",
+        "ingresos_totales": "12352046660.58",
+        "gastos_totales": "11802421650.44",
+        "resultado_financiero": "549625010.14",
+        "personal_devengado": "6914794216.94"
+      },
+      "documents": [
+        {
+          "url": "https://gestion.generalbelgrano.gob.ar/gobiernoabierto/2026/Información Financiera/Situacion economico-financiera al 30.06.2026.pdf",
+          "sha256": "c9747fc3f5d07ea78bfcd50b158f137598ee85d4da37d459f49a9e1e5555ca16",
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 401228
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06274",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://florenciovarela.gob.ar/informeseconomicos/",
+      "amounts": {
+        "ingresos_corrientes": "91955003462.48",
+        "gastos_corrientes": "88563766629.37",
+        "ingresos_capital": "6478628619.96",
+        "gastos_capital": "8179793352.21",
+        "ingresos_totales": "98433632082.44",
+        "gastos_totales": "96743559981.58",
+        "resultado_financiero": "1690072100.86",
+        "personal_devengado": "49089931366.79"
+      },
+      "documents": [
+        {
+          "url": "https://florenciovarela.gob.ar/informeseconomicos/imagenes/2026/situacioneconomicofinanciera-del01012026al30062026.pdf",
+          "sha256": "9480160fd8736877b6e169c3830ef90884ae90216c74712ff094073e1d35b0c7",
+          "pages": 10,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 1644736
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06287",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://munialvear.gov.ar/transparencia/",
+      "amounts": {
+        "ingresos_corrientes": "8646439535.80",
+        "gastos_corrientes": "8113836737.79",
+        "ingresos_capital": "12662941.79",
+        "gastos_capital": "499749614.88",
+        "ingresos_totales": "8659102477.59",
+        "gastos_totales": "8613586352.67",
+        "resultado_financiero": "45516124.92",
+        "personal_devengado": "6144867538.78"
+      },
+      "documents": [
+        {
+          "url": "https://munialvear.gov.ar/wp-content/uploads/hacienda/Situacion%20Economica%20Financiera%201º%20Semestre.pdf",
+          "sha256": "d724887c973f4c304524dcd5dd9c2197568d290484d57e44da1f91ba4826cdc0",
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 301628
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06581",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://necochea.gov.ar/transparencia/",
+      "amounts": {
+        "ingresos_corrientes": "48140322957.69",
+        "gastos_corrientes": "41549251696.67",
+        "ingresos_capital": "161261126.08",
+        "gastos_capital": "223223461.54",
+        "ingresos_totales": "48301584083.77",
+        "gastos_totales": "41772475158.21",
+        "resultado_financiero": "6529108925.56",
+        "personal_devengado": "26782184601.82"
+      },
+      "documents": [
+        {
+          "url": "https://necochea.gov.ar/descargas/transparencia/economica/2026/Situacion-Economico-Financiera-a-30-06-2026.pdf",
+          "sha256": "c9af855517a2a3ab254324b9745b660c7f9bcb647f040e0ea74b661077c5b6b0",
+          "pages": 9,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 368146
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06218",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://chascomus.gob.ar/municipio/estaticas/transparencia",
+      "amounts": {
+        "ingresos_corrientes": "23360686771.73",
+        "gastos_corrientes": "24076851999.01",
+        "ingresos_capital": "2104134695.60",
+        "gastos_capital": "2733147921.77",
+        "ingresos_totales": "25464821467.33",
+        "gastos_totales": "26809999920.78",
+        "resultado_financiero": "-1345178453.45",
+        "personal_devengado": "18314934939.56"
+      },
+      "documents": [
+        {
+          "url": "https://uploads.chascomus.gob.ar/boletines/Situacion Economico Financiera Semestre I 2026.pdf",
+          "sha256": "de2f69ffb555e378f43c4a5318b2f747a9405a86f6801935141c38109250fdf1",
+          "pages": 10,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 132481
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06595",
+      "inicio": "2026-01-05",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.olavarria.gov.ar/documentos-publicos/",
+      "amounts": {
+        "ingresos_corrientes": "64483561978.40",
+        "gastos_corrientes": "62810273413.49",
+        "ingresos_capital": "1134038146.34",
+        "gastos_capital": "3894637515.23",
+        "ingresos_totales": "65617600124.74",
+        "gastos_totales": "66704910928.72",
+        "resultado_financiero": "-1087310803.98",
+        "personal_devengado": "39103681190.96"
+      },
+      "documents": [
+        {
+          "url": "https://www.olavarria.gov.ar/wp-content/uploads/2026/07/ESTADO-DE-SITUACION-ECONOMICA-Y-FINANCIERA-AL-30-06-2026.pdf",
+          "sha256": "144a1467e7c5bb22085fa97c051910f8c34bf120901baf0666922a57d0101164",
+          "pages": 6,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 346449
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06833",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Administración central. No consolida el Centro Municipal de Salud, Claromecó ni Vialidad; pueden existir transferencias a esos organismos.",
+      "landingUrl": "https://jitsi.tresarroyos.gov.ar/transparencia-fiscal",
+      "amounts": {
+        "ingresos_corrientes": "34456920489.03",
+        "gastos_corrientes": "33472969472.15",
+        "ingresos_capital": "1254971807.82",
+        "gastos_capital": "776432845.01",
+        "ingresos_totales": "35711892296.85",
+        "gastos_totales": "34249402317.16",
+        "resultado_financiero": "1462489979.69",
+        "personal_devengado": "10303529131.42"
+      },
+      "documents": [
+        {
+          "url": "https://jitsi.tresarroyos.gov.ar/storage/archivos/situacion/2026-muni-sem1-6a450660c9f92.pdf",
+          "sha256": "5003e06dfa98ef00e9eaf9ee22603158d4ae65c65d34127ab49d936c5b32a7a7",
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 60918
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06266",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.exaltaciondelacruz.gob.ar/?wpdmpro=situacion-economico-financiera-1o-semestre-2026",
+      "amounts": {
+        "ingresos_corrientes": "25644876499.18",
+        "gastos_corrientes": "24048925870.70",
+        "ingresos_capital": "63121843.71",
+        "gastos_capital": "835549342.35",
+        "ingresos_totales": "25707998342.89",
+        "gastos_totales": "24884475213.05",
+        "resultado_financiero": "823523129.84",
+        "personal_devengado": "8802074385.65"
+      },
+      "documents": [
+        {
+          "url": "https://www.exaltaciondelacruz.gob.ar/?wpdmpro=situacion-economico-financiera-1o-semestre-2026&wpdmdl=6940&refresh=6a9f3d9f2bb721788820895",
+          "sha256": "9d2c5d56b637bf5f55ac5811a27b6941dbab5030dd74f68195fb486dc94a2fe2",
+          "pages": 3,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 339551
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06413",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.junin.gob.ar/programa/estado-economico",
+      "amounts": {
+        "ingresos_corrientes": "36471108143.13",
+        "gastos_corrientes": "29223133207.79",
+        "ingresos_capital": "171043617.44",
+        "gastos_capital": "3231167885.97",
+        "ingresos_totales": "36642151760.57",
+        "gastos_totales": "32454301093.76",
+        "resultado_financiero": "4187850666.81",
+        "personal_devengado": "13793540750.80"
+      },
+      "documents": [
+        {
+          "url": "https://www.junin.gob.ar/sites/default/files/1er_semestre_2026.pdf",
+          "sha256": "2afc87435ef2ff577f13972b3d1042b2ef4fad9bc35ed1057cbb3f20f3374d4d",
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 331423
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06515",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.malvinasargentinas.gob.ar/informeeconomico",
+      "amounts": {
+        "ingresos_corrientes": "177973701797.98",
+        "gastos_corrientes": "164374431087.81",
+        "ingresos_capital": "1702426572.51",
+        "gastos_capital": "25105647513.87",
+        "ingresos_totales": "179676128370.49",
+        "gastos_totales": "189480078601.68",
+        "resultado_financiero": "-9803950231.19",
+        "personal_devengado": "58304586616.47"
+      },
+      "documents": [
+        {
+          "url": "https://www.malvinasargentinas.gob.ar/docs/informe-economico/situacion_economica_financiera_periodo_01012026_al_30062026.pdf",
+          "sha256": "106bc8fe5318d556ba36b63c02102f3e04a5e92d97a285536db315f74a2866f7",
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 230332
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06434",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.lanus.gob.ar/documentos-oficiales?page=2",
+      "amounts": {
+        "ingresos_corrientes": "136387316608.38",
+        "gastos_corrientes": "112079100699.49",
+        "ingresos_capital": "4013253350.43",
+        "gastos_capital": "5048686771.70",
+        "ingresos_totales": "140400569958.81",
+        "gastos_totales": "117127787471.19",
+        "resultado_financiero": "23272782487.62",
+        "personal_devengado": "47066244002.91"
+      },
+      "documents": [
+        {
+          "url": "https://www.lanus.gob.ar/documentos-oficiales/1419/situacion-economico-financiera-1er-semestre-2026/descargar",
+          "sha256": "982adb119fd10350a7789e9d367a8f389857ebce120034569863521e993b3c0d",
+          "pages": 8,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 263298
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
+    },
+    {
+      "id": "06882",
+      "inicio": "2026-01-05",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://zarate.gob.ar/transparencia/",
+      "amounts": {
+        "ingresos_corrientes": "50358536268.43",
+        "gastos_corrientes": "47688223605.98",
+        "ingresos_capital": "696150665.22",
+        "gastos_capital": "3668265974.38",
+        "ingresos_totales": "51054686933.65",
+        "gastos_totales": "51356489580.36",
+        "resultado_financiero": "-301802646.71",
+        "personal_devengado": "19835007678.37"
+      },
+      "documents": [
+        {
+          "url": "https://zarate.gob.ar/wp-content/uploads/2026/07/Situacion-Economica-Financiera-al-30-06-26.pdf",
+          "sha256": "e6ae262ef3b7a3652bd61459787f2b0916c0fdcae8e2596dcfbe21c8153d5161",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 605401
+        }
+      ],
+      "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos. Lectura visual de documento escaneado."
+    },
+    {
+      "id": "06371",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "economic_execution",
+      "scope": "Todas las jurisdicciones incluidas en la ejecución publicada; el documento indica Consolidado - Sintético.",
+      "landingUrl": "https://im.sanmartin.gov.ar/gobierno-abierto/",
+      "amounts": {
+        "ingresos_corrientes": "162429620907.34",
+        "gastos_corrientes": "144746867047.34",
+        "ingresos_capital": "32824.56",
+        "gastos_capital": "3315483337.75",
+        "ingresos_totales": "162429653731.90",
+        "gastos_totales": "148062350385.09",
+        "resultado_financiero": "14367303346.81",
+        "personal_devengado": "80171040150.97"
+      },
+      "documents": [
+        {
+          "url": "https://im.sanmartin.gov.ar/uploads/1785210695-Ejecuci%C3%B3n%20Presupuestaria%20de%20Recursos%20por%20Car%C3%A1cter%20Econ%C3%B3mico%2030%20Junio%202026.pdf",
+          "sha256": "a1506fe842d79a44df464e79e4442906a3e3f2c6d9786c713c78b55e96ea150f",
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Totales de ingresos corrientes y recursos de capital, columna percibido.",
+          "bytes": 303229
+        },
+        {
+          "url": "https://im.sanmartin.gov.ar/uploads/1785210659-Estado%20de%20Ejecuci%C3%B3n%20de%20Gastos%20por%20Car%C3%A1cter%20Econ%C3%B3mico%20Junio%202026.pdf",
+          "sha256": "a309a2e4ca62b878360c4608ae8eceefe6fdcb32df64dd8049ba6cf5eb3d6270",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Totales de gastos corrientes y de capital; remuneraciones, columna devengado.",
+          "bytes": 300482
+        }
+      ],
+      "note": "Resultado calculado: recursos corrientes y de capital percibidos menos gastos corrientes y de capital devengados. Se excluyen fuentes y aplicaciones financieras."
+    }
+  ],
+  "budgetExecutions": [
+    {
+      "id": "06805",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "scope": "Todas las jurisdicciones y categorías programáticas incluidas en la ejecución municipal publicada.",
+      "landingUrl": "https://www.tigre.gob.ar/gobierno/informacion_gestion",
+      "amounts": {
+        "presupuesto_vigente": "611294558622.66",
+        "recursos_presupuestarios_percibidos": "218657322550.68",
+        "gastos_presupuestarios_devengados": "239430557656.92",
+        "gastos_presupuestarios_pagados": "231010667809.66"
+      },
+      "documents": [
+        {
+          "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_CALCULO_DE_RECURSOS_AL_30-06-2026.pdf",
+          "sha256": "56a6cb2c67c2cde39c500dd953ba919f5385e08c563efb98b981d1293818e8ff",
+          "pages": 13,
+          "consultedPages": [
+            1,
+            13
+          ],
+          "locator": "Encabezado y Total General, columna percibido.",
+          "bytes": 304717
+        },
+        {
+          "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_PRESUPUESTO_DE_GASTOS_AL_30-06-2026.pdf",
+          "sha256": "58f0fcf385e8d6f0369b5b5474716824779f550e6718a99cd4dbada2be6dcdcf",
+          "pages": 296,
+          "consultedPages": [
+            1,
+            296
+          ],
+          "locator": "Encabezado y Totales Generales, columnas crédito vigente, devengado y pagado.",
+          "bytes": 1780487
+        }
+      ],
+      "note": "Ejecución presupuestaria por rubro y objeto. Los totales no separan aquí todas las operaciones financieras para construir una CAIF homologada. No se calcula déficit restando estos totales. Los enlaces de recursos y gastos están intercambiados en el portal; se verificó el título dentro de cada PDF."
+    }
+  ]
+}
