@@ -1,4 +1,4 @@
-"""Extract debt stocks and structural ratios from supplied 1816 reports.
+"""Extract debt stocks and structural ratios from supplied fiscal reports.
 Usage: python scripts_build_debt_history.py /path/to/reports
 Requires pdfplumber. Never distributes source PDFs or converts currencies.
 """
@@ -29,7 +29,7 @@ def extract_report(path):
             province=ALIASES.get(match[1],match[1]);values=[int(v.replace('.','')) for v in match[2].split()]
             if abs(values[0]-sum(values[1:]))>2:raise ValueError(f'Debt reconciliation failed: {period} {province}')
             row=dict(zip(['total','bonds','nation','multilateral','banks','consolidated'],values))
-            row.update(province=province,period=period,currency=currency,unit='millions',source_title=f'1816 · Informe fiscal provincias {label[1]}T{label[2]}',source_page=21,ratio_source_page=23,publication_date=path.name[:10],ratios=ratios.get(province))
+            row.update(province=province,period=period,currency=currency,unit='millions',source_title=f'Informe fiscal provincias {label[1]}T{label[2]}',source_page=21,ratio_source_page=23,publication_date=path.name[:10],ratios=ratios.get(province))
             rows.append(row)
         if not 20<=len(rows)<=24:raise ValueError(f'Unexpected row count: {period}: {len(rows)}')
         return rows,{'period':period,'currency':currency,'debt_rows':len(rows),'ratio_rows':len(ratios),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}

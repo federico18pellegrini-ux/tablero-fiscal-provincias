@@ -190,7 +190,7 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertAlmostEqual(float(row['automatic_transfers_pct']), 13.342013, places=6)
         self.assertAlmostEqual(float(row['total_rigid_pct']), 79.741950, places=6)
 
-        with (ROOT / 'data/1816/rigid_spending_components_1t26.csv').open(encoding='utf-8', newline='') as source:
+        with (ROOT / 'data/fiscal/rigid_spending_components_1t26.csv').open(encoding='utf-8', newline='') as source:
             raw = next(csv.DictReader(source))
         numerator = sum(float(raw[key]) for key in (
             'personnel_ars_m', 'social_security_spending_ars_m', 'interest_ars_m'
@@ -201,7 +201,7 @@ class FiscalRegressionTests(unittest.TestCase):
             places=6,
         )
         rigid_by_province = {item['province']: item for item in rows}
-        with (ROOT / 'data/1816/rigid_spending_components_1t26.csv').open(encoding='utf-8', newline='') as source:
+        with (ROOT / 'data/fiscal/rigid_spending_components_1t26.csv').open(encoding='utf-8', newline='') as source:
             raw_rows = list(csv.DictReader(source))
         self.assertEqual(set(rigid_by_province), {item['province'] for item in raw_rows})
         for raw_item in raw_rows:

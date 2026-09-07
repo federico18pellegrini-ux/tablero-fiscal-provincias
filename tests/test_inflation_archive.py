@@ -10,7 +10,7 @@ class InflationArchiveTests(unittest.TestCase):
   self.assertEqual(set(ipc),set(factors))
   for month,value in ipc.items():self.assertAlmostEqual(factors[month],ipc['2026-06']/value,places=8)
  def test_annual_identities_and_latest_vintage(self):
-  a=json.loads((ROOT/'data/1816_archive.json').read_text(encoding='utf-8'));v=json.loads((ROOT/'data/1816_archive_vintages.json').read_text(encoding='utf-8'))
+  a=json.loads((ROOT/'data/fiscal_archive.json').read_text(encoding='utf-8'));v=json.loads((ROOT/'data/fiscal_archive_vintages.json').read_text(encoding='utf-8'))
   self.assertEqual(len(a['reports']),18);self.assertEqual(len(a['annual_ratios']),214)
   self.assertEqual(len(v['annual_vintages']),1983)
   selected={}
@@ -21,7 +21,7 @@ class InflationArchiveTests(unittest.TestCase):
    self.assertLessEqual(abs(row['primary']+row['interest_signed']-row['financial']),.31)
   self.assertEqual(selected,{(r['province'],r['year']):r for r in a['annual_ratios']})
  def test_rank_gaps_are_not_zero_or_backfilled(self):
-  a=json.loads((ROOT/'data/1816_archive.json').read_text(encoding='utf-8'));v=json.loads((ROOT/'data/1816_archive_vintages.json').read_text(encoding='utf-8'))
+  a=json.loads((ROOT/'data/fiscal_archive.json').read_text(encoding='utf-8'));v=json.loads((ROOT/'data/fiscal_archive_vintages.json').read_text(encoding='utf-8'))
   self.assertEqual(len(a['rank_history']),1080)
   self.assertEqual(min(r['period'] for r in a['rank_history']),'2015-Q1')
   self.assertEqual(len({(r['province'],r['period']) for r in a['rank_history']}),1080)

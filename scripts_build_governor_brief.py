@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the PBA governor brief from audited 1816 inputs.
+"""Build the PBA governor brief from audited fiscal inputs.
 
 The inputs are deliberately small and reviewable. Values copied from charts must
 carry evidence_status=visual_and_table_verified before they can reach the UI.
@@ -12,8 +12,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-SNAPSHOTS = ROOT / "data/1816/pba_fiscal_snapshots.csv"
-RANKING = ROOT / "data/1816/ranking_1t26.csv"
+SNAPSHOTS = ROOT / "data/fiscal/pba_fiscal_snapshots.csv"
+RANKING = ROOT / "data/fiscal/ranking_1t26.csv"
 OUTPUT = ROOT / "dashboard_governor_brief.json"
 
 
@@ -49,7 +49,7 @@ def main() -> None:
 
     ranking = read_csv(RANKING)
     if len(ranking) != 23 or {int(row["general_rank"]) for row in ranking} != set(range(1, 24)):
-        raise ValueError("The latest 1816 ranking must contain exactly ranks 1-23")
+        raise ValueError("The latest fiscal ranking must contain exactly ranks 1-23")
     latest = snapshots[-1]
     previous = snapshots[-2]
     pba_rank = next(row for row in ranking if row["province"] == "Buenos Aires")

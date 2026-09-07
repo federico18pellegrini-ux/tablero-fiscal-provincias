@@ -32,7 +32,7 @@ function initFederalTools(){
   initManagementDesign();
   renderProfileReadings();
   renderFiscalHistory(currentProvince);renderFiscalMap();renderNationalPanel();
-  fetch('data/debt_history.json').then(r=>{if(!r.ok)throw Error('debt');return r.json();}).then(d=>{debtHistory=d;renderComposition(currentProvince);}).catch(()=>{debtHistory={rows:[],failed:true};renderComposition(currentProvince);});
+  fetch('data/debt_history.json?v=20260907-2').then(r=>{if(!r.ok)throw Error('debt');return r.json();}).then(d=>{debtHistory=d;renderComposition(currentProvince);}).catch(()=>{debtHistory={rows:[],failed:true};renderComposition(currentProvince);});
   for(const [id,all] of [['downloadPdf',false],['downloadPdfAll',true]]){
     const old=document.getElementById(id);if(!old)continue;
     const button=old.cloneNode(true);old.replaceWith(button);
@@ -126,7 +126,7 @@ async function exportFiscalTextPdf(all=false){
       line('El saldo fiscal no acredita caja disponible. Completar caja libre, deuda flotante, vencimientos y financiamiento efectivamente utilizable antes de definir compromisos.');
       line('Evolución de los últimos cuatro cortes',14,true);
       for(const p of historyPeriods().slice(-4)){const r=historyRow(province,p);line(`${periodName(p)} | primario: ${fnum(r?.primary_pct)}% | financiero: ${fnum(r?.financial_pct)}%`,10);}
-      line('Fuentes y alcance',14,true);line('1816, informes fiscales provinciales: resultados anuales, página 8; trimestre, página 6; deuda, página 21 del informe 1T26. La historia conserva los valores publicados en cada informe.',9);
+      line('Fuentes y alcance',14,true);line('Informes fiscales provinciales: resultados anuales, página 8; trimestre, página 6; deuda, página 21 del informe 1T26. La historia conserva los valores publicados en cada informe.',9);
       line('Montos de deuda en millones de dólares; resultados en porcentaje de ingresos. La Pampa no integra el corte comparable 1T26. Este informe separa datos observados de necesidades de información para la gestión.',9);
       line('https://tablero.federicopellegrini.com.ar/',9);
     }

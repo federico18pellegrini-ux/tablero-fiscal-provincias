@@ -1,5 +1,5 @@
 """Extract all supplied fiscal reports, preserving source vintages and units.
-Usage: python scripts_build_1816_archive.py REPORT_FOLDER CACHE_FOLDER
+Usage: python scripts_build_fiscal_archive.py REPORT_FOLDER CACHE_FOLDER
 Source PDFs remain local. Annual annex ratios are not monetary flows.
 """
 import csv,hashlib,json,re,sys,unicodedata
@@ -91,9 +91,9 @@ def build(folder,cache):
         assert all(r[k]==index[r['province'],r['period']][k] for k in FIELDS),(r['province'],r['period'])
     payload=dict(reviewed_at='2026-09-06',method='Última versión disponible por indicador y período; se conservan todas las versiones extraídas. Ranking: posición publicada, no mide calidad de gobierno. Anexos: componentes como porcentaje de ingresos totales nominales de cada año completo; no son pesos ni tasas de crecimiento real. No se digitalizan puntos sin cifra explícita de los gráficos.',reports=reports,annual_ratios=latest(annual,['province','year']),rank_history=latest(ranks,['province','period']),annual_vintages=annual,rank_vintages=ranks,exceptions=exceptions,ltm_reconciliation='All 15 fields match the existing fiscal history exactly')
     vintages={key:payload.pop(key) for key in ['annual_vintages','rank_vintages']}
-    (ROOT/'data/1816_archive_vintages.json').write_text(json.dumps(vintages,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
-    (ROOT/'data/1816_archive.json').write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
-    for name,key in [('1816_annual_history.csv','annual_ratios'),('1816_rank_history.csv','rank_history')]:
+    (ROOT/'data/fiscal_archive_vintages.json').write_text(json.dumps(vintages,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+    (ROOT/'data/fiscal_archive.json').write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+    for name,key in [('fiscal_annual_history.csv','annual_ratios'),('fiscal_rank_history.csv','rank_history')]:
         with (ROOT/'data'/name).open('w',encoding='utf-8-sig',newline='') as output:
             writer=csv.DictWriter(output,fieldnames=list(payload[key][0]));writer.writeheader();writer.writerows(payload[key])
     print('TOTAL',len(payload['annual_ratios']),len(payload['rank_history']),'exceptions',len(exceptions))

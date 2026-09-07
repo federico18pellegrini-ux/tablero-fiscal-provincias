@@ -113,9 +113,9 @@ body{padding-top:var(--fixed-header-height)}
 .charts-row>.cc{min-width:0}.cw,.history-chart,.overview-canvas{min-width:0;max-width:100%}canvas{max-width:100%}
 @media(max-height:500px) and (max-width:1366px){.header{min-height:80px;grid-template-rows:44px auto}.header .fixed-dashboard-title{font-size:18px!important;padding:4px 0 8px;line-height:24px}.header .brand-logo{width:32px;height:32px}.header .brand-sub{display:none}}
 
-#priceBasisNotice{padding:10px 12px;border-left:3px solid var(--blue);background:var(--s1);font-size:13px;margin:12px 0;line-height:1.6}.national-context #priceBasisNotice{display:none}#archive1816Metric{display:block;width:100%;min-width:0;margin:8px 0;font-size:16px}#archive1816Content{min-width:0}
+#priceBasisNotice{padding:10px 12px;border-left:3px solid var(--blue);background:var(--s1);font-size:13px;margin:12px 0;line-height:1.6}.national-context #priceBasisNotice{display:none}#fiscalArchiveMetric{display:block;width:100%;min-width:0;margin:8px 0;font-size:16px}#fiscalArchiveContent{min-width:0}
 
-.history-values{background:var(--s2)!important;color:var(--text);border-color:var(--border);padding:12px;border-radius:8px}.history-values>summary{color:var(--text);font-weight:600;line-height:1.6}.history-values p{line-height:1.65}.history-values .history-values{background:var(--s1)!important}#archive1816Metric{background:var(--s1);color:var(--text);border:1px solid var(--border2);padding:10px;border-radius:6px}
+.history-values{background:var(--s2)!important;color:var(--text);border-color:var(--border);padding:12px;border-radius:8px}.history-values>summary{color:var(--text);font-weight:600;line-height:1.6}.history-values p{line-height:1.65}.history-values .history-values{background:var(--s1)!important}#fiscalArchiveMetric{background:var(--s1);color:var(--text);border:1px solid var(--border2);padding:10px;border-radius:6px}
 
 .editorial-link{display:inline-block;background:none;border:0;color:var(--blue);font:600 14px/1.6 var(--font);text-align:left;padding:10px 0;min-height:44px;cursor:pointer}.reading-options #priceBasisNotice{margin:12px 0 0;max-width:85ch}
 

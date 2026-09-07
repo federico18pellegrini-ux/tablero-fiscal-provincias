@@ -286,7 +286,7 @@ class Report:
   agenda='<b>En los primeros 30 días:</b> '+one[0].lower()+one[1:]+' Armar un plan de caja semanal de 13 semanas, con prioridad para servicios esenciales. <b>A los 60 días,</b> presentar una cartera de obras y equipamiento ordenada por impacto, costo total y financiamiento. <b>A los 100 días,</b> publicar metas de aprendizaje y salud, con responsables y plazos, e informar su avance junto con el presupuesto.'
   y=self.paragraph(agenda,18,219,174,10.3,13.7,max_end=245)+3
   self.paragraph('<b>Nuestra lectura.</b> '+self.editorial['closing'],18,y,174,10.3,13.7,max_end=259)
-  self.note('Base: tablero provincial, DNAP, 1816, IPC INDEC, Aprender y DEIS. Pesos corrientes salvo variaciones reales de transferencias. Montos anuales sin ajuste por IPC; no hay proyecciones de ingresos. Cortes propios en cada bloque.',262,max_end=275)
+  self.note('Base: tablero provincial, DNAP, informes fiscales provinciales, IPC INDEC, Aprender y DEIS. Pesos corrientes salvo variaciones reales de transferencias. Montos anuales sin ajuste por IPC; no hay proyecciones de ingresos. Cortes propios en cada bloque.',262,max_end=275)
   self.link('Datos y método del informe',SITE+'reports/metodologia.html',18,279)
   self.link('Abrir el tablero',SITE,152,279)
  def build(self):

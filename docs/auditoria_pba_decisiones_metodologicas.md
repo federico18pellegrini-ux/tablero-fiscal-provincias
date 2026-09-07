@@ -19,7 +19,7 @@ Incluye solo señales observadas/derivadas con respaldo parcial (depósitos disp
 si no existe base completa de Tesorería + Letras + vencimientos + flujo salarial.
 
 ## 3) Regla de comparabilidad por módulo
-- **Módulo estructural 1816 (3T2025):** universo comparable restringido (jurisdicciones con dato estructural completo).
+- **Módulo estructural fiscal (3T2025):** universo comparable restringido (jurisdicciones con dato estructural completo).
 - **Módulo RON anual:** universo nacional (24 jurisdicciones) con reglas de disponibilidad propias del módulo.
 - **Módulo dinámico mensual 2026:** comparabilidad por cobertura efectiva (mes/provincia), sin forzar universo único.
 

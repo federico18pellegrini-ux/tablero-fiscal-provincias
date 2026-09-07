@@ -28,7 +28,7 @@ function buildProfileReadings(profile,{province,rf=null,rp=null,debt=null,debtSc
 }
 function renderProfileReadings(){
  if(typeof document==='undefined'||typeof manifest==='undefined'||!manifest)return;
- const cross={...(cross1816?.[currentProvince]||{}),...(latestRanking1816?.[currentProvince]||{})};
+ const cross={...(crossFiscal?.[currentProvince]||{}),...(latestFiscalRanking?.[currentProvince]||{})};
  const q=dashboardPeriod==='quarter'?latestFiscalDetails?.quarters?.[currentProvince]:null;
  const rf=toN(q?q.financial_pct:cross.resultado_financiero_ltm_pct),rp=toN(q?q.primary_pct:cross.resultado_primario_ltm_pct);
  const debt=toN(currentProvince==='Buenos Aires'?pbaDebtProfile?.latest_stock?.debt_to_ltm_income_pct:cross.deuda_total_sobre_ingresos_pct);

@@ -16,7 +16,7 @@ class GovernorBriefTests(unittest.TestCase):
         cls.payload = json.loads((ROOT / "dashboard_governor_brief.json").read_text(encoding="utf-8"))
 
     def test_latest_snapshot_reconciles(self):
-        with (ROOT / "data/1816/pba_fiscal_snapshots.csv").open(encoding="utf-8", newline="") as source:
+        with (ROOT / "data/fiscal/pba_fiscal_snapshots.csv").open(encoding="utf-8", newline="") as source:
             latest = list(csv.DictReader(source))[-1]
         income = float(latest["total_income_m"])
         spending = float(latest["primary_spending_m"])
@@ -57,7 +57,7 @@ class GovernorBriefTests(unittest.TestCase):
             )
 
     def test_ranking_universe_is_complete(self):
-        with (ROOT / "data/1816/ranking_1t26.csv").open(encoding="utf-8", newline="") as source:
+        with (ROOT / "data/fiscal/ranking_1t26.csv").open(encoding="utf-8", newline="") as source:
             rows = list(csv.DictReader(source))
         self.assertEqual(len(rows), 23)
         self.assertEqual({int(row["general_rank"]) for row in rows}, set(range(1, 24)))
@@ -67,7 +67,7 @@ class GovernorBriefTests(unittest.TestCase):
 
     def test_frontend_uses_latest_ranking_and_full_width_structural_layout(self):
         frontend = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn("ranking_1816_1t26", frontend)
+        self.assertIn("ranking_fiscal_1t26", frontend)
         self.assertIn("key-indicators-row{grid-template-columns:minmax(0,1fr)!important", frontend)
         self.assertIn("#metricsDetails:not([open]) #metricsDetailsTableWrap{display:none}", frontend)
         self.assertIn("Situación fiscal de las provincias argentinas", frontend)
