@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacidad y estadísticas · Tablero Fiscal</title>
+  <meta name="theme-color" content="#112b49">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#172b43;font:17px/1.65 system-ui,sans-serif}
+    main{max-width:760px;margin:40px auto;padding:32px;background:#fff;border-radius:16px}
+    h1{font-size:30px;line-height:1.2}h2{font-size:21px;margin-top:28px}a{color:#145c88}
+    button{font:inherit;padding:12px 18px;min-height:44px;border:0;border-radius:8px;background:#112b49;color:white;cursor:pointer}
+    button:focus-visible,a:focus-visible{outline:3px solid #c28b25;outline-offset:4px}
+    @media(max-width:600px){main{margin:0;padding:24px 20px;border-radius:0}h1{font-size:26px}}
+  </style>
+</head>
+<body><main>
+  <a href="./">← Volver al tablero</a>
+  <h1>Privacidad y estadísticas de uso</h1>
+  <p>Usamos Google Analytics 4 para conocer cuántos usuarios visitan el tablero, qué secciones consultan y cuándo hacen clic en la descarga de un informe. Estas estadísticas nos ayudan a mejorar la herramienta.</p>
+  <h2>Qué se registra</h2>
+  <p>Analytics utiliza cookies e identificadores del navegador para estimar usuarios y sesiones. También informa el tipo de dispositivo, la procedencia de las visitas y la ubicación aproximada. Una persona que usa dos dispositivos puede contarse más de una vez.</p>
+  <p>No enviamos nombres, correos, el perfil de lectura elegido ni los valores cargados en simulaciones. La configuración no habilita personalización publicitaria ni Google Signals.</p>
+  <p>Google procesa la información del servicio según su <a href="https://policies.google.com/privacy">Política de Privacidad</a> y explica <a href="https://policies.google.com/technologies/partner-sites">cómo usa los datos de los sitios que emplean sus servicios</a>.</p>
+  <h2>Tu elección en este navegador</h2>
+  <p>Podés desactivar la medición. El tablero y las descargas siguen funcionando. La preferencia se guarda en este navegador; si borrás sus datos o usás otro, deberás volver a elegirla.</p>
+  <p id="analyticsPreference" role="status" aria-live="polite"></p>
+  <button type="button" id="toggleAnalytics">Desactivar estadísticas en este navegador</button>
+  <noscript><p>Con JavaScript desactivado no se carga Analytics.</p></noscript>
+  <p><small>Federico Pellegrini · Actualizado el 7 de septiembre de 2026.</small></p>
+</main>
+<script src="analytics-preferences.js"></script>
+</body></html>

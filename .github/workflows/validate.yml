@@ -23,7 +23,7 @@ jobs:
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
       - name: Validate calculations and reading profiles
-        run: node --test tests/management_math.test.cjs tests/profile_readings.test.cjs tests/budget_execution.test.cjs
+        run: node --test tests/management_math.test.cjs tests/profile_readings.test.cjs tests/budget_execution.test.cjs tests/analytics.test.cjs
       - name: Validate TOP traceability
         run: python scripts_validate_top_traceability.py
       - name: Validate national claims data
