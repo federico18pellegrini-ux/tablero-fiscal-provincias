@@ -8,7 +8,7 @@ function managementTable(caption,headers,rows){
   const head=table.createTHead().insertRow();headers.forEach(h=>{const th=document.createElement('th');th.scope='col';th.textContent=h;head.append(th);});
   const body=table.createTBody();rows.forEach(values=>{const tr=body.insertRow();values.forEach((v,i)=>{const cell=document.createElement(i?'td':'th');if(!i)cell.scope='row';cell.textContent=v;tr.append(cell);});});return box;
 }
-function managementSource(parent,url,label){const p=document.createElement('p'),a=document.createElement('a');p.className='federal-note';a.href=url;a.target='_blank';a.rel='noopener';a.textContent=label;p.append(a);parent.append(p);}
+function managementSource(parent,url,label){const p=document.createElement('p'),a=document.createElement('a');p.className='federal-note'+(label.startsWith('Descargar')?'':' source-reference');a.href=url;a.target='_blank';a.rel='noopener';a.textContent=label;p.append(a);parent.append(p);}
 function initManagementDesign(){
   document.querySelector('#heroTitle').textContent='Tablero para la gestión';
   const bar=document.querySelector('.dashboard-command-bar'),options=document.createElement('section');options.className='reading-options';options.innerHTML='<h2>Lectura y unidades</h2><div class="reading-options-grid"></div>';

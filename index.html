@@ -875,7 +875,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260906-13">
+<link rel="stylesheet" href="executive-redesign.css?v=20260907-1">
 </head>
 <body>
 
@@ -1048,7 +1048,7 @@ tr:last-child td{border-bottom:none}
         <div id="metricsCommonMeta"></div>
         <table><tbody id="metricsBody"></tbody></table>
         <details id="metricsDetails" style="margin-top:8px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px">
-          <summary style="cursor:pointer;color:var(--muted);font-size:12px;font-weight:700">Fuentes y cálculo de cada indicador</summary>
+          <summary style="cursor:pointer;color:var(--muted);font-size:12px;font-weight:700">Cálculo y cobertura de cada indicador</summary>
           <div id="metricsDetailsTableWrap" style="margin-top:8px"></div>
         </details>
       </div>
@@ -1066,7 +1066,7 @@ tr:last-child td{border-bottom:none}
 </section>
 
 <details class="data-context">
-  <summary>Fuentes, unidades y cobertura</summary>
+  <summary>Unidades y cobertura</summary>
   <div class="data-context-body">
     <div id="availNote" style="font-size:12px;color:var(--dim);margin-bottom:10px;line-height:1.6">Cargando cobertura de datos...</div>
     <div class="money-glossary" aria-label="Convención monetaria">
@@ -1162,7 +1162,7 @@ tr:last-child td{border-bottom:none}
         <div class="debt-creditor-legend" id="debtProfileCreditors">—</div>
       </div>
     </div>
-    <details class="debt-method-details"><summary>Ver fuentes y diferencias de fecha</summary><div id="debtProfileMethodNote" class="cc-note" style="margin-top:8px"></div></details>
+    <details class="debt-method-details"><summary>Ver unidades y diferencias de fecha</summary><div id="debtProfileMethodNote" class="cc-note" style="margin-top:8px"></div></details>
   </div>
   <div class="debt-schedule-card" id="debtScheduleCard">
     <div class="debt-schedule-head">
@@ -1200,8 +1200,8 @@ tr:last-child td{border-bottom:none}
   <div id="transfersDependencyCards" class="transfer-grid"></div>
   <div id="transfersDependencyReading" class="transfer-reading"></div>
   <details class="method-details">
-    <summary>Fuente y forma de lectura</summary>
-    <div class="cc-note" style="margin-top:8px">Fuentes: Subsecretaría de Coordinación Fiscal Provincial, Ministerio de Economía de la Nación; Anuario 2025 del Gobierno de la Provincia de Buenos Aires; e INDEC para población. El aporte bonaerense es la estimación territorial oficial publicada por la Provincia para el total de impuestos nacionales generado por su actividad económica. El retorno es el total de recursos automáticos de origen nacional efectivamente recibido en 2025. No debe confundirse con la recaudación de ARBA ni con una obligación de devolver a la Provincia cada impuesto en el lugar donde se originó. Montos en pesos corrientes.</div>
+    <summary>Cómo interpretar esta comparación</summary>
+    <div class="cc-note" style="margin-top:8px">El aporte bonaerense es la estimación territorial oficial publicada por la Provincia para el total de impuestos nacionales generado por su actividad económica. El retorno es el total de recursos automáticos de origen nacional efectivamente recibido en 2025. No debe confundirse con la recaudación de ARBA ni con una obligación de devolver a la Provincia cada impuesto en el lugar donde se originó. Montos en pesos corrientes.</div>
   </details>
 </div>
 
@@ -1285,7 +1285,7 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
   <details class="method-details">
-    <summary>Ver método, universo y fuentes</summary>
+    <summary>Ver método y universo</summary>
     <div id="federalFairnessMethod" class="cc-note" style="margin-top:8px"></div>
     <div id="federalFairnessFootnotes" class="cc-note" style="margin-top:8px"></div>
   </details>
@@ -2719,7 +2719,7 @@ function renderGovernorBrief(province,cross={}){
     `<strong style="color:var(--muted)">Regla:</strong> ${brief.methodology.facts_inferences_actions}<br>`+
     `<strong style="color:var(--muted)">Universo:</strong> ${brief.methodology.ranking_universe}`+
     `<div class="gov-missing"><strong>Dato faltante para decidir caja:</strong> ${missing}.</div>`+
-    `<div style="margin-top:7px">Fuente: Informes 1816 4T25 y 1T26, páginas 7, 8, 23 y 27.</div>`;
+    `<div class="source-reference" style="margin-top:7px">Fuente: Informes 1816 4T25 y 1T26, páginas 7, 8, 23 y 27.</div>`;
 }
 
 function renderCoverageGaps(province){
@@ -2745,12 +2745,12 @@ function renderCoverageGaps(province){
 
 function renderPressContent(province,{rf,rp,debt,mP,rP}={}){
   const sourceText={
-    rank:'Fuente: Informe 1816 1T26 · corte 31/03/2026 · universo 23 jurisdicciones.',
-    financial:`Fuente: Informe 1816 1T26 · ${dashboardPeriod==='quarter'&&latestFiscalDetails?.quarters?.[province]?'enero–marzo 2026':'últimos 12 meses al 31/03/2026'}.`,
-    primary:`Fuente: Informe 1816 1T26 · ${dashboardPeriod==='quarter'&&latestFiscalDetails?.quarters?.[province]?'enero–marzo 2026':'últimos 12 meses al 31/03/2026'}.`,
-    debt:province==='Buenos Aires'?'Fuente: DNAP · stock al 31/03/2026; moneda al 31/12/2025.':'Fuente: serie homogénea 1816 · último dato estructural disponible.',
-    own:`Fuente: recaudación provincial normalizada · corte ${mP?.length?fullMonthLabel(mP[mP.length-1]):'no disponible'}.`,
-    nation:`Fuente: DNAP · recursos de origen nacional · corte ${rP?.length?fullMonthLabel(rP[rP.length-1]):'no disponible'}.`
+    rank:'Corte 31/03/2026 · universo 23 jurisdicciones.',
+    financial:`${dashboardPeriod==='quarter'&&latestFiscalDetails?.quarters?.[province]?'enero–marzo 2026':'últimos 12 meses al 31/03/2026'}.`,
+    primary:`${dashboardPeriod==='quarter'&&latestFiscalDetails?.quarters?.[province]?'enero–marzo 2026':'últimos 12 meses al 31/03/2026'}.`,
+    debt:province==='Buenos Aires'?'Stock al 31/03/2026; moneda al 31/12/2025.':'Último dato estructural disponible.',
+    own:`Corte ${mP?.length?fullMonthLabel(mP[mP.length-1]):'no disponible'}.`,
+    nation:`Corte ${rP?.length?fullMonthLabel(rP[rP.length-1]):'no disponible'}.`
   };
   document.querySelectorAll('[data-press-source]').forEach(node=>{node.textContent=sourceText[node.dataset.pressSource]||'';});
   const quoteGrid=document.getElementById('pressQuoteGrid');
@@ -2849,7 +2849,7 @@ function render(province){
   setK('gRonYtd',hasRon2026?fmtPesosKPI(ronYtd):ND,'b');
   const fiscalRatiosMethodNote=document.getElementById('fiscalRatiosMethodNote');
   if(fiscalRatiosMethodNote){
-    fiscalRatiosMethodNote.innerText = `Los dos acumulados usan ${commonFlowMonths.size} meses comunes de 2026. Último mes disponible por fuente: recaudación propia ${topSourceMonths.at(-1)||'sin dato'}; recursos de Nación ${ronSourceMonths.at(-1)||'sin dato'}. Los gráficos mensuales conservan el detalle de sus fuentes.`;
+    fiscalRatiosMethodNote.innerText = `Los dos acumulados usan ${commonFlowMonths.size} meses comunes de 2026. Último mes disponible: recaudación propia ${topSourceMonths.at(-1)||'sin dato'}; recursos de Nación ${ronSourceMonths.at(-1)||'sin dato'}. Los gráficos mensuales conservan el detalle de cada serie.`;
   }
   // Lectura política rápida
   const setQuick=(id,val,cls,textId,text)=>{
@@ -2988,14 +2988,14 @@ function renderLiquidity(province){
   const pbaLatestStock=pbaDebtProfile?.latest_stock;
   const items=province==='Buenos Aires'&&pbaIndicators&&pbaLatestStock
     ? [
-      ['Intereses pagados / Recursos totales (%)',toN(pbaIndicators.interest_paid_to_total_resources_pct),'Fuente: informe oficial PBA, año 2025.','4T2025',pbaIndicators.source?.url],
-      ['Servicios pagados / Recursos totales (%)',toN(pbaIndicators.debt_service_paid_to_total_resources_pct),'Fuente: informe oficial PBA, año 2025.','4T2025',pbaIndicators.source?.url],
-      ['Stock de deuda / Ingresos de los últimos 12 meses (%)',toN(pbaLatestStock.debt_to_ltm_income_pct),'Fuente: stock DNAP al 31/03/2026 sobre ingresos de los últimos 12 meses al 1T26.','1T2026',pbaLatestStock.source?.url],
+      ['Intereses pagados / Recursos totales (%)',toN(pbaIndicators.interest_paid_to_total_resources_pct),'Año 2025.','4T2025',pbaIndicators.source?.url],
+      ['Servicios pagados / Recursos totales (%)',toN(pbaIndicators.debt_service_paid_to_total_resources_pct),'Año 2025.','4T2025',pbaIndicators.source?.url],
+      ['Stock de deuda / Ingresos de los últimos 12 meses (%)',toN(pbaLatestStock.debt_to_ltm_income_pct),'Stock al 31/03/2026 sobre ingresos de los últimos 12 meses al 1T26.','1T2026',pbaLatestStock.source?.url],
     ]
     : [
-      ['Intereses / Ingresos Corrientes (%)',intIng,'Fuente: 1816 fiscal histórico, pág. 8 (LTM III TRIM 2025).','3T2025','dashboard_liquidity_risk.json'],
-      ['Servicios de deuda acumulados / Ingresos anuales (%)',serviciosSobreIng,'Fuente: tableros DNAP por provincia, III TRIM 2025.','3T2025','dashboard_liquidity_risk.json'],
-      ['Stock de deuda / Ingresos Totales (%)',deudaRec,'Fuente: 1816 fiscal histórico, pág. 21 + DNAP tipo de cambio A3500.','3T2025','dashboard_liquidity_risk.json'],
+      ['Intereses / Ingresos Corrientes (%)',intIng,'Últimos 12 meses al III TRIM 2025.','3T2025','dashboard_liquidity_risk.json'],
+      ['Servicios de deuda acumulados / Ingresos anuales (%)',serviciosSobreIng,'III TRIM 2025.','3T2025','dashboard_liquidity_risk.json'],
+      ['Stock de deuda / Ingresos Totales (%)',deudaRec,'III TRIM 2025 · conversión al tipo de cambio A3500.','3T2025','dashboard_liquidity_risk.json'],
     ];
   cards.innerHTML=items.map(([label,val,micro,period,source])=>{
     const missing=val===null||val===undefined;
@@ -3505,7 +3505,7 @@ function renderFederalFairness(province){
   const year=pdata.year||'—';
   const rankExpl = rankValue!==null&&rankValue!==undefined ? `Cómo leer el ranking: ${rankTxt} ubica a ${province} dentro del conjunto comparado por RON per cápita.` : 'Ranking no disponible para esta provincia.';
   if(footnotes){
-    footnotes.innerHTML = `<strong>Corte:</strong> ${year}. · <strong>Fuente:</strong> serie RON normalizada e INDEC. · <strong>Universo:</strong> ${perCapitaUniverse} jurisdicciones con RON y población válidos. · ${rankExpl} · <strong>Alcance:</strong> comparación relativa por habitante; no determina una obligación legal de reparto.`;
+    footnotes.innerHTML = `<strong>Corte:</strong> ${year}. · <strong>Universo:</strong> ${perCapitaUniverse} jurisdicciones con RON y población válidos. · ${rankExpl} · <strong>Alcance:</strong> comparación relativa por habitante; no determina una obligación legal de reparto.`;
   }
   [
     ['RON per cápita vs promedio', ronPerCapitaValue, 'ars'],
@@ -4259,7 +4259,7 @@ function renderMetrics(c,topYtd,ronYtd){
     const lead=ordered[0];
     if(!lead || (lead.count/rows.length)<0.7) return null;
 
-    const metaText=(group)=>META_FIELDS
+    const metaText=(group)=>META_FIELDS.filter(([field])=>field!=='fuente')
       .map(([field,label])=>group.meta?.[field]?`${label} ${group.meta[field]}`:null)
       .filter(Boolean)
       .join(', ');
@@ -4374,13 +4374,13 @@ function renderMetrics(c,topYtd,ronYtd){
       <table class="kpi-details-table indicators-meta-table">
         <thead>
           <tr>
-            <th>Indicador</th><th>Fuente</th><th>Período</th><th>Cobertura</th><th>Unidad</th><th>estado_dato</th><th>tipo_dato</th>
+            <th>Indicador</th><th class="source-reference">Fuente</th><th>Período</th><th>Cobertura</th><th>Unidad</th><th>estado_dato</th><th>tipo_dato</th>
           </tr>
         </thead>
         <tbody>
           ${rows.map(([n,,,,,,,meta])=>`
             <tr>
-              <td>${n}</td><td>${meta.fuente}</td><td>${meta.periodo}</td><td>${meta.cobertura}</td><td>${meta.unidad}</td><td>${meta.estado}</td><td>${meta.tipo}</td>
+              <td>${n}</td><td class="source-reference">${meta.fuente}</td><td>${meta.periodo}</td><td>${meta.cobertura}</td><td>${meta.unidad}</td><td>${meta.estado}</td><td>${meta.tipo}</td>
             </tr>
           `).join('')}
         </tbody>
@@ -4395,7 +4395,7 @@ function renderGovernmentResults(province){
   if(!grid)return;
   const provinceData=governmentResults?.provinces?.[province];
   const scope=document.getElementById('governmentResultsScope');
-  if(scope)scope.textContent=`${province} frente a las 24 jurisdicciones · fuentes oficiales · cada indicador conserva su propio período.`;
+  if(scope)scope.textContent=`${province} frente a las 24 jurisdicciones · cada indicador conserva su propio período.`;
   if(!provinceData){
     grid.innerHTML='<article class="result-card missing"><div class="k-lbl">Dato no disponible</div><div class="result-question">No hay una fila federal validada para esta jurisdicción. No se reemplaza con un promedio ni con una estimación.</div></article>';
     return;
@@ -4466,7 +4466,7 @@ function renderDebtProfile(province, c){
     set('debtProfileInterest','Sin calendario validado');set('debtProfileService','Sin calendario validado');
     set('debtProfileReading','El stock mide obligaciones pendientes; para evaluar capacidad de pago hace falta su calendario y la caja disponible.');
     document.getElementById('debtProfileCreditors').innerHTML=[['Bonos',debt.bonds],['Nación',debt.nation],['Organismos internacionales',debt.multilateral],['Bancos',debt.banks],['Deuda consolidada',debt.consolidated]].map(([label,value])=>`<p>${label}: ${formatUSDMillions(value)}</p>`).join('');
-    set('debtProfileMethodNote','Fuente: 1816, Informe fiscal provincias 1T26, página 21. Montos en millones de dólares. Los componentes pueden diferir del total por redondeo.');
+    set('debtProfileMethodNote','Montos en millones de dólares. Los componentes pueden diferir del total por redondeo.');
     return;
   }
 
@@ -4517,7 +4517,7 @@ function renderDebtProfile(province, c){
     `).join('');
     const debtProfileMethodNote=document.getElementById('debtProfileMethodNote');
     if(debtProfileMethodNote){
-      debtProfileMethodNote.innerText=`Stock y acreedores: DNAP, 31/03/2026; dato preliminar, sin deuda flotante ni contingente. Equivalente en USD: A3500 BCRA de $${Number(stock.a3500_ars_per_usd).toLocaleString('es-AR',{minimumFractionDigits:4,maximumFractionDigits:4})}. Exposición cambiaria: informe oficial PBA al 31/12/2025. Deuda / ingresos: stock DNAP sobre ingresos de los últimos 12 meses al 1T26. ${official.methodology_note}`;
+      debtProfileMethodNote.innerText=`Stock y acreedores: 31/03/2026; dato preliminar, sin deuda flotante ni contingente. Equivalente en USD: A3500 BCRA de $${Number(stock.a3500_ars_per_usd).toLocaleString('es-AR',{minimumFractionDigits:4,maximumFractionDigits:4})}. Exposición cambiaria al 31/12/2025. Deuda / ingresos: stock sobre ingresos de los últimos 12 meses al 1T26. ${official.methodology_note}`;
     }
     [
       ['Deuda total (ARS M)',totalArs,'ars',stock.source?.url,'1T2026'],
@@ -4551,7 +4551,7 @@ function renderDebtProfile(province, c){
   document.getElementById('debtProfileTotal').textContent=deudaTotal===null?ND:formatUSDMillions(deudaTotal);
   const debtProfileUsd=document.getElementById('debtProfileUsd');
   if(debtProfileUsd) debtProfileUsd.textContent='Serie homogénea comparativa';
-  document.getElementById('debtProfileFx').textContent=deudaFx===null?'Moneda extranjera: SD':`Moneda extranjera: ${pctN(deudaFx)} · ${debtSourceNote}`;
+  document.getElementById('debtProfileFx').textContent=deudaFx===null?'Moneda extranjera: SD':`Moneda extranjera: ${pctN(deudaFx)}`;
   const debtProfileRatio=document.getElementById('debtProfileRatio');
   if(debtProfileRatio) debtProfileRatio.textContent=pctN(toN(c.deuda_total_sobre_ingresos_pct));
   const debtProfileInterest=document.getElementById('debtProfileInterest');
@@ -5133,13 +5133,13 @@ document.getElementById('downloadPng')?.addEventListener('click',exportCurrentPr
 </script>
 <script src="visible-controls.js?v=20260906-12"></script>
 <script src="profile-readings.js?v=20260906-12"></script>
-<script src="provincial-debt-services.js?v=20260906-13"></script>
-<script src="inflation-history.js?v=20260906-9"></script>
-<script src="executive-redesign.js?v=20260906-12"></script>
-<script src="closing-tools.js?v=20260906-4"></script>
-<script src="management-tools.js?v=20260906-12"></script>
-<script src="federal-tools.js?v=20260906-12"></script>
-<script src="budget-execution.js?v=20260906-13"></script>
+<script src="provincial-debt-services.js?v=20260907-1"></script>
+<script src="inflation-history.js?v=20260907-1"></script>
+<script src="executive-redesign.js?v=20260907-1"></script>
+<script src="closing-tools.js?v=20260907-1"></script>
+<script src="management-tools.js?v=20260907-1"></script>
+<script src="federal-tools.js?v=20260907-1"></script>
+<script src="budget-execution.js?v=20260907-1"></script>
 <script>
 /* ── BOOT ────────────────────────────────────────────────────────── */
 loadAll().catch(err=>{

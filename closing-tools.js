@@ -17,7 +17,7 @@ async function renderManagementProposals(host){
     const rows=document.createElement('div');host.append(rows);
     const render=()=>{rows.replaceChildren(managementTable('Propuesta de trabajo · no aprobada',['Indicador y base','Meta y plazo','Responsabilidad y seguimiento'],d.rows.filter(r=>r.provincia===select.value).map(r=>[`${r.indicador}: ${fnum(r.valor_base)} ${r.unidad} · ${r.periodo_base}`,`${r.meta_propuesta===null?'Requiere nueva medición':fnum(r.meta_propuesta)+' '+r.unidad}. ${r.criterio}. ${r.horizonte}`,`${r.responsable_funcional}. ${r.seguimiento}${r.nota_cobertura?' · '+r.nota_cobertura:''}`])));};
     const sync=()=>{select.value=document.querySelector('#psel').value;render();};select.onchange=render;document.querySelector('#psel').addEventListener('change',sync);sync();
-    managementSource(host,'data/management_proposals.csv','Descargar 96 propuestas con fuentes y método');
+    managementSource(host,'data/management_proposals.csv','Descargar las 96 propuestas');
     managementSource(host,'data/management_targets_template.csv','Descargar matriz vacía para definir objetivos propios');
   }catch{const p=document.createElement('p');p.textContent='No se pudieron cargar las propuestas de metas. Reintentá al recargar.';host.append(p);}
 }
