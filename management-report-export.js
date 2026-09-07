@@ -13,13 +13,13 @@ function initManagementReportExport(){
   if(!report){download.removeAttribute('href');download.setAttribute('aria-disabled','true');download.tabIndex=-1;detail.textContent=province+' · Preparando el informe…';return;}
   const url=new URL('reports/'+report.file,location.href);url.searchParams.set('v',report.sha256.slice(0,12));
   download.href=url.href;download.download=report.file;download.removeAttribute('aria-disabled');download.removeAttribute('tabindex');
-  detail.textContent=`${province} · ${report.pages} páginas · Cuentas ${report.annual_year} y señales ${report.quarter.slice(0,4)}. Cortes y unidades indicados en cada página.`;
+  detail.textContent=`${province} · ${report.pages} páginas · Datos, análisis editorial y prioridades de gestión. Cuentas ${report.annual_year} y señales ${report.quarter.slice(0,4)}.`;
   status.textContent=report.annual_available?'':`El cierre ${report.annual_year} no está disponible: el informe lo identifica y conserva los demás indicadores.`;
  }
  async function load(){
   retry.hidden=true;status.textContent='';
   try{
-   const response=await fetch('reports/manifest.json?v=20260907-5',{cache:'no-cache'});if(!response.ok)throw Error('manifest');
+   const response=await fetch('reports/manifest.json?v=20260907-6',{cache:'no-cache'});if(!response.ok)throw Error('manifest');
    const data=await response.json();
    const expected=[...document.getElementById('psel').options].map(o=>o.value);
    if(!Array.isArray(data.reports)||data.reports.length!==expected.length||!expected.every(p=>data.reports.filter(r=>r.province===p&&r.pages===3&&/^informe-[a-z-]+\.pdf$/.test(r.file)&&/^[a-f0-9]{64}$/.test(r.sha256)).length===1))throw Error('coverage');

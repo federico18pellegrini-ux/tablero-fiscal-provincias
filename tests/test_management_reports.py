@@ -1,7 +1,7 @@
 import csv, hashlib, json, math, tempfile, unittest
 from pathlib import Path
 from pypdf import PdfReader
-from scripts_export_management_reports import ReportData, ROOT, build, fingerprints, ratio
+from scripts_export_management_reports import ReportData, ROOT, build, fingerprints, ratio, editorial_reading
 
 class ManagementReportTests(unittest.TestCase):
  @classmethod
@@ -69,5 +69,21 @@ class ManagementReportTests(unittest.TestCase):
     self.assertEqual({b['page'] for b in blocks},{1,2,3})
     self.assertTrue(all(b['end']<280 for b in blocks),name)
     self.assertEqual(len(PdfReader(Path(tmp)/next(e['file'] for e in generated['reports'] if e['province']==name)).pages),3)
+
+ def test_editorial_distinguishes_annual_primary_deficit_from_quarter_interest_pressure(self):
+  ba=editorial_reading(self.data.model('Buenos Aires'))
+  self.assertIn('desbalance antes de intereses',ba['mechanism'])
+  self.assertIn('alcanzaron para el gasto sin intereses',ba['quarter'])
+  self.assertIn('compran menos',ba['federal'])
+  self.assertIn('Corregir el déficit',ba['closing'])
+
+ def test_editorial_does_not_impute_a_deficit_or_surplus_to_missing_information(self):
+  missing=editorial_reading(self.data.model('La Pampa'))
+  self.assertIn('Sin ese cierre',missing['opening'])
+  self.assertIn('La información que falta',missing['closing'])
+  self.assertNotIn('Corregir el déficit',missing['closing'])
+  surplus=editorial_reading(self.data.model('Córdoba'))
+  self.assertIn('superávit',surplus['opening'])
+  self.assertNotIn('corregir el desbalance',surplus['opening'])
 
 if __name__=='__main__':unittest.main()

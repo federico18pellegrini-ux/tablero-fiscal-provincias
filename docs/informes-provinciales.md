@@ -2,6 +2,8 @@
 
 El botón visible «Exportar informe (PDF)» descarga el informe de la provincia elegida en el menú fijo. Las 24 jurisdicciones tienen el mismo diseño y estructura; los números, diagnóstico, disponibilidad y recomendaciones dependen de cada provincia. El documento tiene un alcance propio: cierre anual, comienzo del año siguiente, transferencias mensuales, deuda y resultados de gobierno. No replica filtros transitorios de una sola vista.
 
+La lectura editorial conecta el dato con su consecuencia y una recomendación. Distingue déficit antes de intereses, déficit por intereses, superávit, equilibrio y falta de información. El trimestre conserva su diagnóstico propio; las transferencias se interpretan según su variación real. La agenda de 100 días cierra con un juicio profesional ligado a las cuentas de la provincia. Las recomendaciones no se presentan como hechos observados ni como medidas presupuestadas. Se conserva el límite de tres páginas, los gráficos y el pie con autor y numeración.
+
 ## Generación y actualización
 
 Instalar `requirements-reports.txt` y ejecutar `python scripts_export_management_reports.py`. Produce los 24 PDF en `reports/` y un manifiesto con períodos, referencias, huellas de los datos y de cada archivo. La importación ordinaria `scripts_regenerate_2026.py` también regenera estos informes. Si se actualiza otra fuente, ejecutar el generador antes de publicar. CI rechaza informes que no correspondan a los datos del tablero.
