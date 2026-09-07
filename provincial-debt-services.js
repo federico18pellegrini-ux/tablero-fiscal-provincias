@@ -33,7 +33,7 @@ function renderProvinceServices(province){
  const recent=rows.filter(r=>['2025','2026-Q1'].includes(r.period));
  const formatRows=rs=>rs.map(r=>[r.period_type==='quarter'?'Enero–marzo 2026':r.period,fnum(r.amortization_ars_m),fnum(r.interest_ars_m),fnum(r.total_ars_m)]);
  history.append(managementTable('Año completo y trimestre: no se comparan como períodos iguales',['Período','Capital','Intereses','Total'],formatRows(recent)));
- const details=document.createElement('details');details.className='history-values';details.innerHTML='<summary>Ver historia desde 2005 y fuentes</summary>';details.append(managementTable('Servicios devengados · millones de pesos corrientes',['Período','Capital','Intereses','Total'],formatRows(rows)));
+ const details=document.createElement('details');details.className='history-values';details.innerHTML='<summary>Ver historia desde 2005</summary>';details.append(managementTable('Servicios devengados · millones de pesos corrientes',['Período','Capital','Intereses','Total'],formatRows(rows)));
  for(const url of [...new Set(rows.map(r=>r.source_url))])managementSource(details,url,'Abrir planilla oficial de origen');history.append(details);
  const diff=data.source_differences.find(r=>r.province===province);if(diff){const p=document.createElement('p');p.className='federal-note';p.textContent='La serie provincial y el consolidado nacional presentan diferencias en 2025. Se conserva la serie provincial; el detalle de conciliación está en la descarga.';details.append(p);}
  managementSource(history,'data/provincial_debt_services.csv','Descargar servicios de las 24 jurisdicciones (CSV)');managementSource(history,'data/provincial_debt_services.json','Ver cobertura, fuentes y conciliación');

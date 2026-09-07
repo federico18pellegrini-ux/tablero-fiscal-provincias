@@ -43,11 +43,10 @@ let managementReviewRequest=null;
 function renderManagementSourceReview(){
  if(managementReviewRequest||!document.getElementById('fiscalGuide'))return;
  managementReviewRequest=Promise.all(['management_source_review.json','management_source_gaps.json'].map(name=>fetch('data/'+name+'?v=20260906-13').then(r=>{if(!r.ok)throw Error('review');return r.json();}))).then(([review,gaps])=>{
-  const host=document.createElement('section');host.id='managementSourceReview';host.className='national-section completion-card';const h=document.createElement('h2');h.textContent='Fuentes revisadas y datos que faltan';host.append(h);
-  budgetParagraph(host,'Revisión del '+new Date(review.checked_at).toLocaleDateString('es-AR')+'. Control a pedido; no es una actualización automática. Se verificaron '+review.sources.length+' enlaces: '+review.sources.filter(s=>s.status==='unchanged').length+' archivos coinciden con los importados. Que un enlace funcione no garantiza que el dato sea actual ni comparable.');
+  const host=document.createElement('section');host.id='managementSourceReview';host.className='national-section completion-card';const h=document.createElement('h2');h.textContent='Datos que faltan para decidir';host.append(h);
+  budgetParagraph(host,'Revisión del '+new Date(review.checked_at).toLocaleDateString('es-AR')+'. Los datos pendientes no se interpretan como cero.');
   const list=document.createElement('ul');for(const text of gaps.pending){const li=document.createElement('li');li.textContent=text;list.append(li);}host.append(list);
-  for(const source of gaps.checks){budgetParagraph(host,source.province+' · '+source.kind+': '+source.note);managementSource(host,source.url,'Consultar archivo observado');}
-  managementSource(host,'data/management_source_review.json','Ver resultado del control de enlaces y cambios');document.getElementById('fiscalGuide').append(host);
+  document.getElementById('fiscalGuide').append(host);
  }).catch(()=>{managementReviewRequest=null;});
 }
 function renderExecutionChanges(province,now,previous){
