@@ -1,6 +1,6 @@
 {
   "project": "Sistema fiscal provincias - capa intermedia normalizada",
-  "generated_at": "2026-09-06T21:01:57.872076Z",
+  "generated_at": "2026-09-07T02:49:29.601451Z",
   "data_cutoff": "2026-07-31",
   "province_universe": [
     "Buenos Aires",
@@ -76,7 +76,9 @@
     "pba_debt_service_schedule": "data/debt/pba_debt_service_schedule_2026_2041.csv",
     "government_results": "data/government_results_provinces.json",
     "government_results_audit_csv": "data/government_results/official_metrics.csv",
-    "government_results_pba": "data/government_results_pba.json"
+    "government_results_pba": "data/government_results_pba.json",
+    "management_reports": "reports/manifest.json",
+    "annual_fiscal_accounts": "data/annual_fiscal_accounts.json"
   },
   "notes": {
     "cross_section_1816_scope": "La capa estructural general conserva el corte 3T25. La nueva sala del gobernador usa 4T25 y 1T26 y un ranking homogéneo de 23 jurisdicciones; La Pampa no integra esos informes.",
@@ -87,12 +89,12 @@
     "top_mensual_cobertura": "Cobertura dispar por jurisdicción; consultar data/cobertura.csv y mostrar el corte propio de cada provincia.",
     "fiscal_pipeline_v2": "Se agregan indicadores de dependencia, rigidez, ahorro corriente, estrés fiscal, riesgo aguinaldo, atribución del deterioro y semáforo fiscal para consumo directo de frontend.",
     "liquidity_risk_scope": "Bloque de caja y riesgo inmediato. El perfil anual oficial de deuda 2026-2041 está integrado. Caja de libre disponibilidad, calendario operativo de salarios/aguinaldo y financiamiento efectivamente disponible requieren una fuente operativa adicional.",
-    "real_dynamics_scope": "Bloque de dinámica real 2026. Requiere base mensual homogénea actual vs mismo período del año previo. El repo actual prefill ingresos 2026, pero no contiene aún toda la base comparable 2025 ni ejecución mensual de gasto 2026 normalizada.",
+    "real_dynamics_scope": "RON 2026: variación real de meses comparables contra 2025, con IPC observado aplicado mes a mes. Los demás indicadores requieren base mensual homogénea; los faltantes no se reemplazan por cero.",
     "attribution_scope": "Bloque de atribución del deterioro. Separa presión Nación, macro y gestión con fórmula visible. Requiere inputs homogéneos de ingresos, transferencias, proxy macro y gasto primario.",
     "federal_fairness_scope": "Bloque de comparación federal justa. Calcula RON per cápita vs promedio provincial y aporte estimado vs participación recibida, con método visible.",
     "scenarios_scope": "Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible.",
     "load_priority_2025_2026": "a) comparación federal justa; b) caja y riesgo inmediato; c) atribución del deterioro; d) escenarios; e) dinámica real completa.",
-    "monthly_scope_2025_prepared": "Se agregan archivos placeholder 2025 (top mensual, consolidado mensual RON y gasto mensual 2025-2026) para futura carga auditada sin imputar valores.",
+    "monthly_scope_2025_prepared": "RON 2025: base mensual oficial completa, 24 jurisdicciones y 12 meses, importada con trazabilidad. TOP 2025 y gasto mensual 2025-2026 mantienen los faltantes identificados; no se imputan.",
     "reclamos_nacion_scope": "Matriz Nación→provincias con deuda total reclamada y robusta; distingue observado, estimado robusto, proxy y no disponible.",
     "pba_new_sources_2026_scope": "PBA: TOP mensual, RON mensual/diario y ejecución trimestral se integran como prioridad para 2025-2026 sin romper series históricas nacionales.",
     "national_debt_scope": "Serie mensual de deuda nacional (USD) para contexto macro del bloque Nación.",

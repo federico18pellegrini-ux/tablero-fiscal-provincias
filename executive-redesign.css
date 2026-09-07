@@ -1,6 +1,14 @@
 /* Light institutional theme with an optional dark reading mode. */
 /* Reference records remain in data and exports, outside the dashboard reading. */
 .source-reference,.result-source,#liquidityMethodNote{display:none!important}
+.management-report-export{display:flex;align-items:center;gap:20px;justify-content:space-between;padding:18px 20px;margin:12px 0 20px;border:1px solid var(--border2);border-left:4px solid var(--blue);border-radius:10px;background:var(--s1)}
+.management-report-export h2{font:600 17px/1.4 var(--font);margin:0 0 5px;color:var(--text)}
+.management-report-export p{font:400 13px/1.5 var(--font);color:var(--muted);margin:0;max-width:75ch}
+.management-report-export #managementReportStatus:not(:empty){margin-top:5px}
+.management-report-download{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 18px;border-radius:8px;background:#174e8c;color:#fff;text-decoration:none;font:600 14px/1.4 var(--font)}
+.management-report-download:hover{background:#123d70}.management-report-download:focus-visible{outline:3px solid #cb9630;outline-offset:3px}.management-report-download[aria-disabled=true]{opacity:.55;cursor:wait}
+@media(max-width:640px){.management-report-export{align-items:stretch;flex-direction:column;gap:12px;padding:16px}.management-report-download{width:100%;box-sizing:border-box}}
+@media print{.management-report-export{display:none!important}}
 .profile-reading[data-reading=debt] .profile-explanation{white-space:pre-line}
 /* Consistent card headings, including content that previously used accordions. */
 .gov-panel>h4,.gov-panel>summary,.expanded-content>summary,.cc>h3,.tb>h3,.overview-charts article>h3,.profile-reading>h3,.federal-guide-grid h3,.national-kpis article>h3{font:600 16px/1.4 var(--font)!important;letter-spacing:0!important;text-transform:none!important;color:var(--text)!important}

@@ -182,10 +182,10 @@ def ron_headers(sheet) -> dict[int, str]:
     return headers
 
 
-def import_ron(path: Path, universe: list[str]) -> tuple[list[dict[str, object]], dict[str, list[str]]]:
+def import_ron(path: Path, universe: list[str], year: int = 2026) -> tuple[list[dict[str, object]], dict[str, list[str]]]:
     workbook = openpyxl.load_workbook(path, data_only=True, read_only=True)
     universe_set = set(universe)
-    monthly_sheets = [(name.lower(), f"2026-{MONTHS[name]}") for name in MONTHS if name.lower() in workbook.sheetnames]
+    monthly_sheets = [(name.lower(), f"{year}-{MONTHS[name]}") for name in MONTHS if name.lower() in workbook.sheetnames]
     monthly_sheets.sort(key=lambda item: item[1])
     source_name = path.name
     rows: list[dict[str, object]] = []
@@ -210,7 +210,7 @@ def import_ron(path: Path, universe: list[str]) -> tuple[list[dict[str, object]]
                         "province": province,
                         "source": source_name,
                         "sheet": sheet_name,
-                        "year": 2026,
+                        "year": year,
                         "period_type": period_type,
                         "period": period,
                         "category": category,
@@ -463,6 +463,9 @@ def main() -> None:
     write_pba_files(top_rows, ron_rows, args.top_source, args.ron_source)
     write_canonical_files(top_rows, ron_rows, top_coverage, ron_coverage, universe)
     update_manifest(top_coverage, ron_coverage, universe)
+    # Keep the downloadable report in sync with the same data publication.
+    from scripts_export_management_reports import build as build_management_reports
+    build_management_reports(ROOT / 'reports')
 
     print(f"TOP: {len(top_rows)} filas; PBA hasta {max(top_coverage['Buenos Aires'])}")
     print(f"RON: {len(ron_rows)} filas; {len(ron_coverage)} jurisdicciones hasta julio")
