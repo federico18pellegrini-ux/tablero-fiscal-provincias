@@ -71,4 +71,3 @@ function renderProposalEstimator(province){
  const reset=document.createElement('button');reset.type='button';reset.className='management-action';reset.textContent='Limpiar supuestos';reset.onclick=()=>{description.value='';Object.values(inputs).forEach(i=>i.value='');update();};host.append(reset);
 }
 if(typeof module!=='undefined')module.exports={fiscalExecutionRatios,proposalCost};
-
