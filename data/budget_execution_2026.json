@@ -1,0 +1,1991 @@
+{
+  "reviewed_at": "2026-09-06",
+  "unit": "ARS millions",
+  "budgets": [
+    {
+      "province": "Buenos Aires",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 41484520.65893499,
+      "spending": 43021244.867920004,
+      "capital": 3152264.646857,
+      "source_header": "PRESUPUESTO GENERAL EJERCICIO 2026 -LEY N° 15.557 | CUENTA DE AHORRO - INVERSION - FINANCIAMIENTO | EN MILLONES DE  PESOS | PROVINCIA DE BUENOS AIRES | TOTAL | ADMINISTRACION \nCENTRAL | ORGANISMOS DESCENTRALIZADOS | INSTITUCIONES DE PREVISION SOCIAL | CUENTA CORRIENTE",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_buenos_aires_1.xls",
+      "law_source_url": null,
+      "selected_column": 2,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "B10",
+            "label": "- INGRESOS CORRIENTES",
+            "multiplier": 1,
+            "original_value": 41417479.40257299
+          },
+          {
+            "cell": "B47",
+            "label": "- RECURSOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 67041.256362
+          }
+        ],
+        "spending": [
+          {
+            "cell": "B26",
+            "label": "- GASTOS CORRIENTES",
+            "multiplier": 1,
+            "original_value": 39868980.221063
+          },
+          {
+            "cell": "B55",
+            "label": "- GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 3152264.646857
+          }
+        ],
+        "capital": [
+          {
+            "cell": "B55",
+            "label": "- GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 3152264.646857
+          }
+        ]
+      }
+    },
+    {
+      "province": "CABA",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 17347360.262855,
+      "spending": 17341466.875164002,
+      "capital": 3433320.6956860004,
+      "source_header": "PRESUPUESTO AÑO 2026 LEY 6929 | CONSOLIDADO ADMINISTRACION PUBLICA | - EN MILLONES DE PESOS - | ADMINISTRACION PUBLICA NO FINANCIERA | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | FDOS. FIDUC\nY CTAS. ESP | INST. DE SEG.\nSOCIAL | SUBTOTAL | (1) | (2) | (3) | (4) | (5)=(1+2+3+4)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_caba_11.xls",
+      "law_source_url": null,
+      "selected_column": 6,
+      "scope_comparison": true,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "F130",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 17347360.262855
+          }
+        ],
+        "spending": [
+          {
+            "cell": "F131",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 17341466.875164002
+          }
+        ],
+        "capital": [
+          {
+            "cell": "F106",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 3433320.6956860004
+          }
+        ]
+      }
+    },
+    {
+      "province": "Catamarca",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 2575407.738607,
+      "spending": 2660936.962633,
+      "capital": 431604.90982500004,
+      "source_header": "PRESUPUESTO 2026  LEY N° 5928 | SECTOR PUBLICO PROVINCIAL NO FINANCIERO | - EN MILLONES DE PESOS - | NIVEL INSTITUCIONAL | Administración\nCentral | Organismos\nDescentralizados | Instituciones de la\nSeguridad Social | TOTAL",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_catamarca_1.xls",
+      "law_source_url": null,
+      "selected_column": 6,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "F48",
+            "label": "VI INGRESOS TOTALES",
+            "multiplier": 1,
+            "original_value": 2575407.738607
+          }
+        ],
+        "spending": [
+          {
+            "cell": "F50",
+            "label": "VII GASTOS TOTALES",
+            "multiplier": 1,
+            "original_value": 2660936.962633
+          }
+        ],
+        "capital": [
+          {
+            "cell": "F42",
+            "label": "V GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 431604.90982500004
+          }
+        ]
+      }
+    },
+    {
+      "province": "Chaco",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 4407870.056,
+      "spending": 4407713.468,
+      "capital": 693554.232,
+      "source_header": "PRESUPUESTO 2025 LEY Nº 4194-F | ADMINISTRACIÓN PROVINCIAL | - EN MILLONES DE PESOS - | Ley Nro. 5655. \nNo se cuenta con las planillas de la ley pero se cargaron las de una versión del proyecto de ley más la única\nmodificación que se introdujo a dicha versión previo a la sanción de la ley, modificación que fue informada telefónicamente\npor l | CONCEPTO | TOTAL",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_chaco_1.xls",
+      "law_source_url": "https://contaduriageneral.chaco.gob.ar/leyes",
+      "selected_column": 2,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial. El encabezado del archivo tiene un año inconsistente; la norma oficial confirma el ejercicio 2026.",
+      "trace": {
+        "income": [
+          {
+            "cell": "B18",
+            "label": "III. RECURSOS",
+            "multiplier": 1,
+            "original_value": 4407870.056
+          }
+        ],
+        "spending": [
+          {
+            "cell": "B10",
+            "label": "I. EROGACIONES",
+            "multiplier": 1,
+            "original_value": 4407713.468
+          }
+        ],
+        "capital": [
+          {
+            "cell": "B12",
+            "label": ". DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 693554.232
+          }
+        ]
+      }
+    },
+    {
+      "province": "Chubut",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 3188808.972445,
+      "spending": 3395223.9148099995,
+      "capital": 553178.030901,
+      "source_header": "PRESUPUESTO 2026  LEY II N° 316 | - EN MILLONES DE PESOS - | PROVINCIA  DE CHUBUT | ADMINISTRACION PUBLICA NO FINANCIERA | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | TOTAL | (1) | (2) | (3) = (1)+(2)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_chubut_1.xls",
+      "law_source_url": null,
+      "selected_column": 4,
+      "scope_comparison": true,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "D17",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 3188808.972445
+          }
+        ],
+        "spending": [
+          {
+            "cell": "D18",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 3395223.9148099995
+          }
+        ],
+        "capital": [
+          {
+            "cell": "D16",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 553178.030901
+          }
+        ]
+      }
+    },
+    {
+      "province": "Córdoba",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 13773483.0,
+      "spending": 13760488.0,
+      "capital": 1744827.0,
+      "source_header": "PRESUPUESTO 2026 LEY Nº 11.088 | ADMINISTRACION PÚBLICA NO FINANCIERA | - EN MILLONES DE PESOS - | PROVINCIA  DE CORDOBA | ADMINISTRACION PUBLICA NO FINANCIERA | CONCEPTO | ADMINISTRACION CENTRAL | ORGANISMOS DESCEN. | FDOS. FID. Y CTAS ESP. | INSTITUCIONES DE SEGURIDAD SOCIAL | TOTAL",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_cordoba_1.xls",
+      "law_source_url": null,
+      "selected_column": 6,
+      "scope_comparison": true,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "F52",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 13773483.0
+          }
+        ],
+        "spending": [
+          {
+            "cell": "F53",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 13760488.0
+          }
+        ],
+        "capital": [
+          {
+            "cell": "F42",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 1744827.0
+          }
+        ]
+      }
+    },
+    {
+      "province": "Corrientes",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 3089398.277788,
+      "spending": 3279147.717871,
+      "capital": 546515.055313,
+      "source_header": "PRESUPUESTO 2026 Ley Nº 6745 | ESQUEMA AHORRO -INVERSIÓN - FINANCIAMIENTO | ADMINISTRACIÓN CENTRAL + ORGANISMOS DESCENTRALIZADOS NO AUTOFINANCIADOS | En millones de $ | I - Recursos Corrientes",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_corrientes_1.xls",
+      "law_source_url": null,
+      "selected_column": 3,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "C21",
+            "label": "VII- TOTAL DE RECURSOS (I+IV)",
+            "multiplier": 1,
+            "original_value": 3089398.277788
+          }
+        ],
+        "spending": [
+          {
+            "cell": "C23",
+            "label": "VIII- TOTAL DE GASTOS (II+V)",
+            "multiplier": 1,
+            "original_value": 3279147.717871
+          }
+        ],
+        "capital": [
+          {
+            "cell": "C17",
+            "label": "V- GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 546515.055313
+          }
+        ]
+      }
+    },
+    {
+      "province": "Entre Ríos",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 5668132.0,
+      "spending": 5898195.899999999,
+      "capital": 545849.39,
+      "source_header": "PRESUPUESTO  2026 LEY Nº 11.234 | CONSOLIDADO SECTOR PÚBLICO | - EN MILLONES DE PESOS - | PROVINCIA  DE ENTRE RIOS | ADMINISTRACION PUBLICA NO FINANCIERA | INSTITUTOS, EMPRESAS Y OTROS ENTES | TOTAL SECTOR PÚBLICO | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | INST. DE SEG.\nSOCIAL | SUBTOTAL | INST. DE\nOBRA SOCIAL | EMPRESAS Y \nOTROS ENTES | SUBTOTAL | (1) | (2) | (3) | (4) = (1)+(2)+(3) | (5) | (6) | (7) = (5)+(6) | (8) = (4)+(7)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_entre_rios_1.xls",
+      "law_source_url": null,
+      "selected_column": 5,
+      "scope_comparison": true,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "E55",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 5668132.0
+          }
+        ],
+        "spending": [
+          {
+            "cell": "E56",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 5898195.899999999
+          }
+        ],
+        "capital": [
+          {
+            "cell": "E45",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 545849.39
+          }
+        ]
+      }
+    },
+    {
+      "province": "Formosa",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 3125126.1989669995,
+      "spending": 3098923.974841,
+      "capital": 450515.66800400004,
+      "source_header": "PRESUPUESTO 2026  Ley N° 1745 | CONSOLIDADO ADMINISTRACION PUBLICA | - EN MILLONES DE PESOS - | PROVINCIA  DE FORMOSA | ADMINISTRACION PUBLICA NO FINANCIERA | INSTITUTOS, EMPRESAS Y OTROS ENTES | TOTAL | SECTOR | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | INST. DE SEG.\nSOCIAL | SUBTOTAL | INST. DE\nOBRA SOCIAL | EMPRESAS Y \nOTROS ENTES | SUBTOTAL | PUBLICO | (1) | (2) | (4) | (5)=(1+2+3+4) | (6) | (7) | (8)=(6+7) | (9)=(5+8)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_formosa_11.xls",
+      "law_source_url": null,
+      "selected_column": 5,
+      "scope_comparison": true,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "E113",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 3125126.1989669995
+          }
+        ],
+        "spending": [
+          {
+            "cell": "E114",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 3098923.974841
+          }
+        ],
+        "capital": [
+          {
+            "cell": "E94",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 450515.66800400004
+          }
+        ]
+      }
+    },
+    {
+      "province": "Jujuy",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 2665146.4043460004,
+      "spending": 2663750.291667,
+      "capital": 379257.348435,
+      "source_header": "PROVINCIA  DE JUJUY | PRESUPUESTO 2026 LEY Nº 6.490 | ADMINISTRACIÓN PÚBLICA NO FINANCIERA | - EN MILLONES DE PESOS - | ADMINISTRACION PUBLICA NO FINANCIERA | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | TOTAL GENERAL | I -        INGRESOS CORRIENTES | - Tributarios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_jujuy_1.xls",
+      "law_source_url": null,
+      "selected_column": 5,
+      "scope_comparison": true,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "E31",
+            "label": "VI - INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 2665146.4043460004
+          }
+        ],
+        "spending": [
+          {
+            "cell": "E32",
+            "label": "VII - GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 2663750.291667
+          }
+        ],
+        "capital": [
+          {
+            "cell": "E26",
+            "label": "V - GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 379257.348435
+          }
+        ]
+      }
+    },
+    {
+      "province": "La Pampa",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 2293404.3255879995,
+      "spending": 2521562.37793,
+      "capital": 679557.491389,
+      "source_header": "PRESUPUESTO 2026 LEY Nº 3637 | ADMINISTRACIÓN PROVINCIAL | - EN MILLONES DE PESOS - | CONCEPTO | TOTAL | ADMINIST. CENTRAL | ORG. DESCENT.",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_la_pampa_11.xls",
+      "law_source_url": null,
+      "selected_column": 2,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "B46",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 2293404.3255879995
+          }
+        ],
+        "spending": [
+          {
+            "cell": "B47",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 2521562.37793
+          }
+        ],
+        "capital": [
+          {
+            "cell": "B39",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 679557.491389
+          }
+        ]
+      }
+    },
+    {
+      "province": "La Rioja",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 1837272.770334,
+      "spending": 1832020.6238710003,
+      "capital": 124918.595841,
+      "source_header": "Ley N° 10581 | Presupuesto 2026 Ley N°  10.850 | - EN MILLONES DE PESOS - | PROVINCIA DE LA RIOJA | ADMINISTRACION PUBLICA PROVINCIAL | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | INSTITUCIONES DE SEG.\nSOCIAL | TOTAL | (1) | (2) | (3) | (4) = (1)+(2)+(3)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_la_rioja_1.xls",
+      "law_source_url": null,
+      "selected_column": 5,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "E43",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 1837272.770334
+          }
+        ],
+        "spending": [
+          {
+            "cell": "E44",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 1832020.6238710003
+          }
+        ],
+        "capital": [
+          {
+            "cell": "E42",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 124918.595841
+          }
+        ]
+      }
+    },
+    {
+      "province": "Mendoza",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 5012981.975377,
+      "spending": 5662107.1224030005,
+      "capital": 822947.462131,
+      "source_header": "PRESUPUESTO 2026 LEY Nº 9.681 | ADMINISTRACIÓN CENTRAL, ORGANISMOS DESCENTRALIZADOS Y CUENTAS ESPECIALES | - EN MILLONES DE PESOS - | PROVINCIA DE MENDOZA | CONCEPTO | TOTAL",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_mendoza_11.xls",
+      "law_source_url": null,
+      "selected_column": 2,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "B56",
+            "label": "VI. INGRESOS TOTALES",
+            "multiplier": 1,
+            "original_value": 5012981.975377
+          }
+        ],
+        "spending": [
+          {
+            "cell": "B57",
+            "label": "VII. EGRESOS TOTALES",
+            "multiplier": 1,
+            "original_value": 5662107.1224030005
+          }
+        ],
+        "capital": [
+          {
+            "cell": "B46",
+            "label": "V. EROGACIONES DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 822947.462131
+          }
+        ]
+      }
+    },
+    {
+      "province": "Misiones",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 3599507.544,
+      "spending": 4045600.921,
+      "capital": 631535.919,
+      "source_header": "PRESUPUESTO DE LA ADMINISTRACION CENTRAL Y ORGANISMOS DESCENTRALIZADOS LEY VII - N° 107 | AÑO 2026 | - EN MILES DE PESOS - | PROVINCIA  DE MISIONES | CONCEPTO | TOTAL | ADMINISTRACIÓN CENTRAL | ORGANISMOS DESCENTRALIZADOS",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_misiones_1.xls",
+      "law_source_url": null,
+      "selected_column": 3,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial. Original en miles de pesos, convertido a millones. Se excluye financiamiento de los ingresos.",
+      "trace": {
+        "income": [
+          {
+            "cell": "C14",
+            "label": ". INGRESOS CORRIENTES",
+            "multiplier": 1,
+            "original_value": 3589804636.0
+          },
+          {
+            "cell": "C15",
+            "label": ". INGRESOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 9702908.0
+          }
+        ],
+        "spending": [
+          {
+            "cell": "C10",
+            "label": "I. TOTAL DE EROGACIONES",
+            "multiplier": 1,
+            "original_value": 4045600921.0
+          }
+        ],
+        "capital": [
+          {
+            "cell": "C12",
+            "label": ". EROGACIONES DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 631535919.0
+          }
+        ]
+      }
+    },
+    {
+      "province": "Neuquén",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 9224980.217545,
+      "spending": 9092564.847391,
+      "capital": 1166286.731644,
+      "source_header": "PRESUPUESTO 2026 LEYES Nº 3552/3553/3554 (*) | ADMINISTRACIÓN PROVINCIAL | - EN MILLONES DE PESOS - | PROVINCIA  DE NEUQUEN | ADMINISTRACION PROVINCIAL | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | FONDOS FIDUCIARIOS | INSTITUTO DE SEGURIDAD SOCIAL | TOTAL | (1) | (2) | (3) | (4) | (5) = (1+2+3+4)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_neuquen_1.xls",
+      "law_source_url": null,
+      "selected_column": 6,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "F62",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 9224980.217545
+          }
+        ],
+        "spending": [
+          {
+            "cell": "F63",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 9092564.847391
+          }
+        ],
+        "capital": [
+          {
+            "cell": "F48",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 1166286.731644
+          }
+        ]
+      }
+    },
+    {
+      "province": "Río Negro",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 2945086.375416,
+      "spending": 2927608.7297659996,
+      "capital": 198004.30502,
+      "source_header": "PRESUPUESTO AÑO 2026: Ley N° 5836 | Presupuesto Ejercicio Fiscal 2026 Ley N°5836 | CONSOLIDADO SECTOR  PÚBLICO PROVINCIAL | - EN MILLONES DE PESOS - | PROVINCIA  DE RIO NEGRO | ADMINISTRACION PUBLICA NO FINANCIERA | TOTAL SECTOR PUBLICO | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | FDOS. FIDUC\nY CTAS. ESP | INST. DE OBRA\nSOCIAL | SUBTOTAL | OTROS ENTES (IAPS- LOTERÍA) | (1) | (2) | (3) | (4) | (5)=(1+2+3+4) | (6) | (7)=(5+6)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_rio_negro_1.xls",
+      "law_source_url": null,
+      "selected_column": 7,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "G34",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 2945086.375416
+          }
+        ],
+        "spending": [
+          {
+            "cell": "G35",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 2927608.7297659996
+          }
+        ],
+        "capital": [
+          {
+            "cell": "G30",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 198004.30502
+          }
+        ]
+      }
+    },
+    {
+      "province": "Salta",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 3899595.175325,
+      "spending": 3887538.3513249997,
+      "capital": 351880.954977,
+      "source_header": "PRESUPUESTO 2026 LEY Nº 8518 | ADMINISTRACIÓN PROVINCIAL | - EN MILLONES DE PESOS - | PROVINCIA  DE SALTA | ADMINISTRACIÓN PROVINCIAL | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | TOTAL | (1) | (2) | (3) = (1)+(2)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_salta_1.xls",
+      "law_source_url": null,
+      "selected_column": 4,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "D40",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 3899595.175325
+          }
+        ],
+        "spending": [
+          {
+            "cell": "D41",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 3887538.3513249997
+          }
+        ],
+        "capital": [
+          {
+            "cell": "D36",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 351880.954977
+          }
+        ]
+      }
+    },
+    {
+      "province": "San Juan",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 3106169.53,
+      "spending": 3093698.403,
+      "capital": 487834.4780000001,
+      "source_header": "PRESUPUESTO 2026  LEY N° 2801-I | PROVINCIA DE SAN JUAN | - EN MILLONES DE PESOS - | PROVINCIA DE SAN JUAN | ADMINISTRACION PUBLICA PROVINCIAL | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | PODERES LEGISLATIVO Y JUDICIAL | FDOS. FIDUC | TOTAL",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_san_juan_1.xls",
+      "law_source_url": null,
+      "selected_column": 7,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "G42",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 3106169.53
+          }
+        ],
+        "spending": [
+          {
+            "cell": "G43",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 3093698.403
+          }
+        ],
+        "capital": [
+          {
+            "cell": "G38",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 487834.4780000001
+          }
+        ]
+      }
+    },
+    {
+      "province": "San Luis",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 1885788.61411,
+      "spending": 1885788.6141100002,
+      "capital": 334941.54321299994,
+      "source_header": "PRESUPUESTO AÑO 2026 | ESQUEMA AHORRO-INVERSION - FINANCIAMIENTO -LEY Nº VIII-0253-2025 | - EN MILLONES DE PESOS - | CONCEPTO | TOTAL",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_san_luis_1.xls",
+      "law_source_url": null,
+      "selected_column": 3,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "C29",
+            "label": "VII I- INGRESOS TOTALES",
+            "multiplier": 1,
+            "original_value": 1885788.61411
+          }
+        ],
+        "spending": [
+          {
+            "cell": "C30",
+            "label": "IX- GASTOS TOTALES",
+            "multiplier": 1,
+            "original_value": 1885788.6141100002
+          }
+        ],
+        "capital": [
+          {
+            "cell": "C23",
+            "label": "V - GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 334941.54321299994
+          }
+        ]
+      }
+    },
+    {
+      "province": "Santa Cruz",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 2905047.1154199997,
+      "spending": 3244867.064142,
+      "capital": 60244.95951,
+      "source_header": "PRESUPUESTO 2025 LEY Nº 3.987 | ADMINISTRACIÓN PÚBLICA NO FINANCIERA | - EN MILLONES DE PESOS - | PROVINCIA DE SANTA CRUZ | ADMINISTRACION PUBLICA NO FINANCIERA | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | INST. DE SEG.\nSOCIAL | TOTAL | (1) | (2) | (3) | (4)=(1+2+3)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_santa_cruz_1.xls",
+      "law_source_url": "https://boletinoficial.santacruz.gob.ar/legislacion/leyes/52781",
+      "selected_column": 5,
+      "scope_comparison": true,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial. El encabezado del archivo tiene un año inconsistente; la norma oficial confirma el ejercicio 2026.",
+      "trace": {
+        "income": [
+          {
+            "cell": "E55",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 2905047.1154199997
+          }
+        ],
+        "spending": [
+          {
+            "cell": "E56",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 3244867.064142
+          }
+        ],
+        "capital": [
+          {
+            "cell": "E50",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 60244.95951
+          }
+        ]
+      }
+    },
+    {
+      "province": "Santa Fe",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 14132615.709,
+      "spending": 14125704.195,
+      "capital": 1912344.366,
+      "source_header": "PRESUPUESTO 2026 LEY N° 14424 | ADMINISTRACION PROVINCIAL (ADMINISTRACIÓN CENTRAL, ORGANISMOS DESCENTRALIZADOS E INSTITUCIONES DE LA SEGURIDAD SOCIAL) | - EN MILLONES DE PESOS - | PROVINCIA  DE SANTA FE | ADMINISTRACION PROVINCIAL | CONCEPTO | ADMINIST. CENTRAL | ORG. DESCENT. | INSTITUCIONES DE SEG. SOCIAL | TOTAL | (1) | (2) | (3) | (4)=(1)+(2)+(3)",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_santa_fe_1.xls",
+      "law_source_url": null,
+      "selected_column": 5,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "E18",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 14132615.709
+          }
+        ],
+        "spending": [
+          {
+            "cell": "E19",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 14125704.195
+          }
+        ],
+        "capital": [
+          {
+            "cell": "E16",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 1912344.366
+          }
+        ]
+      }
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 2750820.3402199997,
+      "spending": 2749996.104952,
+      "capital": 969582.67611,
+      "source_header": "PRESUPUESTO 2026 LEY N° 7409 | ESQUEMA AHORRO - INVERSIÓN - FINANCIAMIENTO | - EN MILLONES DE PESOS - | PROVINCIA  DE SANTIAGO DEL ESTERO | CONCEPTO | ADMINIST. CENTRAL Y ORG. DESCENT.",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_santiago_del_estero_1.xls",
+      "law_source_url": null,
+      "selected_column": 2,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial.",
+      "trace": {
+        "income": [
+          {
+            "cell": "B38",
+            "label": "VI. INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 2750820.3402199997
+          }
+        ],
+        "spending": [
+          {
+            "cell": "B39",
+            "label": "VII. GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 2749996.104952
+          }
+        ],
+        "capital": [
+          {
+            "cell": "B34",
+            "label": "V. GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 969582.67611
+          }
+        ]
+      }
+    },
+    {
+      "province": "Tierra del Fuego",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 2313546.5023090597,
+      "spending": 2357684.05378024,
+      "capital": 211418.99721233,
+      "source_header": "PRESUPUESTO GENERAL EJERCICIO 2026 -LEY N° 1.580 (Presupuesto 2025)  Prorrogado en 2026 por Decreto 32/2026 | SECTOR PUBLICO PROVINCIAL NO FINANCIERO | - EN MILLONES DE PESOS - | PROVINCIA  DE TIERRA DEL FUEGO | CONCEPTO | AÑO 2026",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_tierra_del_fuego_1.xls",
+      "law_source_url": null,
+      "selected_column": 2,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial. Presupuesto 2025 prorrogado para 2026 por Decreto 32/2026.",
+      "trace": {
+        "income": [
+          {
+            "cell": "B20",
+            "label": "VI- INGRESOS TOTALES (I+IV)",
+            "multiplier": 1,
+            "original_value": 2313546.5023090597
+          }
+        ],
+        "spending": [
+          {
+            "cell": "B22",
+            "label": "VII- GASTOS TOTALES (II+V)",
+            "multiplier": 1,
+            "original_value": 2357684.05378024
+          }
+        ],
+        "capital": [
+          {
+            "cell": "B18",
+            "label": "V- GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 211418.99721233
+          }
+        ]
+      }
+    },
+    {
+      "province": "Tucumán",
+      "year": 2026,
+      "unit": "ARS millions",
+      "income": 4982270.086,
+      "spending": 4981562.0,
+      "capital": 421862.19399999996,
+      "source_header": "PRESUPUESTO 2020 LEY Nº  9942 | ADMINISTRACION PUBLICA NO FINANCIERA | - en millones de $ - | PROVINICIA DE TUCUMAN | CONCEPTO | PROGRAMADO | INGRESOS CORRIENTES",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_tucuman_1.xls",
+      "law_source_url": "https://presupuesto.mecontuc.gob.ar/presupuestoGrales.html",
+      "selected_column": 2,
+      "scope_comparison": false,
+      "note": "Presupuesto inicial, no crédito vigente. Los ajustes metodológicos de DNAP pueden diferir de la presentación provincial. El encabezado del archivo tiene un año inconsistente; la norma oficial confirma el ejercicio 2026. Se restan recursos y gastos figurativos internos para evitar duplicación.",
+      "trace": {
+        "income": [
+          {
+            "cell": "B40",
+            "label": "TOTAL INGRESOS",
+            "multiplier": 1,
+            "original_value": 5936973.686
+          },
+          {
+            "cell": "B15",
+            "label": "CONTRIBUCIONES CORRIENTES FIGURATIVAS",
+            "multiplier": -1,
+            "original_value": 862581.6
+          },
+          {
+            "cell": "B30",
+            "label": "CONTRIBUCIONES DE CAPITAL FIGURATIVAS Y P/APLIC. FINANCIERAS",
+            "multiplier": -1,
+            "original_value": 92122.0
+          }
+        ],
+        "spending": [
+          {
+            "cell": "B41",
+            "label": "TOTAL GASTOS",
+            "multiplier": 1,
+            "original_value": 5936265.6
+          },
+          {
+            "cell": "B23",
+            "label": "GASTOS CORRIENTES FIGURATIVOS",
+            "multiplier": -1,
+            "original_value": 862581.6
+          },
+          {
+            "cell": "B37",
+            "label": "CONTRIBUCIONES DE CAPITAL FIGURATIVAS",
+            "multiplier": -1,
+            "original_value": 92122.0
+          }
+        ],
+        "capital": [
+          {
+            "cell": "B39",
+            "label": "TOTAL GASTOS DE CAPITAL",
+            "multiplier": 1,
+            "original_value": 513984.19399999996
+          },
+          {
+            "cell": "B37",
+            "label": "CONTRIBUCIONES DE CAPITAL FIGURATIVAS",
+            "multiplier": -1,
+            "original_value": 92122.0
+          }
+        ]
+      }
+    }
+  ],
+  "executions": [
+    {
+      "province": "CABA",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "B50",
+        "spending": "B51",
+        "capital": "B43",
+        "primary": "B52"
+      },
+      "income": 3749096.18151493,
+      "spending": 2925422.580224447,
+      "capital": 328239.00306682,
+      "primary": 2919232.2502288204
+    },
+    {
+      "province": "Buenos Aires",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "C50",
+        "spending": "C51",
+        "capital": "C43",
+        "primary": "C52"
+      },
+      "income": 9700178.40466849,
+      "spending": 10078613.55765027,
+      "capital": 438813.24880501,
+      "primary": 9531188.73256803
+    },
+    {
+      "province": "Catamarca",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "D50",
+        "spending": "D51",
+        "capital": "D43",
+        "primary": "D52"
+      },
+      "income": 539876.6283481716,
+      "spending": 522263.18449091236,
+      "capital": 55538.51218491999,
+      "primary": 519161.49172441993
+    },
+    {
+      "province": "Córdoba",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "E50",
+        "spending": "E51",
+        "capital": "E43",
+        "primary": "E52"
+      },
+      "income": 3419795.0634542084,
+      "spending": 3006951.0825769515,
+      "capital": 245985.96754707457,
+      "primary": 2972668.026536309
+    },
+    {
+      "province": "Corrientes",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "F50",
+        "spending": "F51",
+        "capital": "F43",
+        "primary": "F52"
+      },
+      "income": 858543.6162218645,
+      "spending": 841679.4178001041,
+      "capital": 36090.64,
+      "primary": 840696.74
+    },
+    {
+      "province": "Chaco",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "G50",
+        "spending": "G51",
+        "capital": "G43",
+        "primary": "G52"
+      },
+      "income": 1070256.4486868049,
+      "spending": 1038463.0091496058,
+      "capital": 42982.32063388,
+      "primary": 994781.5253736599
+    },
+    {
+      "province": "Chubut",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "H50",
+        "spending": "H51",
+        "capital": "H43",
+        "primary": "H52"
+      },
+      "income": 786284.0923369444,
+      "spending": 764100.0781899531,
+      "capital": 50562.863133529994,
+      "primary": 737026.28504614
+    },
+    {
+      "province": "Entre Ríos",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "I50",
+        "spending": "I51",
+        "capital": "I43",
+        "primary": "I52"
+      },
+      "income": 1284636.6394793286,
+      "spending": 1270822.8422202116,
+      "capital": 37262.95050638,
+      "primary": 1220995.35202186
+    },
+    {
+      "province": "Formosa",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "J50",
+        "spending": "J51",
+        "capital": "J43",
+        "primary": "J52"
+      },
+      "income": 712378.2318053789,
+      "spending": 680942.25777187,
+      "capital": 76300.54573302002,
+      "primary": 680682.39212126
+    },
+    {
+      "province": "Jujuy",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "K50",
+        "spending": "K51",
+        "capital": "K43",
+        "primary": "K52"
+      },
+      "income": 625462.526931531,
+      "spending": 496169.8788625087,
+      "capital": 13157.810647019998,
+      "primary": 480045.2316292201
+    },
+    {
+      "province": "La Pampa",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "L50",
+        "spending": "L51",
+        "capital": "L43",
+        "primary": "L52"
+      },
+      "income": null,
+      "spending": null,
+      "capital": null,
+      "primary": null
+    },
+    {
+      "province": "La Rioja",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "M50",
+        "spending": "M51",
+        "capital": "M43",
+        "primary": "M52"
+      },
+      "income": 372133.6353300155,
+      "spending": 360769.01547062973,
+      "capital": 8481.750925,
+      "primary": 357670.0454336297
+    },
+    {
+      "province": "Mendoza",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "N50",
+        "spending": "N51",
+        "capital": "N43",
+        "primary": "N52"
+      },
+      "income": 1205351.5277445256,
+      "spending": 1057187.6738073297,
+      "capital": 86168.06536678999,
+      "primary": 1016826.5438073297
+    },
+    {
+      "province": "Misiones",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "O50",
+        "spending": "O51",
+        "capital": "O43",
+        "primary": "O52"
+      },
+      "income": 976268.8199565477,
+      "spending": 865232.6173371794,
+      "capital": 48874.0506549406,
+      "primary": 864550.5573371793
+    },
+    {
+      "province": "Neuquén",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "P50",
+        "spending": "P51",
+        "capital": "P43",
+        "primary": "P52"
+      },
+      "income": 2092131.5844582762,
+      "spending": 2040779.948863439,
+      "capital": 169369.34229693998,
+      "primary": 2027333.6447463394
+    },
+    {
+      "province": "Río Negro",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "Q50",
+        "spending": "Q51",
+        "capital": "Q43",
+        "primary": "Q52"
+      },
+      "income": 764982.0981030791,
+      "spending": 685354.4530210012,
+      "capital": 42261.256584843424,
+      "primary": 665257.2130210012
+    },
+    {
+      "province": "Salta",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "R50",
+        "spending": "R51",
+        "capital": "R43",
+        "primary": "R52"
+      },
+      "income": 882587.966316093,
+      "spending": 820528.7302273468,
+      "capital": 44075.09013868001,
+      "primary": 807738.5077250403
+    },
+    {
+      "province": "San Juan",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "S50",
+        "spending": "S51",
+        "capital": "S43",
+        "primary": "S52"
+      },
+      "income": 677094.0815957775,
+      "spending": 707763.3555482511,
+      "capital": 94100.16559391002,
+      "primary": 702030.32048817
+    },
+    {
+      "province": "San Luis",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "T50",
+        "spending": "T51",
+        "capital": "T43",
+        "primary": "T52"
+      },
+      "income": 484407.17464136507,
+      "spending": 400894.9985603199,
+      "capital": 40776.86823769999,
+      "primary": 400894.9985603199
+    },
+    {
+      "province": "Santa Cruz",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "U50",
+        "spending": "U51",
+        "capital": "U43",
+        "primary": "U52"
+      },
+      "income": 658194.9443508023,
+      "spending": 694305.5051810425,
+      "capital": 4751.1692159023405,
+      "primary": 688959.7786561472
+    },
+    {
+      "province": "Santa Fe",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "V50",
+        "spending": "V51",
+        "capital": "V43",
+        "primary": "V52"
+      },
+      "income": 2714834.272371359,
+      "spending": 3317074.69,
+      "capital": 504529.63999999996,
+      "primary": 3307039.39
+    },
+    {
+      "province": "Santiago del Estero",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "W50",
+        "spending": "W51",
+        "capital": "W43",
+        "primary": "W52"
+      },
+      "income": 712640.4627691015,
+      "spending": 687759.0841589273,
+      "capital": 151960.02000000002,
+      "primary": 687428.38
+    },
+    {
+      "province": "Tucumán",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "X50",
+        "spending": "X51",
+        "capital": "X43",
+        "primary": "X52"
+      },
+      "income": 1082663.3909027185,
+      "spending": 1183199.6473175548,
+      "capital": 22351.895,
+      "primary": 1161195.5750000002
+    },
+    {
+      "province": "Tierra del Fuego",
+      "period": "2026-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "trace": {
+        "income": "Y50",
+        "spending": "Y51",
+        "capital": "Y43",
+        "primary": "Y52"
+      },
+      "income": 349416.7756254127,
+      "spending": 399011.58834401873,
+      "capital": 8258.87450975,
+      "primary": 397350.26368987013
+    },
+    {
+      "province": "CABA",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "B50",
+        "spending": "B51",
+        "capital": "B43",
+        "primary": "B52"
+      },
+      "income": 2998994.44308537,
+      "spending": 2115978.6596689406,
+      "capital": 225491.74087299997,
+      "primary": 2111670.970857742
+    },
+    {
+      "province": "Buenos Aires",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "C50",
+        "spending": "C51",
+        "capital": "C43",
+        "primary": "C52"
+      },
+      "income": 7365714.659196133,
+      "spending": 7366688.410617821,
+      "capital": 372966.89385968837,
+      "primary": 7041939.947191587
+    },
+    {
+      "province": "Catamarca",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "D50",
+        "spending": "D51",
+        "capital": "D43",
+        "primary": "D52"
+      },
+      "income": 412092.77534243336,
+      "spending": 390555.76280793705,
+      "capital": 36983.98227544,
+      "primary": 389936.77253774
+    },
+    {
+      "province": "Córdoba",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "E50",
+        "spending": "E51",
+        "capital": "E43",
+        "primary": "E52"
+      },
+      "income": 2574698.971167415,
+      "spending": 2153871.8128869557,
+      "capital": 138574.76142827646,
+      "primary": 2132693.361936947
+    },
+    {
+      "province": "Corrientes",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "F50",
+        "spending": "F51",
+        "capital": "F43",
+        "primary": "F52"
+      },
+      "income": 643949.1534754859,
+      "spending": 702110.3790549163,
+      "capital": 74455.78286874347,
+      "primary": 701177.7559032256
+    },
+    {
+      "province": "Chaco",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "G50",
+        "spending": "G51",
+        "capital": "G43",
+        "primary": "G52"
+      },
+      "income": 876079.6763206878,
+      "spending": 903227.033706275,
+      "capital": 37801.139299270006,
+      "primary": 876995.5594587361
+    },
+    {
+      "province": "Chubut",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "H50",
+        "spending": "H51",
+        "capital": "H43",
+        "primary": "H52"
+      },
+      "income": 639723.2081719476,
+      "spending": 603449.830094154,
+      "capital": 43661.292141390004,
+      "primary": 582940.3647511
+    },
+    {
+      "province": "Entre Ríos",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "I50",
+        "spending": "I51",
+        "capital": "I43",
+        "primary": "I52"
+      },
+      "income": 1011728.2561399983,
+      "spending": 1024968.8377923358,
+      "capital": 23703.408959279994,
+      "primary": 991384.79014957
+    },
+    {
+      "province": "Formosa",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "J50",
+        "spending": "J51",
+        "capital": "J43",
+        "primary": "J52"
+      },
+      "income": 550593.9174961826,
+      "spending": 512734.09884958,
+      "capital": 61931.27575657,
+      "primary": 512489.33768095
+    },
+    {
+      "province": "Jujuy",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "K50",
+        "spending": "K51",
+        "capital": "K43",
+        "primary": "K52"
+      },
+      "income": 485523.0511605942,
+      "spending": 357477.7665884161,
+      "capital": 18374.44606459,
+      "primary": 342643.16142271
+    },
+    {
+      "province": "La Pampa",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "L50",
+        "spending": "L51",
+        "capital": "L43",
+        "primary": "L52"
+      },
+      "income": null,
+      "spending": null,
+      "capital": null,
+      "primary": null
+    },
+    {
+      "province": "La Rioja",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "M50",
+        "spending": "M51",
+        "capital": "M43",
+        "primary": "M52"
+      },
+      "income": 299275.249905356,
+      "spending": 307244.4358538114,
+      "capital": 24645.513481900005,
+      "primary": 304614.97876488004
+    },
+    {
+      "province": "Mendoza",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "N50",
+        "spending": "N51",
+        "capital": "N43",
+        "primary": "N52"
+      },
+      "income": 972210.9692109297,
+      "spending": 770801.7459727768,
+      "capital": 63119.15044564667,
+      "primary": 755136.3081500367
+    },
+    {
+      "province": "Misiones",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "O50",
+        "spending": "O51",
+        "capital": "O43",
+        "primary": "O52"
+      },
+      "income": 830204.7161719931,
+      "spending": 749593.2816522745,
+      "capital": 39360.53815717,
+      "primary": 748600.1860507677
+    },
+    {
+      "province": "Neuquén",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "P50",
+        "spending": "P51",
+        "capital": "P43",
+        "primary": "P52"
+      },
+      "income": 1509825.0006068347,
+      "spending": 1426056.204294362,
+      "capital": 88755.36447251998,
+      "primary": 1412068.7155700726
+    },
+    {
+      "province": "Río Negro",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "Q50",
+        "spending": "Q51",
+        "capital": "Q43",
+        "primary": "Q52"
+      },
+      "income": 555454.50725802,
+      "spending": 514423.94347317156,
+      "capital": 11487.858609,
+      "primary": 502216.54441314004
+    },
+    {
+      "province": "Salta",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "R50",
+        "spending": "R51",
+        "capital": "R43",
+        "primary": "R52"
+      },
+      "income": 686899.9501971549,
+      "spending": 646878.2181370801,
+      "capital": 22596.53806927,
+      "primary": 637623.9094430798
+    },
+    {
+      "province": "San Juan",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "S50",
+        "spending": "S51",
+        "capital": "S43",
+        "primary": "S52"
+      },
+      "income": 547544.6697474413,
+      "spending": 504659.5967004396,
+      "capital": 61874.404984990004,
+      "primary": 499696.6846873751
+    },
+    {
+      "province": "San Luis",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "T50",
+        "spending": "T51",
+        "capital": "T43",
+        "primary": "T52"
+      },
+      "income": 377803.44466056005,
+      "spending": 336418.20171193744,
+      "capital": 39938.479639929996,
+      "primary": 336418.20171193744
+    },
+    {
+      "province": "Santa Cruz",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "U50",
+        "spending": "U51",
+        "capital": "U43",
+        "primary": "U52"
+      },
+      "income": 484254.3891186793,
+      "spending": 504306.18776436336,
+      "capital": 6277.7322189999995,
+      "primary": 504109.2020300732
+    },
+    {
+      "province": "Santa Fe",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "V50",
+        "spending": "V51",
+        "capital": "V43",
+        "primary": "V52"
+      },
+      "income": 2168709.3470124807,
+      "spending": 2153685.82238061,
+      "capital": 229067.33482343,
+      "primary": 2144418.6223806096
+    },
+    {
+      "province": "Santiago del Estero",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "W50",
+        "spending": "W51",
+        "capital": "W43",
+        "primary": "W52"
+      },
+      "income": 604610.6169903281,
+      "spending": 476395.0310966825,
+      "capital": 114884.55974279002,
+      "primary": 476025.16849794
+    },
+    {
+      "province": "Tucumán",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "X50",
+        "spending": "X51",
+        "capital": "X43",
+        "primary": "X52"
+      },
+      "income": 867741.0792054819,
+      "spending": 874604.2715903876,
+      "capital": 59022.69729533,
+      "primary": 866737.89113291
+    },
+    {
+      "province": "Tierra del Fuego",
+      "period": "2025-Q1",
+      "scope": "APNF",
+      "basis": "Ingresos percibidos; gastos devengados; datos provisorios",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "trace": {
+        "income": "Y50",
+        "spending": "Y51",
+        "capital": "Y43",
+        "primary": "Y52"
+      },
+      "income": 316494.6939786928,
+      "spending": 322816.2910857153,
+      "capital": 10140.816528172676,
+      "primary": 322030.2608949827
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_buenos_aires_1.xls",
+      "sha256": "d43214d0889c46b665bc35ec8c51587fd13e96ff8be8f9b3643bcc47f631b8db",
+      "kind": "Presupuesto 2026",
+      "province": "Buenos Aires"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_caba_11.xls",
+      "sha256": "f03d5f62e093a15ebdc2672b1801e5ad95cc07fe49b40e90948787574a124e2a",
+      "kind": "Presupuesto 2026",
+      "province": "CABA"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_catamarca_1.xls",
+      "sha256": "f72a4a37187a0d2ac49828f16b119e044166c42e2a790a0ac2ce246ffd0c0553",
+      "kind": "Presupuesto 2026",
+      "province": "Catamarca"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_chaco_1.xls",
+      "sha256": "0501cae51c2b92146ecd28893d82a56956154a246565759eddec6d2b27e28197",
+      "kind": "Presupuesto 2026",
+      "province": "Chaco"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_chubut_1.xls",
+      "sha256": "6517058b0a35be7382cabc0e67a92048ae8c668794ec602e0de08b5e9ba4b702",
+      "kind": "Presupuesto 2026",
+      "province": "Chubut"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_cordoba_1.xls",
+      "sha256": "902a6c17e98f205051738ee7e034836c3618648e737082724c0cf9311e3266d2",
+      "kind": "Presupuesto 2026",
+      "province": "Córdoba"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_corrientes_1.xls",
+      "sha256": "c4a1536ddc328022ceb4cf564660ac8bdfa7e138c5ab37f10204f6e4dcdb78db",
+      "kind": "Presupuesto 2026",
+      "province": "Corrientes"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_entre_rios_1.xls",
+      "sha256": "cb31c2b759f0a94ca7f4bfea0c599983299225878cac866e43c352fd738cba53",
+      "kind": "Presupuesto 2026",
+      "province": "Entre Ríos"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_formosa_11.xls",
+      "sha256": "da76f0e9f19cf23aa7d6b1046202f7e6ce92057402450e7998a1bbb29d0485a6",
+      "kind": "Presupuesto 2026",
+      "province": "Formosa"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_jujuy_1.xls",
+      "sha256": "ea48ed7d4e8d03ed27b9ed3e7e8e0724b701c13aff1bf91aa85a7744078cbcb7",
+      "kind": "Presupuesto 2026",
+      "province": "Jujuy"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_la_pampa_11.xls",
+      "sha256": "ba3769eb8afb4d0e5848b2f49aae5709fa5f9bc4f35b5cfc3ec68ecac5461482",
+      "kind": "Presupuesto 2026",
+      "province": "La Pampa"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_la_rioja_1.xls",
+      "sha256": "9f130f4395ff4031ac01caea5a0ebf79903403587330f55f9662ef3db2fca582",
+      "kind": "Presupuesto 2026",
+      "province": "La Rioja"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_mendoza_11.xls",
+      "sha256": "43b4ef804320d2d1f7ee66e2aefc069d6f85566f93a05c87415a998210e7d71a",
+      "kind": "Presupuesto 2026",
+      "province": "Mendoza"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_misiones_1.xls",
+      "sha256": "0a5ba4692493e68f6514c6cd09f8eec52ced0b13b0870889d9d46cef0f076bb5",
+      "kind": "Presupuesto 2026",
+      "province": "Misiones"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_neuquen_1.xls",
+      "sha256": "bae84766dfa62abe011cb477b7f651fe844cb7c8f09949e5135b8d357b128f53",
+      "kind": "Presupuesto 2026",
+      "province": "Neuquén"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_rio_negro_1.xls",
+      "sha256": "3e50f12adb01a7e6c5c41d358d9793512fb6ff3606451f5f24e7e2130ab9a1d7",
+      "kind": "Presupuesto 2026",
+      "province": "Río Negro"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_salta_1.xls",
+      "sha256": "fa22cc03a13a4c244b21652b95ab73e1f8db5130719db9bcd38e127609c7ba88",
+      "kind": "Presupuesto 2026",
+      "province": "Salta"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_san_juan_1.xls",
+      "sha256": "98c8315389e0fe91bd08633b13eac90a1d220f784edcc486a13f29a4ee17ddbb",
+      "kind": "Presupuesto 2026",
+      "province": "San Juan"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_san_luis_1.xls",
+      "sha256": "41d6cac07c50f1e70e9193fdcad8d0ac6fe8a396ec2c5601b31743c906275ab6",
+      "kind": "Presupuesto 2026",
+      "province": "San Luis"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_santa_cruz_1.xls",
+      "sha256": "513ad45e3a20397ca3b46924094e46fd48c088ae14268ab24dc2ae5f25300802",
+      "kind": "Presupuesto 2026",
+      "province": "Santa Cruz"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_santa_fe_1.xls",
+      "sha256": "2f3bce208610ed6623a8c44eb708ca5ecf04d8985d257cb500c1b7f1d344139a",
+      "kind": "Presupuesto 2026",
+      "province": "Santa Fe"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_santiago_del_estero_1.xls",
+      "sha256": "c2b16fa055d001b354e528531121e71762d0bbeb9bed6b5d23f322468d21f78a",
+      "kind": "Presupuesto 2026",
+      "province": "Santiago del Estero"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_tierra_del_fuego_1.xls",
+      "sha256": "0c519c6f405b6239217bab69d619af691c9c9fe2bf7d3cac411865859de8bbe3",
+      "kind": "Presupuesto 2026",
+      "province": "Tierra del Fuego"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_tucuman_1.xls",
+      "sha256": "49dc293aa04099b0e0940e7e8aa97a603963b6e8f274f35b5f4522c921de58c3",
+      "kind": "Presupuesto 2026",
+      "province": "Tucumán"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "sha256": "5caf72e9394f59f578c578081cc9f5122adc8a84c1f58f6f270a777311b57bf0",
+      "kind": "Ejecución 2026-Q1",
+      "province": "24 jurisdicciones"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "sha256": "80f14057bb571cce755a34cc22ae1c34cbdbbdd615ac3b5cac9b28e4bf5a6e52",
+      "kind": "Ejecución 2025-Q1",
+      "province": "24 jurisdicciones"
+    }
+  ],
+  "methodology": "Presupuesto inicial anual 2026 frente a ejecución acumulada del primer trimestre. El avance se calcula solo para las siete coberturas APNF identificadas y es orientativo: no mide desvío contra una programación mensual ni crédito vigente. No se supone que 25% sea la meta trimestral."
+}

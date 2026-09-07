@@ -1,0 +1,248 @@
+{
+  "checked_at": "2026-09-07T02:09:05.296243+00:00",
+  "method": "Control a pedido de disponibilidad y cambios en archivos. No verifica por sí solo cifras, actualidad ni cobertura. No actualiza los datos publicados.",
+  "sources": [
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_buenos_aires_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Buenos Aires",
+      "http_status": 200,
+      "current_sha256": "d43214d0889c46b665bc35ec8c51587fd13e96ff8be8f9b3643bcc47f631b8db",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_caba_11.xls",
+      "kind": "Presupuesto 2026",
+      "province": "CABA",
+      "http_status": 200,
+      "current_sha256": "f03d5f62e093a15ebdc2672b1801e5ad95cc07fe49b40e90948787574a124e2a",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_catamarca_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Catamarca",
+      "http_status": 200,
+      "current_sha256": "f72a4a37187a0d2ac49828f16b119e044166c42e2a790a0ac2ce246ffd0c0553",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_chaco_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Chaco",
+      "http_status": 200,
+      "current_sha256": "0501cae51c2b92146ecd28893d82a56956154a246565759eddec6d2b27e28197",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_chubut_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Chubut",
+      "http_status": 200,
+      "current_sha256": "6517058b0a35be7382cabc0e67a92048ae8c668794ec602e0de08b5e9ba4b702",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_cordoba_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Córdoba",
+      "http_status": 200,
+      "current_sha256": "902a6c17e98f205051738ee7e034836c3618648e737082724c0cf9311e3266d2",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_corrientes_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Corrientes",
+      "http_status": 200,
+      "current_sha256": "c4a1536ddc328022ceb4cf564660ac8bdfa7e138c5ab37f10204f6e4dcdb78db",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_entre_rios_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Entre Ríos",
+      "http_status": 200,
+      "current_sha256": "cb31c2b759f0a94ca7f4bfea0c599983299225878cac866e43c352fd738cba53",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_formosa_11.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Formosa",
+      "http_status": 200,
+      "current_sha256": "da76f0e9f19cf23aa7d6b1046202f7e6ce92057402450e7998a1bbb29d0485a6",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_jujuy_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Jujuy",
+      "http_status": 200,
+      "current_sha256": "ea48ed7d4e8d03ed27b9ed3e7e8e0724b701c13aff1bf91aa85a7744078cbcb7",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_la_pampa_11.xls",
+      "kind": "Presupuesto 2026",
+      "province": "La Pampa",
+      "http_status": 200,
+      "current_sha256": "ba3769eb8afb4d0e5848b2f49aae5709fa5f9bc4f35b5cfc3ec68ecac5461482",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_la_rioja_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "La Rioja",
+      "http_status": 200,
+      "current_sha256": "9f130f4395ff4031ac01caea5a0ebf79903403587330f55f9662ef3db2fca582",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_mendoza_11.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Mendoza",
+      "http_status": 200,
+      "current_sha256": "43b4ef804320d2d1f7ee66e2aefc069d6f85566f93a05c87415a998210e7d71a",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_misiones_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Misiones",
+      "http_status": 200,
+      "current_sha256": "0a5ba4692493e68f6514c6cd09f8eec52ced0b13b0870889d9d46cef0f076bb5",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_neuquen_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Neuquén",
+      "http_status": 200,
+      "current_sha256": "bae84766dfa62abe011cb477b7f651fe844cb7c8f09949e5135b8d357b128f53",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_rio_negro_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Río Negro",
+      "http_status": 200,
+      "current_sha256": "3e50f12adb01a7e6c5c41d358d9793512fb6ff3606451f5f24e7e2130ab9a1d7",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_salta_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Salta",
+      "http_status": 200,
+      "current_sha256": "fa22cc03a13a4c244b21652b95ab73e1f8db5130719db9bcd38e127609c7ba88",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_san_juan_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "San Juan",
+      "http_status": 200,
+      "current_sha256": "98c8315389e0fe91bd08633b13eac90a1d220f784edcc486a13f29a4ee17ddbb",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_san_luis_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "San Luis",
+      "http_status": 200,
+      "current_sha256": "41d6cac07c50f1e70e9193fdcad8d0ac6fe8a396ec2c5601b31743c906275ab6",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_santa_cruz_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Santa Cruz",
+      "http_status": 200,
+      "current_sha256": "513ad45e3a20397ca3b46924094e46fd48c088ae14268ab24dc2ae5f25300802",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_santa_fe_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Santa Fe",
+      "http_status": 200,
+      "current_sha256": "2f3bce208610ed6623a8c44eb708ca5ecf04d8985d257cb500c1b7f1d344139a",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_santiago_del_estero_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Santiago del Estero",
+      "http_status": 200,
+      "current_sha256": "c2b16fa055d001b354e528531121e71762d0bbeb9bed6b5d23f322468d21f78a",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_tierra_del_fuego_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Tierra del Fuego",
+      "http_status": 200,
+      "current_sha256": "0c519c6f405b6239217bab69d619af691c9c9fe2bf7d3cac411865859de8bbe3",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/presupuesto_provincial_-_tucuman_1.xls",
+      "kind": "Presupuesto 2026",
+      "province": "Tucumán",
+      "http_status": 200,
+      "current_sha256": "49dc293aa04099b0e0940e7e8aa97a603963b6e8f274f35b5f4522c921de58c3",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2026_-_trim._i.xls",
+      "kind": "Ejecución 2026-Q1",
+      "province": "24 jurisdicciones",
+      "http_status": 200,
+      "current_sha256": "5caf72e9394f59f578c578081cc9f5122adc8a84c1f58f6f270a777311b57bf0",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/ejecuciones_presupuestarias_apnf_2025_-_trim._i.xls",
+      "kind": "Ejecución 2025-Q1",
+      "province": "24 jurisdicciones",
+      "http_status": 200,
+      "current_sha256": "80f14057bb571cce755a34cc22ae1c34cbdbbdd615ac3b5cac9b28e4bf5a6e52",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.entrerios.gov.ar/presupuesto/leypres/p26-28/pdf/ANEXO1.pdf",
+      "kind": "Calendario Entre Ríos 2026–2028",
+      "http_status": 200,
+      "current_sha256": "81f9468b79d6c991c60a18d2a490885b1e0977209f5ea429e77d592948ac639b",
+      "status": "unchanged"
+    },
+    {
+      "province": "CABA",
+      "url": "https://buenosaires.gob.ar/sites/default/files/2026-07/Perfil_pagina_30_06_2026.pdf",
+      "kind": "Calendario futuro",
+      "note": "Enlace oficial con error 404 al revisar. No implica que no exista un calendario publicado.",
+      "status": "unavailable",
+      "error": "HTTP Error 404: Not Found",
+      "http_status": 404
+    },
+    {
+      "province": "Santa Cruz",
+      "url": "https://mefi.gob.ar/documentos/economia/ResponsabilidadFiscal/JUNIO2026/SITUACION_DEL_TESORO_2T2026.xlsx",
+      "kind": "Situación del Tesoro",
+      "note": "No incorporada como junio de 2026: primera hoja rotulada septiembre de 2024; total exigible de 79.839.920.435,42 en primera hoja y 44.024.527.137 en segunda. Fecha y alcance por conciliar.",
+      "http_status": 200,
+      "current_sha256": "ec4240922cc63b218e75c02ad11f723322fbe01b79f810bcece07adec9eef66a",
+      "status": "reachable_unvalidated"
+    },
+    {
+      "province": "Santa Cruz",
+      "url": "https://mefi.gob.ar/documentos/economia/ResponsabilidadFiscal/MARZO2026/Deuda_Flotante_1T2026.xlsx",
+      "kind": "Deuda flotante",
+      "note": "Saldo al 31/03/2026 localizado. No convertido ni incorporado: el archivo no explicita la unidad monetaria.",
+      "http_status": 200,
+      "current_sha256": "f7b71988b73f2d43882f3da37e6ab650190691c2162e619d4b520bdb912a4f16",
+      "status": "reachable_unvalidated"
+    }
+  ]
+}

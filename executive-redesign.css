@@ -130,3 +130,12 @@ body .national-context .dashboard-command-bar,body.national-context .dashboard-c
 html,body{overflow-x:clip;overflow-y:visible}
 #provincialServicesHistory,.profile-reading,.overview-charts,#nationalContent .national-section{scroll-margin-top:calc(var(--fixed-header-height) + var(--visible-nav-height,160px) + 12px)}
 .national-context #priceBasisNotice{display:block!important}
+.completion-card{margin:24px 0;padding:20px;border:1px solid var(--line,#334155);border-radius:16px;min-width:0}
+.completion-card h2{font-size:1.25rem;line-height:1.35;margin:0 0 14px}
+.completion-card p{line-height:1.65;overflow-wrap:anywhere}
+.budget-composition-chart{height:220px;position:relative;min-width:0;margin:16px 0}
+.completion-card .scenario-grid label{min-width:0}
+.completion-card input{max-width:100%;box-sizing:border-box}
+.completion-table .management-table{min-width:0;width:100%;table-layout:fixed}.completion-table .management-table th{white-space:normal;overflow-wrap:anywhere}.completion-table .management-table td{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:600px){.completion-card{padding:14px 10px}.completion-card .management-table{font-size:13px}.completion-card .management-table th,.completion-card .management-table td{padding:9px 6px}.budget-composition-chart{height:240px}
+.completion-table .management-table{min-width:0;width:100%;display:block}.completion-table table caption{display:block;text-align:left}.completion-table thead{display:none}.completion-table tbody,.completion-table tr{display:block;width:100%}.completion-table tr{margin:12px 0;border:1px solid var(--border);border-radius:10px;padding:6px;box-sizing:border-box}.completion-table tbody th{display:block;text-align:left;white-space:normal}.completion-table tbody td{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;white-space:normal;text-align:right;overflow-wrap:anywhere}.completion-table tbody td::before{content:attr(data-label);text-align:left;color:var(--muted);font-size:12px}}

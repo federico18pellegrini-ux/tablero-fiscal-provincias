@@ -3,7 +3,7 @@ function renderProvinceServices(province){
  const card=document.getElementById('debtScheduleCard');if(!card)return;card.style.display='block';
  if(!provincialServicesData){
   document.getElementById('debtScheduleReading').textContent='Cargando calendarios y servicios registrados…';
-  if(!provincialServicesRequest)provincialServicesRequest=fetch('data/provincial_debt_services.json?v=20260906-10').then(r=>{if(!r.ok)throw Error('debt services');return r.json();}).then(d=>{provincialServicesData=d;renderProvinceServices(currentProvince);}).catch(()=>{provincialServicesRequest=null;document.getElementById('debtScheduleReading').textContent='No se pudo cargar la fuente. Cambiá de provincia para reintentar.';});
+  if(!provincialServicesRequest)provincialServicesRequest=fetch('data/provincial_debt_services.json?v=20260906-13').then(r=>{if(!r.ok)throw Error('debt services');return r.json();}).then(d=>{provincialServicesData=d;renderProvinceServices(currentProvince);}).catch(()=>{provincialServicesRequest=null;document.getElementById('debtScheduleReading').textContent='No se pudo cargar la fuente. Cambiá de provincia para reintentar.';});
   return;
  }
  const data=provincialServicesData,projection=data.projections[province],canvas=document.getElementById('cDebtSchedule');
