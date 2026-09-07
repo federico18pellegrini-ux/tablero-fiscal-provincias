@@ -18,6 +18,8 @@ jobs:
           python-version: '3.12'
       - name: Compile Python sources
         run: python -m compileall -q .
+      - name: Install report dependencies
+        run: python -m pip install -r requirements-reports.txt
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
       - name: Validate calculations and reading profiles
@@ -26,3 +28,5 @@ jobs:
         run: python scripts_validate_top_traceability.py
       - name: Validate national claims data
         run: python scripts_validate_reclamos_nacion.py
+      - name: Verify reports match dashboard data
+        run: python scripts_export_management_reports.py --check

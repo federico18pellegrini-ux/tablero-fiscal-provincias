@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "author": "Federico Pellegrini",
+  "title": "Informe de gestión provincial",
+  "reviewed_at": "2026-09-06",
+  "method": "Tres páginas por jurisdicción. Se usa el último año completo común, sin sustituir faltantes por años anteriores. Cuentas APNF y trimestres separados. Transferencias: total legal (1)+(2), mes a mes en pesos constantes con IPC nacional observado para variaciones reales. No equivale a la vista, unidad o perfil transitorios de la pantalla. Los informes se regeneran desde los archivos de datos del tablero.",
+  "input_sha256": {
+    "data/annual_fiscal_accounts.json": "488fedee561ba955baf618339d793463767adc321385002fbb9fadb876b8809d",
+    "data/budget_execution_2026.json": "d7a680b808ed094af4e371f3a0c3d8b56737f3731514abeb09c0a85f315dbe84",
+    "data/fiscal_history.json": "d434fa06bc6c6e1699964d2517bea12c4842d723a87910d3b6cadcc08d2b112a",
+    "data/provincial_debt_services.json": "710572bc93b70f45bc4ef436fb8c42909726e4c1aec5176efdee95e93000547f",
+    "data/debt_history.json": "175481d6f6a2132bcbb558d1921c2fb5bd827d59eb2e48821eef7a54cf1d1568",
+    "data/government_results_provinces.json": "408a08c42670bb2c6e47016270e4565eb298c785df0941543ee037c262a8be7b",
+    "informacion_consolidada_2026_normalizado.csv": "2318435d1cd55e8eff33b273f6675f008e744fa383a216af2a68d597b14f09c2",
+    "informacion_consolidada_2025_normalizado.csv": "34082ab763023c68b5c51ee34d29cded09c904febf8edf7ac616850d186710f2",
+    "data/ipc_national_index.csv": "895cc9a62e287f3c735616532a6ac32a4ecdcb54e6329168ef1b87573c7a29fb",
+    "data/ron_2025_import.json": "6de5913c7227f2b08b88ba4459f92ba0f2153aef882339b9016ba6834c9619ce",
+    "data/meta.json": "c644d058c95de34c6866065927633fea91a55a8eecb33fd93fe7757a72415746",
+    "scripts_export_management_reports.py": "795adc559c5ccd8dbf1561f6e7d653a1e667ed0c9317890846520a47d6251f85",
+    "assets/report-fonts/Lato-Regular.ttf": "d636e4683231f931eda222d588e944d082bfd3bdba02f928bee461c0f185b251",
+    "assets/report-fonts/Lato-Bold.ttf": "8a0aace75d33794eece4b28187bfc1df0bbd2888b5d8a56e01788c8d65d16be1"
+  },
+  "sources": [
+    {
+      "label": "Cuentas anuales APNF",
+      "url": "https://www.argentina.gob.ar/sites/default/files/serie_aif-apnf-2025.xlsx"
+    },
+    {
+      "label": "Ejecución trimestral APNF",
+      "url": "https://www.argentina.gob.ar/economia/sechacienda/coordinacion-fiscal-provincial/ejecucion-presupuestaria-provincial/ejecuciones"
+    },
+    {
+      "label": "Recursos nacionales 2025",
+      "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada2025_5.xlsx"
+    },
+    {
+      "label": "Recursos nacionales 2026",
+      "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_4.xlsx"
+    },
+    {
+      "label": "Datos de deuda y calendarios",
+      "url": "https://tablero.federicopellegrini.com.ar/data/provincial_debt_services.json"
+    },
+    {
+      "label": "Resultados y referencias por indicador",
+      "url": "https://tablero.federicopellegrini.com.ar/data/government_results_provinces.json"
+    },
+    {
+      "label": "IPC observado",
+      "url": "https://tablero.federicopellegrini.com.ar/data/ipc_national_index.csv"
+    }
+  ],
+  "reports": [
+    {
+      "province": "Buenos Aires",
+      "file": "informe-buenos-aires.pdf",
+      "pages": 3,
+      "sha256": "7344f71d74408e4959e07b486ca8798b52100450700a4e00fb9b4fd1cecc19b7",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": true
+    },
+    {
+      "province": "CABA",
+      "file": "informe-caba.pdf",
+      "pages": 3,
+      "sha256": "5eaba0dc7281ec773c982f5fec75558854f7f688202f238292fd91d130d4717e",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Catamarca",
+      "file": "informe-catamarca.pdf",
+      "pages": 3,
+      "sha256": "25ada507420fa34ba6cd895fdb8847ec4ba03f79ea3ed72a6d4e883e8b61e56e",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Chaco",
+      "file": "informe-chaco.pdf",
+      "pages": 3,
+      "sha256": "988da1b7c3cb035dfa046f13b2dcfac2e7f1c06a3c14ccd58fdd66b5da22df1e",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Chubut",
+      "file": "informe-chubut.pdf",
+      "pages": 3,
+      "sha256": "3ff95623f872f41a1e1c34ccdd223db9dbf90734281b07f7680e14c1a5aeac9c",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Corrientes",
+      "file": "informe-corrientes.pdf",
+      "pages": 3,
+      "sha256": "df3d1dac10f492b6da0b7311aa3d34bbf947fdd1d13edab6d31fe3f16c2ef0a5",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Córdoba",
+      "file": "informe-cordoba.pdf",
+      "pages": 3,
+      "sha256": "952c7642114a990a1987e31c60e9a47e8a1ab5a6f292b8708fec34922307e62b",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": true
+    },
+    {
+      "province": "Entre Ríos",
+      "file": "informe-entre-rios.pdf",
+      "pages": 3,
+      "sha256": "a362714068dc2a0d5ce2d2f82df6d1730dcc3a4232b74ca0ef7a5a5e43a7834c",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": true
+    },
+    {
+      "province": "Formosa",
+      "file": "informe-formosa.pdf",
+      "pages": 3,
+      "sha256": "87d731d6ce6bb47c02bc288b1cb72cff6eb7a246efe2cbc531f4cdb6f1bb7da6",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Jujuy",
+      "file": "informe-jujuy.pdf",
+      "pages": 3,
+      "sha256": "2d33ddb5ed4704e3ce7c5a2a33e7107da01d40ce62e625db5a8fcb2c9aca794e",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "La Pampa",
+      "file": "informe-la-pampa.pdf",
+      "pages": 3,
+      "sha256": "6c3a310230195b2172f95ec915aca014064e5a0852d73ade514be7cb13a2cbc3",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": false,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "La Rioja",
+      "file": "informe-la-rioja.pdf",
+      "pages": 3,
+      "sha256": "ebfd849e2521f7499cdd35edddc0a72792072d420fde35fc95ae3d9485df6356",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Mendoza",
+      "file": "informe-mendoza.pdf",
+      "pages": 3,
+      "sha256": "55ee3696d61735833e326d82ef6251e433ea8a532c92588f7d71a31cd479c5cf",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Misiones",
+      "file": "informe-misiones.pdf",
+      "pages": 3,
+      "sha256": "5639c689aae9039106f6ca66d547ad38a0653f6b9497da6cdb5278a3ee4024ff",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Neuquén",
+      "file": "informe-neuquen.pdf",
+      "pages": 3,
+      "sha256": "ab0cbcacf27c2097ac8c1eb2ffd06055dafa8747faeddd0076fc8c0d35a2aaef",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Río Negro",
+      "file": "informe-rio-negro.pdf",
+      "pages": 3,
+      "sha256": "df319286981b5d8d79956d20f5fec5d523c1c166a3886213dba12c4fbe5f9b96",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Salta",
+      "file": "informe-salta.pdf",
+      "pages": 3,
+      "sha256": "24cf66498c29197af92d551c01272aecc83abe5d089437822a924471216663b9",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "San Juan",
+      "file": "informe-san-juan.pdf",
+      "pages": 3,
+      "sha256": "604796d277f60f180ef8ee18a79e6519652ba0219a0cf62f68317dad25aaa4fc",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "San Luis",
+      "file": "informe-san-luis.pdf",
+      "pages": 3,
+      "sha256": "2d95e31a715c3226349aea0831a3f10b821b59c2c183aaa3c2b466d30f30b5b6",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Santa Cruz",
+      "file": "informe-santa-cruz.pdf",
+      "pages": 3,
+      "sha256": "cc08f2d035765cc42ddaee99aebbec7d1c864dcddcf4b5d89034388dc1216f72",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Santa Fe",
+      "file": "informe-santa-fe.pdf",
+      "pages": 3,
+      "sha256": "8bf2c6b3a0bf2750b71d06b78edd12809d9698905d2cbb9fdc0a30b206de2b66",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Santiago del Estero",
+      "file": "informe-santiago-del-estero.pdf",
+      "pages": 3,
+      "sha256": "9d0852893fe572afd8db2ae43c8a8d019bf5f5596a823919641b7fb8a41da844",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Tierra del Fuego",
+      "file": "informe-tierra-del-fuego.pdf",
+      "pages": 3,
+      "sha256": "b83266e4ff2ba98c6599350b87e221821fbd70a5b2d516be90278a0d8f2ca4ea",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    },
+    {
+      "province": "Tucumán",
+      "file": "informe-tucuman.pdf",
+      "pages": 3,
+      "sha256": "617bb172135c028047f174db7cd526cccf790780d07725d7a4da19451613d602",
+      "annual_year": 2025,
+      "quarter": "2026-Q1",
+      "transfer_cutoff": "2026-07",
+      "annual_available": true,
+      "forward_debt_calendar": false
+    }
+  ]
+}
