@@ -8,9 +8,10 @@ function initVisibleControls(){
   select.after(group);groups.push([select,group]);
  }
  const picker=document.getElementById('mobileViewPicker');picker.closest('.mobile-view-picker').classList.add('control-source');
- const section=document.createElement('section');section.className='visible-navigation';section.setAttribute('aria-label','Vista del tablero');section.innerHTML='<h2>Vista del tablero</h2><nav aria-label="Cambiar página del tablero"></nav>';
+ const section=document.createElement('section');section.className='visible-navigation';section.setAttribute('aria-label','Provincia y vista del tablero');section.innerHTML='<div class="visible-navigation-heading"><h2>Vista del tablero</h2></div><nav aria-label="Cambiar página del tablero"></nav>';
+ const provinceField=document.getElementById('psel').closest('.command-field');provinceField.classList.add('fixed-province-picker');section.firstElementChild.append(provinceField);
  for(const option of picker.options){const button=document.createElement('button');button.type='button';button.dataset.page=option.value;button.textContent=option.textContent.replace(' provincial','').replace(' de Argentina','');button.onclick=()=>{const alreadyOpen=option.value.startsWith('open')&&document.querySelector('#federalTools > details[open]')?.id===panelKeys[option.value];if(!alreadyOpen){picker.value=option.value;picker.dispatchEvent(new Event('change'));}sync();const target=option.value.startsWith('open')?document.getElementById(panelKeys[option.value]):document.querySelector('[data-view-panel="'+dashboardView+'"]');target?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});};section.lastElementChild.append(button);}
- document.querySelector('.dashboard-command-bar').after(section);
+ document.querySelector('.dashboard-command-bar').before(section);
  const panelKeys={openHistory:'fiscalHistoryPanel',openMap:'fiscalMapPanel',openNation:'nationalPanel',openOperations:'operationsPanel',openGuide:'fiscalGuide'};
  function sync(){
   for(const [select,group] of groups)for(const button of group.children){button.setAttribute('aria-pressed',String(button.dataset.choice===select.value));button.disabled=select.querySelector('option[value="'+button.dataset.choice+'"]')?.disabled||false;}

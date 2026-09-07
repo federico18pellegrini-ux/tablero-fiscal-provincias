@@ -118,6 +118,11 @@ body .national-context .dashboard-command-bar,body.national-context .dashboard-c
 .reading-options-grid{grid-template-columns:1.3fr 1fr 1fr;align-items:start;gap:16px}.choice-buttons{display:flex;gap:6px}.choice-buttons button{flex:1;min-width:0;min-height:48px;padding:9px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--s1);color:var(--text);font:600 14px/1.3 var(--font);cursor:pointer}
 .choice-buttons button[aria-pressed=true]{background:#174e8c;color:#fff;border-color:#174e8c;box-shadow:0 2px 5px #174e8c22}.choice-buttons button:disabled{opacity:.45;cursor:not-allowed}
 .visible-navigation{position:sticky;top:var(--fixed-header-height);z-index:45;padding:12px 0;background:var(--bg);border-bottom:1px solid var(--border);margin-bottom:16px}
+.visible-navigation-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:10px}
+.visible-navigation-heading h2{margin:0}.fixed-province-picker{display:flex;align-items:center;gap:10px;flex:0 1 380px;min-width:0}
+.fixed-province-picker .ctrl-lbl{margin:0;text-transform:none;letter-spacing:0;flex-shrink:0}.fixed-province-picker select.psel{min-width:0;min-height:44px;font-size:16px;padding-top:10px;padding-bottom:10px;border-color:var(--blue)}
+.fixed-province-picker select:focus-visible{outline:3px solid #cb9630;outline-offset:2px}
+@media(max-width:640px){.visible-navigation-heading{margin-bottom:8px}.visible-navigation-heading h2{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.fixed-province-picker{flex:1}.fixed-province-picker .ctrl-lbl{font-size:13px}}
 .visible-navigation nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
 .visible-navigation button{min-height:44px;white-space:normal;background:var(--s1);border:1px solid var(--border2);color:var(--text);border-radius:7px;padding:8px;font:500 13px/1.25 var(--font);cursor:pointer;transition:background .18s,box-shadow .18s}
 .visible-navigation button[aria-current=page]{background:#174e8c;color:#fff;border-color:#174e8c;box-shadow:inset 0 -3px 0 #d7b568}
