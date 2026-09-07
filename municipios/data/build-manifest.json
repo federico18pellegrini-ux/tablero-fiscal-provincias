@@ -1,0 +1,62 @@
+{
+  "generated": "2026-09-07",
+  "inputs": [
+    {
+      "file": "catalogo_rankings_calculados.csv",
+      "sha256": "98b22e5cf11942c677bed6e48bcad54520f23ed5c307c8286a1a093a9019312d"
+    },
+    {
+      "file": "catalogo_rankings_fiscales_propuestos.csv",
+      "sha256": "1f98b8c498fae13dbc22eddf5728807c505d3e517135afa29fa1a93a9093e037"
+    },
+    {
+      "file": "doble_caida_2025_vs2024.csv",
+      "sha256": "7595f2c498561d16525992e4c31f1364f67e5009dadd92f001afb753c19722d1"
+    },
+    {
+      "file": "empleo_sectorial_pba_2019_2025.csv",
+      "sha256": "b17292e10feceb3347ad4251544cc4ef813a9a4534cf73e57733ce254579172f"
+    },
+    {
+      "file": "fuentes_y_huellas.csv",
+      "sha256": "8a7e93f09da988f1de090ca5939dfd683fbb4769f7bbcb02161c992712449e63"
+    },
+    {
+      "file": "ipc_indec_verificado.csv",
+      "sha256": "9e42eef08ff8a0eda355439343a26319ceac4f6cf2d6c542ae00ad37e81d789e"
+    },
+    {
+      "file": "muestra_fiscal_junio2026.csv",
+      "sha256": "6584a28212fe26b4384d21ff072f3905fddde785b0a4387f52115e0785ae3fcb"
+    },
+    {
+      "file": "rankings_base_135_municipios.csv",
+      "sha256": "2bdac1f050deee9380e846d9fe2bb07d505542ae1d1f7e4a0afa4cc5ec2495d6"
+    },
+    {
+      "file": "rankings_ordenados.csv",
+      "sha256": "f6bbf407d39437c22282cea49ca309fe62a758371c8b61be068a95144ae6b779"
+    },
+    {
+      "file": "recaudacion_provincial_2025_2026.csv",
+      "sha256": "7bd7d300c88a155dc69505849bcf50e1138e337795e424e3d5e0489a2cc9e4ec"
+    },
+    {
+      "file": "transferencias_2024_verificadas.csv",
+      "sha256": "be27c6b95c90885ac535c5819b47edbc69db121f4bec687a908fee765d77c0bf"
+    },
+    {
+      "file": "datos_de_entrada/empleo_salarios_oede_muestra.csv",
+      "sha256": "2109df35f5a7c16beed8339d9feef502b6deb90f4883309c2a693dcd29f19832"
+    },
+    {
+      "file": "datos_de_entrada/municipios_135.csv",
+      "sha256": "5af8e5a395899bc840e8fecdf4c29bb1beddf6f91c96a25bc390645fdc31a582"
+    },
+    {
+      "file": "datos_de_entrada/transferencias_mensuales_2025_2026_muestra.csv",
+      "sha256": "6291cbe4b96cc98e233ec1124e8ee1c906be06cdef2799c16568475d912ac8d8"
+    }
+  ],
+  "coverage": 135
+}

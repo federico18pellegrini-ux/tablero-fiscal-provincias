@@ -14,6 +14,7 @@
   });
   const ALIASES = {governorRoom:'summary', layer3:'debt', structuralIndicators:'income',
     layer1:'federal', layer2:'comparison', comparisonSection:'comparison'};
+  const MUNICIPAL_VIEWS = Object.freeze({panorama:'Panorama municipal',rankings:'Rankings municipales',recursos:'Recursos municipales',empleo:'Empleo municipal',simular:'Escenario de coparticipación'});
 
   function initAnalytics(win, doc) {
     if (win.location.hostname !== HOST || win.location.protocol !== 'https:') return null;
@@ -22,6 +23,9 @@
     win.dataLayer = win.dataLayer || [];
     win.gtag = function () { win.dataLayer.push(arguments); };
     const origin = 'https://' + HOST;
+    const municipal = /^\/municipios(?:\/|$)/.test(win.location.pathname || '');
+    const views = municipal ? MUNICIPAL_VIEWS : VIEWS;
+    const basePath = municipal ? '/municipios/' : '/';
     let previousLocation = '';
     try { previousLocation = doc.referrer ? new URL(doc.referrer).origin + '/' : ''; } catch (_) {}
     let lastView = null;
@@ -39,14 +43,14 @@
       allow_ad_personalization_signals: false,
       cookie_domain: HOST,
       cookie_prefix: 'tablero',
-      page_location: origin + '/',
+      page_location: origin + basePath,
       page_referrer: previousLocation
     });
 
     function recordView(view) {
-      if (win[disabledKey] || !Object.hasOwn(VIEWS, view) || view === lastView) return;
-      const pageLocation = origin + '/#' + view;
-      const params = {page_title: VIEWS[view] + ' · Tablero Fiscal',
+      if (win[disabledKey] || !Object.hasOwn(views, view) || view === lastView) return;
+      const pageLocation = origin + basePath + '#' + view;
+      const params = {page_title: views[view] + (municipal ? ' · Municipios' : ' · Tablero Fiscal'),
         page_location: pageLocation, page_referrer: previousLocation};
       win.gtag('set', params);
       win.gtag('event', 'page_view', params);
@@ -67,9 +71,9 @@
         file_name: url.pathname, link_url: origin + url.pathname,
         link_text: 'PDF de la provincia'});
     });
-    const current = doc.querySelector('.visible-navigation button[aria-current="page"]')?.dataset.page;
-    const hash = win.location.hash.slice(1);
-    recordView(current || (Object.hasOwn(VIEWS, hash) ? hash : Object.hasOwn(ALIASES, hash) ? ALIASES[hash] : 'summary'));
+    const current = doc.querySelector(municipal ? '.main-nav button[aria-current="page"]' : '.visible-navigation button[aria-current="page"]')?.dataset;
+    const hash = municipal ? new URLSearchParams(win.location.search || '').get('vista') : win.location.hash.slice(1);
+    recordView(municipal ? (Object.hasOwn(views, hash) ? hash : 'panorama') : (current?.page || (Object.hasOwn(VIEWS, hash) ? hash : Object.hasOwn(ALIASES, hash) ? ALIASES[hash] : 'summary')));
     const script = doc.createElement('script');
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + MEASUREMENT_ID;

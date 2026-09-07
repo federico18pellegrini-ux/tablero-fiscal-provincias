@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6f3">
+  <meta name="description" content="Una mirada clara sobre los 135 municipios bonaerenses. Recursos, empleo, rankings y escenarios para la gestión municipal. Federico Pellegrini.">
+  <title>Municipios · Federico Pellegrini</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260907-1">
+  <script defer src="vendor/d3.v7.min.js"></script>
+  <script defer src="app.js?v=20260907-1"></script>
+  <script defer src="../analytics.js?v=20260907-2"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir a los datos</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="Municipios, inicio"><span class="brand-mark">fp.</span><span><strong>Municipios</strong><small>Federico Pellegrini</small></span></a>
+      <div class="header-actions"><a href="../" class="province-link">Tablero provincial <span aria-hidden="true">↗</span></a><label class="municipality-picker"><span>Tu municipio</span><select id="municipality" aria-label="Elegir municipio" disabled><option>Cargando municipios…</option></select></label></div>
+    </div>
+    <nav class="main-nav" aria-label="Vistas del tablero">
+      <button data-view="panorama" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-8H9v8H4a1 1 0 0 1-1-1Z"/></svg>Panorama</button>
+      <button data-view="rankings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h17M8 7h12M8 12h8M8 17h4"/></svg>Rankings</button>
+      <button data-view="recursos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18M5 9v10m5-10v10m4-10v10m5-10v10M3 21h18M3 6l9-4 9 4Z"/></svg>Recursos</button>
+      <button data-view="empleo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12l9 3 9-3M12 12v5"/></svg>Empleo</button>
+      <button data-view="simular"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg>Simular</button>
+    </nav>
+  </header>
+  <main id="main">
+    <div id="loading" class="loading" role="status"><span class="loading-dot"></span>Preparando los datos de los 135 municipios…</div>
+    <div id="error" class="error-panel" hidden role="alert"><h1>No pudimos cargar el tablero</h1><p>Revisá la conexión y volvé a intentarlo.</p><button onclick="location.reload()" class="button">Volver a cargar</button></div>
+    <div id="dashboard" hidden>
+      <section class="municipality-heading"><div><div class="eyebrow">Buenos Aires <span> / </span> 135 municipios</div><h1 id="municipality-name">Tu municipio</h1><p id="municipality-context"></p></div><button id="share" class="button button-quiet" aria-label="Copiar enlace a esta vista"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6M8 16l-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 1 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(1 0)"/></svg><span>Copiar enlace</span></button></section>
+      <section id="panorama" class="view" aria-label="Panorama municipal">
+        <div class="overview-layout">
+          <div class="overview-reading">
+            <div class="eyebrow">La foto del municipio</div>
+            <h2 id="overview-headline"></h2><p id="overview-copy" class="lead"></p>
+            <div class="overview-stats" id="overview-stats"></div>
+            <div class="reading-note"><span class="note-mark" aria-hidden="true">↗</span><p id="overview-note"></p></div>
+          </div>
+          <section class="map-panel" aria-labelledby="map-title">
+            <div class="panel-heading"><div><span class="eyebrow">Explorá el territorio</span><h2 id="map-title">Un mapa, 135 realidades</h2></div><span class="small-note">Tocá un municipio</span></div>
+            <div class="choices map-metrics" role="group" aria-label="Indicador del mapa"><button data-map="recursos" aria-pressed="true">Recursos</button><button data-map="empleo" aria-pressed="false">Empleo</button><button data-map="carencias" aria-pressed="false">Carencias</button><button data-map="industria" aria-pressed="false">Industria</button></div>
+            <div class="map-canvas"><svg id="map" aria-label="Mapa interactivo de los municipios de Buenos Aires"></svg><div class="map-zoom"><button id="zoom-in" aria-label="Acercar mapa">+</button><button id="zoom-out" aria-label="Alejar mapa">−</button><button id="zoom-reset" aria-label="Ver toda la provincia">↺</button></div><button id="zoom-selected" class="map-locate">Ubicar municipio <span aria-hidden="true">⌖</span></button><div id="map-tooltip" class="map-tooltip" hidden></div></div>
+            <div class="map-legend"><span id="legend-low"></span><span class="legend-gradient" aria-hidden="true"></span><span id="legend-high"></span><span class="missing-key">Sin dato</span></div>
+            <div class="map-selection" id="map-selection"></div><p class="chart-caption" id="map-caption"></p>
+          </section>
+        </div>
+        <section class="section-block"><div class="section-heading"><div><div class="eyebrow">Lo que conviene mirar</div><h2>Tres lecturas para la gestión</h2></div><span class="small-note">Datos, contexto y próximos pasos</span></div><div class="insights-grid" id="insights"></div></section>
+        <section class="province-pulse"><div><div class="eyebrow">La provincia, en perspectiva</div><h2>¿El cambio es local o compartido?</h2></div><div><strong id="pulse-transfers">106</strong><span>municipios con menos transferencias reales<small>Ene–jul 2026 vs. 2025</small></span></div><div><strong id="pulse-both">41</strong><span>con menos empleo y transferencias<small>Año 2025 vs. 2024</small></span></div><button class="text-button" data-go="rankings">Comparar municipios <span aria-hidden="true">→</span></button></section>
+      </section>
+      <section id="rankings" class="view" aria-label="Rankings municipales" hidden>
+        <div class="section-heading"><div><div class="eyebrow">Comparar para entender</div><h2>¿Dónde está cada municipio?</h2><p>Elegí qué mirar. Cada indicador cuenta una parte de la historia.</p></div><button class="button button-quiet" id="download-ranking">Descargar ranking ↓</button></div>
+        <div class="choices category-choices" id="ranking-groups" role="group" aria-label="Tema del ranking"></div>
+        <div class="choices metric-choices" id="ranking-metrics" role="group" aria-label="Indicador del ranking"></div>
+        <section class="panel ranking-panel"><div class="ranking-top"><div><h3 id="ranking-title"></h3><p class="small-note" id="ranking-period"></p></div><div class="choices small-choices" role="group" aria-label="Municipios a comparar"><button id="scope-all" aria-pressed="true">Todos</button><button id="scope-peers" aria-pressed="false">Población similar</button></div></div><div class="ranking-context"><p id="ranking-coverage"></p><button id="ranking-direction" class="text-button"></button></div><div id="ranking-selected" class="selected-rank"></div><div id="ranking-rows" class="ranking-rows"></div><button id="ranking-more" class="button button-quiet more-button">Ver todos los municipios</button><p id="ranking-note" class="chart-caption"></p></section>
+      </section>
+      <section id="recursos" class="view" aria-label="Recursos municipales" hidden>
+        <div class="section-heading"><div><div class="eyebrow">Recursos para gestionar</div><h2>Lo que llega y lo que cambia</h2><p>Transferencias provinciales, expresadas en pesos de julio de 2026.</p></div></div>
+        <div id="resource-stats" class="stats-grid"></div>
+        <div class="two-columns"><section class="panel"><div class="panel-heading"><div><h3>Las transferencias, mes a mes</h3><p class="small-note">Enero a julio · millones de pesos de julio de 2026</p></div></div><div class="chart-key"><span><i class="key previous"></i>2025</span><span><i class="key current"></i>2026</span></div><div id="transfers-chart" class="chart"></div><p class="chart-caption">La comparación descuenta la inflación de cada mes. Tocá las barras para ver los importes.</p></section>
+        <section class="panel"><div class="eyebrow">Abrir la diferencia</div><h3>¿Por qué cambió la coparticipación?</h3><p class="small-note">Enero–julio 2026 frente a 2025 · pesos constantes</p><div id="decomposition"></div><p class="chart-caption">Separamos el cambio del total repartido y el de la participación del municipio. Es una descomposición contable.</p></section></div>
+        <section class="province-revenue panel"><div><div class="eyebrow">El vínculo con la provincia</div><h3>La recaudación también llega al municipio</h3><p>La masa coparticipable combina impuestos provinciales y recursos federales. Una caída de la recaudación propia no se traslada en idéntico porcentaje a todas las transferencias.</p></div><div id="revenue-stats" class="revenue-stats"></div><button class="text-button" data-go="simular">Probar un escenario →</button></section>
+        <section class="panel fiscal-panel" id="fiscal-panel"></section>
+      </section>
+      <section id="empleo" class="view" aria-label="Economía y empleo municipal" hidden>
+        <div class="section-heading"><div><div class="eyebrow">La economía detrás del presupuesto</div><h2>Trabajo, salarios y actividad</h2><p>Empleo privado registrado por lugar del establecimiento.</p></div></div>
+        <div id="employment-stats" class="stats-grid"></div>
+        <div class="two-columns"><section class="panel"><div class="panel-heading"><div><h3>Cómo evoluciona el empleo</h3><p class="small-note">Puestos privados registrados · datos mensuales</p></div></div><div class="choices" role="group" aria-label="Historia de empleo"><button id="history-short" aria-pressed="true">2024–2025</button><button id="history-full" aria-pressed="false">Desde 2019</button></div><div id="employment-chart" class="chart"></div><p class="chart-caption">La serie puede mostrar estacionalidad. No mide desempleo, informalidad ni empleo público.</p></section><section class="panel"><div class="eyebrow">Estructura productiva</div><h3>¿Dónde están los puestos?</h3><p class="small-note">Sectores del empleo privado formal · diciembre de 2025</p><div id="sectors"></div><p class="chart-caption">Los sectores reservados quedan identificados; no se completan con cero.</p></section></div>
+        <section class="editorial-reading" id="employment-reading"></section>
+      </section>
+      <section id="simular" class="view" aria-label="Simulador de coparticipación" hidden>
+        <div class="section-heading"><div><div class="eyebrow">Anticipar el impacto</div><h2>¿Y si cae la coparticipación?</h2><p>Un escenario simple para ponerle un número a la exposición.</p></div><span class="scenario-badge">Escenario, no pronóstico</span></div>
+        <div class="simulation-layout"><section class="simulation-controls panel"><div class="eyebrow">Mové el escenario</div><label for="shock">Caída de la masa coparticipable</label><div class="shock-value"><output id="shock-output" for="shock">10</output><span>%</span></div><input id="shock" type="range" min="0" max="20" step="0.5" value="10"><div class="range-labels"><span>Sin caída</span><span>20%</span></div><div id="sim-live" class="sim-live" role="status"></div><div class="choices" role="group" aria-label="Escenarios de caída"><button data-shock="5">5%</button><button data-shock="10" aria-pressed="true">10%</button><button data-shock="15">15%</button></div><p>Se aplica a toda la masa elegible, con la participación municipal constante. Los demás fondos quedan sin cambios.</p><a class="text-button" href="metodologia.html#simulador">Cómo se calcula ↗</a></section><section class="simulation-result"><div class="eyebrow" id="sim-name"></div><h3>El impacto sobre los recursos</h3><div id="simulation-stats" class="stats-grid"></div><div id="simulation-bars"></div><p class="chart-caption">Base: coparticipación bruta observada en enero–julio de 2026, expresada en pesos de julio. Población del Censo 2022.</p></section></div>
+        <section class="editorial-reading"><span class="eyebrow">Qué significa para la gestión</span><h3 id="simulation-headline"></h3><p id="simulation-reading"></p><p>Para traducir esta pérdida a porcentaje del presupuesto o a días de salarios, todavía hay que completar los ingresos y gastos municipales del mismo período. La coparticipación es una parte de los recursos del municipio.</p></section>
+      </section>
+      <footer class="site-footer"><div><strong>Federico Pellegrini</strong><span>Entre Mates y Mercados · Datos para entender y decidir.</span></div><div><a href="metodologia.html">Criterios y fechas</a><button class="text-button" id="download-municipality">Descargar datos ↓</button><a href="../privacidad.html">Privacidad</a></div><p>135 municipios · Cada indicador conserva su período. Los datos faltantes no se reemplazan por cero.</p></footer>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

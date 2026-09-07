@@ -1,5 +1,13 @@
 # Tablero fiscal de provincias
 
+## Tablero municipal
+
+`/municipios/` reúne los 135 municipios bonaerenses en cinco vistas: Panorama, Rankings, Recursos, Empleo y Simular. Incluye mapa Georef/IGN, selección persistente, enlaces directos, 19 indicadores de ranking y tres comparaciones fiscales con cobertura parcial, descargas CSV y escenarios sobre coparticipación observada. La interfaz y los recursos visuales se sirven localmente; los datos faltantes quedan fuera de los rankings.
+
+La base de esta versión proviene de la investigación auditada del 7 de septiembre de 2026. Transferencias: 2025 y enero–julio 2026; empleo: 2019–2025; población y NBI: Censo 2022; producto municipal: 2021–2023; bancos: 2024. Cuentas individuales: tres municipios al primer semestre de 2026. `municipios/metodologia.html` documenta definiciones, diferencias de cobertura y enlaces; `municipios/data/build-manifest.json` conserva las huellas de los CSV de entrada.
+
+Para regenerar el paquete desde el directorio de investigación, usar `python scripts_build_municipal_dashboard.py --input-dir /ruta/municipios-rankings-20260907`. El generador también compone `municipios/app.js` a partir de `model.mjs` y `app.mjs`. Las pruebas de cálculo, cobertura y geografía corren con `node --test tests/municipal_dashboard.test.mjs`. La medición GA4 distingue las vistas municipales y excluye municipio, simulaciones y parámetros libres.
+
 Tablero fiscal para gobernadores y ministros. Las 24 jurisdicciones comparten navegación; las cifras conservan sus cortes y faltantes. El módulo nacional distingue al Sector Público Nacional de la suma de provincias.
 
 ## Actualización federal del 6 de septiembre de 2026

@@ -75,3 +75,12 @@ test('PDF clicks record a sanitized download; invalid and disabled links are ign
   assert.equal(downloads[0][2].file_name, '/reports/informe-buenos-aires.pdf');
   assert.doesNotMatch(JSON.stringify(downloads), /\?v=/);
 });
+
+test('municipal views have their own path and exclude chosen municipality and simulation', () => {
+  const s = setup({location:{pathname:'/municipios/',search:'?municipio=06805&vista=empleo&shock=10'}});
+  assert.equal(s.views()[0][2].page_location,'https://tablero.federicopellegrini.com.ar/municipios/#empleo');
+  s.events['dashboard:view']({detail:{view:'simular'}});
+  assert.equal(s.views().length,2);
+  assert.equal(s.views()[1][2].page_location,'https://tablero.federicopellegrini.com.ar/municipios/#simular');
+  assert.doesNotMatch(JSON.stringify(s.records()),/06805|shock|municipio=/);
+});
