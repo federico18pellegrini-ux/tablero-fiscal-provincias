@@ -875,7 +875,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260906-9">
+<link rel="stylesheet" href="executive-redesign.css?v=20260906-10">
 </head>
 <body>
 
@@ -1167,12 +1167,12 @@ tr:last-child td{border-bottom:none}
   </div>
   <div class="debt-schedule-card" id="debtScheduleCard">
     <div class="debt-schedule-head">
-      <div><div class="k-lbl">Calendario anual de servicios de deuda</div><div class="cc-note">Capital e intereses previstos, valuados al 31/12/2025. La altura total de cada barra muestra el esfuerzo anual.</div></div>
-      <div><div class="debt-schedule-highlight" id="debtSchedule2026">—</div><div class="rigid-headline-label">servicios 2026</div></div>
+      <div><div class="k-lbl">Calendario anual de servicios de deuda</div><div class="cc-note" id="debtScheduleDescription">Capital e intereses según la proyección publicada de cada jurisdicción.</div></div>
+      <div><div class="debt-schedule-highlight" id="debtSchedule2026">—</div><div class="rigid-headline-label" id="debtScheduleHighlightLabel">servicios 2026</div></div>
     </div>
     <div class="debt-schedule-legend"><span class="li"><span class="ld" style="background:#60a5fa"></span>Amortización</span><span class="li"><span class="ld" style="background:#fbbf24"></span>Intereses</span></div>
     <div class="debt-schedule-chart"><canvas id="cDebtSchedule" role="img" aria-label="Perfil anual de amortización e intereses de la deuda de Buenos Aires entre 2026 y 2041"></canvas></div>
-    <div class="debt-reading" id="debtScheduleReading">—</div>
+    <div class="debt-reading" id="debtScheduleReading">—</div><div id="debtScheduleSources"></div>
   </div>
   <div class="compact-callout" id="debtDecisionGap"><strong>Lo que todavía falta para decidir caja:</strong> el informe oficial publica el perfil anual 2026–2041, pero no el calendario mensual de los próximos 90/180 días. Para saber si la plata alcanza hay que conocer la caja que se puede usar, cuándo se pagan salarios y aguinaldo y qué financiamiento está disponible.</div>
 </section>
@@ -4450,48 +4450,7 @@ function renderGovernmentResults(province){
   grid.innerHTML=federalCards+localDetail;
 }
 
-function renderDebtSchedule(province){
-  const card=document.getElementById('debtScheduleCard');
-  if(!card)return;
-  if(charts.cDebtSchedule){charts.cDebtSchedule.destroy();delete charts.cDebtSchedule;}
-  if(province!=='Buenos Aires'){
-    card.style.display='none';
-    return;
-  }
-  card.style.display='block';
-  const rows=(debtScheduleRows||[])
-    .map(row=>({
-      year:toN(row.year),
-      amortization:toN(row.amortization_ars_m),
-      interest:toN(row.interest_ars_m),
-      total:toN(row.total_service_ars_m)
-    }))
-    .filter(row=>row.year!==null&&row.amortization!==null&&row.interest!==null)
-    .sort((a,b)=>a.year-b.year);
-  if(!rows.length){
-    noData('cDebtSchedule','Sin cronograma anual cargado');
-    document.getElementById('debtSchedule2026').textContent=ND;
-    document.getElementById('debtScheduleReading').textContent='No hay una serie anual disponible para mostrar.';
-    return;
-  }
-  const first=rows.find(row=>row.year===2026)||rows[0];
-  const income=toN(pbaDebtProfile?.latest_stock?.ltm_total_income_ars_m);
-  const serviceRatio=income&&first.total!==null?first.total/income*100:null;
-  document.getElementById('debtSchedule2026').textContent=`AR$ ${(first.total/1e6).toFixed(2).replace('.',',')} billones`;
-  document.getElementById('debtScheduleReading').innerHTML=`<strong>Lectura 2026:</strong> el perfil oficial prevé AR$ ${(first.amortization/1e6).toFixed(2).replace('.',',')} billones de capital y AR$ ${(first.interest/1e6).toFixed(2).replace('.',',')} billones de intereses. En conjunto equivalen a ${pctN(serviceRatio)} de los ingresos de los últimos 12 meses. Es presión anual, no prueba de que todo venza junto ni de que la caja esté cubierta.`;
-  if(!hasChartLib()){noData('cDebtSchedule','No se pudo cargar la librería de gráficos');return;}
-  charts.cDebtSchedule=new Chart(document.getElementById('cDebtSchedule'),{
-    type:'bar',
-    data:{
-      labels:rows.map(row=>row.year),
-      datasets:[
-        {label:'Amortización',data:rows.map(row=>row.amortization),backgroundColor:'rgba(96,165,250,.85)',borderColor:'#60a5fa',borderWidth:1,stack:'service',borderRadius:2},
-        {label:'Intereses',data:rows.map(row=>row.interest),backgroundColor:'rgba(251,191,36,.82)',borderColor:'#fbbf24',borderWidth:1,stack:'service',borderRadius:2}
-      ]
-    },
-    options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,x:{...BASE_OPTS.scales.x,stacked:true,ticks:{...BASE_OPTS.scales.x.ticks,maxRotation:0}},y:{...BASE_OPTS.scales.y,stacked:true,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>fmtPesosEje(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${fmtPesosNarrativo(ctx.parsed.y)}`}}}}
-  });
-}
+function renderDebtSchedule(province){renderProvinceServices(province);}
 
 function renderDebtProfile(province, c){
   if(province!=='Buenos Aires' && latestFiscalDetails?.debt?.[province]){
@@ -5169,6 +5128,7 @@ document.getElementById('downloadPdfAll')?.addEventListener('click',exportAllPro
 document.getElementById('downloadPng')?.addEventListener('click',exportCurrentProvincePng);
 
 </script>
+<script src="provincial-debt-services.js?v=20260906-10"></script>
 <script src="inflation-history.js?v=20260906-9"></script>
 <script src="executive-redesign.js?v=20260906-9"></script>
 <script src="closing-tools.js?v=20260906-4"></script>
