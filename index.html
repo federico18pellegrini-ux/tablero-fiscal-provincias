@@ -875,7 +875,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260906-11">
+<link rel="stylesheet" href="executive-redesign.css?v=20260906-12">
 </head>
 <body>
 
@@ -915,9 +915,9 @@ tr:last-child td{border-bottom:none}
   <div class="command-field">
     <div class="ctrl-lbl">Perfil</div>
     <select aria-label="Perfil de lectura" id="profileSelector" class="psel">
-      <option value="governor">gobernador</option>
-      <option value="hacienda">ministro de economía</option>
-      <option value="press">prensa</option>
+      <option value="governor">Gobernador</option>
+      <option value="hacienda">Ministro de Economía</option>
+      <option value="press">Prensa</option>
     </select>
   </div>
   <div class="command-field">
@@ -1921,9 +1921,9 @@ function setModeButtons(){
 const VIEW_LABELS={summary:'Resumen',debt:'Solvencia y deuda',income:'Ingresos y gasto',federal:'Relación con Nación',comparison:'Comparación',results:'Resultados de gobierno'};
 const VIEW_HASH_ALIASES={governorRoom:'summary',layer3:'debt',structuralIndicators:'income',layer1:'federal',layer2:'comparison',comparisonSection:'comparison'};
 const PROFILE_CONFIG={
-  governor:{label:'gobernador',level:'Nivel 1',purpose:'Prioridades de gestión, continuidad de los servicios y decisiones con impacto provincial.',views:['summary','debt','income','federal','comparison','results']},
-  hacienda:{label:'ministro de economía',level:'Nivel 2',purpose:'Resultado fiscal, caja, vencimientos y alternativas de financiamiento.',views:['summary','debt','income','comparison','federal','results']},
-  press:{label:'prensa',level:'Citas',purpose:'Qué muestran los datos, cómo explicarlos y qué conclusiones permiten sostener.',views:['summary','federal','comparison','debt','income','results']},
+  governor:{label:'Gobernador',level:'Nivel 1',purpose:'Prioridades de gestión, continuidad de los servicios y decisiones con impacto provincial.',views:['summary','debt','income','federal','comparison','results']},
+  hacienda:{label:'Ministro de Economía',level:'Nivel 2',purpose:'Resultado fiscal, caja, vencimientos y alternativas de financiamiento.',views:['summary','debt','income','comparison','federal','results']},
+  press:{label:'Prensa',level:'Citas',purpose:'Qué muestran los datos, cómo explicarlos y qué conclusiones permiten sostener.',views:['summary','federal','comparison','debt','income','results']},
 };
 const CROSS_SECTION_GAPS_3T25=new Set(['Santiago del Estero','La Pampa','Neuquén']);
 const HISTORICAL_REVENUE_GAPS=new Set(['CABA','Santiago del Estero']);
@@ -2772,6 +2772,7 @@ function render(province){
   updatePeriodAvailability(province);
   resetAuditCells();
   currentProvince=province;
+  const pulseTitle=document.getElementById('executivePulseTitle');if(pulseTitle)pulseTitle.textContent='Posición fiscal de '+province;
   const heroProvince=document.getElementById('heroProvinceSubtitle');
   if(heroProvince)heroProvince.textContent=`Provincia seleccionada: ${province}`;
 
@@ -2821,8 +2822,8 @@ function render(province){
   const kResFinPeriod=document.getElementById('kResFinPeriod');
   const kResPriPeriod=document.getElementById('kResPriPeriod');
   if(executivePulsePeriod)executivePulsePeriod.innerHTML=useQuarter?'Enero–marzo 2026<br>ranking y deuda al 1T26':'Últimos 12 meses al 1T26<br>salvo flujos 2026';
-  if(kResFinReading)kResFinReading.textContent=rf===null?'Sin dato comparable.':`Después de intereses: ${rf<0?'faltaron':'quedaron'} $${Math.abs(rf).toFixed(2)} por cada $100 de ingresos.`;
-  if(kResPriReading)kResPriReading.textContent=rp===null?'Sin dato comparable.':`Antes de intereses: ${rp<0?'los gastos superaron los ingresos':'los ingresos superaron los gastos'} en $${Math.abs(rp).toFixed(2)} por cada $100 ingresados.`;
+  if(kResFinReading)kResFinReading.textContent=rf===null?'Sin dato comparable.':`Después de intereses: ${rf<0?'faltaron':'quedaron'} $${Math.abs(rf).toFixed(2).replace('.',',')} por cada $100 de ingresos.`;
+  if(kResPriReading)kResPriReading.textContent=rp===null?'Sin dato comparable.':`Antes de intereses: ${rp<0?'los gastos superaron los ingresos':'los ingresos superaron los gastos'} en $${Math.abs(rp).toFixed(2).replace('.',',')} por cada $100 ingresados.`;
   if(kResFinPeriod)kResFinPeriod.textContent=useQuarter?'Trimestre · % de ingresos':'Últimos 12 meses · % de ingresos';
   if(kResPriPeriod)kResPriPeriod.textContent=useQuarter?'Trimestre · % de ingresos':'Últimos 12 meses · % de ingresos';
   const latestPbaDebt=province==='Buenos Aires'?pbaDebtProfile?.latest_stock:null;
@@ -5129,13 +5130,14 @@ document.getElementById('downloadPdfAll')?.addEventListener('click',exportAllPro
 document.getElementById('downloadPng')?.addEventListener('click',exportCurrentProvincePng);
 
 </script>
-<script src="profile-readings.js?v=20260906-11"></script>
-<script src="provincial-debt-services.js?v=20260906-11"></script>
+<script src="visible-controls.js?v=20260906-12"></script>
+<script src="profile-readings.js?v=20260906-12"></script>
+<script src="provincial-debt-services.js?v=20260906-12"></script>
 <script src="inflation-history.js?v=20260906-9"></script>
-<script src="executive-redesign.js?v=20260906-9"></script>
+<script src="executive-redesign.js?v=20260906-12"></script>
 <script src="closing-tools.js?v=20260906-4"></script>
-<script src="management-tools.js?v=20260906-5"></script>
-<script src="federal-tools.js?v=20260906-11"></script>
+<script src="management-tools.js?v=20260906-12"></script>
+<script src="federal-tools.js?v=20260906-12"></script>
 <script>
 /* ── BOOT ────────────────────────────────────────────────────────── */
 loadAll().catch(err=>{

@@ -73,7 +73,7 @@ function renderFiscalMap(){
 async function renderNationalPanel(){
   const host=document.getElementById('nationalContent');
   try{
-    const response=await fetch('data/national_management.json?v=20260906-9');if(!response.ok)throw Error('source');const d=await response.json();
+    const response=await fetch('data/national_management.json?v=20260906-9');if(!response.ok)throw Error('source');const d=await response.json();nationalReadingData=d;
     host.replaceChildren();
     const paragraph=(parent,text)=>{const p=document.createElement('p');p.textContent=text;parent.append(p);return p;};
     const source=(parent,url,date,label='Fuente oficial')=>{const p=document.createElement('p');p.className='federal-note';const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.textContent=date?`${label} · publicación: ${date}`:label;p.append(a);parent.append(p);};
@@ -89,7 +89,7 @@ async function renderNationalPanel(){
       }
     }
     const nav=document.createElement('nav');nav.className='national-section-nav';nav.setAttribute('aria-label','Temas de economía nacional');for(const section of host.querySelectorAll('.national-section')){const a=document.createElement('a');a.href='#'+section.id;a.textContent=section.querySelector('h3').textContent.split(':')[0];nav.append(a);}host.firstElementChild.after(nav);
-    const h=document.createElement('h3');h.textContent='Qué falta actualizar para tomar decisiones';host.append(h);const ul=document.createElement('ul');for(const item of d.missing_blocks||[]){const li=document.createElement('li');li.textContent=item;ul.append(li);}host.append(ul);source(host,'data/national_management.json',null,'Descargar indicadores, historia y referencias');
+    const h=document.createElement('h3');h.textContent='Qué falta actualizar para tomar decisiones';host.append(h);const ul=document.createElement('ul');for(const item of d.missing_blocks||[]){const li=document.createElement('li');li.textContent=item;ul.append(li);}host.append(ul);source(host,'data/national_management.json',null,'Descargar indicadores, historia y referencias');renderProfileReadings();
   }catch{host.textContent='No se pudo cargar la fuente nacional. No se reemplaza por el agregado de provincias.';}
 }
 

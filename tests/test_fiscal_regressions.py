@@ -223,7 +223,7 @@ class FiscalRegressionTests(unittest.TestCase):
         for profile in ('governor', 'hacienda', 'press'):
             self.assertIn(f'{profile}:{{', frontend)
             self.assertIn(f'value="{profile}"', frontend)
-        self.assertIn("governor:{label:'gobernador'", frontend)
+        self.assertIn("governor:{label:'Gobernador'", frontend)
         self.assertIn("views:['summary','debt','income','federal','comparison','results']", frontend)
         self.assertIn("views:['summary','debt','income','comparison','federal','results']", frontend)
         self.assertIn("views:['summary','federal','comparison','debt','income','results']", frontend)
