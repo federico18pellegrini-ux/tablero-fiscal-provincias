@@ -135,7 +135,7 @@ class Report:
  def __init__(self,path,model,data):
   self.m=model;self.d=data;self.editorial=editorial_reading(model);self.page=0;self.layouts=[]
   self.c=canvas.Canvas(str(path),pagesize=A4,pageCompression=1,invariant=1)
-  self.c.setTitle(f'{model["province"]} | Informe de gestión | Frente Renovador')
+  self.c.setTitle(f'{model["province"]} | Informe de gestión')
   self.c.setAuthor('Federico Pellegrini');self.c.setSubject('Diagnóstico fiscal, inversión y agenda de gestión provincial. Documento de trabajo.');self.c.setCreator('Tablero de Federico Pellegrini')
  def text(self,text,x,y,size=10.5,bold=False,color=INK):
   self.c.setFont('LatoBold' if bold else 'Lato',size);self.c.setFillColor(HexColor(color));self.c.drawString(x*MM,H-y*MM,clean_text(text))
@@ -158,7 +158,7 @@ class Report:
  def header(self,topic):
   if self.page:self.c.showPage()
   self.page+=1;self.rect(0,0,210,3,TEAL)
-  self.text('FRENTE RENOVADOR  /  AGENDA PROVINCIAL',18,14,8.7,True,TEAL)
+  self.text('AGENDA PROVINCIAL',18,14,8.7,True,TEAL)
   self.right('DOCUMENTO DE TRABAJO',192,14,7.8,color=MUTED)
   name=self.m['province'];size=29 if len(name)<21 else 25
   self.text(name,18,29,size,True);self.text(topic,18,37,11,color=MUTED);self.line(18,42,174)
