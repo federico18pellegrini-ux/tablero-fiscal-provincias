@@ -96,6 +96,34 @@ body{font-size:var(--text-reading)}
 
 #fiscal-panel{scroll-margin-top:calc(var(--header-height) + 16px)}
 
+/* Dated publication evidence, kept separate from fiscal results. */
+#transparency-panel{scroll-margin-top:calc(var(--header-height) + 16px)}
+.transparency-panel{border-top:3px solid var(--ranking)}
+.transparency-overview{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:36px;margin:28px 0}
+.transparency-panel h3{font-size:20px;line-height:1.4;letter-spacing:-.025em}
+.transparency-panel p,.ranking-summary{font-size:var(--text-reading);line-height:1.7;color:var(--muted)}
+.transparency-period{margin:20px 0}
+.transparency-period>div:first-child{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:var(--text-label)}
+.transparency-period strong{font-size:22px;line-height:1.2;color:var(--ranking);font-variant-numeric:tabular-nums}
+.transparency-track{height:8px;border-radius:6px;background:#e6eaf3;margin:12px 0;overflow:hidden}
+.transparency-track>span{display:block;height:100%;background:var(--ranking);border-radius:6px;animation:transparency-reveal .4s ease-out;transform-origin:left}
+.transparency-period:first-of-type .transparency-track>span{background:#91a4cc}
+.transparency-components{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.transparency-component{padding:20px;border:1px solid #dce2f0;border-radius:14px;min-width:0}
+.transparency-component h3{font-size:18px;margin-bottom:12px;min-height:2.8em}
+.transparency-component strong{font-size:20px;font-variant-numeric:tabular-nums;color:var(--ranking)}
+.transparency-component p{margin-bottom:0}
+.transparency-current{display:flex;gap:24px;align-items:center;flex-wrap:wrap;padding:22px;margin-top:24px;background:#edf1fb;border-radius:14px}
+.transparency-current>div{flex:1 1 320px;min-width:0}
+.transparency-current p{margin:8px 0 0}
+.transparency-current .text-button{color:var(--ranking)}
+.transparency-panel .chart-caption{font-size:var(--text-label)}
+.ranking-summary{padding:18px 22px;background:var(--ranking-soft);border-radius:14px}
+@keyframes transparency-reveal{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(min-width:1101px){.map-metrics{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:820px){.transparency-overview{grid-template-columns:1fr;gap:12px}.transparency-components{grid-template-columns:repeat(2,minmax(0,1fr))}.map-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.transparency-components{grid-template-columns:1fr}.transparency-component h3{min-height:0}.transparency-current{padding:18px;gap:8px}.map-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.map-metrics button:last-child{grid-column:1/-1}}
+
 /* General comparison has its own navigation and reference hierarchy. */
 :root{--ranking:#3455a0;--ranking-soft:#edf1fb}
 .main-nav .general-ranking{margin-left:auto;color:var(--ranking);background:var(--ranking-soft);border:1px solid #cbd5ef}

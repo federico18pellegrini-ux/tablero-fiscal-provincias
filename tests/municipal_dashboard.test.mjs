@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createRequire} from 'node:module';
-import {METRICS,metricValue,rankMunicipalities,peers,simulate,readState,csv} from '../municipios/model.mjs';
+import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv} from '../municipios/model.mjs';
 const require=createRequire(import.meta.url),d3=require('../municipios/vendor/d3.v7.min.js');
 const data=JSON.parse(fs.readFileSync(new URL('../municipios/data/dashboard.json',import.meta.url)));
 const geometry=JSON.parse(fs.readFileSync(new URL('../municipios/data/geografia_original.geojson',import.meta.url)));
@@ -22,7 +22,7 @@ test('reserved observations never become zeros or ranking positions',()=>{
   assert.equal(rankMunicipalities(rows,metric('industria-cambio')).length,130);
   assert.equal(rankMunicipalities(rows,metric('credito')).length,106);
   assert.equal(rankMunicipalities(rows,metric('poblacion')).length,133);
-  assert.equal(rankMunicipalities(rows,metric('deficit')).length,17);
+  assert.equal(rankMunicipalities(rows,metric('deficit')).length,18);
   const missing=rows.find(m=>!m.fiscal);assert.equal(metricValue(missing,metric('deficit')),null);
 });
 
@@ -40,7 +40,7 @@ test('municipal fiscal accounts reconcile without including financing or treatin
     assert.ok(Math.abs(f.gastos_capital/m.poblacion_2022-f.capital_por_habitante_base2022_ars_corrientes)<.00001);
     assert.ok(Math.abs(f.personal_devengado/f.gastos_corrientes*100-f.personal_sobre_gasto_corriente_pct)<.00001);
   }
-  for(const id of ['deficit','resultado-pesos','inversion','personal','ahorro-corriente','inversion-habitante'])assert.equal(rankMunicipalities(rows,metric(id)).length,17);
+  for(const id of ['deficit','resultado-pesos','inversion','personal','ahorro-corriente','inversion-habitante'])assert.equal(rankMunicipalities(rows,metric(id)).length,18);
   const lasHeras=rows.find(m=>m.id==='06329').fiscal;
   assert.equal(lasHeras.ingresos_totales,10441008325.60);
   assert.equal(lasHeras.gastos_totales,8853440358.31);
@@ -50,6 +50,12 @@ test('municipal fiscal accounts reconcile without including financing or treatin
   assert.equal(martin.resultado_financiero,14367303346.81);
   assert.notEqual(martin.gastos_totales,176554014228.48); // Budget total includes financial applications.
   assert.match(rows.find(m=>m.id==='06833').fiscal.scope,/No consolida el Centro Municipal de Salud/);
+  const matanza=rows.find(m=>m.id==='06427').fiscal;
+  assert.equal(matanza.ingresos_totales,383274207057.99);
+  assert.equal(matanza.gastos_totales,273688321997.90);
+  assert.equal(matanza.resultado_financiero,109585885060.09);
+  assert.equal(matanza.personal_devengado,58753633542.65); // Devengado, not compromiso or pagado.
+  assert.notEqual(matanza.gastos_totales,293676011453.75); // Budget total includes financing operations.
 });
 
 test('Tigre budget execution stays separate from the fiscal deficit ranking',()=>{
@@ -65,7 +71,7 @@ test('Tigre budget execution stays separate from the fiscal deficit ranking',()=
 
 test('new fiscal observations retain primary documents, page locations and content hashes',()=>{
   const audit=JSON.parse(fs.readFileSync(new URL('../municipios/data/fiscal_verified.json',import.meta.url)));
-  assert.equal(audit.records.length,14);
+  assert.equal(audit.records.length,15);
   for(const r of [...audit.records,...audit.budgetExecutions]){
     assert.match(r.landingUrl,/^https:\/\//);
     assert.ok(r.documents.length>0);
@@ -76,6 +82,45 @@ test('new fiscal observations retain primary documents, page locations and conte
       assert.ok(d.bytes>0);
     }
   }
+});
+
+test('ASAP scores retain all 135 municipalities, zero scores, ties, and point changes',()=>{
+  const ranked=rankMunicipalities(rows,metric('transparencia'));
+  assert.equal(data.transparency.coverage,135);
+  assert.equal(ranked.length,135);
+  assert.equal(ranked.filter(r=>r.rank===1&&r.value===100).length,65);
+  assert.equal(ranked.filter(r=>r.value===0).length,9);
+  assert.equal(metric('cambio-transparencia').unit,'points');
+  for(const m of rows){
+    const t=m.transparency;
+    assert.deepEqual(t.history.map(h=>h.edition),['2025-11','2026-05']);
+    assert.equal(t.change,t.score-t.previousScore);
+    for(const h of t.history)assert.equal(h.score,Object.values(h.components).reduce((a,b)=>a+b,0));
+  }
+  assert.equal(rows.filter(m=>m.transparency.change>0).length,20);
+  assert.equal(rows.filter(m=>m.transparency.change<0).length,23);
+  assert.equal(rows.filter(m=>m.transparency.change===0).length,92);
+  assert.equal(readState('?vista=rankings&indicador=transparencia',rows).metric,'transparencia');
+});
+
+test('publication snapshot remains separate from later accounts and ambiguous component scores',()=>{
+  const lasHeras=rows.find(m=>m.id==='06329'),tigre=rows.find(m=>m.id==='06805');
+  assert.equal(lasHeras.transparency.score,30);
+  assert.equal(lasHeras.fiscal.fin,'2026-06-30');
+  assert.equal(tigre.transparency.score,5);
+  assert.equal(tigre.transparency.change,-33);
+  assert.ok(tigre.fiscalExecution);
+  assert.equal(tigre.fiscal,null);
+  assert.equal(data.transparency.editions.at(-1).observedThrough,'2026-05-08');
+  assert.equal(rows.find(m=>m.id==='06385').transparency.score,100); // Corrected General Viamonte score.
+  const sef=TRANSPARENCY_COMPONENTS.find(c=>c.id==='situacion_economico_financiera');
+  assert.match(transparencyStatus(sef,15),/parcial o de un trimestre anterior/);
+  assert.match(transparencyStatus(sef,0),/ausente o fuera del período/);
+  assert.equal(transparencyStatus(sef,null),'Sin dato');
+  const moron=rows.find(m=>m.id==='06568').transparency;
+  assert.equal(moron.history[0].components.presupuesto,15);
+  assert.match(moron.history[0].note,/no figuran en su escala/);
+  assert.match(transparencyStatus(TRANSPARENCY_COMPONENTS.find(c=>c.id==='presupuesto'),15),/fuera de la escala/);
 });
 test('ranking preserves ties and recomputes within the chosen population cohort',()=>{
   const meta={field:'v',ascending:true},sample=[{municipio:'A',v:2},{municipio:'B',v:2},{municipio:'C',v:4},{municipio:'D',v:null}];

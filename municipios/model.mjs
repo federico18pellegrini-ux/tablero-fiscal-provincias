@@ -24,8 +24,24 @@ export const METRICS = [
   metric('inversion', 'Inversión sobre gasto', 'Cuentas', 'fiscal.capital_sobre_gasto_pct', '%', 'Acumulado al 30 de junio de 2026', 'Gasto de capital sobre gasto total sin aplicaciones financieras. Incluye inversión y transferencias de capital; no mide avance físico ni calidad de las obras.', false),
   metric('personal', 'Personal sobre gasto corriente', 'Cuentas', 'fiscal.personal_sobre_gasto_corriente_pct', '%', 'Acumulado al 30 de junio de 2026', 'Gasto devengado en personal sobre gasto corriente. Los servicios prestados, la tercerización y los organismos incluidos afectan la comparación.', false),
   metric('ahorro-corriente', 'Ahorro corriente sobre ingresos', 'Cuentas', 'fiscal.ahorro_sobre_ingresos_corrientes_pct', '%', 'Acumulado al 30 de junio de 2026', 'Ingresos corrientes percibidos menos gastos corrientes devengados, como porcentaje de los ingresos corrientes. Muestra el margen antes de la cuenta de capital. No es dinero libre.', false),
-  metric('inversion-habitante', 'Inversión por habitante', 'Cuentas', 'fiscal.capital_por_habitante_base2022_ars_corrientes', 'money', 'Acumulado al 30 de junio de 2026 · población 2022', 'Gasto de capital en pesos corrientes por habitante del Censo 2022. La cobertura institucional y los servicios a cargo pueden diferir.', false)
+  metric('inversion-habitante', 'Inversión por habitante', 'Cuentas', 'fiscal.capital_por_habitante_base2022_ars_corrientes', 'money', 'Acumulado al 30 de junio de 2026 · población 2022', 'Gasto de capital en pesos corrientes por habitante del Censo 2022. La cobertura institucional y los servicios a cargo pueden diferir.', false),
+  metric('transparencia', 'Publicación de información fiscal', 'Transparencia', 'transparency.score', 'score', 'ASAP · relevamiento del 1 al 8 de mayo de 2026', 'Puntaje de 0 a 100 por publicación, actualidad, integridad y acceso a información fiscal. Describe lo observado por ASAP en esa fecha; no mide el resultado fiscal ni acredita la calidad de gestión.', false),
+  metric('cambio-transparencia', 'Cambio del puntaje', 'Transparencia', 'transparency.change', 'points', 'ASAP · mayo de 2026 vs. noviembre de 2025', 'Diferencia en puntos del índice publicado. Cada edición exige información del período correspondiente: una baja puede reflejar documentos que quedaron desactualizados. No mide cambios en la situación financiera.', false)
 ];
+export const TRANSPARENCY_COMPONENTS = [
+  {id:'presupuesto',label:'Presupuesto',max:30},
+  {id:'situacion_economico_financiera',label:'Situación económica y financiera',max:35},
+  {id:'ejecucion',label:'Ejecución de ingresos y gastos',max:10},
+  {id:'gasto_finalidad_funcion',label:'Gasto por finalidad y función',max:10},
+  {id:'deuda',label:'Información de deuda',max:10},
+  {id:'accesibilidad',label:'Facilidad de acceso',max:5}
+];
+export function transparencyStatus(component, score) {
+  if(!finite(score))return 'Sin dato';
+  if(component.id==='accesibilidad')return score===5?'Acceso fácil en el relevamiento.':'Acceso confuso o nulo según ASAP.';
+  if(component.id==='presupuesto')return score===30?'Presupuesto vigente publicado.':score===20?'Presupuesto publicado de forma parcial.':score===0?'No recibió puntos por presupuesto vigente.':'Puntaje publicado fuera de la escala metodológica.';
+  return score===component.max?'Información completa y al día en el relevamiento.':score===0?'Sin puntaje: información ausente o fuera del período admitido.':'Información parcial o de un trimestre anterior.';
+}
 export const VALID_VIEWS = ['panorama', 'rankings', 'recursos', 'empleo', 'simular'];
 export function metricValue(m, meta) { return meta.field.split('.').reduce((v, k) => v?.[k], m) ?? null; }
 export function finite(v) { return typeof v === 'number' && Number.isFinite(v); }

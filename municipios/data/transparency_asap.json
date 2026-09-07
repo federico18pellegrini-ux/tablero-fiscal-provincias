@@ -1,0 +1,4916 @@
+{
+  "version": 1,
+  "verifiedAt": "2026-09-07",
+  "provider": "ASAP",
+  "measure": "Publicación de información fiscal, actualidad, integridad y acceso. No mide resultado fiscal ni calidad de gestión.",
+  "maximums": {
+    "accesibilidad": 5,
+    "presupuesto": 30,
+    "situacion_economico_financiera": 35,
+    "ejecucion": 10,
+    "gasto_finalidad_funcion": 10,
+    "deuda": 10
+  },
+  "editions": [
+    {
+      "edition": "2025-11",
+      "label": "Noviembre de 2025",
+      "observedThrough": "2025-11-08",
+      "fieldworkLabel": "Relevamiento al 8 de noviembre de 2025",
+      "document": {
+        "url": "https://www.asap.org.ar/img_informes/12221419_InformeTransparenciaMunicipiosPBA-Noviembre2025.pdf",
+        "sha256": "ab953674d809233ee867f18a75d1befb9edf8d2b8c3702946c5da4f0b58f4479",
+        "bytes": 969185,
+        "pages": 28
+      },
+      "records": [
+        {
+          "id": "06014",
+          "publishedName": "Adolfo Gonzales Chaves",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06042",
+          "publishedName": "Ayacucho",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06049",
+          "publishedName": "Azul",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06063",
+          "publishedName": "Balcarce",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06084",
+          "publishedName": "Benito Juárez",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06098",
+          "publishedName": "Berisso",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06105",
+          "publishedName": "Bolívar",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06112",
+          "publishedName": "Bragado",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06147",
+          "publishedName": "Carlos Casares",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06154",
+          "publishedName": "Carlos Tejedor",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06161",
+          "publishedName": "Carmen de Areco",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06218",
+          "publishedName": "Chascomús",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06224",
+          "publishedName": "Chivilcoy",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06175",
+          "publishedName": "Colón",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06189",
+          "publishedName": "Coronel Dorrego",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06196",
+          "publishedName": "Coronel Pringles",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06203",
+          "publishedName": "Coronel Suárez",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06277",
+          "publishedName": "Florentino Ameghino",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06280",
+          "publishedName": "General Alvarado",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06301",
+          "publishedName": "General Belgrano",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06322",
+          "publishedName": "General La Madrid",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06315",
+          "publishedName": "General Madariaga",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06351",
+          "publishedName": "General Pinto",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06357",
+          "publishedName": "General Pueyrredón",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06371",
+          "publishedName": "General San Martín",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06385",
+          "publishedName": "General Viamonte",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06392",
+          "publishedName": "General Villegas",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06413",
+          "publishedName": "Junín",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06427",
+          "publishedName": "La Matanza",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06441",
+          "publishedName": "La Plata",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06434",
+          "publishedName": "Lanús",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06448",
+          "publishedName": "Laprida",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06469",
+          "publishedName": "Lincoln",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06476",
+          "publishedName": "Lobería",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06483",
+          "publishedName": "Lobos",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06497",
+          "publishedName": "Luján",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06505",
+          "publishedName": "Magdalena",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06515",
+          "publishedName": "Malvinas Argentinas",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06532",
+          "publishedName": "Mercedes",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06553",
+          "publishedName": "Monte Hermoso",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06560",
+          "publishedName": "Moreno",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06581",
+          "publishedName": "Necochea",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06588",
+          "publishedName": "Nueve de Julio",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06595",
+          "publishedName": "Olavarría",
+          "page": 22,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06623",
+          "publishedName": "Pergamino",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06644",
+          "publishedName": "Pinamar",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06672",
+          "publishedName": "Rauch",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06679",
+          "publishedName": "Rivadavia",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06686",
+          "publishedName": "Rojas",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06700",
+          "publishedName": "Saavedra",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06707",
+          "publishedName": "Saladillo",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06714",
+          "publishedName": "Salto",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06728",
+          "publishedName": "San Andrés de Giles",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06742",
+          "publishedName": "San Cayetano",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06756",
+          "publishedName": "San Isidro",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06760",
+          "publishedName": "San Miguel",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06547",
+          "publishedName": "San Miguel del Monte",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06770",
+          "publishedName": "San Pedro",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06791",
+          "publishedName": "Tandil",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06798",
+          "publishedName": "Tapalqué",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06826",
+          "publishedName": "Trenque Lauquen",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06833",
+          "publishedName": "Tres Arroyos",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06840",
+          "publishedName": "Tres de Febrero",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06882",
+          "publishedName": "Zárate",
+          "page": 23,
+          "score": 90,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06287",
+          "publishedName": "General Alvear",
+          "page": 23,
+          "score": 75,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06406",
+          "publishedName": "Hipólito Yrigoyen",
+          "page": 23,
+          "score": 75,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06861",
+          "publishedName": "Vicente López",
+          "page": 23,
+          "score": 75,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06875",
+          "publishedName": "Villarino",
+          "page": 23,
+          "score": 75,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06007",
+          "publishedName": "Adolfo Alsina",
+          "page": 23,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06028",
+          "publishedName": "Almirante Brown",
+          "page": 23,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06182",
+          "publishedName": "Coronel de Marina Leonardo Rosales",
+          "page": 23,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06308",
+          "publishedName": "General Guido",
+          "page": 23,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06616",
+          "publishedName": "Pellegrini",
+          "page": 23,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06784",
+          "publishedName": "Suipacha",
+          "page": 23,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06854",
+          "publishedName": "Veinticinco de Mayo",
+          "page": 23,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06056",
+          "publishedName": "Bahía Blanca",
+          "page": 23,
+          "score": 69,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 3,
+            "gasto_finalidad_funcion": 3,
+            "deuda": 3
+          }
+        },
+        {
+          "id": "06602",
+          "publishedName": "Patagones",
+          "page": 23,
+          "score": 65,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06035",
+          "publishedName": "Avellaneda",
+          "page": 23,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06091",
+          "publishedName": "Berazategui",
+          "page": 23,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06252",
+          "publishedName": "Escobar",
+          "page": 23,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06658",
+          "publishedName": "Quilmes",
+          "page": 23,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06735",
+          "publishedName": "San Antonio de Areco",
+          "page": 23,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06819",
+          "publishedName": "Tornquist",
+          "page": 24,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06021",
+          "publishedName": "Alberti",
+          "page": 24,
+          "score": 59,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 15,
+            "ejecucion": 3,
+            "gasto_finalidad_funcion": 3,
+            "deuda": 3
+          }
+        },
+        {
+          "id": "06568",
+          "publishedName": "Morón",
+          "page": 24,
+          "score": 45,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 15,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          },
+          "note": "ASAP asignó a Morón 15 puntos por presupuesto y 45 en total en noviembre de 2025 (página 24). Los 15 puntos no figuran en su escala metodológica. Conservamos el dato publicado; el cambio entre ediciones debe leerse con esa salvedad."
+        },
+        {
+          "id": "06294",
+          "publishedName": "General Arenales",
+          "page": 24,
+          "score": 41,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 3,
+            "gasto_finalidad_funcion": 3,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06805",
+          "publishedName": "Tigre",
+          "page": 24,
+          "score": 38,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 3,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06070",
+          "publishedName": "Baradero",
+          "page": 24,
+          "score": 35,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06266",
+          "publishedName": "Exaltación de la Cruz",
+          "page": 24,
+          "score": 35,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06466",
+          "publishedName": "Lezama",
+          "page": 24,
+          "score": 35,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06077",
+          "publishedName": "Arrecifes",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06119",
+          "publishedName": "Brandsen",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06126",
+          "publishedName": "Campana",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06168",
+          "publishedName": "Castelli",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06210",
+          "publishedName": "Chacabuco",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06231",
+          "publishedName": "Daireaux",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06238",
+          "publishedName": "Dolores",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06245",
+          "publishedName": "Ensenada",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06270",
+          "publishedName": "Ezeiza",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06274",
+          "publishedName": "Florencio Varela",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06329",
+          "publishedName": "General Las Heras",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06336",
+          "publishedName": "General Lavalle",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06364",
+          "publishedName": "General Rodríguez",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06410",
+          "publishedName": "Ituzaingó",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06412",
+          "publishedName": "José C. Paz",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06455",
+          "publishedName": "Las Flores",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 15,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06511",
+          "publishedName": "Maipú",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06574",
+          "publishedName": "Navarro",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06609",
+          "publishedName": "Pehuajó",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06638",
+          "publishedName": "Pilar",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06693",
+          "publishedName": "Roque Pérez",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06763",
+          "publishedName": "San Nicolás",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06778",
+          "publishedName": "San Vicente",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06847",
+          "publishedName": "Tres Lomas",
+          "page": 24,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06140",
+          "publishedName": "Capitán Sarmiento",
+          "page": 24,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06343",
+          "publishedName": "General Paz",
+          "page": 24,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06408",
+          "publishedName": "Hurlingham",
+          "page": 24,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06462",
+          "publishedName": "Leandro N. Alem",
+          "page": 24,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06518",
+          "publishedName": "Mar Chiquita",
+          "page": 24,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06539",
+          "publishedName": "Merlo",
+          "page": 24,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06655",
+          "publishedName": "Punta Indio",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06721",
+          "publishedName": "Salliqueló",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06749",
+          "publishedName": "San Fernando",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06812",
+          "publishedName": "Tordillo",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06134",
+          "publishedName": "Cañuelas",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06260",
+          "publishedName": "Esteban Echeverría",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06399",
+          "publishedName": "Guaminí",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06420",
+          "publishedName": "La Costa",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06490",
+          "publishedName": "Lomas de Zamora",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06525",
+          "publishedName": "Marcos Paz",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06630",
+          "publishedName": "Pila",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06648",
+          "publishedName": "Presidente Perón",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06651",
+          "publishedName": "Puan",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06665",
+          "publishedName": "Ramallo",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06868",
+          "publishedName": "Villa Gesell",
+          "page": 25,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        }
+      ]
+    },
+    {
+      "edition": "2026-05",
+      "label": "Mayo de 2026",
+      "observedThrough": "2026-05-08",
+      "fieldworkLabel": "Relevamiento del 1 al 8 de mayo de 2026",
+      "document": {
+        "url": "https://www.asap.org.ar/img_informes/06181547_InformeTransparenciaMunicipiosPBA-Mayo2026.pdf",
+        "sha256": "689df97fe6f383a136d6a74c88cecce910b8e3f72e1385aa4e8253338aa723ae",
+        "bytes": 1093233,
+        "pages": 29
+      },
+      "records": [
+        {
+          "id": "06007",
+          "publishedName": "Adolfo Alsina",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06014",
+          "publishedName": "Adolfo Gonzales Chaves",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06021",
+          "publishedName": "Alberti",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06042",
+          "publishedName": "Ayacucho",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06063",
+          "publishedName": "Balcarce",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06084",
+          "publishedName": "Benito Juárez",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06098",
+          "publishedName": "Berisso",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06105",
+          "publishedName": "Bolívar",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06112",
+          "publishedName": "Bragado",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06140",
+          "publishedName": "Capitán Sarmiento",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06147",
+          "publishedName": "Carlos Casares",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06154",
+          "publishedName": "Carlos Tejedor",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06218",
+          "publishedName": "Chascomús",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06224",
+          "publishedName": "Chivilcoy",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06189",
+          "publishedName": "Coronel Dorrego",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06196",
+          "publishedName": "Coronel Pringles",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06203",
+          "publishedName": "Coronel Suárez",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06277",
+          "publishedName": "Florentino Ameghino",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06280",
+          "publishedName": "General Alvarado",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06287",
+          "publishedName": "General Alvear",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06301",
+          "publishedName": "General Belgrano",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06322",
+          "publishedName": "General La Madrid",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06315",
+          "publishedName": "General Madariaga",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06351",
+          "publishedName": "General Pinto",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06357",
+          "publishedName": "General Pueyrredón",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06371",
+          "publishedName": "General San Martín",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06385",
+          "publishedName": "General Viamonte",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          },
+          "note": "Se conserva el puntaje corregido por ASAP; fe de erratas en página 3."
+        },
+        {
+          "id": "06392",
+          "publishedName": "General Villegas",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06406",
+          "publishedName": "Hipólito Yrigoyen",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06413",
+          "publishedName": "Junín",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06427",
+          "publishedName": "La Matanza",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06441",
+          "publishedName": "La Plata",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06434",
+          "publishedName": "Lanús",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06448",
+          "publishedName": "Laprida",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06469",
+          "publishedName": "Lincoln",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06476",
+          "publishedName": "Lobería",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06483",
+          "publishedName": "Lobos",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06497",
+          "publishedName": "Luján",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06505",
+          "publishedName": "Magdalena",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06515",
+          "publishedName": "Malvinas Argentinas",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06532",
+          "publishedName": "Mercedes",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06553",
+          "publishedName": "Monte Hermoso",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06560",
+          "publishedName": "Moreno",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06581",
+          "publishedName": "Necochea",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06623",
+          "publishedName": "Pergamino",
+          "page": 23,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06644",
+          "publishedName": "Pinamar",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06651",
+          "publishedName": "Puan",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06672",
+          "publishedName": "Rauch",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06679",
+          "publishedName": "Rivadavia",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06686",
+          "publishedName": "Rojas",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06700",
+          "publishedName": "Saavedra",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06707",
+          "publishedName": "Saladillo",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06714",
+          "publishedName": "Salto",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06728",
+          "publishedName": "San Andrés de Giles",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06742",
+          "publishedName": "San Cayetano",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06756",
+          "publishedName": "San Isidro",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06760",
+          "publishedName": "San Miguel",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06547",
+          "publishedName": "San Miguel del Monte",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06770",
+          "publishedName": "San Pedro",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06791",
+          "publishedName": "Tandil",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06826",
+          "publishedName": "Trenque Lauquen",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06833",
+          "publishedName": "Tres Arroyos",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06840",
+          "publishedName": "Tres de Febrero",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06875",
+          "publishedName": "Villarino",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06882",
+          "publishedName": "Zárate",
+          "page": 24,
+          "score": 100,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06119",
+          "publishedName": "Brandsen",
+          "page": 24,
+          "score": 95,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06049",
+          "publishedName": "Azul",
+          "page": 24,
+          "score": 93,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 3
+          }
+        },
+        {
+          "id": "06077",
+          "publishedName": "Arrecifes",
+          "page": 24,
+          "score": 90,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06182",
+          "publishedName": "Coronel de Marina Leonardo Rosales",
+          "page": 24,
+          "score": 81,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 3,
+            "deuda": 3
+          }
+        },
+        {
+          "id": "06175",
+          "publishedName": "Colón",
+          "page": 24,
+          "score": 80,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 15,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06028",
+          "publishedName": "Almirante Brown",
+          "page": 24,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06161",
+          "publishedName": "Carmen de Areco",
+          "page": 24,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06210",
+          "publishedName": "Chacabuco",
+          "page": 24,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06308",
+          "publishedName": "General Guido",
+          "page": 24,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06798",
+          "publishedName": "Tapalqué",
+          "page": 24,
+          "score": 70,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06056",
+          "publishedName": "Bahía Blanca",
+          "page": 24,
+          "score": 65,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06035",
+          "publishedName": "Avellaneda",
+          "page": 24,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06091",
+          "publishedName": "Berazategui",
+          "page": 24,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06455",
+          "publishedName": "Las Flores",
+          "page": 24,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 20,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06630",
+          "publishedName": "Pila",
+          "page": 24,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06819",
+          "publishedName": "Tornquist",
+          "page": 24,
+          "score": 60,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 30,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06070",
+          "publishedName": "Baradero",
+          "page": 25,
+          "score": 50,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 35,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06231",
+          "publishedName": "Daireaux",
+          "page": 25,
+          "score": 50,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 10,
+            "deuda": 10
+          }
+        },
+        {
+          "id": "06595",
+          "publishedName": "Olavarría",
+          "page": 25,
+          "score": 45,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06616",
+          "publishedName": "Pellegrini",
+          "page": 25,
+          "score": 45,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06861",
+          "publishedName": "Vicente López",
+          "page": 25,
+          "score": 45,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06588",
+          "publishedName": "Nueve de Julio",
+          "page": 25,
+          "score": 43,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 3,
+            "gasto_finalidad_funcion": 5,
+            "deuda": 5
+          }
+        },
+        {
+          "id": "06602",
+          "publishedName": "Patagones",
+          "page": 25,
+          "score": 40,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06266",
+          "publishedName": "Exaltación de la Cruz",
+          "page": 25,
+          "score": 35,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06735",
+          "publishedName": "San Antonio de Areco",
+          "page": 25,
+          "score": 35,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 5,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06238",
+          "publishedName": "Dolores",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06245",
+          "publishedName": "Ensenada",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06252",
+          "publishedName": "Escobar",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06270",
+          "publishedName": "Ezeiza",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06274",
+          "publishedName": "Florencio Varela",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06329",
+          "publishedName": "General Las Heras",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06336",
+          "publishedName": "General Lavalle",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06364",
+          "publishedName": "General Rodríguez",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06410",
+          "publishedName": "Ituzaingó",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06412",
+          "publishedName": "José C. Paz",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06511",
+          "publishedName": "Maipú",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06568",
+          "publishedName": "Morón",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06574",
+          "publishedName": "Navarro",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06609",
+          "publishedName": "Pehuajó",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06658",
+          "publishedName": "Quilmes",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06665",
+          "publishedName": "Ramallo",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06693",
+          "publishedName": "Roque Pérez",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06721",
+          "publishedName": "Salliqueló",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06749",
+          "publishedName": "San Fernando",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06778",
+          "publishedName": "San Vicente",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06784",
+          "publishedName": "Suipacha",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06847",
+          "publishedName": "Tres Lomas",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06854",
+          "publishedName": "Veinticinco de Mayo",
+          "page": 25,
+          "score": 30,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 25,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06638",
+          "publishedName": "Pilar",
+          "page": 25,
+          "score": 15,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 10,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06126",
+          "publishedName": "Campana",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06294",
+          "publishedName": "General Arenales",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06343",
+          "publishedName": "General Paz",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06408",
+          "publishedName": "Hurlingham",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06462",
+          "publishedName": "Leandro N. Alem",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06466",
+          "publishedName": "Lezama",
+          "page": 25,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06518",
+          "publishedName": "Mar Chiquita",
+          "page": 26,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06539",
+          "publishedName": "Merlo",
+          "page": 26,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06655",
+          "publishedName": "Punta Indio",
+          "page": 26,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06805",
+          "publishedName": "Tigre",
+          "page": 26,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06812",
+          "publishedName": "Tordillo",
+          "page": 26,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06868",
+          "publishedName": "Villa Gesell",
+          "page": 26,
+          "score": 5,
+          "components": {
+            "accesibilidad": 5,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06134",
+          "publishedName": "Cañuelas",
+          "page": 26,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06168",
+          "publishedName": "Castelli",
+          "page": 26,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06260",
+          "publishedName": "Esteban Echeverría",
+          "page": 26,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06399",
+          "publishedName": "Guaminí",
+          "page": 26,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06420",
+          "publishedName": "La Costa",
+          "page": 26,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06490",
+          "publishedName": "Lomas de Zamora",
+          "page": 26,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06525",
+          "publishedName": "Marcos Paz",
+          "page": 26,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06648",
+          "publishedName": "Presidente Perón",
+          "page": 26,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        },
+        {
+          "id": "06763",
+          "publishedName": "San Nicolás",
+          "page": 26,
+          "score": 0,
+          "components": {
+            "accesibilidad": 0,
+            "presupuesto": 0,
+            "situacion_economico_financiera": 0,
+            "ejecucion": 0,
+            "gasto_finalidad_funcion": 0,
+            "deuda": 0
+          }
+        }
+      ]
+    }
+  ],
+  "directory": [
+    {
+      "id": "06007",
+      "municipio": "Adolfo Alsina",
+      "pagina": 26,
+      "url_impresa": "https://gobabierto.ar/adolfoalsina/transparenciafiscal/",
+      "url_normalizada": "https://gobabierto.ar/adolfoalsina/transparenciafiscal/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06014",
+      "municipio": "Adolfo Gonzales Chaves",
+      "pagina": 26,
+      "url_impresa": "http://gonzaleschaves.gob.ar/gobierno-abierto/",
+      "url_normalizada": "http://gonzaleschaves.gob.ar/gobierno-abierto/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06021",
+      "municipio": "Alberti",
+      "pagina": 26,
+      "url_impresa": "https://alberti.gov.ar/hestia_layouts/2024",
+      "url_normalizada": "https://alberti.gov.ar/hestia_layouts/2024",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06042",
+      "municipio": "Ayacucho",
+      "pagina": 26,
+      "url_impresa": "https://www.ayacucho.gob.ar/?q=rendicion-cuentas-0",
+      "url_normalizada": "https://www.ayacucho.gob.ar/?q=rendicion-cuentas-0",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06063",
+      "municipio": "Balcarce",
+      "pagina": 26,
+      "url_impresa": "https://balcarce.gob.ar/transparencia-fiscal/",
+      "url_normalizada": "https://balcarce.gob.ar/transparencia-fiscal/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06084",
+      "municipio": "Benito Juárez",
+      "pagina": 26,
+      "url_impresa": "https://benitojuarez.gov.ar/transparencia/",
+      "url_normalizada": "https://benitojuarez.gov.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06098",
+      "municipio": "Berisso",
+      "pagina": 26,
+      "url_impresa": "http://berisso.gob.ar/gobierno-abierto.php",
+      "url_normalizada": "http://berisso.gob.ar/gobierno-abierto.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06105",
+      "municipio": "Bolívar",
+      "pagina": 26,
+      "url_impresa": "https://www.bolivar.gob.ar/hacienda/transparencia-fiscal/",
+      "url_normalizada": "https://www.bolivar.gob.ar/hacienda/transparencia-fiscal/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06112",
+      "municipio": "Bragado",
+      "pagina": 26,
+      "url_impresa": "https://portalbragado.com.ar/",
+      "url_normalizada": "https://portalbragado.com.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06140",
+      "municipio": "Capitán Sarmiento",
+      "pagina": 27,
+      "url_impresa": "https://marianolesc.wixsite.com/municipalidad-de-cap/copia-de-tasas-vigentes-fi-2",
+      "url_normalizada": "https://marianolesc.wixsite.com/municipalidad-de-cap/copia-de-tasas-vigentes-fi-2",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06147",
+      "municipio": "Carlos Casares",
+      "pagina": 27,
+      "url_impresa": "https://gobabierto.ar/carloscasares/",
+      "url_normalizada": "https://gobabierto.ar/carloscasares/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06154",
+      "municipio": "Carlos Tejedor",
+      "pagina": 27,
+      "url_impresa": "https://carlostejedor.gob.ar/transparencia/",
+      "url_normalizada": "https://carlostejedor.gob.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06218",
+      "municipio": "Chascomús",
+      "pagina": 27,
+      "url_impresa": "https://chascomus.gob.ar/municipio/estaticas/transparencia",
+      "url_normalizada": "https://chascomus.gob.ar/municipio/estaticas/transparencia",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06224",
+      "municipio": "Chivilcoy",
+      "pagina": 27,
+      "url_impresa": "https://chivilcoy.gov.ar/transparencia/",
+      "url_normalizada": "https://chivilcoy.gov.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06189",
+      "municipio": "Coronel Dorrego",
+      "pagina": 27,
+      "url_impresa": "https://dorrego.gob.ar/mun/direcciones/administracion/menu/contabilidad/transparencia.php",
+      "url_normalizada": "https://dorrego.gob.ar/mun/direcciones/administracion/menu/contabilidad/transparencia.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06196",
+      "municipio": "Coronel Pringles",
+      "pagina": 27,
+      "url_impresa": "http://www.ciudadabierta.coronelpringles.gov.ar/transparencia/presupuesto.php",
+      "url_normalizada": "http://www.ciudadabierta.coronelpringles.gov.ar/transparencia/presupuesto.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06203",
+      "municipio": "Coronel Suárez",
+      "pagina": 27,
+      "url_impresa": "https://www.coronelsuarez.gob.ar/transparencia-fiscal/",
+      "url_normalizada": "https://www.coronelsuarez.gob.ar/transparencia-fiscal/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06277",
+      "municipio": "Florentino Ameghino",
+      "pagina": 27,
+      "url_impresa": "https://www.ameghino.gob.ar/?q=transparencia-gobierno",
+      "url_normalizada": "https://www.ameghino.gob.ar/?q=transparencia-gobierno",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06280",
+      "municipio": "General Alvarado",
+      "pagina": 27,
+      "url_impresa": "https://mga.gov.ar/ejecucion-presupuestaria/",
+      "url_normalizada": "https://mga.gov.ar/ejecucion-presupuestaria/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06287",
+      "municipio": "General Alvear",
+      "pagina": 27,
+      "url_impresa": "https://munialvear.gov.ar/?page_id=6117",
+      "url_normalizada": "https://munialvear.gov.ar/?page_id=6117",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06301",
+      "municipio": "General Belgrano",
+      "pagina": 27,
+      "url_impresa": "https://generalbelgrano.gob.ar/gobierno-abierto/",
+      "url_normalizada": "https://generalbelgrano.gob.ar/gobierno-abierto/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06322",
+      "municipio": "General La Madrid",
+      "pagina": 27,
+      "url_impresa": "https://www.lamadrid.gob.ar/estadistica/",
+      "url_normalizada": "https://www.lamadrid.gob.ar/estadistica/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06315",
+      "municipio": "General Juan Madariaga",
+      "pagina": 27,
+      "url_impresa": "https://www.madariaga.gob.ar/areas/hacienda",
+      "url_normalizada": "https://www.madariaga.gob.ar/areas/hacienda",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06351",
+      "municipio": "General Pinto",
+      "pagina": 27,
+      "url_impresa": "http://www.pinto.gob.ar/",
+      "url_normalizada": "http://www.pinto.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06357",
+      "municipio": "General Pueyrredon",
+      "pagina": 27,
+      "url_impresa": "https://www.mardelplata.gob.ar/transparencia/transparenciafiscal",
+      "url_normalizada": "https://www.mardelplata.gob.ar/transparencia/transparenciafiscal",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06371",
+      "municipio": "General San Martín",
+      "pagina": 27,
+      "url_impresa": "https://sanmartin.gob.ar/transparencia/",
+      "url_normalizada": "https://sanmartin.gob.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06385",
+      "municipio": "General Viamonte",
+      "pagina": 27,
+      "url_impresa": "https://www.generalviamonte.gob.ar/",
+      "url_normalizada": "https://www.generalviamonte.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06392",
+      "municipio": "General Villegas",
+      "pagina": 27,
+      "url_impresa": "http://www.villegas.gov.ar/",
+      "url_normalizada": "http://www.villegas.gov.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06406",
+      "municipio": "Hipólito Yrigoyen",
+      "pagina": 27,
+      "url_impresa": "https://www.hipolitoyrigoyen.gob.ar/?q=rendicion_de_cuentas",
+      "url_normalizada": "https://www.hipolitoyrigoyen.gob.ar/?q=rendicion_de_cuentas",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06413",
+      "municipio": "Junín",
+      "pagina": 28,
+      "url_impresa": "https://ga.junin.gob.ar/?seccion=transparencia#barraNav",
+      "url_normalizada": "https://ga.junin.gob.ar/?seccion=transparencia#barraNav",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06427",
+      "municipio": "La Matanza",
+      "pagina": 28,
+      "url_impresa": "https://www.lamatanza.gov.ar/economia/informes-periodicos",
+      "url_normalizada": "https://www.lamatanza.gov.ar/economia/informes-periodicos",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06441",
+      "municipio": "La Plata",
+      "pagina": 28,
+      "url_impresa": "https://www.laplata.gob.ar/#/transparencia/presupuestos",
+      "url_normalizada": "https://www.laplata.gob.ar/#/transparencia/presupuestos",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06434",
+      "municipio": "Lanús",
+      "pagina": 28,
+      "url_impresa": "https://www.lanus.gob.ar/documentos-oficiales?categoria=21&amp;buscar=",
+      "url_normalizada": "https://www.lanus.gob.ar/documentos-oficiales?categoria=21&buscar=",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06448",
+      "municipio": "Laprida",
+      "pagina": 28,
+      "url_impresa": "https://www.laprida.gov.ar/index.php/contenido/archivo/situacion",
+      "url_normalizada": "https://www.laprida.gov.ar/index.php/contenido/archivo/situacion",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06469",
+      "municipio": "Lincoln",
+      "pagina": 28,
+      "url_impresa": "https://www.lincoln.gob.ar/?q=transparencia",
+      "url_normalizada": "https://www.lincoln.gob.ar/?q=transparencia",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06476",
+      "municipio": "Lobería",
+      "pagina": 28,
+      "url_impresa": "https://www.loberia.gov.ar/?q=transparencia",
+      "url_normalizada": "https://www.loberia.gov.ar/?q=transparencia",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06483",
+      "municipio": "Lobos",
+      "pagina": 28,
+      "url_impresa": "https://www.lobos.gob.ar/?q=responsabilidad-fiscal",
+      "url_normalizada": "https://www.lobos.gob.ar/?q=responsabilidad-fiscal",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06497",
+      "municipio": "Luján",
+      "pagina": 28,
+      "url_impresa": "http://luj-bue-datos.paisdigital.innovacion.gob.ar/dataset?groups=economia-y-finanzas",
+      "url_normalizada": "http://luj-bue-datos.paisdigital.innovacion.gob.ar/dataset?groups=economia-y-finanzas",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06505",
+      "municipio": "Magdalena",
+      "pagina": 28,
+      "url_impresa": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "url_normalizada": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06515",
+      "municipio": "Malvinas Argentinas",
+      "pagina": 28,
+      "url_impresa": "https://www.malvinasargentinas.gob.ar/informeeconomico",
+      "url_normalizada": "https://www.malvinasargentinas.gob.ar/informeeconomico",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06532",
+      "municipio": "Mercedes",
+      "pagina": 28,
+      "url_impresa": "https://datosabiertos.mercedes.gob.ar/dataset?groups=economia-y-hacienda",
+      "url_normalizada": "https://datosabiertos.mercedes.gob.ar/dataset?groups=economia-y-hacienda",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06553",
+      "municipio": "Monte Hermoso",
+      "pagina": 28,
+      "url_impresa": "https://montehermoso.gov.ar/sitio/",
+      "url_normalizada": "https://montehermoso.gov.ar/sitio/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06560",
+      "municipio": "Moreno",
+      "pagina": 28,
+      "url_impresa": "https://moreno2.moreno.gob.ar/documentos-economia.php",
+      "url_normalizada": "https://moreno2.moreno.gob.ar/documentos-economia.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06581",
+      "municipio": "Necochea",
+      "pagina": 28,
+      "url_impresa": "https://necochea.gov.ar/transparencia/",
+      "url_normalizada": "https://necochea.gov.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06623",
+      "municipio": "Pergamino",
+      "pagina": 28,
+      "url_impresa": "https://datosabiertos.pergamino.gob.ar/dataset?organization=secretaria-hacienda",
+      "url_normalizada": "https://datosabiertos.pergamino.gob.ar/dataset?organization=secretaria-hacienda",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06644",
+      "municipio": "Pinamar",
+      "pagina": 28,
+      "url_impresa": "https://pinamar.gob.ar/estado-financiero-municipal/",
+      "url_normalizada": "https://pinamar.gob.ar/estado-financiero-municipal/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06651",
+      "municipio": "Puan",
+      "pagina": 28,
+      "url_impresa": "http://puan.gob.ar/",
+      "url_normalizada": "http://puan.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06672",
+      "municipio": "Rauch",
+      "pagina": 28,
+      "url_impresa": "http://www.rauch.mun.gba.gov.ar/web/",
+      "url_normalizada": "http://www.rauch.mun.gba.gov.ar/web/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06679",
+      "municipio": "Rivadavia",
+      "pagina": 29,
+      "url_impresa": "https://munirivadavia.gob.ar/gobierno-abierto/",
+      "url_normalizada": "https://munirivadavia.gob.ar/gobierno-abierto/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06686",
+      "municipio": "Rojas",
+      "pagina": 29,
+      "url_impresa": "https://transparencia.rojas.gov.ar/?action=9",
+      "url_normalizada": "https://transparencia.rojas.gov.ar/?action=9",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06700",
+      "municipio": "Saavedra",
+      "pagina": 29,
+      "url_impresa": "https://transparencia.saavedra.gob.ar/ano-2024/",
+      "url_normalizada": "https://transparencia.saavedra.gob.ar/ano-2024/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06707",
+      "municipio": "Saladillo",
+      "pagina": 29,
+      "url_impresa": "https://www.saladillo.gob.ar/?q=informes_economicos",
+      "url_normalizada": "https://www.saladillo.gob.ar/?q=informes_economicos",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06714",
+      "municipio": "Salto",
+      "pagina": 29,
+      "url_impresa": "https://salto.gob.ar/responsabilidad-fiscal/",
+      "url_normalizada": "https://salto.gob.ar/responsabilidad-fiscal/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06728",
+      "municipio": "San Andrés de Giles",
+      "pagina": 29,
+      "url_impresa": "https://www.sanandresdegiles.gob.ar/?q=situacion-economica-financiera",
+      "url_normalizada": "https://www.sanandresdegiles.gob.ar/?q=situacion-economica-financiera",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06742",
+      "municipio": "San Cayetano",
+      "pagina": 29,
+      "url_impresa": "https://www.hcdsancayetano.gob.ar/situacion-economica-financiera.php",
+      "url_normalizada": "https://www.hcdsancayetano.gob.ar/situacion-economica-financiera.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06756",
+      "municipio": "San Isidro",
+      "pagina": 29,
+      "url_impresa": "https://www.sanisidro.gob.ar/transparencia-si",
+      "url_normalizada": "https://www.sanisidro.gob.ar/transparencia-si",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06760",
+      "municipio": "San Miguel",
+      "pagina": 29,
+      "url_impresa": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "url_normalizada": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06547",
+      "municipio": "Monte",
+      "pagina": 29,
+      "url_impresa": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "url_normalizada": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06770",
+      "municipio": "San Pedro",
+      "pagina": 29,
+      "url_impresa": "https://www.sanpedro.net.ar/datos_abiertos/presupuesto.php",
+      "url_normalizada": "https://www.sanpedro.net.ar/datos_abiertos/presupuesto.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06791",
+      "municipio": "Tandil",
+      "pagina": 29,
+      "url_impresa": "http://datos.tandil.gov.ar/dataset/informacion-financiera-2024",
+      "url_normalizada": "http://datos.tandil.gov.ar/dataset/informacion-financiera-2024",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06826",
+      "municipio": "Trenque Lauquen",
+      "pagina": 29,
+      "url_impresa": "https://www.trenquelauquen.gov.ar/rendiciones/",
+      "url_normalizada": "https://www.trenquelauquen.gov.ar/rendiciones/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06833",
+      "municipio": "Tres Arroyos",
+      "pagina": 29,
+      "url_impresa": "https://www.tresarroyos.gov.ar/transparencia-fiscal",
+      "url_normalizada": "https://www.tresarroyos.gov.ar/transparencia-fiscal",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06840",
+      "municipio": "Tres de Febrero",
+      "pagina": 29,
+      "url_impresa": "https://www.tresdefebrero.gov.ar/cumplimiento-ley-responsabilidad-fiscal/",
+      "url_normalizada": "https://www.tresdefebrero.gov.ar/cumplimiento-ley-responsabilidad-fiscal/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06875",
+      "municipio": "Villarino",
+      "pagina": 29,
+      "url_impresa": "https://www.villarino.gob.ar/economia/",
+      "url_normalizada": "https://www.villarino.gob.ar/economia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06882",
+      "municipio": "Zárate",
+      "pagina": 29,
+      "url_impresa": "https://zarate.gob.ar/transparencia/",
+      "url_normalizada": "https://zarate.gob.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06119",
+      "municipio": "Brandsen",
+      "pagina": 27,
+      "url_impresa": "https://brandsen.gob.ar/transparencia-de-gobierno/",
+      "url_normalizada": "https://brandsen.gob.ar/transparencia-de-gobierno/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06049",
+      "municipio": "Azul",
+      "pagina": 26,
+      "url_impresa": "http://azuldigital.gob.ar/transparencia/",
+      "url_normalizada": "http://azuldigital.gob.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06077",
+      "municipio": "Arrecifes",
+      "pagina": 26,
+      "url_impresa": "https://arrecifes.gob.ar/informacion-publica/situacion-economico-financiera/",
+      "url_normalizada": "https://arrecifes.gob.ar/informacion-publica/situacion-economico-financiera/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06182",
+      "municipio": "Coronel de Marina L. Rosales",
+      "pagina": 27,
+      "url_impresa": "http://www.rosalesmunicipio.gob.ar/",
+      "url_normalizada": "http://www.rosalesmunicipio.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06175",
+      "municipio": "Colón",
+      "pagina": 27,
+      "url_impresa": "http://www.municipalidaddecolon.com/index.php",
+      "url_normalizada": "http://www.municipalidaddecolon.com/index.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06028",
+      "municipio": "Almirante Brown",
+      "pagina": 26,
+      "url_impresa": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "url_normalizada": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06161",
+      "municipio": "Carmen de Areco",
+      "pagina": 27,
+      "url_impresa": "https://carmendeareco.gob.ar/transparencia/",
+      "url_normalizada": "https://carmendeareco.gob.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06210",
+      "municipio": "Chacabuco",
+      "pagina": 27,
+      "url_impresa": "https://chacabuco.gob.ar/gobierno-abierto/",
+      "url_normalizada": "https://chacabuco.gob.ar/gobierno-abierto/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06308",
+      "municipio": "General Guido",
+      "pagina": 27,
+      "url_impresa": "https://www.generalguido.gob.ar/?q=publicaciones",
+      "url_normalizada": "https://www.generalguido.gob.ar/?q=publicaciones",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06798",
+      "municipio": "Tapalqué",
+      "pagina": 29,
+      "url_impresa": "https://www.municipiodetapalque.gob.ar/",
+      "url_normalizada": "https://www.municipiodetapalque.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06056",
+      "municipio": "Bahía Blanca",
+      "pagina": 26,
+      "url_impresa": "https://gobiernoabierto.bahia.gob.ar/",
+      "url_normalizada": "https://gobiernoabierto.bahia.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06035",
+      "municipio": "Avellaneda",
+      "pagina": 26,
+      "url_impresa": "https://www.mda.gob.ar/gobierno/secretaria-de-hacienda-y-administracion/",
+      "url_normalizada": "https://www.mda.gob.ar/gobierno/secretaria-de-hacienda-y-administracion/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06091",
+      "municipio": "Berazategui",
+      "pagina": 26,
+      "url_impresa": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "url_normalizada": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06455",
+      "municipio": "Las Flores",
+      "pagina": 28,
+      "url_impresa": "https://lasflores.gob.ar/transparencia",
+      "url_normalizada": "https://lasflores.gob.ar/transparencia",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06630",
+      "municipio": "Pila",
+      "pagina": 28,
+      "url_impresa": "https://pila.gob.ar/",
+      "url_normalizada": "https://pila.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06819",
+      "municipio": "Tornquist",
+      "pagina": 29,
+      "url_impresa": "https://tornquist.gob.ar/gobierno-abierto",
+      "url_normalizada": "https://tornquist.gob.ar/gobierno-abierto",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06070",
+      "municipio": "Baradero",
+      "pagina": 26,
+      "url_impresa": "https://baradero.gob.ar/situacion-economica-financiera/",
+      "url_normalizada": "https://baradero.gob.ar/situacion-economica-financiera/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06231",
+      "municipio": "Daireaux",
+      "pagina": 27,
+      "url_impresa": "https://daireaux.gob.ar/wp-content/uploads/2024/07/Situacion-Economica-Financiera-2024-01.pdf",
+      "url_normalizada": "https://daireaux.gob.ar/wp-content/uploads/2024/07/Situacion-Economica-Financiera-2024-01.pdf",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06595",
+      "municipio": "Olavarría",
+      "pagina": 28,
+      "url_impresa": "https://gobiernoabierto.olavarria.gov.ar/datos-abiertos-olavarria/",
+      "url_normalizada": "https://gobiernoabierto.olavarria.gov.ar/datos-abiertos-olavarria/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06616",
+      "municipio": "Pellegrini",
+      "pagina": 28,
+      "url_impresa": "https://www.pellegrini.gov.ar/Gobierno-abierto/",
+      "url_normalizada": "https://www.pellegrini.gov.ar/Gobierno-abierto/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06861",
+      "municipio": "Vicente López",
+      "pagina": 29,
+      "url_impresa": "h ttps://www.vicentelopez.gov.ar/",
+      "url_normalizada": "https://www.vicentelopez.gov.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06588",
+      "municipio": "9 de Julio",
+      "pagina": 28,
+      "url_impresa": "https://www.9dejulio.gov.ar/gobierno_abierto.php",
+      "url_normalizada": "https://www.9dejulio.gov.ar/gobierno_abierto.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06602",
+      "municipio": "Patagones",
+      "pagina": 28,
+      "url_impresa": "https://patagones.gob.ar/ejercicio-economico-financiero/",
+      "url_normalizada": "https://patagones.gob.ar/ejercicio-economico-financiero/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06266",
+      "municipio": "Exaltación de la Cruz",
+      "pagina": 27,
+      "url_impresa": "https://www.exaltaciondelacruz.gob.ar/",
+      "url_normalizada": "https://www.exaltaciondelacruz.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06735",
+      "municipio": "San Antonio de Areco",
+      "pagina": 29,
+      "url_impresa": "https://areco.ar/transparencia/presupuestos/",
+      "url_normalizada": "https://areco.ar/transparencia/presupuestos/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06238",
+      "municipio": "Dolores",
+      "pagina": 27,
+      "url_impresa": "https://dolores.gob.ar/resena-trimestral/",
+      "url_normalizada": "https://dolores.gob.ar/resena-trimestral/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06245",
+      "municipio": "Ensenada",
+      "pagina": 27,
+      "url_impresa": "https://www.ensenada.gov.ar/category/hacienda/",
+      "url_normalizada": "https://www.ensenada.gov.ar/category/hacienda/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06252",
+      "municipio": "Escobar",
+      "pagina": 27,
+      "url_impresa": "https://www.escobar.gob.ar/transparencia/",
+      "url_normalizada": "https://www.escobar.gob.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06270",
+      "municipio": "Ezeiza",
+      "pagina": 27,
+      "url_impresa": "https://www.ezeiza.gob.ar/datos_abiertos.php",
+      "url_normalizada": "https://www.ezeiza.gob.ar/datos_abiertos.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06274",
+      "municipio": "Florencio Varela",
+      "pagina": 27,
+      "url_impresa": "https://www.varela.gob.ar/informeseconomicos/",
+      "url_normalizada": "https://www.varela.gob.ar/informeseconomicos/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06329",
+      "municipio": "General Las Heras",
+      "pagina": 27,
+      "url_impresa": "https://gobiernodelasheras.com/category/documentos/2024/",
+      "url_normalizada": "https://gobiernodelasheras.com/category/documentos/2024/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06336",
+      "municipio": "General Lavalle",
+      "pagina": 27,
+      "url_impresa": "https://www.generallavalle.gob.ar/estado-transparente/5",
+      "url_normalizada": "https://www.generallavalle.gob.ar/estado-transparente/5",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06364",
+      "municipio": "General Rodríguez",
+      "pagina": 27,
+      "url_impresa": "https://generalrodriguez.gob.ar/transparencia/",
+      "url_normalizada": "https://generalrodriguez.gob.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06410",
+      "municipio": "Ituzaingó",
+      "pagina": 28,
+      "url_impresa": "https://www.miituzaingo.gov.ar/es/gobierno-abierto/transparencia/cuentas-claras/2024",
+      "url_normalizada": "https://www.miituzaingo.gov.ar/es/gobierno-abierto/transparencia/cuentas-claras/2024",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06412",
+      "municipio": "José C. Paz",
+      "pagina": 28,
+      "url_impresa": "https://josecpaz.gob.ar/situacion-economica-financiera/",
+      "url_normalizada": "https://josecpaz.gob.ar/situacion-economica-financiera/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06511",
+      "municipio": "Maipú",
+      "pagina": 28,
+      "url_impresa": "https://www.maipu-gba.gob.ar/",
+      "url_normalizada": "https://www.maipu-gba.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06568",
+      "municipio": "Morón",
+      "pagina": 28,
+      "url_impresa": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "url_normalizada": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06574",
+      "municipio": "Navarro",
+      "pagina": 28,
+      "url_impresa": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "url_normalizada": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06609",
+      "municipio": "Pehuajó",
+      "pagina": 28,
+      "url_impresa": "http://www.pehuajo.gob.ar/p/situacion-economico-financiera.html",
+      "url_normalizada": "http://www.pehuajo.gob.ar/p/situacion-economico-financiera.html",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06658",
+      "municipio": "Quilmes",
+      "pagina": 28,
+      "url_impresa": "https://quilmes.gov.ar/institucional/gobierno_abierto.php",
+      "url_normalizada": "https://quilmes.gov.ar/institucional/gobierno_abierto.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06665",
+      "municipio": "Ramallo",
+      "pagina": 28,
+      "url_impresa": "https://www.haciendaramallo.com.ar/?page_id=60",
+      "url_normalizada": "https://www.haciendaramallo.com.ar/?page_id=60",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06693",
+      "municipio": "Roque Pérez",
+      "pagina": 29,
+      "url_impresa": "https://roqueperez.gob.ar/situacion-economica-financiera",
+      "url_normalizada": "https://roqueperez.gob.ar/situacion-economica-financiera",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06721",
+      "municipio": "Salliqueló",
+      "pagina": 29,
+      "url_impresa": "https://www.salliquelo.gob.ar",
+      "url_normalizada": "https://www.salliquelo.gob.ar",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06749",
+      "municipio": "San Fernando",
+      "pagina": 29,
+      "url_impresa": "https://www.sanfernando.gob.ar/situacion-economico-financiera",
+      "url_normalizada": "https://www.sanfernando.gob.ar/situacion-economico-financiera",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06778",
+      "municipio": "San Vicente",
+      "pagina": 29,
+      "url_impresa": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "url_normalizada": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06784",
+      "municipio": "Suipacha",
+      "pagina": 29,
+      "url_impresa": "https://suipacha.gob.ar/transparencia/",
+      "url_normalizada": "https://suipacha.gob.ar/transparencia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06847",
+      "municipio": "Tres Lomas",
+      "pagina": 29,
+      "url_impresa": "https://www.treslomas.gob.ar/?q=estado-economico",
+      "url_normalizada": "https://www.treslomas.gob.ar/?q=estado-economico",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06854",
+      "municipio": "25 de Mayo",
+      "pagina": 29,
+      "url_impresa": "https://25demayo.gob.ar/informacion-economico-financiera/",
+      "url_normalizada": "https://25demayo.gob.ar/informacion-economico-financiera/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06638",
+      "municipio": "Pilar",
+      "pagina": 28,
+      "url_impresa": "http://www.pilar.gob.ar/transparencia",
+      "url_normalizada": "http://www.pilar.gob.ar/transparencia",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06126",
+      "municipio": "Campana",
+      "pagina": 27,
+      "url_impresa": "https://www.campana.gob.ar/secretaria-de-economia-y-hacienda/",
+      "url_normalizada": "https://www.campana.gob.ar/secretaria-de-economia-y-hacienda/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06294",
+      "municipio": "General Arenales",
+      "pagina": 27,
+      "url_impresa": "https://www.generalarenales.gob.ar/gobierno-abierto/",
+      "url_normalizada": "https://www.generalarenales.gob.ar/gobierno-abierto/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06343",
+      "municipio": "General Paz",
+      "pagina": 27,
+      "url_impresa": "http://generalpaz.gob.ar/",
+      "url_normalizada": "http://generalpaz.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06408",
+      "municipio": "Hurlingham",
+      "pagina": 28,
+      "url_impresa": "https://www.hurlingham.gob.ar/gobierno-abierto/",
+      "url_normalizada": "https://www.hurlingham.gob.ar/gobierno-abierto/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06462",
+      "municipio": "Leandro N. Alem",
+      "pagina": 28,
+      "url_impresa": "https://municipioalem.gob.ar/?q=transparencia",
+      "url_normalizada": "https://municipioalem.gob.ar/?q=transparencia",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06466",
+      "municipio": "Lezama",
+      "pagina": 28,
+      "url_impresa": "https://lezama.gov.ar/situacion-financiera/",
+      "url_normalizada": "https://lezama.gov.ar/situacion-financiera/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06518",
+      "municipio": "Mar Chiquita",
+      "pagina": 28,
+      "url_impresa": "https://www.marchiquita.gob.ar/secretaria-de-economia/",
+      "url_normalizada": "https://www.marchiquita.gob.ar/secretaria-de-economia/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06539",
+      "municipio": "Merlo",
+      "pagina": 28,
+      "url_impresa": "https://www.merlo.gob.ar/",
+      "url_normalizada": "https://www.merlo.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06655",
+      "municipio": "Punta Indio",
+      "pagina": 28,
+      "url_impresa": "https://puntaindio.gov.ar/",
+      "url_normalizada": "https://puntaindio.gov.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06805",
+      "municipio": "Tigre",
+      "pagina": 29,
+      "url_impresa": "https://www.tigre.gob.ar/gobierno",
+      "url_normalizada": "https://www.tigre.gob.ar/gobierno",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06812",
+      "municipio": "Tordillo",
+      "pagina": 29,
+      "url_impresa": "https://tordillomunicipio.com/",
+      "url_normalizada": "https://tordillomunicipio.com/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06868",
+      "municipio": "Villa Gesell",
+      "pagina": 29,
+      "url_impresa": "https://www.gesell.gob.ar/info-util/transparencia-en-la-gestion.html",
+      "url_normalizada": "https://www.gesell.gob.ar/info-util/transparencia-en-la-gestion.html",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06134",
+      "municipio": "Cañuelas",
+      "pagina": 27,
+      "url_impresa": "www.canuelas.gov.ar",
+      "url_normalizada": "www.canuelas.gov.ar",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06168",
+      "municipio": "Castelli",
+      "pagina": 27,
+      "url_impresa": "https://www.castelli.gob.ar/",
+      "url_normalizada": "https://www.castelli.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06260",
+      "municipio": "Esteban Echeverría",
+      "pagina": 27,
+      "url_impresa": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+      "url_normalizada": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06399",
+      "municipio": "Guaminí",
+      "pagina": 27,
+      "url_impresa": "https://www.guamini.gob.ar/",
+      "url_normalizada": "https://www.guamini.gob.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06420",
+      "municipio": "La Costa",
+      "pagina": 28,
+      "url_impresa": "http://www.lacosta.gov.ar/",
+      "url_normalizada": "http://www.lacosta.gov.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06490",
+      "municipio": "Lomas de Zamora",
+      "pagina": 28,
+      "url_impresa": "https://www.lomasdezamora.gov.ar/",
+      "url_normalizada": "https://www.lomasdezamora.gov.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06525",
+      "municipio": "Marcos Paz",
+      "pagina": 28,
+      "url_impresa": "https://www.marcospaz.gov.ar/",
+      "url_normalizada": "https://www.marcospaz.gov.ar/",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06648",
+      "municipio": "Presidente Perón",
+      "pagina": 28,
+      "url_impresa": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "url_normalizada": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    },
+    {
+      "id": "06763",
+      "municipio": "San Nicolás",
+      "pagina": 29,
+      "url_impresa": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "url_normalizada": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "estado": "Directorio relevado por ASAP en mayo 2026. Vigencia actual del enlace no comprobada de forma exhaustiva."
+    }
+  ],
+  "notes": [
+    "El índice mide publicación, actualidad, integridad y acceso a información fiscal. No mide resultado fiscal, calidad de gestión o corrupción.",
+    "La observación de ASAP de mayo no invalida documentos posteriores.",
+    "El PDF mayo 2026 usa ene-26 por error en el encabezado comparativo de página 19. Se conserva mayo 2026 conforme portada y fechas del relevamiento.",
+    "La metodología histórica de 2019 difiere en puntajes parciales y rezagos. No se construyó una serie homogénea desde 2019.",
+    "Los portales son direcciones del directorio ASAP, algunas a secciones antiguas. La búsqueda actual debe recorrer las secciones nuevas.",
+    "Las diferencias recientes son puntos del índice publicado. No implican mejoría o deterioro fiscal."
+  ]
+}
