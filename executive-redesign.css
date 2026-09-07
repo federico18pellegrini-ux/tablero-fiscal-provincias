@@ -101,3 +101,10 @@ body{padding-top:var(--fixed-header-height)}
 .editorial-link{display:inline-block;background:none;border:0;color:var(--blue);font:600 14px/1.6 var(--font);text-align:left;padding:10px 0;min-height:44px;cursor:pointer}.reading-options #priceBasisNotice{margin:12px 0 0;max-width:85ch}
 
 #provincialServicesHistory{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);min-width:0}#provincialServicesHistory h3{font-size:18px}#provincialServicesHistory p,#debtScheduleSources p{margin:10px 0;line-height:1.6}#debtScheduleCard [hidden]{display:none!important}#debtScheduleSources .management-table,#provincialServicesHistory .management-table{min-width:500px}#debtScheduleCard{min-width:0}
+/* The three reading profiles share data and change their interpretation. */
+.profile-reading{margin:16px 0;padding:16px 18px;background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:8px;min-width:0}
+.profile-reading h3{margin:0 0 8px;font-size:15px;color:var(--text)}
+.profile-reading p{margin:6px 0;color:var(--muted);line-height:1.6;font-size:14px}
+.profile-reading .profile-conclusion{color:var(--text)}
+#governorNarrativeDetails{display:none!important}
+@media(max-width:640px){.profile-reading{padding:12px}.profile-reading p{font-size:13px}}

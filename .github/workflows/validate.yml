@@ -20,8 +20,8 @@ jobs:
         run: python -m compileall -q .
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
-      - name: Validate cash scenario calculations
-        run: node --test tests/management_math.test.cjs
+      - name: Validate calculations and reading profiles
+        run: node --test tests/management_math.test.cjs tests/profile_readings.test.cjs
       - name: Validate TOP traceability
         run: python scripts_validate_top_traceability.py
       - name: Validate national claims data
