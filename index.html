@@ -875,7 +875,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260906-12">
+<link rel="stylesheet" href="executive-redesign.css?v=20260906-13">
 </head>
 <body>
 
@@ -2935,6 +2935,7 @@ function render(province){
   applyDashboardView(dashboardView,{updateHash:false});
   prepareInfoDots();
   renderProfileReadings();
+  renderBudgetExecution();
 }
 
 function liquiditySemaphore(metrics){
@@ -5132,12 +5133,13 @@ document.getElementById('downloadPng')?.addEventListener('click',exportCurrentPr
 </script>
 <script src="visible-controls.js?v=20260906-12"></script>
 <script src="profile-readings.js?v=20260906-12"></script>
-<script src="provincial-debt-services.js?v=20260906-12"></script>
+<script src="provincial-debt-services.js?v=20260906-13"></script>
 <script src="inflation-history.js?v=20260906-9"></script>
 <script src="executive-redesign.js?v=20260906-12"></script>
 <script src="closing-tools.js?v=20260906-4"></script>
 <script src="management-tools.js?v=20260906-12"></script>
 <script src="federal-tools.js?v=20260906-12"></script>
+<script src="budget-execution.js?v=20260906-13"></script>
 <script>
 /* ── BOOT ────────────────────────────────────────────────────────── */
 loadAll().catch(err=>{
