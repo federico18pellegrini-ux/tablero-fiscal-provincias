@@ -129,3 +129,4 @@ body .national-context .dashboard-command-bar,body.national-context .dashboard-c
 @media print{.visible-navigation,.choice-buttons{display:none!important}}
 html,body{overflow-x:clip;overflow-y:visible}
 #provincialServicesHistory,.profile-reading,.overview-charts,#nationalContent .national-section{scroll-margin-top:calc(var(--fixed-header-height) + var(--visible-nav-height,160px) + 12px)}
+.national-context #priceBasisNotice{display:block!important}
