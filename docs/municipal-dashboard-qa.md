@@ -32,3 +32,7 @@ Revisión visual en escritorio y tamaños de 390 × 844, 768 × 1024, 320 × 740
 ## Criterios de actualización
 
 Los datos son una fotografía auditada, no una conexión automática a las fuentes. Cada indicador informa su período. La metodología y los enlaces públicos están disponibles en `municipios/metodologia.html`; el manifiesto conserva las huellas de los archivos de entrada. El generador recompone tanto los datos como el JavaScript de publicación.
+
+## Ajuste de legibilidad móvil
+
+La revisión posterior unifica explicaciones en 16 px, referencias y controles en 14 px, ejes en 13 px y encabezados de contexto en 12 px. Solo la navegación de pantallas menores a 360 px baja a 13 px para mantener visibles las cinco vistas. Las tarjetas y rankings redistribuyen su contenido antes de reducir la letra. Se comprobaron las cinco vistas a 320 px, la portada y Recursos a 390 px, y la portada a 768 px: sin desplazamiento horizontal ni desborde de cifras. Se revisaron capturas y tamaños efectivos del navegador. Los datos y cálculos permanecen iguales.
