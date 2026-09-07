@@ -53,3 +53,10 @@ Las transcripciones, fechas originales, alcance institucional, páginas, enlaces
 - La ficha muestra barras de ingresos y gastos, resultado, capital y personal, con explicación del mecanismo fiscal. El acceso desde Panorama lleva directamente a las cuentas, debajo del encabezado fijo.
 
 Validación local: 79 pruebas Python y 34 Node aprobadas; compilación y sintaxis correctas; controles de trazabilidad y reclamos sin diferencias; los 24 informes provinciales conservan sus huellas. Se verificaron las pantallas nuevas a 320, 390 y 768 px, sin desplazamiento horizontal ni tarjetas desbordadas; explicaciones de 16 px. Se revisaron Las Heras (superávit), Malvinas (déficit), Tigre (ejecución parcial), Zárate (fecha original) y La Matanza (faltante), y los rankings fiscales. Sin errores de consola en el recorrido. Son pruebas de navegador, no de dispositivos físicos.
+
+
+## Separación del ranking general y la ficha municipal
+
+El último botón de navegación se llama «Ranking general» y utiliza azul para distinguir la comparación provincial. Esa vista muestra un encabezado general y elimina la presentación duplicada que comenzaba con el nombre y la población del municipio. El selector superior se identifica como referencia, y una tarjeta explica su posición en el ranking con acceso a «Ver ficha municipal». Al volver a Panorama, Recursos, Empleo o Simular se recupera el encabezado individual. La descarga de datos municipales identifica el municipio para distinguirla de la descarga del ranking.
+
+Se verificaron el enlace directo a densidad de empleo, cambios de referencia, comparación por población similar, regreso a la ficha y cobertura fiscal parcial. Revisión visual a 390 y 768 px; comprobación adicional de navegación y desbordes a 320 px. No hubo desbordes horizontales ni errores de consola. Pasaron 79 pruebas Python, 34 Node y los controles de publicación. Los datos e indicadores no cambian.

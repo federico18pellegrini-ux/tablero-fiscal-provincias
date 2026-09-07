@@ -80,11 +80,24 @@ function navigate(view,scroll=true){
   window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view}}));
   if(scroll)window.scrollTo({top:0,behavior:motion()?'smooth':'instant'});
 }
-function selectMunicipality(id){if(!byId.has(id))return;state.id=id;persist();renderHeader();renderView();}
+function selectMunicipality(id){if(!byId.has(id))return;state.id=id;persist();renderView();}
 function card(label,value,context,cls=''){return `<div class="stat-card"><span class="stat-label">${label}</span><strong class="stat-value ${cls}">${value}</strong><span class="stat-context">${context}</span></div>`;}
 function bindMunicipalButtons(container){container.querySelectorAll('[data-municipality]').forEach(b=>b.addEventListener('click',()=>selectMunicipality(b.dataset.municipality)));}
-function renderHeader(){const m=current();$('municipality').value=m.id;$('municipality-name').textContent=m.municipio;$('municipality-context').textContent=`${num(m.poblacion_2022)} habitantes · Censo 2022 · ${num(m.superficie_km2)} km²`;document.title=`${m.municipio} · Municipios · Federico Pellegrini`;}
+function renderHeader(){
+  const m=current(),ranking=state.view==='rankings';
+  document.body.classList.toggle('ranking-view',ranking);
+  $('municipality').value=m.id;
+  $('municipality-picker-label').textContent=ranking?'Referencia':'Tu municipio';
+  $('municipality').setAttribute('aria-label',ranking?'Elegir municipio de referencia':'Elegir municipio');
+  $('view-context').textContent=ranking?'Provincia de Buenos Aires':'Buenos Aires / 135 municipios';
+  $('municipality-name').textContent=ranking?'Ranking general':m.municipio;
+  $('municipality-context').textContent=ranking?'Elegí un indicador para ordenar y comparar los municipios bonaerenses.':`${num(m.poblacion_2022)} habitantes · Censo 2022 · ${num(m.superficie_km2)} km²`;
+  $('share').setAttribute('aria-label',ranking?'Copiar enlace a este ranking':'Copiar enlace a esta vista');
+  $('download-municipality').textContent=ranking?`Descargar datos de ${m.municipio} ↓`:'Descargar datos ↓';
+  document.title=ranking?'Ranking general · Municipios · Federico Pellegrini':`${m.municipio} · Municipios · Federico Pellegrini`;
+}
 function renderView(){
+  renderHeader();
   for(const view of VALID_VIEWS){$(view).hidden=view!==state.view;document.querySelector(`[data-view="${view}"]`).setAttribute('aria-current',view===state.view?'page':'false');}
   if(state.view==='panorama')renderOverview();
   if(state.view==='rankings')renderRanking();
@@ -153,8 +166,10 @@ function renderRanking(){
   $('ranking-title').textContent=meta.label;$('ranking-period').textContent=meta.period;
   $('ranking-coverage').textContent=`${ranked.length} ${ranked.length===1?'municipio':'municipios'} con datos${meta.group==='Cuentas'?' · Muestra parcial, no ranking de los 135':''}${scopePeers?` · Entre ${num(m.poblacion_2022/2)} y ${num(m.poblacion_2022*2)} habitantes (Censo 2022)`:''}`;
   $('ranking-direction').textContent=rankAscending?'Menor a mayor ↑':'Mayor a menor ↓';
+  $('scope-peers').setAttribute('aria-label',`Comparar municipios con población similar a ${m.municipio}`);
   $('scope-all').setAttribute('aria-pressed',String(!scopePeers));$('scope-peers').setAttribute('aria-pressed',String(scopePeers));
-  $('ranking-selected').innerHTML=`<span>${escape(m.municipio)}${selected?` · posición ${selected.rank} de ${ranked.length}`:' · sin dato comparable'}</span><strong>${formatMetric(metricValue(m,meta),meta)}</strong>`;
+  $('ranking-selected').innerHTML=`<div class="rank-reference-info"><span class="rank-reference-label">Municipio de referencia</span><strong>${escape(m.municipio)}</strong><span>${selected?`Posición ${selected.rank} de ${ranked.length} en esta comparación`:'Sin dato para este indicador'}</span></div><div class="rank-reference-detail"><strong>${formatMetric(metricValue(m,meta),meta)}</strong><button class="text-button" id="open-reference">Ver ficha municipal →</button></div>`;
+  $('open-reference').onclick=()=>navigate('panorama');
   const vals=ranked.map(r=>r.value),lo=Math.min(0,...vals),hi=Math.max(0,...vals),span=hi-lo||1,zero=(0-lo)/span*100;
   $('ranking-rows').innerHTML=(showAll?ranked:ranked.slice(0,10)).map(r=>{const pos=(r.value-lo)/span*100,left=Math.min(pos,zero),width=Math.max(Math.abs(pos-zero),.4);return `<button class="rank-row ${r.m.id===m.id?'is-selected':''}" data-municipality="${r.m.id}" aria-label="${escape(r.m.municipio)}, puesto ${r.rank}, ${formatMetric(r.value,meta)}. Seleccionar municipio"><span class="rank-number">${r.rank.toString().padStart(2,'0')}</span><span class="rank-name">${escape(r.m.municipio)}</span><span class="rank-track" aria-hidden="true"><span class="rank-zero" style="left:${zero}%"></span><span class="rank-fill ${r.value<0?'down':'single'}" style="left:${left}%;width:${width}%"></span></span><span class="rank-value">${formatMetric(r.value,meta)}</span></button>`;}).join('');
   bindMunicipalButtons($('ranking-rows'));
@@ -257,7 +272,7 @@ async function init(){
     let saved;try{saved=localStorage.getItem('pellegrini_municipio');}catch{}
     state=readState(location.search,rows,saved);rankAscending=currentMetric().ascending;
     $('municipality').innerHTML=rows.slice().sort((a,b)=>a.municipio.localeCompare(b.municipio,'es')).map(m=>`<option value="${m.id}">${escape(m.municipio)}</option>`).join('');$('municipality').disabled=false;
-    $('loading').hidden=true;$('dashboard').hidden=false;attachEvents();renderHeader();persist();renderView();window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view:state.view}}));
+    $('loading').hidden=true;$('dashboard').hidden=false;attachEvents();persist();renderView();window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view:state.view}}));
   }catch(error){$('loading').hidden=true;$('dashboard').hidden=true;$('error').hidden=false;console.error('Error al iniciar el tablero municipal:',error.message);}
 }
 init();
