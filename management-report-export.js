@@ -19,7 +19,7 @@ function initManagementReportExport(){
  async function load(){
   retry.hidden=true;status.textContent='';
   try{
-   const response=await fetch('reports/manifest.json?v=20260907-8',{cache:'no-cache'});if(!response.ok)throw Error('manifest');
+   const response=await fetch('reports/manifest.json?v=20260907-9',{cache:'no-cache'});if(!response.ok)throw Error('manifest');
    const data=await response.json();
    const expected=[...document.getElementById('psel').options].map(o=>o.value);
    if(!Array.isArray(data.reports)||data.reports.length!==expected.length||!expected.every(p=>data.reports.filter(r=>r.province===p&&r.pages===3&&/^informe-[a-z-]+\.pdf$/.test(r.file)&&/^[a-f0-9]{64}$/.test(r.sha256)).length===1))throw Error('coverage');

@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-09-06",
+  "reviewed_at": "2026-09-07",
   "unit": "ARS millions",
   "history_basis": "Servicios devengados, preliminares, netos de deuda indirecta. No equivalen a pagos de caja ni a vencimientos futuros. Pesos corrientes de cada período, sin ajuste por inflación.",
   "history": [
@@ -5159,13 +5159,85 @@
           "total_ars_m": 212084.899
         }
       ]
+    },
+    "Neuquén": {
+      "as_of": null,
+      "reference_label": "Presupuesto 2026 · proyección 2026–2028",
+      "scope": "Administración Provincial, sin ISSN · Presupuesto 2026",
+      "interest_label": "Intereses y comisiones",
+      "note": "Proyección presupuestaria 2026–2028, con intereses y comisiones. Usa los tipos de cambio del presupuesto; no descuenta pagos ni refinanciaciones posteriores. No hay fecha de valuación informada en esta tabla.",
+      "sources": [
+        {
+          "url": "https://www.economianqn.gob.ar/contenido/file/11850",
+          "label": "Mensaje del presupuesto 2026, página PDF 96 (impresa 94)",
+          "sha256": "a3cd45a37df432ed375c0fcd7577c730db322d7f8677a7da601b3e6789fffa1b",
+          "original_unit": "ARS millions",
+          "trace": "Tabla Perfil de la Deuda Pública 2026–2028, fila TOTAL; transcripción visual, contrastada con AIF página PDF 103 (redondeado a millones)."
+        }
+      ],
+      "rows": [
+        {
+          "year": 2026,
+          "amortization_ars_m": 307755.9,
+          "interest_ars_m": 125195.3,
+          "total_ars_m": 432951.2
+        },
+        {
+          "year": 2027,
+          "amortization_ars_m": 232813.2,
+          "interest_ars_m": 137471.4,
+          "total_ars_m": 370284.6
+        },
+        {
+          "year": 2028,
+          "amortization_ars_m": 209543.4,
+          "interest_ars_m": 130305.8,
+          "total_ars_m": 339849.2
+        }
+      ]
+    },
+    "Santa Fe": {
+      "as_of": null,
+      "reference_label": "Presupuesto 2026 · proyección 2026–2028",
+      "scope": "Deuda pública provincial · Presupuesto plurianual 2026–2028",
+      "interest_label": "Intereses",
+      "note": "Perfil publicado en el presupuesto plurianual. Capital e intereses del Anexo XVI; no se reemplazan por las aplicaciones financieras del AIF. No descuenta pagos posteriores ni constituye un flujo mensual actualizado.",
+      "sources": [
+        {
+          "url": "https://www.santafe.gov.ar/index.php/web/content/download/283813/1467742/file/Mensaje%205%20-Presupuesto%20Plurianual%202026-2028.pdf",
+          "label": "Presupuesto plurianual 2026–2028, Anexo XVI",
+          "sha256": "5ff19615d19b6cdd67690e8f491fec74b30c7441505a7f54ca49a8557993cd7e",
+          "original_unit": "ARS pesos",
+          "trace": "Páginas PDF 19–20, fila TOTAL SERVICIOS DE LA DEUDA. Importes en pesos; el documento explicita la moneda en el Anexo IV."
+        }
+      ],
+      "rows": [
+        {
+          "year": 2026,
+          "amortization_ars_m": 163330.371,
+          "interest_ars_m": 69240.737,
+          "total_ars_m": 232571.108
+        },
+        {
+          "year": 2027,
+          "amortization_ars_m": 199780.180211,
+          "interest_ars_m": 210314.004462,
+          "total_ars_m": 410094.184673
+        },
+        {
+          "year": 2028,
+          "amortization_ars_m": 44707.075211,
+          "interest_ars_m": 194445.284325,
+          "total_ars_m": 239152.359536
+        }
+      ]
     }
   },
   "coverage": [
     {
       "province": "Buenos Aires",
       "schedule_status": "verified",
-      "schedule_note": "Calendario incorporado con fuente y fecha de referencia."
+      "schedule_note": "Proyección oficial incorporada; conservar su fecha, cobertura y supuestos. No es el saldo pendiente de hoy."
     },
     {
       "province": "CABA",
@@ -5190,7 +5262,7 @@
     {
       "province": "Córdoba",
       "schedule_status": "verified",
-      "schedule_note": "Calendario incorporado con fuente y fecha de referencia."
+      "schedule_note": "Proyección oficial incorporada; conservar su fecha, cobertura y supuestos. No es el saldo pendiente de hoy."
     },
     {
       "province": "Corrientes",
@@ -5200,7 +5272,7 @@
     {
       "province": "Entre Ríos",
       "schedule_status": "verified",
-      "schedule_note": "Calendario incorporado con fuente y fecha de referencia."
+      "schedule_note": "Proyección oficial incorporada; conservar su fecha, cobertura y supuestos. No es el saldo pendiente de hoy."
     },
     {
       "province": "Formosa",
@@ -5234,8 +5306,8 @@
     },
     {
       "province": "Neuquén",
-      "schedule_status": "not_loaded",
-      "schedule_note": "No hay un calendario futuro verificado cargado; no implica ausencia de deuda ni de publicaciones."
+      "schedule_status": "verified",
+      "schedule_note": "Proyección oficial incorporada; conservar su fecha, cobertura y supuestos. No es el saldo pendiente de hoy."
     },
     {
       "province": "Río Negro",
@@ -5264,8 +5336,8 @@
     },
     {
       "province": "Santa Fe",
-      "schedule_status": "not_loaded",
-      "schedule_note": "No hay un calendario futuro verificado cargado; no implica ausencia de deuda ni de publicaciones."
+      "schedule_status": "verified",
+      "schedule_note": "Proyección oficial incorporada; conservar su fecha, cobertura y supuestos. No es el saldo pendiente de hoy."
     },
     {
       "province": "Santiago del Estero",

@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-07",
+  "unit": "ARS millions",
+  "method": "Crédito anual vigente y etapas acumuladas a la fecha indicada, en pesos corrientes. Cortes y coberturas propios: no constituye un ranking provincial ni acredita caja libre. Faltante es null, nunca cero.",
+  "records": [
+    {
+      "province": "Neuquén",
+      "as_of": "2026-06-30",
+      "period_start": "2026-01-01",
+      "year": 2026,
+      "scope": "APNF, incluido el Instituto de Seguridad Social",
+      "unit": "ARS millions",
+      "note": "Datos provisorios. Crédito anual y devengado acumulado a junio, de igual cobertura. Excluye gastos figurativos del total consolidado.",
+      "sources": [
+        {
+          "url": "https://www.economianqn.gob.ar/contenido/file/12830",
+          "label": "Crédito vigente AIF, segundo trimestre 2026",
+          "sha256": "802f79e3f7fc3b0ebdc82e97a445781b0ea70477fa34d200f9c800c5e78cde26",
+          "original_unit": "ARS millions",
+          "trace": "Página 1, columna (6), filas VI, VII y V"
+        },
+        {
+          "url": "https://www.economianqn.gob.ar/contenido/file/12831",
+          "label": "AIF devengado, segundo trimestre 2026",
+          "sha256": "484324057bd62e6a137297594645bdcb3d070323c5468d7ed1be376d20e1876a",
+          "original_unit": "ARS millions",
+          "trace": "Página 1, columna (6), filas VI, VII y V"
+        }
+      ],
+      "credit_ars_m": 10108919.7,
+      "accrued_ars_m": 4786043.2,
+      "committed_ars_m": null,
+      "paid_ars_m": null,
+      "income_budget_ars_m": 9762226.6,
+      "income_collected_ars_m": 4915131.7,
+      "capital_credit_ars_m": 1508977.2,
+      "capital_accrued_ars_m": 449052.0
+    },
+    {
+      "province": "Río Negro",
+      "as_of": "2026-07-31",
+      "period_start": "2026-01-01",
+      "year": 2026,
+      "scope": "Administración Provincial; incluye aplicaciones financieras",
+      "unit": "ARS millions",
+      "note": "Incluye reservas y remanentes; excluye figurativos. Compromiso es gasto comprometido, no devengado. El saldo del presupuesto es autorización sin comprometer, no dinero en el banco.",
+      "sources": [
+        {
+          "url": "https://rionegro.gov.ar/contenido/Contadur%C3%ADa%20General/Ejecuci%C3%B3n%20presupuestaria/2026/Julio/EJEC%20POR%20OBJ%20DEL%20GASTO%20ADM%20PROVINCIAL%20-%20MES%2007-26.pdf",
+          "label": "Ejecución por objeto del gasto, enero–julio 2026",
+          "sha256": "9e87919b81782d0940c52e49eec2c11e3db627a7b3120648431c7cde18ee851c",
+          "original_unit": "ARS pesos",
+          "trace": "Página 1, fila TOTAL ADMINISTRACIÓN PROVINCIAL, columnas (2), (3), (4) y (5)"
+        }
+      ],
+      "credit_ars_m": 3748997.5242267,
+      "accrued_ars_m": null,
+      "committed_ars_m": 2312245.1872132,
+      "paid_ars_m": 1750183.94287555,
+      "ordered_for_payment_ars_m": 1982418.61329802
+    },
+    {
+      "province": "Chubut",
+      "as_of": "2026-03-31",
+      "period_start": "2026-01-01",
+      "year": 2026,
+      "scope": "Administración Provincial, incluido ISSyS",
+      "unit": "ARS millions",
+      "note": "Crédito vigente y devengado de la misma planilla. Incluye ISSyS; no se mezcla con el presupuesto inicial de otra cobertura. La unidad se concilió con el gasto de capital de la planilla nacional.",
+      "sources": [
+        {
+          "url": "https://economia.chubut.gov.ar/wp-content/uploads/2026/07/Marzo-2026.xls",
+          "label": "Información fiscal provincial, marzo 2026",
+          "sha256": "89204a73581d581285dfc84ceec04f5deb21e07ce883cbc4352cfe3abd9a1f7c",
+          "original_unit": "ARS pesos",
+          "trace": "Hojas CTA.FINANCIAMIENTO Vigente y Devengado, columna TOTAL; VIII GASTOS TOTALES. Unidad: gasto de capital / 1.000.000 = 50.562,86313353 millones en DNAP."
+        }
+      ],
+      "credit_ars_m": 4136079.18441,
+      "accrued_ars_m": 772771.50281698,
+      "committed_ars_m": null,
+      "paid_ars_m": null,
+      "capital_credit_ars_m": 561275.2821963299,
+      "capital_accrued_ars_m": 50562.86313353001
+    },
+    {
+      "province": "Córdoba",
+      "as_of": "2026-03-31",
+      "period_start": "2026-01-01",
+      "year": 2026,
+      "scope": "Administración General Centralizada (cobertura parcial de la provincia)",
+      "unit": "ARS millions",
+      "note": "Informe de ejecución de la Administración Central: rentas generales y recursos afectados. No es el total de la APNF. Se usa el total del informe, que excluye amortizaciones; no se suma con el archivo de entidades descentralizadas.",
+      "sources": [
+        {
+          "url": "https://economiaygestionpublica.cba.gov.ar/download/12413/",
+          "label": "Informe de ejecución presupuestaria, marzo 2026",
+          "sha256": "5add297d968f5b14f8117207d7aa24d1432aae5dbff698dce0609af116c9fc24",
+          "original_unit": "ARS pesos",
+          "trace": "Página 18: Crédito Vigente, Total Devengado y cobertura; utilización publicada 21,39%."
+        }
+      ],
+      "credit_ars_m": 12048593.176,
+      "accrued_ars_m": 2577785.334966,
+      "committed_ars_m": null,
+      "paid_ars_m": null
+    },
+    {
+      "province": "Catamarca",
+      "as_of": "2026-08-31",
+      "period_start": "2026-01-01",
+      "year": 2026,
+      "scope": "Administración Provincial; sin figurativos ni aplicaciones financieras",
+      "unit": "ARS millions",
+      "note": "Acumulado a agosto. Se excluyen las transferencias entre organismos y las aplicaciones financieras tanto del crédito como de la ejecución. El total general del archivo no se vuelve a sumar.",
+      "sources": [
+        {
+          "url": "https://api-portal.catamarca.gob.ar/media/cms/archivos/GASTOS_AGOSTO_2026.csv",
+          "label": "Gastos a agosto 2026, datos abiertos de Contaduría",
+          "sha256": "e53c5273354c2b6d2ec830f56b3d36449f7908834cdfa3036d8f54ac489671e9",
+          "original_unit": "ARS pesos",
+          "trace": "10.384 filas Ejer=2026; excluir In=9 y económico distinto de 21/22. Columnas Crédito Vigente, Devengado Consumido, Compromiso Consumido y Pagado. Inicial conciliado con presupuesto nacional."
+        }
+      ],
+      "credit_ars_m": 2786272.078476,
+      "accrued_ars_m": 1865975.8189106602,
+      "committed_ars_m": 1896394.61242067,
+      "paid_ars_m": 1730075.62193333
+    },
+    {
+      "province": "Tucumán",
+      "as_of": "2026-04-30",
+      "period_start": "2026-01-01",
+      "year": 2026,
+      "scope": "APNF; esquema Ahorro–Inversión–Financiamiento",
+      "unit": "ARS millions",
+      "note": "Se verificó el crédito anual vigente a abril. No se calcula un porcentaje de ejecución sin un devengado del mismo período y cobertura conciliados.",
+      "sources": [
+        {
+          "url": "https://responsabilidadfiscal.mecontuc.gob.ar/archivos/Responsabilidad-Fiscal/Archivos%20publicados/DGP/Anexo%20I/Planilla%201.4/2026/20260604-04_2026-Planilla_1.4-Instancia_Vigente-DGP.pdf",
+          "label": "Planilla 1.4, instancia vigente al 30/04/2026",
+          "sha256": "a9b85543219fd1219383b682f3e363f43704a04285c7729262b595a3905e87c4",
+          "original_unit": "ARS millions",
+          "trace": "Página 2, última columna; filas VI, VII y V"
+        }
+      ],
+      "credit_ars_m": 5027538,
+      "accrued_ars_m": null,
+      "committed_ars_m": null,
+      "paid_ars_m": null,
+      "income_budget_ars_m": 4987660,
+      "capital_credit_ars_m": 457662
+    },
+    {
+      "province": "CABA",
+      "as_of": "2026-06-30",
+      "period_start": "2026-01-01",
+      "year": 2026,
+      "scope": "Administración Central y organismos descentralizados",
+      "unit": "ARS millions",
+      "note": "Acumulado al segundo trimestre. Se excluyen aplicaciones financieras (económico 23) de ambos importes. Se compara el crédito y el devengado del mismo archivo; no se mezcla con la presentación nacional del presupuesto inicial.",
+      "sources": [
+        {
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-economia-y-finanzas/presupuesto-ejecutado-2026/presupuesto-ejecutado-2026-2.xlsx",
+          "label": "Presupuesto ejecutado 2026, segundo trimestre",
+          "sha256": "68775f7f4e6bb3e51c44ad781f5a139febcf7ce57c1e68f03dbf02c8e14c3c35",
+          "original_unit": "ARS pesos",
+          "trace": "Hoja BASE 2T Gestion 2026; 38.756 partidas sin duplicados; Eco empieza en 21/22; columnas Vigente_Trim2_CONT y Devengado_Trim2_CONT."
+        }
+      ],
+      "credit_ars_m": 19877152.039294,
+      "accrued_ars_m": 7104105.8905761605,
+      "committed_ars_m": null,
+      "paid_ars_m": null
+    }
+  ]
+}

@@ -20,11 +20,11 @@ function renderBudgetExecution(){
  const province=currentProvince,b=budgetExecutionData.budgets.find(r=>r.province===province),e=budgetExecutionData.executions.find(r=>r.province===province&&r.period==='2026-Q1'),old=budgetExecutionData.executions.find(r=>r.province===province&&r.period==='2025-Q1');
  if(!b)return;
  let host=document.getElementById('budgetExecution');if(!host){host=document.createElement('section');host.id='budgetExecution';host.className='national-section completion-card';document.getElementById('incomeView').append(host);}host.replaceChildren();
- const title=document.createElement('h2');title.textContent='Presupuesto y ejecución · '+province;host.append(title);
+ const title=document.createElement('h2');title.textContent='Presupuesto inicial y ejecución · '+province;host.append(title);
  budgetParagraph(host,'Presupuesto inicial de todo 2026 y ejecución de enero a marzo de 2026. Millones de pesos corrientes. Este bloque conserva su período y unidad aunque cambies los controles generales.');
  const valid=b.scope_comparison&&fiscalExecutionRatios(e);
  host.append(completionTable('Importes de distinto horizonte temporal',['Concepto','Presupuesto anual inicial','Ejecutado enero–marzo','% del inicial¹'],[['income','Ingresos'],['spending','Gasto total'],['capital','Gasto de capital']].map(([key,label])=>[label,fnum(b[key]),Number.isFinite(e?.[key])?fnum(e[key]):'Sin dato',valid&&b[key]>0?fnum(e[key]/b[key]*100)+'%':'No calculado'])));
- budgetParagraph(host,valid?'¹ Porcentaje orientativo para coberturas identificadas como Administración Pública No Financiera (APNF). No mide sobreejecución ni subejecución: faltan crédito vigente y programación trimestral. El 25% no es una meta automática.':'¹ No se calcula el porcentaje: '+(!fiscalExecutionRatios(e)?'falta ejecución completa del período.':'la cobertura institucional del presupuesto todavía debe conciliarse con la ejecución APNF. Mostrar ambos importes no los vuelve comparables.'));
+ budgetParagraph(host,valid?'¹ Porcentaje orientativo para coberturas identificadas como Administración Pública No Financiera (APNF). El denominador es el presupuesto inicial. El crédito vigente verificado tiene su propio bloque y corte. Sin programación trimestral no mide atrasos ni adelantos de gestión: el 25% no es una meta automática.':'¹ No se calcula el porcentaje: '+(!fiscalExecutionRatios(e)?'falta ejecución completa del período.':'la cobertura institucional del presupuesto todavía debe conciliarse con la ejecución APNF. Mostrar ambos importes no los vuelve comparables.'));
  budgetParagraph(host,b.note+' La ejecución usa ingresos percibidos y gastos devengados: no representa pagos de caja.');
  const ratios=fiscalExecutionRatios(e),previous=fiscalExecutionRatios(old);
  budgetCompositionChart?.destroy();budgetCompositionChart=null;
@@ -37,14 +37,14 @@ function renderBudgetExecution(){
  }
  budgetParagraph(host,profileWording('El presupuesto muestra qué se autorizó para el año. La ejecución permite ver qué empezó a concretarse. Para decidir si una política viene atrasada, hay que mirar además su calendario, las obras terminadas y las obligaciones que todavía faltan pagar.','El siguiente paso es conciliar cobertura, crédito vigente, devengado y pagado por programa. Recién con esa apertura se puede medir el desvío frente a lo programado y estimar cuánto queda por financiar.','Al comunicar estos datos, separá el presupuesto anual del gasto de tres meses. Un porcentaje bajo no demuestra por sí solo un recorte. También puede responder al calendario de pagos o de las obras.'),'profile-explanation');
  managementSource(host,b.source_url,'Fuente: presupuesto provincial 2026 · archivo oficial');managementSource(host,e.source_url,'Fuente: DNAP · ejecución APNF, primer trimestre de 2026');managementSource(host,old.source_url,'Fuente: DNAP · ejecución APNF, primer trimestre de 2025');managementSource(host,'data/budget_execution_2026.json','Ver coberturas, celdas de origen y metodología');
- renderExecutionChanges(province,ratios,previous);renderProposalEstimator(province);renderManagementSourceReview();
+ renderExecutionChanges(province,ratios,previous);renderProposalEstimator(province);renderManagementSourceReview();renderVerifiedManagement();
 }
 let managementReviewRequest=null;
 function renderManagementSourceReview(){
  if(managementReviewRequest||!document.getElementById('fiscalGuide'))return;
- managementReviewRequest=Promise.all(['management_source_review.json','management_source_gaps.json'].map(name=>fetch('data/'+name+'?v=20260906-13').then(r=>{if(!r.ok)throw Error('review');return r.json();}))).then(([review,gaps])=>{
+ managementReviewRequest=Promise.all(['management_source_review.json','management_source_gaps.json'].map(name=>fetch('data/'+name+'?v=20260907-9').then(r=>{if(!r.ok)throw Error('review');return r.json();}))).then(([review,gaps])=>{
   const host=document.createElement('section');host.id='managementSourceReview';host.className='national-section completion-card';const h=document.createElement('h2');h.textContent='Datos que faltan para decidir';host.append(h);
-  budgetParagraph(host,'Revisión del '+new Date(review.checked_at).toLocaleDateString('es-AR')+'. Los datos pendientes no se interpretan como cero.');
+  budgetParagraph(host,'Revisión del '+gaps.reviewed_at.split('-').reverse().join('/')+'. Los datos pendientes no se interpretan como cero.');
   const list=document.createElement('ul');for(const text of gaps.pending){const li=document.createElement('li');li.textContent=text;list.append(li);}host.append(list);
   document.getElementById('fiscalGuide').append(host);
  }).catch(()=>{managementReviewRequest=null;});

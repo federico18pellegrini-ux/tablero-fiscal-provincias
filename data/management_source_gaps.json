@@ -1,14 +1,29 @@
 {
-  "reviewed_at": "2026-09-06",
+  "reviewed_at": "2026-09-07",
   "checks": [
-    {"province":"CABA","url":"https://buenosaires.gob.ar/sites/default/files/2026-07/Perfil_pagina_30_06_2026.pdf","kind":"Calendario futuro","note":"Enlace oficial con error 404 al revisar. No implica que no exista un calendario publicado."},
-    {"province":"Santa Cruz","url":"https://mefi.gob.ar/documentos/economia/ResponsabilidadFiscal/JUNIO2026/SITUACION_DEL_TESORO_2T2026.xlsx","kind":"Situación del Tesoro","note":"No incorporada como junio de 2026: primera hoja rotulada septiembre de 2024; total exigible de 79.839.920.435,42 en primera hoja y 44.024.527.137 en segunda. Fecha y alcance por conciliar."},
-    {"province":"Santa Cruz","url":"https://mefi.gob.ar/documentos/economia/ResponsabilidadFiscal/MARZO2026/Deuda_Flotante_1T2026.xlsx","kind":"Deuda flotante","note":"Saldo al 31/03/2026 localizado. No convertido ni incorporado: el archivo no explicita la unidad monetaria."}
+    {
+      "province": "CABA",
+      "url": "https://buenosaires.gob.ar/sites/default/files/2026-07/Perfil_pagina_30_06_2026.pdf",
+      "kind": "Calendario futuro",
+      "note": "Enlace oficial con error 404 al revisar. No implica que no exista un calendario publicado."
+    },
+    {
+      "province": "Santa Cruz",
+      "url": "https://mefi.gob.ar/documentos/economia/ResponsabilidadFiscal/JUNIO2026/SITUACION_DEL_TESORO_2T2026.xlsx",
+      "kind": "Situación del Tesoro",
+      "note": "No incorporada como junio de 2026: primera hoja rotulada septiembre de 2024; total exigible de 79.839.920.435,42 en primera hoja y 44.024.527.137 en segunda. Fecha y alcance por conciliar."
+    },
+    {
+      "province": "Santa Cruz",
+      "url": "https://mefi.gob.ar/documentos/economia/ResponsabilidadFiscal/MARZO2026/Deuda_Flotante_1T2026.xlsx",
+      "kind": "Deuda flotante",
+      "note": "Saldo al 31/03/2026 localizado. No convertido ni incorporado: el archivo no explicita la unidad monetaria."
+    }
   ],
   "pending": [
-    "Caja libre conciliada, fondos afectados y pagos exigibles por provincia: no se deducen del resultado fiscal.",
-    "Crédito presupuestario vigente y programación trimestral: el presupuesto inicial no permite medir desvíos de gestión.",
-    "Calendarios futuros: verificados Buenos Aires, Córdoba y Entre Ríos; las otras 21 jurisdicciones conservan su historial de servicios y la falta explícita de proyección.",
-    "Costos de cada propuesta: requieren alcance, cotizaciones o costos unitarios y financiamiento. El simulador no sustituye esas fuentes."
+    "Caja libre: sin conciliación verificable para las 24 jurisdicciones. Se requieren bancos, afectaciones y pagos exigibles a la misma fecha.",
+    "Crédito vigente: incorporado para CABA, Catamarca, Chubut, Neuquén, Río Negro y Tucumán; Córdoba tiene cobertura parcial de Administración Central. En las otras 17 jurisdicciones sigue pendiente. La programación trimestral sigue sin verificarse.",
+    "Calendarios futuros: incorporados Buenos Aires, Córdoba, Entre Ríos, Neuquén y Santa Fe. Quedan 19 sin calendario conciliado; en Mendoza se localizó el documento 2026–2029, pendiente de validar su alcance e importación.",
+    "Costos de propuestas: requieren alcance, costos unitarios y financiamiento confirmados. El simulador no sustituye esos datos."
   ]
 }

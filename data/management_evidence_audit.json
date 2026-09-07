@@ -1,0 +1,605 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-07",
+  "summary": {
+    "current_budget_jurisdictions": 7,
+    "current_budget_full_scope": 6,
+    "current_budget_partial_scope": 1,
+    "verified_debt_schedules": 5,
+    "free_cash_verified": 0
+  },
+  "method": "Revisión de portales oficiales, archivos originales y enlaces públicos. Un dato no verificado puede existir en otra publicación o requerir información de la Tesorería; no equivale a cero ni a ausencia de transparencia. No se equiparan stock, flujos, crédito presupuestario y caja.",
+  "jurisdictions": [
+    {
+      "province": "Buenos Aires",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Contaduría publica gasto devengado APNF a junio de 2026. Los cuadros revisados no contienen el crédito vigente total.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "Faltan saldos bancarios conciliados, fondos afectados y pagos exigibles a una misma fecha.",
+      "debt_status": "verified",
+      "debt_finding": "Calendario incorporado: Perfil oficial de deuda provincial. Valuado al 31/12/2025. Es el calendario publicado para todo el año; no descuenta pagos posteriores.",
+      "sources": [
+        {
+          "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/images/Cuerpo.htm",
+          "sha256": "39081504cb9883240a869cd67deaec34531e7424f5c5072554db91eeae9bfd80",
+          "cached_name": "pba-june-body"
+        },
+        {
+          "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/APNF_Econ2.htm",
+          "sha256": "1e5e565ad37f1bf738c91707e05c0615dc10e880d218e8527cde9d2a894c18f7",
+          "cached_name": "pba-june-gasto"
+        }
+      ]
+    },
+    {
+      "province": "CABA",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "verified",
+      "budget_as_of": "2026-06-30",
+      "budget_finding": "Crédito vigente incorporado al 2026-06-30. Cobertura: Administración Central y organismos descentralizados.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "El presupuesto ejecutado no informa caja libre conciliada.",
+      "debt_status": "not_verified",
+      "debt_finding": "El portal enlaza un perfil al 30/06/2026, pero la descarga devuelve 404. No significa que la Ciudad carezca de calendario.",
+      "sources": [
+        {
+          "url": "https://data.buenosaires.gob.ar/es_AR/dataset/presupuesto-ejecutado-2026",
+          "sha256": "d7915ed1c7ef5dc68bcb94899e930fc085cfdead97e9742e170a4fc9d2501fca",
+          "cached_name": "caba-current-page"
+        },
+        {
+          "url": "https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-economia-y-finanzas/presupuesto-ejecutado-2026/presupuesto-ejecutado-2026-2.xlsx",
+          "sha256": "68775f7f4e6bb3e51c44ad781f5a139febcf7ce57c1e68f03dbf02c8e14c3c35",
+          "cached_name": "caba-q2-current"
+        },
+        {
+          "url": "https://buenosaires.gob.ar/gcaba_historico/direccion-general-de-credito-publico/stock-y-perfiles-de-vencimientos",
+          "sha256": "9080bfed28b722eb572333c69be8891646ca4f69ae53924a6fa38112889b81e1",
+          "cached_name": "caba-debt-page"
+        }
+      ]
+    },
+    {
+      "province": "Catamarca",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "verified",
+      "budget_as_of": "2026-08-31",
+      "budget_finding": "Crédito vigente incorporado al 2026-08-31. Cobertura: Administración Provincial; sin figurativos ni aplicaciones financieras.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "La recaudación y el pagado acumulados no son saldos bancarios disponibles.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://api-portal.catamarca.gob.ar/media/cms/archivos/GASTOS_AGOSTO_2026.csv",
+          "sha256": "e53c5273354c2b6d2ec830f56b3d36449f7908834cdfa3036d8f54ac489671e9",
+          "cached_name": "cat-aug-gasto"
+        },
+        {
+          "url": "https://api-portal.catamarca.gob.ar/media/cms/archivos/RECURSOS_AGOSTO_2026.csv",
+          "sha256": "261cb43c2cdb0fa81b2135e3245d1a2609f27ac84ae53edbdde9478d2d7d3461",
+          "cached_name": "cat-aug-recurso"
+        }
+      ]
+    },
+    {
+      "province": "Chaco",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Se verificó AIF devengado al primer trimestre de 2026; no acredita el crédito vigente ni su programación.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "La planilla incluye movimientos de caja, remanentes y deuda flotante. Son flujos y conceptos distintos: no se suman como caja libre.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://hacienda.chaco.gov.ar/secciones/1",
+          "sha256": "77d095ff383c696a9eb00c000ee0bac6680276d01302a28f6537471741700128",
+          "cached_name": "chaco-fiscal"
+        },
+        {
+          "url": "https://hacienda.chaco.gov.ar/uploads/archivos/CAIF%20-%20Primer%20trimestre%202026.pdf",
+          "sha256": "a446700fcea544c8f49d5673fb381a4c58020245fb4cd4acc6444b8fafe99bda",
+          "cached_name": "chaco-q1"
+        }
+      ]
+    },
+    {
+      "province": "Chubut",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "verified",
+      "budget_as_of": "2026-03-31",
+      "budget_finding": "Crédito vigente incorporado al 2026-03-31. Cobertura: Administración Provincial, incluido ISSyS.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "El AIF permite leer crédito y ejecución; no concilia fondos utilizables con obligaciones exigibles.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://economia.chubut.gov.ar/cprf-infopresprov/",
+          "sha256": "16e8a61f885eebbbe6855287ddda72ca00bf34a7d446da6f5bedaa6b67458577",
+          "cached_name": "chubut-fiscal"
+        },
+        {
+          "url": "https://economia.chubut.gov.ar/wp-content/uploads/2026/07/Marzo-2026.xls",
+          "sha256": "89204a73581d581285dfc84ceec04f5deb21e07ce883cbc4352cfe3abd9a1f7c",
+          "cached_name": "chubut-q1"
+        }
+      ]
+    },
+    {
+      "province": "Corrientes",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "El portal de Contaduría mostró un error de conexión al consultar sus publicaciones. No se pudo verificar el crédito vigente.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "No se obtuvo una conciliación de Tesorería utilizable.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://www.cgpcorrientes.gob.ar/publicaciones-component",
+          "sha256": "ef299542532522be1573900a0802ee70a360b55efb3bed310d695d6c315ae152",
+          "cached_name": "corrientes-cgp"
+        }
+      ]
+    },
+    {
+      "province": "Córdoba",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "verified_partial",
+      "budget_as_of": "2026-03-31",
+      "budget_finding": "Crédito vigente incorporado al 2026-03-31. Cobertura: Administración General Centralizada (cobertura parcial de la provincia).",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "Separar rentas generales de recursos afectados no basta: faltan bancos conciliados y pagos exigibles.",
+      "debt_status": "verified",
+      "debt_finding": "Calendario incorporado: Administración Central + ACIF · Presupuesto 2026. Proyección presupuestaria actualizada el 02/01/2026, expresada en pesos. Incluye gastos junto con intereses. No descuenta los pagos posteriores.",
+      "sources": [
+        {
+          "url": "https://economiaygestionpublica.cba.gov.ar/publicacion/ejecucion-presupuestaria/",
+          "sha256": "5500a407c4a363b2ba94be56870b7e7e0166a74ec956982d47bd285d3aacc483",
+          "cached_name": "cba-executions-page"
+        },
+        {
+          "url": "https://economiaygestionpublica.cba.gov.ar/download/12413/",
+          "sha256": "5add297d968f5b14f8117207d7aa24d1432aae5dbff698dce0609af116c9fc24",
+          "cached_name": "cba-q1-report"
+        }
+      ]
+    },
+    {
+      "province": "Entre Ríos",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "El portal muestra ejecuciones hasta julio de 2026; en la consulta no expuso enlaces de descarga utilizables para conciliar crédito vigente.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "El calendario presupuestario de deuda no informa el saldo de caja libre.",
+      "debt_status": "verified",
+      "debt_finding": "Calendario incorporado: Sector Público No Financiero Provincial · Presupuesto plurianual 2026–2028. Proyección orientativa presentada el 28/11/2025. Unidad conciliada con el presupuesto oficial 2026; incluye otros pasivos y gastos. No equivale a deuda pendiente de hoy ni descuenta pagos posteriores.",
+      "sources": [
+        {
+          "url": "https://portal.entrerios.gov.ar/haciendayfinanzas/contaduriageneral/ps/esquemaAIFSPNF/5187",
+          "sha256": "2c716e264735a6651154d78394a7d5a2ac0af75dec3f7c83a63e1dd9cb19b5db",
+          "cached_name": "er-current"
+        }
+      ]
+    },
+    {
+      "province": "Formosa",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "El informe acumulado al segundo trimestre de 2026 contiene devengado y deuda; no acredita crédito vigente. La página de proyecciones plurianuales examinada corresponde a 2010–2012.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "No se obtuvo el detalle conjunto de bancos, afectaciones y pagos exigibles.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://www.formosa.gob.ar/haciendayfinanzas/responsabilidadfiscal/informes",
+          "sha256": "ae4472bf15116555735f49b3244f4ef1e69c5c6a3b60308d96c48866d38dac0e",
+          "cached_name": "formosa-fiscal"
+        },
+        {
+          "url": "https://archivos.formosa.gob.ar/media/uploads/documentos/documento_89c3da12eb97f95ea22e2b68ed2198db.pdf",
+          "sha256": "30bc4e130c0bfe2767bc0789b02fd06a1f1cc9027c1be78240d128cd616dd8ed",
+          "cached_name": "formosa-q2"
+        },
+        {
+          "url": "https://www.formosa.gob.ar/haciendayfinanzas/presupuesto/proyecciones",
+          "sha256": "2f8ca071f68b2ab74f0024f34bf84475600bd9980e98750c99d43ac87434ac5f",
+          "cached_name": "formosa-pluri"
+        }
+      ]
+    },
+    {
+      "province": "Jujuy",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Se verificó AIF devengado de 2026. La planilla de proyección plurianual enlazada en el portal corresponde a 2017; no se usa como crédito vigente 2026.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "Un resultado fiscal positivo no permite identificar dinero libre.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://hacienda.jujuy.gob.ar/egresos-publicos/",
+          "sha256": "cc1f65d1feec057bb69b3f652d46b2ee1fdbd1a2cc2b5f99f674691778c460cb",
+          "cached_name": "jujuy-budget"
+        },
+        {
+          "url": "https://hacienda.jujuy.gob.ar/wp-content/uploads/2026/02/Trim-II-Planilla-I.1.Devengado.pdf",
+          "sha256": "f1905fe8ca2e8e32f43b90a47a98e668fd7ec44b684e8c31a55a919b1292273c",
+          "cached_name": "jujuy-q2-aif"
+        }
+      ]
+    },
+    {
+      "province": "La Pampa",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Se encontró ejecución mensual por compromiso hasta julio de 2026. El cuadro revisado no informa crédito vigente y no equivale a devengado acumulado APNF.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "No se obtuvo una conciliación de caja libre. El stock de deuda publicado tampoco la reemplaza.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://contaduriageneral.lapampa.gob.ar/informacion-presupuestaria",
+          "sha256": "e855e6187ad7c7aafc82120add7a6fcb965229497baab4d0fb77b767b272cace",
+          "cached_name": "lp-budget-page"
+        },
+        {
+          "url": "https://contaduriageneral.lapampa.gob.ar/ejecucion-presupuestaria/ano-2026",
+          "sha256": "6404ba18603cb8c40573d0ce8a200f54cd1406b0bd2487364effc10904b2c0d8",
+          "cached_name": "lp-gastos-2026"
+        },
+        {
+          "url": "https://contaduriageneral.lapampa.gob.ar/images/pdf/InfoPres/EjePresupuestaria/2026/INFORME_CLAS_ECON-FIN-FUN_JULIO_2026.pdf",
+          "sha256": "a48845963122ad73a1a403e648d7c54f1048bfcb5e469943c45beb85f0bf6fc5",
+          "cached_name": "lp-july"
+        },
+        {
+          "url": "https://contaduriageneral.lapampa.gob.ar/informacion-presupuestaria/deuda-publica",
+          "sha256": "850b880430bada66053e324ac6f701812a7523d06cbb7d777eaadc49e2d8f37b",
+          "cached_name": "lp-debt-page"
+        }
+      ]
+    },
+    {
+      "province": "La Rioja",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "La consulta al portal de responsabilidad fiscal encontró una restricción de acceso. No se verificó crédito vigente desde ese documento.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "No se obtuvo una conciliación de caja. No se reconstruye a partir de noticias sobre financiamiento.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://hacienda.larioja.gob.ar/responsabilidad-fiscal/"
+        }
+      ]
+    },
+    {
+      "province": "Mendoza",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Se revisó el portal de responsabilidad fiscal del segundo trimestre de 2026. No se incorporó crédito vigente total conciliado.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "Se localizó el informe del Fondo Anticíclico del segundo trimestre. Un fondo específico no es la caja libre de toda la provincia.",
+      "debt_status": "located_pending_reconciliation",
+      "debt_finding": "Se localizó y abrió el flujo estimado 2026–2029 de la Administración Central, segundo trimestre de 2026. La descarga automatizada devuelve 403. Antes de incorporarlo falta conciliar el alcance de 2026 y conservar la tabla con una extracción verificable.",
+      "sources": [
+        {
+          "url": "https://www.mendoza.gob.ar/haciendayfinanzas/ley-de-responsabilidad-fiscal/"
+        },
+        {
+          "url": "https://sitios.mendoza.gob.ar/haciendayfinanzas/responsabilidad_fiscal/2026-2-trimestre-subsecretaria-de-hacienda/"
+        },
+        {
+          "url": "https://media.mendoza.gob.ar/informacion-oficial/uploads/sites/11/2026/09/FlujoFuturo_2_26.pdf"
+        },
+        {
+          "url": "https://media.mendoza.gob.ar/informacion-oficial/uploads/sites/11/2026/09/Fondo-Anticiclico-Provincial_2_26.pdf"
+        }
+      ],
+      "debt_document_url": "https://media.mendoza.gob.ar/informacion-oficial/uploads/sites/11/2026/09/FlujoFuturo_2_26.pdf"
+    },
+    {
+      "province": "Misiones",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Se verificó AIF devengado al segundo trimestre de 2026. No se verificó crédito vigente del mismo alcance.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "El anexo de avales no informa disponibilidades. Las casillas vacías no se convierten en cero.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://hacienda.gob.ar/transparencia/",
+          "sha256": "263b8a4460d3d904c524783bfff38fd293ec1bba2a1d1c0139634bf9f6da8e49",
+          "cached_name": "misiones-transparency"
+        },
+        {
+          "url": "https://hacienda.gob.ar/ubicacion/2026-ahorro-inversion-financiamiento-aif/",
+          "sha256": "fce62f8b459ea839b5c49ef1a9a154a4d03b17cfcc25d58a24b87b63f313fa82",
+          "cached_name": "misiones-aif"
+        },
+        {
+          "url": "https://hacienda.gob.ar/wp-content/uploads/2026/08/AIF-2026-2doTrimestre-Base-Devengado.pdf",
+          "sha256": "ee82d3017492636f56ddfcda1d986c9f7259ad30a962f682b731f2cd95e25fdc",
+          "cached_name": "misiones-aif-q2"
+        },
+        {
+          "url": "https://hacienda.gob.ar/wp-content/uploads/2026/08/Planilla-7-DeudaPublica-2026-2doTrimestre.pdf",
+          "sha256": "eeafab6ec803212ec3e2f82dde47f5b15bdcd361145cbb84ef8fa42131f4cb42",
+          "cached_name": "misiones-debt-q2"
+        }
+      ]
+    },
+    {
+      "province": "Neuquén",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "verified",
+      "budget_as_of": "2026-06-30",
+      "budget_finding": "Crédito vigente incorporado al 2026-06-30. Cobertura: APNF, incluido el Instituto de Seguridad Social.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "Se localizó deuda del Tesoro al 30/06/2026, pero la tabla no explicita la unidad y no identifica caja libre. No se la carga como disponibilidad.",
+      "debt_status": "verified",
+      "debt_finding": "Calendario incorporado: Administración Provincial, sin ISSN · Presupuesto 2026. Proyección presupuestaria 2026–2028, con intereses y comisiones. Usa los tipos de cambio del presupuesto; no descuenta pagos ni refinanciaciones posteriores. No hay fecha de valuación informada en esta tabla.",
+      "sources": [
+        {
+          "url": "https://www.economianqn.gob.ar/contenido/institucional/cfrf/",
+          "sha256": "a69b2126f43cb98d9e6272399107c2754911065fd5736c6995704e638b26069d",
+          "cached_name": "nqn-cfrf"
+        },
+        {
+          "url": "https://www.economianqn.gob.ar/contenido/file/12830",
+          "sha256": "802f79e3f7fc3b0ebdc82e97a445781b0ea70477fa34d200f9c800c5e78cde26",
+          "cached_name": "nqn-vigente"
+        },
+        {
+          "url": "https://www.economianqn.gob.ar/contenido/file/12831",
+          "sha256": "484324057bd62e6a137297594645bdcb3d070323c5468d7ed1be376d20e1876a",
+          "cached_name": "nqn-devengado"
+        },
+        {
+          "url": "https://www.economianqn.gob.ar/contenido/file/12834",
+          "sha256": "cd7c138545ddb05c2e6f3cd3f5d61f525571314da0396343cae8e48666502773",
+          "cached_name": "nqn-tesoro"
+        },
+        {
+          "url": "https://www.economianqn.gob.ar/contenido/file/11850",
+          "sha256": "a3cd45a37df432ed375c0fcd7577c730db322d7f8677a7da601b3e6789fffa1b",
+          "cached_name": "nqn-message"
+        }
+      ]
+    },
+    {
+      "province": "Río Negro",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "verified",
+      "budget_as_of": "2026-07-31",
+      "budget_finding": "Crédito vigente incorporado al 2026-07-31. Cobertura: Administración Provincial; incluye aplicaciones financieras.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "El saldo del presupuesto es crédito sin comprometer. No es un saldo bancario ni dinero de libre disponibilidad.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://contaduria.rionegro.gov.ar/ejecucion-presupuestaria",
+          "sha256": "96a4a46bd53b737bc601173fb53b4a1972e243984e0076d59fd0d2ee9f43bc16",
+          "cached_name": "rn-execution"
+        },
+        {
+          "url": "https://rionegro.gov.ar/contenido/Contadur%C3%ADa%20General/Ejecuci%C3%B3n%20presupuestaria/2026/Julio/EJEC%20POR%20OBJ%20DEL%20GASTO%20ADM%20PROVINCIAL%20-%20MES%2007-26.pdf",
+          "sha256": "9e87919b81782d0940c52e49eec2c11e3db627a7b3120648431c7cde18ee851c",
+          "cached_name": "rn-july"
+        },
+        {
+          "url": "https://rionegro.gov.ar/?contID=8378",
+          "sha256": "e280184efb71c3ebba9b3aacac37796152b914a9f33b1f93191ee4f6320906d2",
+          "cached_name": "rn-debt-page"
+        }
+      ]
+    },
+    {
+      "province": "Salta",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Se revisó deuda al segundo trimestre de 2026 y los accesos presupuestarios. No se verificó crédito vigente total conciliado.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "Stock y servicios acumulados de deuda no acreditan un saldo utilizable de Tesorería.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://economiasalta.gob.ar/contaduria/?page_id=265",
+          "sha256": "ee87df8a3a111f40129c02fd3d853a869fcfc4d8f4313208dcf1a516283a0271",
+          "cached_name": "salta-debt"
+        },
+        {
+          "url": "https://economiasalta.gob.ar/contaduria/wp-content/uploads/2026/08/2026-06-Stock-y-Serv.pdf",
+          "sha256": "a3d3ea92191f310ef509ddf2069b150663787a607683a076f0a711536ce1f97c",
+          "cached_name": "salta-q2"
+        }
+      ]
+    },
+    {
+      "province": "San Juan",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "La consulta al portal oficial de transparencia agotó el tiempo de espera. No se pudo verificar crédito vigente desde ese acceso.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "No se obtuvo una conciliación de caja libre.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://web.sanjuan.gob.ar/hacienda/transparencia/"
+        }
+      ]
+    },
+    {
+      "province": "San Luis",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Las publicaciones localizadas contienen presupuesto inicial y modificaciones de partidas, no un consolidado de crédito vigente al mismo corte.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "No se deduce caja libre de noticias sobre reservas ni de ausencia de endeudamiento en ejercicios anteriores.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://boletinoficial.sanluis.gov.ar/Boletins/VerBoletin/16113"
+        },
+        {
+          "url": "https://boletinoficial.sanluis.gov.ar/Boletins/Numero/16107"
+        }
+      ]
+    },
+    {
+      "province": "Santa Cruz",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Se revisaron publicaciones trimestrales de responsabilidad fiscal. No se verificó un total de crédito vigente conciliado.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "El archivo titulado junio de 2026 tiene una hoja fechada septiembre de 2024 y totales exigibles distintos. La deuda flotante de marzo no explicita unidad. No se incorporan como caja libre.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://mefi.gob.ar/informacion-publica",
+          "sha256": "67167036e42e7cce7e793650d2d1756841d048198561470e65954fcfc761eef6",
+          "cached_name": "sc-portal"
+        }
+      ]
+    },
+    {
+      "province": "Santa Fe",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Se verificó ejecución devengada hasta mayo de 2026; no acredita crédito vigente. El plurianual 2026–2028 es una proyección, no actualización de crédito.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "El incremento presupuestado de disponibilidades es un flujo previsto. No es el saldo bancario libre.",
+      "debt_status": "verified",
+      "debt_finding": "Calendario incorporado: Deuda pública provincial · Presupuesto plurianual 2026–2028. Perfil publicado en el presupuesto plurianual. Capital e intereses del Anexo XVI; no se reemplazan por las aplicaciones financieras del AIF. No descuenta pagos posteriores ni constituye un flujo mensual actualizado.",
+      "sources": [
+        {
+          "url": "https://www.santafe.gov.ar/index.php/web/content/view/full/116439/(subtema)/116436",
+          "sha256": "ccfc361094b15f57df955f9370c4df3f4496b54df4482ad961a5f0cfbf9b8e50",
+          "cached_name": "sf-fiscal"
+        },
+        {
+          "url": "https://www.santafe.gov.ar/index.php/web/content/download/285046/1472631/file/Ley%20de%20Responsabilidad%20Fiscal%20a%20Mayo%202026.pdf",
+          "sha256": "9d9d0bad2f63e001b16e2939d7555de7b6c80148ef719f1fe9d7d3dd6bc314ba",
+          "cached_name": "sf-may"
+        },
+        {
+          "url": "https://www.santafe.gov.ar/index.php/web/content/download/283813/1467742/file/Mensaje%205%20-Presupuesto%20Plurianual%202026-2028.pdf",
+          "sha256": "5ff19615d19b6cdd67690e8f491fec74b30c7441505a7f54ca49a8557993cd7e",
+          "cached_name": "sf-pluri-official"
+        }
+      ]
+    },
+    {
+      "province": "Santiago del Estero",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "En el portal de responsabilidad fiscal revisado, la última serie visible es 2025. No se verificó crédito vigente 2026.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "No se obtuvo una conciliación de caja libre para el corte actual.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "http://meconse.gob.ar/index.php/responsabilidad-fiscal/",
+          "sha256": "aa83d888f2a72348d608ce1a7244514ee13e2965278e220637afba04d12a3184",
+          "cached_name": "santiago-fiscal"
+        }
+      ]
+    },
+    {
+      "province": "Tierra del Fuego",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "not_verified",
+      "budget_as_of": null,
+      "budget_finding": "Se localizaron AIF y deuda del primer trimestre de 2026, junto con el presupuesto. No se verificó el crédito vigente consolidado.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "Un calendario de un bono o las regalías afectadas no representan caja libre de la provincia.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://gestiontransparente.tierradelfuego.gob.ar/responsabilidad-fiscal/",
+          "sha256": "078a83d1ca2beffdecbd5fa9ec7ba3189944231dce491dda212b82e8cdd89277",
+          "cached_name": "tdf-fiscal"
+        },
+        {
+          "url": "https://gestiontransparente.tierradelfuego.gob.ar/deuda-publica/",
+          "sha256": "9bd64da0d16a8f9e9a4ed494eb5c2a20762f94e15a00b124fba4cf853b12b3ea",
+          "cached_name": "tdf-debt"
+        }
+      ]
+    },
+    {
+      "province": "Tucumán",
+      "reviewed_at": "2026-09-07",
+      "budget_status": "verified",
+      "budget_as_of": "2026-04-30",
+      "budget_finding": "Crédito vigente incorporado al 2026-04-30. Cobertura: APNF; esquema Ahorro–Inversión–Financiamiento.",
+      "free_cash_ars_m": null,
+      "cash_status": "not_verified",
+      "cash_finding": "El crédito vigente de abril es una autorización presupuestaria; no acredita fondos disponibles.",
+      "debt_status": "not_verified",
+      "debt_finding": "No se verificó un calendario futuro provincial completo en los documentos consultados. El historial de servicios no se proyecta hacia adelante.",
+      "sources": [
+        {
+          "url": "https://responsabilidadfiscal.mecontuc.gob.ar/archivos/Responsabilidad-Fiscal/Archivos%20publicados/DGP/Anexo%20I/Planilla%201.4/2026/20260604-04_2026-Planilla_1.4-Instancia_Vigente-DGP.pdf",
+          "sha256": "a9b85543219fd1219383b682f3e363f43704a04285c7729262b595a3905e87c4",
+          "cached_name": "tuc-current"
+        }
+      ]
+    }
+  ]
+}
