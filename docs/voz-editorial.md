@@ -24,3 +24,11 @@ Solo se ofrecen `gobernador`, `ministro de economía` y `prensa`, con esos nombr
 - prensa: explicación del dato, alcance de la afirmación y límites de la evidencia. El período de una cita debe coincidir con el seleccionado.
 
 Las once vistas tienen lectura y conclusión específicas. Las definiciones técnicas y notas de fuente son comunes. El resumen distingue déficit, equilibrio, superávit y dato faltante. Las preferencias antiguas de Analista migran a un perfil vigente.
+
+## Controles visibles y análisis contextual
+
+Los perfiles se muestran como botones: Gobernador, Ministro de Economía y Prensa. Período y unidad también quedan visibles. Las once páginas tienen botones de acceso directo, con la página activa señalada y navegación fija al desplazar.
+
+Cada lectura desarrolla dato, mecanismo y conclusión. La explicación toma el resultado y período seleccionados, el perfil de deuda verificado, los servicios históricos, los ingresos mostrados, los indicadores de resultados y el bloque nacional. No presenta escenarios como hechos ni extrapola el servicio histórico hacia un calendario futuro.
+
+Las 24 jurisdicciones tienen el mismo gráfico histórico de capital e intereses devengados, en pesos corrientes. Los calendarios futuros mantienen su cobertura documentada; un faltante no se rellena con estimaciones. Los gráficos tienen selección táctil, animación breve respetando movimiento reducido y acceso a importes de origen.
