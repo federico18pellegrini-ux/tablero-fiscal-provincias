@@ -107,7 +107,8 @@ class Report:
   self.c.setFont('LatoBold' if bold else 'Lato',size);self.c.setFillColor(HexColor(color));self.c.drawRightString(x*MM,H-y*MM,str(text))
  def rect(self,x,y,w,h,fill=PALE,stroke=None,r=0):
   self.c.setFillColor(HexColor(fill));self.c.setStrokeColor(HexColor(stroke or fill))
-  self.c.roundRect(x*MM,H-(y+h)*MM,w*MM,h*MM,r*MM,fill=1,stroke=bool(stroke))
+  radius=max(0,min(r,w/2,h/2))
+  self.c.roundRect(x*MM,H-(y+h)*MM,w*MM,h*MM,radius*MM,fill=1,stroke=bool(stroke))
  def line(self,x,y,w,color=LINE):
   self.c.setStrokeColor(HexColor(color));self.c.setLineWidth(.6);self.c.line(x*MM,H-y*MM,(x+w)*MM,H-y*MM)
  def paragraph(self,text,x,y,w=174,size=10.5,leading=14.7,color=INK,bold=False,max_end=275):
@@ -223,7 +224,7 @@ class Report:
   self.paragraph(federal,18,87,174,10.3,14,max_end=109)
   self.section('B','La deuda importa por cuánto y cuándo se paga',120)
   projection=m['projection'];debt=m['debt'];debt_ratio=debt.get('ratios',{}).get('debt_income_pct') if debt else None
-  stock=(f'Por cada $100 de ingresos de doce meses, había ${number(debt_ratio)} de deuda al {quarter_label(self.d.quarter)}. Los vencimientos se reparten en el tiempo. ' if debt_ratio is not None else 'Falta el monto total de deuda comparable al último corte. ')
+  stock=(f'Por cada $100 de ingresos de doce meses, había ${number(debt_ratio)} de deuda al {quarter_label(self.d.quarter)}. Ese dato no dice cuánto hay que pagar este año. ' if debt_ratio is not None else 'Falta el monto total de deuda comparable al último corte. ')
   if projection:
    rows=projection['rows'];shown=rows[:5];maxval=max(r['total_ars_m'] for r in shown);unit='millones de pesos'
    self.paragraph(stock+'El gráfico muestra el calendario publicado; hay que descontar lo ya pagado y actualizar refinanciaciones y tipo de cambio.',18,128,174,10.2,13.6,max_end=147)
