@@ -17,6 +17,7 @@ function initVisibleControls(){
   for(const [select,group] of groups)for(const button of group.children){button.setAttribute('aria-pressed',String(button.dataset.choice===select.value));button.disabled=select.querySelector('option[value="'+button.dataset.choice+'"]')?.disabled||false;}
   const open=document.querySelector('#federalTools > details[open]');const active=open?Object.keys(panelKeys).find(k=>panelKeys[k]===open.id):dashboardView;
   for(const button of section.querySelectorAll('button'))button.setAttribute('aria-current',button.dataset.page===active?'page':'false');
+  window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view:active}}));
  }
  document.addEventListener('change',sync);for(const panel of document.querySelectorAll('#federalTools > details'))panel.addEventListener('toggle',sync);
  new MutationObserver(sync).observe(document.querySelector('.dashboard-nav'),{subtree:true,attributes:true,attributeFilter:['class','aria-current']});
