@@ -91,3 +91,7 @@ body{font-size:var(--text-reading)}
   .overview-stats{grid-template-columns:1fr}
   .province-pulse{grid-template-columns:1fr}
 }
+
+.fiscal-bars{margin:24px 0}.fiscal-reading{margin-top:28px}.fiscal-reading h3{font-size:22px}.fiscal-reading p{max-width:78ch}.fiscal-panel .stats-grid{row-gap:16px}
+
+#fiscal-panel{scroll-margin-top:calc(var(--header-height) + 16px)}
