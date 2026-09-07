@@ -875,7 +875,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260907-2">
+<link rel="stylesheet" href="executive-redesign.css?v=20260907-3">
 </head>
 <body>
 
@@ -1057,7 +1057,7 @@ tr:last-child td{border-bottom:none}
   </section>
   <div class="gov-columns" id="decisionRiskGrid">
     <article class="gov-panel" id="governorDecisionPanel"><h4>3 decisiones sugeridas</h4><ul class="gov-list" id="governorDecisions"></ul></article>
-    <details class="gov-panel" id="governorRiskPanel"><summary>3 riesgos que requieren atención</summary><ul class="gov-list" id="governorRisks"></ul></details>
+    <details class="gov-panel" id="governorRiskPanel" open><summary>3 riesgos que requieren atención</summary><ul class="gov-list" id="governorRisks"></ul></details>
   </div>
   <details class="gov-method">
     <summary>Qué sabemos, qué falta y cómo leerlo</summary>
@@ -2009,8 +2009,8 @@ function applyDashboardProfile(profile){
   });
   const riskPanel=document.getElementById('governorRiskPanel');
   const narrative=document.getElementById('governorNarrativeDetails');
-  if(riskPanel)riskPanel.open=false;
-  if(narrative)narrative.open=false;
+  if(riskPanel)riskPanel.open=true;
+  if(narrative)narrative.open=true;
   const modulePreferences=document.querySelector('.module-preferences');
   if(modulePreferences)modulePreferences.hidden=true;
   try{localStorage.setItem('dashboard_profile',dashboardProfile);}catch(_err){}
@@ -5131,10 +5131,11 @@ document.getElementById('downloadPdfAll')?.addEventListener('click',exportAllPro
 document.getElementById('downloadPng')?.addEventListener('click',exportCurrentProvincePng);
 
 </script>
-<script src="visible-controls.js?v=20260907-2"></script>
+<script src="expanded-content.js?v=20260907-3"></script>
+<script src="visible-controls.js?v=20260907-3"></script>
 <script src="profile-readings.js?v=20260906-12"></script>
 <script src="provincial-debt-services.js?v=20260907-1"></script>
-<script src="inflation-history.js?v=20260907-1"></script>
+<script src="inflation-history.js?v=20260907-3"></script>
 <script src="executive-redesign.js?v=20260907-1"></script>
 <script src="closing-tools.js?v=20260907-1"></script>
 <script src="management-tools.js?v=20260907-1"></script>

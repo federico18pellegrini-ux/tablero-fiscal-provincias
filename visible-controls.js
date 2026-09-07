@@ -22,7 +22,7 @@ function initVisibleControls(){
  new MutationObserver(sync).observe(document.querySelector('.dashboard-nav'),{subtree:true,attributes:true,attributeFilter:['class','aria-current']});
  new MutationObserver(sync).observe(document.getElementById('periodSelector'),{subtree:true,attributes:true,attributeFilter:['disabled']});
  new ResizeObserver(()=>document.documentElement.style.setProperty('--visible-nav-height',section.getBoundingClientRect().height+'px')).observe(section);
- sync();
+ sync();initExpandedContent();
 }
 if(typeof Chart!=='undefined')Chart.register({id:'touchFriendlyCharts',beforeInit(chart){
  const options=chart.config.options;
