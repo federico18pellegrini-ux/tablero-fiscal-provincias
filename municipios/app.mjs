@@ -1,4 +1,4 @@
-import {METRICS, VALID_VIEWS, finite, metricValue, rankMunicipalities, peers, simulate, csv, readState} from './model.mjs';
+import {METRICS, TRANSPARENCY_COMPONENTS, transparencyStatus, VALID_VIEWS, finite, metricValue, rankMunicipalities, peers, simulate, csv, readState} from './model.mjs';
 
 const $=id=>document.getElementById(id);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -10,7 +10,7 @@ const tone=v=>!finite(v)?'muted':v<0?'negative':v>0?'positive':'neutral';
 const signedMillions=v=>finite(v)?(v<0?'−':v>0?'+':'')+millions(Math.abs(v)):'Sin dato';
 const motion=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?0:300;
 const monthLabels=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-const formatMetric=(v,meta)=>!finite(v)?'Sin dato':meta.unit==='money'?money(v):meta.unit==='millions'?millions(v):meta.unit==='%'?num(v,2)+'%':meta.unit==='pp'?(v>0?'+':'')+num(v,3)+' pp':num(v,['density','branches'].includes(meta.unit)?1:0);
+const formatMetric=(v,meta)=>!finite(v)?'Sin dato':meta.unit==='score'?num(v)+' / 100':meta.unit==='points'?(v>0?'+':'')+num(v)+' puntos':meta.unit==='money'?money(v):meta.unit==='millions'?millions(v):meta.unit==='%'?num(v,2)+'%':meta.unit==='pp'?(v>0?'+':'')+num(v,3)+' pp':num(v,['density','branches'].includes(meta.unit)?1:0);
 let data,geography,rows,byId,state,mapMetric='recursos',scopePeers=false,rankAscending=true,showAll=false,fullHistory=false,mapZoom,mapProjection,mapPath,mapWidth=0;
 let toastTimer;
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,3500);}
@@ -68,10 +68,22 @@ function renderOverview(){
   ].map(([n,t,b,l,v])=>`<article class="insight"><span class="number">${n} /</span><h3>${t}</h3><p>${b}</p><button class="text-button" data-insight-view="${v}" data-insight-target="${n==='03'?'fiscal-panel':''}">${l} →</button></article>`).join('');
   $('insights').querySelectorAll('button').forEach(b=>b.onclick=()=>{navigate(b.dataset.insightView,!b.dataset.insightTarget);if(b.dataset.insightTarget)$(b.dataset.insightTarget).scrollIntoView({behavior:motion()?'smooth':'instant',block:'start'});});
   $('pulse-transfers').textContent=num(data.summary.municipalities_falling_transfers);$('pulse-both').textContent=num(data.summary.same_window_2025_vs2024_both_falling);
+  renderTransparency();
   drawMap();
+}
+function openTransparency(){navigate('panorama',false);$('transparency-panel').scrollIntoView({behavior:motion()?'smooth':'instant',block:'start'});}
+function renderTransparency(){
+  const m=current(),t=m.transparency,editions=data.transparency.editions,latest=editions.at(-1),f=m.fiscal||m.fiscalExecution;
+  const change=t.change===0?'El puntaje se mantuvo entre las dos ediciones.':`El puntaje ${t.change>0?'subió':'bajó'} ${num(Math.abs(t.change))} puntos entre noviembre de 2025 y mayo de 2026.`;
+  const sourceNotes=t.history.filter(h=>h.note).map(h=>`<p class="chart-caption">${escape(h.note)}</p>`).join('');
+  const accounts=f?`Las ${m.fiscal?'cuentas fiscales':'ejecuciones presupuestarias'} que incorporamos para ${m.municipio} llegan al ${fiscalDate(f.fin)}. Es un corte posterior al relevamiento de ASAP.`:`Todavía no incorporamos una ejecución fiscal individual de ${m.municipio}. Eso no significa que el municipio no la publique.`;
+  $('transparency-panel').innerHTML=`<div class="section-heading"><div><div class="eyebrow">Información pública · ASAP</div><h2>Transparencia fiscal</h2><p>${escape(latest.fieldworkLabel)}.</p></div><button class="button button-quiet" id="transparency-ranking">Comparar los 135 municipios →</button></div><div class="transparency-overview"><div class="transparency-history"><h3>Qué cambió en la publicación</h3>${t.history.map((h,i)=>`<div class="transparency-period"><div><span>${escape(editions[i].label)}</span><strong>${num(h.score)} / 100</strong></div><div class="transparency-track" aria-hidden="true"><span style="width:${h.score}%"></span></div></div>`).join('')}<p>${change}</p></div><div class="transparency-reading"><h3>${t.score===100?'Publicó toda la información evaluada.':t.score<=5?'ASAP encontró muy poca información utilizable.':'La publicación de información era parcial.'}</h3><p>El puntaje resume qué información fiscal se podía consultar y cuán actualizada estaba. Un municipio puede publicar sus cuentas y tener déficit: son dos datos distintos.</p><p>La comparación exige documentos actualizados en cada edición. Una baja del puntaje puede aparecer cuando los informes anteriores quedan fuera del período admitido.</p></div></div><div class="transparency-components">${TRANSPARENCY_COMPONENTS.map(c=>{const v=t.components[c.id];return `<article class="transparency-component"><h3>${c.label}</h3><strong>${num(v)} / ${c.max} puntos</strong><div class="transparency-track" aria-hidden="true"><span style="width:${v/c.max*100}%"></span></div><p>${transparencyStatus(c,v)}</p></article>`;}).join('')}</div><div class="transparency-current"><div><h3>Qué tenemos hoy en el tablero</h3><p>${escape(accounts)}</p>${sourceNotes}</div><button class="text-button" id="transparency-accounts">Ver las cuentas municipales →</button></div><p class="chart-caption">Los puntos de cada rubro suman el total; cada rubro tiene un peso distinto. La evaluación corresponde a mayo de 2026. <a href="metodologia.html#transparencia">Cómo se interpreta el índice ↗</a></p>`;
+  $('transparency-ranking').onclick=()=>{scopePeers=false;state.metric='transparencia';rankAscending=false;showAll=false;navigate('rankings');};
+  $('transparency-accounts').onclick=()=>{navigate('recursos',false);$('fiscal-panel').scrollIntoView({behavior:motion()?'smooth':'instant',block:'start'});};
 }
 function mapScale(meta){
   const vals=rows.map(m=>metricValue(m,meta)).filter(finite);
+  if(meta.id==='transparencia')return {scale:d3.scaleLinear().domain([0,100]).range(['#eef1f8','#3455a0']).clamp(true),low:'0 puntos',high:'100 puntos'};
   if(['recursos','empleo'].includes(meta.id)){const edge=Math.max(...vals.map(Math.abs));return {scale:d3.scaleLinear().domain([-edge,0,edge]).range(['#d5886e','#edf1e6','#288676']).clamp(true),low:'Mayor caída',high:'Mayor suba'};}
   return {scale:d3.scaleLinear().domain([Math.min(...vals),Math.max(...vals)]).range(meta.id==='carencias'?['#eff1e7','#b36d51']:['#eef2e9','#2a766b']).clamp(true),low:meta.id==='carencias'?'Menos carencias':'Menor peso',high:meta.id==='carencias'?'Más carencias':'Mayor peso'};
 }
@@ -97,7 +109,7 @@ function drawMap(){
   if(changed)svg.call(mapZoom.transform,d3.zoomIdentity);
   document.querySelectorAll('[data-map]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.map===mapMetric)));
   $('legend-low').textContent=colors.low;$('legend-high').textContent=colors.high;
-  const gradient=document.querySelector('.legend-gradient');gradient.style.background=['recursos','empleo'].includes(mapMetric)?'linear-gradient(90deg,#d5886e,#edf1e6,#288676)':mapMetric==='carencias'?'linear-gradient(90deg,#eff1e7,#b36d51)':'linear-gradient(90deg,#eef2e9,#2a766b)';
+  const gradient=document.querySelector('.legend-gradient');gradient.style.background=mapMetric==='transparencia'?'linear-gradient(90deg,#eef1f8,#3455a0)':['recursos','empleo'].includes(mapMetric)?'linear-gradient(90deg,#d5886e,#edf1e6,#288676)':mapMetric==='carencias'?'linear-gradient(90deg,#eff1e7,#b36d51)':'linear-gradient(90deg,#eef2e9,#2a766b)';
   $('map-selection').innerHTML=`<strong>${escape(current().municipio)}</strong><span>${formatMetric(metricValue(current(),meta),meta)}</span>`;
   $('map-caption').textContent=meta.period+' · '+meta.note;
 }
@@ -115,8 +127,11 @@ function renderRanking(){
   $('ranking-direction').textContent=rankAscending?'Menor a mayor ↑':'Mayor a menor ↓';
   $('scope-peers').setAttribute('aria-label',`Comparar municipios con población similar a ${m.municipio}`);
   $('scope-all').setAttribute('aria-pressed',String(!scopePeers));$('scope-peers').setAttribute('aria-pressed',String(scopePeers));
-  $('ranking-selected').innerHTML=`<div class="rank-reference-info"><span class="rank-reference-label">Municipio de referencia</span><strong>${escape(m.municipio)}</strong><span>${selected?`Posición ${selected.rank} de ${ranked.length} en esta comparación`:'Sin dato para este indicador'}</span></div><div class="rank-reference-detail"><strong>${formatMetric(metricValue(m,meta),meta)}</strong><button class="text-button" id="open-reference">Ver ficha municipal →</button></div>`;
-  $('open-reference').onclick=()=>navigate('panorama');
+  const transparency=meta.group==='Transparencia';
+  $('ranking-summary').hidden=!transparency;
+  if(transparency)$('ranking-summary').textContent=meta.id==='transparencia'?`${ranked.filter(r=>r.value===100).length} de ${ranked.length} municipios de esta comparación alcanzaron los 100 puntos. El índice evalúa publicación de información fiscal.`:`En esta comparación, ${ranked.filter(r=>r.value>0).length} municipios subieron, ${ranked.filter(r=>r.value<0).length} bajaron y ${ranked.filter(r=>r.value===0).length} mantuvieron su puntaje. Son cambios en publicación, no en resultado fiscal.`;
+  $('ranking-selected').innerHTML=`<div class="rank-reference-info"><span class="rank-reference-label">Municipio de referencia</span><strong>${escape(m.municipio)}</strong><span>${selected?`Posición ${selected.rank} de ${ranked.length} en esta comparación`:'Sin dato para este indicador'}</span></div><div class="rank-reference-detail"><strong>${formatMetric(metricValue(m,meta),meta)}</strong><button class="text-button" id="open-reference">${transparency?'Ver detalle de transparencia':'Ver ficha municipal'} →</button></div>`;
+  $('open-reference').onclick=()=>transparency?openTransparency():navigate('panorama');
   const vals=ranked.map(r=>r.value),lo=Math.min(0,...vals),hi=Math.max(0,...vals),span=hi-lo||1,zero=(0-lo)/span*100;
   $('ranking-rows').innerHTML=(showAll?ranked:ranked.slice(0,10)).map(r=>{const pos=(r.value-lo)/span*100,left=Math.min(pos,zero),width=Math.max(Math.abs(pos-zero),.4);return `<button class="rank-row ${r.m.id===m.id?'is-selected':''}" data-municipality="${r.m.id}" aria-label="${escape(r.m.municipio)}, puesto ${r.rank}, ${formatMetric(r.value,meta)}. Seleccionar municipio"><span class="rank-number">${r.rank.toString().padStart(2,'0')}</span><span class="rank-name">${escape(r.m.municipio)}</span><span class="rank-track" aria-hidden="true"><span class="rank-zero" style="left:${zero}%"></span><span class="rank-fill ${r.value<0?'down':'single'}" style="left:${left}%;width:${width}%"></span></span><span class="rank-value">${formatMetric(r.value,meta)}</span></button>`;}).join('');
   bindMunicipalButtons($('ranking-rows'));
@@ -212,7 +227,7 @@ function attachEvents(){
 }
 async function init(){
   try{
-    const responses=await Promise.all([fetch('data/dashboard.json?v=20260907-3'),fetch('data/geografia_original.geojson')]);
+    const responses=await Promise.all([fetch('data/dashboard.json?v=20260907-5'),fetch('data/geografia_original.geojson')]);
     if(responses.some(r=>!r.ok))throw new Error('No se pudieron leer los datos municipales.');
     [data,geography]=await Promise.all(responses.map(r=>r.json()));rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
     if(rows.length!==135||geography.features.length!==135||geography.features.some(f=>!byId.has(f.properties.id)))throw new Error('La cobertura geográfica no coincide con los datos.');

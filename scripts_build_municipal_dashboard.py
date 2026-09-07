@@ -65,6 +65,47 @@ def read_csv(path):
         return list(csv.DictReader(f))
 
 
+def apply_transparency(municipalities, path):
+    """Keep ASAP's dated publication scores separate from actual fiscal accounts."""
+    audit = json.loads(path.read_text(encoding='utf-8'))
+    maximums = audit['maximums']
+    expected = {'accesibilidad': 5, 'presupuesto': 30, 'situacion_economico_financiera': 35,
+                'ejecucion': 10, 'gasto_finalidad_funcion': 10, 'deuda': 10}
+    if maximums != expected or [e['edition'] for e in audit['editions']] != ['2025-11', '2026-05']:
+        raise ValueError('Unsupported ASAP methodology or editions')
+    allowed = {'accesibilidad': {0, 5}, 'presupuesto': {0, 20, 30},
+               'situacion_economico_financiera': {0, 15, 25, 30, 35},
+               'ejecucion': {0, 3, 5, 8, 10}, 'gasto_finalidad_funcion': {0, 3, 5, 8, 10}, 'deuda': {0, 3, 5, 8, 10}}
+    # ASAP Nov. 2025, p. 24 assigns Morón 15 budget points, outside its p. 7 rubric.
+    # Preserve that explicitly documented published value; do not silently rescore it.
+    published_exceptions = {('2025-11', '06568', 'presupuesto', 15)}
+    histories = {ident: [] for ident in municipalities}
+    for edition in audit['editions']:
+        seen = set()
+        for record in edition['records']:
+            ident, components, score = record['id'], record['components'], record['score']
+            if ident not in municipalities or ident in seen:
+                raise ValueError(f'Duplicate or unknown ASAP municipality: {ident}')
+            seen.add(ident)
+            if set(components) != set(maximums) or any(type(v) is not int or (v not in allowed[k] and (edition['edition'], ident, k, v) not in published_exceptions) for k, v in components.items()):
+                raise ValueError(f'Invalid ASAP components: {ident}')
+            if type(score) is not int or score != sum(components.values()):
+                raise ValueError(f'Unreconciled ASAP score: {ident}')
+            if not 1 <= record['page'] <= edition['document']['pages']:
+                raise ValueError(f'Invalid ASAP source page: {ident}')
+            histories[ident].append({'edition': edition['edition'], 'score': score, 'components': components,
+                                     'page': record['page'], 'note': record.get('note', '')})
+        if seen != set(municipalities):
+            raise ValueError('Incomplete ASAP municipal coverage')
+    for ident, history in histories.items():
+        previous, current = history
+        municipalities[ident]['transparency'] = {**current, 'previousScore': previous['score'],
+                                                'change': current['score'] - previous['score'], 'history': history}
+    return {'provider': audit['provider'], 'verifiedAt': audit['verifiedAt'], 'maximums': maximums,
+            'editions': [{k: v for k, v in e.items() if k != 'records'} for e in audit['editions']],
+            'coverage': len(histories), 'fullScore': sum(h[-1]['score'] == 100 for h in histories.values())}
+
+
 def value(text):
     if text in ('', None):
         return None
@@ -101,18 +142,21 @@ def build(folder):
         municipalities[r['municipality_id']]['fiscal'] = {k: value(v) for k, v in r.items() if k not in ('municipality_id', 'municipio')}
     fiscal_path = ROOT / 'municipios/data/fiscal_verified.json'
     fiscal_coverage = apply_verified_fiscal(municipalities, fiscal_path)
+    transparency_path = ROOT / 'municipios/data/transparency_asap.json'
+    transparency = apply_transparency(municipalities, transparency_path)
     for m in municipalities.values():
         m['transfers'].sort()
         assert len(m['transfers']) == 19 and len(m['employment']) == 84
         assert m['poblacion_2022'] > 0
     summary = json.loads((folder / 'resultados_verificados.json').read_text(encoding='utf-8'))
     controls = json.loads((folder / 'control_y_recaudacion.json').read_text(encoding='utf-8'))
-    data = {'version': 2, 'generated': '2026-09-07', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
+    data = {'version': 3, 'generated': '2026-09-07', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
     target = ROOT / 'municipios/data/dashboard.json'
     target.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':'), allow_nan=False), encoding='utf-8')
     manifest = [{'file': str(p.relative_to(folder)).replace('\\', '/'), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in folder.rglob('*.csv')]
     overlay = {'file': str(fiscal_path.relative_to(ROOT)).replace('\\', '/'), 'sha256': hashlib.sha256(fiscal_path.read_bytes()).hexdigest()}
-    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': '2026-09-07', 'inputs': manifest, 'repositoryInputs': [overlay], 'coverage': 135, 'fiscalCoverage': fiscal_coverage}, indent=2), encoding='utf-8')
+    transparency_input = {'file': str(transparency_path.relative_to(ROOT)).replace('\\', '/'), 'sha256': hashlib.sha256(transparency_path.read_bytes()).hexdigest()}
+    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': '2026-09-07', 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
     (target.parent / 'fuentes.csv').write_bytes((folder / 'fuentes_y_huellas.csv').read_bytes())
     fiscal_audit = json.loads(fiscal_path.read_text(encoding='utf-8'))
     with (target.parent / 'fuentes.csv').open('a', encoding='utf-8', newline='') as source_file:
@@ -120,6 +164,9 @@ def build(folder):
         for record in fiscal_audit['records'] + fiscal_audit['budgetExecutions']:
             for index, document in enumerate(record['documents'], 1):
                 writer.writerow([f"municipio-{record['id']}-2026-06-{index}.pdf", document['url'], document['sha256'], document['bytes'], fiscal_audit['verifiedAt']])
+        for edition in transparency['editions']:
+            document = edition['document']
+            writer.writerow([f"asap-{edition['edition']}.pdf", document['url'], document['sha256'], document['bytes'], transparency['verifiedAt']])
     # Serve a conventional deferred script on static hosts, independent of .mjs MIME configuration.
     model = (ROOT / 'municipios/model.mjs').read_text(encoding='utf-8').replace('export ', '')
     app = (ROOT / 'municipios/app.mjs').read_text(encoding='utf-8').split('\n', 1)[1]

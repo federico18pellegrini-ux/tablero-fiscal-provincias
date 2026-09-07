@@ -449,6 +449,37 @@
         }
       ],
       "note": "Resultado calculado: recursos corrientes y de capital percibidos menos gastos corrientes y de capital devengados. Se excluyen fuentes y aplicaciones financieras."
+    },
+    {
+      "id": "06427",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Cuenta municipal publicada. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.lamatanza.gov.ar/economia/informes-periodicos",
+      "amounts": {
+        "ingresos_corrientes": "382923860633.65",
+        "gastos_corrientes": "242604880050.93",
+        "ingresos_capital": "350346424.34",
+        "gastos_capital": "31083441946.97",
+        "ingresos_totales": "383274207057.99",
+        "gastos_totales": "273688321997.90",
+        "resultado_financiero": "109585885060.09",
+        "personal_devengado": "58753633542.65"
+      },
+      "documents": [
+        {
+          "url": "https://www.lamatanza.gov.ar/upload/pdf/economia/informes/2026/2_trim/4.pdf",
+          "sha256": "1e1bedf80ba16301a47cb54ed6bab80537428572fc70d80c6b38021811b90fd4",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, filas I a VIII; gastos por objeto, personal, columna devengado.",
+          "bytes": 97534
+        }
+      ],
+      "note": "CAIF al 30/06/2026, emitida el 07/07/2026. Importes conciliados y columnas verificadas visualmente. Se toma el gasto de la CAIF, no el total presupuestario que incluye operaciones financieras."
     }
   ],
   "budgetExecutions": [
