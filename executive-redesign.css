@@ -99,3 +99,5 @@ body{padding-top:var(--fixed-header-height)}
 .history-values{background:var(--s2)!important;color:var(--text);border-color:var(--border);padding:12px;border-radius:8px}.history-values>summary{color:var(--text);font-weight:600;line-height:1.6}.history-values p{line-height:1.65}.history-values .history-values{background:var(--s1)!important}#archive1816Metric{background:var(--s1);color:var(--text);border:1px solid var(--border2);padding:10px;border-radius:6px}
 
 .editorial-link{display:inline-block;background:none;border:0;color:var(--blue);font:600 14px/1.6 var(--font);text-align:left;padding:10px 0;min-height:44px;cursor:pointer}.reading-options #priceBasisNotice{margin:12px 0 0;max-width:85ch}
+
+#provincialServicesHistory{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);min-width:0}#provincialServicesHistory h3{font-size:18px}#provincialServicesHistory p,#debtScheduleSources p{margin:10px 0;line-height:1.6}#debtScheduleCard [hidden]{display:none!important}#debtScheduleSources .management-table,#provincialServicesHistory .management-table{min-width:500px}#debtScheduleCard{min-width:0}
