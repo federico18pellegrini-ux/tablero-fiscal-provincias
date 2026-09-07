@@ -274,7 +274,7 @@ class Report:
     self.rect(x,181-bh,23,bh,TEAL,r=.8)
     self.text(str(r['year']),x+5,187,8.5,True)
     self.text(number(r['total_ars_m']/1000,1),x+1,180-bh,8.1,True,TEAL)
-   source_date='Valuación: '+date_label(projection['as_of']) if projection.get('as_of') else 'Valuación no informada; publicado '+date_label(projection.get('publication_date'))
+   source_date=('Valuación: '+date_label(projection['as_of']) if projection.get('as_of') else 'Publicado '+date_label(projection['publication_date']) if projection.get('publication_date') else projection.get('reference_label','Fecha de valuación no informada'))
    self.note('Miles de millones de pesos. '+projection.get('scope','')+'. '+source_date+'.',190,max_end=202)
   else:
    self.paragraph(stock+'La serie histórica muestra capital e intereses registrados en años anteriores. Todavía falta un calendario futuro verificado: con esos datos no se puede saber qué año concentrará más vencimientos.',18,128,174,10.5,14.3,max_end=155)

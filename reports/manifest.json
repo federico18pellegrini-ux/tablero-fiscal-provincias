@@ -2,13 +2,13 @@
   "schema_version": 1,
   "author": "Federico Pellegrini",
   "title": "Informe de gestión provincial",
-  "reviewed_at": "2026-09-06",
+  "reviewed_at": "2026-09-07",
   "method": "Tres páginas por jurisdicción. Se usa el último año completo común, sin sustituir faltantes por años anteriores. Cuentas APNF y trimestres separados. Transferencias: total legal (1)+(2), mes a mes en pesos constantes con IPC nacional observado para variaciones reales. No equivale a la vista, unidad o perfil transitorios de la pantalla. Los informes se regeneran desde los archivos de datos del tablero.",
   "input_sha256": {
     "data/annual_fiscal_accounts.json": "488fedee561ba955baf618339d793463767adc321385002fbb9fadb876b8809d",
     "data/budget_execution_2026.json": "d7a680b808ed094af4e371f3a0c3d8b56737f3731514abeb09c0a85f315dbe84",
     "data/fiscal_history.json": "b36d3474215568b418f55161731d0b03f9a15a01199fe6151b7cc0726ec0f912",
-    "data/provincial_debt_services.json": "710572bc93b70f45bc4ef436fb8c42909726e4c1aec5176efdee95e93000547f",
+    "data/provincial_debt_services.json": "d5ffe063e79ace04662be3f5e076c3fb25dc0aee127c5e75ef466c15da9e1758",
     "data/debt_history.json": "fa6ab73051827800a86518675031a806cb478a5fe96d7c2bffcad7a179be7ffe",
     "data/government_results_provinces.json": "408a08c42670bb2c6e47016270e4565eb298c785df0941543ee037c262a8be7b",
     "informacion_consolidada_2026_normalizado.csv": "2318435d1cd55e8eff33b273f6675f008e744fa383a216af2a68d597b14f09c2",
@@ -16,7 +16,7 @@
     "data/ipc_national_index.csv": "895cc9a62e287f3c735616532a6ac32a4ecdcb54e6329168ef1b87573c7a29fb",
     "data/ron_2025_import.json": "6de5913c7227f2b08b88ba4459f92ba0f2153aef882339b9016ba6834c9619ce",
     "data/meta.json": "c644d058c95de34c6866065927633fea91a55a8eecb33fd93fe7757a72415746",
-    "scripts_export_management_reports.py": "198d635ad19c8d9b20866a74f09bebf7aba5718303a0c721421ec056f2db1aa9",
+    "scripts_export_management_reports.py": "8310cfc8f18bde7fb53d238bae6684c8367ae6ba4e08451e73c365af90a70d7b",
     "assets/report-fonts/Lato-Regular.ttf": "d636e4683231f931eda222d588e944d082bfd3bdba02f928bee461c0f185b251",
     "assets/report-fonts/Lato-Bold.ttf": "8a0aace75d33794eece4b28187bfc1df0bbd2888b5d8a56e01788c8d65d16be1"
   },
@@ -132,7 +132,7 @@
       "province": "Entre Ríos",
       "file": "informe-entre-rios.pdf",
       "pages": 3,
-      "sha256": "890de324114bc4043926ec9df66c9b4c70d012f92beee9f0148e9a116c1325ed",
+      "sha256": "d2fdef1dabb1e2875b4101ad65faa3433e38f961df5b02da7cc36735a0b21ba9",
       "annual_year": 2025,
       "quarter": "2026-Q1",
       "transfer_cutoff": "2026-07",
@@ -209,12 +209,12 @@
       "province": "Neuquén",
       "file": "informe-neuquen.pdf",
       "pages": 3,
-      "sha256": "583850c4938aaec0abfed677dd5caf40413f12241b04e0770bd7a21ead90ffbc",
+      "sha256": "8dfe759aaf927d98f00a4aac248aa13cbc6917c49269f68614dc41ff0d06f4ba",
       "annual_year": 2025,
       "quarter": "2026-Q1",
       "transfer_cutoff": "2026-07",
       "annual_available": true,
-      "forward_debt_calendar": false
+      "forward_debt_calendar": true
     },
     {
       "province": "Río Negro",
@@ -275,12 +275,12 @@
       "province": "Santa Fe",
       "file": "informe-santa-fe.pdf",
       "pages": 3,
-      "sha256": "f2d621051819c0cc95b16c60178a1d59f6009d6f0fc88134bea00dac7a3fab1b",
+      "sha256": "e9a2061965401e0c332e6b92c60707b388b90a44cdac254170bc6827fd576776",
       "annual_year": 2025,
       "quarter": "2026-Q1",
       "transfer_cutoff": "2026-07",
       "annual_available": true,
-      "forward_debt_calendar": false
+      "forward_debt_calendar": true
     },
     {
       "province": "Santiago del Estero",
