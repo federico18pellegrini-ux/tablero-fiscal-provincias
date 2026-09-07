@@ -1,6 +1,14 @@
 /* Light institutional theme with an optional dark reading mode. */
 /* Reference records remain in data and exports, outside the dashboard reading. */
 .source-reference,.result-source,#liquidityMethodNote{display:none!important}
+/* Consistent card headings, including content that previously used accordions. */
+.gov-panel>h4,.gov-panel>summary,.expanded-content>summary,.cc>h3,.tb>h3,.overview-charts article>h3,.profile-reading>h3,.federal-guide-grid h3,.national-kpis article>h3{font:600 16px/1.4 var(--font)!important;letter-spacing:0!important;text-transform:none!important;color:var(--text)!important}
+.gov-panel>h4,.gov-panel>summary{margin:0 0 12px!important;padding:0!important}
+.expanded-content>summary,.view-container>summary{display:block;list-style:none;cursor:default!important}
+.expanded-content>summary{margin:0 0 12px;min-height:0!important;padding:0!important}
+.expanded-content>summary::marker,.view-container>summary::marker{content:''}
+.expanded-content>summary::-webkit-details-marker,.view-container>summary::-webkit-details-marker{display:none}
+.expanded-content>summary::after,.view-container>summary::after{content:none!important}
 :root{--bg:#f3f6fa;--s1:#fff;--s2:#f7f9fc;--s3:#edf2f8;--border:#dbe3ed;--border2:#a9b8ca;--text:#162b46;--muted:#475569;--dim:#53657a;--gold:#796023;--gold-dim:#796023;--gold-bg:#f8f4e9;--gold-border:#d8c79e;--blue:#235c9e;--green:#16724e;--red:#b33236;--amber:#8b600d;--font:'Inter',system-ui,sans-serif;--mono:'Inter',system-ui,sans-serif;color-scheme:light}
 :root[data-theme=dark]{--bg:#0b1220;--s1:#121d2d;--s2:#172438;--s3:#1b2c42;--border:#29394e;--border2:#53657a;--text:#eef3fa;--muted:#c2cede;--dim:#aab9cc;--gold:#d4b36c;--gold-bg:#292519;--gold-border:#6d603e;--blue:#91bdf2;--green:#71d7ad;--red:#ff8e88;--amber:#e0bf70;color-scheme:dark}
 body{font-family:var(--font);font-weight:400;font-size:16px;background:var(--bg);color:var(--text)}

@@ -8,7 +8,7 @@ function updatePriceBasisNotice(){
 function initInflationHistory(){
   const note=document.createElement('p');note.id='priceBasisNotice';note.className='federal-note';note.setAttribute('aria-live','polite');document.querySelector('.reading-options').append(note);updatePriceBasisNotice();
   const selector=document.getElementById('valueModeSelector');selector.setAttribute('aria-label','Unidad de los ingresos provinciales mensuales');
-  const details=document.createElement('details');details.className='history-values';details.id='archive1816Panel';details.innerHTML='<summary>Archivo completo 1816 · ranking desde 2015 y cuentas anuales desde 2017</summary><div id="archive1816Content"><p>Se cargan las series al abrir esta sección.</p></div>';
+  const details=document.createElement('details');details.className='history-values';details.id='archive1816Panel';details.innerHTML='<summary>Archivo completo 1816 · ranking desde 2015 y cuentas anuales desde 2017</summary><div id="archive1816Content"><p>Cargando las series históricas…</p></div>';
   document.querySelector('#fiscalHistoryPanel .federal-content').append(details);
   let loaded=false;details.addEventListener('toggle',async()=>{if(!details.open||loaded)return;loaded=true;const host=details.querySelector('#archive1816Content');try{
     const d=await operationFile('1816_archive.json');host.replaceChildren();
@@ -24,5 +24,5 @@ function initInflationHistory(){
     select.onchange=draw;document.getElementById('psel').addEventListener('change',draw);draw();
     managementSource(host,'data/1816_annual_history.csv','Descargar cuentas anuales en CSV');managementSource(host,'data/1816_rank_history.csv','Descargar ranking histórico en CSV');managementSource(host,'data/1816_archive.json','Descargar historia y catálogo de los informes');managementSource(host,'data/1816_archive_vintages.json','Descargar todas las versiones extraídas');managementSource(host,'data/inflation_audit.json','Ver auditoría del IPC y fórmula de ajuste');
     const exceptions=document.createElement('p');exceptions.className='federal-note';exceptions.textContent=`Se registraron ${d.exceptions.length} posiciones publicadas como cero en las distintas versiones del ranking. Se muestran como «sin dato», porque cero no es una posición válida. El detalle está en la descarga. Los gráficos sin valor numérico explícito no se convierten en observaciones.`;host.append(exceptions);
-  }catch(error){loaded=false;host.textContent='No se pudo cargar el archivo histórico. Cerrá y abrí esta sección para reintentar.';console.error(error);}});
+  }catch(error){loaded=false;host.textContent='No se pudo cargar el archivo histórico. Recargá la página para reintentar.';console.error(error);}});
 }
