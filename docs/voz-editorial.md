@@ -14,3 +14,13 @@ Las explicaciones siguen la voz económica de Federico Pellegrini: español arge
 Ejemplo de tono: “Podés tener superávit y no tener la plata disponible para pagar mañana. El tema es cuánto dinero podés usar y cuándo vencen los pagos.”
 
 La edición de estilo debe conservar importes, fórmulas y diferencias entre stocks, flujos, fechas y bases de precios. Actualizar también el generador cuando el texto se produzca desde un script.
+
+## Perfiles de lectura
+
+Solo se ofrecen `gobernador`, `ministro de economía` y `prensa`, con esos nombres. Los datos, unidades y fuentes no cambian con el perfil.
+
+- gobernador: consecuencias para los servicios, prioridades de gestión y decisiones sostenibles.
+- ministro de economía: resultado primario y financiero, caja utilizable, gasto comprometido, vencimientos y financiamiento. Registro ejecutivo directo.
+- prensa: explicación del dato, alcance de la afirmación y límites de la evidencia. El período de una cita debe coincidir con el seleccionado.
+
+Las once vistas tienen lectura y conclusión específicas. Las definiciones técnicas y notas de fuente son comunes. El resumen distingue déficit, equilibrio, superávit y dato faltante. Las preferencias antiguas de Analista migran a un perfil vigente.

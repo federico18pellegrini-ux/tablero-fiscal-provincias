@@ -875,7 +875,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260906-10">
+<link rel="stylesheet" href="executive-redesign.css?v=20260906-11">
 </head>
 <body>
 
@@ -915,10 +915,9 @@ tr:last-child td{border-bottom:none}
   <div class="command-field">
     <div class="ctrl-lbl">Perfil</div>
     <select aria-label="Perfil de lectura" id="profileSelector" class="psel">
-      <option value="governor">Gobernador / decisor</option>
-      <option value="hacienda">Ministro de Hacienda</option>
-      <option value="press">Prensa</option>
-      <option value="deep">Analista</option>
+      <option value="governor">gobernador</option>
+      <option value="hacienda">ministro de economía</option>
+      <option value="press">prensa</option>
     </select>
   </div>
   <div class="command-field">
@@ -951,7 +950,7 @@ tr:last-child td{border-bottom:none}
     </div>
   </details>
 </div>
-<div class="profile-purpose" id="profilePurpose">Decidir en 30 segundos: diagnóstico, seis datos, tres decisiones y tres riesgos.</div>
+<div class="profile-purpose" id="profilePurpose">Prioridades de gestión, continuidad de los servicios y decisiones con impacto provincial.</div>
 <div class="view-vintage"><span id="viewAsOfText">Cargando fecha de corte…</span><span class="vintage-badge" id="viewAsOfBadge">Corte</span></div>
 <div class="data-gap" id="viewDataGap" role="status"></div>
 
@@ -1922,10 +1921,9 @@ function setModeButtons(){
 const VIEW_LABELS={summary:'Resumen',debt:'Solvencia y deuda',income:'Ingresos y gasto',federal:'Relación con Nación',comparison:'Comparación',results:'Resultados de gobierno'};
 const VIEW_HASH_ALIASES={governorRoom:'summary',layer3:'debt',structuralIndicators:'income',layer1:'federal',layer2:'comparison',comparisonSection:'comparison'};
 const PROFILE_CONFIG={
-  governor:{label:'Gobernador / decisor',level:'Nivel 1',purpose:'Decidir en 30 segundos: diagnóstico, seis datos, tres decisiones y tres riesgos.',views:['summary','debt','income','federal','comparison','results']},
-  hacienda:{label:'Ministro de Hacienda',level:'Nivel 2',purpose:'Gestionar caja: deuda, flujos mensuales, gasto comprometido y balance operativo.',views:['summary','debt','income','comparison','federal','results']},
-  press:{label:'Prensa',level:'Citas',purpose:'Citar sin sesgo: período y fuente en cada dato, contralectura federal y descargas.',views:['summary','federal','comparison','results']},
-  deep:{label:'Analista',level:'Profundo',purpose:'Auditar en profundidad: series, 23 jurisdicciones, metodología y todas las descargas.',views:['summary','income','federal','comparison','debt','results']}
+  governor:{label:'gobernador',level:'Nivel 1',purpose:'Prioridades de gestión, continuidad de los servicios y decisiones con impacto provincial.',views:['summary','debt','income','federal','comparison','results']},
+  hacienda:{label:'ministro de economía',level:'Nivel 2',purpose:'Resultado fiscal, caja, vencimientos y alternativas de financiamiento.',views:['summary','debt','income','comparison','federal','results']},
+  press:{label:'prensa',level:'Citas',purpose:'Qué muestran los datos, cómo explicarlos y qué conclusiones permiten sostener.',views:['summary','federal','comparison','debt','income','results']},
 };
 const CROSS_SECTION_GAPS_3T25=new Set(['Santiago del Estero','La Pampa','Neuquén']);
 const HISTORICAL_REVENUE_GAPS=new Set(['CABA','Santiago del Estero']);
@@ -1992,7 +1990,7 @@ function applyDashboardView(view,{updateHash=true}={}){
 }
 
 function applyDashboardProfile(profile){
-  const migrated=profile==='analyst'?'press':profile;
+  const migrated=normalizeReadingProfile(profile);
   dashboardProfile=PROFILE_CONFIG[migrated]?migrated:'governor';
   document.body.classList.remove('profile-governor','profile-hacienda','profile-press','profile-deep','profile-analyst');
   document.body.classList.add(`profile-${dashboardProfile}`);
@@ -2011,12 +2009,14 @@ function applyDashboardProfile(profile){
   });
   const riskPanel=document.getElementById('governorRiskPanel');
   const narrative=document.getElementById('governorNarrativeDetails');
-  if(riskPanel)riskPanel.open=dashboardProfile==='deep';
-  if(narrative)narrative.open=dashboardProfile==='deep';
+  if(riskPanel)riskPanel.open=false;
+  if(narrative)narrative.open=false;
   const modulePreferences=document.querySelector('.module-preferences');
   if(modulePreferences)modulePreferences.hidden=true;
   try{localStorage.setItem('dashboard_profile',dashboardProfile);}catch(_err){}
-  applyDashboardView(dashboardView,{updateHash:false});
+  if(manifest)render(currentProvince);
+  else applyDashboardView(dashboardView,{updateHash:false});
+  renderProfileReadings();
 }
 
 function updatePeriodAvailability(province){
@@ -2739,15 +2739,15 @@ function renderCoverageGaps(province){
   if(incomeGap){incomeGap.textContent=incomeText;incomeGap.classList.toggle('visible',!!incomeText);}
   const debtText=province==='Buenos Aires'
     ? ''
-    : `La ficha detallada de acreedores, moneda y vencimientos sólo está disponible para Buenos Aires. Para ${province} se muestra únicamente la serie homogénea comparativa cuando existe.`;
+    : `La cobertura de acreedores, moneda y vencimientos varía entre provincias. Para ${province}, cada bloque informa su fuente, fecha y datos faltantes.`;
   if(debtGap){debtGap.textContent=debtText;debtGap.classList.toggle('visible',!!debtText);}
 }
 
 function renderPressContent(province,{rf,rp,debt,mP,rP}={}){
   const sourceText={
     rank:'Fuente: Informe 1816 1T26 · corte 31/03/2026 · universo 23 jurisdicciones.',
-    financial:'Fuente: Informe 1816 1T26 · últimos 12 meses al 31/03/2026.',
-    primary:'Fuente: Informe 1816 1T26 · últimos 12 meses al 31/03/2026.',
+    financial:`Fuente: Informe 1816 1T26 · ${dashboardPeriod==='quarter'&&latestFiscalDetails?.quarters?.[province]?'enero–marzo 2026':'últimos 12 meses al 31/03/2026'}.`,
+    primary:`Fuente: Informe 1816 1T26 · ${dashboardPeriod==='quarter'&&latestFiscalDetails?.quarters?.[province]?'enero–marzo 2026':'últimos 12 meses al 31/03/2026'}.`,
     debt:province==='Buenos Aires'?'Fuente: DNAP · stock al 31/03/2026; moneda al 31/12/2025.':'Fuente: serie homogénea 1816 · último dato estructural disponible.',
     own:`Fuente: recaudación provincial normalizada · corte ${mP?.length?fullMonthLabel(mP[mP.length-1]):'no disponible'}.`,
     nation:`Fuente: DNAP · recursos de origen nacional · corte ${rP?.length?fullMonthLabel(rP[rP.length-1]):'no disponible'}.`
@@ -2755,7 +2755,7 @@ function renderPressContent(province,{rf,rp,debt,mP,rP}={}){
   document.querySelectorAll('[data-press-source]').forEach(node=>{node.textContent=sourceText[node.dataset.pressSource]||'';});
   const quoteGrid=document.getElementById('pressQuoteGrid');
   if(quoteGrid){
-    const close=rf===null?'no tiene un resultado financiero homogéneo disponible':`cerró los últimos 12 meses con un resultado financiero de ${pct(rf)} de sus ingresos`;
+    const close=rf===null?'no tiene un resultado financiero homogéneo disponible':`registró ${dashboardPeriod==='quarter'&&latestFiscalDetails?.quarters?.[province]?'en enero–marzo de 2026':'en los últimos 12 meses al 31/03/2026'} un resultado financiero de ${pct(rf)} de sus ingresos`;
     const primary=rp===null?'El resultado primario no está disponible para el mismo corte.':`Antes de intereses, el resultado fue ${pct(rp)} de los ingresos.`;
     const debtText=debt===null?'La carga de deuda comparable no está disponible.':`La deuda equivale a ${pctN(debt)} de los ingresos de un año.`;
     quoteGrid.innerHTML=[
@@ -2933,6 +2933,7 @@ function render(province){
   updateViewAsOf(province);
   applyDashboardView(dashboardView,{updateHash:false});
   prepareInfoDots();
+  renderProfileReadings();
 }
 
 function liquiditySemaphore(metrics){
@@ -3609,7 +3610,7 @@ function renderTransfersDependency(province){
     </article>`;
   }).join('');
   if(reading){
-    reading.innerHTML='<strong>Para la gestión:</strong> el reparto por habitante, el aporte tributario y los reclamos miden cuestiones distintas. Recibir menos por habitante no significa, por sí solo, que exista una deuda legal. Y un aumento nominal tampoco demuestra una mejora del poder de compra: hay que descontar la inflación.';
+    reading.textContent=profileWording('Separar el debate sobre el reparto federal de los recursos disponibles para sostener la gestión. Un reclamo pendiente de cobro no financia un pago inmediato.','Distinguir transferencias automáticas, discrecionales y reclamos. Proyectar cada flujo según su fecha y certeza de cobro; comparar variaciones reales sobre los mismos meses.','Recibir menos por habitante no significa que exista una deuda legal. Separá reparto, aporte tributario y reclamos; un aumento nominal tampoco demuestra una mejora del poder de compra.');
   }
 }
 
@@ -5128,12 +5129,13 @@ document.getElementById('downloadPdfAll')?.addEventListener('click',exportAllPro
 document.getElementById('downloadPng')?.addEventListener('click',exportCurrentProvincePng);
 
 </script>
-<script src="provincial-debt-services.js?v=20260906-10"></script>
+<script src="profile-readings.js?v=20260906-11"></script>
+<script src="provincial-debt-services.js?v=20260906-11"></script>
 <script src="inflation-history.js?v=20260906-9"></script>
 <script src="executive-redesign.js?v=20260906-9"></script>
 <script src="closing-tools.js?v=20260906-4"></script>
 <script src="management-tools.js?v=20260906-5"></script>
-<script src="federal-tools.js?v=20260906-9"></script>
+<script src="federal-tools.js?v=20260906-11"></script>
 <script>
 /* ── BOOT ────────────────────────────────────────────────────────── */
 loadAll().catch(err=>{

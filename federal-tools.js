@@ -30,6 +30,7 @@ function initFederalTools(){
   document.getElementById('mapMetric').onchange=renderFiscalMap;
   initCompositionExplorer();
   initManagementDesign();
+  renderProfileReadings();
   renderFiscalHistory(currentProvince);renderFiscalMap();renderNationalPanel();
   fetch('data/debt_history.json').then(r=>{if(!r.ok)throw Error('debt');return r.json();}).then(d=>{debtHistory=d;renderComposition(currentProvince);}).catch(()=>{debtHistory={rows:[],failed:true};renderComposition(currentProvince);});
   for(const [id,all] of [['downloadPdf',false],['downloadPdfAll',true]]){

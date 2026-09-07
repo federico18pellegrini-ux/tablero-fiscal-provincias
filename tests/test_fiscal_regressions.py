@@ -220,13 +220,13 @@ class FiscalRegressionTests(unittest.TestCase):
 
     def test_profiles_have_distinct_modules_order_and_detail(self):
         frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
-        for profile in ('governor', 'hacienda', 'press', 'deep'):
+        for profile in ('governor', 'hacienda', 'press'):
             self.assertIn(f'{profile}:{{', frontend)
             self.assertIn(f'value="{profile}"', frontend)
-        self.assertIn("governor:{label:'Gobernador / decisor'", frontend)
+        self.assertIn("governor:{label:'gobernador'", frontend)
         self.assertIn("views:['summary','debt','income','federal','comparison','results']", frontend)
         self.assertIn("views:['summary','debt','income','comparison','federal','results']", frontend)
-        self.assertIn("views:['summary','federal','comparison','results']", frontend)
+        self.assertIn("views:['summary','federal','comparison','debt','income','results']", frontend)
         self.assertIn('id="governorDecisionPanel"', frontend)
         self.assertIn('id="governorRiskPanel"', frontend)
         self.assertLess(frontend.index('id="governorDecisionPanel"'), frontend.index('id="governorRiskPanel"'))
@@ -237,7 +237,7 @@ class FiscalRegressionTests(unittest.TestCase):
         frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
         self.assertIn("CROSS_SECTION_GAPS_3T25=new Set(['Santiago del Estero','La Pampa','Neuquén'])", frontend)
         self.assertIn("HISTORICAL_REVENUE_GAPS=new Set(['CABA','Santiago del Estero'])", frontend)
-        self.assertIn('sólo está disponible para Buenos Aires', frontend)
+        self.assertIn('cada bloque informa su fuente, fecha y datos faltantes', frontend)
         self.assertIn('return `AR$ ${fmtNum(billones,2)} billones`', frontend)
         self.assertNotIn('millones (= ${fmtNum(bn,2)} Bn)', frontend)
 
