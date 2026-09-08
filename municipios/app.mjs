@@ -14,6 +14,28 @@ const monthLabels=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','
 const formatMetric=(v,meta)=>!finite(v)?'Sin dato':meta.unit==='score'?num(v)+' / 100':meta.unit==='points'?(v>0?'+':'')+num(v)+' puntos':meta.unit==='money'?money(v):meta.unit==='millions'?millions(v):meta.unit==='%'?num(v,2)+'%':meta.unit==='pp'?(v>0?'+':'')+num(v,3)+' pp':num(v,['density','branches'].includes(meta.unit)?1:0);
 let data,geography,rows,byId,state,mapMetric='recursos',scopePeers=false,rankAscending=true,showAll=false,fullHistory=false,mapZoom,mapProjection,mapPath,mapWidth=0;
 let toastTimer;
+let reportManifest=null,reportUnavailable=false;
+function updateReportLink(m){
+  const link=$('export-report'),entry=reportManifest?.reports.find(r=>r.id===m.id);
+  link.setAttribute('aria-label',`Exportar informe completo de ${m.municipio}`);
+  link.setAttribute('aria-disabled',String(!entry));
+  $('export-report-label').textContent=reportUnavailable?'Informe en actualización':'Exportar informe completo';
+  $('report-scope').textContent=entry?`${m.municipio} · PDF de ${entry.pages} páginas · Todas las vistas y series.`:reportUnavailable?'El informe está en actualización. Los datos del tablero siguen disponibles.':`Preparando el informe completo de ${m.municipio}…`;
+  if(entry){link.href=`reports/${entry.file}?v=${entry.sha256}`;link.download=`informe-${m.municipio.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-')}.pdf`;}
+  else link.removeAttribute('href');
+}
+async function prepareReports(dashboardText){
+  try{
+    const response=await fetch('reports/manifest.json',{cache:'no-cache'});
+    if(!response.ok)throw new Error('No se pudo consultar el informe.');
+    const manifest=await response.json();
+    const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(dashboardText.replace(/\r\n?/g,'\n')));
+    const hash=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
+    if(manifest.input_sha256?.['municipios/data/dashboard.json']!==hash||!Array.isArray(manifest.reports)||manifest.reports.length!==rows.length||new Set(manifest.reports.map(r=>r.id)).size!==rows.length||manifest.reports.some(r=>r.file!==`informe-${r.id}.pdf`||!byId.has(r.id)||!Number.isInteger(r.pages)||r.pages<1||!/^[a-f0-9]{64}$/.test(r.sha256)))throw new Error('Los informes están en actualización.');
+    reportManifest=manifest;
+  }catch(error){reportUnavailable=true;console.warn('Informe municipal:',error.message);}
+  updateReportLink(current());
+}
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,3500);}
 const current=()=>byId.get(state.id);
 const currentMetric=()=>METRICS.find(m=>m.id===state.metric);
@@ -43,6 +65,7 @@ function renderHeader(){
   $('municipality-context').textContent=ranking?'Elegí un indicador para ordenar y comparar los municipios bonaerenses.':`${num(m.poblacion_2022)} habitantes · Censo 2022 · ${num(m.superficie_km2)} km²`;
   $('share').setAttribute('aria-label',ranking?'Copiar enlace a este ranking':'Copiar enlace a esta vista');
   $('download-municipality').textContent=ranking?`Descargar datos de ${m.municipio} ↓`:'Descargar datos ↓';
+  updateReportLink(m);
   document.title=ranking?'Ranking general · Municipios · Federico Pellegrini':`${m.municipio} · Municipios · Federico Pellegrini`;
 }
 function renderView(){
@@ -223,6 +246,7 @@ function attachEvents(){
   $('history-short').onclick=()=>{fullHistory=false;renderEmployment();};$('history-full').onclick=()=>{fullHistory=true;renderEmployment();};
   $('shock').addEventListener('input',renderSimulation);document.querySelectorAll('[data-shock]').forEach(b=>b.onclick=()=>{$('shock').value=b.dataset.shock;renderSimulation();});
   $('share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('Enlace copiado con el municipio y la vista elegidos.');}catch{toast('Podés copiar el enlace desde la barra del navegador.');}};
+  $('export-report').onclick=event=>{if($('export-report').getAttribute('aria-disabled')==='true'){event.preventDefault();toast(reportUnavailable?'El informe está en actualización. Volvé a cargar la página en unos minutos.':'Estamos preparando el enlace al informe.');}};
   $('download-ranking').onclick=()=>{const meta=currentMetric();download(`ranking-${meta.id}.csv`,csv([['Municipio','Puesto','Valor','Unidad','Período','Cobertura','Criterio'],...rankingRows().map(r=>[r.m.municipio,r.rank,r.value,meta.unit,meta.period,rankingRows().length,meta.note])]));};
   $('download-municipality').onclick=()=>{const m=current();download(`municipio-${m.id}.csv`,csv([['Municipio','Indicador','Valor','Unidad','Período','Criterio'],...METRICS.map(meta=>[m.municipio,meta.label,metricValue(m,meta),meta.unit,meta.period,meta.note]),...fiscalExportRows(m)]));};
   let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(state.view==='panorama')drawMap();if(state.view==='recursos')drawTransferChart();if(state.view==='empleo')drawEmploymentChart();},80);}).observe(document.querySelector('main'));
@@ -232,12 +256,13 @@ async function init(){
   try{
     const responses=await Promise.all([fetch('data/dashboard.json?v=20260907-8'),fetch('data/geografia_original.geojson')]);
     if(responses.some(r=>!r.ok))throw new Error('No se pudieron leer los datos municipales.');
-    [data,geography]=await Promise.all(responses.map(r=>r.json()));rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
+    const [dashboardText,geo]=await Promise.all([responses[0].text(),responses[1].json()]);data=JSON.parse(dashboardText);geography=geo;rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
     if(rows.length!==135||geography.features.length!==135||geography.features.some(f=>!byId.has(f.properties.id)))throw new Error('La cobertura geográfica no coincide con los datos.');
     let saved;try{saved=localStorage.getItem('pellegrini_municipio');}catch{}
     state=readState(location.search,rows,saved);rankAscending=currentMetric().ascending;
     $('municipality').innerHTML=rows.slice().sort((a,b)=>a.municipio.localeCompare(b.municipio,'es')).map(m=>`<option value="${m.id}">${escape(m.municipio)}</option>`).join('');$('municipality').disabled=false;
     $('loading').hidden=true;$('dashboard').hidden=false;attachEvents();persist();renderView();window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view:state.view}}));
+    prepareReports(dashboardText);
   }catch(error){$('loading').hidden=true;$('dashboard').hidden=true;$('error').hidden=false;console.error('Error al iniciar el tablero municipal:',error.message);}
 }
 init();
