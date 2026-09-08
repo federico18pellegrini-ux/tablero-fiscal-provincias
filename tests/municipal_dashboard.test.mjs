@@ -1,12 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
-import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv} from '../municipios/model.mjs';
+import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv,fiscalExportRows} from '../municipios/model.mjs';
 const require=createRequire(import.meta.url),d3=require('../municipios/vendor/d3.v7.min.js');
 const data=JSON.parse(fs.readFileSync(new URL('../municipios/data/dashboard.json',import.meta.url)));
 const geometry=JSON.parse(fs.readFileSync(new URL('../municipios/data/geografia_original.geojson',import.meta.url)));
 const rows=data.municipalities,metric=id=>METRICS.find(m=>m.id===id);
+
+test('published input manifest matches the committed text on Windows and Linux',()=>{
+  const manifest=JSON.parse(fs.readFileSync(new URL('../municipios/data/build-manifest.json',import.meta.url)));
+  for(const input of manifest.repositoryInputs){
+    const text=fs.readFileSync(new URL('../'+input.file,import.meta.url),'utf8').replace(/\r\n/g,'\n');
+    assert.equal(createHash('sha256').update(text).digest('hex'),input.sha256,input.file);
+  }
+});
 test('all 135 municipalities join to actual polygons; geometry covers Buenos Aires',()=>{
   assert.equal(rows.length,135);assert.equal(new Set(rows.map(m=>m.id)).size,135);
   assert.deepEqual(new Set(rows.map(m=>m.id)),new Set(geometry.features.map(f=>f.properties.id)));
@@ -22,7 +31,7 @@ test('reserved observations never become zeros or ranking positions',()=>{
   assert.equal(rankMunicipalities(rows,metric('industria-cambio')).length,130);
   assert.equal(rankMunicipalities(rows,metric('credito')).length,106);
   assert.equal(rankMunicipalities(rows,metric('poblacion')).length,133);
-  assert.equal(rankMunicipalities(rows,metric('deficit')).length,18);
+  assert.equal(rankMunicipalities(rows,metric('deficit')).length,72);
   const missing=rows.find(m=>!m.fiscal);assert.equal(metricValue(missing,metric('deficit')),null);
 });
 
@@ -38,9 +47,11 @@ test('municipal fiscal accounts reconcile without including financing or treatin
     assert.ok(Math.abs(f.ingresos_totales-f.gastos_totales-f.resultado_financiero)<.011);
     assert.ok(Math.abs(f.resultado_financiero/f.ingresos_totales*100-f.resultado_sobre_ingresos_pct)<.00001);
     assert.ok(Math.abs(f.gastos_capital/m.poblacion_2022-f.capital_por_habitante_base2022_ars_corrientes)<.00001);
-    assert.ok(Math.abs(f.personal_devengado/f.gastos_corrientes*100-f.personal_sobre_gasto_corriente_pct)<.00001);
+    if(f.personal_devengado==null)assert.equal(f.personal_sobre_gasto_corriente_pct,null);
+    else assert.ok(Math.abs(f.personal_devengado/f.gastos_corrientes*100-f.personal_sobre_gasto_corriente_pct)<.00001);
   }
-  for(const id of ['deficit','resultado-pesos','inversion','personal','ahorro-corriente','inversion-habitante'])assert.equal(rankMunicipalities(rows,metric(id)).length,18);
+  for(const id of ['deficit','resultado-pesos','inversion','ahorro-corriente','inversion-habitante'])assert.equal(rankMunicipalities(rows,metric(id)).length,72);
+  assert.equal(rankMunicipalities(rows,metric('personal')).length,71);
   const lasHeras=rows.find(m=>m.id==='06329').fiscal;
   assert.equal(lasHeras.ingresos_totales,10441008325.60);
   assert.equal(lasHeras.gastos_totales,8853440358.31);
@@ -71,17 +82,67 @@ test('Tigre budget execution stays separate from the fiscal deficit ranking',()=
 
 test('new fiscal observations retain primary documents, page locations and content hashes',()=>{
   const audit=JSON.parse(fs.readFileSync(new URL('../municipios/data/fiscal_verified.json',import.meta.url)));
-  assert.equal(audit.records.length,15);
-  for(const r of [...audit.records,...audit.budgetExecutions]){
-    assert.match(r.landingUrl,/^https:\/\//);
+  assert.equal(audit.records.length,69);
+  assert.equal(audit.otherPeriods.length,19);
+  for(const r of [...audit.records,...audit.budgetExecutions,...audit.otherPeriods]){
+    assert.match(r.landingUrl,/^https?:\/\//);
     assert.ok(r.documents.length>0);
     for(const d of r.documents){
-      assert.match(d.url,/^https:\/\//);
+      assert.match(d.url,/^https?:\/\//);
       assert.match(d.sha256,/^[0-9a-f]{64}$/);
       assert.ok(d.consultedPages.every(p=>p>=1&&p<=d.pages));
       assert.ok(d.bytes>0);
     }
   }
+});
+
+test('quarter sums exclude overlapping periods and do not invent personnel',()=>{
+  const a=rows.find(m=>m.id==='06042').fiscal;
+  assert.equal(a.resultado_financiero,-478052216.13);
+  assert.equal(a.personal_devengado,undefined);
+  assert.equal(a.personal_sobre_gasto_corriente_pct,null);
+  const si=rows.find(m=>m.id==='06756').fiscal;
+  assert.equal(si.method,'sum_quarters');
+  assert.equal(si.resultado_financiero,-11956211531.15);
+  assert.equal(si.personal_devengado,74667170776.53);
+});
+
+test('accounts belong to the municipality, not the separately published agency',()=>{
+  assert.equal(rows.find(m=>m.id==='06357').fiscal.ingresos_totales,211223436093.38);
+  assert.equal(rows.find(m=>m.id==='06672').fiscal.resultado_financiero,551633002.17);
+  const azul=rows.find(m=>m.id==='06049').fiscalOther;
+  assert.equal(azul.ingresos_totales,15237040168.17);
+  assert.match(azul.scope,/No consolida la Dirección de Vialidad Rural/);
+});
+
+test('other periods stay visible and downloadable without entering June rankings',()=>{
+  assert.equal(data.fiscalCoverage.withAccounts,90);
+  assert.equal(data.fiscalCoverage.otherPeriods,19);
+  const lp=rows.find(m=>m.id==='06441'),b=rows.find(m=>m.id==='06112');
+  assert.equal(lp.fiscal,null);
+  assert.equal(lp.fiscalOther.fin,'2026-03-31');
+  assert.equal(metricValue(lp,metric('deficit')),null);
+  assert.equal(b.fiscal.fin,'2026-06-30');
+  assert.equal(b.fiscalOther.fin,'2026-08-31');
+  assert.notEqual(b.fiscal.resultado_financiero,b.fiscalOther.resultado_financiero);
+  assert.equal(metricValue(b,metric('resultado-pesos')),b.fiscal.resultado_financiero);
+  assert.equal(fiscalExportRows(lp).length,8);
+  assert.ok(fiscalExportRows(lp).every(r=>r[4].endsWith('2026-03-31')));
+  assert.equal(fiscalExportRows(b).length,16);
+  assert.equal(fiscalExportRows(rows.find(m=>m.id==='06042')).find(r=>r[1]==='Personal devengado')[2],null);
+});
+
+test('portal review covers every municipality and preserves pending accounts',()=>{
+  const review=JSON.parse(fs.readFileSync(new URL('../municipios/data/fiscal_search.json',import.meta.url)));
+  assert.equal(review.municipalities.length,135);
+  assert.equal(review.municipalities.filter(r=>r.searchedThisRound).length,117);
+  assert.deepEqual(new Set(review.municipalities.map(r=>r.id)),new Set(rows.map(r=>r.id)));
+  for(const m of rows){
+    assert.ok(m.fiscalSearch.message.length>20);
+    if(m.fiscalSearch.status==='comparable_account')assert.ok(m.fiscal);
+    if(m.fiscalSearch.status==='other_period'){assert.ok(m.fiscalOther);assert.equal(m.fiscal,null);}
+  }
+  assert.equal(rows.filter(m=>!m.fiscal&&!m.fiscalOther&&!m.fiscalExecution).length,44);
 });
 
 test('ASAP scores retain all 135 municipalities, zero scores, ties, and point changes',()=>{

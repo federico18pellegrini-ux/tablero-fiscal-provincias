@@ -155,3 +155,5 @@ body{font-size:var(--text-reading)}
   .rank-reference-detail .text-button{text-align:left}
   .rank-reference-info,.rank-reference-detail{flex-basis:100%}
 }
+
+.fiscal-periods{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.fiscal-periods button{min-height:44px;padding:10px 16px;border:1px solid var(--line,#dce2db);border-radius:10px;background:#fff;color:var(--ink,#182f2a);font:inherit}.fiscal-periods button[aria-pressed="true"]{background:#e6eee9;border-color:#527c70;font-weight:600}.period-notice{padding:14px 16px;border-left:3px solid #5474a3;background:#eef2f8;border-radius:0 8px 8px 0}

@@ -5,27 +5,42 @@ import hashlib
 import json
 import math
 from decimal import Decimal
+from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+
+
+def repository_input(path):
+    # Git stores these JSON text inputs as UTF-8/LF even when Windows checks out CRLF.
+    content = path.read_text(encoding='utf-8').encode('utf-8')
+    return {'file': str(path.relative_to(ROOT)).replace('\\', '/'),
+            'sha256': hashlib.sha256(content).hexdigest(), 'encoding': 'UTF-8/LF'}
 
 
 def apply_verified_fiscal(municipalities, path):
     """Overlay official executions; reject inconsistent amounts or periods before publishing."""
     audit = json.loads(path.read_text(encoding='utf-8'))
     seen = set()
-    for group, target in [('records', 'fiscal'), ('budgetExecutions', 'fiscalExecution')]:
-        for record in audit[group]:
+    for group, target in [('records', 'fiscal'), ('otherPeriods', 'fiscalOther'), ('budgetExecutions', 'fiscalExecution')]:
+        for record in audit.get(group, []):
             ident = record['id']
-            if ident not in municipalities or ident in seen:
+            key = (group, ident)
+            if ident not in municipalities or key in seen or (group == 'budgetExecutions' and ('records', ident) in seen):
                 raise ValueError(f'Duplicate or unknown fiscal municipality: {ident}')
-            seen.add(ident)
-            if record['fin'] != audit['periodEnd'] or not record['inicio'].startswith('2026-01-'):
+            seen.add(key)
+            start, end = date.fromisoformat(record['inicio']), date.fromisoformat(record['fin'])
+            comparable = end.isoformat() == audit['periodEnd'] and date(2026, 1, 1) <= start <= date(2026, 1, 5)
+            if start > end or end > date.fromisoformat(audit['verifiedAt']):
+                raise ValueError(f'Invalid fiscal period: {ident}')
+            if target != 'fiscalOther' and not comparable:
                 raise ValueError(f'Non-comparable fiscal period: {ident}')
+            if target == 'fiscalOther' and comparable:
+                raise ValueError(f'Comparable account placed outside semester ranking: {ident}')
             amounts = {k: Decimal(v) for k, v in record['amounts'].items()}
             if not all(v.is_finite() for v in amounts.values()):
                 raise ValueError(f'Non-finite fiscal amount: {ident}')
-            if target == 'fiscal':
+            if target != 'fiscalExecution':
                 checks = [
                     amounts['ingresos_corrientes'] + amounts['ingresos_capital'] - amounts['ingresos_totales'],
                     amounts['gastos_corrientes'] + amounts['gastos_capital'] - amounts['gastos_totales'],
@@ -33,6 +48,22 @@ def apply_verified_fiscal(municipalities, path):
                 ]
                 if any(abs(v) > Decimal('0.01') for v in checks):
                     raise ValueError(f'Unreconciled fiscal account: {ident}')
+                if record['method'] == 'sum_quarters':
+                    parts = record.get('components', [])
+                    if len(parts) != 2 or parts[0]['inicio'] != record['inicio'] or parts[-1]['fin'] != record['fin'] or date.fromisoformat(parts[0]['fin']) + timedelta(days=1) != date.fromisoformat(parts[1]['inicio']):
+                        raise ValueError(f'Non-contiguous fiscal components: {ident}')
+                    for part in parts:
+                        values = {k: Decimal(v) for k, v in part['amounts'].items()}
+                        if date.fromisoformat(part['inicio']) > date.fromisoformat(part['fin']) or not all(v.is_finite() for v in values.values()):
+                            raise ValueError(f'Invalid fiscal component: {ident}')
+                        differences = [values['ingresos_corrientes'] + values['ingresos_capital'] - values['ingresos_totales'],
+                                       values['gastos_corrientes'] + values['gastos_capital'] - values['gastos_totales'],
+                                       values['ingresos_totales'] - values['gastos_totales'] - values['resultado_financiero']]
+                        if any(abs(v) > Decimal('0.01') for v in differences):
+                            raise ValueError(f'Unreconciled fiscal component: {ident}')
+                    for key, total in amounts.items():
+                        if any(key not in part['amounts'] for part in parts) or sum(Decimal(part['amounts'][key]) for part in parts) != total:
+                            raise ValueError(f'Unreconciled fiscal components: {ident}')
             else:
                 pending = amounts['gastos_presupuestarios_devengados'] - amounts['gastos_presupuestarios_pagados']
                 if pending < 0:
@@ -45,18 +76,21 @@ def apply_verified_fiscal(municipalities, path):
                 'verifiedAt': audit['verifiedAt'],
             }
     for m in municipalities.values():
-        f = m['fiscal']
-        if not f:
-            continue
-        f['ahorro_corriente'] = round(f['ingresos_corrientes'] - f['gastos_corrientes'], 2)
-        f['resultado_sobre_ingresos_pct'] = f['resultado_financiero'] / f['ingresos_totales'] * 100
-        f['resultado_por_habitante_base2022_ars_corrientes'] = f['resultado_financiero'] / m['poblacion_2022']
-        f['capital_sobre_gasto_pct'] = f['gastos_capital'] / f['gastos_totales'] * 100
-        f['personal_sobre_gasto_corriente_pct'] = f['personal_devengado'] / f['gastos_corrientes'] * 100 if f.get('personal_devengado') is not None else None
-        f['ahorro_sobre_ingresos_corrientes_pct'] = f['ahorro_corriente'] / f['ingresos_corrientes'] * 100
-        f['capital_por_habitante_base2022_ars_corrientes'] = f['gastos_capital'] / m['poblacion_2022']
+        for f in [m['fiscal'], m.get('fiscalOther')]:
+            if not f:
+                continue
+            ratio = lambda numerator, denominator: numerator / denominator * 100 if denominator else None
+            f['ahorro_corriente'] = round(f['ingresos_corrientes'] - f['gastos_corrientes'], 2)
+            f['resultado_sobre_ingresos_pct'] = ratio(f['resultado_financiero'], f['ingresos_totales'])
+            f['resultado_por_habitante_base2022_ars_corrientes'] = f['resultado_financiero'] / m['poblacion_2022']
+            f['capital_sobre_gasto_pct'] = ratio(f['gastos_capital'], f['gastos_totales'])
+            f['personal_sobre_gasto_corriente_pct'] = ratio(f['personal_devengado'], f['gastos_corrientes']) if f.get('personal_devengado') is not None else None
+            f['ahorro_sobre_ingresos_corrientes_pct'] = ratio(f['ahorro_corriente'], f['ingresos_corrientes'])
+            f['capital_por_habitante_base2022_ars_corrientes'] = f['gastos_capital'] / m['poblacion_2022']
     return {'fiscal': sum(bool(m['fiscal']) for m in municipalities.values()),
             'budgetOnly': sum(bool(m.get('fiscalExecution')) and not m['fiscal'] for m in municipalities.values()),
+            'otherPeriods': sum(bool(m.get('fiscalOther')) for m in municipalities.values()),
+            'withAccounts': sum(bool(m.get('fiscal') or m.get('fiscalOther')) for m in municipalities.values()),
             'verifiedAt': audit['verifiedAt']}
 
 
@@ -144,26 +178,33 @@ def build(folder):
     fiscal_coverage = apply_verified_fiscal(municipalities, fiscal_path)
     transparency_path = ROOT / 'municipios/data/transparency_asap.json'
     transparency = apply_transparency(municipalities, transparency_path)
+    search_path = ROOT / 'municipios/data/fiscal_search.json'
+    search = json.loads(search_path.read_text(encoding='utf-8'))
+    if {r['id'] for r in search['municipalities']} != set(municipalities) or len(search['municipalities']) != 135:
+        raise ValueError('Fiscal portal review must identify all 135 municipalities')
+    for record in search['municipalities']:
+        municipalities[record['id']]['fiscalSearch'] = {k: record[k] for k in ['status', 'message', 'reviewedAt']}
     for m in municipalities.values():
         m['transfers'].sort()
         assert len(m['transfers']) == 19 and len(m['employment']) == 84
         assert m['poblacion_2022'] > 0
     summary = json.loads((folder / 'resultados_verificados.json').read_text(encoding='utf-8'))
     controls = json.loads((folder / 'control_y_recaudacion.json').read_text(encoding='utf-8'))
-    data = {'version': 3, 'generated': '2026-09-07', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
+    data = {'version': 4, 'generated': '2026-09-07', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
     target = ROOT / 'municipios/data/dashboard.json'
     target.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':'), allow_nan=False), encoding='utf-8')
     manifest = [{'file': str(p.relative_to(folder)).replace('\\', '/'), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in folder.rglob('*.csv')]
-    overlay = {'file': str(fiscal_path.relative_to(ROOT)).replace('\\', '/'), 'sha256': hashlib.sha256(fiscal_path.read_bytes()).hexdigest()}
-    transparency_input = {'file': str(transparency_path.relative_to(ROOT)).replace('\\', '/'), 'sha256': hashlib.sha256(transparency_path.read_bytes()).hexdigest()}
-    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': '2026-09-07', 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
+    overlay = repository_input(fiscal_path)
+    transparency_input = repository_input(transparency_path)
+    search_input = repository_input(search_path)
+    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': '2026-09-07', 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
     (target.parent / 'fuentes.csv').write_bytes((folder / 'fuentes_y_huellas.csv').read_bytes())
     fiscal_audit = json.loads(fiscal_path.read_text(encoding='utf-8'))
     with (target.parent / 'fuentes.csv').open('a', encoding='utf-8', newline='') as source_file:
         writer = csv.writer(source_file)
-        for record in fiscal_audit['records'] + fiscal_audit['budgetExecutions']:
+        for record in fiscal_audit['records'] + fiscal_audit['budgetExecutions'] + fiscal_audit.get('otherPeriods', []):
             for index, document in enumerate(record['documents'], 1):
-                writer.writerow([f"municipio-{record['id']}-2026-06-{index}.pdf", document['url'], document['sha256'], document['bytes'], fiscal_audit['verifiedAt']])
+                writer.writerow([f"municipio-{record['id']}-{record['fin']}-{index}.pdf", document['url'], document['sha256'], document['bytes'], fiscal_audit['verifiedAt']])
         for edition in transparency['editions']:
             document = edition['document']
             writer.writerow([f"asap-{edition['edition']}.pdf", document['url'], document['sha256'], document['bytes'], transparency['verifiedAt']])
