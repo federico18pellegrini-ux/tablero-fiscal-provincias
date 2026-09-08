@@ -7,9 +7,9 @@
   <meta name="description" content="Una mirada clara sobre los 135 municipios bonaerenses. Recursos, empleo, rankings y escenarios para la gestión municipal. Federico Pellegrini.">
   <title>Municipios · Federico Pellegrini</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260907-9">
+  <link rel="stylesheet" href="styles.css?v=20260907-10">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20260907-8"></script>
+  <script defer src="app.js?v=20260907-9"></script>
   <script defer src="../analytics.js?v=20260907-2"></script>
 </head>
 <body>
@@ -32,7 +32,7 @@
     <div id="loading" class="loading" role="status"><span class="loading-dot"></span>Preparando los datos de los 135 municipios…</div>
     <div id="error" class="error-panel" hidden role="alert"><h1>No pudimos cargar el tablero</h1><p>Revisá la conexión y volvé a intentarlo.</p><button onclick="location.reload()" class="button">Volver a cargar</button></div>
     <div id="dashboard" hidden>
-      <section class="municipality-heading"><div><div class="eyebrow" id="view-context">Buenos Aires / 135 municipios</div><h1 id="municipality-name">Tu municipio</h1><p id="municipality-context"></p></div><button id="share" class="button button-quiet" aria-label="Copiar enlace a esta vista"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6M8 16l-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 1 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(1 0)"/></svg><span>Copiar enlace</span></button></section>
+      <section class="municipality-heading"><div><div class="eyebrow" id="view-context">Buenos Aires / 135 municipios</div><h1 id="municipality-name">Tu municipio</h1><p id="municipality-context"></p></div><div class="report-actions"><div class="report-action-buttons"><a id="export-report" class="button" aria-disabled="true" target="_blank" rel="noopener" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span id="export-report-label">Exportar informe completo</span></a><button id="share" class="button button-quiet" aria-label="Copiar enlace a esta vista"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6M8 16l-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 1 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(1 0)"/></svg><span>Copiar enlace</span></button></div><p id="report-scope" aria-live="polite">PDF con análisis, gráficos y todos los datos del municipio.</p></div></section>
       <section id="panorama" class="view" aria-label="Panorama municipal">
         <div class="overview-layout">
           <div class="overview-reading">

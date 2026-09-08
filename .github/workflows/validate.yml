@@ -23,10 +23,12 @@ jobs:
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
       - name: Validate calculations and reading profiles
-        run: node --test tests/management_math.test.cjs tests/profile_readings.test.cjs tests/budget_execution.test.cjs tests/analytics.test.cjs tests/municipal_dashboard.test.mjs
+        run: node --test tests/management_math.test.cjs tests/profile_readings.test.cjs tests/budget_execution.test.cjs tests/analytics.test.cjs tests/municipal_dashboard.test.mjs tests/municipal_reports.test.mjs
       - name: Validate TOP traceability
         run: python scripts_validate_top_traceability.py
       - name: Validate national claims data
         run: python scripts_validate_reclamos_nacion.py
       - name: Verify reports match dashboard data
         run: python scripts_export_management_reports.py --check
+      - name: Verify complete municipal reports match dashboard data
+        run: python scripts_export_municipal_reports.py --check

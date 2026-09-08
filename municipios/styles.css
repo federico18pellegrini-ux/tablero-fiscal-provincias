@@ -177,3 +177,21 @@ body{font-size:var(--text-reading)}
   .municipality-picker select{flex:1;width:100%;min-width:0;max-width:none}
 }
 @media print{.province-link{display:none}}
+
+.municipality-heading{flex-wrap:wrap}
+.report-actions{display:flex;flex-direction:column;align-items:flex-end;gap:8px;min-width:0;max-width:100%}
+.report-action-buttons{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+#export-report{width:auto;margin-top:0}
+#export-report-label{display:inline}
+#export-report{background:var(--teal);font-size:15px;gap:9px}
+#export-report svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;flex:none}
+#export-report[aria-disabled=true]{opacity:.65;cursor:wait}
+.municipality-heading #report-scope{font-size:13px;line-height:1.5;max-width:52ch}
+@media(max-width:620px){
+  .report-actions{align-items:stretch;width:100%}
+  .report-action-buttons{display:grid;grid-template-columns:minmax(0,1fr) auto}
+  #export-report{padding:10px 12px;line-height:1.4;min-height:48px}
+  .report-action-buttons #share{width:48px;height:48px;padding:10px}
+  .report-action-buttons #share{margin-top:0}
+  .report-action-buttons #share span{display:none}
+}
