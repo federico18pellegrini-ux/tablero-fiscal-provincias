@@ -2314,6 +2314,110 @@
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06826",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.trenquelauquen.gov.ar/rendiciones/",
+      "amounts": {
+        "ingresos_corrientes": "37461234038.63",
+        "gastos_corrientes": "34241341589.22",
+        "ingresos_capital": "1988536271.41",
+        "gastos_capital": "5377653455.37",
+        "ingresos_totales": "39449770310.04",
+        "gastos_totales": "39618995044.59",
+        "resultado_financiero": "-169224734.55",
+        "personal_devengado": "23265089331.84"
+      },
+      "documents": [
+        {
+          "url": "https://www.trenquelauquen.gov.ar/wordpress/wp-content/uploads/Situacion-Economica-Financiera-II°-trimestre-2026.pdf",
+          "sha256": "61e38d09e942fbde48aac3465ec6ed96dab16506d150a9ae08b832ebdc723259",
+          "pages": 7,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal, columna devengado.",
+          "bytes": 344135
+        }
+      ],
+      "note": "Cuenta inicial incorporada al registro unificado tras volver a verificar sus importes y documentos. Se conserva el período publicado."
+    },
+    {
+      "id": "06364",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://generalrodriguez.gob.ar/transparencia/situacion-economica",
+      "amounts": {
+        "ingresos_corrientes": "46545901591.05",
+        "gastos_corrientes": "45327512664.39",
+        "ingresos_capital": "722027877.78",
+        "gastos_capital": "708051185.28",
+        "ingresos_totales": "47267929468.83",
+        "gastos_totales": "46035563849.67",
+        "resultado_financiero": "1232365619.16",
+        "personal_devengado": "31529174798.95"
+      },
+      "documents": [
+        {
+          "url": "https://generalrodriguez.gob.ar/uploads/pdf/situacionecono/econo-financiera-al30062026.pdf",
+          "sha256": "26b63880a57cab2ea61c8d87e35fc5f8e850ff244b2becf269b6bb1dc8ec6566",
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF, ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal, columna devengado.",
+          "bytes": 1187676
+        }
+      ],
+      "note": "Cuenta inicial incorporada al registro unificado tras volver a verificar sus importes y documentos. Se conserva el período publicado."
+    },
+    {
+      "id": "06161",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://carmendeareco.gob.ar/",
+      "amounts": {
+        "ingresos_corrientes": "6434467456.95",
+        "gastos_corrientes": "6021886181.97",
+        "ingresos_capital": "26433150.83",
+        "gastos_capital": "359803198.27",
+        "ingresos_totales": "6460900607.78",
+        "gastos_totales": "6381689380.24",
+        "resultado_financiero": "79211227.54",
+        "personal_devengado": "2893732139.89"
+      },
+      "documents": [
+        {
+          "url": "https://carmendeareco.gob.ar/wp-content/uploads/2026/07/Cuenta-Ahorro-Inversion-Financiamiento-Junio.pdf",
+          "sha256": "e2d095f578d1473f0fd11962432313846ceb845bce56e61f65403f3cddf53697",
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "CAIF, ingresos y gastos corrientes, de capital y totales; resultado financiero.",
+          "bytes": 371237
+        },
+        {
+          "url": "https://carmendeareco.gob.ar/wp-content/uploads/2026/07/Situacion-Economico-Financiera-Junio.pdf",
+          "sha256": "3094cb2627231406dae39f4835af5f971024cc933ca707d5ebecbde0d646bc30",
+          "pages": 3,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Gastos por objeto, personal, columna devengado.",
+          "bytes": 311663
+        }
+      ],
+      "note": "Cuenta inicial incorporada al registro unificado tras volver a verificar sus importes y documentos. Se conserva el período publicado."
     }
   ],
   "budgetExecutions": [

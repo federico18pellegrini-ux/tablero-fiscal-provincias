@@ -78,11 +78,17 @@ test('Tigre budget execution stays separate from the fiscal deficit ranking',()=
   assert.equal(e.devengado_no_pagado_del_periodo,8419889847.26);
   assert.ok(Math.abs(e.gastos_presupuestarios_devengados-e.gastos_presupuestarios_pagados-e.devengado_no_pagado_del_periodo)<.01);
   assert.equal(data.fiscalCoverage.budgetOnly,1);
+  const exported=fiscalExportRows(tigre);
+  assert.equal(exported.length,5);
+  assert.equal(exported.find(r=>r[1]==='Gastos del período devengados y no pagados')[2],8419889847.26);
+  assert.ok(exported.every(r=>r[3]==='ARS corrientes'&&r[4]==='2026-01-01 / 2026-06-30'));
+  assert.ok(!exported.some(r=>r[1]==='Resultado financiero'));
 });
 
-test('new fiscal observations retain primary documents, page locations and content hashes',()=>{
+test('all fiscal observations retain primary documents, page locations and content hashes',()=>{
   const audit=JSON.parse(fs.readFileSync(new URL('../municipios/data/fiscal_verified.json',import.meta.url)));
-  assert.equal(audit.records.length,69);
+  assert.equal(audit.records.length,72);
+  assert.deepEqual(audit.records.map(r=>r.id).sort(),rows.filter(m=>m.fiscal).map(m=>m.id).sort());
   assert.equal(audit.otherPeriods.length,19);
   for(const r of [...audit.records,...audit.budgetExecutions,...audit.otherPeriods]){
     assert.match(r.landingUrl,/^https?:\/\//);

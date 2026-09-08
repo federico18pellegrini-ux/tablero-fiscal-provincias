@@ -24,6 +24,26 @@ class MunicipalFiscalImportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unreconciled'):
             self.apply(self.audit)
 
+    def test_every_semester_account_is_in_the_verified_register(self):
+        published = {ident for ident, row in self.rows.items() if row.get('fiscal')}
+        self.assertEqual(published, {record['id'] for record in self.audit['records']})
+
+    def test_removed_record_cannot_survive_from_old_dashboard(self):
+        removed = self.audit['records'].pop(0)['id']
+        rows = copy.deepcopy(self.rows)
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / 'audit.json'
+            path.write_text(json.dumps(self.audit), encoding='utf-8')
+            apply_verified_fiscal(rows, path)
+        self.assertIsNone(rows[removed]['fiscal'])
+
+    def test_missing_source_or_out_of_bounds_page_is_rejected(self):
+        for documents in [[], [{**self.audit['records'][0]['documents'][0], 'consultedPages': [999]}]]:
+            audit = copy.deepcopy(self.audit)
+            audit['records'][0]['documents'] = documents
+            with self.assertRaisesRegex(ValueError, 'Missing or invalid fiscal evidence'):
+                self.apply(audit)
+
     def test_different_period_cannot_enter_semester_ranking(self):
         self.audit['records'][0]['fin'] = '2026-03-31'
         with self.assertRaisesRegex(ValueError, 'Non-comparable'):

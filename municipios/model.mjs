@@ -63,7 +63,13 @@ export function csv(rows) {
 }
 export function fiscalExportRows(m) {
   const fields=[['ingresos_corrientes','Ingresos corrientes'],['ingresos_capital','Recursos de capital'],['ingresos_totales','Ingresos totales'],['gastos_corrientes','Gastos corrientes'],['gastos_capital','Gastos de capital'],['gastos_totales','Gastos totales'],['resultado_financiero','Resultado financiero'],['personal_devengado','Personal devengado']];
-  return [m.fiscal,m.fiscalOther].filter(Boolean).flatMap(f=>fields.map(([key,label])=>[m.municipio,label,f[key]??null,'ARS corrientes',`${f.inicio} / ${f.fin}`,`${f.scope||'Cuenta municipal publicada.'} ${f===m.fiscal?'Período del ranking fiscal.':'Fuera del período del ranking fiscal.'}`]));
+  const rows=[m.fiscal,m.fiscalOther].filter(Boolean).flatMap(f=>fields.map(([key,label])=>[m.municipio,label,f[key]??null,'ARS corrientes',`${f.inicio} / ${f.fin}`,`${f.scope||'Cuenta municipal publicada.'} ${f===m.fiscal?'Período del ranking fiscal.':'Fuera del período del ranking fiscal.'}`]));
+  const e=m.fiscalExecution;
+  if(e){
+    const budgetFields=[['presupuesto_vigente','Presupuesto vigente'],['recursos_presupuestarios_percibidos','Recursos presupuestarios cobrados'],['gastos_presupuestarios_devengados','Gastos presupuestarios devengados'],['gastos_presupuestarios_pagados','Gastos presupuestarios pagados'],['devengado_no_pagado_del_periodo','Gastos del período devengados y no pagados']];
+    rows.push(...budgetFields.map(([key,label])=>[m.municipio,label,e[key]??null,'ARS corrientes',`${e.inicio} / ${e.fin}`,key==='presupuesto_vigente'?'Autorización anual vigente al cierre informado.':'Ejecución presupuestaria del período. Incluye operaciones financieras; no integra el ranking fiscal ni mide deuda total.']));
+  }
+  return rows;
 }
 export function readState(search, municipalities, savedId) {
   const p=new URLSearchParams(search), id=p.get('municipio') || savedId;

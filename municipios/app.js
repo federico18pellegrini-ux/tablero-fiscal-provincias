@@ -65,7 +65,13 @@ function csv(rows) {
 }
 function fiscalExportRows(m) {
   const fields=[['ingresos_corrientes','Ingresos corrientes'],['ingresos_capital','Recursos de capital'],['ingresos_totales','Ingresos totales'],['gastos_corrientes','Gastos corrientes'],['gastos_capital','Gastos de capital'],['gastos_totales','Gastos totales'],['resultado_financiero','Resultado financiero'],['personal_devengado','Personal devengado']];
-  return [m.fiscal,m.fiscalOther].filter(Boolean).flatMap(f=>fields.map(([key,label])=>[m.municipio,label,f[key]??null,'ARS corrientes',`${f.inicio} / ${f.fin}`,`${f.scope||'Cuenta municipal publicada.'} ${f===m.fiscal?'Período del ranking fiscal.':'Fuera del período del ranking fiscal.'}`]));
+  const rows=[m.fiscal,m.fiscalOther].filter(Boolean).flatMap(f=>fields.map(([key,label])=>[m.municipio,label,f[key]??null,'ARS corrientes',`${f.inicio} / ${f.fin}`,`${f.scope||'Cuenta municipal publicada.'} ${f===m.fiscal?'Período del ranking fiscal.':'Fuera del período del ranking fiscal.'}`]));
+  const e=m.fiscalExecution;
+  if(e){
+    const budgetFields=[['presupuesto_vigente','Presupuesto vigente'],['recursos_presupuestarios_percibidos','Recursos presupuestarios cobrados'],['gastos_presupuestarios_devengados','Gastos presupuestarios devengados'],['gastos_presupuestarios_pagados','Gastos presupuestarios pagados'],['devengado_no_pagado_del_periodo','Gastos del período devengados y no pagados']];
+    rows.push(...budgetFields.map(([key,label])=>[m.municipio,label,e[key]??null,'ARS corrientes',`${e.inicio} / ${e.fin}`,key==='presupuesto_vigente'?'Autorización anual vigente al cierre informado.':'Ejecución presupuestaria del período. Incluye operaciones financieras; no integra el ranking fiscal ni mide deuda total.']));
+  }
+  return rows;
 }
 function readState(search, municipalities, savedId) {
   const p=new URLSearchParams(search), id=p.get('municipio') || savedId;
@@ -303,7 +309,7 @@ function attachEvents(){
 }
 async function init(){
   try{
-    const responses=await Promise.all([fetch('data/dashboard.json?v=20260907-7'),fetch('data/geografia_original.geojson')]);
+    const responses=await Promise.all([fetch('data/dashboard.json?v=20260907-8'),fetch('data/geografia_original.geojson')]);
     if(responses.some(r=>!r.ok))throw new Error('No se pudieron leer los datos municipales.');
     [data,geography]=await Promise.all(responses.map(r=>r.json()));rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
     if(rows.length!==135||geography.features.length!==135||geography.features.some(f=>!byId.has(f.properties.id)))throw new Error('La cobertura geográfica no coincide con los datos.');
