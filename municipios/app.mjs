@@ -230,7 +230,7 @@ function attachEvents(){
 }
 async function init(){
   try{
-    const responses=await Promise.all([fetch('data/dashboard.json?v=20260907-7'),fetch('data/geografia_original.geojson')]);
+    const responses=await Promise.all([fetch('data/dashboard.json?v=20260907-8'),fetch('data/geografia_original.geojson')]);
     if(responses.some(r=>!r.ok))throw new Error('No se pudieron leer los datos municipales.');
     [data,geography]=await Promise.all(responses.map(r=>r.json()));rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
     if(rows.length!==135||geography.features.length!==135||geography.features.some(f=>!byId.has(f.properties.id)))throw new Error('La cobertura geográfica no coincide con los datos.');

@@ -4,6 +4,7 @@ import csv
 import hashlib
 import json
 import math
+import re
 from decimal import Decimal
 from datetime import date, timedelta
 from pathlib import Path
@@ -21,6 +22,11 @@ def repository_input(path):
 def apply_verified_fiscal(municipalities, path):
     """Overlay official executions; reject inconsistent amounts or periods before publishing."""
     audit = json.loads(path.read_text(encoding='utf-8'))
+    # The verified register is authoritative, including removals. Never retain
+    # an old account from a seed CSV or a previously generated dashboard.
+    for municipality in municipalities.values():
+        for target in ('fiscal', 'fiscalOther', 'fiscalExecution'):
+            municipality[target] = None
     seen = set()
     for group, target in [('records', 'fiscal'), ('otherPeriods', 'fiscalOther'), ('budgetExecutions', 'fiscalExecution')]:
         for record in audit.get(group, []):
@@ -29,6 +35,16 @@ def apply_verified_fiscal(municipalities, path):
             if ident not in municipalities or key in seen or (group == 'budgetExecutions' and ('records', ident) in seen):
                 raise ValueError(f'Duplicate or unknown fiscal municipality: {ident}')
             seen.add(key)
+            documents = record.get('documents', [])
+            if not documents or any(
+                not document.get('url', '').startswith(('https://', 'http://'))
+                or not re.fullmatch(r'[a-f0-9]{64}', document.get('sha256', ''))
+                or not document.get('consultedPages')
+                or any(type(page) is not int or not 1 <= page <= document.get('pages', 0)
+                       for page in document['consultedPages'])
+                for document in documents
+            ):
+                raise ValueError(f'Missing or invalid fiscal evidence: {ident}')
             start, end = date.fromisoformat(record['inicio']), date.fromisoformat(record['fin'])
             comparable = end.isoformat() == audit['periodEnd'] and date(2026, 1, 1) <= start <= date(2026, 1, 5)
             if start > end or end > date.fromisoformat(audit['verifiedAt']):
@@ -172,8 +188,6 @@ def build(folder):
     for r in read_csv(folder / 'empleo_sectorial_pba_2019_2025.csv'):
         if r['Periodo'] == '202512':
             municipalities[r['municipality_id']]['sectors'].append({'name': r['Sector'], 'jobs': value(r['empleo_num'])})
-    for r in read_csv(folder / 'muestra_fiscal_junio2026.csv'):
-        municipalities[r['municipality_id']]['fiscal'] = {k: value(v) for k, v in r.items() if k not in ('municipality_id', 'municipio')}
     fiscal_path = ROOT / 'municipios/data/fiscal_verified.json'
     fiscal_coverage = apply_verified_fiscal(municipalities, fiscal_path)
     transparency_path = ROOT / 'municipios/data/transparency_asap.json'
