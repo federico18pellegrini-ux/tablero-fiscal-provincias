@@ -7,6 +7,7 @@ const pct=(v,d=1)=>finite(v)?`${v>0?'+':''}${num(v,d)}%`:'Sin dato';
 const money=v=>finite(v)?'$'+num(v):'Sin dato';
 const millions=v=>finite(v)?'$'+num(v/1e6,1)+' M':'Sin dato';
 const tone=v=>!finite(v)?'muted':v<0?'negative':v>0?'positive':'neutral';
+const negativeClass=v=>finite(v)&&v<0?'negative':'';
 const signedMillions=v=>finite(v)?(v<0?'−':v>0?'+':'')+millions(Math.abs(v)):'Sin dato';
 const motion=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?0:300;
 const monthLabels=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
@@ -63,7 +64,7 @@ function renderOverview(){
   const diff=r-data.summary.transfer_real_change_pct;
   const fiscal=latestFiscal(m);
   $('insights').innerHTML=[
-    ['01','La evolución de los recursos',`La variación real del municipio está ${num(Math.abs(diff),1)} puntos porcentuales ${diff>=0?'por encima':'por debajo'} del conjunto bonaerense (${pct(data.summary.transfer_real_change_pct)}). Abrir los fondos permite entender esa diferencia.`,'Abrir los recursos','recursos'],
+    ['01','La evolución de los recursos',`La variación real del municipio está ${num(Math.abs(diff),1)} puntos porcentuales ${diff>=0?'por encima':'por debajo'} del conjunto bonaerense (<span class="${negativeClass(data.summary.transfer_real_change_pct)}">${pct(data.summary.transfer_real_change_pct)}</span>). Abrir los fondos permite entender esa diferencia.`,'Abrir los recursos','recursos'],
     ['02','El trabajo también importa',`El empleo formal promedio de 2025 ${j<0?'se achicó':'creció'} ${num(Math.abs(j),1)}% frente a 2024. Para evaluar qué implica sobre la actividad y las tasas municipales, conviene mirar los sectores y la evolución de los salarios.`,'Mirar el empleo','empleo'],
     ['03',fiscal?'El resultado de las cuentas':m.fiscalExecution?'La ejecución ya está disponible':'La cuenta fiscal sigue abierta',fiscal?`Del ${fiscalDate(fiscal.inicio)} al ${fiscalDate(fiscal.fin)}, por cada $100 de ingresos se registraron $${num(fiscal.gastos_totales/fiscal.ingresos_totales*100,1)} de gastos. La diferencia fue un ${fiscal.resultado_financiero<0?'déficit':'superávit'} de ${millions(Math.abs(fiscal.resultado_financiero))}. Abrir las cuentas permite ver el gasto corriente y la inversión.`:m.fiscalExecution?`Al cierre de junio se habían devengado ${millions(m.fiscalExecution.gastos_presupuestarios_devengados)} y pagado ${millions(m.fiscalExecution.gastos_presupuestarios_pagados)}. Ya podemos seguir la ejecución; todavía falta separar todas las operaciones financieras para calcular el déficit con el mismo criterio de los demás municipios.`:'Todavía falta una ejecución fiscal individual homologada para este municipio. Con las transferencias solas no podemos calcular su déficit, la inversión total ni cuánto dinero tiene disponible.','Ver las cuentas','recursos']
   ].map(([n,t,b,l,v])=>`<article class="insight"><span class="number">${n} /</span><h3>${t}</h3><p>${b}</p><button class="text-button" data-insight-view="${v}" data-insight-target="${n==='03'?'fiscal-panel':''}">${l} →</button></article>`).join('');
@@ -98,7 +99,7 @@ function drawMap(){
   let group=svg.select('g.map-shapes');if(group.empty())group=svg.append('g').attr('class','map-shapes');
   const features=geography.features;
   const paths=group.selectAll('path.municipality-path').data(features,d=>d.properties.id).join('path').attr('class',d=>'municipality-path'+(d.properties.id===state.id?' selected':'')).attr('d',mapPath).attr('data-municipality',d=>d.properties.id).attr('fill',d=>{const v=metricValue(byId.get(d.properties.id),meta);return finite(v)?colors.scale(v):'#dce2db';}).attr('role','button').attr('tabindex',d=>d.properties.id===state.id?0:-1).attr('aria-pressed',d=>String(d.properties.id===state.id)).attr('aria-label',d=>`${byId.get(d.properties.id).municipio}: ${formatMetric(metricValue(byId.get(d.properties.id),meta),meta)}. ${meta.period}`);
-  function tip(event,d){const m=byId.get(d.properties.id);$('map-tooltip').innerHTML=`<strong>${escape(m.municipio)}</strong>${formatMetric(metricValue(m,meta),meta)}`;$('map-tooltip').hidden=false;}
+  function tip(event,d){const m=byId.get(d.properties.id),value=metricValue(m,meta);$('map-tooltip').innerHTML=`<strong>${escape(m.municipio)}</strong><span class="${negativeClass(value)}">${formatMetric(value,meta)}</span>`;$('map-tooltip').hidden=false;}
   paths.on('pointerenter',tip).on('pointerleave',()=>$('map-tooltip').hidden=true).on('focus',tip).on('blur',()=>$('map-tooltip').hidden=true).on('click',(event,d)=>{event.stopPropagation();$('map-tooltip').hidden=true;selectMunicipality(d.properties.id);}).on('keydown',(event,d)=>{
     if(event.key==='Enter'||event.key===' '){event.preventDefault();selectMunicipality(d.properties.id);}
     if(['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(event.key)){event.preventDefault();const sorted=rows.slice().sort((a,b)=>a.municipio.localeCompare(b.municipio,'es'));const i=sorted.findIndex(m=>m.id===d.properties.id),next=sorted[(i+(['ArrowRight','ArrowDown'].includes(event.key)?1:sorted.length-1))%sorted.length];selectMunicipality(next.id);svg.select(`[data-municipality="${next.id}"]`).node().focus();}
@@ -111,7 +112,7 @@ function drawMap(){
   document.querySelectorAll('[data-map]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.map===mapMetric)));
   $('legend-low').textContent=colors.low;$('legend-high').textContent=colors.high;
   const gradient=document.querySelector('.legend-gradient');gradient.style.background=mapMetric==='transparencia'?'linear-gradient(90deg,#eef1f8,#3455a0)':['recursos','empleo'].includes(mapMetric)?'linear-gradient(90deg,#d5886e,#edf1e6,#288676)':mapMetric==='carencias'?'linear-gradient(90deg,#eff1e7,#b36d51)':'linear-gradient(90deg,#eef2e9,#2a766b)';
-  $('map-selection').innerHTML=`<strong>${escape(current().municipio)}</strong><span>${formatMetric(metricValue(current(),meta),meta)}</span>`;
+  $('map-selection').innerHTML=`<strong>${escape(current().municipio)}</strong><span class="${negativeClass(metricValue(current(),meta))}">${formatMetric(metricValue(current(),meta),meta)}</span>`;
   $('map-caption').textContent=meta.period+' · '+meta.note;
 }
 function zoomSelected(){const f=geography.features.find(f=>f.properties.id===state.id),[[x0,y0],[x1,y1]]=mapPath.bounds(f),w=$('map').clientWidth,h=$('map').clientHeight;const k=Math.min(12,.65/Math.max((x1-x0)/w,(y1-y0)/h));d3.select('#map').transition().duration(motion()).call(mapZoom.transform,d3.zoomIdentity.translate(w/2,h/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2));}
@@ -131,10 +132,10 @@ function renderRanking(){
   const transparency=meta.group==='Transparencia';
   $('ranking-summary').hidden=!transparency;
   if(transparency)$('ranking-summary').textContent=meta.id==='transparencia'?`${ranked.filter(r=>r.value===100).length} de ${ranked.length} municipios de esta comparación alcanzaron los 100 puntos. El índice evalúa publicación de información fiscal.`:`En esta comparación, ${ranked.filter(r=>r.value>0).length} municipios subieron, ${ranked.filter(r=>r.value<0).length} bajaron y ${ranked.filter(r=>r.value===0).length} mantuvieron su puntaje. Son cambios en publicación, no en resultado fiscal.`;
-  $('ranking-selected').innerHTML=`<div class="rank-reference-info"><span class="rank-reference-label">Municipio de referencia</span><strong>${escape(m.municipio)}</strong><span>${selected?`Posición ${selected.rank} de ${ranked.length} en esta comparación`:'Sin dato para este indicador'}</span></div><div class="rank-reference-detail"><strong>${formatMetric(metricValue(m,meta),meta)}</strong><button class="text-button" id="open-reference">${transparency?'Ver detalle de transparencia':'Ver ficha municipal'} →</button></div>`;
+  $('ranking-selected').innerHTML=`<div class="rank-reference-info"><span class="rank-reference-label">Municipio de referencia</span><strong>${escape(m.municipio)}</strong><span>${selected?`Posición ${selected.rank} de ${ranked.length} en esta comparación`:'Sin dato para este indicador'}</span></div><div class="rank-reference-detail"><strong class="${negativeClass(metricValue(m,meta))}">${formatMetric(metricValue(m,meta),meta)}</strong><button class="text-button" id="open-reference">${transparency?'Ver detalle de transparencia':'Ver ficha municipal'} →</button></div>`;
   $('open-reference').onclick=()=>transparency?openTransparency():navigate('panorama');
   const vals=ranked.map(r=>r.value),lo=Math.min(0,...vals),hi=Math.max(0,...vals),span=hi-lo||1,zero=(0-lo)/span*100;
-  $('ranking-rows').innerHTML=(showAll?ranked:ranked.slice(0,10)).map(r=>{const pos=(r.value-lo)/span*100,left=Math.min(pos,zero),width=Math.max(Math.abs(pos-zero),.4);return `<button class="rank-row ${r.m.id===m.id?'is-selected':''}" data-municipality="${r.m.id}" aria-label="${escape(r.m.municipio)}, puesto ${r.rank}, ${formatMetric(r.value,meta)}. Seleccionar municipio"><span class="rank-number">${r.rank.toString().padStart(2,'0')}</span><span class="rank-name">${escape(r.m.municipio)}</span><span class="rank-track" aria-hidden="true"><span class="rank-zero" style="left:${zero}%"></span><span class="rank-fill ${r.value<0?'down':'single'}" style="left:${left}%;width:${width}%"></span></span><span class="rank-value">${formatMetric(r.value,meta)}</span></button>`;}).join('');
+  $('ranking-rows').innerHTML=(showAll?ranked:ranked.slice(0,10)).map(r=>{const pos=(r.value-lo)/span*100,left=Math.min(pos,zero),width=Math.max(Math.abs(pos-zero),.4);return `<button class="rank-row ${r.m.id===m.id?'is-selected':''}" data-municipality="${r.m.id}" aria-label="${escape(r.m.municipio)}, puesto ${r.rank}, ${formatMetric(r.value,meta)}. Seleccionar municipio"><span class="rank-number">${r.rank.toString().padStart(2,'0')}</span><span class="rank-name">${escape(r.m.municipio)}</span><span class="rank-track" aria-hidden="true"><span class="rank-zero" style="left:${zero}%"></span><span class="rank-fill ${r.value<0?'down':'single'}" style="left:${left}%;width:${width}%"></span></span><span class="rank-value ${negativeClass(r.value)}">${formatMetric(r.value,meta)}</span></button>`;}).join('');
   bindMunicipalButtons($('ranking-rows'));
   $('ranking-more').hidden=ranked.length<=10;$('ranking-more').textContent=showAll?'Mostrar los primeros 10':`Ver los ${ranked.length} municipios`;
   $('ranking-note').textContent=meta.note+' Los empates comparten puesto. La posición corresponde al orden y al grupo elegidos; no es una calificación general de gestión.';
@@ -229,7 +230,7 @@ function attachEvents(){
 }
 async function init(){
   try{
-    const responses=await Promise.all([fetch('data/dashboard.json?v=20260907-6'),fetch('data/geografia_original.geojson')]);
+    const responses=await Promise.all([fetch('data/dashboard.json?v=20260907-7'),fetch('data/geografia_original.geojson')]);
     if(responses.some(r=>!r.ok))throw new Error('No se pudieron leer los datos municipales.');
     [data,geography]=await Promise.all(responses.map(r=>r.json()));rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
     if(rows.length!==135||geography.features.length!==135||geography.features.some(f=>!byId.has(f.properties.id)))throw new Error('La cobertura geográfica no coincide con los datos.');
