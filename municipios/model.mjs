@@ -61,15 +61,38 @@ export function simulate(m, shockPercent) {
 export function csv(rows) {
   return '\ufeff'+rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');
 }
+export function fiscalPeriods(m) {
+  const unique=new Map();
+  for(const f of [m.fiscal,m.fiscalOther,...(m.management?.history||[])].filter(Boolean)) {
+    const key=f.inicio+'/'+f.fin;if(!unique.has(key))unique.set(key,f);
+  }
+  return [...unique.values()].sort((a,b)=>b.fin.localeCompare(a.fin)||a.inicio.localeCompare(b.inicio));
+}
+export function managementExportRows(m) {
+  if(!m.management)return [];
+  const g=m.management,rows=[];
+  const add=(label,value,period,note='')=>{if(finite(value))rows.push([m.municipio,label,value,'ARS corrientes',period,note]);};
+  const b=g.budget,p=b.inicio+' / '+b.fin;
+  for(const [key,label] of Object.entries({original:'Presupuesto original',modifications:'Modificaciones presupuestarias',current:'Presupuesto vigente',received:'Recursos presupuestarios cobrados',accrued:'Gastos presupuestarios devengados',paid:'Gastos presupuestarios pagados',unpaid:'Gastos del período devengados y no pagados'}))add(label,b[key],p,'El presupuesto vigente es anual. La ejecución incluye operaciones financieras.');
+  for(const r of b.objects)for(const [key,label] of [['current','Presupuesto vigente'],['accrued','Devengado'],['paid','Pagado']])add(r.label+' · '+label,r[key],p);
+  for(const r of b.receipts)add(b.receiptTitle+' · '+r.label,r.received,p);
+  for(const [key,label] of Object.entries({closing:'Saldo de tesorería',available:'Disponibilidades',transitory:'Movimientos transitorios',budgetCash:'Cuentas presupuestarias',unearmarkedAccounts:'Cuentas sin afectación',earmarkedAccounts:'Cuentas con afectación',thirdPartyAndSpecial:'Terceros y cuentas especiales',liabilities:'Pasivos contables',currentLiabilities:'Pasivos corrientes',nonCurrentLiabilities:'Pasivos no corrientes'}))add(label,g.treasury[key],g.treasury.date,'Los saldos no equivalen a caja libre; no sumar categorías que se contienen.');
+  if(g.debt){for(const [key,label] of [['consolidated','Deuda consolidada'],['floating','Deuda flotante'],['current','Deuda consolidada corriente'],['nonCurrent','Deuda consolidada no corriente']])add(label,g.debt[key],g.debt.date);for(const r of g.debt.floatingHistory)add('Deuda flotante histórica',r.floating,r.year+'-12-31','Importe publicado redondeado a pesos enteros.');}
+  for(const r of g.banking.records){for(const [key,label] of [['loans','Préstamos bancarios · actualización BCRA'],['deposits','Depósitos bancarios · actualización BCRA']]){
+    rows.push([m.municipio,label,r[key]??null,'ARS corrientes',r.date,g.banking.note]);
+    rows.push([m.municipio,label+' · ajustados por inflación',r[key+'Real']??null,'ARS de julio de 2026',r.date,'IPC nacional del mes de cierre; misma localización financiera.']);
+  }}
+  return rows;
+}
 export function fiscalExportRows(m) {
   const fields=[['ingresos_corrientes','Ingresos corrientes'],['ingresos_capital','Recursos de capital'],['ingresos_totales','Ingresos totales'],['gastos_corrientes','Gastos corrientes'],['gastos_capital','Gastos de capital'],['gastos_totales','Gastos totales'],['resultado_financiero','Resultado financiero'],['personal_devengado','Personal devengado']];
-  const rows=[m.fiscal,m.fiscalOther].filter(Boolean).flatMap(f=>fields.map(([key,label])=>[m.municipio,label,f[key]??null,'ARS corrientes',`${f.inicio} / ${f.fin}`,`${f.scope||'Cuenta municipal publicada.'} ${f===m.fiscal?'Período del ranking fiscal.':'Fuera del período del ranking fiscal.'}`]));
+  const rows=fiscalPeriods(m).flatMap(f=>fields.map(([key,label])=>[m.municipio,label,f[key]??null,'ARS corrientes',`${f.inicio} / ${f.fin}`,`${f.scope||'Cuenta municipal publicada.'} ${f===m.fiscal?'Período del ranking fiscal.':'Fuera del período del ranking fiscal.'}`]));
   const e=m.fiscalExecution;
   if(e){
     const budgetFields=[['presupuesto_vigente','Presupuesto vigente'],['recursos_presupuestarios_percibidos','Recursos presupuestarios cobrados'],['gastos_presupuestarios_devengados','Gastos presupuestarios devengados'],['gastos_presupuestarios_pagados','Gastos presupuestarios pagados'],['devengado_no_pagado_del_periodo','Gastos del período devengados y no pagados']];
     rows.push(...budgetFields.map(([key,label])=>[m.municipio,label,e[key]??null,'ARS corrientes',`${e.inicio} / ${e.fin}`,key==='presupuesto_vigente'?'Autorización anual vigente al cierre informado.':'Ejecución presupuestaria del período. Incluye operaciones financieras; no integra el ranking fiscal ni mide deuda total.']));
   }
-  return rows;
+  return rows.concat(managementExportRows(m));
 }
 export function readState(search, municipalities, savedId) {
   const p=new URLSearchParams(search), id=p.get('municipio') || savedId;

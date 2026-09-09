@@ -30,7 +30,7 @@ class MunicipalReports(unittest.TestCase):
                 self.assertEqual(len(pdf.pages),r['pages'])
                 self.assertEqual(pdf.metadata.author,'Federico Pellegrini')
                 self.assertIn(r['municipality'],pdf.pages[0].extract_text())
-                self.assertEqual(r['sections'],['lectura','prioridades','cuentas','transferencias','empleo','salarios','actividad','deudas','poblacion'])
+                self.assertEqual(r['sections'],['lectura','prioridades','cuentas']+(['presupuesto','caja','deuda-municipal','historia-fiscal'] if r['id'] in ['06329','06805'] else [])+['transferencias','empleo','salarios','actividad','deudas','poblacion'])
                 self.assertEqual(r['crimeYears'],[2024,2025])
 
     def test_general_las_heras_fiscal_money_and_price_bases(self):
@@ -73,8 +73,11 @@ class MunicipalReports(unittest.TestCase):
 
     def test_execution_and_different_periods_do_not_become_comparable_deficits(self):
         tigre='\n'.join(p.extract_text() for p in PdfReader(OUTPUT/'informe-06805.pdf').pages)
-        self.assertIn('Ejecución presupuestaria',tigre)
-        self.assertIn('no se usan como un déficit o superávit en el ranking',tigre)
+        self.assertIn('Presupuesto y pagos',tigre)
+        self.assertIn('Menos cancelación de pasivos anteriores',tigre)
+        self.assertIn('$12.863,85',tigre)
+        self.assertIn('$33.832,57',tigre)
+        self.assertIn('31/12/2025',tigre)
         bragado='\n'.join(p.extract_text() for p in PdfReader(OUTPUT/'informe-06112.pdf').pages)
         self.assertIn('30/06/2026',bragado)
         self.assertIn('31/08/2026',bragado)

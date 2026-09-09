@@ -7,9 +7,9 @@
   <meta name="description" content="Una mirada clara sobre los 135 municipios bonaerenses. Recursos, empleo, rankings y escenarios para la gestión municipal. Federico Pellegrini.">
   <title>Municipios · Federico Pellegrini</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260909-3">
+  <link rel="stylesheet" href="styles.css?v=20260909-4">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20260909-3"></script>
+  <script defer src="app.js?v=20260909-4"></script>
   <script defer src="../analytics.js?v=20260907-2"></script>
 </head>
 <body>
@@ -62,6 +62,7 @@
       </section>
       <section id="recursos" class="view" aria-label="Recursos municipales" hidden>
         <div class="section-heading"><div><div class="eyebrow">Recursos para gestionar</div><h2>Lo que llega y lo que cambia</h2><p>Transferencias provinciales, expresadas en pesos de julio de 2026.</p></div></div>
+        <nav id="management-shortcuts" class="management-shortcuts" aria-label="Cuentas y presupuesto" hidden></nav>
         <div id="resource-stats" class="stats-grid"></div>
         <p class="resource-shortcuts"><a class="button button-quiet" href="#price-panel">Comparar pesos corrientes y reales ↓</a><a class="text-button" href="cobertura.html">Ver qué datos faltan →</a></p>
         <div class="two-columns"><section class="panel"><div class="panel-heading"><div><h3>Las transferencias, mes a mes</h3><p class="small-note">Enero a julio · millones de pesos de julio de 2026</p></div></div><div class="chart-key"><span><i class="key previous"></i>2025</span><span><i class="key current"></i>2026</span></div><div id="transfers-chart" class="chart"></div><p class="chart-caption">La comparación descuenta la inflación de cada mes. Tocá las barras para ver los importes.</p></section>
@@ -79,6 +80,7 @@
           <p class="data-sources">Deflactor: <a href="https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_08_26.xls" target="_blank" rel="noopener">IPC nacional, nivel general, INDEC</a>. Es una referencia general de poder de compra; no mide exactamente el costo de las obras o de cada servicio municipal. <a href="metodologia.html#deflactor">Ver cálculo y alcance</a> · <a id="municipal-coverage-link" href="cobertura.html">Qué datos faltan en este municipio</a></p>
         </section>
         <section class="panel fiscal-panel" id="fiscal-panel"></section>
+        <div id="management-panel"></div>
       </section>
       <section id="empleo" class="view" aria-label="Economía y empleo municipal" hidden>
         <div class="section-heading"><div><div class="eyebrow">La economía detrás del presupuesto</div><h2>Trabajo, salarios y actividad</h2><p>Empleo privado registrado por lugar del establecimiento.</p></div></div>
