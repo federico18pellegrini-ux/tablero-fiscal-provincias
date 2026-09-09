@@ -282,7 +282,7 @@ class Report:
         self.h('2. Distinguir el resultado de la plata disponible')
         if f:
             b=f['resultado_financiero']
-            self.p(f"<b>Por qué la elegimos.</b> El último cierre muestra un {'déficit' if b<0 else 'superávit'} de {money(abs(b))} millones. "+('Ese faltante exige saber si se usaron ahorros anteriores, se tomó deuda o quedaron gastos sin pagar.' if b<0 else 'Tener superávit no significa que todo ese monto pueda gastarse: hay que descontar obligaciones pendientes y respetar el destino de cada fondo.'))
+            self.p(f"<b>Por qué la elegimos.</b> El último cierre muestra un {'déficit' if b<0 else 'superávit'} de {money(abs(b))} millones. "+('Ese faltante exige saber si se usaron ahorros anteriores, se tomó deuda o quedaron gastos sin pagar.' if b<0 else 'Tener superávit no alcanza para saber cuánto puede gastarse. Hay que mirar el saldo bancario, los pagos pendientes y el destino de cada fondo. Los gastos ya registrados no se restan otra vez del resultado.'))
         else:self.p('<b>Por qué la elegimos.</b> Todavía falta una cuenta fiscal completa y verificada. Sin saber cuánto ingresó, cuánto se gastó y cuánto queda por pagar, no hay una base firme para asumir nuevos compromisos.')
         self.p('<b>Qué recomendamos.</b> Reunir el saldo bancario, los fondos con destino obligatorio, las facturas pendientes y los próximos vencimientos en una misma planilla. Esto permite separar el resultado contable del dinero que realmente se puede usar y ordenar los pagos por fecha y prioridad.')
         self.h('3. Entender qué está pasando con el trabajo')
