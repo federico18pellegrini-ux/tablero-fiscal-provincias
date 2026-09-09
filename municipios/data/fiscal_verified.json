@@ -2195,7 +2195,7 @@
       "id": "06854",
       "inicio": "2026-01-01",
       "fin": "2026-06-30",
-      "method": "published_caif",
+      "method": "sum_quarters",
       "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
       "landingUrl": "https://25demayo.gob.ar/informacion-economico-financiera-2/",
       "amounts": {
@@ -2210,17 +2210,75 @@
       },
       "documents": [
         {
-          "url": "https://25demayo.gob.ar/informacion-economica/2026/2do-trimestre/Situacion%20Economica%20Financiera%20Primer%20Semestre%202026.pdf",
-          "sha256": "44c59661a2330e3b2f827df1c5acdba867fac08cde1130f9a88f5ccf86e433e2",
+          "url": "https://25demayo.gob.ar/informacion-economica/2026/1er-trimestre/Situacion%20Economico%20Financiera%20Primer%20Trimestre%202026.pdf",
+          "sha256": "ed64186b56fd7db5a5fca0d13765ee50e2523c965b9d933a2a826d354c383132",
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "bytes": 1170530,
+          "locator": "CAIF y gasto en personal devengado. Trimestre sin superposición; suma de flujos, no del presupuesto vigente.",
+          "verifiedAt": "2026-09-09"
+        },
+        {
+          "url": "https://25demayo.gob.ar/informacion-economica/2026/2do-trimestre/Situacion%20Economica%20Financiera%20Segundo%20Trimestre%202026.pdf",
+          "sha256": "21938580bf2e1b1a41db490dedbeb56eae56660a849f7c532c267366a8631d48",
           "pages": 6,
           "consultedPages": [
             1
           ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 1172907
+          "bytes": 1172925,
+          "locator": "CAIF y gasto en personal devengado. Trimestre sin superposición; suma de flujos, no del presupuesto vigente.",
+          "verifiedAt": "2026-09-09"
         }
       ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+      "note": "Semestre reconstruido sumando enero–marzo y abril–junio. Los ocho importes coinciden al centavo con el informe semestral archivado cuyo enlace dejó de funcionar.",
+      "replacedEvidence": {
+        "reviewedAt": "2026-09-09",
+        "reason": "El enlace semestral devuelve 404. Los dos documentos trimestrales vigentes suman exactamente los ocho importes del semestre publicado.",
+        "documents": [
+          {
+            "url": "https://25demayo.gob.ar/informacion-economica/2026/2do-trimestre/Situacion%20Economica%20Financiera%20Primer%20Semestre%202026.pdf",
+            "sha256": "44c59661a2330e3b2f827df1c5acdba867fac08cde1130f9a88f5ccf86e433e2",
+            "pages": 6,
+            "consultedPages": [
+              1
+            ],
+            "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+            "bytes": 1172907
+          }
+        ]
+      },
+      "components": [
+        {
+          "inicio": "2026-01-01",
+          "fin": "2026-03-31",
+          "amounts": {
+            "ingresos_corrientes": "8943261877.15",
+            "gastos_corrientes": "7945280041.04",
+            "ingresos_capital": "351351.53",
+            "gastos_capital": "478414678.46",
+            "ingresos_totales": "8943613228.68",
+            "gastos_totales": "8423694719.50",
+            "resultado_financiero": "519918509.18",
+            "personal_devengado": "4722134380.61"
+          }
+        },
+        {
+          "inicio": "2026-04-01",
+          "fin": "2026-06-30",
+          "amounts": {
+            "ingresos_corrientes": "10658453912.94",
+            "gastos_corrientes": "8005979584.06",
+            "ingresos_capital": "6963714.05",
+            "gastos_capital": "677135960.91",
+            "ingresos_totales": "10665417626.99",
+            "gastos_totales": "8683115544.97",
+            "resultado_financiero": "1982302082.02",
+            "personal_devengado": "4050825502.06"
+          }
+        }
+      ]
     },
     {
       "id": "06126",

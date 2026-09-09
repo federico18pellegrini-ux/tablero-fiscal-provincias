@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
-import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv,fiscalExportRows} from '../municipios/model.mjs';
+import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv,fiscalExportRows,adjustPrice,priceComparisons,municipalContextExportRows} from '../municipios/model.mjs';
 const require=createRequire(import.meta.url),d3=require('../municipios/vendor/d3.v7.min.js');
 const data=JSON.parse(fs.readFileSync(new URL('../municipios/data/dashboard.json',import.meta.url)));
 const geometry=JSON.parse(fs.readFileSync(new URL('../municipios/data/geografia_original.geojson',import.meta.url)));
@@ -248,4 +248,51 @@ test('external debt aggregates preserve attribution, persons and money denominat
  const h=rows.find(m=>m.id==='06329').community.debt;
  assert.equal(h.peopleWithDebt,13565);assert.equal(h.peopleInArrears,4035);assert.equal(h.debtARS,52962481000);
  assert.ok(Math.abs(h.peopleInArrearsPct-h.debtInArrearsPct)>6);
+});
+
+test('deflator preserves zero, negative values and missing months without extrapolation',()=>{
+  const ix={'2024-12':100,'2025-12':150};
+  assert.equal(adjustPrice(100,'2024-12','2025-12',ix),150);
+  assert.equal(adjustPrice(-100,'2024-12','2025-12',ix),-150);
+  assert.equal(adjustPrice(0,'2024-12','2025-12',ix),0);
+  assert.equal(adjustPrice(null,'2024-12','2025-12',ix),null);
+  assert.equal(adjustPrice(100,'2024-12','2026-12',ix),null);
+  assert.equal(adjustPrice(100,'2024-12','2025-12',{'2024-12':0,'2025-12':150}),null);
+  assert.ok(Math.abs(adjustPrice(adjustPrice(1234,'2024-12','2025-12',ix),'2025-12','2024-12',ix)-1234)<1e-9);
+});
+
+test('all municipalities retain real changes under a different base and nominal transfers use original pesos',()=>{
+  const deflator=JSON.parse(fs.readFileSync(new URL('../municipios/data/deflator.json',import.meta.url)));
+  for(const m of rows){
+    const nominal=priceComparisons(m,'nominal','2024-12',deflator);
+    assert.equal(nominal[0].current,m.transferencias_2026_ene_jul_ars);
+    assert.equal(nominal[2].current,m.community.wage.annual['2025'].nominal);
+    for(const base of deflator.bases){
+      const real=priceComparisons(m,'real',base,deflator);
+      assert.ok(Math.abs(real[0].change-m.variacion_transferencias_real_pct)<0.00000051);
+      assert.ok(Math.abs(real[1].change-m.variacion_copart_real_pct)<0.00000051);
+      for(const [n,key] of [[3,'prestamos_real_cambio_2023_2024_pct'],[4,'depositos_real_cambio_2023_2024_pct']]){
+        if(m[key]===null)assert.equal(real[n].change,null);
+        else assert.ok(Math.abs(real[n].change-m[key])<0.00000051);
+      }
+      assert.equal(real[5].previous,null);assert.equal(real[5].change,null);
+      assert.equal(real[5].current,adjustPrice(m.community.debt.debtARS,'2026-07',base,deflator.indices));
+    }
+  }
+  const h=rows.find(m=>m.id==='06329');
+  assert.ok(Math.abs(priceComparisons(h,'real','2026-07',deflator)[0].current-priceComparisons(h,'nominal','2026-07',deflator)[0].current)>1e8);
+});
+
+test('municipal CSV includes new displayed context with original denominators and missingness',()=>{
+  for(const m of rows){
+    const out=municipalContextExportRows(m),get=label=>out.find(r=>r[1]===label);
+    assert.equal(get('Deuda total registrada de personas')[2],m.community.debt.debtARS);
+    assert.equal(get('Personas en mora sobre personas con deuda')[2],m.community.debt.peopleInArrearsPct);
+    assert.equal(get('Población en viviendas particulares')[2],m.community.health.populationPrivateDwellings);
+    assert.equal(get('Población')[2],m.poblacion_2022);
+    assert.equal(out.filter(r=>r[1]==='Robos registrados').length,2);
+    assert.equal(out.filter(r=>r[1]==='Salario bruto mensual promedio').length,3);
+    for(const s of m.sectors)assert.equal(get('Empleo privado formal: '+s.name)[2],s.jobs);
+    assert.ok(out.every(r=>r.length===6&&r[0]===m.municipio));
+  }
 });

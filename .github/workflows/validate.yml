@@ -32,3 +32,5 @@ jobs:
         run: python scripts_export_management_reports.py --check
       - name: Verify complete municipal reports match dashboard data
         run: python scripts_export_municipal_reports.py --check
+      - name: Verify municipal coverage and deflator
+        run: python scripts_build_municipal_tools.py --check
