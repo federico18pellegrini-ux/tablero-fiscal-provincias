@@ -7,9 +7,9 @@
   <meta name="description" content="Una mirada clara sobre los 135 municipios bonaerenses. Recursos, empleo, rankings y escenarios para la gestión municipal. Federico Pellegrini.">
   <title>Municipios · Federico Pellegrini</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260909-2">
+  <link rel="stylesheet" href="styles.css?v=20260909-3">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20260909-2"></script>
+  <script defer src="app.js?v=20260909-3"></script>
   <script defer src="../analytics.js?v=20260907-2"></script>
 </head>
 <body>
@@ -49,7 +49,7 @@
             <div class="map-selection" id="map-selection"></div><p class="chart-caption" id="map-caption"></p>
           </section>
         </div>
-        <section class="section-block"><div class="section-heading"><div><div class="eyebrow">Lo que conviene mirar</div><h2>Tres lecturas para la gestión</h2></div><span class="small-note">Datos, contexto y próximos pasos</span></div><div class="insights-grid" id="insights"></div></section>
+        <section class="section-block"><div class="section-heading"><div><div class="eyebrow">Lo que conviene mirar</div><h2>Tres prioridades para la gestión</h2></div><span class="small-note">Datos, contexto y próximos pasos</span></div><div class="insights-grid" id="insights"></div></section>
         <section class="panel section-block community-panel" id="community-panel" aria-label="Salud, vivienda y seguridad"></section>
         <section class="panel section-block transparency-panel" id="transparency-panel" aria-label="Transparencia fiscal municipal"></section>
         <section class="province-pulse"><div><div class="eyebrow">La provincia, en perspectiva</div><h2>¿El cambio es local o compartido?</h2></div><div><strong id="pulse-transfers">106</strong><span>municipios con menos transferencias reales<small>Ene–jul 2026 vs. 2025</small></span></div><div><strong id="pulse-both">41</strong><span>con menos empleo y transferencias<small>Año 2025 vs. 2024</small></span></div><button class="text-button" data-go="rankings">Ver ranking general <span aria-hidden="true">→</span></button></section>
@@ -84,7 +84,7 @@
         <div class="section-heading"><div><div class="eyebrow">La economía detrás del presupuesto</div><h2>Trabajo, salarios y actividad</h2><p>Empleo privado registrado por lugar del establecimiento.</p></div></div>
         <div id="employment-stats" class="stats-grid"></div>
         <div class="two-columns"><section class="panel"><div class="panel-heading"><div><h3>Cómo evoluciona el empleo</h3><p class="small-note">Puestos privados registrados · datos mensuales</p></div></div><div class="choices" role="group" aria-label="Historia de empleo"><button id="history-short" aria-pressed="true">2024–2025</button><button id="history-full" aria-pressed="false">Desde 2019</button></div><div id="employment-chart" class="chart"></div><p class="chart-caption">La serie puede mostrar estacionalidad. No mide desempleo, informalidad ni empleo público.</p></section><section class="panel"><div class="eyebrow">Estructura productiva</div><h3>¿Dónde están los puestos?</h3><p class="small-note">Sectores del empleo privado formal · diciembre de 2025</p><div id="sectors"></div><p class="chart-caption">Los sectores reservados quedan identificados; no se completan con cero.</p></section></div>
-        <section class="editorial-reading" id="employment-reading"></section>
+        <section class="panel section-block" id="employment-detail" aria-label="Empleo anual de 2023 a 2025"></section><section class="editorial-reading" id="employment-reading"></section>
         <section class="panel section-block community-panel" id="salary-panel" aria-label="Salarios y actividad económica"></section>
         <section class="panel section-block community-panel" id="debt-panel" aria-label="Deudas de las personas"></section>
       </section>
