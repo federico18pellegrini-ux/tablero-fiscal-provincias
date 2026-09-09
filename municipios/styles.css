@@ -157,6 +157,7 @@ body{font-size:var(--text-reading)}
 }
 
 .fiscal-periods{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.fiscal-periods button{min-height:44px;padding:10px 16px;border:1px solid var(--line,#dce2db);border-radius:10px;background:#fff;color:var(--ink,#182f2a);font:inherit}.fiscal-periods button[aria-pressed="true"]{background:#e6eee9;border-color:#527c70;font-weight:600}.period-notice{padding:14px 16px;border-left:3px solid #5474a3;background:#eef2f8;border-radius:0 8px 8px 0}
+.management-shortcuts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}.management-shortcuts[hidden]{display:none}#management-panel .panel{min-width:0}#management-panel h2{font-size:clamp(24px,3vw,32px);line-height:1.25}#management-panel p,#management-panel li{font-size:16px;line-height:1.65}#management-panel li+li{margin-top:12px}#management-panel section{scroll-margin-top:220px}#management-shortcuts .button{font-size:16px}#fiscal-panel{scroll-margin-top:220px}
 
 /* A lighter red keeps negative values readable on dark tooltip backgrounds. */
 .map-tooltip,.chart-tip{--red:#ffaaa3}

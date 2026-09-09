@@ -3,9 +3,9 @@
   "scope": "Datos incorporados; no certifica que un municipio no publique información en otro sitio.",
   "commonPending": [
     "Caja de libre disponibilidad, luego de obligaciones y fondos afectados.",
-    "Stock y calendario futuro de deuda del gobierno municipal; no es la deuda de las personas.",
+    "Stock y calendario de deuda municipal comparables para los 135: se incorporaron pasivos de Las Heras (junio 2026) y deuda consolidada y flotante de Tigre (diciembre 2025), sin calendario futuro.",
     "Ingresos y gastos fiscales mensuales para ajustar cada flujo por inflación.",
-    "Presupuesto vigente comparable: solo hay un total presupuestario incorporado para Tigre."
+    "Presupuesto vigente comparable para los 135: se incorporaron presupuesto y ejecución de General Las Heras y Tigre a junio de 2026."
   ],
   "municipalities": [
     {
@@ -615,10 +615,18 @@
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
+        "Caja de libre disponibilidad conciliada, descontando fondos afectados y todas las obligaciones exigibles.",
+        "Calendario futuro de capital e intereses, por contrato, moneda y fecha.",
+        "Antigüedad y vencimiento de la deuda con proveedores; distinguir pendiente de vencida.",
+        "Ingresos y gastos mensuales para ajustar cada flujo fiscal por inflación.",
+        "Cierre fiscal anual de 2023. Los datos disponibles del primer semestre no se anualizan.",
+        "Desglose contractual del stock de deuda; los pasivos contables no identifican por sí solos préstamos.",
+        "Presupuesto original de 2026 y detalle de sus modificaciones; el presupuesto vigente sí está incorporado.",
+        "Préstamos y depósitos bancarios 2025 y junio de 2026: sin cifras verificables para Las Heras."
       ],
-      "portalReview": "2026-09-07",
-      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+      "portalReview": "2026-09-09",
+      "portalStatus": "Cuenta de enero–junio de 2026 conciliada. Se incorporaron historia fiscal, presupuesto, pagos y tesorería. Historia desde 2021 con períodos exactos y pasivos contables a junio de 2026; falta el cierre anual 2023."
     },
     {
       "id": "06336",
@@ -1597,14 +1605,18 @@
     {
       "id": "06805",
       "municipio": "Tigre",
-      "fiscalStatus": "Ejecución parcial",
-      "comparable": false,
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
       "latestFiscalEnd": "2026-06-30",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Caja de libre disponibilidad conciliada, descontando fondos afectados y todas las obligaciones exigibles.",
+        "Calendario futuro de capital e intereses, por contrato, moneda y fecha.",
+        "Antigüedad y vencimiento de la deuda con proveedores; distinguir pendiente de vencida.",
+        "Ingresos y gastos mensuales para ajustar cada flujo fiscal por inflación.",
+        "Estado de tesorería y stock completo de pasivos a junio de 2026."
       ],
-      "portalReview": "2026-09-07",
-      "portalStatus": "Ejecución presupuestaria disponible. Falta separar las operaciones financieras para calcular un resultado comparable."
+      "portalReview": "2026-09-09",
+      "portalStatus": "Cuenta de enero–junio de 2026 conciliada. Se incorporaron historia fiscal, presupuesto, pagos y tesorería. Resultado reconstruido por objeto y programa, con control contra la cuenta anual 2025. Deuda consolidada y flotante al cierre 2025."
     },
     {
       "id": "06812",

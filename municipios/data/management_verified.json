@@ -1,0 +1,2823 @@
+{
+  "version": 1,
+  "verifiedAt": "2026-09-09",
+  "classification": {
+    "url": "https://normas.gba.gob.ar/documentos/VW5JbhYx.pdf",
+    "pages": [
+      225,
+      226
+    ],
+    "method": "Matriz de conversión objeto/carácter económico; insumos de proyectos como producción propia. Conciliación íntegra con CAIF Tigre 2025 antes de aplicar a junio de 2026."
+  },
+  "controls": {
+    "tigre2025MatchesPublishedCAIF": true,
+    "tigre2026ExpenseLeafRows": 5455,
+    "tigre2026IncomeLeafRows": 154,
+    "tigre2025Bridge": {
+      "amounts": {
+        "budgetAccrued": "400156205161.65",
+        "amortization": "247525.71",
+        "priorLiabilities": "12604039686.42",
+        "interestIncluded": "106060.45",
+        "projectInputsIncludedInCapital": "6495045905.14",
+        "fiscalExpenditure": "387551917949.52"
+      }
+    },
+    "incomeExtractionLimit": "La columna Devengado no percibido recorta dígitos y signos en el PDF; no se incorpora. Los totales cobrados, devengados y presupuestados utilizados concilian."
+  },
+  "sources": [
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2025.pdf",
+      "sha256": "58aa0a98ab91117bd90cb3b8ba82a9f1ba62abc9394db611bdc592a0d15b7af6",
+      "bytes": 286857,
+      "file": "06805--SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2025.pdf",
+      "title": "AÑo 2025",
+      "retrieved": "2026-09-09",
+      "pages": 12,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2024.pdf",
+      "sha256": "397e3d02c67c9f64e80a77e5f47d31a23854045b3622cd539c7976285acfb721",
+      "bytes": 359066,
+      "file": "06805--SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2024.pdf",
+      "title": "AÑo 2024",
+      "retrieved": "2026-09-09",
+      "pages": 12,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SIUACION_ECONOMICO_FINANCIERA31-12-2023.pdf",
+      "sha256": "60c9f64e1b07247f9277693207e6aca611dc6e6bdc8b27c66a48c7f177c2e9d2",
+      "bytes": 359334,
+      "file": "06805--SIUACION_ECONOMICO_FINANCIERA31-12-2023.pdf",
+      "title": "AÑo 2023",
+      "retrieved": "2026-09-09",
+      "pages": 12,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SIUACION_ECONOMICO_FINANCIERA31-12-2022.pdf",
+      "sha256": "fcd298b6ab9d02270c7a158068100d46f9bcf2dc4fefe41c99710a5d8ef811a1",
+      "bytes": 385490,
+      "file": "06805--SIUACION_ECONOMICO_FINANCIERA31-12-2022.pdf",
+      "title": "AÑo 2022",
+      "retrieved": "2026-09-09",
+      "pages": 13,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SIUACION_ECONOMICO_FINANCIERA31-12-2021.pdf",
+      "sha256": "9d93d029dc0fe9a40aa13c0f28494a96a0c322080e4b3ef1e4c84268a0fee7e6",
+      "bytes": 79867,
+      "file": "06805--SIUACION_ECONOMICO_FINANCIERA31-12-2021.pdf",
+      "title": "AÑo 2021",
+      "retrieved": "2026-09-09",
+      "pages": 13,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2024/07/sitecofin-1sem2024.pdf",
+      "sha256": "c5e979d1a89c0d2fa89f39de6bfdd391b738ab9458bf408296fc71a3f162bb8b",
+      "bytes": 233120,
+      "file": "06329--sitecofin-1sem2024.pdf",
+      "title": "sitecofin-1sem2024",
+      "retrieved": "2026-09-09",
+      "pages": 5,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2025/04/sitecofin-2sem-2024.pdf",
+      "sha256": "949e957b0382955dc7383fe18ea7fb05d6b9122ab2fe6d9302b3f30151898bd5",
+      "bytes": 313907,
+      "file": "06329--sitecofin-2sem-2024.pdf",
+      "title": "sitecofin-2sem-2024",
+      "retrieved": "2026-09-09",
+      "pages": 5,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2025/07/2025-sitecofin-1sem.pdf",
+      "sha256": "c232dbcbb6f28e91af0635f6791cdd57ebb4d7f7a7b2351423182e17ba226efa",
+      "bytes": 236132,
+      "file": "06329--2025-sitecofin-1sem.pdf",
+      "title": "2025-sitecofin-1sem",
+      "retrieved": "2026-09-09",
+      "pages": 5,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/03/sit-econ-fin-2sem-2025.pdf",
+      "sha256": "7d2030e6da5e837370fe6f4de3831865eb7c56edecc0a8a30b9e92a695162a42",
+      "bytes": 409073,
+      "file": "06329--sit-econ-fin-2sem-2025.pdf",
+      "title": "sit-econ-fin-2sem-2025",
+      "retrieved": "2026-09-09",
+      "pages": 5,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/07/SITECOFIN-1SEM-2026.pdf",
+      "sha256": "135ed8813ecbdc9fb40b32da86a34c0c9e240ceec5017726419014f65124dbfc",
+      "bytes": 319494,
+      "file": "06329--SITECOFIN-1SEM-2026.pdf",
+      "title": "SITECOFIN-1SEM-2026",
+      "retrieved": "2026-09-09",
+      "pages": 5,
+      "consultedPages": [
+        1,
+        3
+      ]
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2023/07/stiecofin-1sem-2023.pdf",
+      "sha256": "570edf95fd45cf4a26e0932170a6964588f8321f7108b5a61e3bd1489122b716",
+      "bytes": 231335,
+      "file": "06329--stiecofin-1sem-2023.pdf",
+      "title": "stiecofin-1sem-2023",
+      "retrieved": "2026-09-09",
+      "pages": 5,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2022/07/sitecofin-1sem-2022.pdf",
+      "sha256": "82fe1d3e09b976a631a47029496eed769c031c89e9e31e9a028b3ec4cc208968",
+      "bytes": 1664543,
+      "file": "06329--sitecofin-1sem-2022.pdf",
+      "title": "sitecofin-1sem-2022",
+      "retrieved": "2026-09-09",
+      "pages": 4,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2023/04/Situacion-Econ-Fin-segundo-Semestre-2022.pdf",
+      "sha256": "d5de9ee6a36d957c8e3f3b31cf806e8fe8960f9b46dd27d26b9f9630dc1e77a0",
+      "bytes": 114054,
+      "file": "06329--Situacion-Econ-Fin-segundo-Semestre-2022.pdf",
+      "title": "Situacion-Econ-Fin-segundo-Semestre-2022",
+      "retrieved": "2026-09-09",
+      "pages": 4,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2022/04/sitecofin-2sem-2021.pdf",
+      "sha256": "32fb07d5a0cd89571e68591617e7004f7b14baff45d3b84c3de5d3fe03de6c2c",
+      "bytes": 311840,
+      "file": "06329--sitecofin-2sem-2021.pdf",
+      "title": "sitecofin-2sem-2021",
+      "retrieved": "2026-09-09",
+      "pages": 5,
+      "consultedPages": [
+        1
+      ]
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_PRESUPUESTO_DE_GASTOS_AL_31-12-2025.pdf",
+      "sha256": "2510ac72ce9e7a549a9cd020efae288213ee6242983747c31c5b54d9eccba209",
+      "bytes": 1924601,
+      "file": "06805--EJECUCION_PRESUPUESTO_DE_GASTOS_AL_31-12-2025.pdf",
+      "title": "Ejecución Presupuesto de gastos al 31-12-2025",
+      "retrieved": "2026-09-09",
+      "pages": 312,
+      "consultedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312
+      ]
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_CALCULO_DE_RECURSOS_AL_31-12-2025.pdf",
+      "sha256": "fd063a1c5bd00e15ba34a0031100183f43ae20b7084748ec5dafcb1ff2b54fa1",
+      "bytes": 342350,
+      "file": "06805--EJECUCION_CALCULO_DE_RECURSOS_AL_31-12-2025.pdf",
+      "title": "Ejecución Cálculo de recursos al 31-12-2025",
+      "retrieved": "2026-09-09",
+      "pages": 13,
+      "consultedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_PRESUPUESTO_DE_GASTOS_AL_30-06-2026.pdf",
+      "sha256": "58f0fcf385e8d6f0369b5b5474716824779f550e6718a99cd4dbada2be6dcdcf",
+      "bytes": 1780487,
+      "file": "06805--EJECUCION_PRESUPUESTO_DE_GASTOS_AL_30-06-2026.pdf",
+      "title": "Ejecución Cálculo de recursos al 30-06-2026",
+      "retrieved": "2026-09-09",
+      "pages": 296,
+      "consultedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296
+      ]
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_CALCULO_DE_RECURSOS_AL_30-06-2026.pdf",
+      "sha256": "56a6cb2c67c2cde39c500dd953ba919f5385e08c563efb98b981d1293818e8ff",
+      "bytes": 304717,
+      "file": "06805--EJECUCION_CALCULO_DE_RECURSOS_AL_30-06-2026.pdf",
+      "title": "Ejecución Presupuesto de gastos al 30-06-2026",
+      "retrieved": "2026-09-09",
+      "pages": 13,
+      "consultedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SALDO_DEUDA_CONSOLIDADA_2025.xlsx",
+      "sha256": "1dd0e7a7868d344ee55510e3b4979eeedc951ccec02fbe0047fab896d706c6e1",
+      "bytes": 12036,
+      "file": "06805--SALDO_DEUDA_CONSOLIDADA_2025.xlsx",
+      "title": "2025",
+      "retrieved": "2026-09-09"
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EVOLUCION_DE_LA_DEUDA_FLOTANTE_2025.docx",
+      "sha256": "7b2c9a949a02b7cbefbfd9436563950ebd711b3da2be81c4e9d04f94a4d937e9",
+      "bytes": 13219,
+      "file": "06805--EVOLUCION_DE_LA_DEUDA_FLOTANTE_2025.docx",
+      "title": "Evolución\n\t\t\t\t\t\t\t\t\tde la Deuda Flotante",
+      "retrieved": "2026-09-09"
+    },
+    {
+      "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/RESUMEN_PRESUPUESTARIO_2025.xlsx",
+      "sha256": "8efd25c45bd7670fa62cc98826d1107cd67facd1f64e965a9048a0c3d1958b8f",
+      "bytes": 14533,
+      "file": "06805--RESUMEN_PRESUPUESTARIO_2025.xlsx",
+      "title": "Resumen Estado Presupuestario 2025",
+      "retrieved": "2026-09-09"
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/07/BALTES-1SEM-2026.pdf",
+      "sha256": "b56a421a76467fac451c3c9c7f036e65cb794313db59e3c7d728f27e26952244",
+      "bytes": 233771,
+      "file": "06329--BALTES-1SEM-2026.pdf",
+      "title": "BALTES-1SEM-2026",
+      "retrieved": "2026-09-09",
+      "pages": 7,
+      "consultedPages": [
+        7
+      ]
+    },
+    {
+      "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2023.xls",
+      "sha256": "2a17ce7a604a585cede290938a6c9088a3ab8948239526e9971c9a792f21c669",
+      "bytes": 3322880,
+      "file": "BCRA-Loc2023.xls",
+      "title": "BCRA, préstamos y depósitos por localización 2023",
+      "retrieved": "2026-09-09"
+    },
+    {
+      "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2024.xls",
+      "sha256": "68f88bf4b45c5cda8e91e1add5056c4d69d7366fd0f8e95e404de75952f51bc8",
+      "bytes": 3249664,
+      "file": "BCRA-Loc2024.xls",
+      "title": "BCRA, préstamos y depósitos por localización 2024",
+      "retrieved": "2026-09-09"
+    },
+    {
+      "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2025.xls",
+      "sha256": "22aea439ee28e230e7803af5113d127ea569c9cfcce858bebe9d4feec5a1aa31",
+      "bytes": 3301376,
+      "file": "BCRA-Loc2025.xls",
+      "title": "BCRA, préstamos y depósitos por localización 2025",
+      "retrieved": "2026-09-09"
+    },
+    {
+      "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2026.xls",
+      "sha256": "147d7703ecd3286446e237ede1d34d22b12a86398c0f0a2e6c8001af8d7517d1",
+      "bytes": 1758720,
+      "file": "BCRA-Loc2026.xls",
+      "title": "BCRA, préstamos y depósitos por localización 2026",
+      "retrieved": "2026-09-09"
+    }
+  ],
+  "municipalities": [
+    {
+      "id": "06329",
+      "history": [
+        {
+          "inicio": "2021-01-04",
+          "fin": "2021-12-31",
+          "method": "published_caif",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2021/situacion-economico-financiera-segundo-semestre-2021/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2022/04/sitecofin-2sem-2021.pdf",
+              "sha256": "32fb07d5a0cd89571e68591617e7004f7b14baff45d3b84c3de5d3fe03de6c2c",
+              "bytes": 311840,
+              "file": "06329--sitecofin-2sem-2021.pdf",
+              "title": "sitecofin-2sem-2021",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "1086211835.67",
+            "gastos_corrientes": "738241374.59",
+            "ingresos_capital": "8730928.86",
+            "gastos_capital": "189667805.16",
+            "ingresos_totales": "1094942764.53",
+            "gastos_totales": "927909179.75",
+            "resultado_financiero": "167033584.78",
+            "personal_devengado": "412260338.27"
+          }
+        },
+        {
+          "inicio": "2022-01-03",
+          "fin": "2022-06-30",
+          "method": "published_caif",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2022/situacion-economico-financiera-primer-semestre-2022/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2022/07/sitecofin-1sem-2022.pdf",
+              "sha256": "82fe1d3e09b976a631a47029496eed769c031c89e9e31e9a028b3ec4cc208968",
+              "bytes": 1664543,
+              "file": "06329--sitecofin-1sem-2022.pdf",
+              "title": "sitecofin-1sem-2022",
+              "retrieved": "2026-09-09",
+              "pages": 4,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "843401150.44",
+            "gastos_corrientes": "542548806.57",
+            "ingresos_capital": "7748329.46",
+            "gastos_capital": "206097896.24",
+            "ingresos_totales": "851149479.90",
+            "gastos_totales": "748646702.81",
+            "resultado_financiero": "102502777.09",
+            "personal_devengado": "306745759.27"
+          }
+        },
+        {
+          "inicio": "2022-01-03",
+          "fin": "2022-12-30",
+          "method": "published_caif",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2022/situacion-economico-financiera-segundo-semestre-2022/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2023/04/Situacion-Econ-Fin-segundo-Semestre-2022.pdf",
+              "sha256": "d5de9ee6a36d957c8e3f3b31cf806e8fe8960f9b46dd27d26b9f9630dc1e77a0",
+              "bytes": 114054,
+              "file": "06329--Situacion-Econ-Fin-segundo-Semestre-2022.pdf",
+              "title": "Situacion-Econ-Fin-segundo-Semestre-2022",
+              "retrieved": "2026-09-09",
+              "pages": 4,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "1905128242.00",
+            "gastos_corrientes": "1385258411.10",
+            "ingresos_capital": "15375816.80",
+            "gastos_capital": "656321614.18",
+            "ingresos_totales": "1920504058.80",
+            "gastos_totales": "2041580025.28",
+            "resultado_financiero": "-121075966.48",
+            "personal_devengado": "780572415.90"
+          }
+        },
+        {
+          "inicio": "2023-01-02",
+          "fin": "2023-06-30",
+          "method": "published_caif",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2023/situacion-economico-financiera-primer-semestre-2023/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2023/07/stiecofin-1sem-2023.pdf",
+              "sha256": "570edf95fd45cf4a26e0932170a6964588f8321f7108b5a61e3bd1489122b716",
+              "bytes": 231335,
+              "file": "06329--stiecofin-1sem-2023.pdf",
+              "title": "stiecofin-1sem-2023",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "1374296480.14",
+            "gastos_corrientes": "1041173430.68",
+            "ingresos_capital": "50289191.43",
+            "gastos_capital": "301214159.25",
+            "ingresos_totales": "1424585671.57",
+            "gastos_totales": "1342387589.93",
+            "resultado_financiero": "82198081.64",
+            "personal_devengado": "626932664.85"
+          }
+        },
+        {
+          "inicio": "2024-01-02",
+          "fin": "2024-06-30",
+          "method": "published_caif",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2024/situacion-economico-financiera-primer-semestre-2024/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2024/07/sitecofin-1sem2024.pdf",
+              "sha256": "c5e979d1a89c0d2fa89f39de6bfdd391b738ab9458bf408296fc71a3f162bb8b",
+              "bytes": 233120,
+              "file": "06329--sitecofin-1sem2024.pdf",
+              "title": "sitecofin-1sem2024",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "4151168223.94",
+            "gastos_corrientes": "2916439715.86",
+            "ingresos_capital": "101820028.13",
+            "gastos_capital": "469536609.09",
+            "ingresos_totales": "4252988252.07",
+            "gastos_totales": "3385976324.95",
+            "resultado_financiero": "867011927.12",
+            "personal_devengado": "1698998605.67"
+          }
+        },
+        {
+          "inicio": "2024-01-02",
+          "fin": "2024-12-31",
+          "method": "published_caif",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2024/situacion-economico-financiera-segundo-semestre-2024/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2025/04/sitecofin-2sem-2024.pdf",
+              "sha256": "949e957b0382955dc7383fe18ea7fb05d6b9122ab2fe6d9302b3f30151898bd5",
+              "bytes": 313907,
+              "file": "06329--sitecofin-2sem-2024.pdf",
+              "title": "sitecofin-2sem-2024",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "10368687633.61",
+            "gastos_corrientes": "7976133685.38",
+            "ingresos_capital": "216782716.34",
+            "gastos_capital": "1695634346.19",
+            "ingresos_totales": "10585470349.95",
+            "gastos_totales": "9671768031.57",
+            "resultado_financiero": "913702318.38",
+            "personal_devengado": "4418904985.14"
+          }
+        },
+        {
+          "inicio": "2025-01-02",
+          "fin": "2025-06-30",
+          "method": "published_caif",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2025/situacion-economico-financiera-primer-semestre-2025/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2025/07/2025-sitecofin-1sem.pdf",
+              "sha256": "c232dbcbb6f28e91af0635f6791cdd57ebb4d7f7a7b2351423182e17ba226efa",
+              "bytes": 236132,
+              "file": "06329--2025-sitecofin-1sem.pdf",
+              "title": "2025-sitecofin-1sem",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "6927322835.85",
+            "gastos_corrientes": "5680965446.19",
+            "ingresos_capital": "240744991.98",
+            "gastos_capital": "915396531.21",
+            "ingresos_totales": "7168067827.83",
+            "gastos_totales": "6596361977.40",
+            "resultado_financiero": "571705850.43",
+            "personal_devengado": "3431798859.54"
+          }
+        },
+        {
+          "inicio": "2025-01-02",
+          "fin": "2025-12-31",
+          "method": "sum_semesters",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2025/situacion-economico-financiera-primer-semestre-2025/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2025/07/2025-sitecofin-1sem.pdf",
+              "sha256": "c232dbcbb6f28e91af0635f6791cdd57ebb4d7f7a7b2351423182e17ba226efa",
+              "bytes": 236132,
+              "file": "06329--2025-sitecofin-1sem.pdf",
+              "title": "2025-sitecofin-1sem",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1
+              ]
+            },
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/03/sit-econ-fin-2sem-2025.pdf",
+              "sha256": "7d2030e6da5e837370fe6f4de3831865eb7c56edecc0a8a30b9e92a695162a42",
+              "bytes": 409073,
+              "file": "06329--sit-econ-fin-2sem-2025.pdf",
+              "title": "sit-econ-fin-2sem-2025",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Suma de 02/01–30/06 y 01/07–31/12 de 2025, sin superposición. No se presume actividad del 1 de enero.",
+          "amounts": {
+            "ingresos_corrientes": "14651931697.31",
+            "gastos_corrientes": "14334593554.10",
+            "ingresos_capital": "351026824.52",
+            "gastos_capital": "2262607053.51",
+            "ingresos_totales": "15002958521.83",
+            "gastos_totales": "16597200607.61",
+            "resultado_financiero": "-1594242085.78",
+            "personal_devengado": "8050093909.47"
+          },
+          "components": [
+            {
+              "inicio": "2025-01-02",
+              "fin": "2025-06-30",
+              "method": "published_caif",
+              "landingUrl": "https://gobiernodelasheras.com/documentos/2025/situacion-economico-financiera-primer-semestre-2025/",
+              "documents": [
+                {
+                  "url": "https://gobiernodelasheras.com/wp-content/uploads/2025/07/2025-sitecofin-1sem.pdf",
+                  "sha256": "c232dbcbb6f28e91af0635f6791cdd57ebb4d7f7a7b2351423182e17ba226efa",
+                  "bytes": 236132,
+                  "file": "06329--2025-sitecofin-1sem.pdf",
+                  "title": "2025-sitecofin-1sem",
+                  "retrieved": "2026-09-09",
+                  "pages": 5,
+                  "consultedPages": [
+                    1
+                  ]
+                }
+              ],
+              "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+              "amounts": {
+                "ingresos_corrientes": "6927322835.85",
+                "gastos_corrientes": "5680965446.19",
+                "ingresos_capital": "240744991.98",
+                "gastos_capital": "915396531.21",
+                "ingresos_totales": "7168067827.83",
+                "gastos_totales": "6596361977.40",
+                "resultado_financiero": "571705850.43",
+                "personal_devengado": "3431798859.54"
+              }
+            },
+            {
+              "inicio": "2025-07-01",
+              "fin": "2025-12-31",
+              "method": "published_caif",
+              "landingUrl": "https://gobiernodelasheras.com/documentos/2025/situacion-economico-financiera-segundo-semestre-2025/",
+              "documents": [
+                {
+                  "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/03/sit-econ-fin-2sem-2025.pdf",
+                  "sha256": "7d2030e6da5e837370fe6f4de3831865eb7c56edecc0a8a30b9e92a695162a42",
+                  "bytes": 409073,
+                  "file": "06329--sit-econ-fin-2sem-2025.pdf",
+                  "title": "sit-econ-fin-2sem-2025",
+                  "retrieved": "2026-09-09",
+                  "pages": 5,
+                  "consultedPages": [
+                    1
+                  ]
+                }
+              ],
+              "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+              "amounts": {
+                "ingresos_corrientes": "7724608861.46",
+                "gastos_corrientes": "8653628107.91",
+                "ingresos_capital": "110281832.54",
+                "gastos_capital": "1347210522.30",
+                "ingresos_totales": "7834890694.00",
+                "gastos_totales": "10000838630.21",
+                "resultado_financiero": "-2165947936.21",
+                "personal_devengado": "4618295049.93"
+              }
+            }
+          ]
+        },
+        {
+          "inicio": "2025-07-01",
+          "fin": "2025-12-31",
+          "method": "published_caif",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2025/situacion-economico-financiera-segundo-semestre-2025/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/03/sit-econ-fin-2sem-2025.pdf",
+              "sha256": "7d2030e6da5e837370fe6f4de3831865eb7c56edecc0a8a30b9e92a695162a42",
+              "bytes": 409073,
+              "file": "06329--sit-econ-fin-2sem-2025.pdf",
+              "title": "sit-econ-fin-2sem-2025",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "7724608861.46",
+            "gastos_corrientes": "8653628107.91",
+            "ingresos_capital": "110281832.54",
+            "gastos_capital": "1347210522.30",
+            "ingresos_totales": "7834890694.00",
+            "gastos_totales": "10000838630.21",
+            "resultado_financiero": "-2165947936.21",
+            "personal_devengado": "4618295049.93"
+          }
+        },
+        {
+          "inicio": "2026-01-01",
+          "fin": "2026-06-30",
+          "method": "published_caif",
+          "landingUrl": "https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/07/SITECOFIN-1SEM-2026.pdf",
+              "sha256": "135ed8813ecbdc9fb40b32da86a34c0c9e240ceec5017726419014f65124dbfc",
+              "bytes": 319494,
+              "file": "06329--SITECOFIN-1SEM-2026.pdf",
+              "title": "SITECOFIN-1SEM-2026",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1,
+                3
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "10208185556.34",
+            "gastos_corrientes": "7630969990.20",
+            "ingresos_capital": "232822769.26",
+            "gastos_capital": "1222470368.11",
+            "ingresos_totales": "10441008325.60",
+            "gastos_totales": "8853440358.31",
+            "resultado_financiero": "1587567967.29",
+            "personal_devengado": "4727411019.57"
+          }
+        }
+      ],
+      "budget": {
+        "inicio": "2026-01-01",
+        "fin": "2026-06-30",
+        "documents": [
+          {
+            "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/07/SITECOFIN-1SEM-2026.pdf",
+            "sha256": "135ed8813ecbdc9fb40b32da86a34c0c9e240ceec5017726419014f65124dbfc",
+            "bytes": 319494,
+            "file": "06329--SITECOFIN-1SEM-2026.pdf",
+            "title": "SITECOFIN-1SEM-2026",
+            "retrieved": "2026-09-09",
+            "pages": 5,
+            "consultedPages": [
+              1,
+              3
+            ]
+          }
+        ],
+        "amounts": {
+          "current": "20293962203.96",
+          "received": "10441008325.60",
+          "accrued": "9737375373.29",
+          "paid": "9572988905.55",
+          "unpaid": "164386467.74"
+        },
+        "objects": [
+          {
+            "label": "Personal",
+            "amounts": {
+              "current": "9658128700.00",
+              "accrued": "4727411019.57",
+              "paid": "4623367471.88"
+            }
+          },
+          {
+            "label": "Bienes de consumo",
+            "amounts": {
+              "current": "3148991822.13",
+              "accrued": "999519289.64",
+              "paid": "971552759.97"
+            }
+          },
+          {
+            "label": "Servicios",
+            "amounts": {
+              "current": "4195150798.41",
+              "accrued": "1719094560.12",
+              "paid": "1700699919.89"
+            }
+          },
+          {
+            "label": "Bienes de uso",
+            "amounts": {
+              "current": "1703144874.71",
+              "accrued": "1171848925.01",
+              "paid": "1171651925.01"
+            }
+          },
+          {
+            "label": "Transferencias",
+            "amounts": {
+              "current": "781132877.97",
+              "accrued": "226304138.04",
+              "paid": "213504882.89"
+            }
+          },
+          {
+            "label": "Activos financieros",
+            "amounts": {
+              "current": "26600000.00",
+              "accrued": "9262425.93",
+              "paid": "9262425.93"
+            }
+          },
+          {
+            "label": "Deuda y otros pasivos",
+            "amounts": {
+              "current": "780813130.74",
+              "accrued": "883935014.98",
+              "paid": "882949519.98"
+            }
+          }
+        ],
+        "receiptTitle": "Destino de los recursos cobrados",
+        "receipts": [
+          {
+            "label": "De libre disponibilidad (ingresos)",
+            "amounts": {
+              "received": "7942857342.65"
+            }
+          },
+          {
+            "label": "Con destino asignado (afectados)",
+            "amounts": {
+              "received": "2498150982.95"
+            }
+          }
+        ],
+        "reading": "Al cierre de junio se había devengado el 48,0% del presupuesto anual vigente. Quedaban $164,4 millones de esos gastos sin pagar. Esa cifra mide obligaciones registradas en el semestre; no toda la deuda municipal. Los ingresos de libre disponibilidad tampoco equivalen al saldo de caja que queda libre."
+      },
+      "treasury": {
+        "date": "2026-06-30",
+        "documents": [
+          {
+            "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/07/SITECOFIN-1SEM-2026.pdf",
+            "sha256": "135ed8813ecbdc9fb40b32da86a34c0c9e240ceec5017726419014f65124dbfc",
+            "bytes": 319494,
+            "file": "06329--SITECOFIN-1SEM-2026.pdf",
+            "title": "SITECOFIN-1SEM-2026",
+            "retrieved": "2026-09-09",
+            "pages": 5,
+            "consultedPages": [
+              1,
+              3
+            ]
+          }
+        ],
+        "amounts": {
+          "closing": "1718889847.93",
+          "available": "1637017470.98",
+          "transitory": "81872376.95",
+          "liabilities": "574895931.29",
+          "currentLiabilities": "574895931.29",
+          "nonCurrentLiabilities": "0.00"
+        },
+        "reading": "Tesorería informa $1.718,9 millones: $1.637,0 millones de disponibilidades y $81,9 millones de movimientos transitorios. Incluye fondos afectados, como educación, y valores en cartera. Por eso no se puede disponer libremente de todo ese saldo. Los pasivos contables suman $574,9 millones; el informe no los desglosa por fecha de vencimiento. No se suman a los gastos pendientes del semestre: pueden superponerse."
+      },
+      "banking": {
+        "records": [
+          {
+            "date": "2023-12-31",
+            "status": "reserved_or_unverified",
+            "sourceRow": 14421,
+            "sourceFile": "BCRA-Loc2023.xls",
+            "sheet": "Datos",
+            "columns": {
+              "loans": [
+                "H",
+                "J",
+                "L"
+              ],
+              "deposits": [
+                "I",
+                "K",
+                "M"
+              ]
+            },
+            "amounts": {},
+            "rawValues": {
+              "loansThousands": "0.0",
+              "depositsThousands": "0.0"
+            }
+          },
+          {
+            "date": "2024-12-31",
+            "status": "reserved_or_unverified",
+            "sourceRow": 14430,
+            "sourceFile": "BCRA-Loc2024.xls",
+            "sheet": "Datos",
+            "columns": {
+              "loans": [
+                "H",
+                "J",
+                "L"
+              ],
+              "deposits": [
+                "I",
+                "K",
+                "M"
+              ]
+            },
+            "amounts": {},
+            "rawValues": {
+              "loansThousands": "0.0",
+              "depositsThousands": "0.0"
+            }
+          },
+          {
+            "date": "2025-12-31",
+            "status": "reserved_or_unverified",
+            "sourceRow": 14354,
+            "sourceFile": "BCRA-Loc2025.xls",
+            "sheet": "Datos",
+            "columns": {
+              "loans": [
+                "H",
+                "J",
+                "L"
+              ],
+              "deposits": [
+                "I",
+                "K",
+                "M"
+              ]
+            },
+            "amounts": {},
+            "rawValues": {
+              "loansThousands": "0.0",
+              "depositsThousands": "0.0"
+            }
+          },
+          {
+            "date": "2026-06-30",
+            "status": "reserved_or_unverified",
+            "sourceRow": 5541,
+            "sourceFile": "BCRA-Loc2026.xls",
+            "sheet": "Datos",
+            "columns": {
+              "loans": [
+                "H",
+                "J",
+                "L"
+              ],
+              "deposits": [
+                "I",
+                "K",
+                "M"
+              ]
+            },
+            "amounts": {},
+            "rawValues": {
+              "loansThousands": "0.0",
+              "depositsThousands": "0.0"
+            }
+          }
+        ],
+        "documents": [
+          {
+            "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2023.xls",
+            "sha256": "2a17ce7a604a585cede290938a6c9088a3ab8948239526e9971c9a792f21c669",
+            "bytes": 3322880,
+            "file": "BCRA-Loc2023.xls",
+            "title": "BCRA, préstamos y depósitos por localización 2023",
+            "retrieved": "2026-09-09"
+          },
+          {
+            "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2024.xls",
+            "sha256": "68f88bf4b45c5cda8e91e1add5056c4d69d7366fd0f8e95e404de75952f51bc8",
+            "bytes": 3249664,
+            "file": "BCRA-Loc2024.xls",
+            "title": "BCRA, préstamos y depósitos por localización 2024",
+            "retrieved": "2026-09-09"
+          },
+          {
+            "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2025.xls",
+            "sha256": "22aea439ee28e230e7803af5113d127ea569c9cfcce858bebe9d4feec5a1aa31",
+            "bytes": 3301376,
+            "file": "BCRA-Loc2025.xls",
+            "title": "BCRA, préstamos y depósitos por localización 2025",
+            "retrieved": "2026-09-09"
+          },
+          {
+            "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2026.xls",
+            "sha256": "147d7703ecd3286446e237ede1d34d22b12a86398c0f0a2e6c8001af8d7517d1",
+            "bytes": 1758720,
+            "file": "BCRA-Loc2026.xls",
+            "title": "BCRA, préstamos y depósitos por localización 2026",
+            "retrieved": "2026-09-09"
+          }
+        ],
+        "note": "BCRA: saldos por ubicación de la casa o sucursal bancaria, en pesos. Se suman sectores público, privado no financiero y residentes del exterior. La moneda extranjera ya está convertida a pesos por el BCRA. No identifica solamente habitantes, pymes ni depósitos del gobierno municipal."
+      },
+      "debt": null,
+      "pending": [
+        "Caja de libre disponibilidad conciliada, descontando fondos afectados y todas las obligaciones exigibles.",
+        "Calendario futuro de capital e intereses, por contrato, moneda y fecha.",
+        "Antigüedad y vencimiento de la deuda con proveedores; distinguir pendiente de vencida.",
+        "Ingresos y gastos mensuales para ajustar cada flujo fiscal por inflación.",
+        "Cierre fiscal anual de 2023. Los datos disponibles del primer semestre no se anualizan.",
+        "Desglose contractual del stock de deuda; los pasivos contables no identifican por sí solos préstamos.",
+        "Presupuesto original de 2026 y detalle de sus modificaciones; el presupuesto vigente sí está incorporado.",
+        "Préstamos y depósitos bancarios 2025 y junio de 2026: sin cifras verificables para Las Heras."
+      ],
+      "historyReading": "Los cortes de mitad de año y los cierres anuales se leen por separado. Un superávit en junio no asegura cerrar el año con superávit. Los importes históricos están en pesos de cada período: para seguir el equilibrio se muestra el resultado como porcentaje de los ingresos, sin presentarlo como una variación real."
+    },
+    {
+      "id": "06805",
+      "history": [
+        {
+          "inicio": "2021-01-01",
+          "fin": "2021-12-31",
+          "method": "published_caif",
+          "landingUrl": "https://www.tigre.gob.ar/gobierno/informacion_gestion",
+          "documents": [
+            {
+              "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SIUACION_ECONOMICO_FINANCIERA31-12-2021.pdf",
+              "sha256": "9d93d029dc0fe9a40aa13c0f28494a96a0c322080e4b3ef1e4c84268a0fee7e6",
+              "bytes": 79867,
+              "file": "06805--SIUACION_ECONOMICO_FINANCIERA31-12-2021.pdf",
+              "title": "AÑo 2021",
+              "retrieved": "2026-09-09",
+              "pages": 13,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "18715473239.27",
+            "gastos_corrientes": "16956651743.86",
+            "ingresos_capital": "554885595.35",
+            "gastos_capital": "1448945205.73",
+            "ingresos_totales": "19270358834.62",
+            "gastos_totales": "18405596949.59",
+            "resultado_financiero": "864761885.03",
+            "personal_devengado": "6109955703.17"
+          }
+        },
+        {
+          "inicio": "2022-01-01",
+          "fin": "2022-12-31",
+          "method": "published_caif",
+          "landingUrl": "https://www.tigre.gob.ar/gobierno/informacion_gestion",
+          "documents": [
+            {
+              "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SIUACION_ECONOMICO_FINANCIERA31-12-2022.pdf",
+              "sha256": "fcd298b6ab9d02270c7a158068100d46f9bcf2dc4fefe41c99710a5d8ef811a1",
+              "bytes": 385490,
+              "file": "06805--SIUACION_ECONOMICO_FINANCIERA31-12-2022.pdf",
+              "title": "AÑo 2022",
+              "retrieved": "2026-09-09",
+              "pages": 13,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "32581434270.99",
+            "gastos_corrientes": "29260059276.29",
+            "ingresos_capital": "1868340696.34",
+            "gastos_capital": "5720660521.50",
+            "ingresos_totales": "34449774967.33",
+            "gastos_totales": "34980719797.79",
+            "resultado_financiero": "-530944830.46",
+            "personal_devengado": "11333259926.81"
+          }
+        },
+        {
+          "inicio": "2023-01-01",
+          "fin": "2023-12-31",
+          "method": "published_caif",
+          "landingUrl": "https://www.tigre.gob.ar/gobierno/informacion_gestion",
+          "documents": [
+            {
+              "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SIUACION_ECONOMICO_FINANCIERA31-12-2023.pdf",
+              "sha256": "60c9f64e1b07247f9277693207e6aca611dc6e6bdc8b27c66a48c7f177c2e9d2",
+              "bytes": 359334,
+              "file": "06805--SIUACION_ECONOMICO_FINANCIERA31-12-2023.pdf",
+              "title": "AÑo 2023",
+              "retrieved": "2026-09-09",
+              "pages": 12,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "71604269503.05",
+            "gastos_corrientes": "64579827669.78",
+            "ingresos_capital": "6400412041.71",
+            "gastos_capital": "11847469620.50",
+            "ingresos_totales": "78004681544.76",
+            "gastos_totales": "76427297290.28",
+            "resultado_financiero": "1577384254.48",
+            "personal_devengado": "27428114548.41"
+          }
+        },
+        {
+          "inicio": "2024-01-01",
+          "fin": "2024-12-31",
+          "method": "published_caif",
+          "landingUrl": "https://www.tigre.gob.ar/gobierno/informacion_gestion",
+          "documents": [
+            {
+              "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2024.pdf",
+              "sha256": "397e3d02c67c9f64e80a77e5f47d31a23854045b3622cd539c7976285acfb721",
+              "bytes": 359066,
+              "file": "06805--SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2024.pdf",
+              "title": "AÑo 2024",
+              "retrieved": "2026-09-09",
+              "pages": 12,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "216357232059.51",
+            "gastos_corrientes": "195098512846.90",
+            "ingresos_capital": "7972707641.56",
+            "gastos_capital": "21468633252.27",
+            "ingresos_totales": "224329939701.07",
+            "gastos_totales": "216567146099.17",
+            "resultado_financiero": "7762793601.90",
+            "personal_devengado": "74273320289.48"
+          }
+        },
+        {
+          "inicio": "2025-01-01",
+          "fin": "2025-12-31",
+          "method": "published_caif",
+          "landingUrl": "https://www.tigre.gob.ar/gobierno/informacion_gestion",
+          "documents": [
+            {
+              "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2025.pdf",
+              "sha256": "58aa0a98ab91117bd90cb3b8ba82a9f1ba62abc9394db611bdc592a0d15b7af6",
+              "bytes": 286857,
+              "file": "06805--SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2025.pdf",
+              "title": "AÑo 2025",
+              "retrieved": "2026-09-09",
+              "pages": 12,
+              "consultedPages": [
+                1
+              ]
+            }
+          ],
+          "scope": "Cuenta municipal publicada; se conserva el período exacto del original. No se presume consolidación de entes con cuentas separadas.",
+          "amounts": {
+            "ingresos_corrientes": "372581756244.97",
+            "gastos_corrientes": "332237618608.56",
+            "ingresos_capital": "13259661144.35",
+            "gastos_capital": "55314299340.96",
+            "ingresos_totales": "385841417389.32",
+            "gastos_totales": "387551917949.52",
+            "resultado_financiero": "-1710500560.20",
+            "personal_devengado": "121732948212.14"
+          }
+        },
+        {
+          "inicio": "2026-01-01",
+          "fin": "2026-06-30",
+          "verifiedAt": "2026-09-09",
+          "method": "reconstructed_programmatic",
+          "landingUrl": "https://www.tigre.gob.ar/gobierno/informacion_gestion",
+          "amounts": {
+            "ingresos_corrientes": "211867302042.41",
+            "ingresos_capital": "6790020508.27",
+            "gastos_corrientes": "180585397572.62",
+            "gastos_capital": "25208077922.78",
+            "gastos_totales": "205793475495.40",
+            "ingresos_totales": "218657322550.68",
+            "personal_devengado": "74791280260.67",
+            "resultado_financiero": "12863847055.28"
+          },
+          "documents": [
+            {
+              "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_PRESUPUESTO_DE_GASTOS_AL_30-06-2026.pdf",
+              "sha256": "58f0fcf385e8d6f0369b5b5474716824779f550e6718a99cd4dbada2be6dcdcf",
+              "bytes": 1780487,
+              "file": "06805--EJECUCION_PRESUPUESTO_DE_GASTOS_AL_30-06-2026.pdf",
+              "title": "Ejecución Cálculo de recursos al 30-06-2026",
+              "retrieved": "2026-09-09",
+              "pages": 296,
+              "consultedPages": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+                107,
+                108,
+                109,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                144,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173,
+                174,
+                175,
+                176,
+                177,
+                178,
+                179,
+                180,
+                181,
+                182,
+                183,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                193,
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                202,
+                203,
+                204,
+                205,
+                206,
+                207,
+                208,
+                209,
+                210,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222,
+                223,
+                224,
+                225,
+                226,
+                227,
+                228,
+                229,
+                230,
+                231,
+                232,
+                233,
+                234,
+                235,
+                236,
+                237,
+                238,
+                239,
+                240,
+                241,
+                242,
+                243,
+                244,
+                245,
+                246,
+                247,
+                248,
+                249,
+                250,
+                251,
+                252,
+                253,
+                254,
+                255,
+                256,
+                257,
+                258,
+                259,
+                260,
+                261,
+                262,
+                263,
+                264,
+                265,
+                266,
+                267,
+                268,
+                269,
+                270,
+                271,
+                272,
+                273,
+                274,
+                275,
+                276,
+                277,
+                278,
+                279,
+                280,
+                281,
+                282,
+                283,
+                284,
+                285,
+                286,
+                287,
+                288,
+                289,
+                290,
+                291,
+                292,
+                293,
+                294,
+                295,
+                296
+              ]
+            },
+            {
+              "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_CALCULO_DE_RECURSOS_AL_30-06-2026.pdf",
+              "sha256": "56a6cb2c67c2cde39c500dd953ba919f5385e08c563efb98b981d1293818e8ff",
+              "bytes": 304717,
+              "file": "06805--EJECUCION_CALCULO_DE_RECURSOS_AL_30-06-2026.pdf",
+              "title": "Ejecución Presupuesto de gastos al 30-06-2026",
+              "retrieved": "2026-09-09",
+              "pages": 13,
+              "consultedPages": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ]
+            }
+          ],
+          "scope": "Reconstrucción de las ejecuciones oficiales por objeto y programa. Se excluyen amortizaciones y cancelaciones de pasivos anteriores; se conservan intereses e insumos de obras. Método conciliado con la cuenta anual oficial 2025."
+        }
+      ],
+      "budget": {
+        "inicio": "2026-01-01",
+        "fin": "2026-06-30",
+        "documents": [
+          {
+            "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_PRESUPUESTO_DE_GASTOS_AL_30-06-2026.pdf",
+            "sha256": "58f0fcf385e8d6f0369b5b5474716824779f550e6718a99cd4dbada2be6dcdcf",
+            "bytes": 1780487,
+            "file": "06805--EJECUCION_PRESUPUESTO_DE_GASTOS_AL_30-06-2026.pdf",
+            "title": "Ejecución Cálculo de recursos al 30-06-2026",
+            "retrieved": "2026-09-09",
+            "pages": 296,
+            "consultedPages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105,
+              106,
+              107,
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              128,
+              129,
+              130,
+              131,
+              132,
+              133,
+              134,
+              135,
+              136,
+              137,
+              138,
+              139,
+              140,
+              141,
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154,
+              155,
+              156,
+              157,
+              158,
+              159,
+              160,
+              161,
+              162,
+              163,
+              164,
+              165,
+              166,
+              167,
+              168,
+              169,
+              170,
+              171,
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180,
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188,
+              189,
+              190,
+              191,
+              192,
+              193,
+              194,
+              195,
+              196,
+              197,
+              198,
+              199,
+              200,
+              201,
+              202,
+              203,
+              204,
+              205,
+              206,
+              207,
+              208,
+              209,
+              210,
+              211,
+              212,
+              213,
+              214,
+              215,
+              216,
+              217,
+              218,
+              219,
+              220,
+              221,
+              222,
+              223,
+              224,
+              225,
+              226,
+              227,
+              228,
+              229,
+              230,
+              231,
+              232,
+              233,
+              234,
+              235,
+              236,
+              237,
+              238,
+              239,
+              240,
+              241,
+              242,
+              243,
+              244,
+              245,
+              246,
+              247,
+              248,
+              249,
+              250,
+              251,
+              252,
+              253,
+              254,
+              255,
+              256,
+              257,
+              258,
+              259,
+              260,
+              261,
+              262,
+              263,
+              264,
+              265,
+              266,
+              267,
+              268,
+              269,
+              270,
+              271,
+              272,
+              273,
+              274,
+              275,
+              276,
+              277,
+              278,
+              279,
+              280,
+              281,
+              282,
+              283,
+              284,
+              285,
+              286,
+              287,
+              288,
+              289,
+              290,
+              291,
+              292,
+              293,
+              294,
+              295,
+              296
+            ]
+          },
+          {
+            "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EJECUCION_CALCULO_DE_RECURSOS_AL_30-06-2026.pdf",
+            "sha256": "56a6cb2c67c2cde39c500dd953ba919f5385e08c563efb98b981d1293818e8ff",
+            "bytes": 304717,
+            "file": "06805--EJECUCION_CALCULO_DE_RECURSOS_AL_30-06-2026.pdf",
+            "title": "Ejecución Presupuesto de gastos al 30-06-2026",
+            "retrieved": "2026-09-09",
+            "pages": 13,
+            "consultedPages": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13
+            ]
+          }
+        ],
+        "amounts": {
+          "original": "578906001955.00",
+          "modifications": "32388556667.66",
+          "current": "611294558622.66",
+          "accrued": "239430557656.92",
+          "paid": "231010667809.66",
+          "unpaid": "8419889847.26",
+          "received": "218657322550.68"
+        },
+        "objects": [
+          {
+            "label": "Personal",
+            "amounts": {
+              "current": "159328559430.77",
+              "accrued": "74791280260.67",
+              "paid": "72505372165.18"
+            }
+          },
+          {
+            "label": "Bienes de consumo",
+            "amounts": {
+              "current": "69949568079.14",
+              "accrued": "17535981088.79",
+              "paid": "16113487774.58"
+            }
+          },
+          {
+            "label": "Servicios",
+            "amounts": {
+              "current": "270547840269.90",
+              "accrued": "87248539991.81",
+              "paid": "84104556632.54"
+            }
+          },
+          {
+            "label": "Bienes de uso",
+            "amounts": {
+              "current": "71747746029.74",
+              "accrued": "24584521885.80",
+              "paid": "23341122546.19"
+            }
+          },
+          {
+            "label": "Transferencias",
+            "amounts": {
+              "current": "5146771014.26",
+              "accrued": "1101158238.57",
+              "paid": "777052499.89"
+            }
+          },
+          {
+            "label": "Activos financieros",
+            "amounts": {
+              "current": "571137138.11",
+              "accrued": "531947338.11",
+              "paid": "531947338.11"
+            }
+          },
+          {
+            "label": "Deuda y otros pasivos",
+            "amounts": {
+              "current": "34002936660.74",
+              "accrued": "33637128853.17",
+              "paid": "33637128853.17"
+            }
+          }
+        ],
+        "receiptTitle": "Origen de los recursos cobrados",
+        "receipts": [
+          {
+            "label": "Origen provincial",
+            "amounts": {
+              "received": "58985132480.39"
+            }
+          },
+          {
+            "label": "Origen municipal",
+            "amounts": {
+              "received": "159487173911.09"
+            }
+          },
+          {
+            "label": "Origen nacional",
+            "amounts": {
+              "received": "185016159.20"
+            }
+          }
+        ],
+        "reconciliation": {
+          "amounts": {
+            "budgetAccrued": "239430557656.92",
+            "amortization": "126321.43",
+            "priorLiabilities": "33636955840.09",
+            "interestIncluded": "46691.65",
+            "projectInputsIncludedInCapital": "77568698.87",
+            "fiscalExpenditure": "205793475495.40"
+          }
+        },
+        "reading": "El presupuesto registra $239.430,6 millones de gastos, pero incluye $33.637,1 millones de amortizaciones y cancelación de pasivos anteriores. Al separarlos, el gasto fiscal del semestre queda en $205.793,5 millones. Los intereses permanecen dentro del gasto. Los pagos pendientes del período son $8.419,9 millones y no representan por sí solos toda la deuda."
+      },
+      "treasury": {
+        "date": "2025-12-31",
+        "documents": [
+          {
+            "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2025.pdf",
+            "sha256": "58aa0a98ab91117bd90cb3b8ba82a9f1ba62abc9394db611bdc592a0d15b7af6",
+            "bytes": 286857,
+            "file": "06805--SITUACION_ECONOMICO_FINANCIERA_AL_31-12-2025.pdf",
+            "title": "AÑo 2025",
+            "retrieved": "2026-09-09",
+            "pages": 12,
+            "consultedPages": [
+              3
+            ]
+          },
+          {
+            "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/RESUMEN_PRESUPUESTARIO_2025.xlsx",
+            "sha256": "8efd25c45bd7670fa62cc98826d1107cd67facd1f64e965a9048a0c3d1958b8f",
+            "bytes": 14533,
+            "file": "06805--RESUMEN_PRESUPUESTARIO_2025.xlsx",
+            "title": "Resumen Estado Presupuestario 2025",
+            "retrieved": "2026-09-09"
+          }
+        ],
+        "amounts": {
+          "closing": "49608076288.69",
+          "budgetCash": "43532075335.91",
+          "unearmarkedAccounts": "22978118240.65",
+          "earmarkedAccounts": "20553957095.26",
+          "thirdPartyAndSpecial": "6076000952.78",
+          "liabilities": "40079689651.22",
+          "currentLiabilities": "40078641766.74",
+          "nonCurrentLiabilities": "1047884.48"
+        },
+        "reading": "El cierre de 2025 informa $49.608,1 millones en tesorería. De ese total, $43.532,1 millones corresponden a cuentas presupuestarias y $6.076,0 millones a terceros y cuentas especiales. Hay fondos afectados y obligaciones pendientes: el total no es caja libre. Este saldo es de diciembre de 2025; no describe la caja de junio de 2026 ni se resta de deudas de otra fecha."
+      },
+      "banking": {
+        "records": [
+          {
+            "date": "2023-12-31",
+            "status": "verified",
+            "sourceRow": 13512,
+            "sourceFile": "BCRA-Loc2023.xls",
+            "sheet": "Datos",
+            "columns": {
+              "loans": [
+                "H",
+                "J",
+                "L"
+              ],
+              "deposits": [
+                "I",
+                "K",
+                "M"
+              ]
+            },
+            "amounts": {
+              "loans": "179558525324.10",
+              "deposits": "262584176950.51"
+            },
+            "rawValues": {
+              "loansThousands": "179558525.3240967472600436",
+              "depositsThousands": "262584176.950513946552"
+            }
+          },
+          {
+            "date": "2024-12-31",
+            "status": "verified",
+            "sourceRow": 13530,
+            "sourceFile": "BCRA-Loc2024.xls",
+            "sheet": "Datos",
+            "columns": {
+              "loans": [
+                "H",
+                "J",
+                "L"
+              ],
+              "deposits": [
+                "I",
+                "K",
+                "M"
+              ]
+            },
+            "amounts": {
+              "loans": "605826689182.02",
+              "deposits": "650061644097.26"
+            },
+            "rawValues": {
+              "loansThousands": "605826689.182022219563667",
+              "depositsThousands": "650061644.097255718397"
+            }
+          },
+          {
+            "date": "2025-12-31",
+            "status": "verified",
+            "sourceRow": 13454,
+            "sourceFile": "BCRA-Loc2025.xls",
+            "sheet": "Datos",
+            "columns": {
+              "loans": [
+                "H",
+                "J",
+                "L"
+              ],
+              "deposits": [
+                "I",
+                "K",
+                "M"
+              ]
+            },
+            "amounts": {
+              "loans": "1738335775579.95",
+              "deposits": "996145272232.34"
+            },
+            "rawValues": {
+              "loansThousands": "1738335775.5799482218249",
+              "depositsThousands": "996145272.23234100686"
+            }
+          },
+          {
+            "date": "2026-06-30",
+            "status": "verified",
+            "sourceRow": 4662,
+            "sourceFile": "BCRA-Loc2026.xls",
+            "sheet": "Datos",
+            "columns": {
+              "loans": [
+                "H",
+                "J",
+                "L"
+              ],
+              "deposits": [
+                "I",
+                "K",
+                "M"
+              ]
+            },
+            "amounts": {
+              "loans": "2250219620914.24",
+              "deposits": "1070393984830.03"
+            },
+            "rawValues": {
+              "loansThousands": "2250219620.91424128848",
+              "depositsThousands": "1070393984.8300254083"
+            }
+          }
+        ],
+        "documents": [
+          {
+            "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2023.xls",
+            "sha256": "2a17ce7a604a585cede290938a6c9088a3ab8948239526e9971c9a792f21c669",
+            "bytes": 3322880,
+            "file": "BCRA-Loc2023.xls",
+            "title": "BCRA, préstamos y depósitos por localización 2023",
+            "retrieved": "2026-09-09"
+          },
+          {
+            "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2024.xls",
+            "sha256": "68f88bf4b45c5cda8e91e1add5056c4d69d7366fd0f8e95e404de75952f51bc8",
+            "bytes": 3249664,
+            "file": "BCRA-Loc2024.xls",
+            "title": "BCRA, préstamos y depósitos por localización 2024",
+            "retrieved": "2026-09-09"
+          },
+          {
+            "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2025.xls",
+            "sha256": "22aea439ee28e230e7803af5113d127ea569c9cfcce858bebe9d4feec5a1aa31",
+            "bytes": 3301376,
+            "file": "BCRA-Loc2025.xls",
+            "title": "BCRA, préstamos y depósitos por localización 2025",
+            "retrieved": "2026-09-09"
+          },
+          {
+            "url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Loc2026.xls",
+            "sha256": "147d7703ecd3286446e237ede1d34d22b12a86398c0f0a2e6c8001af8d7517d1",
+            "bytes": 1758720,
+            "file": "BCRA-Loc2026.xls",
+            "title": "BCRA, préstamos y depósitos por localización 2026",
+            "retrieved": "2026-09-09"
+          }
+        ],
+        "note": "BCRA: saldos por ubicación de la casa o sucursal bancaria, en pesos. Se suman sectores público, privado no financiero y residentes del exterior. La moneda extranjera ya está convertida a pesos por el BCRA. No identifica solamente habitantes, pymes ni depósitos del gobierno municipal."
+      },
+      "debt": {
+        "date": "2025-12-31",
+        "documents": [
+          {
+            "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/SALDO_DEUDA_CONSOLIDADA_2025.xlsx",
+            "sha256": "1dd0e7a7868d344ee55510e3b4979eeedc951ccec02fbe0047fab896d706c6e1",
+            "bytes": 12036,
+            "file": "06805--SALDO_DEUDA_CONSOLIDADA_2025.xlsx",
+            "title": "2025",
+            "retrieved": "2026-09-09"
+          },
+          {
+            "url": "https://www.tigre.gob.ar/public/assets/frontend/documentos/gobierno/informacion_gestion/EVOLUCION_DE_LA_DEUDA_FLOTANTE_2025.docx",
+            "sha256": "7b2c9a949a02b7cbefbfd9436563950ebd711b3da2be81c4e9d04f94a4d937e9",
+            "bytes": 13219,
+            "file": "06805--EVOLUCION_DE_LA_DEUDA_FLOTANTE_2025.docx",
+            "title": "Evolución\n\t\t\t\t\t\t\t\t\tde la Deuda Flotante",
+            "retrieved": "2026-09-09"
+          }
+        ],
+        "amounts": {
+          "consolidated": "1502037.70",
+          "current": "454153.22",
+          "nonCurrent": "1047884.48",
+          "floating": "33832574642.10"
+        },
+        "floatingHistory": [
+          {
+            "year": 2019,
+            "amounts": {
+              "floating": "453791177.00"
+            }
+          },
+          {
+            "year": 2020,
+            "amounts": {
+              "floating": "913193979.00"
+            }
+          },
+          {
+            "year": 2021,
+            "amounts": {
+              "floating": "1229009881.00"
+            }
+          },
+          {
+            "year": 2022,
+            "amounts": {
+              "floating": "1798793295.00"
+            }
+          },
+          {
+            "year": 2023,
+            "amounts": {
+              "floating": "4181054967.00"
+            }
+          },
+          {
+            "year": 2024,
+            "amounts": {
+              "floating": "12646084652.00"
+            }
+          },
+          {
+            "year": 2025,
+            "amounts": {
+              "floating": "33832574642.00"
+            }
+          }
+        ],
+        "reading": "La deuda consolidada corresponde a préstamos y convenios; la deuda flotante, a gastos registrados que quedaban sin pagar. En Tigre el mayor monto está en esta segunda categoría. No se deben confundir $1,5 millones de deuda consolidada con toda la deuda del municipio. La serie de deuda flotante está publicada en pesos corrientes, redondeados a pesos enteros; el cierre 2025 con centavos se concilia con la ejecución. No informa el vencimiento de cada factura."
+      },
+      "pending": [
+        "Caja de libre disponibilidad conciliada, descontando fondos afectados y todas las obligaciones exigibles.",
+        "Calendario futuro de capital e intereses, por contrato, moneda y fecha.",
+        "Antigüedad y vencimiento de la deuda con proveedores; distinguir pendiente de vencida.",
+        "Ingresos y gastos mensuales para ajustar cada flujo fiscal por inflación.",
+        "Estado de tesorería y stock completo de pasivos a junio de 2026."
+      ],
+      "historyReading": "Los cortes de mitad de año y los cierres anuales se leen por separado. Un superávit en junio no asegura cerrar el año con superávit. Los importes históricos están en pesos de cada período: para seguir el equilibrio se muestra el resultado como porcentaje de los ingresos, sin presentarlo como una variación real."
+    }
+  ]
+}

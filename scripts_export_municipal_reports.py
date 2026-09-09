@@ -232,7 +232,10 @@ class Report:
         self.story.extend([t,Spacer(1,10)])
     def refs(self,*keys):return ' · '.join(self.sources[k] for k in keys)
     def fiscal_refs(self,f):
-        return f"Municipalidad de {escaped(self.m['municipio'])}, cuenta al {date(f['fin'])}: "+' · '.join(source_link(d['url'],f"documento {i}, págs. {', '.join(map(str,d['consultedPages']))}") for i,d in enumerate(f['documents'],1))
+        def pages(d):
+            values=d['consultedPages']
+            return f'{min(values)}-{max(values)}' if len(values)>8 and values==list(range(min(values),max(values)+1)) else ', '.join(map(str,values))
+        return f"Municipalidad de {escaped(self.m['municipio'])}, cuenta al {date(f['fin'])}: "+' · '.join(source_link(d['url'],f"documento {i}, págs. {pages(d)}") for i,d in enumerate(f['documents'],1))
     def footer(self,c,doc):
         self.pages=doc.page;c.saveState()
         sources=Paragraph(getattr(c,'report_sources',''),self.styles['small'])
@@ -318,6 +321,72 @@ class Report:
             self.p(escaped(m.get('fiscalSearch',{}).get('message','Todavía no hay una cuenta completa verificada para este municipio.')))
             self.panel('Lo que todavía no podemos concluir','Las transferencias provinciales son sólo una parte de los ingresos. Con esa información no se puede calcular el déficit, el gasto de capital total ni la caja disponible. Los espacios sin información se mantienen como tales.')
             self.p('Para completar la cuenta hacen falta ingresos y gastos corrientes y de capital del mismo período, con identificación de los organismos incluidos. Para evaluar liquidez, además, se necesitan saldos, fondos afectados y obligaciones pendientes.')
+    def management(self):
+        g=self.m.get('management')
+        if not g:return
+        b,t,d=g['budget'],g['treasury'],g['debt']
+        def refs(documents):return 'Municipalidad de '+escaped(self.m['municipio'])+' · '+' · '.join(source_link(x['url'],'documento '+str(i)) for i,x in enumerate(documents,1))+' · '+source_link(SITE+'auditoria-distritos.html#'+self.m['id'],'criterios y conciliaciones')
+        self.section('Presupuesto y pagos',sources=refs(b['documents']))
+        self.p(f"Del {date(b['inicio'])} al {date(b['fin'])}. Millones de pesos corrientes. El presupuesto es la autorización anual para gastar. Devengado es un gasto registrado; pagado es lo efectivamente cancelado.")
+        labels={'original':'Presupuesto original del año','modifications':'Modificaciones presupuestarias','current':'Presupuesto vigente del año','received':'Recursos cobrados en el período','accrued':'Gastos presupuestarios devengados','paid':'Gastos presupuestarios pagados','unpaid':'Devengado del período sin pagar'}
+        self.table(['Concepto','Millones de pesos'],[(label,money(b[key],2)) for key,label in labels.items() if finite(b.get(key))],[CONTENT*.66,CONTENT*.34],True)
+        self.p(escaped(b['reading']))
+        self.h('En qué se registran los gastos')
+        self.table(['Objeto del gasto','Vigente','Devengado','Pagado'],[(r['label'],money(r['current'],2),money(r['accrued'],2),money(r['paid'],2)) for r in b['objects']],[CONTENT*.37,CONTENT*.21,CONTENT*.21,CONTENT*.21],True)
+        self.p('Bienes de uso incluye obras y equipamiento, pero no agota el gasto de capital: también hay insumos de obras y transferencias. Ejecutar presupuesto no demuestra que una obra esté terminada ni exige gastar la mitad del presupuesto a mitad de año.','small')
+        self.section('Los ingresos y el resultado',sources=refs(b['documents']))
+        self.h(b['receiptTitle'])
+        self.table(['Concepto','Millones de pesos','Parte del total'],[(r['label'],money(r['received'],2),pct(ratio(r['received'],b['received']),1)) for r in b['receipts']],[CONTENT*.5,CONTENT*.3,CONTENT*.2])
+        self.p('Origen municipal incluye tasas, derechos y otros recursos propios, incluso ventas de activos. No equivale solamente a impuestos ni asegura que los ingresos se repitan.' if b['receiptTitle'].startswith('Origen') else 'Un recurso sin afectación específica puede usarse para distintas finalidades. De todos modos, primero debe atender las obligaciones del municipio. Esa clasificación describe los ingresos cobrados; no identifica cuánto queda hoy en el banco para nuevas decisiones.')
+        if b.get('reconciliation'):
+            r=b['reconciliation'];self.h('Cómo se llega al gasto fiscal')
+            self.table(['Paso de la conciliación','Millones de pesos'],[(label,money(value,2)) for label,value in [('Gasto presupuestario devengado',r['budgetAccrued']),('Menos devolución del capital de préstamos',-r['amortization']),('Menos cancelación de pasivos anteriores',-r['priorLiabilities']),('Gasto fiscal del período',r['fiscalExpenditure']),('Intereses, ya incluidos en el gasto fiscal',r['interestIncluded'])]],[CONTENT*.68,CONTENT*.32])
+            self.p('Pagar una obligación de un año anterior consume dinero, pero no constituye un nuevo gasto fiscal de este semestre. La devolución del capital de un préstamo también se separa del gasto; sus intereses permanecen incluidos. Por eso no se calcula déficit restando sin más los totales presupuestarios.')
+            self.p('La reconstrucción cruza objeto del gasto y programa para incluir los insumos de obras dentro del capital. Antes de aplicar el criterio a junio de 2026, conciliamos todos los componentes con la cuenta anual oficial de 2025.','small')
+        else:
+            self.p('Para leer el resultado se utiliza la Cuenta Ahorro Inversión Financiamiento publicada por el municipio. Esa cuenta separa las operaciones financieras del gasto corriente y de capital. El presupuesto y la tesorería aportan otra parte del análisis: autorizaciones, pagos y saldos.')
+        self.section('Caja y obligaciones',sources=refs(t['documents']))
+        self.p(f"Cierre al {date(t['date'])}. Millones de pesos corrientes. Cada saldo corresponde a esa fecha; no se combina con obligaciones de otro cierre.")
+        labels={'closing':'Saldo total de tesorería','available':'Disponibilidades, incluidas en el total','transitory':'Movimientos transitorios, incluidos en el total','budgetCash':'Cuentas presupuestarias, incluidas en el total','unearmarkedAccounts':'De ellas: cuentas sin afectación','earmarkedAccounts':'De ellas: cuentas con destino asignado','thirdPartyAndSpecial':'Terceros y cuentas especiales','liabilities':'Pasivos contables totales','currentLiabilities':'De ellos: pasivos corrientes','nonCurrentLiabilities':'De ellos: pasivos no corrientes'}
+        self.table(['Concepto','Millones de pesos'],[(label,money(t[key],2)) for key,label in labels.items() if finite(t.get(key))],[CONTENT*.67,CONTENT*.33],True)
+        self.p(escaped(t['reading']))
+        self.p('Los pasivos son obligaciones registradas. Corrientes son los de corto plazo; no corrientes, los de mayor plazo. Esa clasificación no identifica qué factura ya venció. Los subtotales están incluidos en los totales: no se suman otra vez. El resultado financiero tampoco se suma al saldo bancario para estimar dinero disponible.')
+        self.h('Qué falta para completar la lectura')
+        for item in g['pending']:self.p(escaped(item),'small')
+        if d:
+            self.section('La deuda del municipio',sources=refs(d['documents']))
+            self.p(f"Cierre al {date(d['date'])}. Millones de pesos corrientes. Son obligaciones del municipio, distintas de las deudas de las personas.")
+            self.table(['Tipo de obligación','Millones de pesos'],[(label,money(d[key],2)) for key,label in [('consolidated','Deuda consolidada'),('current','De ella: corriente'),('nonCurrent','De ella: no corriente'),('floating','Deuda flotante')]])
+            self.p(escaped(d['reading']))
+            self.h('Deuda flotante al cierre de cada año')
+            self.table(['Año','Millones de pesos corrientes'],[(str(r['year']),money(r['floating'],2)) for r in d['floatingHistory']],small=True)
+            self.p('Los importes no están ajustados por inflación. Un aumento nominal no mide por sí solo cuánto creció la carga real de la deuda. La publicación no contiene un calendario futuro de vencimientos.','small')
+        bank=g['banking']
+        if any(r['status']=='verified' for r in bank['records']):
+            self.section('Crédito y depósitos: el último corte',sources='BCRA · '+ ' · '.join(source_link(x['url'],x['file']) for x in bank['documents'])+' · '+self.refs('ipc'))
+            self.p(escaped(bank['note']))
+            self.p('Millones de pesos. Los corrientes muestran el saldo de cada fecha. Los ajustados por inflación expresan todos los cierres a precios de julio de 2026.')
+            self.table(['Fecha','Préstamos corrientes','Depósitos corrientes','Préstamos ajustados','Depósitos ajustados'],[(date(r['date']),money(r.get('loans'),1),money(r.get('deposits'),1),money(r.get('loansReal'),1),money(r.get('depositsReal'),1)) for r in bank['records']],[CONTENT*.18,CONTENT*.205,CONTENT*.205,CONTENT*.205,CONTENT*.205])
+            self.h('Qué permite leer este dato')
+            self.p('Los saldos describen el crédito y los depósitos registrados en las sucursales del distrito. Ayudan a seguir la actividad financiera local, pero no permiten atribuir todo el crédito a vecinos ni toda la financiación a pymes. Tampoco representan solamente deudas o depósitos del gobierno municipal.')
+            self.p('El ajuste usa el IPC nacional del mes de cada cierre. Como son saldos en una fecha, no corresponde tratarlos igual que ingresos acumulados durante un semestre. Los préstamos y depósitos en moneda extranjera ya están convertidos por el BCRA; un cambio en el tipo de cambio también mueve su valor en pesos.')
+            self.p('Las cifras de diciembre de 2023 y 2024 coinciden con los agregados DPE/BCRA que ya contenía el tablero. Se agregan diciembre de 2025 y junio de 2026. Los rankings bancarios generales mantienen el corte común de 2024 para evitar comparar municipios con fechas distintas.','small')
+        history_refs=source_link(SITE+'auditoria-distritos.html#'+self.m['id'],'Municipalidad de '+self.m['municipio']+': documentos históricos y períodos exactos')
+        portal='https://gobiernodelasheras.com/category/documentos/' if self.m['id']=='06329' else 'https://www.tigre.gob.ar/gobierno/informacion_gestion'
+        history_refs+=' · '+source_link(portal,'Publicaciones oficiales')+' · '+source_link(SITE+'data/management_verified.json','registro de cifras y evidencia')
+        self.section('Historia de las cuentas',sources=history_refs)
+        self.p(escaped(g['historyReading']))
+        for month,label in [(6,'Primer semestre de cada año'),(12,'Cierres de enero a diciembre')]:
+            history=[f for f in g['history'] if int(f['fin'][5:7])==month and int(f['inicio'][5:7])==1]
+            if not history:continue
+            self.h(label)
+            self.table(['Período exacto','Ingresos','Gastos','Resultado','% de ingresos'],[(date(f['inicio'])+' a '+date(f['fin']),money(f['ingresos_totales'],1),money(f['gastos_totales'],1),money(f['resultado_financiero'],1),pct(f['resultado_sobre_ingresos_pct'],2)) for f in history],[CONTENT*.29,CONTENT*.18,CONTENT*.18,CONTENT*.18,CONTENT*.17],True)
+        self.p('Millones de pesos corrientes. Se conservan los días informados por cada publicación. '+('El cierre 2025 suma los dos semestres sin superponerlos; no se suman otra vez a ese cierre. ' if self.m['id']=='06329' else '')+'Un porcentaje de superávit o déficit no mide por sí solo la calidad de los servicios.','small')
+        self.section('El detalle fiscal histórico',sources=history_refs)
+        self.p('Millones de pesos corrientes. Cada fila es un período: no se suman los cortes que se superponen. El detalle también permite consultar por separado julio-diciembre cuando está publicado.')
+        for category,fields in [('Ingresos y personal',[('ingresos_corrientes','Ingresos corrientes'),('ingresos_capital','Ingresos de capital'),('personal_devengado','Personal')]),('Gastos corrientes y de capital',[('gastos_corrientes','Gastos corrientes'),('gastos_capital','Gastos de capital')])]:
+            self.h(category)
+            self.table(['Período exacto']+[l for _,l in fields],[(date(f['inicio'])+' a '+date(f['fin']),*[money(f[k],1) for k,_ in fields]) for f in g['history']],small=True)
     def resources(self):
         m=self.m;self.section('Lo que llega de la Provincia',sources=self.refs('transfers','ipc'))
         r=m['variacion_transferencias_real_pct']
@@ -416,7 +485,7 @@ class Report:
         self.p(f"Se registraron {number(b,0)} robos en 2025, frente a {number(a,0)} en 2024. Conviene contrastar el cambio con zonas, horarios y canales de denuncia antes de definir medidas. Estos registros no captan todos los delitos ni miden la sensación de inseguridad. Más denuncias también pueden modificar el total.")
         self.p('Las tasas son las publicadas por el SNIC, con su población de referencia; no se recalculan con el Censo 2022. En municipios pequeños, pocos hechos pueden mover mucho la tasa. Se muestran junto a las cantidades para evitar lecturas engañosas.','small')
     def build(self):
-        for method in [self.overview,self.priorities,self.accounts,self.resources,self.employment,self.wages,self.territory,self.debt,self.community]:method()
+        for method in [self.overview,self.priorities,self.accounts,self.management,self.resources,self.employment,self.wages,self.territory,self.debt,self.community]:method()
         doc=BaseDocTemplate(str(self.path),pagesize=A4,rightMargin=MARGIN,leftMargin=MARGIN,topMargin=45,bottomMargin=104,
                               title=f'{self.m["municipio"]} - Informe municipal completo',author='Federico Pellegrini',pageCompression=1)
         def deterministic_canvas(*args,**kwargs):kwargs['invariant']=1;return Canvas(*args,**kwargs)
@@ -433,7 +502,7 @@ def build(output=OUTPUT, municipality=None):
     for m in chosen:
         filename=f'informe-{m["id"]}.pdf';path=output/filename;pages=Report(path,m,data,geography).build()
         entries.append({'id':m['id'],'municipality':m['municipio'],'file':filename,'pages':pages,'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
-                        'sections':['lectura','prioridades','cuentas','transferencias','empleo','salarios','actividad','deudas','poblacion'],'populationYear':2022,'crimeYears':[2024,2025]})
+                        'sections':['lectura','prioridades','cuentas']+(['presupuesto','caja','deuda-municipal','historia-fiscal'] if m.get('management') else [])+['transferencias','empleo','salarios','actividad','deudas','poblacion'],'populationYear':2022,'crimeYears':[2024,2025]})
     manifest={'version':2,'generated':data['generated'],'input_sha256':fingerprint(),'reports':entries}
     (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'reports':len(entries),'pages':sorted({e['pages'] for e in entries}),'bytes':sum(e['bytes'] for e in entries)},ensure_ascii=False))

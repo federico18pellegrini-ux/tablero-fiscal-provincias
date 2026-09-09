@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "reviewedAt": "2026-09-07",
-  "scope": "Cruce del directorio de 135 municipios: 18 cuentas previas y búsqueda en los 117 casos restantes, incluido Tigre con ejecución parcial. No encontrar una cuenta en los enlaces revisados no demuestra que no esté publicada en otro lugar.",
+  "reviewedAt": "2026-09-09",
+  "scope": "Revisión del directorio de 135 municipios del 7 de septiembre, ampliada con General Las Heras y Tigre el 9 de septiembre de 2026. No encontrar una cuenta en los enlaces revisados no demuestra que no esté publicada en otro lugar.",
   "counts": {
-    "comparable_account": 72,
+    "comparable_account": 73,
     "account_not_verified": 34,
     "other_period": 18,
     "access_incomplete": 4,
     "documents_pending": 6,
-    "budget_execution": 1
+    "budget_execution": 0
   },
   "municipalities": [
     {
@@ -3011,15 +3011,15 @@
     {
       "id": "06329",
       "municipio": "General Las Heras",
-      "reviewedAt": "2026-09-07",
-      "searchedThisRound": false,
+      "reviewedAt": "2026-09-09",
+      "searchedThisRound": true,
       "status": "comparable_account",
-      "message": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal.",
+      "message": "Cuenta de enero–junio de 2026 conciliada. Se incorporaron historia fiscal, presupuesto, pagos y tesorería. Historia desde 2021 con períodos exactos y pasivos contables a junio de 2026; falta el cierre anual 2023.",
       "providedUrl": "https://gobiernodelasheras.com/category/documentos/2024/",
       "accountUrl": "https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/",
       "latestPeriodEnd": "2026-06-30",
       "comparablePeriodEnd": "2026-06-30",
-      "retrievedPdfCount": 0,
+      "retrievedPdfCount": 10,
       "checkedPages": []
     },
     {
@@ -6592,15 +6592,15 @@
     {
       "id": "06805",
       "municipio": "Tigre",
-      "reviewedAt": "2026-09-07",
+      "reviewedAt": "2026-09-09",
       "searchedThisRound": true,
-      "status": "budget_execution",
-      "message": "Ejecución presupuestaria disponible. Falta separar las operaciones financieras para calcular un resultado comparable.",
+      "status": "comparable_account",
+      "message": "Cuenta de enero–junio de 2026 conciliada. Se incorporaron historia fiscal, presupuesto, pagos y tesorería. Resultado reconstruido por objeto y programa, con control contra la cuenta anual 2025. Deuda consolidada y flotante al cierre 2025.",
       "providedUrl": "https://www.tigre.gob.ar/gobierno",
       "accountUrl": "https://www.tigre.gob.ar/gobierno/informacion_gestion",
       "latestPeriodEnd": "2026-06-30",
-      "comparablePeriodEnd": null,
-      "retrievedPdfCount": 1,
+      "comparablePeriodEnd": "2026-06-30",
+      "retrievedPdfCount": 9,
       "checkedPages": [
         {
           "url": "https://www.tigre.gob.ar/",

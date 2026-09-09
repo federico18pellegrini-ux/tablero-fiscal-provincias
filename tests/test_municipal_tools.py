@@ -12,14 +12,14 @@ class MunicipalTools(unittest.TestCase):
     def test_status_is_mutually_exclusive_and_missing_does_not_mean_zero(self):
         rows=self.coverage['municipalities']
         self.assertEqual(len(rows),135)
-        self.assertEqual(sum(r['comparable'] for r in rows),72)
+        self.assertEqual(sum(r['comparable'] for r in rows),73)
         counts={label:sum(r['fiscalStatus']==label for r in rows) for label in ['Comparable a junio de 2026','Otro período','Ejecución parcial','Cuenta no verificada']}
-        self.assertEqual(list(counts.values()),[72,18,1,44])
+        self.assertEqual(list(counts.values()),[73,18,0,44])
         heras=next(r for r in rows if r['id']=='06329')
         self.assertTrue(heras['comparable'])
         self.assertTrue(any('Préstamos bancarios 2024' in v for v in heras['missing']))
         self.assertTrue(any('Gasto en personal' in v for v in next(r for r in rows if r['id']=='06042')['missing']))
-        self.assertFalse(next(r for r in rows if r['id']=='06805')['comparable'])
+        self.assertTrue(next(r for r in rows if r['id']=='06805')['comparable'])
 
     def test_every_missing_sector_and_unavailable_period_is_identified(self):
         by_id={r['id']:r for r in self.coverage['municipalities']}

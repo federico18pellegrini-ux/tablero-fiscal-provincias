@@ -94,7 +94,7 @@ def apply_verified_fiscal(municipalities, path):
                 **{k: v for k, v in record.items() if k not in ('id', 'amounts')},
                 **{k: float(v) for k, v in amounts.items()},
                 'url': record['landingUrl'], 'unidad': 'ARS corrientes',
-                'verifiedAt': audit['verifiedAt'],
+                'verifiedAt': record.get('verifiedAt', audit['verifiedAt']),
             }
     for m in municipalities.values():
         for f in [m['fiscal'], m.get('fiscalOther')]:
@@ -112,7 +112,7 @@ def apply_verified_fiscal(municipalities, path):
             'budgetOnly': sum(bool(m.get('fiscalExecution')) and not m['fiscal'] for m in municipalities.values()),
             'otherPeriods': sum(bool(m.get('fiscalOther')) for m in municipalities.values()),
             'withAccounts': sum(bool(m.get('fiscal') or m.get('fiscalOther')) for m in municipalities.values()),
-            'verifiedAt': audit['verifiedAt']}
+            'verifiedAt': audit.get('updatedAt', audit['verifiedAt'])}
 
 
 def read_csv(path):
@@ -201,6 +201,77 @@ def apply_community(municipalities, path):
     return {k:v for k,v in audit.items() if k != 'municipalities'}
 
 
+def apply_management(municipalities, path):
+    """Optional primary-source history, budget and treasury, never inferred cash."""
+    audit = json.loads(path.read_text(encoding='utf-8'))
+    indices = {r['period']:Decimal(r['ipc_index']) for r in read_csv(ROOT/'data/ipc_national_index.csv')}
+    def expand(value):
+        if isinstance(value, list): return [expand(v) for v in value]
+        if not isinstance(value, dict): return value
+        result = {k: expand(v) for k, v in value.items() if k != 'amounts'}
+        for key, amount in value.get('amounts', {}).items():
+            n = Decimal(amount)
+            if not n.is_finite(): raise ValueError('Invalid management amount')
+            result[key] = float(n)
+        return result
+    seen = set()
+    for record in audit['municipalities']:
+        ident = record['id']
+        if ident in seen or ident not in municipalities: raise ValueError('Invalid management municipality')
+        seen.add(ident)
+        m = municipalities[ident]; g = expand(record)
+        periods = set()
+        for raw, f in zip(record['history'], g['history']):
+            start, end = date.fromisoformat(f['inicio']), date.fromisoformat(f['fin'])
+            if start > end or end > date.fromisoformat(audit['verifiedAt']) or (start,end) in periods:
+                raise ValueError('Invalid management history period')
+            periods.add((start,end))
+            a = {k: Decimal(v) for k,v in raw['amounts'].items()}
+            differences = [a['ingresos_corrientes']+a['ingresos_capital']-a['ingresos_totales'],
+                           a['gastos_corrientes']+a['gastos_capital']-a['gastos_totales'],
+                           a['ingresos_totales']-a['gastos_totales']-a['resultado_financiero']]
+            if any(abs(v) > Decimal('.01') for v in differences): raise ValueError('Unreconciled management history')
+            if raw.get('components'):
+                parts = raw['components']
+                if date.fromisoformat(parts[0]['fin'])+timedelta(days=1) != date.fromisoformat(parts[1]['inicio']):
+                    raise ValueError('History components overlap or leave a gap')
+                if any(sum(Decimal(p['amounts'][k]) for p in parts) != v for k,v in a.items()):
+                    raise ValueError('History components do not reconcile')
+            f['unidad'] = 'ARS corrientes'; f['verifiedAt'] = audit['verifiedAt']
+            f['ahorro_corriente'] = round(f['ingresos_corrientes']-f['gastos_corrientes'],2)
+            for target, numerator, denominator in [
+                ('resultado_sobre_ingresos_pct','resultado_financiero','ingresos_totales'),
+                ('capital_sobre_gasto_pct','gastos_capital','gastos_totales'),
+                ('personal_sobre_gasto_corriente_pct','personal_devengado','gastos_corrientes'),
+                ('ahorro_sobre_ingresos_corrientes_pct','ahorro_corriente','ingresos_corrientes')]:
+                f[target] = f[numerator]/f[denominator]*100 if f[denominator] else None
+            f['capital_por_habitante_base2022_ars_corrientes'] = f['gastos_capital']/m['poblacion_2022']
+        b = record['budget']; amounts = {k:Decimal(v) for k,v in b['amounts'].items()}
+        for field in ['current','accrued','paid']:
+            if sum(Decimal(r['amounts'][field]) for r in b['objects']) != amounts[field]:
+                raise ValueError('Budget objects do not reconcile')
+        if amounts['accrued']-amounts['paid'] != amounts['unpaid']:
+            raise ValueError('Unpaid execution does not reconcile')
+        if sum(Decimal(r['amounts']['received']) for r in b['receipts']) != amounts['received']:
+            raise ValueError('Receipt breakdown does not reconcile')
+        g['banking']['priceBase'] = '2026-07'
+        for raw, r in zip(record['banking']['records'],g['banking']['records']):
+            if r['status'] == 'verified':
+                factor=indices['2026-07']/indices[r['date'][:7]]
+                for key in ['loans','deposits']:
+                    amount=Decimal(raw['amounts'][key])
+                    if abs(amount-1000*Decimal(raw['rawValues'][key+'Thousands'])) > Decimal('.01'):
+                        raise ValueError('Banking thousand-peso conversion failed')
+                    r[key+'Real']=float((amount*factor).quantize(Decimal('.01')))
+            elif raw.get('amounts'):
+                raise ValueError('Reserved banking amount must remain absent')
+        g['verifiedAt'] = audit['verifiedAt']; m['management'] = g
+    for s in audit['sources']:
+        if not s['url'].startswith('https://') or not re.fullmatch('[0-9a-f]{64}',s['sha256']) or s['bytes'] <= 0:
+            raise ValueError('Missing management primary evidence')
+    return audit
+
+
 def build(folder):
     base = read_csv(folder / 'rankings_base_135_municipios.csv')
     municipalities = {}
@@ -250,6 +321,8 @@ def build(folder):
             raise ValueError('CEC denominators do not reconcile')
         municipalities[record['id']]['community']['debt'] = {k:v for k,v in record.items() if k not in ['sourceRecord','sourceGeography']}
     community['householdDebt']['externalMunicipalProvider'] = {k:v for k,v in debt.items() if k != 'municipalities'}
+    management_path = ROOT / 'municipios/data/management_verified.json'
+    management = apply_management(municipalities, management_path)
     data = {'version': 5, 'generated': '2026-09-09', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
     target = ROOT / 'municipios/data/dashboard.json'
     target.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':'), allow_nan=False), encoding='utf-8')
@@ -257,14 +330,14 @@ def build(folder):
     overlay = repository_input(fiscal_path)
     transparency_input = repository_input(transparency_path)
     search_input = repository_input(search_path)
-    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path)], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
+    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path), repository_input(management_path)], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
     (target.parent / 'fuentes.csv').write_bytes((folder / 'fuentes_y_huellas.csv').read_bytes())
     fiscal_audit = json.loads(fiscal_path.read_text(encoding='utf-8'))
     with (target.parent / 'fuentes.csv').open('a', encoding='utf-8', newline='') as source_file:
         writer = csv.writer(source_file)
         for record in fiscal_audit['records'] + fiscal_audit['budgetExecutions'] + fiscal_audit.get('otherPeriods', []):
             for index, document in enumerate(record['documents'], 1):
-                writer.writerow([f"municipio-{record['id']}-{record['fin']}-{index}.pdf", document['url'], document['sha256'], document['bytes'], fiscal_audit['verifiedAt']])
+                writer.writerow([f"municipio-{record['id']}-{record['fin']}-{index}.pdf", document['url'], document['sha256'], document['bytes'], record.get('verifiedAt', fiscal_audit['verifiedAt'])])
         for edition in transparency['editions']:
             document = edition['document']
             writer.writerow([f"asap-{edition['edition']}.pdf", document['url'], document['sha256'], document['bytes'], transparency['verifiedAt']])
@@ -272,6 +345,8 @@ def build(folder):
             writer.writerow([name, document['url'], document['sha256'], document['bytes'], community['verified']])
         for document in debt['sources']:
             writer.writerow([document['file'], document['url'], document['sha256'], document['bytes'], debt['verifiedAt']])
+        for document in management['sources']:
+            writer.writerow([document['file'], document['url'], document['sha256'], document['bytes'], management['verifiedAt']])
     # Serve a conventional deferred script on static hosts, independent of .mjs MIME configuration.
     bundle_app()
     print(f'{target.name}: {len(municipalities)} municipalities; {target.stat().st_size:,} bytes')
