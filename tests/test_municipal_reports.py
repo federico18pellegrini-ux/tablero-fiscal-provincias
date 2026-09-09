@@ -30,7 +30,8 @@ class MunicipalReports(unittest.TestCase):
                 self.assertEqual(len(pdf.pages),r['pages'])
                 self.assertEqual(pdf.metadata.author,'Federico Pellegrini')
                 self.assertIn(r['municipality'],pdf.pages[0].extract_text())
-                self.assertEqual((r['metrics'],r['transferMonths'],r['employmentMonths'],r['scenarios']),(27,19,84,41))
+                self.assertEqual(r['sections'],['lectura','prioridades','cuentas','transferencias','empleo','salarios','actividad','poblacion'])
+                self.assertEqual(r['crimeYears'],[2024,2025])
 
     def test_general_las_heras_fiscal_money_and_price_bases(self):
         fiscal=self.m['fiscal']
@@ -39,20 +40,19 @@ class MunicipalReports(unittest.TestCase):
             self.assertIn(money(fiscal[key],2),self.text)
         self.assertIn('$5.474,5',self.text)  # Nominal transfers, Jan-Jul 2026.
         self.assertIn('$5.842,9',self.text)  # Same flows in July 2026 purchasing power.
-        self.assertIn('-$444,78',self.text)  # 10% scenario on real coparticipation only.
         self.assertIn('pesos corrientes, sin ajuste por inflación',self.text)
         self.assertIn('pesos constantes de 2004',self.text)
-        self.assertIn('-0,00045 pp',self.text)  # Small negative share change must retain its sign/precision.
 
-    def test_full_historical_observations_are_printed(self):
-        for period,jobs,wage in self.m['employment']:
-            self.assertIn(month(period),self.text)
-            self.assertIn(number(jobs,0),self.text)
-            self.assertIn(money(wage,0,False),self.text)
-        for period,total,copart in self.m['transfers']:
-            self.assertIn(month(period),self.text)
-            self.assertIn(money(total,2),self.text)
-            self.assertIn(money(copart,2),self.text)
+    def test_editorial_report_contains_verified_salary_and_context_not_removed_sections(self):
+        for forbidden in ['Publicación de información fiscal','Los 27 indicadores en comparación','Escenarios de coparticipación','Anexo / transferencias','Anexo / empleo']:
+            self.assertNotIn(forbidden,self.text)
+        for value in ['$1.577.097','$2.117.275','$1.561.205','$2.377.942','5.038','37','22','58','28,0%']:
+            self.assertIn(value,self.text)
+        for definition in ['Real significa ajustado por inflación','necesidades básicas insatisfechas','SIPA','aguinaldo','No es el salario de bolsillo','Por qué la elegimos','Qué recomendamos']:
+            self.assertIn(definition,self.text)
+        self.assertIn('salario bruto publicado', (ROOT/'municipios/metodologia.html').read_text(encoding='utf-8').lower())
+        self.assertNotIn('había Sin dato',self.text)
+        self.assertIn('no significan que el monto sea cero',self.text)
 
     def test_footer_and_missing_data_are_explicit(self):
         for i,p in enumerate(self.pdf.pages,1):
@@ -60,9 +60,14 @@ class MunicipalReports(unittest.TestCase):
             self.assertIn('Federico Pellegrini',text)
             self.assertIn(f'Página {i}',text)
             self.assertGreater(len(text),500)
+            self.assertIn('Fuentes:',text)
+            self.assertIn('tablero.federicopellegrini.com.ar/municipios/',text)
+            links=[a.get_object().get('/A',{}).get('/URI','') for a in p.get('/Annots',[])]
+            self.assertTrue(any('?municipio=06329' in link for link in links))
+            self.assertTrue(any(link.startswith('https://') and 'tablero.federico' not in link for link in links))
         self.assertIn('Sin dato',self.text)
         self.assertIn('Los sectores reservados',self.text)
-        self.assertIn('no un pronóstico',' '.join(self.text.split()))
+        self.assertIn('No encontramos una serie municipal comparable',' '.join(self.text.split()))
 
     def test_execution_and_different_periods_do_not_become_comparable_deficits(self):
         tigre='\n'.join(p.extract_text() for p in PdfReader(OUTPUT/'informe-06805.pdf').pages)

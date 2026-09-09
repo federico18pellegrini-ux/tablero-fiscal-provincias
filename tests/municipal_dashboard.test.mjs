@@ -202,3 +202,31 @@ test('direct links reject unknown state and CSV preserves missing values',()=>{
   assert.equal(readState('?municipio=06427&vista=empleo',rows).id,'06427');
   assert.equal(csv([['Faltante',null]]),'\ufeff"Faltante";""');
 });
+
+
+test('census context uses its own denominators and preserves official crime categories',()=>{
+  const audit=JSON.parse(fs.readFileSync(new URL('../municipios/data/community_verified.json',import.meta.url)));
+  assert.equal(audit.salaryAudit.monthlyObservations,11340);
+  assert.equal(audit.householdDebt.municipalAvailable,false);
+  assert.equal(audit.householdDebt.geographicLevel,'province');
+  for(const m of rows){
+    const c=m.community,h=c.health,raw=audit.municipalities.find(r=>r.id===m.id);
+    assert.equal(h.populationPrivateDwellings,h.socialInsuranceOrPrivate+h.statePlan+h.withoutCoverage);
+    assert.equal(h.withoutCoveragePct,100*h.withoutCoverage/h.populationPrivateDwellings);
+    assert.equal(c.crowding.households,m.hogares_2022);
+    assert.ok(c.crowding.over3PersonsPerRoomPct>=0&&c.crowding.over3PersonsPerRoomPct<=100);
+    for(const year of ['2023','2024','2025'])assert.ok(Math.abs(c.wage.annual[year].real-m[`salario_real_promedio_${year}_ars_jul26`])<.00001);
+    for(const year of ['2024','2025']){
+      const original=raw.crime[year].sourceRows,published=c.crime[year];
+      assert.equal(published.robberies,Number(original['15'].cantidad_hechos)+Number(original['17'].cantidad_hechos));
+      assert.equal(published.homicideVictims,Number(original['1'].cantidad_victimas));
+      assert.equal(published.thefts,Number(original['19'].cantidad_hechos));
+      assert.ok(Math.abs(published.robberyRate-(Number(original['15'].tasa_hechos.replace(',','.'))+Number(original['17'].tasa_hechos.replace(',','.'))))<1e-8);
+    }
+  }
+  const h=rows.find(r=>r.id==='06329').community;
+  assert.equal(h.health.withoutCoverage,5038);assert.equal(h.health.populationPrivateDwellings,17980);
+  assert.equal(h.crime['2025'].homicideVictims,0);assert.equal(h.crime['2024'].robberies,22);assert.equal(h.crime['2025'].robberies,37);
+  assert.equal(Math.round(h.wage.annual['2025'].real),2117275);
+  for(const [id,original] of [['06658','06058'],['06218','06217']])assert.equal(audit.municipalities.find(r=>r.id===id).crime['2025'].sourceRows['1'].departamento_id,original);
+});

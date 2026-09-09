@@ -1,12 +1,11 @@
 {
-  "version": 1,
-  "generated": "2026-09-07",
+  "version": 2,
+  "generated": "2026-09-09",
   "input_sha256": {
-    "municipios/data/dashboard.json": "a64cf15bbcac1c41e4d8f6fd4c68588fe692c6ff548e08ef3f81fcb54123cb1b",
+    "municipios/data/dashboard.json": "6ec46b1b9e3db2924bef18f5151d53800389e64edb6e341b42f5a091f8339d73",
     "municipios/data/geografia_original.geojson": "877e30549e9d73487828d158584981635f7746739412669656bb3dfa4645173f",
-    "municipios/model.mjs": "d6f24d982294bb4cafee87e38eb6138219f4edc5b82ebfc8dccb4a680165b45f",
-    "scripts_municipal_report_data.mjs": "766a6363142da16725e4217009f855249d8877e25b0fcec22d6da35a6fd71794",
-    "scripts_export_municipal_reports.py": "639339609f6c9a1c9014219919037d3d0464ec69d55dc6a2baf09aa7725c5c50",
+    "municipios/data/fuentes.csv": "5c7b409cc7d83c70cd738a925f3d344043948118df6d08f8842321f2e18ee754",
+    "scripts_export_municipal_reports.py": "57d4840242bad27cb0ca33381c90f535fc8230a740e523470a233c20225cdf33",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
   },
@@ -15,1621 +14,3106 @@
       "id": "06007",
       "municipality": "Adolfo Alsina",
       "file": "informe-06007.pdf",
-      "pages": 14,
-      "bytes": 92534,
-      "sha256": "37c17fd40dea3612d5f2b027d2e34b7ffef7a11c44519459311db259aaca8d6f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52804,
+      "sha256": "1d16297f5502cc56e227c562a61d9c616c2fc5d93322380080c88c45bed0e90c",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06014",
       "municipality": "Adolfo Gonzales Chaves",
       "file": "informe-06014.pdf",
-      "pages": 14,
-      "bytes": 92835,
-      "sha256": "7127d834377371cb3d2f04c7c3f023bbc812eaec6a8797a22eafddda5b0e78b5",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52954,
+      "sha256": "d36ac8ead74e4e89c4907b041980ddf4abeca1f10c6f3c9047d8de11029cd5c8",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06021",
       "municipality": "Alberti",
       "file": "informe-06021.pdf",
-      "pages": 14,
-      "bytes": 92617,
-      "sha256": "531e027990d40e219d81db05038693b7df2f7f6877a2b6cd35f1ff96855ea07f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53045,
+      "sha256": "69f0ea85a2e067b8fa714e04e04fc900d25efcbe9f6bcbed007717517b214c9e",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06028",
       "municipality": "Almirante Brown",
       "file": "informe-06028.pdf",
-      "pages": 14,
-      "bytes": 92029,
-      "sha256": "1995fa351df37c69532ffee22395667ea2c586cc851733521ff64d4d029ead3a",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51364,
+      "sha256": "2f0a79eed1cd0c096a11f8a4ddffdb8659c52232c626a1697877638fcb7cff1a",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06077",
       "municipality": "Arrecifes",
       "file": "informe-06077.pdf",
-      "pages": 14,
-      "bytes": 92555,
-      "sha256": "53c0a9ff31c067ce35b8b832638747da70a1df904e0f70f27c9c72162c5ff4d1",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52912,
+      "sha256": "10e22a614fcb431e7f92862ca95e8edceffc0159908a248ef6e45c321930084a",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06035",
       "municipality": "Avellaneda",
       "file": "informe-06035.pdf",
-      "pages": 14,
-      "bytes": 93146,
-      "sha256": "ef9cf580edc6c01fc7acca0d3489e9ccd93cea07de2c8911275d514dec25131a",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53008,
+      "sha256": "318f200430f706ff336999e55baf5f3f9a03722511d6ccb67e743bec5b766e5d",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06042",
       "municipality": "Ayacucho",
       "file": "informe-06042.pdf",
-      "pages": 14,
-      "bytes": 92714,
-      "sha256": "3e49d9547b6ca3ef8f762b08c3a3a298cec65b551ab22518dad5b2846f45aaa0",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53850,
+      "sha256": "6d560bdb9a3d047cad6de5c57473ece7a5f2e6b956e6a550665c3b9796b4a85e",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06049",
       "municipality": "Azul",
       "file": "informe-06049.pdf",
-      "pages": 14,
-      "bytes": 93205,
-      "sha256": "30f8bd1d5b77a1aa351926a96a692c6dbef2a3d8e3b670fec0f960734dd0d60a",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53398,
+      "sha256": "06a71138a037345642a17935056af9e5a68aa8653fc82cebaa330cc3efbbbe40",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06056",
       "municipality": "Bahía Blanca",
       "file": "informe-06056.pdf",
-      "pages": 14,
-      "bytes": 92053,
-      "sha256": "5de61b4681a5963e1098a7ff4b05fde9633f13583af0068732520b75455b1846",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51333,
+      "sha256": "fd78f74e45967e1ff770a5fcd1f1fc784fa0a11cfd436451c98239a45b28083e",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06063",
       "municipality": "Balcarce",
       "file": "informe-06063.pdf",
-      "pages": 14,
-      "bytes": 92971,
-      "sha256": "aeb1e237e8053ae5738efc9a9b366360596b2a5458bb24706b200eca991250c2",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52887,
+      "sha256": "ce5f9fa1e851c126c3216056f67083f9351c7654ceae55ce52d86e64ee9d5401",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06070",
       "municipality": "Baradero",
       "file": "informe-06070.pdf",
-      "pages": 14,
-      "bytes": 92724,
-      "sha256": "261d4be207cb9f3ea49e61a09b89d6f7ecd44afac1b69879a33eeffbde37c593",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53005,
+      "sha256": "7b975092aae382f7d669f699d8abd8b25915ee30a3dd044d3ab790080303edd7",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06084",
       "municipality": "Benito Juárez",
       "file": "informe-06084.pdf",
-      "pages": 14,
-      "bytes": 92864,
-      "sha256": "fd9b4669d08792556d3a1e92831da6d23de427c49022385af182e173c4f5c7c7",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52981,
+      "sha256": "dd182b358f4c2fb49ab02319825d84cfeb48a49ff1e160da039bf0e9210f589c",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06091",
       "municipality": "Berazategui",
       "file": "informe-06091.pdf",
-      "pages": 14,
-      "bytes": 91996,
-      "sha256": "ce2361273fa179c028a2e68b2d510af40d9e0b12fce829fade39faa6fbd30d47",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51323,
+      "sha256": "2a989de67aae7fa8409841a5405bda49fdd01cc94b84b7d256ad9439512cca76",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06098",
       "municipality": "Berisso",
       "file": "informe-06098.pdf",
-      "pages": 14,
-      "bytes": 93053,
-      "sha256": "e5ac98f04208dbab302f4f383f80ba173485f94604bd0f75695553d6b6a4bd81",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53206,
+      "sha256": "7fa9b72d4864543eb6b081258a190e8439555aa9abbb0bc5f63c2ccbfd832b51",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06105",
       "municipality": "Bolívar",
       "file": "informe-06105.pdf",
-      "pages": 14,
-      "bytes": 92658,
-      "sha256": "e57c20109dd3fcc97e54f44011a167007a2576fe2c289dbcbc83f10152333874",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53098,
+      "sha256": "5a95e5f9097005ad750d6569a4eb8135c52bdf5907bb7f4f861fc7f6dadfaf36",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06112",
       "municipality": "Bragado",
       "file": "informe-06112.pdf",
-      "pages": 15,
-      "bytes": 95297,
-      "sha256": "80f481c2a96fd3cd0b7d90194440bd2c1d6abcd309dbab467f744611b7560a9b",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 9,
+      "bytes": 56729,
+      "sha256": "bd0587bd7564a224dffa1b4fdd3df440ce326ac2bcfdf8d33030e0dc86eab062",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06119",
       "municipality": "Brandsen",
       "file": "informe-06119.pdf",
-      "pages": 14,
-      "bytes": 92657,
-      "sha256": "b4d28b588001c0cdbcf9b56e9d3d0e99107d45facaaf5341d05bc51b157b47bb",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52971,
+      "sha256": "c6652c2582d71efcd2a193a855e894e3decbbac793119b935042adb17218a16a",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06126",
       "municipality": "Campana",
       "file": "informe-06126.pdf",
-      "pages": 14,
-      "bytes": 93286,
-      "sha256": "7f02976e9262cf85451c03bcd67ee86e6b2b0c749390ab3c99d84895579c8313",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52980,
+      "sha256": "bb75c49365c092e82e237cc1a2f6d356ccf12eaa71d6d93a8bc03e80221e8813",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06134",
       "municipality": "Cañuelas",
       "file": "informe-06134.pdf",
-      "pages": 14,
-      "bytes": 91693,
-      "sha256": "687279928e6d7d51607cfcc1e176a706a55c432ca6cb85d7044badce3fadf213",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51272,
+      "sha256": "27fbe38a2abd603885c1f60f9e07c8257d701dffbd2250907bd46a6d6f857997",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06140",
       "municipality": "Capitán Sarmiento",
       "file": "informe-06140.pdf",
-      "pages": 14,
-      "bytes": 92864,
-      "sha256": "27169d9f1e18544e53e70dfecfbbd9bfb789165687122c45570d4059b2374fcf",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52960,
+      "sha256": "69c6f4b53690b2d3536cd1742bf833d12d57d8cf5f337483d59e93bca4b52f53",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06147",
       "municipality": "Carlos Casares",
       "file": "informe-06147.pdf",
-      "pages": 14,
-      "bytes": 93069,
-      "sha256": "e307ec65bd9a174958f677aa406a51c0f8d2e798fc23919cdff5e4bc18695ba2",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53075,
+      "sha256": "470a752c0e0009927b0cce9f5b77e1c2b7bb157b63f639a8fafc96889bbcad37",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06154",
       "municipality": "Carlos Tejedor",
       "file": "informe-06154.pdf",
-      "pages": 14,
-      "bytes": 92795,
-      "sha256": "05b61905096834b3a345caa3c7dccb438b37555f4598e4d6e28513e03f51191e",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53029,
+      "sha256": "c99187d721f7107c533d1ab74e6c80806b4a13666fb3a664c898dc132b528cdc",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06161",
       "municipality": "Carmen de Areco",
       "file": "informe-06161.pdf",
-      "pages": 14,
-      "bytes": 92748,
-      "sha256": "4243a82c88156955c673a5acafe1648726b0f21e6a30d63c4688e864269e2c09",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 54032,
+      "sha256": "d801c2db6b59235aafef0784d290202f92042f67be574596ddaadce00fd0c05f",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06168",
       "municipality": "Castelli",
       "file": "informe-06168.pdf",
-      "pages": 14,
-      "bytes": 91448,
-      "sha256": "3b6bafcdc0a1e3294bd88e5317c1835973d9dd6e9b0a164a807e647dacb0b5e9",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51084,
+      "sha256": "c800bbc5de9b861864891d734a843c52c269b5358fe027fc5fde6993580898da",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06210",
       "municipality": "Chacabuco",
       "file": "informe-06210.pdf",
-      "pages": 14,
-      "bytes": 92872,
-      "sha256": "88612e620eee196155112ebf47e38a0a854adf28cfa69b6faa2bdf6276af083c",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53033,
+      "sha256": "12f86c2be70656b990285316eedd6106cbe36b9d956e39a08aa939a1edea7856",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06218",
       "municipality": "Chascomús",
       "file": "informe-06218.pdf",
-      "pages": 14,
-      "bytes": 92844,
-      "sha256": "c6b15f9d04fcbf110d2969c05a8b6f2010671e9ca135d6843b90436c6cd2417f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52966,
+      "sha256": "587e81b94c7920e24d3085bc52ab63aecc53ba87d12cdff774828deeb9af70ba",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06224",
       "municipality": "Chivilcoy",
       "file": "informe-06224.pdf",
-      "pages": 14,
-      "bytes": 92868,
-      "sha256": "65c4d1d6cd8cbd66841e2c90f00183bca3fe7e030cb9890551c4cc5b34e28cb9",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53395,
+      "sha256": "c20cd3547bc9072f3b812c82e4ed3a2bededc1ff8fe7515710788dbed174a5f2",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06175",
       "municipality": "Colón",
       "file": "informe-06175.pdf",
-      "pages": 14,
-      "bytes": 91727,
-      "sha256": "3c64cedbc762b64d4afab0281109eb7516ef5bc9579cb0ae854e16d0507ac445",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51153,
+      "sha256": "457983c730a1dd1b1106d30389ba52f4c7b7a0df830e18e778051596e789751c",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06182",
       "municipality": "Coronel de Marina L. Rosales",
       "file": "informe-06182.pdf",
-      "pages": 14,
-      "bytes": 92018,
-      "sha256": "e5251398d4c827de5322bdb8ec0b8a450a227f05d7454c8396847b92c2b6d534",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51397,
+      "sha256": "7d5e61f21d786c7744e490399be73fec11e7b6fef077de9ed7d11ded8250a686",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06189",
       "municipality": "Coronel Dorrego",
       "file": "informe-06189.pdf",
-      "pages": 14,
-      "bytes": 92845,
-      "sha256": "e353ead9fb050660c569b55b1320c7317937681e105d54e08c1fce09b3503a7b",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53068,
+      "sha256": "7c0a8826bbd1fa479cde78e8944f95f4afdf6e6d326ae38df760f391480a3fc8",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06196",
       "municipality": "Coronel Pringles",
       "file": "informe-06196.pdf",
-      "pages": 14,
-      "bytes": 92850,
-      "sha256": "23ee61cfb4652faf2c5a21819acf69ca406db5e6abca73c4e3165eb963f72a85",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53031,
+      "sha256": "57aea8743626be8d56d3d2c4f1f8ea77c4081f244a5f2196d73440a2116a5221",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06203",
       "municipality": "Coronel Suárez",
       "file": "informe-06203.pdf",
-      "pages": 14,
-      "bytes": 93010,
-      "sha256": "9c9cf09e0748d653b557831892a961463bd0a3d9e9c48773ad4870bd43670286",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52968,
+      "sha256": "4f2b5a5e0a4765b4b0e60fad1ba338b1937cd89a3e79e004925867336b0bc27d",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06231",
       "municipality": "Daireaux",
       "file": "informe-06231.pdf",
-      "pages": 14,
-      "bytes": 92942,
-      "sha256": "5dcc9bf276bac98050b48960e1831adc708620b2e5ccb02567b7b049ac8dd312",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52981,
+      "sha256": "82cfa2a18058d44ab9406d80f32cbca56fee2b0628d9dbdb28ec9e8923d1be33",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06238",
       "municipality": "Dolores",
       "file": "informe-06238.pdf",
-      "pages": 14,
-      "bytes": 91762,
-      "sha256": "4ae384b0069cba4b30941a60c4994e1cc315a69fc288679c1f6baf88d5bfd869",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51280,
+      "sha256": "827ebb603547177c3f400f2a7302db05a7df0aed9907c3febeb9ec72a67dd228",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06245",
       "municipality": "Ensenada",
       "file": "informe-06245.pdf",
-      "pages": 14,
-      "bytes": 93145,
-      "sha256": "d7488a2f1743f1071b9863ee5ca1e32cab6c804f92ca7e35e9a3334627d10c8f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53139,
+      "sha256": "ff0889481fd3a21b4ce45dfeee93165c4e90bd4bd6c070bcace4e6e4650a22e3",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06252",
       "municipality": "Escobar",
       "file": "informe-06252.pdf",
-      "pages": 14,
-      "bytes": 93068,
-      "sha256": "1586a0a37ddd31f0a3bc1f10d0c5644bcf82b4f8c2ae97896ce9bae23246b034",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53761,
+      "sha256": "2f5078599407ec6ca1adcb1f67689ccc263496cdd83df00bc25c471ca6158e29",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06260",
       "municipality": "Esteban Echeverría",
       "file": "informe-06260.pdf",
-      "pages": 14,
-      "bytes": 91963,
-      "sha256": "d2f9302f94d294fce5e7a270cd4175d931d4f8517d4bf1fc8545254912f422fa",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51329,
+      "sha256": "5bdb168a2df1b134aeec67a506696278bbaba12cf2f2bc1011f72f7ae8bb349b",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06266",
       "municipality": "Exaltación de la Cruz",
       "file": "informe-06266.pdf",
-      "pages": 14,
-      "bytes": 92825,
-      "sha256": "0c49e0ad8cb67b5d5c8ccd44762ed22947fe20a33eec9fd32334639bead32848",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53145,
+      "sha256": "63a060f6ba4bc584a5f6cde2e3c069103ca8f4a519891ac7d15dc9e3b914dbd8",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06270",
       "municipality": "Ezeiza",
       "file": "informe-06270.pdf",
-      "pages": 14,
-      "bytes": 93009,
-      "sha256": "d0ef04a858c77dc20dcce874a43fabca8d74c21399cc53e87a609f99419dd4ef",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53244,
+      "sha256": "68f7f67e7e79bae4f995d7b90b6060996f3872cdcab1781f6c6c20f1f1dfc0b9",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06274",
       "municipality": "Florencio Varela",
       "file": "informe-06274.pdf",
-      "pages": 14,
-      "bytes": 93004,
-      "sha256": "efd10dc4f2736845d5d20524687b73436db2789f3ea8d3b74e4849f48bac90a1",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53161,
+      "sha256": "7685a88011b0dc13eb60923e4447345cdd0b9f24ae2d250ba23287cd7e4a992f",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06277",
       "municipality": "Florentino Ameghino",
       "file": "informe-06277.pdf",
-      "pages": 14,
-      "bytes": 92840,
-      "sha256": "82e1037cd59d94ad439291d1b45426c7530496704f4d11ff0fdd609c8c3450c7",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52952,
+      "sha256": "1936766e2ed13e3ba43be6de94b4fecda971362b3d556cad341926cd59df2fb9",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06280",
       "municipality": "General Alvarado",
       "file": "informe-06280.pdf",
-      "pages": 14,
-      "bytes": 92941,
-      "sha256": "36fe45788378900aa73a4d5b15998fe8dff1f19295a9e55bb04160fdded07f47",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53061,
+      "sha256": "0e95d7d26eea0d82a4e8c10db53970acfd2cd966aecb7585bc856f545cad1cec",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06287",
       "municipality": "General Alvear",
       "file": "informe-06287.pdf",
-      "pages": 14,
-      "bytes": 92539,
-      "sha256": "5368ff198133c2a52c0341699db6353f5f64215ccfab93cb097aa2266f2cedce",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52831,
+      "sha256": "cd0f3b3f3856d94d624ee7a7295977d52d76f4563b67c7d4b7fb6ff9e423c57b",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06294",
       "municipality": "General Arenales",
       "file": "informe-06294.pdf",
-      "pages": 14,
-      "bytes": 91813,
-      "sha256": "7f5555254d70a2c51dda42ace7eef23ca3a9636e3cdb6682e76a0ad1b4f867d6",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51191,
+      "sha256": "6e2df6a8035ec915534f0f15655f416448d7bbe0f7414fcba6833bc8e52e4d32",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06301",
       "municipality": "General Belgrano",
       "file": "informe-06301.pdf",
-      "pages": 14,
-      "bytes": 92693,
-      "sha256": "9db8c4409df9308756f137171e0ce22a85518280d58adfb00a443d0ab1d25049",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53066,
+      "sha256": "adcc9964d2ba43aff24dbd385011f92c36b8b39e8055685f3f678711c0324a59",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06308",
       "municipality": "General Guido",
       "file": "informe-06308.pdf",
-      "pages": 14,
-      "bytes": 92057,
-      "sha256": "61d287bcd3de457f64bf01dbdefe6195c9a5e1c01265d7110bd220a9b9e2d74f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53737,
+      "sha256": "6be61672db9e2788ee62c69f9f3d264830c1c8b75493631b0086da9ffa150dc8",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06315",
       "municipality": "General Juan Madariaga",
       "file": "informe-06315.pdf",
-      "pages": 14,
-      "bytes": 92864,
-      "sha256": "b732264273eee2442fb3613e8ea15f975021a60b978415e996c155d454b52890",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53020,
+      "sha256": "7639f1f2dc6e2276843d9bd8d654fc57099be807ac1c107d0d16bb2eb6e0b9cf",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06322",
       "municipality": "General La Madrid",
       "file": "informe-06322.pdf",
-      "pages": 14,
-      "bytes": 92655,
-      "sha256": "19568e4f315ec12df39968d37d108c87311bffc6fc78b7b491ad10a753f1deee",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53003,
+      "sha256": "06336619ee800a9a4d1e19190e8bf7234c55d110cb4920c87c8b6da155b3473a",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06329",
       "municipality": "General Las Heras",
       "file": "informe-06329.pdf",
-      "pages": 14,
-      "bytes": 92965,
-      "sha256": "d19830439dcb813a1a2634a04ee5790d69142e86c58af1d65cd76c073d552516",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52878,
+      "sha256": "f9c164209cc33f60f575eeb6a4e2c346cd4aa065477df7a8991932bc267b77c6",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06336",
       "municipality": "General Lavalle",
       "file": "informe-06336.pdf",
-      "pages": 14,
-      "bytes": 92671,
-      "sha256": "6a131de23e0304b36fbf6a68f7d81ef4d6b48465eee6d21579c28dfe68076ec4",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53040,
+      "sha256": "6fa015214f8e8229de6aa7d9e75782e9064379c639558f5b95792db3c6edb729",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06343",
       "municipality": "General Paz",
       "file": "informe-06343.pdf",
-      "pages": 14,
-      "bytes": 91343,
-      "sha256": "ffb4bc4a586435d9eb26203482bb44609cdc588048e134bec060ec2f5c4ac34e",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51067,
+      "sha256": "e95c6d090dd028e9c4fad0e70ad7c7a6b0dd08fd4f58217c1c533a86b83e0e4a",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06351",
       "municipality": "General Pinto",
       "file": "informe-06351.pdf",
-      "pages": 14,
-      "bytes": 91512,
-      "sha256": "61adf29756c90ac078288b8b58e0beafbeda36fd4c97a7f15f2ad2197707189d",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51113,
+      "sha256": "c0b25fe06e889b1ab98288216f4f2c53b15507fdbd3c135d91c579f3dceec3aa",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06357",
       "municipality": "General Pueyrredon",
       "file": "informe-06357.pdf",
-      "pages": 14,
-      "bytes": 93164,
-      "sha256": "65fa0c65eed899d5f0962423ab76c9ab7e48176168e1223f8c02a43ebfaa8e13",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53200,
+      "sha256": "204837e97752b8eff94de431c4f85e2917e5c2f6273d3355ccb6f0203cf282b0",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06364",
       "municipality": "General Rodríguez",
       "file": "informe-06364.pdf",
-      "pages": 14,
-      "bytes": 92866,
-      "sha256": "939050f543e8294df60f3ad6d3e5f0df5b19253edd459d609473a3d9b1828e0c",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52992,
+      "sha256": "674e3aa6b871078c793533cee1ac944b7422d5c78b9cf5a7c80990859bd99089",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06371",
       "municipality": "General San Martín",
       "file": "informe-06371.pdf",
-      "pages": 14,
-      "bytes": 93355,
-      "sha256": "d2c33d5e7b7d94dd42ed810d0d313fcd105ab80f916f0b1f500fe899d884c20d",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 54325,
+      "sha256": "a6f1207c407307f520c2cf8a38456a0ad91c8e22a4dc653ec44e56d9ae023d18",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06385",
       "municipality": "General Viamonte",
       "file": "informe-06385.pdf",
-      "pages": 14,
-      "bytes": 92688,
-      "sha256": "310c318c2bce57a17babcbc0cf0d28df6c24a6992f5380e655913dbd48de13ff",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 54254,
+      "sha256": "d0275b68d4005f2851f6d1d2eaef313dcadb66736427a15e4424f4efe293b7df",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06392",
       "municipality": "General Villegas",
       "file": "informe-06392.pdf",
-      "pages": 14,
-      "bytes": 92816,
-      "sha256": "d4269e0a3a8b15a2e22519c09917db8af77d1df7d2af397f2c084bdcb7ac4f24",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52918,
+      "sha256": "4117e51d478b1baba96017ae5eb23f96546e9624e56de1381474c8c44769cde2",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06399",
       "municipality": "Guaminí",
       "file": "informe-06399.pdf",
-      "pages": 14,
-      "bytes": 92708,
-      "sha256": "b0007102ec910fdaa97c146af5d3e197a87c6a3fb2adab2afb793b56359a7df1",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53092,
+      "sha256": "a08149bcae418ae6e0bfdc5b2950c266be86c5cb9112dae5939d8faa1f6a197d",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06406",
       "municipality": "Hipólito Yrigoyen",
       "file": "informe-06406.pdf",
-      "pages": 14,
-      "bytes": 92605,
-      "sha256": "ca851f33ddfdab2f74f940e3847866553b5866e1c6b92eabea6bea25bd4a9c69",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52884,
+      "sha256": "dfe78f2676b626f0c617c24ae7ee35be00a1a5dfb9ac5fe1f1edcf9b2ee817c5",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06408",
       "municipality": "Hurlingham",
       "file": "informe-06408.pdf",
-      "pages": 14,
-      "bytes": 91881,
-      "sha256": "4cc6e4534f878f9181ac84abeb549bad3061ee0eb9efa76b9ec6563661539f36",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51249,
+      "sha256": "5062e0ab1d1083fe87be4498e109fe290a0eaf430b247da10360ce6bc9a3bfab",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06410",
       "municipality": "Ituzaingó",
       "file": "informe-06410.pdf",
-      "pages": 14,
-      "bytes": 93202,
-      "sha256": "dbc116a5270d50b3410475d2fd0388d84406c7c4198c76c7d9d7281b899e91e9",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53247,
+      "sha256": "75321661a49b846ce8739456ebcd24b4b897abfd34117c74387ecbaad70a5199",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06412",
       "municipality": "José C. Paz",
       "file": "informe-06412.pdf",
-      "pages": 14,
-      "bytes": 93074,
-      "sha256": "e2e6f60fb1aeadd2ddf802dfdba7f9516b9fd509649a2842c1e65192cc828ea9",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53028,
+      "sha256": "b9d17aeabce7dbadfb4a8caf0161551b55ba03353c71b2343f3efeba4b20941f",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06413",
       "municipality": "Junín",
       "file": "informe-06413.pdf",
-      "pages": 14,
-      "bytes": 92743,
-      "sha256": "a5f6f6f7322f92df4bc03974f9e5fd5764646a36f198bdd26b778815f9f22720",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53122,
+      "sha256": "8f03e8da9ead0ec5dd28509a5e87123538635d1ceeaae1ba2c926ca85cc1196f",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06420",
       "municipality": "La Costa",
       "file": "informe-06420.pdf",
-      "pages": 14,
-      "bytes": 91864,
-      "sha256": "a9ec5af0f526bb7c60d7f6303e529aabb50d930b66b9edc8b247485f893da6d1",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51241,
+      "sha256": "ff240cc6e6485c61292d07a20bc04fb070a0cddf0441faac2fa9c9200efe26b8",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06427",
       "municipality": "La Matanza",
       "file": "informe-06427.pdf",
-      "pages": 14,
-      "bytes": 93077,
-      "sha256": "c41dbcbe5afe088103d5f00410feb49b6769004f50c66955fc2ce58636ce891f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53024,
+      "sha256": "c135afbf911a719e09f6e0f5a16d11636f8030886112a9857b1e4c01c685ab18",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06441",
       "municipality": "La Plata",
       "file": "informe-06441.pdf",
-      "pages": 14,
-      "bytes": 93062,
-      "sha256": "84bd1319da12be642f5bbe333e14cf9e0a2324702fa233a649fc1f5e07cdef72",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53536,
+      "sha256": "d3cae61462d421f404225efd543322c296e8a3e10867f4a90ff27ab2a5fd7a73",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06434",
       "municipality": "Lanús",
       "file": "informe-06434.pdf",
-      "pages": 14,
-      "bytes": 92907,
-      "sha256": "48cf3301a7e500dd27eaf5e9295931542b7c778fb058c135e4f60eedb1ae2991",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53450,
+      "sha256": "d30367cf5a57dbfd1f2eec437720539f0d00dcc4c230d67274fae05fb68b80f2",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06448",
       "municipality": "Laprida",
       "file": "informe-06448.pdf",
-      "pages": 14,
-      "bytes": 91299,
-      "sha256": "5fb06a8eeffe4b05de0c5f8ca9dfa1a8b21411b6e76f847fc9d9a909ca4c0a4a",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51019,
+      "sha256": "6a6dfa575b8edf6eb97a940e4b81eb47edf61a4ab7a0d475c915ecc508672408",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06455",
       "municipality": "Las Flores",
       "file": "informe-06455.pdf",
-      "pages": 14,
-      "bytes": 91958,
-      "sha256": "f1ff3abe2c7ff8cda1904270c630317ef45e9514c4aef370bc52500c553fe70a",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51253,
+      "sha256": "1a3106cf895f9e21cdf730365e4188fb1b93c00de9bcd4c12e2e1b074e1c1318",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06462",
       "municipality": "Leandro N. Alem",
       "file": "informe-06462.pdf",
-      "pages": 14,
-      "bytes": 91687,
-      "sha256": "7565a204de87a5987c481a77d75a0652553eb5dc2e17b98d5fd6e51958c2d45e",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51174,
+      "sha256": "c5fdf7523cacc89b5725c35d0813b4b94234eddfe07a3a1494da22ad299678aa",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06466",
       "municipality": "Lezama",
       "file": "informe-06466.pdf",
-      "pages": 14,
-      "bytes": 92326,
-      "sha256": "a3b104a6b174bd3204cf5e74e727a1f6ceff95c71a25d7b6619c93a60e022a4e",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52993,
+      "sha256": "233f297efec2ac47e41e449803ae1eb0939be50c3364c7c9d4bc7deca43bb912",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06469",
       "municipality": "Lincoln",
       "file": "informe-06469.pdf",
-      "pages": 14,
-      "bytes": 91981,
-      "sha256": "d9071cf3f7df7988b0097441390c2758237fdec95d4bfc6ccfeaedf69a51bebb",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51153,
+      "sha256": "3b71460dd490859179b019de0ccff3135b4e6c2bdfe22782b36b69c07fcae15e",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06476",
       "municipality": "Lobería",
       "file": "informe-06476.pdf",
-      "pages": 14,
-      "bytes": 92930,
-      "sha256": "5e756b6fc19fe12be2d5860bc564ee0956668c210e3c975dc2f1832b415237e0",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53172,
+      "sha256": "cbac1ec2b3f40d0291c77dcdd46929eef17821771818c14da0f3d3a9cecb5c39",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06483",
       "municipality": "Lobos",
       "file": "informe-06483.pdf",
-      "pages": 14,
-      "bytes": 92593,
-      "sha256": "ce2560f3a69dc9d79c21911510961f292b4b680de5c26003120ecbf4aafc7b79",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53131,
+      "sha256": "84d61afba09621133657a4fcbcdb55066a173c9a8e944798f334f7161b2106e5",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06490",
       "municipality": "Lomas de Zamora",
       "file": "informe-06490.pdf",
-      "pages": 14,
-      "bytes": 92058,
-      "sha256": "d984f8ea7721aaaf0ca74675cfbd2a82f8b51f828eb9d163a7828e7fb5c3827c",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51375,
+      "sha256": "45ba519de9fb0c409e2c90128454fd391adcedd75b5aaf718bf1af835293735d",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06497",
       "municipality": "Luján",
       "file": "informe-06497.pdf",
-      "pages": 14,
-      "bytes": 92872,
-      "sha256": "d798b5cd4f81914753356c3cac529a6f4d693d7499e3b87b5122cfee47a7bddb",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53665,
+      "sha256": "6b9028eb32807b447dbfebe01a0c1768cd11c0dd13e77b4a8aa80f7ae0d1c5ac",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06505",
       "municipality": "Magdalena",
       "file": "informe-06505.pdf",
-      "pages": 14,
-      "bytes": 91464,
-      "sha256": "b217f9912131fa77205588c996576a0ec214968d8bc2be6a79f6cd73ae1d6fb7",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51073,
+      "sha256": "083cce46e445000af683c24bf5804fe7a9c80d0e4181eb27db674d9556d5a6aa",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06511",
       "municipality": "Maipú",
       "file": "informe-06511.pdf",
-      "pages": 14,
-      "bytes": 91446,
-      "sha256": "92238812b497a0d8f3dc6aa8838d6b7f2b7420cfc1d403869b04c39db13a4b52",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51022,
+      "sha256": "9f4d9f7350ffad488cf20b561ad16f9161143295d609670c822e9ff7cb84cda7",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06515",
       "municipality": "Malvinas Argentinas",
       "file": "informe-06515.pdf",
-      "pages": 14,
-      "bytes": 93217,
-      "sha256": "109b6efa16e29def1108a3ee091d85c5b8c8cfc6074e632dc718b6e53e1952cd",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53261,
+      "sha256": "3728601e58264583d506da830ef8a16359d3508bba312ec668ae8e426258adb0",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06518",
       "municipality": "Mar Chiquita",
       "file": "informe-06518.pdf",
-      "pages": 14,
-      "bytes": 91751,
-      "sha256": "92813c7648fd7f5f9e1ce78882adcf7ac448d99792635e82dd111b7ed55b04d0",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51224,
+      "sha256": "0e052cdd400c132d0a0daf79c9c7814f0c4b7fc5f0a7d1e126351bab953606f1",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06525",
       "municipality": "Marcos Paz",
       "file": "informe-06525.pdf",
-      "pages": 14,
-      "bytes": 91676,
-      "sha256": "f23ef959ef38685152ad15927f9eb146ad3630eac7c938610e0285102c2d5701",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51215,
+      "sha256": "9ce4c01876b72991921cade05d87f5ebc072c4419a677e096e00d1ec85e37c3a",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06532",
       "municipality": "Mercedes",
       "file": "informe-06532.pdf",
-      "pages": 14,
-      "bytes": 92947,
-      "sha256": "a0d51d07933a2d9452cec62129b8b0230cb89666b796a86dc2f8c5ffc1e8da43",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53204,
+      "sha256": "a010bba2a8a9913f30bf5b39d78da6d813cb758a002bd300b9f5bdcaad4b60a2",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06539",
       "municipality": "Merlo",
       "file": "informe-06539.pdf",
-      "pages": 14,
-      "bytes": 92002,
-      "sha256": "d4c2b20a85bb27397f5495b1678e29b2f12c189aca4264df52680d7a0918a96b",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51271,
+      "sha256": "e639fe5a274b95fabee223c50cc1e5fe12da5765e2bd61af4544d9e5e16da7d1",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06547",
       "municipality": "Monte",
       "file": "informe-06547.pdf",
-      "pages": 14,
-      "bytes": 91448,
-      "sha256": "cb707969b5f21fe6d14ff697580bd3d66e0d027c2a491f235e303c299a29e85d",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51150,
+      "sha256": "0fca07ff2216d1fa21784994f1eb2d2f35a718063e9b6f9556fbda206ab30b1a",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06553",
       "municipality": "Monte Hermoso",
       "file": "informe-06553.pdf",
-      "pages": 14,
-      "bytes": 91511,
-      "sha256": "d69b287184b641bebc748aa20ef5fbb043ff2b8aced2bae4926ec05276d45fdd",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51184,
+      "sha256": "51e24ec4b855d3b678e43e7a84249b2653d2c1ed0965fd0511c360f441ca211f",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06560",
       "municipality": "Moreno",
       "file": "informe-06560.pdf",
-      "pages": 14,
-      "bytes": 92866,
-      "sha256": "01923c084cf380e1eaaed11e0307cb3779097f501db74134b56e7c0ba6a95c1b",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53417,
+      "sha256": "94e298fdfcc802f32aa368def48c5e67c31e392e90b9c54c575e3934c24895ec",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06568",
       "municipality": "Morón",
       "file": "informe-06568.pdf",
-      "pages": 14,
-      "bytes": 92328,
-      "sha256": "9c818aeb60029ac6df75bb4ad1207230e022cd71fa5cf7142b5302a16517663f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51225,
+      "sha256": "d9d396130d01bfbd4c30254a0307dee1f8ecea82d6f5a88e719182aa284e1933",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06574",
       "municipality": "Navarro",
       "file": "informe-06574.pdf",
-      "pages": 14,
-      "bytes": 91640,
-      "sha256": "09731f3e896d464d47a12451d733ae2d2a55b95bd48af929861831e44b57b343",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51179,
+      "sha256": "419c83da7e8721fc0942134bd84b7a5379c3aa9a4d90771fce4770450cb5fa62",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06581",
       "municipality": "Necochea",
       "file": "informe-06581.pdf",
-      "pages": 14,
-      "bytes": 92913,
-      "sha256": "1aa4c463493898b14834740dc95b3bb226a27248358a32f0347b03cad0fe89ab",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53045,
+      "sha256": "49e799338ce531005554a4cc6e0735840c5e340f87844401de28b859fd3c5c88",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06588",
       "municipality": "9 de Julio",
       "file": "informe-06588.pdf",
-      "pages": 14,
-      "bytes": 92732,
-      "sha256": "3b55665c28c74e2265e780a14bc1e1640bcd87dfd28e6edb4edfdc50222d9c3f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53023,
+      "sha256": "1bb637a86b5edc6ff73d2463dd081c8cbdec4ea095f3046e6f8bd8914bf27b23",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06595",
       "municipality": "Olavarría",
       "file": "informe-06595.pdf",
-      "pages": 14,
-      "bytes": 93289,
-      "sha256": "ec2e3de57480993ffaa00d57987116b9612a3adf7c2253b822dcd85e3c6b71f5",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53160,
+      "sha256": "86f138aef1b1078520d0769e202f25c79a7db72f7f19b18ed799fa52bcadb85f",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06602",
       "municipality": "Patagones",
       "file": "informe-06602.pdf",
-      "pages": 14,
-      "bytes": 92922,
-      "sha256": "b4970221e2f2c2a72727c8ff214b9a50c69f93b0027dfb3fff3093bfa6a80ae5",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52914,
+      "sha256": "5d768eaa9eea82cbdd67c147dde5409b67c0a434f63b425531ed68b24c986d20",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06609",
       "municipality": "Pehuajó",
       "file": "informe-06609.pdf",
-      "pages": 14,
-      "bytes": 91665,
-      "sha256": "f3fa4f020799e8149647b78dad868616a68355a59d5081e76f9a92857cb9cde7",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51128,
+      "sha256": "d884cf32fc737134d5d3deb15545a33dfe87dc4c3dbd28ccc32c21f3e551a59e",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06616",
       "municipality": "Pellegrini",
       "file": "informe-06616.pdf",
-      "pages": 14,
-      "bytes": 92321,
-      "sha256": "e53976a799510be54d7911423a600accef5c7926a24369affd84c094eb167b00",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52686,
+      "sha256": "7ef793fc911a8617200494537e5a57d581d876dd714ca0b4609a2b1d52b7463f",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06623",
       "municipality": "Pergamino",
       "file": "informe-06623.pdf",
-      "pages": 14,
-      "bytes": 92762,
-      "sha256": "d106d3e3bc60e6a68c02ace3fed486d20f89bc2b95287244c4a6574792151e03",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53217,
+      "sha256": "ac2f9045d6a5c8f1d2fbd2021eb78ec98a5158ccb87f92714eaf6da22e8a7abe",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06630",
       "municipality": "Pila",
       "file": "informe-06630.pdf",
-      "pages": 14,
-      "bytes": 91329,
-      "sha256": "5aaaeddc01d32766988b7c86bd8e79d0ede3b1ab305feff1ab125b83bc35ba99",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 50982,
+      "sha256": "35a9ea6ee5a2a95427dff800e86372e0fc7e34b5f9c7e7d43e4969966a5ddfd5",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06638",
       "municipality": "Pilar",
       "file": "informe-06638.pdf",
-      "pages": 14,
-      "bytes": 91926,
-      "sha256": "4fc0bff0245ab2ec565c0ebd434d2d26dad9ac0ee3c11da9cc1569b3d4ff8f32",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51266,
+      "sha256": "d722bb772f041d6218c72c2efc8e44cb61128e3352cde6509f69ee37ae22a104",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06644",
       "municipality": "Pinamar",
       "file": "informe-06644.pdf",
-      "pages": 14,
-      "bytes": 92995,
-      "sha256": "ab380cfc341d66a3d4cf9205118d6a2f3becef0b5f36d5f68bfd550cfa8c0800",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53164,
+      "sha256": "456205a307cf24b3b9cd6366475a488ec2f257b57f5e96daac75da1c3f4aa79f",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06648",
       "municipality": "Presidente Perón",
       "file": "informe-06648.pdf",
-      "pages": 14,
-      "bytes": 91632,
-      "sha256": "072b478bf43ce5db5a97907676b9118e754700f634f3322585cb26c1c921f1f4",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51202,
+      "sha256": "680be9e86a590ed60d447078993fb85462449873ee8a866550d534bc18dc1cb0",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06651",
       "municipality": "Puan",
       "file": "informe-06651.pdf",
-      "pages": 14,
-      "bytes": 92638,
-      "sha256": "af04242d0eb4b4ec00b2c7c6cb03af11b87212ed0cb994f0dbea9f325ad3ee4c",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53017,
+      "sha256": "9762642aa58b1910f6e7eb9736f08dc474af75ffe68c9789cdfee304ce9101ea",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06655",
       "municipality": "Punta Indio",
       "file": "informe-06655.pdf",
-      "pages": 14,
-      "bytes": 91451,
-      "sha256": "dadb6c27763c914207c456dca057fa37c06e4ae96b5e6fb368fcdeef6732c57c",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51105,
+      "sha256": "87e519da8d319c617bb938c46612feba475b7414b5e131e9ac6644bb170551e3",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06658",
       "municipality": "Quilmes",
       "file": "informe-06658.pdf",
-      "pages": 14,
-      "bytes": 93030,
-      "sha256": "92963016953969674c72c065d0d0898170473b308e163c91a423822973841074",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53199,
+      "sha256": "18c674e9aefe314bacdbd8fe0e16543e71eefc3d8bdc536c1e17e2ed8803aa11",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06665",
       "municipality": "Ramallo",
       "file": "informe-06665.pdf",
-      "pages": 14,
-      "bytes": 91883,
-      "sha256": "7ee1543e5a96db1a51a3f0b283a934ca1ace408b601b1a79039711f29e468793",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51261,
+      "sha256": "9f78ed36a3c27c9aa47825460f0fc367a1d924df3b0e179f51faa703a352636c",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06672",
       "municipality": "Rauch",
       "file": "informe-06672.pdf",
-      "pages": 14,
-      "bytes": 92650,
-      "sha256": "238c737e9756c829f05f315aedc8acbbcc6d48ca8d98fb9c6cc55e9830ff8f2c",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53036,
+      "sha256": "49556814ce5cbb5188b9fb8286fca9f75f9f50b7583c9e620fef97f4165dd178",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06679",
       "municipality": "Rivadavia",
       "file": "informe-06679.pdf",
-      "pages": 14,
-      "bytes": 92580,
-      "sha256": "dea8660473dfad5cb503f3586474f3240d182b4389cf00886b4b18d023b7738d",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52859,
+      "sha256": "e79a71e465c0ab3651bd220934046a6d783220ce96b41ff59082b93d68e496cc",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06686",
       "municipality": "Rojas",
       "file": "informe-06686.pdf",
-      "pages": 14,
-      "bytes": 92656,
-      "sha256": "4586ae4267363d4d857ada53cc4180b2228a686ba51fc785fc162a85ca4907aa",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53266,
+      "sha256": "34b4bbd0f01d246722742e8f8773839c2e58956fdc57a4cbd2c8d87e4f8a51ac",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06693",
       "municipality": "Roque Pérez",
       "file": "informe-06693.pdf",
-      "pages": 14,
-      "bytes": 91833,
-      "sha256": "459400179ddf755b087202c73b44d39774edd9a08e798d02fb2d674a05c1b3be",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51186,
+      "sha256": "c3c2368fa8b914dec8d1e94f679f9897e31f62bd3f09097496fcb02ec74109fe",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06700",
       "municipality": "Saavedra",
       "file": "informe-06700.pdf",
-      "pages": 14,
-      "bytes": 92761,
-      "sha256": "4265a9d8e339b55492a1af628a1131826f5b4ae6c1bce4f8ac5b43d180736e1b",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52961,
+      "sha256": "1735909cda164a1735f025ea4c71beaceb790fb8350e6f765638dfcb0d3dcf5b",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06707",
       "municipality": "Saladillo",
       "file": "informe-06707.pdf",
-      "pages": 14,
-      "bytes": 92629,
-      "sha256": "d3aada21788b185b02d49a9099b82acfecb73dc18199a2d7d37b8a7b8b40dca0",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52940,
+      "sha256": "59789ba2c123ccdf33acf2350ae9e8ecda14ec8705b1949546990786002818c6",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06721",
       "municipality": "Salliqueló",
       "file": "informe-06721.pdf",
-      "pages": 14,
-      "bytes": 92423,
-      "sha256": "aa679421cc3a3ec2f40f191daeb2e77a7554a5b69353de92e484ccd90484b939",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52739,
+      "sha256": "a113d7640bf45d6f7488ff996c6426ead17c3a23382c71c9a735f6877ff4a246",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06714",
       "municipality": "Salto",
       "file": "informe-06714.pdf",
-      "pages": 14,
-      "bytes": 92910,
-      "sha256": "182854b57be61510d1867f4062803a64d0f0612a2367e8ccaedf90d2534562ef",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53167,
+      "sha256": "8b9017abc6dd5ee74bf689d9d8ff847f1c3f5f8757cdc0bf0b91beb1fd4bbd89",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06728",
       "municipality": "San Andrés de Giles",
       "file": "informe-06728.pdf",
-      "pages": 14,
-      "bytes": 92872,
-      "sha256": "936f5f393c63d6d83f843736e84b020ce613ebd17b47a6a0d099b795df664805",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53022,
+      "sha256": "f58e584893eb53f13e6ef52c374d064c4d38d9af1a3219c4bdc1e4abae6d7b99",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06735",
       "municipality": "San Antonio de Areco",
       "file": "informe-06735.pdf",
-      "pages": 14,
-      "bytes": 91915,
-      "sha256": "4924813953067c6e6a53a3d64eab0af6a1c710d7b88417ba8f04caae9c03e064",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51290,
+      "sha256": "0267a99c33a2d530a961ca64b4679e19bb9fa6a9810f074f199dbe65b3deaa0a",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06742",
       "municipality": "San Cayetano",
       "file": "informe-06742.pdf",
-      "pages": 14,
-      "bytes": 92474,
-      "sha256": "45d2fbabb1eb14fa2bb32bb3da22c1f2c0a44df93416c2535898bbd92f98c1d5",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52900,
+      "sha256": "08c269a7e7ab3a9d48f53f021c550deb68287da1ef78f312cc5aa42c124953f9",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06749",
       "municipality": "San Fernando",
       "file": "informe-06749.pdf",
-      "pages": 14,
-      "bytes": 93310,
-      "sha256": "0469920a338597e70bcb64348c341d6d712d54db94de8ea479d7c034bd7c2b34",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53275,
+      "sha256": "48a01ecc158c3c5b699b1fd9ccf8c10c400be385fed37efb60c9446cf9cd51bb",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06756",
       "municipality": "San Isidro",
       "file": "informe-06756.pdf",
-      "pages": 14,
-      "bytes": 93177,
-      "sha256": "51aa913e17a681b0b8ca747ac996ecff1d759ec0017b247e10997b0d95e72db8",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53857,
+      "sha256": "b673955a3ada4308a4890dff685a9bd738a3a6b4f2bf78aa8eab9b99ce8239db",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06760",
       "municipality": "San Miguel",
       "file": "informe-06760.pdf",
-      "pages": 14,
-      "bytes": 91831,
-      "sha256": "0f82fbfa23697cc2a7cc89eb5513699e61e7bbb833c4e82afdd126073c325fac",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51268,
+      "sha256": "9805aae62643e28e40e1952127c48af4cb5d90a2db6e05349f54f0955792535d",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06763",
       "municipality": "San Nicolás",
       "file": "informe-06763.pdf",
-      "pages": 14,
-      "bytes": 92049,
-      "sha256": "f7a1c7e6ca64f21ad04b82bd449e1768236026d50b109a3dfb644ac3fb5a3811",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51363,
+      "sha256": "545cf543910634c7b9d6c630b2970ba56f75adea2d61152342547514a683a4b9",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06770",
       "municipality": "San Pedro",
       "file": "informe-06770.pdf",
-      "pages": 14,
-      "bytes": 91977,
-      "sha256": "add86b7830029900b8802d2f7ca6e884fedd8115ccbc9246827a7a78390eab2d",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51292,
+      "sha256": "2a2cfd51ece24d719eff8b9da0789e5ee989e74b4f2aeb63d934a39969f999f5",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06778",
       "municipality": "San Vicente",
       "file": "informe-06778.pdf",
-      "pages": 14,
-      "bytes": 91736,
-      "sha256": "93f828d13902fd915145e489f6c669a62fdb76def45c66967f8a41a75af16080",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51242,
+      "sha256": "a7255b07b4a64bb7f721c8472c6e5d9b6c39f2f295c42023709aac7570325e38",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06784",
       "municipality": "Suipacha",
       "file": "informe-06784.pdf",
-      "pages": 14,
-      "bytes": 92655,
-      "sha256": "0ae4cc9cd9ba4fce362c8714fc42b88cb705669b74d961a67fd06e4ad5347ce8",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53224,
+      "sha256": "0bcfe407a0a293cae9bb0114c05864303753a12a59c067aae378e9181561c885",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06791",
       "municipality": "Tandil",
       "file": "informe-06791.pdf",
-      "pages": 14,
-      "bytes": 92911,
-      "sha256": "a7240aed2a9292e137ffe62b2de6c80e00c2ede00e987bf61ad68e2bb8a5f61c",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53213,
+      "sha256": "f6097e17fd3785f7a7f999fe706be22e176801dea46e609408ae5b4ec0279886",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06798",
       "municipality": "Tapalqué",
       "file": "informe-06798.pdf",
-      "pages": 14,
-      "bytes": 92738,
-      "sha256": "63c4b36eb452b2532e2cd13ab08b9882262a5b0ec5c58d5f952578eac0c98376",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52742,
+      "sha256": "f44ac1c55a0c400fbd0d515c2e118cb879538cbf61917e0359e02f0d56877cc8",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06805",
       "municipality": "Tigre",
       "file": "informe-06805.pdf",
-      "pages": 14,
-      "bytes": 92272,
-      "sha256": "9c430fd61fd9b9080920fcd1951e3d397685ebb76f1cf1a0d6370b3a5cbaedcb",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51966,
+      "sha256": "30494a85902e6f30a122f6f0a8ca84738fb6a602717103f0a3644ba46ea1d84d",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06812",
       "municipality": "Tordillo",
       "file": "informe-06812.pdf",
-      "pages": 14,
-      "bytes": 91116,
-      "sha256": "977d3f3a24d850eb5870e90699c2a2a28396732c0cec197af56c43b2563f1743",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 50886,
+      "sha256": "92d555e09a6e5ac8a64a4983435855e6ba390ac391a52c6c331fbb529160240c",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06819",
       "municipality": "Tornquist",
       "file": "informe-06819.pdf",
-      "pages": 14,
-      "bytes": 91948,
-      "sha256": "c0f3d3b5c6fb3942df9fa7d041df5cae7ed597bc6a984c5767eb46fe7e2373f1",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51243,
+      "sha256": "5d9fc32b96031d49f549c0bb3f9fd475ac83c2ab390060bb39b17faffe8adf99",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06826",
       "municipality": "Trenque Lauquen",
       "file": "informe-06826.pdf",
-      "pages": 14,
-      "bytes": 92814,
-      "sha256": "e17589e5d0cb49e6cca5611546a473edcee2238c998cf331783d2253f85b704f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53033,
+      "sha256": "f19a7b8316e97c7cc2f1fa0b510236d75cda84d1457c199f6f15aed5db529e94",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06833",
       "municipality": "Tres Arroyos",
       "file": "informe-06833.pdf",
-      "pages": 14,
-      "bytes": 92837,
-      "sha256": "1e32bd8f820c500c17ccaaa70ef51f21ab6af65c6a7d03242f4752a085453fc5",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53007,
+      "sha256": "df3b85a75e304734f0be2d30ebf9ec3ceefa6094cf0268dfe0a8e65eb3c046fa",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06840",
       "municipality": "Tres de Febrero",
       "file": "informe-06840.pdf",
-      "pages": 14,
-      "bytes": 92892,
-      "sha256": "e8c6024f005db11eacbd141bd43fe5e104ecbe18a81fb54f20443b4d03f0080f",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53011,
+      "sha256": "f0314b1990dcb2f1ae5c87a78e09876546229462d8f1e6d29428c67dc01804df",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06847",
       "municipality": "Tres Lomas",
       "file": "informe-06847.pdf",
-      "pages": 14,
-      "bytes": 92385,
-      "sha256": "0cfcbfc093c24716520dac7fd4fd8add4653220fc01fe7913672f4df449e5ebe",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 52752,
+      "sha256": "1d6a38a2c1c05969b80449a9a25826e93fea187a8b9aa02b40494511f7d1629c",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06854",
       "municipality": "25 de Mayo",
       "file": "informe-06854.pdf",
-      "pages": 14,
-      "bytes": 92892,
-      "sha256": "ff24549bce54dd2dce53ddb69f5336214925594c7fbc81f0c696c18d578900c5",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53009,
+      "sha256": "c20f54f0a3486209493e17b6975fd6256d07ec00293df42e1058cfbdec5887bc",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06861",
       "municipality": "Vicente López",
       "file": "informe-06861.pdf",
-      "pages": 14,
-      "bytes": 92209,
-      "sha256": "51f26a2a55cb8e03ac44db8e92a2e596be270a188abe27ea9853b6af1f17b659",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51379,
+      "sha256": "494dc2dbe2bfa3bac92d4d07593b82cd33b3c49063881d13ae7ece778507667d",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06868",
       "municipality": "Villa Gesell",
       "file": "informe-06868.pdf",
-      "pages": 14,
-      "bytes": 92885,
-      "sha256": "d4809f781fbd23c247002f18613fd34da5353d343233d009f24bbca35baf92c3",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53001,
+      "sha256": "763d665aa970899bf42dedcefea488ce8985fea9bbb6c76be6caba5f7e15f5ca",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06875",
       "municipality": "Villarino",
       "file": "informe-06875.pdf",
-      "pages": 14,
-      "bytes": 91976,
-      "sha256": "6e49da7833fd17e642fd807da5be8e13ae4744244eb12d55f68083bc1360eb4b",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 51269,
+      "sha256": "f7dd66694f839a3f78c975152c8ede25aa429a0aeb31ec71df33254a1171e500",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     },
     {
       "id": "06882",
       "municipality": "Zárate",
       "file": "informe-06882.pdf",
-      "pages": 14,
-      "bytes": 92983,
-      "sha256": "3e86a1072084ab5a5af105a8bf663cc33906f8440261f038a6a37c9234c6a511",
-      "metrics": 27,
-      "transferMonths": 19,
-      "employmentMonths": 84,
-      "scenarios": 41
+      "pages": 8,
+      "bytes": 53339,
+      "sha256": "0bb2267c7a90599354a19178a3fd2217312cc838d7af1f952021d23062de0f6e",
+      "sections": [
+        "lectura",
+        "prioridades",
+        "cuentas",
+        "transferencias",
+        "empleo",
+        "salarios",
+        "actividad",
+        "poblacion"
+      ],
+      "populationYear": 2022,
+      "crimeYears": [
+        2024,
+        2025
+      ]
     }
   ]
 }
