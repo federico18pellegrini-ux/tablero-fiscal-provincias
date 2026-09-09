@@ -4,6 +4,7 @@ python scripts_export_municipal_reports.py [--municipality 06329] [--output PATH
 python scripts_export_municipal_reports.py --check
 """
 import argparse
+import csv
 import hashlib
 import json
 import math
@@ -19,14 +20,14 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen.canvas import Canvas
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, Flowable, KeepTogether
+from reportlab.platypus import BaseDocTemplate, PageTemplate, Frame, Paragraph, Spacer, Table, TableStyle, PageBreak, Flowable, KeepTogether
 from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / 'municipios/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/municipios/'
 INPUTS = ['municipios/data/dashboard.json', 'municipios/data/geografia_original.geojson',
-          'municipios/model.mjs', 'scripts_municipal_report_data.mjs', 'scripts_export_municipal_reports.py',
+          'municipios/data/fuentes.csv', 'scripts_export_municipal_reports.py',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK = colors.HexColor('#203331'); TEAL = colors.HexColor('#14695c')
 MUTED = colors.HexColor('#586963'); LINE = colors.HexColor('#d8e2dc')
@@ -79,8 +80,36 @@ def fingerprint():
     return {f: hashlib.sha256((ROOT/f).read_bytes() if f.endswith('.ttf') else (ROOT/f).read_text(encoding='utf-8').encode()).hexdigest() for f in INPUTS}
 
 def load_models():
-    result = subprocess.run(['node', str(ROOT/'scripts_municipal_report_data.mjs')], cwd=ROOT, check=True, stdout=subprocess.PIPE)
-    return json.loads(result.stdout)
+    return json.loads((ROOT/'municipios/data/dashboard.json').read_text(encoding='utf-8'))
+
+
+def source_link(url, label):
+    return f'<link href="{escape(url, {chr(34): "&quot;"})}" color="#14695c">{escaped(label)}</link>'
+
+
+def source_catalog():
+    with (ROOT/'municipios/data/fuentes.csv').open(encoding='utf-8-sig',newline='') as stream:
+        rows=list(csv.reader(stream))
+    def find(name):return next(r[1] for r in rows if r[0]==name)
+    return {
+        'population':source_link(find('poblacion-total-superficie.xlsx'),'INDEC / DPE, censos y población'),
+        'nbi':source_link(find('nbi-catalog-1.xlsx'),'INDEC / DPE, NBI 2022'),
+        'pbg':source_link(find('pbg-data.xlsx'),'DPE Buenos Aires, producto municipal 2021-2023'),
+        'oede':source_link('https://www.argentina.gob.ar/sites/default/files/departamento_serie_empleo_remuneraciones_3.xlsx','OEDE / SIPA, empleo privado y remuneraciones 2019-2025'),
+        'ipc':source_link('https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_08_26.xls','INDEC, IPC nacional, julio de 2026'),
+        'transfers':source_link('https://www.gba.gob.ar/node/11822','Ministerio de Economía PBA, transferencias municipales 2025-2026'),
+        'banks':'DPE / BCRA, 2023-2024: '+source_link(find('bancos-1.xlsx'),'préstamos')+', '+source_link(find('bancos-2.xlsx'),'depósitos')+' y '+source_link(find('bancos-0.xlsx'),'sucursales'),
+        'credit':source_link('https://mapadeladeuda.ar/','CEC / FES, Mapa de la Deuda, sobre Central de Deudores del BCRA, julio de 2026'),
+        'health':source_link('https://anuario2024.estadistica.ec.gba.gov.ar/wp-content/uploads/2026/04/SALUD-Y-SOC3.xlsx','INDEC / DPE, cobertura de salud, Censo 2022'),
+        'crowding':source_link('https://anuario2024.estadistica.ec.gba.gov.ar/wp-content/uploads/2025/12/CARACT-HOG-12.xlsx','INDEC / DPE, personas por cuarto, Censo 2022'),
+        'crime':source_link('https://cloud-snic.minseg.gob.ar/Bases/SNIC/snic-departamentos-anual.csv','Ministerio de Seguridad Nacional, SNIC 2024-2025'),
+    }
+
+
+class PageSources(Flowable):
+    def __init__(self, text):
+        super().__init__();self.text=text;self.width=0;self.height=0;self.keepWithNext=True
+    def draw(self):self.canv.report_sources=self.text
 
 def register_fonts():
     for name, filename in [('Municipal', 'manrope-400.ttf'), ('MunicipalBold', 'manrope-700.ttf')]:
@@ -177,11 +206,12 @@ class LocationMap(Flowable):
 
 class Report:
     def __init__(self,path,m,data,geography):
-        self.path=path;self.m=m;self.data=data;self.geography=geography;self.styles=styles();self.story=[];self.pages=0;self.layouts=[]
+        self.path=path;self.m=m;self.data=data;self.geography=geography;self.styles=styles();self.story=[];self.pages=0;self.layouts=[];self.sources=source_catalog()
     def p(self,text,style='body'):
         self.story.append(Paragraph(red_negatives(clean(text)),self.styles[style]))
-    def section(self,title,new=True):
+    def section(self,title,new=True,sources=None):
         if new and self.story:self.story.append(PageBreak())
+        if sources:self.story.append(PageSources('Fuentes: '+sources))
         self.p(title,'h1')
     def h(self,title):self.p(title,'h2')
     def table(self,head,rows,widths=None,small=False):
@@ -200,45 +230,71 @@ class Report:
         t=Table([[Paragraph(escaped(title),self.styles['h2'])],[Paragraph(clean(text),self.styles['body'])]],colWidths=[CONTENT])
         t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),PALE),('LEFTPADDING',(0,0),(-1,-1),13),('RIGHTPADDING',(0,0),(-1,-1),13),('TOPPADDING',(0,0),(-1,0),4),('BOTTOMPADDING',(0,-1),(-1,-1),10)]))
         self.story.extend([t,Spacer(1,10)])
+    def refs(self,*keys):return ' · '.join(self.sources[k] for k in keys)
+    def fiscal_refs(self,f):
+        return f"Municipalidad de {escaped(self.m['municipio'])}, cuenta al {date(f['fin'])}: "+' · '.join(source_link(d['url'],f"documento {i}, págs. {', '.join(map(str,d['consultedPages']))}") for i,d in enumerate(f['documents'],1))
     def footer(self,c,doc):
-        self.pages=doc.page;c.saveState();c.setStrokeColor(LINE);c.setLineWidth(.6);c.line(MARGIN,38,WIDTH-MARGIN,38)
-        c.setFillColor(MUTED);c.setFont('Municipal',8);c.drawString(MARGIN,25,'Federico Pellegrini')
-        c.drawRightString(WIDTH-MARGIN,25,f'Página {doc.page}')
+        self.pages=doc.page;c.saveState()
+        sources=Paragraph(getattr(c,'report_sources',''),self.styles['small'])
+        _,height=sources.wrap(CONTENT,65)
+        if height>59.1:raise ValueError('Source footer too tall: '+self.m['id'])
+        sources.drawOn(c,MARGIN,43)
+        c.setStrokeColor(LINE);c.setLineWidth(.6);c.line(MARGIN,39,WIDTH-MARGIN,39)
+        c.setFillColor(TEAL);c.setFont('Municipal',8)
+        c.drawString(MARGIN,27,'tablero.federicopellegrini.com.ar/municipios/')
+        c.linkURL(SITE+f'?municipio={self.m["id"]}&vista=panorama',(MARGIN,24,WIDTH-MARGIN,37),relative=0)
+        c.setFillColor(MUTED);c.drawString(MARGIN,14,'Federico Pellegrini')
+        c.drawRightString(WIDTH-MARGIN,14,f'Página {doc.page}')
         if doc.page>1:
             c.setFont('MunicipalBold',8);c.drawString(MARGIN,HEIGHT-24,self.m['municipio'])
-            c.setFont('Municipal',8);c.drawRightString(WIDTH-MARGIN,HEIGHT-24,'Informe municipal completo')
+            c.setFont('Municipal',8);c.drawRightString(WIDTH-MARGIN,HEIGHT-24,'Informe municipal')
         c.restoreState()
     def overview(self):
         m=self.m;f=max([x for x in [m.get('fiscal'),m.get('fiscalOther')] if x],key=lambda x:x['fin'],default=None)
-        self.p('PROVINCIA DE BUENOS AIRES / INFORME MUNICIPAL','small');self.section(escaped(m['municipio']),False)
-        self.p('Las cuentas, los recursos y el trabajo','h2')
-        text=f"<b>{number(m['poblacion_2022'],0)} habitantes</b> según el Censo 2022. Superficie: {number(m['superficie_km2'],0)} km². Cada bloque conserva su propio período y su unidad monetaria.<br/><br/>Base del tablero actualizada el {date(self.data['generated'])}."
-        t=Table([[Paragraph(text,self.styles['body']),LocationMap(self.geography,m['id'])]],colWidths=[CONTENT-150,150]);t.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'MIDDLE'),('LEFTPADDING',(0,0),(-1,-1),0)]));self.story.extend([t,Spacer(1,8)])
+        refs=self.refs('population','transfers','ipc','oede')+((' · '+self.fiscal_refs(f)) if f else '')
+        self.section(escaped(m['municipio']),False,refs)
+        self.p('INFORME MUNICIPAL / PROVINCIA DE BUENOS AIRES','small')
+        self.p('Los recursos, el trabajo y la vida cotidiana','h2')
+        self.p(f"{number(m['poblacion_2022'],0)} habitantes según el Censo 2022. Base del tablero actualizada el {date(self.data['generated'])}. Cada tema conserva su fecha: este informe reúne los últimos datos incorporados, aunque correspondan a años distintos.")
         r=m['variacion_transferencias_real_pct'];j=m['empleo_promedio_cambio_2024_2025_pct']
-        kpis=[('Transferencias reales',pct(r),'Ene-jul 2026 vs. 2025'),('Empleo privado formal',pct(j),'Promedio 2025 vs. 2024'),('Resultado financiero',money(f['resultado_financiero'])+' M' if f else 'Sin dato',f"Cierre {date(f['fin'])}" if f else 'Sin cuenta fiscal comparable')]
+        kpis=[('Transferencias, sin el efecto de la inflación',pct(r),'Ene-jul 2026 vs. 2025'),('Puestos privados registrados',pct(j),'Promedio 2025 vs. 2024'),('Ingresos menos gastos',money(f['resultado_financiero'])+' M' if f else 'Sin dato',f"Cierre {date(f['fin'])}" if f else 'Cuenta fiscal sin verificar')]
         cells=[]
         for label,v,note in kpis:
             color='#b42318' if v.startswith('-') else '#203331'
             cells.append([Paragraph(escaped(label),self.styles['kpilabel']),Paragraph(f'<font color="{color}">{escaped(v)}</font>',self.styles['kpi']),Paragraph(escaped(note),self.styles['kpilabel'])])
-        t=Table([cells],colWidths=[CONTENT/3]*3);t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),PALE),('VALIGN',(0,0),(-1,-1),'TOP'),('BOX',(0,0),(-1,-1),.5,LINE),('LEFTPADDING',(0,0),(-1,-1),10),('TOPPADDING',(0,0),(-1,-1),10),('BOTTOMPADDING',(0,0),(-1,-1),10)]));self.story.extend([t,Spacer(1,14)])
+        t=Table([cells],colWidths=[CONTENT/3]*3);t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),PALE),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),10),('TOPPADDING',(0,0),(-1,-1),10),('BOTTOMPADDING',(0,0),(-1,-1),10)]));self.story.extend([t,Spacer(1,14)])
         self.h('La lectura central')
-        self.p(f"Las transferencias provinciales {direction(r,'ganaron','perdieron')} {number(abs(r),1)}% de poder de compra en enero-julio de 2026 frente al mismo período de 2025. El empleo privado formal promedio {direction(j,'creció','se redujo')} {number(abs(j),1)}% en 2025 frente a 2024. Son ventanas distintas: conviene leerlas por separado antes de vincular sus movimientos.")
-        if m['caen_empleo_y_transferencias_misma_ventana_2025_vs2024']:
-            self.p(f"Al comparar el mismo año, 2025 frente a 2024, también aparecen menos recursos reales y menos empleo: las transferencias anuales bajaron {number(abs(m['transferencias_anual_2024_2025_real_pct']),1)}%. Esto combina presión sobre los recursos municipales con una menor cantidad de puestos privados registrados. No alcanza para cuantificar cuánto afectó a las tasas municipales.")
+        self.p(f"<b>Los recursos que llegan de la Provincia {direction(r,'ganaron','perdieron')} poder de compra.</b> En enero-julio de 2026 las transferencias {direction(r,'aumentaron','cayeron')} {number(abs(r),1)}% después de descontar la inflación, frente a los mismos meses de 2025. "+('Con esos fondos se puede comprar menos, aunque el monto en pesos haya aumentado. Esto presiona sobre el dinero para sostener servicios y obras.' if r<0 else 'La mejora permite comprar más que un año antes con esos fondos. Para saber si amplía el margen de gestión, hay que ver también cómo cambiaron los gastos.'))
+        self.p(f"<b>El trabajo da otra señal.</b> El promedio de puestos privados registrados {direction(j)} {number(abs(j),1)}% en 2025 frente a 2024. "+('Menos puestos pueden debilitar los ingresos de las familias vinculadas a esas empresas y el movimiento comercial.' if j<0 else 'Más puestos pueden sostener los ingresos de las familias vinculadas a esas empresas y el movimiento comercial.')+' El dato cuenta empleos en establecimientos del municipio; no mide cuántos vecinos están desocupados. El corte es 2025 y no alcanza para describir el empleo de 2026.')
         if f:
-            b=f['resultado_financiero'];self.p(f"La cuenta fiscal al {date(f['fin'])} muestra un {'déficit' if b<0 else 'superávit' if b>0 else 'equilibrio'} de {money(abs(b))} millones, equivalente al {pct(abs(f['resultado_sobre_ingresos_pct']),2)} de los ingresos. {'El faltante requiere identificar su financiamiento y las obligaciones pendientes.' if b<0 else 'Ese resultado necesita contrastarse con pagos pendientes, deudas y fondos con destino asignado antes de definir nuevas erogaciones.'}")
-        else:self.p('Todavía no hay una cuenta fiscal homologada para determinar el resultado con el mismo criterio del ranking. Las transferencias y el empleo permiten describir parte de la situación, pero no reemplazan los ingresos y gastos completos.')
-        self.panel('Tres prioridades para ordenar la gestión',
-          '<b>Recursos:</b> seguir la recaudación propia y distinguir el efecto del reparto provincial.<br/>'
-          '<b>Cuentas:</b> conciliar ejecución, pagos pendientes y fondos afectados antes de ampliar compromisos.<br/>'
-          '<b>Actividad:</b> revisar los sectores que explican el empleo y definir medidas con objetivos verificables.')
-        self.p('Contenido: cuentas municipales; transferencias; empleo; población, actividad y bancos; transparencia; los 27 indicadores de ranking; escenarios y anexos mensuales. El ranking informa la posición del municipio seleccionado, con su universo de comparación.','small')
+            b=f['resultado_financiero'];spending=ratio(f['gastos_totales'],f['ingresos_totales'])
+            self.p(f"<b>Las cuentas muestran un {'déficit' if b<0 else 'superávit' if b>0 else 'equilibrio'}.</b> Del {date(f['inicio'])} al {date(f['fin'])}, por cada $100 cobrados se registraron ${number(spending,1)} de gastos. La diferencia fue de {money(abs(b))} millones. "+('Los gastos superaron a los ingresos. Hace falta identificar cómo se cubrió esa diferencia y cuánto quedó pendiente de pago.' if b<0 else 'Los ingresos alcanzaron para cubrir los gastos registrados. Ese saldo no equivale automáticamente a dinero libre: puede haber pagos pendientes y fondos que ya tienen un destino asignado.'))
+        else:self.p('<b>La cuenta fiscal todavía está incompleta.</b> No hay ingresos y gastos verificados con el mismo criterio para calcular el resultado. Las transferencias provinciales son sólo una parte de los recursos: con ellas solas no se puede afirmar que el municipio tiene déficit o superávit.')
+        self.p('M significa millones de pesos. La cuenta fiscal usa los pesos de su período; transferencias y salarios se ajustan por inflación cuando así se indica.','small')
+    def priorities(self):
+        m=self.m;f=max([x for x in [m.get('fiscal'),m.get('fiscalOther')] if x],key=lambda x:x['fin'],default=None)
+        self.section('Tres prioridades para la gestión',sources=self.refs('transfers','ipc','oede')+((' · '+self.fiscal_refs(f)) if f else ''))
+        self.p('Las prioridades surgen de los recursos disponibles, el resultado de las cuentas y la evolución del trabajo. El objetivo es ordenar decisiones concretas con la información de este municipio.')
+        r=m['variacion_transferencias_real_pct'];j=m['empleo_promedio_cambio_2024_2025_pct']
+        self.h('1. Cuidar los recursos para sostener los servicios')
+        self.p(f"<b>Por qué la elegimos.</b> Las transferencias perdieron {number(abs(r),1)}% de poder de compra en enero-julio de 2026. Cuando esos fondos alcanzan para menos, el municipio necesita revisar qué gastos puede sostener con ingresos habituales." if r<0 else f"<b>Por qué la elegimos.</b> Las transferencias ganaron {number(abs(r),1)}% de poder de compra en enero-julio de 2026. Antes de convertir esa mejora en nuevos gastos permanentes, conviene verificar si se mantiene y qué fondos tienen un destino específico.")
+        self.p('<b>Qué recomendamos.</b> Comparar todos los meses lo que se esperaba cobrar con lo efectivamente cobrado, separando tasas propias y fondos provinciales. Actualizar el costo de los servicios esenciales. Así se detecta antes si hace falta reprogramar una compra o una obra, en vez de enterarse cuando llega el vencimiento.')
+        self.h('2. Distinguir el resultado de la plata disponible')
+        if f:
+            b=f['resultado_financiero']
+            self.p(f"<b>Por qué la elegimos.</b> El último cierre muestra un {'déficit' if b<0 else 'superávit'} de {money(abs(b))} millones. "+('Ese faltante exige saber si se usaron ahorros anteriores, se tomó deuda o quedaron gastos sin pagar.' if b<0 else 'Tener superávit no alcanza para saber cuánto puede gastarse. Hay que mirar el saldo bancario, los pagos pendientes y el destino de cada fondo. Los gastos ya registrados no se restan otra vez del resultado.'))
+        else:self.p('<b>Por qué la elegimos.</b> Todavía falta una cuenta fiscal completa y verificada. Sin saber cuánto ingresó, cuánto se gastó y cuánto queda por pagar, no hay una base firme para asumir nuevos compromisos.')
+        self.p('<b>Qué recomendamos.</b> Reunir el saldo bancario, los fondos con destino obligatorio, las facturas pendientes y los próximos vencimientos en una misma planilla. Esto permite separar el resultado contable del dinero que realmente se puede usar y ordenar los pagos por fecha y prioridad.')
+        self.h('3. Entender qué está pasando con el trabajo')
+        self.p(f"<b>Por qué la elegimos.</b> El empleo privado registrado promedio {direction(j)} {number(abs(j),1)}% en 2025. "+('La caída puede afectar a las familias y a los comercios que dependen de esos ingresos.' if j<0 else 'El crecimiento abre oportunidades, aunque puede concentrarse en pocos sectores o empresas.')+' El total por sí solo no permite identificar dónde está el problema o la oportunidad.')
+        self.p('<b>Qué recomendamos.</b> Revisar los sectores con mayor peso y contrastar su evolución con habilitaciones, actividad comercial y cobranza de tasas. Priorizar formación laboral, trámites o infraestructura cuando se identifique una necesidad concreta. Luego medir si mejoran el empleo y la actividad; el dato agregado no alcanza para prometer ese resultado.')
     def accounts(self):
         m=self.m;accounts=[x for x in [m.get('fiscal'),m.get('fiscalOther')] if x]
         for i,f in enumerate(sorted(accounts,key=lambda x:x['fin'])):
-            self.section('Las cuentas municipales' if not i else 'Cuentas de otro período')
-            self.p(f"Del {date(f['inicio'])} al {date(f['fin'])}. Millones de pesos corrientes, sin ajuste por inflación. Ingresos cobrados y gastos devengados; se excluyen operaciones de financiamiento.")
-            self.p(escaped(f.get('scope','Cuenta municipal publicada.')),'small')
+            self.section('Las cuentas municipales' if not i else 'Cuentas de otro período',sources=self.fiscal_refs(f))
+            self.p(f"Del {date(f['inicio'])} al {date(f['fin'])}. Millones de pesos corrientes, sin ajuste por inflación. Los ingresos son lo cobrado. Los gastos devengados son obligaciones registradas, aunque todavía no se hayan pagado. Se excluyen préstamos recibidos y otras operaciones de financiamiento.")
+            self.p(escaped(f.get('scope','Cuenta municipal publicada.')).replace('Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.','Cuenta municipal publicada. El documento puede no incluir todos los hospitales y entes con cuentas separadas.'),'small')
+            self.p('Corriente es lo que sostiene el funcionamiento habitual, como salarios y servicios. Capital incluye obras y equipamiento. El resultado financiero es ingresos totales menos gastos totales.','small')
             if f is m.get('fiscalOther'):self.p('Este corte se conserva en la ficha, pero no integra el ranking de enero-junio de 2026. No se compara directamente con períodos de distinta duración.','small')
             fields=[('Ingresos corrientes','ingresos_corrientes'),('Ingresos de capital','ingresos_capital'),('Ingresos totales','ingresos_totales'),('Gastos corrientes','gastos_corrientes'),('Gastos de capital','gastos_capital'),('Gastos totales','gastos_totales'),('Resultado financiero','resultado_financiero'),('Gasto en personal','personal_devengado'),('Ahorro corriente','ahorro_corriente')]
             self.table(['Concepto','Millones de pesos corrientes'],[(label,money(f.get(key),2)) for label,key in fields],[CONTENT*.62,CONTENT*.38])
@@ -246,131 +302,127 @@ class Report:
             current=f['ingresos_corrientes']-f['gastos_corrientes'];capital=f['ingresos_capital']-f['gastos_capital'];balance=f['resultado_financiero']
             self.table(['Margen corriente','Saldo de capital','Resultado financiero'],[[money(current,2),money(capital,2),money(balance,2)]])
             self.p(f"Por cada $100 de ingresos, se registraron ${number(ratio(f['gastos_totales'],f['ingresos_totales']),1)} de gastos. "+(f"Los ingresos corrientes alcanzaron para cubrir el gasto corriente y dejaron {money(current)} millones antes de la cuenta de capital. " if current>=0 else f"El gasto corriente superó a los ingresos corrientes en {money(abs(current))} millones. El desequilibrio ya aparece en el funcionamiento corriente. ")+(f"La cuenta de capital absorbió {money(abs(capital))} millones de ese margen." if capital<0 and current>=0 else f"La cuenta de capital agregó un déficit de {money(abs(capital))} millones." if capital<0 else f"La cuenta de capital aportó un saldo positivo de {money(capital)} millones."))
-            self.p('El resultado no informa por sí solo cuánto hay disponible en caja. Para evaluar nuevas decisiones hace falta revisar pagos pendientes, saldos anteriores, fondos afectados y vencimientos. Un semestre tampoco permite concluir que el resultado sea permanente.')
-            self.table(['Indicador de este período','Valor'],[
-              ('Resultado financiero / ingresos',pct(f.get('resultado_sobre_ingresos_pct'),2)),('Capital / gasto total',pct(f.get('capital_sobre_gasto_pct'),2)),
-              ('Personal / gasto corriente',pct(f.get('personal_sobre_gasto_corriente_pct'),2)),('Ahorro corriente / ingresos corrientes',pct(f.get('ahorro_sobre_ingresos_corrientes_pct'),2)),
-              ('Capital por habitante del Censo 2022',money(f.get('capital_por_habitante_base2022_ars_corrientes'),0,False))],[CONTENT*.68,CONTENT*.32],True)
+            self.p('El resultado no informa por sí solo cuánto hay disponible en caja. Para evaluar nuevas decisiones hace falta revisar pagos pendientes, saldos anteriores, fondos afectados y vencimientos. Un solo período tampoco permite concluir que el resultado sea permanente.')
+            self.p(f"El resultado representa {pct(f['resultado_sobre_ingresos_pct'],2)} de los ingresos. El gasto de capital equivale al {pct(f['capital_sobre_gasto_pct'],2)} del gasto total y a {money(f['capital_por_habitante_base2022_ars_corrientes'],0,False)} por habitante del Censo 2022. {('El gasto en personal representa '+pct(f['personal_sobre_gasto_corriente_pct'],2)+' del gasto corriente. ') if finite(f.get('personal_sobre_gasto_corriente_pct')) else 'Falta el desglose de personal para calcular su peso en el gasto corriente. '}El ahorro corriente equivale al {pct(f['ahorro_sobre_ingresos_corrientes_pct'],2)} de los ingresos corrientes.",'small')
         e=m.get('fiscalExecution')
         if e:
-            self.section('Ejecución presupuestaria')
+            self.section('Ejecución presupuestaria',sources=self.fiscal_refs(e))
             self.p(f"Del {date(e['inicio'])} al {date(e['fin'])}. Millones de pesos corrientes. El presupuesto vigente es una autorización anual; los gastos y recursos corresponden al período informado.")
+            self.p('Gasto devengado es una obligación registrada, aunque siga sin pagarse. Gasto pagado es lo efectivamente cancelado. El presupuesto vigente indica cuánto está autorizado gastar en el año; no es dinero disponible en el banco.')
             fields=[('Presupuesto vigente','presupuesto_vigente'),('Recursos presupuestarios cobrados','recursos_presupuestarios_percibidos'),('Gastos devengados','gastos_presupuestarios_devengados'),('Gastos pagados','gastos_presupuestarios_pagados'),('Devengado del período sin pagar','devengado_no_pagado_del_periodo')]
             self.table(['Concepto','Millones de pesos corrientes'],[(label,money(e.get(key),2)) for label,key in fields],[CONTENT*.65,CONTENT*.35])
             self.panel('Qué significa para la gestión',f"De los gastos registrados, {money(e.get('devengado_no_pagado_del_periodo'))} millones permanecían sin pagar al cierre. Esto permite seguir obligaciones del período; no representa toda la deuda municipal ni demuestra que todos esos pagos estén vencidos.")
             self.p('Los totales presupuestarios incluyen operaciones financieras que deben separarse antes de calcular el resultado fiscal. Por ese motivo, estos datos no se usan como un déficit o superávit en el ranking.')
         if not accounts and not e:
-            self.section('Las cuentas que faltan verificar')
+            self.section('Las cuentas que faltan verificar',sources=source_link(SITE+'data/fiscal_verified.json','Registro de cuentas municipales verificadas y documentos disponibles'))
             self.p(escaped(m.get('fiscalSearch',{}).get('message','Todavía no hay una cuenta completa verificada para este municipio.')))
             self.panel('Lo que todavía no podemos concluir','Las transferencias provinciales son sólo una parte de los ingresos. Con esa información no se puede calcular el déficit, el gasto de capital total ni la caja disponible. Los espacios sin información se mantienen como tales.')
             self.p('Para completar la cuenta hacen falta ingresos y gastos corrientes y de capital del mismo período, con identificación de los organismos incluidos. Para evaluar liquidez, además, se necesitan saldos, fondos afectados y obligaciones pendientes.')
-        self.p(f"El ranking fiscal reúne {self.data['fiscalCoverage']['fiscal']} municipios con cierre a junio de 2026. Es una muestra parcial. Las funciones y los organismos incluidos pueden diferir entre municipios.",'small')
     def resources(self):
-        m=self.m;self.section('Transferencias y reparto provincial')
-        r=m['variacion_transferencias_real_pct'];diff=r-self.data['summary']['transfer_real_change_pct']
-        self.p(f"En enero-julio de 2026 el municipio recibió {money(m['transferencias_2026_ene_jul_ars_jul26'])} millones a precios de julio. Su poder de compra {direction(r)} {number(abs(r),1)}% frente a los mismos meses de 2025. La variación quedó {number(abs(diff),1)} puntos porcentuales {'por encima' if diff>=0 else 'por debajo'} del conjunto bonaerense.")
-        self.table(['Enero-julio','2025','2026'],[
-            ('Transferencias totales, pesos corrientes (M)',money(m['transferencias_2025_ene_jul_ars']),money(m['transferencias_2026_ene_jul_ars'])),
-            ('Transferencias totales, pesos de julio de 2026 (M)',money(m['transferencias_2025_ene_jul_ars_jul26']),money(m['transferencias_2026_ene_jul_ars_jul26'])),
-            ('Coparticipación, pesos corrientes (M)',money(m['copart_2025_ene_jul_ars']),money(m['copart_2026_ene_jul_ars'])),
-            ('Coparticipación, pesos de julio de 2026 (M)',money(m['copart_2025_ene_jul_ars_jul26']),money(m['copart_2026_ene_jul_ars_jul26'])),
-            ('Participación observada en la coparticipación',pct(m['participacion_copart_2025_pct'],5),pct(m['participacion_copart_2026_pct'],5))],[CONTENT*.48,CONTENT*.26,CONTENT*.26],True)
-        self.h('Cómo evolucionó mes a mes');self.story.append(TransferChart(m['transfers']))
-        self.p('Transferencias totales. Millones de pesos de julio de 2026. Cada mes se ajusta por inflación antes de acumularlo. Los importes completos figuran en el anexo.','small')
-        self.h('Qué explica el cambio de coparticipación')
-        self.table(['Componente','Cambio real en millones'],[
-            ('Cambio del total repartido, con la participación de 2025',money(m['efecto_masa_observada_ars_jul26'],2)),
-            ('Cambio de participación, sobre el total repartido en 2026',money(m['efecto_participacion_observada_ars_jul26'],2)),
-            ('Diferencia total, enero-julio 2026 menos 2025',money(m['copart_2026_ene_jul_ars_jul26']-m['copart_2025_ene_jul_ars_jul26'],2))],[CONTENT*.70,CONTENT*.30],True)
-        self.p('La descomposición separa cuánto cambió la masa repartida y cuánto cambió la participación observada del municipio. Esa participación no reemplaza una tabla oficial de coeficientes CUD.','small')
-        self.table(['Vínculo provincial: variación real enero-julio 2026 vs. 2025','Cambio'],[
-            ('Recaudación propia de la provincia',pct(self.data['provincialRevenue']['total_provincial'])),('Ingresos Brutos provincial',pct(self.data['provincialRevenue']['ingresos_brutos'])),('Coparticipación al conjunto de municipios',pct(self.data['summary']['copart_real_change_pct']))],[CONTENT*.76,CONTENT*.24],True)
-        self.p('La masa coparticipable combina impuestos provinciales y recursos federales. Una caída de un impuesto no se traslada automáticamente en el mismo porcentaje a todas las transferencias.','small')
+        m=self.m;self.section('Lo que llega de la Provincia',sources=self.refs('transfers','ipc'))
+        r=m['variacion_transferencias_real_pct']
+        self.p('<b>Transferencias</b> es el dinero que la Provincia gira al municipio. Incluye la <b>coparticipación</b>, el reparto de parte de los impuestos, y otros fondos. Por eso, no hay que sumar las dos filas: la coparticipación ya está dentro del total.')
+        self.p('<b>Real significa ajustado por inflación.</b> Los pesos corrientes muestran el monto de cada momento. Los pesos de julio de 2026 llevan todos los meses al mismo nivel de precios: permiten comparar cuánto se puede comprar con ese dinero.')
+        self.table(['Enero-julio de cada año','2025','2026'],[
+            ('Transferencias totales, millones de pesos corrientes',money(m['transferencias_2025_ene_jul_ars']),money(m['transferencias_2026_ene_jul_ars'])),
+            ('Transferencias totales, millones de pesos de julio de 2026',money(m['transferencias_2025_ene_jul_ars_jul26']),money(m['transferencias_2026_ene_jul_ars_jul26'])),
+            ('Coparticipación, millones de pesos corrientes',money(m['copart_2025_ene_jul_ars']),money(m['copart_2026_ene_jul_ars'])),
+            ('Coparticipación, millones de pesos de julio de 2026',money(m['copart_2025_ene_jul_ars_jul26']),money(m['copart_2026_ene_jul_ars_jul26']))],[CONTENT*.5,CONTENT*.25,CONTENT*.25],True)
+        self.p(f"Después de descontar la inflación, el total {direction(r)} {number(abs(r),1)}%. En términos de poder de compra, cada $100 del período anterior equivalen a ${number(100+r,1)} en el período actual.")
+        self.h('Las transferencias, mes a mes');self.story.append(TransferChart(m['transfers']))
+        self.p('Millones de pesos de julio de 2026. Se ajusta cada mes con el IPC nacional antes de sumar el período. Así no se confunde un aumento de precios con una mejora de recursos.','small')
+        self.h('Por qué cambió la coparticipación')
+        self.table(['Explicación del cambio real, enero-julio','Millones de pesos de julio de 2026'],[
+            ('Efecto del total repartido a todos los municipios',money(m['efecto_masa_observada_ars_jul26'],2)),
+            ('Efecto del cambio en la porción recibida por el municipio',money(m['efecto_participacion_observada_ars_jul26'],2)),
+            ('Cambio total de la coparticipación del municipio',money(m['copart_2026_ene_jul_ars_jul26']-m['copart_2025_ene_jul_ars_jul26'],2))],[CONTENT*.68,CONTENT*.32],True)
+        self.p('El primer efecto mantiene la participación del año anterior; el segundo recoge su cambio sobre el reparto actual. Son participaciones observadas, no los coeficientes legales de reparto. La recaudación provincial influye, pero también hay recursos nacionales: la baja de un impuesto no se traslada automáticamente en igual porcentaje.','small')
     def employment(self):
-        m=self.m;self.section('Trabajo, salarios y sectores')
+        m=self.m;self.section('El trabajo y los sectores',sources=self.refs('oede')+' · '+source_link('https://www.argentina.gob.ar/sites/default/files/departamento_series_empleo_y_salarios_mensual_sector_1.csv','OEDE, empleo sectorial, diciembre de 2025'))
         j=m['empleo_promedio_cambio_2024_2025_pct'];change=m['empleos_cambio_dic2023_dic2025']
-        self.p(f"El empleo privado formal promedio {direction(j)} {number(abs(j),1)}% en 2025 frente a 2024. Entre diciembre de 2023 y diciembre de 2025, el saldo fue de {number(abs(change),0)} puestos {'menos' if change<0 else 'más' if change>0 else 'de diferencia'}. Promedios anuales y cierres de diciembre permiten dos lecturas distintas; no deben confundirse.")
-        self.h('Historia completa del empleo registrado')
-        self.story.append(LineChart([r[0] for r in m['employment']],[r[1] for r in m['employment']]))
-        self.p('Puestos por lugar del establecimiento. Incluye trabajadores que pueden vivir en otro municipio. No mide desempleo, informalidad ni empleo público.','small')
-        self.table(['Año','Empleo promedio','Puestos en diciembre','Salario real medio mensual'],[[str(y),number(m[f'empleo_promedio_{y}'],1),number(m[f'empleo_dic{y}'],0),money(m[f'salario_real_promedio_{y}_ars_jul26'],0,False)] for y in [2023,2024,2025]],[CONTENT*.10,CONTENT*.25,CONTENT*.25,CONTENT*.40],True)
-        self.p('Remuneración media mensual en pesos de julio de 2026. Los aguinaldos y la composición del empleo también influyen en los promedios.','small')
-        self.h('Dónde están los puestos privados formales')
-        def sector_name(s):return {'Explotacion de minas y canteras':'Explotación de minas y canteras','Electircidad, gas y agua':'Electricidad, gas y agua','Construccion':'Construcción','Agricultura, ganaderia y pesca':'Agricultura, ganadería y pesca'}.get(s,s)
-        self.table(['Sector, diciembre de 2025','Puestos','Sobre el total'],[[sector_name(s['name']),number(s['jobs'],0),pct(ratio(s['jobs'],m['empleo_dic2025']),1)] for s in m['sectors']],[CONTENT*.60,CONTENT*.20,CONTENT*.20],True)
-        self.p('Los sectores reservados se dejan sin dato. Los sectores publicados pueden no sumar el total; no se completa el residual con una estimación.','small')
-        salary=m['salario_real_promedio_cambio_2023_2025_pct'];mass=m['masa_salarial_formal_aprox_cambio_2023_2025_pct']
-        self.p(f"El salario real promedio {direction(salary)} {number(abs(salary),1)}% entre 2023 y 2025. La masa salarial formal aproximada {direction(mass)} {number(abs(mass),1)}%. Esta última combina puestos y remuneraciones; no es una medición de ventas ni de consumo local. Para evaluar el impacto fiscal hace falta observar también la recaudación de las tasas.")
+        self.p(f"El empleo privado registrado promedio {direction(j)} {number(abs(j),1)}% en 2025 frente a 2024. Entre diciembre de 2023 y diciembre de 2025 hubo {number(abs(change),0)} puestos {'menos' if change<0 else 'más' if change>0 else 'de diferencia'}.")
+        self.p('<b>Qué se cuenta.</b> Puestos de trabajo declarados por empresas privadas ante la seguridad social, ubicados según el establecimiento. Un trabajador puede vivir en otro municipio. Quedan fuera el empleo público, el trabajo informal y los trabajadores independientes; esta serie no mide la desocupación local.')
+        self.h('Cómo evolucionó el empleo registrado')
+        self.story.append(LineChart([r[0] for r in m['employment']],[r[1] for r in m['employment']],145))
+        self.table(['Año','Promedio mensual de puestos','Puestos en diciembre'],[[str(y),number(m[f'empleo_promedio_{y}'],1),number(m[f'empleo_dic{y}'],0)] for y in [2023,2024,2025]],[CONTENT*.15,CONTENT*.43,CONTENT*.42],True)
+        self.p('El promedio resume los doce meses. Diciembre muestra el cierre del año. Pueden cambiar en distinta dirección si hubo contrataciones o bajas durante el año.','small')
+        self.h('Dónde están los puestos, a diciembre de 2025')
+        names={'Explotacion de minas y canteras':'Explotación de minas y canteras','Electircidad, gas y agua':'Electricidad, gas y agua','Construccion':'Construcción','Agricultura, ganaderia y pesca':'Agricultura, ganadería y pesca'}
+        self.table(['Sector','Puestos','Parte del total'],[[names.get(s['name'],s['name']),number(s['jobs'],0),pct(ratio(s['jobs'],m['empleo_dic2025']),1)] for s in m['sectors']],[CONTENT*.60,CONTENT*.20,CONTENT*.20],True)
+        self.p('Los sectores reservados se dejan sin dato para respetar la confidencialidad estadística. Las filas visibles pueden no sumar el total; no se estima el faltante.','small')
+    def wages(self):
+        m=self.m;w=m['community']['wage'];self.section('Cuánto significa el salario publicado',sources=self.refs('oede','ipc'))
+        self.p(f"El promedio mensual de 2025 fue de <b>{money(w['annual']['2025']['nominal'],0,False)} brutos</b>, en los pesos de ese año. Al ajustar cada mes por inflación, equivale a <b>{money(w['annual']['2025']['real'],0,False)} a precios de julio de 2026</b>.")
+        self.h('Qué incluye ese número')
+        self.p('Es la remuneración bruta promedio que los empleadores privados declararon al Sistema Integrado Previsional Argentino (SIPA), a través de ARCA. Incluye conceptos remunerativos y no remunerativos, aguinaldo y pagos por vacaciones. <b>No es el salario de bolsillo:</b> no se descontaron aportes ni otras deducciones.')
+        self.p('Tampoco es el sueldo de un vecino típico. Es un promedio de puestos localizados en el municipio: algunos trabajadores pueden vivir afuera, y los salarios altos o el peso de determinadas actividades pueden elevarlo. La base no publica aquí una mediana, que sería el valor que deja a la mitad de los salarios por debajo y a la mitad por encima.')
+        self.table(['Promedio mensual del año','Bruto en pesos de cada año','Bruto ajustado a julio de 2026'],[[str(y),money(w['annual'][str(y)]['nominal'],0,False),money(w['annual'][str(y)]['real'],0,False)] for y in [2023,2024,2025]],[CONTENT*.28,CONTENT*.36,CONTENT*.36])
+        self.h('Por qué diciembre puede parecer muy alto')
+        self.table(['Mes de 2025','Bruto del mes, sin ajuste','Bruto a precios de julio de 2026'],[[label,money(w['months'][p]['nominal'],0,False),money(w['months'][p]['real'],0,False)] for p,label in [('2025-11','Noviembre'),('2025-12','Diciembre')]], [CONTENT*.28,CONTENT*.36,CONTENT*.36])
+        self.p('Diciembre puede incluir el aguinaldo y otros pagos estacionales. Noviembre sirve como referencia de otro mes, pero tampoco equivale necesariamente al sueldo habitual ni al importe neto. No corresponde convertir el dato bruto en un sueldo de bolsillo con un descuento único: depende de cada trabajador.')
+        self.h('Cómo se calcula el ajuste por inflación')
+        self.p('Para cada mes se toma el salario publicado y se multiplica por el IPC de julio de 2026 dividido por el IPC de ese mes. El IPC es el índice de precios al consumidor del INDEC. Después se promedian los doce meses ya ajustados: así todos quedan expresados con el mismo poder de compra.')
+        self.p(f"Con ese criterio, el salario promedio ajustado por inflación cambió {pct(m['salario_real_promedio_cambio_2023_2025_pct'],1)} entre 2023 y 2025. Esto describe al conjunto de puestos; no implica que cada trabajador haya tenido ese mismo cambio.")
+        refs=', '.join(f"hoja {r['sheet']}, fila {r['row']}" for r in w['references'])
+        self.p(f"Dato original: planilla OEDE, {refs}. Auditoría: los 84 meses por municipio y los promedios 2023-2025 coinciden con la planilla oficial y el IPC nacional. Sólo se redondea al mostrar los importes.",'small')
     def territory(self):
-        m=self.m;self.section('Población, actividad y bancos')
-        self.p('El tamaño, la estructura productiva y los servicios a cargo condicionan las comparaciones. Los datos por habitante usan una población censal fija: no son una proyección demográfica a 2026.')
-        self.h('Población y condiciones estructurales')
-        self.table(['Indicador','Valor'],[
-            ('Población, Censo 2022',number(m['poblacion_2022'],0)),('Población, Censo 2010',number(m.get('poblacion_2010'),0)),('Cambio poblacional 2010-2022',pct(m.get('crecimiento_poblacion_2010_2022_pct'),2)),
-            ('Superficie (km²)',number(m['superficie_km2'],1)),('Densidad 2022 (habitantes por km²)',number(m['densidad_2022'],1)),('Hogares, Censo 2022',number(m['hogares_2022'],0)),('Hogares con NBI',number(m['hogares_nbi_2022'],0)),('Hogares con NBI / hogares totales',pct(m['hogares_nbi_2022_pct'],2))],[CONTENT*.67,CONTENT*.33],True)
-        self.p('Las necesidades básicas insatisfechas (NBI) describen carencias estructurales en 2022. No equivalen a pobreza monetaria actual. Chascomús y Lezama no tienen crecimiento intercensal comparable en esta base.','small')
-        self.h('Actividad económica localizada')
-        self.table(['Producto bruto municipal','Millones de pesos constantes de 2004'],[[str(y),money(m.get(f'pbg_constante_2004_{y}_ars'),2)] for y in [2021,2022,2023]],[CONTENT*.45,CONTENT*.55],True)
-        self.p(f"El producto local varió {pct(m.get('pbg_real_cambio_2021_2023_pct'),2)} entre 2021 y 2023. Este es el último corte de actividad incorporado; no describe directamente la coyuntura de 2026.",'small')
-        self.h('Crédito, depósitos y presencia financiera')
+        m=self.m;self.section('La economía local y los bancos',sources=self.refs('pbg','banks','ipc','credit'))
+        self.h('Producto bruto municipal: qué produce el territorio')
+        self.p('El producto bruto municipal estima el valor de los bienes y servicios generados dentro del municipio, evitando contar dos veces los insumos. Describe el tamaño de la actividad económica. <b>No es la recaudación ni el presupuesto del gobierno municipal</b>, y tampoco mide cuánto gana cada vecino.')
+        self.table(['Año','Producto municipal, millones de pesos constantes de 2004'],[[str(y),money(m.get(f'pbg_constante_2004_{y}_ars'),2)] for y in [2021,2022,2023]],[CONTENT*.18,CONTENT*.82])
+        self.p(f"La Dirección Provincial de Estadística de Buenos Aires publica esta estimación. Al usar precios de 2004, el cambio refleja producción y no inflación. Entre 2021 y 2023 el producto varió {pct(m.get('pbg_real_cambio_2021_2023_pct'),2)}. El último año incorporado es 2023: este dato no describe por sí solo la actividad de 2026.")
+        self.h('Préstamos, depósitos y sucursales')
         self.table(['Indicador','2023','2024'],[
             ('Préstamos, millones de pesos corrientes',money(m.get('prestamos_2023_ars'),2),money(m.get('prestamos_2024_ars'),2)),('Depósitos, millones de pesos corrientes',money(m.get('depositos_2023_ars'),2),money(m.get('depositos_2024_ars'),2)),
-            ('Sucursales','Sin dato',number(m.get('sucursales_2024'),0))],[CONTENT*.54,CONTENT*.23,CONTENT*.23],True)
-        self.p(f"Cambio real de préstamos: {pct(m.get('prestamos_real_cambio_2023_2024_pct'),2)}. Cambio real de depósitos: {pct(m.get('depositos_real_cambio_2023_2024_pct'),2)}. Préstamos sobre depósitos en el cuarto trimestre de 2024: {pct(m.get('prestamos_sobre_depositos_2024_pct'),2)}.")
-        self.p('Los saldos se asignan por localización financiera y se ajustan con IPC de cierre para medir su variación real. No identifican exclusivamente residentes o pymes ni permiten inferir fuga de ahorros. Los datos reservados permanecen sin valor.','small')
-    def transparency(self):
-        m=self.m;t=m['transparency'];self.section('Publicación de información fiscal')
-        self.p(f"ASAP asignó {number(t['score'],0)} puntos sobre 100 en mayo de 2026, frente a {number(t['previousScore'],0)} en noviembre de 2025. El cambio fue de {number(t['change'],0)} puntos. El índice evalúa la información disponible en esas fechas, no el resultado de las cuentas ni la calidad general de la gestión.")
-        self.table(['Componente','Nov. 2025','Mayo 2026','Máximo'],[[c['label'],number(c['history'][0],0),number(c['history'][1],0),str(c['max'])] for c in m['reportTransparency']]+[['Total',str(t['previousScore']),str(t['score']),'100']],[CONTENT*.52,CONTENT*.16,CONTENT*.16,CONTENT*.16])
-        self.h('Cómo interpretar los componentes')
-        for c in m['reportTransparency']:self.p(f"<b>{escaped(c['label'])}:</b> {escaped(c['status'])}")
-        for h in t['history']:
-            if h.get('note'):self.p(escaped(h['note']),'small')
-        self.panel('Publicar y gestionar son dimensiones distintas','Un municipio puede publicar toda su información y registrar déficit. También puede haber incorporado documentos después del relevamiento. La baja de un puntaje puede reflejar que informes anteriores quedaron fuera del período admitido; no demuestra un deterioro financiero.')
-        self.p('Relevamientos: al 8 de noviembre de 2025 y del 1 al 8 de mayo de 2026. Los componentes tienen pesos distintos y suman el total.','small')
-    def rankings(self):
-        m=self.m;self.section('Los 27 indicadores en comparación')
-        self.p('La posición corresponde al municipio seleccionado. Cada indicador conserva el orden inicial del tablero, indicado en la tabla. El puesto 1 puede ser el menor o el mayor valor según ese orden; no significa automáticamente mejor gestión.')
-        self.p(f"La comparación de población similar incluye municipios entre {number(m['poblacion_2022']/2,0)} y {number(m['poblacion_2022']*2,0)} habitantes del Censo 2022. Los empates comparten puesto. Los faltantes quedan fuera. El filtro aproxima tamaños; no iguala servicios ni estructura productiva.",'small')
-        rows=[]
-        for r in m['reportRankings']:
-            v=r['value'];unit=r['unit']
-            formatted=money(v,0,False) if unit=='money' else money(v,2)+' M' if unit=='millions' and finite(v) else pct(v,2) if unit=='%' else number(v,5)+' pp' if unit=='pp' and finite(v) else number(v,0)+' / 100' if unit=='score' and finite(v) else number(v,0)+' puntos' if unit=='points' and finite(v) else number(v,1 if unit in ['density','branches'] else 0)
-            position=lambda n,c:f'{n} de {c}' if n is not None else f'Sin dato ({c} con dato)'
-            label='Sucursales por 10.000 habitantes' if r['unit']=='branches' else r['label']
-            rows.append([label+'\n'+r['period'],formatted,'Menor primero' if r['ascending'] else 'Mayor primero',position(r['rank'],r['count']),position(r['peerRank'],r['peerCount'])])
-        self.table(['Indicador y período','Valor','Orden','Todos con dato','Población similar'],rows,[CONTENT*.39,CONTENT*.17,CONTENT*.14,CONTENT*.15,CONTENT*.15],True)
-        self.p('Las cuentas fiscales del ranking corresponden al cierre de junio de 2026 y tienen cobertura parcial. Un municipio con otra fecha de ejecución puede tener su cuenta en este informe y quedar fuera de ese ranking.','small')
-    def scenarios(self):
-        m=self.m;self.section('Escenarios de coparticipación')
-        s=m['reportScenarios'][20]
-        self.p(f"Una caída hipotética del 10% de la masa coparticipable restaría {money(s['loss'])} millones al municipio, o {money(s['perCapita'],0,False)} por habitante censal. La base observada es la coparticipación bruta de enero-julio de 2026: {money(s['baseline'])} millones a precios de julio.")
-        self.panel('Qué supone el ejercicio','Se mantiene la participación municipal y se dejan constantes los demás fondos. La caída se aplica sobre toda la masa elegible, no sobre un impuesto aislado. Es un escenario sobre un período observado, no un pronóstico del cierre anual ni una estimación del déficit.')
-        self.p('Se incluyen todos los valores del control del tablero, de 0% a 20% en pasos de 0,5 puntos. El cambio negativo representa recursos que se perderían. La caída elegida puede localizarse en esta tabla.','small')
-        self.table(['Caída supuesta','Cambio de recursos (M)','Coparticipación resultante (M)','Pérdida por habitante ($)'],[[pct(s['shock'],1),money(-s['loss'],2),money(s['after'],2),money(s['perCapita'],0,False)] for s in m['reportScenarios']],[CONTENT*.16,CONTENT*.29,CONTENT*.30,CONTENT*.25],True)
-        self.p('Los importes están en pesos de julio de 2026. No se suman directamente a un resultado fiscal en pesos corrientes o de otro período. Para decidir cómo absorber un desvío hacen falta caja, vencimientos, ingresos propios y prioridades de gasto.','small')
-    def annexes(self):
-        m=self.m;self.section('Anexo / transferencias mensuales')
-        self.p('Serie completa incorporada. Millones de pesos de julio de 2026. El total incluye la coparticipación; no corresponde sumar ambas columnas.')
-        self.table(['Mes','Transferencias totales','Coparticipación bruta'],[[month(r[0]),money(r[1],2),money(r[2],2)] for r in m['transfers']],[CONTENT*.24,CONTENT*.38,CONTENT*.38],True)
-        self.table(['Totales anuales comparables','Millones de pesos de julio de 2026'],[['2024',money(m['transferencias_anual_2024_ars_jul26'],2)],['2025',money(m['transferencias_anual_2025_ars_jul26'],2)],['Variación real 2025 / 2024',pct(m['transferencias_anual_2024_2025_real_pct'],2)]],[CONTENT*.53,CONTENT*.47],True)
-        self.p('Los totales anuales cubren doce meses y se informan por separado del acumulado enero-julio. Los cocientes por habitante usan la población del Censo 2022.','small')
-        self.p(f"En el conjunto provincial, {self.data['summary']['municipalities_falling_transfers']} de 135 municipios tuvieron menos transferencias reales en enero-julio de 2026 frente al mismo período de 2025. Al comparar el año 2025 con 2024, {self.data['summary']['same_window_2025_vs2024_both_falling']} municipios registraron una caída tanto del empleo formal promedio como de las transferencias reales anuales.",'small')
-        self.section('Anexo / empleo y salarios mensuales')
-        self.p('Toda la historia del tablero. Puestos privados registrados por establecimiento y remuneración media mensual en pesos de julio de 2026. Los saltos de junio y diciembre pueden reflejar aguinaldos y otros pagos estacionales.')
-        self.table(['Mes','Puestos privados formales','Remuneración media real ($)'],[[month(r[0]),number(r[1],0),money(r[2],0,False)] for r in m['employment']],[CONTENT*.24,CONTENT*.36,CONTENT*.40],True)
-        self.h('Masa salarial formal aproximada')
-        self.table(['Año','Millones de pesos de julio de 2026'],[[str(y),money(m[f'masa_salarial_formal_aprox_{y}_ars_jul26'],2)] for y in [2023,2024,2025]],[CONTENT*.3,CONTENT*.7],True)
-        self.p('Aproximación calculada como puestos por remuneración media de cada mes, luego acumulada en el año. No equivale a facturación, consumo ni ingreso disponible de los residentes.','small')
-        self.h('Criterios para leer el informe')
-        self.p('Los datos faltantes se informan como "Sin dato". Las cifras negativas conservan signo y color rojo. Los importes se redondean sólo para su presentación; pequeñas diferencias en sumas visibles pueden responder a ese redondeo. El documento reúne todas las vistas para el municipio seleccionado; no es una captura de la página ni cambia según la vista que estuviera abierta.','small')
-        self.p(f'<link href="{SITE}?municipio={m["id"]}&amp;vista=panorama" color="#14695c">Abrir la ficha de {escaped(m["municipio"])}</link> · <link href="{SITE}metodologia.html" color="#14695c">Criterios y fechas de los datos</link>','small')
+            ('Sucursales bancarias','Sin dato',number(m.get('sucursales_2024'),0))],[CONTENT*.54,CONTENT*.23,CONTENT*.23])
+        if all(finite(m.get(k)) for k in ['prestamos_real_cambio_2023_2024_pct','depositos_real_cambio_2023_2024_pct','prestamos_sobre_depositos_2024_pct']):
+            self.p(f"Al descontar la inflación entre los cierres de 2023 y 2024, los préstamos cambiaron {pct(m['prestamos_real_cambio_2023_2024_pct'],2)} y los depósitos, {pct(m['depositos_real_cambio_2023_2024_pct'],2)}. En el cuarto trimestre de 2024 había {number(m['prestamos_sobre_depositos_2024_pct'],2)} pesos prestados por cada $100 depositados.")
+        else:self.p('Los saldos bancarios disponibles no permiten calcular una variación comparable ni la relación entre préstamos y depósitos para este municipio. Las celdas sin dato no significan que el monto sea cero.')
+        self.p('Los saldos se asignan por la localización financiera informada y pueden incluir operaciones de empresas y personas de otros lugares. No permiten afirmar que los ahorros de los vecinos se prestan dentro o fuera del municipio. Los valores reservados quedan como «Sin dato».','small')
+        self.p('Para mirar las deudas de las personas se utiliza el relevamiento territorial CEC/FES de la página siguiente, con una base y un período distintos de estos saldos bancarios.')
+    def debt(self):
+        d=self.m['community']['debt'];self.section('Deudas de las personas',sources=self.refs('credit'))
+        self.p('RELEVAMIENTO EXTERNO / JULIO DE 2026','small')
+        self.p(f"El Mapa de la Deuda del CEC/FES ubica <b>{number(d['peopleWithDebt'],0)} personas con deuda</b> en este municipio. De ellas, <b>{number(d['peopleInArrears'],0)} figuran en mora</b>: {pct(d['peopleInArrearsPct'],1)} del grupo con deuda informada.")
+        self.p('<b>Tener deuda no significa estar atrasado.</b> Una persona puede usar una tarjeta o pagar un préstamo al día. Aquí se considera mora a las situaciones 3, 4 y 5 de la clasificación utilizada por el relevamiento, asociadas a atrasos de unos tres meses o más. Los atrasos más cortos quedan fuera de este indicador.')
+        self.table(['Personas y montos del relevamiento','Julio de 2026'],[
+            ('Personas con deuda informada',number(d['peopleWithDebt'],0)),('Personas en mora',number(d['peopleInArrears'],0)),
+            ('Personas en mora / personas con deuda',pct(d['peopleInArrearsPct'],2)),
+            ('Deuda total, millones de pesos corrientes',money(d['debtARS'],2)),('Deuda en mora, millones de pesos corrientes',money(d['debtInArrearsARS'],2)),
+            ('Deuda en mora / deuda total',pct(d['debtInArrearsPct'],2)),('Deuda promedio por persona con deuda, pesos corrientes',money(d['averageDebtARS'],0,False))],[CONTENT*.7,CONTENT*.3])
+        self.h('Dos porcentajes que responden preguntas distintas')
+        self.p(f"<b>{pct(d['peopleInArrearsPct'],1)} de las personas con deuda está en mora.</b> Ese porcentaje cuenta personas, no pesos. <b>{pct(d['debtInArrearsPct'],1)} del monto adeudado está en mora.</b> Ese segundo porcentaje mide dinero. Pueden ser diferentes porque no todas las personas deben el mismo monto.")
+        self.p('Ninguno de los dos porcentajes se calcula sobre toda la población municipal. Tampoco cuentan hogares: una misma familia puede tener varias personas con deuda. El promedio de deuda divide el monto total por las personas con deuda informada; no indica cuánto debe un vecino típico.')
+        self.h('Qué aporta a la gestión')
+        self.p('Los pagos atrasados permiten reconocer una presión sobre las finanzas de las personas alcanzadas por el relevamiento. Conviene contrastarla con empleo, ingresos y consultas de defensa del consumidor. Puede orientar información sobre crédito y atención de reclamos; no permite atribuir por sí sola la mora a una causa ni estimar cuánto caerá el consumo local.')
+        self.p('<b>Alcance del dato.</b> Procesamiento y asignación territorial del CEC/FES a partir de la Central de Deudores del BCRA; no es una serie municipal publicada directamente por el Banco Central. Se incluyen todas las entidades, edades y géneros del relevamiento, que excluye sociedades de garantía recíproca y fondos públicos de garantía. La localización se toma del proveedor: no se verificaron domicilios individuales. No cubre toda la deuda informal ni demuestra que los préstamos hayan financiado solamente consumo.','small')
+    def community(self):
+        m=self.m;c=m['community'];h=c['health'];crime=c['crime'];self.section('La población y la vida cotidiana',sources=self.refs('population','nbi','health','crowding','crime'))
+        self.table(['Población y hogares','Dato'],[
+            ('Habitantes, Censo 2022',number(m['poblacion_2022'],0)),('Cambio de población entre 2010 y 2022',pct(m.get('crecimiento_poblacion_2010_2022_pct'),1)),
+            ('Superficie / habitantes por km²',number(m['superficie_km2'],0)+' km² / '+number(m['densidad_2022'],1)),
+            ('Hogares, Censo 2022',number(m['hogares_2022'],0)),('Hogares con necesidades básicas insatisfechas',number(m['hogares_nbi_2022'],0)+' / '+pct(m['hogares_nbi_2022_pct'],1)),
+            ('Hogares con más de 3 personas por cuarto',pct(c['crowding']['over3PersonsPerRoomPct'],1)),
+            ('Personas sin obra social, prepaga ni plan estatal de salud',number(h['withoutCoverage'],0)+' / '+pct(h['withoutCoveragePct'],1))],[CONTENT*.70,CONTENT*.30],True)
+        self.p('<b>NBI significa necesidades básicas insatisfechas.</b> Identifica hogares con al menos una carencia: vivienda inadecuada, hacinamiento, falta de retrete, niños en edad escolar que no asisten o baja capacidad de subsistencia según el criterio censal. No es una medición actual de pobreza por ingresos.')
+        self.p(f"La cobertura de salud se calcula sobre {number(h['populationPrivateDwellings'],0)} personas en viviendas particulares del Censo 2022. No tener obra social, prepaga o plan estatal <b>no significa quedar sin atención pública</b>. El dato ayuda a dimensionar la población que puede necesitar esa red. El hacinamiento identifica hogares donde conviven más de tres personas por cuarto; puede orientar la política habitacional.")
+        self.h('Seguridad: qué dicen los registros')
+        self.table(['Registro del SNIC','2024','2025','Tasa 2025 por 100.000 habitantes'],[
+            ('Víctimas de homicidios dolosos',number(crime['2024']['homicideVictims'],0),number(crime['2025']['homicideVictims'],0),number(crime['2025']['homicideRate'],1)),
+            ('Hechos de robo consumado',number(crime['2024']['robberies'],0),number(crime['2025']['robberies'],0),number(crime['2025']['robberyRate'],1)),
+            ('Hechos de hurto consumado',number(crime['2024']['thefts'],0),number(crime['2025']['thefts'],0),number(crime['2025']['theftRate'],1))],[CONTENT*.44,CONTENT*.13,CONTENT*.13,CONTENT*.30],True)
+        self.p('El Sistema Nacional de Información Criminal (SNIC) reúne hechos registrados por las fuerzas de seguridad. Robo implica fuerza o violencia; hurto, sustracción sin esos medios. Homicidio doloso refiere a una muerte intencional. Los robos incluyen los agravados y excluyen las tentativas.','small')
+        a,b=crime['2024']['robberies'],crime['2025']['robberies']
+        self.p(f"Se registraron {number(b,0)} robos en 2025, frente a {number(a,0)} en 2024. Conviene contrastar el cambio con zonas, horarios y canales de denuncia antes de definir medidas. Estos registros no captan todos los delitos ni miden la sensación de inseguridad. Más denuncias también pueden modificar el total.")
+        self.p('Las tasas son las publicadas por el SNIC, con su población de referencia; no se recalculan con el Censo 2022. En municipios pequeños, pocos hechos pueden mover mucho la tasa. Se muestran junto a las cantidades para evitar lecturas engañosas.','small')
     def build(self):
-        for method in [self.overview,self.accounts,self.resources,self.employment,self.territory,self.transparency,self.rankings,self.scenarios,self.annexes]:method()
-        doc=SimpleDocTemplate(str(self.path),pagesize=A4,rightMargin=MARGIN,leftMargin=MARGIN,topMargin=45,bottomMargin=54,
+        for method in [self.overview,self.priorities,self.accounts,self.resources,self.employment,self.wages,self.territory,self.debt,self.community]:method()
+        doc=BaseDocTemplate(str(self.path),pagesize=A4,rightMargin=MARGIN,leftMargin=MARGIN,topMargin=45,bottomMargin=104,
                               title=f'{self.m["municipio"]} - Informe municipal completo',author='Federico Pellegrini',pageCompression=1)
         def deterministic_canvas(*args,**kwargs):kwargs['invariant']=1;return Canvas(*args,**kwargs)
-        doc.build(self.story,onFirstPage=self.footer,onLaterPages=self.footer,canvasmaker=deterministic_canvas)
+        frame=Frame(MARGIN,104,CONTENT,HEIGHT-45-104,id='body',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)
+        doc.addPageTemplates(PageTemplate(id='municipal',frames=frame,onPageEnd=self.footer))
+        doc.build(self.story,canvasmaker=deterministic_canvas)
         return self.pages
 
 def build(output=OUTPUT, municipality=None):
@@ -381,8 +433,8 @@ def build(output=OUTPUT, municipality=None):
     for m in chosen:
         filename=f'informe-{m["id"]}.pdf';path=output/filename;pages=Report(path,m,data,geography).build()
         entries.append({'id':m['id'],'municipality':m['municipio'],'file':filename,'pages':pages,'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
-                        'metrics':len(m['reportRankings']),'transferMonths':len(m['transfers']),'employmentMonths':len(m['employment']),'scenarios':len(m['reportScenarios'])})
-    manifest={'version':1,'generated':data['generated'],'input_sha256':fingerprint(),'reports':entries}
+                        'sections':['lectura','prioridades','cuentas','transferencias','empleo','salarios','actividad','deudas','poblacion'],'populationYear':2022,'crimeYears':[2024,2025]})
+    manifest={'version':2,'generated':data['generated'],'input_sha256':fingerprint(),'reports':entries}
     (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'reports':len(entries),'pages':sorted({e['pages'] for e in entries}),'bytes':sum(e['bytes'] for e in entries)},ensure_ascii=False))
     return manifest

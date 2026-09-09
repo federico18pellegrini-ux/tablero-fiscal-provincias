@@ -173,6 +173,34 @@ def value(text):
         return text
 
 
+def apply_community(municipalities, path):
+    audit = json.loads(path.read_text(encoding='utf-8'))
+    records = audit['municipalities']
+    if len(records) != 135 or {r['id'] for r in records} != set(municipalities):
+        raise ValueError('Incomplete municipal population context')
+    for record in records:
+        m = municipalities[record['id']]
+        if m['municipio'] != record['municipality']:
+            raise ValueError('Municipality identity mismatch')
+        h, c, w = record['health'], record['crowding'], record['wage']
+        if h['populationPrivateDwellings'] != h['socialInsuranceOrPrivate'] + h['statePlan'] + h['withoutCoverage'] or abs(h['withoutCoveragePct'] - 100*h['withoutCoverage']/h['populationPrivateDwellings']) > 1e-8:
+            raise ValueError('Invalid health denominator')
+        if c['households'] != m['hogares_2022'] or not 0 <= c['over3PersonsPerRoomPct'] <= 100:
+            raise ValueError('Invalid crowding denominator')
+        for year, wage in w['annual'].items():
+            if abs(wage['real'] - m[f'salario_real_promedio_{year}_ars_jul26']) > .00001:
+                raise ValueError('Salary audit no longer matches dashboard')
+        for year, crime in record['crime'].items():
+            rows = crime['sourceRows']
+            if set(rows) != {'1','15','17','19'} or any(r['municipalityId'] != m['id'] or r['anio'] != year for r in rows.values()):
+                raise ValueError('Invalid crime identity or period')
+            if crime['robberies'] != float(rows['15']['cantidad_hechos']) + float(rows['17']['cantidad_hechos']) or crime['homicideVictims'] != float(rows['1']['cantidad_victimas']):
+                raise ValueError('Invalid crime aggregation')
+        m['community'] = {k: record[k] for k in ['health','crowding','wage']}
+        m['community']['crime'] = {y:{k:v for k,v in r.items() if k != 'sourceRows'} for y,r in record['crime'].items()}
+    return {k:v for k,v in audit.items() if k != 'municipalities'}
+
+
 def build(folder):
     base = read_csv(folder / 'rankings_base_135_municipios.csv')
     municipalities = {}
@@ -209,14 +237,27 @@ def build(folder):
         assert m['poblacion_2022'] > 0
     summary = json.loads((folder / 'resultados_verificados.json').read_text(encoding='utf-8'))
     controls = json.loads((folder / 'control_y_recaudacion.json').read_text(encoding='utf-8'))
-    data = {'version': 4, 'generated': '2026-09-07', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
+    community_path = ROOT / 'municipios/data/community_verified.json'
+    community = apply_community(municipalities, community_path)
+    debt_path = ROOT / 'municipios/data/debt_cec.json'
+    debt = json.loads(debt_path.read_text(encoding='utf-8'))
+    if len(debt['municipalities']) != 135 or {r['id'] for r in debt['municipalities']} != set(municipalities):
+        raise ValueError('Incomplete CEC municipal coverage')
+    for record in debt['municipalities']:
+        if record['municipality'] != municipalities[record['id']]['municipio'] or record['period'] != debt['period']:
+            raise ValueError('CEC geography or period mismatch')
+        if abs(record['peopleInArrearsPct'] - 100*record['peopleInArrears']/record['peopleWithDebt']) > 1e-8 or abs(record['debtInArrearsPct'] - 100*record['debtInArrearsARS']/record['debtARS']) > 1e-6:
+            raise ValueError('CEC denominators do not reconcile')
+        municipalities[record['id']]['community']['debt'] = {k:v for k,v in record.items() if k not in ['sourceRecord','sourceGeography']}
+    community['householdDebt']['externalMunicipalProvider'] = {k:v for k,v in debt.items() if k != 'municipalities'}
+    data = {'version': 5, 'generated': '2026-09-09', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
     target = ROOT / 'municipios/data/dashboard.json'
     target.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':'), allow_nan=False), encoding='utf-8')
     manifest = [{'file': str(p.relative_to(folder)).replace('\\', '/'), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in folder.rglob('*.csv')]
     overlay = repository_input(fiscal_path)
     transparency_input = repository_input(transparency_path)
     search_input = repository_input(search_path)
-    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': '2026-09-07', 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
+    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path)], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
     (target.parent / 'fuentes.csv').write_bytes((folder / 'fuentes_y_huellas.csv').read_bytes())
     fiscal_audit = json.loads(fiscal_path.read_text(encoding='utf-8'))
     with (target.parent / 'fuentes.csv').open('a', encoding='utf-8', newline='') as source_file:
@@ -227,6 +268,10 @@ def build(folder):
         for edition in transparency['editions']:
             document = edition['document']
             writer.writerow([f"asap-{edition['edition']}.pdf", document['url'], document['sha256'], document['bytes'], transparency['verifiedAt']])
+        for name, document in community['sources'].items():
+            writer.writerow([name, document['url'], document['sha256'], document['bytes'], community['verified']])
+        for document in debt['sources']:
+            writer.writerow([document['file'], document['url'], document['sha256'], document['bytes'], debt['verifiedAt']])
     # Serve a conventional deferred script on static hosts, independent of .mjs MIME configuration.
     bundle_app()
     print(f'{target.name}: {len(municipalities)} municipalities; {target.stat().st_size:,} bytes')

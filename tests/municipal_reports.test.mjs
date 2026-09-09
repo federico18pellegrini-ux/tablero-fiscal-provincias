@@ -48,13 +48,13 @@ function browserHarness(manifest,failed=false){
   return {context,element,prepare:()=>vm.runInContext(`prepareReports(${JSON.stringify(dashboardText)})`,context)};
 }
 const manifest=JSON.parse(fs.readFileSync(new URL('../municipios/reports/manifest.json',import.meta.url)));
-test('download follows the selected municipality, includes all views and uses a fingerprinted PDF',async()=>{
+test('download follows the selected municipality, contains the editorial analysis and uses a fingerprinted PDF',async()=>{
   const h=browserHarness(manifest);await h.prepare();
   assert.equal(h.element('export-report').download,'informe-general-las-heras.pdf');
   assert.match(h.element('export-report').href,/informe-06329\.pdf\?v=[a-f0-9]{64}$/);
   vm.runInContext("state.id='06805';updateReportLink(current());",h.context);
   assert.equal(h.element('export-report').download,'informe-tigre.pdf');
-  assert.match(h.element('report-scope').textContent,/Tigre.*Todas las vistas y series/);
+  assert.match(h.element('report-scope').textContent,/Tigre.*Análisis y datos principales/);
 });
 test('stale, duplicate, malformed or unavailable manifests cannot offer a wrong report',async()=>{
   const stale=structuredClone(manifest);stale.input_sha256['municipios/data/dashboard.json']=createHash('sha256').update('old data').digest('hex');
