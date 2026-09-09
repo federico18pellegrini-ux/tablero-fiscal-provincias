@@ -239,6 +239,17 @@ def build(folder):
     controls = json.loads((folder / 'control_y_recaudacion.json').read_text(encoding='utf-8'))
     community_path = ROOT / 'municipios/data/community_verified.json'
     community = apply_community(municipalities, community_path)
+    debt_path = ROOT / 'municipios/data/debt_cec.json'
+    debt = json.loads(debt_path.read_text(encoding='utf-8'))
+    if len(debt['municipalities']) != 135 or {r['id'] for r in debt['municipalities']} != set(municipalities):
+        raise ValueError('Incomplete CEC municipal coverage')
+    for record in debt['municipalities']:
+        if record['municipality'] != municipalities[record['id']]['municipio'] or record['period'] != debt['period']:
+            raise ValueError('CEC geography or period mismatch')
+        if abs(record['peopleInArrearsPct'] - 100*record['peopleInArrears']/record['peopleWithDebt']) > 1e-8 or abs(record['debtInArrearsPct'] - 100*record['debtInArrearsARS']/record['debtARS']) > 1e-6:
+            raise ValueError('CEC denominators do not reconcile')
+        municipalities[record['id']]['community']['debt'] = {k:v for k,v in record.items() if k not in ['sourceRecord','sourceGeography']}
+    community['householdDebt']['externalMunicipalProvider'] = {k:v for k,v in debt.items() if k != 'municipalities'}
     data = {'version': 5, 'generated': '2026-09-09', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
     target = ROOT / 'municipios/data/dashboard.json'
     target.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':'), allow_nan=False), encoding='utf-8')
@@ -246,7 +257,7 @@ def build(folder):
     overlay = repository_input(fiscal_path)
     transparency_input = repository_input(transparency_path)
     search_input = repository_input(search_path)
-    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path)], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
+    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path)], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
     (target.parent / 'fuentes.csv').write_bytes((folder / 'fuentes_y_huellas.csv').read_bytes())
     fiscal_audit = json.loads(fiscal_path.read_text(encoding='utf-8'))
     with (target.parent / 'fuentes.csv').open('a', encoding='utf-8', newline='') as source_file:
@@ -259,6 +270,8 @@ def build(folder):
             writer.writerow([f"asap-{edition['edition']}.pdf", document['url'], document['sha256'], document['bytes'], transparency['verifiedAt']])
         for name, document in community['sources'].items():
             writer.writerow([name, document['url'], document['sha256'], document['bytes'], community['verified']])
+        for document in debt['sources']:
+            writer.writerow([document['file'], document['url'], document['sha256'], document['bytes'], debt['verifiedAt']])
     # Serve a conventional deferred script on static hosts, independent of .mjs MIME configuration.
     bundle_app()
     print(f'{target.name}: {len(municipalities)} municipalities; {target.stat().st_size:,} bytes')

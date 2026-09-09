@@ -99,7 +99,7 @@ def source_catalog():
         'ipc':source_link('https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_08_26.xls','INDEC, IPC nacional, julio de 2026'),
         'transfers':source_link('https://www.gba.gob.ar/node/11822','Ministerio de Economía PBA, transferencias municipales 2025-2026'),
         'banks':'DPE / BCRA, 2023-2024: '+source_link(find('bancos-1.xlsx'),'préstamos')+', '+source_link(find('bancos-2.xlsx'),'depósitos')+' y '+source_link(find('bancos-0.xlsx'),'sucursales'),
-        'credit':source_link('https://www.bcra.gob.ar/indicadores-inclusion-financiera/','BCRA, inclusión financiera'),
+        'credit':source_link('https://mapadeladeuda.ar/','CEC / FES, Mapa de la Deuda, sobre Central de Deudores del BCRA, julio de 2026'),
         'health':source_link('https://anuario2024.estadistica.ec.gba.gov.ar/wp-content/uploads/2026/04/SALUD-Y-SOC3.xlsx','INDEC / DPE, cobertura de salud, Censo 2022'),
         'crowding':source_link('https://anuario2024.estadistica.ec.gba.gov.ar/wp-content/uploads/2025/12/CARACT-HOG-12.xlsx','INDEC / DPE, personas por cuarto, Censo 2022'),
         'crime':source_link('https://cloud-snic.minseg.gob.ar/Bases/SNIC/snic-departamentos-anual.csv','Ministerio de Seguridad Nacional, SNIC 2024-2025'),
@@ -379,8 +379,23 @@ class Report:
             self.p(f"Al descontar la inflación entre los cierres de 2023 y 2024, los préstamos cambiaron {pct(m['prestamos_real_cambio_2023_2024_pct'],2)} y los depósitos, {pct(m['depositos_real_cambio_2023_2024_pct'],2)}. En el cuarto trimestre de 2024 había {number(m['prestamos_sobre_depositos_2024_pct'],2)} pesos prestados por cada $100 depositados.")
         else:self.p('Los saldos bancarios disponibles no permiten calcular una variación comparable ni la relación entre préstamos y depósitos para este municipio. Las celdas sin dato no significan que el monto sea cero.')
         self.p('Los saldos se asignan por la localización financiera informada y pueden incluir operaciones de empresas y personas de otros lugares. No permiten afirmar que los ahorros de los vecinos se prestan dentro o fuera del municipio. Los valores reservados quedan como «Sin dato».','small')
-        self.h('¿Cuánto deben las familias del municipio?')
-        self.p('Las bases abiertas del BCRA revisadas publican indicadores de personas con crédito por provincia. No encontramos una serie municipal comparable de deuda de los hogares o mora, es decir, atrasos en los pagos. Los préstamos de la tabla anterior no permiten completar ese dato: incluyen otros usos y no identifican exclusivamente a familias residentes.')
+        self.p('Para mirar las deudas de las personas se utiliza el relevamiento territorial CEC/FES de la página siguiente, con una base y un período distintos de estos saldos bancarios.')
+    def debt(self):
+        d=self.m['community']['debt'];self.section('Deudas de las personas',sources=self.refs('credit'))
+        self.p('RELEVAMIENTO EXTERNO / JULIO DE 2026','small')
+        self.p(f"El Mapa de la Deuda del CEC/FES ubica <b>{number(d['peopleWithDebt'],0)} personas con deuda</b> en este municipio. De ellas, <b>{number(d['peopleInArrears'],0)} figuran en mora</b>: {pct(d['peopleInArrearsPct'],1)} del grupo con deuda informada.")
+        self.p('<b>Tener deuda no significa estar atrasado.</b> Una persona puede usar una tarjeta o pagar un préstamo al día. Aquí se considera mora a las situaciones 3, 4 y 5 de la clasificación utilizada por el relevamiento, asociadas a atrasos de unos tres meses o más. Los atrasos más cortos quedan fuera de este indicador.')
+        self.table(['Personas y montos del relevamiento','Julio de 2026'],[
+            ('Personas con deuda informada',number(d['peopleWithDebt'],0)),('Personas en mora',number(d['peopleInArrears'],0)),
+            ('Personas en mora / personas con deuda',pct(d['peopleInArrearsPct'],2)),
+            ('Deuda total, millones de pesos corrientes',money(d['debtARS'],2)),('Deuda en mora, millones de pesos corrientes',money(d['debtInArrearsARS'],2)),
+            ('Deuda en mora / deuda total',pct(d['debtInArrearsPct'],2)),('Deuda promedio por persona con deuda, pesos corrientes',money(d['averageDebtARS'],0,False))],[CONTENT*.7,CONTENT*.3])
+        self.h('Dos porcentajes que responden preguntas distintas')
+        self.p(f"<b>{pct(d['peopleInArrearsPct'],1)} de las personas con deuda está en mora.</b> Ese porcentaje cuenta personas, no pesos. <b>{pct(d['debtInArrearsPct'],1)} del monto adeudado está en mora.</b> Ese segundo porcentaje mide dinero. Pueden ser diferentes porque no todas las personas deben el mismo monto.")
+        self.p('Ninguno de los dos porcentajes se calcula sobre toda la población municipal. Tampoco cuentan hogares: una misma familia puede tener varias personas con deuda. El promedio de deuda divide el monto total por las personas con deuda informada; no indica cuánto debe un vecino típico.')
+        self.h('Qué aporta a la gestión')
+        self.p('Los pagos atrasados permiten reconocer una presión sobre las finanzas de las personas alcanzadas por el relevamiento. Conviene contrastarla con empleo, ingresos y consultas de defensa del consumidor. Puede orientar información sobre crédito y atención de reclamos; no permite atribuir por sí sola la mora a una causa ni estimar cuánto caerá el consumo local.')
+        self.p('<b>Alcance del dato.</b> Procesamiento y asignación territorial del CEC/FES a partir de la Central de Deudores del BCRA; no es una serie municipal publicada directamente por el Banco Central. Se incluyen todas las entidades, edades y géneros del relevamiento, que excluye sociedades de garantía recíproca y fondos públicos de garantía. La localización se toma del proveedor: no se verificaron domicilios individuales. No cubre toda la deuda informal ni demuestra que los préstamos hayan financiado solamente consumo.','small')
     def community(self):
         m=self.m;c=m['community'];h=c['health'];crime=c['crime'];self.section('La población y la vida cotidiana',sources=self.refs('population','nbi','health','crowding','crime'))
         self.table(['Población y hogares','Dato'],[
@@ -401,7 +416,7 @@ class Report:
         self.p(f"Se registraron {number(b,0)} robos en 2025, frente a {number(a,0)} en 2024. Conviene contrastar el cambio con zonas, horarios y canales de denuncia antes de definir medidas. Estos registros no captan todos los delitos ni miden la sensación de inseguridad. Más denuncias también pueden modificar el total.")
         self.p('Las tasas son las publicadas por el SNIC, con su población de referencia; no se recalculan con el Censo 2022. En municipios pequeños, pocos hechos pueden mover mucho la tasa. Se muestran junto a las cantidades para evitar lecturas engañosas.','small')
     def build(self):
-        for method in [self.overview,self.priorities,self.accounts,self.resources,self.employment,self.wages,self.territory,self.community]:method()
+        for method in [self.overview,self.priorities,self.accounts,self.resources,self.employment,self.wages,self.territory,self.debt,self.community]:method()
         doc=BaseDocTemplate(str(self.path),pagesize=A4,rightMargin=MARGIN,leftMargin=MARGIN,topMargin=45,bottomMargin=104,
                               title=f'{self.m["municipio"]} - Informe municipal completo',author='Federico Pellegrini',pageCompression=1)
         def deterministic_canvas(*args,**kwargs):kwargs['invariant']=1;return Canvas(*args,**kwargs)
@@ -418,7 +433,7 @@ def build(output=OUTPUT, municipality=None):
     for m in chosen:
         filename=f'informe-{m["id"]}.pdf';path=output/filename;pages=Report(path,m,data,geography).build()
         entries.append({'id':m['id'],'municipality':m['municipio'],'file':filename,'pages':pages,'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
-                        'sections':['lectura','prioridades','cuentas','transferencias','empleo','salarios','actividad','poblacion'],'populationYear':2022,'crimeYears':[2024,2025]})
+                        'sections':['lectura','prioridades','cuentas','transferencias','empleo','salarios','actividad','deudas','poblacion'],'populationYear':2022,'crimeYears':[2024,2025]})
     manifest={'version':2,'generated':data['generated'],'input_sha256':fingerprint(),'reports':entries}
     (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'reports':len(entries),'pages':sorted({e['pages'] for e in entries}),'bytes':sum(e['bytes'] for e in entries)},ensure_ascii=False))

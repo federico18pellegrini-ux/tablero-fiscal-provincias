@@ -30,7 +30,7 @@ class MunicipalReports(unittest.TestCase):
                 self.assertEqual(len(pdf.pages),r['pages'])
                 self.assertEqual(pdf.metadata.author,'Federico Pellegrini')
                 self.assertIn(r['municipality'],pdf.pages[0].extract_text())
-                self.assertEqual(r['sections'],['lectura','prioridades','cuentas','transferencias','empleo','salarios','actividad','poblacion'])
+                self.assertEqual(r['sections'],['lectura','prioridades','cuentas','transferencias','empleo','salarios','actividad','deudas','poblacion'])
                 self.assertEqual(r['crimeYears'],[2024,2025])
 
     def test_general_las_heras_fiscal_money_and_price_bases(self):
@@ -67,7 +67,9 @@ class MunicipalReports(unittest.TestCase):
             self.assertTrue(any(link.startswith('https://') and 'tablero.federico' not in link for link in links))
         self.assertIn('Sin dato',self.text)
         self.assertIn('Los sectores reservados',self.text)
-        self.assertIn('No encontramos una serie municipal comparable',' '.join(self.text.split()))
+        self.assertIn('no se verificaron domicilios individuales',' '.join(self.text.split()))
+        for value in ['13.565','4.035','29,75%','22,81%','$52.962,48','$12.083,31']:
+            self.assertIn(value,self.text)
 
     def test_execution_and_different_periods_do_not_become_comparable_deficits(self):
         tigre='\n'.join(p.extract_text() for p in PdfReader(OUTPUT/'informe-06805.pdf').pages)

@@ -230,3 +230,22 @@ test('census context uses its own denominators and preserves official crime cate
   assert.equal(Math.round(h.wage.annual['2025'].real),2117275);
   for(const [id,original] of [['06658','06058'],['06218','06217']])assert.equal(audit.municipalities.find(r=>r.id===id).crime['2025'].sourceRows['1'].departamento_id,original);
 });
+
+
+test('external debt aggregates preserve attribution, persons and money denominators and thousand-peso units',()=>{
+ const audit=JSON.parse(fs.readFileSync(new URL('../municipios/data/debt_cec.json',import.meta.url)));
+ assert.equal(audit.period,'2026-07');assert.equal(audit.populationDenominator,false);
+ assert.match(audit.classification,/CEC/);assert.match(audit.verificationScope,/no se verificaron domicilios/);
+ assert.equal(audit.municipalities.length,135);
+ for(const m of rows){
+  const d=m.community.debt,raw=audit.municipalities.find(r=>r.id===m.id).sourceRecord;
+  assert.equal(d.period,'2026-07');assert.ok(d.peopleInArrears>=5&&d.peopleInArrears<=d.peopleWithDebt);
+  assert.equal(d.debtARS,raw.monto_total*1000);assert.equal(d.debtInArrearsARS,raw.monto_mora*1000);
+  assert.equal(d.peopleInArrearsPct,100*d.peopleInArrears/d.peopleWithDebt);
+  assert.ok(Math.abs(d.debtInArrearsPct-100*d.debtInArrearsARS/d.debtARS)<.000001);
+ }
+ assert.equal(rows.reduce((sum,m)=>sum+m.community.debt.peopleWithDebt,0),7395124);
+ const h=rows.find(m=>m.id==='06329').community.debt;
+ assert.equal(h.peopleWithDebt,13565);assert.equal(h.peopleInArrears,4035);assert.equal(h.debtARS,52962481000);
+ assert.ok(Math.abs(h.peopleInArrearsPct-h.debtInArrearsPct)>6);
+});
