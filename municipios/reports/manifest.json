@@ -2,9 +2,9 @@
   "version": 2,
   "generated": "2026-09-09",
   "input_sha256": {
-    "municipios/data/dashboard.json": "f0d0d31e646c4575224fc49433cbdd2a1045a16e9e0c851668406fa6ae2e447f",
+    "municipios/data/dashboard.json": "d85c28d2a4cd5226654c9d15997e0fc18b0dd12dd154b9740ad9065a27214b82",
     "municipios/data/geografia_original.geojson": "877e30549e9d73487828d158584981635f7746739412669656bb3dfa4645173f",
-    "municipios/data/fuentes.csv": "2ec8c90fd80b130d15449d5b31c3865c3d1af262ecefdb3eacab906e61f9e2e3",
+    "municipios/data/fuentes.csv": "e3a41688a17fbbcdbf83688c5a612d7760731f298f0f040a8dd8a491f0642e72",
     "scripts_export_municipal_reports.py": "22e741473bb3c823ae4264d168745a3bf872b72cfc5f414a0623d39b7245d0fb",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
@@ -3135,8 +3135,8 @@
       "municipality": "25 de Mayo",
       "file": "informe-06854.pdf",
       "pages": 9,
-      "bytes": 56101,
-      "sha256": "94c2f0fd2e747993b9048e66250f6a26965f7b2d56ba6ec4be11bad277e1117c",
+      "bytes": 57070,
+      "sha256": "46f277c6118eabdd95883438e4f5527d4807f0c2667961351a7113e60d49a85e",
       "sections": [
         "lectura",
         "prioridades",

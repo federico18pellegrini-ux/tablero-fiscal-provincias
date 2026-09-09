@@ -75,3 +75,53 @@ export function readState(search, municipalities, savedId) {
   const p=new URLSearchParams(search), id=p.get('municipio') || savedId;
   return {id:municipalities.some(m=>m.id===id)?id:'06805',view:VALID_VIEWS.includes(p.get('vista'))?p.get('vista'):'panorama',metric:METRICS.some(m=>m.id===p.get('indicador'))?p.get('indicador'):'recursos'};
 }
+
+export function adjustPrice(value, period, base, indices) {
+  if (!finite(value) || !finite(indices?.[period]) || indices[period] <= 0 || !finite(indices?.[base]) || indices[base] <= 0) return null;
+  return value * indices[base] / indices[period];
+}
+
+export function priceComparisons(m, mode, base, deflator) {
+  const real = mode === 'real', ix = deflator.indices;
+  const atBase = value => real ? adjustPrice(value, '2026-07', base, ix) : value;
+  const stock = (value, period) => real ? adjustPrice(value, period, base, ix) : value;
+  const rows = [];
+  for (const [prefix, label] of [['transferencias','Transferencias provinciales'],['copart','Coparticipación bruta']]) {
+    const key = year => `${prefix}_${year}_ene_jul_ars${real ? '_jul26' : ''}`;
+    rows.push({id:prefix,label,previous:atBase(m[key(2025)]),current:atBase(m[key(2026)]),previousPeriod:'Enero–julio de 2025',currentPeriod:'Enero–julio de 2026',unit:'millions',method:'El ajuste real se hace mes a mes, antes de sumar los siete meses.'});
+  }
+  const wage = m.community.wage.annual;
+  rows.push({id:'salario',label:'Salario bruto mensual promedio',previous:atBase(wage['2024'][real?'real':'nominal']),current:atBase(wage['2025'][real?'real':'nominal']),previousPeriod:'Promedio de 2024',currentPeriod:'Promedio de 2025',unit:'money',method:'Para calcular el promedio real se ajusta cada mes y luego se promedian los doce meses. Incluye aguinaldo y otros pagos; no es salario de bolsillo.'});
+  for (const [prefix,label] of [['prestamos','Préstamos bancarios'],['depositos','Depósitos bancarios']]) {
+    rows.push({id:prefix,label,previous:stock(m[`${prefix}_2023_ars`],'2023-12'),current:stock(m[`${prefix}_2024_ars`],'2024-12'),previousPeriod:'Cierre de 2023',currentPeriod:'Cierre de 2024',unit:'millions',method:'El ajuste real de los saldos usa el IPC del cierre. Localización bancaria: no identifica exclusivamente residentes ni pymes.'});
+  }
+  rows.push({id:'deuda-personas',label:'Deuda registrada de las personas',previous:null,current:stock(m.community.debt.debtARS,m.community.debt.period),previousPeriod:null,currentPeriod:'Julio de 2026',unit:'millions',method:'Relevamiento externo CEC/FES basado en el BCRA. Hay un solo corte incorporado: no permite calcular una variación. No es deuda del gobierno municipal.'});
+  return rows.map(row=>({...row,change:finite(row.previous)&&row.previous!==0&&finite(row.current)?(row.current/row.previous-1)*100:null}));
+}
+
+export function municipalContextExportRows(m) {
+  const rows=[], add=(label,value,unit,period,note)=>rows.push([m.municipio,label,value??null,unit,period,note]);
+  add('Población',m.poblacion_2022,'personas','Censo 2022','INDEC/DPE.');
+  add('Superficie',m.superficie_km2,'km²','Base territorial DPE','No es superficie urbanizada.');
+  add('Total de hogares',m.hogares_2022,'hogares','Censo 2022','Denominador de NBI y hacinamiento.');
+  for(const s of m.sectors)add('Empleo privado formal: '+s.name,s.jobs,'puestos','2025-12','OEDE; lugar del establecimiento. Los registros reservados quedan vacíos.');
+  for(const y of [2021,2022,2023])add('Producto bruto municipal',m[`pbg_constante_2004_${y}_ars`],'ARS constantes de 2004',String(y),'DPE; producción del territorio, no ingresos municipales.');
+  for(const y of [2023,2024])for(const [key,label] of [['prestamos','Préstamos bancarios'],['depositos','Depósitos bancarios']])add(label,m[`${key}_${y}_ars`],'ARS corrientes',`Cierre ${y}`,'DPE/BCRA; localización financiera, no deuda exclusiva de residentes.');
+  for(const [y,w] of Object.entries(m.community.wage.annual)){
+    add('Salario bruto mensual promedio',w.nominal,'ARS corrientes',y,'OEDE/SIPA; promedio de 12 meses, incluye aguinaldo.');
+    add('Salario bruto mensual promedio ajustado',w.real,'ARS de julio de 2026',y,'OEDE/SIPA e INDEC; ajuste mensual antes de promediar.');
+  }
+  for(const [p,w] of Object.entries(m.community.wage.months)){
+    add('Salario bruto mensual',w.nominal,'ARS corrientes',p,'OEDE/SIPA; bruto, incluye pagos estacionales.');
+    add('Salario bruto mensual ajustado',w.real,'ARS de julio de 2026',p,'OEDE/SIPA e IPC nacional INDEC.');
+  }
+  const h=m.community.health;
+  add('Personas sin obra social, prepaga ni plan estatal',h.withoutCoverage,'personas','Censo 2022','DPE/INDEC; no significa quedar sin acceso al sistema público.');
+  add('Población en viviendas particulares',h.populationPrivateDwellings,'personas','Censo 2022','Denominador del indicador de cobertura de salud.');
+  add('Sin cobertura de salud',h.withoutCoveragePct,'%','Censo 2022','Sobre población en viviendas particulares.');
+  add('Hogares con más de tres personas por cuarto',m.community.crowding.over3PersonsPerRoomPct,'%','Censo 2022','DPE/INDEC; denominador: hogares.');
+  for(const [y,c] of Object.entries(m.community.crime))for(const [key,label,unit] of [['homicideVictims','Víctimas de homicidio doloso','personas'],['homicideRate','Tasa de víctimas de homicidio doloso','por 100.000 habitantes'],['robberies','Robos registrados','hechos'],['robberyRate','Tasa de robos registrados','por 100.000 habitantes'],['thefts','Hurtos registrados','hechos'],['theftRate','Tasa de hurtos registrados','por 100.000 habitantes']])add(label,c[key],unit,y,'SNIC; hechos registrados, tasas oficiales con su propia población de referencia.');
+  const d=m.community.debt;
+  for(const [key,label,unit] of [['peopleWithDebt','Personas con deuda','personas'],['peopleInArrears','Personas en mora','personas'],['peopleInArrearsPct','Personas en mora sobre personas con deuda','%'],['debtARS','Deuda total registrada de personas','ARS corrientes'],['debtInArrearsARS','Deuda de personas en mora','ARS corrientes'],['debtInArrearsPct','Deuda en mora sobre deuda total','%'],['averageDebtARS','Deuda promedio por persona con deuda','ARS corrientes']])add(label,d[key],unit,d.period,'CEC/FES, Mapa de la Deuda sobre base BCRA. Localización del proveedor; no describe a toda la población ni a hogares.');
+  return rows;
+}

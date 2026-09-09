@@ -7,9 +7,9 @@
   <meta name="description" content="Una mirada clara sobre los 135 municipios bonaerenses. Recursos, empleo, rankings y escenarios para la gestión municipal. Federico Pellegrini.">
   <title>Municipios · Federico Pellegrini</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260909-1">
+  <link rel="stylesheet" href="styles.css?v=20260909-2">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20260909-1"></script>
+  <script defer src="app.js?v=20260909-2"></script>
   <script defer src="../analytics.js?v=20260907-2"></script>
 </head>
 <body>
@@ -63,9 +63,21 @@
       <section id="recursos" class="view" aria-label="Recursos municipales" hidden>
         <div class="section-heading"><div><div class="eyebrow">Recursos para gestionar</div><h2>Lo que llega y lo que cambia</h2><p>Transferencias provinciales, expresadas en pesos de julio de 2026.</p></div></div>
         <div id="resource-stats" class="stats-grid"></div>
+        <p class="resource-shortcuts"><a class="button button-quiet" href="#price-panel">Comparar pesos corrientes y reales ↓</a><a class="text-button" href="cobertura.html">Ver qué datos faltan →</a></p>
         <div class="two-columns"><section class="panel"><div class="panel-heading"><div><h3>Las transferencias, mes a mes</h3><p class="small-note">Enero a julio · millones de pesos de julio de 2026</p></div></div><div class="chart-key"><span><i class="key previous"></i>2025</span><span><i class="key current"></i>2026</span></div><div id="transfers-chart" class="chart"></div><p class="chart-caption">La comparación descuenta la inflación de cada mes. Tocá las barras para ver los importes.</p></section>
         <section class="panel"><div class="eyebrow">Abrir la diferencia</div><h3>¿Por qué cambió la coparticipación?</h3><p class="small-note">Enero–julio 2026 frente a 2025 · pesos constantes</p><div id="decomposition"></div><p class="chart-caption">Separamos el cambio del total repartido y el de la participación del municipio. Es una descomposición contable.</p></section></div>
         <section class="province-revenue panel"><div><div class="eyebrow">El vínculo con la provincia</div><h3>La recaudación también llega al municipio</h3><p>La masa coparticipable combina impuestos provinciales y recursos federales. Una caída de la recaudación propia no se traslada en idéntico porcentaje a todas las transferencias.</p></div><div id="revenue-stats" class="revenue-stats"></div><button class="text-button" data-go="simular">Probar un escenario →</button></section>
+        <section class="panel section-block price-panel" id="price-panel" aria-label="Comparar pesos y poder de compra">
+          <div class="eyebrow">Pesos e inflación</div><h2>¿Subió el monto o también su poder de compra?</h2>
+          <p>Los pesos corrientes son los importes de cada fecha. Los pesos reales descuentan la inflación para comparar cuánto permiten comprar. Elegí cómo mirar estos seis indicadores.</p>
+          <div class="choices" role="group" aria-label="Unidad de este comparador"><button data-price-mode="nominal" aria-pressed="false">Pesos corrientes</button><button data-price-mode="real" aria-pressed="true">Ajustados por inflación</button></div>
+          <p class="price-label">Expresar los importes ajustados a precios de:</p><div class="choices" role="group" aria-label="Mes base de los pesos constantes"><button data-price-base="2024-12" aria-pressed="false">Diciembre 2024</button><button data-price-base="2025-12" aria-pressed="false">Diciembre 2025</button><button data-price-base="2026-07" aria-pressed="true">Julio 2026</button></div>
+          <p id="price-current-unit" class="price-unit" aria-live="polite"></p><div id="price-cards" class="price-grid"></div>
+          <button class="button button-quiet" id="download-prices">Descargar esta comparación ↓</button>
+          <div class="price-calculator"><h3>Pasar un importe a pesos de otra fecha</h3><p>Por ejemplo: cuánto se necesita en julio de 2026 para comprar lo mismo que con $100.000 en diciembre de 2025.</p><div class="price-inputs"><label>Importe en pesos<input id="price-amount" type="number" step="any" value="100000"></label><label>Mes del importe<input id="price-from" type="month" value="2025-12"></label><label>Mes al que se lleva<input id="price-to" type="month" value="2026-07"></label></div><p id="price-calculation" class="price-calculation" aria-live="polite"></p></div>
+          <p><strong>Las cuentas fiscales acumuladas siguen en pesos corrientes.</strong> Para ajustarlas con precisión hace falta saber en qué mes se cobró o se registró cada importe. Aplicar el IPC del cierre a todo el semestre puede distorsionar el resultado. El producto municipal ya está a precios constantes de 2004 y conserva esa metodología.</p>
+          <p class="data-sources">Deflactor: <a href="https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_08_26.xls" target="_blank" rel="noopener">IPC nacional, nivel general, INDEC</a>. Es una referencia general de poder de compra; no mide exactamente el costo de las obras o de cada servicio municipal. <a href="metodologia.html#deflactor">Ver cálculo y alcance</a> · <a id="municipal-coverage-link" href="cobertura.html">Qué datos faltan en este municipio</a></p>
+        </section>
         <section class="panel fiscal-panel" id="fiscal-panel"></section>
       </section>
       <section id="empleo" class="view" aria-label="Economía y empleo municipal" hidden>
@@ -81,7 +93,7 @@
         <div class="simulation-layout"><section class="simulation-controls panel"><div class="eyebrow">Mové el escenario</div><label for="shock">Caída de la masa coparticipable</label><div class="shock-value"><output id="shock-output" for="shock">10</output><span>%</span></div><input id="shock" type="range" min="0" max="20" step="0.5" value="10"><div class="range-labels"><span>Sin caída</span><span>20%</span></div><div id="sim-live" class="sim-live" role="status"></div><div class="choices" role="group" aria-label="Escenarios de caída"><button data-shock="5">5%</button><button data-shock="10" aria-pressed="true">10%</button><button data-shock="15">15%</button></div><p>Se aplica a toda la masa elegible, con la participación municipal constante. Los demás fondos quedan sin cambios.</p><a class="text-button" href="metodologia.html#simulador">Cómo se calcula ↗</a></section><section class="simulation-result"><div class="eyebrow" id="sim-name"></div><h3>El impacto sobre los recursos</h3><div id="simulation-stats" class="stats-grid"></div><div id="simulation-bars"></div><p class="chart-caption">Base: coparticipación bruta observada en enero–julio de 2026, expresada en pesos de julio. Población del Censo 2022.</p></section></div>
         <section class="editorial-reading"><span class="eyebrow">Qué significa para la gestión</span><h3 id="simulation-headline"></h3><p id="simulation-reading"></p><p>Para traducir esta pérdida a porcentaje del presupuesto o a días de salarios, todavía hay que completar los ingresos y gastos municipales del mismo período. La coparticipación es una parte de los recursos del municipio.</p></section>
       </section>
-      <footer class="site-footer"><div><strong>Federico Pellegrini</strong><span>Entre Mates y Mercados · Datos para entender y decidir.</span></div><div><a href="metodologia.html">Criterios y fechas</a><button class="text-button" id="download-municipality">Descargar datos ↓</button><a href="../privacidad.html">Privacidad</a></div><p>135 municipios · Cada indicador conserva su período. Los datos faltantes no se reemplazan por cero.</p></footer>
+      <footer class="site-footer"><div><strong>Federico Pellegrini</strong><span>Entre Mates y Mercados · Datos para entender y decidir.</span></div><div><a href="metodologia.html">Criterios y fechas</a><a href="cobertura.html">Qué datos faltan</a><button class="text-button" id="download-municipality">Descargar datos ↓</button><a href="../privacidad.html">Privacidad</a></div><p>135 municipios · Cada indicador conserva su período. Los datos faltantes no se reemplazan por cero.</p></footer>
     </div>
   </main>
   <div id="toast" class="toast" role="status" hidden></div>

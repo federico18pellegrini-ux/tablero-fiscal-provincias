@@ -1,0 +1,1748 @@
+{
+  "generated": "2026-09-09",
+  "scope": "Datos incorporados; no certifica que un municipio no publique información en otro sitio.",
+  "commonPending": [
+    "Caja de libre disponibilidad, luego de obligaciones y fondos afectados.",
+    "Stock y calendario futuro de deuda del gobierno municipal; no es la deuda de las personas.",
+    "Ingresos y gastos fiscales mensuales para ajustar cada flujo por inflación.",
+    "Presupuesto vigente comparable: solo hay un total presupuestario incorporado para Tigre."
+  ],
+  "municipalities": [
+    {
+      "id": "06007",
+      "municipio": "Adolfo Alsina",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06014",
+      "municipio": "Adolfo Gonzales Chaves",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06021",
+      "municipio": "Alberti",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06028",
+      "municipio": "Almirante Brown",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06077",
+      "municipio": "Arrecifes",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06035",
+      "municipio": "Avellaneda",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Agricultura, ganaderia y pesca"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06042",
+      "municipio": "Ayacucho",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Gasto en personal: junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06049",
+      "municipio": "Azul",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2026-03-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2026-03-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06056",
+      "municipio": "Bahía Blanca",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06063",
+      "municipio": "Balcarce",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06070",
+      "municipio": "Baradero",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2026-03-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2026-03-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06084",
+      "municipio": "Benito Juárez",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06091",
+      "municipio": "Berazategui",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06098",
+      "municipio": "Berisso",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Agricultura, ganaderia y pesca"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06105",
+      "municipio": "Bolívar",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06112",
+      "municipio": "Bragado",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-08-31",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06119",
+      "municipio": "Brandsen",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2026-03-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2026-03-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06126",
+      "municipio": "Campana",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06134",
+      "municipio": "Cañuelas",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06140",
+      "municipio": "Capitán Sarmiento",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06147",
+      "municipio": "Carlos Casares",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06154",
+      "municipio": "Carlos Tejedor",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06161",
+      "municipio": "Carmen de Areco",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06168",
+      "municipio": "Castelli",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06210",
+      "municipio": "Chacabuco",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06218",
+      "municipio": "Chascomús",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
+        "Crecimiento de población 2010–2022: límites territoriales sin homologar"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06224",
+      "municipio": "Chivilcoy",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2025-12-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06175",
+      "municipio": "Colón",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06182",
+      "municipio": "Coronel de Marina L. Rosales",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Agricultura, ganaderia y pesca"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Los enlaces consultados no permitieron acceder a una cuenta verificable. La cobertura sigue pendiente; no se interpreta como ausencia de publicación."
+    },
+    {
+      "id": "06189",
+      "municipio": "Coronel Dorrego",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06196",
+      "municipio": "Coronel Pringles",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06203",
+      "municipio": "Coronel Suárez",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06231",
+      "municipio": "Daireaux",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2024-06-30",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2024-06-30. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06238",
+      "municipio": "Dolores",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
+    },
+    {
+      "id": "06245",
+      "municipio": "Ensenada",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2025-12-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06252",
+      "municipio": "Escobar",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2025-12-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06260",
+      "municipio": "Esteban Echeverría",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06266",
+      "municipio": "Exaltación de la Cruz",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06270",
+      "municipio": "Ezeiza",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2025-12-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06274",
+      "municipio": "Florencio Varela",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06277",
+      "municipio": "Florentino Ameghino",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06280",
+      "municipio": "General Alvarado",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06287",
+      "municipio": "General Alvear",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06294",
+      "municipio": "General Arenales",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
+    },
+    {
+      "id": "06301",
+      "municipio": "General Belgrano",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06308",
+      "municipio": "General Guido",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Empleo industrial diciembre de 2025: reservado o sin dato",
+        "Cambio industrial 2023–2025: falta al menos un corte publicado",
+        "Sectores de empleo con reserva o sin cifra: Industria manufacturera, Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06315",
+      "municipio": "General Juan Madariaga",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06322",
+      "municipio": "General La Madrid",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2025-12-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Cambio industrial 2023–2025: falta al menos un corte publicado",
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06329",
+      "municipio": "General Las Heras",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06336",
+      "municipio": "General Lavalle",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2025-12-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06343",
+      "municipio": "General Paz",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06351",
+      "municipio": "General Pinto",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06357",
+      "municipio": "General Pueyrredon",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06364",
+      "municipio": "General Rodríguez",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06371",
+      "municipio": "General San Martín",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06385",
+      "municipio": "General Viamonte",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06392",
+      "municipio": "General Villegas",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06399",
+      "municipio": "Guaminí",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06406",
+      "municipio": "Hipólito Yrigoyen",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Empleo industrial diciembre de 2025: reservado o sin dato",
+        "Cambio industrial 2023–2025: falta al menos un corte publicado",
+        "Sectores de empleo con reserva o sin cifra: Industria manufacturera, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06408",
+      "municipio": "Hurlingham",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06410",
+      "municipio": "Ituzaingó",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2024-12-30",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2024-12-30. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06412",
+      "municipio": "José C. Paz",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Agricultura, ganaderia y pesca"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06413",
+      "municipio": "Junín",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06420",
+      "municipio": "La Costa",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06427",
+      "municipio": "La Matanza",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06441",
+      "municipio": "La Plata",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2026-03-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2026-03-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06434",
+      "municipio": "Lanús",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06448",
+      "municipio": "Laprida",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "La consulta de situación financiera no devolvió documentos para 2025 ni 2026. La cuenta sigue pendiente de verificación."
+    },
+    {
+      "id": "06455",
+      "municipio": "Las Flores",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06462",
+      "municipio": "Leandro N. Alem",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06466",
+      "municipio": "Lezama",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2024-12-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
+        "Crecimiento de población 2010–2022: límites territoriales sin homologar"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2024-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06469",
+      "municipio": "Lincoln",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "La sección de estado financiero consultada mostraba «Contenido en preparación». No se encontró allí una cuenta para incorporar."
+    },
+    {
+      "id": "06476",
+      "municipio": "Lobería",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06483",
+      "municipio": "Lobos",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06490",
+      "municipio": "Lomas de Zamora",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06497",
+      "municipio": "Luján",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06505",
+      "municipio": "Magdalena",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Los enlaces consultados no permitieron acceder a una cuenta verificable. La cobertura sigue pendiente; no se interpreta como ausencia de publicación."
+    },
+    {
+      "id": "06511",
+      "municipio": "Maipú",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
+    },
+    {
+      "id": "06515",
+      "municipio": "Malvinas Argentinas",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06518",
+      "municipio": "Mar Chiquita",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06525",
+      "municipio": "Marcos Paz",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06532",
+      "municipio": "Mercedes",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06539",
+      "municipio": "Merlo",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06547",
+      "municipio": "Monte",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06553",
+      "municipio": "Monte Hermoso",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06560",
+      "municipio": "Moreno",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2026-03-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2026-03-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06568",
+      "municipio": "Morón",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Agricultura, ganaderia y pesca"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06574",
+      "municipio": "Navarro",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06581",
+      "municipio": "Necochea",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06588",
+      "municipio": "9 de Julio",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2026-03-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2026-03-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06595",
+      "municipio": "Olavarría",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06602",
+      "municipio": "Patagones",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06609",
+      "municipio": "Pehuajó",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06616",
+      "municipio": "Pellegrini",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06623",
+      "municipio": "Pergamino",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06630",
+      "municipio": "Pila",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06638",
+      "municipio": "Pilar",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Los enlaces consultados no permitieron acceder a una cuenta verificable. La cobertura sigue pendiente; no se interpreta como ausencia de publicación."
+    },
+    {
+      "id": "06644",
+      "municipio": "Pinamar",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Agricultura, ganaderia y pesca"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06648",
+      "municipio": "Presidente Perón",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Agricultura, ganaderia y pesca"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06651",
+      "municipio": "Puan",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06655",
+      "municipio": "Punta Indio",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06658",
+      "municipio": "Quilmes",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06665",
+      "municipio": "Ramallo",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06672",
+      "municipio": "Rauch",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06679",
+      "municipio": "Rivadavia",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06686",
+      "municipio": "Rojas",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06693",
+      "municipio": "Roque Pérez",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
+    },
+    {
+      "id": "06700",
+      "municipio": "Saavedra",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2025-12-30",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2025-12-30. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06707",
+      "municipio": "Saladillo",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06721",
+      "municipio": "Salliqueló",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06714",
+      "municipio": "Salto",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06728",
+      "municipio": "San Andrés de Giles",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06735",
+      "municipio": "San Antonio de Areco",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
+    },
+    {
+      "id": "06742",
+      "municipio": "San Cayetano",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06749",
+      "municipio": "San Fernando",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2025-12-30",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2025-12-30. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06756",
+      "municipio": "San Isidro",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06760",
+      "municipio": "San Miguel",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
+    },
+    {
+      "id": "06763",
+      "municipio": "San Nicolás",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06770",
+      "municipio": "San Pedro",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06778",
+      "municipio": "San Vicente",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06784",
+      "municipio": "Suipacha",
+      "fiscalStatus": "Otro período",
+      "comparable": false,
+      "latestFiscalEnd": "2025-12-31",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
+    },
+    {
+      "id": "06791",
+      "municipio": "Tandil",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06798",
+      "municipio": "Tapalqué",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Empleo industrial diciembre de 2025: reservado o sin dato",
+        "Cambio industrial 2023–2025: falta al menos un corte publicado",
+        "Sectores de empleo con reserva o sin cifra: Industria manufacturera, Electircidad, gas y agua, Construccion"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06805",
+      "municipio": "Tigre",
+      "fiscalStatus": "Ejecución parcial",
+      "comparable": false,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Ejecución presupuestaria disponible. Falta separar las operaciones financieras para calcular un resultado comparable."
+    },
+    {
+      "id": "06812",
+      "municipio": "Tordillo",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Empleo industrial diciembre de 2025: reservado o sin dato",
+        "Cambio industrial 2023–2025: falta al menos un corte publicado",
+        "Sectores de empleo con reserva o sin cifra: Servicios, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Los enlaces consultados no permitieron acceder a una cuenta verificable. La cobertura sigue pendiente; no se interpreta como ausencia de publicación."
+    },
+    {
+      "id": "06819",
+      "municipio": "Tornquist",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06826",
+      "municipio": "Trenque Lauquen",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06833",
+      "municipio": "Tres Arroyos",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06840",
+      "municipio": "Tres de Febrero",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06847",
+      "municipio": "Tres Lomas",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Préstamos bancarios 2023: reservado o sin dato de origen",
+        "Depósitos bancarios 2023: reservado o sin dato de origen",
+        "Préstamos bancarios 2024: reservado o sin dato de origen",
+        "Depósitos bancarios 2024: reservado o sin dato de origen"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06854",
+      "municipio": "25 de Mayo",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06861",
+      "municipio": "Vicente López",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06868",
+      "municipio": "Villa Gesell",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    },
+    {
+      "id": "06875",
+      "municipio": "Villarino",
+      "fiscalStatus": "Cuenta no verificada",
+      "comparable": false,
+      "latestFiscalEnd": null,
+      "missing": [
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+      ],
+      "portalReview": "2026-09-07",
+      "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
+    },
+    {
+      "id": "06882",
+      "municipio": "Zárate",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
+      "missing": [],
+      "portalReview": "2026-09-07",
+      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
+    }
+  ]
+}

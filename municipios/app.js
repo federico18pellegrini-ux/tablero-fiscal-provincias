@@ -78,6 +78,56 @@ function readState(search, municipalities, savedId) {
   return {id:municipalities.some(m=>m.id===id)?id:'06805',view:VALID_VIEWS.includes(p.get('vista'))?p.get('vista'):'panorama',metric:METRICS.some(m=>m.id===p.get('indicador'))?p.get('indicador'):'recursos'};
 }
 
+function adjustPrice(value, period, base, indices) {
+  if (!finite(value) || !finite(indices?.[period]) || indices[period] <= 0 || !finite(indices?.[base]) || indices[base] <= 0) return null;
+  return value * indices[base] / indices[period];
+}
+
+function priceComparisons(m, mode, base, deflator) {
+  const real = mode === 'real', ix = deflator.indices;
+  const atBase = value => real ? adjustPrice(value, '2026-07', base, ix) : value;
+  const stock = (value, period) => real ? adjustPrice(value, period, base, ix) : value;
+  const rows = [];
+  for (const [prefix, label] of [['transferencias','Transferencias provinciales'],['copart','Coparticipación bruta']]) {
+    const key = year => `${prefix}_${year}_ene_jul_ars${real ? '_jul26' : ''}`;
+    rows.push({id:prefix,label,previous:atBase(m[key(2025)]),current:atBase(m[key(2026)]),previousPeriod:'Enero–julio de 2025',currentPeriod:'Enero–julio de 2026',unit:'millions',method:'El ajuste real se hace mes a mes, antes de sumar los siete meses.'});
+  }
+  const wage = m.community.wage.annual;
+  rows.push({id:'salario',label:'Salario bruto mensual promedio',previous:atBase(wage['2024'][real?'real':'nominal']),current:atBase(wage['2025'][real?'real':'nominal']),previousPeriod:'Promedio de 2024',currentPeriod:'Promedio de 2025',unit:'money',method:'Para calcular el promedio real se ajusta cada mes y luego se promedian los doce meses. Incluye aguinaldo y otros pagos; no es salario de bolsillo.'});
+  for (const [prefix,label] of [['prestamos','Préstamos bancarios'],['depositos','Depósitos bancarios']]) {
+    rows.push({id:prefix,label,previous:stock(m[`${prefix}_2023_ars`],'2023-12'),current:stock(m[`${prefix}_2024_ars`],'2024-12'),previousPeriod:'Cierre de 2023',currentPeriod:'Cierre de 2024',unit:'millions',method:'El ajuste real de los saldos usa el IPC del cierre. Localización bancaria: no identifica exclusivamente residentes ni pymes.'});
+  }
+  rows.push({id:'deuda-personas',label:'Deuda registrada de las personas',previous:null,current:stock(m.community.debt.debtARS,m.community.debt.period),previousPeriod:null,currentPeriod:'Julio de 2026',unit:'millions',method:'Relevamiento externo CEC/FES basado en el BCRA. Hay un solo corte incorporado: no permite calcular una variación. No es deuda del gobierno municipal.'});
+  return rows.map(row=>({...row,change:finite(row.previous)&&row.previous!==0&&finite(row.current)?(row.current/row.previous-1)*100:null}));
+}
+
+function municipalContextExportRows(m) {
+  const rows=[], add=(label,value,unit,period,note)=>rows.push([m.municipio,label,value??null,unit,period,note]);
+  add('Población',m.poblacion_2022,'personas','Censo 2022','INDEC/DPE.');
+  add('Superficie',m.superficie_km2,'km²','Base territorial DPE','No es superficie urbanizada.');
+  add('Total de hogares',m.hogares_2022,'hogares','Censo 2022','Denominador de NBI y hacinamiento.');
+  for(const s of m.sectors)add('Empleo privado formal: '+s.name,s.jobs,'puestos','2025-12','OEDE; lugar del establecimiento. Los registros reservados quedan vacíos.');
+  for(const y of [2021,2022,2023])add('Producto bruto municipal',m[`pbg_constante_2004_${y}_ars`],'ARS constantes de 2004',String(y),'DPE; producción del territorio, no ingresos municipales.');
+  for(const y of [2023,2024])for(const [key,label] of [['prestamos','Préstamos bancarios'],['depositos','Depósitos bancarios']])add(label,m[`${key}_${y}_ars`],'ARS corrientes',`Cierre ${y}`,'DPE/BCRA; localización financiera, no deuda exclusiva de residentes.');
+  for(const [y,w] of Object.entries(m.community.wage.annual)){
+    add('Salario bruto mensual promedio',w.nominal,'ARS corrientes',y,'OEDE/SIPA; promedio de 12 meses, incluye aguinaldo.');
+    add('Salario bruto mensual promedio ajustado',w.real,'ARS de julio de 2026',y,'OEDE/SIPA e INDEC; ajuste mensual antes de promediar.');
+  }
+  for(const [p,w] of Object.entries(m.community.wage.months)){
+    add('Salario bruto mensual',w.nominal,'ARS corrientes',p,'OEDE/SIPA; bruto, incluye pagos estacionales.');
+    add('Salario bruto mensual ajustado',w.real,'ARS de julio de 2026',p,'OEDE/SIPA e IPC nacional INDEC.');
+  }
+  const h=m.community.health;
+  add('Personas sin obra social, prepaga ni plan estatal',h.withoutCoverage,'personas','Censo 2022','DPE/INDEC; no significa quedar sin acceso al sistema público.');
+  add('Población en viviendas particulares',h.populationPrivateDwellings,'personas','Censo 2022','Denominador del indicador de cobertura de salud.');
+  add('Sin cobertura de salud',h.withoutCoveragePct,'%','Censo 2022','Sobre población en viviendas particulares.');
+  add('Hogares con más de tres personas por cuarto',m.community.crowding.over3PersonsPerRoomPct,'%','Censo 2022','DPE/INDEC; denominador: hogares.');
+  for(const [y,c] of Object.entries(m.community.crime))for(const [key,label,unit] of [['homicideVictims','Víctimas de homicidio doloso','personas'],['homicideRate','Tasa de víctimas de homicidio doloso','por 100.000 habitantes'],['robberies','Robos registrados','hechos'],['robberyRate','Tasa de robos registrados','por 100.000 habitantes'],['thefts','Hurtos registrados','hechos'],['theftRate','Tasa de hurtos registrados','por 100.000 habitantes']])add(label,c[key],unit,y,'SNIC; hechos registrados, tasas oficiales con su propia población de referencia.');
+  const d=m.community.debt;
+  for(const [key,label,unit] of [['peopleWithDebt','Personas con deuda','personas'],['peopleInArrears','Personas en mora','personas'],['peopleInArrearsPct','Personas en mora sobre personas con deuda','%'],['debtARS','Deuda total registrada de personas','ARS corrientes'],['debtInArrearsARS','Deuda de personas en mora','ARS corrientes'],['debtInArrearsPct','Deuda en mora sobre deuda total','%'],['averageDebtARS','Deuda promedio por persona con deuda','ARS corrientes']])add(label,d[key],unit,d.period,'CEC/FES, Mapa de la Deuda sobre base BCRA. Localización del proveedor; no describe a toda la población ni a hogares.');
+  return rows;
+}
+
 
 const $=id=>document.getElementById(id);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -94,6 +144,8 @@ const formatMetric=(v,meta)=>!finite(v)?'Sin dato':meta.unit==='score'?num(v)+' 
 let data,geography,rows,byId,state,mapMetric='recursos',scopePeers=false,rankAscending=true,showAll=false,fullHistory=false,mapZoom,mapProjection,mapPath,mapWidth=0;
 let toastTimer;
 let reportManifest=null,reportUnavailable=false;
+let deflator,priceMode='real',priceBase='2026-07';
+const priceMonth=p=>new Intl.DateTimeFormat('es-AR',{month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(p+'-15T12:00:00Z'));
 function updateReportLink(m){
   const link=$('export-report'),entry=reportManifest?.reports.find(r=>r.id===m.id);
   link.setAttribute('aria-label',`Exportar informe completo de ${m.municipio}`);
@@ -121,6 +173,7 @@ const currentMetric=()=>METRICS.find(m=>m.id===state.metric);
 const latestFiscal=m=>[m.fiscal,m.fiscalOther].filter(Boolean).sort((a,b)=>b.fin.localeCompare(a.fin))[0];
 function persist(){
   const url=new URL(location.href);url.search='';url.searchParams.set('municipio',state.id);url.searchParams.set('vista',state.view);if(state.view==='rankings')url.searchParams.set('indicador',state.metric);url.hash='';
+  if(state.view==='recursos'){url.searchParams.set('pesos',priceMode==='real'?'reales':'corrientes');url.searchParams.set('base',priceBase);}
   history.replaceState(null,'',url);
   try{localStorage.setItem('pellegrini_municipio',state.id);}catch{}
 }
@@ -250,12 +303,36 @@ function renderRanking(){
 function chooseMetric(id){state.metric=id;rankAscending=currentMetric().ascending;showAll=false;persist();renderRanking();}
 function renderResources(){
   const m=current();
+  renderPrices();
   $('resource-stats').innerHTML=card('Transferencias provinciales',millions(m.transferencias_2026_ene_jul_ars_jul26),'Ene–jul 2026 · millones de pesos de julio')+card('Variación real',pct(m.variacion_transferencias_real_pct),'Ene–jul 2026 vs. igual período de 2025',tone(m.variacion_transferencias_real_pct))+card('Por habitante',money(m.transferencias_por_habitante_base2022_ars_jul26),'Ene–jul 2026 · pesos de julio · población 2022');
   drawTransferChart();
   const parts=[['Cambio del total repartido','Con la participación de 2025',m.efecto_masa_observada_ars_jul26],['Cambio de participación','Sobre el total repartido en 2026',m.efecto_participacion_observada_ars_jul26],['Diferencia total de coparticipación','Ene–jul 2026 menos ene–jul 2025',m.copart_2026_ene_jul_ars_jul26-m.copart_2025_ene_jul_ars_jul26]];
   $('decomposition').innerHTML=parts.map(([l,c,v],i)=>`<div class="decomp-row ${i===2?'total':''}"><span>${l}<small>${c}</small></span><strong class="${tone(v)}">${signedMillions(v)}</strong></div>`).join('');
   $('revenue-stats').innerHTML=[['Recaudación propia PBA',data.provincialRevenue.total_provincial],['Ingresos Brutos PBA',data.provincialRevenue.ingresos_brutos],['Coparticipación a municipios',data.summary.copart_real_change_pct]].map(([l,v])=>`<div><span class="stat-label">${l}</span><strong class="stat-value ${tone(v)}">${pct(v)}</strong><span class="stat-context">Real · ene–jul 2026 vs. 2025</span></div>`).join('');
   renderFiscal(m);
+}
+function renderPrices(){
+  const real=priceMode==='real',unit=real?'pesos de '+priceMonth(priceBase):'pesos corrientes de cada período';
+  $('price-current-unit').textContent='Este comparador muestra '+unit+'. Los demás cuadros conservan la unidad indicada en cada uno.';
+  document.querySelectorAll('[data-price-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.priceMode===priceMode)));
+  document.querySelectorAll('[data-price-base]').forEach(b=>{b.setAttribute('aria-pressed',String(b.dataset.priceBase===priceBase));b.disabled=!real;});
+  $('price-cards').innerHTML=priceComparisons(current(),priceMode,priceBase,deflator).map(r=>{
+    const format=r.unit==='millions'?millions:money;
+    return `<article class="price-card" data-price-row="${r.id}"><h3>${escape(r.label)}</h3><p class="small-note">${r.unit==='millions'?'Millones de '+unit:unit}</p><div class="price-values">${r.previousPeriod?`<div><span>${r.previousPeriod}</span><strong class="${negativeClass(r.previous)}" data-previous>${format(r.previous)}</strong></div>`:''}<div><span>${r.currentPeriod}</span><strong class="${negativeClass(r.current)}" data-current>${format(r.current)}</strong></div></div><p class="price-change"><strong class="${negativeClass(r.change)}" data-change>${finite(r.change)?pct(r.change):'Sin comparación'}</strong> ${finite(r.change)?(real?'de cambio, descontada la inflación':'de cambio en pesos, sin descontar inflación'):'· falta un período comparable con dato publicado'}</p><p class="chart-caption">${escape(r.method)}</p></article>`;
+  }).join('');
+  $('municipal-coverage-link').href=`cobertura.html#m-${state.id}`;
+  renderPriceCalculator();
+}
+function renderPriceCalculator(){
+  const input=$('price-amount'),from=$('price-from').value,to=$('price-to').value,amount=input.value.trim()===''?null:Number(input.value);
+  const value=adjustPrice(amount,from,to,deflator.indices);
+  if(!finite(value)){$('price-calculation').textContent='Ingresá un importe y meses dentro de la serie disponible: diciembre de 2016 a '+priceMonth(deflator.latest)+'.';return;}
+  const factor=deflator.indices[to]/deflator.indices[from];
+  $('price-calculation').innerHTML=`<strong class="${negativeClass(value)}">${money(amount)} de ${priceMonth(from)} equivalen a ${money(value)} de ${priceMonth(to)}.</strong><span>Se multiplica el importe por ${num(factor,4)}: IPC de ${priceMonth(to)} dividido por IPC de ${priceMonth(from)}. Es una equivalencia de poder de compra; no suma intereses.</span>`;
+}
+function priceExport(){
+  const unit=priceMode==='real'?'ARS de '+priceBase:'ARS corrientes';
+  return [['Municipio','Indicador','Valor anterior','Período anterior','Valor actual','Período actual','Unidad de importes','Variación %','Criterio'],...priceComparisons(current(),priceMode,priceBase,deflator).map(r=>[current().municipio,r.label,r.previous,r.previousPeriod,r.current,r.currentPeriod,unit,r.change,r.method])];
 }
 function fiscalDate(date){return new Intl.DateTimeFormat('es-AR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(date+'T12:00:00Z'));}
 function renderFiscal(m,chosen){
@@ -329,6 +406,10 @@ function renderSimulation(){
 }
 function download(filename,text){const url=URL.createObjectURL(new Blob([text],{type:'text/csv;charset=utf-8;'})),a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('La descarga está preparada.');}
 function attachEvents(){
+  document.querySelectorAll('[data-price-mode]').forEach(b=>b.onclick=()=>{priceMode=b.dataset.priceMode;persist();renderPrices();});
+  document.querySelectorAll('[data-price-base]').forEach(b=>b.onclick=()=>{priceBase=b.dataset.priceBase;persist();renderPrices();});
+  for(const id of ['price-amount','price-from','price-to'])$(id).addEventListener('input',renderPriceCalculator);
+  $('download-prices').onclick=()=>download(`comparacion-pesos-${state.id}-${priceMode}-${priceBase}.csv`,csv(priceExport()));
   $('municipality').addEventListener('change',event=>selectMunicipality(event.target.value));
   document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>navigate(b.dataset.view));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>navigate(b.dataset.go));
   document.querySelectorAll('[data-map]').forEach(b=>b.onclick=()=>{mapMetric=b.dataset.map;drawMap();});
@@ -339,15 +420,17 @@ function attachEvents(){
   $('share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('Enlace copiado con el municipio y la vista elegidos.');}catch{toast('Podés copiar el enlace desde la barra del navegador.');}};
   $('export-report').onclick=event=>{if($('export-report').getAttribute('aria-disabled')==='true'){event.preventDefault();toast(reportUnavailable?'El informe está en actualización. Volvé a cargar la página en unos minutos.':'Estamos preparando el enlace al informe.');}};
   $('download-ranking').onclick=()=>{const meta=currentMetric();download(`ranking-${meta.id}.csv`,csv([['Municipio','Puesto','Valor','Unidad','Período','Cobertura','Criterio'],...rankingRows().map(r=>[r.m.municipio,r.rank,r.value,meta.unit,meta.period,rankingRows().length,meta.note])]));};
-  $('download-municipality').onclick=()=>{const m=current();download(`municipio-${m.id}.csv`,csv([['Municipio','Indicador','Valor','Unidad','Período','Criterio'],...METRICS.map(meta=>[m.municipio,meta.label,metricValue(m,meta),meta.unit,meta.period,meta.note]),...fiscalExportRows(m)]));};
+  $('download-municipality').onclick=()=>{const m=current();download(`municipio-${m.id}.csv`,csv([['Municipio','Indicador','Valor','Unidad','Período','Criterio'],...METRICS.map(meta=>[m.municipio,meta.label,metricValue(m,meta),meta.unit,meta.period,meta.note]),...fiscalExportRows(m),...municipalContextExportRows(m)]));};
   let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(state.view==='panorama')drawMap();if(state.view==='recursos')drawTransferChart();if(state.view==='empleo')drawEmploymentChart();},80);}).observe(document.querySelector('main'));
   new ResizeObserver(()=>document.documentElement.style.setProperty('--header-height',document.querySelector('.site-header').getBoundingClientRect().height+'px')).observe(document.querySelector('.site-header'));
 }
 async function init(){
   try{
-    const responses=await Promise.all([fetch('data/dashboard.json?v=20260909-1'),fetch('data/geografia_original.geojson')]);
+    const responses=await Promise.all([fetch('data/dashboard.json?v=20260909-2'),fetch('data/geografia_original.geojson'),fetch('data/deflator.json?v=20260909-2')]);
     if(responses.some(r=>!r.ok))throw new Error('No se pudieron leer los datos municipales.');
-    const [dashboardText,geo]=await Promise.all([responses[0].text(),responses[1].json()]);data=JSON.parse(dashboardText);geography=geo;rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
+    const [dashboardText,geo,prices]=await Promise.all([responses[0].text(),responses[1].json(),responses[2].json()]);data=JSON.parse(dashboardText);geography=geo;deflator=prices;rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
+    const params=new URLSearchParams(location.search);priceMode=params.get('pesos')==='corrientes'?'nominal':'real';priceBase=deflator.bases.includes(params.get('base'))?params.get('base'):deflator.latest;
+    for(const id of ['price-from','price-to']){$(id).min=Object.keys(deflator.indices).sort()[0];$(id).max=deflator.latest;}
     if(rows.length!==135||geography.features.length!==135||geography.features.some(f=>!byId.has(f.properties.id)))throw new Error('La cobertura geográfica no coincide con los datos.');
     let saved;try{saved=localStorage.getItem('pellegrini_municipio');}catch{}
     state=readState(location.search,rows,saved);rankAscending=currentMetric().ascending;

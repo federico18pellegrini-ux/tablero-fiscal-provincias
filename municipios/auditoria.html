@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Revisión de los datos · Municipios · Federico Pellegrini</title><link rel="stylesheet" href="styles.css?v=20260909-2"></head><body><main class="coverage-page">
+<a class="button" href="./">← Volver al tablero municipal</a>
+<h1>Qué revisamos y qué falta completar</h1>
+<p>Revisión del 9 de septiembre de 2026. Alcance: los datos, cálculos, gráficos, rankings y descargas del tablero de los 135 municipios bonaerenses.</p>
+<h2>No detectamos diferencias numéricas en los controles realizados</h2>
+<p>Contrastamos los datos cargados con sus documentos y planillas de respaldo. Recalculamos transferencias, ajustes por inflación, empleo, salarios, producto municipal, saldos bancarios, población, condiciones sociales, delitos registrados, deuda personal y puntajes de publicación fiscal. Los controles automáticos realizaron 76.299 comparaciones numéricas sin diferencias detectadas.</p>
+<p>En las cuentas fiscales revisamos 92 registros principales y sus componentes trimestrales, respaldados por 100 PDF. Se contrastaron 720 importes mediante extracción de texto, 48 con lectura visual de documentos escaneados y tres totales derivados con sus componentes. También se verificaron los códigos y geometrías de los 135 municipios.</p>
+<p>Esto verifica la correspondencia entre el tablero y sus respaldos, junto con los cálculos que hacemos sobre ellos. No es una auditoría de las operaciones internas de cada municipio ni permite certificar que los documentos publicados incluyan todas sus obligaciones.</p>
+<h2>Dos problemas corregidos</h2>
+<ul><li><strong>La descarga de datos estaba incompleta.</strong> El CSV ahora incluye los bloques de salarios, población, salud, hacinamiento, delitos y deuda personal, además del detalle bancario, productivo y sectorial. Cada indicador conserva su fecha, unidad y referencia.</li>
+<li><strong>El enlace semestral de 25 de Mayo había dejado de funcionar.</strong> Se reemplazó por los documentos oficiales del primer y segundo trimestre de 2026. La suma coincide al centavo con los ocho importes ya incorporados. No cambian los resultados; se recupera un respaldo accesible y se actualiza el PDF del municipio.</li></ul>
+<p>De los 125 archivos de respaldo que utiliza esta versión, se logró volver a acceder a 124 y verificar su contenido. El sitio de Exaltación de la Cruz no respondió durante la revisión. Su documento archivado sigue respaldando los valores incorporados; el problema de acceso queda pendiente. Los portales de Bolívar y General Pueyrredon permitieron recuperar sus documentos desde el navegador.</p>
+<h2>El límite principal está en la cobertura fiscal</h2>
+<p>El ranking fiscal reúne 72 municipios con cierre a junio de 2026. Otros 18 tienen cuentas de períodos distintos. Tigre cuenta con ejecución parcial, pendiente de separar las operaciones financieras. En 44 municipios todavía no hay una cuenta ni ejecución incorporada. Por eso, el ranking no permite afirmar quién tiene el mayor déficit entre los 135.</p>
+<p>Ayacucho integra la comparación semestral, con el gasto en personal pendiente. Bragado tiene además un cierre a agosto, que se muestra por separado: no se mezcla con el ranking de junio.</p>
+<p><a class="button" href="cobertura.html">Ver el detalle de los 135 municipios →</a></p>
+<p><a href="data/cobertura.csv" download>Descargar todos los faltantes por municipio (CSV)</a></p>
+<h2>Qué otras cifras faltan</h2>
+<ul><li><strong>Préstamos y depósitos de 2024:</strong> faltan montos numéricos para 29 municipios, por reserva o ausencia en la fuente. No equivalen a cero.</li>
+<li><strong>Industria:</strong> faltan los puestos de diciembre de 2025 de General Guido, Hipólito Yrigoyen, Tapalqué y Tordillo. General La Madrid se suma a los faltantes de la comparación 2023–2025.</li>
+<li><strong>Población:</strong> no se calcula el crecimiento 2010–2022 de Chascomús y Lezama sin homologar sus límites territoriales.</li>
+<li><strong>Cuentas de gestión:</strong> falta incorporar de forma comparable la caja libre, el presupuesto vigente, los ingresos y gastos mensuales, y el stock y los futuros pagos de deuda de los gobiernos municipales. La deuda personal ya disponible corresponde a personas, no al gobierno municipal.</li></ul>
+<p>Hay datos para los 135 en transferencias, empleo privado total, salarios, producto municipal, población de 2022, NBI, salud, hacinamiento, delitos registrados, el relevamiento externo de deuda personal y puntajes de publicación fiscal. Cada bloque conserva su fecha y alcance; contar con cobertura completa no significa que todos describan el mismo año.</p>
+<h2>Cómo se agregó el ajuste por inflación</h2>
+<p>En Recursos, el bloque <strong>Pesos e inflación</strong> permite elegir pesos corrientes o ajustados por el IPC nacional del INDEC. Las bases disponibles son diciembre de 2024, diciembre de 2025 y julio de 2026. Se comparan transferencias, coparticipación, salarios, préstamos, depósitos y deuda personal; esta última tiene un solo corte y no muestra una variación inventada.</p>
+<p>La fórmula multiplica el importe original por el IPC del mes base y lo divide por el IPC del mes del importe. Las transferencias se ajustan cada mes antes de sumarse. El salario anual ajusta los doce meses antes de promediar. Los saldos bancarios usan el IPC de cierre. Cambiar la base cambia la escala de los pesos, pero no el crecimiento real entre dos períodos.</p>
+<p>Las cuentas fiscales acumuladas siguen en pesos corrientes: para ajustarlas con precisión hace falta conocer el mes de cada flujo. El producto municipal conserva su medición a precios de 2004. El IPC aproxima poder de compra general; no mide el costo específico de una obra municipal.</p>
+<p><a href="./?municipio=06329&amp;vista=recursos#price-panel">Abrir el comparador y la calculadora</a> · <a href="metodologia.html#deflactor">Ver fórmula, fuente y límites</a></p>
+<h2>Pruebas de funcionamiento</h2>
+<p>Se verificaron las cuatro vistas individuales para los 135 municipios, 108 combinaciones de ranking y los comparadores de precios en tamaños de celular y tablet. Se comprobaron los contenidos de 162 CSV de municipios y rankings y las 540 combinaciones de precios por tamaño de pantalla. Los faltantes se conservaron y no se detectaron desbordes horizontales.</p>
+<p>Los 135 informes conservan su estructura; se revisaron sus 1.216 páginas para detectar contenido fuera de los márgenes. También se verificaron las páginas modificadas y la lectura de los controles en celular.</p>
+<footer class="site-footer"><strong>Federico Pellegrini</strong><a href="cobertura.html">Datos faltantes</a><a href="metodologia.html">Fuentes, períodos y criterios</a></footer>
+</main></body></html>
