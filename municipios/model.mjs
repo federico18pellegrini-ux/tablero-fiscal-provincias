@@ -84,6 +84,13 @@ export function managementExportRows(m) {
   }}
   return rows;
 }
+export function annualBudgetExportRows(m) {
+  const b=m.annualBudget;
+  if(!b)return [[m.municipio,'Presupuesto anual',null,'ARS corrientes','Sin ejercicio verificado','Pendiente de documento oficial; no equivale a cero.']];
+  const period=`Ejercicio ${b.year} · documento o corte ${b.asOf}`;
+  const note=`Autorización anual; no es gasto ejecutado ni caja libre. ${b.scope} ${b.documents.map(d=>d.url).join(' | ')}`;
+  return [['Presupuesto anual original',b.original,'ARS corrientes'],['Presupuesto anual vigente',b.current,'ARS corrientes'],['Presupuesto anual por habitante',b.perCapita,'ARS corrientes por habitante Censo 2022']].map(([label,value,unit])=>[m.municipio,label,value??null,unit,period,label.endsWith('por habitante')?`Presupuesto ${b.basis==='current'?'vigente':'original'} dividido por ${m.poblacion_2022} habitantes del Censo 2022. ${note}`:note]);
+}
 export function fiscalExportRows(m) {
   const fields=[['ingresos_corrientes','Ingresos corrientes'],['ingresos_capital','Recursos de capital'],['ingresos_totales','Ingresos totales'],['gastos_corrientes','Gastos corrientes'],['gastos_capital','Gastos de capital'],['gastos_totales','Gastos totales'],['resultado_financiero','Resultado financiero'],['personal_devengado','Personal devengado']];
   const rows=fiscalPeriods(m).flatMap(f=>fields.map(([key,label])=>[m.municipio,label,f[key]??null,'ARS corrientes',`${f.inicio} / ${f.fin}`,`${f.scope||'Cuenta municipal publicada.'} ${f===m.fiscal?'Período del ranking fiscal.':'Fuera del período del ranking fiscal.'}`]));

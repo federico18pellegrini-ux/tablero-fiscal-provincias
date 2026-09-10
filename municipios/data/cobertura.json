@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-09",
+  "generated": "2026-09-10",
   "scope": "Datos incorporados; no certifica que un municipio no publique información en otro sitio.",
   "commonPending": [
     "Caja de libre disponibilidad, luego de obligaciones y fondos afectados.",
     "Stock y calendario de deuda municipal comparables para los 135: se incorporaron pasivos de Las Heras (junio 2026) y deuda consolidada y flotante de Tigre (diciembre 2025), sin calendario futuro.",
     "Ingresos y gastos fiscales mensuales para ajustar cada flujo por inflación.",
-    "Presupuesto vigente comparable para los 135: se incorporaron presupuesto y ejecución de General Las Heras y Tigre a junio de 2026."
+    "Presupuesto anual: 93 municipios con 2026 y 10 con años anteriores; 32 pendientes de verificación. Los cortes y organismos incluidos pueden diferir."
   ],
   "municipalities": [
     {
@@ -51,7 +51,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -90,7 +91,8 @@
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal."
@@ -236,7 +238,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras, Electircidad, gas y agua",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -334,7 +337,8 @@
       "comparable": false,
       "latestFiscalEnd": "2025-12-31",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -359,7 +363,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Agricultura, ganaderia y pesca"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Agricultura, ganaderia y pesca",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Los enlaces consultados no permitieron acceder a una cuenta verificable. La cobertura sigue pendiente; no se interpreta como ausencia de publicación."
@@ -418,7 +423,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
@@ -443,7 +449,8 @@
       "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -456,7 +463,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -478,7 +486,8 @@
       "comparable": false,
       "latestFiscalEnd": "2025-12-31",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -540,7 +549,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
@@ -599,7 +609,8 @@
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Cambio industrial 2023–2025: falta al menos un corte publicado",
-        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -639,7 +650,8 @@
         "Préstamos bancarios 2023: reservado o sin dato de origen",
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
-        "Depósitos bancarios 2024: reservado o sin dato de origen"
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -672,7 +684,8 @@
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -773,7 +786,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -786,7 +800,8 @@
       "latestFiscalEnd": "2024-12-30",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2024-12-30. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -822,7 +837,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -876,7 +892,8 @@
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua, Construccion"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua, Construccion",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "La consulta de situación financiera no devolvió documentos para 2025 ni 2026. La cuenta sigue pendiente de verificación."
@@ -901,7 +918,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -919,7 +937,8 @@
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
-        "Crecimiento de población 2010–2022: límites territoriales sin homologar"
+        "Crecimiento de población 2010–2022: límites territoriales sin homologar",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2024-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -931,7 +950,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "La sección de estado financiero consultada mostraba «Contenido en preparación». No se encontró allí una cuenta para incorporar."
@@ -972,7 +992,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras"
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -998,7 +1019,8 @@
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
-        "Depósitos bancarios 2024: reservado o sin dato de origen"
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Los enlaces consultados no permitieron acceder a una cuenta verificable. La cobertura sigue pendiente; no se interpreta como ausencia de publicación."
@@ -1014,7 +1036,8 @@
         "Préstamos bancarios 2023: reservado o sin dato de origen",
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
-        "Depósitos bancarios 2024: reservado o sin dato de origen"
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
@@ -1051,7 +1074,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1076,7 +1100,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras, Electircidad, gas y agua",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1093,7 +1118,8 @@
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1135,7 +1161,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Sin rama, Agricultura, ganaderia y pesca"
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Agricultura, ganaderia y pesca",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1148,7 +1175,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1208,7 +1236,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1251,7 +1280,8 @@
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1292,7 +1322,8 @@
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Agricultura, ganaderia y pesca"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Agricultura, ganaderia y pesca",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1319,7 +1350,8 @@
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1341,7 +1373,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1389,7 +1422,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion"
+        "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Se recuperaron documentos del portal, pero todavía no se pudo verificar una cuenta municipal completa con un período y una clasificación comparables."
@@ -1402,7 +1436,8 @@
       "latestFiscalEnd": "2025-12-30",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2025-12-30. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -1490,7 +1525,8 @@
       "latestFiscalEnd": "2025-12-30",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2025-12-30. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -1540,7 +1576,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1553,7 +1590,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1569,7 +1607,8 @@
         "Préstamos bancarios 2023: reservado o sin dato de origen",
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
-        "Depósitos bancarios 2024: reservado o sin dato de origen"
+        "Depósitos bancarios 2024: reservado o sin dato de origen",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Cuenta incorporada con cierre al 2025-12-31. Todavía no se verificó una cuenta comparable de enero–junio de 2026."
@@ -1632,7 +1671,8 @@
         "Depósitos bancarios 2024: reservado o sin dato de origen",
         "Empleo industrial diciembre de 2025: reservado o sin dato",
         "Cambio industrial 2023–2025: falta al menos un corte publicado",
-        "Sectores de empleo con reserva o sin cifra: Servicios, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Servicios, Electircidad, gas y agua",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "Los enlaces consultados no permitieron acceder a una cuenta verificable. La cobertura sigue pendiente; no se interpreta como ausencia de publicación."
@@ -1645,7 +1685,8 @@
       "latestFiscalEnd": null,
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua"
+        "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."
@@ -1741,7 +1782,8 @@
       "comparable": false,
       "latestFiscalEnd": null,
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026"
+        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
+        "Presupuesto anual 2026: pendiente de documento oficial verificado"
       ],
       "portalReview": "2026-09-07",
       "portalStatus": "En las páginas consultadas todavía no se pudo verificar una cuenta municipal completa. Eso no significa que el municipio no la publique."

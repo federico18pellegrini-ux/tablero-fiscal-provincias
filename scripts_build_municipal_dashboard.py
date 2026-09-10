@@ -8,6 +8,7 @@ import re
 from decimal import Decimal
 from datetime import date, timedelta
 from pathlib import Path
+from scripts_municipal_budgets import apply_annual_budgets, write_budget_catalog
 
 ROOT = Path(__file__).resolve().parent
 
@@ -323,14 +324,18 @@ def build(folder):
     community['householdDebt']['externalMunicipalProvider'] = {k:v for k,v in debt.items() if k != 'municipalities'}
     management_path = ROOT / 'municipios/data/management_verified.json'
     management = apply_management(municipalities, management_path)
-    data = {'version': 5, 'generated': '2026-09-09', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
+    annual_budget_path = ROOT / 'municipios/data/annual_budgets_verified.json'
+    annual_budgets, annual_coverage = apply_annual_budgets(municipalities, annual_budget_path)
+    write_budget_catalog(ROOT, municipalities, annual_coverage)
+    data = {'version': 6, 'generated': '2026-09-10', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
     target = ROOT / 'municipios/data/dashboard.json'
+    data['annualBudgetCoverage'] = annual_coverage
     target.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':'), allow_nan=False), encoding='utf-8')
     manifest = [{'file': str(p.relative_to(folder)).replace('\\', '/'), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in folder.rglob('*.csv')]
     overlay = repository_input(fiscal_path)
     transparency_input = repository_input(transparency_path)
     search_input = repository_input(search_path)
-    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path), repository_input(management_path)], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
+    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path), repository_input(management_path), repository_input(annual_budget_path)], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
     (target.parent / 'fuentes.csv').write_bytes((folder / 'fuentes_y_huellas.csv').read_bytes())
     fiscal_audit = json.loads(fiscal_path.read_text(encoding='utf-8'))
     with (target.parent / 'fuentes.csv').open('a', encoding='utf-8', newline='') as source_file:
@@ -347,6 +352,9 @@ def build(folder):
             writer.writerow([document['file'], document['url'], document['sha256'], document['bytes'], debt['verifiedAt']])
         for document in management['sources']:
             writer.writerow([document['file'], document['url'], document['sha256'], document['bytes'], management['verifiedAt']])
+        for record in annual_budgets['records']:
+            for index, document in enumerate(record['documents'], 1):
+                writer.writerow([f"presupuesto-{record['id']}-{record['year']}-{index}", document['url'], document['sha256'], document['bytes'], annual_budgets['verifiedAt']])
     # Serve a conventional deferred script on static hosts, independent of .mjs MIME configuration.
     bundle_app()
     print(f'{target.name}: {len(municipalities)} municipalities; {target.stat().st_size:,} bytes')

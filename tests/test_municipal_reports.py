@@ -30,7 +30,7 @@ class MunicipalReports(unittest.TestCase):
                 self.assertEqual(len(pdf.pages),r['pages'])
                 self.assertEqual(pdf.metadata.author,'Federico Pellegrini')
                 self.assertIn(r['municipality'],pdf.pages[0].extract_text())
-                self.assertEqual(r['sections'],['lectura','prioridades','cuentas']+(['presupuesto','caja','deuda-municipal','historia-fiscal'] if r['id'] in ['06329','06805'] else [])+['transferencias','empleo','salarios','actividad','deudas','poblacion'])
+                self.assertEqual(r['sections'],['lectura','prioridades','cuentas']+(['presupuesto','caja','deuda-municipal','historia-fiscal'] if r['id'] in ['06329','06805'] else ['presupuesto'] if next(m for m in self.data['municipalities'] if m['id']==r['id']).get('annualBudget') else [])+['transferencias','empleo','salarios','actividad','deudas','poblacion'])
                 self.assertEqual(r['crimeYears'],[2024,2025])
 
     def test_general_las_heras_fiscal_money_and_price_bases(self):

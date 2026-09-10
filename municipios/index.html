@@ -7,9 +7,9 @@
   <meta name="description" content="Una mirada clara sobre los 135 municipios bonaerenses. Recursos, empleo, rankings y escenarios para la gestión municipal. Federico Pellegrini.">
   <title>Municipios · Federico Pellegrini</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260909-4">
+  <link rel="stylesheet" href="styles.css?v=20260910-1">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20260909-4"></script>
+  <script defer src="app.js?v=20260910-1"></script>
   <script defer src="../analytics.js?v=20260907-2"></script>
 </head>
 <body>
@@ -49,6 +49,7 @@
             <div class="map-selection" id="map-selection"></div><p class="chart-caption" id="map-caption"></p>
           </section>
         </div>
+        <section class="panel section-block annual-budget" id="annual-budget-overview" aria-label="Presupuesto anual del municipio"></section>
         <section class="section-block"><div class="section-heading"><div><div class="eyebrow">Lo que conviene mirar</div><h2>Tres prioridades para la gestión</h2></div><span class="small-note">Datos, contexto y próximos pasos</span></div><div class="insights-grid" id="insights"></div></section>
         <section class="panel section-block community-panel" id="community-panel" aria-label="Salud, vivienda y seguridad"></section>
         <section class="panel section-block transparency-panel" id="transparency-panel" aria-label="Transparencia fiscal municipal"></section>
@@ -61,6 +62,7 @@
         <section class="panel ranking-panel"><div class="ranking-top"><div><h2 id="ranking-title"></h2><p class="small-note" id="ranking-period"></p></div><div class="choices small-choices" role="group" aria-label="Municipios a comparar"><button id="scope-all" aria-pressed="true">Todos</button><button id="scope-peers" aria-pressed="false">Población similar</button></div></div><div class="ranking-context"><p id="ranking-coverage"></p><button id="ranking-direction" class="text-button"></button></div><div id="ranking-selected" class="selected-rank"></div><div id="ranking-rows" class="ranking-rows"></div><button id="ranking-more" class="button button-quiet more-button">Ver todos los municipios</button><p id="ranking-note" class="chart-caption"></p></section>
       </section>
       <section id="recursos" class="view" aria-label="Recursos municipales" hidden>
+        <section class="panel section-block annual-budget" id="annual-budget-resources" aria-label="Detalle del presupuesto anual"></section>
         <div class="section-heading"><div><div class="eyebrow">Recursos para gestionar</div><h2>Lo que llega y lo que cambia</h2><p>Transferencias provinciales, expresadas en pesos de julio de 2026.</p></div></div>
         <nav id="management-shortcuts" class="management-shortcuts" aria-label="Cuentas y presupuesto" hidden></nav>
         <div id="resource-stats" class="stats-grid"></div>
