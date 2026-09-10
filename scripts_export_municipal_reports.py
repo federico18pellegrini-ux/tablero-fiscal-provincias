@@ -321,6 +321,34 @@ class Report:
             self.p(escaped(m.get('fiscalSearch',{}).get('message','Todavía no hay una cuenta completa verificada para este municipio.')))
             self.panel('Lo que todavía no podemos concluir','Las transferencias provinciales son sólo una parte de los ingresos. Con esa información no se puede calcular el déficit, el gasto de capital total ni la caja disponible. Los espacios sin información se mantienen como tales.')
             self.p('Para completar la cuenta hacen falta ingresos y gastos corrientes y de capital del mismo período, con identificación de los organismos incluidos. Para evaluar liquidez, además, se necesitan saldos, fondos afectados y obligaciones pendientes.')
+    def annual_budget(self):
+        b=self.m.get('annualBudget')
+        if not b:
+            self.h('Presupuesto anual pendiente')
+            self.p('Todavía no incorporamos un documento oficial con el presupuesto anual. Eso no significa que el municipio no tenga presupuesto. No se estima a partir de las transferencias ni de gastos parciales.','small')
+            return
+        if self.m.get('management'):return
+        refs='Municipalidad de '+escaped(self.m['municipio'])+' · '+' · '.join(source_link(d['url'],'presupuesto, '+('pág. '+', '.join(map(str,d['consultedPages'])) if d.get('consultedPages') else 'norma publicada')) for d in b['documents'])
+        refs+=' · '+source_link(SITE+'presupuestos.html#m-'+self.m['id'],'registro de presupuestos y alcance')
+        self.section('El presupuesto anual',sources=refs)
+        self.budget_reading(b)
+        self.table(['Concepto','Pesos corrientes'],[
+            ('Presupuesto original del año',money(b.get('original'),2,False)),
+            ('Presupuesto vigente al corte informado',money(b.get('current'),2,False)),
+            ('Presupuesto destacado por habitante del Censo 2022',money(b['perCapita'],0,False))
+        ],[CONTENT*.61,CONTENT*.39])
+        self.h('Cómo leerlo')
+        self.p('El original es el monto de partida para el año. El vigente incorpora las modificaciones conocidas hasta el corte indicado. Que una partida esté autorizada no significa que ya se haya gastado ni que ese dinero esté disponible en el banco.')
+        if b['basis']=='original':self.p('Mostramos el presupuesto original porque todavía no incorporamos una actualización del vigente. No se supone que haya permanecido sin cambios durante el año.')
+        self.p('El presupuesto sirve para conocer la escala de recursos que la gestión prevé utilizar. Para evaluar su ejecución hay que compararlo con gastos del mismo ejercicio y de los mismos organismos. Los ingresos provinciales recibidos son sólo una parte de la financiación municipal.')
+        self.p(escaped(b['scope']))
+        if b['note']:self.p(escaped(b['note']),'small')
+    def budget_reading(self,b):
+        label='vigente' if b['basis']=='current' else 'original publicado'
+        self.p(f"El presupuesto {label} de {b['year']} es de {money(b['amount'],1)} millones. Documento o corte: {date(b['asOf'])}. Es la autorización para gastar durante todo el año; no representa gasto ejecutado ni caja libre.")
+        if b['historical']:self.p(f"Este es un dato histórico de {b['year']}. Todavía falta verificar el presupuesto de 2026.")
+        self.p(f"Equivale a {money(b['perCapita'],0,False)} por habitante. El cálculo divide ese presupuesto por los {number(self.m['poblacion_2022'],0)} habitantes del Censo 2022. Sirve para dimensionar el monto; no es una suma que recibe cada vecino ni mide la calidad de la gestión.")
+        self.p('Pesos corrientes, sin ajuste por inflación. Verificación del '+date(b['verifiedAt'])+'.','small')
     def management(self):
         g=self.m.get('management')
         if not g:return
@@ -330,6 +358,9 @@ class Report:
         self.p(f"Del {date(b['inicio'])} al {date(b['fin'])}. Millones de pesos corrientes. El presupuesto es la autorización anual para gastar. Devengado es un gasto registrado; pagado es lo efectivamente cancelado.")
         labels={'original':'Presupuesto original del año','modifications':'Modificaciones presupuestarias','current':'Presupuesto vigente del año','received':'Recursos cobrados en el período','accrued':'Gastos presupuestarios devengados','paid':'Gastos presupuestarios pagados','unpaid':'Devengado del período sin pagar'}
         self.table(['Concepto','Millones de pesos'],[(label,money(b[key],2)) for key,label in labels.items() if finite(b.get(key))],[CONTENT*.66,CONTENT*.34],True)
+        if self.m.get('annualBudget'):
+            annual=self.m['annualBudget']
+            self.p(f"El presupuesto vigente equivale a {money(annual['perCapita'],0,False)} por habitante: se divide el crédito anual por los {number(self.m['poblacion_2022'],0)} habitantes del Censo 2022. Es una referencia de escala, no una suma que recibe cada vecino.",'small')
         self.p(escaped(b['reading']))
         self.h('En qué se registran los gastos')
         self.table(['Objeto del gasto','Vigente','Devengado','Pagado'],[(r['label'],money(r['current'],2),money(r['accrued'],2),money(r['paid'],2)) for r in b['objects']],[CONTENT*.37,CONTENT*.21,CONTENT*.21,CONTENT*.21],True)
@@ -485,7 +516,7 @@ class Report:
         self.p(f"Se registraron {number(b,0)} robos en 2025, frente a {number(a,0)} en 2024. Conviene contrastar el cambio con zonas, horarios y canales de denuncia antes de definir medidas. Estos registros no captan todos los delitos ni miden la sensación de inseguridad. Más denuncias también pueden modificar el total.")
         self.p('Las tasas son las publicadas por el SNIC, con su población de referencia; no se recalculan con el Censo 2022. En municipios pequeños, pocos hechos pueden mover mucho la tasa. Se muestran junto a las cantidades para evitar lecturas engañosas.','small')
     def build(self):
-        for method in [self.overview,self.priorities,self.accounts,self.management,self.resources,self.employment,self.wages,self.territory,self.debt,self.community]:method()
+        for method in [self.overview,self.priorities,self.accounts,self.annual_budget,self.management,self.resources,self.employment,self.wages,self.territory,self.debt,self.community]:method()
         doc=BaseDocTemplate(str(self.path),pagesize=A4,rightMargin=MARGIN,leftMargin=MARGIN,topMargin=45,bottomMargin=104,
                               title=f'{self.m["municipio"]} - Informe municipal completo',author='Federico Pellegrini',pageCompression=1)
         def deterministic_canvas(*args,**kwargs):kwargs['invariant']=1;return Canvas(*args,**kwargs)
@@ -502,7 +533,7 @@ def build(output=OUTPUT, municipality=None):
     for m in chosen:
         filename=f'informe-{m["id"]}.pdf';path=output/filename;pages=Report(path,m,data,geography).build()
         entries.append({'id':m['id'],'municipality':m['municipio'],'file':filename,'pages':pages,'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
-                        'sections':['lectura','prioridades','cuentas']+(['presupuesto','caja','deuda-municipal','historia-fiscal'] if m.get('management') else [])+['transferencias','empleo','salarios','actividad','deudas','poblacion'],'populationYear':2022,'crimeYears':[2024,2025]})
+                        'sections':['lectura','prioridades','cuentas']+(['presupuesto','caja','deuda-municipal','historia-fiscal'] if m.get('management') else ['presupuesto'] if m.get('annualBudget') else [])+['transferencias','empleo','salarios','actividad','deudas','poblacion'],'populationYear':2022,'crimeYears':[2024,2025]})
     manifest={'version':2,'generated':data['generated'],'input_sha256':fingerprint(),'reports':entries}
     (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'reports':len(entries),'pages':sorted({e['pages'] for e in entries}),'bytes':sum(e['bytes'] for e in entries)},ensure_ascii=False))

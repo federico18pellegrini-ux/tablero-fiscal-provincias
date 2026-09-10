@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09",
+  "generated": "2026-09-10",
   "inputs": [
     {
       "file": "catalogo_rankings_calculados.csv",
@@ -87,6 +87,11 @@
     {
       "file": "municipios/data/management_verified.json",
       "sha256": "98afa126b6677c175bd98619c24f63e55aed7fe2a29a48b2b3bad3e688f63039",
+      "encoding": "UTF-8/LF"
+    },
+    {
+      "file": "municipios/data/annual_budgets_verified.json",
+      "sha256": "d5fbc6acc5d5b46ea1c5d29a442569bdf0c76d6285869cfbc8572aa826df1fb2",
       "encoding": "UTF-8/LF"
     }
   ],

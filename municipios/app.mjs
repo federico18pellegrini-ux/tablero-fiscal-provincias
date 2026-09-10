@@ -1,4 +1,4 @@
-import {METRICS, TRANSPARENCY_COMPONENTS, transparencyStatus, VALID_VIEWS, finite, metricValue, rankMunicipalities, peers, simulate, csv, fiscalExportRows, fiscalPeriods, readState, adjustPrice, priceComparisons, municipalContextExportRows} from './model.mjs';
+import {METRICS, TRANSPARENCY_COMPONENTS, transparencyStatus, VALID_VIEWS, finite, metricValue, rankMunicipalities, peers, simulate, csv, fiscalExportRows, annualBudgetExportRows, fiscalPeriods, readState, adjustPrice, priceComparisons, municipalContextExportRows} from './model.mjs';
 
 const $=id=>document.getElementById(id);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -82,7 +82,7 @@ function renderView(){
 }
 
 function detailValue(value,format='number',digits=0){
-  const text=!finite(value)?'Sin dato':format==='money'?money(value):format==='millions'?'$'+num(value/1e6,digits)+' M':format==='share'?num(value,digits)+'%':format==='change'?pct(value,digits):num(value,digits);
+  const text=!finite(value)?'Sin dato':format==='money'?'$'+num(value,digits):format==='millions'?'$'+num(value/1e6,digits)+' M':format==='share'?num(value,digits)+'%':format==='change'?pct(value,digits):num(value,digits);
   return `<span class="detail-value ${negativeClass(value)}" data-value="${finite(value)?value:''}" data-format="${format}" data-digits="${digits}">${text}</span>`;
 }
 function detailTable(id,caption,headers,records){
@@ -92,6 +92,7 @@ const sectorName=name=>({'Explotacion de minas y canteras':'Explotación de mina
 
 function renderOverview(){
   const m=current(),r=m.variacion_transferencias_real_pct,j=m.empleo_promedio_cambio_2024_2025_pct;
+  renderAnnualBudget(m,'annual-budget-overview',false);
   $('overview-headline').textContent=m.caen_empleo_y_transferencias_misma_ventana_2025_vs2024?'Menos empleo y menos recursos en 2025.':r<0?'Los recursos compran menos que hace un año.':'Las transferencias ganan poder de compra.';
   $('overview-copy').textContent=m.caen_empleo_y_transferencias_misma_ventana_2025_vs2024?`En 2025, las transferencias reales cayeron ${num(Math.abs(m.transferencias_anual_2024_2025_real_pct),1)}% y el empleo formal promedio, ${num(Math.abs(j),1)}%, frente a 2024. El último corte de recursos, enero–julio de 2026, muestra ${r<0?'una baja':'una suba'} real de ${num(Math.abs(r),1)}% frente a los mismos meses de 2025.`:`En enero–julio de 2026, las transferencias provinciales ${r<0?'cayeron':'aumentaron'} ${num(Math.abs(r),1)}% después de descontar la inflación. El empleo privado formal ${j<0?'bajó':'subió'} ${num(Math.abs(j),1)}% en el promedio de 2025 frente a 2024.`;
   const stats=[['Transferencias ajustadas por inflación',pct(r),'Ene–jul 2026 vs. 2025',tone(r)],['Empleo privado formal',pct(j),'Promedio 2025 vs. 2024',tone(j)],['Transferencias por habitante',money(m.transferencias_por_habitante_base2022_ars_jul26),'Ene–jul 2026 · pesos de julio · población 2022','currency-value'],['Hogares con carencias',num(m.hogares_nbi_2022_pct,1)+'%','Necesidades básicas insatisfechas · Censo 2022','']];
@@ -193,6 +194,7 @@ function renderRanking(){
 function chooseMetric(id){state.metric=id;rankAscending=currentMetric().ascending;showAll=false;persist();renderRanking();}
 function renderResources(){
   const m=current();
+  renderAnnualBudget(m,'annual-budget-resources',true);
   renderPrices();
   $('resource-stats').innerHTML=card('Transferencias provinciales',millions(m.transferencias_2026_ene_jul_ars_jul26),'Ene–jul 2026 · millones de pesos de julio')+card('Variación real',pct(m.variacion_transferencias_real_pct),'Ene–jul 2026 vs. igual período de 2025',tone(m.variacion_transferencias_real_pct))+card('Por habitante',money(m.transferencias_por_habitante_base2022_ars_jul26),'Ene–jul 2026 · pesos de julio · población 2022');
   drawTransferChart();
@@ -245,6 +247,31 @@ function renderFiscal(m,chosen){
   }
 
 }
+function renderAnnualBudget(m,id,detailed){
+  const host=$(id),b=m.annualBudget,coverage=data.annualBudgetCoverage;
+  const catalog=`<a class="text-button" href="presupuestos.html#m-${m.id}">Ver los presupuestos de los 135 municipios →</a>`;
+  if(!b){
+    host.innerHTML=`<div class="eyebrow">Presupuesto anual</div><h2>Falta verificar el presupuesto de ${escape(m.municipio)}</h2><p>Todavía no incorporamos un documento oficial con el monto anual. Eso no significa que el municipio no tenga presupuesto. Las transferencias recibidas o los gastos de un semestre no permiten reconstruirlo.</p>${catalog}`;
+    return;
+  }
+  const label=b.basis==='current'?'Presupuesto vigente':'Presupuesto original publicado';
+  const dateLabel=b.basis==='current'?'Vigente al':'Documento del';
+  const headline=b.historical?`Último presupuesto verificado · ${b.year}`:`Presupuesto anual ${b.year}`;
+  const cards=`<div class="annual-budget-grid"><div><span class="stat-label">${label}</span><strong class="annual-budget-amount" data-budget-amount><span data-budget-raw="${b.amount}">$${num(b.amount/1e6,1)}</span> <span>millones</span></strong><span class="stat-context">Pesos corrientes, sin ajustar por inflación</span></div><div><span class="stat-label">Presupuesto por habitante</span><strong class="annual-budget-per-capita">${detailValue(b.perCapita,'money',0)}</strong><span class="stat-context">Presupuesto ${b.year} ÷ ${num(m.poblacion_2022)} habitantes del Censo 2022</span></div></div>`;
+  const status=b.historical?`<p class="budget-status">Este dato es de ${b.year}. Todavía falta verificar el presupuesto de ${coverage.targetYear}.</p>`:'';
+  let detail='';
+  if(detailed){
+    detail=detailTable('annual-authorization','El monto completo, en pesos corrientes',['Concepto','Pesos'],[
+      ['Presupuesto original del año',finite(b.original)?detailValue(b.original,'money',2):'Todavía no incorporado'],
+      ...(finite(b.modifications)?[['Modificaciones registradas',detailValue(b.modifications,'money',2)]]:[]),
+      ['Presupuesto vigente al corte informado',finite(b.current)?detailValue(b.current,'money',2):'Todavía no incorporado']
+    ])+`<p>El original es el monto de partida para el año. El vigente incorpora las modificaciones conocidas hasta el corte indicado. ${b.basis==='original'?'Aquí se muestra el original porque todavía no incorporamos una actualización del vigente.':''}</p><p>${escape(b.scope)} ${escape(b.note)}</p><p class="annual-budget-links">${b.documents.map((d,i)=>`<a href="${escape(d.url)}" target="_blank" rel="noopener">Documento oficial${b.documents.length>1?' '+(i+1):''}${d.consultedPages?.length===1?' · página '+d.consultedPages[0]:''} ↗</a>`).join(' · ')} · <a href="data/presupuestos_anuales.csv" download>Descargar los presupuestos (CSV) ↓</a></p>`;
+  }
+  host.innerHTML=`<div class="eyebrow">Cuánto tiene autorizado gastar</div><h2>${headline}</h2><p class="annual-budget-date">${dateLabel} ${fiscalDate(b.asOf)}. Verificado el ${fiscalDate(b.verifiedAt)}.</p>${status}${cards}<p>Es la autorización para gastar durante todo el año. No indica cuánto se gastó ni cuánto dinero queda disponible. El monto por habitante sirve para dimensionarlo; no es una suma que recibe cada vecino.</p>${detail}<div class="annual-budget-links">${detailed?catalog:'<button class="text-button" data-open-budget>Ver el detalle del presupuesto →</button>'}</div>`;
+  const open=host.querySelector('[data-open-budget]');
+  if(open)open.onclick=()=>{navigate('recursos');requestAnimationFrame(()=>$('annual-budget-resources').scrollIntoView({block:'start',behavior:'smooth'}));};
+}
+
 function renderManagement(m){
   const g=m.management,host=$('management-panel'),nav=$('management-shortcuts');
   host.innerHTML='';nav.innerHTML='';nav.hidden=!g;if(!g)return;
@@ -329,13 +356,13 @@ function attachEvents(){
   $('share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('Enlace copiado con el municipio y la vista elegidos.');}catch{toast('Podés copiar el enlace desde la barra del navegador.');}};
   $('export-report').onclick=event=>{if($('export-report').getAttribute('aria-disabled')==='true'){event.preventDefault();toast(reportUnavailable?'El informe está en actualización. Volvé a cargar la página en unos minutos.':'Estamos preparando el enlace al informe.');}};
   $('download-ranking').onclick=()=>{const meta=currentMetric();download(`ranking-${meta.id}.csv`,csv([['Municipio','Puesto','Valor','Unidad','Período','Cobertura','Criterio'],...rankingRows().map(r=>[r.m.municipio,r.rank,r.value,meta.unit,meta.period,rankingRows().length,meta.note])]));};
-  $('download-municipality').onclick=()=>{const m=current();download(`municipio-${m.id}.csv`,csv([['Municipio','Indicador','Valor','Unidad','Período','Criterio'],...METRICS.map(meta=>[m.municipio,meta.label,metricValue(m,meta),meta.unit,meta.period,meta.note]),...fiscalExportRows(m),...municipalContextExportRows(m)]));};
+  $('download-municipality').onclick=()=>{const m=current();download(`municipio-${m.id}.csv`,csv([['Municipio','Indicador','Valor','Unidad','Período','Criterio'],...METRICS.map(meta=>[m.municipio,meta.label,metricValue(m,meta),meta.unit,meta.period,meta.note]),...fiscalExportRows(m),...annualBudgetExportRows(m),...municipalContextExportRows(m)]));};
   let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(state.view==='panorama')drawMap();if(state.view==='recursos')drawTransferChart();if(state.view==='empleo')drawEmploymentChart();},80);}).observe(document.querySelector('main'));
   new ResizeObserver(()=>document.documentElement.style.setProperty('--header-height',document.querySelector('.site-header').getBoundingClientRect().height+'px')).observe(document.querySelector('.site-header'));
 }
 async function init(){
   try{
-    const responses=await Promise.all([fetch('data/dashboard.json?v=20260909-4'),fetch('data/geografia_original.geojson'),fetch('data/deflator.json?v=20260909-2')]);
+    const responses=await Promise.all([fetch('data/dashboard.json?v=20260910-1'),fetch('data/geografia_original.geojson'),fetch('data/deflator.json?v=20260909-2')]);
     if(responses.some(r=>!r.ok))throw new Error('No se pudieron leer los datos municipales.');
     const [dashboardText,geo,prices]=await Promise.all([responses[0].text(),responses[1].json(),responses[2].json()]);data=JSON.parse(dashboardText);geography=geo;deflator=prices;rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
     const params=new URLSearchParams(location.search);priceMode=params.get('pesos')==='corrientes'?'nominal':'real';priceBase=deflator.bases.includes(params.get('base'))?params.get('base'):deflator.latest;

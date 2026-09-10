@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
-import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv,fiscalExportRows,adjustPrice,priceComparisons,municipalContextExportRows} from '../municipios/model.mjs';
+import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv,fiscalExportRows,annualBudgetExportRows,adjustPrice,priceComparisons,municipalContextExportRows} from '../municipios/model.mjs';
 const require=createRequire(import.meta.url),d3=require('../municipios/vendor/d3.v7.min.js');
 const data=JSON.parse(fs.readFileSync(new URL('../municipios/data/dashboard.json',import.meta.url)));
 const geometry=JSON.parse(fs.readFileSync(new URL('../municipios/data/geografia_original.geojson',import.meta.url)));
@@ -296,5 +296,19 @@ test('municipal CSV includes new displayed context with original denominators an
     assert.equal(out.filter(r=>r[1]==='Salario bruto mensual promedio').length,3);
     for(const s of m.sectors)assert.equal(get('Empleo privado formal: '+s.name)[2],s.jobs);
     assert.ok(out.every(r=>r.length===6&&r[0]===m.municipio));
+  }
+});
+
+
+test('annual budgets export original and current amounts with their own year and census denominator',()=>{
+  for(const m of rows){
+    const exported=annualBudgetExportRows(m),b=m.annualBudget;
+    if(!b){assert.equal(exported.length,1);assert.equal(exported[0][2],null);continue;}
+    assert.equal(exported.length,3);
+    assert.equal(exported[0][2],b.original);
+    assert.equal(exported[1][2],b.current);
+    assert.ok(Math.abs(exported[2][2]-b.amount/m.poblacion_2022)<1e-7);
+    assert.ok(exported.every(r=>r[4].includes(String(b.year))&&r[4].includes(b.asOf)));
+    assert.ok(exported[2][5].includes('Censo 2022'));
   }
 });
