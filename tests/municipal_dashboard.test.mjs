@@ -3,11 +3,80 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
+import {rankingMetric,rankingExportRows,metricExportUnit} from '../municipios/model.mjs';
 import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv,fiscalExportRows,annualBudgetExportRows,adjustPrice,priceComparisons,municipalContextExportRows} from '../municipios/model.mjs';
 const require=createRequire(import.meta.url),d3=require('../municipios/vendor/d3.v7.min.js');
 const data=JSON.parse(fs.readFileSync(new URL('../municipios/data/dashboard.json',import.meta.url)));
 const geometry=JSON.parse(fs.readFileSync(new URL('../municipios/data/geografia_original.geojson',import.meta.url)));
 const rows=data.municipalities,metric=id=>METRICS.find(m=>m.id===id);
+
+test('budget rankings compare one exercise and type without silently mixing cutoff dates',()=>{
+  for(const [basis,count] of [['junio',68],['vigente',79],['original',17]]){
+    const meta=rankingMetric(metric('presupuesto-total'),basis),ranked=rankMunicipalities(rows,meta);
+    assert.equal(ranked.length,count);
+    for(const [i,r] of ranked.entries()){
+      assert.equal(r.m.annualBudget.year,2026);
+      assert.equal(r.value,r.m.annualBudget[basis==='original'?'original':'current']);
+      if(basis==='junio')assert.equal(r.m.annualBudget.asOf,'2026-06-30');
+      if(i)assert.ok(ranked[i-1].value>=r.value);
+    }
+  }
+  const sanIsidro=rows.find(m=>m.id==='06756'),lasHeras=rows.find(m=>m.id==='06329');
+  assert.equal(metricValue(sanIsidro,metric('presupuesto-total')),null);
+  assert.equal(metricValue(sanIsidro,rankingMetric(metric('presupuesto-total'),'vigente')),333076160469.20);
+  assert.equal(metricValue(lasHeras,rankingMetric(metric('presupuesto-total'),'original')),null);
+  assert.equal(metricValue(lasHeras,metric('presupuesto-total')),20293962203.96);
+  for(const m of rows.filter(m=>m.annualBudget&&m.annualBudget.year!==2026)){
+    for(const basis of ['junio','vigente','original'])assert.equal(metricValue(m,rankingMetric(metric('presupuesto-total'),basis)),null);
+  }
+});
+test('per-capita budgets use the requested numerator and preserve missing and zero states',()=>{
+  const tigre=rows.find(m=>m.id==='06805'),original=rankingMetric(metric('presupuesto-habitante'),'original');
+  assert.equal(metricValue(tigre,original),578906001955/446949);
+  assert.notEqual(metricValue(tigre,original),tigre.annualBudget.perCapita);
+  const sample={poblacion_2022:10,annualBudget:{year:2026,asOf:'2026-06-30',current:0,original:null}};
+  assert.equal(metricValue(sample,metric('presupuesto-total')),0);
+  assert.equal(metricValue(sample,original),null);
+  assert.equal(metricValue({...sample,poblacion_2022:0},metric('presupuesto-habitante')),null);
+  assert.equal(metricValue({...sample,poblacion_2022:null},metric('presupuesto-habitante')),null);
+  const tied=[{...sample,id:'a',municipio:'A'},{...sample,id:'b',municipio:'B'}];
+  assert.deepEqual(rankMunicipalities(tied,metric('presupuesto-total')).map(r=>r.rank),[1,1]);
+  const meta=rankingMetric(metric('presupuesto-total'),'vigente');
+  const peerRows=peers(rows,tigre,true),ranked=rankMunicipalities(peerRows,meta,true);
+  assert.equal(ranked.length,peerRows.filter(m=>m.annualBudget?.year===2026&&typeof m.annualBudget.current==='number').length);
+  for(let i=1;i<ranked.length;i++)assert.ok(ranked[i-1].value<=ranked[i].value);
+});
+test('new rankings retain the audited denominators, units and partial fiscal coverage',()=>{
+  assert.equal(METRICS.length,36);
+  for(const id of ['ingresos-habitante','gasto-habitante']){
+    const meta=metric(id),field=id==='ingresos-habitante'?'ingresos_totales':'gastos_totales';
+    assert.equal(rankMunicipalities(rows,meta).length,73);
+    for(const m of rows)assert.equal(metricValue(m,meta),m.fiscal?m.fiscal[field]/m.poblacion_2022:null);
+  }
+  for(const m of rows){
+    assert.equal(metricValue(m,metric('salario-nivel')),m.community.wage.annual['2025'].real);
+    assert.equal(metricValue(m,metric('salud')),m.community.health.withoutCoveragePct);
+    assert.equal(metricValue(m,metric('hacinamiento')),m.community.crowding.over3PersonsPerRoomPct);
+    assert.equal(metricValue(m,metric('deudas-atrasadas')),m.community.debt.peopleInArrearsPct);
+    assert.equal(metricValue(m,metric('robos')),m.community.crime['2025'].robberyRate);
+  }
+  assert.match(metric('robos').note,/población de referencia oficial/);
+  assert.match(metric('deudas-atrasadas').period,/personas con deuda registrada/);
+  assert.equal(metricExportUnit(metric('salario-nivel')),'ARS de julio de 2026');
+});
+test('budget exports and shared links identify the chosen basis, cutoff and raw peso unit',()=>{
+  const tigre=rows.find(m=>m.id==='06805'),meta=rankingMetric(metric('presupuesto-total'),'original');
+  const exported=rankingExportRows(rankMunicipalities([tigre],meta),meta),r=exported[1];
+  assert.equal(r[2],578906001955);
+  assert.equal(r[3],'ARS corrientes');
+  assert.equal(r[7],'Original');assert.equal(r[8],tigre.annualBudget.asOf);
+  assert.equal(r[9],tigre.annualBudget.scope);
+  assert.ok(r[10].includes(tigre.annualBudget.documents[0].url));
+  assert.equal(metricExportUnit(metric('resultado-pesos')),'ARS corrientes');
+  assert.equal(metricExportUnit(metric('presupuesto-habitante')),'ARS corrientes por habitante Censo 2022');
+  for(const basis of ['junio','vigente','original'])assert.equal(readState('?vista=rankings&indicador=presupuesto-total&presupuesto='+basis,rows).budgetBasis,basis);
+  for(const basis of ['bad','toString','__proto__'])assert.equal(readState('?presupuesto='+basis,rows).budgetBasis,'junio');
+});
 
 test('published input manifest matches the committed text on Windows and Linux',()=>{
   const manifest=JSON.parse(fs.readFileSync(new URL('../municipios/data/build-manifest.json',import.meta.url)));

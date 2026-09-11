@@ -1,5 +1,7 @@
 const metric = (id, label, group, field, unit, period, note, ascending = true) => ({id, label, group, field, unit, period, note, ascending});
 export const METRICS = [
+  {...metric('presupuesto-total', 'Presupuesto total', 'Presupuesto', 'annualBudget.current', 'millions', 'Ejercicio 2026 · vigente al 30 de junio', 'Autorización anual para gastar, en pesos corrientes. No es gasto ejecutado ni dinero disponible. Los organismos y servicios incluidos pueden diferir entre municipios.', false), budget:true},
+  {...metric('presupuesto-habitante', 'Presupuesto por habitante', 'Presupuesto', 'annualBudget.current', 'money', 'Ejercicio 2026 · vigente al 30 de junio · población 2022', 'Presupuesto anual dividido por la población del Censo 2022. Ayuda a comparar municipios de distinto tamaño; los organismos y servicios incluidos pueden diferir. No es dinero que recibe cada vecino.', false), budget:true, perCapita:true},
   metric('recursos', 'Cambio de transferencias', 'Recursos', 'variacion_transferencias_real_pct', '%', 'Ene–jul 2026 vs. ene–jul 2025', 'Transferencias provinciales totales, descontando la inflación mes a mes. No son todos los ingresos municipales.'),
   metric('por-habitante', 'Transferencias por habitante', 'Recursos', 'transferencias_por_habitante_base2022_ars_jul26', 'money', 'Ene–jul 2026 · población 2022', 'Pesos de julio de 2026 por habitante del Censo 2022. El reparto también contempla servicios y superficie.', false),
   metric('copart', 'Cambio de coparticipación', 'Recursos', 'variacion_copart_real_pct', '%', 'Ene–jul 2026 vs. ene–jul 2025', 'Variación real de la coparticipación bruta. Los demás fondos se contabilizan por separado.'),
@@ -9,6 +11,7 @@ export const METRICS = [
   metric('caida-empleo', 'Cambio del empleo desde 2023', 'Empleo', 'empleo_cambio_dic2023_dic2025_pct', '%', 'Diciembre 2025 vs. diciembre 2023', 'Cambio porcentual de puestos privados formales entre dos cortes de diciembre.'),
   metric('densidad-empleo', 'Puestos por 1.000 habitantes', 'Empleo', 'empleos_formales_dic2025_por_1000_hab_base2022', 'density', 'Diciembre 2025 · población 2022', 'Puestos localizados por 1.000 habitantes censales. Incluye trabajadores que pueden vivir en otro municipio.', false),
   metric('salarios', 'Cambio del salario bruto real', 'Empleo', 'salario_real_promedio_cambio_2023_2025_pct', '%', 'Promedio mensual 2025 vs. 2023', 'Salario bruto promedio del empleo privado registrado, ajustado por inflación. Incluye aguinaldo y otros pagos; no es sueldo de bolsillo. La composición del empleo modifica el promedio.', false),
+  metric('salario-nivel', 'Salario bruto promedio', 'Empleo', 'community.wage.annual.2025.real', 'money', 'Promedio mensual de 2025 · pesos de julio de 2026', 'OEDE/SIPA e IPC nacional INDEC: cada mes se ajusta por inflación y luego se promedian los doce meses. Empleo privado formal por lugar del establecimiento; incluye aguinaldo y otros pagos. No es sueldo de bolsillo, salario municipal ni ingreso medio de los vecinos.', false),
   metric('masa-salarial', 'Cambio de masa salarial', 'Empleo', 'masa_salarial_formal_aprox_cambio_2023_2025_pct', '%', 'Año 2025 vs. año 2023', 'Aproximación: puestos por remuneración media, sumados mes a mes a precios constantes. No mide ventas locales.'),
   metric('industria', 'Peso de la industria', 'Economía', 'peso_industria_empleo_formal_dic2025_pct', '%', 'Diciembre 2025', 'Empleo manufacturero sobre empleo privado formal total. Los registros reservados quedan sin dato.', false),
   metric('industria-cambio', 'Cambio del empleo industrial', 'Economía', 'empleo_industrial_cambio_dic2023_dic2025_pct', '%', 'Diciembre 2025 vs. diciembre 2023', 'Variación de puestos manufactureros; se comparan solamente municipios con ambos cortes publicados.'),
@@ -16,15 +19,21 @@ export const METRICS = [
   metric('carencias', 'Hogares con carencias · %', 'Población', 'hogares_nbi_2022_pct', '%', 'Censo 2022', 'Hogares con necesidades básicas insatisfechas (NBI). Son carencias estructurales, no pobreza monetaria actual.', false),
   metric('hogares', 'Hogares con carencias · cantidad', 'Población', 'hogares_nbi_2022', 'households', 'Censo 2022', 'Número de hogares con NBI. Una mayor cantidad puede reflejar una población más grande.', false),
   metric('poblacion', 'Crecimiento de población', 'Población', 'crecimiento_poblacion_2010_2022_pct', '%', 'Censos 2010–2022', 'Chascomús y Lezama quedan fuera hasta homologar la separación territorial en la base de 2010.', false),
+  metric('salud', 'Sin obra social, prepaga ni plan estatal', 'Población', 'community.health.withoutCoveragePct', '%', 'Censo 2022 · población en viviendas particulares', 'INDEC/DPE: personas sin obra social, prepaga ni plan estatal, sobre la población en viviendas particulares. Pueden atenderse en el sistema público; no significa falta de atención médica. Es una referencia de 2022, no una medición actual.', false),
+  metric('hacinamiento', 'Hogares con hacinamiento crítico', 'Población', 'community.crowding.over3PersonsPerRoomPct', '%', 'Censo 2022 · porcentaje de hogares', 'INDEC/DPE: hogares con más de tres personas por cuarto, sobre el total de hogares. Muestra una carencia habitacional; no equivale a pobreza por ingresos ni describe por sí sola la situación actual.', false),
   metric('sucursales', 'Sucursales por habitante', 'Finanzas', 'sucursales_por_10000_hab_base2022', 'branches', '2024 · población 2022', 'Locales financieros por 10.000 habitantes. No incluye una medición de cobertura bancaria digital.', false),
   metric('credito', 'Cambio real del crédito', 'Finanzas', 'prestamos_real_cambio_2023_2024_pct', '%', 'Diciembre 2024 vs. diciembre 2023', 'Préstamos registrados por localización financiera, deflactados con IPC de cierre. No identifica solamente pymes o residentes.', false),
   metric('prestamos-depositos', 'Préstamos sobre depósitos', 'Finanzas', 'prestamos_sobre_depositos_2024_pct', '%', 'Cuarto trimestre 2024', 'Relación de saldos por localización financiera. No mide fuga de ahorros ni permite seguir el destino de cada depósito.', false),
+  metric('deudas-atrasadas', 'Personas con deudas atrasadas', 'Finanzas', 'community.debt.peopleInArrearsPct', '%', 'Julio de 2026 · sobre personas con deuda registrada', 'CEC/FES, Mapa de la Deuda, sobre registros del BCRA: personas en mora divididas por personas con deuda registrada. La fuente cuenta las situaciones 3, 4 y 5; no incluye todos los atrasos más cortos. No es el porcentaje de todos los habitantes ni deuda del gobierno municipal. La localización sigue el criterio del proveedor.', false),
   metric('deficit', 'Resultado sobre ingresos', 'Cuentas', 'fiscal.resultado_sobre_ingresos_pct', '%', 'Acumulado al 30 de junio de 2026', 'Muestra parcial con cierre en junio. Negativo: déficit; positivo: superávit. Recursos percibidos menos gastos devengados, sin aplicaciones financieras. Los servicios y organismos incluidos pueden diferir. No es caja libre.'),
   metric('resultado-pesos', 'Resultado en pesos', 'Cuentas', 'fiscal.resultado_financiero', 'millions', 'Acumulado al 30 de junio de 2026', 'Resultado financiero en pesos corrientes. El monto refleja también el tamaño del municipio. La muestra no permite identificar el mayor déficit de los 135.'),
   metric('inversion', 'Inversión sobre gasto', 'Cuentas', 'fiscal.capital_sobre_gasto_pct', '%', 'Acumulado al 30 de junio de 2026', 'Gasto de capital sobre gasto total sin aplicaciones financieras. Incluye inversión y transferencias de capital; no mide avance físico ni calidad de las obras.', false),
   metric('personal', 'Personal sobre gasto corriente', 'Cuentas', 'fiscal.personal_sobre_gasto_corriente_pct', '%', 'Acumulado al 30 de junio de 2026', 'Gasto devengado en personal sobre gasto corriente. Los servicios prestados, la tercerización y los organismos incluidos afectan la comparación.', false),
   metric('ahorro-corriente', 'Ahorro corriente sobre ingresos', 'Cuentas', 'fiscal.ahorro_sobre_ingresos_corrientes_pct', '%', 'Acumulado al 30 de junio de 2026', 'Ingresos corrientes percibidos menos gastos corrientes devengados, como porcentaje de los ingresos corrientes. Muestra el margen antes de la cuenta de capital. No es dinero libre.', false),
   metric('inversion-habitante', 'Inversión por habitante', 'Cuentas', 'fiscal.capital_por_habitante_base2022_ars_corrientes', 'money', 'Acumulado al 30 de junio de 2026 · población 2022', 'Gasto de capital en pesos corrientes por habitante del Censo 2022. La cobertura institucional y los servicios a cargo pueden diferir.', false),
+  {...metric('ingresos-habitante', 'Ingresos por habitante', 'Cuentas', 'fiscal.ingresos_totales', 'money', 'Acumulado al 30 de junio de 2026 · población 2022', 'Recursos corrientes y de capital percibidos, divididos por habitantes del Censo 2022. Pesos corrientes del período informado, sin anualizar. No incluye fuentes financieras; los organismos y servicios incluidos pueden diferir.', false), perCapita:true},
+  {...metric('gasto-habitante', 'Gasto por habitante', 'Cuentas', 'fiscal.gastos_totales', 'money', 'Acumulado al 30 de junio de 2026 · población 2022', 'Gastos corrientes y de capital devengados, divididos por habitantes del Censo 2022. Pesos corrientes del período informado, sin anualizar. Devengado significa que se generó la obligación de pagar; no incluye aplicaciones financieras. Más gasto no prueba mejores servicios.', false), perCapita:true},
+  metric('robos', 'Robos por 100.000 habitantes', 'Seguridad', 'community.crime.2025.robberyRate', 'rate', 'Año 2025 · tasa oficial SNIC', 'SNIC: robos registrados, incluidos los agravados y excluidas las tentativas. La tasa usa la población de referencia oficial del SNIC, no el Censo 2022 del tablero. No incluye todos los delitos ni mide percepción de inseguridad. En municipios pequeños, pocos hechos pueden cambiar mucho la tasa.', false),
   metric('transparencia', 'Publicación de información fiscal', 'Transparencia', 'transparency.score', 'score', 'ASAP · relevamiento del 1 al 8 de mayo de 2026', 'Puntaje de 0 a 100 por publicación, actualidad, integridad y acceso a información fiscal. Describe lo observado por ASAP en esa fecha; no mide el resultado fiscal ni acredita la calidad de gestión.', false),
   metric('cambio-transparencia', 'Cambio del puntaje', 'Transparencia', 'transparency.change', 'points', 'ASAP · mayo de 2026 vs. noviembre de 2025', 'Diferencia en puntos del índice publicado. Cada edición exige información del período correspondiente: una baja puede reflejar documentos que quedaron desactualizados. No mide cambios en la situación financiera.', false)
 ];
@@ -43,7 +52,37 @@ export function transparencyStatus(component, score) {
   return score===component.max?'Información completa y al día en el relevamiento.':score===0?'Sin puntaje: información ausente o fuera del período admitido.':'Información parcial o de un trimestre anterior.';
 }
 export const VALID_VIEWS = ['panorama', 'rankings', 'recursos', 'empleo', 'simular'];
-export function metricValue(m, meta) { return meta.field.split('.').reduce((v, k) => v?.[k], m) ?? null; }
+export const BUDGET_BASES = {
+  junio:{field:'current',asOf:'2026-06-30',label:'Vigente · junio 2026',period:'Ejercicio 2026 · vigente al 30 de junio',note:'Compara presupuestos anuales vigentes en la misma fecha: 30 de junio de 2026. Quedan fuera los que sólo tienen otro corte o el presupuesto original.'},
+  vigente:{field:'current',label:'Vigente · último corte 2026',period:'Ejercicio 2026 · último vigente disponible de cada municipio',note:'Amplía la muestra usando el último presupuesto vigente verificado de 2026. Los cortes son distintos: mirá la fecha debajo de cada municipio. No representa una comparación a una misma fecha.'},
+  original:{field:'original',label:'Original · 2026',period:'Ejercicio 2026 · presupuesto original',note:'Compara la autorización inicial para 2026, antes de las modificaciones del año. La fecha debajo de cada municipio corresponde al documento consultado.'}
+};
+export function rankingMetric(meta, basis='junio') {
+  if(!meta.budget)return meta;
+  const budgetBasis=Object.hasOwn(BUDGET_BASES,basis)?basis:'junio',config=BUDGET_BASES[budgetBasis];
+  return {...meta,budgetBasis,period:config.period+(meta.perCapita?' · población 2022':'')};
+}
+export function metricValue(m, meta) {
+  let value;
+  if(meta.budget){
+    const b=m.annualBudget,config=BUDGET_BASES[meta.budgetBasis]||BUDGET_BASES.junio;
+    if(!b||b.year!==2026||(config.asOf&&b.asOf!==config.asOf))return null;
+    value=b[config.field];
+  }else value=meta.field.split('.').reduce((v,k)=>v?.[k],m);
+  if(!finite(value))return null;
+  return meta.perCapita?(finite(m.poblacion_2022)&&m.poblacion_2022>0?value/m.poblacion_2022:null):value;
+}
+export function metricExportUnit(meta) {
+  if(meta.budget||meta.perCapita)return meta.perCapita?'ARS corrientes por habitante Censo 2022':'ARS corrientes';
+  if(meta.id==='salario-nivel')return 'ARS de julio de 2026';
+  return ({millions:'ARS corrientes',money:'ARS (ver período y criterio)',rate:'hechos por 100.000 habitantes',density:'puestos por 1.000 habitantes',branches:'locales por 10.000 habitantes',jobs:'puestos',households:'hogares',score:'puntaje sobre 100',points:'puntos'})[meta.unit]||meta.unit;
+}
+export function rankingExportRows(ranked,meta) {
+  return [['Municipio','Puesto','Valor','Unidad','Período','Municipios con datos','Criterio','Tipo de presupuesto','Corte o fecha del documento','Cobertura institucional','Documento'],...ranked.map(r=>{
+    const b=meta.budget?r.m.annualBudget:null,config=meta.budget?(BUDGET_BASES[meta.budgetBasis]||BUDGET_BASES.junio):null;
+    return [r.m.municipio,r.rank,r.value,metricExportUnit(meta),meta.period,ranked.length,meta.note+(config?' '+config.note:''),b?(config.field==='original'?'Original':'Vigente'):'',b?.asOf??'',b?.scope??(meta.group==='Cuentas'?r.m.fiscal?.scope:'')??'',b?.documents?.map(d=>d.url).join(' | ')??''];
+  })];
+}
 export function finite(v) { return typeof v === 'number' && Number.isFinite(v); }
 export function rankMunicipalities(rows, meta, ascending = meta.ascending) {
   const valid = rows.map(m => ({m, value:metricValue(m, meta)})).filter(r => finite(r.value));
@@ -103,7 +142,7 @@ export function fiscalExportRows(m) {
 }
 export function readState(search, municipalities, savedId) {
   const p=new URLSearchParams(search), id=p.get('municipio') || savedId;
-  return {id:municipalities.some(m=>m.id===id)?id:'06805',view:VALID_VIEWS.includes(p.get('vista'))?p.get('vista'):'panorama',metric:METRICS.some(m=>m.id===p.get('indicador'))?p.get('indicador'):'recursos'};
+  return {id:municipalities.some(m=>m.id===id)?id:'06805',view:VALID_VIEWS.includes(p.get('vista'))?p.get('vista'):'panorama',metric:METRICS.some(m=>m.id===p.get('indicador'))?p.get('indicador'):'recursos',budgetBasis:Object.hasOwn(BUDGET_BASES,p.get('presupuesto'))?p.get('presupuesto'):'junio'};
 }
 
 export function adjustPrice(value, period, base, indices) {

@@ -1,4 +1,4 @@
-import {METRICS, TRANSPARENCY_COMPONENTS, transparencyStatus, VALID_VIEWS, finite, metricValue, rankMunicipalities, peers, simulate, csv, fiscalExportRows, annualBudgetExportRows, fiscalPeriods, readState, adjustPrice, priceComparisons, municipalContextExportRows} from './model.mjs';
+import {METRICS, BUDGET_BASES, rankingMetric, rankingExportRows, metricExportUnit, TRANSPARENCY_COMPONENTS, transparencyStatus, VALID_VIEWS, finite, metricValue, rankMunicipalities, peers, simulate, csv, fiscalExportRows, annualBudgetExportRows, fiscalPeriods, readState, adjustPrice, priceComparisons, municipalContextExportRows} from './model.mjs';
 
 const $=id=>document.getElementById(id);
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -11,7 +11,7 @@ const negativeClass=v=>finite(v)&&v<0?'negative':'';
 const signedMillions=v=>finite(v)?(v<0?'−':v>0?'+':'')+millions(Math.abs(v)):'Sin dato';
 const motion=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?0:300;
 const monthLabels=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-const formatMetric=(v,meta)=>!finite(v)?'Sin dato':meta.unit==='score'?num(v)+' / 100':meta.unit==='points'?(v>0?'+':'')+num(v)+' puntos':meta.unit==='money'?money(v):meta.unit==='millions'?millions(v):meta.unit==='%'?num(v,2)+'%':meta.unit==='pp'?(v>0?'+':'')+num(v,3)+' pp':num(v,['density','branches'].includes(meta.unit)?1:0);
+const formatMetric=(v,meta)=>!finite(v)?'Sin dato':meta.unit==='score'?num(v)+' / 100':meta.unit==='points'?(v>0?'+':'')+num(v)+' puntos':meta.unit==='money'?money(v):meta.unit==='millions'?millions(v):meta.unit==='%'?num(v,2)+'%':meta.unit==='pp'?(v>0?'+':'')+num(v,3)+' pp':num(v,['density','branches','rate'].includes(meta.unit)?1:0);
 let data,geography,rows,byId,state,mapMetric='recursos',scopePeers=false,rankAscending=true,showAll=false,fullHistory=false,mapZoom,mapProjection,mapPath,mapWidth=0;
 let toastTimer;
 let reportManifest=null,reportUnavailable=false;
@@ -40,10 +40,11 @@ async function prepareReports(dashboardText){
 }
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,3500);}
 const current=()=>byId.get(state.id);
-const currentMetric=()=>METRICS.find(m=>m.id===state.metric);
+const currentMetric=()=>rankingMetric(METRICS.find(m=>m.id===state.metric),state.budgetBasis);
 const latestFiscal=m=>[m.fiscal,m.fiscalOther].filter(Boolean).sort((a,b)=>b.fin.localeCompare(a.fin))[0];
 function persist(){
   const url=new URL(location.href);url.search='';url.searchParams.set('municipio',state.id);url.searchParams.set('vista',state.view);if(state.view==='rankings')url.searchParams.set('indicador',state.metric);url.hash='';
+  if(state.view==='rankings'&&currentMetric().budget)url.searchParams.set('presupuesto',state.budgetBasis);
   if(state.view==='recursos'){url.searchParams.set('pesos',priceMode==='real'?'reales':'corrientes');url.searchParams.set('base',priceBase);}
   history.replaceState(null,'',url);
   try{localStorage.setItem('pellegrini_municipio',state.id);}catch{}
@@ -168,25 +169,38 @@ function drawMap(){
 }
 function zoomSelected(){const f=geography.features.find(f=>f.properties.id===state.id),[[x0,y0],[x1,y1]]=mapPath.bounds(f),w=$('map').clientWidth,h=$('map').clientHeight;const k=Math.min(12,.65/Math.max((x1-x0)/w,(y1-y0)/h));d3.select('#map').transition().duration(motion()).call(mapZoom.transform,d3.zoomIdentity.translate(w/2,h/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2));}
 function rankingRows(){return rankMunicipalities(peers(rows,current(),scopePeers),currentMetric(),rankAscending);}
+function rankingRowContext(m,meta){
+  if(meta.budget){const date=m.annualBudget?.asOf?.split('-').reverse().join('/');return (meta.budgetBasis==='original'?'Original · documento ':'Vigente al ')+date;}
+  if(meta.id==='robos')return num(m.community.crime['2025'].robberies)+' robos registrados en 2025';
+  if(meta.id==='deudas-atrasadas')return num(m.community.debt.peopleInArrears)+' en mora de '+num(m.community.debt.peopleWithDebt)+' personas con deuda';
+  return '';
+}
 function renderRanking(){
   const meta=currentMetric(),groups=[...new Set(METRICS.map(m=>m.group))];
   $('ranking-groups').innerHTML=groups.map(g=>`<button data-group="${g}" aria-pressed="${g===meta.group}">${g}</button>`).join('');
   $('ranking-groups').querySelectorAll('button').forEach(b=>b.onclick=()=>chooseMetric(METRICS.find(m=>m.group===b.dataset.group).id));
   $('ranking-metrics').innerHTML=METRICS.filter(m=>m.group===meta.group).map(m=>`<button data-metric="${m.id}" aria-pressed="${m.id===meta.id}">${m.label}</button>`).join('');
   $('ranking-metrics').querySelectorAll('button').forEach(b=>b.onclick=()=>chooseMetric(b.dataset.metric));
+  $('budget-ranking-controls').hidden=!meta.budget;
+  if(meta.budget){
+    $('budget-ranking-choices').innerHTML=Object.entries(BUDGET_BASES).map(([id,b])=>`<button data-budget-basis="${id}" aria-pressed="${id===state.budgetBasis}">${b.label}</button>`).join('');
+    $('budget-ranking-choices').querySelectorAll('button').forEach(b=>b.onclick=()=>{state.budgetBasis=b.dataset.budgetBasis;showAll=false;persist();renderRanking();});
+    $('budget-ranking-note').textContent=BUDGET_BASES[state.budgetBasis].note;
+  }
   const ranked=rankingRows(),m=current(),selected=ranked.find(r=>r.m.id===m.id);
-  $('ranking-title').textContent=meta.label;$('ranking-period').textContent=meta.period;
-  $('ranking-coverage').textContent=`${ranked.length} ${ranked.length===1?'municipio':'municipios'} con datos${meta.group==='Cuentas'?' · Muestra parcial, no ranking de los 135':''}${scopePeers?` · Entre ${num(m.poblacion_2022/2)} y ${num(m.poblacion_2022*2)} habitantes (Censo 2022)`:''}`;
+  $('ranking-title').textContent=meta.label;$('ranking-period').textContent=meta.period+(meta.unit==='millions'?' · M = millones de pesos':'');
+  $('ranking-coverage').textContent=`${ranked.length} ${ranked.length===1?'municipio':'municipios'} con datos${meta.group==='Cuentas'||meta.budget?' · Muestra parcial, no ranking de los 135':''}${scopePeers?` · Entre ${num(m.poblacion_2022/2)} y ${num(m.poblacion_2022*2)} habitantes (Censo 2022)`:''}`;
   $('ranking-direction').textContent=rankAscending?'Menor a mayor ↑':'Mayor a menor ↓';
   $('scope-peers').setAttribute('aria-label',`Comparar municipios con población similar a ${m.municipio}`);
   $('scope-all').setAttribute('aria-pressed',String(!scopePeers));$('scope-peers').setAttribute('aria-pressed',String(scopePeers));
   const transparency=meta.group==='Transparencia';
-  $('ranking-summary').hidden=!transparency;
+  $('ranking-summary').hidden=!(transparency||meta.budget);
+  if(meta.budget)$('ranking-summary').textContent=meta.perCapita?'El presupuesto por habitante ayuda a comparar municipios de distinto tamaño. Es una autorización anual dividida por la población del Censo 2022; no es dinero que recibe cada vecino. Los servicios y organismos incluidos pueden diferir.':'El presupuesto total muestra cuánto tiene autorizado gastar cada municipio en el año. No es lo que ya gastó ni la plata disponible en caja. Para comparar distritos de distinto tamaño, mirá también el presupuesto por habitante.';
   if(transparency)$('ranking-summary').textContent=meta.id==='transparencia'?`${ranked.filter(r=>r.value===100).length} de ${ranked.length} municipios de esta comparación alcanzaron los 100 puntos. El índice evalúa publicación de información fiscal.`:`En esta comparación, ${ranked.filter(r=>r.value>0).length} municipios subieron, ${ranked.filter(r=>r.value<0).length} bajaron y ${ranked.filter(r=>r.value===0).length} mantuvieron su puntaje. Son cambios en publicación, no en resultado fiscal.`;
-  $('ranking-selected').innerHTML=`<div class="rank-reference-info"><span class="rank-reference-label">Municipio de referencia</span><strong>${escape(m.municipio)}</strong><span>${selected?`Posición ${selected.rank} de ${ranked.length} en esta comparación`:'Sin dato para este indicador'}</span></div><div class="rank-reference-detail"><strong class="${negativeClass(metricValue(m,meta))}">${formatMetric(metricValue(m,meta),meta)}</strong><button class="text-button" id="open-reference">${transparency?'Ver detalle de transparencia':'Ver ficha municipal'} →</button></div>`;
-  $('open-reference').onclick=()=>transparency?openTransparency():navigate('panorama');
+  $('ranking-selected').innerHTML=`<div class="rank-reference-info"><span class="rank-reference-label">Municipio de referencia</span><strong>${escape(m.municipio)}</strong><span>${selected?`Posición ${selected.rank} de ${ranked.length} en esta comparación`:meta.budget?'Sin presupuesto verificado para el tipo y corte elegidos':'Sin dato para este indicador'}</span>${selected&&meta.budget?`<span>${escape(rankingRowContext(m,meta))}</span>`:''}</div><div class="rank-reference-detail"><strong class="${negativeClass(metricValue(m,meta))}">${formatMetric(metricValue(m,meta),meta)}</strong><button class="text-button" id="open-reference">${transparency?'Ver detalle de transparencia':meta.budget?'Ver presupuesto y documento':'Ver ficha municipal'} →</button></div>`;
+  $('open-reference').onclick=()=>{if(transparency)openTransparency();else if(meta.budget){navigate('recursos',false);$('annual-budget-resources').scrollIntoView({behavior:motion()?'smooth':'instant',block:'start'});}else navigate('panorama');};
   const vals=ranked.map(r=>r.value),lo=Math.min(0,...vals),hi=Math.max(0,...vals),span=hi-lo||1,zero=(0-lo)/span*100;
-  $('ranking-rows').innerHTML=(showAll?ranked:ranked.slice(0,10)).map(r=>{const pos=(r.value-lo)/span*100,left=Math.min(pos,zero),width=Math.max(Math.abs(pos-zero),.4);return `<button class="rank-row ${r.m.id===m.id?'is-selected':''}" data-municipality="${r.m.id}" aria-label="${escape(r.m.municipio)}, puesto ${r.rank}, ${formatMetric(r.value,meta)}. Seleccionar municipio"><span class="rank-number">${r.rank.toString().padStart(2,'0')}</span><span class="rank-name">${escape(r.m.municipio)}</span><span class="rank-track" aria-hidden="true"><span class="rank-zero" style="left:${zero}%"></span><span class="rank-fill ${r.value<0?'down':'single'}" style="left:${left}%;width:${width}%"></span></span><span class="rank-value ${negativeClass(r.value)}">${formatMetric(r.value,meta)}</span></button>`;}).join('');
+  $('ranking-rows').innerHTML=(showAll?ranked:ranked.slice(0,10)).map(r=>{const pos=(r.value-lo)/span*100,left=Math.min(pos,zero),width=Math.max(Math.abs(pos-zero),.4),context=rankingRowContext(r.m,meta);return `<button class="rank-row ${r.m.id===m.id?'is-selected':''}" data-municipality="${r.m.id}" aria-label="${escape(r.m.municipio)}, puesto ${r.rank}, ${formatMetric(r.value,meta)}. ${escape(context)}. Seleccionar municipio"><span class="rank-number">${r.rank.toString().padStart(2,'0')}</span><span class="rank-name">${escape(r.m.municipio)}${context?`<small class="rank-row-context">${escape(context)}</small>`:''}</span><span class="rank-track" aria-hidden="true"><span class="rank-zero" style="left:${zero}%"></span><span class="rank-fill ${r.value<0?'down':'single'}" style="left:${left}%;width:${width}%"></span></span><span class="rank-value ${negativeClass(r.value)}">${formatMetric(r.value,meta)}</span></button>`;}).join('');
   bindMunicipalButtons($('ranking-rows'));
   $('ranking-more').hidden=ranked.length<=10;$('ranking-more').textContent=showAll?'Mostrar los primeros 10':`Ver los ${ranked.length} municipios`;
   $('ranking-note').textContent=meta.note+' Los empates comparten puesto. La posición corresponde al orden y al grupo elegidos; no es una calificación general de gestión.';
@@ -355,8 +369,8 @@ function attachEvents(){
   $('shock').addEventListener('input',renderSimulation);document.querySelectorAll('[data-shock]').forEach(b=>b.onclick=()=>{$('shock').value=b.dataset.shock;renderSimulation();});
   $('share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('Enlace copiado con el municipio y la vista elegidos.');}catch{toast('Podés copiar el enlace desde la barra del navegador.');}};
   $('export-report').onclick=event=>{if($('export-report').getAttribute('aria-disabled')==='true'){event.preventDefault();toast(reportUnavailable?'El informe está en actualización. Volvé a cargar la página en unos minutos.':'Estamos preparando el enlace al informe.');}};
-  $('download-ranking').onclick=()=>{const meta=currentMetric();download(`ranking-${meta.id}.csv`,csv([['Municipio','Puesto','Valor','Unidad','Período','Cobertura','Criterio'],...rankingRows().map(r=>[r.m.municipio,r.rank,r.value,meta.unit,meta.period,rankingRows().length,meta.note])]));};
-  $('download-municipality').onclick=()=>{const m=current();download(`municipio-${m.id}.csv`,csv([['Municipio','Indicador','Valor','Unidad','Período','Criterio'],...METRICS.map(meta=>[m.municipio,meta.label,metricValue(m,meta),meta.unit,meta.period,meta.note]),...fiscalExportRows(m),...annualBudgetExportRows(m),...municipalContextExportRows(m)]));};
+  $('download-ranking').onclick=()=>{const meta=currentMetric();download(`ranking-${meta.id}${meta.budget?'-'+state.budgetBasis:''}.csv`,csv(rankingExportRows(rankingRows(),meta)));};
+  $('download-municipality').onclick=()=>{const m=current();download(`municipio-${m.id}.csv`,csv([['Municipio','Indicador','Valor','Unidad','Período','Criterio'],...METRICS.map(meta=>[m.municipio,meta.label,metricValue(m,meta),metricExportUnit(meta),meta.period,meta.note]),...fiscalExportRows(m),...annualBudgetExportRows(m),...municipalContextExportRows(m)]));};
   let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(state.view==='panorama')drawMap();if(state.view==='recursos')drawTransferChart();if(state.view==='empleo')drawEmploymentChart();},80);}).observe(document.querySelector('main'));
   new ResizeObserver(()=>document.documentElement.style.setProperty('--header-height',document.querySelector('.site-header').getBoundingClientRect().height+'px')).observe(document.querySelector('.site-header'));
 }
