@@ -2,6 +2,8 @@
 (function(){'use strict';
 const metric = (id, label, group, field, unit, period, note, ascending = true) => ({id, label, group, field, unit, period, note, ascending});
 const METRICS = [
+  {...metric('presupuesto-total', 'Presupuesto total', 'Presupuesto', 'annualBudget.current', 'millions', 'Ejercicio 2026 · vigente al 30 de junio', 'Autorización anual para gastar, en pesos corrientes. No es gasto ejecutado ni dinero disponible. Los organismos y servicios incluidos pueden diferir entre municipios.', false), budget:true},
+  {...metric('presupuesto-habitante', 'Presupuesto por habitante', 'Presupuesto', 'annualBudget.current', 'money', 'Ejercicio 2026 · vigente al 30 de junio · población 2022', 'Presupuesto anual dividido por la población del Censo 2022. Ayuda a comparar municipios de distinto tamaño; los organismos y servicios incluidos pueden diferir. No es dinero que recibe cada vecino.', false), budget:true, perCapita:true},
   metric('recursos', 'Cambio de transferencias', 'Recursos', 'variacion_transferencias_real_pct', '%', 'Ene–jul 2026 vs. ene–jul 2025', 'Transferencias provinciales totales, descontando la inflación mes a mes. No son todos los ingresos municipales.'),
   metric('por-habitante', 'Transferencias por habitante', 'Recursos', 'transferencias_por_habitante_base2022_ars_jul26', 'money', 'Ene–jul 2026 · población 2022', 'Pesos de julio de 2026 por habitante del Censo 2022. El reparto también contempla servicios y superficie.', false),
   metric('copart', 'Cambio de coparticipación', 'Recursos', 'variacion_copart_real_pct', '%', 'Ene–jul 2026 vs. ene–jul 2025', 'Variación real de la coparticipación bruta. Los demás fondos se contabilizan por separado.'),
@@ -11,6 +13,7 @@ const METRICS = [
   metric('caida-empleo', 'Cambio del empleo desde 2023', 'Empleo', 'empleo_cambio_dic2023_dic2025_pct', '%', 'Diciembre 2025 vs. diciembre 2023', 'Cambio porcentual de puestos privados formales entre dos cortes de diciembre.'),
   metric('densidad-empleo', 'Puestos por 1.000 habitantes', 'Empleo', 'empleos_formales_dic2025_por_1000_hab_base2022', 'density', 'Diciembre 2025 · población 2022', 'Puestos localizados por 1.000 habitantes censales. Incluye trabajadores que pueden vivir en otro municipio.', false),
   metric('salarios', 'Cambio del salario bruto real', 'Empleo', 'salario_real_promedio_cambio_2023_2025_pct', '%', 'Promedio mensual 2025 vs. 2023', 'Salario bruto promedio del empleo privado registrado, ajustado por inflación. Incluye aguinaldo y otros pagos; no es sueldo de bolsillo. La composición del empleo modifica el promedio.', false),
+  metric('salario-nivel', 'Salario bruto promedio', 'Empleo', 'community.wage.annual.2025.real', 'money', 'Promedio mensual de 2025 · pesos de julio de 2026', 'OEDE/SIPA e IPC nacional INDEC: cada mes se ajusta por inflación y luego se promedian los doce meses. Empleo privado formal por lugar del establecimiento; incluye aguinaldo y otros pagos. No es sueldo de bolsillo, salario municipal ni ingreso medio de los vecinos.', false),
   metric('masa-salarial', 'Cambio de masa salarial', 'Empleo', 'masa_salarial_formal_aprox_cambio_2023_2025_pct', '%', 'Año 2025 vs. año 2023', 'Aproximación: puestos por remuneración media, sumados mes a mes a precios constantes. No mide ventas locales.'),
   metric('industria', 'Peso de la industria', 'Economía', 'peso_industria_empleo_formal_dic2025_pct', '%', 'Diciembre 2025', 'Empleo manufacturero sobre empleo privado formal total. Los registros reservados quedan sin dato.', false),
   metric('industria-cambio', 'Cambio del empleo industrial', 'Economía', 'empleo_industrial_cambio_dic2023_dic2025_pct', '%', 'Diciembre 2025 vs. diciembre 2023', 'Variación de puestos manufactureros; se comparan solamente municipios con ambos cortes publicados.'),
@@ -18,15 +21,21 @@ const METRICS = [
   metric('carencias', 'Hogares con carencias · %', 'Población', 'hogares_nbi_2022_pct', '%', 'Censo 2022', 'Hogares con necesidades básicas insatisfechas (NBI). Son carencias estructurales, no pobreza monetaria actual.', false),
   metric('hogares', 'Hogares con carencias · cantidad', 'Población', 'hogares_nbi_2022', 'households', 'Censo 2022', 'Número de hogares con NBI. Una mayor cantidad puede reflejar una población más grande.', false),
   metric('poblacion', 'Crecimiento de población', 'Población', 'crecimiento_poblacion_2010_2022_pct', '%', 'Censos 2010–2022', 'Chascomús y Lezama quedan fuera hasta homologar la separación territorial en la base de 2010.', false),
+  metric('salud', 'Sin obra social, prepaga ni plan estatal', 'Población', 'community.health.withoutCoveragePct', '%', 'Censo 2022 · población en viviendas particulares', 'INDEC/DPE: personas sin obra social, prepaga ni plan estatal, sobre la población en viviendas particulares. Pueden atenderse en el sistema público; no significa falta de atención médica. Es una referencia de 2022, no una medición actual.', false),
+  metric('hacinamiento', 'Hogares con hacinamiento crítico', 'Población', 'community.crowding.over3PersonsPerRoomPct', '%', 'Censo 2022 · porcentaje de hogares', 'INDEC/DPE: hogares con más de tres personas por cuarto, sobre el total de hogares. Muestra una carencia habitacional; no equivale a pobreza por ingresos ni describe por sí sola la situación actual.', false),
   metric('sucursales', 'Sucursales por habitante', 'Finanzas', 'sucursales_por_10000_hab_base2022', 'branches', '2024 · población 2022', 'Locales financieros por 10.000 habitantes. No incluye una medición de cobertura bancaria digital.', false),
   metric('credito', 'Cambio real del crédito', 'Finanzas', 'prestamos_real_cambio_2023_2024_pct', '%', 'Diciembre 2024 vs. diciembre 2023', 'Préstamos registrados por localización financiera, deflactados con IPC de cierre. No identifica solamente pymes o residentes.', false),
   metric('prestamos-depositos', 'Préstamos sobre depósitos', 'Finanzas', 'prestamos_sobre_depositos_2024_pct', '%', 'Cuarto trimestre 2024', 'Relación de saldos por localización financiera. No mide fuga de ahorros ni permite seguir el destino de cada depósito.', false),
+  metric('deudas-atrasadas', 'Personas con deudas atrasadas', 'Finanzas', 'community.debt.peopleInArrearsPct', '%', 'Julio de 2026 · sobre personas con deuda registrada', 'CEC/FES, Mapa de la Deuda, sobre registros del BCRA: personas en mora divididas por personas con deuda registrada. La fuente cuenta las situaciones 3, 4 y 5; no incluye todos los atrasos más cortos. No es el porcentaje de todos los habitantes ni deuda del gobierno municipal. La localización sigue el criterio del proveedor.', false),
   metric('deficit', 'Resultado sobre ingresos', 'Cuentas', 'fiscal.resultado_sobre_ingresos_pct', '%', 'Acumulado al 30 de junio de 2026', 'Muestra parcial con cierre en junio. Negativo: déficit; positivo: superávit. Recursos percibidos menos gastos devengados, sin aplicaciones financieras. Los servicios y organismos incluidos pueden diferir. No es caja libre.'),
   metric('resultado-pesos', 'Resultado en pesos', 'Cuentas', 'fiscal.resultado_financiero', 'millions', 'Acumulado al 30 de junio de 2026', 'Resultado financiero en pesos corrientes. El monto refleja también el tamaño del municipio. La muestra no permite identificar el mayor déficit de los 135.'),
   metric('inversion', 'Inversión sobre gasto', 'Cuentas', 'fiscal.capital_sobre_gasto_pct', '%', 'Acumulado al 30 de junio de 2026', 'Gasto de capital sobre gasto total sin aplicaciones financieras. Incluye inversión y transferencias de capital; no mide avance físico ni calidad de las obras.', false),
   metric('personal', 'Personal sobre gasto corriente', 'Cuentas', 'fiscal.personal_sobre_gasto_corriente_pct', '%', 'Acumulado al 30 de junio de 2026', 'Gasto devengado en personal sobre gasto corriente. Los servicios prestados, la tercerización y los organismos incluidos afectan la comparación.', false),
   metric('ahorro-corriente', 'Ahorro corriente sobre ingresos', 'Cuentas', 'fiscal.ahorro_sobre_ingresos_corrientes_pct', '%', 'Acumulado al 30 de junio de 2026', 'Ingresos corrientes percibidos menos gastos corrientes devengados, como porcentaje de los ingresos corrientes. Muestra el margen antes de la cuenta de capital. No es dinero libre.', false),
   metric('inversion-habitante', 'Inversión por habitante', 'Cuentas', 'fiscal.capital_por_habitante_base2022_ars_corrientes', 'money', 'Acumulado al 30 de junio de 2026 · población 2022', 'Gasto de capital en pesos corrientes por habitante del Censo 2022. La cobertura institucional y los servicios a cargo pueden diferir.', false),
+  {...metric('ingresos-habitante', 'Ingresos por habitante', 'Cuentas', 'fiscal.ingresos_totales', 'money', 'Acumulado al 30 de junio de 2026 · población 2022', 'Recursos corrientes y de capital percibidos, divididos por habitantes del Censo 2022. Pesos corrientes del período informado, sin anualizar. No incluye fuentes financieras; los organismos y servicios incluidos pueden diferir.', false), perCapita:true},
+  {...metric('gasto-habitante', 'Gasto por habitante', 'Cuentas', 'fiscal.gastos_totales', 'money', 'Acumulado al 30 de junio de 2026 · población 2022', 'Gastos corrientes y de capital devengados, divididos por habitantes del Censo 2022. Pesos corrientes del período informado, sin anualizar. Devengado significa que se generó la obligación de pagar; no incluye aplicaciones financieras. Más gasto no prueba mejores servicios.', false), perCapita:true},
+  metric('robos', 'Robos por 100.000 habitantes', 'Seguridad', 'community.crime.2025.robberyRate', 'rate', 'Año 2025 · tasa oficial SNIC', 'SNIC: robos registrados, incluidos los agravados y excluidas las tentativas. La tasa usa la población de referencia oficial del SNIC, no el Censo 2022 del tablero. No incluye todos los delitos ni mide percepción de inseguridad. En municipios pequeños, pocos hechos pueden cambiar mucho la tasa.', false),
   metric('transparencia', 'Publicación de información fiscal', 'Transparencia', 'transparency.score', 'score', 'ASAP · relevamiento del 1 al 8 de mayo de 2026', 'Puntaje de 0 a 100 por publicación, actualidad, integridad y acceso a información fiscal. Describe lo observado por ASAP en esa fecha; no mide el resultado fiscal ni acredita la calidad de gestión.', false),
   metric('cambio-transparencia', 'Cambio del puntaje', 'Transparencia', 'transparency.change', 'points', 'ASAP · mayo de 2026 vs. noviembre de 2025', 'Diferencia en puntos del índice publicado. Cada edición exige información del período correspondiente: una baja puede reflejar documentos que quedaron desactualizados. No mide cambios en la situación financiera.', false)
 ];
@@ -45,7 +54,37 @@ function transparencyStatus(component, score) {
   return score===component.max?'Información completa y al día en el relevamiento.':score===0?'Sin puntaje: información ausente o fuera del período admitido.':'Información parcial o de un trimestre anterior.';
 }
 const VALID_VIEWS = ['panorama', 'rankings', 'recursos', 'empleo', 'simular'];
-function metricValue(m, meta) { return meta.field.split('.').reduce((v, k) => v?.[k], m) ?? null; }
+const BUDGET_BASES = {
+  junio:{field:'current',asOf:'2026-06-30',label:'Vigente · junio 2026',period:'Ejercicio 2026 · vigente al 30 de junio',note:'Compara presupuestos anuales vigentes en la misma fecha: 30 de junio de 2026. Quedan fuera los que sólo tienen otro corte o el presupuesto original.'},
+  vigente:{field:'current',label:'Vigente · último corte 2026',period:'Ejercicio 2026 · último vigente disponible de cada municipio',note:'Amplía la muestra usando el último presupuesto vigente verificado de 2026. Los cortes son distintos: mirá la fecha debajo de cada municipio. No representa una comparación a una misma fecha.'},
+  original:{field:'original',label:'Original · 2026',period:'Ejercicio 2026 · presupuesto original',note:'Compara la autorización inicial para 2026, antes de las modificaciones del año. La fecha debajo de cada municipio corresponde al documento consultado.'}
+};
+function rankingMetric(meta, basis='junio') {
+  if(!meta.budget)return meta;
+  const budgetBasis=Object.hasOwn(BUDGET_BASES,basis)?basis:'junio',config=BUDGET_BASES[budgetBasis];
+  return {...meta,budgetBasis,period:config.period+(meta.perCapita?' · población 2022':'')};
+}
+function metricValue(m, meta) {
+  let value;
+  if(meta.budget){
+    const b=m.annualBudget,config=BUDGET_BASES[meta.budgetBasis]||BUDGET_BASES.junio;
+    if(!b||b.year!==2026||(config.asOf&&b.asOf!==config.asOf))return null;
+    value=b[config.field];
+  }else value=meta.field.split('.').reduce((v,k)=>v?.[k],m);
+  if(!finite(value))return null;
+  return meta.perCapita?(finite(m.poblacion_2022)&&m.poblacion_2022>0?value/m.poblacion_2022:null):value;
+}
+function metricExportUnit(meta) {
+  if(meta.budget||meta.perCapita)return meta.perCapita?'ARS corrientes por habitante Censo 2022':'ARS corrientes';
+  if(meta.id==='salario-nivel')return 'ARS de julio de 2026';
+  return ({millions:'ARS corrientes',money:'ARS (ver período y criterio)',rate:'hechos por 100.000 habitantes',density:'puestos por 1.000 habitantes',branches:'locales por 10.000 habitantes',jobs:'puestos',households:'hogares',score:'puntaje sobre 100',points:'puntos'})[meta.unit]||meta.unit;
+}
+function rankingExportRows(ranked,meta) {
+  return [['Municipio','Puesto','Valor','Unidad','Período','Municipios con datos','Criterio','Tipo de presupuesto','Corte o fecha del documento','Cobertura institucional','Documento'],...ranked.map(r=>{
+    const b=meta.budget?r.m.annualBudget:null,config=meta.budget?(BUDGET_BASES[meta.budgetBasis]||BUDGET_BASES.junio):null;
+    return [r.m.municipio,r.rank,r.value,metricExportUnit(meta),meta.period,ranked.length,meta.note+(config?' '+config.note:''),b?(config.field==='original'?'Original':'Vigente'):'',b?.asOf??'',b?.scope??(meta.group==='Cuentas'?r.m.fiscal?.scope:'')??'',b?.documents?.map(d=>d.url).join(' | ')??''];
+  })];
+}
 function finite(v) { return typeof v === 'number' && Number.isFinite(v); }
 function rankMunicipalities(rows, meta, ascending = meta.ascending) {
   const valid = rows.map(m => ({m, value:metricValue(m, meta)})).filter(r => finite(r.value));
@@ -105,7 +144,7 @@ function fiscalExportRows(m) {
 }
 function readState(search, municipalities, savedId) {
   const p=new URLSearchParams(search), id=p.get('municipio') || savedId;
-  return {id:municipalities.some(m=>m.id===id)?id:'06805',view:VALID_VIEWS.includes(p.get('vista'))?p.get('vista'):'panorama',metric:METRICS.some(m=>m.id===p.get('indicador'))?p.get('indicador'):'recursos'};
+  return {id:municipalities.some(m=>m.id===id)?id:'06805',view:VALID_VIEWS.includes(p.get('vista'))?p.get('vista'):'panorama',metric:METRICS.some(m=>m.id===p.get('indicador'))?p.get('indicador'):'recursos',budgetBasis:Object.hasOwn(BUDGET_BASES,p.get('presupuesto'))?p.get('presupuesto'):'junio'};
 }
 
 function adjustPrice(value, period, base, indices) {
@@ -170,7 +209,7 @@ const negativeClass=v=>finite(v)&&v<0?'negative':'';
 const signedMillions=v=>finite(v)?(v<0?'−':v>0?'+':'')+millions(Math.abs(v)):'Sin dato';
 const motion=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?0:300;
 const monthLabels=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-const formatMetric=(v,meta)=>!finite(v)?'Sin dato':meta.unit==='score'?num(v)+' / 100':meta.unit==='points'?(v>0?'+':'')+num(v)+' puntos':meta.unit==='money'?money(v):meta.unit==='millions'?millions(v):meta.unit==='%'?num(v,2)+'%':meta.unit==='pp'?(v>0?'+':'')+num(v,3)+' pp':num(v,['density','branches'].includes(meta.unit)?1:0);
+const formatMetric=(v,meta)=>!finite(v)?'Sin dato':meta.unit==='score'?num(v)+' / 100':meta.unit==='points'?(v>0?'+':'')+num(v)+' puntos':meta.unit==='money'?money(v):meta.unit==='millions'?millions(v):meta.unit==='%'?num(v,2)+'%':meta.unit==='pp'?(v>0?'+':'')+num(v,3)+' pp':num(v,['density','branches','rate'].includes(meta.unit)?1:0);
 let data,geography,rows,byId,state,mapMetric='recursos',scopePeers=false,rankAscending=true,showAll=false,fullHistory=false,mapZoom,mapProjection,mapPath,mapWidth=0;
 let toastTimer;
 let reportManifest=null,reportUnavailable=false;
@@ -199,10 +238,11 @@ async function prepareReports(dashboardText){
 }
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,3500);}
 const current=()=>byId.get(state.id);
-const currentMetric=()=>METRICS.find(m=>m.id===state.metric);
+const currentMetric=()=>rankingMetric(METRICS.find(m=>m.id===state.metric),state.budgetBasis);
 const latestFiscal=m=>[m.fiscal,m.fiscalOther].filter(Boolean).sort((a,b)=>b.fin.localeCompare(a.fin))[0];
 function persist(){
   const url=new URL(location.href);url.search='';url.searchParams.set('municipio',state.id);url.searchParams.set('vista',state.view);if(state.view==='rankings')url.searchParams.set('indicador',state.metric);url.hash='';
+  if(state.view==='rankings'&&currentMetric().budget)url.searchParams.set('presupuesto',state.budgetBasis);
   if(state.view==='recursos'){url.searchParams.set('pesos',priceMode==='real'?'reales':'corrientes');url.searchParams.set('base',priceBase);}
   history.replaceState(null,'',url);
   try{localStorage.setItem('pellegrini_municipio',state.id);}catch{}
@@ -327,25 +367,38 @@ function drawMap(){
 }
 function zoomSelected(){const f=geography.features.find(f=>f.properties.id===state.id),[[x0,y0],[x1,y1]]=mapPath.bounds(f),w=$('map').clientWidth,h=$('map').clientHeight;const k=Math.min(12,.65/Math.max((x1-x0)/w,(y1-y0)/h));d3.select('#map').transition().duration(motion()).call(mapZoom.transform,d3.zoomIdentity.translate(w/2,h/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2));}
 function rankingRows(){return rankMunicipalities(peers(rows,current(),scopePeers),currentMetric(),rankAscending);}
+function rankingRowContext(m,meta){
+  if(meta.budget){const date=m.annualBudget?.asOf?.split('-').reverse().join('/');return (meta.budgetBasis==='original'?'Original · documento ':'Vigente al ')+date;}
+  if(meta.id==='robos')return num(m.community.crime['2025'].robberies)+' robos registrados en 2025';
+  if(meta.id==='deudas-atrasadas')return num(m.community.debt.peopleInArrears)+' en mora de '+num(m.community.debt.peopleWithDebt)+' personas con deuda';
+  return '';
+}
 function renderRanking(){
   const meta=currentMetric(),groups=[...new Set(METRICS.map(m=>m.group))];
   $('ranking-groups').innerHTML=groups.map(g=>`<button data-group="${g}" aria-pressed="${g===meta.group}">${g}</button>`).join('');
   $('ranking-groups').querySelectorAll('button').forEach(b=>b.onclick=()=>chooseMetric(METRICS.find(m=>m.group===b.dataset.group).id));
   $('ranking-metrics').innerHTML=METRICS.filter(m=>m.group===meta.group).map(m=>`<button data-metric="${m.id}" aria-pressed="${m.id===meta.id}">${m.label}</button>`).join('');
   $('ranking-metrics').querySelectorAll('button').forEach(b=>b.onclick=()=>chooseMetric(b.dataset.metric));
+  $('budget-ranking-controls').hidden=!meta.budget;
+  if(meta.budget){
+    $('budget-ranking-choices').innerHTML=Object.entries(BUDGET_BASES).map(([id,b])=>`<button data-budget-basis="${id}" aria-pressed="${id===state.budgetBasis}">${b.label}</button>`).join('');
+    $('budget-ranking-choices').querySelectorAll('button').forEach(b=>b.onclick=()=>{state.budgetBasis=b.dataset.budgetBasis;showAll=false;persist();renderRanking();});
+    $('budget-ranking-note').textContent=BUDGET_BASES[state.budgetBasis].note;
+  }
   const ranked=rankingRows(),m=current(),selected=ranked.find(r=>r.m.id===m.id);
-  $('ranking-title').textContent=meta.label;$('ranking-period').textContent=meta.period;
-  $('ranking-coverage').textContent=`${ranked.length} ${ranked.length===1?'municipio':'municipios'} con datos${meta.group==='Cuentas'?' · Muestra parcial, no ranking de los 135':''}${scopePeers?` · Entre ${num(m.poblacion_2022/2)} y ${num(m.poblacion_2022*2)} habitantes (Censo 2022)`:''}`;
+  $('ranking-title').textContent=meta.label;$('ranking-period').textContent=meta.period+(meta.unit==='millions'?' · M = millones de pesos':'');
+  $('ranking-coverage').textContent=`${ranked.length} ${ranked.length===1?'municipio':'municipios'} con datos${meta.group==='Cuentas'||meta.budget?' · Muestra parcial, no ranking de los 135':''}${scopePeers?` · Entre ${num(m.poblacion_2022/2)} y ${num(m.poblacion_2022*2)} habitantes (Censo 2022)`:''}`;
   $('ranking-direction').textContent=rankAscending?'Menor a mayor ↑':'Mayor a menor ↓';
   $('scope-peers').setAttribute('aria-label',`Comparar municipios con población similar a ${m.municipio}`);
   $('scope-all').setAttribute('aria-pressed',String(!scopePeers));$('scope-peers').setAttribute('aria-pressed',String(scopePeers));
   const transparency=meta.group==='Transparencia';
-  $('ranking-summary').hidden=!transparency;
+  $('ranking-summary').hidden=!(transparency||meta.budget);
+  if(meta.budget)$('ranking-summary').textContent=meta.perCapita?'El presupuesto por habitante ayuda a comparar municipios de distinto tamaño. Es una autorización anual dividida por la población del Censo 2022; no es dinero que recibe cada vecino. Los servicios y organismos incluidos pueden diferir.':'El presupuesto total muestra cuánto tiene autorizado gastar cada municipio en el año. No es lo que ya gastó ni la plata disponible en caja. Para comparar distritos de distinto tamaño, mirá también el presupuesto por habitante.';
   if(transparency)$('ranking-summary').textContent=meta.id==='transparencia'?`${ranked.filter(r=>r.value===100).length} de ${ranked.length} municipios de esta comparación alcanzaron los 100 puntos. El índice evalúa publicación de información fiscal.`:`En esta comparación, ${ranked.filter(r=>r.value>0).length} municipios subieron, ${ranked.filter(r=>r.value<0).length} bajaron y ${ranked.filter(r=>r.value===0).length} mantuvieron su puntaje. Son cambios en publicación, no en resultado fiscal.`;
-  $('ranking-selected').innerHTML=`<div class="rank-reference-info"><span class="rank-reference-label">Municipio de referencia</span><strong>${escape(m.municipio)}</strong><span>${selected?`Posición ${selected.rank} de ${ranked.length} en esta comparación`:'Sin dato para este indicador'}</span></div><div class="rank-reference-detail"><strong class="${negativeClass(metricValue(m,meta))}">${formatMetric(metricValue(m,meta),meta)}</strong><button class="text-button" id="open-reference">${transparency?'Ver detalle de transparencia':'Ver ficha municipal'} →</button></div>`;
-  $('open-reference').onclick=()=>transparency?openTransparency():navigate('panorama');
+  $('ranking-selected').innerHTML=`<div class="rank-reference-info"><span class="rank-reference-label">Municipio de referencia</span><strong>${escape(m.municipio)}</strong><span>${selected?`Posición ${selected.rank} de ${ranked.length} en esta comparación`:meta.budget?'Sin presupuesto verificado para el tipo y corte elegidos':'Sin dato para este indicador'}</span>${selected&&meta.budget?`<span>${escape(rankingRowContext(m,meta))}</span>`:''}</div><div class="rank-reference-detail"><strong class="${negativeClass(metricValue(m,meta))}">${formatMetric(metricValue(m,meta),meta)}</strong><button class="text-button" id="open-reference">${transparency?'Ver detalle de transparencia':meta.budget?'Ver presupuesto y documento':'Ver ficha municipal'} →</button></div>`;
+  $('open-reference').onclick=()=>{if(transparency)openTransparency();else if(meta.budget){navigate('recursos',false);$('annual-budget-resources').scrollIntoView({behavior:motion()?'smooth':'instant',block:'start'});}else navigate('panorama');};
   const vals=ranked.map(r=>r.value),lo=Math.min(0,...vals),hi=Math.max(0,...vals),span=hi-lo||1,zero=(0-lo)/span*100;
-  $('ranking-rows').innerHTML=(showAll?ranked:ranked.slice(0,10)).map(r=>{const pos=(r.value-lo)/span*100,left=Math.min(pos,zero),width=Math.max(Math.abs(pos-zero),.4);return `<button class="rank-row ${r.m.id===m.id?'is-selected':''}" data-municipality="${r.m.id}" aria-label="${escape(r.m.municipio)}, puesto ${r.rank}, ${formatMetric(r.value,meta)}. Seleccionar municipio"><span class="rank-number">${r.rank.toString().padStart(2,'0')}</span><span class="rank-name">${escape(r.m.municipio)}</span><span class="rank-track" aria-hidden="true"><span class="rank-zero" style="left:${zero}%"></span><span class="rank-fill ${r.value<0?'down':'single'}" style="left:${left}%;width:${width}%"></span></span><span class="rank-value ${negativeClass(r.value)}">${formatMetric(r.value,meta)}</span></button>`;}).join('');
+  $('ranking-rows').innerHTML=(showAll?ranked:ranked.slice(0,10)).map(r=>{const pos=(r.value-lo)/span*100,left=Math.min(pos,zero),width=Math.max(Math.abs(pos-zero),.4),context=rankingRowContext(r.m,meta);return `<button class="rank-row ${r.m.id===m.id?'is-selected':''}" data-municipality="${r.m.id}" aria-label="${escape(r.m.municipio)}, puesto ${r.rank}, ${formatMetric(r.value,meta)}. ${escape(context)}. Seleccionar municipio"><span class="rank-number">${r.rank.toString().padStart(2,'0')}</span><span class="rank-name">${escape(r.m.municipio)}${context?`<small class="rank-row-context">${escape(context)}</small>`:''}</span><span class="rank-track" aria-hidden="true"><span class="rank-zero" style="left:${zero}%"></span><span class="rank-fill ${r.value<0?'down':'single'}" style="left:${left}%;width:${width}%"></span></span><span class="rank-value ${negativeClass(r.value)}">${formatMetric(r.value,meta)}</span></button>`;}).join('');
   bindMunicipalButtons($('ranking-rows'));
   $('ranking-more').hidden=ranked.length<=10;$('ranking-more').textContent=showAll?'Mostrar los primeros 10':`Ver los ${ranked.length} municipios`;
   $('ranking-note').textContent=meta.note+' Los empates comparten puesto. La posición corresponde al orden y al grupo elegidos; no es una calificación general de gestión.';
@@ -514,8 +567,8 @@ function attachEvents(){
   $('shock').addEventListener('input',renderSimulation);document.querySelectorAll('[data-shock]').forEach(b=>b.onclick=()=>{$('shock').value=b.dataset.shock;renderSimulation();});
   $('share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('Enlace copiado con el municipio y la vista elegidos.');}catch{toast('Podés copiar el enlace desde la barra del navegador.');}};
   $('export-report').onclick=event=>{if($('export-report').getAttribute('aria-disabled')==='true'){event.preventDefault();toast(reportUnavailable?'El informe está en actualización. Volvé a cargar la página en unos minutos.':'Estamos preparando el enlace al informe.');}};
-  $('download-ranking').onclick=()=>{const meta=currentMetric();download(`ranking-${meta.id}.csv`,csv([['Municipio','Puesto','Valor','Unidad','Período','Cobertura','Criterio'],...rankingRows().map(r=>[r.m.municipio,r.rank,r.value,meta.unit,meta.period,rankingRows().length,meta.note])]));};
-  $('download-municipality').onclick=()=>{const m=current();download(`municipio-${m.id}.csv`,csv([['Municipio','Indicador','Valor','Unidad','Período','Criterio'],...METRICS.map(meta=>[m.municipio,meta.label,metricValue(m,meta),meta.unit,meta.period,meta.note]),...fiscalExportRows(m),...annualBudgetExportRows(m),...municipalContextExportRows(m)]));};
+  $('download-ranking').onclick=()=>{const meta=currentMetric();download(`ranking-${meta.id}${meta.budget?'-'+state.budgetBasis:''}.csv`,csv(rankingExportRows(rankingRows(),meta)));};
+  $('download-municipality').onclick=()=>{const m=current();download(`municipio-${m.id}.csv`,csv([['Municipio','Indicador','Valor','Unidad','Período','Criterio'],...METRICS.map(meta=>[m.municipio,meta.label,metricValue(m,meta),metricExportUnit(meta),meta.period,meta.note]),...fiscalExportRows(m),...annualBudgetExportRows(m),...municipalContextExportRows(m)]));};
   let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(state.view==='panorama')drawMap();if(state.view==='recursos')drawTransferChart();if(state.view==='empleo')drawEmploymentChart();},80);}).observe(document.querySelector('main'));
   new ResizeObserver(()=>document.documentElement.style.setProperty('--header-height',document.querySelector('.site-header').getBoundingClientRect().height+'px')).observe(document.querySelector('.site-header'));
 }

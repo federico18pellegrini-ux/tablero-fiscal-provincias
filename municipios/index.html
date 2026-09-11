@@ -7,9 +7,9 @@
   <meta name="description" content="Una mirada clara sobre los 135 municipios bonaerenses. Recursos, empleo, rankings y escenarios para la gestión municipal. Federico Pellegrini.">
   <title>Municipios · Federico Pellegrini</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260910-1">
+  <link rel="stylesheet" href="styles.css?v=20260911-1">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20260910-1"></script>
+  <script defer src="app.js?v=20260911-1"></script>
   <script defer src="../analytics.js?v=20260907-2"></script>
 </head>
 <body>
@@ -58,6 +58,11 @@
       <section id="rankings" class="view" aria-label="Ranking general de municipios" hidden>
         <div class="ranking-tools"><div class="choices category-choices" id="ranking-groups" role="group" aria-label="Tema del ranking"></div><button class="button button-quiet" id="download-ranking">Descargar ranking ↓</button></div>
         <div class="choices metric-choices" id="ranking-metrics" role="group" aria-label="Indicador del ranking"></div>
+        <section class="budget-ranking-controls" id="budget-ranking-controls" aria-label="Qué presupuesto comparar" hidden>
+          <h2>Qué presupuesto comparar</h2>
+          <div class="choices" id="budget-ranking-choices" role="group" aria-label="Tipo y corte del presupuesto"></div>
+          <p id="budget-ranking-note"></p>
+        </section>
         <p class="ranking-summary" id="ranking-summary" hidden></p>
         <section class="panel ranking-panel"><div class="ranking-top"><div><h2 id="ranking-title"></h2><p class="small-note" id="ranking-period"></p></div><div class="choices small-choices" role="group" aria-label="Municipios a comparar"><button id="scope-all" aria-pressed="true">Todos</button><button id="scope-peers" aria-pressed="false">Población similar</button></div></div><div class="ranking-context"><p id="ranking-coverage"></p><button id="ranking-direction" class="text-button"></button></div><div id="ranking-selected" class="selected-rank"></div><div id="ranking-rows" class="ranking-rows"></div><button id="ranking-more" class="button button-quiet more-button">Ver todos los municipios</button><p id="ranking-note" class="chart-caption"></p></section>
       </section>

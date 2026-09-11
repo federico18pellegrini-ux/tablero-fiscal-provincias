@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import {webcrypto, createHash} from 'node:crypto';
 import {reportModels} from '../scripts_municipal_report_data.mjs';
+import {METRICS,metricValue} from '../municipios/model.mjs';
 const dashboardText=fs.readFileSync(new URL('../municipios/data/dashboard.json',import.meta.url),'utf8');
 const data=JSON.parse(dashboardText),models=reportModels(data);
 
@@ -11,12 +12,12 @@ test('report covers every municipality and all observed months without replacing
   assert.equal(models.length,135);
   for(const m of models){
     const raw=data.municipalities.find(r=>r.id===m.id);
-    assert.equal(m.reportRankings.length,27);
+    assert.equal(m.reportRankings.length,METRICS.length);
     assert.deepEqual(m.employment,raw.employment);
     assert.deepEqual(m.transfers,raw.transfers);
     assert.deepEqual(m.sectors,raw.sectors);
     for(const r of m.reportRankings){
-      const available=data.municipalities.map(row=>r.field.split('.').reduce((v,k)=>v?.[k],row)).filter(v=>typeof v==='number'&&Number.isFinite(v));
+      const available=data.municipalities.map(row=>metricValue(row,r)).filter(v=>typeof v==='number'&&Number.isFinite(v));
       assert.equal(r.count,available.length);
       assert.equal(r.rank,r.value===null?null:1+available.filter(v=>r.ascending?v<r.value:v>r.value).length);
     }
