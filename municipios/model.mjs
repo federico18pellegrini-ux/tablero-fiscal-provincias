@@ -37,6 +37,66 @@ export const METRICS = [
   metric('transparencia', 'Publicación de información fiscal', 'Transparencia', 'transparency.score', 'score', 'ASAP · relevamiento del 1 al 8 de mayo de 2026', 'Puntaje de 0 a 100 por publicación, actualidad, integridad y acceso a información fiscal. Describe lo observado por ASAP en esa fecha; no mide el resultado fiscal ni acredita la calidad de gestión.', false),
   metric('cambio-transparencia', 'Cambio del puntaje', 'Transparencia', 'transparency.change', 'points', 'ASAP · mayo de 2026 vs. noviembre de 2025', 'Diferencia en puntos del índice publicado. Cada edición exige información del período correspondiente: una baja puede reflejar documentos que quedaron desactualizados. No mide cambios en la situación financiera.', false)
 ];
+// Economic meaning is independent of the numeric sign, sorting and peer group.
+const changeReading = (note, positive='Aumento', negative='Caída') => ({kind:'change',note,positive,negative,neutral:'Sin cambio'});
+const burdenReading = (note, negative) => ({kind:'burden',note,negative,positive:'Sin casos registrados'});
+const contextReading = note => ({kind:'context',note,neutral:'Requiere contexto'});
+export const RANKING_READINGS = {
+  'presupuesto-total':contextReading('Un presupuesto más grande no demuestra una mejor gestión. El gris identifica una cantidad, sin calificarla como buena o mala.'),
+  'presupuesto-habitante':contextReading('Más presupuesto por habitante no demuestra mejores servicios. El gris permite comparar los montos sin calificarlos como buenos o malos.'),
+  recursos:changeReading('Verde: llegaron más recursos, descontando la inflación. Rojo: llegaron menos y se achicó su poder de compra.'),
+  'por-habitante':contextReading('Más transferencias por habitante no prueban un mejor reparto ni una mejor gestión. También influyen los servicios y la superficie de cada municipio.'),
+  copart:changeReading('Verde: la coparticipación ganó poder de compra. Rojo: perdió frente a la inflación.'),
+  reparto:changeReading('Verde: el municipio ganó participación en el reparto. Rojo: perdió participación. Ganar una porción mayor no garantiza recibir más dinero en términos reales.'),
+  empleo:changeReading('Verde: aumentó el empleo privado formal localizado en el municipio. Rojo: se perdieron puestos. No mide el empleo de todos los vecinos.'),
+  puestos:changeReading('Verde: se ganaron puestos privados formales. Rojo: se perdieron. La cantidad también depende del tamaño del municipio.', 'Puestos ganados', 'Puestos perdidos'),
+  'caida-empleo':changeReading('Verde: hay más puestos privados formales que en diciembre de 2023. Rojo: hay menos.'),
+  'densidad-empleo':contextReading('Más puestos por habitante describe una mayor concentración de empleo. Como incluye personas que viven en otros municipios, no permite afirmar que sus vecinos tengan más trabajo.'),
+  salarios:changeReading('Verde: el salario bruto promedio ganó poder de compra. Rojo: perdió frente a la inflación. El promedio también cambia cuando cambia la composición del empleo.'),
+  'salario-nivel':contextReading('El gris muestra el nivel del salario bruto promedio. Para saber si mejoró su poder de compra, mirá el cambio del salario real; este monto no es el ingreso de todos los vecinos.'),
+  'masa-salarial':changeReading('Verde: creció el total estimado de salarios formales, descontando la inflación. Rojo: se achicó. Puede cambiar por los sueldos, por la cantidad de puestos o por ambos.'),
+  industria:contextReading('Un mayor peso de la industria describe la estructura económica. No significa, por sí solo, una economía mejor o peor.'),
+  'industria-cambio':changeReading('Verde: aumentaron los puestos industriales. Rojo: se perdieron puestos industriales.'),
+  actividad:changeReading('Verde: creció la producción de bienes y servicios, sin el efecto de la inflación. Rojo: se contrajo. No mide cómo se distribuyeron esos ingresos.'),
+  carencias:burdenReading('Un porcentaje más alto significa que una mayor proporción de hogares tiene necesidades básicas insatisfechas (NBI). Es una situación desfavorable: se muestra en rojo aunque el número sea positivo. Menos es mejor.', 'Hogares con carencias'),
+  hogares:burdenReading('El rojo señala hogares con necesidades básicas insatisfechas (NBI). Menos hogares afectados es mejor. Para comparar municipios de distinto tamaño, mirá también el porcentaje.', 'Hogares con carencias'),
+  poblacion:contextReading('Que la población crezca o caiga no alcanza para decir si el municipio está mejor. Cambian la demanda de servicios y las necesidades de infraestructura.'),
+  salud:burdenReading('El rojo señala personas sin obra social, prepaga ni plan estatal. Una proporción menor indica una brecha de cobertura menor. Pueden atenderse en el sistema público: no significa que no reciban atención.', 'Brecha de cobertura'),
+  hacinamiento:burdenReading('El rojo señala hogares con más de tres personas por cuarto. Un porcentaje menor indica menos hacinamiento; un porcentaje mayor, una carencia habitacional más extendida.', 'Hacinamiento registrado'),
+  sucursales:contextReading('Más sucursales no garantizan un mejor acceso financiero. También importan su ubicación y los servicios digitales, que este indicador no mide.'),
+  credito:contextReading('Que crezca el crédito no alcanza para decir que la situación mejoró: puede financiar actividad o cubrir problemas de ingresos. El gris evita calificarlo sin conocer su destino y las condiciones.'),
+  'prestamos-depositos':contextReading('Una relación más alta entre préstamos y depósitos no es automáticamente mejor o peor. Este dato no permite seguir el destino de los ahorros.'),
+  'deudas-atrasadas':burdenReading('El rojo señala personas con deudas atrasadas, entre quienes tienen deuda registrada. Un porcentaje mayor indica más dificultades de pago; uno menor, menos. No es deuda del municipio.', 'Deudas atrasadas'),
+  deficit:{...changeReading('Verde: superávit, los recursos superaron los gastos. Rojo: déficit, los gastos superaron los recursos. El superávit no equivale a dinero disponible ni prueba, por sí solo, una buena gestión.', 'Superávit', 'Déficit'),neutral:'Equilibrio'},
+  'resultado-pesos':{...changeReading('Verde: superávit. Rojo: déficit. El monto también refleja el tamaño del municipio; para comparar, mirá el resultado sobre ingresos. No es caja libre.', 'Superávit', 'Déficit'),neutral:'Equilibrio'},
+  inversion:contextReading('Destinar una proporción mayor a inversión no demuestra que las obras avancen o sean mejores. El gris permite comparar el gasto sin atribuirle una calidad que este dato no mide.'),
+  personal:contextReading('Un mayor peso del personal no demuestra ineficiencia. También depende de los servicios a cargo del municipio y de cuánto trabajo terceriza.'),
+  'ahorro-corriente':{...changeReading('Verde: los ingresos corrientes cubrieron los gastos corrientes y quedó un margen antes de la inversión. Rojo: no alcanzaron. Ese margen no equivale a dinero libre.', 'Ahorro corriente', 'Déficit corriente'),neutral:'Equilibrio corriente'},
+  'inversion-habitante':contextReading('Más inversión por habitante no demuestra mejores obras. También importan su avance, su calidad y los servicios incluidos en las cuentas.'),
+  'ingresos-habitante':contextReading('Más ingresos por habitante muestran más recursos por vecino, pero no prueban una mejor gestión. Los servicios y organismos incluidos pueden diferir.'),
+  'gasto-habitante':contextReading('Más gasto por habitante no demuestra mejores servicios. El gris permite comparar los montos sin confundir cantidad con calidad.'),
+  robos:burdenReading('El rojo señala robos registrados. Una tasa menor es favorable; una mayor indica más hechos por habitante. No mide todos los delitos ni los hechos no registrados.', 'Robos registrados'),
+  transparencia:{kind:'publication',note:'Verde: 100 puntos, el máximo del índice. Rojo: 0 puntos. Gris: puntaje intermedio, con requisitos pendientes. Evalúa publicación de información, no calidad de gestión.',positive:'Puntaje máximo',negative:'Sin puntaje',neutral:'Puntaje intermedio'},
+  'cambio-transparencia':changeReading('Verde: mejoró el puntaje de publicación fiscal. Rojo: bajó. No indica una mejora o un deterioro de las cuentas municipales.', 'Subió el puntaje', 'Bajó el puntaje')
+};
+export function rankingReading(meta) {
+  return RANKING_READINGS[meta.id] || contextReading('Este indicador necesita contexto para interpretar si el resultado es favorable o desfavorable.');
+}
+export function rankingAssessment(meta, value) {
+  if(!finite(value))return {tone:'muted',label:'Sin dato'};
+  const reading=rankingReading(meta);
+  let tone='neutral';
+  if(reading.kind==='change')tone=value>0?'positive':value<0?'negative':'neutral';
+  if(reading.kind==='burden') {
+    if(value<0)return {tone:'muted',label:'Dato fuera de rango'};
+    tone=value>0?'negative':'positive';
+  }
+  if(reading.kind==='publication') {
+    if(value<0||value>100)return {tone:'muted',label:'Dato fuera de rango'};
+    tone=value===100?'positive':value===0?'negative':'neutral';
+  }
+  return {tone,label:reading[tone]};
+}
 export const TRANSPARENCY_COMPONENTS = [
   {id:'presupuesto',label:'Presupuesto',max:30},
   {id:'situacion_economico_financiera',label:'Situación económica y financiera',max:35},

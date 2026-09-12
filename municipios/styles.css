@@ -258,5 +258,16 @@ body{font-size:var(--text-reading)}
 .rank-name .rank-row-context{display:block;font-size:1rem;font-weight:400;line-height:1.5;color:var(--muted);margin-top:4px}
 .rank-name{min-width:0;overflow-wrap:anywhere}
 .rank-reference-info>span{line-height:1.5}
+.ranking-reading{margin:18px 0;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ranking-reading h3{font-size:18px;line-height:1.5;letter-spacing:0;margin:0 0 8px}
+.ranking-reading p{font-size:16px;line-height:1.65;max-width:82ch;margin:0 0 12px}
+.ranking-color-key{display:flex;flex-wrap:wrap;gap:8px 22px}
+.ranking-key-item{display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:1.5}
+.ranking-key-item i{width:10px;height:10px;flex:none;background:currentColor;border-radius:50%}
+.ranking-panel .neutral{color:var(--muted)}
+.rank-fill.negative{background:var(--red)}
+.rank-fill.positive{background:var(--teal)}
+.rank-fill.neutral,.rank-fill.muted{background:var(--muted)}
+.rank-assessment-label{font-size:16px;line-height:1.5}
 @media(max-width:600px){.budget-ranking-controls{padding:16px}.budget-ranking-controls .choices button{width:100%}.rank-name .rank-row-context{margin-top:6px}}
 @media(max-width:600px){.annual-budget-grid{grid-template-columns:1fr;gap:22px}.annual-budget{scroll-margin-top:220px}.annual-budget .detail-table td{overflow-wrap:anywhere}.annual-budget-links{align-items:flex-start;flex-direction:column}.annual-budget-amount,.annual-budget-per-capita{font-size:1.75rem}}

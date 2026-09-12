@@ -3,12 +3,62 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
-import {rankingMetric,rankingExportRows,metricExportUnit} from '../municipios/model.mjs';
+import {rankingMetric,rankingReading,rankingAssessment,RANKING_READINGS,rankingExportRows,metricExportUnit} from '../municipios/model.mjs';
 import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv,fiscalExportRows,annualBudgetExportRows,adjustPrice,priceComparisons,municipalContextExportRows} from '../municipios/model.mjs';
 const require=createRequire(import.meta.url),d3=require('../municipios/vendor/d3.v7.min.js');
 const data=JSON.parse(fs.readFileSync(new URL('../municipios/data/dashboard.json',import.meta.url)));
 const geometry=JSON.parse(fs.readFileSync(new URL('../municipios/data/geografia_original.geojson',import.meta.url)));
 const rows=data.municipalities,metric=id=>METRICS.find(m=>m.id===id);
+
+test('ranking colors interpret carencias and other adverse levels instead of positive numeric signs',()=>{
+  for(const id of ['carencias','hogares','salud','hacinamiento','deudas-atrasadas','robos']){
+    assert.equal(rankingAssessment(metric(id),1).tone,'negative',id);
+    assert.equal(rankingAssessment(metric(id),20).tone,'negative',id);
+    assert.equal(rankingAssessment(metric(id),0).tone,'positive',id);
+    assert.equal(rankingAssessment(metric(id),-1).tone,'muted',id);
+  }
+  const lasHeras=rows.find(m=>m.id==='06329'),meta=metric('carencias');
+  assert.ok(metricValue(lasHeras,meta)>0);
+  assert.equal(rankingAssessment(meta,metricValue(lasHeras,meta)).tone,'negative');
+  assert.match(rankingReading(meta).note,/necesidades básicas insatisfechas/);
+  // A smaller positive NBI rate still records deprivation; no median-based green label.
+  for(const ascending of [true,false])for(const group of [rows,peers(rows,lasHeras,true)]){
+    for(const r of rankMunicipalities(group,meta,ascending))assert.equal(rankingAssessment(meta,r.value).tone,r.value>0?'negative':'positive');
+  }
+});
+
+test('growth and fiscal balances retain useful sign colors and a neutral zero',()=>{
+  for(const id of ['recursos','copart','reparto','empleo','puestos','caida-empleo','salarios','masa-salarial','industria-cambio','actividad','deficit','resultado-pesos','ahorro-corriente','cambio-transparencia']){
+    assert.equal(rankingAssessment(metric(id),-2).tone,'negative',id);
+    assert.equal(rankingAssessment(metric(id),2).tone,'positive',id);
+    assert.equal(rankingAssessment(metric(id),0).tone,'neutral',id);
+  }
+  assert.equal(rankingAssessment(metric('deficit'),2).label,'Superávit');
+  assert.equal(rankingAssessment(metric('deficit'),-2).label,'Déficit');
+  assert.equal(rankingAssessment(metric('deficit'),0).label,'Equilibrio');
+});
+
+test('context-dependent quantities are not scored as successes or failures',()=>{
+  for(const id of ['presupuesto-total','presupuesto-habitante','por-habitante','densidad-empleo','salario-nivel','industria','poblacion','sucursales','credito','prestamos-depositos','inversion','personal','inversion-habitante','ingresos-habitante','gasto-habitante']){
+    for(const value of [0,10,100])assert.equal(rankingAssessment(metric(id),value).tone,'neutral',id);
+  }
+  assert.equal(rankingAssessment(metric('credito'),-5).tone,'neutral');
+  for(const basis of ['junio','vigente','original'])assert.equal(rankingAssessment(rankingMetric(metric('presupuesto-total'),basis),1e10).tone,'neutral');
+  assert.equal(rankingAssessment(metric('transparencia'),100).tone,'positive');
+  assert.equal(rankingAssessment(metric('transparencia'),0).tone,'negative');
+  for(const value of [5,50,95])assert.equal(rankingAssessment(metric('transparencia'),value).tone,'neutral');
+  assert.equal(rankingAssessment(metric('transparencia'),101).tone,'muted');
+});
+
+test('all ranking indicators explain their colors and missing data never becomes a good result',()=>{
+  assert.deepEqual(new Set(Object.keys(RANKING_READINGS)),new Set(METRICS.map(m=>m.id)));
+  for(const meta of METRICS){
+    assert.ok(rankingReading(meta).note.length>40,meta.id);
+    for(const value of [null,undefined,NaN,Infinity,'0'])assert.deepEqual(rankingAssessment(meta,value),{tone:'muted',label:'Sin dato'});
+    for(const r of rankMunicipalities(rows,meta))assert.ok(rankingAssessment(meta,r.value).label,meta.id);
+  }
+  assert.equal(rankingAssessment({id:'unknown'},100).tone,'neutral');
+});
 
 test('budget rankings compare one exercise and type without silently mixing cutoff dates',()=>{
   for(const [basis,count] of [['junio',72],['vigente',85],['original',22]]){
