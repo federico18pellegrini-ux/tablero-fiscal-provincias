@@ -328,7 +328,7 @@ def build(folder):
     annual_budget_path = ROOT / 'municipios/data/annual_budgets_verified.json'
     annual_budgets, annual_coverage = apply_annual_budgets(municipalities, annual_budget_path)
     write_budget_catalog(ROOT, municipalities, annual_coverage)
-    data = {'version': 6, 'generated': '2026-09-10', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
+    data = {'version': 6, 'generated': '2026-09-11', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
     target = ROOT / 'municipios/data/dashboard.json'
     data['annualBudgetCoverage'] = annual_coverage
     target.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':'), allow_nan=False), encoding='utf-8')
