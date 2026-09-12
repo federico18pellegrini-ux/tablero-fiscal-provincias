@@ -1,0 +1,540 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-09-11",
+  "scope": "Revisión de 288 URLs enlazadas por los portales de 135 municipios y descarga de 61 documentos candidatos. Se distingue localizar, descargar, validar e incorporar. No constituye revisión manual integral de todas las páginas de cada sitio.",
+  "pagesReviewed": 288,
+  "municipalitiesReviewed": 135,
+  "pagesResponded": 242,
+  "downloadsAttempted": 61,
+  "downloadsRetrieved": 59,
+  "incorporated": {
+    "fiscalAdded": [
+      "06070",
+      "06322",
+      "06336"
+    ],
+    "payrollCompleted": [
+      "06042"
+    ],
+    "budgetsNew2026": [
+      "06042",
+      "06322",
+      "06336",
+      "06351",
+      "06547",
+      "06693",
+      "06784"
+    ],
+    "budgetRefreshed": [
+      "06070"
+    ]
+  },
+  "findings": [
+    {
+      "id": "06042",
+      "topic": "debt",
+      "state": "located_pending_validation",
+      "url": "https://www.ayacucho.gob.ar/sites/default/files/8._stock_de_deuda_y_perfil_de_vencimientos_al_30-06.pdf",
+      "note": "Planilla con stock al 30/06/2026 y perfil de capital e intereses: localizada y descargada. Falta conciliar saldo, pagos del año y calendario futuro antes de incorporarla."
+    },
+    {
+      "id": "06693",
+      "topic": "debt",
+      "state": "located_pending_validation",
+      "url": "https://roqueperez.gob.ar/sites/default/files/stockdeudapublicaperfildevencimientos22026.pdf",
+      "note": "El portal enlaza stock y vencimientos del segundo trimestre. Pendiente de descarga, conciliación y carga."
+    },
+    {
+      "id": "06252",
+      "topic": "budget",
+      "state": "draft_not_approved",
+      "url": "https://www.escobar.gob.ar/transparencia/",
+      "note": "Los cuatro cuerpos 2026 están disponibles. Las páginas iniciales del cuerpo I dicen proyecto de ordenanza. Falta verificar la norma aprobada o la ejecución 2026; no se cargó el proyecto como presupuesto vigente."
+    },
+    {
+      "id": "06270",
+      "topic": "fiscal",
+      "state": "broken_link",
+      "url": "https://www.ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt%201er%20Sem%202026.pdf",
+      "note": "El enlace municipal al primer semestre de 2026 devuelve 404. Se necesita una copia o un enlace corregido."
+    },
+    {
+      "id": "06469",
+      "topic": "budget",
+      "state": "broken_link",
+      "url": "https://www.lincoln.gob.ar/sites/default/files/presupuesto_de_gastos_2026.pdf",
+      "note": "El enlace candidato al presupuesto 2026 devuelve 404. Se necesita el archivo o la ordenanza aprobada."
+    },
+    {
+      "id": "06693",
+      "topic": "fiscal",
+      "state": "classification_pending",
+      "url": "https://roqueperez.gob.ar/ejecucion-trimestral-recursos-y-gastos",
+      "note": "Ejecuciones de recursos y gastos de ambos trimestres descargadas. Falta una CAIF o una conversión económica conciliada que separe gastos fiscales de cancelación de pasivos. Presupuesto de marzo incorporado."
+    },
+    {
+      "id": "06351",
+      "topic": "fiscal",
+      "state": "other_period_execution",
+      "url": "https://pinto.cloudnetworkengine.com/listado-acotado-pdf.php?idCategoria=166",
+      "note": "Ejecuciones de enero–marzo 2026 dentro de archivos ZIP. Permiten verificar presupuesto anual; todavía falta la cuenta comparable de junio."
+    },
+    {
+      "id": "06784",
+      "topic": "fiscal",
+      "state": "classification_pending",
+      "url": "https://suipacha.gob.ar/transparencia/",
+      "note": "Ejecuciones de recursos y gastos a junio 2026 descargadas. Falta separar las operaciones de financiamiento para obtener el resultado fiscal; el presupuesto anual sí se incorporó."
+    }
+  ],
+  "seriesReview": [
+    {
+      "topic": "employment",
+      "url": "https://www.argentina.gob.ar/sites/default/files/departamento_serie_empleo_remuneraciones_3.xlsx",
+      "sha256": "415899365a2828be8dadcea46f6d48d9c1c23c25c0aa88c5985b19fd6574d4e3",
+      "lastObservation": "2025-12",
+      "note": "Archivo actual descargado: las hojas T1/T7/T8 terminan en diciembre de 2025. La fecha de publicación julio de 2026 no es el mes de los datos."
+    },
+    {
+      "topic": "transfers",
+      "url": "https://www.gba.gob.ar/economia/direccion_provincial_de_coordinacion_municipal_y_programas_de_desarrollo/transferencias_municipios",
+      "lastLinkedFile": "2026-07",
+      "note": "El enlace oficial de 2026 apunta al archivo de julio. El catálogo alternativo menciona junio; se conserva julio ya validado."
+    }
+  ],
+  "documents": [
+    {
+      "id": "06070",
+      "url": "https://baradero.gob.ar/wp-content/uploads/2026/07/Situacion-Economico-Financiera-al-30-6-26-2.pdf",
+      "status": 200,
+      "bytes": 2004662,
+      "sha256": "da935e6899c7e8f09b57214c7c481a8948947ebef129ce0b25b42aeda0231853"
+    },
+    {
+      "id": "06252",
+      "url": "https://www.dropbox.com/scl/fi/jz5zcgz2trfgim8m6p9x2/Presupuesto-2026-Cuerpo-1.pdf?rlkey=7wk1906drj00srnf23ras3soy&st=vewhyid7&dl=1",
+      "status": 200,
+      "bytes": 80865793,
+      "sha256": "021af5c7b45782730752b1b6e72e519c2bfe0ac3576b7d1c68e54ba5cde9b75c"
+    },
+    {
+      "id": "06252",
+      "url": "https://www.dropbox.com/scl/fi/ka7spkyie2hefb6a9karq/Presupuesto-2026-Cuerpo-2.pdf?rlkey=1oegz1xakobj10j99xpqirm9o&st=8g5c2e47&dl=1",
+      "status": 200,
+      "bytes": 68698520,
+      "sha256": "18e93e2fe4ad8330c738518580c35f472af095322b567c6bb78d30bf1205d2c3"
+    },
+    {
+      "id": "06252",
+      "url": "https://www.dropbox.com/scl/fi/y8eksbyhcuempp5ldw4lj/Presupuesto-2026-Cuerpo-3.pdf?rlkey=hyvet1y11baleegxrf1wxd4rj&st=6vgmrbpc&dl=1",
+      "status": 200,
+      "bytes": 73390499,
+      "sha256": "99d2c7c20fc410e77c0ceb7b76ce43c98228f5a386f72b33dbaa3ab671a18ee0"
+    },
+    {
+      "id": "06252",
+      "url": "https://www.dropbox.com/scl/fi/iyd9btnhst4aqxj0dciw3/Presupuesto-2026-Cuerpo-4.pdf?rlkey=z9ue2t43oi53e6v1l8327t4il&st=3ziqpgtv&dl=1",
+      "status": 200,
+      "bytes": 72318548,
+      "sha256": "8601d2933e456f2aa6c01dc9788ca95503c1154ba81ad136f93f324dbdb68755"
+    },
+    {
+      "id": "06270",
+      "url": "https://www.ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt 1er Sem 2026.pdf",
+      "status": 404,
+      "bytes": 228,
+      "sha256": "105a128119ac844c985e43625a12ce62912845a28da39d42d95fdff86d62feb4"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/07/Estado-de-ejecucion-de-gastos.pdf",
+      "status": 200,
+      "bytes": 2008638,
+      "sha256": "49120cf2dec918f96405119b1c8d67f31da5795ee9a3b6994a755bcab0af6ac0"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/07/Situacion-Ec.-Fciera-30.06.2026.pdf",
+      "status": 200,
+      "bytes": 1361211,
+      "sha256": "d08f6c148d639afa44d6747db41da2fbdde2a2a61bd3e76681b6526aab925f17"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/07/Estado-de-ejecucion-de-recursos.pdf",
+      "status": 200,
+      "bytes": 449003,
+      "sha256": "9b2be360e6bda5590567ee4bdd49e0536c09d91b4e7195f7577c6cd7673ced89"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/07/Estado-de-ejecucion-de-gastos-por-finalidad-y-funcion.pdf",
+      "status": 200,
+      "bytes": 380735,
+      "sha256": "b873046657a63a8bbafefff103a02843f4e3046a7a79206485ddb7b4bd9720bb"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/05/Estado-de-Ejecucion-de-gastos-1.pdf",
+      "status": 200,
+      "bytes": 1860598,
+      "sha256": "f5b32e63cac79572d44a4b6c36e2972e67bd30f9c8ce9182c0ed126f94a9e97f"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/05/Situacion-Economico-Financiera-1-26_page-0001.pdf",
+      "status": 200,
+      "bytes": 998954,
+      "sha256": "8206c1d3e021c710d6368a8352320cff02c6359ad46fba6d65da79fe2aae920a"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/05/Estado-de-Ejecucion-Presupuestaria-de-Recursos-1-26_page-0001-1.pdf",
+      "status": 200,
+      "bytes": 1457364,
+      "sha256": "c0ef2e1a4f18772e106aa4272e7f7da72d4ba81cae4f3da4635ec4a93df560ca"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/05/Estado-de-Ejecucion-del-Presupuesto-de-Gastos-Por-Finalidad-y-Funcion-1-26_page-0001.pdf",
+      "status": 200,
+      "bytes": 326035,
+      "sha256": "f30ebf3e8e1bd142e6f721ed10eade0465564541fe72bfbe6e80743ddf3dd09a"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/03/Estado-de-Ejecucion-del-Presupuesto-de-Gastos-2025.pdf",
+      "status": 200,
+      "bytes": 2108588,
+      "sha256": "a86ad44b207f106afa0626ad81177725fb66618ca073dbdb4e1682c22668d875"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/03/Situacion-Economico-Financiera-2025.pdf",
+      "status": 200,
+      "bytes": 328450,
+      "sha256": "1a1584d1ec1e13ab6bba4ea5891115a30eec5a4d481abe2786526fe37c1ff087"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/03/Estado-de-Ejecucion-Presupuestaria-de-Recursos-2025.pdf",
+      "status": 200,
+      "bytes": 454962,
+      "sha256": "d2ee1cb2bb688b11696da2c0e9fd68f22f27689deb26d427ed71bae034295328"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/03/Estado-de-Ejecucion-del-Presupuesto-de-Gastos-Por-Finalidad-y-Funcion-2025.pdf",
+      "status": 200,
+      "bytes": 380625,
+      "sha256": "55a982a169dfa4303a65c866292d8a3a95891c35c73fb47b80318cf30d982d00"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-Financiera-2025.pdf",
+      "status": 200,
+      "bytes": 1038346,
+      "sha256": "89f8ed012d9ce6a57de8124582cb87b4bdc9e5082441f2be8a933f51cf587ff9"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/01/Ord.-3661.pdf",
+      "status": 200,
+      "bytes": 1554079,
+      "sha256": "6b1a40858fb84b6488e1ce8798c02f6d5397a95210ac9496ec5737f636d285e9"
+    },
+    {
+      "id": "06322",
+      "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/01/Presupuesto-de-gastos-2026.pdf",
+      "status": 200,
+      "bytes": 993423,
+      "sha256": "4aa5b9637619a2075ce12d45af53a2d4a15f04097cd779536ee405975a40cb12"
+    },
+    {
+      "id": "06336",
+      "url": "https://www.generallavalle.gob.ar/estado-transparente/descargar/situacion-economica-financiera-al-30-06-2026-15.pdf",
+      "status": 200,
+      "bytes": 2234039,
+      "sha256": "167531ad29d61b46c63efc6888940fd91db28972c3b6bae60b508e2e864889dd"
+    },
+    {
+      "id": "06336",
+      "url": "https://www.generallavalle.gob.ar/uploads_archivos/situacion-economica-financiera-al-30-06-2026-15.pdf",
+      "status": 200,
+      "bytes": 2234039,
+      "sha256": "167531ad29d61b46c63efc6888940fd91db28972c3b6bae60b508e2e864889dd"
+    },
+    {
+      "id": "06351",
+      "url": "https://pinto.cloudnetworkengine.com/upload/PRESUPUESTODERECURSOS20261776692527.zip",
+      "status": 200,
+      "bytes": 365440,
+      "sha256": "cee41031ef17bfc355ef45f3b9d5152bf90ce24a8c92ecea9eb29c772386555c"
+    },
+    {
+      "id": "06351",
+      "url": "https://pinto.cloudnetworkengine.com/upload/PRESUPUESTODEGASTOS20261776692505.zip",
+      "status": 200,
+      "bytes": 546054,
+      "sha256": "0ec78a61c18bd1b55ac595b4e3e0a9fb28adbbabf3f9777562090a995f3a36ef"
+    },
+    {
+      "id": "06351",
+      "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDERECURSOSAL310320261776692415.zip",
+      "status": 200,
+      "bytes": 417435,
+      "sha256": "3a7c0d0b49e49377cc4bbbc5beddbd1dfc72a33b4f66a2cb28cde2367bf6d181"
+    },
+    {
+      "id": "06351",
+      "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSPORFINALIDADYFUNCIONAL310320261776692403.zip",
+      "status": 200,
+      "bytes": 361941,
+      "sha256": "572944732c909c0709958e2b6646d6619eafc999f26e2431e1363c0d5879ea09"
+    },
+    {
+      "id": "06351",
+      "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSAL310320261776692382.zip",
+      "status": 200,
+      "bytes": 666445,
+      "sha256": "2a4cce19bdc445724a5933a33ca81dd2fb9017b500b4e0fa4a1bc99aecc4d614"
+    },
+    {
+      "id": "06547",
+      "url": "https://drive.google.com/file/d/1drebixbXgLLTxSaD7knY6jzpZjVyH8Kx/view?usp=drive_link",
+      "status": 200,
+      "bytes": 10067488,
+      "sha256": "4d5abbe8b4de058ed938f12f1f7ad0dce90af425d2a98cd3e390b442932fd33e"
+    },
+    {
+      "id": "06693",
+      "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestariarecursos22026.pdf",
+      "status": 200,
+      "bytes": 445680,
+      "sha256": "ec71f4da05fd00e0d61c8b586c1b29096da16f19292c56a361174abadecbf535"
+    },
+    {
+      "id": "06693",
+      "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestariarecursos12026.pdf",
+      "status": 200,
+      "bytes": 453956,
+      "sha256": "cfb16d91c4364934d6fb82c1a1b22fd9c41aaa2647f34dceb23fb88bea693163"
+    },
+    {
+      "id": "06693",
+      "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastos22026.pdf",
+      "status": 200,
+      "bytes": 1805544,
+      "sha256": "09382729e69affd4b03e76b292da612254f229e56cb6fa77203d8bcc3b4858f6"
+    },
+    {
+      "id": "06693",
+      "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastos12026.pdf",
+      "status": 200,
+      "bytes": 986516,
+      "sha256": "f117f2e7b8c77d1bb2d6cf656322efc8aa59060346a3199b740e933ad6783099"
+    },
+    {
+      "id": "06693",
+      "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastosporfinalidadfuncion22026.pdf",
+      "status": 200,
+      "bytes": 386715,
+      "sha256": "a8b068f8fc38bdeee0de58dd64cd8d8fb3e114f381d89f630a78f3f182fa8e2c"
+    },
+    {
+      "id": "06693",
+      "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastosporfinalidadfuncion12026.pdf",
+      "status": 200,
+      "bytes": 386545,
+      "sha256": "f793b2a7869018544bb972053fe501dd8604711ec0ac3520bfc63f964db69747"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/Situacion-Economica-Financiera-31.12.2025.pdf",
+      "status": 200,
+      "bytes": 89287,
+      "sha256": "6472b495689976076e9d999bf8099d6e6ac08e4609ed52327b4047ac9fdf35c6"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/04/Situacion-Economica-Financiera-2025.pdf",
+      "status": 200,
+      "bytes": 89287,
+      "sha256": "6472b495689976076e9d999bf8099d6e6ac08e4609ed52327b4047ac9fdf35c6"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/Situacion-Economica-Financiera-al-30.09.2025.pdf",
+      "status": 200,
+      "bytes": 413233,
+      "sha256": "c66517f0ad5d32f7bc24d50a2d1c4b75906a625043c3b94519c8932456cb13ac"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-SITUACION-ECONOMICO-FINANCIERA-30.06.2025.pdf",
+      "status": 200,
+      "bytes": 302297,
+      "sha256": "9809a4fd60ee1c9a34fa3a82ae59ad764650ef72e146f0b66b696ded8086302f"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/Presupuesto-Digital-2026.pdf",
+      "status": 200,
+      "bytes": 11755171,
+      "sha256": "9a7fa9816e7ed42c1776bdcc0731821e39e1f6ec38b84541c4e3689f7f190205"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/APROBACION-PRESUPUESTO-2025-ORD-2755-2024.pdf",
+      "status": 200,
+      "bytes": 1263376,
+      "sha256": "d09c67807d18bfb95863d2775e7bb01ab90d3d6e1d402f099bcd748b70455954"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-PRESUPUESTARIA-AL-30-06-26.pdf",
+      "status": 200,
+      "bytes": 437053,
+      "sha256": "479fa40f391bfa25aaa98819177f39ad4f3316a24fdc05a64f4d79e757d10a30"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-PRESUPUESTARIA-AL-31-03-26.pdf",
+      "status": 200,
+      "bytes": 422756,
+      "sha256": "f8eed31e2d704387358030ef2407bbd0aec8db29acd362ee4e4ec0a510f79efc"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-PRESUPUESTARIA-31.12.2025.pdf",
+      "status": 200,
+      "bytes": 436597,
+      "sha256": "aca798c495263dc393da78b6457366fc74e13d6f842df9dd950e1f460c6e92b6"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-PRESUPUESTARIA-30.09.2025.pdf",
+      "status": 200,
+      "bytes": 436434,
+      "sha256": "3aa580e74555030827b46a651316ccf96682b390a1e8fcf840fdd5f373650fb9"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-PRESUPUESTARIA-30.06.2025.pdf",
+      "status": 200,
+      "bytes": 431048,
+      "sha256": "8ed8ba8daa59753a152e9846270ee080182a7bbf04b20552993d2755395d8820"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-PRESUPUESTARIA-31.03.2025-1.pdf",
+      "status": 200,
+      "bytes": 420182,
+      "sha256": "aec0b5f4369c2364b54216ef625deb1b735696dfa483ab8ceb5ea1251132c266"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-PRESUPUESTARIA-31.03.2025.pdf",
+      "status": 200,
+      "bytes": 420182,
+      "sha256": "aec0b5f4369c2364b54216ef625deb1b735696dfa483ab8ceb5ea1251132c266"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-DEL-PRESUPUESTO-DE-GASTOS-AL-30-06-26.pdf",
+      "status": 200,
+      "bytes": 364825,
+      "sha256": "cde44d1e28d93db868da72450818e101644c96493f6fd1068f18b7a64ab2b8b9"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-DEL-PRESUPUESTO-DE-GASTOS-AL-31-03-26.pdf",
+      "status": 200,
+      "bytes": 364192,
+      "sha256": "0694c4f3ac7a64b27d03b2bf06ec082467e8f66a134e89c9542ae84bd301b43a"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-DE-GASTOS-POR-FINALIDAD-Y-FUNCION-31.12.2025.pdf",
+      "status": 200,
+      "bytes": 363441,
+      "sha256": "6c7a8934bb8d1a1e97e9b8f2d01a4a5abea48ffdc2f7cbf1cff5c13ec8bf7f4b"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-DE-GASTOS-POR-FINALIDAD-Y-FUNCION-30.09.2025.pdf",
+      "status": 200,
+      "bytes": 365889,
+      "sha256": "46878cbd9d55875bf465c87aa8caf78f6ec8e31563fdc74b5c97f303aafeabcd"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-DE-GASTOS-POR-FINALIDAD-Y-FUNCION-30.06.2025.pdf",
+      "status": 200,
+      "bytes": 365170,
+      "sha256": "5929dbe39639a3f53ef897ea2d4ea3eede8b6a17acd88b7ca1845efed91b4b62"
+    },
+    {
+      "id": "06784",
+      "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-DE-GASTOS-POR-FINALIDAD-Y-FUNCION-31.03.2025.pdf",
+      "status": 200,
+      "bytes": 363546,
+      "sha256": "9ca3f53b8f4dd26c999f11dd0fe3e817d23f9c23f1f4f748b1ba0960b7c950d8"
+    },
+    {
+      "id": "06042",
+      "url": "https://www.ayacucho.gob.ar/sites/default/files/1_presupuesto_2026.pdf",
+      "status": 200,
+      "bytes": 5252854,
+      "sha256": "24fa6eb3249449f4c89a1cfd66085431db01c18735e2166b049c7c99b51577a7"
+    },
+    {
+      "id": "06042",
+      "url": "https://www.ayacucho.gob.ar/sites/default/files/1.c_presupuesto_gastos_por_objeto.pdf",
+      "status": 200,
+      "bytes": 65576,
+      "sha256": "d9503fcf752765124e23823de66951ac274915ff0468aee236cd408f3b9340ea"
+    },
+    {
+      "id": "06042",
+      "url": "https://www.ayacucho.gob.ar/sites/default/files/3._caif_al_30-6.pdf",
+      "status": 200,
+      "bytes": 368233,
+      "sha256": "4be6af84bccc6b5878c71116acdb79bf4ed2f453efc88088f5c31c3702311135"
+    },
+    {
+      "id": "06042",
+      "url": "https://www.ayacucho.gob.ar/sites/default/files/4._estado_ejecucion_gastos_30-6.pdf",
+      "status": 200,
+      "bytes": 2013959,
+      "sha256": "cbc1b8a9a2e42d4950e54e447167ee8d2e5669009fd20812bf08a7688563a868"
+    },
+    {
+      "id": "06042",
+      "url": "https://www.ayacucho.gob.ar/sites/default/files/7._situacion_economico_financiera_al_30-6.pdf",
+      "status": 200,
+      "bytes": 320281,
+      "sha256": "91dcccfacf5fd46de47ccd46189e53fbf3ee8c3636a5c851c5fa49bf99794046"
+    },
+    {
+      "id": "06042",
+      "url": "https://www.ayacucho.gob.ar/sites/default/files/8._stock_de_deuda_y_perfil_de_vencimientos_al_30-06.pdf",
+      "status": 200,
+      "bytes": 636360,
+      "sha256": "7b5d110a184f47017d7d696f8c4cd5698743f9ff8b0f357082c4cb1e439b9f53"
+    },
+    {
+      "id": "06469",
+      "url": "https://www.lincoln.gob.ar/sites/default/files/presupuesto_de_gastos_2026.pdf",
+      "status": 404,
+      "bytes": 13490,
+      "sha256": "bc10f3e0af57a83802b60659858366e4b2064b4a0ee81a59fe64bb061a630c3b"
+    }
+  ],
+  "employmentAudit": {
+    "source": "https://www.argentina.gob.ar/sites/default/files/departamento_serie_empleo_remuneraciones_3.xlsx",
+    "observationsChecked": 22680,
+    "errors": [],
+    "method": "84 observaciones mensuales de empleo y salario de 135 municipios contra T1/T2 y T7/T8. Salarios convertidos con IPC mensual a julio 2026; tolerancia 2 centavos. Lezama: código OEDE 06266 homologado a INDEC 06466 mediante el nombre del municipio."
+  }
+}

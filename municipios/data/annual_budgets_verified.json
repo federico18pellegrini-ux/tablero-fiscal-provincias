@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "verifiedAt": "2026-09-10",
+  "verifiedAt": "2026-09-11",
   "targetYear": 2026,
   "currency": "ARS",
   "priceBasis": "nominal",
@@ -232,6 +232,41 @@
       "periodStart": "2026-01-02"
     },
     {
+      "id": "06042",
+      "year": 2026,
+      "asOf": "2026-03-31",
+      "original": "37919278802.67",
+      "current": "38324870778.06",
+      "modifications": "405591975.39",
+      "scope": "Administración central de Ayacucho. Incluye transferencias figurativas al Hospital Municipal; no se suma nuevamente el presupuesto del hospital.",
+      "method": "published_current",
+      "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
+      "documents": [
+        {
+          "url": "https://www.ayacucho.gob.ar/sites/default/files/1.c_presupuesto_gastos_por_objeto.pdf",
+          "sha256": "d9503fcf752765124e23823de66951ac274915ff0468aee236cd408f3b9340ea",
+          "bytes": 65576,
+          "pages": 11,
+          "consultedPages": [
+            1,
+            11
+          ],
+          "locator": "Presupuesto por objeto del 06/04/2026, última página: original, modificaciones y vigente; corte marzo contrastado con situación económico-financiera."
+        },
+        {
+          "url": "https://www.ayacucho.gob.ar/sites/default/files/7._situacion_economico_financ._31-03-26.pdf",
+          "sha256": "1aef1c7b2c9890af0646514f135c4417a5a1c1ec84b9e35fec1de06084c93791",
+          "bytes": 57949,
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Período enero–marzo y total vigente: 38.324.870.778,06 pesos."
+        }
+      ],
+      "periodStart": "2026-01-01"
+    },
+    {
       "id": "06049",
       "year": 2026,
       "asOf": "2026-03-31",
@@ -382,60 +417,25 @@
     {
       "id": "06070",
       "year": 2026,
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "original": null,
-      "current": "35879174990.38",
+      "current": "37585772675.86",
       "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "reconciled_objects",
+      "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
+      "method": "published_current",
+      "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
       "documents": [
         {
-          "url": "https://baradero.gob.ar/wp-content/uploads/2026/04/Situacion-Economico-Financiera-al-31-03-2026.pdf",
-          "sha256": "6721e7ac3aef3a8062c515d29a3583edfe3d83ca25cb23e6078fc56c9cb5554b",
-          "bytes": 54562,
+          "url": "https://baradero.gob.ar/wp-content/uploads/2026/07/Situacion-Economico-Financiera-al-30-6-26-2.pdf",
+          "sha256": "da935e6899c7e8f09b57214c7c481a8948947ebef129ce0b25b42aeda0231853",
+          "bytes": 2004662,
           "pages": 2,
           "consultedPages": [
             1
           ],
-          "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
+          "locator": "Gastos por objeto, Total, columna Vigente; período enero–junio de 2026."
         }
       ],
-      "components": [
-        {
-          "label": "Gastos en personal",
-          "amount": "20469932694.88"
-        },
-        {
-          "label": "Bienes de consumo",
-          "amount": "2558442958.76"
-        },
-        {
-          "label": "Servicios no personales",
-          "amount": "6957483592.82"
-        },
-        {
-          "label": "Bienes de uso",
-          "amount": "2183129944.02"
-        },
-        {
-          "label": "Transferencias",
-          "amount": "530304121.51"
-        },
-        {
-          "label": "Activos financieros",
-          "amount": "120851951.77"
-        },
-        {
-          "label": "Servicio de la deuda y disminución de otros pasivos",
-          "amount": "3059029726.62"
-        },
-        {
-          "label": "Otros gastos",
-          "amount": "0.00"
-        }
-      ],
-      "componentField": "current",
       "periodStart": "2026-01-01"
     },
     {
@@ -2057,58 +2057,27 @@
     },
     {
       "id": "06322",
-      "year": 2025,
-      "asOf": "2025-12-31",
+      "year": 2026,
+      "asOf": "2026-06-30",
       "original": null,
-      "current": "25443919682.40",
+      "current": "29243429040.74",
       "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "reconciled_objects",
+      "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
+      "method": "published_current",
+      "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
       "documents": [
         {
-          "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/03/Situacion-Economico-Financiera-2025.pdf",
-          "sha256": "1a1584d1ec1e13ab6bba4ea5891115a30eec5a4d481abe2786526fe37c1ff087",
-          "bytes": 328450,
+          "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/07/Situacion-Ec.-Fciera-30.06.2026.pdf",
+          "sha256": "d08f6c148d639afa44d6747db41da2fbdde2a2a61bd3e76681b6526aab925f17",
+          "bytes": 1361211,
           "pages": 5,
           "consultedPages": [
             1
           ],
-          "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
+          "locator": "Gastos por objeto, Total, columna Vigente; período enero–junio de 2026."
         }
       ],
-      "components": [
-        {
-          "label": "Gastos en personal",
-          "amount": "14652024776.24"
-        },
-        {
-          "label": "Bienes de consumo",
-          "amount": "2912702654.59"
-        },
-        {
-          "label": "Servicios no personales",
-          "amount": "3900579979.09"
-        },
-        {
-          "label": "Bienes de uso",
-          "amount": "2029105109.33"
-        },
-        {
-          "label": "Transferencias",
-          "amount": "1517501547.18"
-        },
-        {
-          "label": "Activos financieros",
-          "amount": "125391360.34"
-        },
-        {
-          "label": "Servicio de la deuda y disminución de otros pasivos",
-          "amount": "306614255.63"
-        }
-      ],
-      "componentField": "current",
-      "periodStart": "2025-01-01"
+      "periodStart": "2026-01-01"
     },
     {
       "id": "06329",
@@ -2168,58 +2137,27 @@
     },
     {
       "id": "06336",
-      "year": 2025,
-      "asOf": "2025-12-31",
+      "year": 2026,
+      "asOf": "2026-06-30",
       "original": null,
-      "current": "11523830040.29",
+      "current": "12642677582.07",
       "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "reconciled_objects",
+      "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
+      "method": "published_current",
+      "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
       "documents": [
         {
-          "url": "https://www.generallavalle.gob.ar/uploads_archivos/situacion-economica-financiera-cierre-2025-99.pdf",
-          "sha256": "7846fe42d9bd0974977e156ff3f79caa38fe5ffaefecd55fd317e2d030447756",
-          "bytes": 317648,
-          "pages": 3,
+          "url": "https://www.generallavalle.gob.ar/uploads_archivos/situacion-economica-financiera-al-30-06-2026-15.pdf",
+          "sha256": "167531ad29d61b46c63efc6888940fd91db28972c3b6bae60b508e2e864889dd",
+          "bytes": 2234039,
+          "pages": 2,
           "consultedPages": [
             1
           ],
-          "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
+          "locator": "Gastos por objeto, Total, columna Vigente; período enero–junio de 2026."
         }
       ],
-      "components": [
-        {
-          "label": "Gastos en personal",
-          "amount": "5731175571.59"
-        },
-        {
-          "label": "Bienes de consumo",
-          "amount": "1752644875.34"
-        },
-        {
-          "label": "Servicios no personales",
-          "amount": "2810726300.60"
-        },
-        {
-          "label": "Bienes de uso",
-          "amount": "399441283.23"
-        },
-        {
-          "label": "Transferencias",
-          "amount": "517867640.39"
-        },
-        {
-          "label": "Activos financieros",
-          "amount": "2474595.70"
-        },
-        {
-          "label": "Servicio de la deuda y disminución de otros pasivos",
-          "amount": "309499773.44"
-        }
-      ],
-      "componentField": "current",
-      "periodStart": "2025-01-01"
+      "periodStart": "2026-01-01"
     },
     {
       "id": "06343",
@@ -2244,6 +2182,34 @@
       "components": [],
       "componentField": "current",
       "periodStart": null
+    },
+    {
+      "id": "06351",
+      "year": 2026,
+      "asOf": "2026-03-31",
+      "original": "21980000000.00",
+      "current": "23130109390.63",
+      "modifications": "1150109390.63",
+      "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
+      "method": "published_current",
+      "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
+      "documents": [
+        {
+          "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSPORFINALIDADYFUNCIONAL310320261776692403.zip",
+          "sha256": "572944732c909c0709958e2b6646d6619eafc999f26e2431e1363c0d5879ea09",
+          "bytes": 361941,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "PDF dentro del ZIP oficial: Gastos por finalidad y función, Totales Generales, aprobado/modificaciones/vigente; período enero–marzo.",
+          "extractedPdfSha256": "be4815a57e64b024d34bc7bbac3403a3d4adbcc9d9a90c8196846ab2b3a39792",
+          "extractedPdfBytes": 369576,
+          "container": "ZIP oficial; páginas y localización corresponden al PDF contenido."
+        }
+      ],
+      "periodStart": "2026-01-01"
     },
     {
       "id": "06357",
@@ -3323,6 +3289,31 @@
       "periodStart": "2026-01-01"
     },
     {
+      "id": "06547",
+      "year": 2026,
+      "asOf": "2025-12-26",
+      "original": "15192000000.00",
+      "current": null,
+      "modifications": null,
+      "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
+      "method": "published_original",
+      "note": "Presupuesto aprobado original. No se presume que conserve el mismo monto después de sus modificaciones.",
+      "documents": [
+        {
+          "url": "https://drive.google.com/file/d/1drebixbXgLLTxSaD7knY6jzpZjVyH8Kx/view?usp=drive_link",
+          "sha256": "4d5abbe8b4de058ed938f12f1f7ad0dce90af425d2a98cd3e390b442932fd33e",
+          "bytes": 10067488,
+          "pages": 167,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Ordenanza 4731, artículo 1: presupuesto 2026 de 15.192.000.000 pesos. Sancionada el 26/12/2025. Archivo enlazado por el portal municipal."
+        }
+      ],
+      "periodStart": null
+    },
+    {
       "id": "06553",
       "year": 2026,
       "asOf": "2025-12-23",
@@ -4107,6 +4098,31 @@
       "periodStart": "2026-01-01"
     },
     {
+      "id": "06693",
+      "year": 2026,
+      "asOf": "2026-03-31",
+      "original": "17050281000.00",
+      "current": "18637075477.07",
+      "modifications": "1586794477.07",
+      "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
+      "method": "published_current",
+      "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
+      "documents": [
+        {
+          "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastosporfinalidadfuncion12026.pdf",
+          "sha256": "f793b2a7869018544bb972053fe501dd8604711ec0ac3520bfc63f964db69747",
+          "bytes": 386545,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Gastos por finalidad y función, Totales Generales, aprobado/modificaciones/vigente; período enero–marzo. El archivo abril–junio se conserva separado."
+        }
+      ],
+      "periodStart": "2026-01-01"
+    },
+    {
       "id": "06700",
       "year": 2025,
       "asOf": "2025-12-30",
@@ -4611,58 +4627,39 @@
     },
     {
       "id": "06784",
-      "year": 2025,
-      "asOf": "2025-12-31",
-      "original": null,
-      "current": "10334218367.28",
-      "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "reconciled_objects",
+      "year": 2026,
+      "asOf": "2026-06-30",
+      "original": "13248321462.65",
+      "current": "13840181534.68",
+      "modifications": "591860072.03",
+      "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
+      "method": "published_current",
+      "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
       "documents": [
         {
-          "url": "https://suipacha.gob.ar/wp-content/uploads/2026/04/Situacion-Economica-Financiera-2025.pdf",
-          "sha256": "6472b495689976076e9d999bf8099d6e6ac08e4609ed52327b4047ac9fdf35c6",
-          "bytes": 89287,
+          "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/ESTADO-DE-EJECUCION-DEL-PRESUPUESTO-DE-GASTOS-AL-30-06-26.pdf",
+          "sha256": "cde44d1e28d93db868da72450818e101644c96493f6fd1068f18b7a64ab2b8b9",
+          "bytes": 364825,
           "pages": 2,
           "consultedPages": [
-            1
+            1,
+            2
           ],
-          "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
+          "locator": "Gastos por finalidad y función, Totales Generales, aprobado/modificaciones/vigente; período enero–junio. Original también verificado en Ordenanza 2803/2025."
+        },
+        {
+          "url": "https://suipacha.gob.ar/wp-content/uploads/2026/08/Presupuesto-Digital-2026.pdf",
+          "sha256": "9a7fa9816e7ed42c1776bdcc0731821e39e1f6ec38b84541c4e3689f7f190205",
+          "bytes": 11755171,
+          "pages": 303,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Decreto 600/2025 y Ordenanza 2803/2025, artículo 4; aprobado original 13.248.321.462,65 pesos."
         }
       ],
-      "components": [
-        {
-          "label": "Gastos en personal",
-          "amount": "5571839015.52"
-        },
-        {
-          "label": "Bienes de consumo",
-          "amount": "931242557.92"
-        },
-        {
-          "label": "Servicios no personales",
-          "amount": "2209017725.58"
-        },
-        {
-          "label": "Bienes de uso",
-          "amount": "423218515.43"
-        },
-        {
-          "label": "Transferencias",
-          "amount": "634138414.23"
-        },
-        {
-          "label": "Activos financieros",
-          "amount": "44033997.46"
-        },
-        {
-          "label": "Servicio de la deuda y disminución de otros pasivos",
-          "amount": "520728141.14"
-        }
-      ],
-      "componentField": "current",
-      "periodStart": "2025-01-02"
+      "periodStart": "2026-01-01"
     },
     {
       "id": "06791",
@@ -5548,12 +5545,6 @@
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
     {
-      "id": "06042",
-      "municipality": "Ayacucho",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
       "id": "06134",
       "municipality": "Cañuelas",
       "status": "pending",
@@ -5580,12 +5571,6 @@
     {
       "id": "06294",
       "municipality": "General Arenales",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
-      "id": "06351",
-      "municipality": "General Pinto",
       "status": "pending",
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
@@ -5650,12 +5635,6 @@
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
     {
-      "id": "06547",
-      "municipality": "Monte",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
       "id": "06568",
       "municipality": "Morón",
       "status": "pending",
@@ -5694,12 +5673,6 @@
     {
       "id": "06665",
       "municipality": "Ramallo",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
-      "id": "06693",
-      "municipality": "Roque Pérez",
       "status": "pending",
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },

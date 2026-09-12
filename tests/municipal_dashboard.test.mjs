@@ -11,7 +11,7 @@ const geometry=JSON.parse(fs.readFileSync(new URL('../municipios/data/geografia_
 const rows=data.municipalities,metric=id=>METRICS.find(m=>m.id===id);
 
 test('budget rankings compare one exercise and type without silently mixing cutoff dates',()=>{
-  for(const [basis,count] of [['junio',68],['vigente',79],['original',17]]){
+  for(const [basis,count] of [['junio',72],['vigente',85],['original',22]]){
     const meta=rankingMetric(metric('presupuesto-total'),basis),ranked=rankMunicipalities(rows,meta);
     assert.equal(ranked.length,count);
     for(const [i,r] of ranked.entries()){
@@ -50,7 +50,7 @@ test('new rankings retain the audited denominators, units and partial fiscal cov
   assert.equal(METRICS.length,36);
   for(const id of ['ingresos-habitante','gasto-habitante']){
     const meta=metric(id),field=id==='ingresos-habitante'?'ingresos_totales':'gastos_totales';
-    assert.equal(rankMunicipalities(rows,meta).length,73);
+    assert.equal(rankMunicipalities(rows,meta).length,76);
     for(const m of rows)assert.equal(metricValue(m,meta),m.fiscal?m.fiscal[field]/m.poblacion_2022:null);
   }
   for(const m of rows){
@@ -100,7 +100,7 @@ test('reserved observations never become zeros or ranking positions',()=>{
   assert.equal(rankMunicipalities(rows,metric('industria-cambio')).length,130);
   assert.equal(rankMunicipalities(rows,metric('credito')).length,106);
   assert.equal(rankMunicipalities(rows,metric('poblacion')).length,133);
-  assert.equal(rankMunicipalities(rows,metric('deficit')).length,73);
+  assert.equal(rankMunicipalities(rows,metric('deficit')).length,76);
   const missing=rows.find(m=>!m.fiscal);assert.equal(metricValue(missing,metric('deficit')),null);
 });
 
@@ -119,8 +119,8 @@ test('municipal fiscal accounts reconcile without including financing or treatin
     if(f.personal_devengado==null)assert.equal(f.personal_sobre_gasto_corriente_pct,null);
     else assert.ok(Math.abs(f.personal_devengado/f.gastos_corrientes*100-f.personal_sobre_gasto_corriente_pct)<.00001);
   }
-  for(const id of ['deficit','resultado-pesos','inversion','ahorro-corriente','inversion-habitante'])assert.equal(rankMunicipalities(rows,metric(id)).length,73);
-  assert.equal(rankMunicipalities(rows,metric('personal')).length,72);
+  for(const id of ['deficit','resultado-pesos','inversion','ahorro-corriente','inversion-habitante'])assert.equal(rankMunicipalities(rows,metric(id)).length,76);
+  assert.equal(rankMunicipalities(rows,metric('personal')).length,76);
   const lasHeras=rows.find(m=>m.id==='06329').fiscal;
   assert.equal(lasHeras.ingresos_totales,10441008325.60);
   assert.equal(lasHeras.gastos_totales,8853440358.31);
@@ -158,7 +158,7 @@ test('Tigre separates old liabilities and amortization before entering the fisca
 
 test('all fiscal observations retain primary documents, page locations and content hashes',()=>{
   const audit=JSON.parse(fs.readFileSync(new URL('../municipios/data/fiscal_verified.json',import.meta.url)));
-  assert.equal(audit.records.length,73);
+  assert.equal(audit.records.length,76);
   assert.deepEqual(audit.records.map(r=>r.id).sort(),rows.filter(m=>m.fiscal).map(m=>m.id).sort());
   assert.equal(audit.otherPeriods.length,19);
   for(const r of [...audit.records,...audit.budgetExecutions,...audit.otherPeriods]){
@@ -176,8 +176,8 @@ test('all fiscal observations retain primary documents, page locations and conte
 test('quarter sums exclude overlapping periods and do not invent personnel',()=>{
   const a=rows.find(m=>m.id==='06042').fiscal;
   assert.equal(a.resultado_financiero,-478052216.13);
-  assert.equal(a.personal_devengado,undefined);
-  assert.equal(a.personal_sobre_gasto_corriente_pct,null);
+  assert.equal(a.personal_devengado,7556993784.83);
+  assert.equal(a.personal_sobre_gasto_corriente_pct,7556993784.83/a.gastos_corrientes*100);
   const si=rows.find(m=>m.id==='06756').fiscal;
   assert.equal(si.method,'sum_quarters');
   assert.equal(si.resultado_financiero,-11956211531.15);
@@ -206,13 +206,13 @@ test('other periods stay visible and downloadable without entering June rankings
   assert.equal(fiscalExportRows(lp).length,8);
   assert.ok(fiscalExportRows(lp).every(r=>r[4].endsWith('2026-03-31')));
   assert.equal(fiscalExportRows(b).length,16);
-  assert.equal(fiscalExportRows(rows.find(m=>m.id==='06042')).find(r=>r[1]==='Personal devengado')[2],null);
+  assert.equal(fiscalExportRows(rows.find(m=>m.id==='06042')).find(r=>r[1]==='Personal devengado')[2],7556993784.83);
 });
 
 test('portal review covers every municipality and preserves pending accounts',()=>{
   const review=JSON.parse(fs.readFileSync(new URL('../municipios/data/fiscal_search.json',import.meta.url)));
   assert.equal(review.municipalities.length,135);
-  assert.equal(review.municipalities.filter(r=>r.searchedThisRound).length,118);
+  assert.equal(review.municipalities.filter(r=>r.searchedThisRound).length,135);
   assert.deepEqual(new Set(review.municipalities.map(r=>r.id)),new Set(rows.map(r=>r.id)));
   for(const m of rows){
     assert.ok(m.fiscalSearch.message.length>20);

@@ -670,7 +670,7 @@ function attachEvents(){
 }
 async function init(){
   try{
-    const responses=await Promise.all([fetch('data/dashboard.json?v=20260910-1'),fetch('data/geografia_original.geojson'),fetch('data/deflator.json?v=20260909-2')]);
+    const responses=await Promise.all([fetch('data/dashboard.json?v=20260911-3',{cache:'no-cache'}),fetch('data/geografia_original.geojson'),fetch('data/deflator.json?v=20260911-3',{cache:'no-cache'})]);
     if(responses.some(r=>!r.ok))throw new Error('No se pudieron leer los datos municipales.');
     const [dashboardText,geo,prices]=await Promise.all([responses[0].text(),responses[1].json(),responses[2].json()]);data=JSON.parse(dashboardText);geography=geo;deflator=prices;rows=data.municipalities;byId=new Map(rows.map(m=>[m.id,m]));
     const params=new URLSearchParams(location.search);priceMode=params.get('pesos')==='corrientes'?'nominal':'real';priceBase=deflator.bases.includes(params.get('base'))?params.get('base'):deflator.latest;
