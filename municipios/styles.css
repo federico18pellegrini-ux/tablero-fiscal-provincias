@@ -231,6 +231,24 @@ body{font-size:var(--text-reading)}
 .budget-status{background:#fff2d8;border-left:3px solid #9b5c10;padding:12px 16px;color:#65400e}
 .budget-catalog-value{font-size:1.45rem;font-weight:700;color:#14695c;overflow-wrap:anywhere}
 #rankings{--text-label:1rem}
+.report-builder{--text-label:1rem}
+.report-builder-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(290px,.85fr);gap:24px;align-items:start}
+.report-topics{border:0;padding:0;margin:0;min-width:0}
+.report-topics legend{font-size:18px;font-weight:700;margin-bottom:16px}
+.report-options{display:grid;gap:12px}
+.report-option{display:flex;gap:14px;padding:18px;border:1px solid var(--line);border-radius:14px;background:white;cursor:pointer;min-width:0}
+.report-option.is-chosen{background:#edf4ef;border-color:#86aa98}
+.report-option input{width:22px;height:22px;margin:3px 0 0;flex:none;accent-color:var(--teal)}
+.report-option>span{min-width:0}.report-option strong,.report-option span span,.report-option small{display:block;font-size:16px;line-height:1.5}
+.report-option span span{margin:5px 0;color:var(--muted)}.report-option small{color:var(--teal)}
+.report-download-panel h3{font-size:22px;line-height:1.4}.report-download-panel ol{padding-left:22px;font-size:16px;line-height:1.6}
+.report-download-panel li{margin:9px 0}.report-download-panel .button{width:100%;font-size:16px;text-align:center;white-space:normal}
+.report-download-panel [aria-disabled=true]{opacity:.6;cursor:wait}
+#report-download-status{font-size:16px;margin-top:16px;overflow-wrap:anywhere}
+#price-cards{grid-template-columns:1fr;max-width:850px}
+#price-indicators button{font-size:16px}
+@media(min-width:1000px){.report-download-panel{position:sticky;top:calc(var(--header-height,170px) + 20px)}}
+@media(max-width:800px){.report-builder-layout{grid-template-columns:1fr}.report-option{padding:16px}.report-download-panel{position:static;grid-row:1}}
 .budget-ranking-controls{margin:20px 0;padding:20px;border:1px solid #cbded5;border-radius:16px;background:#edf4ef}
 .budget-ranking-controls h2{font-size:1rem;line-height:1.5;margin:0 0 12px;font-weight:700}
 .budget-ranking-controls .choices{display:flex;flex-wrap:wrap;gap:8px}

@@ -7,10 +7,10 @@
   <meta name="description" content="Una mirada clara sobre los 135 municipios bonaerenses. Recursos, empleo, rankings y escenarios para la gestión municipal. Federico Pellegrini.">
   <title>Municipios · Federico Pellegrini</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260911-1">
+  <link rel="stylesheet" href="styles.css?v=20260911-2">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20260911-1"></script>
-  <script defer src="../analytics.js?v=20260907-2"></script>
+  <script defer src="app.js?v=20260911-2"></script>
+  <script defer src="../analytics.js?v=20260911-2"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Ir a los datos</a>
@@ -32,7 +32,7 @@
     <div id="loading" class="loading" role="status"><span class="loading-dot"></span>Preparando los datos de los 135 municipios…</div>
     <div id="error" class="error-panel" hidden role="alert"><h1>No pudimos cargar el tablero</h1><p>Revisá la conexión y volvé a intentarlo.</p><button onclick="location.reload()" class="button">Volver a cargar</button></div>
     <div id="dashboard" hidden>
-      <section class="municipality-heading"><div><div class="eyebrow" id="view-context">Buenos Aires / 135 municipios</div><h1 id="municipality-name">Tu municipio</h1><p id="municipality-context"></p></div><div class="report-actions"><div class="report-action-buttons"><a id="export-report" class="button" aria-disabled="true" target="_blank" rel="noopener" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span id="export-report-label">Exportar informe completo</span></a><button id="share" class="button button-quiet" aria-label="Copiar enlace a esta vista"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6M8 16l-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 1 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(1 0)"/></svg><span>Copiar enlace</span></button></div><p id="report-scope" aria-live="polite">PDF con análisis, explicaciones y datos principales del municipio.</p></div></section>
+      <section class="municipality-heading"><div><div class="eyebrow" id="view-context">Buenos Aires / 135 municipios</div><h1 id="municipality-name">Tu municipio</h1><p id="municipality-context"></p></div><div class="report-actions"><div class="report-action-buttons"><a id="export-report" class="button" aria-disabled="true" target="_blank" rel="noopener" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span id="export-report-label">Armar informe</span></a><button id="share" class="button button-quiet" aria-label="Copiar enlace a esta vista"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6M8 16l-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 1 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(1 0)"/></svg><span>Copiar enlace</span></button></div><p id="report-scope" aria-live="polite">Versión breve de 3 páginas o temas a elección.</p></div></section>
       <section id="panorama" class="view" aria-label="Panorama municipal">
         <div class="overview-layout">
           <div class="overview-reading">
@@ -54,6 +54,12 @@
         <section class="panel section-block community-panel" id="community-panel" aria-label="Salud, vivienda y seguridad"></section>
         <section class="panel section-block transparency-panel" id="transparency-panel" aria-label="Transparencia fiscal municipal"></section>
         <section class="province-pulse"><div><div class="eyebrow">La provincia, en perspectiva</div><h2>¿El cambio es local o compartido?</h2></div><div><strong id="pulse-transfers">106</strong><span>municipios con menos transferencias reales<small>Ene–jul 2026 vs. 2025</small></span></div><div><strong id="pulse-both">41</strong><span>con menos empleo y transferencias<small>Año 2025 vs. 2024</small></span></div><button class="text-button" data-go="rankings">Ver ranking general <span aria-hidden="true">→</span></button></section>
+      </section>
+      <section id="informe" class="view report-builder" aria-label="Elegir contenido del informe" hidden>
+        <div class="section-heading"><div><div class="eyebrow">Un informe para cada reunión</div><h2 id="report-title">Armá el informe</h2><p>La versión breve reúne el diagnóstico, las cuentas y la economía local en tres páginas. Podés quitar temas o sumar el detalle que necesites.</p></div></div>
+        <div class="choices" role="group" aria-label="Contenido sugerido"><button id="report-preset-brief" aria-pressed="true">Breve · 3 páginas</button><button id="report-preset-all" aria-pressed="false">Todos los temas disponibles</button></div>
+        <div class="report-builder-layout"><fieldset class="report-topics"><legend>Elegí qué incluir</legend><div id="report-options" class="report-options"></div><p id="report-unavailable-topics" class="chart-caption"></p></fieldset>
+          <aside class="panel report-download-panel" aria-label="Resumen del informe elegido"><h3 id="report-selection-summary" aria-live="polite">Preparando el informe…</h3><ol id="report-outline"></ol><a id="download-report" class="button" aria-disabled="true" download>Descargar informe</a><p id="report-download-status" role="status"></p><p class="small-note">El PDF conserva las fechas, las fuentes y la numeración de las páginas elegidas. Los datos que no se incluyan siguen disponibles en el tablero.</p></aside></div>
       </section>
       <section id="rankings" class="view" aria-label="Ranking general de municipios" hidden>
         <div class="ranking-tools"><div class="choices category-choices" id="ranking-groups" role="group" aria-label="Tema del ranking"></div><button class="button button-quiet" id="download-ranking">Descargar ranking ↓</button></div>
@@ -80,7 +86,7 @@
           <p>Los pesos corrientes son los importes de cada fecha. Los pesos reales descuentan la inflación para comparar cuánto permiten comprar. Elegí cómo mirar estos seis indicadores.</p>
           <div class="choices" role="group" aria-label="Unidad de este comparador"><button data-price-mode="nominal" aria-pressed="false">Pesos corrientes</button><button data-price-mode="real" aria-pressed="true">Ajustados por inflación</button></div>
           <p class="price-label">Expresar los importes ajustados a precios de:</p><div class="choices" role="group" aria-label="Mes base de los pesos constantes"><button data-price-base="2024-12" aria-pressed="false">Diciembre 2024</button><button data-price-base="2025-12" aria-pressed="false">Diciembre 2025</button><button data-price-base="2026-07" aria-pressed="true">Julio 2026</button></div>
-          <p id="price-current-unit" class="price-unit" aria-live="polite"></p><div id="price-cards" class="price-grid"></div>
+          <div class="choices" id="price-indicators" role="group" aria-label="Variable para comparar con y sin inflación"></div><p id="price-current-unit" class="price-unit" aria-live="polite"></p><div id="price-cards" class="price-grid"></div>
           <button class="button button-quiet" id="download-prices">Descargar esta comparación ↓</button>
           <div class="price-calculator"><h3>Pasar un importe a pesos de otra fecha</h3><p>Por ejemplo: cuánto se necesita en julio de 2026 para comprar lo mismo que con $100.000 en diciembre de 2025.</p><div class="price-inputs"><label>Importe en pesos<input id="price-amount" type="number" step="any" value="100000"></label><label>Mes del importe<input id="price-from" type="month" value="2025-12"></label><label>Mes al que se lleva<input id="price-to" type="month" value="2026-07"></label></div><p id="price-calculation" class="price-calculation" aria-live="polite"></p></div>
           <p><strong>Las cuentas fiscales acumuladas siguen en pesos corrientes.</strong> Para ajustarlas con precisión hace falta saber en qué mes se cobró o se registró cada importe. Aplicar el IPC del cierre a todo el semestre puede distorsionar el resultado. El producto municipal ya está a precios constantes de 2004 y conserva esa metodología.</p>
@@ -95,7 +101,7 @@
         <div class="two-columns"><section class="panel"><div class="panel-heading"><div><h3>Cómo evoluciona el empleo</h3><p class="small-note">Puestos privados registrados · datos mensuales</p></div></div><div class="choices" role="group" aria-label="Historia de empleo"><button id="history-short" aria-pressed="true">2024–2025</button><button id="history-full" aria-pressed="false">Desde 2019</button></div><div id="employment-chart" class="chart"></div><p class="chart-caption">La serie puede mostrar estacionalidad. No mide desempleo, informalidad ni empleo público.</p></section><section class="panel"><div class="eyebrow">Estructura productiva</div><h3>¿Dónde están los puestos?</h3><p class="small-note">Sectores del empleo privado formal · diciembre de 2025</p><div id="sectors"></div><p class="chart-caption">Los sectores reservados quedan identificados; no se completan con cero.</p></section></div>
         <section class="panel section-block" id="employment-detail" aria-label="Empleo anual de 2023 a 2025"></section><section class="editorial-reading" id="employment-reading"></section>
         <section class="panel section-block community-panel" id="salary-panel" aria-label="Salarios y actividad económica"></section>
-        <section class="panel section-block community-panel" id="debt-panel" aria-label="Deudas de las personas"></section>
+        <section class="panel section-block community-panel" id="debt-panel" aria-label="Deudas de las personas"></section><div id="banking-panel"></div>
       </section>
       <section id="simular" class="view" aria-label="Simulador de coparticipación" hidden>
         <div class="section-heading"><div><div class="eyebrow">Anticipar el impacto</div><h2>¿Y si cae la coparticipación?</h2><p>Un escenario simple para ponerle un número a la exposición.</p></div><span class="scenario-badge">Escenario, no pronóstico</span></div>
