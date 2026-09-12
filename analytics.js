@@ -14,7 +14,7 @@
   });
   const ALIASES = {governorRoom:'summary', layer3:'debt', structuralIndicators:'income',
     layer1:'federal', layer2:'comparison', comparisonSection:'comparison'};
-  const MUNICIPAL_VIEWS = Object.freeze({panorama:'Panorama municipal',rankings:'Rankings municipales',recursos:'Recursos municipales',empleo:'Empleo municipal',simular:'Escenario de coparticipación'});
+  const MUNICIPAL_VIEWS = Object.freeze({panorama:'Panorama municipal',rankings:'Rankings municipales',recursos:'Recursos municipales',empleo:'Empleo municipal',simular:'Escenario de coparticipación',informe:'Preparar informe municipal'});
 
   function initAnalytics(win, doc) {
     if (win.location.hostname !== HOST || win.location.protocol !== 'https:') return null;

@@ -70,5 +70,5 @@ class AnnualBudgets(unittest.TestCase):
                 text = ' '.join(p.extract_text() for p in pdf.pages)
                 self.assertIn(money(b['perCapita'], 0, False), text)
                 self.assertIn('Censo 2022', text)
-                self.assertIn(money(b['amount'], 2, False) if ident not in ['06329', '06805'] else money(b['amount'], 2), text)
-                if b['historical']: self.assertIn('Todavía falta verificar el presupuesto de 2026', text)
+                self.assertIn(money(b['amount'])+' millones', text)
+                if b['historical']: self.assertIn('falta verificar el presupuesto de 2026', text)

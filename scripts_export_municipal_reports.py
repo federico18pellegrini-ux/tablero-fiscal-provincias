@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / 'municipios/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/municipios/'
 INPUTS = ['municipios/data/dashboard.json', 'municipios/data/geografia_original.geojson',
-          'municipios/data/fuentes.csv', 'scripts_export_municipal_reports.py',
+          'municipios/data/fuentes.csv', 'scripts_export_municipal_reports.py', 'scripts_municipal_editorial.py',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK = colors.HexColor('#203331'); TEAL = colors.HexColor('#14695c')
 MUTED = colors.HexColor('#586963'); LINE = colors.HexColor('#d8e2dc')
@@ -247,8 +247,8 @@ class Report:
         c.drawString(MARGIN,27,'tablero.federicopellegrini.com.ar/municipios/')
         c.linkURL(SITE+f'?municipio={self.m["id"]}&vista=panorama',(MARGIN,24,WIDTH-MARGIN,37),relative=0)
         c.setFillColor(MUTED);c.drawString(MARGIN,14,'Federico Pellegrini')
-        c.drawRightString(WIDTH-MARGIN,14,f'Página {doc.page}')
-        if doc.page>1:
+        if getattr(self,'numbered',True):c.drawRightString(WIDTH-MARGIN,14,f'Página {doc.page}')
+        if doc.page>1 or getattr(self,'topic','lectura')!='lectura':
             c.setFont('MunicipalBold',8);c.drawString(MARGIN,HEIGHT-24,self.m['municipio'])
             c.setFont('Municipal',8);c.drawRightString(WIDTH-MARGIN,HEIGHT-24,'Informe municipal')
         c.restoreState()
@@ -526,15 +526,17 @@ class Report:
         return self.pages
 
 def build(output=OUTPUT, municipality=None):
+    from scripts_municipal_editorial import build_editorial
     register_fonts();data=load_models();geography=json.loads((ROOT/'municipios/data/geografia_original.geojson').read_text(encoding='utf-8'))
     output.mkdir(parents=True,exist_ok=True);entries=[]
     chosen=[m for m in data['municipalities'] if municipality is None or m['id']==municipality]
     if not chosen:raise ValueError('Municipio no encontrado')
     for m in chosen:
-        filename=f'informe-{m["id"]}.pdf';path=output/filename;pages=Report(path,m,data,geography).build()
+        filename=f'informe-{m["id"]}.pdf';path=output/filename;brief_filename=f'informe-{m["id"]}-breve.pdf';brief_path=output/brief_filename
+        pages,modules=build_editorial(path,brief_path,m,data,geography)
         entries.append({'id':m['id'],'municipality':m['municipio'],'file':filename,'pages':pages,'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
-                        'sections':['lectura','prioridades','cuentas']+(['presupuesto','caja','deuda-municipal','historia-fiscal'] if m.get('management') else ['presupuesto'] if m.get('annualBudget') else [])+['transferencias','empleo','salarios','actividad','deudas','poblacion'],'populationYear':2022,'crimeYears':[2024,2025]})
-    manifest={'version':2,'generated':data['generated'],'input_sha256':fingerprint(),'reports':entries}
+                        'sections':[x['id'] for x in modules],'modules':modules,'brief':{'file':brief_filename,'pages':3,'bytes':brief_path.stat().st_size,'sha256':hashlib.sha256(brief_path.read_bytes()).hexdigest()},'populationYear':2022,'crimeYears':[2024,2025]})
+    manifest={'version':3,'generated':data['generated'],'input_sha256':fingerprint(),'reports':entries}
     (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'reports':len(entries),'pages':sorted({e['pages'] for e in entries}),'bytes':sum(e['bytes'] for e in entries)},ensure_ascii=False))
     return manifest
@@ -550,6 +552,10 @@ def check(output=OUTPUT):
         if hashlib.sha256(path.read_bytes()).hexdigest()!=r['sha256']:raise ValueError('PDF alterado: '+r['file'])
         pdf=PdfReader(path)
         if len(pdf.pages)!=r['pages']:raise ValueError('Paginado incorrecto: '+r['file'])
+        if [p for m in r['modules'] for p in m['pages']]!=list(range(r['pages'])):raise ValueError('Módulos de informe incorrectos: '+r['file'])
+        if [p for m in r['modules'] if m['default'] for p in m['pages']]!=[0,1,2]:raise ValueError('La versión breve debe tener tres páginas.')
+        brief=r['brief'];brief_path=output/brief['file']
+        if brief['file']!=f'informe-{r["id"]}-breve.pdf' or hashlib.sha256(brief_path.read_bytes()).hexdigest()!=brief['sha256'] or len(PdfReader(brief_path).pages)!=3:raise ValueError('Informe breve incorrecto: '+r['file'])
     print(f'{len(manifest["reports"])} informes municipales vigentes y verificados.')
 
 if __name__=='__main__':
