@@ -5,8 +5,7 @@ test('only three profiles, including migration of saved legacy choices',()=>{ass
 test('every section changes interpretation across all three profiles while keeping facts',()=>{const all=roles.map(r=>buildProfileReadings(r,{province:'Córdoba',rf:-2,rp:1,debt:20,period:'enero–marzo 2026'}));assert.equal(Object.keys(all[0]).length,11);for(const section of Object.keys(all[0]))assert.equal(new Set(all.map(r=>r[section][1])).size,3,section);for(const r of all){assert.match(r.summary[0],/Córdoba.*-2%.*enero–marzo 2026/);assert.match(r.debt[0],/\$100.*\$20/);}});
 test('missing fiscal observations do not become a diagnosis or numeric zero',()=>{for(const role of roles){const r=buildProfileReadings(role,{province:'La Pampa'});assert.match(r.summary[0],/falta un resultado/);assert.doesNotMatch(r.summary[0],/0%/);assert.match(r.debt[0],/Falta/);}});
 test('zero, deficit and surplus have distinct conclusions',()=>{for(const role of roles){const conclusions=[-1,0,1].map(rf=>buildProfileReadings(role,{province:'Prueba',rf,rp:0}).summary[1]);assert.equal(new Set(conclusions).size,3);}});
-test('minister differentiates a primary deficit from interest pressure',()=>{const primary=buildProfileReadings('hacienda',{province:'Prueba',rf:-5,rp:-2});const interest=buildProfileReadings('hacienda',{province:'Prueba',rf:-5,rp:2});assert.match(primary.summary[1],/empieza antes de intereses/);assert.match(interest.summary[1],/costo de intereses/);});
-const {buildSheetExplanation}=require('../profile-readings.js');
+test('minister differentiates a primary deficit from interest pressure',()=>{const primary=buildProfileReadings('hacienda',{province:'Prueba',rf:-5,rp:-2});const interest=buildProfileReadings('hacienda',{province:'Prueba',rf:-5,rp:2});assert.match(primary.summary[1],/empieza antes de intereses/);assert.match(interest.summary[1],/diferencia aparece al pagar intereses/);});
 const {buildSummaryReading}=require('../profile-readings.js');
 test('short summary distinguishes fiscal mechanisms without repeating the KPI percentages',()=>{
  for(const role of roles){
@@ -20,18 +19,58 @@ test('short summary distinguishes fiscal mechanisms without repeating the KPI pe
  assert.equal(new Set(roles.map(r=>buildSummaryReading(r,{rf:-5,rp:-2}))).size,3);
  assert.match(buildSummaryReading('governor',{rf:1,rp:-1}),/conciliar/);
 });
-test('rich analysis explains only observed fiscal differences',()=>{const text=buildSheetExplanation('summary',{rf:-6.58,rp:-2.74});assert.match(text,/antes de pagar intereses/);assert.match(text,/3,84 puntos/);const missing=buildSheetExplanation('summary',{rf:null,rp:null});assert.match(missing,/información que falta/);assert.doesNotMatch(missing,/0 puntos/);});
-test('debt narrative does not turn history into a future schedule',()=>{const text=buildSheetExplanation('debt',{services:{total_ars_m:100,amortization_ars_m:70,interest_ars_m:30}});assert.match(text,/compromisos registrados en años anteriores/);assert.match(text,/falta el calendario de próximos pagos/);assert.doesNotMatch(text,/mayor importe.*2026/);const projected=buildSheetExplanation('debt',{projection:{rows:[{year:2026,total_ars_m:10},{year:2027,total_ars_m:20}]}});assert.match(projected,/mayor importe anual en 2027: \$20 millones/);assert.match(projected,/descontar los pagos ya realizados/);});
-test('debt priority follows schedule coverage and does not mislabel loading as missing',()=>{
+test('debt narrative separates recorded services from a published annual calendar',()=>{
+ const text=buildProfileReadings('governor',{services:{total_ars_m:100}}).debt.join(' ');
+ assert.match(text,/registrados en años anteriores/);assert.match(text,/Falta el calendario de próximos pagos/);
+ assert.doesNotMatch(text,/mayor importe.*2026/);
+ const projected=buildProfileReadings('governor',{projection:{rows:[{year:2026,total_ars_m:10},{year:2027,total_ars_m:20},{year:2028,total_ars_m:null}]}}).debt.join(' ');
+ assert.match(projected,/mayor importe anual en 2027/);assert.match(projected,/sin descontar los pagos posteriores/);
+});
+test('debt reading preserves missing, loading and zero observations',()=>{
  const pending=buildProfileReadings('governor',{debt:45.23});
  assert.match(pending.debt[0],/\$100.*\$45,23/);
- assert.match(pending.debt[1],/Armar un calendario/);
+ assert.match(pending.debt[0],/Falta el calendario/);
  assert.doesNotMatch(pending.debt[1],/años de mayor vencimiento/);
- const available=buildProfileReadings('governor',{debt:45.23,debtScheduleStatus:'verified'});
- assert.match(available.debt[1],/Revisar los próximos pagos/);
- const loading=buildSheetExplanation('debt',{debtScheduleStatus:'loading'});
- assert.doesNotMatch(loading,/falta el calendario/);
+ const loading=buildProfileReadings('governor',{debtScheduleStatus:'loading'}).debt[0];
+ assert.match(loading,/Estamos cargando/);assert.doesNotMatch(loading,/Falta el calendario/);
  assert.match(buildProfileReadings('governor',{debt:0}).debt[0],/\$100.*\$0/);
+});
+
+test('federal reading describes the documented instrument rather than assuming a cash claim',()=>{
+ const cases=[['reclamo',/reclamo publicado/],['anticipo',/anticipos acordados/],['credito_compensable',/reducir lo que la Provincia debe pagar/],['acuerdo',/acuerdo de pago/],['pago',/ya recibió/],['sin_monto',/no tenemos un importe/]];
+ for(const [kind,expected] of cases)assert.match(buildProfileReadings('governor',{claim:{kind}}).federal[0],expected);
+ assert.match(buildProfileReadings('governor',{}).federal[0],/falta documentación/);
+ assert.match(buildProfileReadings('governor',{claim:{state:'unavailable'}}).federal[0],/No se pudo cargar/);
+ assert.doesNotMatch(buildProfileReadings('governor',{claim:{kind:'credito_compensable'}}).federal.join(' '),/cobrar|ya recibió/);
+});
+
+test('income and map explain the selected unit and period without turning missing data into zero',()=>{
+ const real=buildProfileReadings('governor',{priceMode:'real',autonomy:0});
+ assert.match(real.income[0],/aportan \$0 de cada \$100/);assert.match(real.income[0],/constantes descuenta la inflación/);
+ const nominal=buildProfileReadings('governor',{priceMode:'nominal'});
+ assert.match(nominal.income[0],/corrientes muestra/);assert.doesNotMatch(nominal.income[0],/aportan \$0/);
+ const map=buildProfileReadings('governor',{province:'Córdoba',mapMetric:'primary_pct',mapPeriod:'2024-Q4',mapValue:0}).map[0];
+ assert.match(map,/antes de intereses al 4T2024/);assert.match(map,/Córdoba: 0%/);
+ assert.match(buildProfileReadings('governor',{mapMetric:'financial_pct'}).map[0],/después de intereses/);
+ assert.doesNotMatch(buildProfileReadings('governor',{}).map[0],/0%/);
+});
+
+test('history uses dated observations and does not invent a trend from one observation',()=>{
+ const one=buildProfileReadings('governor',{history:[{period:'2026-Q1',financial_pct:null},{period:'2025-Q4',financial_pct:0}]}).history[0];
+ assert.match(one,/Hay un dato.*4T2025: 0%/);assert.doesNotMatch(one,/pasó de|1T2026/);
+ const series=[{period:'2026-Q1',financial_pct:-2},{period:'2025-Q4',financial_pct:3}];
+ assert.match(buildProfileReadings('governor',{history:series}).history[0],/4T2025 y 1T2026.*3% a -2%/);
+ assert.equal(series[0].period,'2026-Q1');
+ assert.doesNotMatch(buildProfileReadings('governor',{}).history[1],/La curva permite/);
+ assert.doesNotMatch(buildProfileReadings('governor',{}).comparison[1],/El puesto ayuda/);
+});
+
+test('national monthly reading distinguishes surplus, deficit, balance and missing observations',()=>{
+ for(const [value,word] of [[1,'superávit'],[-1,'déficit'],[0,'equilibrio']]){
+  const national={period_label:'julio de 2026',metrics:[{label:'Resultado financiero mensual',unit:'millones de $',value}]};
+  assert.match(buildProfileReadings('governor',{national}).nation[0],new RegExp('julio de 2026.*'+word));
+ }
+ assert.doesNotMatch(buildProfileReadings('governor',{}).nation[0],/superávit|déficit|equilibrio/);
 });
 
 const {debtRankingLabel}=require('../profile-readings.js');

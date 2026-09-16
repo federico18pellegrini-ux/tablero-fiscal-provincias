@@ -61,7 +61,7 @@
       ${record.valuation_date?`<p class="nation-claim-date">Valuación: ${esc(date(record.valuation_date))}.</p>`:''}
     </article>`;
   }
-  function render(data,province,managementReading){
+  function render(data,province){
     const item=data?.schema_version===2?data.provinces?.[province]:null;
     if(!item)return '<div class="claim-card"><p>No se pudo cargar la documentación.</p></div>';
     const count=data.coverage;
@@ -73,7 +73,6 @@
     return `<h2 class="sh sh-gold">${esc(summaryModel(data,province).title)} · ${esc(province)}</h2>
       <div class="nation-claim-records">${records}</div>
       ${item.reading?`<div class="claim-card nation-claim-context"><h3>Para entender la cifra</h3><p>${esc(item.reading)}</p>${(item.context_sources||[]).map(s=>`<p>${sourceLink(s)}</p>`).join('')}</div>`:''}
-      <div class="claim-card nation-claim-reading"><h3>Qué implica para la gestión</h3><p>${esc(managementReading)}</p></div>
       <p class="nation-claim-method">Importes en la moneda y fecha del documento. Reclamos, acuerdos y cobros se presentan por separado. Un billón equivale a un millón de millones.</p>
       <div class="claim-card nation-claim-overview"><h3>Consultar otra provincia</h3><p>${count.with_amounts} jurisdicciones con montos · ${count.documents_without_amounts} con documentos sin monto · ${count.pending_documentation} pendientes. Revisión: ${esc(date(data.reviewed_at))}.</p><div class="nation-claim-provinces">${overview}</div></div>`;
   }
