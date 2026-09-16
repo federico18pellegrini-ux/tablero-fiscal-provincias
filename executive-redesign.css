@@ -10,6 +10,7 @@
 @media(max-width:640px){.management-report-export{align-items:stretch;flex-direction:column;gap:12px;padding:16px}.management-report-download{width:100%;box-sizing:border-box}}
 @media print{.management-report-export{display:none!important}}
 .profile-reading[data-reading=debt] .profile-explanation{white-space:pre-line}
+.profile-reading .profile-explanation:empty{display:none}
 /* Consistent card headings, including content that previously used accordions. */
 .gov-panel>h4,.gov-panel>summary,.expanded-content>summary,.cc>h3,.tb>h3,.overview-charts article>h3,.profile-reading>h3,.federal-guide-grid h3,.national-kpis article>h3{font:600 16px/1.4 var(--font)!important;letter-spacing:0!important;text-transform:none!important;color:var(--text)!important}
 .gov-panel>h4,.gov-panel>summary{margin:0 0 12px!important;padding:0!important}
@@ -166,3 +167,65 @@ html,body{overflow-x:clip;overflow-y:visible}
 .completion-table .management-table{min-width:0;width:100%;table-layout:fixed}.completion-table .management-table th{white-space:normal;overflow-wrap:anywhere}.completion-table .management-table td{white-space:normal;overflow-wrap:anywhere}
 @media(max-width:600px){.completion-card{padding:14px 10px}.completion-card .management-table{font-size:13px}.completion-card .management-table th,.completion-card .management-table td{padding:9px 6px}.budget-composition-chart{height:240px}
 .completion-table .management-table{min-width:0;width:100%;display:block}.completion-table table caption{display:block;text-align:left}.completion-table thead{display:none}.completion-table tbody,.completion-table tr{display:block;width:100%}.completion-table tr{margin:12px 0;border:1px solid var(--border);border-radius:10px;padding:6px;box-sizing:border-box}.completion-table tbody th{display:block;text-align:left;white-space:normal}.completion-table tbody td{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;white-space:normal;text-align:right;overflow-wrap:anywhere}.completion-table tbody td::before{content:attr(data-label);text-align:left;color:var(--muted);font-size:12px}}
+
+/* Summary: three decision metrics first, then interpretation and supporting context. */
+#summaryView .gov-head{background:transparent;border:0;padding:6px 0 16px!important;margin:0}
+#summaryView .gov-title{font-size:clamp(24px,2.8vw,32px);line-height:1.25;max-width:40ch;letter-spacing:-.025em}
+#summaryView .gov-kicker{font-size:13px;margin-bottom:8px}
+#summaryView .gov-status{display:block;background:none;border:0;color:var(--muted);font-size:14px;font-weight:400;padding:0;margin-top:10px;text-transform:none;letter-spacing:0}
+#summaryView .executive-pulse{border:0}
+#summaryView .executive-pulse-head{margin:8px 0 12px;align-items:center}
+#summaryView .executive-pulse-title{font-size:18px;margin:0}
+#summaryView .executive-pulse-period{font-size:13px;text-align:right}
+#summaryView .executive-pulse-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.25fr)!important;gap:14px}
+#summaryView .executive-pulse-grid>.kcard{grid-column:auto;display:flex;flex-direction:column;gap:10px;box-shadow:none;border-radius:12px;padding:22px!important}
+#summaryView .executive-pulse-grid .k-lbl{font-size:16px;font-weight:650;margin:0;line-height:1.4}
+#summaryView .executive-pulse-grid .k-val{font-size:clamp(32px,3.6vw,46px)!important;line-height:1.15;margin:2px 0 4px}
+#summaryView #kDebt{color:var(--text)}
+#summaryView .pulse-reading{font-size:16px;line-height:1.55;margin:0;overflow-wrap:anywhere}
+#summaryView .pulse-tag{font-size:13px;line-height:1.4;margin:0;text-transform:none;letter-spacing:0;color:var(--muted)}
+#summaryView .summary-nation-claim{border-top:3px solid var(--blue);background:var(--gold-bg)!important}
+.summary-nation-value{font-size:clamp(28px,3.2vw,40px);line-height:1.2;font-weight:750;color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:-.03em;margin:2px 0 4px;overflow-wrap:anywhere}
+.summary-nation-value.is-pending{font-size:26px;font-weight:650;letter-spacing:-.02em}
+.summary-nation-caution{font-size:14px;line-height:1.5;color:var(--muted);margin:0}
+.summary-detail-link{display:inline-flex;align-items:center;align-self:flex-start;gap:6px;background:transparent;border:0;padding:10px 0 0;min-height:44px;text-align:left;color:var(--blue);font:650 15px/1.4 var(--font);cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+#summaryView .executive-pulse-grid .summary-detail-link{margin-top:auto}
+.summary-detail-link:hover{color:var(--text)}
+.summary-detail-link:focus-visible{outline:3px solid var(--blue);outline-offset:4px;border-radius:3px}
+#summaryView .profile-reading{margin:18px 0 24px;padding:18px 22px;background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:10px}
+#summaryView .profile-reading p{font-size:16px;line-height:1.6;margin:8px 0 0}
+#summaryView .profile-reading h3{margin:0}
+#summaryView .overview-extra{margin:24px 0}
+#summaryView .overview-extra h3{font-size:18px;color:var(--text)}
+#summaryView .overview-extra-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+#summaryView .overview-extra-grid>.kcard{min-width:0;grid-column:auto;background:var(--s1);border:1px solid var(--border);padding:18px;border-radius:10px;display:flex;flex-direction:column;gap:8px}
+#summaryView .overview-extra-grid .k-val{font-size:28px!important;line-height:1.25;overflow-wrap:anywhere}
+#summaryView .overview-extra-grid .k-lbl{font-size:16px;line-height:1.4;overflow-wrap:anywhere}
+#summaryView .overview-extra-grid .pulse-reading{font-size:16px}
+#summaryView .overview-extra-grid .summary-detail-link{margin-top:auto}
+#summaryView #fiscalRatiosMethodNote{padding:10px 0 0;margin:8px 0 0;border:0;background:transparent;color:var(--muted);font-size:13px;line-height:1.55}
+#summaryView .summary-trend{grid-template-columns:minmax(0,1fr);margin:24px 0}
+.summary-trend-heading{display:flex;gap:18px;justify-content:space-between;align-items:center}
+#summaryView .summary-trend article{padding:20px}
+#summaryView .summary-trend .overview-canvas{height:250px;margin:12px 0}
+#summaryView .summary-trend p{font-size:15px}
+#summaryView .summary-trend button{font-size:15px;min-height:44px;flex-shrink:0}
+#summaryView .gov-list{font-size:16px;line-height:1.6}
+@media(max-width:1100px){
+ #summaryView .executive-pulse-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #summaryView .executive-pulse-grid>.summary-nation-claim{grid-column:1/-1}
+ #summaryView .overview-extra-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ #summaryView .executive-pulse-grid{grid-template-columns:minmax(0,1fr)!important}
+ #summaryView .executive-pulse-grid>.kcard{padding:18px!important;gap:8px}
+ #summaryView .executive-pulse-grid>.summary-nation-claim{grid-column:auto}
+ #summaryView .executive-pulse-head{display:block}
+ #summaryView .executive-pulse-period{text-align:left;margin-top:4px}
+ #summaryView .overview-extra-grid{gap:10px}
+ #summaryView .overview-extra-grid>.kcard{padding:12px}
+ #summaryView .overview-extra-grid .k-val{font-size:24px!important}
+ #summaryView .profile-reading{padding:16px}
+ .summary-trend-heading{display:block}
+ #summaryView .summary-trend .overview-canvas{height:230px}
+}

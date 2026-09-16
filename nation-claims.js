@@ -21,6 +21,33 @@
     if(!source||!/^https:\/\//.test(source.url||''))return '';
     return `<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title||'Ver documento oficial')} ↗</a>`;
   }
+  function summaryModel(data,province){
+    const item=data?.schema_version===2?data.provinces?.[province]:null;
+    const records=[...(item?.records||[])].sort((a,b)=>(b.published_at||'').localeCompare(a.published_at||''));
+    const claim=records.find(r=>r.kind==='reclamo'&&r.amount);
+    const reference=claim||records.find(r=>r.amount)||records[0];
+    const direct=claim?.components?.find(part=>part.label==='Deudas directas');
+    if(claim)return {
+      state:'claim',title:'Reclamo a Nación',value:money(claim.amount),recordId:claim.id,
+      context:direct?`Deudas directas: ${money({value:direct.value,currency:claim.amount.currency,qualifier:'aproximado'})}. El total también incluye obras y programas.`:'Monto reclamado por la provincia.',
+      caution:'Reclamo publicado; no es un saldo actual conciliado ni caja disponible.',
+      publishedAt:claim.published_at,link:'Ver conceptos y documentos',
+    };
+    return {
+      state:reference?.amount?'reference':'missing',title:'Nación y provincia',value:reference?'Saldo sin verificar':'Monto sin documentar',recordId:reference?.id||null,
+      context:reference?.amount?`${kinds[reference.kind]}: ${money(reference.amount)}${reference.period?' · '+reference.period:''}.`:(reference?'Hay un documento oficial, pero no permite cuantificar un saldo pendiente.':'Falta documentación para cuantificar el reclamo.'),
+      caution:reference?.amount?'El importe de esta referencia no representa toda la deuda de Nación.':'Sin dato no significa deuda cero.',
+      publishedAt:reference?.published_at||null,link:'Ver lo documentado y lo pendiente',
+    };
+  }
+  function summaryHTML(data,province){
+    const model=summaryModel(data,province);
+    return `<div class="k-lbl" id="summaryNationTitle">${esc(model.title)}</div>
+      <div class="summary-nation-value ${model.state==='claim'?'has-claim':'is-pending'}" data-claim-state="${model.state}">${esc(model.value)}</div>
+      <p class="pulse-reading">${esc(model.context)}</p><p class="summary-nation-caution">${esc(model.caution)}</p>
+      <div class="pulse-tag">${model.publishedAt?'Publicación: '+esc(date(model.publishedAt)):'Sin importe verificado'} · sin ajuste adicional por inflación</div>
+      <button type="button" class="summary-detail-link" data-editorial-view="federal" data-summary-claim-link>${esc(model.link)} <span aria-hidden="true">→</span></button>`;
+  }
   function recordHTML(record){
     const components=(record.components||[]).map(part=>`<div class="nation-claim-part"><div><h4>${esc(part.label)}</h4><p>${esc(part.explanation)}</p></div><strong>${esc(money({value:part.value,currency:record.amount.currency,qualifier:'aproximado'}))}</strong></div>`).join('');
     return `<article class="claim-card nation-claim-record" data-claim-id="${esc(record.id)}">
@@ -51,5 +78,5 @@
       <div class="claim-card nation-claim-method"><h3>Cómo leer estos montos</h3><p><strong>Saldo total pendiente de cobro: no verificado.</strong> Los importes conservan la moneda y la fecha de cada publicación. No se ajustan por inflación ni cambian con el selector general de unidades. Un billón equivale a un millón de millones de pesos.</p><p>Los reclamos, acuerdos y cobros se muestran por separado: no se suman ni se restan automáticamente. Las obras y los programas reclamados tampoco equivalen necesariamente a efectivo disponible. Por esas diferencias, no armamos un ranking ni un total nacional.</p></div>
       <div class="claim-card nation-claim-overview"><h3>Consultar otra provincia</h3><p>Revisión documental: ${esc(date(data.reviewed_at))}. ${count.with_amounts} jurisdicciones con montos publicados · ${count.documents_without_amounts} con documentos sin monto · ${count.pending_documentation} pendientes de documentación. Los montos pueden corresponder a reclamos o acuerdos de distintas fechas; no son saldos actuales comparables.</p><div class="nation-claim-provinces">${overview}</div></div>`;
   }
-  return {money,render,recordHTML,esc};
+  return {money,render,recordHTML,esc,summaryModel,summaryHTML};
 });

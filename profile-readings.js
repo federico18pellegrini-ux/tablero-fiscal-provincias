@@ -26,15 +26,25 @@ function buildProfileReadings(profile,{province,rf=null,rp=null,debt=null,debtSc
  guide:[choose('Cada lectura debe terminar en una prioridad, una decisión o un dato que falta para decidir.','Cada decisión debe apoyarse en períodos conciliados, unidades claras y caja efectivamente utilizable.','Cada afirmación necesita dato, período, unidad y fuente.'),choose('Vincular la decisión con el servicio o la inversión que se quiere sostener.','Separar resultado fiscal, financiamiento y caja; cada uno responde una pregunta distinta.','Separá dato, interpretación y recomendación. Si la información no alcanza, decilo sin completar el vacío con una conclusión.')]
  };
 }
+function buildSummaryReading(profile,{rf=null,rp=null}={}){
+ const role=normalizeReadingProfile(profile),choose=(g,m,p)=>({governor:g,hacienda:m,press:p}[role]);
+ if(!Number.isFinite(rf))return 'Falta un resultado financiero comparable. Los ingresos observados ayudan a seguir la actividad, pero no alcanzan para saber cómo cierran las cuentas.';
+ if(!Number.isFinite(rp))return 'El resultado financiero está disponible, pero falta el resultado antes de intereses. Todavía no podemos separar el desequilibrio operativo del costo de la deuda.';
+ if(rf<0&&rp<0)return choose('Los ingresos no alcanzan para cubrir los gastos, incluso antes de pagar intereses. Ordenar ese desequilibrio importa para sostener los servicios y la inversión.','El déficit empieza antes de intereses. Hay que actuar sobre ingresos y gasto primario, además de revisar el costo financiero.','El déficit no se explica solamente por los intereses: el gasto primario también supera a los ingresos. Esto describe el período, no la disponibilidad de caja de hoy.');
+ if(rf<0)return choose('Los ingresos alcanzan para el gasto antes de intereses, pero el costo financiero deja las cuentas en rojo. La prioridad es cubrir esa diferencia sin acumular atrasos.','El resultado primario no es negativo y el financiero sí: la diferencia aparece al pagar intereses. Revisar el costo y las condiciones del financiamiento.','Las cuentas pasan al déficit cuando se incorporan los intereses. Esa diferencia permite explicar qué parte del problema corresponde al costo financiero.');
+ if(rp<0)return 'El resultado financiero no es negativo, pero el resultado primario sí. Hay que conciliar ambos conceptos antes de explicar el origen del saldo.';
+ if(rf===0)return choose('Los ingresos y los gastos del período están equilibrados. Para sostener ese cierre, importa cómo evolucionan los recursos y qué obligaciones quedan pendientes.','El resultado financiero es cero. Revisar estacionalidad y obligaciones pendientes antes de incorporar gastos permanentes.','El resultado financiero está en equilibrio. No es un superávit ni demuestra que todos los pagos estén al día.');
+ return choose('Los ingresos superan al gasto del período. Ese margen ayuda, pero antes de comprometerlo hay que revisar los vencimientos y las obligaciones pendientes.','El superávit mejora el resultado fiscal. Antes de asignarlo, conciliarlo con la caja utilizable, las amortizaciones y los pagos pendientes.','Las cuentas muestran superávit en el período. Ese resultado no equivale a dinero libre ni demuestra por sí solo una mejora de los servicios.');
+}
 function renderProfileReadings(){
  if(typeof document==='undefined'||typeof manifest==='undefined'||!manifest)return;
  const cross={...(crossFiscal?.[currentProvince]||{}),...(latestFiscalRanking?.[currentProvince]||{})};
  const q=dashboardPeriod==='quarter'?latestFiscalDetails?.quarters?.[currentProvince]:null;
  const rf=toN(q?q.financial_pct:cross.resultado_financiero_ltm_pct),rp=toN(q?q.primary_pct:cross.resultado_primario_ltm_pct);
  const debt=toN(currentProvince==='Buenos Aires'?pbaDebtProfile?.latest_stock?.debt_to_ltm_income_pct:cross.deuda_total_sobre_ingresos_pct);
- const kicker=document.querySelector('.gov-kicker');if(kicker)kicker.textContent=PROFILE_CONFIG[dashboardProfile].label+' · corte 31/03/2026';
+ const kicker=document.querySelector('.gov-kicker');if(kicker)kicker.textContent=PROFILE_CONFIG[dashboardProfile].label+' · cierre fiscal al 31/03/2026';
  const headline=document.getElementById('governorRoomTitle');if(headline)headline.textContent=currentProvince+': '+(rf===null?'resultado fiscal sin dato comparable':rf<0?'las cuentas cierran con déficit':rf>0?'las cuentas cierran con superávit':'las cuentas cierran en equilibrio');
- const status=document.getElementById('governorStatus');if(status){status.textContent=rf===null?'CONCLUSIÓN · DATOS PARCIALES':rf<0?'CONCLUSIÓN · DÉFICIT FINANCIERO':rf>0?'CONCLUSIÓN · SUPERÁVIT FINANCIERO':'CONCLUSIÓN · EQUILIBRIO FINANCIERO';status.className='gov-status '+(rf===null?'partial':rf<0?'negative':'positive');}
+ const status=document.getElementById('governorStatus');if(status){status.textContent=rf===null?'Resultado comparable pendiente':q?'Resultado de enero–marzo de 2026':'Resultado de los últimos 12 meses al 31/03/2026';status.className='gov-status';}
  const debtData=typeof provincialServicesData!=='undefined'?provincialServicesData:null;
  const projection=debtData?.projections?.[currentProvince];
  const debtScheduleStatus=debtData?(projection?'verified':'missing'):'loading';
@@ -48,11 +58,12 @@ function renderProfileReadings(){
   const host=document.querySelector(selector);if(!host)continue;
   let card=host.querySelector(':scope > .profile-reading');
   if(!card){card=document.createElement('section');card.className='profile-reading';card.dataset.reading=key;const h=document.createElement('h3'),p=document.createElement('p'),c=document.createElement('p');c.className='profile-conclusion';const explanation=document.createElement('p');explanation.className='profile-explanation';card.append(h,p,explanation,c);const anchor=host.tagName==='DETAILS'?host.querySelector(':scope > summary'):key==='summary'?host.querySelector('.gov-head'):host.firstElementChild;if(anchor)anchor.after(card);else host.prepend(card);}
-  card.dataset.profile=dashboardProfile;card.children[0].textContent=labels[dashboardProfile][0];card.children[1].textContent=readings[key][0];card.children[2].textContent=buildSheetExplanation(key,context);card.children[3].textContent=labels[dashboardProfile][1]+': '+readings[key][1];
+  card.dataset.profile=dashboardProfile;card.children[0].textContent=labels[dashboardProfile][0];card.children[1].textContent=key==='summary'?buildSummaryReading(dashboardProfile,{rf,rp}):readings[key][0];card.children[2].textContent=key==='summary'?'':buildSheetExplanation(key,context);card.children[3].textContent=labels[dashboardProfile][1]+': '+readings[key][1];
+  if(key==='summary')host.querySelector('.executive-pulse')?.after(card);
  }
  const picker=document.getElementById('mobileViewPicker');if(picker){for(const option of picker.options){if(VIEW_LABELS[option.value])option.hidden=!enabledDashboardViews().has(option.value);}if(!picker.value.startsWith('open'))picker.value=dashboardView;}
 }
-if(typeof module!=='undefined')module.exports={normalizeReadingProfile,buildProfileReadings,buildSheetExplanation};
+if(typeof module!=='undefined')module.exports={normalizeReadingProfile,buildProfileReadings,buildSheetExplanation,buildSummaryReading};
 /* Rich editorial layer: only documented observations enter the narrative. */
 let nationalReadingData=null;
 function buildSheetExplanation(key,c){

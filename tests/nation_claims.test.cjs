@@ -42,3 +42,36 @@ test('embedded fallback matches the verified dataset',()=>{
   const match=html.match(/^const EMBEDDED_RECLAMOS_NACION = (.*);$/m);
   assert.deepEqual(JSON.parse(match[1]),data);
 });
+test('summary only presents claims as the headline amount, never advances or agreements',()=>{
+  const pba=Claims.summaryModel(data,'Buenos Aires');
+  assert.equal(pba.value,'≈ $19,1 billones');
+  assert.match(pba.context,/4,7 billones/);
+  assert.match(pba.caution,/no es un saldo actual conciliado/);
+  for(const province of ['Corrientes','Córdoba','Entre Ríos','Mendoza']){
+    const model=Claims.summaryModel(data,province);
+    assert.equal(model.state,'reference');
+    assert.equal(model.value,'Saldo sin verificar');
+    assert.match(model.caution,/no representa toda la deuda/);
+    assert.ok(model.publishedAt);
+  }
+  assert.equal(Claims.summaryModel(data,'CABA').value,'≈ USD 6 mil millones');
+  assert.equal(Claims.summaryModel(data,'Santa Fe').value,'$1,5 a 2 billones');
+});
+test('summary picks the latest claim without summing references or mutating data',()=>{
+  const copy=structuredClone(data),pba=copy.provinces['Buenos Aires'];
+  const old=structuredClone(pba.records[0]);old.id='older';old.published_at='2026-01-01';old.amount.value=15e12;pba.records.unshift(old);
+  const before=JSON.stringify(copy);
+  assert.equal(Claims.summaryModel(copy,'Buenos Aires').recordId,'pba-20260914');
+  assert.equal(JSON.stringify(copy),before);
+});
+test('summary preserves missingness, dates, evidence type and the detail route for all provinces',()=>{
+  for(const province of Object.keys(data.provinces)){
+    const model=Claims.summaryModel(data,province),html=Claims.summaryHTML(data,province);
+    assert.ok(model.value);assert.match(html,/data-summary-claim-link/);
+    assert.match(html,/data-editorial-view="federal"/);
+    assert.doesNotMatch(html,/\$0(?:\s|<)|undefined|null|NaN/);
+    if(model.publishedAt)assert.ok(html.includes(model.publishedAt.split('-').reverse().join('/')));
+  }
+  for(const province of ['Catamarca','Misiones','Santa Cruz'])assert.equal(Claims.summaryModel(data,province).state,'missing');
+  assert.equal(Claims.summaryModel(null,'Buenos Aires').value,'Monto sin documentar');
+});
