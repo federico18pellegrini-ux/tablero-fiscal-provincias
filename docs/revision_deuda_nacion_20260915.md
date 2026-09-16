@@ -56,3 +56,9 @@ Fecha de revisión: 15/09/2026.
 ## Interfaz
 
 Título Tablero Provincial; lectura por perfil inmediatamente debajo del diagnóstico; déficit rojo y superávit verde; deuda reclamada destacada en rojo; ranking calculado con el universo vigente. Se reducen las advertencias repetidas sin borrar procedencia, fechas, moneda o tipo de documento. El desglose y los documentos quedan disponibles en Ver detalle.
+
+## Corrección del importe destacado
+
+Se revisaron los 24 cuadros del Resumen. La etiqueta genérica «Sin monto total» relegaba importes oficiales al texto secundario en Corrientes, Córdoba, Entre Ríos, La Pampa y Mendoza. Ahora se destaca el monto del acuerdo o crédito, con su naturaleza en el título. La cuota mensual de La Pampa conserva su base temporal explícita. No se alteran importes, monedas, fechas ni fuentes.
+
+Chaco, Formosa, La Rioja, Misiones, Salta y Santa Cruz muestran «Monto no publicado». Catamarca, Jujuy, Río Negro, San Juan, San Luis y Santiago del Estero muestran «Sin dato documentado». Los siete reclamos cuantificados mantienen su importe y su atribución provincial.

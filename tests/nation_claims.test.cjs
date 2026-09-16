@@ -42,16 +42,19 @@ test('embedded fallback matches the verified dataset',()=>{
   const match=html.match(/^const EMBEDDED_RECLAMOS_NACION = (.*);$/m);
   assert.deepEqual(JSON.parse(match[1]),data);
 });
-test('summary only presents claims as the headline amount, never advances or agreements',()=>{
+test('summary highlights documented amounts under their actual concept, without implying total debt',()=>{
   const pba=Claims.summaryModel(data,'Buenos Aires');
   assert.equal(pba.value,'≈ $19,1 billones');
   assert.match(pba.context,/deudas directas, obras y programas/);
   assert.equal(pba.attribution,'Según la Provincia');
-  for(const province of ['Corrientes','Córdoba','Entre Ríos','Mendoza']){
+  const amounts={'Corrientes':'$40 mil millones','Córdoba':'$120 mil millones','Entre Ríos':'$120 mil millones','Mendoza':'≈ $121,282 mil millones'};
+  for(const [province,value] of Object.entries(amounts)){
     const model=Claims.summaryModel(data,province);
     assert.equal(model.state,'reference');
-    assert.equal(model.value,'Sin monto total');
-    assert.equal(model.title,'Deuda de Nación');
+    assert.equal(model.value,value);
+    assert.equal(model.hasAmount,true);
+    assert.equal(model.tone,'informative');
+    assert.equal(model.title,province==='Mendoza'?'Crédito para compensar con Nación':'Acuerdo previsional con Nación');
     assert.ok(model.publishedAt);
   }
   assert.equal(Claims.summaryModel(data,'CABA').value,'≈ USD 6 mil millones');
@@ -73,7 +76,7 @@ test('summary preserves missingness, dates, evidence type and the detail route f
     if(model.publishedAt)assert.ok(html.includes(model.publishedAt.split('-').reverse().join('/')));
   }
   for(const province of ['Catamarca','Misiones','Santa Cruz'])assert.equal(Claims.summaryModel(data,province).state,'missing');
-  assert.equal(Claims.summaryModel(null,'Buenos Aires').value,'Sin monto total');
+  assert.equal(Claims.summaryModel(null,'Buenos Aires').value,'Datos no disponibles');
 });
 
 test('new sources preserve scope, installments, qualifiers and publication dates',()=>{
@@ -81,11 +84,37 @@ test('new sources preserve scope, installments, qualifiers and publication dates
  assert.equal(Claims.summaryModel(data,'Tucumán').value,'≈ $200 mil millones');
  assert.equal(Claims.summaryModel(data,'Tierra del Fuego').value,'$8,5 mil millones');
  assert.match(Claims.summaryModel(data,'Tierra del Fuego').context,/Obras y organismos/);
- assert.equal(Claims.summaryModel(data,'La Pampa').value,'Sin monto total');
- assert.match(Claims.summaryModel(data,'La Pampa').context,/5 mil millones por mes/);
+ assert.equal(Claims.summaryModel(data,'La Pampa').value,'$5 mil millones');
+ assert.equal(Claims.summaryModel(data,'La Pampa').valueSuffix,'por mes');
+ assert.match(Claims.summaryHTML(data,'La Pampa'),/summary-nation-unit">por mes/);
+ assert.match(Claims.recordHTML(data.provinces['La Pampa'].records[0]),/nation-claim-unit">por mes/);
  assert.equal(Claims.summaryModel(data,'Córdoba').publishedAt,'2026-04-08');
- assert.match(Claims.summaryModel(data,'Córdoba').context,/120 mil millones/);
+ assert.match(Claims.summaryModel(data,'Córdoba').context,/12 anticipos de \$10 mil millones/);
  assert.equal(Claims.summaryModel(data,'Corrientes').publishedAt,'2026-04-08');
  assert.equal(data.provinces.Formosa.records[0].amount,null);
  assert.equal(data.provinces.Salta.records[0].amount,null);
+});
+
+test('a published document without amount is distinct from undocumented and unavailable data',()=>{
+ for(const province of ['Chaco','Formosa','La Rioja','Misiones','Salta','Santa Cruz']){
+  const model=Claims.summaryModel(data,province);
+  assert.equal(model.value,'Monto no publicado');assert.equal(model.hasAmount,false);assert.equal(model.tone,'neutral');assert.ok(model.publishedAt);
+ }
+ for(const province of ['Catamarca','Jujuy','Río Negro','San Juan','San Luis','Santiago del Estero']){
+  const model=Claims.summaryModel(data,province);
+  assert.equal(model.value,'Sin dato documentado');assert.equal(model.publishedAt,null);assert.equal(model.hasAmount,false);
+ }
+ assert.equal(Claims.summaryModel(null,'Chaco').state,'unavailable');
+ assert.equal(Claims.summaryModel(data,'Provincia inexistente').state,'unavailable');
+});
+
+test('later payments remain receipts, not debt or net balances, and monthly amounts are not annualized',()=>{
+ const copy=structuredClone(data),lp=copy.provinces['La Pampa'];
+ assert.equal(Claims.summaryModel(copy,'La Pampa').value,'$5 mil millones');
+ lp.records.find(r=>r.kind==='pago').published_at='2026-08-01';
+ const model=Claims.summaryModel(copy,'La Pampa');
+ assert.equal(model.value,'$10 mil millones');assert.equal(model.kind,'pago');
+ assert.equal(model.title,'Cobros de Nación');assert.equal(model.tone,'positive');assert.equal(model.valueSuffix,'');
+ const html=Claims.summaryHTML(copy,'La Pampa');
+ assert.doesNotMatch(html,/Deuda de Nación|por mes|Sin monto total/);
 });

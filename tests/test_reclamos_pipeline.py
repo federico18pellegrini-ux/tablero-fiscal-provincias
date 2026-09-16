@@ -58,5 +58,17 @@ class ReclamosPipelineTests(unittest.TestCase):
         for row in fiscal['provinces'].values():
             self.assertNotIn('deuda_total_reclamada',row['reclamos_nacion'])
 
+    def test_monthly_amount_basis_is_explicit_and_requires_a_valid_amount(self):
+        record=self.data['provinces']['La Pampa']['records'][0]
+        self.assertEqual(record['amount_basis'],'mensual')
+        self.assertEqual(record['amount']['value'],5e9)
+        self.assertEqual(validate_evidence(self.data,self.universe),[])
+        record['amount_basis']='anual_inferida'
+        self.assertTrue(any('base temporal' in e for e in validate_evidence(self.data,self.universe)))
+        record['amount_basis']='mensual'
+        record['amount']=None
+        record['kind']='sin_monto'
+        self.assertTrue(any('base temporal' in e for e in validate_evidence(self.data,self.universe)))
+
 if __name__=='__main__':
     unittest.main()

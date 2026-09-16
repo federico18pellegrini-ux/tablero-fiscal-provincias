@@ -54,6 +54,8 @@ def validate_evidence(data, universe):
             if not source.get('institution') or not source.get('title') or not source.get('url', '').startswith('https://') or not host.endswith(('.gob.ar', '.gov.ar')):
                 errors.append(f'{label}: requiere documento oficial identificado')
             amount = record.get('amount')
+            if record.get('amount_basis') not in {None, 'mensual'} or (record.get('amount_basis') and amount is None):
+                errors.append(f'{label}: base temporal del importe inválida')
             if amount is None:
                 if record.get('kind') != 'sin_monto':
                     errors.append(f'{label}: importe requerido para este tipo')
