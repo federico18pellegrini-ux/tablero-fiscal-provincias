@@ -176,6 +176,7 @@ html,body{overflow-x:clip;overflow-y:visible}
 .completion-card .scenario-grid label{min-width:0}
 .completion-card input{max-width:100%;box-sizing:border-box}
 .completion-table .management-table{min-width:0;width:100%;table-layout:fixed}.completion-table .management-table th{white-space:normal;overflow-wrap:anywhere}.completion-table .management-table td{white-space:normal;overflow-wrap:anywhere}
+#executionChanges .management-table td.negative-value{color:var(--red)}
 @media(max-width:600px){.completion-card{padding:14px 10px}.completion-card .management-table{font-size:13px}.completion-card .management-table th,.completion-card .management-table td{padding:9px 6px}.budget-composition-chart{height:240px}
 .completion-table .management-table{min-width:0;width:100%;display:block}.completion-table table caption{display:block;text-align:left}.completion-table thead{display:none}.completion-table tbody,.completion-table tr{display:block;width:100%}.completion-table tr{margin:12px 0;border:1px solid var(--border);border-radius:10px;padding:6px;box-sizing:border-box}.completion-table tbody th{display:block;text-align:left;white-space:normal}.completion-table tbody td{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;white-space:normal;text-align:right;overflow-wrap:anywhere}.completion-table tbody td::before{content:attr(data-label);text-align:left;color:var(--muted);font-size:12px}}
 
