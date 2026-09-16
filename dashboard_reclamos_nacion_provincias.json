@@ -127,7 +127,9 @@
             "institution": "Ministerio de Economía de la Nación",
             "title": "Convenio de compensación con Nación"
           },
-          "explanation": "Nación informó un convenio para compensar obligaciones del Consenso Fiscal y de vivienda con obligaciones provinciales. El comunicado no publica el importe."
+          "explanation": "Nación informó un convenio para compensar obligaciones del Consenso Fiscal y de vivienda con obligaciones provinciales. El comunicado no publica el importe.",
+          "summary_title": "Compensación con Nación",
+          "summary_context": "Convenio por Consenso Fiscal, vivienda y obligaciones provinciales."
         }
       ],
       "provincia": "Chaco",
@@ -184,7 +186,8 @@
           },
           "explanation": "Diez cuotas de $4 mil millones desde abril de 2026, a cuenta del resultado de la auditoría del déficit previsional.",
           "period": "Diez cuotas desde abril de 2026",
-          "summary_context": "Anticipos acordados: $40 mil millones en 10 cuotas."
+          "summary_context": "Anticipos para la caja jubilatoria: 10 cuotas de $4 mil millones desde abril de 2026.",
+          "summary_title": "Acuerdo previsional con Nación"
         }
       ],
       "provincia": "Corrientes",
@@ -212,8 +215,9 @@
             "title": "Acuerdo previsional de 2026"
           },
           "explanation": "El convenio ratificado establece doce anticipos de $10 mil millones desde mayo de 2026 hasta abril de 2027, mientras se audita el déficit previsional.",
-          "summary_context": "Anticipos acordados: $120 mil millones en 12 cuotas.",
-          "period": "Mayo de 2026 a abril de 2027"
+          "summary_context": "12 anticipos de $10 mil millones, de mayo de 2026 a abril de 2027.",
+          "period": "Mayo de 2026 a abril de 2027",
+          "summary_title": "Acuerdo previsional con Nación"
         },
         {
           "id": "cba-acuerdo-20250514",
@@ -232,7 +236,9 @@
             "title": "Acuerdo con la Caja de Jubilaciones de Córdoba"
           },
           "explanation": "El acuerdo de 2025 estableció desembolsos mensuales de $5 mil millones durante un año y auditorías de los ejercicios 2019 a 2024.",
-          "period": "Cuota mensual del acuerdo de 2025"
+          "period": "Cuota mensual del acuerdo de 2025",
+          "summary_title": "Acuerdo previsional con Nación",
+          "amount_basis": "mensual"
         }
       ],
       "provincia": "Córdoba",
@@ -261,7 +267,8 @@
           },
           "explanation": "Diez cuotas por $120 mil millones a cuenta del déficit previsional. El convenio permite compensar obligaciones recíprocas y actualizar déficit y cobros por el índice SIPA.",
           "period": "Diez cuotas; compensables contra obligaciones provinciales",
-          "summary_context": "Anticipos acordados: $120 mil millones en 10 cuotas."
+          "summary_context": "10 cuotas para financiar la caja jubilatoria, compensables con obligaciones provinciales.",
+          "summary_title": "Acuerdo previsional con Nación"
         }
       ],
       "provincia": "Entre Ríos",
@@ -284,7 +291,8 @@
             "institution": "Gobierno de Formosa",
             "title": "Reclamo por fondos previsionales y programas"
           },
-          "explanation": "El gobernador reclamó fondos previsionales y de programas nacionales. La cifra global de perjuicio económico informada también incluye recortes y gastos cubiertos por la Provincia; no identifica un importe de deuda por separado."
+          "explanation": "El gobernador reclamó fondos previsionales y de programas nacionales. La cifra global de perjuicio económico informada también incluye recortes y gastos cubiertos por la Provincia; no identifica un importe de deuda por separado.",
+          "summary_context": "Reclamo por fondos previsionales y programas nacionales."
         }
       ],
       "provincia": "Formosa",
@@ -320,8 +328,10 @@
             "title": "Cuotas del acuerdo previsional"
           },
           "explanation": "El acuerdo homologado por la Corte prevé un desembolso inicial de $2.500 millones y doce cuotas mensuales de $5.000 millones. Las auditorías determinan el monto definitivo.",
-          "summary_context": "Anticipo acordado: $5 mil millones por mes.",
-          "period": "Importe por cuota mensual · 12 cuotas"
+          "summary_context": "12 cuotas mensuales, más un desembolso inicial acordado de $2,5 mil millones.",
+          "period": "Importe por cuota mensual · 12 cuotas",
+          "summary_title": "Acuerdo previsional con Nación",
+          "amount_basis": "mensual"
         },
         {
           "id": "lp-cobro-20260727",
@@ -364,7 +374,8 @@
             "title": "Reclamo por recursos nacionales en la Legislatura"
           },
           "explanation": "El diario de sesiones registra el reclamo de la diputada Lourdes Ortiz por recursos nacionales adeudados. La intervención no publica una liquidación del monto.",
-          "period": "Sesión del 19 de marzo de 2026 · página 43 (página 42 del PDF)"
+          "period": "Sesión del 19 de marzo de 2026 · página 43 (página 42 del PDF)",
+          "summary_context": "Reclamo por recursos nacionales en la Legislatura provincial."
         }
       ],
       "provincia": "La Rioja",
@@ -392,7 +403,8 @@
             "title": "Media sanción a la ratificación del acuerdo entre Provincia y Nación por compensación de deudas y acreencias"
           },
           "explanation": "Créditos por Consenso Fiscal, vivienda y obras viales, destinados a compensar obligaciones de la Provincia con Nación.",
-          "summary_context": "Crédito para compensar: ≈ $121,282 mil millones."
+          "summary_context": "Consenso Fiscal, vivienda y rutas. Se aplica a reducir obligaciones provinciales.",
+          "summary_title": "Crédito para compensar con Nación"
         }
       ],
       "provincia": "Mendoza",
@@ -415,7 +427,9 @@
             "institution": "Gobierno de Misiones",
             "title": "Misiones y Nación firmaron un convenio para reforzar la caja jubilatoria de la provincia"
           },
-          "explanation": "La Provincia informó un convenio por el déficit previsional histórico, sin publicar su importe."
+          "explanation": "La Provincia informó un convenio por el déficit previsional histórico, sin publicar su importe.",
+          "summary_title": "Acuerdo previsional con Nación",
+          "summary_context": "Convenio para financiar la caja jubilatoria provincial."
         }
       ],
       "provincia": "Misiones",
@@ -493,7 +507,8 @@
             "institution": "Gobierno de Salta",
             "title": "Reintegro de fondos provinciales para obras nacionales"
           },
-          "explanation": "El gobernador solicitó reintegrar los recursos provinciales destinados a las rutas nacionales 9/34 y 51 y al puente de Vaqueros. La publicación no cuantifica el total del reintegro solicitado."
+          "explanation": "El gobernador solicitó reintegrar los recursos provinciales destinados a las rutas nacionales 9/34 y 51 y al puente de Vaqueros. La publicación no cuantifica el total del reintegro solicitado.",
+          "summary_context": "Reintegro solicitado por aportes provinciales a obras nacionales."
         }
       ],
       "provincia": "Salta",
@@ -532,7 +547,9 @@
             "institution": "Gobierno de Santa Cruz / Caja de Previsión Social",
             "title": "Pablo Pérez: No es real que exista una deuda automática de ANSES con la provincia"
           },
-          "explanation": "La Caja informó que el financiamiento de ANSES requiere completar las auditorías y las condiciones del régimen previsional."
+          "explanation": "La Caja informó que el financiamiento de ANSES requiere completar las auditorías y las condiciones del régimen previsional.",
+          "summary_title": "Financiamiento de ANSES",
+          "summary_context": "La determinación del financiamiento depende de las auditorías previsionales."
         }
       ],
       "provincia": "Santa Cruz",

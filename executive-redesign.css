@@ -245,10 +245,18 @@ html,body{overflow-x:clip;overflow-y:visible}
 #summaryView .gov-title[data-tone="negative"]{color:var(--red)}
 #summaryView .gov-title[data-tone="positive"]{color:var(--green)}
 #summaryView .gov-title[data-tone="neutral"]{color:var(--text)}
-.summary-nation-value.has-claim{font-size:clamp(40px,4.4vw,56px);color:var(--red)}
-#summaryView .summary-nation-claim:has(.has-claim){border-top-color:var(--red)}
+.summary-nation-value.has-amount{font-size:clamp(40px,4.4vw,56px)}
+.summary-nation-value[data-tone="negative"]{color:var(--red)}
+.summary-nation-value[data-tone="positive"]{color:var(--green)}
+.summary-nation-value[data-tone="informative"]{color:var(--blue)}
+.summary-nation-value[data-tone="neutral"]{color:var(--muted)}
+.summary-nation-unit,.nation-claim-unit{display:block;font-size:18px;line-height:1.4;font-weight:650;letter-spacing:0}
+#summaryView .summary-nation-claim:has([data-tone="negative"]){border-top-color:var(--red)}
+#summaryView .summary-nation-claim:has([data-tone="positive"]){border-top-color:var(--green)}
+#summaryView .summary-nation-claim:has([data-tone="neutral"]){border-top-color:var(--border)}
 .profile-conclusion:empty{display:none}
 .nation-claim-record[data-claim-kind="reclamo"] .nation-claim-value{color:var(--red)}
 .nation-claim-record[data-claim-kind="pago"] .nation-claim-value{color:var(--green)}
+.nation-claim-record:is([data-claim-kind="acuerdo"],[data-claim-kind="anticipo"],[data-claim-kind="credito_compensable"]) .nation-claim-value{color:var(--blue)}
 .nation-claim-method{font-size:14px;color:var(--muted);line-height:1.6;margin:16px 0}
 #priceBasisNotice{border:0;background:none;padding:6px 0;margin:6px 0 0;font-size:14px}
