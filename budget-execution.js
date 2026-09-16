@@ -53,7 +53,13 @@ function renderExecutionChanges(province,now,previous){
  let host=document.getElementById('executionChanges');if(!host){host=document.createElement('section');host.id='executionChanges';host.className='national-section completion-card';document.getElementById('incomeView').append(host);}host.replaceChildren();const h=document.createElement('h2');h.textContent='Qué cambió · '+province;host.append(h);
  budgetParagraph(host,'Primer trimestre de 2026 contra el mismo trimestre de 2025 · APNF. Esta comparación tiene un corte distinto del informe fiscal y no reemplaza su ranking.');
  if(!now||!previous){budgetParagraph(host,'Faltan datos para comparar ambos trimestres. La ausencia de información no se interpreta como cero ni como mejora.');return;}
- host.append(completionTable('Cambios en puntos porcentuales (pp)',['Indicador','Enero–marzo 2025','Enero–marzo 2026','Cambio'],[['Resultado financiero / ingresos',previous.balance,now.balance],['Gasto de capital / gasto total',previous.capital,now.capital]].map(([label,a,b])=>[label,fnum(a)+'%',fnum(b)+'%',(b-a>0?'+':'')+fnum(b-a)+' pp'])));
+ const rows=[['Resultado financiero / ingresos',previous.balance,now.balance],['Gasto de capital / gasto total',previous.capital,now.capital]];
+ const table=completionTable('Cambios en puntos porcentuales (pp)',['Indicador','Enero–marzo 2025','Enero–marzo 2026','Cambio'],rows.map(([label,a,b])=>[label,fnum(a)+'%',fnum(b)+'%',(b-a>0?'+':'')+fnum(b-a)+' pp']));
+ table.querySelectorAll('tbody tr').forEach((tr,i)=>{
+  const [,a,b]=rows[i];
+  [a,b,b-a].forEach((value,j)=>tr.children[j+1].classList.toggle('negative-value',value<0));
+ });
+ host.append(table);
  budgetParagraph(host,'El resultado financiero es la diferencia entre ingresos y gastos, incluidos los intereses. '+(now.balance>0?'En este trimestre los ingresos superan al gasto devengado.':now.balance<0?'En este trimestre el gasto devengado supera a los ingresos.':'En este trimestre los ingresos y el gasto devengado están equilibrados.')+' Eso no alcanza para saber cuánta caja libre hay. La participación del gasto de capital muestra cuánto pesa dentro del gasto total; para saber si la inversión creció hay que descontar inflación y revisar qué obras se ejecutaron.');
  const source=budgetExecutionData.executions.find(r=>r.province===province&&r.period==='2026-Q1');managementSource(host,source.source_url,'DNAP · datos provisorios de ejecución');managementSource(host,'data/budget_execution_2026.json','Ver ambos períodos y cálculos de origen');
 }
