@@ -4,12 +4,8 @@
   "integrations": {
     "reclamos_nacion": {
       "source_file": "dashboard_reclamos_nacion_provincias.json",
-      "selector_keys": [
-        "deuda_total_reclamada",
-        "deuda_total_robusta"
-      ],
-      "future_block_key": "deuda_nacion_con_provincia",
-      "methodology_note": "Suma de montos_actualizados con calidad_dato observado o estimado_robusto."
+      "schema_version": 2,
+      "methodology_note": "Registros documentales separados; no se calcula un saldo ni un total sumando reclamos y acuerdos."
     }
   },
   "provinces": {
@@ -66,17 +62,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -6.6%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 319680000000.0,
-        "deuda_total_robusta": 307680000000.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 25.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "con_montos_publicados",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       },
       "pba_context_2025_2026": {
         "latest_budget_execution_quarter": {
@@ -169,17 +157,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "con_montos_publicados",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Catamarca": {
@@ -235,17 +215,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -1.8%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Chaco": {
@@ -301,17 +273,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -4.2%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Chubut": {
@@ -367,17 +331,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -8.3%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Corrientes": {
@@ -433,17 +389,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -2.6%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "con_montos_publicados",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Córdoba": {
@@ -499,17 +447,9 @@
       },
       "mensaje_clave": "Provincia con superávit de 0.4%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "con_montos_publicados",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Entre Ríos": {
@@ -565,17 +505,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -2.1%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "con_montos_publicados",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Formosa": {
@@ -631,17 +563,9 @@
       },
       "mensaje_clave": "Provincia con superávit de 0.9%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Jujuy": {
@@ -697,17 +621,9 @@
       },
       "mensaje_clave": "Provincia con superávit de 1.0%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "La Pampa": {
@@ -763,17 +679,9 @@
       },
       "mensaje_clave": "Provincia con déficit de N/D. El desequilibrio se explica principalmente por sin evidencia suficiente. El gasto es sin_dato y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "La Rioja": {
@@ -829,17 +737,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -1.3%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Mendoza": {
@@ -895,17 +795,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -6.5%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "con_montos_publicados",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Misiones": {
@@ -961,17 +853,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -0.5%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "documento_sin_monto",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Neuquén": {
@@ -1027,17 +911,9 @@
       },
       "mensaje_clave": "Provincia con superávit de 0.4%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "con_montos_publicados",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Río Negro": {
@@ -1093,17 +969,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -2.7%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Salta": {
@@ -1159,17 +1027,9 @@
       },
       "mensaje_clave": "Provincia con superávit de 2.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "San Juan": {
@@ -1225,17 +1085,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -1.4%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "San Luis": {
@@ -1291,17 +1143,9 @@
       },
       "mensaje_clave": "Provincia con superávit de 4.3%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Santa Cruz": {
@@ -1357,17 +1201,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -6.5%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "documento_sin_monto",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Santa Fe": {
@@ -1423,17 +1259,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -5.7%. El desequilibrio se explica principalmente por provincia. El gasto es intermedio y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "con_montos_publicados",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Santiago del Estero": {
@@ -1489,17 +1317,9 @@
       },
       "mensaje_clave": "Provincia con superávit de 18.1%. El desequilibrio se explica principalmente por provincia. El gasto es flexible y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Tierra del Fuego": {
@@ -1555,17 +1375,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -18.9%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     },
     "Tucumán": {
@@ -1621,17 +1433,9 @@
       },
       "mensaje_clave": "Provincia con déficit de -1.7%. El desequilibrio se explica principalmente por provincia. El gasto es rígido y la dependencia de Nación es sin_dato. No hay base auditada para medir cobertura de caja o aguinaldo.",
       "reclamos_nacion": {
-        "deuda_total_reclamada": 0.0,
-        "deuda_total_robusta": 0.0,
-        "estado_cobertura": "cobertura_insuficiente",
-        "porcentaje_cubierto_con_dato_robusto": 0.0,
-        "deuda_nacion_con_provincia": {
-          "status": "pendiente_diseno_funcional",
-          "ready_for_render": false,
-          "component_key": "deuda_nacion_con_provincia",
-          "cards": [],
-          "last_update": "2026-03-31"
-        }
+        "saldo_actual_verificado": null,
+        "coverage": "pendiente_documentacion",
+        "source_file": "dashboard_reclamos_nacion_provincias.json"
       }
     }
   }

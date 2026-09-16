@@ -1,20 +1,51 @@
 {
+  "saldo_actual_verificado": null,
+  "pending": "Falta una conciliación por concepto que separe montos reconocidos, discutidos, pagados y pendientes. El comunicado no detalla la fecha de valuación de cada componente.",
+  "records": [
+    {
+      "id": "pba-20260914",
+      "kind": "reclamo",
+      "title": "Reclamo publicado por la Provincia",
+      "amount": {
+        "value": 19100000000000,
+        "currency": "ARS",
+        "qualifier": "aproximado"
+      },
+      "published_at": "2026-09-14",
+      "valuation_date": null,
+      "source": {
+        "url": "https://gba.gob.ar/gobierno/noticias/bianco_%E2%80%9Cla_situaci%C3%B3n_econ%C3%B3mica_productiva_y_social_en_argentina_es_asfixiante%E2%80%9D",
+        "institution": "Gobierno de la Provincia de Buenos Aires",
+        "title": "Bianco: La situación económica, productiva y social en Argentina es asfixiante"
+      },
+      "explanation": "La Provincia suma deudas directas, obras comprometidas sin ejecutar y programas interrumpidos o demorados. Es su estimación del reclamo: el comunicado no acredita que Nación haya reconocido el total ni que todo sea dinero exigible hoy.",
+      "components": [
+        {
+          "label": "Deudas directas",
+          "value": 4700000000000,
+          "explanation": "Montos que la Provincia identifica como obligaciones de pago pendientes. El rótulo provincial no acredita por sí solo el reconocimiento de Nación."
+        },
+        {
+          "label": "Obras comprometidas sin ejecutar",
+          "value": 10100000000000,
+          "explanation": "Valor de obras que la Provincia sostiene que Nación se comprometió a realizar. No equivale necesariamente a una transferencia de efectivo que deba ingresar a la caja provincial."
+        },
+        {
+          "label": "Programas interrumpidos o demorados",
+          "value": 4300000000000,
+          "explanation": "Financiamiento que la Provincia reclama por programas suspendidos o demorados. Para conocer el saldo exigible hay que revisar cada compromiso."
+        }
+      ]
+    }
+  ],
+  "reading": "La cifra de $15 billones circuló en abril de 2026. La publicación oficial del 14 de septiembre informa $19,1 billones. Ojo con la unidad: un billón es un millón de millones. Los $28,4 billones mencionados en el mismo comunicado agregan pérdida de recaudación atribuida a la recesión; esa pérdida no se incorpora como deuda de Nación.",
+  "context_sources": [
+    {
+      "title": "Reclamo superior a $15 billones, 21 de abril de 2026",
+      "url": "https://gba.gob.ar/node/52824"
+    }
+  ],
   "provincia": "Buenos Aires",
-  "fecha_corte_reporte": "2026-03-31",
-  "cantidad_reclamos": 8,
-  "cantidad_reclamos_con_monto": 3,
-  "deuda_total_reclamada": 319680000000.0,
-  "deuda_total_robusta": 307680000000.0,
-  "conteo_por_calidad_dato": {
-    "observado": 1,
-    "no_disponible": 3,
-    "estimado_robusto": 1,
-    "proxy": 3
-  },
-  "deuda_con_monto_por_tipo_reclamo": {
-    "ANSES / cajas previsionales no transferidas": 252000000000.0,
-    "FONID / conectividad / material didáctico": 55680000000.0,
-    "Transporte interior / fondo compensador": 12000000000.0
-  },
-  "nota": "Caso testigo BA armado con evidencia disponible en el repositorio; donde la evidencia no cuantifica, se conserva calidad proxy o no_disponible."
+  "coverage": "con_montos_publicados",
+  "latest_publication": "2026-09-14"
 }
