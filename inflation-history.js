@@ -2,7 +2,7 @@
 function updatePriceBasisNotice(){
   const basis=displayMode==='real'?`Pesos constantes de ${CONSTANT_PRICE_BASE}`:'Pesos corrientes';
   const note=document.getElementById('priceBasisNotice');
-  if(note)note.textContent=`${basis}: se aplica a los ingresos provinciales con apertura mensual. Los porcentajes fiscales mantienen su definición. En deuda y en los demás bloques, fijate en la moneda y la fecha indicadas. El gasto nacional a precios constantes usa julio de 2026, explicitado en esa sección.`;
+  if(note)note.textContent=displayMode==='real'?`Ingresos provinciales ajustados por IPC, a precios de ${CONSTANT_PRICE_BASE}.`:'Ingresos provinciales en pesos de cada mes.';
   for(const id of ['kTopYtd','kRonYtd']){const card=document.getElementById(id)?.closest('.kcard');if(!card)continue;const tag=card.querySelector('.pulse-tag');if(tag)tag.textContent='Flujo acumulado · '+basis;}
 }
 function initInflationHistory(){

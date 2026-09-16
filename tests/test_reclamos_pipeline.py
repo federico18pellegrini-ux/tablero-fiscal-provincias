@@ -11,8 +11,8 @@ class ReclamosPipelineTests(unittest.TestCase):
     def test_missing_amounts_remain_unknown_and_all_provinces_exist(self):
         out=build_payload(self.data,self.universe)
         self.assertEqual(len(out['provinces']),24)
-        self.assertEqual(out['coverage']['with_amounts'],8)
-        self.assertEqual(out['coverage']['documents_without_amounts'],2)
+        self.assertEqual(out['coverage']['with_amounts'],12)
+        self.assertEqual(out['coverage']['documents_without_amounts'],6)
         for province in out['provinces'].values():
             self.assertIsNone(province['saldo_actual_verificado'])
             self.assertNotIn('deuda_total_reclamada',province)

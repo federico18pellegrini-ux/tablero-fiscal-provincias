@@ -12,9 +12,11 @@ En particular, la pérdida de recaudación, una obra nacional no ejecutada y una
 
 ## Cobertura y límites
 
-Se muestran las 24 jurisdicciones. Ocho tienen montos documentados: Buenos Aires, CABA, Córdoba, Corrientes, Entre Ríos, Mendoza, Neuquén y Santa Fe. El registro de Córdoba es un antecedente de 2025, expresamente marcado como pendiente de actualización con el convenio de 2026. Misiones y Santa Cruz tienen documentos sin un monto incorporable.
+Se muestran las 24 jurisdicciones. Doce tienen importes documentados: Buenos Aires, CABA, Chubut, Córdoba, Corrientes, Entre Ríos, La Pampa, Mendoza, Neuquén, Santa Fe, Tierra del Fuego y Tucumán. Los importes incluyen distintos tipos de evidencia; no todos son reclamos. Córdoba incorpora el convenio de 2026. La Pampa informa cuotas acordadas y cobros, sin un monto total de deuda.
 
-Quedan pendientes de documentación cuantificable Chubut, Catamarca, Chaco, Formosa, Jujuy, La Pampa, La Rioja, Río Negro, Salta, San Juan, San Luis, Santiago del Estero, Tierra del Fuego y Tucumán. Esto NO certifica ausencia de acreencias: es el estado de cobertura de esta base.
+Chaco, Formosa, La Rioja, Misiones, Salta y Santa Cruz tienen documentos sin un monto incorporable. Permanecen pendientes Catamarca, Jujuy, Río Negro, San Juan, San Luis y Santiago del Estero. El estado describe la cobertura de esta base, no la existencia o ausencia de acreencias.
+
+El Resumen usa el título «Deuda de Nación» y atribuye los reclamos cuantificados con «Según la Provincia» y fecha. Si sólo existe un acuerdo, un anticipo o un cobro, informa «Sin monto total» y muestra el concepto documentado por separado. Los importes se conservan en su moneda original y no responden al selector de ingresos en pesos constantes.
 
 No se publica un saldo actual conciliado para ninguna jurisdicción. Se necesita reconstruir, para cada concepto, saldo inicial, actualización conforme al instrumento aplicable, reconocimiento, pagos efectivos y compensaciones. Un anticipo aprobado o un bono autorizado no acredita por sí solo un cobro. No corresponde construir un ranking de deudas ni un total nacional con estas referencias.
 

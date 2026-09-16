@@ -18,7 +18,7 @@
         "institution": "Gobierno de la Provincia de Buenos Aires",
         "title": "Bianco: La situación económica, productiva y social en Argentina es asfixiante"
       },
-      "explanation": "La Provincia suma deudas directas, obras comprometidas sin ejecutar y programas interrumpidos o demorados. Es su estimación del reclamo: el comunicado no acredita que Nación haya reconocido el total ni que todo sea dinero exigible hoy.",
+      "explanation": "La Provincia informó $19,1 billones: $4,7 billones en deudas directas, $10,1 billones en obras comprometidas y $4,3 billones en programas.",
       "components": [
         {
           "label": "Deudas directas",
@@ -35,10 +35,11 @@
           "value": 4300000000000,
           "explanation": "Financiamiento que la Provincia reclama por programas suspendidos o demorados. Para conocer el saldo exigible hay que revisar cada compromiso."
         }
-      ]
+      ],
+      "summary_context": "Incluye deudas directas, obras y programas."
     }
   ],
-  "reading": "La cifra de $15 billones circuló en abril de 2026. La publicación oficial del 14 de septiembre informa $19,1 billones. Ojo con la unidad: un billón es un millón de millones. Los $28,4 billones mencionados en el mismo comunicado agregan pérdida de recaudación atribuida a la recesión; esa pérdida no se incorpora como deuda de Nación.",
+  "reading": "La cifra pasó de $15 billones publicados en abril a $19,1 billones en septiembre de 2026. El nuevo total reúne deudas directas, obras y programas.",
   "context_sources": [
     {
       "title": "Reclamo superior a $15 billones, 21 de abril de 2026",

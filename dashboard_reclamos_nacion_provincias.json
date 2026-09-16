@@ -24,7 +24,7 @@
             "institution": "Gobierno de la Provincia de Buenos Aires",
             "title": "Bianco: La situación económica, productiva y social en Argentina es asfixiante"
           },
-          "explanation": "La Provincia suma deudas directas, obras comprometidas sin ejecutar y programas interrumpidos o demorados. Es su estimación del reclamo: el comunicado no acredita que Nación haya reconocido el total ni que todo sea dinero exigible hoy.",
+          "explanation": "La Provincia informó $19,1 billones: $4,7 billones en deudas directas, $10,1 billones en obras comprometidas y $4,3 billones en programas.",
           "components": [
             {
               "label": "Deudas directas",
@@ -41,10 +41,11 @@
               "value": 4300000000000,
               "explanation": "Financiamiento que la Provincia reclama por programas suspendidos o demorados. Para conocer el saldo exigible hay que revisar cada compromiso."
             }
-          ]
+          ],
+          "summary_context": "Incluye deudas directas, obras y programas."
         }
       ],
-      "reading": "La cifra de $15 billones circuló en abril de 2026. La publicación oficial del 14 de septiembre informa $19,1 billones. Ojo con la unidad: un billón es un millón de millones. Los $28,4 billones mencionados en el mismo comunicado agregan pérdida de recaudación atribuida a la recesión; esa pérdida no se incorpora como deuda de Nación.",
+      "reading": "La cifra pasó de $15 billones publicados en abril a $19,1 billones en septiembre de 2026. El nuevo total reúne deudas directas, obras y programas.",
       "context_sources": [
         {
           "title": "Reclamo superior a $15 billones, 21 de abril de 2026",
@@ -75,7 +76,8 @@
             "institution": "Gobierno de la Ciudad de Buenos Aires",
             "title": "Coparticipación: el Gobierno nacional y la Ciudad acordaron la cancelación de deuda"
           },
-          "explanation": "La Ciudad informó que mantiene el reclamo histórico de USD 6.000 millones, correspondiente a la gestión nacional anterior. Lo distingue del acuerdo sobre atrasos recientes; esta declaración no acredita el saldo exigible actual."
+          "explanation": "La Ciudad mantiene un reclamo histórico de USD 6.000 millones correspondiente a la gestión nacional anterior, separado del acuerdo por atrasos recientes.",
+          "summary_context": "Reclamo histórico por coparticipación."
         },
         {
           "id": "caba-acuerdo-20260529",
@@ -93,7 +95,7 @@
             "institution": "Ministerio de Economía de la Nación",
             "title": "Resolución Conjunta 29/2026"
           },
-          "explanation": "La norma documenta un crédito de $813.442.779.604,73 al 31 de marzo de 2026 y su cancelación mediante títulos del Tesoro. El crédito reconocido a esa fecha no equivale al saldo de hoy ni a dinero cobrado en efectivo.",
+          "explanation": "La norma documenta un crédito de $813.442.779.604,73 al 31 de marzo de 2026 y su cancelación mediante títulos del Tesoro.",
           "period": "Crédito al 31/03/2026; convenio del 18/05/2026"
         }
       ],
@@ -111,19 +113,54 @@
     },
     "Chaco": {
       "saldo_actual_verificado": null,
-      "pending": "Falta incorporar documentación oficial que permita identificar conceptos, montos reclamados, reconocimiento nacional y pagos. Sin un saldo conciliado, no corresponde informar deuda cero.",
-      "records": [],
+      "pending": "Importe del convenio de compensación y obligaciones que permanecen pendientes.",
+      "records": [
+        {
+          "id": "chaco-compensacion-20250205",
+          "kind": "sin_monto",
+          "title": "Convenio de compensación con Nación",
+          "amount": null,
+          "published_at": "2025-02-05",
+          "valuation_date": null,
+          "source": {
+            "url": "https://www.argentina.gob.ar/node/456412",
+            "institution": "Ministerio de Economía de la Nación",
+            "title": "Convenio de compensación con Nación"
+          },
+          "explanation": "Nación informó un convenio para compensar obligaciones del Consenso Fiscal y de vivienda con obligaciones provinciales. El comunicado no publica el importe."
+        }
+      ],
       "provincia": "Chaco",
-      "coverage": "pendiente_documentacion",
-      "latest_publication": null
+      "coverage": "documento_sin_monto",
+      "latest_publication": "2025-02-05"
     },
     "Chubut": {
       "saldo_actual_verificado": null,
-      "pending": "Falta incorporar documentación oficial que permita identificar conceptos, montos reclamados, reconocimiento nacional y pagos. Sin un saldo conciliado, no corresponde informar deuda cero.",
-      "records": [],
+      "pending": "Liquidación por ejercicio y pagos posteriores al reclamo de marzo de 2026.",
+      "records": [
+        {
+          "id": "chubut-previsional-20260325",
+          "kind": "reclamo",
+          "title": "Fondos previsionales reclamados a ANSES",
+          "amount": {
+            "value": 50000000000.0,
+            "currency": "ARS",
+            "qualifier": "mas_de"
+          },
+          "published_at": "2026-03-25",
+          "valuation_date": null,
+          "source": {
+            "url": "https://desarrollohumano.chubut.gov.ar/el-gobierno-provincial-refuerza-el-acompanamiento-a-adultos-mayores-y-ratifica-el-reclamo-por-fondos-previsionales/",
+            "institution": "Ministerio de Desarrollo Humano de Chubut",
+            "title": "Fondos previsionales reclamados a ANSES"
+          },
+          "explanation": "El Gobierno provincial informó un reclamo superior a $50 mil millones por fondos de la caja jubilatoria.",
+          "summary_context": "Fondos de la caja jubilatoria provincial."
+        }
+      ],
       "provincia": "Chubut",
-      "coverage": "pendiente_documentacion",
-      "latest_publication": null
+      "coverage": "con_montos_publicados",
+      "latest_publication": "2026-03-25"
     },
     "Corrientes": {
       "saldo_actual_verificado": null,
@@ -138,25 +175,46 @@
             "currency": "ARS",
             "qualifier": "exacto"
           },
-          "published_at": "2026-04-07",
+          "published_at": "2026-04-08",
           "valuation_date": null,
           "source": {
-            "url": "https://www.anses.gob.ar/noticias/el-ministerio-de-capital-humano-firmo-acuerdos-de-financiamiento-previsional-con-las",
-            "institution": "ANSES / Ministerio de Capital Humano",
+            "url": "https://www.argentina.gob.ar/node/497282",
+            "institution": "Ministerio de Capital Humano de la Nación",
             "title": "Acuerdos de financiamiento previsional con Santa Fe y Corrientes"
           },
-          "explanation": "Se acordaron diez cuotas de $4 mil millones desde abril de 2026, a cuenta del resultado de la auditoría del déficit previsional de ese año. No es una medición del saldo total que Nación debe hoy.",
-          "period": "Diez cuotas desde abril de 2026"
+          "explanation": "Diez cuotas de $4 mil millones desde abril de 2026, a cuenta del resultado de la auditoría del déficit previsional.",
+          "period": "Diez cuotas desde abril de 2026",
+          "summary_context": "Anticipos acordados: $40 mil millones en 10 cuotas."
         }
       ],
       "provincia": "Corrientes",
       "coverage": "con_montos_publicados",
-      "latest_publication": "2026-04-07"
+      "latest_publication": "2026-04-08"
     },
     "Córdoba": {
       "saldo_actual_verificado": null,
-      "pending": "La referencia incorporada corresponde a 2025. Falta incorporar el convenio posterior de 2026, las auditorías y los desembolsos para actualizar el saldo. No se presenta este acuerdo como vigente al día de hoy.",
+      "pending": "Resultado de las auditorías previsionales y detalle de anticipos cobrados.",
       "records": [
+        {
+          "id": "cba-anticipo-20260408",
+          "kind": "anticipo",
+          "title": "Acuerdo previsional de 2026",
+          "amount": {
+            "value": 120000000000.0,
+            "currency": "ARS",
+            "qualifier": "exacto"
+          },
+          "published_at": "2026-04-08",
+          "valuation_date": null,
+          "source": {
+            "url": "https://legislaturacba.gob.ar/ratificaron-el-convenio-de-financiamiento-entre-la-provincia-y-la-nacion-para-la-caja-de-jubilaciones/",
+            "institution": "Legislatura de Córdoba",
+            "title": "Acuerdo previsional de 2026"
+          },
+          "explanation": "El convenio ratificado establece doce anticipos de $10 mil millones desde mayo de 2026 hasta abril de 2027, mientras se audita el déficit previsional.",
+          "summary_context": "Anticipos acordados: $120 mil millones en 12 cuotas.",
+          "period": "Mayo de 2026 a abril de 2027"
+        },
         {
           "id": "cba-acuerdo-20250514",
           "kind": "acuerdo",
@@ -173,13 +231,13 @@
             "institution": "ANSES / Ministerio de Capital Humano",
             "title": "Acuerdo con la Caja de Jubilaciones de Córdoba"
           },
-          "explanation": "ANSES informó desembolsos de $5 mil millones mensuales durante un año y auditorías de los ejercicios 2019 a 2024. La cifra es una cuota mensual del acuerdo de 2025; no es el total de deuda ni un saldo actualizado.",
+          "explanation": "El acuerdo de 2025 estableció desembolsos mensuales de $5 mil millones durante un año y auditorías de los ejercicios 2019 a 2024.",
           "period": "Cuota mensual del acuerdo de 2025"
         }
       ],
       "provincia": "Córdoba",
       "coverage": "con_montos_publicados",
-      "latest_publication": "2025-05-14"
+      "latest_publication": "2026-04-08"
     },
     "Entre Ríos": {
       "saldo_actual_verificado": null,
@@ -201,8 +259,9 @@
             "institution": "Gobierno de Entre Ríos",
             "title": "Frigerio destacó que el acuerdo con ANSES es el mayor reconocimiento de fondos obtenido por Entre Ríos"
           },
-          "explanation": "La Provincia comunicó diez cuotas por un total de $120 mil millones, a cuenta del déficit previsional. El convenio permite aplicarlas a compensar obligaciones recíprocas. El comunicado indica que déficit y cobros se actualizarán por el índice SIPA para calcular el saldo final; no corresponde deducir este anticipo de otra cifra sin esa conciliación.",
-          "period": "Diez cuotas; compensables contra obligaciones provinciales"
+          "explanation": "Diez cuotas por $120 mil millones a cuenta del déficit previsional. El convenio permite compensar obligaciones recíprocas y actualizar déficit y cobros por el índice SIPA.",
+          "period": "Diez cuotas; compensables contra obligaciones provinciales",
+          "summary_context": "Anticipos acordados: $120 mil millones en 10 cuotas."
         }
       ],
       "provincia": "Entre Ríos",
@@ -211,11 +270,26 @@
     },
     "Formosa": {
       "saldo_actual_verificado": null,
-      "pending": "Falta incorporar documentación oficial que permita identificar conceptos, montos reclamados, reconocimiento nacional y pagos. Sin un saldo conciliado, no corresponde informar deuda cero.",
-      "records": [],
+      "pending": "Monto del reclamo desagregado, separado de recortes y gastos sustituidos por la Provincia.",
+      "records": [
+        {
+          "id": "formosa-reclamo-20250301",
+          "kind": "sin_monto",
+          "title": "Reclamo por fondos previsionales y programas",
+          "amount": null,
+          "published_at": "2025-03-01",
+          "valuation_date": null,
+          "source": {
+            "url": "https://m.formosa.gob.ar/noticia/32971/211/hoy_el_modelo_formoseno_esta_mas_fuerte_que_nunca_subrayo_el_gobernador",
+            "institution": "Gobierno de Formosa",
+            "title": "Reclamo por fondos previsionales y programas"
+          },
+          "explanation": "El gobernador reclamó fondos previsionales y de programas nacionales. La cifra global de perjuicio económico informada también incluye recortes y gastos cubiertos por la Provincia; no identifica un importe de deuda por separado."
+        }
+      ],
       "provincia": "Formosa",
-      "coverage": "pendiente_documentacion",
-      "latest_publication": null
+      "coverage": "documento_sin_monto",
+      "latest_publication": "2025-03-01"
     },
     "Jujuy": {
       "saldo_actual_verificado": null,
@@ -227,19 +301,75 @@
     },
     "La Pampa": {
       "saldo_actual_verificado": null,
-      "pending": "Falta incorporar documentación oficial que permita identificar conceptos, montos reclamados, reconocimiento nacional y pagos. Sin un saldo conciliado, no corresponde informar deuda cero.",
-      "records": [],
+      "pending": "Monto definitivo de las auditorías y cumplimiento de las cuotas posteriores a julio de 2026.",
+      "records": [
+        {
+          "id": "lp-acuerdo-20260727",
+          "kind": "anticipo",
+          "title": "Cuotas del acuerdo previsional",
+          "amount": {
+            "value": 5000000000.0,
+            "currency": "ARS",
+            "qualifier": "exacto"
+          },
+          "published_at": "2026-07-27",
+          "valuation_date": null,
+          "source": {
+            "url": "https://apn.lapampa.gob.ar/nota/detalle/id/30373/Tras-la-reunin-entre-Ziliotto-y-Santilli-Nacin-reanud-el-envo-de-fondos-previsionales-a-La-Pampa",
+            "institution": "Agencia Provincial de Noticias de La Pampa",
+            "title": "Cuotas del acuerdo previsional"
+          },
+          "explanation": "El acuerdo homologado por la Corte prevé un desembolso inicial de $2.500 millones y doce cuotas mensuales de $5.000 millones. Las auditorías determinan el monto definitivo.",
+          "summary_context": "Anticipo acordado: $5 mil millones por mes.",
+          "period": "Importe por cuota mensual · 12 cuotas"
+        },
+        {
+          "id": "lp-cobro-20260727",
+          "kind": "pago",
+          "title": "Cobro de las cuotas de junio y julio",
+          "amount": {
+            "value": 10000000000.0,
+            "currency": "ARS",
+            "qualifier": "exacto"
+          },
+          "published_at": "2026-07-27",
+          "valuation_date": null,
+          "source": {
+            "url": "https://apn.lapampa.gob.ar/nota/detalle/id/30373/Tras-la-reunin-entre-Ziliotto-y-Santilli-Nacin-reanud-el-envo-de-fondos-previsionales-a-La-Pampa",
+            "institution": "Agencia Provincial de Noticias de La Pampa",
+            "title": "Cobro de las cuotas de junio y julio"
+          },
+          "explanation": "La Provincia informó el ingreso de $10.000 millones correspondientes a junio y julio. Son pagos del acuerdo previsional.",
+          "period": "Cuotas de junio y julio de 2026"
+        }
+      ],
       "provincia": "La Pampa",
-      "coverage": "pendiente_documentacion",
-      "latest_publication": null
+      "coverage": "con_montos_publicados",
+      "latest_publication": "2026-07-27"
     },
     "La Rioja": {
       "saldo_actual_verificado": null,
-      "pending": "Falta incorporar documentación oficial que permita identificar conceptos, montos reclamados, reconocimiento nacional y pagos. Sin un saldo conciliado, no corresponde informar deuda cero.",
-      "records": [],
+      "pending": "Liquidación del Poder Ejecutivo provincial con conceptos, importes y fecha de corte.",
+      "records": [
+        {
+          "id": "rioja-legislatura-20260319",
+          "kind": "sin_monto",
+          "title": "Reclamo por recursos nacionales en la Legislatura",
+          "amount": null,
+          "published_at": "2026-03-19",
+          "valuation_date": null,
+          "source": {
+            "url": "https://legislaturalarioja.gob.ar/documentos/diario-sesiones/P141/D02-141F_Recinto.pdf",
+            "institution": "Legislatura de La Rioja",
+            "title": "Reclamo por recursos nacionales en la Legislatura"
+          },
+          "explanation": "El diario de sesiones registra el reclamo de la diputada Lourdes Ortiz por recursos nacionales adeudados. La intervención no publica una liquidación del monto.",
+          "period": "Sesión del 19 de marzo de 2026 · página 43 (página 42 del PDF)"
+        }
+      ],
       "provincia": "La Rioja",
-      "coverage": "pendiente_documentacion",
-      "latest_publication": null
+      "coverage": "documento_sin_monto",
+      "latest_publication": "2026-03-19"
     },
     "Mendoza": {
       "saldo_actual_verificado": null,
@@ -261,7 +391,8 @@
             "institution": "Cámara de Diputados de Mendoza",
             "title": "Media sanción a la ratificación del acuerdo entre Provincia y Nación por compensación de deudas y acreencias"
           },
-          "explanation": "La Legislatura informó créditos provinciales por $121.282 millones, vinculados al Consenso Fiscal, vivienda y obras viales, para compensar obligaciones de la Provincia con Nación. Es un crédito reconocido dentro de un acuerdo de compensación, no un saldo actual a cobrar en efectivo."
+          "explanation": "Créditos por Consenso Fiscal, vivienda y obras viales, destinados a compensar obligaciones de la Provincia con Nación.",
+          "summary_context": "Crédito para compensar: ≈ $121,282 mil millones."
         }
       ],
       "provincia": "Mendoza",
@@ -284,7 +415,7 @@
             "institution": "Gobierno de Misiones",
             "title": "Misiones y Nación firmaron un convenio para reforzar la caja jubilatoria de la provincia"
           },
-          "explanation": "La Provincia informó un convenio por el déficit previsional histórico. Como la publicación no cuantifica el acuerdo, se deja el monto sin dato."
+          "explanation": "La Provincia informó un convenio por el déficit previsional histórico, sin publicar su importe."
         }
       ],
       "provincia": "Misiones",
@@ -311,7 +442,8 @@
             "institution": "Gobierno de Neuquén",
             "title": "Figueroa: Todo lo que favorezca al ciudadano neuquino lo vamos a apoyar"
           },
-          "explanation": "El gobernador afirmó que Nación adeuda más de USD 300 millones y mencionó la negociación de compensaciones con inmuebles. Se conserva la moneda de su declaración; el comunicado no aporta una liquidación por concepto."
+          "explanation": "El gobernador informó una deuda nacional superior a USD 300 millones y la negociación de compensaciones con inmuebles.",
+          "summary_context": "Monto informado por el Gobierno provincial, expresado en dólares."
         },
         {
           "id": "nqn-anticipo-20260329",
@@ -329,7 +461,7 @@
             "institution": "Gobierno de Neuquén",
             "title": "Figueroa ratificó el acuerdo con ANSES para el cobro de la deuda previsional de Nación"
           },
-          "explanation": "El acuerdo prevé doce anticipos de $4 mil millones, de mayo de 2026 a abril de 2027, sujetos a auditoría. No se descuentan del reclamo anterior: difieren la moneda, el alcance y la fecha, y falta verificar los pagos.",
+          "explanation": "Doce anticipos previsionales de $4 mil millones, de mayo de 2026 a abril de 2027, sujetos a auditoría.",
           "period": "Mayo de 2026 a abril de 2027"
         }
       ],
@@ -347,11 +479,26 @@
     },
     "Salta": {
       "saldo_actual_verificado": null,
-      "pending": "Falta incorporar documentación oficial que permita identificar conceptos, montos reclamados, reconocimiento nacional y pagos. Sin un saldo conciliado, no corresponde informar deuda cero.",
-      "records": [],
+      "pending": "Certificación de lo efectivamente aportado y monto total del reintegro reclamado.",
+      "records": [
+        {
+          "id": "salta-obras-20260813",
+          "kind": "sin_monto",
+          "title": "Reintegro de fondos provinciales para obras nacionales",
+          "amount": null,
+          "published_at": "2026-08-13",
+          "valuation_date": null,
+          "source": {
+            "url": "https://www.salta.gob.ar/prensa/noticias/saenz-exige-a-la-nacion-el-reintegro-de-los-fondos-que-salta-invierte-para-sostener-obras-de-responsabilidad-nacional-109455",
+            "institution": "Gobierno de Salta",
+            "title": "Reintegro de fondos provinciales para obras nacionales"
+          },
+          "explanation": "El gobernador solicitó reintegrar los recursos provinciales destinados a las rutas nacionales 9/34 y 51 y al puente de Vaqueros. La publicación no cuantifica el total del reintegro solicitado."
+        }
+      ],
       "provincia": "Salta",
-      "coverage": "pendiente_documentacion",
-      "latest_publication": null
+      "coverage": "documento_sin_monto",
+      "latest_publication": "2026-08-13"
     },
     "San Juan": {
       "saldo_actual_verificado": null,
@@ -385,7 +532,7 @@
             "institution": "Gobierno de Santa Cruz / Caja de Previsión Social",
             "title": "Pablo Pérez: No es real que exista una deuda automática de ANSES con la provincia"
           },
-          "explanation": "La Caja explicó que el eventual financiamiento nacional requiere cumplir condiciones y completar auditorías. Tener déficit previsional no determina por sí solo una deuda exigible a ANSES."
+          "explanation": "La Caja informó que el financiamiento de ANSES requiere completar las auditorías y las condiciones del régimen previsional."
         }
       ],
       "provincia": "Santa Cruz",
@@ -413,7 +560,8 @@
             "institution": "Gobierno de Santa Fe",
             "title": "Nación y Provincia avanzan en un acuerdo por la deuda previsional"
           },
-          "explanation": "La Provincia estimó la deuda histórica entre $1,5 y $2 billones. La auditoría de los ejercicios 2020 a 2025 debe precisar el monto; la cifra no es una liquidación final aceptada por ambas partes."
+          "explanation": "La Provincia estimó entre $1,5 y $2 billones de deuda previsional histórica. La auditoría abarca los ejercicios 2020 a 2025.",
+          "summary_context": "Estimación provincial de la deuda previsional histórica."
         },
         {
           "id": "sf-anticipo-20260407",
@@ -424,20 +572,20 @@
             "currency": "ARS",
             "qualifier": "exacto"
           },
-          "published_at": "2026-04-07",
+          "published_at": "2026-04-08",
           "valuation_date": null,
           "source": {
-            "url": "https://www.anses.gob.ar/noticias/el-ministerio-de-capital-humano-firmo-acuerdos-de-financiamiento-previsional-con-las",
-            "institution": "ANSES / Ministerio de Capital Humano",
+            "url": "https://www.argentina.gob.ar/node/497282",
+            "institution": "Ministerio de Capital Humano de la Nación",
             "title": "Acuerdos de financiamiento previsional con Santa Fe y Corrientes"
           },
-          "explanation": "El acuerdo prevé doce cuotas de $10 mil millones desde mayo de 2026. Son anticipos sujetos a auditoría del déficit de 2026; este documento no permite verificar qué cuotas se cobraron ni el saldo histórico remanente.",
+          "explanation": "Doce cuotas de $10 mil millones desde mayo de 2026, a cuenta de la auditoría del déficit previsional de 2026.",
           "period": "Doce cuotas desde mayo de 2026"
         }
       ],
       "provincia": "Santa Fe",
       "coverage": "con_montos_publicados",
-      "latest_publication": "2026-04-07"
+      "latest_publication": "2026-04-08"
     },
     "Santiago del Estero": {
       "saldo_actual_verificado": null,
@@ -449,26 +597,86 @@
     },
     "Tierra del Fuego": {
       "saldo_actual_verificado": null,
-      "pending": "Falta incorporar documentación oficial que permita identificar conceptos, montos reclamados, reconocimiento nacional y pagos. Sin un saldo conciliado, no corresponde informar deuda cero.",
-      "records": [],
+      "pending": "Desagregar obras y escuelas para determinar superposiciones; verificar compensaciones y pagos posteriores al informe 2025.",
+      "records": [
+        {
+          "id": "tdf-organismos-20260228",
+          "kind": "reclamo",
+          "title": "Obras y organismos provinciales",
+          "amount": {
+            "value": 8500000000.0,
+            "currency": "ARS",
+            "qualifier": "exacto"
+          },
+          "published_at": "2026-02-28",
+          "valuation_date": null,
+          "source": {
+            "url": "https://www.tierradelfuego.gob.ar/wp-content/uploads/2026/02/Informe_2025-280226_2-comprimido.pdf",
+            "institution": "Gobierno de Tierra del Fuego",
+            "title": "Obras y organismos provinciales"
+          },
+          "explanation": "El informe de gestión 2025 identifica $8.500 millones de obligaciones nacionales con Vialidad, el IPV, la DPOSS y áreas de Obras y Educación.",
+          "summary_context": "Obras y organismos provinciales · informe de gestión 2025.",
+          "period": "Informe de gestión 2025 · página 135 (página 203 del PDF)"
+        },
+        {
+          "id": "tdf-escuelas-20260228",
+          "kind": "reclamo",
+          "title": "Fondos para tres escuelas técnicas",
+          "amount": {
+            "value": 11000000000.0,
+            "currency": "ARS",
+            "qualifier": "exacto"
+          },
+          "published_at": "2026-02-28",
+          "valuation_date": null,
+          "source": {
+            "url": "https://www.tierradelfuego.gob.ar/wp-content/uploads/2026/02/Informe_2025-280226_2-comprimido.pdf",
+            "institution": "Gobierno de Tierra del Fuego",
+            "title": "Fondos para tres escuelas técnicas"
+          },
+          "explanation": "El mismo informe menciona por separado $11.000 millones aprobados en 2024 para tres escuelas técnicas y no transferidos. La publicación no precisa si este concepto se superpone con el reclamo de obras y organismos.",
+          "period": "Proyectos aprobados en 2024 · página 135 (página 203 del PDF)"
+        }
+      ],
       "provincia": "Tierra del Fuego",
-      "coverage": "pendiente_documentacion",
-      "latest_publication": null
+      "coverage": "con_montos_publicados",
+      "latest_publication": "2026-02-28"
     },
     "Tucumán": {
       "saldo_actual_verificado": null,
-      "pending": "Falta incorporar documentación oficial que permita identificar conceptos, montos reclamados, reconocimiento nacional y pagos. Sin un saldo conciliado, no corresponde informar deuda cero.",
-      "records": [],
+      "pending": "Desglose de los conceptos reclamados, reconocimiento y cobros posteriores.",
+      "records": [
+        {
+          "id": "tuc-reclamo-20260219",
+          "kind": "reclamo",
+          "title": "Reclamos por PAMI y fondos previsionales",
+          "amount": {
+            "value": 200000000000.0,
+            "currency": "ARS",
+            "qualifier": "aproximado"
+          },
+          "published_at": "2026-02-19",
+          "valuation_date": null,
+          "source": {
+            "url": "https://www.comunicaciontucuman.gob.ar/noticia/economia-produccion/239508/tucuman-transita-equilibrio-fiscal-sostuvo-ministro-economia-produccion",
+            "institution": "Ministerio de Economía y Producción de Tucumán",
+            "title": "Reclamos por PAMI y fondos previsionales"
+          },
+          "explanation": "El ministro Daniel Abad informó reclamos por aproximadamente $200 mil millones. Incluyen prestaciones sanitarias del PAMI y obligaciones vinculadas al traspaso de la caja previsional.",
+          "summary_context": "Prestaciones del PAMI y fondos previsionales, entre otros conceptos."
+        }
+      ],
       "provincia": "Tucumán",
-      "coverage": "pendiente_documentacion",
-      "latest_publication": null
+      "coverage": "con_montos_publicados",
+      "latest_publication": "2026-02-19"
     }
   },
   "coverage": {
     "jurisdictions": 24,
-    "with_amounts": 8,
-    "documents_without_amounts": 2,
-    "pending_documentation": 14,
+    "with_amounts": 12,
+    "documents_without_amounts": 6,
+    "pending_documentation": 6,
     "verified_current_balances": 0
   }
 }

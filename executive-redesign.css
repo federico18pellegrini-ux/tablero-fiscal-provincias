@@ -179,7 +179,7 @@ html,body{overflow-x:clip;overflow-y:visible}
 @media(max-width:600px){.completion-card{padding:14px 10px}.completion-card .management-table{font-size:13px}.completion-card .management-table th,.completion-card .management-table td{padding:9px 6px}.budget-composition-chart{height:240px}
 .completion-table .management-table{min-width:0;width:100%;display:block}.completion-table table caption{display:block;text-align:left}.completion-table thead{display:none}.completion-table tbody,.completion-table tr{display:block;width:100%}.completion-table tr{margin:12px 0;border:1px solid var(--border);border-radius:10px;padding:6px;box-sizing:border-box}.completion-table tbody th{display:block;text-align:left;white-space:normal}.completion-table tbody td{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;white-space:normal;text-align:right;overflow-wrap:anywhere}.completion-table tbody td::before{content:attr(data-label);text-align:left;color:var(--muted);font-size:12px}}
 
-/* Summary: three decision metrics first, then interpretation and supporting context. */
+/* Summary: interpretation below the headline, followed by decision metrics. */
 #summaryView .gov-head{background:transparent;border:0;padding:6px 0 16px!important;margin:0}
 #summaryView .gov-title{font-size:clamp(24px,2.8vw,32px);line-height:1.25;max-width:40ch;letter-spacing:-.025em}
 #summaryView .gov-kicker{font-size:13px;margin-bottom:8px}
@@ -192,13 +192,14 @@ html,body{overflow-x:clip;overflow-y:visible}
 #summaryView .executive-pulse-grid>.kcard{grid-column:auto;display:flex;flex-direction:column;gap:10px;box-shadow:none;border-radius:12px;padding:22px!important}
 #summaryView .executive-pulse-grid .k-lbl{font-size:16px;font-weight:650;margin:0;line-height:1.4}
 #summaryView .executive-pulse-grid .k-val{font-size:clamp(32px,3.6vw,46px)!important;line-height:1.15;margin:2px 0 4px}
-#summaryView #kDebt{color:var(--text)}
+#summaryView #kDebt.r{color:var(--red)}
+#summaryView #kDebt.g{color:var(--green)}
 #summaryView .pulse-reading{font-size:16px;line-height:1.55;margin:0;overflow-wrap:anywhere}
 #summaryView .pulse-tag{font-size:13px;line-height:1.4;margin:0;text-transform:none;letter-spacing:0;color:var(--muted)}
-#summaryView .summary-nation-claim{border-top:3px solid var(--blue);background:var(--gold-bg)!important}
+#summaryView .summary-nation-claim{border-top:3px solid var(--blue);background:var(--s1)!important}
 .summary-nation-value{font-size:clamp(28px,3.2vw,40px);line-height:1.2;font-weight:750;color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:-.03em;margin:2px 0 4px;overflow-wrap:anywhere}
 .summary-nation-value.is-pending{font-size:26px;font-weight:650;letter-spacing:-.02em}
-.summary-nation-caution{font-size:14px;line-height:1.5;color:var(--muted);margin:0}
+
 .summary-detail-link{display:inline-flex;align-items:center;align-self:flex-start;gap:6px;background:transparent;border:0;padding:10px 0 0;min-height:44px;text-align:left;color:var(--blue);font:650 15px/1.4 var(--font);cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 #summaryView .executive-pulse-grid .summary-detail-link{margin-top:auto}
 .summary-detail-link:hover{color:var(--text)}
@@ -240,3 +241,14 @@ html,body{overflow-x:clip;overflow-y:visible}
  .summary-trend-heading{display:block}
  #summaryView .summary-trend .overview-canvas{height:230px}
 }
+
+#summaryView .gov-title[data-tone="negative"]{color:var(--red)}
+#summaryView .gov-title[data-tone="positive"]{color:var(--green)}
+#summaryView .gov-title[data-tone="neutral"]{color:var(--text)}
+.summary-nation-value.has-claim{font-size:clamp(40px,4.4vw,56px);color:var(--red)}
+#summaryView .summary-nation-claim:has(.has-claim){border-top-color:var(--red)}
+.profile-conclusion:empty{display:none}
+.nation-claim-record[data-claim-kind="reclamo"] .nation-claim-value{color:var(--red)}
+.nation-claim-record[data-claim-kind="pago"] .nation-claim-value{color:var(--green)}
+.nation-claim-method{font-size:14px;color:var(--muted);line-height:1.6;margin:16px 0}
+#priceBasisNotice{border:0;background:none;padding:6px 0;margin:6px 0 0;font-size:14px}
