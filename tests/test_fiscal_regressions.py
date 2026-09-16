@@ -318,12 +318,16 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertIn('todavía no podemos calcular cómo llegará la caja a los próximos 90 o 180 días', frontend)
         self.assertNotIn('90 días: administrable', frontend)
 
-    def test_claims_cutoff_comes_from_source_rows(self):
+    def test_claims_publication_date_is_not_a_common_valuation_date(self):
         with (ROOT / 'data/reclamos_nacion/reclamos_nacion_provincias_maestra.csv').open(encoding='utf-8', newline='') as source:
-            expected = max(row['fecha_corte_monto'] for row in csv.DictReader(source) if row['fecha_corte_monto'])
+            expected = max(row['fecha_publicacion'] for row in csv.DictReader(source) if row['fecha_publicacion'])
         payload = json.loads((ROOT / 'dashboard_reclamos_nacion_provincias.json').read_text(encoding='utf-8'))
-        self.assertEqual(payload['cutoff_date'], expected)
-        self.assertEqual(payload['provinces']['Buenos Aires']['deuda_total_reclamada'], 319680000000.0)
+        self.assertEqual(payload['latest_publication'], expected)
+        pba = payload['provinces']['Buenos Aires']
+        self.assertEqual(pba['records'][0]['amount']['value'], 19100000000000)
+        self.assertIsNone(pba['records'][0]['valuation_date'])
+        self.assertIsNone(pba['saldo_actual_verificado'])
+        self.assertNotIn('deuda_total_reclamada', pba)
 
 
 if __name__ == '__main__':

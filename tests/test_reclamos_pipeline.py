@@ -1,56 +1,62 @@
+import copy
+import json
 import unittest
-
-from scripts_build_nacion_reclamos import aggregate_province_claims
-
+from scripts_build_nacion_reclamos import ROOT, EVIDENCE_FILE, build_payload, build_outputs, validate_evidence
 
 class ReclamosPipelineTests(unittest.TestCase):
-    def test_deduplicate_by_expediente(self):
-        claims = [
-            {
-                'provincia': 'Buenos Aires',
-                'expediente_o_causa': 'EXP-1',
-                'tipo_reclamo': 'Coparticipación',
-                'estado_reclamo': 'judicializado',
-                'fecha_corte_monto': '2026-01-15',
-                'calidad_dato': 'proxy',
-                'monto_actualizado_calculado': 100.0,
-            },
-            {
-                'provincia': 'Buenos Aires',
-                'expediente_o_causa': 'EXP-1',
-                'tipo_reclamo': 'Coparticipación',
-                'estado_reclamo': 'judicializado',
-                'fecha_corte_monto': '2026-01-15',
-                'calidad_dato': 'observado',
-                'monto_actualizado_calculado': 120.0,
-            },
-        ]
+    def setUp(self):
+        self.data=json.loads(EVIDENCE_FILE.read_text(encoding='utf-8'))
+        self.universe=json.loads((ROOT/'dashboard_manifest.json').read_text(encoding='utf-8'))['province_universe']
 
-        out = aggregate_province_claims(claims)
+    def test_missing_amounts_remain_unknown_and_all_provinces_exist(self):
+        out=build_payload(self.data,self.universe)
+        self.assertEqual(len(out['provinces']),24)
+        self.assertEqual(out['coverage']['with_amounts'],8)
+        self.assertEqual(out['coverage']['documents_without_amounts'],2)
+        for province in out['provinces'].values():
+            self.assertIsNone(province['saldo_actual_verificado'])
+            self.assertNotIn('deuda_total_reclamada',province)
+        self.assertEqual(out['provinces']['Catamarca']['records'],[])
 
-        self.assertEqual(out['cantidad_de_reclamos'], 1)
-        self.assertEqual(out['deuda_total_reclamada'], 120.0)
-        self.assertEqual(out['deuda_total_robusta'], 120.0)
+    def test_no_aggregate_of_claims_currencies_agreements_or_payments(self):
+        out=build_payload(self.data,self.universe)
+        caba=out['provinces']['CABA']
+        self.assertEqual([r['amount']['currency'] for r in caba['records']],['USD','ARS'])
+        self.assertEqual([r['kind'] for r in caba['records']],['reclamo','acuerdo'])
+        self.assertNotIn('total',out)
+        self.assertNotIn('total',caba)
+        self.assertEqual(out['provinces']['Santa Fe']['records'][0]['amount']['upper'],2e12)
 
-    def test_marks_insufficient_coverage_when_missing_robust_data(self):
-        claims = [
-            {
-                'provincia': 'Córdoba',
-                'expediente_o_causa': 'EXP-2',
-                'tipo_reclamo': 'Caja',
-                'estado_reclamo': 'administrativo',
-                'fecha_corte_monto': '2026-02-01',
-                'calidad_dato': 'proxy',
-                'monto_actualizado_calculado': 50.0,
-            }
-        ]
+    def test_pba_components_reconcile_without_being_added_twice(self):
+        pba=self.data['provinces']['Buenos Aires']['records'][0]
+        self.assertEqual(pba['amount']['value'],19.1e12)
+        self.assertEqual(sum(p['value'] for p in pba['components']),19.1e12)
+        pba['components'][0]['value']+=1e9
+        self.assertTrue(any('no concilian' in e for e in validate_evidence(self.data,self.universe)))
 
-        out = aggregate_province_claims(claims)
+    def test_rejects_duplicates_undocumented_amounts_and_invalid_dates(self):
+        record=self.data['provinces']['Buenos Aires']['records'][0]
+        self.data['provinces']['Buenos Aires']['records'].append(copy.deepcopy(record))
+        record['source']['url']='https://example.com/informe'
+        record['published_at']='2027-01-01'
+        errors=' '.join(validate_evidence(self.data,self.universe))
+        self.assertIn('duplicado',errors)
+        self.assertIn('documento oficial',errors)
+        self.assertIn('posterior',errors)
 
-        self.assertTrue(out['cobertura_insuficiente'])
-        self.assertEqual(out['estado_cobertura'], 'cobertura_insuficiente')
-        self.assertEqual(out['porcentaje_cubierto_con_dato_robusto'], 0.0)
+    def test_rejects_missing_jurisdictions_and_fabricated_balances(self):
+        del self.data['provinces']['Catamarca']
+        self.data['provinces']['Buenos Aires']['saldo_actual_verificado']=19.1e12
+        errors=' '.join(validate_evidence(self.data,self.universe))
+        self.assertIn('24 jurisdicciones',errors)
+        self.assertIn('no verifica saldos',errors)
 
+    def test_published_outputs_are_current(self):
+        for path,expected in build_outputs(self.data,self.universe).items():
+            self.assertEqual((ROOT/path).read_text(encoding='utf-8'),expected,path)
+        fiscal=json.loads((ROOT/'dashboard_fiscal_provincias.json').read_text(encoding='utf-8'))
+        for row in fiscal['provinces'].values():
+            self.assertNotIn('deuda_total_reclamada',row['reclamos_nacion'])
 
-if __name__ == '__main__':
+if __name__=='__main__':
     unittest.main()

@@ -78,7 +78,8 @@
     "government_results_audit_csv": "data/government_results/official_metrics.csv",
     "government_results_pba": "data/government_results_pba.json",
     "management_reports": "reports/manifest.json",
-    "annual_fiscal_accounts": "data/annual_fiscal_accounts.json"
+    "annual_fiscal_accounts": "data/annual_fiscal_accounts.json",
+    "reclamos_nacion_evidencia": "data/reclamos_nacion/evidencia_verificada.json"
   },
   "notes": {
     "cross_section_fiscal_scope": "La capa estructural general conserva el corte 3T25. La nueva sala del gobernador usa 4T25 y 1T26 y un ranking homogéneo de 23 jurisdicciones; La Pampa no integra esos informes.",
@@ -95,7 +96,7 @@
     "scenarios_scope": "Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible.",
     "load_priority_2025_2026": "a) comparación federal justa; b) caja y riesgo inmediato; c) atribución del deterioro; d) escenarios; e) dinámica real completa.",
     "monthly_scope_2025_prepared": "RON 2025: base mensual oficial completa, 24 jurisdicciones y 12 meses, importada con trazabilidad. TOP 2025 y gasto mensual 2025-2026 mantienen los faltantes identificados; no se imputan.",
-    "reclamos_nacion_scope": "Matriz Nación→provincias con deuda total reclamada y robusta; distingue observado, estimado robusto, proxy y no disponible.",
+    "reclamos_nacion_scope": "Publicaciones oficiales por jurisdicción: reclamos, anticipos, acuerdos, créditos compensables y cobros separados. Moneda y fecha propias; sin total nacional, sin actualización automática y sin sustituir faltantes por cero.",
     "pba_new_sources_2026_scope": "PBA: TOP mensual, RON mensual/diario y ejecución trimestral se integran como prioridad para 2025-2026 sin romper series históricas nacionales.",
     "national_debt_scope": "Serie mensual de deuda nacional (USD) para contexto macro del bloque Nación.",
     "rigid_spending_scope": "Piso comparable de 23 jurisdicciones: personal + gasto previsional + intereses / ingresos LTM al 1T26. Para PBA se suma un piso ampliado con transferencias legales mensuales a municipios del mismo período. No equivale a gasto rígido total ni a caja libre.",

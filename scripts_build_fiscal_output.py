@@ -267,12 +267,8 @@ def build():
         'integrations': {
             'reclamos_nacion': {
                 'source_file': RECLAMOS_FILE,
-                'selector_keys': (reclamos_payload.get('integration_ready') or {}).get('selector_keys', ['deuda_total_reclamada', 'deuda_total_robusta']),
-                'future_block_key': (reclamos_payload.get('integration_ready') or {}).get('future_block_key', 'deuda_nacion_con_provincia'),
-                'methodology_note': (
-                    (reclamos_payload.get('methodology') or {}).get('deuda_total_robusta')
-                    or 'deuda_total_robusta incluye solo observado/estimado_robusto.'
-                ),
+                'schema_version': 2,
+                'methodology_note': 'Registros documentales separados; no se calcula un saldo ni un total sumando reclamos y acuerdos.',
             }
         },
         'provinces': {}
@@ -366,17 +362,9 @@ def build():
             },
             'mensaje_clave': mensaje_clave,
             'reclamos_nacion': {
-                'deuda_total_reclamada': to_float((reclamos_by_province.get(province) or {}).get('deuda_total_reclamada')),
-                'deuda_total_robusta': to_float((reclamos_by_province.get(province) or {}).get('deuda_total_robusta')),
-                'estado_cobertura': (reclamos_by_province.get(province) or {}).get('estado_cobertura', 'sin_carga'),
-                'porcentaje_cubierto_con_dato_robusto': to_float((reclamos_by_province.get(province) or {}).get('porcentaje_cubierto_con_dato_robusto')),
-                'deuda_nacion_con_provincia': (reclamos_by_province.get(province) or {}).get('deuda_nacion_con_provincia', {
-                    'status': 'pendiente_diseno_funcional',
-                    'ready_for_render': False,
-                    'component_key': 'deuda_nacion_con_provincia',
-                    'cards': [],
-                    'last_update': None,
-                }),
+                'saldo_actual_verificado': None,
+                'coverage': (reclamos_by_province.get(province) or {}).get('coverage', 'pendiente_documentacion'),
+                'source_file': RECLAMOS_FILE,
             },
         })
 

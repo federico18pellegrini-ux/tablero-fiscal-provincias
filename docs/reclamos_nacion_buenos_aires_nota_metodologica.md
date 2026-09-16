@@ -1,32 +1,13 @@
-# Nota metodológica · Caso testigo Buenos Aires (matriz Nación → provincias)
+# Buenos Aires: cómo leer el reclamo
 
-## Alcance
-Este caso testigo organiza los principales reclamos de la Provincia de Buenos Aires frente al Estado nacional usando exclusivamente evidencia ya cargada en el proyecto (tabla maestra y salidas del pipeline).
+El comunicado oficial del 14 de septiembre de 2026 publica aproximadamente $19,1 billones: $4,7 billones de deudas directas, $10,1 billones de obras comprometidas sin ejecutar y $4,3 billones de programas interrumpidos o demorados. Los tres componentes están incluidos en el total; no se suman nuevamente como registros independientes.
 
-## Criterio de construcción de filas
-Cada fila del archivo `reclamos_nacion_buenos_aires_caso_testigo.csv` incluye:
-- provincia
-- tipo_reclamo
-- organismo_nacional
-- expediente o referencia
-- monto
-- fecha de corte
-- calidad_dato
-- observaciones
+El organismo que informa es el Gobierno provincial. La publicación verifica la existencia y el monto del reclamo provincial, no su aceptación por Nación, exigibilidad judicial o saldo pendiente actual. Tampoco detalla una fecha de valuación para cada componente.
 
-Reglas aplicadas:
-1. Si existe `monto_actualizado`, se prioriza ese valor.
-2. Si no existe `monto_actualizado`, se usa `monto_nominal` solamente cuando está cargado.
-3. Si no hay monto validado, el campo `monto` queda vacío (no se imputa).
-4. Cuando la cobertura es parcial o no homogénea, se conserva `calidad_dato = proxy`.
+[Comunicado de Gobierno provincial](https://gba.gob.ar/gobierno/noticias/bianco_%E2%80%9Cla_situaci%C3%B3n_econ%C3%B3mica_productiva_y_social_en_argentina_es_asfixiante%E2%80%9D)
 
-## Límites de evidencia (explícitos)
-- Hay reclamos con existencia documental, pero sin cuantificación pública homogénea al corte.
-- En esos casos, la serie no asigna monto y no fuerza estimaciones.
-- `proxy` se usa para señalar precisamente ese límite: hay indicios y trazas administrativas, pero no una base cerrada y auditada para cuantificar sin riesgo de sesgo o doble conteo.
-- `no_disponible` se conserva cuando el reclamo está identificado pero sin monto computable con la evidencia actual.
+El [comunicado del 21 de abril de 2026](https://gba.gob.ar/node/52824) había difundido un reclamo superior a $15 billones. Un billón es un millón de millones: $15 billones son mil veces $15 mil millones. No se construye una tasa de crecimiento entre comunicados sin conciliar conceptos y valuaciones.
 
-## Efecto sobre agregados de Buenos Aires
-- `deuda_total_reclamada` suma únicamente filas con monto.
-- `deuda_total_robusta` suma solo filas con `calidad_dato` observado o estimado_robusto.
-- Por diseño metodológico, estos agregados pueden subestimar el universo total reclamado cuando persisten filas `proxy` o `no_disponible` sin monto.
+Los $28,4 billones mencionados en septiembre incorporan pérdida de recaudación atribuida a la recesión. Esa estimación no se carga como deuda nacional.
+
+Para decidir sobre caja y gasto, falta conciliar por concepto qué se reconoce, qué se acordó pagar, qué efectivamente se cobró y qué sigue pendiente. Una obra reclamada no equivale necesariamente a efectivo disponible para la Provincia.
