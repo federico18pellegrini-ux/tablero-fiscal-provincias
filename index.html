@@ -122,15 +122,14 @@ body{
 .dashboard-view[hidden]{display:none!important}
 .profile-governor .analyst-only,.profile-governor .gov-method,.profile-governor #balanceSection,.profile-governor #executiveSummarySection,.profile-governor .data-context,.profile-governor .secondary-tools{display:none!important}
 .profile-hacienda .analyst-only,.profile-hacienda #executiveSummarySection{display:none!important}
-.profile-hacienda #decisionRiskGrid,.profile-hacienda #governorNarrativeDetails{display:none!important}
+.profile-hacienda #governorNarrativeDetails{display:none!important}
 .profile-press .analyst-only,.profile-press #balanceSection,.profile-press #executiveSummarySection,.profile-press .gov-method{display:none!important}
-.profile-press #decisionRiskGrid,.profile-press #governorNarrativeDetails{display:none!important}
+.profile-press #governorNarrativeDetails{display:none!important}
 .profile-governor .pulse-reading{display:none}
 .profile-governor .executive-pulse-grid .kcard{padding:11px 13px}
 .profile-governor #governorNarrativeDetails{display:block}
 .profile-governor #governorNarrativeDetails:not([open])>*:not(summary){display:none}
-.profile-governor #governorRiskPanel:not([open])>*:not(summary){display:none}
-.profile-hacienda #governorNarrativeDetails,.profile-hacienda #governorRiskPanel{display:none}
+.profile-hacienda #governorNarrativeDetails{display:none}
 .profile-press #governorNarrativeDetails{display:none}
 .profile-deep .data-context{display:block}
 .press-only{display:none!important}
@@ -1084,10 +1083,6 @@ tr:last-child td{border-bottom:none}
       <div class="tb" style="display:none"></div>
     </div>
   </section>
-  <div class="gov-columns" id="decisionRiskGrid">
-    <article class="gov-panel" id="governorDecisionPanel"><h4>3 decisiones sugeridas</h4><ul class="gov-list" id="governorDecisions"></ul></article>
-    <details class="gov-panel" id="governorRiskPanel" open><summary>3 riesgos que requieren atención</summary><ul class="gov-list" id="governorRisks"></ul></details>
-  </div>
   <details class="gov-method">
     <summary>Qué sabemos, qué falta y cómo leerlo</summary>
     <div id="governorMethod" style="margin-top:8px"></div>
@@ -1383,10 +1378,6 @@ tr:last-child td{border-bottom:none}
 <!-- FOOTER -->
 <div class="footer">
   <strong style="color:var(--muted)">Federico Pellegrini · Entre Mates y Mercados</strong><br>
-  Ranking y resultados comparativos: últimos 12 meses al 31/03/2026.
-  Recaudación propia: último mes disponible por jurisdicción; recursos nacionales: julio de 2026.
-  Cada bloque muestra su fecha de corte y estado de evidencia.<br>
-  El tablero calcula y renderiza desde archivos CSV/JSON normalizados; los faltantes no se completan con cero.
   <div class="footer-links"><a href="privacidad.html">Privacidad y estadísticas de uso</a></div>
 </div>
 
@@ -1999,9 +1990,7 @@ function applyDashboardProfile(profile){
   document.querySelectorAll('.dashboard-nav button[data-view]').forEach(button=>{
     button.hidden=!PROFILE_CONFIG[dashboardProfile].views.includes(button.dataset.view);
   });
-  const riskPanel=document.getElementById('governorRiskPanel');
   const narrative=document.getElementById('governorNarrativeDetails');
-  if(riskPanel)riskPanel.open=true;
   if(narrative)narrative.open=true;
   const modulePreferences=document.querySelector('.module-preferences');
   if(modulePreferences)modulePreferences.hidden=true;
@@ -2696,12 +2685,6 @@ function renderGovernorBrief(province,cross={}){
     governorStatus.textContent=rf===null?'CONCLUSIÓN · DATOS PARCIALES':`CONCLUSIÓN · ${rf<0?'DÉFICIT FINANCIERO':'SUPERÁVIT FINANCIERO'}`;
     governorStatus.className=`gov-status ${rf===null?'partial':(rf<0?'negative':'positive')}`;
   }
-  document.getElementById('governorRisks').innerHTML=(brief.risks||[]).map(item=>
-    `<li><strong>${item.title}</strong>${item.evidence}<br>${item.political_meaning}</li>`
-  ).join('');
-  document.getElementById('governorDecisions').innerHTML=(brief.decisions||[]).map(item=>
-    `<li><strong><span class="gov-horizon">${item.horizon}</span>${item.action}</strong>${item.why}</li>`
-  ).join('');
   const missing=(brief.missing_for_decision||[]).join(' · ');
   document.getElementById('governorMethod').innerHTML=
     `<strong style="color:var(--muted)">Dos relojes:</strong> ${brief.methodology.quarter_vs_ltm}<br>`+
@@ -5059,7 +5042,7 @@ document.getElementById('downloadPng')?.addEventListener('click',exportCurrentPr
 <script src="management-tools.js?v=20260915-4"></script>
 <script src="federal-tools.js?v=20260907-2"></script>
 <script src="verified-management.js?v=20260907-9"></script>
-<script src="budget-execution.js?v=20260907-9"></script>
+<script src="budget-execution.js?v=20260915-5"></script>
 <script src="management-report-export.js?v=20260907-9"></script>
 <script>
 /* ── BOOT ────────────────────────────────────────────────────────── */

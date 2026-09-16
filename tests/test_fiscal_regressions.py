@@ -227,9 +227,6 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertIn("views:['summary','debt','income','federal','comparison','results']", frontend)
         self.assertIn("views:['summary','debt','income','comparison','federal','results']", frontend)
         self.assertIn("views:['summary','federal','comparison','debt','income','results']", frontend)
-        self.assertIn('id="governorDecisionPanel"', frontend)
-        self.assertIn('id="governorRiskPanel"', frontend)
-        self.assertLess(frontend.index('id="governorDecisionPanel"'), frontend.index('id="governorRiskPanel"'))
         self.assertIn('data-press-source="financial"', frontend)
         self.assertIn('id="pressQuoteGrid"', frontend)
 
