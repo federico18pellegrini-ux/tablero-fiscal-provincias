@@ -9,8 +9,6 @@
 .management-report-download:hover{background:#123d70}.management-report-download:focus-visible{outline:3px solid #cb9630;outline-offset:3px}.management-report-download[aria-disabled=true]{opacity:.55;cursor:wait}
 @media(max-width:640px){.management-report-export{align-items:stretch;flex-direction:column;gap:12px;padding:16px}.management-report-download{width:100%;box-sizing:border-box}}
 @media print{.management-report-export{display:none!important}}
-.profile-reading[data-reading=debt] .profile-explanation{white-space:pre-line}
-.profile-reading .profile-explanation:empty{display:none}
 /* Consistent card headings, including content that previously used accordions. */
 .gov-panel>h4,.gov-panel>summary,.expanded-content>summary,.cc>h3,.tb>h3,.overview-charts article>h3,.profile-reading>h3,.federal-guide-grid h3,.national-kpis article>h3{font:600 16px/1.4 var(--font)!important;letter-spacing:0!important;text-transform:none!important;color:var(--text)!important}
 .gov-panel>h4,.gov-panel>summary{margin:0 0 12px!important;padding:0!important}
@@ -124,10 +122,10 @@ body{padding-top:var(--fixed-header-height)}
 /* The three reading profiles share data and change their interpretation. */
 .profile-reading{margin:16px 0;padding:16px 18px;background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:8px;min-width:0}
 .profile-reading h3{margin:0 0 8px;font-size:15px;color:var(--text)}
-.profile-reading p{margin:6px 0;color:var(--muted);line-height:1.6;font-size:14px}
+.profile-reading p{margin:8px 0 0;color:var(--muted);line-height:1.6;font-size:16px}
 .profile-reading .profile-conclusion{color:var(--text)}
 #governorNarrativeDetails{display:none!important}
-@media(max-width:640px){.profile-reading{padding:12px}.profile-reading p{font-size:13px}}
+@media(max-width:640px){.profile-reading{padding:16px}}
 /* Reading controls stay visible; phones use a compact, expandable navigation. */
 .control-source,.mobile-view-picker.control-source,.executive-sidebar{display:none!important}
 .wrap{margin-left:auto!important;margin-right:auto!important;max-width:1500px}
@@ -153,7 +151,7 @@ body .national-context .dashboard-command-bar,body.national-context .dashboard-c
 .header .mobile-theme{display:block!important}.overview-extra h3{font-size:15px;color:var(--text)}
 .debt-history-chart{height:320px;min-width:0;position:relative}.chart-touch-note{font-size:12px!important;color:var(--muted);margin:8px 0}
 @media(max-width:900px){.reading-options-grid{grid-template-columns:1fr 1fr}.reading-options-grid>.command-field:first-child{grid-column:1/-1}.visible-navigation nav{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:640px){.reading-options-grid{gap:12px}.choice-buttons button{font-size:13px;padding:8px 5px}.visible-navigation{padding:8px 0}.visible-navigation nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.visible-navigation button{font-size:12px;padding:6px;min-height:42px}.visible-navigation h2{font-size:12px;margin-bottom:6px}.debt-history-chart{height:300px}.profile-reading p{font-size:14px;line-height:1.7}.overview-canvas:has(#overviewPeers){height:590px}}
+@media(max-width:640px){.reading-options-grid{gap:12px}.choice-buttons button{font-size:13px;padding:8px 5px}.visible-navigation{padding:8px 0}.visible-navigation nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.visible-navigation button{font-size:12px;padding:6px;min-height:42px}.visible-navigation h2{font-size:12px;margin-bottom:6px}.debt-history-chart{height:300px}.profile-reading p{font-size:16px;line-height:1.6}.overview-canvas:has(#overviewPeers){height:590px}}
 @media(max-width:640px),(max-width:950px) and (max-height:500px){
  .visible-navigation{padding:8px 0}
  .visible-navigation .mobile-navigation-toggle{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:10px 12px;font-size:16px;text-align:left;background:var(--s1);border-radius:10px}

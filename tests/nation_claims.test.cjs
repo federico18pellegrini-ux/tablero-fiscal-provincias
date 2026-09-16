@@ -12,11 +12,11 @@ test('Spanish units distinguish trillions from billions and preserve USD',()=>{
 });
 test('all jurisdictions render dates, missingness and no collapsed content',()=>{
   for(const name of Object.keys(data.provinces)){
-    const html=Claims.render(data,name,'Lectura según perfil');
+    const html=Claims.render(data,name);
     assert.match(html,/Reclamos, acuerdos y cobros se presentan por separado/);
     assert.equal((html.match(/data-claim-province=/g)||[]).length,24);
     assert.doesNotMatch(html,/<details|<select/);
-    assert.match(html,/Lectura según perfil/);
+    assert.doesNotMatch(html,/Qué implica para la gestión|nation-claim-reading/);
     if(data.provinces[name].records.length===0)assert.match(html,/Sin monto oficial incorporado/);
   }
 });

@@ -26,8 +26,8 @@ function initFederalTools(){
     trigger.onclick=()=>{const p=document.getElementById(panel),open=!p.open;for(const other of host.querySelectorAll(':scope > details'))other.open=false;p.open=open;if(open)p.scrollIntoView({behavior:'smooth',block:'start'});};
   }
   const periods=historyPeriods();document.getElementById('mapPeriod').innerHTML=periods.map(p=>`<option value="${p}">${periodName(p)}</option>`).join('');document.getElementById('mapPeriod').value=periods.at(-1)||'';
-  document.getElementById('mapPeriod').onchange=renderFiscalMap;
-  document.getElementById('mapMetric').onchange=renderFiscalMap;
+  document.getElementById('mapPeriod').onchange=()=>{renderFiscalMap();renderProfileReadings();};
+  document.getElementById('mapMetric').onchange=()=>{renderFiscalMap();renderProfileReadings();};
   initCompositionExplorer();
   initManagementDesign();
   renderProfileReadings();

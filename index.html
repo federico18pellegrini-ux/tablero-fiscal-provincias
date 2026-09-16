@@ -900,7 +900,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260915-7">
+<link rel="stylesheet" href="executive-redesign.css?v=20260915-8">
 </head>
 <body>
 
@@ -1385,7 +1385,7 @@ tr:last-child td{border-bottom:none}
 
 <div id="infoPopover" class="info-popover" role="tooltip" hidden></div>
 
-<script src="nation-claims.js?v=20260915-6"></script>
+<script src="nation-claims.js?v=20260915-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 var CONSTANT_PRICE_BASE = 'junio de 2026';
@@ -3596,12 +3596,7 @@ function renderNationDebt(province){
   const content=document.getElementById('nationDebtContent');
   if(!section||!content)return;
   section.style.display='block';
-  const reading=profileWording(
-    'Cobrar estos fondos ampliaría los recursos para servicios y obras. La prioridad es definir qué conceptos negociar primero y acordar fechas de pago. Si el acuerdo compensa deudas provinciales, reduce obligaciones de la Provincia.',
-    'Ordenar cada concepto por monto, reconocimiento y fecha de pago. Los anticipos previsionales se ajustan con la auditoría; las compensaciones reducen obligaciones. Para programar la caja, identificar cuándo y cómo ingresa cada recurso.',
-    'El dato central es cuánto informa la Provincia, por qué conceptos y a qué fecha. Un reclamo señala lo solicitado; un acuerdo fija cómo pagarlo y un cobro registra lo recibido. Esa secuencia permite explicar el avance de la negociación.'
-  );
-  content.innerHTML=NationClaims.render(reclamosNacionData,province,reading);
+  content.innerHTML=NationClaims.render(reclamosNacionData,province);
   content.querySelectorAll('[data-claim-province]').forEach(button=>{
     button.addEventListener('click',()=>{
       const selector=document.getElementById('psel');
@@ -5034,13 +5029,13 @@ document.getElementById('downloadPng')?.addEventListener('click',exportCurrentPr
 </script>
 <script src="expanded-content.js?v=20260907-3"></script>
 <script src="visible-controls.js?v=20260915-3"></script>
-<script src="profile-readings.js?v=20260915-4"></script>
+<script src="profile-readings.js?v=20260915-8"></script>
 <script src="provincial-debt-services.js?v=20260907-9"></script>
 <script src="inflation-history.js?v=20260915-4"></script>
 <script src="executive-redesign.js?v=20260915-2"></script>
 <script src="closing-tools.js?v=20260907-1"></script>
 <script src="management-tools.js?v=20260915-4"></script>
-<script src="federal-tools.js?v=20260907-2"></script>
+<script src="federal-tools.js?v=20260915-8"></script>
 <script src="verified-management.js?v=20260907-9"></script>
 <script src="budget-execution.js?v=20260915-7"></script>
 <script src="management-report-export.js?v=20260907-9"></script>
