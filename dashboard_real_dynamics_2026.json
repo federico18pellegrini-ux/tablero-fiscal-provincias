@@ -1,6 +1,6 @@
 {
   "source": "dinámica real 2026",
-  "generated_at": "2026-09-07T02:49:29.599451Z",
+  "generated_at": "2026-09-16T02:51:44.768615Z",
   "methodology": {
     "real_yoy_pct": "((nominal_current / nominal_prev_year) / (ipc_index_current / ipc_index_prev_year) - 1) * 100",
     "real_ytd_pct": "sumas deflactadas a último mes disponible del período",
@@ -11,17 +11,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-07",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 5.9,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.0,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.1,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -0.9,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -51,17 +51,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-07",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.5,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -2.5,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.3,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -2.1,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -91,16 +91,16 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-07",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 10.1,
-          "ytd_available_through": "2026-07",
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.0,
+          "ytd_available_through": "2026-08",
           "real_ytd_pct": 0.3,
           "status": "calculated"
         },
@@ -131,17 +131,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-07",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.3,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.6,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.1,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.4,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -171,17 +171,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-07",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.7,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.3,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.3,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.1,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -211,17 +211,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-05",
+          "last_available_period": "2026-07",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.3,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.5,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.1,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.3,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -251,17 +251,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.6,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.5,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.2,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.3,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -291,17 +291,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.6,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.7,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.1,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.5,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -331,17 +331,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-07",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.5,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.6,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.0,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.4,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -371,17 +371,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.5,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.6,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.0,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.4,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -411,17 +411,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-05",
+          "last_available_period": "2026-07",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 8.0,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.6,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.1,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.4,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -451,17 +451,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.6,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.8,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.3,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.6,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -491,17 +491,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-07",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.5,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.6,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.2,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.4,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -531,17 +531,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.0,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.2,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.0,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.1,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -571,17 +571,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-07",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.9,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.1,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.1,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -0.9,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -611,17 +611,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-07",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.8,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.4,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.2,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.2,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -651,17 +651,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-05",
+          "last_available_period": "2026-06",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 8.6,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -0.7,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.0,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -0.6,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -691,17 +691,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-07",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.7,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.7,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.2,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.4,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -731,17 +731,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-07",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 8.0,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.6,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.2,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.4,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -778,10 +778,10 @@
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.9,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.4,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.4,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.3,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -818,10 +818,10 @@
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.6,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.8,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.3,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.5,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -851,17 +851,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-07",
+          "last_available_period": "2026-08",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 7.3,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.6,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": 0.1,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.4,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -891,17 +891,17 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-07",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 8.1,
-          "ytd_available_through": "2026-07",
-          "real_ytd_pct": -1.4,
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.0,
+          "ytd_available_through": "2026-08",
+          "real_ytd_pct": -1.3,
           "status": "calculated"
         },
         "primary_expenditure": {
@@ -931,16 +931,16 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-06",
+          "last_available_period": "2026-07",
           "last_available_real_yoy_pct": null,
           "ytd_available_through": null,
           "real_ytd_pct": null,
           "status": "current_without_homogeneous_base"
         },
         "ron_total": {
-          "last_available_period": "2026-07",
-          "last_available_real_yoy_pct": 6.3,
-          "ytd_available_through": "2026-07",
+          "last_available_period": "2026-08",
+          "last_available_real_yoy_pct": -0.8,
+          "ytd_available_through": "2026-08",
           "real_ytd_pct": -1.1,
           "status": "calculated"
         },

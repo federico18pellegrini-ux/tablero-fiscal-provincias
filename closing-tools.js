@@ -11,7 +11,7 @@ async function renderManagementProposals(host){
   const title=document.createElement('h3');title.textContent='Metas propuestas para una futura gestión';host.append(title);
   try{
     const d=await operationFile('management_proposals.json');
-    const note=document.createElement('p');note.textContent=d.methodology;host.append(note);
+    const note=document.createElement('p');note.textContent='Ejercicio a 48 meses: cerrar la mitad de la brecha con la mediana o sostener el nivel cuando ya la supera. Es un supuesto de trabajo, no una meta oficial ni una estimación de impacto. Requiere actualizar la base y costear las acciones.';host.append(note);
     const label=document.createElement('label');label.textContent='Jurisdicción de las metas ';const select=document.createElement('select');select.id='proposalProvince';label.append(select);host.append(label);
     for(const name of [...new Set(d.rows.map(r=>r.provincia))]){const o=document.createElement('option');o.value=name;o.textContent=name;select.append(o);}
     const rows=document.createElement('div');host.append(rows);

@@ -24,7 +24,7 @@ test('debt narrative separates recorded services from a published annual calenda
  assert.match(text,/registrados en años anteriores/);assert.match(text,/Falta el calendario de próximos pagos/);
  assert.doesNotMatch(text,/mayor importe.*2026/);
  const projected=buildProfileReadings('governor',{projection:{rows:[{year:2026,total_ars_m:10},{year:2027,total_ars_m:20},{year:2028,total_ars_m:null}]}}).debt.join(' ');
- assert.match(projected,/mayor importe anual en 2027/);assert.match(projected,/sin descontar los pagos posteriores/);
+ assert.match(projected,/mayor importe anual en 2027/);assert.match(projected,/No descuenta los pagos posteriores/);
 });
 test('debt reading preserves missing, loading and zero observations',()=>{
  const pending=buildProfileReadings('governor',{debt:45.23});

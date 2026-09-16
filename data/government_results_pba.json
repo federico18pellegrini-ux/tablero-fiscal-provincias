@@ -1,6 +1,6 @@
 {
   "province": "Buenos Aires",
-  "generated_at": "2026-08-14",
+  "generated_at": "2026-09-15",
   "methodology": "Indicadores faro de resultado o producción pública. Cada cifra conserva su propio corte y alcance. No se calcula costo por resultado hasta contar con gasto y producto de igual período y perímetro institucional.",
   "pillars": [
     {
@@ -96,22 +96,22 @@
       "metrics": [
         {
           "label": "Edificios escolares finalizados",
-          "value": 315,
-          "display": "315 edificios",
-          "period": "al 10/08/2026",
+          "value": 317,
+          "display": "317 edificios",
+          "period": "actualizado el 09/09/2026",
           "status": "auditado",
-          "interpretation": "Incluye 112 creaciones y 203 sustituciones. Es producción de obra; todavía falta vincular costo, plazo, matrícula beneficiada y estado edilicio posterior.",
+          "interpretation": "Incluye 112 creaciones y 205 sustituciones. Es el acumulado del registro, no obras realizadas sólo en 2026.",
           "source_title": "DGCyE PBA - Nuevos edificios escolares",
-          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/nuevos-edificios-escolares"
+          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/50d50dc6-81f1-4992-a97f-9332ac3974d8/resource/55f3c44e-9739-4d66-bbaa-28ba5c1bbffa/download/nuevos-edificios-07092026.csv"
         },
         {
           "label": "Creaciones / sustituciones",
-          "value": 315,
-          "display": "112 / 203",
-          "period": "al 10/08/2026",
+          "value": 317,
+          "display": "112 / 205",
+          "period": "actualizado el 09/09/2026",
           "status": "auditado",
           "source_title": "DGCyE PBA - Nuevos edificios escolares",
-          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/nuevos-edificios-escolares"
+          "source_url": "https://catalogo.datos.gba.gob.ar/dataset/50d50dc6-81f1-4992-a97f-9332ac3974d8/resource/55f3c44e-9739-4d66-bbaa-28ba5c1bbffa/download/nuevos-edificios-07092026.csv"
         }
       ]
     },
@@ -127,5 +127,6 @@
   "cost_per_result": {
     "status": "not_calculated",
     "reason": "Los gastos disponibles no comparten todavía período y perímetro institucional con los productos. Dividirlos produciría un costo unitario engañoso."
-  }
+  },
+  "school_source_sha256": "fb8f5519d197840d0be1b98ef3386459f26a44367fb12380b9be3bf939a6b2f0"
 }

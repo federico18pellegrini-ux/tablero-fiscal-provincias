@@ -62,7 +62,7 @@ def main() -> int:
 
     mismatches = 0
     with OUT_FILE.open('w', encoding='utf-8', newline='') as fh:
-        writer = csv.writer(fh)
+        writer = csv.writer(fh, lineterminator='\n')
         writer.writerow([
             'province', 'period', 'published_millions', 'reconstructed_millions',
             'delta_millions', 'delta_pct', 'iibb_millions', 'iibb_share_pct', 'source_current', 'status'

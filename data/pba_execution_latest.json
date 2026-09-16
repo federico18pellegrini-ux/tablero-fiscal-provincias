@@ -1,0 +1,56 @@
+{
+  "province": "Buenos Aires",
+  "reviewed_at": "2026-09-15",
+  "period": "2026-H1",
+  "period_label": "Enero–junio 2026",
+  "scope": "Administración Pública no Financiera (APNF)",
+  "basis": "Gasto devengado",
+  "unit": "ARS millions",
+  "status": "provisorio",
+  "source": {
+    "file": "execution-pba-q2.pdf",
+    "url": "https://www.ec.gba.gov.ar/areas/hacienda/Presupuesto/ejecucion_presupuestaria/Ejecuci%C3%B3n%20Presupuestaria%20II%20trim%202026.pdf",
+    "sha256": "29806a0174f9f85e8fad24b973de5067a6473632c16b0b7ccbe82770a63b36ed",
+    "bytes": 587246,
+    "pages": 13,
+    "publisher": "Dirección Provincial de Presupuesto Público, PBA",
+    "page": 13
+  },
+  "rows": [
+    {
+      "year": 2025,
+      "income": 15837261,
+      "spending": 16698747,
+      "financial": -861486,
+      "primary": -404992,
+      "interest": 456494,
+      "capital": 1056035,
+      "personnel": 6878339,
+      "pensions": 3172905,
+      "own_tax": 6392766,
+      "national_tax": 5837908,
+      "municipal_current_transfers": 2138442,
+      "financial_pct": -5.439614842490757,
+      "primary_pct": -2.557209860972803,
+      "capital_pct": 6.3240373663964125
+    },
+    {
+      "year": 2026,
+      "income": 20743442,
+      "spending": 21619499,
+      "financial": -876057,
+      "primary": -149297,
+      "interest": 726760,
+      "capital": 971008,
+      "personnel": 9069150,
+      "pensions": 4204316,
+      "own_tax": 8362281,
+      "national_tax": 7507420,
+      "municipal_current_transfers": 2774742,
+      "financial_pct": -4.2232962109181305,
+      "primary_pct": -0.7197310841662632,
+      "capital_pct": 4.491352921730518
+    }
+  ],
+  "methodology": "Importes corrientes del cuadro de la página 13. Comparación entre primeros semestres; no reemplaza el ranking común al 1T26. El RON presupuestario no es el mismo total bruto de distribución automática del registro nacional. Diferencias de componentes de hasta $1 millón por redondeo."
+}

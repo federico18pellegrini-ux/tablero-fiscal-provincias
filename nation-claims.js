@@ -49,13 +49,13 @@
       <button type="button" class="summary-detail-link" data-editorial-view="federal" data-summary-claim-link>${esc(model.link)} <span aria-hidden="true">→</span></button>`;
   }
   function recordHTML(record){
-    const components=(record.components||[]).map(part=>`<div class="nation-claim-part"><div><h4>${esc(part.label)}</h4><p>${esc(part.explanation)}</p></div><strong>${esc(money({value:part.value,currency:record.amount.currency,qualifier:'aproximado'}))}</strong></div>`).join('');
+    const components=(record.components||[]).map(part=>`<div class="nation-claim-part"><div><h4>${esc(part.label)}</h4></div><strong>${esc(money({value:part.value,currency:record.amount.currency,qualifier:'aproximado'}))}</strong></div>`).join('');
     return `<article class="claim-card nation-claim-record" data-claim-id="${esc(record.id)}" data-claim-kind="${esc(record.kind)}">
       <div class="nation-claim-meta"><span class="nation-claim-kind">${esc(kinds[record.kind]||record.kind)}</span><span>Publicado: ${esc(date(record.published_at))}</span></div>
       <h3>${esc(record.title)}</h3>
       <div class="nation-claim-value">${esc(money(record.amount))}${record.amount_basis==='mensual'?' <span class="nation-claim-unit">por mes</span>':''}</div>
       ${record.period?`<p class="nation-claim-period">${esc(record.period)}</p>`:''}
-      <p>${esc(record.explanation)}</p>
+      ${components?'':`<p>${esc(record.explanation)}</p>`}
       ${components?`<div class="nation-claim-parts" aria-label="Componentes incluidos en el total">${components}</div>`:''}
       <p class="nation-claim-document">${esc(record.source.institution)} · ${sourceLink(record.source)}</p>
       ${record.valuation_date?`<p class="nation-claim-date">Valuación: ${esc(date(record.valuation_date))}.</p>`:''}
@@ -64,17 +64,10 @@
   function render(data,province){
     const item=data?.schema_version===2?data.provinces?.[province]:null;
     if(!item)return '<div class="claim-card"><p>No se pudo cargar la documentación.</p></div>';
-    const count=data.coverage;
-    const overview=Object.entries(data.provinces).map(([name,row])=>{
-      const status=row.coverage==='con_montos_publicados'?'Montos publicados':row.coverage==='documento_sin_monto'?'Documento sin monto':'Falta documentación';
-      return `<button type="button" class="nation-claim-province" data-claim-province="${esc(name)}" aria-pressed="${name===province}"><strong>${esc(name)}</strong><span>${esc(status)}</span></button>`;
-    }).join('');
     const records=item.records.length?item.records.map(recordHTML).join(''):'<article class="claim-card"><h3>Sin monto oficial incorporado</h3><p>La cuantificación está pendiente de documentación.</p></article>';
     return `<h2 class="sh sh-gold">${esc(summaryModel(data,province).title)} · ${esc(province)}</h2>
       <div class="nation-claim-records">${records}</div>
-      ${item.reading?`<div class="claim-card nation-claim-context"><h3>Para entender la cifra</h3><p>${esc(item.reading)}</p>${(item.context_sources||[]).map(s=>`<p>${sourceLink(s)}</p>`).join('')}</div>`:''}
-      <p class="nation-claim-method">Importes en la moneda y fecha del documento. Reclamos, acuerdos y cobros se presentan por separado. Un billón equivale a un millón de millones.</p>
-      <div class="claim-card nation-claim-overview"><h3>Consultar otra provincia</h3><p>${count.with_amounts} jurisdicciones con montos · ${count.documents_without_amounts} con documentos sin monto · ${count.pending_documentation} pendientes. Revisión: ${esc(date(data.reviewed_at))}.</p><div class="nation-claim-provinces">${overview}</div></div>`;
+      <p class="nation-claim-method">Un billón equivale a un millón de millones. Los reclamos, acuerdos y cobros conservan el alcance del documento.</p>`;
   }
   return {money,render,recordHTML,esc,summaryModel,summaryHTML};
 });

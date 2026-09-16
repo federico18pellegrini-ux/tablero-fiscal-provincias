@@ -17,27 +17,29 @@ function renderBudgetExecution(){
   if(!budgetExecutionRequest)budgetExecutionRequest=fetch('data/budget_execution_2026.json?v=20260906-13').then(r=>{if(!r.ok)throw Error('budget');return r.json();}).then(d=>{budgetExecutionData=d;renderBudgetExecution();}).catch(()=>{budgetExecutionRequest=null;let h=document.getElementById('budgetExecution');if(!h){h=document.createElement('section');h.id='budgetExecution';document.getElementById('incomeView').append(h);}h.textContent='No se pudo cargar presupuesto y ejecución. Cambiá de provincia para reintentar.';});
   return;
  }
- const province=currentProvince,b=budgetExecutionData.budgets.find(r=>r.province===province),e=budgetExecutionData.executions.find(r=>r.province===province&&r.period==='2026-Q1'),old=budgetExecutionData.executions.find(r=>r.province===province&&r.period==='2025-Q1');
+ renderLatestPbaUpdate();
+ const semester=currentProvince==='Buenos Aires'?pbaExecutionLatest:null;
+ const periodText=semester?'Enero–junio':'Enero–marzo';
+ const province=currentProvince,b=budgetExecutionData.budgets.find(r=>r.province===province),e=semester?{...semester.rows[1],source_url:semester.source.url}:budgetExecutionData.executions.find(r=>r.province===province&&r.period==='2026-Q1'),old=semester?{...semester.rows[0],source_url:semester.source.url}:budgetExecutionData.executions.find(r=>r.province===province&&r.period==='2025-Q1');
  if(!b)return;
  let host=document.getElementById('budgetExecution');if(!host){host=document.createElement('section');host.id='budgetExecution';host.className='national-section completion-card';document.getElementById('incomeView').append(host);}host.replaceChildren();
  const title=document.createElement('h2');title.textContent='Presupuesto inicial y ejecución · '+province;host.append(title);
- budgetParagraph(host,'Presupuesto inicial de todo 2026 y ejecución de enero a marzo de 2026. Millones de pesos corrientes. Este bloque conserva su período y unidad aunque cambies los controles generales.');
+ budgetParagraph(host,'Presupuesto anual inicial y ejecución '+periodText.toLowerCase()+' de 2026 · millones de pesos corrientes.');
  const valid=b.scope_comparison&&fiscalExecutionRatios(e);
- host.append(completionTable('Importes de distinto horizonte temporal',['Concepto','Presupuesto anual inicial','Ejecutado enero–marzo','% del inicial¹'],[['income','Ingresos'],['spending','Gasto total'],['capital','Gasto de capital']].map(([key,label])=>[label,fnum(b[key]),Number.isFinite(e?.[key])?fnum(e[key]):'Sin dato',valid&&b[key]>0?fnum(e[key]/b[key]*100)+'%':'No calculado'])));
- budgetParagraph(host,valid?'¹ Porcentaje orientativo para coberturas identificadas como Administración Pública No Financiera (APNF). El denominador es el presupuesto inicial. El crédito vigente verificado tiene su propio bloque y corte. Sin programación trimestral no mide atrasos ni adelantos de gestión: el 25% no es una meta automática.':'¹ No se calcula el porcentaje: '+(!fiscalExecutionRatios(e)?'falta ejecución completa del período.':'la cobertura institucional del presupuesto todavía debe conciliarse con la ejecución APNF. Mostrar ambos importes no los vuelve comparables.'));
- budgetParagraph(host,b.note+' La ejecución usa ingresos percibidos y gastos devengados: no representa pagos de caja.');
+ host.append(completionTable('Importes de distinto horizonte temporal',['Concepto','Presupuesto anual inicial','Ejecutado '+periodText.toLowerCase(),'% del inicial¹'],[['income','Ingresos'],['spending','Gasto total'],['capital','Gasto de capital']].map(([key,label])=>[label,fnum(b[key]),Number.isFinite(e?.[key])?fnum(e[key]):'Sin dato',valid&&b[key]>0?fnum(e[key]/b[key]*100)+'%':'No calculado'])));
+ budgetParagraph(host,valid?'¹ Porcentaje orientativo para coberturas identificadas como Administración Pública No Financiera (APNF). El denominador es el presupuesto inicial. El crédito vigente verificado tiene su propio bloque y corte. Sin programación trimestral no mide atrasos ni adelantos de gestión: el 25% no es una meta automática.':'¹ No se calcula el porcentaje: '+(!fiscalExecutionRatios(e)?'falta ejecución completa del período.':'presupuesto y ejecución tienen coberturas pendientes de conciliación.'));
+ budgetParagraph(host,'Ejecución APNF: ingresos cobrados y gastos devengados. Presupuesto inicial, sin modificaciones del año.');
  const ratios=fiscalExecutionRatios(e),previous=fiscalExecutionRatios(old);
  budgetCompositionChart?.destroy();budgetCompositionChart=null;
  if(ratios){
   const h=document.createElement('h3');h.textContent='Cómo se distribuye el gasto ejecutado';host.append(h);
-  const box=document.createElement('div');box.className='budget-composition-chart';const canvas=document.createElement('canvas');canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Composición porcentual del gasto del primer trimestre de '+province);box.append(canvas);host.append(box);
-  const periods=[...(previous?[{label:'Enero–marzo 2025',r:previous}]:[]),{label:'Enero–marzo 2026',r:ratios}];
+  const box=document.createElement('div');box.className='budget-composition-chart';const canvas=document.createElement('canvas');canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Composición del gasto '+periodText.toLowerCase()+' de '+province);box.append(canvas);host.append(box);
+  const periods=[...(previous?[{label:periodText+' 2025',r:previous}]:[]),{label:periodText+' 2026',r:ratios}];
   if(typeof Chart!=='undefined')budgetCompositionChart=new Chart(canvas,{type:'bar',data:{labels:periods.map(p=>p.label),datasets:[{label:'Gasto corriente',data:periods.map(p=>100-p.r.capital),backgroundColor:'#60a5fa'},{label:'Gasto de capital',data:periods.map(p=>p.r.capital),backgroundColor:'#fbbf24'}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>c.dataset.label+': '+fnum(c.raw)+'%'}}},scales:{x:{stacked:true,min:0,max:100,ticks:{callback:v=>v+'%',maxTicksLimit:5}},y:{stacked:true}}}});
-  budgetParagraph(host,'Participación del gasto de capital: '+(previous?fnum(previous.capital)+'% en enero–marzo de 2025; ':'')+fnum(ratios.capital)+'% en enero–marzo de 2026. Es composición del gasto, no crecimiento real ni avance físico de las obras.');
+  budgetParagraph(host,'Gasto de capital: obras, equipamiento, transferencias de capital e inversión financiera. El gráfico muestra su peso en el gasto total.');
  }
- budgetParagraph(host,profileWording('El presupuesto muestra qué se autorizó para el año. La ejecución permite ver qué empezó a concretarse. Para decidir si una política viene atrasada, hay que mirar además su calendario, las obras terminadas y las obligaciones que todavía faltan pagar.','El siguiente paso es conciliar cobertura, crédito vigente, devengado y pagado por programa. Recién con esa apertura se puede medir el desvío frente a lo programado y estimar cuánto queda por financiar.','Al comunicar estos datos, separá el presupuesto anual del gasto de tres meses. Un porcentaje bajo no demuestra por sí solo un recorte. También puede responder al calendario de pagos o de las obras.'),'profile-explanation');
- managementSource(host,b.source_url,'Fuente: presupuesto provincial 2026 · archivo oficial');managementSource(host,e.source_url,'Fuente: DNAP · ejecución APNF, primer trimestre de 2026');managementSource(host,old.source_url,'Fuente: DNAP · ejecución APNF, primer trimestre de 2025');managementSource(host,'data/budget_execution_2026.json','Ver coberturas, celdas de origen y metodología');
- renderExecutionChanges(province,ratios,previous);renderProposalEstimator(province);renderManagementSourceReview();renderVerifiedManagement();
+ managementSource(host,b.source_url,'Fuente: presupuesto provincial 2026 · archivo oficial');managementSource(host,e.source_url,semester?'PBA · ejecución APNF, primer semestre de 2026':'DNAP · ejecución APNF, primer trimestre de 2026');if(!semester)managementSource(host,old.source_url,'DNAP · ejecución APNF, primer trimestre de 2025');managementSource(host,'data/budget_execution_2026.json','Ver coberturas, celdas de origen y metodología');
+ renderExecutionChanges(province,ratios,previous,semester);renderProposalEstimator(province);renderManagementSourceReview();renderVerifiedManagement();
 }
 let managementReviewRequest=null;
 function renderManagementSourceReview(){
@@ -49,24 +51,25 @@ function renderManagementSourceReview(){
   document.getElementById('fiscalGuide').append(host);
  }).catch(()=>{managementReviewRequest=null;});
 }
-function renderExecutionChanges(province,now,previous){
+function renderExecutionChanges(province,now,previous,semester=null){
+ const periodText=semester?'Enero–junio':'Enero–marzo';
  let host=document.getElementById('executionChanges');if(!host){host=document.createElement('section');host.id='executionChanges';host.className='national-section completion-card';document.getElementById('incomeView').append(host);}host.replaceChildren();const h=document.createElement('h2');h.textContent='Qué cambió · '+province;host.append(h);
- budgetParagraph(host,'Primer trimestre de 2026 contra el mismo trimestre de 2025 · APNF. Esta comparación tiene un corte distinto del informe fiscal y no reemplaza su ranking.');
+ budgetParagraph(host,periodText+' de 2026 contra los mismos meses de 2025 · APNF. El ranking conserva el corte común de marzo.');
  if(!now||!previous){budgetParagraph(host,'Faltan datos para comparar ambos trimestres. La ausencia de información no se interpreta como cero ni como mejora.');return;}
  const rows=[['Resultado financiero / ingresos',previous.balance,now.balance],['Gasto de capital / gasto total',previous.capital,now.capital]];
- const table=completionTable('Cambios en puntos porcentuales (pp)',['Indicador','Enero–marzo 2025','Enero–marzo 2026','Cambio'],rows.map(([label,a,b])=>[label,fnum(a)+'%',fnum(b)+'%',(b-a>0?'+':'')+fnum(b-a)+' pp']));
+ const table=completionTable('Cambios en puntos porcentuales (pp)',['Indicador',periodText+' 2025',periodText+' 2026','Cambio'],rows.map(([label,a,b])=>[label,fnum(a)+'%',fnum(b)+'%',(b-a>0?'+':'')+fnum(b-a)+' pp']));
  table.querySelectorAll('tbody tr').forEach((tr,i)=>{
   const [,a,b]=rows[i];
   [a,b,b-a].forEach((value,j)=>tr.children[j+1].classList.toggle('negative-value',value<0));
  });
  host.append(table);
- budgetParagraph(host,'El resultado financiero es la diferencia entre ingresos y gastos, incluidos los intereses. '+(now.balance>0?'En este trimestre los ingresos superan al gasto devengado.':now.balance<0?'En este trimestre el gasto devengado supera a los ingresos.':'En este trimestre los ingresos y el gasto devengado están equilibrados.')+' Eso no alcanza para saber cuánta caja libre hay. La participación del gasto de capital muestra cuánto pesa dentro del gasto total; para saber si la inversión creció hay que descontar inflación y revisar qué obras se ejecutaron.');
- const source=budgetExecutionData.executions.find(r=>r.province===province&&r.period==='2026-Q1');managementSource(host,source.source_url,'DNAP · datos provisorios de ejecución');managementSource(host,'data/budget_execution_2026.json','Ver ambos períodos y cálculos de origen');
+ budgetParagraph(host,semester?'El déficit pasó de '+fnum(previous.balance)+'% a '+fnum(now.balance)+'% de los ingresos: el desequilibrio se achicó, aunque los recursos todavía no cubren el gasto. Capital mide la participación de la inversión, no su crecimiento real.':'Resultado financiero: ingresos menos gastos, incluidos los intereses. El cambio se expresa en puntos porcentuales (pp).');
+ const source=semester?{source_url:semester.source.url}:budgetExecutionData.executions.find(r=>r.province===province&&r.period==='2026-Q1');managementSource(host,source.source_url,semester?'PBA · ejecución APNF, primeros semestres de 2025 y 2026':'DNAP · datos provisorios de ejecución');managementSource(host,'data/budget_execution_2026.json','Ver ambos períodos y cálculos de origen');
 }
 function renderProposalEstimator(province){
  let host=document.getElementById('proposalEstimator');if(host?.dataset.province===province)return;if(!host){host=document.createElement('section');host.id='proposalEstimator';host.className='national-section completion-card';document.getElementById('resultsView').append(host);}host.replaceChildren();host.dataset.province=province;
  const h=document.createElement('h2');h.textContent='Cuánto costaría una propuesta · '+province;host.append(h);
- budgetParagraph(host,'Este ejercicio no asigna costos inventados a las propuestas. Cargá alcance, costo mensual por unidad y meses dentro de un año. Todos los importes están en millones de pesos nominales del mismo año. Los supuestos quedan en esta pantalla y se limpian al cambiar de provincia.');
+ budgetParagraph(host,'Cargá alcance, costos y financiamiento en millones de pesos del mismo año. Los supuestos se limpian al cambiar de provincia.');
  const grid=document.createElement('div');grid.className='scenario-grid';host.append(grid);
  const label=document.createElement('label');label.textContent='Propuesta y fuente de los costos';const description=document.createElement('input');description.type='text';description.placeholder='Ej.: programa, cotización y fecha';description.maxLength=500;label.append(description);grid.append(label);
  const fields=[['quantity','Cantidad de unidades o beneficiarios'],['unit','Costo mensual por unidad · $ millones'],['months','Meses del año (1 a 12)'],['startup','Costo inicial único · $ millones'],['funding','Financiamiento confirmado · $ millones']],inputs={};
