@@ -901,7 +901,7 @@ tr:last-child td{border-bottom:none}
 </style>
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
-<link rel="stylesheet" href="executive-redesign.css?v=20260907-8">
+<link rel="stylesheet" href="executive-redesign.css?v=20260915-2">
 </head>
 <body>
 
@@ -1018,7 +1018,7 @@ tr:last-child td{border-bottom:none}
         <div class="press-source" data-press-source="primary"></div>
       </article>
       <article class="kcard pulse-wide">
-        <div class="k-lbl">Deuda / ingresos</div>
+        <div class="k-lbl">Deuda provincial / ingresos</div>
         <div class="k-val" id="kDebt">—</div>
         <div class="pulse-reading"><strong id="kDebtStock">Stock actualizado no disponible.</strong><br><span id="kDebtRank">Comparación no disponible.</span></div>
         <div class="pulse-tag">Stock al 31/03/2026</div>
@@ -1030,6 +1030,10 @@ tr:last-child td{border-bottom:none}
         <div class="pulse-reading" id="kTopSub">Corte mensual no disponible.</div>
         <div class="pulse-tag">Flujo acumulado</div>
         <div class="press-source" data-press-source="own"></div>
+      </article>
+      <article class="kcard summary-nation-claim" id="summaryNationClaim" aria-labelledby="summaryNationTitle">
+        <div class="k-lbl" id="summaryNationTitle">Nación y provincia</div>
+        <p class="pulse-reading">Cargando documentación del reclamo…</p>
       </article>
       <article class="kcard">
         <div class="k-lbl">Recursos de Nación 2026</div>
@@ -1391,7 +1395,7 @@ tr:last-child td{border-bottom:none}
 
 <div id="infoPopover" class="info-popover" role="tooltip" hidden></div>
 
-<script src="nation-claims.js?v=20260915-1"></script>
+<script src="nation-claims.js?v=20260915-2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 var CONSTANT_PRICE_BASE = 'junio de 2026';
@@ -2757,7 +2761,7 @@ function render(province){
   updatePeriodAvailability(province);
   resetAuditCells();
   currentProvince=province;
-  const pulseTitle=document.getElementById('executivePulseTitle');if(pulseTitle)pulseTitle.textContent='Posición fiscal de '+province;
+  const pulseTitle=document.getElementById('executivePulseTitle');if(pulseTitle)pulseTitle.textContent='Lo central';
   const heroProvince=document.getElementById('heroProvinceSubtitle');
   if(heroProvince)heroProvince.textContent=`Provincia seleccionada: ${province}`;
 
@@ -2806,7 +2810,7 @@ function render(province){
   const kResPriReading=document.getElementById('kResPriReading');
   const kResFinPeriod=document.getElementById('kResFinPeriod');
   const kResPriPeriod=document.getElementById('kResPriPeriod');
-  if(executivePulsePeriod)executivePulsePeriod.innerHTML=useQuarter?'Enero–marzo 2026<br>ranking y deuda al 1T26':'Últimos 12 meses al 1T26<br>salvo flujos 2026';
+  if(executivePulsePeriod)executivePulsePeriod.textContent='Cada indicador conserva su período';
   if(kResFinReading)kResFinReading.textContent=rf===null?'Sin dato comparable.':`Después de intereses: ${rf<0?'faltaron':'quedaron'} $${Math.abs(rf).toFixed(2).replace('.',',')} por cada $100 de ingresos.`;
   if(kResPriReading)kResPriReading.textContent=rp===null?'Sin dato comparable.':`Antes de intereses: ${rp<0?'los gastos superaron los ingresos':'los ingresos superaron los gastos'} en $${Math.abs(rp).toFixed(2).replace('.',',')} por cada $100 ingresados.`;
   if(kResFinPeriod)kResFinPeriod.textContent=useQuarter?'Trimestre · % de ingresos':'Últimos 12 meses · % de ingresos';
@@ -3602,6 +3606,8 @@ function renderTransfersDependency(province){
 }
 
 function renderNationDebt(province){
+  const overview=document.getElementById('summaryNationClaim');
+  if(overview)overview.innerHTML=NationClaims.summaryHTML(reclamosNacionData,province);
   const section=document.getElementById('nationDebtSection');
   const content=document.getElementById('nationDebtContent');
   if(!section||!content)return;
@@ -5044,10 +5050,10 @@ document.getElementById('downloadPng')?.addEventListener('click',exportCurrentPr
 </script>
 <script src="expanded-content.js?v=20260907-3"></script>
 <script src="visible-controls.js?v=20260907-6"></script>
-<script src="profile-readings.js?v=20260907-5"></script>
+<script src="profile-readings.js?v=20260915-2"></script>
 <script src="provincial-debt-services.js?v=20260907-9"></script>
 <script src="inflation-history.js?v=20260907-4"></script>
-<script src="executive-redesign.js?v=20260907-1"></script>
+<script src="executive-redesign.js?v=20260915-2"></script>
 <script src="closing-tools.js?v=20260907-1"></script>
 <script src="management-tools.js?v=20260907-9"></script>
 <script src="federal-tools.js?v=20260907-2"></script>

@@ -7,6 +7,19 @@ test('missing fiscal observations do not become a diagnosis or numeric zero',()=
 test('zero, deficit and surplus have distinct conclusions',()=>{for(const role of roles){const conclusions=[-1,0,1].map(rf=>buildProfileReadings(role,{province:'Prueba',rf,rp:0}).summary[1]);assert.equal(new Set(conclusions).size,3);}});
 test('minister differentiates a primary deficit from interest pressure',()=>{const primary=buildProfileReadings('hacienda',{province:'Prueba',rf:-5,rp:-2});const interest=buildProfileReadings('hacienda',{province:'Prueba',rf:-5,rp:2});assert.match(primary.summary[1],/empieza antes de intereses/);assert.match(interest.summary[1],/costo de intereses/);});
 const {buildSheetExplanation}=require('../profile-readings.js');
+const {buildSummaryReading}=require('../profile-readings.js');
+test('short summary distinguishes fiscal mechanisms without repeating the KPI percentages',()=>{
+ for(const role of roles){
+  const cases=[{rf:null,rp:null},{rf:-5,rp:null},{rf:-5,rp:-2},{rf:-5,rp:2},{rf:0,rp:1},{rf:4,rp:6}];
+  const readings=cases.map(c=>buildSummaryReading(role,c));
+  assert.equal(new Set(readings).size,cases.length);
+  for(const text of readings){assert.ok(text.split(/\s+/).length<=55);assert.doesNotMatch(text,/%|undefined|NaN/);}
+  assert.match(readings[0],/Falta/);assert.match(readings[2],/antes de|gasto primario/);
+  assert.match(readings[3],/intereses|costo financiero/);
+ }
+ assert.equal(new Set(roles.map(r=>buildSummaryReading(r,{rf:-5,rp:-2}))).size,3);
+ assert.match(buildSummaryReading('governor',{rf:1,rp:-1}),/conciliar/);
+});
 test('rich analysis explains only observed fiscal differences',()=>{const text=buildSheetExplanation('summary',{rf:-6.58,rp:-2.74});assert.match(text,/antes de pagar intereses/);assert.match(text,/3,84 puntos/);const missing=buildSheetExplanation('summary',{rf:null,rp:null});assert.match(missing,/información que falta/);assert.doesNotMatch(missing,/0 puntos/);});
 test('debt narrative does not turn history into a future schedule',()=>{const text=buildSheetExplanation('debt',{services:{total_ars_m:100,amortization_ars_m:70,interest_ars_m:30}});assert.match(text,/compromisos registrados en años anteriores/);assert.match(text,/falta el calendario de próximos pagos/);assert.doesNotMatch(text,/mayor importe.*2026/);const projected=buildSheetExplanation('debt',{projection:{rows:[{year:2026,total_ars_m:10},{year:2027,total_ars_m:20}]}});assert.match(projected,/mayor importe anual en 2027: \$20 millones/);assert.match(projected,/descontar los pagos ya realizados/);});
 test('debt priority follows schedule coverage and does not mislabel loading as missing',()=>{
