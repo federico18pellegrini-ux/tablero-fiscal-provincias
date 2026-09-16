@@ -13,11 +13,11 @@ test('Spanish units distinguish trillions from billions and preserve USD',()=>{
 test('all jurisdictions render dates, missingness and no collapsed content',()=>{
   for(const name of Object.keys(data.provinces)){
     const html=Claims.render(data,name,'Lectura según perfil');
-    assert.match(html,/Saldo total pendiente de cobro: no verificado/);
+    assert.match(html,/Reclamos, acuerdos y cobros se presentan por separado/);
     assert.equal((html.match(/data-claim-province=/g)||[]).length,24);
     assert.doesNotMatch(html,/<details|<select/);
     assert.match(html,/Lectura según perfil/);
-    if(data.provinces[name].records.length===0)assert.match(html,/no significa que Nación no le deba/);
+    if(data.provinces[name].records.length===0)assert.match(html,/Sin monto oficial incorporado/);
   }
 });
 test('source text is escaped and unsafe URLs are never rendered',()=>{
@@ -45,13 +45,13 @@ test('embedded fallback matches the verified dataset',()=>{
 test('summary only presents claims as the headline amount, never advances or agreements',()=>{
   const pba=Claims.summaryModel(data,'Buenos Aires');
   assert.equal(pba.value,'≈ $19,1 billones');
-  assert.match(pba.context,/4,7 billones/);
-  assert.match(pba.caution,/no es un saldo actual conciliado/);
+  assert.match(pba.context,/deudas directas, obras y programas/);
+  assert.equal(pba.attribution,'Según la Provincia');
   for(const province of ['Corrientes','Córdoba','Entre Ríos','Mendoza']){
     const model=Claims.summaryModel(data,province);
     assert.equal(model.state,'reference');
-    assert.equal(model.value,'Saldo sin verificar');
-    assert.match(model.caution,/no representa toda la deuda/);
+    assert.equal(model.value,'Sin monto total');
+    assert.equal(model.title,'Deuda de Nación');
     assert.ok(model.publishedAt);
   }
   assert.equal(Claims.summaryModel(data,'CABA').value,'≈ USD 6 mil millones');
@@ -73,5 +73,19 @@ test('summary preserves missingness, dates, evidence type and the detail route f
     if(model.publishedAt)assert.ok(html.includes(model.publishedAt.split('-').reverse().join('/')));
   }
   for(const province of ['Catamarca','Misiones','Santa Cruz'])assert.equal(Claims.summaryModel(data,province).state,'missing');
-  assert.equal(Claims.summaryModel(null,'Buenos Aires').value,'Monto sin documentar');
+  assert.equal(Claims.summaryModel(null,'Buenos Aires').value,'Sin monto total');
+});
+
+test('new sources preserve scope, installments, qualifiers and publication dates',()=>{
+ assert.equal(Claims.summaryModel(data,'Chubut').value,'Más de $50 mil millones');
+ assert.equal(Claims.summaryModel(data,'Tucumán').value,'≈ $200 mil millones');
+ assert.equal(Claims.summaryModel(data,'Tierra del Fuego').value,'$8,5 mil millones');
+ assert.match(Claims.summaryModel(data,'Tierra del Fuego').context,/Obras y organismos/);
+ assert.equal(Claims.summaryModel(data,'La Pampa').value,'Sin monto total');
+ assert.match(Claims.summaryModel(data,'La Pampa').context,/5 mil millones por mes/);
+ assert.equal(Claims.summaryModel(data,'Córdoba').publishedAt,'2026-04-08');
+ assert.match(Claims.summaryModel(data,'Córdoba').context,/120 mil millones/);
+ assert.equal(Claims.summaryModel(data,'Corrientes').publishedAt,'2026-04-08');
+ assert.equal(data.provinces.Formosa.records[0].amount,null);
+ assert.equal(data.provinces.Salta.records[0].amount,null);
 });

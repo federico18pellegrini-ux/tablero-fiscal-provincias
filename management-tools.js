@@ -10,7 +10,7 @@ function managementTable(caption,headers,rows){
 }
 function managementSource(parent,url,label){const p=document.createElement('p'),a=document.createElement('a');p.className='federal-note'+(label.startsWith('Descargar')?'':' source-reference');a.href=url;a.target='_blank';a.rel='noopener';a.textContent=label;p.append(a);parent.append(p);}
 function initManagementDesign(){
-  document.querySelector('#heroTitle').textContent='Tablero para la gestión';
+  document.querySelector('#heroTitle').textContent='Tablero Provincial';
   const bar=document.querySelector('.dashboard-command-bar'),options=document.createElement('section');options.className='reading-options';options.innerHTML='<h2>Lectura y unidades</h2><div class="reading-options-grid"></div>';
   for(const id of ['profileSelector','periodSelector','valueModeSelector'])options.lastElementChild.append(document.getElementById(id).closest('.command-field'));
   bar.append(options);

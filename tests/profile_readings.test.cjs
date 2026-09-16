@@ -33,3 +33,13 @@ test('debt priority follows schedule coverage and does not mislabel loading as m
  assert.doesNotMatch(loading,/falta el calendario/);
  assert.match(buildProfileReadings('governor',{debt:0}).debt[0],/\$100.*\$0/);
 });
+
+const {debtRankingLabel}=require('../profile-readings.js');
+test('debt rank is interpreted from its observed position and coverage',()=>{
+ assert.match(debtRankingLabel(23,23),/puesto 23 de 23.*mayor carga/);
+ assert.match(debtRankingLabel(1,23),/puesto 1 de 23.*menor carga/);
+ assert.match(debtRankingLabel(8,23),/puesto 8 de 23.*de menor a mayor/);
+ for(const rank of [null,0,24,NaN])assert.equal(debtRankingLabel(rank,23),'Sin posición en el ranking actual.');
+ assert.match(buildSummaryReading('governor',{rf:-5,rp:-2,debtRank:23,debtTotal:23}),/mayor carga de deuda/);
+ assert.doesNotMatch(buildSummaryReading('governor',{rf:null,rp:null,debtRank:23,debtTotal:23}),/mayor carga de deuda/);
+});
