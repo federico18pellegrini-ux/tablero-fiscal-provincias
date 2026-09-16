@@ -59,7 +59,8 @@ def outputs():
     raw = (ROOT/'data/ipc_national_index.csv').read_text(encoding='utf-8')
     indices = {r['period']: float(r['ipc_index']) for r in csv.DictReader(io.StringIO(raw))}
     assert indices['2016-12'] == 100 and all(v > 0 for v in indices.values())
-    assert max(indices) == data['priceBase'] == source['latest_period']
+    # The municipal series keeps its own price base when a newer IPC is added.
+    assert max(indices) == source['latest_period'] and data['priceBase'] in indices
     prices = {'generated': data['generated'], 'series': source['source'], 'source': source['url'],
               'sourceSha256': hashlib.sha256(raw.encode()).hexdigest(), 'latest': max(indices),
               'bases': ['2024-12', '2025-12', data['priceBase']], 'indices': indices}

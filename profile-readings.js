@@ -12,7 +12,7 @@ function buildProfileReadings(profile,c={}){
  const debtFact=Number.isFinite(debt)?`Por cada $100 de ingresos anuales, la deuda equivale a $${n(debt)}. Ese total se devuelve a lo largo del tiempo.`:'Falta el dato para comparar la deuda total con los ingresos de un año.';
  const scheduleRows=(c.projection?.rows||[]).filter(r=>Number.isFinite(r.year)&&Number.isFinite(r.total_ars_m)&&r.total_ars_m>=0);
  const peak=scheduleRows.length?scheduleRows.reduce((a,b)=>b.total_ars_m>a.total_ars_m?b:a):null;
- const schedule=peak?`El calendario publicado tiene su mayor importe anual en ${peak.year}. Incluye el año completo, sin descontar los pagos posteriores.`:c.debtScheduleStatus==='loading'?'Estamos cargando el calendario de pagos.':'Las barras muestran capital e intereses registrados en años anteriores. Falta el calendario de próximos pagos.';
+ const schedule=peak?`El calendario publicado tiene su mayor importe anual en ${peak.year}. ${c.schedulePartial?'La primera barra incluye sólo julio–diciembre de 2026; las siguientes, años completos.':'No descuenta los pagos posteriores a su publicación.'}`:c.debtScheduleStatus==='loading'?'Estamos cargando el calendario de pagos.':'Las barras muestran capital e intereses registrados en años anteriores. Falta el calendario de próximos pagos.';
  const debtFocus=choose(
   'La clave es cuánto vence en cada fecha: esos pagos compiten por recursos con salarios, servicios y obras. Anticiparlos permite organizar cómo cubrirlos.',
   'Para organizar los pagos, separar capital —el dinero que se devuelve— e intereses —el costo de financiarse—. Revisar fechas, monedas y financiamiento disponible.',
@@ -103,7 +103,7 @@ function renderProfileReadings(){
  const cross={...(crossFiscal?.[currentProvince]||{}),...(latestFiscalRanking?.[currentProvince]||{})};
  const q=dashboardPeriod==='quarter'?latestFiscalDetails?.quarters?.[currentProvince]:null;
  const rf=toN(q?q.financial_pct:cross.resultado_financiero_ltm_pct),rp=toN(q?q.primary_pct:cross.resultado_primario_ltm_pct);
- const debt=toN(currentProvince==='Buenos Aires'?pbaDebtProfile?.latest_stock?.debt_to_ltm_income_pct:cross.deuda_total_sobre_ingresos_pct);
+ const debt=toN(currentProvince==='Buenos Aires'?(pbaDebtProfile?.latest_official_stock||pbaDebtProfile?.latest_stock)?.debt_to_ltm_income_pct:cross.deuda_total_sobre_ingresos_pct);
  const kicker=document.querySelector('.gov-kicker');if(kicker)kicker.textContent=PROFILE_CONFIG[dashboardProfile].label;
  const headline=document.getElementById('governorRoomTitle');if(headline){headline.textContent=currentProvince+': '+(rf===null?'resultado fiscal sin dato comparable':rf<0?'las cuentas cierran con déficit':rf>0?'las cuentas cierran con superávit':'las cuentas cierran en equilibrio');headline.dataset.tone=rf===null?'neutral':rf<0?'negative':rf>0?'positive':'neutral';}
  const debtRank=toN(latestFiscalRanking?.[currentProvince]?.rank_deuda_total),debtTotal=Object.values(latestFiscalRanking||{}).filter(row=>toN(row.rank_deuda_total)!==null).length;
@@ -112,7 +112,7 @@ function renderProfileReadings(){
  const projection=debtData?.projections?.[currentProvince];
  const debtScheduleStatus=debtData?(projection?'verified':'missing'):'loading';
  const mapPeriod=document.getElementById('mapPeriod')?.value,mapMetric=document.getElementById('mapMetric')?.value;
- const context={province:currentProvince,rf,rp,debt,projection,debtScheduleStatus,
+ const context={schedulePartial:currentProvince==='Buenos Aires'&&!!pbaDebtProfile?.latest_official_stock,province:currentProvince,rf,rp,debt,projection,debtScheduleStatus,
   period:q?'enero–marzo 2026':'últimos 12 meses al 31/03/2026',
   autonomy:toN(cross.autonomia_fiscal_pct),priceMode:displayMode,
   rank:isPartialStructural(cross)?null:toN(cross.ranking_general),rankTotal:structuralUniverseCount(),

@@ -53,7 +53,8 @@ def build(cache):
  payload=dict(reviewed_at='2026-09-06',unit='ARS millions',history_basis='Servicios devengados, preliminares, netos de deuda indirecta. No equivalen a pagos de caja ni a vencimientos futuros. Pesos corrientes de cada período, sin ajuste por inflación.',history=history,sources=catalog,source_differences=differences,projections=projections,coverage=[dict(province=s['province'],schedule_status='verified' if s['province'] in projections else 'not_loaded',schedule_note='Calendario incorporado con fuente y fecha de referencia.' if s['province'] in projections else 'El enlace oficial al perfil 30/06/2026 devolvió HTTP 404 el 06/09/2026.' if s['province']=='CABA' else 'No hay un calendario futuro verificado cargado; no implica ausencia de deuda ni de publicaciones.') for s in sources])
  additional=json.loads((ROOT/'data/debt/verified_forward_schedules.json').read_text(encoding='utf-8'))
  payload['projections'].update(additional['projections'])
- payload['reviewed_at']=additional['reviewed_at']
+ payload['projections']['Buenos Aires']=json.loads((ROOT/'data/debt/pba_forward_schedule.json').read_text(encoding='utf-8'))
+ payload['reviewed_at']=max(additional['reviewed_at'],'2026-09-15')
  for coverage in payload['coverage']:
   if coverage['province'] in payload['projections']:
    coverage.update(schedule_status='verified',schedule_note='Proyección oficial incorporada; conservar su fecha, cobertura y supuestos. No es el saldo pendiente de hoy.')

@@ -13,7 +13,7 @@ function initManagementReportExport(){
   if(!report){download.removeAttribute('href');download.setAttribute('aria-disabled','true');download.tabIndex=-1;detail.textContent=province+' · Preparando el informe…';return;}
   const url=new URL('reports/'+report.file,location.href);url.searchParams.set('v',report.sha256.slice(0,12));
   download.href=url.href;download.download=report.file;download.removeAttribute('aria-disabled');download.removeAttribute('tabindex');
-  detail.textContent=`${province} · ${report.pages} páginas · Datos, análisis editorial y prioridades de gestión. Cuentas ${report.annual_year} y señales ${report.quarter.slice(0,4)}.`;
+  detail.textContent=`${province} · ${report.pages} páginas · Actualizado al ${manifest.reviewed_at.split('-').reverse().join('/')}`;
   status.textContent=report.annual_available?'':`El cierre ${report.annual_year} no está disponible: el informe lo identifica y conserva los demás indicadores.`;
  }
  async function load(){

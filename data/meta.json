@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-20T02:06:40Z",
+  "generated_at": "2026-09-16T02:48:47.373909Z",
   "structural_cutoff": "2026-03-31",
   "sources": {
     "recaudacion_propia_2026": {
-      "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_12.xlsx",
-      "max_period": "2026-07",
-      "pba_max_period": "2026-06"
+      "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_16.xlsx",
+      "max_period": "2026-08",
+      "pba_max_period": "2026-07"
     },
     "transferencias_nacion_2026": {
-      "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_4.xlsx",
-      "max_period": "2026-07",
-      "pba_max_period": "2026-07"
+      "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_5.xlsx",
+      "max_period": "2026-08",
+      "pba_max_period": "2026-08"
     },
     "pba_transferencias_legales_municipios_ltm_1t26": {
       "url": "https://www.gba.gob.ar/economia/direccion_provincial_de_coordinacion_municipal_y_programas_de_desarrollo/transferencias_municipios",
@@ -18,13 +18,13 @@
       "scope": "Coparticipación, descentralización y fondos legales mensuales publicados por municipio"
     },
     "pba_debt_service_schedule": {
-      "url": "https://www.ec.gba.gov.ar/areas/finanzas/deuda/archivos/Informe%20de%20Deuda%20PBA%20al%2031-dic-2025.pdf",
-      "valuation_date": "2025-12-31",
-      "period": "2026-2041"
+      "url": "https://www.ec.gba.gov.ar/areas/finanzas/deuda/archivos/Informe%20de%20Deuda%20PBA%20al%2030-Jun-2026.pdf",
+      "valuation_date": "2026-06-30",
+      "period": "Julio–diciembre 2026 y años 2027–2041"
     },
     "pba_government_results": {
       "url": "https://catalogo.datos.gba.gob.ar/",
-      "cutoffs": "Seguridad 2025; educación 2025; salud 2024; infraestructura 2026-08-10"
+      "cutoffs": "Seguridad 2025; educación 2025; salud 2024; infraestructura 2026-09-09"
     },
     "federal_government_results": {
       "urls": [
@@ -36,6 +36,20 @@
       ],
       "cutoffs": "Seguridad 2025; educación 2024; salud 2024; NBI 2022; gasto por finalidad APNF 2024",
       "coverage": "24 jurisdicciones; educación: 24 publicadas y 22 elegibles para ranking por participación estudiantil de al menos 50%"
+    },
+    "pba_execution_latest": {
+      "file": "execution-pba-q2.pdf",
+      "url": "https://www.ec.gba.gov.ar/areas/hacienda/Presupuesto/ejecucion_presupuestaria/Ejecuci%C3%B3n%20Presupuestaria%20II%20trim%202026.pdf",
+      "sha256": "29806a0174f9f85e8fad24b973de5067a6473632c16b0b7ccbe82770a63b36ed",
+      "bytes": 587246,
+      "pages": 13,
+      "publisher": "Dirección Provincial de Presupuesto Público, PBA",
+      "page": 13
+    },
+    "historical_own_revenue_pba": {
+      "url": "https://www.argentina.gob.ar/sites/default/files/serie_top_1984_2025_0.xlsx",
+      "period": "1984–2025",
+      "scope": "Ampliación PBA 2025; las restantes provincias conservan la serie histórica previa."
     }
   },
   "rules": {

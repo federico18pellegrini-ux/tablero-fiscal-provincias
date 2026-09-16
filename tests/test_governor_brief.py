@@ -80,7 +80,7 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertNotIn('id="federalSectionReading"', frontend)
         self.assertNotIn("Análisis integral IA · inferencia político-fiscal", frontend)
         self.assertIn("Recursos que llegan desde Nación", frontend)
-        self.assertIn("% nominal", frontend)
+        self.assertIn("% real", frontend)
         self.assertIn("un aumento nominal tampoco demuestra una mejora del poder de compra", frontend)
         self.assertIn('id="exResFinRank"', frontend)
         self.assertIn('id="exAutonomiaRank"', frontend)
@@ -140,7 +140,7 @@ class GovernorBriefTests(unittest.TestCase):
             delta=0.001,
         )
         self.assertAlmostEqual(stock["debt_to_ltm_income_pct"], 45.2, delta=0.1)
-        self.assertAlmostEqual(profile["currency_composition"]["payable_foreign_currency_pct"], 78.6)
+        self.assertAlmostEqual(profile["currency_composition"]["payable_foreign_currency_pct"], 79.2)
         self.assertAlmostEqual(profile["official_pba_2025_indicators"]["interest_paid_to_total_resources_pct"], 3.5)
         self.assertAlmostEqual(profile["official_pba_2025_indicators"]["debt_service_paid_to_total_resources_pct"], 7.0)
 

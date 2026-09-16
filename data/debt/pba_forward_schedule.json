@@ -1,0 +1,159 @@
+{
+  "as_of": "2026-06-30",
+  "scope": "Perfil oficial de deuda provincial",
+  "interest_label": "Intereses",
+  "note": "2026 incluye sólo julio–diciembre; desde 2027 son años completos. Valuación al 30/06/2026, con tipos de cambio y últimas tasas variables de esa fecha.",
+  "sources": [
+    {
+      "label": "Informe de deuda PBA, página 6",
+      "url": "https://www.ec.gba.gov.ar/areas/finanzas/deuda/archivos/Informe%20de%20Deuda%20PBA%20al%2030-Jun-2026.pdf"
+    }
+  ],
+  "source_sha256": "be453db6b4cee584b04ea93c6082f10b72df0fe3257498a86e8553fa50cadc91",
+  "rows": [
+    {
+      "year": 2026,
+      "period_label": "Jul–dic 2026",
+      "period_start": "2026-07-01",
+      "period_end": "2026-12-31",
+      "amortization_ars_m": 995864,
+      "interest_ars_m": 683125,
+      "total_ars_m": 1678989
+    },
+    {
+      "year": 2027,
+      "period_label": "2027",
+      "period_start": "2027-01-01",
+      "period_end": "2027-12-31",
+      "amortization_ars_m": 1945000,
+      "interest_ars_m": 1120573,
+      "total_ars_m": 3065573
+    },
+    {
+      "year": 2028,
+      "period_label": "2028",
+      "period_start": "2028-01-01",
+      "period_end": "2028-12-31",
+      "amortization_ars_m": 1985691,
+      "interest_ars_m": 903908,
+      "total_ars_m": 2889600
+    },
+    {
+      "year": 2029,
+      "period_label": "2029",
+      "period_start": "2029-01-01",
+      "period_end": "2029-12-31",
+      "amortization_ars_m": 1427107,
+      "interest_ars_m": 745550,
+      "total_ars_m": 2172657
+    },
+    {
+      "year": 2030,
+      "period_label": "2030",
+      "period_start": "2030-01-01",
+      "period_end": "2030-12-31",
+      "amortization_ars_m": 1496156,
+      "interest_ars_m": 660832,
+      "total_ars_m": 2156988
+    },
+    {
+      "year": 2031,
+      "period_label": "2031",
+      "period_start": "2031-01-01",
+      "period_end": "2031-12-31",
+      "amortization_ars_m": 1158914,
+      "interest_ars_m": 577270,
+      "total_ars_m": 1736185
+    },
+    {
+      "year": 2032,
+      "period_label": "2032",
+      "period_start": "2032-01-01",
+      "period_end": "2032-12-31",
+      "amortization_ars_m": 1178899,
+      "interest_ars_m": 505874,
+      "total_ars_m": 1684773
+    },
+    {
+      "year": 2033,
+      "period_label": "2033",
+      "period_start": "2033-01-01",
+      "period_end": "2033-12-31",
+      "amortization_ars_m": 1193786,
+      "interest_ars_m": 432036,
+      "total_ars_m": 1625823
+    },
+    {
+      "year": 2034,
+      "period_label": "2034",
+      "period_start": "2034-01-01",
+      "period_end": "2034-12-31",
+      "amortization_ars_m": 1216111,
+      "interest_ars_m": 357520,
+      "total_ars_m": 1573631
+    },
+    {
+      "year": 2035,
+      "period_label": "2035",
+      "period_start": "2035-01-01",
+      "period_end": "2035-12-31",
+      "amortization_ars_m": 1247045,
+      "interest_ars_m": 281098,
+      "total_ars_m": 1528143
+    },
+    {
+      "year": 2036,
+      "period_label": "2036",
+      "period_start": "2036-01-01",
+      "period_end": "2036-12-31",
+      "amortization_ars_m": 1276703,
+      "interest_ars_m": 202837,
+      "total_ars_m": 1479540
+    },
+    {
+      "year": 2037,
+      "period_label": "2037",
+      "period_start": "2037-01-01",
+      "period_end": "2037-12-31",
+      "amortization_ars_m": 1307039,
+      "interest_ars_m": 122160,
+      "total_ars_m": 1429199
+    },
+    {
+      "year": 2038,
+      "period_label": "2038",
+      "period_start": "2038-01-01",
+      "period_end": "2038-12-31",
+      "amortization_ars_m": 136614,
+      "interest_ars_m": 58768,
+      "total_ars_m": 195382
+    },
+    {
+      "year": 2039,
+      "period_label": "2039",
+      "period_start": "2039-01-01",
+      "period_end": "2039-12-31",
+      "amortization_ars_m": 112530,
+      "interest_ars_m": 51629,
+      "total_ars_m": 164159
+    },
+    {
+      "year": 2040,
+      "period_label": "2040",
+      "period_start": "2040-01-01",
+      "period_end": "2040-12-31",
+      "amortization_ars_m": 111936,
+      "interest_ars_m": 45791,
+      "total_ars_m": 157726
+    },
+    {
+      "year": 2041,
+      "period_label": "2041",
+      "period_start": "2041-01-01",
+      "period_end": "2041-12-31",
+      "amortization_ars_m": 111936,
+      "interest_ars_m": 39712,
+      "total_ars_m": 151647
+    }
+  ]
+}

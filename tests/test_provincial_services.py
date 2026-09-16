@@ -17,7 +17,7 @@ class ProvincialServices(unittest.TestCase):
  def test_units_and_projection(self):
   self.assertEqual(next(s for s in D['sources'] if s['province']=='CABA')['original_unit'],'ARS miles')
   self.assertAlmostEqual(D['projections']['Córdoba']['rows'][0]['total_ars_m'],634650.115306,places=6)
-  self.assertEqual(D['projections']['Buenos Aires']['rows'][0]['total_ars_m'],3637755)
+  self.assertEqual(D['projections']['Buenos Aires']['rows'][0]['total_ars_m'],1678989)
   for p in D['projections'].values():
    for r in p['rows']:self.assertAlmostEqual(r['total_ars_m'],r['amortization_ars_m']+r['interest_ars_m'],delta=1)
  def test_periods_and_sources(self):

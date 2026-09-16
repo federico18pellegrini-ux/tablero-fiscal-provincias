@@ -82,7 +82,7 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertIn('|| EMBEDDED_PBA_DEBT_PROFILE', frontend)
         self.assertIn('"total_usd_m_equivalent":12056.758559', frontend)
         self.assertIn('"debt_to_ltm_income_pct":45.232757', frontend)
-        self.assertIn('"payable_foreign_currency_pct":78.6', frontend)
+        self.assertIn('"payable_foreign_currency_pct":79.2', frontend)
         self.assertIn('"interest_paid_to_total_resources_pct":3.5', frontend)
         self.assertIn('"debt_service_paid_to_total_resources_pct":7.0', frontend)
 
@@ -145,7 +145,7 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertAlmostEqual(caba_january['Iibb'], 759579.1, places=6)
         self.assertAlmostEqual(sum(caba_january.values()), 1124942.9, places=6)
         self.assertNotEqual(caba_january['Iibb'], sum(caba_january.values()))
-        self.assertEqual(max(row['period'] for row in top if row['province'] == 'Buenos Aires'), '2026-06')
+        self.assertEqual(max(row['period'] for row in top if row['province'] == 'Buenos Aires'), '2026-07')
 
         with (ROOT / 'informacion_consolidada_2026_normalizado.csv').open(encoding='utf-8', newline='') as source:
             ron = list(csv.DictReader(source))
@@ -271,19 +271,13 @@ class FiscalRegressionTests(unittest.TestCase):
                 delta=1,
             )
         first = rows[0]
-        self.assertEqual(float(first['total_service_ars_m']), 3637755)
-        with (ROOT / 'data/gasto_rigido.csv').open(encoding='utf-8', newline='') as source:
-            rigid = next(csv.DictReader(source))
-        income = 36_857_309
-        amortization_pct = float(first['amortization_ars_m']) / income * 100
-        indicative_residual = 100 - float(rigid['total_rigid_pct']) - amortization_pct
-        self.assertEqual(round(amortization_pct, 1), 6.2)
-        self.assertEqual(round(indicative_residual, 1), 14.1)
+        self.assertEqual(float(first['total_service_ars_m']), 1678989)
+        self.assertEqual(first['valuation_date'], '2026-06-30')
+        self.assertEqual(first['period_label'], 'Jul–dic 2026')
+        self.assertEqual(rows[1]['period_label'], '2027')
         frontend = (ROOT / 'index.html').read_text(encoding='utf-8')
         self.assertIn('Calendario anual de servicios de deuda', frontend)
-        self.assertIn('no el calendario mensual', frontend)
-        self.assertIn('31/12/2025</span>', frontend)
-        self.assertIn('Es una referencia de presión, no un porcentaje discrecional', frontend)
+        self.assertNotIn('Si se la descuenta de forma mecánica', frontend)
 
     def test_government_results_preserve_scope_and_missing_social_outcome(self):
         payload = json.loads((ROOT / 'data/government_results_pba.json').read_text(encoding='utf-8'))
@@ -291,7 +285,7 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertAlmostEqual(pillars['security']['metrics'][0]['value'], 4.44294830150959)
         self.assertEqual(pillars['education']['metrics'][0]['value'], 5001493)
         self.assertEqual(pillars['health']['metrics'][0]['value'], 100061869)
-        self.assertEqual(pillars['infrastructure']['metrics'][0]['value'], 315)
+        self.assertEqual(pillars['infrastructure']['metrics'][0]['value'], 317)
         self.assertEqual(pillars['social']['status'], 'faltante')
         self.assertEqual(payload['cost_per_result']['status'], 'not_calculated')
         frontend = (ROOT / 'index.html').read_text(encoding='utf-8')

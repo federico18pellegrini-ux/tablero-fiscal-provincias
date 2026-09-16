@@ -9,6 +9,7 @@ la suma de sus cinco componentes antes de publicar los CSV normalizados.
 from __future__ import annotations
 
 import argparse
+import calendar
 import csv
 import json
 import re
@@ -30,8 +31,8 @@ COVERAGE_OUTPUT = ROOT / "data/cobertura.csv"
 META_OUTPUT = ROOT / "data/meta.json"
 MANIFEST_OUTPUT = ROOT / "dashboard_manifest.json"
 
-TOP_URL = "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_12.xlsx"
-RON_URL = "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_4.xlsx"
+TOP_URL = "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_16.xlsx"
+RON_URL = "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_5.xlsx"
 
 MONTHS = {
     "Enero": "01",
@@ -374,8 +375,8 @@ def write_canonical_files(
     coverage_rows: list[dict[str, object]] = []
     for province in universe:
         for dataset, coverage, expected in (
-            ("recaudacion_propia_2026", top_coverage, "2026-07"),
-            ("transferencias_nacion_2026", ron_coverage, "2026-07"),
+            ("recaudacion_propia_2026", top_coverage, max(p for periods in top_coverage.values() for p in periods)),
+            ("transferencias_nacion_2026", ron_coverage, max(p for periods in ron_coverage.values() for p in periods)),
         ):
             periods = sorted(set(coverage.get(province, [])))
             coverage_rows.append(
@@ -395,12 +396,14 @@ def write_canonical_files(
         coverage_rows,
     )
 
+    previous_meta = json.loads(META_OUTPUT.read_text(encoding='utf-8'))
     meta = {
         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "structural_cutoff": "2026-03-31",
         "sources": {
-            "recaudacion_propia_2026": {"url": TOP_URL, "max_period": "2026-07", "pba_max_period": max(top_coverage.get("Buenos Aires", []), default=None)},
-            "transferencias_nacion_2026": {"url": RON_URL, "max_period": "2026-07", "pba_max_period": max(ron_coverage.get("Buenos Aires", []), default=None)},
+            **previous_meta.get('sources', {}),
+            "recaudacion_propia_2026": {"url": TOP_URL, "max_period": max(p for periods in top_coverage.values() for p in periods), "pba_max_period": max(top_coverage.get("Buenos Aires", []), default=None)},
+            "transferencias_nacion_2026": {"url": RON_URL, "max_period": max(p for periods in ron_coverage.values() for p in periods), "pba_max_period": max(ron_coverage.get("Buenos Aires", []), default=None)},
         },
         "rules": {
             "missing_values": "No se imputan. Los meses sin total oficial no se publican.",
@@ -419,14 +422,16 @@ def update_manifest(
     with MANIFEST_OUTPUT.open(encoding="utf-8") as source:
         manifest = json.load(source)
     manifest["generated_at"] = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-    manifest["data_cutoff"] = "2026-07-31"
+    def cutoff(coverage, province=None):
+        period=max(coverage.get(province, []) if province else [p for periods in coverage.values() for p in periods])
+        return period+'-'+str(calendar.monthrange(int(period[:4]),int(period[-2:]))[1])
+    manifest["data_cutoff"] = max(cutoff(top_coverage),cutoff(ron_coverage))
     manifest["as_of_by_block"] = {
+        **manifest.get('as_of_by_block', {}),
         "structural_and_ranking": "2026-03-31",
-        "recaudacion_propia_2026_max": "2026-07-31",
-        "recaudacion_propia_pba": "2026-06-30",
-        "transferencias_nacion_2026": "2026-07-31",
-        "debt_stock_pba": "2026-03-31",
-        "debt_currency_composition_pba": "2025-12-31",
+        "recaudacion_propia_2026_max": cutoff(top_coverage),
+        "recaudacion_propia_pba": cutoff(top_coverage,'Buenos Aires'),
+        "transferencias_nacion_2026": cutoff(ron_coverage),
     }
     manifest["files"].update(
         {
@@ -441,7 +446,7 @@ def update_manifest(
     notes = manifest.setdefault("notes", {})
     notes["monthly_scope_2026"] = "Importación directa desde planillas oficiales DNAP. No se imputan datos ni se crean placeholders en cero."
     notes["top_mensual_cobertura"] = "Cobertura dispar por jurisdicción; consultar data/cobertura.csv y mostrar el corte propio de cada provincia."
-    notes["mixed_vintages"] = "Estructura/ranking: 1T26; deuda moneda: 4T25; TOP: hasta julio según provincia (PBA junio); RON: julio."
+    notes["mixed_vintages"] = "El ranking conserva el corte común al 1T26. Las actualizaciones provinciales y mensuales indican su propio período."
     MANIFEST_OUTPUT.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -468,7 +473,7 @@ def main() -> None:
     build_management_reports(ROOT / 'reports')
 
     print(f"TOP: {len(top_rows)} filas; PBA hasta {max(top_coverage['Buenos Aires'])}")
-    print(f"RON: {len(ron_rows)} filas; {len(ron_coverage)} jurisdicciones hasta julio")
+    print(f"RON: {len(ron_rows)} filas; {len(ron_coverage)} jurisdicciones; último mes: {max(max(v) for v in ron_coverage.values())}")
     print("Sin TOP:", [province for province in universe if not top_coverage.get(province)])
     print("Sin RON:", [province for province in universe if not ron_coverage.get(province)])
 
