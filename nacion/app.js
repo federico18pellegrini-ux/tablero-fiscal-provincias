@@ -146,6 +146,9 @@
     const blob=new Blob(['\ufeff'+rows.map(r=>r.map(M.csvCell).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`presupuesto-nacional-2027-${state.price}-ARS-millones.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   function render(){sync();hero();distribution();buildMap();works();programs();scale();comparison();changes();resources();macro();historyChart();execution();}
+  const header=document.querySelector('.site-header');
+  const measureHeader=()=>document.documentElement.style.setProperty('--national-header-height',header.getBoundingClientRect().height+'px');
+  new ResizeObserver(measureHeader).observe(header);measureHeader();
   $('theme').addEventListener('click',()=>{const light=document.documentElement.dataset.theme!=='light';document.documentElement.dataset.theme=light?'light':'dark';$('theme').setAttribute('aria-label',light?'Cambiar a modo oscuro':'Cambiar a modo claro');document.querySelector('meta[name="theme-color"]').content='#0A192F';try{localStorage.setItem('national-budget-theme-v2',light?'light':'dark');}catch{}});
   try{if(localStorage.getItem('national-budget-theme-v2')==='dark')$('theme').click();}catch{}
   document.querySelectorAll('[data-price],[data-base],[data-lens],[data-rank],[data-history]').forEach(b=>b.addEventListener('click',()=>{const key=['price','base','lens','rank','history'].find(k=>b.dataset[k]);state[key]=b.dataset[key];if(D)render();else sync();}));
