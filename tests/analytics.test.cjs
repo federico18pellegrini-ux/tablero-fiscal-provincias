@@ -25,6 +25,18 @@ test('loads the dedicated tag once and sends exactly one initial view', () => {
   assert.equal(config.allow_google_signals, false);
   assert.equal(config.allow_ad_personalization_signals, false);
 });
+
+test('national PDF export is counted without queries or arbitrary file names',()=>{
+  const s=setup({location:{pathname:'/nacion/',hash:'#inicio'}});
+  const click=href=>s.clicks.click({target:{closest:()=>({href,getAttribute:()=>null})}});
+  click('https://tablero.federicopellegrini.com.ar/nacion/reports/informe-nacional-real-law-anexo.pdf?v=private');
+  click('https://tablero.federicopellegrini.com.ar/nacion/reports/arbitrary-private.pdf');
+  click('https://other.example/nacion/reports/informe-nacional-real-law.pdf');
+  const events=s.records().filter(r=>r[1]==='file_download');
+  assert.equal(events.length,1);
+  assert.equal(events[0][2].link_text,'Informe del Presupuesto Nacional');
+  assert.doesNotMatch(JSON.stringify(events),/private|other\.example/);
+});
 test('national budget gets its own route and never sends searches or selected provinces',()=>{
   const s=setup({location:{pathname:'/nacion/',hash:'#obras',search:'?provincia=private&q=secret'}});
   assert.equal(s.views()[0][2].page_location,'https://tablero.federicopellegrini.com.ar/nacion/#obras');

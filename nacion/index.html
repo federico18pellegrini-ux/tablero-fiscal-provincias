@@ -6,9 +6,9 @@
   <meta name="description" content="El Presupuesto Nacional, explicado. Explorá el proyecto 2027, las obras por provincia y la ejecución de 2026 con datos oficiales.">
   <meta name="theme-color" content="#f5f6f3">
   <link rel="canonical" href="https://tablero.federicopellegrini.com.ar/nacion/">
-  <link rel="icon" href="../municipios/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260917-identidad">
-  <script defer src="../analytics.js?v=20260917-grupos"></script>
-  <script defer src="math.js?v=20260917-identidad"></script><script defer src="app.js?v=20260917-identidad"></script>
+  <link rel="icon" href="../municipios/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260917-informe">
+  <script defer src="../analytics.js?v=20260917-informe"></script>
+  <script defer src="math.js?v=20260917-identidad"></script><script defer src="report.js?v=20260917-informe"></script><script defer src="app.js?v=20260917-informe"></script>
 </head>
 <body>
 <a href="#contenido" class="skip">Saltar al contenido</a>
@@ -20,6 +20,7 @@
     <a href="#obras" data-page-link="obras"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2ZM9 3v16m6-14v16"/></svg>Obras</a>
     <a href="#recursos" data-page-link="economia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9m8 11V4m8 16V12M2 20h20"/></svg>Economía</a>
     <a href="#ejecucion" data-page-link="ejecucion"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18M6 15l4-5 5 3 6-8"/></svg>Ejecución</a>
+    <button id="export-report" class="report-trigger" aria-label="Exportar informe PDF" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span>Informe<span class="report-pdf-label"> PDF</span></span></button>
   </nav>
 </header>
 <main id="contenido">
@@ -70,6 +71,16 @@
 </div>
 </div>
 </main>
+<dialog id="report-dialog" aria-labelledby="report-title" aria-describedby="report-description">
+  <div class="report-dialog-heading"><p class="eyebrow">Para leer y compartir</p><button id="close-report" aria-label="Cerrar informe">✕</button></div>
+  <h2 id="report-title">Exportar informe completo</h2>
+  <p id="report-description">Una lectura del presupuesto con análisis, gráficos, cuadros y fuentes. Incluye todos los capítulos y todas las provincias.</p>
+  <div class="report-options"><label for="report-price">Montos<select id="report-price"><option value="nominal">Pesos corrientes</option><option value="real">Pesos de agosto de 2026</option></select></label><label for="report-base">Comparar 2027 con<select id="report-base"><option value="current">Vigente 2026 · 15/09</option><option value="law">Inicial 2026</option><option value="closing">Cierre estimado 2026</option></select></label></div>
+  <p id="report-unit-note" class="note"></p>
+  <label class="report-annex"><input id="report-annex" type="checkbox"><span><strong>Agregar anexo con todos los datos</strong><small>Listado completo de programas y proyectos de inversión, y ejecución mensual por organismo.</small></span></label>
+  <p id="report-status" role="status" aria-live="polite">Preparando el informe…</p>
+  <a id="download-national-report" class="button" download hidden>Descargar PDF ↓</a>
+</dialog>
 <footer><div><strong>Federico Pellegrini</strong><span>Entre Mates y Mercados</span></div><p>Datos de ONP, Presupuesto Abierto e INDEC · Cartografía IGN / Georef.</p><nav><a href="#metodo">Fuentes y metodología</a><a href="../">Provincias</a><a href="../municipios/">Municipios</a><a href="../privacidad.html">Privacidad y estadísticas</a></nav></footer>
 <noscript>Para explorar el tablero necesitás activar JavaScript. También podés consultar los <a href="https://www.mecon.gob.ar/onp/presupuestos/2027">documentos oficiales de la ONP</a>.</noscript>
 </body></html>

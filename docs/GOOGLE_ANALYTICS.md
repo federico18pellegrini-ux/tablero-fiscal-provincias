@@ -29,7 +29,7 @@ Las estadísticas empiezan con esta instalación: no recuperan las visitas anter
 - `page_view` inicial y por cada cambio efectivo entre las once vistas. Se deduplican las notificaciones repetidas de una misma vista. Los filtros, la provincia y el perfil de lectura no generan vistas extra.
 - Municipios registra sus seis vistas y Nación sus secciones al navegar. Todos
   incluyen el parámetro estándar `content_group`; no requiere una dimensión personalizada.
-- `file_download` registra el clic en el PDF de la provincia seleccionada; no certifica que el navegador haya terminado de guardar el archivo.
+- `file_download` registra el clic en el PDF de la provincia seleccionada o del Presupuesto Nacional (con o sin anexo); no certifica que el navegador haya terminado de guardar el archivo. El nombre del archivo nacional identifica precios y base comparativa; no se envían búsquedas ni parámetros de URL.
 - La medición mejorada del flujo está **desactivada** y `send_page_view` es `false`. Mantener ambas configuraciones para no duplicar las vistas manuales.
 - Se excluyen parámetros de URL, rutas externas del referente, perfiles de lectura, escenarios y textos libres. No se configuran User-ID, Google Signals ni publicidad personalizada.
 - Las cookies usan el prefijo `tablero` y el dominio del tablero. `privacidad.html` informa el uso y permite desactivar la carga de Analytics en ese navegador.

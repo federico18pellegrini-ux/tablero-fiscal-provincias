@@ -66,14 +66,16 @@
     // The selected role, simulations and free text are never collected.
     doc.addEventListener('click', event => {
       if (win[disabledKey]) return;
-      const link = event.target?.closest?.('#downloadPdf');
+      const link = event.target?.closest?.('#downloadPdf, #download-national-report');
       if (!link || link.getAttribute('aria-disabled') === 'true') return;
       let url;
       try { url = new URL(link.href); } catch (_) { return; }
-      if (url.origin !== origin || !/^\/reports\/informe-[a-z-]+\.pdf$/.test(url.pathname)) return;
+      const provincePdf = /^\/reports\/informe-[a-z-]+\.pdf$/.test(url.pathname);
+      const nationalPdf = /^\/nacion\/reports\/informe-nacional-(nominal|real)-(current|law|closing)(-anexo)?\.pdf$/.test(url.pathname);
+      if (url.origin !== origin || (!provincePdf && !nationalPdf)) return;
       win.gtag('event', 'file_download', {file_extension: 'pdf',
         file_name: url.pathname, link_url: origin + url.pathname,
-        link_text: 'PDF de la provincia'});
+        link_text: nationalPdf ? 'Informe del Presupuesto Nacional' : 'PDF de la provincia'});
     });
     const current = doc.querySelector(municipal ? '.main-nav button[aria-current="page"]' : '.visible-navigation button[aria-current="page"]')?.dataset;
     const hash = municipal ? new URLSearchParams(win.location.search || '').get('vista') : win.location.hash.slice(1);
