@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es-AR" data-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Presupuesto Nacional · Federico Pellegrini</title>
+  <meta name="description" content="El Presupuesto Nacional, explicado. Explorá el proyecto 2027, las obras por provincia y la ejecución de 2026 con datos oficiales.">
+  <meta name="theme-color" content="#06090F">
+  <link rel="canonical" href="https://tablero.federicopellegrini.com.ar/nacion/">
+  <link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="styles.css?v=20260917">
+  <script defer src="../analytics.js?v=20260917-nacion"></script>
+  <script defer src="math.js?v=20260917"></script><script defer src="app.js?v=20260917"></script>
+</head>
+<body>
+<a href="#contenido" class="skip">Saltar al contenido</a>
+<header class="masthead">
+  <a class="brand" href="#inicio">Federico Pellegrini<span>Entre Mates y Mercados</span></a>
+  <div class="header-actions"><a href="../">Provincias ↗</a><a href="../municipios/">Municipios ↗</a><button id="theme" aria-label="Cambiar a modo claro">◐ <span>Modo claro</span></button></div>
+</header>
+<div class="toolbar" aria-label="Opciones del tablero">
+  <a class="toolbar-title" href="#inicio">Presupuesto Nacional</a>
+  <div class="switch" role="group" aria-label="Unidad monetaria"><button data-price="nominal" aria-pressed="true">Corrientes</button><button data-price="real" aria-pressed="false">Constantes</button></div>
+  <details class="menu"><summary>Índice <span aria-hidden="true">☰</span></summary><nav id="compact-index" aria-label="Secciones del tablero"></nav></details>
+</div>
+<main id="contenido">
+  <section class="hero" id="inicio">
+    <p class="eyebrow"><span>ARGENTINA / 2027</span> Proyecto de ley de presupuesto</p>
+    <h1>El presupuesto.<br>Las prioridades.<br><em>Lo que cambia.</em></h1>
+    <p class="hero-deck">Cuánto propone gastar Nación, adónde va la plata y qué está pasando con la ejecución. Los datos oficiales, explicados para entender y decidir.</p>
+    <nav class="hero-links" aria-label="Accesos rápidos"><a href="#distribucion">→ Adónde va la plata</a><a href="#cambios">→ Qué sube y qué baja</a><a href="#ejecucion">→ Cuánto se ejecutó</a></nav>
+  </section>
+  <div id="load-state" role="status">Cargando los datos oficiales…</div>
+  <div id="dashboard" hidden>
+  <section class="lead-figure" aria-labelledby="total-title"><h2 class="sr-only" id="total-title">Gasto propuesto para 2027</h2><div id="headline-total" class="jumbo blue"></div><p class="eyebrow" id="headline-unit"></p><p id="headline-reading" class="reading"></p><p id="real-note" class="note" hidden>Pesos de agosto de 2026 · cálculo con inflación proyectada. <a href="#metodo">Ver el supuesto.</a></p></section>
+  <nav class="full-index" id="full-index" aria-label="Las once secciones"></nav>
+  <section id="distribucion" class="chapter">
+    <p class="eyebrow"><span>I</span> Distribución</p><h2>Adónde va <em>la plata.</em></h2><p>El mismo presupuesto, visto desde cuatro ángulos. Elegí uno y abrí cada ficha para ir al detalle.</p>
+    <div class="switch lenses" role="group" aria-label="Mirar la distribución por"><button data-lens="topics" aria-pressed="true">Temas</button><button data-lens="jurisdictions" aria-pressed="false">Ministerios</button><button data-lens="functions" aria-pressed="false">Funciones</button><button data-lens="geographies" aria-pressed="false">Provincias</button></div>
+    <div id="distribution-note" class="note"></div><div id="composition" class="composition" aria-label="Composición del proyecto"></div><div id="cards" class="cards"></div>
+  </section>
+  <section id="obras" class="chapter">
+    <p class="eyebrow"><span>II</span> El territorio</p><h2>Las obras, <em>en el mapa.</em></h2><p id="works-reading"></p>
+    <div class="map-layout"><div class="map-panel"><div id="map"></div><p class="note">Elegí en el mapa o en la lista. El monto indica la ubicación presupuestaria de la obra.</p></div><div class="works-panel"><label for="province">Provincia o ubicación</label><select id="province"><option value="">Todo el país</option></select><label class="search-label" for="work-search">Buscar una obra</label><input id="work-search" type="search" placeholder="Ruta, hospital, localidad…" autocomplete="off"><p id="works-count" class="eyebrow" aria-live="polite"></p><div id="works-list" class="scroll-list"></div></div></div>
+    <p class="note">Partidas de proyectos de inversión: incluyen construcción, mantenimiento y equipamiento. No representan toda la inversión pública ni transferencias a los gobiernos provinciales.</p>
+  </section>
+  <section id="programas" class="chapter">
+    <p class="eyebrow"><span>III</span> El detalle</p><h2>Programa <em>por programa.</em></h2><p>Detrás de cada partida hay una política pública. Buscá por nombre, organismo o ministerio.</p>
+    <label class="sr-only" for="program-search">Buscar programa u organismo</label><input id="program-search" type="search" placeholder="Por ejemplo: universidades, vacunas, ANSES…" autocomplete="off"><p id="program-count" class="eyebrow" aria-live="polite"></p><div id="program-list"></div><button class="more" id="program-more">Ver más programas ↓</button>
+  </section>
+  <section id="escala" class="chapter"><p class="eyebrow"><span>IV</span> La escala</p><h2>Cuatro datos <em>para ubicarse.</em></h2><div id="scale" class="scale-grid"></div></section>
+  <section id="comparacion" class="chapter">
+    <p class="eyebrow"><span>V</span> Las prioridades</p><h2>Quién recibe <em>más presupuesto.</em></h2><p>Una suba en pesos puede alcanzar para comprar menos. Cambiá a constantes para descontar la inflación del escenario.</p>
+    <div class="compare-controls"><span>Comparar 2027 con:</span><div class="switch" role="group" aria-label="Base 2026"><button data-base="law" aria-pressed="false">Inicial 2026</button><button data-base="current" aria-pressed="true">Vigente 2026</button><button data-base="closing" aria-pressed="false">Cierre estimado</button></div></div>
+    <p id="base-note" class="note"></p><div class="legend"><span class="base-key">Base 2026</span><span class="project-key">Proyecto 2027</span></div><p class="note">B = billones · M = millones de pesos.</p><div id="comparison-chart"></div><p class="note">Jurisdicciones según cada ejercicio. Los cambios de estructura pueden trasladar funciones: una partida ausente no equivale a un recorte a cero.</p>
+  </section>
+  <section id="finalidades" class="chapter"><p class="eyebrow"><span>VI</span> Composición</p><h2>De cada $100, <em>cuánto va a cada fin.</em></h2><p>La participación muestra el peso de cada área dentro del total. No cambia al expresar los montos en pesos constantes.</p><div id="purpose-chart"></div></section>
+  <section id="cambios" class="chapter"><p class="eyebrow"><span>VII</span> Las variaciones</p><h2>Las mayores <em>subas y bajas.</em></h2><p>Ordenamos por el cambio del monto, para identificar qué movimientos explican la diferencia total.</p><div class="switch" role="group" aria-label="Nivel del ranking"><button data-rank="jurisdictions" aria-pressed="true">Jurisdicciones</button><button data-rank="functions" aria-pressed="false">Funciones</button><button data-rank="programs" aria-pressed="false">Programas</button></div><div id="changes" class="change-grid"></div><p id="ranking-note" class="note"></p></section>
+  <section id="recursos" class="chapter"><p class="eyebrow"><span>VIII</span> El financiamiento</p><h2>De dónde sale <em>la plata.</em></h2><p id="resources-reading"></p><div id="resources-chart"></div><div id="pension-reading" class="editorial"></div></section>
+  <section id="macro" class="chapter"><p class="eyebrow"><span>IX</span> El escenario</p><h2>Los supuestos <em>detrás del presupuesto.</em></h2><p>Si cambian la inflación, la actividad o el dólar, también cambia lo que se puede recaudar y comprar. Estas son las previsiones del Ejecutivo.</p><div id="macro-table" class="table-wrap"></div><p class="note">2025: datos reportados por el Mensaje. 2026 y 2027: proyecciones oficiales. Inflación y dólar corresponden a diciembre; actividad, al promedio anual.</p></section>
+  <section id="historia" class="chapter"><p class="eyebrow"><span>X</span> La trayectoria</p><h2>Cómo llegamos <em>hasta acá.</em></h2><p>La serie reúne lo ejecutado en 2023–2025, lo autorizado hoy para 2026 y lo propuesto para 2027. Cada barra identifica su etapa.</p><div class="switch" role="group" aria-label="Indicador histórico"><button data-history="amount" aria-pressed="true">Monto</button><button data-history="composition" aria-pressed="false">Composición</button><button data-history="gdp" aria-pressed="false">% del PIB</button></div><div id="history-chart"></div><p id="history-note" class="note"></p></section>
+  <div class="divider"><span>Del proyecto a la ejecución</span><p>2027 todavía es una propuesta.<br><strong>Ahora miramos lo que se ejecuta en 2026.</strong></p></div>
+  <section id="ejecucion" class="chapter"><p class="eyebrow"><span>XI</span> El presupuesto en marcha</p><h2>Cuánto se <em>ejecutó.</em></h2><p>Devengado es el gasto cuya obligación de pago ya se reconoció. Puede estar pagado o pendiente de pago.</p><label for="execution-jurisdiction">Jurisdicción</label><select id="execution-jurisdiction"></select><div id="execution-reading" class="execution-reading"></div><div id="execution-chart"></div><div id="execution-table" class="table-wrap"></div><p class="note">Corte: 15/09/2026. Septiembre es parcial. El porcentaje compara gasto devengado nominal acumulado con el crédito vigente al corte. El ritmo no es uniforme durante el año.</p></section>
+  <section id="metodo" class="chapter methodology"><p class="eyebrow">Datos abiertos / método</p><h2>Los datos, <em>a la vista.</em></h2><div class="method-grid"><div><h3>Qué estamos comparando</h3><p>Administración Nacional: administración central, organismos descentralizados y seguridad social. Gastos corrientes y de capital, sin aplicaciones financieras ni gastos figurativos. Se incluyen los intereses entre organismos, igual que en los cuadros estadísticos del proyecto.</p><p>Un billón equivale a un millón de millones de pesos. Los PDF publican millones redondeados; la suma de las partidas puede diferir levemente del total.</p><h3>Pesos constantes</h3><p id="deflator-method"></p></div><div><h3>Programas y obras</h3><p id="coverage-method"></p><p>Los temas son una agrupación editorial de las 29 funciones oficiales; cada función se cuenta una sola vez. No se asignan funciones a los programas de 2027 usando las de 2026.</p><p>La localización del gasto no identifica necesariamente a sus beneficiarios. Los montos nacionales, interprovinciales y del exterior quedan fuera del mapa.</p></div></div><h3>Documentos y descargas</h3><p class="note">Revisión: 17/09/2026 · Proyecto 2027 · ejecución 2026 actualizada al 15/09.</p><div id="source-links" class="source-links"></div><div class="downloads"><button id="download">Descargar datos en CSV ↓</button><a href="data/budget.json" download>Base completa JSON ↓</a><a href="data/sources.json" download>Registro de fuentes ↓</a></div></section>
+  </div>
+</main>
+<footer><div><strong>Federico Pellegrini</strong><span>Entre Mates y Mercados</span></div><p>Diseño inspirado en <a href="https://presupuesto.openarg.org/">Presupuesto OpenArg</a>. Desarrollo y análisis propios a partir de fuentes oficiales. Cartografía: <a href="../data/province_geometry.json">IGN / Georef</a>.</p><nav><a href="../">Tablero Provincial</a><a href="../municipios/">Tablero Municipal</a><a href="../privacidad.html">Privacidad y estadísticas</a><a href="#inicio">Volver arriba ↑</a></nav></footer>
+<noscript>Este tablero necesita JavaScript. Podés consultar los <a href="https://www.mecon.gob.ar/onp/presupuestos/2027">documentos oficiales de la ONP</a>.</noscript>
+</body></html>

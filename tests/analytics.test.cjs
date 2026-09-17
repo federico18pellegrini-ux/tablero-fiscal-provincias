@@ -25,6 +25,14 @@ test('loads the dedicated tag once and sends exactly one initial view', () => {
   assert.equal(config.allow_google_signals, false);
   assert.equal(config.allow_ad_personalization_signals, false);
 });
+test('national budget gets its own route and never sends searches or selected provinces',()=>{
+  const s=setup({location:{pathname:'/nacion/',hash:'#obras',search:'?provincia=private&q=secret'}});
+  assert.equal(s.views()[0][2].page_location,'https://tablero.federicopellegrini.com.ar/nacion/#obras');
+  s.win.location.hash='#ejecucion';s.events.hashchange();
+  assert.match(s.views().at(-1)[2].page_title,/Ejecución.*Presupuesto Nacional/);
+  s.events.hashchange();assert.equal(s.views().length,2);
+  assert.doesNotMatch(JSON.stringify(s.records()),/private|secret/);
+});
 test('all eleven sections count once per transition; repeats and invalid values do not count', () => {
   const s = setup();
   const routes = ['summary','debt','income','federal','comparison','results','openHistory','openMap','openNation','openOperations','openGuide'];
