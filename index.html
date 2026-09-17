@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#f5f6f3">
+<meta name="theme-color" content="#0A192F">
 <title>Tablero Provincial · Federico Pellegrini</title>
 <script defer src="analytics.js?v=20260917-informe"></script>
-<link rel="preload" href="municipios/assets/manrope-400.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="municipios/assets/manrope-700.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/brand/playfair-display.ttf" as="font" type="font/ttf" crossorigin>
 <style>
 /* ── TOKENS ─────────────────────────────────────────────────────── */
 :root{
@@ -901,19 +901,15 @@ tr:last-child td{border-bottom:none}
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
 <link rel="stylesheet" href="executive-redesign.css?v=20260915-9">
-<link rel="stylesheet" href="provincial-identity.css?v=20260917-1">
+<link rel="stylesheet" href="provincial-identity.css?v=20260917-marca">
+<link rel="stylesheet" href="brand.css?v=20260917-marca">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 </head>
-<body>
+<body data-dashboard="provincias">
 
 <!-- STICKY HEADER -->
 <div class="header">
-  <div class="brand">
-    <div class="brand-logo" aria-hidden="true">fp.</div>
-    <div class="brand-text">
-      <div class="brand-name">Federico Pellegrini</div>
-      <div class="brand-sub">Entre Mates y Mercados</div>
-    </div>
-  </div>
+  <div class="brand pellegrini-brand"><span class="brand-identity"><strong class="brand-wordmark">PELLEGRINI</strong><small class="brand-tagline">ESTUDIOS MACROFINANCIEROS</small></span><div class="brand-text brand-context"></div></div>
   <div class="header-meta" id="metaBox">Cargando...</div>
 </div>
 
@@ -3686,10 +3682,10 @@ function chartTopMensual(rows){
       ctx.textAlign='center';
       ctx.textBaseline='middle';
       ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--text').trim();
-      ctx.font='700 24px Manrope, sans-serif';
+      ctx.font='700 24px Geist, sans-serif';
       ctx.fillText(`${shares[dominantIndex].toFixed(1).replace('.',',')}%`,x,y-7);
       ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
-      ctx.font='700 13px Manrope, sans-serif';
+      ctx.font='700 13px Geist, sans-serif';
       ctx.fillText(taxes[dominantIndex],x,y+14);
       ctx.restore();
     }
@@ -4369,7 +4365,7 @@ function renderDebtProfile(province, c){
         {label:'Bancos y otros',pct:rawCreditors.slice(2).reduce((sum,item)=>sum+(toN(item.pct)||0),0)}
       ]
       : rawCreditors;
-    const colors=['var(--green)','var(--chart-blue)','var(--chart-amber)','var(--muted)'];
+    const colors=['var(--blue)','var(--chart-blue)','var(--chart-amber)','var(--muted)'];
     const segments=[];
     let cursor=0;
     creditors.forEach((item,index)=>{
@@ -4448,7 +4444,7 @@ function renderDebtProfile(province, c){
   const debtProfileReading=document.getElementById('debtProfileReading');
   if(debtProfileReading) debtProfileReading.textContent='Lectura comparativa disponible; falta una ficha oficial equivalente para este corte.';
   document.getElementById('debtProfileCreditors').innerHTML=acreedores.length
-    ? acreedores.map(([n,v],index)=>`<div class="debt-legend-row"><span class="debt-legend-dot" style="background:${['var(--green)','var(--chart-blue)','var(--chart-amber)'][index]}"></span><span>${n}</span><span class="debt-legend-value">${pctN(v)}</span></div>`).join('')
+    ? acreedores.map(([n,v],index)=>`<div class="debt-legend-row"><span class="debt-legend-dot" style="background:${['var(--blue)','var(--chart-blue)','var(--chart-amber)'][index]}"></span><span>${n}</span><span class="debt-legend-value">${pctN(v)}</span></div>`).join('')
     : 'Acreedores principales: SD';
   const debtProfileMethodNote=document.getElementById('debtProfileMethodNote');
   if(debtProfileMethodNote){
@@ -5023,7 +5019,7 @@ document.getElementById('downloadPng')?.addEventListener('click',exportCurrentPr
 <script src="profile-readings.js?v=20260915-9"></script>
 <script src="provincial-debt-services.js?v=20260915-9"></script>
 <script src="inflation-history.js?v=20260915-4"></script>
-<script src="executive-redesign.js?v=20260917-1"></script>
+<script src="executive-redesign.js?v=20260917-marca"></script>
 <script src="closing-tools.js?v=20260915-9"></script>
 <script src="management-tools.js?v=20260915-9"></script>
 <script src="federal-tools.js?v=20260915-9"></script>

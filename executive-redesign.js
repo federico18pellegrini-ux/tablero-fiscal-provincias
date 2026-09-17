@@ -11,7 +11,7 @@ function initExecutiveRedesign(){
   const picker=document.querySelector('.mobile-view-picker');document.querySelector('.hero').after(picker);
   const theme=document.createElement('button');theme.type='button';theme.id='themeToggle';theme.className='theme-toggle';aside.append(theme);
   let stored='light';try{stored=localStorage.getItem('fiscal-theme')||'light';}catch{}
-  const setTheme=value=>{document.documentElement.dataset.theme=value;theme.textContent=value==='dark'?'Usar fondo claro':'Usar fondo oscuro';theme.setAttribute('aria-pressed',String(value==='dark'));document.querySelector('meta[name="theme-color"]').content=value==='dark'?'#142421':'#f5f6f3';try{localStorage.setItem('fiscal-theme',value);}catch{}if(typeof Chart!=='undefined')Object.values(Chart.instances).forEach(c=>c.update('none'));};
+  const setTheme=value=>{document.documentElement.dataset.theme=value;theme.textContent=value==='dark'?'Usar fondo claro':'Usar fondo oscuro';theme.setAttribute('aria-pressed',String(value==='dark'));document.querySelector('meta[name="theme-color"]').content='#0A192F';try{localStorage.setItem('fiscal-theme',value);}catch{}if(typeof Chart!=='undefined')Object.values(Chart.instances).forEach(c=>c.update('none'));};
   theme.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');setTheme(stored==='dark'?'dark':'light');
   const mobileTheme=document.createElement('button');mobileTheme.type='button';mobileTheme.className='mobile-theme';mobileTheme.textContent='Cambiar tema';mobileTheme.onclick=()=>theme.click();document.querySelector('.header').append(mobileTheme);
   const sync=()=>{const opened=document.querySelector('#federalTools > details[open]');document.body.classList.toggle('tool-context',!!opened);nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',!opened&&b.classList.contains('active')?'page':'false'));};
@@ -46,24 +46,24 @@ function provincialChartColor(value,dark){
   if(Array.isArray(value))return value.map(color=>provincialChartColor(color,dark));
   if(typeof value!=='string')return value;
   const groups=[
-    [['#60a5fa','#68b7ff','#2863aa','#3675bd','#327f88','#82c5c8'],'#327f88','#82c5c8'],
-    [['#4ade80','#6bd5b5','#14695c','#8ed2b5'],'#14695c','#8ed2b5'],
-    [['#fbbf24','#ffb05c','#f6d273','#d79720','#a5782d','#e3bd75'],'#a5782d','#e3bd75'],
-    [['#a78bfa','#d6a3ff','#817699','#bcadd9'],'#817699','#bcadd9'],
-    [['#f87171','#ff5f5f','#b42318','#ff9b91'],'#b42318','#ff9b91'],
-    [['#64748b','#7c9088','#aabeb5'],'#7c9088','#aabeb5'],
-    [['#111827','#ffffff','#1c302c'],'#ffffff','#1c302c']
+    [['#60a5fa','#68b7ff','#2863aa','#3675bd','#327f88','#82c5c8','#254b73','#8eaed1'],'#254b73','#8eaed1'],
+    [['#4ade80','#6bd5b5','#14695c','#8ed2b5','#8398b1','#8b99ad'],'#8398b1','#8b99ad'],
+    [['#fbbf24','#ffb05c','#f6d273','#d79720','#a5782d','#e3bd75','#b8924a','#dfba77'],'#b8924a','#dfba77'],
+    [['#a78bfa','#d6a3ff','#817699','#bcadd9','#756587','#baabd0'],'#756587','#baabd0'],
+    [['#f87171','#ff5f5f','#b42318','#ff9b91','#b91c1c'],'#b91c1c','#ff9b91'],
+    [['#64748b','#7c9088','#aabeb5','#94a3b8','#a6b5ca'],'#94a3b8','#a6b5ca'],
+    [['#111827','#ffffff','#1c302c','#12253e'],'#ffffff','#12253e']
   ];
   const match=value.toLowerCase().match(/^(#[\da-f]{6})([\da-f]{2})?$/);
   if(match){const group=groups.find(([colors])=>colors.includes(match[1]));return group?group[dark?2:1]+(match[2]||''):value;}
   return value;
 }
 if(typeof Chart!=='undefined'){
- Chart.defaults.font.family='Manrope, system-ui, sans-serif';
+ Chart.defaults.font.family='Geist, system-ui, sans-serif';
  Chart.defaults.font.size=14;
  Chart.register({id:'executiveTheme',beforeUpdate(chart){
-  const dark=document.documentElement.dataset.theme==='dark',text=dark?'#aabeb5':'#64736f',grid=dark?'#355046':'#dfe6e0';
-  for(const scale of Object.values(chart.options.scales||{})){if(scale.ticks){scale.ticks.color=text;scale.ticks.font={...scale.ticks.font,family:'Manrope',size:14};}if(scale.title)scale.title.color=text;if(scale.grid)scale.grid.color=grid;if(scale.border)scale.border.color=grid;}
+  const dark=document.documentElement.dataset.theme==='dark',text=dark?'#a6b5ca':'#64748b',grid=dark?'#31465e':'#e2e8f0';
+  for(const scale of Object.values(chart.options.scales||{})){if(scale.ticks){scale.ticks.color=text;scale.ticks.font={...scale.ticks.font,family:'Geist',size:14};}if(scale.title)scale.title.color=text;if(scale.grid)scale.grid.color=grid;if(scale.border)scale.border.color=grid;}
   const legend=chart.options.plugins?.legend;if(legend?.labels)legend.labels.color=text;
   for(const dataset of chart.data.datasets)for(const key of ['borderColor','backgroundColor','pointBackgroundColor','pointBorderColor','hoverBackgroundColor'])if(dataset[key])dataset[key]=provincialChartColor(dataset[key],dark);
  }});

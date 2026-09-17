@@ -481,9 +481,9 @@ function renderTransparency(){
 }
 function mapScale(meta){
   const vals=rows.map(m=>metricValue(m,meta)).filter(finite);
-  if(meta.id==='transparencia')return {scale:d3.scaleLinear().domain([0,100]).range(['#eef1f8','#3455a0']).clamp(true),low:'0 puntos',high:'100 puntos'};
-  if(['recursos','empleo'].includes(meta.id)){const edge=Math.max(...vals.map(Math.abs));return {scale:d3.scaleLinear().domain([-edge,0,edge]).range(['#d5886e','#edf1e6','#288676']).clamp(true),low:'Mayor caída',high:'Mayor suba'};}
-  return {scale:d3.scaleLinear().domain([Math.min(...vals),Math.max(...vals)]).range(meta.id==='carencias'?['#eff1e7','#b36d51']:['#eef2e9','#2a766b']).clamp(true),low:meta.id==='carencias'?'Menos carencias':'Menor peso',high:meta.id==='carencias'?'Más carencias':'Mayor peso'};
+  if(meta.id==='transparencia')return {scale:d3.scaleLinear().domain([0,100]).range(['#f1f5f9','#254b73']).clamp(true),low:'0 puntos',high:'100 puntos'};
+  if(['recursos','empleo'].includes(meta.id)){const edge=Math.max(...vals.map(Math.abs));return {scale:d3.scaleLinear().domain([-edge,0,edge]).range(['#b91c1c','#f8f9fa','#047857']).clamp(true),low:'Mayor caída',high:'Mayor suba'};}
+  return {scale:d3.scaleLinear().domain([Math.min(...vals),Math.max(...vals)]).range(meta.id==='carencias'?['#f8f9fa','#b91c1c']:['#f1f5f9','#0a192f']).clamp(true),low:meta.id==='carencias'?'Menos carencias':'Menor peso',high:meta.id==='carencias'?'Más carencias':'Mayor peso'};
 }
 function drawMap(){
   if(state.view!=='panorama')return;
@@ -494,7 +494,7 @@ function drawMap(){
   mapProjection=d3.geoMercator().fitExtent([[24,12],[w-42,h-30]],geography);mapPath=d3.geoPath(mapProjection);
   let group=svg.select('g.map-shapes');if(group.empty())group=svg.append('g').attr('class','map-shapes');
   const features=geography.features;
-  const paths=group.selectAll('path.municipality-path').data(features,d=>d.properties.id).join('path').attr('class',d=>'municipality-path'+(d.properties.id===state.id?' selected':'')).attr('d',mapPath).attr('data-municipality',d=>d.properties.id).attr('fill',d=>{const v=metricValue(byId.get(d.properties.id),meta);return finite(v)?colors.scale(v):'#dce2db';}).attr('role','button').attr('tabindex',d=>d.properties.id===state.id?0:-1).attr('aria-pressed',d=>String(d.properties.id===state.id)).attr('aria-label',d=>`${byId.get(d.properties.id).municipio}: ${formatMetric(metricValue(byId.get(d.properties.id),meta),meta)}. ${meta.period}`);
+  const paths=group.selectAll('path.municipality-path').data(features,d=>d.properties.id).join('path').attr('class',d=>'municipality-path'+(d.properties.id===state.id?' selected':'')).attr('d',mapPath).attr('data-municipality',d=>d.properties.id).attr('fill',d=>{const v=metricValue(byId.get(d.properties.id),meta);return finite(v)?colors.scale(v):'#e2e8f0';}).attr('role','button').attr('tabindex',d=>d.properties.id===state.id?0:-1).attr('aria-pressed',d=>String(d.properties.id===state.id)).attr('aria-label',d=>`${byId.get(d.properties.id).municipio}: ${formatMetric(metricValue(byId.get(d.properties.id),meta),meta)}. ${meta.period}`);
   function tip(event,d){const m=byId.get(d.properties.id),value=metricValue(m,meta);$('map-tooltip').innerHTML=`<strong>${escape(m.municipio)}</strong><span class="${negativeClass(value)}">${formatMetric(value,meta)}</span>`;$('map-tooltip').hidden=false;}
   paths.on('pointerenter',tip).on('pointerleave',()=>$('map-tooltip').hidden=true).on('focus',tip).on('blur',()=>$('map-tooltip').hidden=true).on('click',(event,d)=>{event.stopPropagation();$('map-tooltip').hidden=true;selectMunicipality(d.properties.id);}).on('keydown',(event,d)=>{
     if(event.key==='Enter'||event.key===' '){event.preventDefault();selectMunicipality(d.properties.id);}
@@ -507,7 +507,7 @@ function drawMap(){
   if(changed)svg.call(mapZoom.transform,d3.zoomIdentity);
   document.querySelectorAll('[data-map]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.map===mapMetric)));
   $('legend-low').textContent=colors.low;$('legend-high').textContent=colors.high;
-  const gradient=document.querySelector('.legend-gradient');gradient.style.background=mapMetric==='transparencia'?'linear-gradient(90deg,#eef1f8,#3455a0)':['recursos','empleo'].includes(mapMetric)?'linear-gradient(90deg,#d5886e,#edf1e6,#288676)':mapMetric==='carencias'?'linear-gradient(90deg,#eff1e7,#b36d51)':'linear-gradient(90deg,#eef2e9,#2a766b)';
+  const gradient=document.querySelector('.legend-gradient');gradient.style.background=mapMetric==='transparencia'?'linear-gradient(90deg,#f1f5f9,#254b73)':['recursos','empleo'].includes(mapMetric)?'linear-gradient(90deg,#b91c1c,#f8f9fa,#047857)':mapMetric==='carencias'?'linear-gradient(90deg,#f8f9fa,#b91c1c)':'linear-gradient(90deg,#f1f5f9,#0a192f)';
   $('map-selection').innerHTML=`<strong>${escape(current().municipio)}</strong><span class="${negativeClass(metricValue(current(),meta))}">${formatMetric(metricValue(current(),meta),meta)}</span>`;
   $('map-caption').textContent=meta.period+' · '+meta.note;
 }
@@ -659,7 +659,7 @@ function drawTransferChart(){
   const x=d3.scaleBand().domain(values.map(d=>d.month)).range([a.left,w-a.right]).padding(.27),y=d3.scaleLinear().domain([0,d3.max(values,d=>Math.max(d.previous,d.current))*1.08]).nice().range([h-a.bottom,a.top]);
   svg.append('g').attr('class','grid').attr('transform',`translate(${a.left},0)`).call(d3.axisLeft(y).ticks(4).tickSize(-(w-a.left-a.right)).tickFormat(v=>num(v)));
   svg.append('g').attr('class','axis').attr('transform',`translate(0,${h-a.bottom})`).call(d3.axisBottom(x).tickSize(0).tickPadding(12));
-  for(const key of ['previous','current'])svg.selectAll('.bar-'+key).data(values).join('rect').attr('x',d=>x(d.month)+(key==='current'?x.bandwidth()/2:0)).attr('y',d=>y(d[key])).attr('height',d=>y(0)-y(d[key])).attr('width',Math.max(1,x.bandwidth()/2-2)).attr('rx',2).attr('fill',key==='current'?'#14695c':'#cdd8cf');
+  for(const key of ['previous','current'])svg.selectAll('.bar-'+key).data(values).join('rect').attr('x',d=>x(d.month)+(key==='current'?x.bandwidth()/2:0)).attr('y',d=>y(d[key])).attr('height',d=>y(0)-y(d[key])).attr('width',Math.max(1,x.bandwidth()/2-2)).attr('rx',2).attr('fill',key==='current'?'#0a192f':'#cbd5e1');
   svg.selectAll('.month-hit').data(values).join('rect').attr('class','month-hit').attr('x',d=>x(d.month)-x.step()*.1).attr('y',a.top).attr('width',x.step()).attr('height',h-a.top-a.bottom).attr('fill','transparent').attr('tabindex',0).attr('role','img').attr('aria-label',d=>`${d.month}: 2025, ${num(d.previous,1)} millones; 2026, ${num(d.current,1)} millones.`).on('pointerenter',(_,d)=>show(d)).on('focus',(_,d)=>show(d)).on('click',(_,d)=>show(d)).on('pointerleave',()=>tip.hidden=true).on('blur',()=>tip.hidden=true);
   function show(d){tip.textContent=`${d.month.toUpperCase()} · 2025: $${num(d.previous,1)} M · 2026: $${num(d.current,1)} M`;tip.hidden=false;}
 }
@@ -694,9 +694,9 @@ function drawEmploymentChart(){
   svg.append('g').attr('class','grid').attr('transform',`translate(${a.left},0)`).call(d3.axisLeft(y).ticks(4).tickSize(-(w-a.left-a.right)).tickFormat(v=>num(v)));
   const indexes=[0,Math.floor((values.length-1)/3),Math.floor((values.length-1)*2/3),values.length-1];
   const ticks=indexes.map(i=>values[i].date);svg.append('g').attr('class','axis').attr('transform',`translate(0,${h-a.bottom})`).call(d3.axisBottom(x).tickValues(ticks).tickFormat(d=>monthLabels[d.getUTCMonth()]+' '+String(d.getUTCFullYear()).slice(2)).tickSize(0).tickPadding(12));
-  svg.append('path').datum(values).attr('fill','#eaf2e9').attr('d',d3.area().x(d=>x(d.date)).y0(h-a.bottom).y1(d=>y(d.jobs)));
-  svg.append('path').datum(values).attr('fill','none').attr('stroke','#14695c').attr('stroke-width',2.4).attr('stroke-linejoin','round').attr('d',d3.line().x(d=>x(d.date)).y(d=>y(d.jobs)));
-  const marker=svg.append('circle').attr('r',4).attr('fill','#14695c').attr('stroke','white').attr('stroke-width',2).style('display','none');
+  svg.append('path').datum(values).attr('fill','#f1f5f9').attr('d',d3.area().x(d=>x(d.date)).y0(h-a.bottom).y1(d=>y(d.jobs)));
+  svg.append('path').datum(values).attr('fill','none').attr('stroke','#0a192f').attr('stroke-width',2.4).attr('stroke-linejoin','round').attr('d',d3.line().x(d=>x(d.date)).y(d=>y(d.jobs)));
+  const marker=svg.append('circle').attr('r',4).attr('fill','#0a192f').attr('stroke','white').attr('stroke-width',2).style('display','none');
   const overlay=svg.append('rect').attr('x',a.left).attr('y',a.top).attr('width',w-a.left-a.right).attr('height',h-a.top-a.bottom).attr('fill','transparent').attr('tabindex',0).attr('role','img').attr('aria-label','Gráfico de empleo. Use flechas izquierda y derecha para recorrer los meses.');
   let selectedIndex=values.length-1;
   function show(i){selectedIndex=Math.min(values.length-1,Math.max(0,i));const d=values[selectedIndex];tip.textContent=`${monthLabels[d.date.getUTCMonth()]} ${d.date.getUTCFullYear()} · ${num(d.jobs)} puestos`;tip.hidden=false;marker.attr('cx',x(d.date)).attr('cy',y(d.jobs)).style('display',null);}

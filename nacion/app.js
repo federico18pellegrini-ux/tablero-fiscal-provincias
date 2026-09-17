@@ -117,7 +117,7 @@
   function macro(){
     $('macro-table').innerHTML=`<table><caption class="sr-only">Supuestos oficiales del Mensaje del presupuesto</caption><thead><tr><th>Variable</th><th>2025</th><th>2026</th><th>2027</th></tr></thead><tbody>${D.macro.map(r=>`<tr><td>${esc(r.name)}</td>${r.values.map((v,i)=>`<td class="${v<0?'negative':i===2?'project-col':''}">${r.unit==='ARS/USD'?'$':''}${nf(v)}${r.unit==='%'?'%':''}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
   }
-  const purposeColors=['#708d82','#426c88','#288676','#bfa676','#a77b73'];
+  const purposeColors=['var(--project)','var(--chart-secondary)','var(--base)','var(--chart-amber)','var(--chart-purple)'];
   function historyChart(){
     const rows=D.history,max=Math.max(...rows.map(r=>state.history==='gdp'?(r.gdp_share||0):val(r.amount,r.year)));
     $('history-chart').innerHTML=rows.map(r=>{let graph;if(state.history==='composition'){const sum=r.purposes.reduce((a,b)=>a+b,0);graph=`<div class="history-stack">${r.purposes.map((v,i)=>`<span style="width:${width(v,sum)}%;background:${purposeColors[i]}" title="${esc(D.purposes[i].name)}: ${nf(M.ratio(v,sum))}%"></span>`).join('')}</div><div class="note">${r.purposes.map((v,i)=>`${esc(D.purposes[i].name)}: ${nf(M.ratio(v,sum))}%`).join(' · ')}</div>`;}else{const v=state.history==='gdp'?r.gdp_share:val(r.amount,r.year);graph=M.finite(v)?`<div class="bar-line ${r.year===2027?'project':''}"><div class="plot"><div class="bar" style="width:${width(v,max)}%"></div></div><span>${state.history==='gdp'?nf(v)+'%':short(v)}</span></div>`:'<span class="note">Pendiente de una base comparable</span>';}
@@ -146,7 +146,7 @@
     const blob=new Blob(['\ufeff'+rows.map(r=>r.map(M.csvCell).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`presupuesto-nacional-2027-${state.price}-ARS-millones.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   function render(){sync();hero();distribution();buildMap();works();programs();scale();comparison();changes();resources();macro();historyChart();execution();}
-  $('theme').addEventListener('click',()=>{const light=document.documentElement.dataset.theme!=='light';document.documentElement.dataset.theme=light?'light':'dark';$('theme').setAttribute('aria-label',light?'Cambiar a modo oscuro':'Cambiar a modo claro');document.querySelector('meta[name="theme-color"]').content=light?'#f5f6f3':'#142421';try{localStorage.setItem('national-budget-theme-v2',light?'light':'dark');}catch{}});
+  $('theme').addEventListener('click',()=>{const light=document.documentElement.dataset.theme!=='light';document.documentElement.dataset.theme=light?'light':'dark';$('theme').setAttribute('aria-label',light?'Cambiar a modo oscuro':'Cambiar a modo claro');document.querySelector('meta[name="theme-color"]').content='#0A192F';try{localStorage.setItem('national-budget-theme-v2',light?'light':'dark');}catch{}});
   try{if(localStorage.getItem('national-budget-theme-v2')==='dark')$('theme').click();}catch{}
   document.querySelectorAll('[data-price],[data-base],[data-lens],[data-rank],[data-history]').forEach(b=>b.addEventListener('click',()=>{const key=['price','base','lens','rank','history'].find(k=>b.dataset[k]);state[key]=b.dataset[key];if(D)render();else sync();}));
   function route(focus=false){

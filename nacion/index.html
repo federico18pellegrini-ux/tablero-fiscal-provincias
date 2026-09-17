@@ -4,16 +4,19 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Presupuesto Nacional · Federico Pellegrini</title>
   <meta name="description" content="El Presupuesto Nacional, explicado. Explorá el proyecto 2027, las obras por provincia y la ejecución de 2026 con datos oficiales.">
-  <meta name="theme-color" content="#f5f6f3">
+  <meta name="theme-color" content="#0A192F">
   <link rel="canonical" href="https://tablero.federicopellegrini.com.ar/nacion/">
-  <link rel="icon" href="../municipios/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260917-informe">
+  <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260917-marca">
   <script defer src="../analytics.js?v=20260917-informe"></script>
-  <script defer src="math.js?v=20260917-identidad"></script><script defer src="report.js?v=20260917-informe"></script><script defer src="app.js?v=20260917-informe"></script>
+  <script defer src="math.js?v=20260917-identidad"></script><script defer src="report.js?v=20260917-informe"></script><script defer src="app.js?v=20260917-marca"></script>
+  <link rel="preload" href="../assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="../assets/brand/playfair-display.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../brand.css?v=20260917-marca">
 </head>
-<body>
+<body data-dashboard="nacion">
 <a href="#contenido" class="skip">Saltar al contenido</a>
 <header class="site-header">
-  <div class="header-inner"><a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">fp.</span><span><strong>Presupuesto Nacional</strong><small>Federico Pellegrini</small></span></a><div class="header-actions"><a href="../">Provincias<span aria-hidden="true"> ↗</span></a><a href="../municipios/">Municipios<span aria-hidden="true"> ↗</span></a><button id="theme" aria-label="Cambiar a modo oscuro" title="Cambiar tema">◐</button></div></div>
+  <div class="header-inner"><a class="brand pellegrini-brand" href="#inicio" aria-label="PELLEGRINI · Presupuesto Nacional, inicio"><span class="brand-identity"><strong class="brand-wordmark">PELLEGRINI</strong><small class="brand-tagline">ESTUDIOS MACROFINANCIEROS</small></span><span class="brand-context">Presupuesto Nacional</span></a><div class="header-actions"><a href="../">Provincias<span aria-hidden="true"> ↗</span></a><a href="../municipios/">Municipios<span aria-hidden="true"> ↗</span></a><button id="theme" aria-label="Cambiar a modo oscuro" title="Cambiar tema">◐</button></div></div>
   <nav class="main-nav" aria-label="Vistas del tablero nacional">
     <a href="#inicio" data-page-link="panorama" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v11h-6v-8H9v8H3Z"/></svg>Panorama</a>
     <a href="#distribucion" data-page-link="gasto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 7 9-4 9 4M3 9h18M5 10v9m5-9v9m4-9v9m5-9v9M3 21h18"/></svg>Gasto</a>
