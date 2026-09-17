@@ -1,0 +1,169 @@
+/* Shared visual identity with Municipios and Nación. Presentation only. */
+@font-face{font-family:Manrope;src:url(municipios/assets/manrope-400.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Manrope;src:url(municipios/assets/manrope-700.ttf) format('truetype');font-weight:600 800;font-style:normal;font-display:swap}
+:root{
+ --bg:#f5f6f3;--s1:#fff;--s2:#f0f4ef;--s3:#e8efea;
+ --text:#203331;--muted:#64736f;--dim:#64736f;--border:#dfe6e0;--border2:#b9c9bf;--line:#dfe6e0;
+ --blue:#14695c;--gold:#14695c;--gold-dim:#14695c;--gold-bg:#e8f2ed;--gold-border:#c6d7ca;
+ --green:#14695c;--green-bg:#e8f2ed;--green-border:#c6d7ca;--red:#b42318;--red-bg:#f9eee9;--red-border:#ebc8bd;
+ --amber:#8a611f;--r:22px;--rs:12px;--font:Manrope,system-ui,sans-serif;--mono:Manrope,system-ui,sans-serif;
+ --chart-blue:#327f88;--chart-amber:#a5782d;--chart-purple:#817699;--chart-gray:#7c9088;
+ --fixed-header-height:82px;color-scheme:light;
+}
+:root[data-theme=dark]{
+ --bg:#142421;--s1:#1c302c;--s2:#203831;--s3:#2b433c;
+ --text:#eef4ef;--muted:#aabeb5;--dim:#aabeb5;--border:#355046;--border2:#789b8b;--line:#355046;
+ --blue:#8ed2b5;--gold:#8ed2b5;--gold-dim:#8ed2b5;--gold-bg:#24483c;--gold-border:#456b59;
+ --green:#8ed2b5;--green-bg:#24483c;--green-border:#456b59;--red:#ff9b91;--red-bg:#482e2b;--red-border:#81534e;
+ --amber:#e3bd75;--chart-blue:#82c5c8;--chart-amber:#e3bd75;--chart-purple:#bcadd9;--chart-gray:#aabeb5;color-scheme:dark;
+}
+body{font:400 16px/1.7 var(--font);background:var(--bg);color:var(--text)}
+button,select,input{font-family:var(--font)}
+.wrap{max-width:1336px;padding:20px 38px 42px}
+.header{display:flex;align-items:center;justify-content:space-between;min-height:82px;padding:14px max(24px,calc((100vw - 1260px)/2));gap:20px;background:var(--s1);color:var(--text);border-bottom:1px solid var(--border)}
+.header .brand{gap:12px;min-width:0}
+.header .brand-logo{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;background:#14695c!important;color:#fff;font:700 28px/1 var(--font);letter-spacing:-2px}
+.header .fixed-dashboard-title{padding:0;margin:0;font:700 22px/1.3 var(--font)!important;letter-spacing:-.6px;color:var(--text)}
+.header .brand-name{font:400 13px/1.5 var(--font);color:var(--muted);margin-top:3px}
+.header .brand-sub,.header .header-meta{display:none!important}
+.header .mobile-theme{border:1px solid var(--border);border-radius:12px;background:var(--s1);color:var(--muted);min-height:44px;font-size:13px;padding:10px 14px;margin:0}
+.header .mobile-theme:hover{color:var(--blue);background:var(--s3)}
+.visible-navigation{margin-bottom:20px;padding:10px 0 12px;background:var(--bg)}
+.visible-navigation-heading{gap:12px;margin-bottom:12px}
+.visible-navigation-heading h2{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.visible-navigation-heading .fixed-province-picker{margin:0 auto 0 0;flex:0 1 350px}
+.fixed-province-picker select.psel{border:1px solid var(--border);border-radius:12px;background:var(--s1);font-weight:700;color:var(--text)}
+.fixed-province-picker .ctrl-lbl{font-size:14px;color:var(--muted)}
+.visible-navigation .municipal-dashboard-link{background:var(--s1);color:var(--blue);border:1px solid var(--border);border-radius:12px;font-size:14px;padding:10px 16px}
+.visible-navigation .municipal-dashboard-link:hover{background:var(--gold-bg)}
+.visible-navigation nav{gap:6px}
+.visible-navigation nav button{background:transparent;border:0;border-radius:12px;color:var(--muted);font-size:14px;font-weight:700;min-height:44px;padding:10px 8px}
+.visible-navigation nav button:hover{color:var(--blue);background:var(--s3)}
+.visible-navigation nav button[aria-current=page]{background:var(--gold-bg);color:var(--blue);box-shadow:none;border:0}
+.visible-navigation nav button[data-page^=open]{font-size:13px;font-weight:400}
+.dashboard-command-bar{padding:14px 18px!important;border:1px solid var(--border);border-radius:16px;background:var(--s1);margin-bottom:0}
+.reading-options h2{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.reading-options-grid{gap:18px;margin-top:0;grid-template-columns:1.5fr 1fr 1fr}
+.ctrl-lbl{font-size:12px;letter-spacing:0;text-transform:none;color:var(--muted);font-weight:400;margin-bottom:6px}
+.choice-buttons{gap:4px;background:var(--bg);padding:4px;border-radius:12px}
+.choice-buttons button{padding:8px;min-height:44px;font-size:13px;line-height:1.5;border:0;border-radius:9px;background:transparent;color:var(--muted);font-weight:700}
+.choice-buttons button[aria-pressed=true]{background:var(--gold-bg);color:var(--blue);border:0;box-shadow:0 1px 4px #20333108}
+.choice-buttons button:hover:not(:disabled){color:var(--blue)}
+#priceBasisNotice{margin:6px 0 0!important;padding:0!important;font-size:13px;color:var(--muted)}
+.management-report-export{border:0;border-bottom:1px solid var(--border);background:transparent;border-radius:0;padding:14px 0;margin:0 0 12px}
+.management-report-export h2{font-size:14px}.management-report-export p{font-size:13px}
+.management-report-download{background:#14695c;border:1px solid #14695c;border-radius:12px;font-size:14px;padding:10px 16px;min-height:44px;color:#fff}
+.management-report-download:hover{background:#10584d}
+.view-vintage{margin:8px 0 22px;font-size:13px}
+#summaryView .gov-title{font-size:clamp(28px,3vw,40px);line-height:1.25;letter-spacing:-1.2px;max-width:32ch;font-weight:700}
+#summaryView .gov-kicker{font-size:12px;font-weight:700;letter-spacing:.08em;margin-bottom:10px}
+#summaryView .gov-status{font-size:13px;margin-top:12px}
+#summaryView .profile-reading,.profile-reading{border:0;border-left:3px solid var(--blue);border-radius:0;background:transparent;padding:4px 0 4px 22px;margin:22px 0 28px;max-width:960px}
+.profile-reading p,#summaryView .profile-reading p{font-size:16px;line-height:1.8}
+.latest-update{background:var(--gold-bg);border:0;border-radius:12px;padding:12px 16px;font-size:15px}
+#summaryView .executive-pulse-head{margin:28px 0 16px}
+#summaryView .executive-pulse-title,.overview-extra h3{font-size:20px;font-weight:700;letter-spacing:-.4px}
+#summaryView .executive-pulse-grid{gap:18px}
+#summaryView .executive-pulse-grid>.kcard{border-radius:22px;padding:26px!important;gap:14px;box-shadow:0 12px 40px #20333106}
+#summaryView .executive-pulse-grid .k-lbl{font-size:16px;font-weight:400;color:var(--muted)}
+#summaryView .executive-pulse-grid .k-val{font-size:clamp(38px,4vw,52px)!important;letter-spacing:-1.5px;font-weight:700}
+#summaryView .pulse-reading{font-size:15px;line-height:1.7;color:var(--muted)}
+#summaryView .pulse-reading strong{color:var(--text);font-weight:700}
+#summaryView .summary-nation-claim{border-top-width:1px}
+#summaryView .summary-nation-claim:has([data-tone]){border-top-color:var(--border)}
+.summary-nation-value.has-amount{font-size:clamp(38px,4vw,52px);font-weight:700;letter-spacing:-1.5px}
+.summary-nation-unit{font-size:18px;letter-spacing:0}
+.summary-detail-link{font-size:14px;font-weight:700;text-decoration:none;padding-top:10px}
+.summary-detail-link:hover{text-decoration:underline;text-underline-offset:4px}
+#summaryView .overview-extra{margin:34px 0}
+#summaryView .overview-extra-grid{gap:22px;margin-top:16px}
+#summaryView .overview-extra-grid>.kcard{border:0;border-top:1px solid var(--border);border-radius:0;background:transparent;padding:20px 0;gap:10px}
+#summaryView .overview-extra-grid .k-lbl{font-size:15px;font-weight:400;color:var(--muted)}
+#summaryView .overview-extra-grid .k-val{font-size:30px!important;font-weight:700}
+#summaryView .overview-extra-grid .pulse-reading{font-size:14px}
+.overview-charts article,#summaryView .summary-trend article,.cc,.tb,.gov-panel,.completion-card,.liq-card,.attr-card,.debt-fact,.fair-card,.national-kpis article,.ops-card,.nation-claim-record{border:1px solid var(--border);border-radius:22px;background:var(--s1);box-shadow:none}
+.cc,.tb,.completion-card{padding:24px}
+.overview-charts article,#summaryView .summary-trend article{padding:26px}
+.cc>h3,.tb>h3,.overview-charts article>h3,.completion-card h2{font-size:20px!important;font-weight:700!important;letter-spacing:-.4px!important}
+.layer-header,.layer-head{background:transparent}
+.layer{padding:0;margin:24px 0;background:transparent;border:0;border-radius:0}
+#debtProfileCard{padding:24px;background:var(--s1);border-radius:22px}
+.debt-fact{border:0;border-top:1px solid var(--border);border-radius:0;background:transparent;padding:16px 0}
+.debt-fact-label{font-size:14px;text-transform:none;letter-spacing:0;margin-bottom:8px}
+.debt-fact-value{font-weight:700;line-height:1.4;overflow-wrap:anywhere}
+.debt-fact-value:has(.date-chip){font-size:28px}
+.debt-donut[hidden]{display:none}.debt-chart:has(.debt-donut[hidden]){grid-template-columns:1fr}
+.debt-donut-label{font-size:12px}
+.debt-schedule-head .k-lbl{font-size:20px;letter-spacing:-.4px;text-transform:none;color:var(--text)}
+.national-kpis article>strong{color:var(--blue)}
+.national-section,.composition-explorer{border-color:var(--border)}
+.federal-tools .national-history{background:var(--s1);border-color:var(--border)}
+.layer-title,.sh,.federal-tools>details>summary{font-size:24px!important;font-weight:700;letter-spacing:-.6px!important;text-transform:none;line-height:1.4}
+.layer-sub,.cc-note,.federal-note,.k-sub{color:var(--muted)}
+.federal-tools>details{border:1px solid var(--border);border-radius:22px;background:var(--s1);overflow:hidden}
+.federal-tools>details>summary{padding:24px 26px}
+.federal-content{padding:0 26px 26px}
+.federal-tools .management-action{background:#14695c;color:white;border-color:#14695c;border-radius:12px}
+.federal-tools .management-action:hover{background:#10584d}
+.federal-tools select,.federal-tools input{border-radius:10px}
+.federal-table th,.management-table th{background:var(--s2);color:var(--muted);font-size:13px}
+.federal-table td,.management-table td{font-size:15px;border-color:var(--border);font-variant-numeric:tabular-nums}
+.management-table tr:hover{background:var(--gold-bg)}
+.comp-row{padding:10px 0;min-height:44px}.comp-row .cn,.comp-row .cv{font-size:14px}
+.bar-fill{border-radius:5px}.bar-zero{background:var(--border2)}
+.attr-fill{background:var(--blue)}
+.ld[style*="#60a5fa"]{background:var(--chart-blue)!important}.ld[style*="#4ade80"]{background:var(--green)!important}.ld[style*="#fbbf24"]{background:var(--chart-amber)!important;border-color:var(--chart-amber)!important}.ld[style*="#a78bfa"]{background:var(--chart-purple)!important}.ld[style*="#64748b"]{background:var(--chart-gray)!important}
+.footer{font-size:14px;color:var(--muted);padding-top:28px;border-top:1px solid var(--border)}
+:focus-visible,.choice-buttons button:focus-visible,.visible-navigation button:focus-visible,.fixed-province-picker select:focus-visible{outline:3px solid var(--blue)!important;outline-offset:3px}
+@media(max-width:1000px){
+ .wrap{padding:16px 28px 34px}.header{padding-inline:28px}
+ .visible-navigation nav{grid-template-columns:repeat(6,minmax(0,1fr))}.visible-navigation nav button{font-size:13px}
+ .reading-options-grid{grid-template-columns:1fr 1fr;gap:12px}.reading-options-grid>.command-field:first-child{grid-column:1/-1}
+ #summaryView .executive-pulse-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #summaryView .executive-pulse-grid>.summary-nation-claim{grid-column:1/-1}
+}
+@media(max-width:900px){.charts-row{grid-template-columns:1fr}}
+@media(max-width:640px){
+ .wrap{padding:8px 18px 28px}.header{min-height:76px;padding:12px 18px;gap:12px}
+ .header .brand{gap:9px}.header .brand-logo{width:36px;height:36px;border-radius:11px;font-size:24px}
+ .header .fixed-dashboard-title{font-size:18px!important;letter-spacing:-.5px}
+ .header .brand-name{font-size:11px;margin-top:2px}.header .mobile-theme{font-size:11px;padding:8px;min-height:40px;max-width:76px;line-height:1.5}
+ .visible-navigation{margin-bottom:14px;padding:8px 0}
+ .visible-navigation .mobile-navigation-toggle{border:1px solid var(--border);border-radius:12px;color:var(--text);background:var(--s1)}
+ .mobile-navigation-context{font-size:12px}
+ .visible-navigation-heading{gap:8px}.visible-navigation-heading .fixed-province-picker{flex:1 1 100%}
+ .visible-navigation .municipal-dashboard-link{flex:1;font-size:13px;padding:10px 8px}
+ .visible-navigation nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .visible-navigation nav button,.visible-navigation nav button[data-page^=open]{font-size:14px!important;min-height:48px;line-height:1.4;text-align:left;padding:10px}
+ .dashboard-command-bar{padding:12px!important;border-radius:16px}
+ .reading-options-grid{grid-template-columns:1fr;gap:8px}.reading-options-grid>.command-field{display:grid;grid-template-columns:70px minmax(0,1fr);align-items:center;gap:7px}.reading-options-grid>.command-field:first-child{grid-template-columns:1fr;gap:2px}.reading-options-grid>.command-field:first-child>.ctrl-lbl{display:none}
+ .ctrl-lbl{font-size:12px}.choice-buttons{gap:2px;padding:3px}.choice-buttons button{font-size:12px!important;padding:7px 5px;min-height:44px}
+ #priceBasisNotice{font-size:12px;margin-top:8px!important}
+ .management-report-export{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 0;margin-bottom:6px}
+ .management-report-export>div{flex:1 1 150px}.management-report-export h2{font-size:13px}.management-report-export p{font-size:12px}
+ .management-report-download{font-size:13px;width:auto;flex:0 1 auto;padding:10px 12px}
+ .view-vintage{font-size:12px!important;margin:10px 0 20px}
+ #summaryView .gov-title{font-size:30px!important;line-height:1.25;letter-spacing:-1px}
+ #summaryView .gov-kicker{font-size:11px}.gov-head{padding-bottom:8px!important}
+ #summaryView .profile-reading,.profile-reading{margin:16px 0 22px;padding:3px 0 3px 16px}
+ #summaryView .profile-reading p,.profile-reading p{font-size:16px;line-height:1.8}
+ .latest-update{font-size:14px;padding:12px 14px}
+ #summaryView .executive-pulse-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px}
+ #summaryView .executive-pulse-grid>.kcard{padding:24px!important;gap:12px}
+ #summaryView .executive-pulse-grid .k-val{font-size:46px!important}.summary-nation-value.has-amount{font-size:46px}
+ #summaryView .overview-extra-grid{grid-template-columns:minmax(0,1fr);gap:0}
+ #summaryView .overview-extra-grid>.kcard{padding:18px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 14px}
+ #summaryView .overview-extra-grid .k-val{grid-column:2;grid-row:1;font-size:26px!important;align-self:center}
+ #summaryView .overview-extra-grid .k-lbl{align-self:center;font-size:15px}
+ #summaryView .overview-extra-grid :is(.pulse-reading,.pulse-tag,.summary-detail-link){grid-column:1/-1}
+ .overview-charts article,#summaryView .summary-trend article,.cc,.tb,.completion-card{padding:20px;border-radius:20px}
+ #debtProfileCard{padding:20px}
+ .federal-tools>details>summary{padding:20px;font-size:22px!important}.federal-content{padding:0 18px 20px}
+ .comp-row{grid-template-columns:100px minmax(0,1fr) 64px;gap:8px}.comp-row .cn,.comp-row .cv{font-size:13px}
+ .key-indicators-row .metrics-table td:nth-child(n){width:auto;min-width:0}
+ .key-indicators-row .metrics-table td:nth-child(2){font-size:14px!important;line-height:1.6;max-width:none}
+ .metrics-ranking-text{font-size:12px}
+}
+@media(max-width:359px){.wrap{padding-inline:13px}.header{padding-inline:13px}.header .brand-logo{display:none}.header .fixed-dashboard-title{font-size:17px!important}.choice-buttons button{font-size:11px!important}#summaryView .overview-extra-grid>.kcard{grid-template-columns:1fr}#summaryView .overview-extra-grid .k-val{grid-column:1;grid-row:auto}}
+@media(prefers-reduced-motion:no-preference){[data-view-panel]{animation:provincial-appear .22s ease}@keyframes provincial-appear{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}}
+@media print{body{padding-top:0}.header{position:static}.header .fixed-dashboard-title{color:#203331}.header .mobile-theme,.visible-navigation{display:none!important}.wrap{max-width:none;margin:0;padding:0}}
