@@ -33,6 +33,21 @@ test('national budget gets its own route and never sends searches or selected pr
   s.events.hashchange();assert.equal(s.views().length,2);
   assert.doesNotMatch(JSON.stringify(s.records()),/private|secret/);
 });
+test('each dashboard keeps its content group on initial and subsequent views', () => {
+  for (const [pathname, hash, search, group, next] of [
+    ['/', '#summary', '?perfil=private', 'Provincias', 'debt'],
+    ['/municipios/', '', '?vista=panorama&municipio=private', 'Municipios', 'rankings'],
+    ['/nacion/', '#inicio', '?q=private', 'Nación', 'ejecucion'],
+  ]) {
+    const s = setup({location:{pathname, hash, search}});
+    assert.equal(s.records().find(row => row[0] === 'config')[2].content_group, group);
+    s.events['dashboard:view']({detail:{view:next}});
+    s.events['dashboard:view']({detail:{view:next}});
+    assert.equal(s.views().length, 2);
+    assert.ok(s.views().every(row => row[2].content_group === group));
+    assert.doesNotMatch(JSON.stringify(s.records()), /private/);
+  }
+});
 test('all eleven sections count once per transition; repeats and invalid values do not count', () => {
   const s = setup();
   const routes = ['summary','debt','income','federal','comparison','results','openHistory','openMap','openNation','openOperations','openGuide'];
