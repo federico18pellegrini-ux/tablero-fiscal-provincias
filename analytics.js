@@ -28,6 +28,7 @@
     const national = /^\/nacion(?:\/|$)/.test(win.location.pathname || '');
     const views = national ? NATIONAL_VIEWS : municipal ? MUNICIPAL_VIEWS : VIEWS;
     const basePath = national ? '/nacion/' : municipal ? '/municipios/' : '/';
+    const contentGroup = national ? 'Nación' : municipal ? 'Municipios' : 'Provincias';
     let previousLocation = '';
     try { previousLocation = doc.referrer ? new URL(doc.referrer).origin + '/' : ''; } catch (_) {}
     let lastView = null;
@@ -45,6 +46,7 @@
       allow_ad_personalization_signals: false,
       cookie_domain: HOST,
       cookie_prefix: 'tablero',
+      content_group: contentGroup,
       page_location: origin + basePath,
       page_referrer: previousLocation
     });
@@ -53,7 +55,7 @@
       if (win[disabledKey] || !Object.hasOwn(views, view) || view === lastView) return;
       const pageLocation = origin + basePath + '#' + view;
       const params = {page_title: views[view] + (national ? ' · Presupuesto Nacional' : municipal ? ' · Municipios' : ' · Tablero Fiscal'),
-        page_location: pageLocation, page_referrer: previousLocation};
+        page_location: pageLocation, page_referrer: previousLocation, content_group: contentGroup};
       win.gtag('set', params);
       win.gtag('event', 'page_view', params);
       previousLocation = pageLocation;

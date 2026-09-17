@@ -1,7 +1,7 @@
-# Estadísticas de uso del tablero
+# Estadísticas de uso de los tres tableros
 
 Alta: 7 de septiembre de 2026. Cuenta: Federico Pellegrini (194596609).
-Propiedad: **Tablero Fiscal · Federico Pellegrini** (553016633).
+Propiedad: **Tableros · Federico Pellegrini** (553016633; nombre actualizado el 17/09/2026, sin cambiar la propiedad ni su historial).
 Flujo: **Tablero Fiscal — Web** (15730871499). ID público de medición: `G-H3P727GYS0`.
 Horario: Buenos Aires (UTC−3). Moneda: ARS.
 
@@ -10,10 +10,25 @@ En Inicio → Ver en tiempo real se ven los usuarios activos recientes.
 Informes permite consultar usuarios, sesiones, origen, dispositivos y páginas por período.
 Las estadísticas empiezan con esta instalación: no recuperan las visitas anteriores.
 
+## Cómo comparar Nación, Provincias y Municipios
+
+- Los tres tableros usan la misma propiedad y el mismo identificador de medición.
+- En **Páginas y pantallas**, seleccionar **Grupo de contenido** para comparar
+  **Nación**, **Provincias** y **Municipios**. El agrupamiento se envía desde el
+  17/09/2026; no reclasifica eventos anteriores.
+- Seleccionar **Título de página y clase de pantalla** para ver las secciones
+  consultadas, incluidas las visitas históricas. Los títulos distinguen los tableros.
+- **Tiempo real** permite verificar visitas recientes; **Adquisición de tráfico**
+  muestra la procedencia y los informes de tecnología permiten comparar dispositivos.
+- Las vistas no equivalen a visitantes únicos. Las pruebas en `localhost` y
+  `127.0.0.1` no se envían a Google: la medición funciona en el sitio publicado.
+
 ## Implementación
 
 - `analytics.js` sólo carga la etiqueta en HTTPS y en el dominio de producción. Desarrollo y copias de prueba no envían eventos.
 - `page_view` inicial y por cada cambio efectivo entre las once vistas. Se deduplican las notificaciones repetidas de una misma vista. Los filtros, la provincia y el perfil de lectura no generan vistas extra.
+- Municipios registra sus seis vistas y Nación sus secciones al navegar. Todos
+  incluyen el parámetro estándar `content_group`; no requiere una dimensión personalizada.
 - `file_download` registra el clic en el PDF de la provincia seleccionada; no certifica que el navegador haya terminado de guardar el archivo.
 - La medición mejorada del flujo está **desactivada** y `send_page_view` es `false`. Mantener ambas configuraciones para no duplicar las vistas manuales.
 - Se excluyen parámetros de URL, rutas externas del referente, perfiles de lectura, escenarios y textos libres. No se configuran User-ID, Google Signals ni publicidad personalizada.
@@ -27,4 +42,4 @@ Tras publicar, abrir el tablero y cambiar entre Resumen, Solvencia y deuda, e Hi
 En Analytics → Tiempo real comprobar los títulos correspondientes y la llegada de `page_view`.
 La instalación se puede revisar desde Administrar → Flujos de datos → Tablero Fiscal — Web → Instrucciones de etiquetado → Probar instalación.
 
-Documentación oficial: [medición de vistas](https://developers.google.com/analytics/devguides/collection/ga4/views) y [aplicaciones de una sola página](https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications).
+Documentación oficial: [medición de vistas](https://developers.google.com/analytics/devguides/collection/ga4/views), [aplicaciones de una sola página](https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications) y [grupos de contenido](https://support.google.com/analytics/answer/11523339?hl=es).
