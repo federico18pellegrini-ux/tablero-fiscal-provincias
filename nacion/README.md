@@ -8,6 +8,20 @@ Desde la raíz: `python -m http.server 8765 --bind 127.0.0.1`. Abrir `http://127
 
 Pruebas: `node --test tests/national_budget.test.cjs tests/analytics.test.cjs`.
 
+## Informe editorial en PDF
+
+El botón **Informe PDF** está disponible en las cinco vistas y en Metodología. Abre un diálogo accesible que toma los precios y la base de comparación del tablero; permite cambiarlos antes de descargar. El informe siempre cubre todo el país: los filtros locales de obras/programas no recortan el documento.
+
+- Informe principal: 10 páginas, con lectura editorial, prioridades, organismos, funciones, programas, territorio, recursos/supuestos macro, ejecución, historia y metodología.
+- Anexo opcional: todas las 394 filas programáticas, 435 partidas de proyectos y ejecución mensual de las 16 jurisdicciones más el total. Con el informe: 56 páginas.
+- Seis combinaciones: pesos corrientes/constantes y base inicial/vigente/cierre estimado. Fuentes, autor, enlace público y numeración en cada página; fuentes originales enlazadas al final.
+- Redacción propia, vinculada a las cifras y a la base seleccionada. No requiere llamar a un servicio de IA ni enviar datos o preferencias a terceros al exportar.
+- Los porcentajes de ejecución son nominales; septiembre real queda sin dato. Los cierres estimados no se inventan para programas. Los números negativos son rojos.
+
+Generación: `python scripts_export_national_reports.py`. Comprobación de vigencia: `python scripts_export_national_reports.py --check`. El catálogo guarda hashes de fuentes, generador, tipografías y PDF. CI exige regenerar ante cambios, y el navegador verifica que el catálogo corresponda exactamente al JSON que está mostrando antes de ofrecer una descarga.
+
+Pruebas: `python -m unittest discover -s tests -p test_national_reports.py` y `node --test tests/national_report.test.cjs`. Los PDF son texto y gráficos vectoriales, no capturas de la web.
+
 Para reconstruir (dependencias en `requirements-national-budget.txt`):
 
 ```

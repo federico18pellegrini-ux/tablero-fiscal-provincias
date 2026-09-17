@@ -12,7 +12,7 @@
   const short=v=>!M.finite(v)?'—':Math.abs(v)>=1e6?`${currency(v)}${nf(Math.abs(v)/1e6)} bill.`:Math.abs(v)>=1000?`${currency(v)}${nf(Math.abs(v)/1000)} mil M`:`${currency(v)}${nf(Math.abs(v),0)} M`;
   const params=new URLSearchParams(location.search);
   const state={price:params.get('precios')==='real'?'real':'nominal',base:['law','current','closing'].includes(params.get('base'))?params.get('base'):'current',lens:['topics','jurisdictions','functions','geographies'].includes(params.get('vista'))?params.get('vista'):'topics',rank:'jurisdictions',history:'amount',province:params.get('provincia')||'',programLimit:16};
-  let D,G;
+  let D,G,dataHash,reportManifest;
   const baseLabel=()=>({law:'Inicial 2026',current:'Vigente 2026 · 15/09',closing:'Cierre estimado 2026'})[state.base];
   const unit=()=>state.price==='real'?'Pesos de agosto 2026 · escenario':'Pesos corrientes';
   const val=(v,year=2027)=>M.price(v,year,state.price,D.deflator.annual_factors);
@@ -174,13 +174,34 @@
   $('province').addEventListener('change',()=>selectProvince($('province').value));$('work-search').addEventListener('input',works);
   $('program-search').addEventListener('input',()=>{state.programLimit=16;programs();});$('program-more').addEventListener('click',()=>{state.programLimit+=24;programs();});
   $('execution-jurisdiction').addEventListener('change',execution);$('download').addEventListener('click',download);
+  function updateReport(){
+    $('download-national-report').hidden=true;
+    $('report-unit-note').textContent=$('report-price').value==='real'?'El ajuste anual usa IPC promedio. Para 2026 y 2027 incluye el escenario de inflación del tablero.':'Los montos corresponden a los precios de cada año. El análisis también muestra el cambio real, ajustado por inflación.';
+    if(!reportManifest)return;
+    try{
+      const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked},dataHash);
+      $('download-national-report').href=pdf.href;$('download-national-report').download=pdf.file;$('download-national-report').hidden=false;
+      $('report-status').textContent=`${pdf.pages} páginas · ${$('report-annex').checked?'Informe y anexo detallado':'Informe con todos los capítulos'} · Federico Pellegrini`;
+    }catch(error){$('report-status').textContent=error.message;}
+  }
+  $('export-report').addEventListener('click',async()=>{
+    $('report-price').value=state.price;$('report-base').value=state.base;
+    $('report-status').textContent='Preparando el informe…';$('download-national-report').hidden=true;
+    $('report-dialog').showModal();updateReport();
+    try{
+      const response=await fetch('reports/manifest.json',{cache:'no-cache'});if(!response.ok)throw Error('No se pudo cargar el informe. Cerrá esta ventana y volvé a intentarlo.');
+      reportManifest=await response.json();updateReport();
+    }catch(error){$('report-status').textContent=error.message;}
+  });
+  $('close-report').addEventListener('click',()=>$('report-dialog').close());
+  ['report-price','report-base','report-annex'].forEach(id=>$(id).addEventListener('change',updateReport));
   window.addEventListener('resize',()=>{if(D)execution();});
-  Promise.all([fetch('data/budget.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo])=>{
+  Promise.all([fetch('data/budget.json').then(async r=>{if(!r.ok)throw Error(r.status);const text=await r.text();dataHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo])=>{
     D=data;G=geo;
     const locations=[...new Set([...D.works_geographies.map(r=>r.name),...G.features.map(f=>f.province)])].sort((a,b)=>a.localeCompare(b,'es'));
     $('province').innerHTML='<option value="">Todo el país</option>'+locations.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('');if(!locations.includes(state.province))state.province='';$('province').value=state.province;
     $('execution-jurisdiction').innerHTML=D.execution.map(r=>`<option value="${esc(r.name)}">${esc(r.name)}</option>`).join('');
-    $('load-state').hidden=true;$('dashboard').hidden=false;render();methodology();
+    $('load-state').hidden=true;$('dashboard').hidden=false;$('export-report').disabled=false;render();methodology();
     route();
   }).catch(error=>{console.error('No se pudo cargar el presupuesto',error);$('load-state').innerHTML='No se pudieron cargar los datos. <a href="">Reintentar</a> o consultar los <a href="https://www.mecon.gob.ar/onp/presupuestos/2027">documentos oficiales</a>.';});
 })();
