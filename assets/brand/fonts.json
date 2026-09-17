@@ -1,0 +1,23 @@
+[
+  {
+    "file": "playfair-display.ttf",
+    "sha256": "c40f2293766a503bc70cce9e512ef844a4ccb7cbcde792fe2ea31d191917d8d6",
+    "source": "https://github.com/google/fonts/tree/main/ofl/playfairdisplay",
+    "license": "OFL-playfairdisplay.txt",
+    "family": "Playfair Display"
+  },
+  {
+    "file": "geist.ttf",
+    "sha256": "73894e0448cae90a92b6c2f8732b7bb9acb7b94c418bff559dad4a18e1de9659",
+    "source": "https://github.com/google/fonts/tree/main/ofl/geist",
+    "license": "OFL-geist.txt",
+    "family": "Geist"
+  },
+  {
+    "file": "geist-mono.ttf",
+    "sha256": "d00e590b8eb3a59acc329b2d044fd143ae935090b7da33199ebee27cc7de8196",
+    "source": "https://github.com/google/fonts/tree/main/ofl/geistmono",
+    "license": "OFL-geistmono.txt",
+    "family": "Geist Mono"
+  }
+]

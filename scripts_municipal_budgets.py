@@ -104,7 +104,7 @@ def write_budget_catalog(root, municipalities, coverage):
         else:
             body = '<p><strong>Presupuesto anual pendiente de verificación</strong></p><p>No se incorporó un total anual respaldado por un documento oficial. Esto no significa que el municipio no tenga presupuesto.</p>'
         cards.append(f'<article class="coverage-card" id="m-{m["id"]}">{heading}{body}</article>')
-    page = f'''<!doctype html><html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Presupuestos anuales · Municipios · Federico Pellegrini</title><link rel="stylesheet" href="styles.css?v=20260910-1"></head><body><main class="coverage-page">
+    page = f'''<!doctype html><html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Presupuestos anuales · Municipios · Federico Pellegrini</title><link rel="stylesheet" href="styles.css?v=20260917-marca"><link rel="stylesheet" href="../brand.css?v=20260917-marca"></head><body data-dashboard="municipios"><main class="coverage-page">
 <a class="button" href="./">← Volver al tablero municipal</a><h1>El presupuesto de los 135 municipios</h1>
 <p>Revisión del {coverage['verifiedAt']}. El presupuesto indica cuánto está autorizado gastar durante el año. El original es el monto de partida; el vigente incorpora modificaciones hasta la fecha indicada. No representa gasto ejecutado ni dinero disponible.</p>
 <div class="coverage-summary"><p><strong>{coverage['currentYear']}</strong> con presupuesto de 2026</p><p><strong>{coverage['historical']}</strong> con un presupuesto anterior</p><p><strong>{coverage['pending']}</strong> pendientes de verificación</p></div>

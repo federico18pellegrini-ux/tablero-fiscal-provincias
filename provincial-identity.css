@@ -1,12 +1,10 @@
 /* Shared visual identity with Municipios and Nación. Presentation only. */
-@font-face{font-family:Manrope;src:url(municipios/assets/manrope-400.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:Manrope;src:url(municipios/assets/manrope-700.ttf) format('truetype');font-weight:600 800;font-style:normal;font-display:swap}
 :root{
  --bg:#f5f6f3;--s1:#fff;--s2:#f0f4ef;--s3:#e8efea;
  --text:#203331;--muted:#64736f;--dim:#64736f;--border:#dfe6e0;--border2:#b9c9bf;--line:#dfe6e0;
  --blue:#14695c;--gold:#14695c;--gold-dim:#14695c;--gold-bg:#e8f2ed;--gold-border:#c6d7ca;
  --green:#14695c;--green-bg:#e8f2ed;--green-border:#c6d7ca;--red:#b42318;--red-bg:#f9eee9;--red-border:#ebc8bd;
- --amber:#8a611f;--r:22px;--rs:12px;--font:Manrope,system-ui,sans-serif;--mono:Manrope,system-ui,sans-serif;
+ --amber:#8a611f;--r:22px;--rs:12px;--font:Geist,system-ui,sans-serif;--mono:Geist,system-ui,sans-serif;
  --chart-blue:#327f88;--chart-amber:#a5782d;--chart-purple:#817699;--chart-gray:#7c9088;
  --fixed-header-height:82px;color-scheme:light;
 }
