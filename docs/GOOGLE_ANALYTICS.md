@@ -37,6 +37,19 @@ Las estadísticas empiezan con esta instalación: no recuperan las visitas anter
 
 ## Verificación
 
+### Revisión del 17/09/2026
+
+- Acceso confirmado en la interfaz de Analytics a la propiedad y a visitas
+  históricas de Provincias y Municipios.
+- Se configuró el **Informe panorámico** con la plantilla de comportamiento de
+  usuarios: visitantes, interacción, páginas consultadas y procedencia.
+- La configuración remota tenía medición mejorada activa, incluido el cambio de
+  historial, pese a lo indicado antes en este documento. Se desactivó para evitar
+  vistas automáticas adicionales al cambiar filtros y mantener el conteo manual.
+  No se borró ni se recalculó el historial anterior; podría incluir duplicaciones.
+- **Grupo de contenido** ya existe entre las dimensiones de Páginas y pantallas.
+  La separación en tres grupos comienza con la nueva etiqueta y no es retroactiva.
+
 Pruebas: `node --test tests/analytics.test.cjs`.
 Tras publicar, abrir el tablero y cambiar entre Resumen, Solvencia y deuda, e Historia fiscal.
 En Analytics → Tiempo real comprobar los títulos correspondientes y la llegada de `page_view`.
