@@ -15,6 +15,7 @@
   const ALIASES = {governorRoom:'summary', layer3:'debt', structuralIndicators:'income',
     layer1:'federal', layer2:'comparison', comparisonSection:'comparison'};
   const MUNICIPAL_VIEWS = Object.freeze({panorama:'Panorama municipal',rankings:'Rankings municipales',recursos:'Recursos municipales',empleo:'Empleo municipal',simular:'Escenario de coparticipación',informe:'Preparar informe municipal'});
+  const NATIONAL_VIEWS = Object.freeze({inicio:'Presupuesto Nacional',distribucion:'Distribución',obras:'Obras',programas:'Programas',escala:'Escala',comparacion:'Comparación',finalidades:'Finalidades',cambios:'Subas y bajas',recursos:'Recursos',macro:'Supuestos macro',historia:'Historia',ejecucion:'Ejecución',metodo:'Método'});
 
   function initAnalytics(win, doc) {
     if (win.location.hostname !== HOST || win.location.protocol !== 'https:') return null;
@@ -24,8 +25,9 @@
     win.gtag = function () { win.dataLayer.push(arguments); };
     const origin = 'https://' + HOST;
     const municipal = /^\/municipios(?:\/|$)/.test(win.location.pathname || '');
-    const views = municipal ? MUNICIPAL_VIEWS : VIEWS;
-    const basePath = municipal ? '/municipios/' : '/';
+    const national = /^\/nacion(?:\/|$)/.test(win.location.pathname || '');
+    const views = national ? NATIONAL_VIEWS : municipal ? MUNICIPAL_VIEWS : VIEWS;
+    const basePath = national ? '/nacion/' : municipal ? '/municipios/' : '/';
     let previousLocation = '';
     try { previousLocation = doc.referrer ? new URL(doc.referrer).origin + '/' : ''; } catch (_) {}
     let lastView = null;
@@ -50,7 +52,7 @@
     function recordView(view) {
       if (win[disabledKey] || !Object.hasOwn(views, view) || view === lastView) return;
       const pageLocation = origin + basePath + '#' + view;
-      const params = {page_title: views[view] + (municipal ? ' · Municipios' : ' · Tablero Fiscal'),
+      const params = {page_title: views[view] + (national ? ' · Presupuesto Nacional' : municipal ? ' · Municipios' : ' · Tablero Fiscal'),
         page_location: pageLocation, page_referrer: previousLocation};
       win.gtag('set', params);
       win.gtag('event', 'page_view', params);
@@ -73,7 +75,8 @@
     });
     const current = doc.querySelector(municipal ? '.main-nav button[aria-current="page"]' : '.visible-navigation button[aria-current="page"]')?.dataset;
     const hash = municipal ? new URLSearchParams(win.location.search || '').get('vista') : win.location.hash.slice(1);
-    recordView(municipal ? (Object.hasOwn(views, hash) ? hash : 'panorama') : (current?.page || (Object.hasOwn(VIEWS, hash) ? hash : Object.hasOwn(ALIASES, hash) ? ALIASES[hash] : 'summary')));
+    recordView(national ? (Object.hasOwn(views, hash) ? hash : 'inicio') : municipal ? (Object.hasOwn(views, hash) ? hash : 'panorama') : (current?.page || (Object.hasOwn(VIEWS, hash) ? hash : Object.hasOwn(ALIASES, hash) ? ALIASES[hash] : 'summary')));
+    if(national)win.addEventListener('hashchange',()=>recordView(win.location.hash.slice(1)));
     const script = doc.createElement('script');
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + MEASUREMENT_ID;
