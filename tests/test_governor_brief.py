@@ -70,7 +70,7 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertIn("ranking_fiscal_1t26", frontend)
         self.assertIn("key-indicators-row{grid-template-columns:minmax(0,1fr)!important", frontend)
         self.assertIn("#metricsDetails:not([open]) #metricsDetailsTableWrap{display:none}", frontend)
-        self.assertIn("Situación fiscal de las provincias argentinas", frontend)
+        self.assertIn('<h1 class="hero-title" id="heroTitle">Tablero Provincial</h1>', frontend)
         self.assertIn('id="heroProvinceSubtitle"', frontend)
         self.assertIn("rf<0?'DÉFICIT FINANCIERO':'SUPERÁVIT FINANCIERO'", frontend)
         self.assertIn("rf<0?'negative':'positive'", frontend)

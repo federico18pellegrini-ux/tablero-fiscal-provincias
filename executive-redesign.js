@@ -1,7 +1,7 @@
 /* Presentation only: reuse the observed data and existing navigation actions. */
 function initExecutiveRedesign(){
   const header=document.querySelector('.header'),title=document.getElementById('heroTitle');
-  title.classList.add('fixed-dashboard-title');header.append(title);document.querySelector('.hero').classList.add('title-relocated');
+  title.classList.add('fixed-dashboard-title');header.querySelector('.brand-text').prepend(title);document.querySelector('.hero').classList.add('title-relocated');
   const measureHeader=()=>document.documentElement.style.setProperty('--fixed-header-height',header.getBoundingClientRect().height+'px');
   new ResizeObserver(measureHeader).observe(header);measureHeader();
   const aside=document.createElement('aside');aside.className='executive-sidebar';aside.setAttribute('aria-label','Secciones del tablero');
@@ -11,7 +11,7 @@ function initExecutiveRedesign(){
   const picker=document.querySelector('.mobile-view-picker');document.querySelector('.hero').after(picker);
   const theme=document.createElement('button');theme.type='button';theme.id='themeToggle';theme.className='theme-toggle';aside.append(theme);
   let stored='light';try{stored=localStorage.getItem('fiscal-theme')||'light';}catch{}
-  const setTheme=value=>{document.documentElement.dataset.theme=value;theme.textContent=value==='dark'?'Usar fondo claro':'Usar fondo oscuro';theme.setAttribute('aria-pressed',String(value==='dark'));try{localStorage.setItem('fiscal-theme',value);}catch{}if(typeof Chart!=='undefined')Object.values(Chart.instances).forEach(c=>c.update('none'));};
+  const setTheme=value=>{document.documentElement.dataset.theme=value;theme.textContent=value==='dark'?'Usar fondo claro':'Usar fondo oscuro';theme.setAttribute('aria-pressed',String(value==='dark'));document.querySelector('meta[name="theme-color"]').content=value==='dark'?'#142421':'#f5f6f3';try{localStorage.setItem('fiscal-theme',value);}catch{}if(typeof Chart!=='undefined')Object.values(Chart.instances).forEach(c=>c.update('none'));};
   theme.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');setTheme(stored==='dark'?'dark':'light');
   const mobileTheme=document.createElement('button');mobileTheme.type='button';mobileTheme.className='mobile-theme';mobileTheme.textContent='Cambiar tema';mobileTheme.onclick=()=>theme.click();document.querySelector('.header').append(mobileTheme);
   const sync=()=>{const opened=document.querySelector('#federalTools > details[open]');document.body.classList.toggle('tool-context',!!opened);nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',!opened&&b.classList.contains('active')?'page':'false'));};
@@ -40,8 +40,31 @@ function renderExecutiveOverview(){
   overviewTrend=new Chart(document.getElementById('overviewTrend'),{type:'line',data:{labels:historyPeriods().map(periodName),datasets:[{label:'Resultado financiero',data:historyPeriods().map(p=>rows.find(r=>r.period===p)?.financial_pct??null),borderColor:'#2863aa',backgroundColor:'#2863aa',pointRadius:2,borderWidth:2,spanGaps:false}]},options});
   const latest=rows.find(r=>r.period===last);document.getElementById('overviewTrendReading').textContent=latest?`${province}: ${fnum(latest.financial_pct)}% al ${periodName(last)}.`:`${province}: sin observación en ${periodName(last)}. No se prolonga el último dato.`;
 }
-if(typeof Chart!=='undefined')Chart.register({id:'executiveTheme',beforeUpdate(chart){
-  const dark=document.documentElement.dataset.theme==='dark',text=dark?'#c2cede':'#475569',grid=dark?'#29394e':'#e3e9f0';
-  for(const scale of Object.values(chart.options.scales||{})){if(scale.ticks)scale.ticks.color=text;if(scale.title)scale.title.color=text;if(scale.grid)scale.grid.color=grid;}
+// Keep the original series distinctions while matching the shared dashboard palette.
+// Values, signs, chart types and the correspondence with external legends are unchanged.
+function provincialChartColor(value,dark){
+  if(Array.isArray(value))return value.map(color=>provincialChartColor(color,dark));
+  if(typeof value!=='string')return value;
+  const groups=[
+    [['#60a5fa','#68b7ff','#2863aa','#3675bd','#327f88','#82c5c8'],'#327f88','#82c5c8'],
+    [['#4ade80','#6bd5b5','#14695c','#8ed2b5'],'#14695c','#8ed2b5'],
+    [['#fbbf24','#ffb05c','#f6d273','#d79720','#a5782d','#e3bd75'],'#a5782d','#e3bd75'],
+    [['#a78bfa','#d6a3ff','#817699','#bcadd9'],'#817699','#bcadd9'],
+    [['#f87171','#ff5f5f','#b42318','#ff9b91'],'#b42318','#ff9b91'],
+    [['#64748b','#7c9088','#aabeb5'],'#7c9088','#aabeb5'],
+    [['#111827','#ffffff','#1c302c'],'#ffffff','#1c302c']
+  ];
+  const match=value.toLowerCase().match(/^(#[\da-f]{6})([\da-f]{2})?$/);
+  if(match){const group=groups.find(([colors])=>colors.includes(match[1]));return group?group[dark?2:1]+(match[2]||''):value;}
+  return value;
+}
+if(typeof Chart!=='undefined'){
+ Chart.defaults.font.family='Manrope, system-ui, sans-serif';
+ Chart.defaults.font.size=14;
+ Chart.register({id:'executiveTheme',beforeUpdate(chart){
+  const dark=document.documentElement.dataset.theme==='dark',text=dark?'#aabeb5':'#64736f',grid=dark?'#355046':'#dfe6e0';
+  for(const scale of Object.values(chart.options.scales||{})){if(scale.ticks){scale.ticks.color=text;scale.ticks.font={...scale.ticks.font,family:'Manrope',size:14};}if(scale.title)scale.title.color=text;if(scale.grid)scale.grid.color=grid;if(scale.border)scale.border.color=grid;}
   const legend=chart.options.plugins?.legend;if(legend?.labels)legend.labels.color=text;
-}});
+  for(const dataset of chart.data.datasets)for(const key of ['borderColor','backgroundColor','pointBackgroundColor','pointBorderColor','hoverBackgroundColor'])if(dataset[key])dataset[key]=provincialChartColor(dataset[key],dark);
+ }});
+}

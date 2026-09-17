@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#112b49">
+<meta name="theme-color" content="#f5f6f3">
 <title>Tablero Provincial · Federico Pellegrini</title>
 <script defer src="analytics.js?v=20260917-informe"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" href="municipios/assets/manrope-400.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="municipios/assets/manrope-700.ttf" as="font" type="font/ttf" crossorigin>
 <style>
 /* ── TOKENS ─────────────────────────────────────────────────────── */
 :root{
@@ -901,13 +901,14 @@ tr:last-child td{border-bottom:none}
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
 <link rel="stylesheet" href="executive-redesign.css?v=20260915-9">
+<link rel="stylesheet" href="provincial-identity.css?v=20260917-1">
 </head>
 <body>
 
 <!-- STICKY HEADER -->
 <div class="header">
   <div class="brand">
-    <div class="brand-logo">FP</div>
+    <div class="brand-logo" aria-hidden="true">fp.</div>
     <div class="brand-text">
       <div class="brand-name">Federico Pellegrini</div>
       <div class="brand-sub">Entre Mates y Mercados</div>
@@ -921,7 +922,7 @@ tr:last-child td{border-bottom:none}
 <!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Sala de situación fiscal</div>
-  <h1 class="hero-title" id="heroTitle">Situación fiscal de las provincias argentinas</h1>
+  <h1 class="hero-title" id="heroTitle">Tablero Provincial</h1>
   <div class="hero-province" id="heroProvinceSubtitle">Provincia seleccionada: Buenos Aires</div>
   <div class="hero-sub">Qué está pasando, por qué importa y qué decisiones requiere. Después, el detalle técnico y la comparación con las demás provincias.</div>
   <div class="hero-credit">Federico Pellegrini · Podcast Entre Mates y Mercados <a href="https://open.spotify.com/show/6kY1P5uQ8Z4WVVKJdA9Qiv" target="_blank" rel="noopener noreferrer">[link]</a></div>
@@ -2460,7 +2461,7 @@ function buildComparativo(){
     const isProv=d.p===currentProvince;
     const isPos=d.rf>=0;
     const bw=Math.abs(d.rf)*(half/max);
-    const bColor=isProv?(isPos?'#4ade80':'#f87171'):(isPos?'#4ade8055':'#f8717155');
+    const bColor=isPos?'var(--green)':'var(--red)';
     const bLeft=isPos?half+'%':(half-bw)+'%';
       const row=document.createElement('div');
       row.className='comp-row';
@@ -2470,7 +2471,7 @@ function buildComparativo(){
       </div>
       <div class="bar-wrap">
         <div class="bar-zero" style="left:${half}%"></div>
-        <div class="bar-fill" style="width:${bw}%;left:${bLeft};background:${bColor}"></div>
+        <div class="bar-fill" style="width:${bw}%;left:${bLeft};background:${bColor};opacity:${isProv?1:.45}"></div>
       </div>
       <div class="cv ${isPos?'g':'r'}">${pct(d.rf)}</div>
     `;
@@ -3684,11 +3685,11 @@ function chartTopMensual(rows){
       ctx.save();
       ctx.textAlign='center';
       ctx.textBaseline='middle';
-      ctx.fillStyle='#f3f4f6';
-      ctx.font='700 22px ui-monospace, SFMono-Regular, Menlo, monospace';
+      ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--text').trim();
+      ctx.font='700 24px Manrope, sans-serif';
       ctx.fillText(`${shares[dominantIndex].toFixed(1).replace('.',',')}%`,x,y-7);
-      ctx.fillStyle='#9ca3af';
-      ctx.font='600 10px system-ui, sans-serif';
+      ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--muted').trim();
+      ctx.font='700 13px Manrope, sans-serif';
       ctx.fillText(taxes[dominantIndex],x,y+14);
       ctx.restore();
     }
@@ -4339,6 +4340,9 @@ function renderGovernmentResults(province){
 function renderDebtSchedule(province){renderProvinceServices(province);}
 
 function renderDebtProfile(province, c){
+  // The creditor ring uses the verified PBA percentages only; never retain it
+  // after selecting another province with a different composition.
+  document.getElementById('debtCreditorsDonut').hidden=province!=='Buenos Aires'||!pbaDebtProfile?.latest_stock;
   if(province!=='Buenos Aires' && latestFiscalDetails?.debt?.[province]){
     const debt=latestFiscalDetails.debt[province];
     const set=(id,text)=>{const el=document.getElementById(id);if(el)el.textContent=text;};
@@ -4365,7 +4369,7 @@ function renderDebtProfile(province, c){
         {label:'Bancos y otros',pct:rawCreditors.slice(2).reduce((sum,item)=>sum+(toN(item.pct)||0),0)}
       ]
       : rawCreditors;
-    const colors=['var(--gold)','var(--blue)','var(--amber)','var(--muted)'];
+    const colors=['var(--green)','var(--chart-blue)','var(--chart-amber)','var(--muted)'];
     const segments=[];
     let cursor=0;
     creditors.forEach((item,index)=>{
@@ -4444,7 +4448,7 @@ function renderDebtProfile(province, c){
   const debtProfileReading=document.getElementById('debtProfileReading');
   if(debtProfileReading) debtProfileReading.textContent='Lectura comparativa disponible; falta una ficha oficial equivalente para este corte.';
   document.getElementById('debtProfileCreditors').innerHTML=acreedores.length
-    ? acreedores.map(([n,v],index)=>`<div class="debt-legend-row"><span class="debt-legend-dot" style="background:${['var(--gold)','var(--blue)','var(--amber)'][index]}"></span><span>${n}</span><span class="debt-legend-value">${pctN(v)}</span></div>`).join('')
+    ? acreedores.map(([n,v],index)=>`<div class="debt-legend-row"><span class="debt-legend-dot" style="background:${['var(--green)','var(--chart-blue)','var(--chart-amber)'][index]}"></span><span>${n}</span><span class="debt-legend-value">${pctN(v)}</span></div>`).join('')
     : 'Acreedores principales: SD';
   const debtProfileMethodNote=document.getElementById('debtProfileMethodNote');
   if(debtProfileMethodNote){
@@ -5019,7 +5023,7 @@ document.getElementById('downloadPng')?.addEventListener('click',exportCurrentPr
 <script src="profile-readings.js?v=20260915-9"></script>
 <script src="provincial-debt-services.js?v=20260915-9"></script>
 <script src="inflation-history.js?v=20260915-4"></script>
-<script src="executive-redesign.js?v=20260915-2"></script>
+<script src="executive-redesign.js?v=20260917-1"></script>
 <script src="closing-tools.js?v=20260915-9"></script>
 <script src="management-tools.js?v=20260915-9"></script>
 <script src="federal-tools.js?v=20260915-9"></script>
