@@ -36,7 +36,7 @@ El JSON incluye resultados de conciliación. Diferencias por redondeo del PDF: p
 
 ## Precios, porcentajes y unidades
 
-Todo monto en el JSON está en **ARS millones**. Las series históricas originales están en pesos: se dividen por 1.000.000. Un billón argentino es 10^12 pesos. B = billones; M = millones en las etiquetas breves.
+Todo monto en el JSON está en **ARS millones**. Las series históricas originales están en pesos: se dividen por 1.000.000. Un billón argentino es 10^12 pesos. bill. = billones; M = millones en las etiquetas breves.
 
 Modo constante: base agosto 2026. IPC INDEC observado hasta agosto; proyección propia de septiembre–diciembre compatible con 29% diciembre/diciembre 2026 y doce tasas mensuales iguales compatibles con 18% en 2027, según supuestos ONP. Se usa IPC **promedio anual** para presupuestos anuales. Los períodos históricos usan los doce IPC observados. La senda mensual proyectada no es un pronóstico oficial mensual.
 
@@ -53,11 +53,13 @@ Variación con base cero o ausente: sin comparación. Cambios de participación:
 
 ## Diseño, navegación y estadísticas
 
-Referencia: brief y nueve capturas suministrados por Federico el 17/09/2026. No se consultó nuevamente el dominio de referencia bloqueado. Colores y composición editorial inspirados en Presupuesto OpenArg; textos, código y normalización propios. Modo oscuro y claro, encabezado fijo, índice por anclas, mapa con alternativa de selector y navegación por teclado, fichas expandibles y gráficos con valores textuales.
+La primera entrega se basó en el brief y nueve capturas de Presupuesto OpenArg suministrados por Federico. La revisión de identidad del 17/09/2026 adopta el sistema visual del tablero municipal: Manrope alojada en `/municipios/assets/`, fondo claro, verde petróleo, marca fp., tarjetas redondeadas y modo oscuro verde opcional. Se reemplazó la portada editorial y los capítulos numerados por cinco vistas: Panorama, Gasto, Obras, Economía y Ejecución.
+
+El Panorama integra una lectura propia que contrasta cambio nominal y real, sin confundir el proyecto 2027 con la ejecución 2026. Los controles se muestran donde aplican. Todas las secciones y enlaces anteriores siguen accesibles; la navegación Atrás/Adelante restaura también los filtros. La metodología tiene un acceso específico. No se modificaron datos, fuentes, fechas ni fórmulas de ajuste. El detalle de la revisión está en `docs/rediseno-nacion-identidad-municipal-2026-09-17.md`.
 
 La ruta propia de GA4 es `/nacion/`. Sólo se registran anclas de una lista permitida. No se envían búsquedas, provincia seleccionada ni parámetros arbitrarios; se respeta la exclusión existente. La descarga CSV identifica unidades y conserva nulos vacíos; los grupos son distintas aperturas del mismo gasto y **no deben sumarse entre sí**.
 
-## Verificación de esta entrega
+## Verificación de la primera entrega
 
 - 92 pruebas Node y 123 pruebas Python aprobadas; controles de vigencia de 24 informes provinciales y 135 municipales, cobertura municipal, reclamos y trazabilidad TOP aprobados.
 - Navegador real: tamaños 390×844, 768×1024 y 1440×1000, ambos temas, cuatro aperturas de distribución, tres bases comparativas, precios corrientes/constantes, mapa por clic y teclado, búsquedas de obras/programas, expansión y carga adicional de programas, rankings y tres vistas históricas.

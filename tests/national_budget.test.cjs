@@ -78,3 +78,17 @@ test('common searches find the official program wording',()=>{
   assert.ok(D.programs.filter(p=>M.searchText(p).includes('universidades')).some(p=>p.name==='Desarrollo de la Educación Superior'));
   assert.ok(D.programs.filter(p=>M.searchText(p).includes('anses')).some(p=>p.name==='Prestaciones Previsionales'));
 });
+
+test('legacy deep links resolve to a visible view and unknown anchors safely open Panorama',()=>{
+  for(const name of ['distribucion','comparacion','cambios','programas','finalidades'])assert.equal(M.pageForAnchor(name),'gasto');
+  assert.equal(M.pageForAnchor('macro'),'economia');assert.equal(M.pageForAnchor('obras'),'obras');
+  assert.equal(M.pageForAnchor('ejecucion'),'ejecucion');assert.equal(M.pageForAnchor('metodo'),'metodo');
+  for(const name of ['','desconocido','__proto__','toString'])assert.equal(M.pageForAnchor(name),'panorama');
+});
+test('overview contrasts nominal and real changes against the selected base while keeping execution fixed',()=>{
+  const current=M.budgetOverview(D.total,'current',D.deflator.annual_factors),closing=M.budgetOverview(D.total,'closing',D.deflator.annual_factors);
+  near(current.nominalChange,32.547,.001);near(current.realChange,10.001,.01);
+  assert.ok(closing.realChange<current.realChange);near(current.execution,closing.execution);
+  const fall=M.budgetOverview({project:110,current:100,accrued:50},'current',{'2026':1,'2027':.8});
+  assert.ok(fall.nominalChange>0);assert.ok(fall.realChange<0);assert.equal(fall.execution,50);
+});
