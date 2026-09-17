@@ -7,9 +7,9 @@
   const nf=(v,d=1)=>new Intl.NumberFormat('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d}).format(v);
   const pct=v=>M.finite(v)?`${v>0?'+':''}${nf(v)}%`:'Sin comparación';
   const sign=v=>!M.finite(v)?'':v<0?'negative':v>0?'positive':'';
-  const money=v=>!M.finite(v)?'Sin dato':Math.abs(v)>=1e6?`$${nf(v/1e6)} billones`:Math.abs(v)>=1000?`$${nf(v/1000)} mil millones`:`$${nf(v,0)} ${v===1?'millón':'millones'}`;
-  const short=v=>!M.finite(v)?'—':Math.abs(v)>=1e6?`$${nf(v/1e6)} B`:Math.abs(v)>=1000?`$${nf(v/1000)} mil M`:`$${nf(v,0)} M`;
-  const sections=[['distribucion','I','Adónde va la plata'],['obras','II','Las obras'],['programas','III','Programa por programa'],['escala','IV','La escala'],['comparacion','V','Quién recibe más presupuesto'],['finalidades','VI','En qué se gasta'],['cambios','VII','Mayores subas y bajas'],['recursos','VIII','De dónde sale la plata'],['macro','IX','Los supuestos macro'],['historia','X','La trayectoria'],['ejecucion','XI','La ejecución de 2026']];
+  const currency=v=>v<0?'−$':'$';
+  const money=v=>!M.finite(v)?'Sin dato':Math.abs(v)>=1e6?`${currency(v)}${nf(Math.abs(v)/1e6)} billones`:Math.abs(v)>=1000?`${currency(v)}${nf(Math.abs(v)/1000)} mil millones`:`${currency(v)}${nf(Math.abs(v),0)} ${Math.abs(v)===1?'millón':'millones'}`;
+  const short=v=>!M.finite(v)?'—':Math.abs(v)>=1e6?`${currency(v)}${nf(Math.abs(v)/1e6)} bill.`:Math.abs(v)>=1000?`${currency(v)}${nf(Math.abs(v)/1000)} mil M`:`${currency(v)}${nf(Math.abs(v),0)} M`;
   const params=new URLSearchParams(location.search);
   const state={price:params.get('precios')==='real'?'real':'nominal',base:['law','current','closing'].includes(params.get('base'))?params.get('base'):'current',lens:['topics','jurisdictions','functions','geographies'].includes(params.get('vista'))?params.get('vista'):'topics',rank:'jurisdictions',history:'amount',province:params.get('provincia')||'',programLimit:16};
   let D,G;
@@ -22,9 +22,18 @@
   const origin=(file,page,label='Documento oficial ↗')=>`<a href="${esc(source(file,page))}" target="_blank" rel="noopener">${label}</a>`;
   const byProject=a=>[...a].sort((a,b)=>(b.project??-1)-(a.project??-1));
   const width=(v,max)=>M.finite(v)&&max>0?Math.max(0,Math.min(100,v/max*100)):0;
+  function readingControls(){
+    const page=M.pageForAnchor(location.hash.slice(1));
+    document.querySelector('.controls').hidden=page==='metodo';
+    $('base-select').closest('label').hidden=!['panorama','gasto'].includes(page);
+    $('base-select').value=state.base;
+    $('unit-context').textContent=state.price==='real'?(page==='ejecucion'?'Cada mes, a pesos de agosto de 2026. IPC observado.':'Pesos de agosto 2026 · escenario de inflación.'):'Montos de cada año, sin descontar inflación.';
+  }
   function sync(){
     document.querySelectorAll('[data-price],[data-base],[data-lens],[data-rank],[data-history]').forEach(b=>{const k=['price','base','lens','rank','history'].find(k=>b.dataset[k]);b.setAttribute('aria-pressed',String(state[k]===b.dataset[k]));});
     const u=new URL(location.href);u.searchParams.set('precios',state.price);u.searchParams.set('base',state.base);u.searchParams.set('vista',state.lens);if(state.province)u.searchParams.set('provincia',state.province);else u.searchParams.delete('provincia');history.replaceState(null,'',u);
+    readingControls();
+    document.querySelectorAll('.base-key').forEach(el=>el.textContent=baseLabel());
   }
   function pair(name,a,b,max,changeText='',changeClass='',unitType='money'){
     const format=v=>unitType==='share'?`${nf(v)}%`:short(v), title=v=>unitType==='share'?`${nf(v)}% del total`:money(v);
@@ -34,8 +43,14 @@
     const amount=val(D.total.project), change=ch(D.total);
     $('headline-total').innerHTML=`$${nf(amount/1e6)} <small>billones</small>`;
     $('headline-unit').textContent=`Proyecto 2027 · ${unit()}`;
+    const o=M.budgetOverview(D.total,state.base,D.deflator.annual_factors);
     const comparisonLabel=({law:'el presupuesto inicial de 2026',current:'el presupuesto vigente de 2026 al 15/09',closing:'el cierre estimado de 2026'})[state.base];
-    $('headline-reading').innerHTML=`Es el gasto que propone el Ejecutivo para la Administración Nacional. Comparado con <strong>${comparisonLabel}</strong>, representa una variación de <strong class="${sign(change)}">${pct(change)}</strong>${state.price==='real'?', descontando la inflación del escenario':', sin descontar inflación'}. El Congreso todavía debe tratar el proyecto.`;
+    $('overview-title').textContent=o.realChange<0?'El presupuesto pierde poder de compra.':'El gasto crece. La inflación achica esa suba.';
+    $('headline-reading').innerHTML=`Comparado con ${comparisonLabel}, el proyecto ${o.nominalChange<0?'baja':'sube'} <strong>${nf(Math.abs(o.nominalChange))}% en pesos</strong>. Al descontar la inflación del escenario, ${o.realChange<0?'la caída es':'el aumento queda en'} <strong>${nf(Math.abs(o.realChange))}%</strong>. La diferencia importa: una cosa es asignar más pesos y otra es cuánto permiten financiar.`;
+    $('headline-change').textContent=pct(change);$('headline-change').className=sign(change);
+    $('headline-base').textContent=`frente a ${baseLabel().toLowerCase()} · ${state.price==='real'?'variación real':'variación nominal'}`;
+    const social=D.functions.find(f=>f.name==='Seguridad Social');
+    $('overview-stats').innerHTML=[['Cambio real',pct(o.realChange),sign(o.realChange),'Poder de compra frente a la base 2026 elegida. Escenario de inflación.','comparacion','Comparar las áreas'],['Seguridad social',`${nf(M.ratio(social.project,D.total.project))}%`,'','del gasto propuesto. Incluye jubilaciones, pensiones y otras prestaciones.','distribucion','Ver la distribución'],['Ejecución 2026',`${nf(o.execution)}%`,'','del presupuesto vigente devengado al 15/09. Septiembre es parcial.','ejecucion','Seguir la ejecución']].map(([label,value,cls,detail,anchor,link])=>`<article class="overview-stat"><h3>${label}</h3><span class="stat-value ${cls}">${value}</span><p>${detail}</p><a href="#${anchor}">${link} →</a></article>`).join('');
     $('real-note').hidden=state.price!=='real';
   }
   const topicText={t0:'Jubilaciones, pensiones y otras prestaciones de la seguridad social. Es el principal componente del gasto.',t1:'Atención, prevención y programas sanitarios de alcance nacional.',t2:'Incluye educación superior, políticas educativas y cultura. El gasto educativo de provincias queda fuera de este universo.',t3:'Transferencias sociales y políticas de empleo. Su alcance depende de los beneficiarios y las prestaciones financiadas.',t4:'Investigación, desarrollo y organismos del sistema científico.',t5:'Defensa nacional, seguridad interior, sistema penal e inteligencia.',t6:'Energía, combustibles y minería, incluidos los subsidios presupuestados en estas funciones.',t7:'Infraestructura, servicios y políticas de transporte.',t8:'Vivienda, agua, saneamiento y cuidado ambiental.',t9:'Políticas productivas, regulación económica y comunicaciones.',t10:'Administración de justicia. No incluye toda la política de seguridad.',t11:'Funciones legislativas, administración pública, relaciones interiores y exteriores y controles.',t12:'Intereses y gastos del servicio de la deuda. Las amortizaciones de capital son aplicaciones financieras y no integran este total.'};
@@ -76,8 +91,8 @@
     $('program-more').hidden=rows.length<=state.programLimit;
   }
   function scale(){
-    const capital=D.jurisdictions.find(j=>j.name==='Ministerio de Capital Humano');
-    const items=[['Gasto propuesto',`$${nf(val(D.total.project)/1e6)} B`,unit()],['Capital Humano',`${nf(M.ratio(capital.project,D.total.project))}%`,'del proyecto. Incluye ANSES, educación y políticas sociales.'],['Gasto de capital',`${nf(M.ratio(3768279,D.total.project))}%`,'del total. Inversión real, transferencias de capital e inversión financiera.'],['Inflación prevista','18,0%','Diciembre de 2027 contra diciembre de 2026. Es un supuesto oficial.']];
+    const interest=D.functions.find(f=>f.name==='Servicio de la Deuda Pública (intereses y gastos)');
+    const items=[['Intereses de la deuda',`${nf(M.ratio(interest.project,D.total.project))}%`,'del gasto propuesto. Son intereses y gastos de la deuda, sin devolución de capital.'],['Gasto de capital',`${nf(M.ratio(3768279,D.total.project))}%`,'del total. Incluye inversión real, transferencias de capital e inversión financiera.'],['Inflación prevista','18,0%','Diciembre de 2027 contra diciembre de 2026. Este supuesto influye en cuánto alcanza el presupuesto.']];
     $('scale').innerHTML=items.map(([a,b,c])=>`<article class="scale-item"><h3>${a}</h3><div class="metric">${b}</div><p>${c}</p></article>`).join('');
   }
   function comparison(){
@@ -102,7 +117,7 @@
   function macro(){
     $('macro-table').innerHTML=`<table><caption class="sr-only">Supuestos oficiales del Mensaje del presupuesto</caption><thead><tr><th>Variable</th><th>2025</th><th>2026</th><th>2027</th></tr></thead><tbody>${D.macro.map(r=>`<tr><td>${esc(r.name)}</td>${r.values.map((v,i)=>`<td class="${v<0?'negative':i===2?'project-col':''}">${r.unit==='ARS/USD'?'$':''}${nf(v)}${r.unit==='%'?'%':''}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
   }
-  const purposeColors=['#8c91b8','#658bc0','#74acdf','#bf8a0a','#cf874c'];
+  const purposeColors=['#708d82','#426c88','#288676','#bfa676','#a77b73'];
   function historyChart(){
     const rows=D.history,max=Math.max(...rows.map(r=>state.history==='gdp'?(r.gdp_share||0):val(r.amount,r.year)));
     $('history-chart').innerHTML=rows.map(r=>{let graph;if(state.history==='composition'){const sum=r.purposes.reduce((a,b)=>a+b,0);graph=`<div class="history-stack">${r.purposes.map((v,i)=>`<span style="width:${width(v,sum)}%;background:${purposeColors[i]}" title="${esc(D.purposes[i].name)}: ${nf(M.ratio(v,sum))}%"></span>`).join('')}</div><div class="note">${r.purposes.map((v,i)=>`${esc(D.purposes[i].name)}: ${nf(M.ratio(v,sum))}%`).join(' · ')}</div>`;}else{const v=state.history==='gdp'?r.gdp_share:val(r.amount,r.year);graph=M.finite(v)?`<div class="bar-line ${r.year===2027?'project':''}"><div class="plot"><div class="bar" style="width:${width(v,max)}%"></div></div><span>${state.history==='gdp'?nf(v)+'%':short(v)}</span></div>`:'<span class="note">Pendiente de una base comparable</span>';}
@@ -131,12 +146,31 @@
     const blob=new Blob(['\ufeff'+rows.map(r=>r.map(M.csvCell).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`presupuesto-nacional-2027-${state.price}-ARS-millones.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   function render(){sync();hero();distribution();buildMap();works();programs();scale();comparison();changes();resources();macro();historyChart();execution();}
-  $('theme').addEventListener('click',()=>{const light=document.documentElement.dataset.theme!=='light';document.documentElement.dataset.theme=light?'light':'dark';$('theme').setAttribute('aria-label',light?'Cambiar a modo oscuro':'Cambiar a modo claro');$('theme').querySelector('span').textContent=light?'Modo oscuro':'Modo claro';try{localStorage.setItem('national-budget-theme',light?'light':'dark');}catch{}});
-  try{if(localStorage.getItem('national-budget-theme')==='light')$('theme').click();}catch{}
+  $('theme').addEventListener('click',()=>{const light=document.documentElement.dataset.theme!=='light';document.documentElement.dataset.theme=light?'light':'dark';$('theme').setAttribute('aria-label',light?'Cambiar a modo oscuro':'Cambiar a modo claro');document.querySelector('meta[name="theme-color"]').content=light?'#f5f6f3':'#142421';try{localStorage.setItem('national-budget-theme-v2',light?'light':'dark');}catch{}});
+  try{if(localStorage.getItem('national-budget-theme-v2')==='dark')$('theme').click();}catch{}
   document.querySelectorAll('[data-price],[data-base],[data-lens],[data-rank],[data-history]').forEach(b=>b.addEventListener('click',()=>{const key=['price','base','lens','rank','history'].find(k=>b.dataset[k]);state[key]=b.dataset[key];if(D)render();else sync();}));
-  for(const id of ['full-index','compact-index'])$(id).innerHTML=sections.map(([id,n,title])=>`<a href="#${id}"><span>${n}.</span>${title}</a>`).join('');
-  $('compact-index').addEventListener('click',e=>{if(e.target.closest('a'))document.querySelector('.menu').open=false;});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelector('.menu').open=false;});
+  function route(focus=false){
+    const anchor=location.hash.slice(1)||'inicio',page=M.pageForAnchor(anchor);
+    if(D){
+      const query=new URLSearchParams(location.search);
+      const next={price:query.get('precios')==='real'?'real':'nominal',base:['law','current','closing'].includes(query.get('base'))?query.get('base'):'current',lens:['topics','jurisdictions','functions','geographies'].includes(query.get('vista'))?query.get('vista'):'topics',province:query.get('provincia')||''};
+      if(!Array.from($('province').options).some(o=>o.value===next.province))next.province='';
+      if(Object.entries(next).some(([key,value])=>state[key]!==value)){Object.assign(state,next);$('province').value=state.province;render();}
+    }
+    document.querySelectorAll('[data-page]').forEach(el=>el.hidden=el.dataset.page!==page);
+    document.querySelectorAll('[data-page-link]').forEach(el=>{if(el.dataset.pageLink===page)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
+    readingControls();
+    if(!D)return;
+    if(page==='ejecucion')execution();
+    window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view:anchor}}));
+    const target=document.getElementById(anchor)||$('inicio');
+    const scrollTarget=['inicio','distribucion','obras','recursos','ejecucion','metodo'].includes(anchor)?$('contenido'):target;
+    requestAnimationFrame(()=>{scrollTarget.scrollIntoView({block:'start',behavior:'instant'});if(focus)(target.querySelector('h2[tabindex]')||target.querySelector('h1'))?.focus({preventScroll:true});});
+  }
+  window.addEventListener('hashchange',()=>route(true));
+  window.addEventListener('popstate',()=>route(true));
+  document.querySelectorAll('[data-page-link]').forEach(link=>link.addEventListener('click',event=>{if(link.hash===location.hash){event.preventDefault();route(true);}}));
+  $('base-select').addEventListener('change',()=>{state.base=$('base-select').value;if(D)render();else sync();});
   $('province').addEventListener('change',()=>selectProvince($('province').value));$('work-search').addEventListener('input',works);
   $('program-search').addEventListener('input',()=>{state.programLimit=16;programs();});$('program-more').addEventListener('click',()=>{state.programLimit+=24;programs();});
   $('execution-jurisdiction').addEventListener('change',execution);$('download').addEventListener('click',download);
@@ -147,6 +181,6 @@
     $('province').innerHTML='<option value="">Todo el país</option>'+locations.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('');if(!locations.includes(state.province))state.province='';$('province').value=state.province;
     $('execution-jurisdiction').innerHTML=D.execution.map(r=>`<option value="${esc(r.name)}">${esc(r.name)}</option>`).join('');
     $('load-state').hidden=true;$('dashboard').hidden=false;render();methodology();
-    if(location.hash){const el=document.getElementById(location.hash.slice(1));if(el)requestAnimationFrame(()=>el.scrollIntoView());}
+    route();
   }).catch(error=>{console.error('No se pudo cargar el presupuesto',error);$('load-state').innerHTML='No se pudieron cargar los datos. <a href="">Reintentar</a> o consultar los <a href="https://www.mecon.gob.ar/onp/presupuestos/2027">documentos oficiales</a>.';});
 })();
