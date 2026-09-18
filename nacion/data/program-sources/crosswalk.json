@@ -1811,7 +1811,7 @@
     "path": "data/program-sources/energia-2026-activities.json",
     "source": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-anual-2026.zip",
     "source_csv_sha256": "976751cc34504e9d51c9d63b99fa13eb154cf46a0300d8d46cb62342e5a6b456",
-    "artifact_sha256": "529c4118f6e3a6dd06c683e0a13907b17eef744645fb9f95ed4d4457c4d8a167",
+    "artifact_sha256": "3466ff217a672bdd7b319202e376be7e6d2402fdbe8e1e51202ee2778c6318ad",
     "cutoff": "2026-09-15",
     "unit": "ARS millones",
     "matched_id": "p222",
@@ -1832,6 +1832,7 @@
         "source": "P27J50.pdf",
         "page": 85
       }
-    }
+    },
+    "artifact_hash_format": "UTF-8, LF"
   }
 }

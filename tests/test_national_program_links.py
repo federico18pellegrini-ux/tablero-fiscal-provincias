@@ -3,6 +3,7 @@ import hashlib
 import json
 import unittest
 from pathlib import Path
+import pymupdf
 from national_program_links import norm, verify_project_row, verify_context
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,9 +60,10 @@ class NationalProgramLinksTest(unittest.TestCase):
         self.assertAlmostEqual(program['law'], 1154999.115632, places=5)
         self.assertEqual(program['current_parts'][1]['include'], [{'subprograma_id':0,'proyecto_id':0,'actividad_id':40}])
         metadata = self.evidence['energy_activity_evidence']
-        raw = (ROOT/'nacion'/metadata['path']).read_bytes()
+        raw = (ROOT/'nacion'/metadata['path']).read_bytes().replace(b'\r\n', b'\n')
         self.assertEqual(hashlib.sha256(raw).hexdigest(), metadata['artifact_sha256'])
-        with __import__('pymupdf').open(ROOT/'nacion/data/program-sources/P27J50.pdf') as doc:
+        self.assertEqual(metadata['artifact_hash_format'], 'UTF-8, LF')
+        with pymupdf.open(ROOT/'nacion/data/program-sources/P27J50.pdf') as doc:
             text = norm(doc[84].get_text())
         self.assertIn('51subsidioenergeticofocalizadogarrafasdecreto9432025', text)
         self.assertIn('791553', text)
