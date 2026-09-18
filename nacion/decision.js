@@ -7,7 +7,7 @@
   const pct=v=>M.finite(v)?`${v>0?'+':''}${num(v)}%`:'No publicado';
   const money=v=>!M.finite(v)?'Sin dato':`${v<0?'−':''}$${num(Math.abs(v)/(Math.abs(v)>=1e6?1e6:Math.abs(v)>=1000?1000:1))} ${Math.abs(v)>=1e6?'billones':Math.abs(v)>=1000?'mil millones':'millones'}`;
   const sign=v=>M.finite(v)?v<0?'negative':v>0?'positive':'':'';
-  let D,B,price='nominal';
+  let D,B,price=new URLSearchParams(location.search).get('precios')==='real'?'real':'nominal';
   const expanded=new Set();
   const val=(v,y=2027)=>M.price(v,y,price,B.deflator.annual_factors);
   const unit=()=>price==='real'?'Pesos de agosto de 2026 · escenario de inflación':'Pesos corrientes';
