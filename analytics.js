@@ -15,7 +15,7 @@
   const ALIASES = {governorRoom:'summary', layer3:'debt', structuralIndicators:'income',
     layer1:'federal', layer2:'comparison', comparisonSection:'comparison'};
   const MUNICIPAL_VIEWS = Object.freeze({panorama:'Panorama municipal',rankings:'Rankings municipales',recursos:'Recursos municipales',empleo:'Empleo municipal',simular:'Escenario de coparticipación',informe:'Preparar informe municipal'});
-  const NATIONAL_VIEWS = Object.freeze({inicio:'Presupuesto Nacional',distribucion:'Distribución',obras:'Obras',programas:'Programas',escala:'Escala',comparacion:'Comparación',finalidades:'Finalidades',cambios:'Subas y bajas',recursos:'Recursos',macro:'Supuestos macro',historia:'Historia',ejecucion:'Ejecución',caja:'Caja nacional','deuda-nacional':'Deuda nacional','provincias-nacion':'Recursos a provincias',metas:'Prestaciones','obras-ejecucion':'Obras ejecutadas','historia-ejecucion':'Historia de ejecución',metodo:'Método'});
+  const NATIONAL_VIEWS = Object.freeze({inicio:'Presupuesto Nacional',distribucion:'Distribución',obras:'Obras',programas:'Programas',escala:'Escala',comparacion:'Comparación',finalidades:'Finalidades',cambios:'Subas y bajas',recursos:'Recursos',macro:'Supuestos macro',financiamiento:'Cierre y financiamiento','politica-inmunizaciones':'Política de inmunizaciones','politica-educacion-superior':'Política universitaria',historia:'Historia',ejecucion:'Ejecución',caja:'Caja nacional','deuda-nacional':'Deuda nacional','provincias-nacion':'Recursos a provincias',metas:'Prestaciones','obras-ejecucion':'Obras ejecutadas','historia-ejecucion':'Historia de ejecución',metodo:'Método'});
 
   function initAnalytics(win, doc) {
     if (win.tableroRedirecting) return null;

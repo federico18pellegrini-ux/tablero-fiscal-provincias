@@ -132,3 +132,13 @@ test('national management sections are measured once without sending searches or
   assert.equal(s.views().length,6);
   assert.doesNotMatch(JSON.stringify(s.records()),/private/);
 });
+
+test('policy and financing views are counted without storing search terms',()=>{
+  const s=setup({location:{pathname:'/nacion/',hash:'#financiamiento',search:'?buscar=private&programa=p297'}});
+  for(const view of ['politica-inmunizaciones','politica-educacion-superior']){
+    s.win.location.hash='#'+view;s.events.hashchange();s.events['dashboard:view']({detail:{view}});
+    assert.equal(s.views().at(-1)[2].page_location,'https://tablero.federicopellegrini.com.ar/nacion/#'+view);
+  }
+  assert.equal(s.views().length,3);
+  assert.doesNotMatch(JSON.stringify(s.records()),/private|p297|buscar=/);
+});
