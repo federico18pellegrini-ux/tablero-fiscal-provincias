@@ -5,7 +5,6 @@ import re
 import unicodedata
 from pathlib import Path
 import pymupdf
-import pandas as pd
 
 ROOT = Path(__file__).resolve().parent
 EVIDENCE = ROOT / 'nacion/data/program-sources/crosswalk.json'
@@ -49,7 +48,7 @@ def verify_context(path, context):
 
 def select_parts(annual, parts):
     """Union of explicit PA program/activity/project selectors; never fuzzy amounts."""
-    selected = pd.Series(False, index=annual.index)
+    selected = annual[KEY[0]].notna() & False
     for part in parts:
         mask = (annual[KEY] == tuple(part['key'])).all(axis=1)
         assert mask.any(), ('Clave sin registros', part['key'])
@@ -58,10 +57,12 @@ def select_parts(annual, parts):
         for operation in ['include', 'exclude']:
             if operation not in part:
                 continue
-            subset = pd.Series(False, index=annual.index)
+            subset = selected & False
             for condition in part[operation]:
                 assert set(condition) <= {'subprograma_id', 'proyecto_id', 'actividad_id'}
-                item = mask & (annual[list(condition)] == pd.Series(condition)).all(axis=1)
+                item = mask.copy()
+                for column, value in condition.items():
+                    item &= annual[column].eq(value)
                 assert item.any(), ('Actividad sin registros', part['key'], condition)
                 subset |= item
             mask &= subset if operation == 'include' else ~subset
