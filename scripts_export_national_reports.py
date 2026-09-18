@@ -23,6 +23,7 @@ OUT = ROOT / 'nacion/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/nacion/'
 BASES = {'current': 'Vigente 2026', 'law': 'Inicial 2026', 'closing': 'Cierre estimado 2026'}
 INPUTS = ['nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
+          'national_decision_report.py', 'nacion/data/decisions.json',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#0a192f', '#254b73', '#64748b', '#e2e8f0', '#f1f5f9', '#b91c1c'])
 PAGE_W, PAGE_H = A4
@@ -349,10 +350,14 @@ class Report:
         canvas.drawRightString(PAGE_W - 42, PAGE_H - 31, self.units + ' · ' + BASES[self.base])
         canvas.restoreState()
 
-    def build(self, path, full=False):
-        self.main()
-        from national_management_report import append_management
-        append_management(self, json.loads((ROOT / 'nacion/data/gestion.json').read_text(encoding='utf-8')))
+    def build(self, path, full=False, focus=None):
+        from national_decision_report import append_decisions
+        decisions=json.loads((ROOT / 'nacion/data/decisions.json').read_text(encoding='utf-8'))
+        if focus is None:
+            self.main()
+            from national_management_report import append_management
+            append_management(self, json.loads((ROOT / 'nacion/data/gestion.json').read_text(encoding='utf-8')))
+        append_decisions(self,decisions,focus)
         if full:
             self.appendix()
         doc = BaseDocTemplate(str(path), pagesize=A4, leftMargin=42, rightMargin=42, topMargin=56, bottomMargin=82,
@@ -379,7 +384,10 @@ def run(output=OUT, check=False):
                 path = output / item['file']
                 if hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256'] or len(PdfReader(path).pages) != item['pages']:
                     raise ValueError('El PDF no coincide con el catálogo: ' + item['file'])
-        print('Informes nacionales: 12 PDF vigentes y verificados.')
+        for item in manifest['focused']:
+            path=output/item['file']
+            assert hashlib.sha256(path.read_bytes()).hexdigest()==item['sha256'] and len(PdfReader(path).pages)==item['pages']
+        print('Informes nacionales: 12 versiones generales y 3 fichas verificadas.')
         return manifest
     register_fonts()
     data = json.loads((ROOT / 'nacion/data/budget.json').read_text(encoding='utf-8'))
@@ -395,6 +403,12 @@ def run(output=OUT, check=False):
                 entry[kind] = {'file': filename, 'pages': len(PdfReader(path).pages), 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
                 print(filename, entry[kind]['pages'], 'páginas')
             manifest['reports'].append(entry)
+    manifest['focused']=[]
+    for focus in ['inmunizaciones','educacion-superior','reactor-ra10']:
+        filename=f'ficha-nacional-{focus}.pdf';path=output/filename
+        Report(data,'nominal','current').build(path,focus=focus)
+        manifest['focused'].append({'scope':focus,'file':filename,'pages':len(PdfReader(path).pages),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+        print(filename,manifest['focused'][-1]['pages'],'páginas')
     manifest_file.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return manifest
 

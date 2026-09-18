@@ -38,5 +38,23 @@ class NationalDecisionsTest(unittest.TestCase):
         item=list(specs[0]);item[-1]=(80,310,99);specs[0]=tuple(item)
         with patch.object(subject,'POLICIES',specs), self.assertRaises(AssertionError):subject.build()
 
+    def test_work_financing_reconciles_and_ra10_preserves_cost_vintage(self):
+        w=subject.build()['works']
+        self.assertEqual(len(w['rows']),435)
+        self.assertEqual(w['totals']['total'],1317609)
+        self.assertEqual(w['totals']['credito_externo'],276136)
+        self.assertEqual(w['rounding_differences']['total'],6)
+        for row in w['rows']:
+            f=row['funding']
+            self.assertLessEqual(abs(f['internas']+f['externas']-f['total']),1)
+        p=w['pilot']
+        self.assertEqual(p['project']['project'],39690)
+        self.assertEqual(p['project']['funding']['tesoro'],39690)
+        self.assertEqual(p['progress_pct'],85.47)
+        self.assertEqual(p['reference_cost'],232217.6)
+        self.assertEqual(p['observed']['corte'],'2026-03-31')
+        self.assertIsNone(p['updated_completion_cost'])
+        self.assertIsNone(p['completion_date'])
+
 
 if __name__=='__main__':unittest.main()

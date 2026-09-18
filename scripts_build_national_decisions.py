@@ -10,13 +10,15 @@ import re
 import unicodedata
 from pathlib import Path
 from pypdf import PdfReader
+from national_work_sources import build_works
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / 'nacion/data'
 OUTPUT = DATA / 'decisions.json'
 INPUTS = ['nacion/data/budget.json', 'nacion/data/gestion/gasto_etapas_programa.json',
           'nacion/data/gestion/metas_fisicas_trimestre_2.json', 'nacion/data/gestion/catalogo.json',
-          'nacion/data/decision-sources/caif-2027.pdf']
+          'nacion/data/decision-sources/caif-2027.pdf', 'nacion/data/decision-sources/proyectos-2027.pdf',
+          'nacion/data/decision-sources/inversion-1t26.pdf', 'nacion/data/gestion/obras_ejecucion_fisica_financiera.json']
 POLICIES = [
     ('inmunizaciones', 'Vacunas e inmunizaciones', 'Prevención y Control de Enfermedades Transmisible e Inmunoprevenibles', 'Ministerio de Salud', (80, 310, 20)),
     ('educacion-superior', 'Universidades', 'Desarrollo de la Educación Superior', 'Secretaría de Educación', (88, 330, 26)),
@@ -75,7 +77,7 @@ def build():
     catalog = {x['dataset']: x for x in load(DATA/'gestion/catalogo.json')}
     inputs = {p: digest(ROOT/p) for p in INPUTS}
     source = next(s for s in b['sources'] if s['file']=='cap1cu01.pdf')
-    assert inputs[INPUTS[-1]] == source['sha256'], 'CAIF differs from the verified project source'
+    assert inputs['nacion/data/decision-sources/caif-2027.pdf'] == source['sha256'], 'CAIF differs from the verified project source'
     caif = parse_caif(DATA/'decision-sources/caif-2027.pdf')
     by = {r['id']: r for r in caif}
     near(by['VII']['project'],b['total']['project'],0)
@@ -102,10 +104,16 @@ def build():
             'sources': {'project':next(s for s in b['sources'] if s['file']==program['source']),
                         'execution':catalog['gasto_etapas_programa']['sources'][0],
                         'physical':catalog['metas_fisicas_trimestre_2']['sources'][0]}})
+    work_sources={'project':next(s for s in b['sources'] if s['file']=='cap1pl12.pdf'),
+                  'physical':catalog['obras_ejecucion_fisica_financiera']['sources'][0],
+                  'investment':catalog['obras_ejecucion_fisica_financiera']['sources'][1]}
+    assert inputs['nacion/data/decision-sources/proyectos-2027.pdf']==work_sources['project']['sha256']
+    assert inputs['nacion/data/decision-sources/inversion-1t26.pdf']==work_sources['investment']['sha256']
+    works=build_works(b,load(DATA/'gestion/obras_ejecucion_fisica_financiera.json'),DATA/'decision-sources/proyectos-2027.pdf',DATA/'decision-sources/inversion-1t26.pdf',work_sources)
     return {'meta':{'reviewed':'2026-09-18','unit':'ARS millones','execution_cutoff':b['meta']['execution_cutoff'],
                     'physical_period':'enero-junio 2026','inputs':inputs},
             'finance':{'scope':'Administración Nacional','base':'Cierre estimado 2026','project':'Proyecto de ley 2027',
-                       'source':source,'page':1,'rows':caif}, 'policies':policies}
+                       'source':source,'page':1,'rows':caif}, 'policies':policies,'works':works}
 
 def run(check=False):
     result = build()

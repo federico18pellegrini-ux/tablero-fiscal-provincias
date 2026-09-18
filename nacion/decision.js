@@ -51,16 +51,17 @@
       <h3>La comparación cambia según el punto de partida</h3>${table(['Base de 2026','Cambio en pesos','Cambio real'],comparisons.map(r=>[labels[r.base],`<span class="${sign(r.nominal)}">${pct(r.nominal)}</span>`,`<strong class="${sign(r.real)}">${pct(r.real)}</strong>`]),'Proyecto 2027 · Cambio real: después de descontar inflación')}<p class="note">El cierre estimado no está publicado para este programa. Los colores indican suba o baja del monto.</p>
       <h3>Del presupuesto al pago</h3><p class="note">2026 al 15/09 · Pesos corrientes · Las etapas corresponden al mismo gasto.</p><div class="policy-stages">${[['Inicial','credito_presupuestado'],['Vigente','credito_vigente'],['Comprometido','credito_comprometido'],['Gasto reconocido','credito_devengado'],['Pagado','credito_pagado']].map(([label,key])=>`<div><span>${label}</span><strong>${money(p.execution[key])}</strong></div>`).join('')}</div><p>Quedan <strong>${money(s.unpaid)}</strong> de gasto reconocido pendiente de pago. El registro no informa qué parte está vencida.</p>
       <h3>Qué prestaciones se informaron</h3><p class="note">Enero–junio 2026 · ${s.reported} de ${s.count} mediciones con ejecución informada${s.partial?` · ${s.partial} con información parcial`:''}. El corte físico es anterior al financiero.</p><div class="policy-measures">${measures.map(physicalCard).join('')}</div><button class="more" data-policy-more="${p.slug}" aria-expanded="${expanded.has(p.slug)}">${expanded.has(p.slug)?'Mostrar sólo la selección':'Ver las '+s.count+' mediciones'}</button>
-      <div class="policy-next"><h3>Qué revisar para decidir</h3><p>${next}</p></div><div class="decision-links">${official(p.sources.project.url+'#page='+p.program.page,'Presupuesto 2027')}${official(p.sources.execution.url,'Ejecución y pagos')}${official(p.sources.physical.url,'Prestaciones y explicaciones')}<a href="data/decisions.json" download>Descargar la información</a></div><p class="note">Correspondencia verificada entre organismo y programa. SAF ${p.link.servicio_id} · programa ${p.link.programa_id}. Las mediciones conservan su unidad y no se suman entre sí.</p>`;
+      <div class="policy-next"><h3>Qué revisar para decidir</h3><p>${next}</p></div><div class="decision-links">${official(p.sources.project.url+'#page='+p.program.page,'Presupuesto 2027')}${official(p.sources.execution.url,'Ejecución y pagos')}${official(p.sources.physical.url,'Prestaciones y explicaciones')}<a href="data/decisions.json" download>Descargar la información</a><button class="button" data-export-focus="${p.slug}">Exportar esta ficha</button></div><p class="note">Correspondencia verificada entre organismo y programa. SAF ${p.link.servicio_id} · programa ${p.link.programa_id}. Las mediciones conservan su unidad y no se suman entre sí.</p>`;
   }
   function render(){
     B=window.nationalBudgetContext?.data;
     if(!D||!B)return;
     if(!N.inputMatches(D,window.nationalBudgetContext.hash)){showError('Estas fichas se están actualizando para coincidir con el presupuesto. Recargá el tablero.');return;}
     finance();D.policies.forEach(policy);route();
+    window.nationalDecisionContext=D;window.dispatchEvent(new Event('national:decisions-ready'));
   }
   function showError(message){
-    for(const id of ['financiamiento','politica-inmunizaciones','politica-educacion-superior'])$(id).innerHTML=`<p role="status">${esc(message)} <a href="">Reintentar</a>.</p>`;
+    for(const id of ['financiamiento','politica-inmunizaciones','politica-educacion-superior','obra-ra10','escenarios','attention'])$(id).innerHTML=`<p role="status">${esc(message)} <a href="">Reintentar</a>.</p>`;
     route();
   }
   document.addEventListener('click',async e=>{
@@ -72,6 +73,6 @@
   window.addEventListener('hashchange',route);
   window.addEventListener('national:budget-ready',render);
   window.addEventListener('national:state',e=>{price=e.detail.price;render();});
-  fetch('data/decisions.json?v=20260918-decisiones',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('No se pudieron cargar las fichas y el financiamiento.');return r.json();}).then(data=>{D=data;render();}).catch(e=>showError(e.message));
+  fetch('data/decisions.json?v=20260918-continuidad',{cache:'no-cache'}).then(async r=>{if(!r.ok)throw Error('No se pudieron cargar las fichas y el financiamiento.');const text=await r.text();window.nationalDecisionHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;render();}).catch(e=>showError(e.message));
   route();
 })();

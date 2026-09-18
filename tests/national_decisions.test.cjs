@@ -37,4 +37,25 @@ test('stale policy packages are blocked and new routes preserve old navigation',
   assert.equal(M.pageForAnchor('financiamiento'),'economia');
   for(const slug of D.policies.map(p=>p.slug))assert.equal(M.pageForAnchor('politica-'+slug),'politicas');
   assert.equal(M.pageForAnchor('programas'),'gasto');assert.equal(M.pageForAnchor('__proto__'),'panorama');
+  assert.equal(M.pageForAnchor('escenarios'),'economia');assert.equal(M.pageForAnchor('obra-ra10'),'obra-ficha');
+});
+
+test('scenarios reproduce the annual base and separate revenue stress from uncovered principal',()=>{
+  const rows=Object.fromEntries(D.finance.rows.map(r=>[r.id,r.project]));
+  const options={project:B.total.project,base:B.total.current,resources:rows.VI,expenses:rows.VII,capital:rows['XIII.2'],inflation:(B.deflator.annual_average_index['2027']/B.deflator.annual_average_index['2026']-1)*100,revenueDrop:0,coverage:100};
+  const initial=N.scenario(options);near(initial.realChange,10.009724);near(initial.balance,246741);assert.equal(initial.uncovered,0);
+  const stressed=N.scenario({...options,revenueDrop:1,coverage:90});near(stressed.balance,-1776740.74);near(stressed.uncovered,30686492.9);
+  assert.ok(N.scenario({...options,inflation:30}).realChange<initial.realChange);
+  for(const bad of [{inflation:null},{coverage:101},{revenueDrop:-1},{base:0},{inflation:Infinity}])assert.equal(N.scenario({...options,...bad}),null);
+});
+
+test('funding filters include mixed projects without counting subtotal columns twice',()=>{
+  const rows=D.works.rows;
+  assert.equal(rows.filter(w=>N.fundingMatches(w.funding,'all')).length,435);
+  const external=rows.filter(w=>N.fundingMatches(w.funding,'external'));
+  assert.ok(external.length>0&&external.length<435);
+  assert.equal(N.fundingMatches(undefined,'external'),false);
+  assert.equal(N.fundingMatches({externas:0,tesoro:100},'internal'),true);
+  assert.equal(N.fundingMatches({externas:10,tesoro:100},'internal'),false);
+  assert.equal(N.fundingMatches({externas:10,tesoro:100},'treasury'),true);
 });

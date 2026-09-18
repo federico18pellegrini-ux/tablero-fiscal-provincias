@@ -2,6 +2,8 @@
 
 Primera entrega del 18/09/2026: búsqueda con palabras habituales, comparación simultánea contra tres bases de 2026, cierre fiscal y financiamiento 2027, fichas de inmunizaciones y educación superior.
 
+La segunda entrega del mismo día incorpora obras, escenarios e informes: [alcance y verificación](nacion-continuidad-informes-2026-09-18.md). Los límites que siguen describen la primera entrega.
+
 ## Accesos
 
 - `/nacion/#financiamiento`
