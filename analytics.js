@@ -18,6 +18,7 @@
   const NATIONAL_VIEWS = Object.freeze({inicio:'Presupuesto Nacional',distribucion:'Distribución',obras:'Obras',programas:'Programas',escala:'Escala',comparacion:'Comparación',finalidades:'Finalidades',cambios:'Subas y bajas',recursos:'Recursos',macro:'Supuestos macro',historia:'Historia',ejecucion:'Ejecución',metodo:'Método'});
 
   function initAnalytics(win, doc) {
+    if (win.tableroRedirecting) return null;
     if (win.location.hostname !== HOST || win.location.protocol !== 'https:') return null;
     try { if (win.localStorage.getItem(OPT_OUT_KEY) === 'true') return null; } catch (_) {}
     if (win.tableroAnalytics) return win.tableroAnalytics;

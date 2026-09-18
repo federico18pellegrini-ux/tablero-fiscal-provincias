@@ -9,8 +9,8 @@
   <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260917-marca">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20260917-marca"></script>
-  <script defer src="../analytics.js?v=20260917-informe"></script>
+  <script defer src="app.js?v=20260917-inicio"></script>
+  <script defer src="../analytics.js?v=20260917-inicio"></script>
   <link rel="preload" href="../assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/brand/playfair-display.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../brand.css?v=20260917-navegacion">
@@ -22,7 +22,7 @@
       <a class="brand pellegrini-brand" href="./" aria-label="PELLEGRINI · Municipios, inicio"><span class="brand-identity"><strong class="brand-wordmark">PELLEGRINI</strong><small class="brand-tagline">ESTUDIOS MACROFINANCIEROS</small></span><span class="brand-context">Municipios</span></a>
       <div class="header-actions"><label class="municipality-picker"><span id="municipality-picker-label">Tu municipio</span><select id="municipality" aria-label="Elegir municipio" disabled><option>Cargando municipios…</option></select></label></div>
     </div>
-    <nav class="dashboard-switcher" aria-label="Cambiar de tablero"><a href="/">Provincias</a><a href="/municipios/" aria-current="page">Municipios</a><a href="/nacion/">Nación</a></nav>
+    <nav class="dashboard-switcher" aria-label="Cambiar de tablero"><a href="/nacion/">Nación</a><a href="/municipios/?municipio=06805&amp;vista=panorama" aria-current="page">Municipios</a><a href="/#summary">Provincias</a></nav>
     <nav class="main-nav" aria-label="Vistas del tablero">
       <button data-view="panorama" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-8H9v8H4a1 1 0 0 1-1-1Z"/></svg>Panorama</button>
       <button data-view="recursos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18M5 9v10m5-10v10m4-10v10m5-10v10M3 21h18M3 6l9-4 9 4Z"/></svg>Recursos</button>

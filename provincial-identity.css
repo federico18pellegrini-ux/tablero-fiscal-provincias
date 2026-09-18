@@ -127,7 +127,7 @@ button,select,input{font-family:var(--font)}
  .header .fixed-dashboard-title{font-size:18px!important;letter-spacing:-.5px}
  .header .brand-name{font-size:11px;margin-top:2px}.header .mobile-theme{font-size:11px;padding:8px;min-height:40px;max-width:76px;line-height:1.5}
  .visible-navigation{margin-bottom:14px;padding:8px 0}
- .visible-navigation .mobile-navigation-toggle{border:1px solid var(--border);border-radius:12px;color:var(--text);background:var(--s1)}
+ .visible-navigation .mobile-navigation-toggle{border:1px solid var(--border);border-radius:12px;color:var(--text);background:var(--s1);transition:none}
  .mobile-navigation-context{font-size:12px}
  .visible-navigation-heading{gap:8px}.visible-navigation-heading .fixed-province-picker{flex:1 1 100%}
  .visible-navigation .municipal-dashboard-link{flex:1;font-size:13px;padding:10px 8px}

@@ -200,8 +200,8 @@ export function fiscalExportRows(m) {
   }
   return rows.concat(managementExportRows(m));
 }
-export function readState(search, municipalities, savedId) {
-  const p=new URLSearchParams(search), id=p.get('municipio') || savedId;
+export function readState(search, municipalities) {
+  const p=new URLSearchParams(search), id=p.get('municipio') || '06805';
   return {id:municipalities.some(m=>m.id===id)?id:'06805',view:VALID_VIEWS.includes(p.get('vista'))?p.get('vista'):'panorama',metric:METRICS.some(m=>m.id===p.get('indicador'))?p.get('indicador'):'recursos',budgetBasis:Object.hasOwn(BUDGET_BASES,p.get('presupuesto'))?p.get('presupuesto'):'junio'};
 }
 

@@ -10,10 +10,17 @@ function initExecutiveRedesign(){
   aside.append(nav,tools);tools.append(tools.querySelector('#openGuide'));document.body.append(aside);
   const picker=document.querySelector('.mobile-view-picker');document.querySelector('.hero').after(picker);
   const theme=document.createElement('button');theme.type='button';theme.id='themeToggle';theme.className='theme-toggle';aside.append(theme);
-  let stored='light';try{stored=localStorage.getItem('fiscal-theme')||'light';}catch{}
-  const setTheme=value=>{document.documentElement.dataset.theme=value;theme.textContent=value==='dark'?'Usar fondo claro':'Usar fondo oscuro';theme.setAttribute('aria-pressed',String(value==='dark'));document.querySelector('meta[name="theme-color"]').content='#0A192F';try{localStorage.setItem('fiscal-theme',value);}catch{}if(typeof Chart!=='undefined')Object.values(Chart.instances).forEach(c=>c.update('none'));};
-  theme.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');setTheme(stored==='dark'?'dark':'light');
-  const mobileTheme=document.createElement('button');mobileTheme.type='button';mobileTheme.className='mobile-theme';mobileTheme.textContent='Cambiar tema';mobileTheme.onclick=()=>theme.click();document.querySelector('.header').append(mobileTheme);
+  const mobileTheme=document.createElement('button');mobileTheme.type='button';mobileTheme.className='mobile-theme';document.querySelector('.header').append(mobileTheme);
+  const setTheme=value=>{
+    const dark=value==='dark',action=dark?'claro':'oscuro';
+    document.documentElement.dataset.theme=value;
+    theme.textContent='Usar fondo '+action;mobileTheme.textContent=dark?'☀ Claro':'☾ Oscuro';
+    for(const button of [theme,mobileTheme]){button.setAttribute('aria-label','Cambiar a modo '+action);button.title='Cambiar a modo '+action;button.setAttribute('aria-pressed',String(dark));}
+    document.querySelector('meta[name="theme-color"]').content='#0A192F';
+    if(typeof Chart!=='undefined')Object.values(Chart.instances).forEach(c=>c.update('none'));
+  };
+  theme.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+  mobileTheme.onclick=()=>theme.click();setTheme('light');
   const sync=()=>{const opened=document.querySelector('#federalTools > details[open]');document.body.classList.toggle('tool-context',!!opened);nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',!opened&&b.classList.contains('active')?'page':'false'));};
   document.querySelectorAll('#federalTools > details').forEach(p=>p.addEventListener('toggle',sync));
   nav.addEventListener('click',e=>{if(!e.target.closest('[data-view]'))return;document.querySelectorAll('#federalTools > details').forEach(p=>p.open=false);sync();window.scrollTo({top:0,behavior:'smooth'});});

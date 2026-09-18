@@ -202,8 +202,8 @@ function fiscalExportRows(m) {
   }
   return rows.concat(managementExportRows(m));
 }
-function readState(search, municipalities, savedId) {
-  const p=new URLSearchParams(search), id=p.get('municipio') || savedId;
+function readState(search, municipalities) {
+  const p=new URLSearchParams(search), id=p.get('municipio') || '06805';
   return {id:municipalities.some(m=>m.id===id)?id:'06805',view:VALID_VIEWS.includes(p.get('vista'))?p.get('vista'):'panorama',metric:METRICS.some(m=>m.id===p.get('indicador'))?p.get('indicador'):'recursos',budgetBasis:Object.hasOwn(BUDGET_BASES,p.get('presupuesto'))?p.get('presupuesto'):'junio'};
 }
 
@@ -390,7 +390,6 @@ function persist(){
   if(state.view==='informe')url.searchParams.set('temas',reportTopics.join(','));
   if(state.view==='recursos'){url.searchParams.set('pesos',priceMode==='real'?'reales':'corrientes');url.searchParams.set('base',priceBase);url.searchParams.set('variable',priceIndicator);}
   history.replaceState(null,'',url);
-  try{localStorage.setItem('pellegrini_municipio',state.id);}catch{}
 }
 function navigate(view,scroll=true){
   if(!VALID_VIEWS.includes(view))return;
@@ -744,8 +743,7 @@ async function init(){
     if(['transferencias','copart','salario','prestamos','depositos','deuda-personas'].includes(params.get('variable')))priceIndicator=params.get('variable');
     for(const id of ['price-from','price-to']){$(id).min=Object.keys(deflator.indices).sort()[0];$(id).max=deflator.latest;}
     if(rows.length!==135||geography.features.length!==135||geography.features.some(f=>!byId.has(f.properties.id)))throw new Error('La cobertura geográfica no coincide con los datos.');
-    let saved;try{saved=localStorage.getItem('pellegrini_municipio');}catch{}
-    state=readState(location.search,rows,saved);rankAscending=currentMetric().ascending;
+    state=readState(location.search,rows);rankAscending=currentMetric().ascending;
     $('municipality').innerHTML=rows.slice().sort((a,b)=>a.municipio.localeCompare(b.municipio,'es')).map(m=>`<option value="${m.id}">${escape(m.municipio)}</option>`).join('');$('municipality').disabled=false;
     $('loading').hidden=true;$('dashboard').hidden=false;attachEvents();persist();renderView();window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view:state.view}}));
     prepareReports(dashboardText);

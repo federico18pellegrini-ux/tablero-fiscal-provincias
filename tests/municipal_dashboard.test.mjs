@@ -321,6 +321,8 @@ test('simulation uses gross coparticipation and remains bounded, per capita reco
 test('direct links reject unknown state and CSV preserves missing values',()=>{
   const s=readState('?municipio=bad&vista=bad&indicador=bad',rows);assert.equal(s.id,'06805');assert.equal(s.view,'panorama');assert.equal(s.metric,'recursos');
   assert.equal(readState('?municipio=06427&vista=empleo',rows).id,'06427');
+  assert.equal(readState('',rows,'06329').id,'06805');
+  assert.equal(readState('?municipio=06329&vista=empleo',rows,'06805').id,'06329');
   assert.equal(csv([['Faltante',null]]),'\ufeff"Faltante";""');
 });
 

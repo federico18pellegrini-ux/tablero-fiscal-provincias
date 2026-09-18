@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
 <meta charset="UTF-8">
+<script>
+// The public landing is Nación; explicit provincial section links stay addressable.
+if (!location.hash) {
+  window.tableroRedirecting = true;
+  document.documentElement.style.visibility = 'hidden';
+  location.replace('/nacion/' + location.search);
+}
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0A192F">
 <title>Tablero Provincial · Federico Pellegrini</title>
-<script defer src="analytics.js?v=20260917-informe"></script>
+<script defer src="analytics.js?v=20260917-inicio"></script>
 <link rel="preload" href="assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="assets/brand/playfair-display.ttf" as="font" type="font/ttf" crossorigin>
 <style>
@@ -901,7 +909,7 @@ tr:last-child td{border-bottom:none}
 <link rel="stylesheet" href="federal-tools.css?v=20260906-2">
 <link rel="stylesheet" href="management-design.css?v=20260906-4">
 <link rel="stylesheet" href="executive-redesign.css?v=20260915-9">
-<link rel="stylesheet" href="provincial-identity.css?v=20260917-marca">
+<link rel="stylesheet" href="provincial-identity.css?v=20260917-inicio">
 <link rel="stylesheet" href="brand.css?v=20260917-navegacion">
 <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 </head>
@@ -911,7 +919,7 @@ tr:last-child td{border-bottom:none}
 <div class="header">
   <div class="brand pellegrini-brand"><span class="brand-identity"><strong class="brand-wordmark">PELLEGRINI</strong><small class="brand-tagline">ESTUDIOS MACROFINANCIEROS</small></span><div class="brand-text brand-context"></div></div>
   <div class="header-meta" id="metaBox">Cargando...</div>
-  <nav class="dashboard-switcher" aria-label="Cambiar de tablero"><a href="/" aria-current="page">Provincias</a><a href="/municipios/">Municipios</a><a href="/nacion/">Nación</a></nav>
+  <nav class="dashboard-switcher" aria-label="Cambiar de tablero"><a href="/nacion/">Nación</a><a href="/municipios/?municipio=06805&amp;vista=panorama">Municipios</a><a href="/#summary" aria-current="page">Provincias</a></nav>
 </div>
 
 <div class="wrap" id="provinceExportRoot">
@@ -5020,7 +5028,7 @@ document.getElementById('downloadPng')?.addEventListener('click',exportCurrentPr
 <script src="profile-readings.js?v=20260915-9"></script>
 <script src="provincial-debt-services.js?v=20260915-9"></script>
 <script src="inflation-history.js?v=20260915-4"></script>
-<script src="executive-redesign.js?v=20260917-marca"></script>
+<script src="executive-redesign.js?v=20260917-inicio"></script>
 <script src="closing-tools.js?v=20260915-9"></script>
 <script src="management-tools.js?v=20260915-9"></script>
 <script src="federal-tools.js?v=20260915-9"></script>
