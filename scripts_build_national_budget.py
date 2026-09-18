@@ -124,10 +124,10 @@ def main():
         series=[dict(month=int(m),accrued=round(float(v.credito_devengado.sum()),6),real=round(float(v.credito_devengado.sum())*anchor/ipc[f'2026-{int(m):02}'],6) if m<=8 else None,partial=bool(m==9)) for m,v in g.groupby('impacto_presupuestario_mes')]
         budget=total['current'] if j=='Total' else group('jurisdiccion_desc')[norm(j)]['current']
         execution.append(dict(name=j,current=budget,months=series))
-    history=[]; hist=pd.read_csv(c/'serie_pib_anual.csv'); hfun=pd.read_csv(c/'serie_finfun_anual.csv').set_index('ejercicio_presupuestario')
+    history=[]; hist=pd.read_csv(c/'totales-de-presupuesto.csv',decimal=',')
     for _,r in hist[hist.ejercicio_presupuestario.between(2023,2025)].iterrows():
         year=int(r.ejercicio_presupuestario)
-        history.append(dict(year=year,stage='Devengado anual',amount=r.gasto/1e6,gdp_share=r.gasto/r.pib*100,purposes=[sum(float(v) for k,v in hfun.loc[year].items() if k.startswith(f'finalidad{p}_'))/1e6 for p in range(1,6)]))
+        history.append(dict(year=year,stage='Devengado anual',amount=float(r.credito_devengado),gdp_share=None,purposes=None))
     history.extend([dict(year=2026,stage='Crédito vigente · 15/09',amount=total['current'],gdp_share=None,purposes=[p['current'] for p in purposes]),dict(year=2027,stage='Proyecto de ley',amount=total['project'],gdp_share=None,purposes=[p['project'] for p in purposes])])
     # Reconcile rounded PDF subtotals; rounding tolerance is <= half a million per printed row.
     checks={}

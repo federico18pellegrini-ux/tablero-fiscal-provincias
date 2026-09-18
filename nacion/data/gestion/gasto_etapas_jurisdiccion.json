@@ -1,0 +1,178 @@
+[
+  {
+    "jurisdiccion_id": 1,
+    "jurisdiccion_desc": "Poder Legislativo Nacional",
+    "credito_presupuestado": 674012.927987,
+    "credito_vigente": 923397.744609,
+    "credito_comprometido": 584635.04739451,
+    "credito_devengado": 571366.4149155,
+    "credito_pagado": 548588.31476502,
+    "devengado_menos_pagado": 22778.10015048,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 5,
+    "jurisdiccion_desc": "Poder Judicial de la Nación",
+    "credito_presupuestado": 2135208.999995,
+    "credito_vigente": 2587730.121283,
+    "credito_comprometido": 1786721.26205524,
+    "credito_devengado": 1639917.79200564,
+    "credito_pagado": 1545253.94220504,
+    "devengado_menos_pagado": 94663.8498006,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 10,
+    "jurisdiccion_desc": "Ministerio Público",
+    "credito_presupuestado": 835392.299994,
+    "credito_vigente": 1065852.031772,
+    "credito_comprometido": 680954.98597013,
+    "credito_devengado": 675583.74308971,
+    "credito_pagado": 674619.97935728,
+    "devengado_menos_pagado": 963.76373243,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 20,
+    "jurisdiccion_desc": "Presidencia de la Nación",
+    "credito_presupuestado": 396555.069251,
+    "credito_vigente": 562589.773432,
+    "credito_comprometido": 340026.5955365,
+    "credito_devengado": 323965.47311946,
+    "credito_pagado": 289589.46375863,
+    "devengado_menos_pagado": 34376.00936083,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 25,
+    "jurisdiccion_desc": "Jefatura de Gabinete de Ministros",
+    "credito_presupuestado": 1263912.394278,
+    "credito_vigente": 1398980.750893,
+    "credito_comprometido": 844012.05090255,
+    "credito_devengado": 779754.1507629,
+    "credito_pagado": 743382.26259417,
+    "devengado_menos_pagado": 36371.88816873,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 30,
+    "jurisdiccion_desc": "Ministerio del Interior",
+    "credito_presupuestado": 835138.313591,
+    "credito_vigente": 648426.559602,
+    "credito_comprometido": 378598.96939296,
+    "credito_devengado": 349845.42586021,
+    "credito_pagado": 343841.8287445,
+    "devengado_menos_pagado": 6003.59711571,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 35,
+    "jurisdiccion_desc": "Ministerio de Relaciones Exteriores, Comercio Internacional y Culto",
+    "credito_presupuestado": 653503.0,
+    "credito_vigente": 719391.869097,
+    "credito_comprometido": 548281.37079149,
+    "credito_devengado": 437759.15474118,
+    "credito_pagado": 406766.94438582,
+    "devengado_menos_pagado": 30992.21035536,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 40,
+    "jurisdiccion_desc": "Ministerio de Justicia",
+    "credito_presupuestado": 218332.225118,
+    "credito_vigente": 331423.084865,
+    "credito_comprometido": 201439.67546026,
+    "credito_devengado": 162704.87957732,
+    "credito_pagado": 162700.47995432,
+    "devengado_menos_pagado": 4.399623,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 41,
+    "jurisdiccion_desc": "Ministerio de Seguridad Nacional",
+    "credito_presupuestado": 7575435.226921,
+    "credito_vigente": 7802024.39742,
+    "credito_comprometido": 5968347.1726978,
+    "credito_devengado": 5472041.56521425,
+    "credito_pagado": 5426181.51536095,
+    "devengado_menos_pagado": 45860.0498533,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 45,
+    "jurisdiccion_desc": "Ministerio de Defensa",
+    "credito_presupuestado": 5699658.52429,
+    "credito_vigente": 5884905.734582,
+    "credito_comprometido": 4503663.59399607,
+    "credito_devengado": 4081649.7700943,
+    "credito_pagado": 4019064.21126653,
+    "devengado_menos_pagado": 62585.55882777,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 50,
+    "jurisdiccion_desc": "Ministerio de Economía",
+    "credito_presupuestado": 8879050.071452,
+    "credito_vigente": 10040251.493488,
+    "credito_comprometido": 7633618.06095894,
+    "credito_devengado": 6977823.93060265,
+    "credito_pagado": 6850587.89332967,
+    "devengado_menos_pagado": 127236.03727298,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 80,
+    "jurisdiccion_desc": "Ministerio de Salud",
+    "credito_presupuestado": 7402959.021544,
+    "credito_vigente": 8604631.070675,
+    "credito_comprometido": 5500304.31428843,
+    "credito_devengado": 5354315.39765797,
+    "credito_pagado": 5198102.52024242,
+    "devengado_menos_pagado": 156212.87741555,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 88,
+    "jurisdiccion_desc": "Ministerio de Capital Humano",
+    "credito_presupuestado": 84953712.824923,
+    "credito_vigente": 89121333.029792,
+    "credito_comprometido": 62847795.47311487,
+    "credito_devengado": 62597906.82294685,
+    "credito_pagado": 61007779.65901284,
+    "devengado_menos_pagado": 1590127.16393401,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 89,
+    "jurisdiccion_desc": "Ministerio de Desregulación y Transformación del Estado",
+    "credito_presupuestado": 25135.0,
+    "credito_vigente": 24743.803637,
+    "credito_comprometido": 15137.18182951,
+    "credito_devengado": 14492.00241806,
+    "credito_pagado": 14289.17323822,
+    "devengado_menos_pagado": 202.82917984,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 90,
+    "jurisdiccion_desc": "Servicio de la Deuda Pública",
+    "credito_presupuestado": 14118044.18889,
+    "credito_vigente": 14328044.18889,
+    "credito_comprometido": 12434123.75250375,
+    "credito_devengado": 12434123.75250375,
+    "credito_pagado": 12375574.58456076,
+    "devengado_menos_pagado": 58549.16794299,
+    "corte": "2026-09-15"
+  },
+  {
+    "jurisdiccion_id": 91,
+    "jurisdiccion_desc": "Obligaciones a Cargo del Tesoro",
+    "credito_presupuestado": 12403243.438315,
+    "credito_vigente": 8431243.186379,
+    "credito_comprometido": 3491927.69442149,
+    "credito_devengado": 3491901.7395826,
+    "credito_pagado": 3413465.07672335,
+    "devengado_menos_pagado": 78436.66285925,
+    "corte": "2026-09-15"
+  }
+]

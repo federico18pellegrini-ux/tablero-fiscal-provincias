@@ -22,9 +22,9 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'nacion/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/nacion/'
 BASES = {'current': 'Vigente 2026', 'law': 'Inicial 2026', 'closing': 'Cierre estimado 2026'}
-INPUTS = ['nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py',
+INPUTS = ['nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
-INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#193c34', '#14786b', '#566b63', '#d8e3dd', '#eef4f0', '#b63836'])
+INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#0a192f', '#254b73', '#64748b', '#e2e8f0', '#f1f5f9', '#b91c1c'])
 PAGE_W, PAGE_H = A4
 WIDTH = PAGE_W - 84
 MONTHS = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre']
@@ -260,14 +260,12 @@ class Report:
         self.note(f"Gasto mensual en millones · {self.units}. Septiembre llega al 15/09 y no es un mes completo. En reales, septiembre queda sin monto porque aún falta su IPC observado. No se usa una proyección para medir gasto real ejecutado.")
         self.note('Un ritmo menor de ejecución puede responder al calendario de pagos, demoras o decisiones de gasto. Hace falta revisar cada programa antes de calificarlo como ahorro o subejecución.')
 
-        self.section('09 / Historia y lectura final', 'Mirar más allá de un solo año', 'Presupuesto Abierto: series anuales de gasto y PIB. ONP: proyecto 2027. INDEC: IPC; 2026-2027, escenario.')
+        self.section('09 / Historia y lectura final', 'Mirar más allá de un solo año', 'Presupuesto Abierto: totales anuales de ejecución. ONP: proyecto 2027. INDEC: IPC; 2026-2027, escenario.')
         self.add('La serie permite ubicar el proyecto en perspectiva. Los primeros tres años muestran gasto realizado; 2026 muestra una autorización vigente y 2027, una propuesta. Son etapas distintas y no se deben leer como cinco cierres anuales.')
-        self.table(['Año / etapa', 'Monto', 'Gasto / PIB'], [[str(r['year']) + ' / ' + r['stage'], num(self.value(r['amount'], r['year']), 0), pct(r.get('gdp_share')) if finite(r.get('gdp_share')) else 's/d'] for r in d['history']], [WIDTH - 165, 100, 65])
-        self.note(f"Montos en millones · {self.units}. PIB = producto interno bruto, el valor de la producción de la economía. Falta una base de PIB 2026-2027 comparable con este universo; no se completa con otro alcance.")
-        self.add('Cómo cambió la composición', 'heading')
-        self.table(['Finalidad / % del gasto', *[str(r['year']) for r in d['history']]],
-                   [[p['name'], *[pct(ratio(r['purposes'][i], sum(r['purposes']))) for r in d['history']]] for i, p in enumerate(d['purposes'])],
-                   [WIDTH - 250, 50, 50, 50, 50, 50], compact=True)
+        self.table(['Año / etapa', 'Monto'], [[str(r['year']) + ' / ' + r['stage'], num(self.value(r['amount'], r['year']), 0)] for r in d['history']], [WIDTH - 130, 130])
+        self.note(f"Montos en millones · {self.units}. La historia utiliza la serie de totales de ejecución, conciliada con el presupuesto actual. La apertura histórica asociada al PIB tiene diferencias de alcance y queda fuera de esta comparación.")
+        self.add('La historia completa y la gestión actual', 'heading')
+        self.add('Los capítulos siguientes amplían la mirada con caja, pagos, deuda, recursos a provincias, prestaciones y obras. La serie de presupuestos y ejecución comienza en 2007. Cada bloque conserva su período y su universo.')
         self.add('Qué recomendamos seguir', 'heading')
         self.add('<b>El poder de compra de las partidas.</b> Si la inflación supera el escenario y los créditos no acompañan, el mismo presupuesto compra menos. Conviene seguir el monto real junto con las prestaciones que debe financiar.')
         self.add('<b>La recaudación que respalda el gasto.</b> Los supuestos de crecimiento sostienen una parte de los ingresos previstos. Un desvío obliga a revisar prioridades, financiamiento o tiempos de ejecución; no permite anticipar automáticamente cuál de esos caminos se elegirá.')
@@ -283,12 +281,12 @@ class Report:
         self.add('Las bases de comparación', 'heading')
         self.add('<b>Inicial:</b> crédito de inicio de 2026. <b>Vigente:</b> crédito autorizado con sus modificaciones al corte. <b>Cierre estimado:</b> proyección anual 2026 de los cuadros de la ONP. <b>Devengado:</b> obligaciones reconocidas. El proyecto 2027 todavía no es una ley sancionada ni gasto ejecutado.', 'small')
         self.add('Fuentes para consultar', 'heading')
-        for file, label in [('mensaje2027.pdf', 'Mensaje: escenario macroeconómico'), ('cap1cu02.pdf', 'Cuadro 2: finalidades y funciones'), ('cap1cu04.pdf', 'Cuadro 4: jurisdicciones'), ('cap1cu06.pdf', 'Cuadro 6: ubicación geográfica'), ('cap1cu08.pdf', 'Cuadro 8: recursos'), ('cap1pla7.pdf', 'Planilla 7: programas'), ('cap1pl12.pdf', 'Planilla 12: proyectos de inversión'), ('credito-anual-2026.zip', 'Presupuesto Abierto: crédito anual 2026'), ('credito-mensual-2026.zip', 'Presupuesto Abierto: ejecución mensual 2026'), ('serie_finfun_anual.csv', 'Presupuesto Abierto: serie de gasto por finalidad'), ('serie_pib_anual.csv', 'Presupuesto Abierto: serie de PIB')]:
+        for file, label in [('mensaje2027.pdf', 'Mensaje: escenario macroeconómico'), ('cap1cu02.pdf', 'Cuadro 2: finalidades y funciones'), ('cap1cu04.pdf', 'Cuadro 4: jurisdicciones'), ('cap1cu06.pdf', 'Cuadro 6: ubicación geográfica'), ('cap1cu08.pdf', 'Cuadro 8: recursos'), ('cap1pla7.pdf', 'Planilla 7: programas'), ('cap1pl12.pdf', 'Planilla 12: proyectos de inversión'), ('credito-anual-2026.zip', 'Presupuesto Abierto: crédito anual 2026'), ('credito-mensual-2026.zip', 'Presupuesto Abierto: ejecución mensual 2026'), ('totales-de-presupuesto.zip', 'Presupuesto Abierto: totales históricos de ejecución')]:
             url = next(s['url'] for s in d['sources'] if s['file'] == file)
-            self.add(f'<link href="{escape(url)}" color="#14786b">{escape(label)}</link>', 'small')
-        self.add('<link href="https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31" color="#14786b">INDEC: índice de precios al consumidor</link>', 'small')
+            self.add(f'<link href="{escape(url)}" color="#254b73">{escape(label)}</link>', 'small')
+        self.add('<link href="https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31" color="#254b73">INDEC: índice de precios al consumidor</link>', 'small')
         self.note('s/d = sin dato; s/c = sin comparación. Los importes ausentes no se sustituyen por cero. Los PDF oficiales redondean a millones: puede haber pequeñas diferencias entre sumas y totales. Programas: +1 millón; proyectos: +6 millones frente a los totales oficiales, antes de ajustar precios.')
-        self.note(f'<link href="{SITE}" color="#14786b">Abrir el tablero nacional</link> · Allí se puede cambiar la comparación y consultar los datos completos. Informe elaborado por Federico Pellegrini a partir de las fuentes indicadas.')
+        self.note(f'<link href="{SITE}" color="#254b73">Abrir el tablero nacional</link> · Allí se puede cambiar la comparación y consultar los datos completos. Informe elaborado por Federico Pellegrini a partir de las fuentes indicadas.')
         return self.story
 
     def comparison_table(self, rows, compact=False):
@@ -342,7 +340,7 @@ class Report:
         canvas.saveState()
         canvas.setFont('ManropeBold', 9)
         canvas.setFillColor(TEAL)
-        canvas.drawString(42, PAGE_H - 31, 'fp. / PRESUPUESTO NACIONAL')
+        canvas.drawString(42, PAGE_H - 31, 'PELLEGRINI / PRESUPUESTO NACIONAL')
         canvas.setFont('Manrope', 7.5)
         canvas.setFillColor(MUTED)
         canvas.drawRightString(PAGE_W - 42, PAGE_H - 31, self.units + ' · ' + BASES[self.base])
@@ -350,6 +348,8 @@ class Report:
 
     def build(self, path, full=False):
         self.main()
+        from national_management_report import append_management
+        append_management(self, json.loads((ROOT / 'nacion/data/gestion.json').read_text(encoding='utf-8')))
         if full:
             self.appendix()
         doc = BaseDocTemplate(str(path), pagesize=A4, leftMargin=42, rightMargin=42, topMargin=56, bottomMargin=82,

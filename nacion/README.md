@@ -12,8 +12,8 @@ Pruebas: `node --test tests/national_budget.test.cjs tests/analytics.test.cjs`.
 
 El botón **Informe PDF** está disponible en las cinco vistas y en Metodología. Abre un diálogo accesible que toma los precios y la base de comparación del tablero; permite cambiarlos antes de descargar. El informe siempre cubre todo el país: los filtros locales de obras/programas no recortan el documento.
 
-- Informe principal: 10 páginas, con lectura editorial, prioridades, organismos, funciones, programas, territorio, recursos/supuestos macro, ejecución, historia y metodología.
-- Anexo opcional: todas las 394 filas programáticas, 435 partidas de proyectos y ejecución mensual de las 16 jurisdicciones más el total. Con el informe: 56 páginas.
+- Informe principal: 15 páginas, con lectura editorial, prioridades, organismos, funciones, programas, territorio, recursos/supuestos macro, ejecución, historia y metodología.
+- Anexo opcional: todas las 394 filas programáticas, 435 partidas de proyectos y ejecución mensual de las 16 jurisdicciones más el total. Con el informe: 61 páginas.
 - Seis combinaciones: pesos corrientes/constantes y base inicial/vigente/cierre estimado. Fuentes, autor, enlace público y numeración en cada página; fuentes originales enlazadas al final.
 - Redacción propia, vinculada a las cifras y a la base seleccionada. No requiere llamar a un servicio de IA ni enviar datos o preferencias a terceros al exportar.
 - Los porcentajes de ejecución son nominales; septiembre real queda sin dato. Los cierres estimados no se inventan para programas. Los números negativos son rojos.
@@ -44,7 +44,7 @@ El registro `data/sources.json` fija URL oficial, fecha de recuperación, tamañ
 - Recursos corrientes y de capital: 202.348.174 millones. No se confunden con el total consolidado del Mensaje, que excluye rentas del FGS/BCRA.
 - PA 15/09/2026: inicial 148.069.293,526549; vigente 152.474.968,840416; devengado 105.365.152,015092 millones. Conciliados contra descarga independiente de totales y contra flujos mensuales por jurisdicción.
 - La base «cierre estimado» es la de los cuadros comparativos oficiales: 161.428.086 millones de gasto. No es el vigente. Se conserva el mismo alcance con intereses intra-Administración Nacional.
-- Serie devengada 2023–2025 de Presupuesto Abierto, vigente 2026 y proyecto 2027 con sus etapas identificadas.
+- Serie devengada 2023–2025 de totales de Presupuesto Abierto, vigente 2026 y proyecto 2027 con sus etapas identificadas. Se retiró el gasto/PIB de la serie alternativa por diferencias de alcance; la historia conciliada 2007–2025 está en Gestión 2026.
 
 El JSON incluye resultados de conciliación. Diferencias por redondeo del PDF: programas +1 millón; obras +6 millones; finalidades y jurisdicciones −1 millón. Las funciones y ubicaciones concilian exactamente. La tolerancia máxima es medio millón por fila publicada.
 
@@ -80,3 +80,22 @@ La ruta propia de GA4 es `/nacion/`. Sólo se registran anclas de una lista perm
 - Verificado que ejecución siga en 69,1% al cambiar de precios, que septiembre se identifique como parcial y que los tooltips de participación expresen porcentajes.
 - CSV nominal y real descargados mediante el botón y comprobados como archivos. Enlaces entre Provincias, Municipios y Nación probados en celular. Sin desbordamiento horizontal de página a 390 y 768 px; las tablas tienen desplazamiento propio.
 - Las limitaciones de datos enumeradas arriba permanecen visibles donde afectan una comparación; los tests no reemplazan esa evidencia pendiente.
+
+
+## Gestión nacional: incorporación de datos del 17/09/2026
+
+Se incorporan 28 de los 29 conjuntos preparados, sin copiar cifras de tableros ajenos. El conjunto `historia_apn_pib_por_conciliar` queda fuera de los cálculos y de las descargas públicas: no concilia con los totales de ejecución. La historia breve que usaba esa serie se corrigió en `budget.json`, el generador y los informes; no se conserva una composición o ratio de PIB de otro universo.
+
+La pestaña **Gestión 2026** reúne siete lecturas: Presupuesto, Caja, Deuda, Provincias, Prestaciones, Obras e Historia. Mantiene enlaces directos y seguimiento GA4 de las secciones, sin enviar búsquedas o la provincia elegida. Las prestaciones y obras se descargan cuando se consultan, se buscan localmente y se muestran por tandas; los faltantes son distintos de cero.
+
+- Presupuesto: cinco etapas, 410 aperturas programáticas, 29 funciones y comparación real enero–agosto, deflactando mes por mes. Septiembre parcial no tiene IPC observado.
+- Caja: SPN enero–julio; no se mezcla con la Administración Nacional. Transferencias corrientes a provincias y otros gastos corrientes conservan la comparación real individual pendiente por reclasificación.
+- Deuda: 92 meses hasta agosto 2026. Moneda extranjera usa como denominador deuda en situación normal; CER es un subconjunto de la deuda en pesos. Calendario de abril 2026 a 2027 y anual posterior con **stock al 31/03/2026**, sin presentarlo como actualizado a agosto. Avales y consolidación se incluyen en la conciliación del cambio de stock.
+- Provincias: 24 jurisdicciones; RON hasta agosto, por habitante con proyección INDEC 2026, y transferencias presupuestarias al 15/09 separadas. Historia RON 2003–2025.
+- Prestaciones: 1.888 mediciones del primer trimestre y 1.889 del segundo; 304 sin ejecución acumulada informada en el segundo. Cada medición mantiene unidad, método y causas publicadas. No se suman unidades diferentes ni se interpreta todo desvío positivo como éxito.
+- Obras: 446 aperturas al primer trimestre; 103 sin avance físico. El avance del trimestre es distinto del acumulado 2025 y del porcentaje de ejecución financiera.
+- Historia: 2007–2025 conciliada. Pesos constantes desde 2017 con IPC promedio anual observado; los años anteriores permanecen sin ajuste real.
+
+`nacion/data/gestion/` contiene los 28 CSV/JSON, catálogo, URL y SHA-256 de los originales y controles. `gestion.json` sirve las vistas y los cinco nuevos capítulos del PDF. El catálogo del informe verifica tanto `budget.json` como `gestion.json` para impedir una descarga desactualizada. Los informes principales tienen 15 páginas y los anexos del proyecto, 61; los detalles completos de gestión se consultan y descargan desde la web.
+
+Importación: `python scripts_build_national_management.py --input-dir /ruta/nacion-datos-20260917`. Verifica los 49 originales archivados antes de copiar. Reconstrucción: `python scripts_build_national_management.py`. Control CI: `python scripts_build_national_management.py --check` y `node --test tests/national_management.test.cjs`. El control concilia también con el presupuesto ya publicado.

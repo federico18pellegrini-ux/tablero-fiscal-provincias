@@ -1,0 +1,79 @@
+[
+  {
+    "tipo_id": 11,
+    "tipo_desc": "Ingresos impositivos",
+    "recurso_inicial": 90308957.677927,
+    "recurso_vigente": 90313857.098309,
+    "recurso_ingresado_percibido": 62247115.29923264
+  },
+  {
+    "tipo_id": 12,
+    "tipo_desc": "Ingresos no impositivos",
+    "recurso_inicial": 2855067.360658,
+    "recurso_vigente": 3143803.303906,
+    "recurso_ingresado_percibido": 2597487.90847299
+  },
+  {
+    "tipo_id": 13,
+    "tipo_desc": "Aportes y contribuciones",
+    "recurso_inicial": 47652939.724814,
+    "recurso_vigente": 50170695.324245,
+    "recurso_ingresado_percibido": 37233779.20418888
+  },
+  {
+    "tipo_id": 14,
+    "tipo_desc": "Venta de bienes y servicios de administraciones públicas",
+    "recurso_inicial": 333140.929401,
+    "recurso_vigente": 363423.757259,
+    "recurso_ingresado_percibido": 206363.23452653
+  },
+  {
+    "tipo_id": 16,
+    "tipo_desc": "Rentas de la propiedad",
+    "recurso_inicial": 6745375.541615,
+    "recurso_vigente": 31218237.448776,
+    "recurso_ingresado_percibido": 30672841.85128734
+  },
+  {
+    "tipo_id": 17,
+    "tipo_desc": "Transferencias corrientes",
+    "recurso_inicial": 42815.0,
+    "recurso_vigente": 43296.270599,
+    "recurso_ingresado_percibido": 38485.09055625
+  },
+  {
+    "tipo_id": 21,
+    "tipo_desc": "Recursos propios de capital",
+    "recurso_inicial": 317.528025,
+    "recurso_vigente": 225477.173624,
+    "recurso_ingresado_percibido": 227936.46744363
+  },
+  {
+    "tipo_id": 22,
+    "tipo_desc": "Transferencias de capital",
+    "recurso_inicial": 356238.0,
+    "recurso_vigente": 373967.575774,
+    "recurso_ingresado_percibido": 178625.08132674
+  },
+  {
+    "tipo_id": 32,
+    "tipo_desc": "Venta de acciones y participaciones de capital",
+    "recurso_inicial": 0.0,
+    "recurso_vigente": 1039903.334799,
+    "recurso_ingresado_percibido": 1039903.33479815
+  },
+  {
+    "tipo_id": 33,
+    "tipo_desc": "Recuperación de préstamos de corto plazo",
+    "recurso_inicial": 699.305782,
+    "recurso_vigente": 699.305782,
+    "recurso_ingresado_percibido": 332.66420202
+  },
+  {
+    "tipo_id": 34,
+    "tipo_desc": "Recuperación de préstamos de largo plazo",
+    "recurso_inicial": 211.613376,
+    "recurso_vigente": 211.613376,
+    "recurso_ingresado_percibido": 161.92711662
+  }
+]

@@ -24,15 +24,17 @@
   const width=(v,max)=>M.finite(v)&&max>0?Math.max(0,Math.min(100,v/max*100)):0;
   function readingControls(){
     const page=M.pageForAnchor(location.hash.slice(1));
-    document.querySelector('.controls').hidden=page==='metodo';
+    document.body.classList.toggle('management-active',page==='ejecucion');
+    document.querySelector('.controls').hidden=page==='metodo'||['deuda-nacional','metas','obras-ejecucion'].includes(location.hash.slice(1));
     $('base-select').closest('label').hidden=!['panorama','gasto'].includes(page);
     $('base-select').value=state.base;
-    $('unit-context').textContent=state.price==='real'?(page==='ejecucion'?'Cada mes, a pesos de agosto de 2026. IPC observado.':'Pesos de agosto 2026 · escenario de inflación.'):'Montos de cada año, sin descontar inflación.';
+    $('unit-context').textContent=state.price==='real'?(location.hash==='#historia-ejecucion'?'Pesos de agosto 2026, con IPC promedio anual observado.':page==='ejecucion'?'Flujos a precios de agosto 2026, con IPC observado. Las autorizaciones siguen en pesos corrientes.':'Pesos de agosto 2026 · escenario de inflación.'):'Montos de cada año, sin descontar inflación.';
   }
   function sync(){
     document.querySelectorAll('[data-price],[data-base],[data-lens],[data-rank],[data-history]').forEach(b=>{const k=['price','base','lens','rank','history'].find(k=>b.dataset[k]);b.setAttribute('aria-pressed',String(state[k]===b.dataset[k]));});
     const u=new URL(location.href);u.searchParams.set('precios',state.price);u.searchParams.set('base',state.base);u.searchParams.set('vista',state.lens);if(state.province)u.searchParams.set('provincia',state.province);else u.searchParams.delete('provincia');history.replaceState(null,'',u);
     readingControls();
+    window.dispatchEvent(new CustomEvent('national:state',{detail:{price:state.price}}));
     document.querySelectorAll('.base-key').forEach(el=>el.textContent=baseLabel());
   }
   function pair(name,a,b,max,changeText='',changeClass='',unitType='money'){
@@ -117,12 +119,10 @@
   function macro(){
     $('macro-table').innerHTML=`<table><caption class="sr-only">Supuestos oficiales del Mensaje del presupuesto</caption><thead><tr><th>Variable</th><th>2025</th><th>2026</th><th>2027</th></tr></thead><tbody>${D.macro.map(r=>`<tr><td>${esc(r.name)}</td>${r.values.map((v,i)=>`<td class="${v<0?'negative':i===2?'project-col':''}">${r.unit==='ARS/USD'?'$':''}${nf(v)}${r.unit==='%'?'%':''}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
   }
-  const purposeColors=['var(--project)','var(--chart-secondary)','var(--base)','var(--chart-amber)','var(--chart-purple)'];
   function historyChart(){
-    const rows=D.history,max=Math.max(...rows.map(r=>state.history==='gdp'?(r.gdp_share||0):val(r.amount,r.year)));
-    $('history-chart').innerHTML=rows.map(r=>{let graph;if(state.history==='composition'){const sum=r.purposes.reduce((a,b)=>a+b,0);graph=`<div class="history-stack">${r.purposes.map((v,i)=>`<span style="width:${width(v,sum)}%;background:${purposeColors[i]}" title="${esc(D.purposes[i].name)}: ${nf(M.ratio(v,sum))}%"></span>`).join('')}</div><div class="note">${r.purposes.map((v,i)=>`${esc(D.purposes[i].name)}: ${nf(M.ratio(v,sum))}%`).join(' · ')}</div>`;}else{const v=state.history==='gdp'?r.gdp_share:val(r.amount,r.year);graph=M.finite(v)?`<div class="bar-line ${r.year===2027?'project':''}"><div class="plot"><div class="bar" style="width:${width(v,max)}%"></div></div><span>${state.history==='gdp'?nf(v)+'%':short(v)}</span></div>`:'<span class="note">Pendiente de una base comparable</span>';}
-    return `<div class="history-item"><div><strong>${r.year}</strong><small>${esc(r.stage)}</small></div><div>${graph}</div></div>`;}).join('');
-    $('history-note').textContent=state.history==='gdp'?'Gasto devengado / PIB nominal, según la serie oficial. Para 2026–2027 falta una base del PIB conciliada con el mismo alcance presupuestario. No se empalma el 14% consolidado del Mensaje con este universo.':state.history==='composition'?'Participación de las cinco finalidades. Los porcentajes no cambian al descontar inflación.':`${unit()}. 2023–2025: ejecución observada. 2026–2027: autorizaciones y proyecto; no son resultados anuales realizados.${state.price==='real'?' El ajuste anual usa IPC promedio de cada año; 2026 y 2027 incluyen proyecciones.':''}`;
+    const rows=D.history,max=Math.max(...rows.map(r=>val(r.amount,r.year)));
+    $('history-chart').innerHTML=rows.map(r=>{const v=val(r.amount,r.year);return `<div class="history-item"><div><strong>${r.year}</strong><small>${esc(r.stage)}</small></div><div><div class="bar-line ${r.year===2027?'project':''}"><div class="plot"><div class="bar" style="width:${width(v,max)}%"></div></div><span>${short(v)}</span></div></div></div>`;}).join('');
+    $('history-note').textContent=`${unit()}. 2023–2025: ejecución observada, conciliada con los totales presupuestarios. 2026–2027: autorización y proyecto.${state.price==='real'?' El ajuste anual usa IPC promedio; 2026 y 2027 incluyen el escenario de inflación.':''}`;
   }
   function execution(){
     const r=D.execution.find(r=>r.name===$('execution-jurisdiction').value)||D.execution[0],cum=M.cumulative(r.months),total=cum.at(-1).cumulative,percent=M.ratio(total,r.current);
@@ -136,7 +136,7 @@
   function methodology(){
     $('deflator-method').textContent=D.deflator.method;
     $('coverage-method').textContent=`Se extrajeron ${D.programs.length} partidas programáticas y ${D.works.length} partidas de proyectos. ${D.meta.program_join_matched} partidas programáticas tienen correspondencia por nombre, entidad y jurisdicción con 2026. Las restantes requieren revisar códigos o cambios institucionales: no se presentan como programas nuevos ni se completan con cero.`;
-    const links=[['mensaje2027.pdf','Mensaje del proyecto 2027'],['cap1cu02.pdf','Finalidades y funciones'],['cap1cu04.pdf','Jurisdicciones y comparación 2026'],['cap1cu06.pdf','Distribución geográfica'],['cap1pla7.pdf','Detalle de programas'],['cap1pl12.pdf','Obras por ubicación'],['cap1cu08.pdf','Recursos del presupuesto'],['credito-anual-2026.zip','Presupuesto y ejecución 2026 · anual'],['credito-mensual-2026.zip','Ejecución 2026 · mensual'],['serie_pib_anual.csv','Serie histórica y PIB']];
+    const links=[['mensaje2027.pdf','Mensaje del proyecto 2027'],['cap1cu02.pdf','Finalidades y funciones'],['cap1cu04.pdf','Jurisdicciones y comparación 2026'],['cap1cu06.pdf','Distribución geográfica'],['cap1pla7.pdf','Detalle de programas'],['cap1pl12.pdf','Obras por ubicación'],['cap1cu08.pdf','Recursos del presupuesto'],['credito-anual-2026.zip','Presupuesto y ejecución 2026 · anual'],['credito-mensual-2026.zip','Ejecución 2026 · mensual'],['totales-de-presupuesto.zip','Historia presupuestaria conciliada']];
     $('source-links').innerHTML=links.map(([f,t])=>origin(f,null,esc(t)+' ↗')).join('')+'<a href="../data/ipc_source.json">IPC INDEC · trazabilidad ↗</a>';
   }
   function download(){
@@ -164,9 +164,10 @@
     readingControls();
     if(!D)return;
     if(page==='ejecucion')execution();
+    window.dispatchEvent(new CustomEvent('national:state',{detail:{price:state.price}}));
     window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view:anchor}}));
     const target=document.getElementById(anchor)||$('inicio');
-    const scrollTarget=['inicio','distribucion','obras','recursos','ejecucion','metodo'].includes(anchor)?$('contenido'):target;
+    const scrollTarget=['inicio','distribucion','obras','recursos','ejecucion','caja','deuda-nacional','provincias-nacion','metas','obras-ejecucion','historia-ejecucion','metodo'].includes(anchor)?$('contenido'):target;
     requestAnimationFrame(()=>{scrollTarget.scrollIntoView({block:'start',behavior:'instant'});if(focus)(target.querySelector('h2[tabindex]')||target.querySelector('h1'))?.focus({preventScroll:true});});
   }
   window.addEventListener('hashchange',()=>route(true));
@@ -181,7 +182,7 @@
     $('report-unit-note').textContent=$('report-price').value==='real'?'El ajuste anual usa IPC promedio. Para 2026 y 2027 incluye el escenario de inflación del tablero.':'Los montos corresponden a los precios de cada año. El análisis también muestra el cambio real, ajustado por inflación.';
     if(!reportManifest)return;
     try{
-      const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked},dataHash);
+      const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked},dataHash,window.nationalManagementHash);
       $('download-national-report').href=pdf.href;$('download-national-report').download=pdf.file;$('download-national-report').hidden=false;
       $('report-status').textContent=`${pdf.pages} páginas · ${$('report-annex').checked?'Informe y anexo detallado':'Informe con todos los capítulos'} · Federico Pellegrini`;
     }catch(error){$('report-status').textContent=error.message;}
@@ -195,6 +196,7 @@
       reportManifest=await response.json();updateReport();
     }catch(error){$('report-status').textContent=error.message;}
   });
+  window.addEventListener('national:management-ready',updateReport);
   $('close-report').addEventListener('click',()=>$('report-dialog').close());
   ['report-price','report-base','report-annex'].forEach(id=>$(id).addEventListener('change',updateReport));
   window.addEventListener('resize',()=>{if(D)execution();});
