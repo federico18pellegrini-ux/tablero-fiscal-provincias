@@ -45,4 +45,13 @@
 }
 
 .management-stats h3{margin-top:0}
+.debt-currency-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.recent-debt{margin:32px 0;padding:24px 0;border-block:1px solid var(--border)}
+.recent-debt h3{margin-top:8px}.debt-currency-panels article{min-width:0}
+.debt-currency-panels h4{font-size:17px;line-height:1.5}.debt-currency-panels .management-bar-row strong{font-size:14px}
+.norm-timeline{list-style:none;padding:0;margin:22px 0}.norm-timeline li{padding:18px 0;border-bottom:1px solid var(--border)}
+.norm-timeline li>div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:16px}
+.norm-timeline strong{white-space:nowrap;font-variant-numeric:tabular-nums}.norm-timeline p{font-size:15px;line-height:1.6;margin:8px 0 0}
+.physical-status{padding:10px 12px;border-left:3px solid var(--brand-gold);background:var(--s2)}
+@media(max-width:640px){.debt-currency-panels{grid-template-columns:1fr;gap:8px}.norm-timeline li>div{flex-direction:column;gap:6px}.physical-filters label{min-width:100%}}
 @media(max-width:640px){.management-nav{grid-template-columns:repeat(4,minmax(0,1fr));padding:4px;gap:3px;margin-bottom:16px}.management-nav a{font-size:12px;min-height:44px;padding:8px 2px}.management-active .controls{padding:14px;gap:10px;margin-bottom:18px}.management-active .controls .note{margin-top:0}.management-stats article{padding:14px 0}}

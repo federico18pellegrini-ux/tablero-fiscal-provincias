@@ -10,6 +10,47 @@ const read=name=>JSON.parse(fs.readFileSync(`${__dirname}/../nacion/data/gestion
 const near=(a,b,eps=.01)=>assert.ok(Math.abs(a-b)<eps,`${a} != ${b}`);
 const sum=(rows,key)=>rows.reduce((n,r)=>n+r[key],0);
 
+test('OPC acts reconcile the current authorization within documented rounding',()=>{
+  const m=G.updates.modifications,r=m.reconciliation;
+  assert.deepEqual(m.acts.map(x=>x.id),['da2','da20','dnu594','da26','dnu867']);
+  assert.equal(sum(m.acts,'spending_ars_millions'),4405675);
+  near(r.current-r.initial,r.acts_total+r.rounding_residual);
+  assert(Math.abs(r.rounding_residual)<=r.tolerance_ars_millions);
+  assert.equal(r.current,G.execution.total.credito_vigente);
+  for(const s of G.updates.sources){
+    const raw=fs.readFileSync(`${__dirname}/../nacion/${s.path}`);
+    assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),s.sha256);
+    assert.equal(raw.length,s.bytes);
+  }
+});
+
+test('July OPC schedule keeps currencies separate and preserves the published rounding',()=>{
+  const d=G.updates.debt;
+  assert.equal(d.stock_cutoff,'2026-07-31');assert.equal(d.pdf_page,17);
+  assert.equal(sum(d.months,'ars_thousand_millions'),105025);
+  assert.equal(sum(d.months,'fx_usd_millions'),5079);
+  assert.equal(d.totals.fx_usd_millions,5080);
+  assert.equal(d.totals.fx_usd_millions_rounding_difference,1);
+  assert.equal(d.months.reduce((a,b)=>a.ars_thousand_millions>b.ars_thousand_millions?a:b).period,'2026-12');
+  assert.equal(d.months.reduce((a,b)=>a.fx_usd_millions>b.fx_usd_millions?a:b).period,'2026-09');
+  assert.equal(G.debt.cutoff_schedule,'2026-03-31');
+});
+
+test('physical comparisons distinguish absent realization, actual zero and unusable plans',()=>{
+  const row=(a,p)=>({ejecutado_acumulado_trim2:a,programacion_acumulada_trim2:p});
+  assert.equal(M.metaStatus(row(null,100),2).key,'missing');
+  assert.equal(M.metaStatus(row(0,100),2).deviation,-100);
+  assert.equal(M.metaStatus(row(0,100),2).key,'below');
+  for(const plan of [null,0,-1])assert.equal(M.metaStatus(row(50,plan),2).deviation,null);
+  assert.equal(M.metaStatus(row(100,100),2).key,'equal');
+  assert.equal(M.metaStatus(row(120,100),2).key,'above');
+  for(const q of [1,2]){
+    const rows=read('metas_fisicas_trimestre_'+q);
+    assert.equal(rows.filter(r=>M.metaStatus(r,q).key==='missing').length,G.physical.coverage.find(r=>r.trimestre===q).mediciones_sin_ejecucion);
+    assert(rows.some(r=>B.matchesSearch({name:r.programa_desc,entity:r.servicio_desc},'vacunas')));
+  }
+});
+
 test('28 published datasets retain sealed CSV and JSON; unreconciled GDP stays out',()=>{
   const catalog=read('catalogo');assert.equal(catalog.length,28);
   assert(!catalog.some(r=>r.dataset.includes('pib')));

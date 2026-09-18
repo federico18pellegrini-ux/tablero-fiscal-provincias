@@ -26,20 +26,27 @@ def append_management(report, data):
     c = next(x for x in g['execution']['comparison'] if x['etapa']=='credito_devengado')
     r.note(f"El gasto devengado de enero-agosto fue {num(abs(c['variacion_real_pct']))}% menor en términos reales que un año antes. Se descuenta la inflación mes a mes. Caja del SPN y ejecución de la Administración Nacional tienen distinto alcance y registro; no se suman.")
     link('resultado_fiscal_comparacion','Hacienda: informe de ingresos y gastos')
+    acts = g['updates']['modifications']['acts']
+    sequence = '; '.join(f"{x['title']}: {'+' if x['spending_ars_millions']>0 else ''}{num(x['spending_ars_millions'],0)}" for x in acts)
+    r.note(f'Cambios del gasto autorizado, en millones corrientes: {sequence}. La suma concilia con el aumento neto de {num(g["updates"]["modifications"]["reconciliation"]["net"],0)} millones, dentro del redondeo. <link href="https://tablero.federicopellegrini.com.ar/nacion/#modificaciones" color="#254b73">Cronología, fechas y documentos OPC</link>.')
 
-    r.section('12 / Deuda nacional', 'Cuándo vence la deuda y en qué moneda', 'Finanzas: deuda de Administración Central a agosto 2026. Vencimientos: stock al 31/03/2026.')
+    r.section('12 / Deuda nacional', 'Cuándo vence la deuda y en qué moneda', 'Finanzas: stock y pagos a agosto 2026. OPC: perfil al 31/07, informe 10/09. Largo plazo: Finanzas, stock al 31/03.')
     d = g['debt']['monthly'][-1]
     fx = ratio(d['stock_moneda_extranjera'],d['stock_situacion_normal'])
     cer = ratio(d['stock_ajustable_cer'],d['stock_moneda_local'])
     r.add(f"La deuda bruta alcanzó <b>USD {num(d['stock_bruto'],0)} millones equivalentes</b> en agosto. Incluye títulos en pesos convertidos a dólares por la fuente. El {num(fx)}% de la deuda en situación de pago normal está en moneda extranjera. Dentro de la deuda en pesos, el {num(cer)}% ajusta por CER, un índice ligado a la inflación.")
-    r.add(f"En agosto se pagaron USD {num(d['capital_pagado'],0)} millones de capital y USD {num(d['intereses_pagados'],0)} millones de intereses. El stock aumentó USD {num(d['variacion_stock'],0)} millones. Las transacciones netas {'sumaron' if d['transacciones_netas'] >= 0 else 'restaron'} USD {num(abs(d['transacciones_netas']),0)} millones y los cambios de valuación {'sumaron' if d['ajustes_valuacion'] >= 0 else 'restaron'} USD {num(abs(d['ajustes_valuacion']),0)} millones. También hubo ajustes de deuda elegible por USD {num(d['ajustes_elegible'],0)} millones, avales por USD {num(d['ajustes_avales'],1)} millones y consolidación por USD {num(d['consolidacion_deudas'],1)} millones.")
-    r.add('Calendario publicado con stock a marzo', 'heading')
-    r.note('USD millones equivalentes. El calendario usa la deuda y los tipos de cambio al 31/03/2026. No incorpora las operaciones posteriores. El renglón 2026 sólo comprende abril-diciembre.')
+    r.note(f"En agosto se pagaron USD {num(d['capital_pagado'],0)} millones de capital y USD {num(d['intereses_pagados'],0)} millones de intereses. El stock aumentó USD {num(d['variacion_stock'],0)} millones: incluye transacciones, valuación y otros ajustes.")
+    recent = g['updates']['debt']
+    r.add('Pagos proyectados al 31 de julio', 'heading')
+    r.table(['Mes de 2026','Pesos / miles de millones','Moneda extranjera / USD millones'],
+        [[{'08':'Agosto','09':'Septiembre','10':'Octubre','11':'Noviembre','12':'Diciembre'}[x['period'][-2:]],num(x['ars_thousand_millions'],0),num(x['fx_usd_millions'],0)] for x in recent['months']]
+        + [['Total publicado',num(recent['totals']['ars_thousand_millions'],0),num(recent['totals']['fx_usd_millions'],0)]], [WIDTH-285,140,145], compact=True)
+    r.note('Capital e intereses. Mayor concentración en pesos: diciembre; en moneda extranjera: septiembre. El perfil incluye agosto y puede cambiar por operaciones posteriores al 31/07. Las dos monedas no se suman; el total conserva el redondeo publicado.')
+    r.add('Largo plazo / Perfil conocido en marzo', 'heading')
+    r.note('USD millones equivalentes al 31/03. Es otro corte: no se suma al perfil de julio. 2026 sólo incluye abril-diciembre.')
     r.table(['Período','Capital','Intereses','Total'],
         [[('2026 / abr-dic' if x['periodo']=='2026' else '2036-2089 / 54 años' if x['agrupa_varios_anios'] else x['periodo']), num(x['capital_usd_millones'],0),num(x['intereses_usd_millones'],0),num(x['total_usd_millones'],0)] for x in g['debt']['annual_schedule']], [WIDTH-255,85,85,85], compact=True)
-    r.add('Para evaluar el riesgo no alcanza con mirar el stock. Hay que ver cuándo vence, en qué moneda y cuánto se puede refinanciar. La parte que no se renueva debe pagarse con recursos de caja. El calendario de marzo necesita incorporar las emisiones y los canjes posteriores para mostrar los próximos pagos.', 'small')
-    link('deuda_stock_pagos','Finanzas: stock, pagos y movimientos mensuales')
-    link('vencimientos_perfil_marzo2026','Finanzas: perfil de vencimientos')
+    r.note('La parte del capital que no se refinancia debe cubrirse con caja u otras fuentes. <link href="https://opc.gob.ar/download/52016/" color="#254b73">OPC: cuadro 7, página 14</link>. <link href="https://tablero.federicopellegrini.com.ar/nacion/#deuda-nacional" color="#254b73">Series y documentos de Finanzas</link>.')
 
     r.section('13 / Nación y provincias', 'Cuánto llega y cuánto permite financiar', 'DNAP: recursos de origen nacional, enero-agosto 2026. PA: transferencias al 15/09. INDEC: población proyectada 2026.')
     ba = next(x for x in g['provinces']['comparison'] if x['provincia_id']==6)

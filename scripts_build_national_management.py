@@ -10,6 +10,7 @@ import json
 import math
 from pathlib import Path
 import shutil
+from national_management_updates import build_updates
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / 'nacion/data'
@@ -146,6 +147,7 @@ def build():
         'physical': {'coverage': get('metas_cobertura'), 'works_count': len(get('obras_ejecucion_fisica_financiera')),
                      'works_missing_physical': sum(r['ejecucion_fisica_1t2026_pct'] is None for r in get('obras_ejecucion_fisica_financiera'))},
         'history': history,
+        'updates': build_updates(stages['credito_presupuestado'], stages['credito_vigente']),
     }
 
 def run(folder=None, check=False):
