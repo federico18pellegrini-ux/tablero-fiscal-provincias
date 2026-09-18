@@ -14,7 +14,7 @@
     if(/Administración Nacional de la Seguridad Social/i.test(p.entity))text+=' ANSES';
     return text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   };
-  const anchorPages = Object.freeze({inicio:'panorama',escala:'panorama',historia:'panorama',distribucion:'gasto',comparacion:'gasto',cambios:'gasto',programas:'gasto',finalidades:'gasto',obras:'obras',recursos:'economia',macro:'economia',ejecucion:'ejecucion',metodo:'metodo'});
+  const anchorPages = Object.freeze({inicio:'panorama',escala:'panorama',historia:'panorama',distribucion:'gasto',comparacion:'gasto',cambios:'gasto',programas:'gasto',finalidades:'gasto',obras:'obras',recursos:'economia',macro:'economia',ejecucion:'ejecucion',caja:'ejecucion','deuda-nacional':'ejecucion','provincias-nacion':'ejecucion',metas:'ejecucion','obras-ejecucion':'ejecucion','historia-ejecucion':'ejecucion',metodo:'metodo'});
   const pageForAnchor = anchor => Object.hasOwn(anchorPages,anchor)?anchorPages[anchor]:'panorama';
   const budgetOverview = (total,base,factors) => ({
     nominalChange:change(total.project,total[base]),

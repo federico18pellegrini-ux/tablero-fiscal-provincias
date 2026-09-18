@@ -50,7 +50,7 @@ class NationalReportsTest(unittest.TestCase):
         self.assertEqual({(r['price'], r['base']) for r in self.catalog['reports']},
                          {(p, b) for p in ['nominal', 'real'] for b in reports.BASES})
         for entry in self.catalog['reports']:
-            self.assertEqual(entry['main']['pages'], 10)
+            self.assertEqual(entry['main']['pages'], 15)
             self.assertGreater(entry['full']['pages'], entry['main']['pages'])
 
     def test_pdfs_have_all_chapters_units_sources_numbering_and_selected_base(self):
@@ -69,16 +69,21 @@ class NationalReportsTest(unittest.TestCase):
             self.assertIn('Septiembre (parcial)', texts[7])
             if entry['price'] == 'real':
                 self.assertRegex(texts[7], r'Septiembre \(parcial\)\s+s/d')
-            self.assertGreater(len(reader.pages[-1].get('/Annots', [])), 10)
+            self.assertGreater(len(reader.pages[9].get('/Annots', [])), 9)
             for phrase in ['LECTURA CENTRAL', 'PRIORIDADES', 'ORGANISMOS', 'FUNCIONES', 'PROGRAMAS', 'TERRITORIO', 'INGRESOS Y ECONOMÍA', 'EJECUCIÓN', 'HISTORIA Y LECTURA FINAL', 'MÉTODO Y FUENTES']:
                 self.assertIn(phrase, all_text)
             self.assertEqual(reader.metadata.author, 'Federico Pellegrini')
+            self.assertIn('484.917', all_text)
+            self.assertIn('2007', all_text)
+            self.assertIn('1.889', all_text)
+            self.assertIn('31/03/2026', all_text)
+            self.assertIn('28 conjuntos', all_text)
 
     def test_annex_preserves_every_program_and_project_exactly_once(self):
         # Each variant includes all source rows, not just the current UI search/page.
         for entry in self.catalog['reports']:
             reader = PdfReader(ROOT / 'nacion/reports' / entry['full']['file'])
-            text = '\n'.join(p.extract_text() for p in reader.pages[10:])
+            text = '\n'.join(p.extract_text() for p in reader.pages[15:])
             for prefix, key in [('p', 'programs'), ('w', 'works')]:
                 ids = re.findall(r'\b(' + prefix + r'\d+)\s*·', text)
                 self.assertEqual(len(ids), len(self.data[key]))

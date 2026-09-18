@@ -120,3 +120,15 @@ test('municipal views have their own path and exclude chosen municipality and si
   assert.equal(s.views()[1][2].page_location,'https://tablero.federicopellegrini.com.ar/municipios/#simular');
   assert.doesNotMatch(JSON.stringify(s.records()),/06805|shock|municipio=/);
 });
+
+
+test('national management sections are measured once without sending searches or province selection',()=>{
+  const s=setup({location:{pathname:'/nacion/',hash:'#caja',search:'?provincia=private&q=private'}});
+  assert.match(s.views()[0][2].page_title,/Caja nacional/);
+  for(const view of ['deuda-nacional','provincias-nacion','metas','obras-ejecucion','historia-ejecucion']){
+    s.win.location.hash='#'+view;s.events.hashchange();s.events['dashboard:view']({detail:{view}});
+    assert.equal(s.views().at(-1)[2].page_location,'https://tablero.federicopellegrini.com.ar/nacion/#'+view);
+  }
+  assert.equal(s.views().length,6);
+  assert.doesNotMatch(JSON.stringify(s.records()),/private/);
+});
