@@ -102,3 +102,36 @@ test('management deep links stay in the right page and missing values remain abs
   assert.equal(M.sum([{x:null}],'x'),null);assert.equal(M.sum([{x:0}],'x'),0);assert.equal(M.sum([],'x'),null);
   assert.equal(M.ratio(20,0),null);assert.equal(M.ratio(null,50),null);
 });
+
+test('net changes reconcile at every level without treating zero initial credit as a new policy',()=>{
+  const total=G.execution.total,net=total.credito_vigente-total.credito_presupuestado;
+  near(net,4405675.31386698);
+  for(const rows of Object.values(G.execution.groups)){
+    const bridge=M.modificationBalance(rows);
+    near(bridge.increases+bridge.reductions,net);
+    near(M.sum(M.modifications(rows),'modification'),net);
+  }
+  const rows=M.modifications([{credito_presupuestado:0,credito_vigente:100},{credito_presupuestado:100,credito_vigente:0},{credito_presupuestado:null,credito_vigente:100}]);
+  assert.equal(rows[0].modification,100);assert.equal(rows[0].modification_pct,null);
+  assert.equal(rows[1].modification_pct,-100);assert.equal(rows[2].modification,null);
+  assert.equal(M.modificationBalance(rows),null);assert.equal(M.modificationBalance([]),null);
+  assert.equal(B.pageForAnchor('modificaciones'),'ejecucion');
+});
+
+test('all provincial sheets join IDs only within PA and names only within the project',()=>{
+  const seen=new Set();
+  for(const p of G.provinces.comparison){
+    const t=M.territory(D,G,p.provincia_id);assert(t);seen.add(t.province.provincia_id);
+    assert.equal(t.project.name,p.provincia);
+    for(const [a,b] of [['law','credito_presupuestado'],['current','credito_vigente'],['accrued','credito_devengado']])near(t.project[a],t.observed[b]);
+    near(t.pending,p.presupuestarias_devengado-p.presupuestarias_pagado);
+    near(t.worksTotal,D.works.filter(w=>w.province===p.provincia).reduce((s,w)=>s+w.project,0));
+    assert(t.works.every(w=>w.province===p.provincia));
+    assert(!Object.hasOwn(t,'total')); // RON, transfers and localized spending must never be summed.
+  }
+  assert.equal(seen.size,24);
+  assert.equal(M.territory(D,G,999),null);assert.equal(M.territory(D,G,'6'),null);
+  assert.equal(M.territory({...D,geographies:[...D.geographies,D.geographies[1]]},G,6),null);
+  const noTransfer=structuredClone(G);noTransfer.provinces.comparison[1].presupuestarias_pagado=null;
+  assert.equal(M.territory(D,noTransfer,6).pending,null);
+});

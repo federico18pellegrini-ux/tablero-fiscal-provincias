@@ -150,3 +150,12 @@ test('focused PDF downloads are measured without including scenario assumptions'
   assert.equal(downloads.length,1);assert.equal(downloads[0][2].file_name,'/nacion/reports/ficha-nacional-reactor-ra10.pdf');
   assert.doesNotMatch(JSON.stringify(s.records()),/private|inflation=/);
 });
+
+test('territorial navigation excludes the selected district and records only allowed PDF paths',()=>{
+  const s=setup({location:{pathname:'/nacion/',hash:'#modificaciones',search:'?distrito=6&buscar=private'}});
+  assert.match(s.views()[0][2].page_title,/Modificaciones 2026/);
+  for(const filename of ['ficha-nacional-provincia-6.pdf','ficha-nacional-provincia-999.pdf'])s.clicks.click({target:{closest:()=>({href:'https://tablero.federicopellegrini.com.ar/nacion/reports/'+filename+'?private=1',getAttribute:()=>null})}});
+  const downloads=s.records().filter(r=>r[1]==='file_download');
+  assert.equal(downloads.length,1);assert.match(downloads[0][2].file_name,/provincia-6.pdf$/);
+  assert.doesNotMatch(JSON.stringify(s.records()),/distrito=|buscar=|private/);
+});

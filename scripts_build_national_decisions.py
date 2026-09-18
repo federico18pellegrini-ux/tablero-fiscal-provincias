@@ -18,7 +18,8 @@ OUTPUT = DATA / 'decisions.json'
 INPUTS = ['nacion/data/budget.json', 'nacion/data/gestion/gasto_etapas_programa.json',
           'nacion/data/gestion/metas_fisicas_trimestre_2.json', 'nacion/data/gestion/catalogo.json',
           'nacion/data/decision-sources/caif-2027.pdf', 'nacion/data/decision-sources/proyectos-2027.pdf',
-          'nacion/data/decision-sources/inversion-1t26.pdf', 'nacion/data/gestion/obras_ejecucion_fisica_financiera.json']
+          'nacion/data/decision-sources/inversion-1t26.pdf', 'nacion/data/gestion/obras_ejecucion_fisica_financiera.json',
+          'nacion/data/decision-sources/ra10-cnea-20260904.json']
 POLICIES = [
     ('inmunizaciones', 'Vacunas e inmunizaciones', 'Prevención y Control de Enfermedades Transmisible e Inmunoprevenibles', 'Ministerio de Salud', (80, 310, 20)),
     ('educacion-superior', 'Universidades', 'Desarrollo de la Educación Superior', 'Secretaría de Educación', (88, 330, 26)),
@@ -110,6 +111,10 @@ def build():
     assert inputs['nacion/data/decision-sources/proyectos-2027.pdf']==work_sources['project']['sha256']
     assert inputs['nacion/data/decision-sources/inversion-1t26.pdf']==work_sources['investment']['sha256']
     works=build_works(b,load(DATA/'gestion/obras_ejecucion_fisica_financiera.json'),DATA/'decision-sources/proyectos-2027.pdf',DATA/'decision-sources/inversion-1t26.pdf',work_sources)
+    announcement=load(DATA/'decision-sources/ra10-cnea-20260904.json')
+    assert announcement['source']['url']=='https://www.argentina.gob.ar/node/512894'
+    assert announcement['source']['published']=='2026-09-04' and announcement['assembly_pct']==96
+    works['pilot']['announcement']=announcement
     return {'meta':{'reviewed':'2026-09-18','unit':'ARS millones','execution_cutoff':b['meta']['execution_cutoff'],
                     'physical_period':'enero-junio 2026','inputs':inputs},
             'finance':{'scope':'Administración Nacional','base':'Cierre estimado 2026','project':'Proyecto de ley 2027',

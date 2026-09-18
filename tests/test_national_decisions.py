@@ -55,6 +55,13 @@ class NationalDecisionsTest(unittest.TestCase):
         self.assertEqual(p['observed']['corte'],'2026-03-31')
         self.assertIsNone(p['updated_completion_cost'])
         self.assertIsNone(p['completion_date'])
+        a=p['announcement']
+        self.assertEqual(a['source']['published'],'2026-09-04')
+        self.assertEqual(a['assembly_pct'],96)
+        self.assertEqual(a['assembly_scope'],'Montaje electromecánico')
+        self.assertIn('2027',a['commissioning_completion_target'])
+        self.assertIn('licencia',a['condition'])
+        self.assertIsNone(a['updated_completion_cost'])
 
 
 if __name__=='__main__':unittest.main()

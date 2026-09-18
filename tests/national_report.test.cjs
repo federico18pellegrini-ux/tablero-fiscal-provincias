@@ -30,3 +30,14 @@ test('focused reports stay brief and must match the decisions currently displaye
   assert.throws(()=>selectReport(manifest,{price:'nominal',base:'current'},hash,managementHash,'stale'),/actualizando/);
   assert.throws(()=>selectReport(manifest,{price:'nominal',base:'current',scope:'unknown'},hash,managementHash,decisionHash),/válido/);
 });
+
+test('every provincial PDF matches its selected code and rejects unknown paths or IDs',()=>{
+  assert.equal(manifest.territories.length,24);
+  for(const t of manifest.territories){
+    const r=selectReport(manifest,{price:'real',base:'closing',scope:'provincia',provinceId:t.province_id},hash,managementHash,decisionHash);
+    assert.equal(r.file,`ficha-nacional-provincia-${t.province_id}.pdf`);assert.equal(r.pages,1);
+  }
+  for(const provinceId of [999,'6',null,undefined])assert.throws(()=>selectReport(manifest,{price:'nominal',base:'current',scope:'provincia',provinceId},hash,managementHash,decisionHash),/provincia válida/);
+  const bad=structuredClone(manifest);bad.territories[0].file='../../private.pdf';
+  assert.throws(()=>selectReport(bad,{price:'nominal',base:'current',scope:'provincia',provinceId:2},hash,managementHash,decisionHash),/validar/);
+});

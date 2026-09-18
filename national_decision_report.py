@@ -40,13 +40,15 @@ def work_page(r,d,first=False):
        ['Gasto acumulado hasta marzo de 2026',money(o['financiero_acumulado_2025_millones']+o['devengado_1t2026_millones'])],
        ['Costo de referencia del BAPIN',money(w['reference_cost'])],
        ['Costo actualizado para terminar y operar','No publicado en estas fuentes'],
-       ['Cronograma y compromisos contractuales','No publicados en estas fuentes']], [WIDTH-180,180])
+       ['Puesta en marcha / objetivo anunciado','Primeros meses de 2027'],
+       ['Cronograma contractual y compromisos pendientes','No publicados en estas fuentes']], [WIDTH-180,180])
     r.add('Qué significa para la continuidad','heading')
-    r.add('La obra tiene una asignación para 2027. Para saber si alcanza hace falta comparar ese monto con los contratos pendientes, el cronograma y el costo de puesta en marcha. Una obra avanzada puede requerir equipamiento, pruebas y recursos de operación antes de prestar el servicio previsto.')
+    r.add('El 04/09 la CNEA informó 96% de avance del montaje electromecánico y una puesta en marcha prevista para los primeros meses de 2027, sujeta a la licencia de la Autoridad Regulatoria Nuclear. El montaje es una parte de la obra; no reemplaza el avance físico global de marzo.')
+    r.add('También anunció capital privado para la planta asociada de radioisótopos. El comunicado no cuantifica esa inversión ni el costo pendiente del reactor. Para evaluar si el presupuesto alcanza faltan contratos y costos de terminación y operación.', 'small')
     r.add('El costo del BAPIN es una referencia del Banco de Proyectos de Inversión Pública, publicada en el informe del primer trimestre. No es un presupuesto actualizado de terminación. Tampoco corresponde usar el porcentaje de avance físico para calcular cuánto dinero falta.')
     r.add('Recomendamos actualizar el costo y el cronograma con el organismo ejecutor. Eso permite evaluar qué asignación sostiene la continuidad y qué recursos necesitará el proyecto cuando empiece a operar.')
     r.note('Correspondencia revisada por denominación, organismo y ubicación. En 2026: SAF 105, programa 20, proyecto 22, obra 51. La planilla 2027 no publica códigos de obra.')
-    r.note(f'<link href="{escape(w["sources"]["project"]["url"])}#page=10" color="#254b73">Presupuesto 2027</link> · <link href="{escape(w["sources"]["investment"]["url"])}#page=7" color="#254b73">Costo y avance físico</link> · <link href="{SITE}#obra-ra10" color="#254b73">Abrir la ficha de la obra</link>')
+    r.note(f'<link href="{escape(w["sources"]["project"]["url"])}#page=10" color="#254b73">Presupuesto 2027</link> · <link href="{escape(w["sources"]["investment"]["url"])}#page=7" color="#254b73">Costo y avance físico</link> · <link href="https://www.argentina.gob.ar/node/512894" color="#254b73">CNEA 04/09</link> · <link href="{SITE}#obra-ra10" color="#254b73">Abrir la ficha de la obra</link>')
 
 def finance_page(r,d):
     from scripts_export_national_reports import WIDTH,money,num,SITE

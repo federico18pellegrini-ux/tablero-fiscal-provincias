@@ -21,5 +21,28 @@
 
 #execution-reading{display:none}
 
+.management-nav{grid-template-columns:repeat(8,minmax(0,1fr))}
+.territory-blocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:26px 0}
+.territory-blocks article{min-width:0;padding:22px;background:var(--surface);border:1px solid var(--border);border-radius:14px}
+.territory-blocks h3{margin:4px 0 20px}.territory-blocks p,.territory-project>p{font-size:16px;line-height:1.6}
+.territory-project{padding:24px 0;border-block:1px solid var(--border);margin:28px 0}
+.territory-project h3{margin-top:8px}.territory-project>.management-number{font-size:36px}
+.territory-work-list{display:grid;gap:0;margin:22px 0}
+.territory-work-list article{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 25px;padding:18px 0;border-bottom:1px solid var(--border)}
+.territory-work-list h4{font-size:17px;margin:0;line-height:1.5}.territory-work-list strong{font-size:18px;white-space:nowrap}.territory-work-list p,.territory-work-list a{grid-column:1/-1;font-size:14px;margin:0}
+.modification-cards article>p{font-size:15px}.modification-cards .positive{color:var(--positive)}
+#provincias-nacion-content>.decision-links{margin-bottom:28px}
+@media(max-width:1000px){.management-nav{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:640px){
+  .territory-blocks{grid-template-columns:1fr;gap:16px}.territory-blocks article{padding:18px}
+  .territory-work-list article{grid-template-columns:1fr;gap:8px}.territory-work-list strong{white-space:normal}
+  .management-panel .territory-table{min-width:0;width:100%;display:block}
+  .territory-table thead{display:none}.territory-table tbody{display:block;width:100%}
+  .territory-table tr{display:block;padding:14px 0;border-bottom:1px solid var(--border)}
+  .territory-table th,.territory-table td{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:8px 0;border:0;width:100%}
+  .territory-table td::before{content:attr(data-label);color:var(--muted);font-size:14px}
+  .territory-table th{font-weight:700!important}.territory-table caption{display:block}
+}
+
 .management-stats h3{margin-top:0}
 @media(max-width:640px){.management-nav{grid-template-columns:repeat(4,minmax(0,1fr));padding:4px;gap:3px;margin-bottom:16px}.management-nav a{font-size:12px;min-height:44px;padding:8px 2px}.management-active .controls{padding:14px;gap:10px;margin-bottom:18px}.management-active .controls .note{margin-top:0}.management-stats article{padding:14px 0}}
