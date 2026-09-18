@@ -887,6 +887,53 @@
       "page": 10,
       "table_name": "Producción de Información Geológica de Base",
       "override": true
+    },
+    {
+      "id": "p222",
+      "name": "Formulación y Ejecución de Política de Hidrocarburos",
+      "entity": "Economía y Energía",
+      "jurisdiction": "Ministerio de Economía",
+      "project": 1210065.0,
+      "source": "P27J50.pdf",
+      "page": 28,
+      "project_code": 73,
+      "table_name": "Formulación y Ejecución de Política de Hidrocarburos",
+      "override": true,
+      "current_parts": [
+        {
+          "key": [
+            50,
+            357,
+            73
+          ],
+          "name": "Formulacion y Ejecucion de Politica de Hidrocarburos"
+        },
+        {
+          "key": [
+            50,
+            357,
+            75
+          ],
+          "include": [
+            {
+              "subprograma_id": 0,
+              "proyecto_id": 0,
+              "actividad_id": 40
+            }
+          ]
+        }
+      ],
+      "note": "La base 2026 suma el subsidio a garrafas, que pasa del programa 75 al 73 en 2027. Así, el cambio de programa no se cuenta como un aumento del gasto.",
+      "evidence": [
+        {
+          "source": "P27J50.pdf",
+          "pages": [
+            76,
+            79,
+            85
+          ]
+        }
+      ]
     }
   ],
   "withdrawn_ids": [
@@ -1197,8 +1244,8 @@
       "name": "Planificación y Sostenibilidad Energética",
       "entity": "Economía y Energía",
       "status": "scope_change",
-      "reason": "Continúa parte de Eficiencia y Transición Energética (75), pero la apertura 2027 no conserva allí el subsidio a garrafas ni el préstamo BIRF 9521. Comparar el programa completo mostraría como recorte un cambio de alcance.",
-      "needed": "Cuadro de continuidad y destino de todas las actividades del programa 75, incluidos subsidios y préstamos.",
+      "reason": "El subsidio a garrafas pasa a Hidrocarburos en 2027: ese traslado ya se incorporó a su comparación. En Planificación Energética todavía falta confirmar el destino presupuestario de las tareas del préstamo BIRF 9521.",
+      "needed": "Destino de la actividad 48 (BIRF 9521) del programa 75 de 2026 y cuadro completo de continuidad hacia el programa 72 de 2027.",
       "evidence": [
         {
           "source": "D26J50.pdf",
@@ -1210,7 +1257,8 @@
           "source": "P27J50.pdf",
           "pages": [
             72,
-            74
+            74,
+            85
           ]
         }
       ]
@@ -1466,6 +1514,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "p222",
+      "name": "Formulación y Ejecución de Política de Hidrocarburos",
+      "entity": "Economía y Energía",
+      "status": "comparable",
+      "reason": "La base 2026 suma el subsidio a garrafas, que pasa del programa 75 al 73 en 2027. Así, el cambio de programa no se cuenta como un aumento del gasto.",
+      "evidence": [
+        {
+          "source": "P27J50.pdf",
+          "pages": [
+            76,
+            79,
+            85
+          ]
+        }
+      ]
     }
   ],
   "legal_evidence": [
@@ -1484,6 +1549,19 @@
         "p42",
         "p52"
       ]
+    },
+    {
+      "url": "https://documents1.worldbank.org/curated/en/099012425103536871/pdf/P178553-8e50093b-b6cb-49b0-a295-6f879988cf7b.pdf",
+      "title": "Banco Mundial · reestructuración BIRF 9521 (2025)",
+      "ids": [
+        "p221"
+      ],
+      "pages": [
+        6,
+        7,
+        8
+      ],
+      "note": "Documenta una cancelación parcial del préstamo; no equivale a un cierre total ni identifica la partida nacional 2027."
     }
   ],
   "groups": [
@@ -1728,5 +1806,33 @@
     "sha256": "976751cc34504e9d51c9d63b99fa13eb154cf46a0300d8d46cb62342e5a6b456",
     "cutoff": "2026-09-15",
     "unit": "ARS millones"
+  },
+  "energy_activity_evidence": {
+    "path": "data/program-sources/energia-2026-activities.json",
+    "source": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-anual-2026.zip",
+    "source_csv_sha256": "976751cc34504e9d51c9d63b99fa13eb154cf46a0300d8d46cb62342e5a6b456",
+    "artifact_sha256": "3466ff217a672bdd7b319202e376be7e6d2402fdbe8e1e51202ee2778c6318ad",
+    "cutoff": "2026-09-15",
+    "unit": "ARS millones",
+    "matched_id": "p222",
+    "transferred_activity": {
+      "source": [
+        50,
+        357,
+        75,
+        0,
+        0,
+        40
+      ],
+      "destination_2027": {
+        "program": 73,
+        "subprogram": 2,
+        "activity": 51,
+        "project_amount": 791553,
+        "source": "P27J50.pdf",
+        "page": 85
+      }
+    },
+    "artifact_hash_format": "UTF-8, LF"
   }
 }

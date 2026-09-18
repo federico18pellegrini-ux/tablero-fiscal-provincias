@@ -1,0 +1,322 @@
+{
+  "reviewed": "2026-09-18",
+  "scope": "Segunda búsqueda de los 12 cruces originales sin comparación individual",
+  "method": "Revisión dirigida de aperturas ONP, anexos de modificaciones, normas organizativas y documentos de préstamos; extracción por términos y lectura de páginas pertinentes, no certificación de cada página de los anexos.",
+  "source_files": [
+    {
+      "file": "da26-comunicacion.pdf",
+      "url": "https://www.argentina.gob.ar/sites/default/files/da_26-26.pdf",
+      "status": 200,
+      "bytes": 504626,
+      "sha256": "8154912e58a25f0ad57d1c6bc50db9d52d26cddf63015bb5be1b6bf7c3a03b66",
+      "pages": 11
+    },
+    {
+      "file": "da20-comunicacion.pdf",
+      "url": "https://www.argentina.gob.ar/sites/default/files/da_20-26.pdf",
+      "status": 200,
+      "bytes": 810996,
+      "sha256": "917eccc35e84539979e7cd8f2eec49619536f107ad7e8af607d0808b4e215d8e",
+      "pages": 19
+    },
+    {
+      "file": "formulario3bis.xlsx",
+      "url": "https://www.mecon.gob.ar/onp/documentos/instrutexto/archivos/F03BisPla2027.xlsx",
+      "status": 200,
+      "bytes": 13160,
+      "sha256": "e297e873d31844b54658197bb1e66f5471de613005bcfbe1aa6eb1029b8461be"
+    },
+    {
+      "file": "instrucciones2027.pdf",
+      "url": "https://www.mecon.gob.ar/onp/documentos/instrutexto/archivos/Circular ONP FOP Instructivo 2027-2029.pdf",
+      "status": 200,
+      "bytes": 323946,
+      "sha256": "a63502409c4bce9f5ad586371dd3670c48316ece517e6256166ff7ce3edf8421",
+      "pages": 27
+    },
+    {
+      "file": "dnu594.html",
+      "url": "https://www.boletinoficial.gob.ar/detalleAviso/primera/344407/20260716",
+      "status": 200,
+      "bytes": 61249,
+      "sha256": "4e7dd1f2a0118dd5826e354993f7024511c254dba75b6541e0858bdd0d3bf702",
+      "links": []
+    },
+    {
+      "file": "dnu867.html",
+      "url": "https://www.boletinoficial.gob.ar/detalleAviso/primera/346909/20260904",
+      "status": 200,
+      "bytes": 56750,
+      "sha256": "74bb1ba96157b18851a28bbc3e4c155f1fe583f402bb8ed53d2824cf323e263b",
+      "links": []
+    },
+    {
+      "file": "segemar114.html",
+      "url": "https://www.boletinoficial.gob.ar/detalleAviso/primera/338798/20260227",
+      "status": 200,
+      "bytes": 63574,
+      "sha256": "31071d48e3315da594f46e2b97afe66ef5a96afcf033272a3afa4da6ed52a63a",
+      "links": []
+    },
+    {
+      "file": "dnu594-anexo1.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "request": [
+        "594",
+        "1",
+        "7710601",
+        "20260716"
+      ],
+      "sha256": "8aaf9eb2a47c1cfa875b4a50b77dd0ae588f2735a408a57e1381ec055d10e30f",
+      "pages": 187
+    },
+    {
+      "file": "dnu594-anexo2.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "request": [
+        "594",
+        "2",
+        "7710601",
+        "20260716"
+      ],
+      "sha256": "383a19b6f9b16261650b7eb2c0b752420191dcb767300800500b4f3d2394012a",
+      "pages": 13
+    },
+    {
+      "file": "dnu594-anexo3.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "request": [
+        "594",
+        "3",
+        "7710601",
+        "20260716"
+      ],
+      "sha256": "60e81c9a3dae7eec4504c99a6d27f360ab61bc2041d521315305cf9fb3641e77",
+      "pages": 2
+    },
+    {
+      "file": "dnu867-anexo1.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "request": [
+        "867",
+        "1",
+        "7761140",
+        "20260904"
+      ],
+      "sha256": "cd3cc125a12406ff3ac6f3729f657c0a0b8306db26b43ec2268ce6c9734e73ef",
+      "pages": 57
+    },
+    {
+      "file": "decreto658.html",
+      "url": "https://www.boletinoficial.gob.ar/detalleAviso/primera/344926/20260727",
+      "status": 200,
+      "bytes": 59778,
+      "sha256": "41d42d283d74ad2e75d8de589519026c1a2d348b7a3cc7ff56f2e32d08fd5f65",
+      "links": [],
+      "anexos": [
+        "\"primera\",\"1\", \"7718433\", \"20260727\", \"/pdf/download_anexo\"",
+        "\"primera\",\"2\", \"7718433\", \"20260727\", \"/pdf/download_anexo\"",
+        "\"primera\",\"3\", \"7718433\", \"20260727\", \"/pdf/download_anexo\"",
+        "\"primera\",\"4\", \"7718433\", \"20260727\", \"/pdf/download_anexo\"",
+        "\"primera\",\"5\", \"7718433\", \"20260727\", \"/pdf/download_anexo\""
+      ]
+    },
+    {
+      "file": "decreto655.html",
+      "url": "https://www.argentina.gob.ar/normativa/nacional/norma-428135/texto",
+      "status": 200,
+      "bytes": 40409,
+      "sha256": "3baa94d2312e6312d374a5ed0fcad0b200fd0ed1aeb9f5a4dc9899244e5ea007",
+      "links": [
+        {
+          "text": "Anexo I (pdf)",
+          "url": "https://www.argentina.gob.ar/normativa/428135_dec655-1_pdf/archivo"
+        },
+        {
+          "text": "Anexo II (pdf)",
+          "url": "https://www.argentina.gob.ar/normativa/428135_dec655-2_pdf/archivo"
+        },
+        {
+          "text": "Archivos anexos",
+          "url": "https://www.argentina.gob.ar/normativa/nacional/norma-428135/texto#archivos-anexos"
+        }
+      ],
+      "anexos": []
+    },
+    {
+      "file": "da26.html",
+      "url": "https://www.boletinoficial.gob.ar/detalleAviso/primera/346911/20260904",
+      "status": 200,
+      "bytes": 64683,
+      "sha256": "1bcfd20528030ef295b16b062ef2675137cd27adb1e30741209f653706ada381",
+      "links": [],
+      "anexos": [
+        "\"primera\",\"1\", \"7761143\", \"20260904\", \"/pdf/download_anexo\"",
+        "\"primera\",\"2\", \"7761143\", \"20260904\", \"/pdf/download_anexo\"",
+        "\"primera\",\"3\", \"7761143\", \"20260904\", \"/pdf/download_anexo\""
+      ]
+    },
+    {
+      "file": "da20.html",
+      "url": "https://www.boletinoficial.gob.ar/detalleAviso/primera/341744/20260511",
+      "status": 200,
+      "bytes": 58710,
+      "sha256": "d6c6c60f82f6ae85b8923815ae366dde9b792e19f5b75f1d14db996e81f5d2f0",
+      "links": [],
+      "anexos": [
+        "\"primera\",\"1\", \"7647566\", \"20260511\", \"/pdf/download_anexo\"",
+        "\"primera\",\"2\", \"7647566\", \"20260511\", \"/pdf/download_anexo\""
+      ]
+    },
+    {
+      "file": "da26-anexo1.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "params": {
+        "seccion": "primera",
+        "nroAnexo": 1,
+        "idAnexo": "7761143",
+        "fechaPublicacion": "20260904"
+      },
+      "bytes": 1863239,
+      "sha256": "2a26c1b6d055a81323f2c6fc528f59c7a8c1d0de5bc281dca52b938bb201314d",
+      "pages": 266
+    },
+    {
+      "file": "da26-anexo2.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "params": {
+        "seccion": "primera",
+        "nroAnexo": 2,
+        "idAnexo": "7761143",
+        "fechaPublicacion": "20260904"
+      },
+      "bytes": 319829,
+      "sha256": "60ef1b4afc1511d3df16b1175af4c69a78fc36d7819aa01c275d84b9486f3b5e",
+      "pages": 6
+    },
+    {
+      "file": "da26-anexo3.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "params": {
+        "seccion": "primera",
+        "nroAnexo": 3,
+        "idAnexo": "7761143",
+        "fechaPublicacion": "20260904"
+      },
+      "bytes": 170294,
+      "sha256": "afe3dbd5442eef7efdb20477a0ca2100fe0ff31a2cd7ff6fa4a14af5f60c7434",
+      "pages": 2
+    },
+    {
+      "file": "da20-anexo1.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "params": {
+        "seccion": "primera",
+        "nroAnexo": 1,
+        "idAnexo": "7647566",
+        "fechaPublicacion": "20260511"
+      },
+      "bytes": 2285915,
+      "sha256": "4d5fd35b9c21d63730c8922669471531ea965c9fc8e3e11ddb8bdd32404c802b",
+      "pages": 588
+    },
+    {
+      "file": "da20-anexo2.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "params": {
+        "seccion": "primera",
+        "nroAnexo": 2,
+        "idAnexo": "7647566",
+        "fechaPublicacion": "20260511"
+      },
+      "bytes": 437904,
+      "sha256": "d8f6e698f9fedc6118acabab8877d1f894c2c92023d467a7dd6ecba876399227",
+      "pages": 19
+    },
+    {
+      "file": "comunicacion658-anexo2.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "params": {
+        "seccion": "primera",
+        "nroAnexo": 2,
+        "idAnexo": "7718433",
+        "fechaPublicacion": "20260727"
+      },
+      "bytes": 151829,
+      "sha256": "ac2c12a864e264267581b8ea3bf03ee59caa0568c53e44521ba2579a91a1b002",
+      "pages": 12
+    },
+    {
+      "file": "comunicacion658-anexo4.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "params": {
+        "seccion": "primera",
+        "nroAnexo": 4,
+        "idAnexo": "7718433",
+        "fechaPublicacion": "20260727"
+      },
+      "bytes": 201767,
+      "sha256": "1f1364897aa1c07dccf10da7a2f89f58ce8886ded8f4df51297bef27ba31653d",
+      "pages": 12
+    },
+    {
+      "file": "comunicacion658-anexo5.pdf",
+      "url": "https://www.boletinoficial.gob.ar/pdf/download_anexo",
+      "params": {
+        "seccion": "primera",
+        "nroAnexo": 5,
+        "idAnexo": "7718433",
+        "fechaPublicacion": "20260727"
+      },
+      "bytes": 209590,
+      "sha256": "15677619d45c761a4776c9edab8e9dc7f6b5ad5e3ef00909150a90c203bdfb7c",
+      "pages": 5
+    },
+    {
+      "file": "cnea655-anexo2.pdf",
+      "url": "https://www.argentina.gob.ar/normativa/428135_dec655-2_pdf/archivo",
+      "params": null,
+      "bytes": 565000,
+      "sha256": "a9074dcab1fe8b5d33d990b51454d0a725eb4766ad4d4b34c4c3dd162a714c05",
+      "pages": 22
+    },
+    {
+      "file": "ambiente-estructura.pdf",
+      "url": "https://biblioteca.afip.gob.ar/pdfp/anexo_7632125_6.pdf",
+      "params": null,
+      "bytes": 1253589,
+      "sha256": "a353dc0273b0d32f5ea5d5b6e0d5fa0a24221b0bf05aa9f2c421be7a1512fdb7",
+      "pages": 183
+    },
+    {
+      "file": "enacom-res1266.pdf",
+      "url": "https://www.enacom.gob.ar/multimedia/normativas/2025/res1266.pdf",
+      "bytes": 1775652,
+      "sha256": "5d48b777f01a6cef2bae735af85ed07d8c3f436db13651081f774a088a50200b"
+    },
+    {
+      "file": "birf9521-restructuring.pdf",
+      "url": "https://documents1.worldbank.org/curated/en/099012425103536871/pdf/P178553-8e50093b-b6cb-49b0-a295-6f879988cf7b.pdf",
+      "bytes": 376610,
+      "sha256": "82408c888ae1172c2eb131c199ecbb4f096e97a2b3f2b48f9e0a86f2544f187c"
+    }
+  ],
+  "annual_recheck": {
+    "source": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-anual-2026.zip",
+    "sha256": "2ca66cedf1bbc1dc7271714029a71a1e72f7290baec664e6b918dfbbbae3bcd9",
+    "bytes": 2721056,
+    "cutoff": "2026-09-16",
+    "rows": 83179,
+    "previous_cutoff": "2026-09-15",
+    "previous_rows": 83042,
+    "new_program_keys": 0,
+    "new_activity_keys": 0,
+    "result": "No agrega aperturas que permitan cerrar los 12 cruces; las variaciones de ejecución no constituyen una correspondencia entre años.",
+    "production_cutoff_retained": "2026-09-15"
+  },
+  "new_complete_original_matches": 0,
+  "original_cases_remaining": 12,
+  "additional_comparison_corrected": "p222",
+  "form_found": "F03BisPla2027.xlsx es una plantilla en blanco, no una presentación completada por un organismo.",
+  "specific_request": "nacion-pedido-correspondencias-2026-09-18.md"
+}

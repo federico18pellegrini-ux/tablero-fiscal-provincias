@@ -2,6 +2,8 @@
 
 ## Resuelto en las entregas del 18/09
 
+- **Segunda búsqueda de los 12 cruces:** se revisaron modificaciones y normas organizativas adicionales, formularios ONP y documentación de préstamos. No se encontraron bases completas adicionales para los 12 casos. Sí se corrigió Hidrocarburos (p222), incorporando a su base 2026 el subsidio a garrafas trasladado desde el programa 75. Se conserva la cobertura de 379/394 y se documentan ahora 27 correspondencias por código. [Hallazgos y documentación requerida](nacion-segunda-busqueda-2026-09-18.md). El pedido específico a ONP quedó preparado, no enviado.
+
 - **Investigados los 20 cruces restantes:** 8 comparaciones nuevas, cuatro anteriores corregidas y cinco comparaciones de conjuntos. Cobertura individual: 379 de 394. Cada uno de los 15 casos de alcance reorganizado tiene explicación y documentación; 12 pertenecían a la lista original y tres se retiraron al encontrar cambios de alcance. [Resultado de cada caso y documentación pendiente](nacion-correspondencias-2026-09-18.md).
 - **Revisión de nuevas publicaciones:** el archivo de prestaciones cambia solo su fecha de actualización, sin nuevos valores. El archivo de avance de obras permanece igual; siguen faltando 304 y 103 mediciones, respectivamente. [Control de disponibilidad](nacion-disponibilidad-2026-09-18.json).
 

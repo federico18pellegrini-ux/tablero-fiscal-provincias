@@ -3,6 +3,7 @@ import hashlib
 import json
 import unittest
 from pathlib import Path
+import pymupdf
 from national_program_links import norm, verify_project_row, verify_context
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +41,9 @@ class NationalProgramLinksTest(unittest.TestCase):
                 # Geo-hazards gets seismic prevention, geological risks and the observatory.
                 retained = [r for r in atoms if r['programa_id']==19 and (r['proyecto_id']==3 or (r['proyecto_id']==0 and r['actividad_id']==1))]
                 rows = retained if entry['id']=='p279' else [r for r in atoms if r not in retained]
+            if entry['id'] == 'p222':
+                energy = json.loads((ROOT/'nacion/data/program-sources/energia-2026-activities.json').read_text(encoding='utf8'))
+                rows = [r for r in energy if r['programa_id']==73 or (r['programa_id']==75 and r['actividad_id']==40)]
             program = programs[entry['id']]
             for current, target in [('credito_presupuestado','law'),('credito_vigente','current'),('credito_devengado','accrued')]:
                 self.assertAlmostEqual(sum(row[current] for row in rows), program[target], places=5)
@@ -47,7 +51,22 @@ class NationalProgramLinksTest(unittest.TestCase):
             self.assertEqual(program['project_code'], entry['project_code'])
             self.assertEqual(program['project'], entry['project'])
         self.assertEqual(set(self.budget['program_join']['ids']), {e['id'] for e in self.evidence['links']})
-        self.assertEqual(26, self.budget['program_join']['documented_count'])
+        self.assertEqual(27, self.budget['program_join']['documented_count'])
+
+    def test_garrafas_transfer_is_in_hydrocarbons_without_importing_other_energy_spending(self):
+        program = next(p for p in self.budget['programs'] if p['id']=='p222')
+        self.assertAlmostEqual(program['current'], 602200.596649, places=5)
+        self.assertAlmostEqual(program['accrued'], 169293.631284, places=5)
+        self.assertAlmostEqual(program['law'], 1154999.115632, places=5)
+        self.assertEqual(program['current_parts'][1]['include'], [{'subprograma_id':0,'proyecto_id':0,'actividad_id':40}])
+        metadata = self.evidence['energy_activity_evidence']
+        raw = (ROOT/'nacion'/metadata['path']).read_bytes().replace(b'\r\n', b'\n')
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), metadata['artifact_sha256'])
+        self.assertEqual(metadata['artifact_hash_format'], 'UTF-8, LF')
+        with pymupdf.open(ROOT/'nacion/data/program-sources/P27J50.pdf') as doc:
+            text = norm(doc[84].get_text())
+        self.assertIn('51subsidioenergeticofocalizadogarrafasdecreto9432025', text)
+        self.assertIn('791553', text)
 
     def test_groups_reconcile_with_whole_organisms_and_never_add_to_national_total(self):
         programs = {p['id']:p for p in self.budget['programs']}
