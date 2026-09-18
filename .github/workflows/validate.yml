@@ -36,6 +36,8 @@ jobs:
         run: python scripts_build_national_management.py --check
       - name: Verify national policy links and financing
         run: python scripts_build_national_decisions.py --check
+      - name: Verify original amendment annexes and program attribution
+        run: python scripts_build_national_acts.py --check
       - name: Verify national reports match dashboard data
         run: python scripts_export_national_reports.py --check
       - name: Verify municipal coverage and deflator

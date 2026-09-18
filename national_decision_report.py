@@ -86,7 +86,7 @@ def finance_page(r,d):
     labels=[('XII.1','Reducción de activos financieros'),('XII.2','Endeudamiento y otros pasivos'),('XII.3','Transferencias internas / fuentes'),('XII','Total de fuentes financieras'),('XIII.1','Inversión financiera'),('XIII.2','Amortización y reducción de otros pasivos'),('XIII.3','Transferencias internas / aplicaciones'),('XIII','Total de aplicaciones financieras')]
     r.table(['Concepto','Proyecto 2027 / $M'],[[label,num(v(key),0)] for key,label in labels],[WIDTH-140,140],compact=True)
     r.add('La devolución del capital aparece entre las aplicaciones financieras y no dentro del gasto. El endeudamiento previsto incluye renovaciones; no equivale al incremento neto de deuda. Las transferencias internas figuran a ambos lados y se compensan. El resultado financiero más las fuentes cubre las aplicaciones.','small')
-    r.note(f'<link href="{escape(d["finance"]["source"]["url"])}" color="#254b73">Cuadro oficial completo</link> · <link href="{SITE}#escenarios" color="#254b73">Probar escenarios de inflación, ingresos y financiamiento</link>')
+    r.note(f'<link href="{escape(d["finance"]["source"]["url"])}" color="#254b73">Cuadro oficial completo</link> · <link href="{SITE}#escenarios" color="#254b73">Proyectar gasto 2026 y simular resultado y financiamiento 2027</link>')
 
 def append_decisions(r,d,focus=None):
     if focus in ['inmunizaciones','educacion-superior']:policy_page(r,d,focus,first=True)
