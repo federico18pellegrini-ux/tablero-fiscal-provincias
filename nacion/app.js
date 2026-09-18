@@ -13,6 +13,9 @@
   const params=new URLSearchParams(location.search);
   const state={price:params.get('precios')==='real'?'real':'nominal',base:['law','current','closing'].includes(params.get('base'))?params.get('base'):'current',lens:['topics','jurisdictions','functions','geographies'].includes(params.get('vista'))?params.get('vista'):'topics',rank:'jurisdictions',history:'amount',province:params.get('provincia')||'',programLimit:16};
   let D,G,dataHash,reportManifest;
+  const openPrograms=new Set();
+  if(params.get('programa'))openPrograms.add(params.get('programa'));
+  $('program-search').value=params.get('buscar')||'';
   const baseLabel=()=>({law:'Inicial 2026',current:'Vigente 2026 · 15/09',closing:'Cierre estimado 2026'})[state.base];
   const unit=()=>state.price==='real'?'Pesos de agosto 2026 · escenario':'Pesos corrientes';
   const val=(v,year=2027)=>M.price(v,year,state.price,D.deflator.annual_factors);
@@ -22,6 +25,7 @@
   const origin=(file,page,label='Documento oficial ↗')=>`<a href="${esc(source(file,page))}" target="_blank" rel="noopener">${label}</a>`;
   const byProject=a=>[...a].sort((a,b)=>(b.project??-1)-(a.project??-1));
   const width=(v,max)=>M.finite(v)&&max>0?Math.max(0,Math.min(100,v/max*100)):0;
+  const comparisons=row=>`<div class="base-comparisons"><div class="comparison-head"><span>Base 2026</span><span>En pesos</span><span>Real</span></div>${M.comparisonRows(row,D.deflator.annual_factors).map(r=>`<div aria-current="${r.base===state.base}"><span>${({law:'Inicial',current:'Vigente · 15/09',closing:'Cierre estimado'})[r.base]}</span><span class="${sign(r.nominal)}">${M.finite(r.nominal)?pct(r.nominal):'—'}</span><strong class="${sign(r.real)}">${M.finite(r.real)?pct(r.real):'—'}</strong></div>`).join('')}</div>`;
   function readingControls(){
     const page=M.pageForAnchor(location.hash.slice(1));
     document.body.classList.toggle('management-active',page==='ejecucion');
@@ -52,7 +56,7 @@
     $('headline-change').textContent=pct(change);$('headline-change').className=sign(change);
     $('headline-base').textContent=`frente a ${baseLabel().toLowerCase()} · ${state.price==='real'?'variación real':'variación nominal'}`;
     const social=D.functions.find(f=>f.name==='Seguridad Social');
-    $('overview-stats').innerHTML=[['Cambio real',pct(o.realChange),sign(o.realChange),'Poder de compra frente a la base 2026 elegida. Escenario de inflación.','comparacion','Comparar las áreas'],['Seguridad social',`${nf(M.ratio(social.project,D.total.project))}%`,'','del gasto propuesto. Incluye jubilaciones, pensiones y otras prestaciones.','distribucion','Ver la distribución'],['Ejecución 2026',`${nf(o.execution)}%`,'','del presupuesto vigente devengado al 15/09. Septiembre es parcial.','ejecucion','Seguir la ejecución']].map(([label,value,cls,detail,anchor,link])=>`<article class="overview-stat"><h3>${label}</h3><span class="stat-value ${cls}">${value}</span><p>${detail}</p><a href="#${anchor}">${link} →</a></article>`).join('');
+    $('overview-stats').innerHTML=`<article class="overview-stat comparison-stat"><h3>Cómo cambia según la base</h3>${comparisons(D.total)}<p class="note">Real: ajustado por inflación. Inicial: al comenzar el año. Vigente: autorización al corte. Cierre: estimación para terminar 2026.</p></article>`+[['Seguridad social',`${nf(M.ratio(social.project,D.total.project))}%`,'','del gasto propuesto. Incluye jubilaciones, pensiones y otras prestaciones.','distribucion','Ver la distribución'],['Ejecución 2026',`${nf(o.execution)}%`,'','del presupuesto vigente devengado al 15/09. Septiembre es parcial.','ejecucion','Seguir la ejecución']].map(([label,value,cls,detail,anchor,link])=>`<article class="overview-stat"><h3>${label}</h3><span class="stat-value ${cls}">${value}</span><p>${detail}</p><a href="#${anchor}">${link} →</a></article>`).join('');
     $('real-note').hidden=state.price!=='real';
   }
   const topicText={t0:'Jubilaciones, pensiones y otras prestaciones de la seguridad social. Es el principal componente del gasto.',t1:'Atención, prevención y programas sanitarios de alcance nacional.',t2:'Incluye educación superior, políticas educativas y cultura. El gasto educativo de provincias queda fuera de este universo.',t3:'Transferencias sociales y políticas de empleo. Su alcance depende de los beneficiarios y las prestaciones financiadas.',t4:'Investigación, desarrollo y organismos del sistema científico.',t5:'Defensa nacional, seguridad interior, sistema penal e inteligencia.',t6:'Energía, combustibles y minería, incluidos los subsidios presupuestados en estas funciones.',t7:'Infraestructura, servicios y políticas de transporte.',t8:'Vivienda, agua, saneamiento y cuidado ambiental.',t9:'Políticas productivas, regulación económica y comunicaciones.',t10:'Administración de justicia. No incluye toda la política de seguridad.',t11:'Funciones legislativas, administración pública, relaciones interiores y exteriores y controles.',t12:'Intereses y gastos del servicio de la deuda. Las amortizaciones de capital son aplicaciones financieras y no integran este total.'};
@@ -87,9 +91,14 @@
     $('map').querySelectorAll('[data-province]').forEach(p=>{const active=p.dataset.province===state.province;p.classList.toggle('selected',active);p.setAttribute('aria-pressed',String(active));});
   }
   function programs(){
-    const q=fold($('program-search').value);const rows=byProject(D.programs.filter(p=>M.searchText(p).includes(q)));
+    const q=$('program-search').value;const rows=byProject(D.programs.filter(p=>M.matchesSearch(p,q)));
+    for(const p of openPrograms){const index=rows.findIndex(r=>r.id===p);if(index>=state.programLimit)state.programLimit=index+1;}
     $('program-count').textContent=`${rows.length} de ${D.programs.length} partidas programáticas · proyecto 2027`;
-    $('program-list').innerHTML=rows.slice(0,state.programLimit).map(p=>`<details class="program"><summary><span class="program-name">${esc(p.name)}<small>${esc(p.entity)} · ${esc(p.jurisdiction)}</small></span><span class="program-amount">${short(val(p.project))}<small>Ver detalle +</small></span></summary><div class="program-detail"><p>El proyecto asigna <strong>${money(val(p.project))}</strong>${p.matched?`. Frente al crédito vigente de 2026, cambia <span class="${sign(M.change(val(p.project),val(p.current,2026)))}">${pct(M.change(val(p.project),val(p.current,2026)))}</span>.`:'. Falta verificar una correspondencia única con 2026; no se clasifica como un programa nuevo.'}</p><dl><dt>Inicial 2026</dt><dd>${short(val(p.law,2026))}</dd><dt>Vigente 2026 · 15/09</dt><dd>${short(val(p.current,2026))}</dd><dt>Proyecto 2027</dt><dd>${short(val(p.project))}</dd><dt>Ejecución 2026 · nominal</dt><dd>${M.ratio(p.accrued,p.current)===null?'—':nf(M.ratio(p.accrued,p.current))+'%'}</dd></dl><p class="note">${unit()}. ${origin(p.source,p.page)}</p></div></details>`).join('')||'<p class="empty">No encontramos coincidencias. Probá con otra palabra.</p>';
+    $('program-list').innerHTML=rows.slice(0,state.programLimit).map(p=>{const slug=M.fold(p.name).includes('inmunoprevenibles')?'inmunizaciones':M.fold(p.name)==='desarrollo de la educacion superior'?'educacion-superior':null;return `<details class="program" data-program-id="${esc(p.id)}" ${openPrograms.has(p.id)?'open':''}><summary><span class="program-name">${esc(p.name)}<small>${esc(p.entity)} · ${esc(p.jurisdiction)}</small></span><span class="program-amount">${short(val(p.project))}<small>Ver detalle +</small></span></summary><div class="program-detail"><p>El proyecto asigna <strong>${money(val(p.project))}</strong>. ${p.matched?'Las variaciones muestran tanto el cambio en pesos como su poder de compra.':'Falta verificar una correspondencia única con 2026; no se clasifica como un programa nuevo.'}</p>${comparisons(p)}<dl><dt>Inicial 2026</dt><dd>${short(val(p.law,2026))}</dd><dt>Vigente 2026 · 15/09</dt><dd>${short(val(p.current,2026))}</dd><dt>Proyecto 2027</dt><dd>${short(val(p.project))}</dd><dt>Ejecución 2026 · nominal</dt><dd>${M.ratio(p.accrued,p.current)===null?'—':nf(M.ratio(p.accrued,p.current))+'%'}</dd></dl><p class="note">${unit()}. — = sin comparación publicada. ${origin(p.source,p.page)}</p><div class="decision-links">${slug?`<a href="#politica-${slug}">Ver presupuesto, pagos y prestaciones →</a>`:''}<button class="button button-quiet" data-copy-program="${esc(p.id)}">Copiar enlace</button></div><p class="copy-status" role="status"></p></div></details>`;}).join('')||'<p class="empty">No encontramos coincidencias. Probá con otra palabra.</p>';
+    $('program-list').querySelectorAll('details').forEach(el=>el.addEventListener('toggle',()=>{
+      if(!el.isConnected)return;
+      const id=el.dataset.programId;if(el.open)openPrograms.add(id);else openPrograms.delete(id);
+    }));
     $('program-more').hidden=rows.length<=state.programLimit;
   }
   function scale(){
@@ -160,7 +169,7 @@
       if(Object.entries(next).some(([key,value])=>state[key]!==value)){Object.assign(state,next);$('province').value=state.province;render();}
     }
     document.querySelectorAll('[data-page]').forEach(el=>el.hidden=el.dataset.page!==page);
-    document.querySelectorAll('[data-page-link]').forEach(el=>{if(el.dataset.pageLink===page)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
+    document.querySelectorAll('[data-page-link]').forEach(el=>{if(el.dataset.pageLink===(page==='politicas'?'gasto':page))el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
     readingControls();
     if(!D)return;
     if(page==='ejecucion')execution();
@@ -175,7 +184,8 @@
   document.querySelectorAll('[data-page-link]').forEach(link=>link.addEventListener('click',event=>{if(link.hash===location.hash){event.preventDefault();route(true);}}));
   $('base-select').addEventListener('change',()=>{state.base=$('base-select').value;if(D)render();else sync();});
   $('province').addEventListener('change',()=>selectProvince($('province').value));$('work-search').addEventListener('input',works);
-  $('program-search').addEventListener('input',()=>{state.programLimit=16;programs();});$('program-more').addEventListener('click',()=>{state.programLimit+=24;programs();});
+  $('program-search').addEventListener('input',()=>{state.programLimit=16;const u=new URL(location.href);$('program-search').value?u.searchParams.set('buscar',$('program-search').value):u.searchParams.delete('buscar');u.searchParams.delete('programa');history.replaceState(null,'',u);programs();});$('program-more').addEventListener('click',()=>{state.programLimit+=24;programs();});
+  $('program-list').addEventListener('click',async e=>{const button=e.target.closest('[data-copy-program]');if(!button)return;const u=new URL(location.href);u.searchParams.set('programa',button.dataset.copyProgram);u.hash='programas';const status=button.closest('.program-detail').querySelector('.copy-status');try{await navigator.clipboard.writeText(u.href);status.textContent='Enlace copiado.';}catch(_){history.replaceState(null,'',u);status.textContent='Copiá la dirección del navegador.';}});
   $('execution-jurisdiction').addEventListener('change',execution);$('download').addEventListener('click',download);
   function updateReport(){
     $('download-national-report').hidden=true;
@@ -202,6 +212,7 @@
   window.addEventListener('resize',()=>{if(D)execution();});
   Promise.all([fetch('data/budget.json?v=20260918-gestion').then(async r=>{if(!r.ok)throw Error(r.status);const text=await r.text();dataHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo])=>{
     D=data;G=geo;
+    window.nationalBudgetContext={data:D,hash:dataHash};window.dispatchEvent(new Event('national:budget-ready'));
     const locations=[...new Set([...D.works_geographies.map(r=>r.name),...G.features.map(f=>f.province)])].sort((a,b)=>a.localeCompare(b,'es'));
     $('province').innerHTML='<option value="">Todo el país</option>'+locations.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('');if(!locations.includes(state.province))state.province='';$('province').value=state.province;
     $('execution-jurisdiction').innerHTML=D.execution.map(r=>`<option value="${esc(r.name)}">${esc(r.name)}</option>`).join('');
