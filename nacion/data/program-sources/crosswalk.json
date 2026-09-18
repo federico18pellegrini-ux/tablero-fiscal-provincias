@@ -162,6 +162,30 @@
       "bytes": 320419,
       "pages": 15,
       "path": "data/program-sources/P27E674.pdf"
+    },
+    {
+      "file": "BIRF9521-enmienda-2026.pdf",
+      "url": "https://documents.worldbank.org/curated/en/099091726160039524/pdf/P178553-13e3a3a3-b4a7-4e99-bae9-cd4a97f5fd98.pdf",
+      "sha256": "a427fe03d734f3f39ddeaea5066ec0b73b22b289e03b5bddbd9a6346cba542d4",
+      "bytes": 33542849,
+      "pages": 6,
+      "path": "data/program-sources/BIRF9521-enmienda-2026.pdf"
+    },
+    {
+      "file": "BIRF9521-reestructuracion-2026.pdf",
+      "url": "https://documents.worldbank.org/curated/en/099062926080015341/pdf/P178553-019d915d-c981-4b10-a83d-96a1a227b4a4.pdf",
+      "sha256": "8e4e322f29298adc925a8025003c8b9e7bcfa12f46645a511aa0c3667c9e0ac6",
+      "bytes": 215988,
+      "pages": 13,
+      "path": "data/program-sources/BIRF9521-reestructuracion-2026.pdf"
+    },
+    {
+      "file": "AGN154-2026.pdf",
+      "url": "https://www.agn.gob.ar/sites/default/files/informes/2026-154-Informe.pdf",
+      "sha256": "285fef2aa258acd0dfaec3ef27c29fac9b2e7b067a631de9e3df8b52a3b027ee",
+      "bytes": 6403281,
+      "pages": 46,
+      "path": "data/program-sources/AGN154-2026.pdf"
     }
   ],
   "links": [
@@ -934,6 +958,34 @@
           ]
         }
       ]
+    },
+    {
+      "id": "p221",
+      "name": "Planificación y Sostenibilidad Energética",
+      "entity": "Economía y Energía",
+      "jurisdiction": "Ministerio de Economía",
+      "project": 33633.0,
+      "source": "P27J50.pdf",
+      "page": 28,
+      "project_code": 72,
+      "table_name": "Planificación y Sostenibilidad Energética",
+      "current_parts": [
+        {
+          "key": [
+            50,
+            357,
+            75
+          ],
+          "exclude": [
+            {
+              "subprograma_id": 0,
+              "proyecto_id": 0,
+              "actividad_id": 40
+            }
+          ]
+        }
+      ],
+      "note": "La base 2026 excluye garrafas, trasladadas a Hidrocarburos. Conserva el gasto del BIRF 9521, cuyo cierre está fijado para diciembre de 2026: su finalización forma parte de la variación, no es un traslado."
     }
   ],
   "withdrawn_ids": [
@@ -1243,9 +1295,8 @@
       "id": "p221",
       "name": "Planificación y Sostenibilidad Energética",
       "entity": "Economía y Energía",
-      "status": "scope_change",
-      "reason": "El subsidio a garrafas pasa a Hidrocarburos en 2027: ese traslado ya se incorporó a su comparación. En Planificación Energética todavía falta confirmar el destino presupuestario de las tareas del préstamo BIRF 9521.",
-      "needed": "Destino de la actividad 48 (BIRF 9521) del programa 75 de 2026 y cuadro completo de continuidad hacia el programa 72 de 2027.",
+      "status": "comparable",
+      "reason": "La base 2026 excluye garrafas, trasladadas a Hidrocarburos. Conserva el gasto del BIRF 9521, cuyo cierre está fijado para diciembre de 2026: su finalización forma parte de la variación, no es un traslado.",
       "evidence": [
         {
           "source": "D26J50.pdf",
@@ -1551,17 +1602,17 @@
       ]
     },
     {
-      "url": "https://documents1.worldbank.org/curated/en/099012425103536871/pdf/P178553-8e50093b-b6cb-49b0-a295-6f879988cf7b.pdf",
-      "title": "Banco Mundial · reestructuración BIRF 9521 (2025)",
+      "url": "https://documents.worldbank.org/curated/en/099091726160039524/pdf/P178553-13e3a3a3-b4a7-4e99-bae9-cd4a97f5fd98.pdf#page=1",
+      "title": "Banco Mundial · cierre del BIRF 9521 en diciembre de 2026",
       "ids": [
         "p221"
       ],
       "pages": [
-        6,
-        7,
-        8
+        1,
+        2,
+        6
       ],
-      "note": "Documenta una cancelación parcial del préstamo; no equivale a un cierre total ni identifica la partida nacional 2027."
+      "note": "Carta del 30/06/2026, aceptada por Argentina el 19/08 y publicada el 17/09. Fija el cierre para el 20/12/2026; no afirma que el préstamo ya esté cerrado ni elimina el gasto de 2026."
     }
   ],
   "groups": [
@@ -1834,5 +1885,34 @@
       }
     },
     "artifact_hash_format": "UTF-8, LF"
+  },
+  "energy_closure_evidence": {
+    "id": "p221",
+    "loan": "BIRF 9521-AR",
+    "closure_date": "2026-12-20",
+    "letter_date": "2026-06-30",
+    "countersignature_date": "2026-08-19",
+    "disclosed": "2026-09-17",
+    "closure_source": "BIRF9521-enmienda-2026.pdf",
+    "closure_pages": [
+      1,
+      2,
+      6
+    ],
+    "audit_source": "AGN154-2026.pdf",
+    "audit_pages": [
+      16,
+      17,
+      18
+    ],
+    "policy": "Se reasigna el subsidio a garrafas a Hidrocarburos y se retiene el gasto histórico del préstamo que finaliza dentro de la política energética. El fin de una intervención afecta la variación de gasto; no se elimina su base para simular continuidad constante.",
+    "retained_activities": [
+      1,
+      30,
+      31,
+      48
+    ],
+    "transferred_activity": 40,
+    "new_activity_2027": 10
   }
 }

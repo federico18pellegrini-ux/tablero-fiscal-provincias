@@ -2,6 +2,9 @@
 
 ## Resuelto en las entregas del 18/09
 
+- **Tercera búsqueda:** se completó Planificación y Sostenibilidad Energética (p221) con la enmienda firmada del BIRF 9521, publicada el 17/09. Cobertura actual: **380 de 394 partidas**, 28 cruces documentados por código. Quedan **11 casos originales y tres relacionados**. [Evidencia y criterio de comparación](nacion-tercera-busqueda-2026-09-18.md). Las entregas anteriores se conservan como antecedentes.
+
+
 - **Segunda búsqueda de los 12 cruces:** se revisaron modificaciones y normas organizativas adicionales, formularios ONP y documentación de préstamos. No se encontraron bases completas adicionales para los 12 casos. Sí se corrigió Hidrocarburos (p222), incorporando a su base 2026 el subsidio a garrafas trasladado desde el programa 75. Se conserva la cobertura de 379/394 y se documentan ahora 27 correspondencias por código. [Hallazgos y documentación requerida](nacion-segunda-busqueda-2026-09-18.md). El pedido específico a ONP quedó preparado, no enviado.
 
 - **Investigados los 20 cruces restantes:** 8 comparaciones nuevas, cuatro anteriores corregidas y cinco comparaciones de conjuntos. Cobertura individual: 379 de 394. Cada uno de los 15 casos de alcance reorganizado tiene explicación y documentación; 12 pertenecían a la lista original y tres se retiraron al encontrar cambios de alcance. [Resultado de cada caso y documentación pendiente](nacion-correspondencias-2026-09-18.md).
@@ -22,7 +25,7 @@ La ficha CNEA se revisó en el navegador de investigación; el registro estructu
 | Tema | Qué falta | Qué se muestra mientras tanto |
 |---|---|---|
 | Modificaciones por partida | Correspondencia de cada reasignación con su norma y apertura; separar reorganizaciones de cambios de prioridad. | Cronología de las cinco normas y conciliación del total, más diferencias netas por área. El total conciliado no demuestra una trazabilidad completa por partida. |
-| Programas entre 2026 y 2027 | Distribución documentada de costos y actividades en 12 casos originales y tres comparaciones anteriores corregidas. No quedan casos de la lista de 20 sin investigar. | 379 vinculadas individualmente; cinco conjuntos reconstruidos. Las 15 partidas sin base individual equivalen al 0,156% del proyecto. Cada caso identifica el dato que falta. |
+| Programas entre 2026 y 2027 | Distribución documentada de costos y actividades en 11 casos originales y tres comparaciones relacionadas. No quedan casos de la lista de 20 sin investigar. | 380 vinculadas individualmente; cinco conjuntos reconstruidos. Las 14 partidas sin base individual equivalen al 0,139% del proyecto. Cada caso identifica el dato que falta. |
 | Calendario de deuda | Perfil completo de largo plazo posterior a marzo y operaciones posteriores a julio para el tramo corto. | Perfil OPC de agosto-diciembre al 31/07; largo plazo de Finanzas al 31/03; stock y pagos hasta agosto. No se suman perfiles de distintas fechas. |
 | Continuidad de obras | Costos actualizados de terminación y operación, compromisos contractuales y cronogramas. RA-10 tiene una meta anunciada de puesta en marcha, no un calendario contractual completo. | Asignaciones y fuentes 2027; ejecución física y financiera publicada. No se calcula costo pendiente a partir del porcentaje físico. |
 | Avance físico | 103 de 446 aperturas del primer trimestre no tienen avance físico informado. | Ausencia de dato, conservando el gasto registrado. |

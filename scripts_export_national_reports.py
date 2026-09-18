@@ -307,6 +307,8 @@ class Report:
         rows = []
         for r in d['programs']:
             context = ' · Actos electorales: 99,3% del proyecto (ONP J25, p. 109).' if r.get('comparison_context') else ''
+            if r['id'] == 'p221':
+                context += ' · Base sin garrafas; incluye BIRF 9521, con cierre fijado al 20/12/2026.'
             if not r['matched']:
                 context += ' · Alcance reorganizado; ver revisión en el tablero.'
             rows.append([f"{r['id']} · {r['name']}{context}\n{r['entity']} / {r['jurisdiction']} · p. {r['page']}", num(self.value(r.get(self.base), 2026), 0), num(self.value(r['project']), 0), num(self.value(r['capital']), 0), pct(self.variation(r, True), True)])
@@ -320,6 +322,9 @@ class Report:
         for g in d['program_join']['groups']:
             self.add(f"<b>{escape(g['name'])}.</b> {escape(g['note'])}", 'small')
         self.note('<link href="https://tablero.federicopellegrini.com.ar/nacion/#metodo">Ver la revisión de los 20 casos y sus documentos oficiales</link>')
+        closure = next((e for e in d['program_join'].get('legal_evidence', []) if 'p221' in e['ids']), None)
+        if closure:
+            self.note(f'<link href="{escape(closure["url"])}">Energía: enmienda del Banco Mundial que fija el cierre del BIRF 9521.</link>')
         self.section('Anexo / Proyectos', 'Todas las partidas de inversión', 'ONP: planilla 12. Referencia al final de cada descripción: página del PDF oficial.')
         self.note(f"{len(d['works'])} partidas · Montos en millones · {self.units}. Una misma obra puede figurar en más de una ubicación. Incluye equipamiento; no es un censo de obras físicas distintas.")
         self.table(['Proyecto / organismo / referencia', 'Ubicación', 'Proyecto 2027'],
