@@ -159,3 +159,15 @@ test('territorial navigation excludes the selected district and records only all
   assert.equal(downloads.length,1);assert.match(downloads[0][2].file_name,/provincia-6.pdf$/);
   assert.doesNotMatch(JSON.stringify(s.records()),/distrito=|buscar=|private/);
 });
+
+test('portfolio and new policy views exclude selections and accept only documented PDF files',()=>{
+  const s=setup({location:{pathname:'/nacion/',hash:'#carteras',search:'?cartera=50&buscar=private'}});
+  assert.match(s.views()[0][2].page_title,/Ministerios/);
+  for(const view of ['politica-jubilaciones','politica-alimentacion','politica-medicamentos','politica-seguridad-federal']){
+    s.win.location.hash='#'+view;s.events.hashchange();
+    assert.equal(s.views().at(-1)[2].page_location,'https://tablero.federicopellegrini.com.ar/nacion/#'+view);
+  }
+  for(const name of ['cartera-50','cartera-999','cartera-6','jubilaciones','alimentacion','medicamentos','seguridad-federal'])s.clicks.click({target:{closest:()=>({href:`https://tablero.federicopellegrini.com.ar/nacion/reports/ficha-nacional-${name}.pdf?v=private`,getAttribute:()=>null})}});
+  assert.equal(s.records().filter(r=>r[1]==='file_download').length,5);
+  assert.doesNotMatch(JSON.stringify(s.records()),/cartera=|private|buscar=/);
+});

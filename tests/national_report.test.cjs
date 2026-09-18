@@ -23,12 +23,23 @@ test('refuses outdated reports and unexpected paths instead of exporting wrong d
 });
 
 test('focused reports stay brief and must match the decisions currently displayed',()=>{
-  for(const scope of ['inmunizaciones','educacion-superior','reactor-ra10']){
+  for(const scope of ['inmunizaciones','educacion-superior','jubilaciones','alimentacion','medicamentos','seguridad-federal','reactor-ra10']){
     const r=selectReport(manifest,{price:'real',base:'closing',annex:true,scope},hash,managementHash,decisionHash);
     assert.equal(r.file,`ficha-nacional-${scope}.pdf`);assert.equal(r.pages,1);
   }
   assert.throws(()=>selectReport(manifest,{price:'nominal',base:'current'},hash,managementHash,'stale'),/actualizando/);
   assert.throws(()=>selectReport(manifest,{price:'nominal',base:'current',scope:'unknown'},hash,managementHash,decisionHash),/válido/);
+});
+
+test('portfolio PDF selection uses actual jurisdiction IDs and rejects wrong or untrusted files',()=>{
+  assert.equal(manifest.portfolios.length,16);
+  for(const p of manifest.portfolios){
+    const r=selectReport(manifest,{price:'real',base:'closing',scope:'cartera',portfolioId:p.portfolio_id},hash,managementHash,decisionHash);
+    assert.equal(r.file,`ficha-nacional-cartera-${p.portfolio_id}.pdf`);assert.ok(r.pages>=2&&r.pages<=3);
+  }
+  for(const portfolioId of [999,'50',null,undefined,6])assert.throws(()=>selectReport(manifest,{price:'nominal',base:'current',scope:'cartera',portfolioId},hash,managementHash,decisionHash),/cartera válida/);
+  const bad=structuredClone(manifest);bad.portfolios[0].file='../../private.pdf';
+  assert.throws(()=>selectReport(bad,{price:'nominal',base:'current',scope:'cartera',portfolioId:bad.portfolios[0].portfolio_id},hash,managementHash,decisionHash),/validar/);
 });
 
 test('every provincial PDF matches its selected code and rejects unknown paths or IDs',()=>{

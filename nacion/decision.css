@@ -20,3 +20,8 @@
   .program-detail .base-comparisons [data-label]::before{content:attr(data-label);display:block;font-size:12px;font-weight:400;color:var(--muted);margin-bottom:4px}
   .program-detail .base-comparisons .comparison-head{display:none}
 }
+
+.portfolio-toolbar{display:flex;flex-wrap:wrap;gap:14px;align-items:end;margin:22px 0 30px}.portfolio-toolbar label{display:grid;gap:8px;flex:1;min-width:220px;max-width:100%;font-size:16px}.portfolio-toolbar select,#report-portfolio{width:100%;min-width:0;max-width:100%;min-height:48px;font:inherit}.portfolio-entity{display:block;color:var(--muted);font-size:13px;margin-top:5px}#carteras h2{overflow-wrap:anywhere}#carteras .decision-table-wrap table{min-width:0}
+
+@media(max-width:640px){#carteras .decision-table-wrap{overflow:visible}#carteras table{min-width:0}#carteras thead{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}#carteras tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-bottom:1px solid var(--border);padding:14px 0;gap:12px}#carteras tbody th{grid-column:1/-1;padding:0;border:0;min-width:0;font-weight:600}#carteras tbody td{display:block;padding:0;border:0;text-align:left;white-space:normal;font-size:16px}#carteras tbody td::before{content:attr(data-label);display:block;font-size:12px;line-height:1.5;color:var(--muted);margin-bottom:6px}#carteras tbody td span{display:block}}
+@media(max-width:640px){#carteras .decision-number{font-size:30px}#carteras .decision-stats{grid-template-columns:1fr}.portfolio-toolbar label{flex-basis:100%}.policy-measure dd{overflow-wrap:anywhere}}

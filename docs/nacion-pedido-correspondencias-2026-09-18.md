@@ -1,6 +1,6 @@
 # Pedido de documentación a la Oficina Nacional de Presupuesto
 
-Borrador listo para presentar. No enviado. Actualizado tras verificar la enmienda del BIRF 9521: quedan 11 casos originales y tres partidas relacionadas, organizados en ocho grupos.
+**Trámite descartado por decisión de Federico Pellegrini. No enviado.** Se conserva este borrador como inventario de la documentación faltante; no constituye una solicitud activa. Actualizado tras verificar la enmienda del BIRF 9521: quedan 11 casos originales y tres partidas relacionadas, organizados en ocho grupos.
 
 Solicito las aperturas y antecedentes que permitan comparar las categorías programáticas del proyecto de Presupuesto Nacional 2027 con las correspondientes al ejercicio 2026, para los casos enumerados abajo.
 
