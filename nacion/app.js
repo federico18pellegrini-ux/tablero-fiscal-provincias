@@ -29,7 +29,7 @@
   function readingControls(){
     const page=M.pageForAnchor(location.hash.slice(1));
     document.body.classList.toggle('management-active',page==='ejecucion');
-    document.querySelector('.controls').hidden=page==='metodo'||['escenarios','modificaciones','deuda-nacional','metas','obras-ejecucion'].includes(location.hash.slice(1));
+    document.querySelector('.controls').hidden=page==='metodo'||['normas','escenarios','modificaciones','deuda-nacional','metas','obras-ejecucion'].includes(location.hash.slice(1));
     $('base-select').closest('label').hidden=!['panorama','gasto'].includes(page);
     $('base-select').value=state.base;
     $('unit-context').textContent=state.price==='real'?(location.hash==='#historia-ejecucion'?'Pesos de agosto 2026, con IPC promedio anual observado.':page==='ejecucion'?'Flujos a precios de agosto 2026, con IPC observado. Las autorizaciones siguen en pesos corrientes.':'Pesos de agosto 2026 · escenario de inflación.'):'Montos de cada año, sin descontar inflación.';
@@ -187,7 +187,7 @@
       if(Object.entries(next).some(([key,value])=>state[key]!==value)){Object.assign(state,next);$('province').value=state.province;render();}
     }
     document.querySelectorAll('[data-page]').forEach(el=>el.hidden=el.dataset.page!==page);
-    document.querySelectorAll('[data-page-link]').forEach(el=>{if(el.dataset.pageLink===(['politicas','carteras'].includes(page)?'gasto':page==='obra-ficha'?'obras':page))el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
+    document.querySelectorAll('[data-page-link]').forEach(el=>{if(el.dataset.pageLink===(['politicas','carteras'].includes(page)?'gasto':page==='obra-ficha'?'obras':page==='actos'?'ejecucion':page))el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
     readingControls();
     if(!D)return;
     if(page==='ejecucion')execution();

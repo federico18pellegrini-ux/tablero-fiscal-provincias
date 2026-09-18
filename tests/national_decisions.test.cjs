@@ -1,7 +1,25 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const B=require('../nacion/data/budget.json'),D=require('../nacion/data/decisions.json');
 const M=require('../nacion/math.js'),N=require('../nacion/decision-model.js');
+const P=require('../nacion/planning-model.js'),monthly=require('../nacion/data/gestion/gasto_mensual_funcion.json');
 const near=(a,b,t=.001)=>assert.ok(Math.abs(a-b)<t,`${a} != ${b}`);
+test('integrated scenario reconciles all funding and fiscal flows at official baseline',()=>{
+ const o={inflation:(B.deflator.annual_average_index['2027']/B.deflator.annual_average_index['2026']-1)*100,growth:4,elasticity:1,pensionPass:100,otherPass:0,interestChange:0,financing:100};
+ const r=P.integrated(B,D,o);near(r.balance,246741);near(r.need,324050562);near(r.gap,0);near(r.primary,r.balance+r.interest);
+ const stress=P.integrated(B,D,{...o,growth:2,financing:90});assert(stress.resources<r.resources);assert(stress.gap>32405056);near(stress.gap,stress.need-stress.available);
+ const inflation=P.integrated(B,D,{...o,inflation:30});assert(inflation.pensions>r.pensions);near(inflation.otherPrimary,r.otherPrimary);near(inflation.otherRevenue,r.otherRevenue);
+ const interest=P.integrated(B,D,{...o,interestChange:10});near(interest.need-r.need,r.interest*.1);
+ for(const bad of [{growth:null},{elasticity:4},{financing:151},{pensionPass:-1},{inflation:NaN}])assert.equal(P.integrated(B,D,{...o,...bad}),null);
+});
+test('closing forecast preserves actual months, seasonality and excludes partial September',()=>{
+ const o={monthlyInflation:1.55,pace:0},r=P.closing(B,monthly,o);assert.equal(r.groups.length,29);near(r.observed,101224608.370245);near(r.total,161754185.478218);
+ near(r.total,r.observed+r.remaining);near(r.total,r.months.reduce((s,x)=>s+x.value,0));assert.equal(r.months.filter(r=>r.observed).length,8);
+ const tampered=monthly.map(r=>r.periodo==='2026-09'?{...r,credito_devengado:1e15}:r);near(P.closing(B,tampered,o).total,r.total);
+ const high=P.closing(B,monthly,{...o,pace:10});near(high.observed,r.observed);near(high.remaining,r.remaining*1.1);
+ assert.equal(P.closing(B,monthly.slice(1),o),null);assert.equal(P.closing(B,monthly,{...o,monthlyInflation:null}),null);
+ const names=monthly.map(r=>r.anio===2025?{...r,funcion_desc:'Previous denomination'}:r);near(P.closing(B,names,o).total,r.total);
+ assert.equal(M.pageForAnchor('normas'),'actos');
+});
 test('habitual terms and multiple accented words find the intended official program',()=>{
   for(const [q,id] of [['vacunas','p297'],['VACUNACIÓN salud','p297'],['universidades','p350']])assert.ok(B.programs.filter(p=>M.matchesSearch(p,q)).some(p=>p.id===id));
   const retirement=B.programs.filter(p=>M.matchesSearch(p,'jubilaciones'));

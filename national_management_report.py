@@ -28,7 +28,7 @@ def append_management(report, data):
     link('resultado_fiscal_comparacion','Hacienda: informe de ingresos y gastos')
     acts = g['updates']['modifications']['acts']
     sequence = '; '.join(f"{x['title']}: {'+' if x['spending_ars_millions']>0 else ''}{num(x['spending_ars_millions'],0)}" for x in acts)
-    r.note(f'Cambios del gasto autorizado, en millones corrientes: {sequence}. La suma concilia con el aumento neto de {num(g["updates"]["modifications"]["reconciliation"]["net"],0)} millones, dentro del redondeo. <link href="https://tablero.federicopellegrini.com.ar/nacion/#modificaciones" color="#254b73">Cronología, fechas y documentos OPC</link>.')
+    r.note(f'Cambios del gasto autorizado, en millones corrientes: {sequence}. La suma concilia con el aumento neto de {num(g["updates"]["modifications"]["reconciliation"]["net"],0)} millones, dentro del redondeo. <link href="https://tablero.federicopellegrini.com.ar/nacion/#normas" color="#254b73">Anexos oficiales y detalle por programa</link>.')
 
     r.section('12 / Deuda nacional', 'Cuándo vence la deuda y en qué moneda', 'Finanzas: stock y pagos a agosto 2026. OPC: perfil al 31/07, informe 10/09. Largo plazo: Finanzas, stock al 31/03.')
     d = g['debt']['monthly'][-1]
