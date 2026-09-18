@@ -149,7 +149,7 @@ code,kbd,.data-code{font-family:var(--mono)}
 
 /* Keep the three dashboards discoverable, including before data finishes loading. */
 .dashboard-switcher{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%;max-width:640px;padding:4px;border:1px solid var(--border);border-radius:14px;background:var(--s2)}
-.dashboard-switcher a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:10px 12px;border:1px solid transparent;border-radius:10px;color:var(--text);background:var(--surface);font:600 15px/1.2 var(--font-body);text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+.dashboard-switcher a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:10px 12px;border:1px solid transparent;border-radius:10px;color:var(--text);background:var(--surface);font:600 15px/1.2 var(--font-body);text-decoration:none;white-space:normal;text-align:center;transition:background .15s,color .15s}
 .dashboard-switcher a:hover{background:var(--gold-bg)}
 .dashboard-switcher a[aria-current=page]{color:#fff;background:var(--brand-navy);box-shadow:inset 0 -3px 0 var(--brand-gold)}
 .dashboard-switcher a:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
