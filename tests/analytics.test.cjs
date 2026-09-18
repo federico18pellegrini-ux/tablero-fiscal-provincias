@@ -135,10 +135,18 @@ test('national management sections are measured once without sending searches or
 
 test('policy and financing views are counted without storing search terms',()=>{
   const s=setup({location:{pathname:'/nacion/',hash:'#financiamiento',search:'?buscar=private&programa=p297'}});
-  for(const view of ['politica-inmunizaciones','politica-educacion-superior']){
+  for(const view of ['politica-inmunizaciones','politica-educacion-superior','escenarios','obra-ra10']){
     s.win.location.hash='#'+view;s.events.hashchange();s.events['dashboard:view']({detail:{view}});
     assert.equal(s.views().at(-1)[2].page_location,'https://tablero.federicopellegrini.com.ar/nacion/#'+view);
   }
-  assert.equal(s.views().length,3);
+  assert.equal(s.views().length,5);
   assert.doesNotMatch(JSON.stringify(s.records()),/private|p297|buscar=/);
+});
+
+test('focused PDF downloads are measured without including scenario assumptions',()=>{
+  const s=setup({location:{pathname:'/nacion/',hash:'#escenarios',search:'?inflation=private'}});
+  s.clicks.click({target:{closest:()=>({href:'https://tablero.federicopellegrini.com.ar/nacion/reports/ficha-nacional-reactor-ra10.pdf?v=private',getAttribute:()=>null})}});
+  const downloads=s.records().filter(r=>r[1]==='file_download');
+  assert.equal(downloads.length,1);assert.equal(downloads[0][2].file_name,'/nacion/reports/ficha-nacional-reactor-ra10.pdf');
+  assert.doesNotMatch(JSON.stringify(s.records()),/private|inflation=/);
 });

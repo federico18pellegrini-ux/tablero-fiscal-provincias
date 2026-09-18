@@ -50,7 +50,7 @@ class NationalReportsTest(unittest.TestCase):
         self.assertEqual({(r['price'], r['base']) for r in self.catalog['reports']},
                          {(p, b) for p in ['nominal', 'real'] for b in reports.BASES})
         for entry in self.catalog['reports']:
-            self.assertEqual(entry['main']['pages'], 15)
+            self.assertEqual(entry['main']['pages'], 19)
             self.assertGreater(entry['full']['pages'], entry['main']['pages'])
 
     def test_pdfs_have_all_chapters_units_sources_numbering_and_selected_base(self):
@@ -83,12 +83,25 @@ class NationalReportsTest(unittest.TestCase):
         # Each variant includes all source rows, not just the current UI search/page.
         for entry in self.catalog['reports']:
             reader = PdfReader(ROOT / 'nacion/reports' / entry['full']['file'])
-            text = '\n'.join(p.extract_text() for p in reader.pages[15:])
+            text = '\n'.join(p.extract_text() for p in reader.pages[19:])
             for prefix, key in [('p', 'programs'), ('w', 'works')]:
                 ids = re.findall(r'\b(' + prefix + r'\d+)\s*·', text)
                 self.assertEqual(len(ids), len(self.data[key]))
                 self.assertEqual(set(ids), {r['id'] for r in self.data[key]})
             self.assertIn('El detalle de cada jurisdicción', text)
+
+    def test_decision_sheets_match_the_full_report_and_keep_their_scope(self):
+        text='\n'.join(p.extract_text() for p in PdfReader(ROOT/'nacion/reports/informe-nacional-nominal-current.pdf').pages[15:])
+        for phrase in ['Cierre y financiamiento','Vacunas e inmunizaciones','Universidades','Reactor RA-10','85,47%','18.254.178','7 de 13','No publicado']:
+            self.assertIn(phrase.upper() if phrase=='Cierre y financiamiento' else phrase,text)
+        self.assertEqual(len(self.catalog['focused']),3)
+        for entry in self.catalog['focused']:
+            reader=PdfReader(ROOT/'nacion/reports'/entry['file'])
+            self.assertEqual(len(reader.pages),1)
+            page=reader.pages[0].extract_text()
+            self.assertIn('Federico Pellegrini',page)
+            self.assertIn('Página 1',page)
+            self.assertGreaterEqual(len(reader.pages[0].get('/Annots',[])),3)
 
 
 if __name__ == '__main__':

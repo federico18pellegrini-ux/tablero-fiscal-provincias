@@ -7,14 +7,15 @@
   <meta name="theme-color" content="#0A192F">
   <link rel="canonical" href="https://tablero.federicopellegrini.com.ar/nacion/">
   <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260917-marca">
-  <script defer src="../analytics.js?v=20260918-decisiones"></script>
-  <script defer src="math.js?v=20260918-decisiones"></script><script defer src="report.js?v=20260918-gestion"></script><script defer src="app.js?v=20260918-decisiones"></script><script defer src="management-model.js?v=20260918-gestion"></script><script defer src="management.js?v=20260918-gestion"></script>
+  <script defer src="../analytics.js?v=20260918-continuidad"></script>
+  <script defer src="math.js?v=20260918-continuidad"></script><script defer src="report.js?v=20260918-continuidad"></script><script defer src="app.js?v=20260918-continuidad"></script><script defer src="management-model.js?v=20260918-gestion"></script><script defer src="management.js?v=20260918-gestion"></script>
   <link rel="preload" href="../assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/brand/playfair-display.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../brand.css?v=20260918-municipios-pba">
 <link rel="stylesheet" href="management.css?v=20260918-gestion">
-<link rel="stylesheet" href="decision.css?v=20260918-decisiones">
-<script defer src="decision-model.js?v=20260918-decisiones"></script><script defer src="decision.js?v=20260918-decisiones"></script>
+<link rel="stylesheet" href="decision.css?v=20260918-continuidad">
+<script defer src="decision-model.js?v=20260918-continuidad"></script><script defer src="decision.js?v=20260918-continuidad"></script>
+<script defer src="decision-next.js?v=20260918-continuidad"></script>
 </head>
 <body data-dashboard="nacion">
 <a href="#contenido" class="skip">Saltar al contenido</a>
@@ -42,7 +43,7 @@
           <article class="total-card" aria-labelledby="total-title"><p class="eyebrow" id="total-title">Gasto propuesto para 2027</p><div id="headline-total" class="jumbo"></div><p id="headline-unit" class="note"></p><div class="total-comparison"><span id="headline-change"></span><p id="headline-base"></p></div><p class="note">Proyecto de ley presentado por el Ejecutivo, pendiente de tratamiento en el Congreso.</p><p id="real-note" class="note" hidden>Pesos de agosto de 2026 · escenario de inflación. <a href="#metodo">Ver el cálculo.</a></p></article>
         </div>
         <div id="overview-stats" class="overview-stats"></div>
-        <nav class="decision-entry-links" aria-label="Análisis para la gestión"><a href="#politica-inmunizaciones">Vacunas e inmunizaciones →</a><a href="#politica-educacion-superior">Universidades →</a><a href="#financiamiento">Cierre y financiamiento →</a></nav>
+        <section id="attention" class="attention" aria-label="Asuntos para revisar"></section>
       </section>
       <section id="escala" class="chapter"><p class="eyebrow">Las prioridades / En perspectiva</p><h2 tabindex="-1">Qué mirar detrás del total</h2><div id="scale" class="scale-grid"></div></section>
 <section id="historia" class="chapter"><p class="eyebrow">Panorama / Historia</p><h2 tabindex="-1">La evolución del gasto</h2><p>La serie reúne lo ejecutado en 2023–2025, lo autorizado hoy para 2026 y lo propuesto para 2027. Cada barra identifica su etapa.</p><p><a href="#historia-ejecucion">Ver la historia completa desde 2007 →</a></p><div id="history-chart"></div><p id="history-note" class="note"></p></section>
@@ -67,13 +68,15 @@
 </div>
 <div data-page="obras" hidden><section id="obras" class="chapter">
     <p class="eyebrow">Obras / Territorio</p><h2 tabindex="-1">Qué inversiones llegan a cada provincia</h2><p id="works-reading"></p>
-    <div class="map-layout"><div class="map-panel"><div id="map"></div><p class="note">Elegí una provincia en el mapa o en la lista. Más intensidad indica un mayor monto presupuestado.</p></div><div class="works-panel"><label for="province">Provincia o ubicación</label><select id="province"><option value="">Todo el país</option></select><label class="search-label" for="work-search">Buscar una obra</label><input id="work-search" type="search" placeholder="Ruta, hospital, localidad…" autocomplete="off"><p id="works-count" class="eyebrow" aria-live="polite"></p><div id="works-list" class="scroll-list"></div></div></div>
-    <p><a href="#obras-ejecucion">Ver el gasto y el avance físico de obras en 2026 →</a></p><p class="note">Partidas de proyectos de inversión: incluyen construcción, mantenimiento y equipamiento. No representan toda la inversión pública ni transferencias a los gobiernos provinciales.</p>
+    <div class="map-layout"><div class="map-panel"><div id="map"></div><p class="note">Elegí una provincia en el mapa o en la lista. Más intensidad indica un mayor monto presupuestado.</p></div><div class="works-panel"><label for="province">Provincia o ubicación</label><select id="province"><option value="">Todo el país</option></select><label for="work-funding">Financiamiento</label><select id="work-funding" disabled><option value="all">Todas las fuentes</option><option value="external">Con financiamiento externo</option><option value="treasury">Con aporte del Tesoro</option><option value="internal">Sólo fuentes internas</option></select><label class="search-label" for="work-search">Buscar una obra</label><input id="work-search" type="search" placeholder="Ruta, hospital, localidad…" autocomplete="off"><p id="works-count" class="eyebrow" aria-live="polite"></p><div id="works-list" class="scroll-list"></div></div></div>
+    <p><a href="data/decisions.json" download>Descargar financiamiento y fichas ↓</a></p><p><a href="#obra-ra10">Ficha de continuidad: Reactor RA-10 →</a></p><p><a href="#obras-ejecucion">Ver el gasto y el avance físico de obras en 2026 →</a></p><p class="note">Partidas de proyectos de inversión: incluyen construcción, mantenimiento y equipamiento. No representan toda la inversión pública ni transferencias a los gobiernos provinciales.</p>
   </section>
 </div>
+<div data-page="obra-ficha" hidden><section id="obra-ra10" class="chapter"><p role="status">Cargando la ficha de la obra…</p></section></div>
 <div data-page="politicas" hidden><section id="politica-inmunizaciones" class="chapter policy-page" hidden><p role="status">Cargando la ficha de inmunizaciones…</p></section><section id="politica-educacion-superior" class="chapter policy-page" hidden><p role="status">Cargando la ficha de universidades…</p></section></div>
-<div data-page="economia" hidden><nav class="section-nav" aria-label="Explorar la economía"><a href="#recursos">Ingresos</a><a href="#financiamiento">Cierre y financiamiento</a><a href="#macro">Supuestos</a></nav><section id="recursos" class="chapter"><p class="eyebrow">Economía / Ingresos</p><h2 tabindex="-1">Con qué ingresos se financia</h2><p id="resources-reading"></p><div id="resources-chart"></div><div id="pension-reading" class="editorial"></div></section>
+<div data-page="economia" hidden><nav class="section-nav" aria-label="Explorar la economía"><a href="#recursos">Ingresos</a><a href="#financiamiento">Cierre y financiamiento</a><a href="#macro">Supuestos</a><a href="#escenarios">Escenarios</a></nav><section id="recursos" class="chapter"><p class="eyebrow">Economía / Ingresos</p><h2 tabindex="-1">Con qué ingresos se financia</h2><p id="resources-reading"></p><div id="resources-chart"></div><div id="pension-reading" class="editorial"></div></section>
 <section id="financiamiento" class="chapter"><p role="status">Cargando el cierre fiscal y su financiamiento…</p></section>
+<section id="escenarios" class="chapter"><p role="status">Cargando los escenarios…</p></section>
 <section id="macro" class="chapter"><p class="eyebrow">Economía / Supuestos</p><h2 tabindex="-1">Qué escenario espera el Gobierno</h2><p>Las cuentas se arman con estos supuestos. Si la actividad crece menos o la inflación resulta mayor, habrá que revisar cuánto se recauda y cuánto alcanza para gastar.</p><div id="macro-table" class="table-wrap"></div><p class="note">2025: datos reportados por el Mensaje. 2026 y 2027: proyecciones oficiales. Inflación y dólar corresponden a diciembre; actividad, al promedio anual.</p></section>
 </div>
 <div data-page="ejecucion" hidden><section id="ejecucion" class="chapter"><p class="eyebrow">Ejecución / 2026</p><h2 tabindex="-1">Del presupuesto al gasto realizado</h2><p>Autorizar un gasto y realizarlo son dos cosas distintas. Acá miramos el gasto devengado: la obligación de pago ya reconocida, aunque todavía no se haya pagado.</p><label for="execution-jurisdiction">Jurisdicción</label><select id="execution-jurisdiction"></select><div id="execution-reading" class="execution-reading"></div><div id="execution-chart"></div><div id="execution-table" class="table-wrap"></div><p class="note">Corte: 15/09/2026. Septiembre es parcial. El porcentaje compara gasto devengado nominal acumulado con el crédito vigente al corte. El ritmo no es uniforme durante el año.</p></section>
@@ -85,8 +88,8 @@
 <dialog id="report-dialog" aria-labelledby="report-title" aria-describedby="report-description">
   <div class="report-dialog-heading"><p class="eyebrow">Para leer y compartir</p><button id="close-report" aria-label="Cerrar informe">✕</button></div>
   <h2 id="report-title">Exportar informe completo</h2>
-  <p id="report-description">Una lectura del presupuesto con análisis, gráficos, cuadros y fuentes. Incluye el proyecto 2027, la gestión de 2026 y las 24 jurisdicciones.</p>
-  <div class="report-options"><label for="report-price">Montos<select id="report-price"><option value="nominal">Pesos corrientes</option><option value="real">Pesos de agosto de 2026</option></select></label><label for="report-base">Comparar 2027 con<select id="report-base"><option value="current">Vigente 2026 · 15/09</option><option value="law">Inicial 2026</option><option value="closing">Cierre estimado 2026</option></select></label></div>
+  <p id="report-description">Una lectura del presupuesto con análisis, gráficos, cuadros y fuentes. Incluye el proyecto 2027, la gestión de 2026, las 24 jurisdicciones y las fichas integradas. También se puede descargar una ficha breve por tema.</p>
+  <label for="report-scope">Contenido<select id="report-scope"><option value="general">Informe general completo</option><option value="inmunizaciones">Ficha de vacunas e inmunizaciones</option><option value="educacion-superior">Ficha de universidades</option><option value="reactor-ra10">Ficha de la obra RA-10</option></select></label><div class="report-options"><label for="report-price">Montos<select id="report-price"><option value="nominal">Pesos corrientes</option><option value="real">Pesos de agosto de 2026</option></select></label><label for="report-base">Comparar 2027 con<select id="report-base"><option value="current">Vigente 2026 · 15/09</option><option value="law">Inicial 2026</option><option value="closing">Cierre estimado 2026</option></select></label></div>
   <p id="report-unit-note" class="note"></p>
   <label class="report-annex"><input id="report-annex" type="checkbox"><span><strong>Agregar anexo de programas y proyectos</strong><small>Detalle del proyecto 2027 y ejecución mensual por organismo. Las bases completas de gestión se descargan desde Datos y metodología.</small></span></label>
   <p id="report-status" role="status" aria-live="polite">Preparando el informe…</p>

@@ -29,7 +29,7 @@
   function readingControls(){
     const page=M.pageForAnchor(location.hash.slice(1));
     document.body.classList.toggle('management-active',page==='ejecucion');
-    document.querySelector('.controls').hidden=page==='metodo'||['deuda-nacional','metas','obras-ejecucion'].includes(location.hash.slice(1));
+    document.querySelector('.controls').hidden=page==='metodo'||['escenarios','deuda-nacional','metas','obras-ejecucion'].includes(location.hash.slice(1));
     $('base-select').closest('label').hidden=!['panorama','gasto'].includes(page);
     $('base-select').value=state.base;
     $('unit-context').textContent=state.price==='real'?(location.hash==='#historia-ejecucion'?'Pesos de agosto 2026, con IPC promedio anual observado.':page==='ejecucion'?'Flujos a precios de agosto 2026, con IPC observado. Las autorizaciones siguen en pesos corrientes.':'Pesos de agosto 2026 · escenario de inflación.'):'Montos de cada año, sin descontar inflación.';
@@ -83,11 +83,11 @@
   }
   function selectProvince(name){state.province=name;$('province').value=name;sync();works();}
   function works(){
-    const q=fold($('work-search').value);const rows=byProject(D.works.filter(w=>(!state.province||w.province===state.province)&&fold([w.name,w.entity,w.jurisdiction,w.province].join(' ')).includes(q)));
+    const q=fold($('work-search').value),packageWorks=window.nationalDecisionContext?.works,byId=new Map(packageWorks?.rows.map(w=>[w.id,w.funding])||[]);$('work-funding').disabled=!packageWorks;const filter=$('work-funding').value;const rows=byProject(D.works.filter(w=>(!state.province||w.province===state.province)&&fold([w.name,w.entity,w.jurisdiction,w.province].join(' ')).includes(q)&&(filter==='all'||window.NationalDecisionMath.fundingMatches(byId.get(w.id),filter))));
     $('works-reading').innerHTML=`<strong>${D.works.length} partidas</strong> de proyectos de inversión por <strong>${money(val(D.works_total))}</strong> en el proyecto 2027. Buscá qué obras tienen presupuesto en cada provincia.`;
     const sum=rows.reduce((a,r)=>a+r.project,0);
     $('works-count').textContent=`${rows.length} partidas · ${money(val(sum))}${state.province?' · '+state.province:''}`;
-    $('works-list').innerHTML=rows.length?rows.map(w=>`<article class="work"><small>${esc(w.province)} · ${esc(w.entity)}</small><h3>${esc(w.name)}</h3><span class="amount">${money(val(w.project))}</span><small>${origin(w.source,w.page,'Ver partida ↗')}</small></article>`).join(''):'<p class="empty">No hay partidas que coincidan con esta búsqueda.</p>';
+    $('works-list').innerHTML=rows.length?rows.map(w=>`<article class="work"><small>${esc(w.province)} · ${esc(w.entity)}</small><h3>${esc(w.name)}</h3><span class="amount">${money(val(w.project))}</span>${byId.has(w.id)?`<p class="work-funding">${Object.entries(byId.get(w.id)).filter(([k,v])=>v>0&&!['total','internas','externas'].includes(k)).map(([k,v])=>`${esc(packageWorks.columns[k])}: ${money(val(v))}`).join('<br>')}</p>`:''}<small>${origin(w.source,w.page,'Ver partida ↗')}${w.id===packageWorks?.pilot?.project?.id?' · <a href="#obra-ra10">Ver ficha completa →</a>':''}</small></article>`).join(''):'<p class="empty">No hay partidas que coincidan con esta búsqueda.</p>';
     $('map').querySelectorAll('[data-province]').forEach(p=>{const active=p.dataset.province===state.province;p.classList.toggle('selected',active);p.setAttribute('aria-pressed',String(active));});
   }
   function programs(){
@@ -169,7 +169,7 @@
       if(Object.entries(next).some(([key,value])=>state[key]!==value)){Object.assign(state,next);$('province').value=state.province;render();}
     }
     document.querySelectorAll('[data-page]').forEach(el=>el.hidden=el.dataset.page!==page);
-    document.querySelectorAll('[data-page-link]').forEach(el=>{if(el.dataset.pageLink===(page==='politicas'?'gasto':page))el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
+    document.querySelectorAll('[data-page-link]').forEach(el=>{if(el.dataset.pageLink===(page==='politicas'?'gasto':page==='obra-ficha'?'obras':page))el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
     readingControls();
     if(!D)return;
     if(page==='ejecucion')execution();
@@ -183,21 +183,24 @@
   window.addEventListener('popstate',()=>route(true));
   document.querySelectorAll('[data-page-link]').forEach(link=>link.addEventListener('click',event=>{if(link.hash===location.hash){event.preventDefault();route(true);}}));
   $('base-select').addEventListener('change',()=>{state.base=$('base-select').value;if(D)render();else sync();});
-  $('province').addEventListener('change',()=>selectProvince($('province').value));$('work-search').addEventListener('input',works);
+  $('province').addEventListener('change',()=>selectProvince($('province').value));$('work-search').addEventListener('input',works);$('work-funding').addEventListener('change',works);window.addEventListener('national:decisions-ready',()=>{if(D)works();});
   $('program-search').addEventListener('input',()=>{state.programLimit=16;const u=new URL(location.href);$('program-search').value?u.searchParams.set('buscar',$('program-search').value):u.searchParams.delete('buscar');u.searchParams.delete('programa');history.replaceState(null,'',u);programs();});$('program-more').addEventListener('click',()=>{state.programLimit+=24;programs();});
   $('program-list').addEventListener('click',async e=>{const button=e.target.closest('[data-copy-program]');if(!button)return;const u=new URL(location.href);u.searchParams.set('programa',button.dataset.copyProgram);u.hash='programas';const status=button.closest('.program-detail').querySelector('.copy-status');try{await navigator.clipboard.writeText(u.href);status.textContent='Enlace copiado.';}catch(_){history.replaceState(null,'',u);status.textContent='Copiá la dirección del navegador.';}});
   $('execution-jurisdiction').addEventListener('change',execution);$('download').addEventListener('click',download);
   function updateReport(){
     $('download-national-report').hidden=true;
+    const focused=$('report-scope').value!=='general';document.querySelector('.report-options').hidden=focused;document.querySelector('.report-annex').hidden=focused;
     $('report-unit-note').textContent=$('report-price').value==='real'?'El ajuste anual usa IPC promedio. Para 2026 y 2027 incluye el escenario de inflación del tablero.':'Los montos corresponden a los precios de cada año. El análisis también muestra el cambio real, ajustado por inflación.';
+    if(focused)$('report-unit-note').textContent='Ficha breve en pesos corrientes, con comparaciones reales y los cortes propios de cada dato.';
     if(!reportManifest)return;
     try{
-      const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked},dataHash,window.nationalManagementHash);
+      const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked,scope:$('report-scope').value},dataHash,window.nationalManagementHash,window.nationalDecisionHash);
       $('download-national-report').href=pdf.href;$('download-national-report').download=pdf.file;$('download-national-report').hidden=false;
-      $('report-status').textContent=`${pdf.pages} páginas · ${$('report-annex').checked?'Informe y anexo detallado':'Informe con todos los capítulos'} · Federico Pellegrini`;
+      $('report-status').textContent=`${pdf.pages} ${pdf.pages===1?'página':'páginas'} · ${focused?'Ficha breve':$('report-annex').checked?'Informe y anexo detallado':'Informe con todos los capítulos'} · Federico Pellegrini`;
     }catch(error){$('report-status').textContent=error.message;}
   }
-  $('export-report').addEventListener('click',async()=>{
+  async function openReport(scope='general'){
+    $('report-scope').value=scope;
     $('report-price').value=state.price;$('report-base').value=state.base;
     $('report-status').textContent='Preparando el informe…';$('download-national-report').hidden=true;
     $('report-dialog').showModal();updateReport();
@@ -205,10 +208,13 @@
       const response=await fetch('reports/manifest.json',{cache:'no-cache'});if(!response.ok)throw Error('No se pudo cargar el informe. Cerrá esta ventana y volvé a intentarlo.');
       reportManifest=await response.json();updateReport();
     }catch(error){$('report-status').textContent=error.message;}
-  });
+  }
+  $('export-report').addEventListener('click',()=>openReport());
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-export-focus]');if(b)openReport(b.dataset.exportFocus);});
+  window.addEventListener('national:decisions-ready',updateReport);
   window.addEventListener('national:management-ready',updateReport);
   $('close-report').addEventListener('click',()=>$('report-dialog').close());
-  ['report-price','report-base','report-annex'].forEach(id=>$(id).addEventListener('change',updateReport));
+  ['report-price','report-base','report-annex','report-scope'].forEach(id=>$(id).addEventListener('change',updateReport));
   window.addEventListener('resize',()=>{if(D)execution();});
   Promise.all([fetch('data/budget.json?v=20260918-gestion').then(async r=>{if(!r.ok)throw Error(r.status);const text=await r.text();dataHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo])=>{
     D=data;G=geo;
