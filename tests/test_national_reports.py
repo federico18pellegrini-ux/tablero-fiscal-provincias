@@ -78,6 +78,10 @@ class NationalReportsTest(unittest.TestCase):
             self.assertIn('1.889', all_text)
             self.assertIn('31/03/2026', all_text)
             self.assertIn('28 conjuntos', all_text)
+            self.assertIn('DA 20/2026', texts[10])
+            self.assertIn('DNU 867/2026', texts[10])
+            for value in ['105.025', '5.080', '31/07', '31/03', 'Pesos / miles de millones']:
+                self.assertIn(value, texts[11])
 
     def test_annex_preserves_every_program_and_project_exactly_once(self):
         # Each variant includes all source rows, not just the current UI search/page.

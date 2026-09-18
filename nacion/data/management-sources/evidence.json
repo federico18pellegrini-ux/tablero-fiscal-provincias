@@ -1,0 +1,139 @@
+{
+  "reviewed": "2026-09-18",
+  "sources": [
+    {
+      "url": "https://opc.gob.ar/download/52016/",
+      "sha256": "b2dc649b18740dc81d2a5b58fc83934f9847cef055f9e47f8ce1caed372b5ccd",
+      "pages": 22,
+      "bytes": 4697493,
+      "path": "data/management-sources/opc-deuda-julio2026.pdf"
+    },
+    {
+      "url": "https://opc.gob.ar/download/51942/",
+      "sha256": "2233a0616896b67b22bb28c8a57bb4f333774a9bf71d955b76ca3f60e9c7d1cc",
+      "pages": 11,
+      "bytes": 2296895,
+      "path": "data/management-sources/opc-da26-dnu867-2026.pdf"
+    },
+    {
+      "url": "https://opc.gob.ar/download/48593/",
+      "sha256": "3f0d0ae94a6db34fb6fb1aaeb98e6fe1b326da68945d79c2d9230864a3234bef",
+      "pages": 6,
+      "bytes": 85535,
+      "path": "data/management-sources/opc-da2-2026.pdf"
+    },
+    {
+      "url": "https://opc.gob.ar/download/50396/",
+      "sha256": "47a3fc7d5b1536c93808ebc0d2f81e8f1b647df007098af4d29af069f552a59c",
+      "pages": 9,
+      "bytes": 2164445,
+      "path": "data/management-sources/opc-da20-2026.pdf"
+    },
+    {
+      "url": "https://opc.gob.ar/download/51422/",
+      "sha256": "83e388427d92929fbb3f3a46020f1b2bb0091990105966ee1ad2f6864c2c130c",
+      "pages": 10,
+      "bytes": 1571261,
+      "path": "data/management-sources/opc-dnu594-2026.pdf"
+    }
+  ],
+  "modifications": {
+    "scope": "Administración Nacional; gastos corrientes y de capital, sin aplicaciones financieras",
+    "unit": "ARS millones corrientes",
+    "cutoff": "2026-09-15",
+    "index_url": "https://www.argentina.gob.ar/node/252673",
+    "acts": [
+      {
+        "id": "da2",
+        "title": "DA 2/2026",
+        "date": "2026-02-04",
+        "spending_ars_millions": 43,
+        "revenue_ars_millions": 43,
+        "source": "opc-da2-2026.pdf",
+        "pdf_page": 3,
+        "reading": "Adecuaciones de funcionamiento y una donación internacional. La reasignación de $190.000 millones a CABA se compensa con una baja equivalente en otra partida."
+      },
+      {
+        "id": "da20",
+        "title": "DA 20/2026",
+        "date": "2026-05-11",
+        "spending_ars_millions": -2439416,
+        "revenue_ars_millions": 564917,
+        "source": "opc-da20-2026.pdf",
+        "pdf_page": 3,
+        "reading": "Reduce la autorización total de gasto. Las mayores bajas se concentran en transferencias corrientes a provincias y gasto de capital."
+      },
+      {
+        "id": "dnu594",
+        "title": "DNU 594/2026",
+        "date": "2026-07-16",
+        "spending_ars_millions": 4448996,
+        "revenue_ars_millions": 25636798,
+        "source": "opc-dnu594-2026.pdf",
+        "pdf_page": 3,
+        "reading": "Amplía principalmente prestaciones sociales, universidades y personal. El aumento del cálculo de recursos se concentra en rentas de la propiedad; no equivale a una suba de la recaudación tributaria."
+      },
+      {
+        "id": "da26",
+        "title": "DA 26/2026",
+        "date": "2026-09-04",
+        "spending_ars_millions": 2161930,
+        "revenue_ars_millions": 2161930,
+        "source": "opc-da26-dnu867-2026.pdf",
+        "pdf_page": 3,
+        "reading": "Refuerza energía, asignaciones familiares, pensiones no contributivas y compras de Salud. También redistribuye reservas del Tesoro hacia organismos ejecutores."
+      },
+      {
+        "id": "dnu867",
+        "title": "DNU 867/2026",
+        "date": "2026-09-04",
+        "spending_ars_millions": 234122,
+        "revenue_ars_millions": 234122,
+        "source": "opc-da26-dnu867-2026.pdf",
+        "pdf_page": 3,
+        "reading": "Amplía créditos para personal, Defensa y CONAE, entre otras áreas. Parte de los recursos presupuestados proviene de ventas de activos."
+      }
+    ]
+  },
+  "debt": {
+    "stock_cutoff": "2026-07-31",
+    "report_date": "2026-09-10",
+    "source": "opc-deuda-julio2026.pdf",
+    "pdf_page": 17,
+    "table": "Cuadro 7 / página impresa 14",
+    "scope": "Perfil provisorio OPC: instrumentos pagaderos en moneda nacional y compromisos en moneda extranjera; capital e intereses",
+    "months": [
+      {
+        "period": "2026-08",
+        "ars_thousand_millions": 17546,
+        "fx_usd_millions": 1001
+      },
+      {
+        "period": "2026-09",
+        "ars_thousand_millions": 16147,
+        "fx_usd_millions": 1657
+      },
+      {
+        "period": "2026-10",
+        "ars_thousand_millions": 16892,
+        "fx_usd_millions": 453
+      },
+      {
+        "period": "2026-11",
+        "ars_thousand_millions": 16491,
+        "fx_usd_millions": 1310
+      },
+      {
+        "period": "2026-12",
+        "ars_thousand_millions": 37949,
+        "fx_usd_millions": 658
+      }
+    ],
+    "totals": {
+      "ars_thousand_millions": 105025,
+      "fx_usd_millions": 5080
+    },
+    "fmi_usd_millions": 2718,
+    "method": "Transcripción visual del Cuadro 7. Se conserva el total publicado y el redondeo por mes. Pagos en pesos y pagos en moneda extranjera no se suman. El perfil al 31/07 incorpora agosto aunque ese mes ya terminó al revisar el tablero. Las operaciones posteriores pueden modificar los vencimientos."
+  }
+}
