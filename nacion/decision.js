@@ -73,6 +73,6 @@
   window.addEventListener('hashchange',route);
   window.addEventListener('national:budget-ready',render);
   window.addEventListener('national:state',e=>{price=e.detail.price;render();});
-  fetch('data/decisions.json?v=20260918-continuidad',{cache:'no-cache'}).then(async r=>{if(!r.ok)throw Error('No se pudieron cargar las fichas y el financiamiento.');const text=await r.text();window.nationalDecisionHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;render();}).catch(e=>showError(e.message));
+  fetch('data/decisions.json?v=20260918-programas',{cache:'no-cache'}).then(async r=>{if(!r.ok)throw Error('No se pudieron cargar las fichas y el financiamiento.');const text=await r.text();window.nationalDecisionHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;render();}).catch(e=>showError(e.message));
   route();
 })();

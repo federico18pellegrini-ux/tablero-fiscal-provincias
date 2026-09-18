@@ -1,0 +1,42 @@
+{
+  "reviewed": "2026-09-18",
+  "checks": [
+    {
+      "dataset": "metas_fisicas_trimestre_2",
+      "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/ejecucion-fisica-trimestre-2-2026.zip",
+      "sha256": "4b1840e9c88496eb6bb7ecff2666cf84230ec46896d279171048410517441f49",
+      "previous_sha256": "34969abd5f22174b0e12887670d8f0d0c9be2c0b19cc239a9af950e692ae9f80",
+      "changed": true,
+      "bytes": 190097,
+      "last_modified": "Fri, 18 Sep 2026 10:38:41 GMT",
+      "comparison": {
+        "rows": 1890,
+        "columns": 34,
+        "changed_columns": [
+          "ultima_actualizacion_fecha"
+        ],
+        "previous_update_dates": [
+          "Última actualización del ejercicio 2026: 15 Septiembre 2026."
+        ],
+        "new_update_dates": [
+          "Última actualización del ejercicio 2026: 16 Septiembre 2026."
+        ],
+        "value_changes_excluding_update_date": 0,
+        "previous_csv_sha256": "98c47f935faa82257cb5919531dea91b123cf58c1fb52167e1a915b379366205",
+        "new_csv_sha256": "dfc09bde848ca8f62972b386f892b0d01ae75a2fcb72691856be682b7e3ca142"
+      }
+    },
+    {
+      "dataset": "obras_ejecucion_fisica_financiera",
+      "url": "https://www.mecon.gob.ar/onp/documentos/fisica_inversion/2026/1ertrim26.xlsx",
+      "sha256": "27adf06ae8e11553d32a4f70ef5d868259e455e07c95d55a06d049cb2e5cc2bf",
+      "previous_sha256": "27adf06ae8e11553d32a4f70ef5d868259e455e07c95d55a06d049cb2e5cc2bf",
+      "changed": false,
+      "bytes": 85704,
+      "last_modified": "Fri, 24 Jul 2026 19:01:30 GMT"
+    }
+  ],
+  "onp_investment_index": "https://www.mecon.gob.ar/onp/evaluacion/2026",
+  "investment_latest_quarter": 1,
+  "conclusion": "Prestaciones: cambia solo ultima_actualizacion_fecha; sin nuevos valores ni explicaciones. Avance de obras: archivo sin cambios, el índice ONP sigue listando el primer trimestre."
+}

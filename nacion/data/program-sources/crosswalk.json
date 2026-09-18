@@ -1,0 +1,373 @@
+{
+  "reviewed": "2026-09-18",
+  "current_cutoff": "2026-09-15",
+  "project_year": 2027,
+  "sources": [
+    {
+      "file": "P27J01.pdf",
+      "url": "https://www.mecon.gob.ar/onp/documentos/presutexto/proy2027/jurent/pdf/P27J01.pdf",
+      "sha256": "ad2b0f4f0eb3952d847c6ffc77767cefd646fcf2bfb7dfa41c9c7f28f553050a",
+      "bytes": 840138,
+      "pages": 90,
+      "path": "data/program-sources/P27J01.pdf"
+    },
+    {
+      "file": "P27J25.pdf",
+      "url": "https://www.mecon.gob.ar/onp/documentos/presutexto/proy2027/jurent/pdf/P27J25.pdf",
+      "sha256": "a7f12cdbf4c8110e6f494dc3b1cbfc59614ebd21ea16167a3d7c00f770f5616f",
+      "bytes": 1236917,
+      "pages": 126,
+      "path": "data/program-sources/P27J25.pdf"
+    },
+    {
+      "file": "P27J91.pdf",
+      "url": "https://www.mecon.gob.ar/onp/documentos/presutexto/proy2027/jurent/pdf/P27J91.pdf",
+      "sha256": "d2bea2fdf84fdb793789047dd2cc38a8d01824dc2a6e518b4dfcdb23d032d453",
+      "bytes": 445358,
+      "pages": 47,
+      "path": "data/program-sources/P27J91.pdf"
+    },
+    {
+      "file": "P27E200.pdf",
+      "url": "https://www.mecon.gob.ar/onp/documentos/presutexto/proy2027/jurent/pdf/P27E200.pdf",
+      "sha256": "8a71cb96974e0998318218b4d54a9bbf8144ab65fbf6e8868cb83224ebc1184d",
+      "bytes": 271103,
+      "pages": 11,
+      "path": "data/program-sources/P27E200.pdf"
+    }
+  ],
+  "links": [
+    {
+      "id": "p7",
+      "name": "Revisión de Cuentas Nacionales",
+      "entity": "Poder Legislativo Nacional",
+      "jurisdiction": "Poder Legislativo Nacional",
+      "project": 104.0,
+      "source": "P27J01.pdf",
+      "page": 28,
+      "project_code": 22,
+      "current_key": [
+        1,
+        312,
+        22
+      ],
+      "current_name": "Revision de Cuentas Nacionales",
+      "table_name": "Revisión de Cuentas Nacionales",
+      "note": "El nombre se repite en la planilla. Esta fila corresponde al programa 22, registrado en Honorable Senado de la Nación Argentina en 2026."
+    },
+    {
+      "id": "p8",
+      "name": "Revisión de Cuentas Nacionales",
+      "entity": "Poder Legislativo Nacional",
+      "jurisdiction": "Poder Legislativo Nacional",
+      "project": 202.0,
+      "source": "P27J01.pdf",
+      "page": 28,
+      "project_code": 23,
+      "current_key": [
+        1,
+        313,
+        23
+      ],
+      "current_name": "Revision de Cuentas Nacionales",
+      "table_name": "Revisión de Cuentas Nacionales",
+      "note": "El nombre se repite en la planilla. Esta fila corresponde al programa 23, registrado en Honorable Cámara de Diputados de la Nación Argentina en 2026."
+    },
+    {
+      "id": "p61",
+      "name": "Actividades Comunes a los Programas de Deporte",
+      "entity": "Vicejefatura de Gabinete",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 921.0,
+      "source": "P27J25.pdf",
+      "page": 15,
+      "project_code": 11,
+      "current_key": [
+        30,
+        325,
+        11
+      ],
+      "current_name": "Actividades Comunes a los Programas de Deporte",
+      "table_name": "Actividades Comunes a los Programas de Deportes",
+      "note": "En 2026 se registra en Ministerio del Interior, programa 11. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p62",
+      "name": "Actividades Comunes a los Programas de Turismo",
+      "entity": "Vicejefatura de Gabinete",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 5831.0,
+      "source": "P27J25.pdf",
+      "page": 15,
+      "project_code": 13,
+      "current_key": [
+        25,
+        322,
+        13
+      ],
+      "current_name": "Actividades Comunes a los Programas de Turismo",
+      "table_name": "Actividades Comunes a los Programas de Turismo",
+      "note": "En 2026 se registra en Secretaría de Turismo y Ambiente, programa 13. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p63",
+      "name": "Actividades Comunes a los Programas de Ambiente",
+      "entity": "Vicejefatura de Gabinete",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 7608.0,
+      "source": "P27J25.pdf",
+      "page": 15,
+      "project_code": 14,
+      "current_key": [
+        25,
+        322,
+        14
+      ],
+      "current_name": "Actividades Comunes a los programas de Ambiente",
+      "table_name": "Actividades Comunes a los Programas de Ambiente",
+      "note": "En 2026 se registra en Secretaría de Turismo y Ambiente, programa 14. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p64",
+      "name": "Gestión y Organización del Sistema de Contrataciones de la Administración Pública Nacional",
+      "entity": "Vicejefatura de Gabinete",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 1865.0,
+      "source": "P27J25.pdf",
+      "page": 15,
+      "project_code": 26,
+      "current_key": [
+        25,
+        305,
+        26
+      ],
+      "current_name": "Gestion y Organizacion del Sistema de Contrataciones de la Administracion Publica Nacional",
+      "table_name": "Gestión y Organización del Sistema de Contrataciones de la Administración Pública Nacional",
+      "note": "En 2026 se registra en Jefatura de Gabinete de Ministros, programa 26. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p65",
+      "name": "Deporte Comunitario, Infraestructura Deportiva y Predios Deportivos Nacionales",
+      "entity": "Vicejefatura de Gabinete",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 10702.0,
+      "source": "P27J25.pdf",
+      "page": 15,
+      "project_code": 54,
+      "current_key": [
+        30,
+        325,
+        54
+      ],
+      "current_name": "Deporte Comunitario, Infraestructura Deportiva y Predios Deportivos Nacionales",
+      "table_name": "Deporte Comunitario, Infraestructura Deportiva y Predios Deportivos Nacionales",
+      "note": "En 2026 se registra en Ministerio del Interior, programa 54. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p66",
+      "name": "Estrategia, Coordinación y Priorización de las Políticas Públicas",
+      "entity": "Vicejefatura de Gabinete",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 8637.0,
+      "source": "P27J25.pdf",
+      "page": 15,
+      "project_code": 55,
+      "current_key": [
+        25,
+        305,
+        55
+      ],
+      "current_name": "Estrategia, Coordinacion y Priorizacion de las Politicas Publicas",
+      "table_name": "Estrategia, Coordinación y Priorización de las Políticas Públicas",
+      "note": "En 2026 se registra en Jefatura de Gabinete de Ministros, programa 55. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p68",
+      "name": "Deporte Federado y Representación Nacional",
+      "entity": "Vicejefatura de Gabinete",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 39082.0,
+      "source": "P27J25.pdf",
+      "page": 15,
+      "project_code": 71,
+      "current_key": [
+        30,
+        325,
+        55
+      ],
+      "current_name": "Deporte Federado y Representacion Nacional",
+      "table_name": "Deporte Federado y Representación Nacional",
+      "note": "Deporte federado pasa del programa 55 del Ministerio del Interior en 2026 al programa 71 de Vicejefatura de Gabinete en el proyecto 2027. Se conservan separados ambos códigos."
+    },
+    {
+      "id": "p70",
+      "name": "Evaluación y Control Ambiental",
+      "entity": "Vicejefatura de Gabinete",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 7635.0,
+      "source": "P27J25.pdf",
+      "page": 15,
+      "project_code": 83,
+      "current_key": [
+        25,
+        322,
+        83
+      ],
+      "current_name": "Evaluacion y Control Ambiental",
+      "table_name": "Evaluación y Control Ambiental",
+      "note": "En 2026 se registra en Secretaría de Turismo y Ambiente, programa 83. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p78",
+      "name": "Impulso al Desarrollo del Sistema Democrático y Relaciones con la Comunidad",
+      "entity": "Vicejefatura de Gabinete del Interior",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 520093.0,
+      "source": "P27J25.pdf",
+      "page": 16,
+      "project_code": 16,
+      "current_key": [
+        30,
+        325,
+        16
+      ],
+      "current_name": "Impulso al Desarrollo del Sistema Democratico y Relaciones con la Comunidad",
+      "table_name": "Impulso al Desarrollo del Sistema Democrático y Relaciones con la Comunidad",
+      "note": "En 2026 se registra en Ministerio del Interior, programa 16. La correspondencia se verificó en el fascículo oficial de 2027.",
+      "context": {
+        "text": "El proyecto destina $516.218 millones corrientes a actos electorales, el 99,3% de esta partida. Esa concentración explica el salto frente a 2026; no implica una expansión permanente de todos sus servicios.",
+        "source": "P27J25.pdf",
+        "page": 109,
+        "activity_code": 43,
+        "activity_project": 516218,
+        "program_project": 520093
+      }
+    },
+    {
+      "id": "p79",
+      "name": "Cooperación, Asistencia Técnica y Capacitación a Municipios",
+      "entity": "Vicejefatura de Gabinete del Interior",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 4931.0,
+      "source": "P27J25.pdf",
+      "page": 16,
+      "project_code": 17,
+      "current_key": [
+        30,
+        325,
+        17
+      ],
+      "current_name": "Cooperacion, Asistencia Tecnica y Capacitacion a Municipios",
+      "table_name": "Cooperación, Asistencia Técnica y Capacitación a Municipios",
+      "note": "En 2026 se registra en Ministerio del Interior, programa 17. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p80",
+      "name": "Relaciones con las Provincias y Desarrollo Regional",
+      "entity": "Vicejefatura de Gabinete del Interior",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 303530.0,
+      "source": "P27J25.pdf",
+      "page": 16,
+      "project_code": 19,
+      "current_key": [
+        30,
+        325,
+        19
+      ],
+      "current_name": "Relaciones con las Provincias y Desarrollo Regional",
+      "table_name": "Relaciones con las Provincias y Desarrollo Regional",
+      "note": "En 2026 se registra en Ministerio del Interior, programa 19. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p81",
+      "name": "Iniciativas Complementarias de Interior",
+      "entity": "Vicejefatura de Gabinete del Interior",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 28717.0,
+      "source": "P27J25.pdf",
+      "page": 16,
+      "project_code": 34,
+      "current_key": [
+        30,
+        325,
+        34
+      ],
+      "current_name": "Iniciativas Complementarias de Interior",
+      "table_name": "Iniciativas Complementarias de Interior",
+      "note": "En 2026 se registra en Ministerio del Interior, programa 34. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p82",
+      "name": "Atención y Desarrollo de Poblaciones Indígenas",
+      "entity": "Vicejefatura de Gabinete del Interior",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 7625.0,
+      "source": "P27J25.pdf",
+      "page": 16,
+      "project_code": 84,
+      "current_key": [
+        30,
+        325,
+        84
+      ],
+      "current_name": "Atencion y Desarrollo de Poblaciones Indigenas",
+      "table_name": "Atención y Desarrollo de Poblaciones Indígenas",
+      "note": "En 2026 se registra en Ministerio del Interior, programa 84. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p100",
+      "name": "Identificación, Registro y Clasificación del Potencial Humano Nacional",
+      "entity": "Registro Nacional de las Personas (RENAPER)",
+      "jurisdiction": "Jefatura de Gabinete de Ministros",
+      "project": 222578.0,
+      "source": "P27E200.pdf",
+      "page": 7,
+      "project_code": 16,
+      "current_key": [
+        30,
+        200,
+        16
+      ],
+      "current_name": "Identificacion, Registro y Clasificacion del Potencial Humano Nacional",
+      "table_name": "Identificación, Registro y Clasificación del Potencial Humano Nacional",
+      "note": "En 2026 se registra en Registro Nacional de las Personas (RENAPER), programa 16. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p382",
+      "name": "Asistencia Financiera a Empresas Públicas y Otros Entes dependientes de la Secretaría de Comunicación y Medios",
+      "entity": "Obligaciones a Cargo del Tesoro",
+      "jurisdiction": "Obligaciones a Cargo del Tesoro",
+      "project": 71550.0,
+      "source": "P27J91.pdf",
+      "page": 5,
+      "project_code": 72,
+      "current_key": [
+        91,
+        356,
+        72
+      ],
+      "current_name": "Asistencia Financiera a Empresas Publicas y Otros Entes dependientes de la Secretaria de Comunicacion y Prensa",
+      "table_name": "Asistencia Financiera a Empresas Públicas y Otros Entes dependientes de la Secretaría de Comunicación y Medios",
+      "note": "En 2026 se registra en Obligaciones a Cargo del Tesoro, programa 72. La correspondencia se verificó en el fascículo oficial de 2027."
+    },
+    {
+      "id": "p388",
+      "name": "Asistencia Financiera a Empresas y Otros Entes del Ministerio de Defensa",
+      "entity": "Obligaciones a Cargo del Tesoro",
+      "jurisdiction": "Obligaciones a Cargo del Tesoro",
+      "project": 54810.0,
+      "source": "P27J91.pdf",
+      "page": 5,
+      "project_code": 83,
+      "current_key": [
+        91,
+        356,
+        83
+      ],
+      "current_name": "Asistencia Financiera a Empresas Publicas y Otros Entes del Ministerio de Defensa",
+      "table_name": "Asistencia Financiera a Empresas y Otros Entes del Ministerio de Defensa",
+      "note": "En 2026 se registra en Obligaciones a Cargo del Tesoro, programa 83. La correspondencia se verificó en el fascículo oficial de 2027."
+    }
+  ]
+}

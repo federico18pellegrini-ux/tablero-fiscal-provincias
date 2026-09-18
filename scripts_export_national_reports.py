@@ -217,15 +217,16 @@ class Report:
         self.comparison_table(d['functions'], compact=True)
         self.note('Partidas del proyecto 2027. Para estimar su efecto sobre la cobertura hacen falta el costo y la cantidad prevista de cada prestación.')
 
-        self.section('05 / Programas', 'Del organismo a la política concreta', 'ONP: planilla 7, programas. Presupuesto Abierto: correspondencias verificadas por nombre, entidad y jurisdicción.')
+        self.section('05 / Programas', 'Del organismo a la política concreta', 'ONP: planilla 7 y fascículos por organismo. Presupuesto Abierto: nombres, organismos y códigos verificados.')
         self.add(f"El proyecto contiene {len(d['programs'])} partidas de programas. Estas son las 12 de mayor monto. El anexo opcional incluye el listado completo, con su organismo y la página del documento oficial.")
         largest = sorted(d['programs'], key=lambda r: -r['project'])[:12]
         self.table(['Programa / organismo', 'Proyecto 2027', 'Peso total', 'Cambio real'],
                    [[r['name'] + ' / ' + r['entity'], num(self.value(r['project']), 0), pct(ratio(r['project'], total['project'])), pct(self.variation(r, True), True)] for r in largest],
                    [WIDTH - 207, 88, 53, 66], compact=True)
         self.note(f"Montos en millones · {self.units}. Base de comparación: {self.base_label}. Se mantiene separada cada fila del documento oficial, incluso cuando dos nombres coinciden.")
+        self.note('<link href="https://tablero.federicopellegrini.com.ar/nacion/data/program-sources/crosswalk.json">Detalle de las correspondencias documentadas y sus fuentes</link>')
         self.add('Cómo leer esta selección', 'heading')
-        self.add(f"Pudimos vincular {d['meta']['program_join_matched']} partidas con 2026. En las otras {len(d['programs']) - d['meta']['program_join_matched']} falta verificar la continuidad del programa. Un cambio de nombre o de organismo puede explicar esa diferencia; no las contamos como programas nuevos.")
+        self.add(f"Pudimos vincular {d['meta']['program_join_matched']} partidas con 2026; {d['program_join']['documented_count']} se resolvieron revisando códigos y cambios de organismo en los fascículos oficiales. En las otras {len(d['programs']) - d['meta']['program_join_matched']} falta verificar la continuidad del programa. Un cambio de nombre o de organismo puede explicar esa diferencia; no las contamos como programas nuevos.")
         if self.base == 'closing':
             self.callout('Por qué no aparece la variación de los programas', 'La planilla programática no publica el cierre estimado 2026. Ese dato sí existe para funciones y jurisdicciones. Para comparar programas, el informe puede exportarse con la base Inicial o Vigente 2026.')
         else:
@@ -305,7 +306,8 @@ class Report:
         self.note(f"{len(d['programs'])} filas · Montos en millones · {self.units}. Base: {self.base_label}. s/c indica falta de comparación verificada; no significa programa nuevo. Capital es un componente del proyecto, no se suma a él.")
         rows = []
         for r in d['programs']:
-            rows.append([f"{r['id']} · {r['name']}\n{r['entity']} / {r['jurisdiction']} · p. {r['page']}", num(self.value(r.get(self.base), 2026), 0), num(self.value(r['project']), 0), num(self.value(r['capital']), 0), pct(self.variation(r, True), True)])
+            context = ' · Actos electorales: 99,3% del proyecto (ONP J25, p. 109).' if r.get('comparison_context') else ''
+            rows.append([f"{r['id']} · {r['name']}{context}\n{r['entity']} / {r['jurisdiction']} · p. {r['page']}", num(self.value(r.get(self.base), 2026), 0), num(self.value(r['project']), 0), num(self.value(r['capital']), 0), pct(self.variation(r, True), True)])
         self.table(['Programa / organismo / referencia', BASES[self.base], 'Proyecto', 'Capital', 'Cambio real'], rows, [WIDTH - 257, 69, 72, 63, 53], compact=True)
         self.section('Anexo / Proyectos', 'Todas las partidas de inversión', 'ONP: planilla 12. Referencia al final de cada descripción: página del PDF oficial.')
         self.note(f"{len(d['works'])} partidas · Montos en millones · {self.units}. Una misma obra puede figurar en más de una ubicación. Incluye equipamiento; no es un censo de obras físicas distintas.")

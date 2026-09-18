@@ -34,7 +34,10 @@ test('unique program keys and withheld ambiguous matches',()=>{
   assert.equal(new Set(D.programs.map(p=>p.id)).size,D.programs.length);
   const matched=D.programs.filter(p=>p.matched);assert.equal(matched.length,D.meta.program_join_matched);
   for(const p of D.programs.filter(p=>!p.matched)){assert.equal(p.current,null);assert.equal(p.accrued,null);}
-  for(const p of D.programs.filter(p=>p.name==='Revisión de Cuentas Nacionales'))assert.equal(p.matched,false);
+  const revisions=D.programs.filter(p=>p.name==='Revisión de Cuentas Nacionales');
+  assert.equal(revisions.length,2);assert.ok(revisions.every(p=>p.matched));
+  assert.deepEqual(revisions.map(p=>p.current_key),[[1,312,22],[1,313,23]]);
+  assert.deepEqual(revisions.map(p=>p.project_code),[22,23]);
 });
 test('monthly flows reconcile with yearly accrued totals by jurisdiction and nationally',()=>{
   for(const r of D.execution){const target=r.name==='Total'?D.total:D.jurisdictions.find(j=>j.name===r.name);near(sum(r.months,'accrued'),target.accrued);near(r.current,target.current);}
