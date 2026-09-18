@@ -2,14 +2,14 @@
   "reviewed": "2026-09-17",
   "execution_cutoff": "2026-09-15",
   "inputs": {
-    "nacion/data/budget.json": "81c805489b462f90ef27cd1ea0d23d6b7aefad5b679f9491bebbacc4852bf64e",
+    "nacion/data/budget.json": "15de2ef6ffdbef71b241d8e7f7dbf6d3da02628d2f73b7e71557a9bdcaadeb3c",
     "data/ipc_source.json": "173ad760a561b12e77257664a9945410b78094ba2f6b1f80f0630366aeaae510",
-    "scripts_export_national_reports.py": "79a5f2df1c460390ee7db52f9a8acffd36d61f453f8c52225909264d194cce1d",
+    "scripts_export_national_reports.py": "93699bad057dd651115a7a7c2a875b29d3010932d5979179b1aec378a41029ea",
     "national_management_report.py": "08bfa02938609cd37423c3af84207fb180264f10c0b653d96b11eff2fdedd151",
     "nacion/data/gestion.json": "8c431bfe7d322b6f58671b686db46d6ec18fff270ed366025d4068377a723301",
     "national_decision_report.py": "f9404adcb5d0f78c49574f52d822d07e5cfaea35575321f1130adefc6ed91e85",
     "national_territory_report.py": "5040b7b077aaaac2b9adb95217fccbb353a19e0d80c6defeb42f1471f865c818",
-    "nacion/data/decisions.json": "3f6ceb34e6d3b0c37f3145162dda15b73ff3fff81eeb736934040ca0993759ef",
+    "nacion/data/decisions.json": "261f61fe4cc1e6de77fead7d0690726697a48d47762ed314c53c5841df4edf27",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
   },
@@ -20,12 +20,12 @@
       "main": {
         "file": "informe-nacional-nominal-current.pdf",
         "pages": 19,
-        "sha256": "60dc4bea6e045bc3b9159412b855418216cd15e90ed349d60ad8e3b0464673e0"
+        "sha256": "e53cec314fd1e474a6dd5f7872679d47ae154e5f9f7014d3c44de15fe1b4e2ca"
       },
       "full": {
         "file": "informe-nacional-nominal-current-anexo.pdf",
         "pages": 66,
-        "sha256": "3f323c21d9728663b60ec8e1aef72497436d9d6db8077ac24f0f44000d6324ba"
+        "sha256": "2bc3862d64a1170be3faa75d0c15efafde6f56299dd6656030b4776ead638bcb"
       }
     },
     {
@@ -34,12 +34,12 @@
       "main": {
         "file": "informe-nacional-nominal-law.pdf",
         "pages": 19,
-        "sha256": "a4deb31a1582117e8ac16d56bfdef4fe22654ae7a937e38c9fd67a47a722a3f4"
+        "sha256": "296bfdeeae5210faa1e0e0acce660fd3b0ac8397f95f849c5adaaa60f2e55884"
       },
       "full": {
         "file": "informe-nacional-nominal-law-anexo.pdf",
         "pages": 66,
-        "sha256": "fd44cf0f35c8a85a794827e03fb0873b4a375b1034a6b6b4673c8c0db1eb9dfa"
+        "sha256": "a0ceeec309063fe07f06b3e9f994314b6cb6288d91b7ae7905f1bf16ea2d3807"
       }
     },
     {
@@ -48,12 +48,12 @@
       "main": {
         "file": "informe-nacional-nominal-closing.pdf",
         "pages": 19,
-        "sha256": "24c34d964b74c8501dcaa332ece589ffbf502229d25d8ec191264260d0965fea"
+        "sha256": "0063577f59182466302ef827a2e70367ce42844bd4b64a2cb35f5e14450a9757"
       },
       "full": {
         "file": "informe-nacional-nominal-closing-anexo.pdf",
         "pages": 66,
-        "sha256": "86043451d725b82a85144441d904e879c5f14df5e454e87ac72f8496db641f57"
+        "sha256": "48334141a3049dde29cb30a433bc2d9a965819e95a794d407d1d72097f7817fa"
       }
     },
     {
@@ -62,12 +62,12 @@
       "main": {
         "file": "informe-nacional-real-current.pdf",
         "pages": 19,
-        "sha256": "8bea18aaec00262e8d548a26b80605d302e0b14843002ac8bebbf15723333cdb"
+        "sha256": "f4c3db200cced0e023a8e36cccae732a910cba22c3945fa89fcf039e78cd9ff4"
       },
       "full": {
         "file": "informe-nacional-real-current-anexo.pdf",
         "pages": 66,
-        "sha256": "7fd9bfbc65e97f14aefcbfe27b7c914b90bb831b69c42d1a448e3333b9074cfc"
+        "sha256": "bed91029b46d8d402672b2b0f2aec5d4e2bd12e9016822451be33a8da66e7b08"
       }
     },
     {
@@ -76,12 +76,12 @@
       "main": {
         "file": "informe-nacional-real-law.pdf",
         "pages": 19,
-        "sha256": "dcf529779e81b61ed3380ab065583a31112f1a436164116cf2927ddef70026ce"
+        "sha256": "51f623b8767dd462c58607036ad1068025e462551340434c94f9cdc84fb12d97"
       },
       "full": {
         "file": "informe-nacional-real-law-anexo.pdf",
         "pages": 66,
-        "sha256": "cc7403cc3247b91c37ad8cd8cbabbce1df693588858f17f018468225e7ae016f"
+        "sha256": "ff116fba5cd83a23de4160c6095ea6b2e1862a7d46af5db51cef8c965f85c06a"
       }
     },
     {
@@ -90,12 +90,12 @@
       "main": {
         "file": "informe-nacional-real-closing.pdf",
         "pages": 19,
-        "sha256": "a6468fc2770bd3a031750fbd120ce10fd6c788dfb1f45da762e8ad901cb1d22c"
+        "sha256": "77c710963ee3b42e38dad73f1fb017cf3d99c85c41417345500449d5e385762b"
       },
       "full": {
         "file": "informe-nacional-real-closing-anexo.pdf",
         "pages": 66,
-        "sha256": "7d55136ab3df1b745d8d74c153812655aa5c12b680b13536791006abfbfbbdc2"
+        "sha256": "d4024a169c06c5781f4032bd27d50cfb7243b9da7e0b6b29b653c4abed888ad5"
       }
     }
   ],

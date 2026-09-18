@@ -94,7 +94,8 @@
   function programEvidence(p){
     const context=p.comparison_context;
     const reading=context?`<p class="program-context"><strong>Qué explica el cambio.</strong> ${esc(context.text)} ${origin(context.source,context.page,'Ver la apertura oficial ↗')}</p>`:'';
-    const evidence=p.match_note?`<p class="note program-link-note">${esc(p.match_note)} <a href="${esc(p.match_source.url)}#page=${p.match_source.page}" target="_blank" rel="noopener">Ver correspondencia ↗</a></p>`:'';
+    const legal=(D.program_join.legal_evidence||[]).filter(e=>e.ids.includes(p.id)).map(e=>` · <a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title)} ↗</a>`).join('');
+    const evidence=p.match_note?`<p class="note program-link-note">${esc(p.match_note)} <a href="${esc(p.match_source.url)}#page=${p.match_source.page}" target="_blank" rel="noopener">Ver correspondencia ↗</a>${legal}</p>`:'';
     const review=p.review&&!p.matched?`<p class="program-context"><strong>${p.review.status==='new_opening'?'Nueva apertura presupuestaria.':'Cambió el contenido de la partida.'}</strong> ${esc(p.review.reason)}</p><p class="note">Para comparar por separado falta: ${esc(p.review.needed)} ${reviewSources(p.review)}</p>`:'';
     const group=D.program_join.groups?.find(g=>g.id===p.review?.group);
     return reading+evidence+review+(group?groupComparison(group):'');

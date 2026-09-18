@@ -44,6 +44,9 @@ class NationalProgramLinksTest(unittest.TestCase):
             if entry['id'] == 'p222':
                 energy = json.loads((ROOT/'nacion/data/program-sources/energia-2026-activities.json').read_text(encoding='utf8'))
                 rows = [r for r in energy if r['programa_id']==73 or (r['programa_id']==75 and r['actividad_id']==40)]
+            if entry['id'] == 'p221':
+                energy = json.loads((ROOT/'nacion/data/program-sources/energia-2026-activities.json').read_text(encoding='utf8'))
+                rows = [r for r in energy if r['programa_id']==75 and r['actividad_id'] in [1,30,31,48]]
             program = programs[entry['id']]
             for current, target in [('credito_presupuestado','law'),('credito_vigente','current'),('credito_devengado','accrued')]:
                 self.assertAlmostEqual(sum(row[current] for row in rows), program[target], places=5)
@@ -51,7 +54,27 @@ class NationalProgramLinksTest(unittest.TestCase):
             self.assertEqual(program['project_code'], entry['project_code'])
             self.assertEqual(program['project'], entry['project'])
         self.assertEqual(set(self.budget['program_join']['ids']), {e['id'] for e in self.evidence['links']})
-        self.assertEqual(27, self.budget['program_join']['documented_count'])
+        self.assertEqual(28, self.budget['program_join']['documented_count'])
+
+    def test_energy_closure_keeps_historical_spending_and_does_not_duplicate_garrafas(self):
+        by_id = {p['id']:p for p in self.budget['programs']}
+        planning, hydrocarbons = by_id['p221'], by_id['p222']
+        self.assertAlmostEqual(planning['current'], 34109.301014, places=5)
+        self.assertAlmostEqual(planning['law'], 32195.730363, places=5)
+        self.assertAlmostEqual(planning['accrued'], 21252.165606, places=5)
+        self.assertEqual(planning['current_parts'][0]['exclude'], hydrocarbons['current_parts'][1]['include'])
+        rows = [r for r in self.current if r['servicio_id']==357 and r['programa_id'] in [73,75]]
+        for field, key in [('credito_presupuestado','law'),('credito_vigente','current'),('credito_devengado','accrued')]:
+            self.assertAlmostEqual(planning[key]+hydrocarbons[key], sum(r[field] for r in rows), places=5)
+        closure = self.evidence['energy_closure_evidence']
+        self.assertEqual(closure['closure_date'], '2026-12-20')
+        self.assertIn(48, closure['retained_activities'])
+        with pymupdf.open(ROOT/'nacion'/self.sources[closure['closure_source']]['path']) as doc:
+            text = norm(doc[0].get_text())
+        self.assertIn('9521ar', text)
+        self.assertIn('closingdate', text)
+        self.assertIn('december202026', text)
+        self.assertIn('effectiveimmediately', text)
 
     def test_garrafas_transfer_is_in_hydrocarbons_without_importing_other_energy_spending(self):
         program = next(p for p in self.budget['programs'] if p['id']=='p222')
@@ -85,7 +108,7 @@ class NationalProgramLinksTest(unittest.TestCase):
         original={'p42','p52','p58','p59','p60','p67','p69','p71','p77','p103','p105','p107','p221','p228','p246','p252','p277','p280','p288','p342'}
         reviews=self.budget['program_join']['reviews']
         self.assertEqual({r['id'] for r in reviews},original)
-        self.assertEqual(sum(r['status']=='comparable' for r in reviews),8)
+        self.assertEqual(sum(r['status']=='comparable' for r in reviews),9)
         for r in reviews:
             self.assertTrue(r['reason'] and r['evidence'])
             if r['status']!='comparable':self.assertTrue(r['needed'])
@@ -97,7 +120,7 @@ class NationalProgramLinksTest(unittest.TestCase):
 
     def test_unresolved_scope_changes_keep_missing_bases(self):
         missing = [p for p in self.budget['programs'] if not p['matched']]
-        self.assertEqual(len(missing), 15)
+        self.assertEqual(len(missing), 14)
         for program in missing:
             for key in ['law','current','accrued']:
                 self.assertIsNone(program[key])

@@ -37,7 +37,7 @@ class NationalReportsTest(unittest.TestCase):
 
     def test_unmatched_programs_and_closing_base_never_invent_a_comparison(self):
         missing = [p for p in self.data['programs'] if not p['matched']]
-        self.assertEqual(len(missing), 15)
+        self.assertEqual(len(missing), 14)
         for base in reports.BASES:
             r = reports.Report(self.data, 'real', base)
             for program in missing:
