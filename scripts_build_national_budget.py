@@ -6,6 +6,7 @@ import argparse, collections, csv, hashlib, json, re, unicodedata
 from pathlib import Path
 import pandas as pd
 import pymupdf as fitz
+from national_program_links import apply_documented_links
 
 ROOT = Path(__file__).resolve().parent
 def norm(s):
@@ -90,6 +91,7 @@ def main():
             g,v=pc[key][0];p.update(v);p['matched']=True
             p['current_functions']=sorted(g.funcion_desc.unique().tolist())
         else:p['matched']=False
+    program_join = apply_documented_links(programs, a)
     works=[]; wg=[]; geo=j=e=''
     for r in pdf_rows(c/'cap1pl12.pdf',203,190):
         if r['name']=='TOTAL':works_total=r['values'][-1];continue
@@ -140,6 +142,7 @@ def main():
         assert not s.get('error'),s
         assert hashlib.sha256((c/s['file']).read_bytes()).hexdigest()==s['sha256']
     data=dict(meta=dict(reviewed='2026-09-17',execution_cutoff='2026-09-15',project_year=2027,base_year=2026,unit='ARS millones',scope='Administración Nacional · gastos corrientes y de capital',project_stage='Proyecto de ley',base_stage='Crédito vigente al 15/09/2026',monthly_real_last='2026-08',program_join_matched=sum(p['matched'] for p in programs),program_join_total=len(programs)),total=total,jurisdictions=jurisdictions,purposes=purposes,functions=functions,topics=topics,geographies=geos,programs=programs,works=works,works_geographies=wg,works_total=works_total,resources=resources,resources_total=202348174,history=history,execution=execution,deflator=dict(anchor='2026-08',annual_factors=factors,annual_average_index=averages,monthly_index={k:v for k,v in ipc.items() if k>='2026-01'},assumptions=dict(inflation_dec_2026=29,inflation_dec_2027=18),method='IPC INDEC observado hasta agosto 2026. Proyección propia: variación mensual constante hasta alcanzar los supuestos ONP de diciembre (29% en 2026; 18% en 2027). Montos anuales divididos por IPC promedio anual y multiplicados por IPC agosto 2026. No usa IPC de diciembre como deflactor anual.',source='../data/ipc_source.json'),macro=[dict(name='Crecimiento del PIB',unit='%',values=[4.5,3,4]),dict(name='Inflación · diciembre contra diciembre',unit='%',values=[31.5,29,18]),dict(name='Dólar · diciembre',unit='ARS/USD',values=[1447.8,1600,1847.6]),dict(name='Consumo privado',unit='%',values=[8.6,3.1,3.4]),dict(name='Inversión',unit='%',values=[16.2,-2.1,9.2]),dict(name='Exportaciones · volumen',unit='%',values=[8.1,7.7,8.5]),dict(name='Importaciones · volumen',unit='%',values=[28,1,8.2])],sources=sources,validation=checks)
+    data['program_join'] = program_join
     (out/'budget.json').write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n','utf-8')
     (out/'sources.json').write_text(json.dumps(sources,ensure_ascii=False,indent=2)+'\n','utf-8')
     print(json.dumps(dict(checks=checks,matched=data['meta']['program_join_matched'],total=total,factors=factors),indent=2))

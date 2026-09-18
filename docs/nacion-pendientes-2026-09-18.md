@@ -2,6 +2,9 @@
 
 ## Resuelto en las entregas del 18/09
 
+- **18 correspondencias de programas adicionales:** 374 de 394 partidas ya permiten comparar con 2026. Códigos, montos y bases contrastados con cuatro fascículos ONP y PA. Se agregan explicación y enlace oficial en las fichas; el informe y el CSV usan las mismas bases. El salto de la partida del sistema democrático se explica por su concentración en actos electorales (99,3% del proyecto). [Detalle y lista de las 20 pendientes](nacion-correspondencias-2026-09-18.md).
+- **Revisión de nuevas publicaciones:** el archivo de prestaciones cambia solo su fecha de actualización, sin nuevos valores. El archivo de avance de obras permanece igual; siguen faltando 304 y 103 mediciones, respectivamente. [Control de disponibilidad](nacion-disponibilidad-2026-09-18.json).
+
 - **Modificaciones 2026:** inicial, cambio neto y vigente. Se concilian todas las aperturas con el aumento total de $4.405.675,31 millones. Búsqueda habitual entre 410 aperturas programáticas; filtros por ampliaciones y reducciones. Además, se incorporan las cinco normas que explican el cambio total: DA 2, DA 20, DNU 594, DA 26 y DNU 867. Los importes OPC suman $4.405.675 millones; el residual frente a PA es $0,314 millones, compatible con el redondeo de las cinco cifras. La cronología no atribuye cada reasignación programática a una norma individual.
 - **Deuda:** perfil OPC al 31/07, publicado el 10/09. Agosto-diciembre: $105.025 miles de millones pagaderos en pesos y USD 5.080 millones en moneda extranjera, por separado. El total de dólares conserva el redondeo oficial (la suma mensual da 5.079). El perfil de largo plazo a marzo y el stock mensual a agosto conservan sus propios cortes.
 - **Prestaciones:** filtros por función, comparación y método, búsqueda habitual (por ejemplo, vacunas), limpieza de filtros y conservación al cambiar trimestre. Ausencia de realización y realización en cero siguen siendo estados distintos.
@@ -17,7 +20,7 @@ La ficha CNEA se revisó en el navegador de investigación; el registro estructu
 | Tema | Qué falta | Qué se muestra mientras tanto |
 |---|---|---|
 | Modificaciones por partida | Correspondencia de cada reasignación con su norma y apertura; separar reorganizaciones de cambios de prioridad. | Cronología de las cinco normas y conciliación del total, más diferencias netas por área. El total conciliado no demuestra una trazabilidad completa por partida. |
-| Programas entre 2026 y 2027 | Correspondencia documentada de 38 de las 394 filas, aproximadamente 0,97% del proyecto. | 356 vinculadas; las otras quedan sin comparación, no como programas nuevos o eliminados. |
+| Programas entre 2026 y 2027 | Correspondencia documentada de 20 de las 394 filas, aproximadamente 0,33% del proyecto. | 374 vinculadas (18 cruces adicionales por códigos y fascículos oficiales); las otras quedan sin comparación, no como programas nuevos o eliminados. |
 | Calendario de deuda | Perfil completo de largo plazo posterior a marzo y operaciones posteriores a julio para el tramo corto. | Perfil OPC de agosto-diciembre al 31/07; largo plazo de Finanzas al 31/03; stock y pagos hasta agosto. No se suman perfiles de distintas fechas. |
 | Continuidad de obras | Costos actualizados de terminación y operación, compromisos contractuales y cronogramas. RA-10 tiene una meta anunciada de puesta en marcha, no un calendario contractual completo. | Asignaciones y fuentes 2027; ejecución física y financiera publicada. No se calcula costo pendiente a partir del porcentaje físico. |
 | Avance físico | 103 de 446 aperturas del primer trimestre no tienen avance físico informado. | Ausencia de dato, conservando el gasto registrado. |
@@ -41,6 +44,8 @@ La ficha CNEA se revisó en el navegador de investigación; el registro estructu
 - 24 fichas provinciales de una página. En la última ampliación cambian las páginas 11 y 12 de los seis informes generales; se revisó su renderizado. Los 39 archivos exportables concilian con su catálogo y datos.
 - Pruebas de navegación, cambio de provincia/precios, enlaces, 39 PDF, móvil 320/390, tablet 768 y escritorio 1440, temas claro/oscuro y ausencia de errores de página. GA4 excluye parámetros de búsqueda y distrito de las vistas; las descargas usan una lista de archivos permitidos.
 
-- Última ampliación: 135 pruebas Python y 125 Node aprobadas; cinco originales OPC archivados con tamaño y SHA-256, conciliación nominal dentro del redondeo; filtros y descarga PDF probados a 320, 390, 768 y 1440 píxeles, en claro y oscuro.
+- Ampliación de normas y deuda: 135 pruebas Python y 125 Node aprobadas; cinco originales OPC archivados con tamaño y SHA-256, conciliación nominal dentro del redondeo; filtros y descarga PDF probados a 320, 390, 768 y 1440 píxeles, en claro y oscuro.
+
+- Ampliación de programas: 139 pruebas Python y 125 Node aprobadas. Cuatro fascículos archivados, 18 cruces conciliados con la base independiente de ejecución, sin reutilizar las claves 2026. Las seis variantes principales siguen en 19 páginas y con anexo en 65. Se revisaron las páginas modificadas y la navegación a 320, 390, 768 y 1440 píxeles; los porcentajes grandes se adaptan a dos columnas con etiquetas en celular.
 
 Este registro distingue controles de consistencia de la revisión de documentos originales. No equivale a una certificación individual de cada registro del tablero.
