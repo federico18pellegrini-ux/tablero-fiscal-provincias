@@ -33,6 +33,7 @@
     $('base-select').closest('label').hidden=!['panorama','gasto'].includes(page);
     $('base-select').value=state.base;
     $('unit-context').textContent=state.price==='real'?(location.hash==='#historia-ejecucion'?'Pesos de agosto 2026, con IPC promedio anual observado.':page==='ejecucion'?'Flujos a precios de agosto 2026, con IPC observado. Las autorizaciones siguen en pesos corrientes.':'Pesos de agosto 2026 · escenario de inflación.'):'Montos de cada año, sin descontar inflación.';
+    if(location.hash==='#provincias-nacion'&&state.price==='real')$('unit-context').textContent='Recursos nacionales a precios de agosto de 2026. Transferencias, gasto localizado y proyecto siguen en pesos corrientes.';
   }
   function sync(){
     document.querySelectorAll('[data-price],[data-base],[data-lens],[data-rank],[data-history]').forEach(b=>{const k=['price','base','lens','rank','history'].find(k=>b.dataset[k]);b.setAttribute('aria-pressed',String(state[k]===b.dataset[k]));});
