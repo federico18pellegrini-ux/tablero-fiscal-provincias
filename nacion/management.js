@@ -102,6 +102,6 @@
   }
   window.addEventListener('national:state',e=>{price=e.detail.price;ready();});
   window.addEventListener('hashchange',route);
-  fetch('data/gestion.json').then(async r=>{if(!r.ok)throw Error('No se pudieron cargar los nuevos datos de gestión.');const text=await r.text();window.nationalManagementHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;window.dispatchEvent(new Event('national:management-ready'));$('management-status').hidden=true;downloads();ready();}).catch(e=>{$('management-status').innerHTML=esc(e.message)+' <a href="">Reintentar</a>';});
+  fetch('data/gestion.json?v=20260918-gestion').then(async r=>{if(!r.ok)throw Error('No se pudieron cargar los nuevos datos de gestión.');const text=await r.text();window.nationalManagementHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;window.dispatchEvent(new Event('national:management-ready'));$('management-status').hidden=true;downloads();ready();}).catch(e=>{$('management-status').innerHTML=esc(e.message)+' <a href="">Reintentar</a>';});
   route();
 })();
