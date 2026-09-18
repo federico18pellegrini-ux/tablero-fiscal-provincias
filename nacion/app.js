@@ -29,7 +29,7 @@
   function readingControls(){
     const page=M.pageForAnchor(location.hash.slice(1));
     document.body.classList.toggle('management-active',page==='ejecucion');
-    document.querySelector('.controls').hidden=page==='metodo'||['escenarios','deuda-nacional','metas','obras-ejecucion'].includes(location.hash.slice(1));
+    document.querySelector('.controls').hidden=page==='metodo'||['escenarios','modificaciones','deuda-nacional','metas','obras-ejecucion'].includes(location.hash.slice(1));
     $('base-select').closest('label').hidden=!['panorama','gasto'].includes(page);
     $('base-select').value=state.base;
     $('unit-context').textContent=state.price==='real'?(location.hash==='#historia-ejecucion'?'Pesos de agosto 2026, con IPC promedio anual observado.':page==='ejecucion'?'Flujos a precios de agosto 2026, con IPC observado. Las autorizaciones siguen en pesos corrientes.':'Pesos de agosto 2026 · escenario de inflación.'):'Montos de cada año, sin descontar inflación.';
@@ -176,7 +176,7 @@
     window.dispatchEvent(new CustomEvent('national:state',{detail:{price:state.price}}));
     window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view:anchor}}));
     const target=document.getElementById(anchor)||$('inicio');
-    const scrollTarget=['inicio','distribucion','obras','recursos','ejecucion','caja','deuda-nacional','provincias-nacion','metas','obras-ejecucion','historia-ejecucion','metodo'].includes(anchor)?$('contenido'):target;
+    const scrollTarget=['inicio','distribucion','obras','recursos','ejecucion','modificaciones','caja','deuda-nacional','provincias-nacion','metas','obras-ejecucion','historia-ejecucion','metodo'].includes(anchor)?$('contenido'):target;
     requestAnimationFrame(()=>{scrollTarget.scrollIntoView({block:'start',behavior:'instant'});if(focus)(target.querySelector('h2[tabindex]')||target.querySelector('h1'))?.focus({preventScroll:true});});
   }
   window.addEventListener('hashchange',()=>route(true));
@@ -189,18 +189,26 @@
   $('execution-jurisdiction').addEventListener('change',execution);$('download').addEventListener('click',download);
   function updateReport(){
     $('download-national-report').hidden=true;
-    const focused=$('report-scope').value!=='general';document.querySelector('.report-options').hidden=focused;document.querySelector('.report-annex').hidden=focused;
+    if(!$('report-province').options.length&&window.nationalManagementContext){
+      $('report-province').innerHTML=window.nationalManagementContext.provinces.comparison.map(p=>`<option value="${p.provincia_id}">${esc(p.provincia)}</option>`).join('');
+      $('report-province').value=6;
+    }
+    const focused=$('report-scope').value!=='general';$('report-province-label').hidden=$('report-scope').value!=='provincia';document.querySelector('.report-options').hidden=focused;document.querySelector('.report-annex').hidden=focused;
     $('report-unit-note').textContent=$('report-price').value==='real'?'El ajuste anual usa IPC promedio. Para 2026 y 2027 incluye el escenario de inflación del tablero.':'Los montos corresponden a los precios de cada año. El análisis también muestra el cambio real, ajustado por inflación.';
     if(focused)$('report-unit-note').textContent='Ficha breve en pesos corrientes, con comparaciones reales y los cortes propios de cada dato.';
     if(!reportManifest)return;
     try{
-      const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked,scope:$('report-scope').value},dataHash,window.nationalManagementHash,window.nationalDecisionHash);
+      const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked,scope:$('report-scope').value,provinceId:Number($('report-province').value)},dataHash,window.nationalManagementHash,window.nationalDecisionHash);
       $('download-national-report').href=pdf.href;$('download-national-report').download=pdf.file;$('download-national-report').hidden=false;
       $('report-status').textContent=`${pdf.pages} ${pdf.pages===1?'página':'páginas'} · ${focused?'Ficha breve':$('report-annex').checked?'Informe y anexo detallado':'Informe con todos los capítulos'} · Federico Pellegrini`;
     }catch(error){$('report-status').textContent=error.message;}
   }
   async function openReport(scope='general'){
     $('report-scope').value=scope;
+    const provinceNames=window.nationalManagementContext?.provinces.comparison||[];
+    $('report-province').innerHTML=provinceNames.map(p=>`<option value="${p.provincia_id}">${esc(p.provincia)}</option>`).join('');
+    const selected=Number($('national-province')?.value||new URLSearchParams(location.search).get('distrito')||6);
+    $('report-province').value=provinceNames.some(p=>p.provincia_id===selected)?selected:6;
     $('report-price').value=state.price;$('report-base').value=state.base;
     $('report-status').textContent='Preparando el informe…';$('download-national-report').hidden=true;
     $('report-dialog').showModal();updateReport();
@@ -214,7 +222,7 @@
   window.addEventListener('national:decisions-ready',updateReport);
   window.addEventListener('national:management-ready',updateReport);
   $('close-report').addEventListener('click',()=>$('report-dialog').close());
-  ['report-price','report-base','report-annex','report-scope'].forEach(id=>$(id).addEventListener('change',updateReport));
+  ['report-price','report-base','report-annex','report-scope','report-province'].forEach(id=>$(id).addEventListener('change',updateReport));
   window.addEventListener('resize',()=>{if(D)execution();});
   Promise.all([fetch('data/budget.json?v=20260918-gestion').then(async r=>{if(!r.ok)throw Error(r.status);const text=await r.text();dataHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo])=>{
     D=data;G=geo;

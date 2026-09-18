@@ -10,8 +10,8 @@
   const usd=v=>M.finite(v)?`USD ${num(v,0)} M`:'Sin dato';
   const fold=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const period=v=>{const [y,m]=v.split('-');return `${['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'][+m-1]} ${y}`;};
-  const pages=[['ejecucion','Presupuesto'],['caja','Caja'],['deuda-nacional','Deuda'],['provincias-nacion','Provincias'],['metas','Prestaciones'],['obras-ejecucion','Obras'],['historia-ejecucion','Historia']];
-  let D,price='nominal',current='ejecucion',quarter=2,metaLimit=12,workLimit=12,provinceId=6,provinceRank='variacion_real_pct';
+  const pages=[['ejecucion','Presupuesto'],['modificaciones','Cambios'],['caja','Caja'],['deuda-nacional','Deuda'],['provincias-nacion','Provincias'],['metas','Prestaciones'],['obras-ejecucion','Obras'],['historia-ejecucion','Historia']];
+  let D,price='nominal',current='ejecucion',quarter=2,metaLimit=12,workLimit=12,provinceId=6,provinceRank='variacion_real_pct',modificationGroup='funcion',modificationOrder='material',modificationQuery='',modificationLimit=12;
   const rawCache=new Map();
   const unit=()=>price==='real'?'Pesos de agosto de 2026':'Pesos corrientes';
   const wrapper=document.querySelector('[data-page="ejecucion"]');
@@ -33,7 +33,7 @@
     document.querySelectorAll('[data-management-panel]').forEach(e=>e.hidden=e.dataset.managementPanel!==current);
     document.querySelectorAll('.management-nav a').forEach(e=>e.setAttribute('aria-current',e.hash==='#'+current?'page':'false'));
     if(!D)return;
-    ({ejecucion:renderExecution,caja:renderCash,'deuda-nacional':renderDebt,'provincias-nacion':renderProvinces,metas:renderMetas,'obras-ejecucion':renderWorks,'historia-ejecucion':renderHistory})[current]();
+    ({ejecucion:renderExecution,modificaciones:renderModifications,caja:renderCash,'deuda-nacional':renderDebt,'provincias-nacion':renderProvinces,metas:renderMetas,'obras-ejecucion':renderWorks,'historia-ejecucion':renderHistory})[current]();
   }
   function preview(){
     const cash=D.cash.comparison.find(r=>r.indicador==='resultado_financiero'),real=D.execution.comparison.find(r=>r.etapa==='credito_devengado');
@@ -62,14 +62,72 @@
     const calendar=()=>{const annual=$('debt-schedule').value==='annual',list=annual?D.debt.annual_schedule:D.debt.schedule;const name=r=>annual?(r.periodo==='2026'?'2026 · abril–diciembre':r.periodo==='2036/2089'?'2036–2089 · suma de 54 años':r.periodo):period(r.periodo);$('debt-calendar').innerHTML=bars(list.filter(r=>!r.agrupa_varios_anios).map(r=>({name:name(r),value:r.total_usd_millones})),usd)+table(['Período','Capital','Intereses','Total'],list.map(r=>[name(r),num(r.capital_usd_millones,0),num(r.intereses_usd_millones,0),num(r.total_usd_millones,0)]),'USD millones equivalentes · Stock al 31/03/2026');};
     $('debt-series').onchange=observed;$('debt-from').onchange=observed;$('debt-schedule').onchange=calendar;observed();calendar();
   }
+  function renderModifications(){
+    const t=D.execution.total,net=M.delta(t.credito_vigente,t.credito_presupuestado);
+    $('modificaciones-content').innerHTML=`<h2 tabindex="-1">Cómo cambió el presupuesto de 2026</h2>
+      <p>El presupuesto inicial fue el punto de partida. Las modificaciones lo ampliaron o redujeron hasta llegar a la autorización vigente.</p>
+      <div class="management-stats">${stat('Inicial',money(t.credito_presupuestado),'Autorizado al comenzar 2026.')}${stat('Cambio neto',money(net),pct(M.change(t.credito_vigente,t.credito_presupuestado))+' sobre el inicial.',sign(net))}${stat('Vigente',money(t.credito_vigente),'Autorizado al 15/09/2026.')}</div>
+      <p class="editorial">La autorización total ${net<0?'se redujo':'aumentó'} ${money(Math.abs(net))}. El cambio de cada área permite ver dónde quedaron más o menos recursos. Son montos en pesos corrientes: una ampliación no demuestra, por sí sola, que haya ganado poder de compra.</p>
+      <div class="management-filters"><label>Apertura<select id="modification-group"><option value="funcion">Funciones</option><option value="programa">Programas</option><option value="jurisdiccion">Organismos</option><option value="objeto">Tipo de gasto</option></select></label><label>Ordenar<select id="modification-order"><option value="material">Mayores cambios en pesos</option><option value="increase">Ampliaciones</option><option value="reduction">Reducciones</option></select></label><label>Buscar<input id="modification-search" type="search" placeholder="Vacunas, universidades, jubilaciones…"></label></div>
+      <p id="modification-balance" class="note"></p><p id="modification-count" role="status"></p><div id="modification-list" class="management-cards modification-cards"></div><button id="modification-more" class="more">Ver más cambios ↓</button>
+      <p class="note">Comparación dentro de 2026 y de la clasificación publicada al 15/09. Cada cambio es neto: no reconstruye la secuencia de normas. Un traslado entre organismos no se interpreta automáticamente como un recorte o una política nueva.</p><div id="modification-source"></div>`;
+    $('modification-group').value=modificationGroup;$('modification-order').value=modificationOrder;$('modification-search').value=modificationQuery;
+    const draw=()=>{
+      const labels={funcion:'funcion_desc',programa:'programa_desc',jurisdiccion:'jurisdiccion_desc',objeto:'inciso_desc'};
+      const all=M.modifications(D.execution.groups[modificationGroup]),balance=M.modificationBalance(all),q=modificationQuery;
+      const rows=all.filter(r=>window.BudgetMath.matchesSearch({name:r[labels[modificationGroup]],entity:r.servicio_desc,jurisdiction:r.jurisdiccion_desc},q)).filter(r=>modificationOrder==='increase'?r.modification>0:modificationOrder==='reduction'?r.modification<0:true).sort((a,b)=>modificationOrder==='increase'?b.modification-a.modification:modificationOrder==='reduction'?a.modification-b.modification:Math.abs(b.modification)-Math.abs(a.modification));
+      $('modification-balance').innerHTML=`En esta apertura, las ampliaciones suman ${money(balance.increases)} y las reducciones <span class="negative">${money(balance.reductions)}</span>. El saldo es ${money(balance.net)}. Los movimientos dentro de una misma área pueden compensarse.`;
+      $('modification-count').textContent=`${Math.min(modificationLimit,rows.length)} de ${rows.length} resultados · Pesos corrientes`;
+      $('modification-list').innerHTML=rows.slice(0,modificationLimit).map(r=>`<article><h3>${esc(r[labels[modificationGroup]])}</h3>${modificationGroup==='programa'?`<p>${esc(r.servicio_desc)} · ${esc(r.jurisdiccion_desc)}</p>`:''}<strong class="management-number ${sign(r.modification)}">${money(r.modification)}</strong><p>${M.finite(r.modification_pct)?pct(r.modification_pct)+' frente al inicial.':r.credito_presupuestado===0?'Sin base inicial positiva para calcular un porcentaje.':'Sin comparación porcentual.'}</p><dl><div><dt>Inicial</dt><dd>${money(r.credito_presupuestado)}</dd></div><div><dt>Vigente</dt><dd>${money(r.credito_vigente)}</dd></div></dl></article>`).join('')||'<p>No hay partidas con esos filtros.</p>';
+      $('modification-more').hidden=modificationLimit>=rows.length;$('modification-source').innerHTML=source('gasto_etapas_'+modificationGroup);
+    };
+    $('modification-group').onchange=e=>{modificationGroup=e.target.value;modificationLimit=12;draw();};
+    $('modification-order').onchange=e=>{modificationOrder=e.target.value;modificationLimit=12;draw();};
+    $('modification-search').oninput=e=>{modificationQuery=e.target.value;modificationLimit=12;draw();};
+    $('modification-more').onclick=()=>{modificationLimit+=24;draw();};draw();
+  }
   function renderProvinces(){
-    $('provincias-nacion-content').innerHTML=`<h2 tabindex="-1">Qué recursos llegan a cada provincia</h2><p>Coparticipación y otros recursos nacionales, separados de las transferencias del presupuesto.</p><div class="management-filters"><label>Provincia<select id="national-province">${D.provinces.comparison.map(r=>`<option value="${r.provincia_id}" ${r.provincia_id===provinceId?'selected':''}>${esc(r.provincia)}</option>`).join('')}</select></label><label>Ranking<select id="national-province-rank"><option value="variacion_real_pct">Cambio real de recursos nacionales</option><option value="pesos_por_habitante_2026">Recursos nacionales por habitante</option><option value="ron_2026">Recursos nacionales totales</option><option value="presupuestarias_devengado">Transferencias presupuestarias</option></select></label></div><div id="national-province-reading"></div><div id="national-province-ranking"></div><h3>La evolución del distrito</h3><div id="national-province-months"></div><h3>Historia de recursos nacionales desde 2003</h3><div id="national-province-history"></div>${source('ron_provincias_mensual')}${source('transferencias_presupuestarias_provincias')}<p class="note">Por habitante: monto en pesos corrientes dividido por la proyección INDEC de población de 2026. No es el dinero recibido por cada persona. Las transferencias presupuestarias identifican a administraciones provinciales; no incluyen a los municipios ni todo el gasto nacional localizado.</p>`;
-    const draw=()=>{provinceId=+$('national-province').value;provinceRank=$('national-province-rank').value;const r=D.provinces.comparison.find(r=>r.provincia_id===provinceId),key=$('national-province-rank').value,rank=M.rankProvinces(D.provinces.comparison,key);$('national-province-reading').innerHTML=`<div class="management-stats">${stat('Recursos nacionales',money(price==='real'?r.ron_real_2026:r.ron_2026),`Enero–agosto · ${unit()}`)}${stat('Cambio real',pct(r.variacion_real_pct),'Contra enero–agosto de 2025.',sign(r.variacion_real_pct))}${stat('Transferencias del presupuesto',money(r.presupuestarias_devengado),'Obligaciones reconocidas al 15/09. Pesos corrientes.')}</div><p class="editorial">En ${esc(r.provincia)}, los recursos nacionales ${r.variacion_real_pct<0?'compraron menos':'ganaron poder de compra'}: ${pct(r.variacion_real_pct)} después de descontar inflación. Esto ${r.variacion_real_pct<0?'reduce':'amplía'} el margen para financiar salarios, servicios y obras con estos fondos.</p>`;
-      const formatter=key==='variacion_real_pct'?pct:key==='pesos_por_habitante_2026'?v=>'$'+num(v,0):money;
-      $('national-province-ranking').innerHTML=table(['Puesto','Provincia',$('national-province-rank').selectedOptions[0].text],rank.map(x=>[String(x.rank),`${x.provincia_id===r.provincia_id?'<strong>':''}${esc(x.provincia)}${x.provincia_id===r.provincia_id?'</strong>':''}`,cell(x[key],formatter)]),key==='presupuestarias_devengado'?'24 jurisdicciones · Devengado al 15/09 · Pesos corrientes':'24 jurisdicciones · Enero–agosto 2026 · Montos y por habitante en pesos corrientes');
+    const B=window.nationalBudgetContext?.data;
+    if(!B){$('provincias-nacion-content').textContent='Cargando la ficha provincial…';return;}
+    const requested=Number(new URLSearchParams(location.search).get('distrito'));
+    if(D.provinces.comparison.some(r=>r.provincia_id===requested))provinceId=requested;
+    $('provincias-nacion-content').innerHTML=`<h2 tabindex="-1">Nación en cada provincia</h2><p>Qué recursos recibe el gobierno provincial, qué gasto registra Nación en el territorio y qué propone para 2027.</p>
+      <div class="management-filters"><label>Provincia<select id="national-province">${D.provinces.comparison.map(r=>`<option value="${r.provincia_id}" ${r.provincia_id===provinceId?'selected':''}>${esc(r.provincia)}</option>`).join('')}</select></label></div>
+      <div class="decision-links"><button id="copy-national-province" class="button button-quiet">Copiar enlace</button><button class="button" data-export-focus="provincia">Exportar ficha provincial</button></div>
+      <div id="national-province-reading"></div><div id="national-province-integrated"></div>
+      <h3>Las 24 jurisdicciones, en comparación</h3><label>Ranking<select id="national-province-rank"><option value="variacion_real_pct">Cambio real de recursos nacionales</option><option value="pesos_por_habitante_2026">Recursos nacionales por habitante</option><option value="ron_2026">Recursos nacionales totales</option><option value="presupuestarias_devengado">Transferencias presupuestarias</option></select></label><div id="national-province-ranking"></div>
+      <h3>La evolución del distrito</h3><div id="national-province-months"></div><h3>Historia de recursos nacionales desde 2003</h3><div id="national-province-history"></div>
+      ${source('ron_provincias_mensual')}${source('transferencias_presupuestarias_provincias')}${source('gasto_etapas_territorio')}
+      <p class="note">Por habitante: recursos nacionales en pesos corrientes divididos por la proyección INDEC de población de 2026. No es un pago a cada persona. Las transferencias identifican administraciones provinciales; el gasto localizado también incluye jubilaciones, salarios y otros servicios nacionales.</p>`;
+    const draw=()=>{
+      provinceId=+$('national-province').value;provinceRank=$('national-province-rank').value;
+      const model=M.territory(B,D,provinceId);if(!model){$('national-province-reading').textContent='No se pudo verificar la correspondencia de esta provincia.';return;}
+      const {province:r,project:g,observed:o,works,worksTotal,pending}=model;
+      $('national-province-reading').innerHTML=`<h3 class="territory-title">${esc(r.provincia)}</h3><div class="management-stats">${stat('Recursos nacionales',money(price==='real'?r.ron_real_2026:r.ron_2026),`Enero–agosto · ${unit()}`)}${stat('Cambio real',pct(r.variacion_real_pct),'Contra enero–agosto de 2025.',sign(r.variacion_real_pct))}${stat('Transferencias pagadas',money(r.presupuestarias_pagado),'Del presupuesto al gobierno provincial · al 15/09 · pesos corrientes.')}</div>
+        <p class="editorial">En ${esc(r.provincia)}, los recursos nacionales ${r.variacion_real_pct<0?'perdieron':'ganaron'} ${num(Math.abs(r.variacion_real_pct))}% de poder de compra. Eso ${r.variacion_real_pct<0?'achica':'amplía'} el margen para sostener servicios con estos fondos. En las transferencias presupuestarias, ${money(pending)} de obligaciones reconocidas todavía no figuran pagadas.</p>`;
+      const src=B.sources.find(s=>s.file===g.source),workSrc=B.sources.find(s=>s.file==='cap1pl12.pdf');
+      const comps=window.BudgetMath.comparisonRows(g,B.deflator.annual_factors).filter(x=>x.base!=='law');
+      const top=works.slice(0,5),workLink=new URL(location.href);workLink.search='';workLink.searchParams.set('provincia',r.provincia);workLink.hash='obras';
+      $('national-province-integrated').innerHTML=`<div class="territory-blocks">
+        <article><p class="eyebrow">2026 / Gobierno provincial</p><h3>Las transferencias del presupuesto</h3><dl class="work-facts"><div><dt>Gasto reconocido</dt><dd>${money(r.presupuestarias_devengado)}</dd></div><div><dt>Dinero pagado</dt><dd>${money(r.presupuestarias_pagado)}</dd></div><div><dt>Pendiente de pago</dt><dd class="${pending>0?'negative':''}">${money(pending)}</dd></div></dl><p class="note">Al 15/09 · Pesos corrientes. Pendiente de pago no identifica qué parte está vencida.</p></article>
+        <article><p class="eyebrow">2026 / Territorio</p><h3>El gasto nacional localizado</h3><strong class="management-number">${money(o.credito_devengado)}</strong><p>Gasto reconocido al 15/09 sobre ${money(o.credito_vigente)} autorizados: ${num(M.ratio(o.credito_devengado,o.credito_vigente))}% ejecutado.</p><p class="note">Pesos corrientes. Incluye gasto directo de Nación y transferencias: no se suma a los fondos provinciales.</p></article></div>
+        <section class="territory-project"><p class="eyebrow">Proyecto 2027 / Territorio</p><h3>Qué propone Nación para ${esc(r.provincia)}</h3><strong class="management-number">${money(g.project)}</strong><p>Gasto localizado propuesto en pesos corrientes. Es presupuesto nacional, no el presupuesto de la provincia.</p>
+        ${table(['Base 2026','Cambio en pesos','Cambio real'],comps.map(c=>[c.base==='current'?'Vigente al 15/09':'Cierre estimado',cell(c.nominal,pct),cell(c.real,pct)]),'Comparación del proyecto 2027 · Real: ajustado por el escenario de inflación promedio anual')}
+        <h3>${works.length} partidas de inversión</h3><p>Suman ${money(worksTotal)} dentro del gasto propuesto. Estas son las ${Math.min(top.length,5)} de mayor monto; una obra puede aparecer en varias ubicaciones.</p>
+        <div class="territory-work-list">${top.map(w=>`<article><h4>${esc(w.name)}</h4><strong>${money(w.project)}</strong><p>${esc(w.entity)}</p>${w.id==='w101'?'<a href="#obra-ra10">Ver continuidad y avance del RA-10 →</a>':''}</article>`).join('')||'<p>Esta ubicación no tiene partidas en la planilla de inversión consultada.</p>'}</div>
+        <div class="decision-links"><a href="${esc(workLink.href)}">Ver todas las partidas y su financiamiento →</a><a href="${esc(src.url)}#page=${g.page}" target="_blank" rel="noopener">Distribución oficial ↗</a><a href="${esc(workSrc.url)}" target="_blank" rel="noopener">Planilla de inversión ↗</a></div></section>`;
+      const formatter=provinceRank==='variacion_real_pct'?pct:provinceRank==='pesos_por_habitante_2026'?v=>'$'+num(v,0):money;
+      $('national-province-ranking').innerHTML=table(['Puesto','Provincia',$('national-province-rank').selectedOptions[0].text],M.rankProvinces(D.provinces.comparison,provinceRank).map(x=>[String(x.rank),`${x.provincia_id===r.provincia_id?'<strong>':''}${esc(x.provincia)}${x.provincia_id===r.provincia_id?'</strong>':''}`,cell(x[provinceRank],formatter)]),provinceRank==='presupuestarias_devengado'?'24 jurisdicciones · Devengado al 15/09 · Pesos corrientes':'24 jurisdicciones · Enero–agosto 2026 · Montos y por habitante en pesos corrientes');
       $('national-province-months').innerHTML=bars(D.provinces.monthly.filter(x=>x.provincia_id===r.provincia_id&&x.periodo.startsWith('2026')).map(x=>({name:period(x.periodo),value:price==='real'?x.ron_real_agosto2026:x.ron_total})));
-      $('national-province-history').innerHTML=table(['Año','Recursos nacionales'],D.provinces.history.filter(x=>x.provincia_id===r.provincia_id).map(x=>[String(x.anio),money(x.ron_total)]),'2003–2025 · Pesos corrientes de cada año');};
-    $('national-province-rank').value=provinceRank;$('national-province').onchange=draw;$('national-province-rank').onchange=draw;draw();
+      $('national-province-history').innerHTML=table(['Año','Recursos nacionales'],D.provinces.history.filter(x=>x.provincia_id===r.provincia_id).map(x=>[String(x.anio),money(x.ron_total)]),'2003–2025 · Pesos corrientes de cada año');
+      // Short comparison tables become labeled rows on phones.
+      document.querySelectorAll('.territory-project table').forEach(t=>{t.classList.add('territory-table');const heads=[...t.querySelectorAll('thead th')].map(x=>x.textContent);t.querySelectorAll('tbody tr').forEach(row=>[...row.children].forEach((c,i)=>c.dataset.label=heads[i]));});
+    };
+    $('national-province-rank').value=provinceRank;
+    $('national-province').onchange=()=>{const u=new URL(location.href);u.searchParams.set('distrito',$('national-province').value);history.replaceState(null,'',u);draw();};
+    $('national-province-rank').onchange=draw;
+    $('copy-national-province').onclick=async e=>{const u=new URL(location.href);u.searchParams.set('distrito',provinceId);u.hash='provincias-nacion';try{await navigator.clipboard.writeText(u.href);e.target.textContent='Enlace copiado';}catch(_){history.replaceState(null,'',u);e.target.textContent='Copiá la dirección del navegador';}};
+    draw();
   }
   async function raw(name){
     if(rawCache.has(name))return rawCache.get(name);
@@ -102,6 +160,8 @@
   }
   window.addEventListener('national:state',e=>{price=e.detail.price;ready();});
   window.addEventListener('hashchange',route);
-  fetch('data/gestion.json?v=20260918-gestion').then(async r=>{if(!r.ok)throw Error('No se pudieron cargar los nuevos datos de gestión.');const text=await r.text();window.nationalManagementHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;window.dispatchEvent(new Event('national:management-ready'));$('management-status').hidden=true;downloads();ready();}).catch(e=>{$('management-status').innerHTML=esc(e.message)+' <a href="">Reintentar</a>';});
+  window.addEventListener('popstate',route);
+  window.addEventListener('national:budget-ready',()=>{if(D&&current==='provincias-nacion')renderProvinces();});
+  fetch('data/gestion.json?v=20260918-gestion').then(async r=>{if(!r.ok)throw Error('No se pudieron cargar los nuevos datos de gestión.');const text=await r.text();window.nationalManagementHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;window.nationalManagementContext=D;window.dispatchEvent(new Event('national:management-ready'));$('management-status').hidden=true;downloads();ready();}).catch(e=>{$('management-status').innerHTML=esc(e.message)+' <a href="">Reintentar</a>';});
   route();
 })();

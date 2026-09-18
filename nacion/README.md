@@ -12,8 +12,8 @@ Pruebas: `node --test tests/national_budget.test.cjs tests/analytics.test.cjs`.
 
 El botón **Informe PDF** está disponible en las cinco vistas y en Metodología. Abre un diálogo accesible que toma los precios y la base de comparación del tablero; permite cambiarlos antes de descargar. El informe siempre cubre todo el país: los filtros locales de obras/programas no recortan el documento.
 
-- Informe principal: 15 páginas, con lectura editorial, prioridades, organismos, funciones, programas, territorio, recursos/supuestos macro, ejecución, historia y metodología.
-- Anexo opcional: todas las 394 filas programáticas, 435 partidas de proyectos y ejecución mensual de las 16 jurisdicciones más el total. Con el informe: 61 páginas.
+- Informe principal: 19 páginas, con lectura editorial, prioridades, organismos, funciones, programas, territorio, recursos/supuestos macro, ejecución, historia y metodología.
+- Anexo opcional: todas las 394 filas programáticas, 435 partidas de proyectos y ejecución mensual de las 16 jurisdicciones más el total. Con el informe: 65 páginas.
 - Seis combinaciones: pesos corrientes/constantes y base inicial/vigente/cierre estimado. Fuentes, autor, enlace público y numeración en cada página; fuentes originales enlazadas al final.
 - Redacción propia, vinculada a las cifras y a la base seleccionada. No requiere llamar a un servicio de IA ni enviar datos o preferencias a terceros al exportar.
 - Los porcentajes de ejecución son nominales; septiembre real queda sin dato. Los cierres estimados no se inventan para programas. Los números negativos son rojos.
@@ -86,7 +86,7 @@ La ruta propia de GA4 es `/nacion/`. Sólo se registran anclas de una lista perm
 
 Se incorporan 28 de los 29 conjuntos preparados, sin copiar cifras de tableros ajenos. El conjunto `historia_apn_pib_por_conciliar` queda fuera de los cálculos y de las descargas públicas: no concilia con los totales de ejecución. La historia breve que usaba esa serie se corrigió en `budget.json`, el generador y los informes; no se conserva una composición o ratio de PIB de otro universo.
 
-La pestaña **Gestión 2026** reúne siete lecturas: Presupuesto, Caja, Deuda, Provincias, Prestaciones, Obras e Historia. Mantiene enlaces directos y seguimiento GA4 de las secciones, sin enviar búsquedas o la provincia elegida. Las prestaciones y obras se descargan cuando se consultan, se buscan localmente y se muestran por tandas; los faltantes son distintos de cero.
+La pestaña **Gestión 2026** reúne ocho lecturas: Presupuesto, Cambios, Caja, Deuda, Provincias, Prestaciones, Obras e Historia. Mantiene enlaces directos y seguimiento GA4 de las secciones, sin enviar búsquedas o la provincia elegida. Las prestaciones y obras se descargan cuando se consultan, se buscan localmente y se muestran por tandas; los faltantes son distintos de cero.
 
 - Presupuesto: cinco etapas, 410 aperturas programáticas, 29 funciones y comparación real enero–agosto, deflactando mes por mes. Septiembre parcial no tiene IPC observado.
 - Caja: SPN enero–julio; no se mezcla con la Administración Nacional. Transferencias corrientes a provincias y otros gastos corrientes conservan la comparación real individual pendiente por reclasificación.
@@ -96,6 +96,19 @@ La pestaña **Gestión 2026** reúne siete lecturas: Presupuesto, Caja, Deuda, P
 - Obras: 446 aperturas al primer trimestre; 103 sin avance físico. El avance del trimestre es distinto del acumulado 2025 y del porcentaje de ejecución financiera.
 - Historia: 2007–2025 conciliada. Pesos constantes desde 2017 con IPC promedio anual observado; los años anteriores permanecen sin ajuste real.
 
-`nacion/data/gestion/` contiene los 28 CSV/JSON, catálogo, URL y SHA-256 de los originales y controles. `gestion.json` sirve las vistas y los cinco nuevos capítulos del PDF. El catálogo del informe verifica tanto `budget.json` como `gestion.json` para impedir una descarga desactualizada. Los informes principales tienen 15 páginas y los anexos del proyecto, 61; los detalles completos de gestión se consultan y descargan desde la web.
+`nacion/data/gestion/` contiene los 28 CSV/JSON, catálogo, URL y SHA-256 de los originales y controles. `gestion.json` sirve las vistas y los cinco nuevos capítulos del PDF. El catálogo del informe verifica `budget.json`, `gestion.json` y `decisions.json` para impedir una descarga desactualizada. Los informes principales tienen 19 páginas y los anexos del proyecto, 65; los detalles completos de gestión se consultan y descargan desde la web.
 
 Importación: `python scripts_build_national_management.py --input-dir /ruta/nacion-datos-20260917`. Verifica los 49 originales archivados antes de copiar. Reconstrucción: `python scripts_build_national_management.py`. Control CI: `python scripts_build_national_management.py --check` y `node --test tests/national_management.test.cjs`. El control concilia también con el presupuesto ya publicado.
+
+
+## Ampliación federal y modificaciones del 18/09/2026
+
+Gestión 2026 incorpora Cambios: inicial, modificación neta y vigente, con 410 aperturas programáticas, búsqueda habitual y filtros por ampliaciones o reducciones. El saldo se concilia en cada clasificación. Es una comparación nominal dentro de 2026, no una reconstrucción norma por norma.
+
+Provincias reúne recursos nacionales, transferencias reconocidas/pagadas, gasto localizado y proyecto 2027, con las dos bases reales y las principales partidas de inversión. Se vincula por código territorial en PA y por denominación normalizada exacta en el proyecto. El parámetro `distrito` preserva la provincia en enlaces y al recargar, separado de `provincia`, que filtra obras.
+
+Hay 24 fichas provinciales de una página, además de tres temáticas y las 12 variantes del informe general. El selector de exportación conserva el distrito. Los PDF se validan contra las tres bases y su huella, y GA4 registra únicamente rutas y descargas permitidas.
+
+RA-10 incorpora el anuncio de la CNEA del 04/09: montaje electromecánico de 96% y objetivo de puesta en marcha a principios de 2027 sujeto a licencia. Se conserva el avance global ONP de marzo como una medición distinta. El comunicado no cuantifica costos de terminación ni contratos pendientes.
+
+El estado completo de los pendientes está en [nacion-pendientes-2026-09-18.md](../docs/nacion-pendientes-2026-09-18.md).

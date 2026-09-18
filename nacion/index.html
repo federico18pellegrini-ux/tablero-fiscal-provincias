@@ -7,15 +7,15 @@
   <meta name="theme-color" content="#0A192F">
   <link rel="canonical" href="https://tablero.federicopellegrini.com.ar/nacion/">
   <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260917-marca">
-  <script defer src="../analytics.js?v=20260918-continuidad"></script>
-  <script defer src="math.js?v=20260918-continuidad"></script><script defer src="report.js?v=20260918-continuidad"></script><script defer src="app.js?v=20260918-continuidad"></script><script defer src="management-model.js?v=20260918-gestion"></script><script defer src="management.js?v=20260918-gestion"></script>
+  <script defer src="../analytics.js?v=20260918-territorios"></script>
+  <script defer src="math.js?v=20260918-territorios"></script><script defer src="report.js?v=20260918-territorios"></script><script defer src="app.js?v=20260918-territorios"></script><script defer src="management-model.js?v=20260918-territorios"></script><script defer src="management.js?v=20260918-territorios"></script>
   <link rel="preload" href="../assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/brand/playfair-display.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../brand.css?v=20260918-municipios-pba">
-<link rel="stylesheet" href="management.css?v=20260918-gestion">
-<link rel="stylesheet" href="decision.css?v=20260918-continuidad">
-<script defer src="decision-model.js?v=20260918-continuidad"></script><script defer src="decision.js?v=20260918-continuidad"></script>
-<script defer src="decision-next.js?v=20260918-continuidad"></script>
+<link rel="stylesheet" href="management.css?v=20260918-territorios">
+<link rel="stylesheet" href="decision.css?v=20260918-territorios">
+<script defer src="decision-model.js?v=20260918-territorios"></script><script defer src="decision.js?v=20260918-territorios"></script>
+<script defer src="decision-next.js?v=20260918-territorios"></script>
 </head>
 <body data-dashboard="nacion">
 <a href="#contenido" class="skip">Saltar al contenido</a>
@@ -89,7 +89,7 @@
   <div class="report-dialog-heading"><p class="eyebrow">Para leer y compartir</p><button id="close-report" aria-label="Cerrar informe">✕</button></div>
   <h2 id="report-title">Exportar informe completo</h2>
   <p id="report-description">Una lectura del presupuesto con análisis, gráficos, cuadros y fuentes. Incluye el proyecto 2027, la gestión de 2026, las 24 jurisdicciones y las fichas integradas. También se puede descargar una ficha breve por tema.</p>
-  <label for="report-scope">Contenido<select id="report-scope"><option value="general">Informe general completo</option><option value="inmunizaciones">Ficha de vacunas e inmunizaciones</option><option value="educacion-superior">Ficha de universidades</option><option value="reactor-ra10">Ficha de la obra RA-10</option></select></label><div class="report-options"><label for="report-price">Montos<select id="report-price"><option value="nominal">Pesos corrientes</option><option value="real">Pesos de agosto de 2026</option></select></label><label for="report-base">Comparar 2027 con<select id="report-base"><option value="current">Vigente 2026 · 15/09</option><option value="law">Inicial 2026</option><option value="closing">Cierre estimado 2026</option></select></label></div>
+  <label for="report-scope">Contenido<select id="report-scope"><option value="general">Informe general completo</option><option value="inmunizaciones">Ficha de vacunas e inmunizaciones</option><option value="educacion-superior">Ficha de universidades</option><option value="reactor-ra10">Ficha de la obra RA-10</option><option value="provincia">Ficha de Nación en una provincia</option></select></label><label id="report-province-label" for="report-province" hidden>Provincia<select id="report-province"></select></label><div class="report-options"><label for="report-price">Montos<select id="report-price"><option value="nominal">Pesos corrientes</option><option value="real">Pesos de agosto de 2026</option></select></label><label for="report-base">Comparar 2027 con<select id="report-base"><option value="current">Vigente 2026 · 15/09</option><option value="law">Inicial 2026</option><option value="closing">Cierre estimado 2026</option></select></label></div>
   <p id="report-unit-note" class="note"></p>
   <label class="report-annex"><input id="report-annex" type="checkbox"><span><strong>Agregar anexo de programas y proyectos</strong><small>Detalle del proyecto 2027 y ejecución mensual por organismo. Las bases completas de gestión se descargan desde Datos y metodología.</small></span></label>
   <p id="report-status" role="status" aria-live="polite">Preparando el informe…</p>

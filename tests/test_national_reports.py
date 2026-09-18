@@ -103,6 +103,21 @@ class NationalReportsTest(unittest.TestCase):
             self.assertIn('Página 1',page)
             self.assertGreaterEqual(len(reader.pages[0].get('/Annots',[])),3)
 
+    def test_24_territorial_sheets_reconcile_and_keep_different_scopes_separate(self):
+        from national_territory_report import territory_data
+        from scripts_export_national_reports import money
+        management=json.loads((ROOT/'nacion/data/gestion.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(self.catalog['territories']),24)
+        for entry in self.catalog['territories']:
+            t=territory_data(self.data,management,entry['province_id'])
+            reader=PdfReader(ROOT/'nacion/reports'/entry['file'])
+            self.assertEqual(len(reader.pages),1)
+            text=reader.pages[0].extract_text()
+            for term in [entry['province'],'Federico Pellegrini','Página 1','no se suman','Cierre estimado',money(t['province']['ron_2026']),money(t['worksTotal'])]:
+                self.assertIn(term,text)
+            self.assertGreaterEqual(len(reader.pages[0].get('/Annots',[])),4)
+        with self.assertRaises(AssertionError):territory_data(self.data,management,999)
+
 
 if __name__ == '__main__':
     unittest.main()

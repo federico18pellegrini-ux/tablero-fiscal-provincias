@@ -15,7 +15,7 @@
   const ALIASES = {governorRoom:'summary', layer3:'debt', structuralIndicators:'income',
     layer1:'federal', layer2:'comparison', comparisonSection:'comparison'};
   const MUNICIPAL_VIEWS = Object.freeze({panorama:'Panorama municipal',rankings:'Rankings municipales',recursos:'Recursos municipales',empleo:'Empleo municipal',simular:'Escenario de coparticipación',informe:'Preparar informe municipal'});
-  const NATIONAL_VIEWS = Object.freeze({inicio:'Presupuesto Nacional',distribucion:'Distribución',obras:'Obras',programas:'Programas',escala:'Escala',comparacion:'Comparación',finalidades:'Finalidades',cambios:'Subas y bajas',recursos:'Recursos',macro:'Supuestos macro',financiamiento:'Cierre y financiamiento',escenarios:'Escenarios','obra-ra10':'Obra RA-10','politica-inmunizaciones':'Política de inmunizaciones','politica-educacion-superior':'Política universitaria',historia:'Historia',ejecucion:'Ejecución',caja:'Caja nacional','deuda-nacional':'Deuda nacional','provincias-nacion':'Recursos a provincias',metas:'Prestaciones','obras-ejecucion':'Obras ejecutadas','historia-ejecucion':'Historia de ejecución',metodo:'Método'});
+  const NATIONAL_VIEWS = Object.freeze({inicio:'Presupuesto Nacional',distribucion:'Distribución',obras:'Obras',programas:'Programas',escala:'Escala',comparacion:'Comparación',finalidades:'Finalidades',cambios:'Subas y bajas',recursos:'Recursos',macro:'Supuestos macro',financiamiento:'Cierre y financiamiento',escenarios:'Escenarios','obra-ra10':'Obra RA-10','politica-inmunizaciones':'Política de inmunizaciones','politica-educacion-superior':'Política universitaria',historia:'Historia',ejecucion:'Ejecución',modificaciones:'Modificaciones 2026',caja:'Caja nacional','deuda-nacional':'Deuda nacional','provincias-nacion':'Recursos a provincias',metas:'Prestaciones','obras-ejecucion':'Obras ejecutadas','historia-ejecucion':'Historia de ejecución',metodo:'Método'});
 
   function initAnalytics(win, doc) {
     if (win.tableroRedirecting) return null;
@@ -72,7 +72,7 @@
       let url;
       try { url = new URL(link.href); } catch (_) { return; }
       const provincePdf = /^\/reports\/informe-[a-z-]+\.pdf$/.test(url.pathname);
-      const nationalPdf = /^\/nacion\/reports\/(informe-nacional-(nominal|real)-(current|law|closing)(-anexo)?|ficha-nacional-(inmunizaciones|educacion-superior|reactor-ra10))\.pdf$/.test(url.pathname);
+      const nationalPdf = /^\/nacion\/reports\/(informe-nacional-(nominal|real)-(current|law|closing)(-anexo)?|ficha-nacional-(inmunizaciones|educacion-superior|reactor-ra10|provincia-(2|6|10|14|18|22|26|30|34|38|42|46|50|54|58|62|66|70|74|78|82|86|90|94)))\.pdf$/.test(url.pathname);
       if (url.origin !== origin || (!provincePdf && !nationalPdf)) return;
       win.gtag('event', 'file_download', {file_extension: 'pdf',
         file_name: url.pathname, link_url: origin + url.pathname,

@@ -23,7 +23,7 @@ OUT = ROOT / 'nacion/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/nacion/'
 BASES = {'current': 'Vigente 2026', 'law': 'Inicial 2026', 'closing': 'Cierre estimado 2026'}
 INPUTS = ['nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
-          'national_decision_report.py', 'nacion/data/decisions.json',
+          'national_decision_report.py', 'national_territory_report.py', 'nacion/data/decisions.json',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#0a192f', '#254b73', '#64748b', '#e2e8f0', '#f1f5f9', '#b91c1c'])
 PAGE_W, PAGE_H = A4
@@ -357,7 +357,11 @@ class Report:
             self.main()
             from national_management_report import append_management
             append_management(self, json.loads((ROOT / 'nacion/data/gestion.json').read_text(encoding='utf-8')))
-        append_decisions(self,decisions,focus)
+        if focus and focus.startswith('provincia-'):
+            from national_territory_report import province_page
+            province_page(self,json.loads((ROOT/'nacion/data/gestion.json').read_text(encoding='utf-8')),int(focus.split('-')[1]))
+        else:
+            append_decisions(self,decisions,focus)
         if full:
             self.appendix()
         doc = BaseDocTemplate(str(path), pagesize=A4, leftMargin=42, rightMargin=42, topMargin=56, bottomMargin=82,
@@ -384,10 +388,10 @@ def run(output=OUT, check=False):
                 path = output / item['file']
                 if hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256'] or len(PdfReader(path).pages) != item['pages']:
                     raise ValueError('El PDF no coincide con el catálogo: ' + item['file'])
-        for item in manifest['focused']:
+        for item in manifest['focused'] + manifest['territories']:
             path=output/item['file']
             assert hashlib.sha256(path.read_bytes()).hexdigest()==item['sha256'] and len(PdfReader(path).pages)==item['pages']
-        print('Informes nacionales: 12 versiones generales y 3 fichas verificadas.')
+        print('Informes nacionales: 12 versiones generales, 3 fichas temáticas y 24 provinciales verificadas.')
         return manifest
     register_fonts()
     data = json.loads((ROOT / 'nacion/data/budget.json').read_text(encoding='utf-8'))
@@ -409,6 +413,15 @@ def run(output=OUT, check=False):
         Report(data,'nominal','current').build(path,focus=focus)
         manifest['focused'].append({'scope':focus,'file':filename,'pages':len(PdfReader(path).pages),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
         print(filename,manifest['focused'][-1]['pages'],'páginas')
+    manifest['territories']=[]
+    management=json.loads((ROOT/'nacion/data/gestion.json').read_text(encoding='utf-8'))
+    for province in management['provinces']['comparison']:
+        province_id=province['provincia_id'];focus=f'provincia-{province_id}'
+        filename=f'ficha-nacional-{focus}.pdf';path=output/filename
+        Report(data,'nominal','current').build(path,focus=focus)
+        pages=len(PdfReader(path).pages)
+        assert pages==1, f'La ficha de {province["provincia"]} debe ocupar una página'
+        manifest['territories'].append({'province_id':province_id,'province':province['provincia'],'file':filename,'pages':pages,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
     manifest_file.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return manifest
 
