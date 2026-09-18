@@ -2,14 +2,14 @@
   "reviewed": "2026-09-17",
   "execution_cutoff": "2026-09-15",
   "inputs": {
-    "nacion/data/budget.json": "4e29182db2e116c6ff3d646f3b3bd5dd9d05622a01cc266dd09151273538f840",
+    "nacion/data/budget.json": "81c805489b462f90ef27cd1ea0d23d6b7aefad5b679f9491bebbacc4852bf64e",
     "data/ipc_source.json": "173ad760a561b12e77257664a9945410b78094ba2f6b1f80f0630366aeaae510",
     "scripts_export_national_reports.py": "79a5f2df1c460390ee7db52f9a8acffd36d61f453f8c52225909264d194cce1d",
     "national_management_report.py": "08bfa02938609cd37423c3af84207fb180264f10c0b653d96b11eff2fdedd151",
     "nacion/data/gestion.json": "8c431bfe7d322b6f58671b686db46d6ec18fff270ed366025d4068377a723301",
     "national_decision_report.py": "f9404adcb5d0f78c49574f52d822d07e5cfaea35575321f1130adefc6ed91e85",
     "national_territory_report.py": "5040b7b077aaaac2b9adb95217fccbb353a19e0d80c6defeb42f1471f865c818",
-    "nacion/data/decisions.json": "0868465d0d35ac5d886f2f45d7e33997f782246b39663a72ea0b24605f2b8e47",
+    "nacion/data/decisions.json": "3f6ceb34e6d3b0c37f3145162dda15b73ff3fff81eeb736934040ca0993759ef",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
   },
@@ -25,7 +25,7 @@
       "full": {
         "file": "informe-nacional-nominal-current-anexo.pdf",
         "pages": 66,
-        "sha256": "d0664cb871eea030c44b9eec1b50fe8a3251d47efa12139eaf1cf59b4cbc4871"
+        "sha256": "3f323c21d9728663b60ec8e1aef72497436d9d6db8077ac24f0f44000d6324ba"
       }
     },
     {
@@ -67,7 +67,7 @@
       "full": {
         "file": "informe-nacional-real-current-anexo.pdf",
         "pages": 66,
-        "sha256": "db88574d48968399b81b119966139f41a3c56d975eadf98cf2ddffcf9bb1c1ea"
+        "sha256": "7fd9bfbc65e97f14aefcbfe27b7c914b90bb831b69c42d1a448e3333b9074cfc"
       }
     },
     {
