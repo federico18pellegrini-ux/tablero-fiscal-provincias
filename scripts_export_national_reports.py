@@ -224,9 +224,9 @@ class Report:
                    [[r['name'] + ' / ' + r['entity'], num(self.value(r['project']), 0), pct(ratio(r['project'], total['project'])), pct(self.variation(r, True), True)] for r in largest],
                    [WIDTH - 207, 88, 53, 66], compact=True)
         self.note(f"Montos en millones · {self.units}. Base de comparación: {self.base_label}. Se mantiene separada cada fila del documento oficial, incluso cuando dos nombres coinciden.")
-        self.note('<link href="https://tablero.federicopellegrini.com.ar/nacion/data/program-sources/crosswalk.json">Detalle de las correspondencias documentadas y sus fuentes</link>')
+        self.note('<link href="https://tablero.federicopellegrini.com.ar/nacion/#metodo">Correspondencias, cambios de alcance y documentos oficiales</link>')
         self.add('Cómo leer esta selección', 'heading')
-        self.add(f"Pudimos vincular {d['meta']['program_join_matched']} partidas con 2026; {d['program_join']['documented_count']} se resolvieron revisando códigos y cambios de organismo en los fascículos oficiales. En las otras {len(d['programs']) - d['meta']['program_join_matched']} falta verificar la continuidad del programa. Un cambio de nombre o de organismo puede explicar esa diferencia; no las contamos como programas nuevos.")
+        self.add(f"Podemos comparar {d['meta']['program_join_matched']} de las {len(d['programs'])} partidas con 2026. En las otras {len(d['programs']) - d['meta']['program_join_matched']}, las tareas se reorganizan y no se publica cómo distribuir todos los costos anteriores. Por eso, el anexo compara cinco conjuntos de programas: permite ver cuánto cambia su presupuesto sin confundir un traslado interno con un recorte.")
         if self.base == 'closing':
             self.callout('Por qué no aparece la variación de los programas', 'La planilla programática no publica el cierre estimado 2026. Ese dato sí existe para funciones y jurisdicciones. Para comparar programas, el informe puede exportarse con la base Inicial o Vigente 2026.')
         else:
@@ -307,8 +307,19 @@ class Report:
         rows = []
         for r in d['programs']:
             context = ' · Actos electorales: 99,3% del proyecto (ONP J25, p. 109).' if r.get('comparison_context') else ''
+            if not r['matched']:
+                context += ' · Alcance reorganizado; ver revisión en el tablero.'
             rows.append([f"{r['id']} · {r['name']}{context}\n{r['entity']} / {r['jurisdiction']} · p. {r['page']}", num(self.value(r.get(self.base), 2026), 0), num(self.value(r['project']), 0), num(self.value(r['capital']), 0), pct(self.variation(r, True), True)])
         self.table(['Programa / organismo / referencia', BASES[self.base], 'Proyecto', 'Capital', 'Cambio real'], rows, [WIDTH - 257, 69, 72, 63, 53], compact=True)
+        self.section('Anexo / Reorganizaciones', 'Comparar el conjunto', 'ONP: fascículos 2026 y 2027. Presupuesto Abierto: crédito anual al 15/09/2026. Reagrupación propia de partidas oficiales.')
+        self.add('Cuando las tareas pasan de un programa a otro, comparar sólo sus nombres puede mostrar un recorte que es un traslado. Estos conjuntos mantienen juntas las áreas que se reorganizan. Incluyen las partidas del anexo anterior: no deben sumarse a ellas.')
+        self.table(['Conjunto', BASES[self.base], 'Proyecto 2027', 'Cambio real'],
+                   [[g['name'], num(self.value(g.get(self.base), 2026), 0), num(self.value(g['project']), 0), pct(self.variation(g, True), True)] for g in d['program_join']['groups']],
+                   [WIDTH - 230, 80, 80, 70], compact=True)
+        self.note(f'Montos en millones · {self.units}. Base: {self.base_label}. El cierre estimado no está publicado para estos conjuntos.')
+        for g in d['program_join']['groups']:
+            self.add(f"<b>{escape(g['name'])}.</b> {escape(g['note'])}", 'small')
+        self.note('<link href="https://tablero.federicopellegrini.com.ar/nacion/#metodo">Ver la revisión de los 20 casos y sus documentos oficiales</link>')
         self.section('Anexo / Proyectos', 'Todas las partidas de inversión', 'ONP: planilla 12. Referencia al final de cada descripción: página del PDF oficial.')
         self.note(f"{len(d['works'])} partidas · Montos en millones · {self.units}. Una misma obra puede figurar en más de una ubicación. Incluye equipamiento; no es un censo de obras físicas distintas.")
         self.table(['Proyecto / organismo / referencia', 'Ubicación', 'Proyecto 2027'],

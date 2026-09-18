@@ -22,6 +22,10 @@ def verify_project_row(path, entry):
         words = page.get_text('words')
         codes = [w for w in words if 95 <= w[0] <= 120 and 145 <= w[1] < 780 and re.fullmatch(r'\d{2}', w[4])]
         found = [w for w in codes if int(w[4]) == entry['project_code']]
+        # The same code can appear in different sub-jurisdictions on one page.
+        right = 480 if path.name == 'P27J91.pdf' else 350
+        found = [w for w in found if any(right <= v[0] < right+90 and abs(v[1]-w[1]) < 2
+                 and v[4] == f"{int(entry['project']):,}".replace(',', '.') for v in words)]
         assert len(found) == 1, entry['id']
         y = found[0][1]
         bottom = min((w[1] for w in codes if w[1] > y+2), default=780)
@@ -42,6 +46,31 @@ def verify_context(path, context):
         assert values == [f"{context['activity_project']:,}".replace(',', '.')]
 
 
+def select_parts(annual, parts):
+    """Union of explicit PA program/activity/project selectors; never fuzzy amounts."""
+    selected = annual[KEY[0]].notna() & False
+    for part in parts:
+        mask = (annual[KEY] == tuple(part['key'])).all(axis=1)
+        assert mask.any(), ('Clave sin registros', part['key'])
+        if part.get('name'):
+            assert {norm(s) for s in annual.loc[mask, 'programa_desc'].unique()} == {norm(part['name'])}
+        for operation in ['include', 'exclude']:
+            if operation not in part:
+                continue
+            subset = selected & False
+            for condition in part[operation]:
+                assert set(condition) <= {'subprograma_id', 'proyecto_id', 'actividad_id'}
+                item = mask.copy()
+                for column, value in condition.items():
+                    item &= annual[column].eq(value)
+                assert item.any(), ('Actividad sin registros', part['key'], condition)
+                subset |= item
+            mask &= subset if operation == 'include' else ~subset
+        assert not (selected & mask).any(), 'Partes superpuestas'
+        selected |= mask
+    return annual.loc[selected]
+
+
 def apply_documented_links(programs, annual):
     evidence = json.loads(EVIDENCE.read_text(encoding='utf-8'))
     by_id = {p['id']: p for p in programs}
@@ -55,32 +84,63 @@ def apply_documented_links(programs, annual):
             tuple(int(v) for v in row)
             for row in rows[KEY].drop_duplicates().itertuples(index=False, name=None)
         }
+    overrides = {e['id'] for e in evidence['links'] if e.get('override')}
+    withdrawn = set(evidence.get('withdrawn_ids', []))
+    for pid in withdrawn | overrides:
+        p = by_id[pid]
+        # p63 used to be documented; the new evidence replaces that link.
+        if pid != 'p63':
+            assert p['matched'], pid
+        p.update(matched=False, law=None, current=None, accrued=None)
+        p.pop('current_functions', None)
     used = set()
     for p in programs:
         if not p['matched']:
             continue
-        used.update(identities[(norm(p['jurisdiction']), norm(p['entity']), norm(p['name']))])
+        keys = identities[(norm(p['jurisdiction']), norm(p['entity']), norm(p['name']))]
+        rows = select_parts(annual, [{'key':list(k)} for k in keys])
+        assert not used.intersection(rows.index), ('Base automática reutilizada', p['id'])
+        used.update(rows.index)
     linked = []
     for entry in evidence['links']:
         p = by_id[entry['id']]
         assert not p['matched'] and all(p[k] == entry[k] for k in ['name','entity','jurisdiction','project']), entry['id']
         verify_project_row(ROOT / 'nacion' / sources[entry['source']]['path'], entry)
-        key = tuple(entry['current_key'])
-        assert key not in used, ('Base 2026 reutilizada', key)
-        used.add(key)
-        g = annual[(annual[KEY] == key).all(axis=1)]
-        assert len(g) and {norm(s) for s in g.programa_desc.unique()} == {norm(entry['current_name'])}, entry['id']
+        parts = entry.get('current_parts') or [{'key':entry['current_key'], 'name':entry['current_name']}]
+        g = select_parts(annual, parts)
+        assert not used.intersection(g.index), ('Base 2026 reutilizada', entry['id'])
+        used.update(g.index)
         for old, new in [('credito_presupuestado','law'),('credito_vigente','current'),('credito_devengado','accrued')]:
             p[new] = round(float(g[old].sum()), 6)
         p.update(matched=True, current_functions=sorted(g.funcion_desc.unique().tolist()),
-                 match_method='documented_codes', current_key=list(key), project_code=entry['project_code'],
+                 match_method='documented_codes', current_parts=parts, project_code=entry['project_code'],
                  match_note=entry['note'], match_source={'url':sources[entry['source']]['url'],
                     'path':sources[entry['source']]['path'], 'page':entry['page']})
+        if len(parts) == 1 and not any(k in parts[0] for k in ['include','exclude']):
+            p['current_key'] = parts[0]['key']
         if entry.get('context'):
             verify_context(ROOT / 'nacion' / sources[entry['context']['source']]['path'], entry['context'])
             p['comparison_context'] = entry['context']
         linked.append(p['id'])
     assert len(linked) == len(set(linked))
+    reviews = evidence.get('reviews', [])
+    for review in reviews + evidence.get('related_reviews', []):
+        p = by_id[review['id']]
+        p['review'] = review
+        assert p['matched'] == (review['status'] == 'comparable'), review['id']
+    assert all(p['matched'] or p.get('review') for p in programs)
+    groups = []
+    for entry in evidence.get('groups', []):
+        g = select_parts(annual, entry['current_parts'])
+        group = dict(entry, project=sum(by_id[pid]['project'] for pid in entry['program_ids']))
+        for old, new in [('credito_presupuestado','law'),('credito_vigente','current'),('credito_devengado','accrued')]:
+            group[new] = round(float(g[old].sum()), 6)
+        # Context totals overlap their component programs, and never enter a ranking or total.
+        group['scope'] = 'Comparación del conjunto; incluye sus programas y no se suma a ellos.'
+        groups.append(group)
     return {'reviewed':evidence['reviewed'], 'documented_count':len(linked), 'ids':linked,
             'source':'data/program-sources/crosswalk.json', 'sources':evidence['sources'],
-            'method':'Nombres y códigos contrastados con los fascículos ONP 2027 y el registro PA 2026. Cada base 2026 se usa una sola vez; cambios de alcance sin equivalencia completa siguen sin comparación.'}
+            'reviews':reviews, 'related_reviews':evidence.get('related_reviews', []), 'groups':groups,
+            'legal_evidence':evidence.get('legal_evidence', []),
+            'investigated_count':len(reviews), 'new_links_count':sum(r['status']=='comparable' for r in reviews),
+            'method':'Nombres, actividades y proyectos contrastados con ONP 2026/2027 y PA al 15/09/2026. Cada registro 2026 se usa una sola vez en las comparaciones individuales. Los conjuntos son vistas alternativas y no se suman a sus componentes.'}
