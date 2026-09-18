@@ -4,12 +4,13 @@
   "inputs": {
     "nacion/data/budget.json": "15de2ef6ffdbef71b241d8e7f7dbf6d3da02628d2f73b7e71557a9bdcaadeb3c",
     "data/ipc_source.json": "173ad760a561b12e77257664a9945410b78094ba2f6b1f80f0630366aeaae510",
-    "scripts_export_national_reports.py": "93699bad057dd651115a7a7c2a875b29d3010932d5979179b1aec378a41029ea",
+    "scripts_export_national_reports.py": "606844b0acac7d2bbcd44502df792c70edb0aa917e35853b70f3849c5d32ef90",
     "national_management_report.py": "08bfa02938609cd37423c3af84207fb180264f10c0b653d96b11eff2fdedd151",
     "nacion/data/gestion.json": "8c431bfe7d322b6f58671b686db46d6ec18fff270ed366025d4068377a723301",
-    "national_decision_report.py": "f9404adcb5d0f78c49574f52d822d07e5cfaea35575321f1130adefc6ed91e85",
+    "national_decision_report.py": "0ef9d337d99798a1acfd7e956bf7bc92d7358769e76074ea89b8cd977c835ab3",
     "national_territory_report.py": "5040b7b077aaaac2b9adb95217fccbb353a19e0d80c6defeb42f1471f865c818",
-    "nacion/data/decisions.json": "261f61fe4cc1e6de77fead7d0690726697a48d47762ed314c53c5841df4edf27",
+    "national_portfolio_report.py": "c84fce113a947e86cfb1e3e9caf73a20b2cf3a6af9cc8f8fbf86bb25bdd2cd24",
+    "nacion/data/decisions.json": "8b6467b6686d177e3fa05e28e86506718dddbbdfdaf2fa52f6f00b021c919038",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
   },
@@ -111,6 +112,30 @@
       "file": "ficha-nacional-educacion-superior.pdf",
       "pages": 1,
       "sha256": "91f778001e03cde3899677b32f43253e1d47111f1052687b2abe1949a3612c18"
+    },
+    {
+      "scope": "jubilaciones",
+      "file": "ficha-nacional-jubilaciones.pdf",
+      "pages": 1,
+      "sha256": "2c5585ed217f3673c65a826927382a3ba06b205922c7dc2e7fbd5d1be5dbb455"
+    },
+    {
+      "scope": "alimentacion",
+      "file": "ficha-nacional-alimentacion.pdf",
+      "pages": 1,
+      "sha256": "be101fe593dd75326711185dca7ffad6c65689293b2ddaf395bf20fa0914ae6a"
+    },
+    {
+      "scope": "medicamentos",
+      "file": "ficha-nacional-medicamentos.pdf",
+      "pages": 1,
+      "sha256": "b5770a5493b8868cb2366bb2b99867317cb8d151e956a7fa32ddd232b5e7e4d0"
+    },
+    {
+      "scope": "seguridad-federal",
+      "file": "ficha-nacional-seguridad-federal.pdf",
+      "pages": 1,
+      "sha256": "0c4a7ab90b5005bd48a20d66f8256173e66eadcd86ba9b822a336b45492faea0"
     },
     {
       "scope": "reactor-ra10",
@@ -287,6 +312,120 @@
       "file": "ficha-nacional-provincia-94.pdf",
       "pages": 1,
       "sha256": "38604b8bad584a20223c212b0c835ec830da08f47f11da7b42265bd3e4ad7adf"
+    }
+  ],
+  "portfolios": [
+    {
+      "portfolio_id": 1,
+      "name": "Poder Legislativo Nacional",
+      "file": "ficha-nacional-cartera-1.pdf",
+      "pages": 2,
+      "sha256": "e133537db7f46f56ac7b8d14c273b1c8871f54747675ea5365b2ecf487896f09"
+    },
+    {
+      "portfolio_id": 5,
+      "name": "Poder Judicial de la Nación",
+      "file": "ficha-nacional-cartera-5.pdf",
+      "pages": 3,
+      "sha256": "7655c55dcca5578d74d6801f7b0ca55565b259593b6d84253bd0b5b33b7a639f"
+    },
+    {
+      "portfolio_id": 10,
+      "name": "Ministerio Público",
+      "file": "ficha-nacional-cartera-10.pdf",
+      "pages": 3,
+      "sha256": "abc582689901f4035b7bd86d2c9aadbbff2c3e2717ecec2193ab462d9e80d535"
+    },
+    {
+      "portfolio_id": 20,
+      "name": "Presidencia de la Nación",
+      "file": "ficha-nacional-cartera-20.pdf",
+      "pages": 3,
+      "sha256": "b1986b486a129cbe26b96b2ff924ce3695f5b43a8d80eff0a06fff8f910ea138"
+    },
+    {
+      "portfolio_id": 25,
+      "name": "Jefatura de Gabinete de Ministros",
+      "file": "ficha-nacional-cartera-25.pdf",
+      "pages": 3,
+      "sha256": "e390b84a517e42c1f179fe01570bff3e33abdf139a2a6f513703e0b19d04fe14"
+    },
+    {
+      "portfolio_id": 35,
+      "name": "Ministerio de Relaciones Exteriores, Comercio Internacional y Culto",
+      "file": "ficha-nacional-cartera-35.pdf",
+      "pages": 3,
+      "sha256": "bc1cda5610ddcb892528c0a6f4916edf2ca28a4f3b7dfc07e746e194824d3bac"
+    },
+    {
+      "portfolio_id": 40,
+      "name": "Ministerio de Justicia",
+      "file": "ficha-nacional-cartera-40.pdf",
+      "pages": 2,
+      "sha256": "e286a3b161cb18d0337dc17cdcb4f355322f94dded55383b6011b428cf065d89"
+    },
+    {
+      "portfolio_id": 41,
+      "name": "Ministerio de Seguridad Nacional",
+      "file": "ficha-nacional-cartera-41.pdf",
+      "pages": 3,
+      "sha256": "698f0b0c5655322aa71df3fc7807aabc91c9d3be95f26204879116ef84b3b041"
+    },
+    {
+      "portfolio_id": 45,
+      "name": "Ministerio de Defensa",
+      "file": "ficha-nacional-cartera-45.pdf",
+      "pages": 3,
+      "sha256": "f283ef4b54a73125689e80bbb6e74ece15ba685cca9824432ef24739542dc5b8"
+    },
+    {
+      "portfolio_id": 50,
+      "name": "Ministerio de Economía",
+      "file": "ficha-nacional-cartera-50.pdf",
+      "pages": 3,
+      "sha256": "ff35d214dfc3a47fd3e006c556254579ad149d2d6a8027e440438f67bd176436"
+    },
+    {
+      "portfolio_id": 80,
+      "name": "Ministerio de Salud",
+      "file": "ficha-nacional-cartera-80.pdf",
+      "pages": 3,
+      "sha256": "7d7148f1d0c3559de0f7c8c5e5f97b0a23c261edb65a0d844175ce76c474ec63"
+    },
+    {
+      "portfolio_id": 88,
+      "name": "Ministerio de Capital Humano",
+      "file": "ficha-nacional-cartera-88.pdf",
+      "pages": 3,
+      "sha256": "4d1b4b07ed5dc446a48b36dfe9caa37e00ffedfa400c8db12ca51af6c6755f22"
+    },
+    {
+      "portfolio_id": 89,
+      "name": "Ministerio de Desregulación y Transformación del Estado",
+      "file": "ficha-nacional-cartera-89.pdf",
+      "pages": 2,
+      "sha256": "721e0a935a7ec066c10cdb470aae2572c62869b74be8aaad963045f69b8a8dd1"
+    },
+    {
+      "portfolio_id": 90,
+      "name": "Servicio de la Deuda Pública",
+      "file": "ficha-nacional-cartera-90.pdf",
+      "pages": 2,
+      "sha256": "bdda3ad5f3bc2a99a3a9223100c9f5e9ec018ac23b174d7de8d3b3736ba3b8d6"
+    },
+    {
+      "portfolio_id": 91,
+      "name": "Obligaciones a Cargo del Tesoro",
+      "file": "ficha-nacional-cartera-91.pdf",
+      "pages": 2,
+      "sha256": "d86e988eb175f799f859789ec976a367e49712045a199ac7a8584663044074fa"
+    },
+    {
+      "portfolio_id": 30,
+      "name": "Ministerio del Interior",
+      "file": "ficha-nacional-cartera-30.pdf",
+      "pages": 2,
+      "sha256": "6d07e54d75471ae5dea23dcf90ccec090c341b4e12c2bcb7ea5bcb3260d94500"
     }
   ]
 }

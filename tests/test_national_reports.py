@@ -98,7 +98,7 @@ class NationalReportsTest(unittest.TestCase):
         text='\n'.join(p.extract_text() for p in PdfReader(ROOT/'nacion/reports/informe-nacional-nominal-current.pdf').pages[15:])
         for phrase in ['Cierre y financiamiento','Vacunas e inmunizaciones','Universidades','Reactor RA-10','85,47%','18.254.178','7 de 13','No publicado']:
             self.assertIn(phrase.upper() if phrase=='Cierre y financiamiento' else phrase,text)
-        self.assertEqual(len(self.catalog['focused']),3)
+        self.assertEqual(len(self.catalog['focused']),7)
         for entry in self.catalog['focused']:
             reader=PdfReader(ROOT/'nacion/reports'/entry['file'])
             self.assertEqual(len(reader.pages),1)
@@ -121,6 +121,27 @@ class NationalReportsTest(unittest.TestCase):
                 self.assertIn(term,text)
             self.assertGreaterEqual(len(reader.pages[0].get('/Annots',[])),4)
         with self.assertRaises(AssertionError):territory_data(self.data,management,999)
+
+    def test_portfolio_reports_keep_the_selected_jurisdiction_money_and_short_length(self):
+        decisions=json.loads((ROOT/'nacion/data/decisions.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(self.catalog['portfolios']),16)
+        for entry in self.catalog['portfolios']:
+            p=next(r for r in decisions['portfolios'] if r['id']==entry['portfolio_id'])
+            pdf=PdfReader(ROOT/'nacion/reports'/entry['file'])
+            self.assertIn(len(pdf.pages),[2,3])
+            pages=[x.extract_text() for x in pdf.pages]
+            text=' '.join(' '.join(pages).split())
+            for term in [p['name'],reports.money(p['execution']['credito_pagado']),'15/09/2026','Cambio real']:
+                self.assertIn(term,text)
+            for i,page in enumerate(pages):
+                self.assertIn(f'Página {i+1}',page)
+                self.assertIn('Federico Pellegrini',page)
+                self.assertIn('tablero.federicopellegrini.com.ar/nacion/',page)
+            if p['id']==30:
+                self.assertIn('no representa un recorte a cero',text)
+                self.assertNotIn('-100,0%',text)
+            else:self.assertIn(reports.money(p['project']['project']),text)
+            self.assertGreater(sum(len(page.get('/Annots',[])) for page in pdf.pages),3)
 
 
 if __name__ == '__main__':

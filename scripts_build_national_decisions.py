@@ -11,6 +11,8 @@ import unicodedata
 from pathlib import Path
 from pypdf import PdfReader
 from national_work_sources import build_works
+from national_policy_readings import readings
+from national_portfolios import build_portfolios
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / 'nacion/data'
@@ -19,10 +21,15 @@ INPUTS = ['nacion/data/budget.json', 'nacion/data/gestion/gasto_etapas_programa.
           'nacion/data/gestion/metas_fisicas_trimestre_2.json', 'nacion/data/gestion/catalogo.json',
           'nacion/data/decision-sources/caif-2027.pdf', 'nacion/data/decision-sources/proyectos-2027.pdf',
           'nacion/data/decision-sources/inversion-1t26.pdf', 'nacion/data/gestion/obras_ejecucion_fisica_financiera.json',
-          'nacion/data/decision-sources/ra10-cnea-20260904.json']
+          'nacion/data/decision-sources/ra10-cnea-20260904.json', 'nacion/data/gestion.json',
+          'national_policy_readings.py', 'national_portfolios.py']
 POLICIES = [
     ('inmunizaciones', 'Vacunas e inmunizaciones', 'Prevención y Control de Enfermedades Transmisible e Inmunoprevenibles', 'Ministerio de Salud', (80, 310, 20)),
     ('educacion-superior', 'Universidades', 'Desarrollo de la Educación Superior', 'Secretaría de Educación', (88, 330, 26)),
+    ('jubilaciones', 'Jubilaciones y pensiones de ANSES', 'Prestaciones Previsionales', 'Administración Nacional de la Seguridad Social', (88, 850, 16)),
+    ('alimentacion', 'Asistencia alimentaria', 'Políticas Alimentarias', 'Secretaría Nacional de Niñez, Adolescencia y Familia', (88, 311, 26)),
+    ('medicamentos', 'Acceso a medicamentos', 'Acceso a Medicamentos, Insumos y Tecnología Médica', 'Ministerio de Salud', (80, 310, 29)),
+    ('seguridad-federal', 'Seguridad federal', 'Seguridad Federal', 'Policía Federal Argentina', (41, 326, 28)),
 ]
 
 def load(path):
@@ -30,7 +37,7 @@ def load(path):
 
 def digest(path):
     raw = path.read_bytes()
-    return hashlib.sha256(raw.replace(b'\r\n', b'\n') if path.suffix == '.json' else raw).hexdigest()
+    return hashlib.sha256(raw.replace(b'\r\n', b'\n') if path.suffix in ('.json','.py') else raw).hexdigest()
 
 def fold(s):
     return ''.join(c for c in unicodedata.normalize('NFD', s).lower() if not unicodedata.combining(c))
@@ -93,15 +100,17 @@ def build():
         execution = [r for r in stages if keys(r)==key]
         assert len(execution)==1, slug
         execution = execution[0]
-        assert fold(execution['programa_desc'])==fold(name) and fold(execution['servicio_desc'])==fold(entity)
+        expected_entity='Policía Federal Argentina (PFA)' if key==(41,326,28) else entity
+        assert fold(execution['programa_desc'])==fold(name) and fold(execution['servicio_desc'])==fold(expected_entity)
         for old, new in [('law','credito_presupuestado'),('current','credito_vigente'),('accrued','credito_devengado')]:
             near(program[old],execution[new],.01)
         physical = [r for r in metas if keys(r)==key]
         assert physical and all(r['ejercicio_presupuestario']==2026 and r['trimestre']==2 for r in physical)
         assert all(not r['requiere_revision_clave'] for r in physical), slug
         policies.append({'slug':slug,'title':title,'program':program,'execution':execution,'physical':physical,
+            'editorial':readings(slug,physical),
             'link': {'jurisdiccion_id':key[0],'servicio_id':key[1],'programa_id':key[2],
-                     'method':'Proyecto 2027 vinculado por denominación y organismo exactos; inicial, vigente y devengado 2026 conciliados. Ejecución y metas 2026 vinculadas por jurisdicción, SAF y programa.'},
+                     'method':'Proyecto 2027 vinculado por denominación y organismo; PFA identifica a Policía Federal Argentina. Inicial, vigente y devengado 2026 conciliados. Ejecución y metas 2026 vinculadas por jurisdicción, SAF y programa.'},
             'sources': {'project':next(s for s in b['sources'] if s['file']==program['source']),
                         'execution':catalog['gasto_etapas_programa']['sources'][0],
                         'physical':catalog['metas_fisicas_trimestre_2']['sources'][0]}})
@@ -117,6 +126,7 @@ def build():
     works['pilot']['announcement']=announcement
     return {'meta':{'reviewed':'2026-09-18','unit':'ARS millones','execution_cutoff':b['meta']['execution_cutoff'],
                     'physical_period':'enero-junio 2026','inputs':inputs},
+            'portfolios':build_portfolios(b,load(DATA/'gestion.json'),metas),
             'finance':{'scope':'Administración Nacional','base':'Cierre estimado 2026','project':'Proyecto de ley 2027',
                        'source':source,'page':1,'rows':caif}, 'policies':policies,'works':works}
 
@@ -126,7 +136,7 @@ def run(check=False):
         assert load(OUTPUT)==result, 'Regenerar decisions.json'
     else:
         OUTPUT.write_text(json.dumps(result,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n',encoding='utf-8')
-    print(f"Decisiones: {len(result['finance']['rows'])} renglones CAIF conciliados y dos políticas vinculadas.")
+    print(f"Decisiones: {len(result['finance']['rows'])} renglones CAIF, {len(result['policies'])} políticas y {len(result['portfolios'])} carteras conciliadas.")
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)

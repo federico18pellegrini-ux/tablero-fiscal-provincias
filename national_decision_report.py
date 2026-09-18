@@ -1,6 +1,30 @@
 """Brief, source-linked decision chapters and standalone one-page sheets."""
 from xml.sax.saxutils import escape
 
+def additional_policy_page(r,d,slug):
+    from scripts_export_national_reports import WIDTH,SITE,money,num,pct,change,ratio
+    p=next(p for p in d['policies'] if p['slug']==slug);e=p['execution'];f=r.d['deflator']['annual_factors']
+    editorial=p['editorial'];real=lambda key:change(p['program']['project']*f['2027'],p['program'][key]*f['2026'])
+    r.s['title'].fontSize=23;r.s['title'].leading=28
+    r.section('Ficha / Política pública',p['title'],'ONP: proyecto 2027. Presupuesto Abierto: finanzas al 15/09/2026; prestaciones enero-junio 2026.',first=True)
+    r.add(f"El proyecto destina <b>{money(p['program']['project'])}</b>. Frente al vigente de 2026, su poder de compra {'cae' if real('current')<0 else 'sube'} <b>{num(abs(real('current')))}%</b>, con la inflación del escenario del tablero.")
+    r.table(['Base de comparación','Cambio nominal','Cambio real'],[[label,pct(change(p['program']['project'],p['program'][k]),True),pct(real(k),True)] for k,label in [('law','Inicial 2026'),('current','Vigente 2026')]], [WIDTH-180,90,90])
+    r.note('Montos en pesos corrientes. Real: después de descontar inflación. El cierre estimado no está publicado para este programa.')
+    r.add('Del presupuesto al pago','heading')
+    r.table(['Vigente 2026','Gasto reconocido','Pagado'],[[money(e[k]) for k in ['credito_vigente','credito_devengado','credito_pagado']]],[WIDTH/3]*3)
+    unpaid=e['credito_devengado']-e['credito_pagado']
+    payment_reading='Al corte, todo el gasto reconocido figura pagado.' if unpaid==0 else f'La diferencia entre gasto reconocido y pagado es {money(unpaid)}; no identifica qué parte está vencida.'
+    r.add(f"Se ejecutó el {num(ratio(e['credito_devengado'],e['credito_vigente']))}% del vigente. {payment_reading}",'small')
+    r.add('Qué muestran las prestaciones','heading')
+    r.add(escape(editorial['reading']))
+    r.add('Qué revisar para decidir','heading')
+    r.add(escape(editorial['recommendation']))
+    reported=sum(x['ejecutado_acumulado_trim2'] is not None for x in p['physical'])
+    missing=' Las restantes conservan el estado sin dato.' if reported<len(p['physical']) else ''
+    r.note(f"{reported} de {len(p['physical'])} mediciones con ejecución informada.{missing} Organismo: {p['program']['entity']}. SAF {p['link']['servicio_id']}, programa {p['link']['programa_id']}.")
+    links=[(p['sources']['project']['url']+'#page='+str(p['program']['page']),'Presupuesto'),(p['sources']['execution']['url'],'Ejecución'),(p['sources']['physical']['url'],'Prestaciones'),(SITE+'#politica-'+slug,'Ver todas las mediciones')]
+    r.note(' · '.join(f'<link href="{escape(url)}" color="#254b73">{label}</link>' for url,label in links))
+
 def policy_page(r,d,slug,first=False):
     from scripts_export_national_reports import WIDTH,money,num,pct,ratio,change,BASES,SITE
     p=next(p for p in d['policies'] if p['slug']==slug);e=p['execution'];f=r.d['deflator']['annual_factors']
@@ -66,6 +90,7 @@ def finance_page(r,d):
 
 def append_decisions(r,d,focus=None):
     if focus in ['inmunizaciones','educacion-superior']:policy_page(r,d,focus,first=True)
+    elif focus in ['jubilaciones','alimentacion','medicamentos','seguridad-federal']:additional_policy_page(r,d,focus)
     elif focus=='reactor-ra10':work_page(r,d,first=True)
     elif focus is None:
         finance_page(r,d)

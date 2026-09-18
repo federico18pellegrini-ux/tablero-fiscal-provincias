@@ -2,6 +2,10 @@
 
 ## Resuelto en las entregas del 18/09
 
+- **Vista e informes por cartera:** 16 jurisdicciones con selección, presupuesto 2027, tres bases de comparación, ejecución y pagos 2026, principales programas, obras y disponibilidad de prestaciones. Incluye 16 PDF de dos o tres páginas. Interior conserva su ejecución aunque no tenga jurisdicción homónima en el proyecto 2027; no se calcula una caída a cero.
+- **Cuatro políticas integradas adicionales:** jubilaciones y pensiones de ANSES, asistencia alimentaria, medicamentos y seguridad federal. Se vinculan proyecto, etapas del gasto y metas por código. Las seis políticas y RA-10 tienen ficha breve propia. El catálogo pasa a 59 PDF; el informe general mantiene su extensión. [Alcance, fuentes y controles](nacion-carteras-politicas-2026-09-18.md).
+- **Pedido ONP descartado:** el usuario decidió no presentar una solicitud de acceso a la información. No se envió. Las brechas documentales siguen registradas y se trabaja con publicaciones disponibles.
+
 - **Tercera búsqueda:** se completó Planificación y Sostenibilidad Energética (p221) con la enmienda firmada del BIRF 9521, publicada el 17/09. Cobertura actual: **380 de 394 partidas**, 28 cruces documentados por código. Quedan **11 casos originales y tres relacionados**. [Evidencia y criterio de comparación](nacion-tercera-busqueda-2026-09-18.md). Las entregas anteriores se conservan como antecedentes.
 
 
@@ -37,12 +41,15 @@ La ficha CNEA se revisó en el navegador de investigación; el registro estructu
 
 ## Ampliaciones de producto pendientes
 
-1. **Más fichas de políticas y de continuidad de obras.** Hoy hay dos políticas completas y una obra con correspondencia verificada. Extenderlas exige revisar códigos y alcance; no basta emparejar nombres parecidos. La ficha provincial integra finanzas y proyecto, pero no atribuye prestaciones nacionales a provincias sin una apertura territorial verificable.
+1. **Más fichas de políticas y de continuidad de obras.** Hoy hay seis políticas integradas y una obra con correspondencia verificada, además de las 16 carteras. Extenderlas exige revisar códigos y alcance; no basta emparejar nombres parecidos. La ficha provincial integra finanzas y proyecto, pero no atribuye prestaciones nacionales a provincias sin una apertura territorial verificable.
 2. **Proyección de cierre 2026 y escenarios macroeconómicos integrados.** Los tres ejercicios actuales son sensibilidades independientes. Falta modelar recaudación, gasto, calendario y respuestas por tipo de partida con supuestos explícitos. No se anualiza septiembre parcial.
 3. **Costos por prestación y resultados.** Se necesita gasto atribuible al producto, denominador y período compatibles. Dividir todo un programa por una de sus prestaciones puede producir un costo falso.
-4. **Informes por cartera y seguimiento de decisiones.** Ya hay PDF general, temático y provincial. Falta la selección por cartera y un seguimiento de responsables/hitos definidos por el usuario; no se inventan responsables ni decisiones tomadas.
+4. **Seguimiento de decisiones.** Los informes por cartera ya están implementados. Queda un seguimiento de responsables e hitos definidos por el usuario; no se inventan responsables ni decisiones tomadas.
 
 ## Verificación de esta entrega
+
+- Carteras y políticas: 146 pruebas Python y 127 Node aprobadas. Después de los ajustes editoriales finales, 23 pruebas nacionales y los ocho validadores de datos/informes volvieron a pasar. Los 59 PDF concilian con los archivos de datos; se renderizaron las 46 páginas nuevas. Navegación y exportación a 320, 390, 768 y 1440 píxeles, incluidos los 16 ministerios/poderes, seis políticas, tema oscuro y ausencia de desbordamiento horizontal.
+- Revisión de publicación oficial: ONP Evaluación 2026 sigue mostrando primer trimestre; Finanzas, deuda trimestral al primer trimestre; OPC, operaciones mensuales de deuda hasta julio. No se identificó un nuevo corte en esas páginas al 18/09. Esto no supone una búsqueda exhaustiva de todo documento gubernamental.
 
 - 24 correspondencias territoriales por código PA y nombre normalizado exacto del proyecto. Se concilian inicial, vigente y devengado; IDs secuenciales de la planilla nunca se interpretan como códigos INDEC.
 - Modificaciones: las ampliaciones y reducciones suman el cambio neto en cada clasificación. Inicial cero no produce un porcentaje ni se llama programa nuevo.

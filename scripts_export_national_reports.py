@@ -23,7 +23,7 @@ OUT = ROOT / 'nacion/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/nacion/'
 BASES = {'current': 'Vigente 2026', 'law': 'Inicial 2026', 'closing': 'Cierre estimado 2026'}
 INPUTS = ['nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
-          'national_decision_report.py', 'national_territory_report.py', 'nacion/data/decisions.json',
+          'national_decision_report.py', 'national_territory_report.py', 'national_portfolio_report.py', 'nacion/data/decisions.json',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#0a192f', '#254b73', '#64748b', '#e2e8f0', '#f1f5f9', '#b91c1c'])
 PAGE_W, PAGE_H = A4
@@ -375,7 +375,10 @@ class Report:
             self.main()
             from national_management_report import append_management
             append_management(self, json.loads((ROOT / 'nacion/data/gestion.json').read_text(encoding='utf-8')))
-        if focus and focus.startswith('provincia-'):
+        if focus and focus.startswith('cartera-'):
+            from national_portfolio_report import portfolio_pages
+            portfolio_pages(self,decisions,int(focus.split('-')[1]))
+        elif focus and focus.startswith('provincia-'):
             from national_territory_report import province_page
             province_page(self,json.loads((ROOT/'nacion/data/gestion.json').read_text(encoding='utf-8')),int(focus.split('-')[1]))
         else:
@@ -406,10 +409,10 @@ def run(output=OUT, check=False):
                 path = output / item['file']
                 if hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256'] or len(PdfReader(path).pages) != item['pages']:
                     raise ValueError('El PDF no coincide con el catálogo: ' + item['file'])
-        for item in manifest['focused'] + manifest['territories']:
+        for item in manifest['focused'] + manifest['territories'] + manifest['portfolios']:
             path=output/item['file']
             assert hashlib.sha256(path.read_bytes()).hexdigest()==item['sha256'] and len(PdfReader(path).pages)==item['pages']
-        print('Informes nacionales: 12 versiones generales, 3 fichas temáticas y 24 provinciales verificadas.')
+        print('Informes nacionales: 12 versiones generales, 7 fichas temáticas, 24 provinciales y 16 carteras verificadas.')
         return manifest
     register_fonts()
     data = json.loads((ROOT / 'nacion/data/budget.json').read_text(encoding='utf-8'))
@@ -426,7 +429,7 @@ def run(output=OUT, check=False):
                 print(filename, entry[kind]['pages'], 'páginas')
             manifest['reports'].append(entry)
     manifest['focused']=[]
-    for focus in ['inmunizaciones','educacion-superior','reactor-ra10']:
+    for focus in ['inmunizaciones','educacion-superior','jubilaciones','alimentacion','medicamentos','seguridad-federal','reactor-ra10']:
         filename=f'ficha-nacional-{focus}.pdf';path=output/filename
         Report(data,'nominal','current').build(path,focus=focus)
         manifest['focused'].append({'scope':focus,'file':filename,'pages':len(PdfReader(path).pages),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
@@ -440,6 +443,14 @@ def run(output=OUT, check=False):
         pages=len(PdfReader(path).pages)
         assert pages==1, f'La ficha de {province["provincia"]} debe ocupar una página'
         manifest['territories'].append({'province_id':province_id,'province':province['provincia'],'file':filename,'pages':pages,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+    manifest['portfolios']=[]
+    decisions=json.loads((ROOT/'nacion/data/decisions.json').read_text(encoding='utf-8'))
+    for portfolio in decisions['portfolios']:
+        filename=f'ficha-nacional-cartera-{portfolio["id"]}.pdf';path=output/filename
+        Report(data,'nominal','current').build(path,focus=f'cartera-{portfolio["id"]}')
+        pages=len(PdfReader(path).pages)
+        assert 2<=pages<=3, (portfolio['name'],pages)
+        manifest['portfolios'].append({'portfolio_id':portfolio['id'],'name':portfolio['name'],'file':filename,'pages':pages,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
     manifest_file.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return manifest
 

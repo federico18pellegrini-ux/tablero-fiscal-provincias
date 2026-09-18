@@ -110,7 +110,7 @@
     const q=$('program-search').value;const rows=byProject(D.programs.filter(p=>M.matchesSearch(p,q)));
     for(const p of openPrograms){const index=rows.findIndex(r=>r.id===p);if(index>=state.programLimit)state.programLimit=index+1;}
     $('program-count').textContent=`${rows.length} de ${D.programs.length} partidas programáticas · proyecto 2027`;
-    $('program-list').innerHTML=rows.slice(0,state.programLimit).map(p=>{const slug=M.fold(p.name).includes('inmunoprevenibles')?'inmunizaciones':M.fold(p.name)==='desarrollo de la educacion superior'?'educacion-superior':null;return `<details class="program" data-program-id="${esc(p.id)}" ${openPrograms.has(p.id)?'open':''}><summary><span class="program-name">${esc(p.name)}<small>${esc(p.entity)} · ${esc(p.jurisdiction)}${p.project_code?` · Programa ${p.project_code}`:''}</small></span><span class="program-amount">${short(val(p.project))}<small>Ver detalle +</small></span></summary><div class="program-detail"><p>El proyecto asigna <strong>${money(val(p.project))}</strong>. ${p.matched?'Las variaciones muestran tanto el cambio en pesos como su poder de compra.':'Su apertura cambió entre años; el detalle explica cómo leerla.'}</p>${programEvidence(p)}${p.matched?comparisons(p):''}<dl><dt>Inicial 2026</dt><dd>${short(val(p.law,2026))}</dd><dt>Vigente 2026 · 15/09</dt><dd>${short(val(p.current,2026))}</dd><dt>Proyecto 2027</dt><dd>${short(val(p.project))}</dd><dt>Ejecución 2026 · nominal</dt><dd>${M.ratio(p.accrued,p.current)===null?'—':nf(M.ratio(p.accrued,p.current))+'%'}</dd></dl><p class="note">${unit()}. — = sin comparación publicada. ${origin(p.source,p.page)}</p><div class="decision-links">${slug?`<a href="#politica-${slug}">Ver presupuesto, pagos y prestaciones →</a>`:''}<button class="button button-quiet" data-copy-program="${esc(p.id)}">Copiar enlace</button></div><p class="copy-status" role="status"></p></div></details>`;}).join('')||'<p class="empty">No encontramos coincidencias. Probá con otra palabra.</p>';
+    $('program-list').innerHTML=rows.slice(0,state.programLimit).map(p=>{const slug=window.nationalDecisionContext?.policies.find(policy=>policy.program.id===p.id)?.slug;return `<details class="program" data-program-id="${esc(p.id)}" ${openPrograms.has(p.id)?'open':''}><summary><span class="program-name">${esc(p.name)}<small>${esc(p.entity)} · ${esc(p.jurisdiction)}${p.project_code?` · Programa ${p.project_code}`:''}</small></span><span class="program-amount">${short(val(p.project))}<small>Ver detalle +</small></span></summary><div class="program-detail"><p>El proyecto asigna <strong>${money(val(p.project))}</strong>. ${p.matched?'Las variaciones muestran tanto el cambio en pesos como su poder de compra.':'Su apertura cambió entre años; el detalle explica cómo leerla.'}</p>${programEvidence(p)}${p.matched?comparisons(p):''}<dl><dt>Inicial 2026</dt><dd>${short(val(p.law,2026))}</dd><dt>Vigente 2026 · 15/09</dt><dd>${short(val(p.current,2026))}</dd><dt>Proyecto 2027</dt><dd>${short(val(p.project))}</dd><dt>Ejecución 2026 · nominal</dt><dd>${M.ratio(p.accrued,p.current)===null?'—':nf(M.ratio(p.accrued,p.current))+'%'}</dd></dl><p class="note">${unit()}. — = sin comparación publicada. ${origin(p.source,p.page)}</p><div class="decision-links">${slug?`<a href="#politica-${slug}">Ver presupuesto, pagos y prestaciones →</a>`:''}<button class="button button-quiet" data-copy-program="${esc(p.id)}">Copiar enlace</button></div><p class="copy-status" role="status"></p></div></details>`;}).join('')||'<p class="empty">No encontramos coincidencias. Probá con otra palabra.</p>';
     $('program-list').querySelectorAll('details').forEach(el=>el.addEventListener('toggle',()=>{
       if(!el.isConnected)return;
       const id=el.dataset.programId;if(el.open)openPrograms.add(id);else openPrograms.delete(id);
@@ -187,7 +187,7 @@
       if(Object.entries(next).some(([key,value])=>state[key]!==value)){Object.assign(state,next);$('province').value=state.province;render();}
     }
     document.querySelectorAll('[data-page]').forEach(el=>el.hidden=el.dataset.page!==page);
-    document.querySelectorAll('[data-page-link]').forEach(el=>{if(el.dataset.pageLink===(page==='politicas'?'gasto':page==='obra-ficha'?'obras':page))el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
+    document.querySelectorAll('[data-page-link]').forEach(el=>{if(el.dataset.pageLink===(['politicas','carteras'].includes(page)?'gasto':page==='obra-ficha'?'obras':page))el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
     readingControls();
     if(!D)return;
     if(page==='ejecucion')execution();
@@ -211,18 +211,20 @@
       $('report-province').innerHTML=window.nationalManagementContext.provinces.comparison.map(p=>`<option value="${p.provincia_id}">${esc(p.provincia)}</option>`).join('');
       $('report-province').value=6;
     }
-    const focused=$('report-scope').value!=='general';$('report-province-label').hidden=$('report-scope').value!=='provincia';document.querySelector('.report-options').hidden=focused;document.querySelector('.report-annex').hidden=focused;
+    const focused=$('report-scope').value!=='general';$('report-province-label').hidden=$('report-scope').value!=='provincia';$('report-portfolio-label').hidden=$('report-scope').value!=='cartera';
+    if(!$('report-portfolio').options.length&&window.nationalDecisionContext){$('report-portfolio').innerHTML=window.nationalDecisionContext.portfolios.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('');$('report-portfolio').value=50;}document.querySelector('.report-options').hidden=focused;document.querySelector('.report-annex').hidden=focused;
     $('report-unit-note').textContent=$('report-price').value==='real'?'El ajuste anual usa IPC promedio. Para 2026 y 2027 incluye el escenario de inflación del tablero.':'Los montos corresponden a los precios de cada año. El análisis también muestra el cambio real, ajustado por inflación.';
-    if(focused)$('report-unit-note').textContent='Ficha breve en pesos corrientes, con comparaciones reales y los cortes propios de cada dato.';
+    if(focused)$('report-unit-note').textContent=$('report-scope').value==='cartera'?'Informe ejecutivo en pesos corrientes. Incluye comparaciones reales frente al inicial, vigente y cierre estimado de 2026.':'Ficha breve en pesos corrientes, con comparaciones reales y los cortes propios de cada dato.';
     if(!reportManifest)return;
     try{
-      const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked,scope:$('report-scope').value,provinceId:Number($('report-province').value)},dataHash,window.nationalManagementHash,window.nationalDecisionHash);
+      const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked,scope:$('report-scope').value,provinceId:Number($('report-province').value),portfolioId:Number($('report-portfolio').value)},dataHash,window.nationalManagementHash,window.nationalDecisionHash);
       $('download-national-report').href=pdf.href;$('download-national-report').download=pdf.file;$('download-national-report').hidden=false;
-      $('report-status').textContent=`${pdf.pages} ${pdf.pages===1?'página':'páginas'} · ${focused?'Ficha breve':$('report-annex').checked?'Informe y anexo detallado':'Informe con todos los capítulos'} · Federico Pellegrini`;
+      $('report-status').textContent=`${pdf.pages} ${pdf.pages===1?'página':'páginas'} · ${focused?($('report-scope').value==='cartera'?'Informe por cartera':'Ficha breve'):$('report-annex').checked?'Informe y anexo detallado':'Informe con todos los capítulos'} · Federico Pellegrini`;
     }catch(error){$('report-status').textContent=error.message;}
   }
   async function openReport(scope='general'){
     $('report-scope').value=scope;
+    if(window.nationalDecisionContext){$('report-portfolio').innerHTML=window.nationalDecisionContext.portfolios.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('');const requested=Number($('portfolio-select')?.value||new URLSearchParams(location.search).get('cartera')||50);$('report-portfolio').value=window.nationalDecisionContext.portfolios.some(p=>p.id===requested)?requested:50;}
     const provinceNames=window.nationalManagementContext?.provinces.comparison||[];
     $('report-province').innerHTML=provinceNames.map(p=>`<option value="${p.provincia_id}">${esc(p.provincia)}</option>`).join('');
     const selected=Number($('national-province')?.value||new URLSearchParams(location.search).get('distrito')||6);
@@ -237,10 +239,10 @@
   }
   $('export-report').addEventListener('click',()=>openReport());
   document.addEventListener('click',e=>{const b=e.target.closest('[data-export-focus]');if(b)openReport(b.dataset.exportFocus);});
-  window.addEventListener('national:decisions-ready',updateReport);
+  window.addEventListener('national:decisions-ready',()=>{updateReport();if(D)programs();});
   window.addEventListener('national:management-ready',updateReport);
   $('close-report').addEventListener('click',()=>$('report-dialog').close());
-  ['report-price','report-base','report-annex','report-scope','report-province'].forEach(id=>$(id).addEventListener('change',updateReport));
+  ['report-price','report-base','report-annex','report-scope','report-province','report-portfolio'].forEach(id=>$(id).addEventListener('change',updateReport));
   window.addEventListener('resize',()=>{if(D)execution();});
   Promise.all([fetch('data/budget.json?v=20260918-programas').then(async r=>{if(!r.ok)throw Error(r.status);const text=await r.text();dataHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo])=>{
     D=data;G=geo;
