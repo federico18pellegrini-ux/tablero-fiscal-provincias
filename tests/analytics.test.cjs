@@ -4,6 +4,7 @@ const {initAnalytics, MEASUREMENT_ID} = require('../analytics.js');
 function setup(options = {}) {
   const events = {}, scripts = [], clicks = {};
   const win = {location: {hostname:'tablero.federicopellegrini.com.ar', protocol:'https:', hash:'#summary', ...options.location},
+    tableroRedirecting:options.redirecting,
     localStorage: {getItem: () => options.optOut ? 'true' : null},
     addEventListener: (name, fn) => {events[name] = fn;}};
   const doc = {referrer:'https://example.com/private?email=test@example.com',
@@ -80,7 +81,7 @@ test('direct section links and old bookmarks start in the right section', () => 
   assert.match(setup({current:'openMap'}).views()[0][2].page_title, /^Mapa/);
 });
 test('local development, previews and opted-out browsers send nothing', () => {
-  for (const options of [{location:{hostname:'localhost'}},{location:{hostname:'federico18pellegrini-ux.github.io'}},{location:{protocol:'http:'}},{optOut:true}]) {
+  for (const options of [{redirecting:true},{location:{hostname:'localhost'}},{location:{hostname:'federico18pellegrini-ux.github.io'}},{location:{protocol:'http:'}},{optOut:true}]) {
     const s = setup(options); assert.equal(s.api, null); assert.equal(s.records().length, 0); assert.equal(s.scripts.length, 0);
   }
 });
