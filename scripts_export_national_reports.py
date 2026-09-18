@@ -91,6 +91,9 @@ class Report:
         self.story = []
         self.units = 'Pesos de agosto de 2026' if mode == 'real' else 'Pesos corrientes'
         self.base_label = BASES[base] + (f" al {date(data['meta']['execution_cutoff'])}" if base == 'current' else '')
+        self.base_prose = {'current': f"lo autorizado para 2026 al {date(data['meta']['execution_cutoff'])}",
+                           'law': 'lo aprobado al inicio de 2026',
+                           'closing': 'la estimación de cierre de 2026'}[base]
 
     def value(self, value, year=2027):
         if not finite(value):
@@ -178,14 +181,14 @@ class Report:
         self.add('El gasto crece. La inflación achica esa suba.' if nominal > 0 and real > 0 else 'El presupuesto pierde poder de compra.' if real < 0 else 'El poder de compra del presupuesto se mantiene.', 'lead')
         self.key_figures(total['project'], nominal, real)
         self.note(f"Gasto propuesto en {self.units.lower()}. Cambios frente a {self.base_label.lower()}. Cambio real: ajustado por inflación según el escenario del tablero.")
-        self.add(f"El proyecto propone gastar <b>{money(total['project'])} en pesos corrientes</b>. Frente a {self.base_label.lower()}, el monto {'sube' if nominal >= 0 else 'baja'} {num(abs(nominal))}%. Cuando se descuenta la inflación prevista, {'la suba queda en' if real >= 0 else 'el poder de compra cae'} <b>{num(abs(real))}%</b>. Esa diferencia importa: más pesos no siempre alcanzan para financiar más servicios, prestaciones u obras.")
+        self.add(f"El proyecto propone gastar <b>{money(total['project'])} en pesos corrientes</b>. Frente a {self.base_prose}, el monto {'sube' if nominal >= 0 else 'baja'} {num(abs(nominal))}%. Cuando se descuenta la inflación prevista, {'la suba queda en' if real >= 0 else 'el poder de compra cae'} <b>{num(abs(real))}%</b>.")
         self.add(f"La seguridad social concentra <b>{pct(ratio(social['project'], total['project']))}</b> del gasto y los intereses y gastos de la deuda, otro <b>{pct(ratio(interest['project'], total['project']))}</b>. Esa composición le pone un límite al margen para reasignar recursos. Una parte grande del presupuesto está vinculada con prestaciones y compromisos financieros; el resto tiene que sostener las demás políticas públicas.")
-        self.add('La discusión, entonces, necesita bajar del total a las prioridades. Detectamos qué áreas ganan o pierden poder de compra, cuánto representan dentro del gasto y qué parte de lo autorizado en 2026 llegó a convertirse en una obligación de pago. Una mayor partida puede ampliar una política, cubrir mayores costos o compensar una base baja. El monto por sí solo no demuestra una mejora en el servicio.')
-        self.callout('La conclusión', 'Recomendamos evaluar el presupuesto con tres criterios: qué capacidad de atención financia, con qué ingresos se sostiene y cómo se ejecuta. Si la inflación o la recaudación se apartan del escenario, habrá que revisar cuánto alcanza el dinero y cuáles son las prioridades que se preservan.')
-        self.note(f"Lectura seleccionada para los cuadros: {self.units}. Comparación: {self.base_label}. Las proyecciones de precios se explican al final. El documento cubre todo el país, independientemente de los filtros de búsqueda de la web.")
+        self.add('El dato agregado no alcanza. Hay que mirar qué partidas ganan poder de compra y cuáles lo pierden. Que una partida suba no significa automáticamente que el servicio mejore. Puede haber más cobertura, mayores costos o simplemente una base muy baja.')
+        self.callout('La conclusión', 'Para evaluar este presupuesto hay tres datos que importan. Cuánto compra cada partida, con qué ingresos se financia y cuánto se ejecuta. Si la inflación supera lo previsto, los recursos alcanzan para menos. Si la recaudación queda corta, el Gobierno tendrá que ajustar gastos, buscar financiamiento o postergar pagos.')
+        self.note(f"Cuadros en {self.units.lower()}. Comparación con {self.base_prose}. Alcance nacional. El escenario de inflación se explica en Método y fuentes.")
 
         self.section('02 / Prioridades', 'Dónde se concentra el gasto', 'ONP: cuadro 2, finalidades y funciones. Temas: agrupación editorial del tablero.')
-        self.add('Por cada $100 del proyecto, esta es la distribución por temas. El peso de un área permite dimensionarla; su variación real, en la página de funciones, muestra si gana o pierde poder de compra.')
+        self.add('Por cada $100 del proyecto, esta es la distribución por temas. La participación muestra cuánto recibe cada área del total. La variación real muestra si esos recursos compran más o menos que en 2026.')
         self.bars([(r['name'], r['project']) for r in sorted(d['topics'], key=lambda r: -r['project'])], total['project'])
         self.add('Las cinco finalidades oficiales', 'heading')
         self.table(['Finalidad', 'Proyecto 2027', 'Peso', 'Cambio de peso'],
@@ -193,10 +196,10 @@ class Report:
                      num(ratio(r['project'], total['project']) - ratio(r[self.base], total[self.base])) + ' pp'] for r in d['purposes']],
                    [WIDTH - 212, 92, 54, 66])
         self.note(f"Montos en millones · {self.units}. pp = puntos porcentuales: pasar de 10% a 12% implica subir 2 pp. Temas y finalidades son distintas aperturas del mismo total; no se suman.")
-        self.add('El peso de una finalidad puede aumentar aunque su monto real caiga, si otras partidas caen más. Por eso conviene mirar ambas medidas antes de interpretar una prioridad. Seguridad social incluye jubilaciones, pensiones y otras prestaciones; deuda pública aquí comprende intereses y gastos, no devolución del capital.')
+        self.add('El peso de una finalidad puede aumentar aunque su monto real caiga, si otras partidas caen más. Por eso hay que mirar participación y variación real al mismo tiempo. Seguridad social incluye jubilaciones, pensiones y otras prestaciones; deuda pública aquí comprende intereses y gastos, no devolución del capital.')
 
         self.section('03 / Organismos', 'Quién administra los recursos', 'ONP: cuadro 4. Presupuesto Abierto: crédito anual 2026. INDEC y escenario ONP: ajuste anual.')
-        self.add('La clasificación por jurisdicción muestra dónde se administra el presupuesto. Sirve para ubicar responsabilidades. Un cambio de estructura puede trasladar políticas de un organismo a otro y alterar la comparación.')
+        self.add('La apertura por jurisdicción muestra quién administra esos recursos. Un cambio de estructura puede trasladar políticas de un organismo a otro y alterar la comparación.')
         self.comparison_table(d['jurisdictions'])
         comparable = [r for r in d['functions'] if finite(r.get(self.base)) and finite(r.get('project'))]
         increases = sorted(comparable, key=lambda r: self.value(r['project']) - self.value(r[self.base], 2026), reverse=True)
@@ -206,26 +209,26 @@ class Report:
         for label, rows in [('Mayores aumentos de monto', up), ('Mayores reducciones de monto', down)]:
             detail = '; '.join(f"{escape(r['name'])}: {money(abs(self.value(r['project']) - self.value(r[self.base], 2026)))}" for r in rows) or 'No hay partidas comparables en esta dirección.'
             self.add(f'<b>{label}:</b> {detail}.', 'small')
-        self.note('Ranking por diferencia absoluta de las funciones, en la unidad elegida. Una suba o baja describe el monto, no la calidad del gasto. s/d = sin dato; s/c = sin comparación.')
+        self.note('Ranking por diferencia absoluta de las funciones, en la unidad elegida. s/d = sin dato; s/c = sin comparación.')
 
         self.section('04 / Funciones', 'Qué políticas ganan o pierden', 'ONP: cuadro 2. Presupuesto Abierto: crédito anual 2026. INDEC y escenario ONP: ajuste anual.')
-        self.add('La función identifica para qué se usa el dinero. La última columna permite comparar el poder de compra incluso si el informe está expresado en pesos corrientes. Los cambios negativos aparecen en rojo.')
+        self.add('La función identifica para qué se usa el dinero. La comparación real muestra cuánto cambia su poder de compra, una vez descontada la inflación.')
         self.comparison_table(d['functions'], compact=True)
-        self.note('Las partidas de 2027 son propuestas. Su aprobación, distribución y ejecución determinan qué prestaciones y servicios se pueden sostener. Un recorte real no permite deducir por sí solo cuántos beneficiarios se perderían.')
+        self.note('Partidas del proyecto 2027. Para estimar su efecto sobre la cobertura hacen falta el costo y la cantidad prevista de cada prestación.')
 
         self.section('05 / Programas', 'Del organismo a la política concreta', 'ONP: planilla 7, programas. Presupuesto Abierto: correspondencias verificadas por nombre, entidad y jurisdicción.')
-        self.add(f"El proyecto contiene {len(d['programs'])} filas programáticas. Estas son las 12 de mayor monto: ayudan a identificar qué prestaciones y políticas explican la mayor parte del gasto. El anexo opcional incluye todas las filas con su organismo y la página de origen.")
+        self.add(f"El proyecto contiene {len(d['programs'])} partidas de programas. Estas son las 12 de mayor monto. El anexo opcional incluye el listado completo, con su organismo y la página del documento oficial.")
         largest = sorted(d['programs'], key=lambda r: -r['project'])[:12]
         self.table(['Programa / organismo', 'Proyecto 2027', 'Peso total', 'Cambio real'],
                    [[r['name'] + ' / ' + r['entity'], num(self.value(r['project']), 0), pct(ratio(r['project'], total['project'])), pct(self.variation(r, True), True)] for r in largest],
                    [WIDTH - 207, 88, 53, 66], compact=True)
         self.note(f"Montos en millones · {self.units}. Base de comparación: {self.base_label}. Se mantiene separada cada fila del documento oficial, incluso cuando dos nombres coinciden.")
         self.add('Cómo leer esta selección', 'heading')
-        self.add(f"Hay {d['meta']['program_join_matched']} correspondencias verificadas con 2026. Las otras {len(d['programs']) - d['meta']['program_join_matched']} filas no permiten concluir que haya programas nuevos: pueden existir cambios de nombre o de organización. Primero hay que resolver esa correspondencia y después comparar.")
+        self.add(f"Pudimos vincular {d['meta']['program_join_matched']} partidas con 2026. En las otras {len(d['programs']) - d['meta']['program_join_matched']} falta verificar la continuidad del programa. Un cambio de nombre o de organismo puede explicar esa diferencia; no las contamos como programas nuevos.")
         if self.base == 'closing':
             self.callout('Por qué no aparece la variación de los programas', 'La planilla programática no publica el cierre estimado 2026. Ese dato sí existe para funciones y jurisdicciones. Para comparar programas, el informe puede exportarse con la base Inicial o Vigente 2026.')
         else:
-            self.callout('Qué mirar para evaluar una política', 'Recomendamos cruzar el monto real con la población atendida, el costo de cada prestación y su ejecución. Un presupuesto mayor no alcanza para afirmar que habrá más cobertura; una partida sin gastar tampoco demuestra que la necesidad haya desaparecido.')
+            self.callout('Qué mirar para evaluar una política', 'Para evaluar una política no alcanza con mirar la partida. Hay que ver cuánta gente atiende, cuánto cuesta cada prestación y cuánto se ejecuta.')
 
         self.section('06 / Territorio', 'Qué se localiza en cada provincia', 'ONP: cuadro 6, ubicación geográfica; planilla 12, partidas de proyectos de inversión.')
         self.add('La ubicación registra dónde se imputa el gasto nacional. No equivale a una transferencia al gobernador ni identifica necesariamente dónde viven todos los beneficiarios. Las obras son una parte del gasto de cada ubicación: no deben sumarse a él.')
@@ -236,14 +239,14 @@ class Report:
         self.note(f"Montos en millones · {self.units}. Proyectos: total oficial por ubicación. El listado comprende {len(d['works'])} partidas por {money(self.value(d['works_total']))}; puede incluir equipamiento y una misma obra en varias ubicaciones. No es toda la inversión pública. Una celda sin dato no se completa con cero.")
 
         self.section('07 / Ingresos y economía', 'Con qué recursos se sostiene', 'ONP: cuadro 8, recursos; Mensaje 2027, supuestos macroeconómicos.')
-        self.add(f"El proyecto estima <b>{money(self.value(d['resources_total']))}</b> de ingresos corrientes y de capital. Los impuestos y los aportes a la seguridad social son los principales sostenes. La recaudación depende de la actividad, los precios y el cumplimiento: si se aparta de lo previsto, cambia el margen para ejecutar el gasto.")
+        self.add(f"El proyecto estima <b>{money(self.value(d['resources_total']))}</b> de ingresos corrientes y de capital. Se apoya principalmente en impuestos y aportes a la seguridad social. Si la recaudación queda por debajo de lo previsto, el Gobierno tiene menos margen para sostener ese gasto.")
         self.table(['Recurso', 'Proyecto 2027', 'Peso'], [[r['name'], num(self.value(r['project']), 0), pct(ratio(r['project'], d['resources_total']))] for r in sorted(d['resources'], key=lambda r: -r['project'])], [WIDTH - 150, 95, 55], compact=True)
         self.note(f"Montos en millones · {self.units}. Incluye rentas de la propiedad. No es el total consolidado del Mensaje, que excluye rentas del FGS y del BCRA.")
         self.add('El escenario que supone el Gobierno', 'heading')
         self.table(['Variable', '2025', '2026', '2027'], [[r['name'], *[(('$' if r['unit'] == 'ARS/USD' else '') + num(v) + ('%' if r['unit'] == '%' else '')) for v in r['values']]] for r in d['macro']], [WIDTH - 189, 63, 63, 63], compact=True)
         self.note('2025: datos reportados por el Mensaje. 2026 y 2027: proyecciones oficiales. Inflación y dólar: diciembre; crecimiento: promedio anual. FGS = Fondo de Garantía de Sustentabilidad; BCRA = Banco Central.')
         contrib = next(r for r in d['resources'] if r['name'].startswith('Aportes'))
-        self.add(f"Los aportes y contribuciones equivalen al {pct(ratio(contrib['project'], social['project']))} del gasto de la función Seguridad Social. La diferencia también se financia con impuestos y otros recursos. Esta relación dimensiona la dependencia de esas fuentes; no mide por sí sola el déficit de ANSES.", 'small')
+        self.add(f"Los aportes y contribuciones equivalen al {pct(ratio(contrib['project'], social['project']))} del gasto de la función Seguridad Social. Para cubrir la diferencia hacen falta impuestos y otros recursos. Esta comparación abarca toda la función Seguridad Social, no sólo ANSES.", 'small')
 
         self.section('08 / Ejecución', 'Qué parte del presupuesto se usó', f"Presupuesto Abierto: crédito anual y mensual 2026, corte {date(d['meta']['execution_cutoff'])}. INDEC: IPC mensual observado.")
         ex = d['execution'][0]
@@ -258,19 +261,19 @@ class Report:
                    [[MONTHS[m['month'] - 1] + (' (parcial)' if m['partial'] else ''), num(m['real'] if self.mode == 'real' else m['accrued'], 0), pct(ratio(sum(x['accrued'] for x in ex['months'][:i+1]), ex['current']))] for i, m in enumerate(ex['months'])],
                    [WIDTH - 235, 105, 130], compact=True)
         self.note(f"Gasto mensual en millones · {self.units}. Septiembre llega al 15/09 y no es un mes completo. En reales, septiembre queda sin monto porque aún falta su IPC observado. No se usa una proyección para medir gasto real ejecutado.")
-        self.note('Un ritmo menor de ejecución puede responder al calendario de pagos, demoras o decisiones de gasto. Hace falta revisar cada programa antes de calificarlo como ahorro o subejecución.')
+        self.note('Cuando una partida se ejecuta menos de lo previsto, hay que revisar qué prestación u obra quedó pendiente y si cambió su calendario.')
 
         self.section('09 / Historia y lectura final', 'Mirar más allá de un solo año', 'Presupuesto Abierto: totales anuales de ejecución. ONP: proyecto 2027. INDEC: IPC; 2026-2027, escenario.')
-        self.add('La serie permite ubicar el proyecto en perspectiva. Los primeros tres años muestran gasto realizado; 2026 muestra una autorización vigente y 2027, una propuesta. Son etapas distintas y no se deben leer como cinco cierres anuales.')
+        self.add('Entre 2023 y 2025 se muestra el gasto reconocido al cierre de cada año. En 2026, el presupuesto vigente; en 2027, el proyecto. La diferencia entre una autorización y su ejecución importa porque parte de lo aprobado puede quedar sin usar.')
         self.table(['Año / etapa', 'Monto'], [[str(r['year']) + ' / ' + r['stage'], num(self.value(r['amount'], r['year']), 0)] for r in d['history']], [WIDTH - 130, 130])
-        self.note(f"Montos en millones · {self.units}. La historia utiliza la serie de totales de ejecución, conciliada con el presupuesto actual. La apertura histórica asociada al PIB tiene diferencias de alcance y queda fuera de esta comparación.")
+        self.note(f"Montos en millones · {self.units}. Serie de totales de ejecución de Presupuesto Abierto. El alcance de la historia desde 2007 se detalla en el capítulo 15.")
         self.add('La historia completa y la gestión actual', 'heading')
-        self.add('Los capítulos siguientes amplían la mirada con caja, pagos, deuda, recursos a provincias, prestaciones y obras. La serie de presupuestos y ejecución comienza en 2007. Cada bloque conserva su período y su universo.')
+        self.add('Los capítulos siguientes muestran cuánto se cobró y pagó en 2026, cuándo vence la deuda y qué fondos llegaron a las provincias. También comparan las prestaciones previstas con las realizadas y el gasto en obras con su avance físico. La serie de presupuestos y ejecución comienza en 2007.')
         self.add('Qué recomendamos seguir', 'heading')
-        self.add('<b>El poder de compra de las partidas.</b> Si la inflación supera el escenario y los créditos no acompañan, el mismo presupuesto compra menos. Conviene seguir el monto real junto con las prestaciones que debe financiar.')
-        self.add('<b>La recaudación que respalda el gasto.</b> Los supuestos de crecimiento sostienen una parte de los ingresos previstos. Un desvío obliga a revisar prioridades, financiamiento o tiempos de ejecución; no permite anticipar automáticamente cuál de esos caminos se elegirá.')
-        self.add('<b>La ejecución y sus resultados.</b> La autorización expresa una prioridad presupuestaria. Para saber si se convirtió en una política efectiva, hay que mirar obligaciones reconocidas, pagos, obras realizadas y población atendida. Son datos que responden preguntas distintas.')
-        self.callout('La lectura final', f"El proyecto {'amplía' if real >= 0 else 'reduce'} el poder de compra total frente a {self.base_label.lower()}, según el escenario de inflación utilizado. El impacto concreto depende de cómo se distribuye ese cambio y de cuánto llega a ejecutarse. Ahí está el punto central para evaluar las prioridades del Gobierno.")
+        self.add('<b>El poder de compra de las partidas.</b> Si los precios suben más que los montos autorizados, se achica la capacidad de financiar las prestaciones. Hay que seguir ambos junto con la cantidad de personas atendidas.')
+        self.add('<b>La recaudación que respalda el gasto.</b> Menos actividad o empleo formal pueden reducir los impuestos y los aportes previstos. Si eso ocurre, el Gobierno deberá decidir qué gastos sostiene y cómo los financia.')
+        self.add('<b>La ejecución y sus resultados.</b> La autorización expresa una prioridad presupuestaria. Para saber si se convirtió en una política efectiva, hay que mirar obligaciones reconocidas, pagos, obras realizadas y población atendida.')
+        self.callout('La lectura final', f"El proyecto {'amplía' if real >= 0 else 'reduce'} el poder de compra total frente a {self.base_prose}, según el escenario de inflación utilizado. Ese cambio se reparte de forma desigual entre las partidas. Recomendamos seguir qué áreas ganan recursos y cuánto de lo aprobado se convierte en prestaciones y obras. Ahí se ve realmente qué prioridades sostiene el Gobierno.")
 
         self.section('10 / Método y fuentes', 'Cómo se construyó el informe', 'Fuentes primarias enlazadas en esta página. Mismo corte y base de datos que el tablero.')
         self.add('Qué incluye', 'heading')
