@@ -244,7 +244,7 @@ test('accounts belong to the municipality, not the separately published agency',
 
 test('other periods stay visible and downloadable without entering June rankings',()=>{
   assert.equal(data.fiscalCoverage.withAccounts,91);
-  assert.equal(data.fiscalCoverage.otherPeriods,19);
+  assert.equal(data.fiscalCoverage.otherPeriods,15);
   const lp=rows.find(m=>m.id==='06441'),b=rows.find(m=>m.id==='06112');
   assert.equal(lp.fiscal,null);
   assert.equal(lp.fiscalOther.fin,'2026-03-31');

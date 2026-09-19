@@ -45,11 +45,11 @@ def enrich_coverage(data, cov):
              'Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.')
         item('Caja libre', False, '',
              'Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.')
-        debt = g.get('debt') or {}
-        item('Stock de deuda municipal', bool(debt), '2025-12-31' if debt else '',
+        debt = m.get('publicDebt') or g.get('debt') or {}
+        item('Stock de deuda municipal', bool(debt), debt.get('date', ''),
              'Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.')
         item('Calendario futuro de deuda', False, '',
-             'Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.')
+             'Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.', state='Perfil publicado parcial' if m.get('publicDebt') else None)
         item('Deuda con proveedores vencida', False, '',
              'Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.')
         item('Flujos fiscales mensuales', False, '',

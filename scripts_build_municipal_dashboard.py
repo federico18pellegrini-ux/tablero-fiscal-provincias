@@ -1,4 +1,5 @@
 """Package the audited municipal research for the static dashboard (stdlib only)."""
+from scripts_municipal_public_debt import apply_public_debt
 import argparse
 import csv
 import hashlib
@@ -112,7 +113,7 @@ def apply_verified_fiscal(municipalities, path):
             f['capital_por_habitante_base2022_ars_corrientes'] = f['gastos_capital'] / m['poblacion_2022']
     return {'fiscal': sum(bool(m['fiscal']) for m in municipalities.values()),
             'budgetOnly': sum(bool(m.get('fiscalExecution')) and not m['fiscal'] for m in municipalities.values()),
-            'otherPeriods': sum(bool(m.get('fiscalOther')) for m in municipalities.values()),
+            'otherPeriods': sum(bool(m.get('fiscalOther')) and not m.get('fiscal') for m in municipalities.values()),
             'withAccounts': sum(bool(m.get('fiscal') or m.get('fiscalOther')) for m in municipalities.values()),
             'verifiedAt': audit.get('updatedAt', audit['verifiedAt'])}
 
@@ -325,10 +326,12 @@ def build(folder):
     community['householdDebt']['externalMunicipalProvider'] = {k:v for k,v in debt.items() if k != 'municipalities'}
     management_path = ROOT / 'municipios/data/management_verified.json'
     management = apply_management(municipalities, management_path)
+    public_debt_path = ROOT / 'municipios/data/public_debt_verified.json'
+    apply_public_debt(municipalities, public_debt_path)
     annual_budget_path = ROOT / 'municipios/data/annual_budgets_verified.json'
     annual_budgets, annual_coverage = apply_annual_budgets(municipalities, annual_budget_path)
     write_budget_catalog(ROOT, municipalities, annual_coverage)
-    data = {'version': 6, 'generated': '2026-09-11', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
+    data = {'version': 6, 'generated': '2026-09-19', 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
     target = ROOT / 'municipios/data/dashboard.json'
     data['annualBudgetCoverage'] = annual_coverage
     target.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':'), allow_nan=False), encoding='utf-8')
@@ -336,7 +339,7 @@ def build(folder):
     overlay = repository_input(fiscal_path)
     transparency_input = repository_input(transparency_path)
     search_input = repository_input(search_path)
-    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path), repository_input(management_path), repository_input(annual_budget_path)], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
+    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path), repository_input(management_path), repository_input(annual_budget_path), repository_input(public_debt_path)], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
     (target.parent / 'fuentes.csv').write_bytes((folder / 'fuentes_y_huellas.csv').read_bytes())
     fiscal_audit = json.loads(fiscal_path.read_text(encoding='utf-8'))
     with (target.parent / 'fuentes.csv').open('a', encoding='utf-8', newline='') as source_file:

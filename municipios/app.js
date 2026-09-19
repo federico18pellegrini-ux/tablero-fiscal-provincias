@@ -566,6 +566,7 @@ function renderResources(){
   $('revenue-stats').innerHTML=[['Recaudación propia PBA',data.provincialRevenue.total_provincial],['Ingresos Brutos PBA',data.provincialRevenue.ingresos_brutos],['Coparticipación a municipios',data.summary.copart_real_change_pct]].map(([l,v])=>`<div><span class="stat-label">${l}</span><strong class="stat-value ${tone(v)}">${pct(v)}</strong><span class="stat-context">Real · ene–jul 2026 vs. 2025</span></div>`).join('');
   renderFiscal(m);
   renderManagement(m);
+  renderPublicDebt(m);
 }
 function renderPrices(){
   const real=priceMode==='real',unit=real?'pesos de '+priceMonth(priceBase):'pesos corrientes de cada período';
@@ -636,6 +637,12 @@ function renderAnnualBudget(m,id,detailed){
   host.innerHTML=detailed?`<div class="eyebrow">Cuánto tiene autorizado gastar</div><h2>${headline}</h2><p class="annual-budget-date">${dateLabel} ${fiscalDate(b.asOf)}. Verificado el ${fiscalDate(b.verifiedAt)}.</p>${status}${cards}<p>Es la autorización para gastar durante todo el año. No indica cuánto se gastó ni cuánto dinero queda disponible. El monto por habitante sirve para dimensionarlo; no es una suma que recibe cada vecino.</p>${detail}<div class="annual-budget-links">${detailed?catalog:'<button class="text-button" data-open-budget>Ver el detalle del presupuesto →</button>'}</div>`:`<div class="eyebrow">Presupuesto anual</div><h2>${headline}</h2><p class="annual-budget-date">${dateLabel} ${fiscalDate(b.asOf)}.</p>${status}<strong class="annual-budget-amount">${detailValue(b.amount,'millions',1)}</strong><p>Autorización para todo el año, en pesos corrientes. El detalle muestra el monto por habitante, las modificaciones y el documento.</p><button class="text-button" data-open-budget>Ver presupuesto y ejecución →</button>`;
   const open=host.querySelector('[data-open-budget]');
   if(open)open.onclick=()=>{navigate('recursos');requestAnimationFrame(()=>$('annual-budget-resources').scrollIntoView({block:'start',behavior:'smooth'}));};
+}
+
+function renderPublicDebt(m){
+  const d=m.publicDebt;if(!d)return;
+  const value=v=>finite(v)?detailValue(v,'millions',2):'Sin dato';
+  $('management-panel').insertAdjacentHTML('beforeend',`<section class="panel section-block" id="public-debt"><div class="eyebrow">Obligaciones del municipio</div><h2>La deuda municipal al ${fiscalDate(d.date)}</h2><p>Millones de pesos corrientes. Deuda del gobierno municipal, separada de la deuda de los vecinos.</p>${detailTable('public-debt-stock','Stock informado',['Concepto','Millones de pesos'],[['Deuda consolidada',value(d.consolidated)],['Deuda flotante',value(d.floating)],...(finite(d.leasing)?[['Leasing, informado por separado',value(d.leasing)]]:[])])}<p>${escape(d.reading)}</p><h3>Pagos publicados desde 2027</h3>${detailTable('public-debt-schedule','Perfil parcial al 30/06/2026',['Año','Capital','Intereses y gastos',...(finite(d.leasing)?['Leasing']:[])],d.schedule.map(r=>[String(r.year),value(r.capital),value(r.interest),...(finite(d.leasing)?[value(r.leasing)]:[])]))}<p class="chart-caption">${escape(d.scheduleNote)}</p><a href="../${escape(d.documents[0].path)}" target="_blank" rel="noopener">Ver planilla oficial ↗</a></section>`);
 }
 
 function renderManagement(m){

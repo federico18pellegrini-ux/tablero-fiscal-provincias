@@ -8,16 +8,16 @@ def append_management(report, data):
     r, g = report, data
     cash = {x['indicador']: x for x in g['cash']['comparison']}
     def cash_value(key):
-        return cash[key]['enero_julio_real_2026' if r.mode == 'real' else 'enero_julio_2026']
+        return cash[key]['enero_agosto_real_2026' if r.mode == 'real' else 'enero_agosto_2026']
     def link(key, label):
         url = g['datasets'][key]['sources'][0]['url']
         r.note(f'<link href="{escape(url)}" color="#254b73">{escape(label)}</link>')
 
-    r.section('11 / Caja y pagos', 'La caja tiene superávit; el margen se achica', 'Hacienda: SPN, enero-julio 2026. Presupuesto Abierto: Administración Nacional, 15/09/2026. INDEC: IPC.')
+    r.section('11 / Caja y pagos', 'La caja tiene superávit; el margen se achica', 'Hacienda: SPN, enero-agosto 2026. Presupuesto Abierto: Administración Nacional, 15/09/2026. INDEC: IPC.')
     r.add(f"El Sector Público Nacional cobró {money(cash_value('ingresos_totales'))} y pagó {money(cash_value('gasto_primario'))} antes de intereses. Después de los intereses quedó un superávit de <b>{money(cash_value('resultado_financiero'))}</b>. Los montos de este cuadro están en {r.units.lower()}.")
-    r.table(['Caja / enero-julio 2026', 'Monto / millones'],
+    r.table(['Caja / enero-agosto 2026', 'Monto / millones'],
         [[label, num(cash_value(key), 0)] for key, label in [('ingresos_totales','Ingresos cobrados'),('gasto_primario','Gasto antes de intereses'),('resultado_primario','Resultado antes de intereses'),('intereses_netos','Intereses pagados'),('resultado_financiero','Resultado después de intereses')]], [WIDTH-140,140])
-    r.add(f"El dato importante está en términos reales. Frente a enero-julio de 2025, los ingresos cayeron {num(abs(cash['ingresos_totales']['variacion_real_acumulada_pct']))}% y el gasto primario, {num(abs(cash['gasto_primario']['variacion_real_acumulada_pct']))}%. Los ingresos cayeron más rápido que el gasto y achicaron el margen fiscal.")
+    r.add(f"El dato importante está en términos reales. Frente a enero-agosto de 2025, los ingresos cayeron {num(abs(cash['ingresos_totales']['variacion_real_acumulada_pct']))}% y el gasto primario, {num(abs(cash['gasto_primario']['variacion_real_acumulada_pct']))}%. Los ingresos cayeron más rápido que el gasto y achicaron el margen fiscal.")
     r.add('Del gasto reconocido al pago', 'heading')
     t = g['execution']['total']
     r.add(f"En la Administración Nacional, al 15/09 se reconocieron gastos por {money(t['credito_devengado'])} y se pagaron {money(t['credito_pagado'])}. La diferencia es <b>{money(t['devengado_menos_pagado'])}</b>. Son obligaciones reconocidas pendientes de pago; para saber cuáles están vencidas hacen falta sus fechas.")
