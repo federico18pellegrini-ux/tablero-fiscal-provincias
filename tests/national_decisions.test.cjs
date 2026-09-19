@@ -77,3 +77,20 @@ test('funding filters include mixed projects without counting subtotal columns t
   assert.equal(N.fundingMatches({externas:10,tesoro:100},'internal'),false);
   assert.equal(N.fundingMatches({externas:10,tesoro:100},'treasury'),true);
 });
+const R=require('../nacion/data/revenue-planning.json');
+test('revenue forecast preserves observations and never rolls BCRA profits into recurring income',()=>{
+ const o={monthlyInflation:1.55,revenuePace:0,bcraFuture:0},r=P.revenue(R,o);
+ near(r.observed,128822516.26388761);near(r.bcraObserved,24400000);near(r.total,183324830.67410213);near(r.total,r.withoutBcra+r.bcraObserved);
+ near(r.months.reduce((s,x)=>s+x.value,0),r.total);assert.equal(r.months.filter(x=>x.observed).length,8);
+ const noBcra={...R,months:R.months.map(m=>({...m,total:m.total-m.bcra,bcra:0}))};const without=P.revenue(noBcra,o);near(without.remaining,r.remaining);near(without.total,r.withoutBcra);
+ const extra=P.revenue(R,{...o,bcraFuture:1});near(extra.total-r.total,1e6);near(extra.unallocatedFuture,1e6);near(extra.withoutBcra,r.withoutBcra);
+ near(extra.months.reduce((s,x)=>s+x.value,0)+extra.unallocatedFuture,extra.total);
+});
+test('revenue stresses affect only future ordinary flows and missing inputs are not zero',()=>{
+ const o={monthlyInflation:1.55,revenuePace:0,bcraFuture:0},r=P.revenue(R,o),stress=P.revenue(R,{...o,revenuePace:-10});
+ near(stress.observed,r.observed);near(stress.bcraObserved,r.bcraObserved);near(stress.remaining,r.remaining*.9);
+ assert.equal(P.revenue({...R,months:R.months.slice(1)},o),null);
+ const incomplete={...R,months:R.months.map((m,i)=>i?m:{...m,groups:m.groups.slice(1)})};assert.equal(P.revenue(incomplete,o),null);
+ for(const bad of [{bcraFuture:null},{revenuePace:NaN},{monthlyInflation:-1},{bcraFuture:101}])assert.equal(P.revenue(R,{...o,...bad}),null);
+ const partial={...R,months:[...R.months,{period:'2026-09',total:1e15}]};near(P.revenue(partial,o).total,r.total);
+});

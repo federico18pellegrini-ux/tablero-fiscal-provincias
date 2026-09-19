@@ -29,6 +29,29 @@
     const average=(sum(Object.entries(b.deflator.monthly_index).filter(([k])=>/^2026-0[1-8]$/.test(k)).map(([,v])=>v))+sum(future.map((r,i)=>anchor*Math.pow(1+monthlyInflation/100,i+1))))/12;
     return {total,observed:sum(observed.map(r=>r.value)),remaining:sum(future.map(r=>r.value)),months:[...observed,...future],groups,average,vsOfficial:total-b.total.closing,vsCredit:total-b.total.current};
   }
+  function revenue(data,{monthlyInflation,revenuePace,bcraFuture}){
+    if(!finite(monthlyInflation)||monthlyInflation<0||monthlyInflation>25||!finite(revenuePace)||revenuePace< -50||revenuePace>50||!finite(bcraFuture)||bcraFuture<0||bcraFuture>100)return null;
+    const ids=['tax','social','property','other'],get=p=>data.months.filter(m=>m.period===p);
+    const old=Array.from({length:12},(_,i)=>get(`2025-${String(i+1).padStart(2,'0')}`)),now=Array.from({length:8},(_,i)=>get(`2026-${String(i+1).padStart(2,'0')}`));
+    if([...old,...now].some(a=>a.length!==1))return null;
+    const past=old.map(a=>a[0]),actual=now.map(a=>a[0]);
+    if(actual.some(m=>!finite(m.total)||!finite(m.bcra)))return null;
+    const months=actual.map((m,i)=>({month:i+1,observed:true,value:m.total,bcra:m.bcra}));
+    const future=Array.from({length:4},(_,i)=>({month:i+9,observed:false,value:0})),groups=[];
+    for(const id of ids){
+      const a=actual.map(m=>m.groups.filter(g=>g.id===id)),p=past.map(m=>m.groups.filter(g=>g.id===id));
+      if([...a,...p].some(x=>x.length!==1||!finite(x[0].real)||!finite(x[0].nominal)))return null;
+      const prior=p.map(x=>x[0]),current=a.map(x=>x[0]),denom=sum(prior.slice(0,8).map(x=>x.real));
+      if(denom<=0)return null;
+      const factor=sum(current.map(x=>x.real))/denom;
+      const projected=prior.slice(8).map((x,i)=>x.real*factor*(1+revenuePace/100)*Math.pow(1+monthlyInflation/100,i+1));
+      projected.forEach((v,i)=>future[i].value+=v);
+      const observed=sum(current.map(x=>x.nominal));groups.push({id,name:current[0].name,observed,remaining:sum(projected),total:observed+sum(projected)});
+    }
+    const observed=sum(actual.map(x=>x.total)),bcraObserved=sum(actual.map(x=>x.bcra)),additional=bcraFuture*1e6,remaining=sum(future.map(x=>x.value))+additional;
+    // New BCRA funds have no assumed month; keep them outside the monthly series.
+    return {observed,bcraObserved,bcraFuture:additional,remaining,total:observed+remaining,withoutBcra:observed+remaining-bcraObserved-additional,groups,months:[...months,...future],unallocatedFuture:additional};
+  }
   function integrated(b,d,o){
     const limits={inflation:[0,300],growth:[-20,20],elasticity:[0,3],pensionPass:[0,100],otherPass:[0,100],interestChange:[-50,100],financing:[0,150]};
     if(Object.entries(limits).some(([k,[lo,hi]])=>!finite(o[k])||o[k]<lo||o[k]>hi))return null;
@@ -48,6 +71,6 @@
     const residual=(f['XIII.1']+f['XIII.2'])-(f.VI-f.VII)-f['XII.1']-f['XII.2'];
     return {resources,expenses,pensions,otherPrimary,interest,taxes,otherRevenue,balance,primary:balance+interest,need,available,gap:need-available,roundingResidual:residual,vsOfficialBalance:balance-(f.VI-f.VII),applications,otherSources};
   }
-  const api={closing,integrated};
+  const api={closing,integrated,revenue};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.NationalPlanning=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
