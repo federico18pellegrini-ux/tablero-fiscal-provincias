@@ -161,6 +161,9 @@ class EditorialReport(Report):
             self.p('Devengado significa obligación registrada, aunque no se haya pagado. Lo devengado y no pagado del período no representa toda la deuda ni demuestra que esas facturas estén vencidas.')
 
     def cash(self):
+        if self.m.get('publicDebt'):
+            self.public_debt()
+            return
         g=self.m['management'];t=g['treasury'];d=g.get('debt')
         self.section('Caja y deuda municipal',False,document_refs(self.m,t['documents'])+' · '+source_link(SITE+'auditoria-distritos.html#'+self.m['id'],'criterios y documentos complementarios'))
         self.p('Son saldos a una fecha, no gastos del semestre. Los subtotales ya están incluidos en sus totales; no se suman nuevamente.','small')
@@ -234,7 +237,7 @@ def write_pdf(writer,path,m):
 def build_editorial(path,brief_path,m,data,geography):
     writer=PdfWriter();modules=[];g=m.get('management');count=0
     for key,label,description,default in TOPICS:
-        available=not(key in ['caja','historia'] and not g or key=='detalle-fiscal' and not(g or m.get('fiscalExecution')) or key=='bancos' and not(finite(m.get('prestamos_2024_ars')) or (g and any(r['status']=='verified' for r in g['banking']['records']))))
+        available=not(key=='historia' and not g or key=='caja' and not(g or m.get('publicDebt')) or key=='detalle-fiscal' and not(g or m.get('fiscalExecution')) or key=='bancos' and not(finite(m.get('prestamos_2024_ars')) or (g and any(r['status']=='verified' for r in g['banking']['records']))))
         if not available:continue
         buffer=io.BytesIO();report=EditorialReport(buffer,m,data,geography,key);pages=report.render_module();buffer.seek(0)
         pdf=PdfReader(buffer)

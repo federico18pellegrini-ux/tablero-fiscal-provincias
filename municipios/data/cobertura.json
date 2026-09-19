@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11",
+  "generated": "2026-09-19",
   "scope": "Datos incorporados; no certifica que un municipio no publique información en otro sitio.",
   "commonPending": [
     "Caja libre, vencimientos futuros, antigüedad de proveedores y flujos fiscales mensuales: todavía no hay una serie comparable para los 135. Un saldo en tesorería no resuelve esos faltantes.",
@@ -478,7 +478,6 @@
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-        "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
         "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
         "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
@@ -512,13 +511,8 @@
           "request": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles."
         },
         {
-          "topic": "Stock de deuda municipal",
-          "state": "Pendiente",
-          "request": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces."
-        },
-        {
           "topic": "Calendario futuro de deuda",
-          "state": "Pendiente",
+          "state": "Perfil publicado parcial",
           "request": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año."
         },
         {
@@ -8436,7 +8430,6 @@
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-        "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
         "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
         "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
@@ -8482,13 +8475,8 @@
           "request": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles."
         },
         {
-          "topic": "Stock de deuda municipal",
-          "state": "Pendiente",
-          "request": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces."
-        },
-        {
           "topic": "Calendario futuro de deuda",
-          "state": "Pendiente",
+          "state": "Perfil publicado parcial",
           "request": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año."
         },
         {
@@ -10739,7 +10727,7 @@
     },
     {
       "topic": "Stock de deuda municipal",
-      "available": 1,
+      "available": 3,
       "total": 135
     },
     {
@@ -12114,9 +12102,9 @@
       "id": "06042",
       "municipio": "Ayacucho",
       "tema": "Stock de deuda municipal",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
+      "estado": "Incorporado",
+      "periodo": "2026-06-30",
+      "documentoNecesario": "",
       "portal": "https://www.ayacucho.gob.ar/?q=transparencia-fiscal-municipal",
       "revision": "2026-09-11"
     },
@@ -12124,7 +12112,7 @@
       "id": "06042",
       "municipio": "Ayacucho",
       "tema": "Calendario futuro de deuda",
-      "estado": "Pendiente",
+      "estado": "Perfil publicado parcial",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
       "portal": "https://www.ayacucho.gob.ar/?q=transparencia-fiscal-municipal",
@@ -31114,9 +31102,9 @@
       "id": "06693",
       "municipio": "Roque Pérez",
       "tema": "Stock de deuda municipal",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
+      "estado": "Incorporado",
+      "periodo": "2026-06-30",
+      "documentoNecesario": "",
       "portal": "https://roqueperez.gob.ar/situacion-economica-financiera",
       "revision": "2026-09-11"
     },
@@ -31124,7 +31112,7 @@
       "id": "06693",
       "municipio": "Roque Pérez",
       "tema": "Calendario futuro de deuda",
-      "estado": "Pendiente",
+      "estado": "Perfil publicado parcial",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
       "portal": "https://roqueperez.gob.ar/situacion-economica-financiera",

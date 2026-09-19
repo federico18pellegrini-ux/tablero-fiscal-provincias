@@ -1,4 +1,4 @@
-# Servicios de deuda provinciales — revisión 6/9/2026
+# Servicios de deuda provinciales — revisión 19/9/2026
 
 Se elimina la restricción que ocultaba el calendario fuera de Buenos Aires. Todas las jurisdicciones tienen la misma ficha, con faltantes explícitos y fuentes descargables.
 
@@ -8,11 +8,12 @@ DNAP: 24 jurisdicciones, 2005–2025 y primer trimestre 2026. Servicios **deveng
 Cuatro diferencias entre las planillas provinciales 2025 y el consolidado (Jujuy, Mendoza, Misiones y Santa Fe) quedan registradas en JSON; se conserva la serie provincial. El importador guarda la huella SHA256 de las 24 planillas.
 
 ## Calendarios futuros
-- Buenos Aires: 2026–2041, informe al 31/12/2025, millones de pesos.
+- Buenos Aires: 2026–2041, informe al 30/06/2026, millones de pesos.
 - Córdoba: 2026–2032, presupuesto actualizado 2/1/2026, Administración Central + ACIF. Los PDF originales están en pesos: se dividen por un millón. La segunda serie incluye intereses **y gastos**.
-- Otras 22 jurisdicciones: sin calendario futuro verificado cargado. No significa ausencia de deuda o de publicaciones oficiales.
+- Entre Ríos: proyección presupuestaria 2026–2028 incorporada.
+- Neuquén y Santa Fe: proyecciones presupuestarias incorporadas, con su alcance propio.
+- Otras 19 jurisdicciones: sin calendario futuro verificado cargado. No significa ausencia de deuda o de publicaciones oficiales.
 - CABA: el enlace oficial al perfil de junio de 2026 devolvió 404 durante esta revisión.
-- Entre Ríos: se encontró https://www.entrerios.gov.ar/presupuesto/leypres/p26-28/pdf/ANEXO1.pdf . No se incorporan importes hasta corroborar su unidad; el anexo extraído no la declara explícitamente.
 
 Los calendarios representan lo previsto en cada publicación. No descuentan pagos posteriores ni incorporan nuevas operaciones: no deben presentarse como saldo pendiente a hoy. Sus fechas y alcances diferentes impiden tratarlos como una comparación homogénea de proyecciones.
 

@@ -87,7 +87,7 @@ def build():
     cash = get('resultado_fiscal_comparacion')
     cash_by = {r['indicador']: r for r in cash}
     for year in (2025, 2026):
-        k = f'enero_julio_{year}'
+        k = f'enero_agosto_{year}'
         assert abs(cash_by['ingresos_totales'][k] - cash_by['gasto_primario'][k] - cash_by['resultado_primario'][k]) < 1
         assert abs(cash_by['resultado_primario'][k] - cash_by['intereses_netos'][k] - cash_by['resultado_financiero'][k]) < 1
     ron = get('ron_comparacion_provincias')
@@ -139,7 +139,7 @@ def build():
         'execution': {'total': stages, 'comparison': get('gasto_comparacion_real_total'),
             'functions_comparison': get('gasto_comparacion_real_funcion'), 'monthly': monthly,
             'groups': {k: get('gasto_etapas_' + k) for k in ['jurisdiccion','funcion','objeto','territorio','programa']}},
-        'cash': {'comparison': cash, 'monthly': get('resultado_fiscal_caja_mensual')},
+        'cash': {'reviewed': '2026-09-19', 'cutoff': '2026-08', 'comparison': cash, 'monthly': get('resultado_fiscal_caja_mensual')},
         'resources': revenue_comparison,
         'debt': {'monthly': get('deuda_stock_pagos'), 'schedule': get('vencimientos_perfil_marzo2026'),
                  'annual_schedule': get('vencimientos_anuales_perfil_marzo2026'), 'cutoff_schedule': '2026-03-31'},

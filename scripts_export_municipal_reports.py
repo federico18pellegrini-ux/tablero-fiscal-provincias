@@ -349,6 +349,17 @@ class Report:
         if b['historical']:self.p(f"Este es un dato histórico de {b['year']}. Todavía falta verificar el presupuesto de 2026.")
         self.p(f"Equivale a {money(b['perCapita'],0,False)} por habitante. El cálculo divide ese presupuesto por los {number(self.m['poblacion_2022'],0)} habitantes del Censo 2022. Sirve para dimensionar el monto; no es una suma que recibe cada vecino ni mide la calidad de la gestión.")
         self.p('Pesos corrientes, sin ajuste por inflación. Verificación del '+date(b['verifiedAt'])+'.','small')
+    def public_debt(self):
+        d=self.m.get('publicDebt')
+        if not d:return
+        self.section('La deuda del municipio',sources=source_link(d['documents'][0]['url'],'Planilla C, al 30/06/2026'))
+        self.p('Millones de pesos corrientes. Obligaciones del gobierno municipal, distintas de las deudas de los vecinos.')
+        self.table(['Concepto','Millones de pesos'],[(label,money(d[key],2)) for key,label in [('consolidated','Deuda consolidada'),('floating','Deuda flotante'),('leasing','Leasing, informado por separado')] if finite(d.get(key))])
+        self.p(escaped(d['reading']))
+        self.h('Pagos publicados desde 2027')
+        self.table(['Año','Capital','Intereses y gastos','Leasing'],[(str(r['year']),money(r['capital'],2),money(r['interest'],2),money(r.get('leasing'),2)) for r in d['schedule']])
+        self.p(escaped(d['scheduleNote']),'small')
+
     def management(self):
         g=self.m.get('management')
         if not g:return
@@ -516,7 +527,7 @@ class Report:
         self.p(f"Se registraron {number(b,0)} robos en 2025, frente a {number(a,0)} en 2024. Conviene contrastar el cambio con zonas, horarios y canales de denuncia antes de definir medidas. Estos registros no captan todos los delitos ni miden la sensación de inseguridad. Más denuncias también pueden modificar el total.")
         self.p('Las tasas son las publicadas por el SNIC, con su población de referencia; no se recalculan con el Censo 2022. En municipios pequeños, pocos hechos pueden mover mucho la tasa. Se muestran junto a las cantidades para evitar lecturas engañosas.','small')
     def build(self):
-        for method in [self.overview,self.priorities,self.accounts,self.annual_budget,self.management,self.resources,self.employment,self.wages,self.territory,self.debt,self.community]:method()
+        for method in [self.overview,self.priorities,self.accounts,self.annual_budget,self.management,self.public_debt,self.resources,self.employment,self.wages,self.territory,self.debt,self.community]:method()
         doc=BaseDocTemplate(str(self.path),pagesize=A4,rightMargin=MARGIN,leftMargin=MARGIN,topMargin=45,bottomMargin=104,
                               title=f'{self.m["municipio"]} - Informe municipal completo',author='Federico Pellegrini',pageCompression=1)
         def deterministic_canvas(*args,**kwargs):kwargs['invariant']=1;return Canvas(*args,**kwargs)

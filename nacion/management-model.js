@@ -3,7 +3,7 @@
   const finite=v=>typeof v==='number'&&Number.isFinite(v);
   const ratio=(a,b)=>finite(a)&&finite(b)&&b>0?a/b*100:null;
   const change=(a,b)=>{const r=ratio(a,b);return r===null?null:r-100;};
-  const cashValue=(r,year,price)=>r[price==='real'?`enero_julio_real_${year}`:`enero_julio_${year}`]??null;
+  const cashValue=(r,year,price)=>r[price==='real'?`enero_agosto_real_${year}`:`enero_agosto_${year}`]??null;
   const metaValues=(r,quarter)=>({planned:r[`programacion_acumulada_trim${quarter}`]??null,actual:r[`ejecutado_acumulado_trim${quarter}`]??null,annual:r[`programacion_anual_vig_trim${quarter}`]??null,method:r.totalizador_avance_fisico});
   const metaStatus=(r,quarter)=>{
     const v=metaValues(r,quarter);

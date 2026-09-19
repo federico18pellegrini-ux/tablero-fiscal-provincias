@@ -1,0 +1,141 @@
+{
+  "reviewedAt": "2026-09-19",
+  "records": [
+    {
+      "id": "06042",
+      "date": "2026-06-30",
+      "consolidated": 922034533.14,
+      "floating": 142509000,
+      "leasing": null,
+      "unit": "ARS",
+      "verifiedAt": "2026-09-19",
+      "documents": [
+        {
+          "url": "https://www.ayacucho.gob.ar/sites/default/files/8._stock_de_deuda_y_perfil_de_vencimientos_al_30-06.pdf",
+          "path": "municipios/data/debt-sources/ayacucho-2026q2.pdf",
+          "sha256": "7b5d110a184f47017d7d696f8c4cd5698743f9ff8b0f357082c4cb1e439b9f53",
+          "bytes": 636360,
+          "page": 1
+        }
+      ],
+      "components": [
+        {
+          "label": "Instituto de la Vivienda",
+          "amount": 174179976.36
+        },
+        {
+          "label": "Banco Provincia",
+          "amount": 747854556.78
+        }
+      ],
+      "schedule": [
+        {
+          "year": 2027,
+          "capital": 255702499.14,
+          "interest": 182084614.75
+        },
+        {
+          "year": 2028,
+          "capital": 255702499.14,
+          "interest": 95152717.05
+        },
+        {
+          "year": 2029,
+          "capital": 131060073.01,
+          "interest": 16687748.36
+        },
+        {
+          "year": 2030,
+          "capital": 6417646.88,
+          "interest": 3998694.04
+        },
+        {
+          "year": 2031,
+          "capital": 6417646.88,
+          "interest": 3998694.04
+        },
+        {
+          "year": 2032,
+          "capital": 144518602.82,
+          "interest": 28984498.4
+        }
+      ],
+      "reading": "La deuda consolidada corresponde a préstamos. Además, se informan $142,5 millones de deuda flotante con proveedores; la planilla no identifica qué facturas están vencidas.",
+      "scheduleStatus": "partial_published",
+      "scheduleNote": "Perfil publicado al 30/06/2026. Se muestran 2027–2032; 2026 es un total anual y no identifica lo pendiente desde julio. No se reconstruye un saldo restando pagos ni se fuerza la suma del calendario al stock. Las celdas sin dato siguen vacías."
+    },
+    {
+      "id": "06693",
+      "date": "2026-06-30",
+      "consolidated": 183229360.65,
+      "floating": 290069683.14,
+      "leasing": 322363236.31,
+      "unit": "ARS",
+      "verifiedAt": "2026-09-19",
+      "documents": [
+        {
+          "url": "https://roqueperez.gob.ar/sites/default/files/stockdeudapublicaperfildevencimientos22026.pdf",
+          "path": "municipios/data/debt-sources/roqueperez-2026q2.pdf",
+          "sha256": "9c7cc3e22e2ec01bbe25273e160c302f267635ebaec8802b4c188c502e906899",
+          "bytes": 483013,
+          "page": 1
+        }
+      ],
+      "components": [
+        {
+          "label": "IPS",
+          "amount": 144737643.14
+        },
+        {
+          "label": "UCO–PFM–PPD",
+          "amount": 35243290.85
+        },
+        {
+          "label": "Instituto de la Vivienda",
+          "amount": 3248426.66
+        }
+      ],
+      "schedule": [
+        {
+          "year": 2027,
+          "capital": 115670.78,
+          "interest": 87076.25,
+          "leasing": 176704337.16
+        },
+        {
+          "year": 2028,
+          "capital": 123528.47,
+          "interest": 79218.58,
+          "leasing": 53534672.43
+        },
+        {
+          "year": 2029,
+          "capital": 128919.94,
+          "interest": 24267.05,
+          "leasing": null
+        },
+        {
+          "year": 2030,
+          "capital": 140881.49,
+          "interest": 61865.58,
+          "leasing": null
+        },
+        {
+          "year": 2031,
+          "capital": 150451.78,
+          "interest": 52295.23,
+          "leasing": null
+        },
+        {
+          "year": 2032,
+          "capital": 160671.73,
+          "interest": 42074.81,
+          "leasing": null
+        }
+      ],
+      "reading": "La deuda pública informada suma $473,3 millones: $183,2 millones consolidados y $290,1 millones de deuda flotante. El leasing figura separado, por $322,4 millones; no se suma sin conciliar su alcance contable.",
+      "scheduleStatus": "partial_published",
+      "scheduleNote": "Perfil publicado al 30/06/2026. Se muestran 2027–2032; 2026 es un total anual y no identifica lo pendiente desde julio. No se reconstruye un saldo restando pagos ni se fuerza la suma del calendario al stock. Las celdas sin dato siguen vacías. La fuente agrega amortizaciones posteriores en “Resto”: $1.695.721,52 e intereses/comisiones por $99.794,12, sin asignarlos a un año. Los intereses de leasing no están desagregados."
+    }
+  ]
+}
