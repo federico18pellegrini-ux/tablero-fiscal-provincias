@@ -2,7 +2,9 @@
 
 ## Resuelto en las entregas del 18/09
 
-- **Escenario integrado:** proyección mensual del gasto 2026 por 29 funciones, conservando enero–agosto observado y usando el patrón real 2025 para septiembre–diciembre. Simulación conjunta de ingresos, gasto, resultado y financiamiento 2027; supuestos editables y descarga reproducible en JSON. No estima ingresos 2026 ni reemplaza cifras oficiales.
+- **Cierre de ingresos 2026 incorporado:** 20 meses originales conciliados, cuatro grupos de recursos y utilidades del BCRA separadas por código. El escenario muestra ingresos, resultado presupuestario con BCRA y sin BCRA. Conserva enero–agosto y proyecta septiembre–diciembre; nuevas utilidades son un supuesto editable, inicialmente cero. [Método y límites](nacion-cierre-ingresos-2026-09-18.md).
+
+- **Escenario integrado:** proyección mensual del gasto 2026 por 29 funciones, conservando enero–agosto observado y usando el patrón real 2025 para septiembre–diciembre. Simulación conjunta de ingresos, gasto, resultado y financiamiento 2027; supuestos editables y descarga reproducible en JSON. La ampliación posterior agrega ingresos 2026 sin reemplazar cifras oficiales.
 - **Normas por programa:** cinco documentos oficiales, 520 registros e importes originales que concilian el cambio total sin depender del redondeo OPC. Buscador, selección de norma y enlaces a cada página. 143 de 410 aperturas concilian su cambio neto con esas normas, incluidas 44 sin cambios; las demás conservan su diferencia. Dos códigos de Deportes del anexo no se asignan a otro programa. [Método y alcance](nacion-cierre-normas-2026-09-18.md).
 
 - **Vista e informes por cartera:** 16 jurisdicciones con selección, presupuesto 2027, tres bases de comparación, ejecución y pagos 2026, principales programas, obras y disponibilidad de prestaciones. Incluye 16 PDF de dos o tres páginas. Interior conserva su ejecución aunque no tenga jurisdicción homónima en el proyecto 2027; no se calcula una caída a cero.
@@ -45,11 +47,13 @@ La ficha CNEA se revisó en el navegador de investigación; el registro estructu
 ## Ampliaciones de producto pendientes
 
 1. **Más fichas de políticas y de continuidad de obras.** Hoy hay seis políticas integradas y una obra con correspondencia verificada, además de las 16 carteras. Extenderlas exige revisar códigos y alcance; no basta emparejar nombres parecidos. La ficha provincial integra finanzas y proyecto, pero no atribuye prestaciones nacionales a provincias sin una apertura territorial verificable.
-2. **Ampliar el escenario:** ya están implementados el cierre mensual del gasto 2026 y la simulación conjunta fiscal y financiera 2027. Quedan un cierre de ingresos 2026 con estacionalidad tributaria, rezagos de movilidad y deuda por contrato/moneda. El ejercicio actual mantiene nominales los otros ingresos y las aplicaciones financieras. No se anualiza septiembre parcial.
+2. **Ampliar el escenario:** ya están implementados el cierre mensual del gasto 2026 y la simulación conjunta fiscal y financiera 2027. El cierre de ingresos 2026 ya usa estacionalidad por grupo y separa utilidades BCRA. Quedan efectos específicos de reformas tributarias, otros ingresos no recurrentes, rezagos de movilidad y deuda por contrato/moneda. El ejercicio actual mantiene nominales los otros ingresos y las aplicaciones financieras. No se anualiza septiembre parcial.
 3. **Costos por prestación y resultados.** Se necesita gasto atribuible al producto, denominador y período compatibles. Dividir todo un programa por una de sus prestaciones puede producir un costo falso.
 4. **Seguimiento de decisiones.** Los informes por cartera ya están implementados. Queda un seguimiento de responsables e hitos definidos por el usuario; no se inventan responsables ni decisiones tomadas.
 
 ## Verificación de esta entrega
+
+- Ingresos 2026: originales PA con tamaño/huella verificados y conciliación de todos los tipos y meses con las series publicadas. Pruebas de separación de BCRA, preservación de meses observados, ausencia de datos, sensibilidad y exportación. Revisión visual y de navegación en celular, tablet y escritorio. No se modifican los PDF: sus enlaces a escenarios abren la ampliación; no se incrusta una hipótesis del usuario como cifra oficial.
 
 - Cierre integrado y normas: 149 pruebas Python, 129 Node y nueve validadores aprobados. Navegación, búsqueda en cinco normas, exportación JSON, supuestos inválidos, restablecimiento, temas y desbordamiento revisados a 320, 390, 768 y 1440 píxeles. Los 59 PDF mantienen su integridad; los generales siguen en 19 páginas y 66 con anexo. Se revisó el render de las páginas 11 y 16 actualizadas. La validación de publicación se registra por separado.
 
