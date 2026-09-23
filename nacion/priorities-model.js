@@ -45,6 +45,27 @@
     return rows.filter(r=>r.period>=start).map(r=>({period:r.period,value:benefitChange(rows,start,r.period,key)}))
       .map(r=>({...r,value:r.value===null?null:100+r.value}));
   }
-  const api={finite,change,delta,share,comparisons,ranked,benefitChange,benefitIndex};
+  function shareReading(row,mode='execution'){
+    if(!row||!finite(row.change)||!finite(row.shareChange))return '';
+    const subject=mode==='project'?'El gasto propuesto':mode==='amendments'?'El crédito autorizado':'El gasto';
+    const unit=mode==='amendments'?'en pesos corrientes':'en términos reales';
+    if(row.change<=-.05&&row.shareChange>=.005)return `${subject} cae ${unit}, pero gana participación porque el total cae más.`;
+    if(row.change>=.05&&row.shareChange<=-.005)return `${subject} sube ${unit}, pero pierde participación porque el total crece más.`;
+    return '';
+  }
+  function interestComparison(model){
+    const row=model.rows.find(r=>r.id==='5-29');
+    if(!row)return null;
+    const before=delta(model.total.before,row.before),after=delta(model.total.after,row.after);
+    return {row,rest:{before,after,change:change(after,before)}};
+  }
+  function delivery(decisions,slug,id,unit){
+    const policy=decisions?.policies?.find(p=>p.slug===slug);
+    const rows=policy?.physical?.filter(r=>r.medicion_fisica_id===id&&r.unidad_medida_desc===unit&&r.ejercicio_presupuestario===2026&&r.trimestre===2)||[];
+    if(rows.length!==1||rows[0].requiere_revision_clave||!finite(rows[0].ejecutado_acumulado_trim2))return null;
+    const r=rows[0],comments=(r.causas||[]).map(c=>c.causa_desvio_comentario||'').join(' ');
+    return {value:r.ejecutado_acumulado_trim2,average:r.totalizador_avance_fisico.startsWith('Promedio'),partial:/parcial|provisori|sujet[oa]s? a.*modific/i.test(comments)};
+  }
+  const api={finite,change,delta,share,comparisons,ranked,benefitChange,benefitIndex,shareReading,interestComparison,delivery};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.NationalPriorities=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

@@ -67,3 +67,33 @@ test('a nominally frozen bonus loses purchasing power, separately from minimum a
 test('priorities is an independent navigable page',()=>{
   assert.equal(require('../nacion/math.js').pageForAnchor('prioridades'),'prioridades');
 });
+
+test('share reading distinguishes less spending from greater participation across modes',()=>{
+ const r=M.comparisons(B,G).rows.find(r=>r.id==='3-15');
+ assert.match(M.shareReading(r),/cae en términos reales, pero gana participación/);
+ assert.match(M.shareReading(r,'amendments'),/crédito autorizado cae en pesos corrientes/);
+ assert.match(M.shareReading(r,'project'),/gasto propuesto/);
+ assert.equal(M.shareReading({change:null,shareChange:1}),'');
+ assert.equal(M.shareReading({change:-.01,shareChange:.001}),'');
+ assert.match(M.shareReading({change:5,shareChange:-1}),/sube.*pierde participación/);
+});
+test('interest card distinguishes spending level, change, shares and rest of spending',()=>{
+ const model=M.comparisons(B,G),i=M.interestComparison(model);
+ near(i.row.after,13192967.29249773);near(i.row.delta,2983748.9437747207);
+ near(i.row.shareAfter,12.151549014048062);
+ near(i.rest.after+i.row.after,model.total.after);
+ assert.ok(i.rest.change<model.total.change);
+ const incomplete=structuredClone(model);incomplete.total.after=null;
+ assert.equal(M.interestComparison(incomplete).rest.change,null);
+});
+test('physical evidence keeps units, averages, period, ambiguity and missing data separate',()=>{
+ const d=require('../nacion/data/decisions.json');
+ assert.equal(M.delivery(d,'inmunizaciones',1110,'Dosis').value,18254178);
+ assert.equal(M.delivery(d,'inmunizaciones',1110,'Dosis').average,false);
+ assert.equal(M.delivery(d,'educacion-superior',4883,'Becario').value,35966);
+ assert.equal(M.delivery(d,'educacion-superior',4883,'Becario').average,true);
+ assert.equal(M.delivery(d,'alimentacion',684,'Persona'),null);
+ assert.equal(M.delivery(d,'jubilaciones',71,'Jubilado'),null);
+ const copy=structuredClone(d),r=copy.policies[0].physical[0];r.trimestre=1;
+ assert.equal(M.delivery(copy,'inmunizaciones',1110,'Dosis'),null);
+});
