@@ -50,7 +50,7 @@ class NationalReportsTest(unittest.TestCase):
         self.assertEqual({(r['price'], r['base']) for r in self.catalog['reports']},
                          {(p, b) for p in ['nominal', 'real'] for b in reports.BASES})
         for entry in self.catalog['reports']:
-            self.assertEqual(entry['main']['pages'], 19)
+            self.assertEqual(entry['main']['pages'], 21)
             self.assertGreater(entry['full']['pages'], entry['main']['pages'])
 
     def test_pdfs_have_all_chapters_units_sources_numbering_and_selected_base(self):
@@ -143,6 +143,33 @@ class NationalReportsTest(unittest.TestCase):
             else:self.assertIn(reports.money(p['project']['project']),text)
             self.assertGreater(sum(len(page.get('/Annots',[])) for page in pdf.pages),3)
 
+
+
+
+class PrioritiesPdfTests(unittest.TestCase):
+    def test_published_general_variants_include_observed_spending_and_deliveries(self):
+        manifest=json.loads((ROOT/'nacion/reports/manifest.json').read_text(encoding='utf-8'))
+        for entry in manifest['reports']:
+            for variant in ['main','full']:
+                pdf=PdfReader(ROOT/'nacion/reports'/entry[variant]['file'])
+                text=' '.join(' '.join(p.extract_text() for p in pdf.pages[19:21]).split())
+                for phrase in ['Qué cambia detrás del gasto total','109,66','108,57','10,21','13,19','12,15','4,1%',
+                               'Ganar peso dentro del presupuesto no significa recibir más recursos',
+                               'Del presupuesto a las personas','18.254.178','35.966','443.768','Promedio de becarios',
+                               'enero–junio 2026','mínima con bono perdió','4,6%','25,1%','IPC observado']:
+                    self.assertIn(phrase,text)
+                self.assertGreater(len(pdf.pages[20].get('/Annots',[])),1)
+
+    def test_spending_function_identity_matches_observed_denominator(self):
+        from national_priorities_report import spending_rows
+        b=json.loads((ROOT/'nacion/data/budget.json').read_text(encoding='utf-8'))
+        g=json.loads((ROOT/'nacion/data/gestion.json').read_text(encoding='utf-8'))
+        rows,totals=spending_rows(b,g)
+        self.assertEqual(len(rows),29)
+        self.assertAlmostEqual(totals[1],108570251.22678363,places=5)
+        intel=next(r for r in rows if r['id']=='2-12')
+        self.assertAlmostEqual(intel['after'],228915.62002183,places=5)
+        self.assertAlmostEqual(sum(r['share_after'] for r in rows),100)
 
 if __name__ == '__main__':
     unittest.main()

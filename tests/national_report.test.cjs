@@ -11,7 +11,7 @@ test('exports the selected annual comparison and price basis, with optional full
     const result=selectReport(manifest,{price,base,annex},hash,managementHash,decisionHash);
     assert.equal(result.file,`informe-nacional-${price}-${base}${annex?'-anexo':''}.pdf`);
     assert.equal(result.href,'reports/'+result.file+'?v='+result.sha256.slice(0,16));
-    assert.equal(result.pages,annex?66:19);
+    assert.equal(result.pages,annex?68:21);
   }
 });
 test('refuses outdated reports and unexpected paths instead of exporting wrong data',()=>{
