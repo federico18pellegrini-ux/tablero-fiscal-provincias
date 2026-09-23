@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'nacion/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/nacion/'
 BASES = {'current': 'Vigente 2026', 'law': 'Inicial 2026', 'closing': 'Cierre estimado 2026'}
-INPUTS = ['nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
+INPUTS = ['national_priorities_report.py', 'nacion/data/benefits.json', 'nacion/priorities-model.js', 'nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
           'national_decision_report.py', 'national_territory_report.py', 'national_portfolio_report.py', 'nacion/data/decisions.json',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#0a192f', '#254b73', '#64748b', '#e2e8f0', '#f1f5f9', '#b91c1c'])
@@ -365,7 +365,7 @@ class Report:
         canvas.drawString(42, PAGE_H - 31, 'PELLEGRINI / PRESUPUESTO NACIONAL')
         canvas.setFont('Manrope', 7.5)
         canvas.setFillColor(MUTED)
-        canvas.drawRightString(PAGE_W - 42, PAGE_H - 31, self.units + ' · ' + BASES[self.base])
+        canvas.drawRightString(PAGE_W - 42, PAGE_H - 31, 'Proyecto: ' + self.units + ' · ' + BASES[self.base])
         canvas.restoreState()
 
     def build(self, path, full=False, focus=None):
@@ -383,6 +383,9 @@ class Report:
             province_page(self,json.loads((ROOT/'nacion/data/gestion.json').read_text(encoding='utf-8')),int(focus.split('-')[1]))
         else:
             append_decisions(self,decisions,focus)
+        if focus is None:
+            from national_priorities_report import append_priorities
+            append_priorities(self, json.loads((ROOT/'nacion/data/gestion.json').read_text(encoding='utf-8')), decisions, json.loads((ROOT/'nacion/data/benefits.json').read_text(encoding='utf-8')))
         if full:
             self.appendix()
         doc = BaseDocTemplate(str(path), pagesize=A4, leftMargin=42, rightMargin=42, topMargin=56, bottomMargin=82,
@@ -395,7 +398,7 @@ class Report:
         doc.build(self.story)
 
 def fingerprint():
-    return {name: hashlib.sha256((ROOT / name).read_bytes().replace(b'\r\n', b'\n') if name.endswith(('.py', '.json')) else (ROOT / name).read_bytes()).hexdigest() for name in INPUTS}
+    return {name: hashlib.sha256((ROOT / name).read_bytes().replace(b'\r\n', b'\n') if name.endswith(('.py', '.json', '.js')) else (ROOT / name).read_bytes()).hexdigest() for name in INPUTS}
 
 def run(output=OUT, check=False):
     manifest_file = output / 'manifest.json'
