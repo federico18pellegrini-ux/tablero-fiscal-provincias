@@ -29,7 +29,7 @@
   function readingControls(){
     const page=M.pageForAnchor(location.hash.slice(1));
     document.body.classList.toggle('management-active',page==='ejecucion');
-    document.querySelector('.controls').hidden=page==='metodo'||['normas','escenarios','modificaciones','deuda-nacional','metas','obras-ejecucion'].includes(location.hash.slice(1));
+    document.querySelector('.controls').hidden=['metodo','prioridades'].includes(page)||['normas','escenarios','modificaciones','deuda-nacional','metas','obras-ejecucion'].includes(location.hash.slice(1));
     $('base-select').closest('label').hidden=!['panorama','gasto'].includes(page);
     $('base-select').value=state.base;
     $('unit-context').textContent=state.price==='real'?(location.hash==='#historia-ejecucion'?'Pesos de agosto 2026, con IPC promedio anual observado.':page==='ejecucion'?'Flujos a precios de agosto 2026, con IPC observado. Las autorizaciones siguen en pesos corrientes.':'Pesos de agosto 2026 · escenario de inflación.'):'Montos de cada año, sin descontar inflación.';
@@ -194,7 +194,7 @@
     window.dispatchEvent(new CustomEvent('national:state',{detail:{price:state.price}}));
     window.dispatchEvent(new CustomEvent('dashboard:view',{detail:{view:anchor}}));
     const target=document.getElementById(anchor)||$('inicio');
-    const scrollTarget=['inicio','distribucion','obras','recursos','ejecucion','modificaciones','caja','deuda-nacional','provincias-nacion','metas','obras-ejecucion','historia-ejecucion','metodo'].includes(anchor)?$('contenido'):target;
+    const scrollTarget=['prioridades','inicio','distribucion','obras','recursos','ejecucion','modificaciones','caja','deuda-nacional','provincias-nacion','metas','obras-ejecucion','historia-ejecucion','metodo'].includes(anchor)?$('contenido'):target;
     requestAnimationFrame(()=>{scrollTarget.scrollIntoView({block:'start',behavior:'instant'});if(focus)(target.querySelector('h2[tabindex]')||target.querySelector('h1'))?.focus({preventScroll:true});});
   }
   window.addEventListener('hashchange',()=>route(true));

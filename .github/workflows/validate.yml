@@ -23,7 +23,7 @@ jobs:
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
       - name: Validate calculations and reading profiles
-        run: node --test tests/management_math.test.cjs tests/profile_readings.test.cjs tests/budget_execution.test.cjs tests/analytics.test.cjs tests/municipal_dashboard.test.mjs tests/municipal_reports.test.mjs tests/nation_claims.test.cjs tests/national_budget.test.cjs tests/national_report.test.cjs tests/national_management.test.cjs tests/national_decisions.test.cjs
+        run: node --test tests/management_math.test.cjs tests/profile_readings.test.cjs tests/budget_execution.test.cjs tests/analytics.test.cjs tests/municipal_dashboard.test.mjs tests/municipal_reports.test.mjs tests/nation_claims.test.cjs tests/national_budget.test.cjs tests/national_report.test.cjs tests/national_management.test.cjs tests/national_decisions.test.cjs tests/national_priorities.test.cjs
       - name: Validate TOP traceability
         run: python scripts_validate_top_traceability.py
       - name: Validate national claims data
@@ -44,3 +44,5 @@ jobs:
         run: python scripts_export_national_reports.py --check
       - name: Verify municipal coverage and deflator
         run: python scripts_build_municipal_tools.py --check
+      - name: Verify monthly benefit sources and observed inflation
+        run: python scripts_build_national_benefits.py --check

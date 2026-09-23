@@ -46,6 +46,13 @@ test('national budget gets its own route and never sends searches or selected pr
   s.events.hashchange();assert.equal(s.views().length,2);
   assert.doesNotMatch(JSON.stringify(s.records()),/private|secret/);
 });
+
+test('priorities route is counted without comparison or beneficiary choices',()=>{
+  const s=setup({location:{pathname:'/nacion/',hash:'#prioridades',search:'?lectura=private&referencia=secret'}});
+  assert.equal(s.views()[0][2].page_location,'https://tablero.federicopellegrini.com.ar/nacion/#prioridades');
+  assert.match(s.views()[0][2].page_title,/Prioridades y efectos/);
+  assert.doesNotMatch(JSON.stringify(s.records()),/private|secret/);
+});
 test('each dashboard keeps its content group on initial and subsequent views', () => {
   for (const [pathname, hash, search, group, next] of [
     ['/', '#summary', '?perfil=private', 'Provincias', 'debt'],
