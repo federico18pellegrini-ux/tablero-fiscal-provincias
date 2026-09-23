@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "reviewed": "2026-09-22",
+    "unit": "ARS por mes · importes publicados redondeados al peso",
+    "publisher": "Secretaría de Trabajo, Empleo y Seguridad Social · IMSS",
+    "source": "https://www.argentina.gob.ar/trabajo/seguridadsocial/imss",
+    "latest_nominal": "2026-09",
+    "latest_real": "2026-08",
+    "missing_months": [
+      "2024-01",
+      "2024-02"
+    ],
+    "ipc_sha256": "1da974c9a84123944529e6a1a1d039be52442a44e4df4e6f49fe1b6ca3a33b1a",
+    "method": "Variación real = (monto final / monto inicial) / (IPC final / IPC inicial) - 1. IPC nacional observado. No se usa inflación proyectada en las prestaciones.",
+    "scope": "Mínima con bono completo para quien cumple el tope. AUH general: derecho mensual al 100%, no depósito neto ni adicional por zona. No incluye aguinaldo.",
+    "corrections": [
+      {
+        "period": "2026-09",
+        "printed_total": 498663,
+        "calculated_total": 498633,
+        "reason": "Se suman los componentes publicados; no se reproduce el total inconsistente de la tabla."
+      },
+      {
+        "period": "2026-03",
+        "printed_total": 439691,
+        "calculated_total": 439601,
+        "reason": "Se suman los componentes publicados; no se reproduce el total inconsistente de la tabla."
+      },
+      {
+        "period": "2025-07",
+        "field": "period",
+        "printed": "Junio 2025",
+        "corrected": "Julio 2025",
+        "reason": "Encabezado repetido de junio; archivo, nota 2 y resolución 251/2025 corresponden a julio.",
+        "verification": "https://www.anses.gob.ar/noticias/en-julio-las-jubilaciones-pensiones-y-asignaciones-aumentaran-150-por-ciento"
+      },
+      {
+        "period": "2024-03",
+        "field": "minimum",
+        "printed": 134446,
+        "corrected": 134445,
+        "reason": "Redondeo del importe exacto de la nota 3: $134.445,30."
+      }
+    ]
+  },
+  "rows": [
+    {
+      "period": "2023-12",
+      "minimum": 105713,
+      "bonus": 55000,
+      "minimum_bonus": 160713,
+      "auh": 20661,
+      "ipc": 3533.1922,
+      "source": "https://www.argentina.gob.ar/sites/default/files/mteyss-sss_indicadores_monetarios_de_seguridad_social2023_12.pdf"
+    },
+    {
+      "period": "2024-03",
+      "minimum": 134445,
+      "bonus": 70000,
+      "minimum_bonus": 204445,
+      "auh": 52553,
+      "ipc": 5357.0929,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_marzo_2024.pdf"
+    },
+    {
+      "period": "2024-04",
+      "minimum": 171283,
+      "bonus": 70000,
+      "minimum_bonus": 241283,
+      "auh": 52553,
+      "ipc": 5830.2271,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_abril_2024.pdf"
+    },
+    {
+      "period": "2024-05",
+      "minimum": 190142,
+      "bonus": 70000,
+      "minimum_bonus": 260142,
+      "auh": 52553,
+      "ipc": 6073.7165,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social202405_actualizado.pdf"
+    },
+    {
+      "period": "2024-06",
+      "minimum": 206931,
+      "bonus": 70000,
+      "minimum_bonus": 276931,
+      "auh": 74354,
+      "ipc": 6351.7145,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_junio_2024.pdf"
+    },
+    {
+      "period": "2024-07",
+      "minimum": 215581,
+      "bonus": 70000,
+      "minimum_bonus": 285581,
+      "auh": 77462,
+      "ipc": 6607.7479,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_julio_2024.pdf"
+    },
+    {
+      "period": "2024-08",
+      "minimum": 225454,
+      "bonus": 70000,
+      "minimum_bonus": 295454,
+      "auh": 81010,
+      "ipc": 6883.4412,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_agosto_202402_0.pdf"
+    },
+    {
+      "period": "2024-09",
+      "minimum": 234540,
+      "bonus": 70000,
+      "minimum_bonus": 304540,
+      "auh": 84275,
+      "ipc": 7122.2421,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_septiembre_2024_1.pdf"
+    },
+    {
+      "period": "2024-10",
+      "minimum": 244321,
+      "bonus": 70000,
+      "minimum_bonus": 314321,
+      "auh": 87790,
+      "ipc": 7313.9542,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_octubre_2024.pdf"
+    },
+    {
+      "period": "2024-11",
+      "minimum": 252799,
+      "bonus": 70000,
+      "minimum_bonus": 322799,
+      "auh": 90837,
+      "ipc": 7491.4314,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_noviembre_2024.pdf"
+    },
+    {
+      "period": "2024-12",
+      "minimum": 259599,
+      "bonus": 70000,
+      "minimum_bonus": 329599,
+      "auh": 93281,
+      "ipc": 7694.0075,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202412_indicadores_monetarios_de_seguridad_social.pdf"
+    },
+    {
+      "period": "2025-01",
+      "minimum": 265907,
+      "bonus": 70000,
+      "minimum_bonus": 335907,
+      "auh": 95548,
+      "ipc": 7864.1257,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202501_indicadores_monetarios_de_seguridad_social.pdf"
+    },
+    {
+      "period": "2025-02",
+      "minimum": 273087,
+      "bonus": 70000,
+      "minimum_bonus": 343087,
+      "auh": 98128,
+      "ipc": 8052.9927,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_202502.pdf"
+    },
+    {
+      "period": "2025-03",
+      "minimum": 279122,
+      "bonus": 70000,
+      "minimum_bonus": 349122,
+      "auh": 100358,
+      "ipc": 8353.3158,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_202503.pdf"
+    },
+    {
+      "period": "2025-04",
+      "minimum": 285821,
+      "bonus": 70000,
+      "minimum_bonus": 355821,
+      "auh": 102705,
+      "ipc": 8585.6078,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_202504.pdf"
+    },
+    {
+      "period": "2025-05",
+      "minimum": 296482,
+      "bonus": 70000,
+      "minimum_bonus": 366482,
+      "auh": 106536,
+      "ipc": 8714.4871,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202505_indicadores_monetarios_de_seguridad_social_0.pdf"
+    },
+    {
+      "period": "2025-06",
+      "minimum": 304724,
+      "bonus": 70000,
+      "minimum_bonus": 374724,
+      "auh": 109498,
+      "ipc": 8855.5681,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_202506.pdf"
+    },
+    {
+      "period": "2025-07",
+      "minimum": 309295,
+      "bonus": 70000,
+      "minimum_bonus": 379295,
+      "auh": 111141,
+      "ipc": 9023.973,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_202507_f.pdf"
+    },
+    {
+      "period": "2025-08",
+      "minimum": 314305,
+      "bonus": 70000,
+      "minimum_bonus": 384305,
+      "auh": 112942,
+      "ipc": 9193.2441,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_202508.pdf"
+    },
+    {
+      "period": "2025-09",
+      "minimum": 320277,
+      "bonus": 70000,
+      "minimum_bonus": 390277,
+      "auh": 115088,
+      "ipc": 9384.0922,
+      "source": "https://www.argentina.gob.ar/sites/default/files/indicadores_monetarios_de_seguridad_social_202509_0.pdf"
+    },
+    {
+      "period": "2025-10",
+      "minimum": 326298,
+      "bonus": 70000,
+      "minimum_bonus": 396298,
+      "auh": 117252,
+      "ipc": 9603.8623,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202510_indicadores_monetarios_de_seguridad_social.pdf"
+    },
+    {
+      "period": "2025-11",
+      "minimum": 333085,
+      "bonus": 70000,
+      "minimum_bonus": 403085,
+      "auh": 119691,
+      "ipc": 9841.3581,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202511_indicadores_monetarios_de_seguridad_social.pdf"
+    },
+    {
+      "period": "2025-12",
+      "minimum": 340880,
+      "bonus": 70000,
+      "minimum_bonus": 410880,
+      "auh": 122492,
+      "ipc": 10121.3715,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202512_indicadores_monetarios_de_seguridad_social_0.pdf"
+    },
+    {
+      "period": "2026-01",
+      "minimum": 349299,
+      "bonus": 70000,
+      "minimum_bonus": 419299,
+      "auh": 125518,
+      "ipc": 10413.0309,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202601_indicadores_monetarios_de_seguridad_social_0.pdf"
+    },
+    {
+      "period": "2026-02",
+      "minimum": 359254,
+      "bonus": 70000,
+      "minimum_bonus": 429254,
+      "auh": 129096,
+      "ipc": 10714.6255,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202602_indicadores_monetarios_de_seguridad_social.pdf"
+    },
+    {
+      "period": "2026-03",
+      "minimum": 369601,
+      "bonus": 70000,
+      "minimum_bonus": 439601,
+      "auh": 132814,
+      "ipc": 11077.0608,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202603_indicadores_monetarios_de_seguridad_social.pdf"
+    },
+    {
+      "period": "2026-04",
+      "minimum": 380319,
+      "bonus": 70000,
+      "minimum_bonus": 450319,
+      "auh": 136666,
+      "ipc": 11363.0904,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202604_indicadores_monetarios_de_seguridad_social_0.pdf"
+    },
+    {
+      "period": "2026-05",
+      "minimum": 393174,
+      "bonus": 70000,
+      "minimum_bonus": 463174,
+      "auh": 141286,
+      "ipc": 11607.3937,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202605_indicadores_monetarios_de_seguridad_social_mayo.pdf"
+    },
+    {
+      "period": "2026-06",
+      "minimum": 403318,
+      "bonus": 70000,
+      "minimum_bonus": 473318,
+      "auh": 144932,
+      "ipc": 11826.4103,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202606_indicadores_monetarios_de_seguridad_social.pdf"
+    },
+    {
+      "period": "2026-07",
+      "minimum": 411989,
+      "bonus": 70000,
+      "minimum_bonus": 481989,
+      "auh": 148049,
+      "ipc": 12076.3937,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202607_indicadores_monetarios_de_seguridad_social.pdf"
+    },
+    {
+      "period": "2026-08",
+      "minimum": 419776,
+      "bonus": 70000,
+      "minimum_bonus": 489776,
+      "auh": 150848,
+      "ipc": 12276.766,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202608_indicadores_monetarios_de_seguridad_social_0.pdf"
+    },
+    {
+      "period": "2026-09",
+      "minimum": 428633,
+      "bonus": 70000,
+      "minimum_bonus": 498633,
+      "auh": 154031,
+      "ipc": null,
+      "source": "https://www.argentina.gob.ar/sites/default/files/202609_indicadores_monetarios_de_seguridad_social.pdf"
+    }
+  ]
+}

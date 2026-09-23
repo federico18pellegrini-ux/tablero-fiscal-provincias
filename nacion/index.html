@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#0A192F">
   <link rel="canonical" href="https://tablero.federicopellegrini.com.ar/nacion/">
   <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260917-marca">
-  <script defer src="../analytics.js?v=20260918-cierre"></script>
-  <script defer src="math.js?v=20260918-cierre"></script><script defer src="report.js?v=20260918-carteras"></script><script defer src="app.js?v=20260918-cierre"></script><script defer src="management-model.js?v=20260919-caja"></script><script defer src="management.js?v=20260919-caja"></script>
+  <script defer src="../analytics.js?v=20260922-prioridades"></script>
+  <script defer src="math.js?v=20260922-prioridades"></script><script defer src="report.js?v=20260918-carteras"></script><script defer src="app.js?v=20260922-prioridades"></script><script defer src="management-model.js?v=20260919-caja"></script><script defer src="management.js?v=20260919-caja"></script>
   <link rel="preload" href="../assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/brand/playfair-display.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../brand.css?v=20260918-municipios-pba">
@@ -19,6 +19,8 @@
 <script defer src="decision-next.js?v=20260918-cierre"></script>
 <script defer src="acts.js?v=20260918-cierre"></script>
 <script defer src="planning-model.js?v=20260918-ingresos"></script><script defer src="planning.js?v=20260918-ingresos"></script>
+<link rel="stylesheet" href="priorities.css?v=20260922">
+<script defer src="priorities-model.js?v=20260922"></script><script defer src="priorities.js?v=20260922"></script>
 </head>
 <body data-dashboard="nacion">
 <a href="#contenido" class="skip">Saltar al contenido</a>
@@ -27,6 +29,7 @@
   <nav class="dashboard-switcher" aria-label="Cambiar de tablero"><a href="/nacion/" aria-current="page">Nación</a><a href="/municipios/?municipio=06805&amp;vista=panorama">Municipios PBA</a><a href="/#summary">Provincias</a></nav>
   <nav class="main-nav" aria-label="Vistas del tablero nacional">
     <a href="#inicio" data-page-link="panorama" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v11h-6v-8H9v8H3Z"/></svg>Panorama</a>
+    <a href="#prioridades" data-page-link="prioridades"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18M7 16V9m5 7V5m5 11v-4"/></svg>Prioridades</a>
     <a href="#distribucion" data-page-link="gasto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 7 9-4 9 4M3 9h18M5 10v9m5-9v9m4-9v9m5-9v9M3 21h18"/></svg>Gasto</a>
     <a href="#obras" data-page-link="obras"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2ZM9 3v16m6-14v16"/></svg>Obras</a>
     <a href="#recursos" data-page-link="economia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9m8 11V4m8 16V12M2 20h20"/></svg>Economía</a>
@@ -46,12 +49,13 @@
           <article class="total-card" aria-labelledby="total-title"><p class="eyebrow" id="total-title">Gasto propuesto para 2027</p><div id="headline-total" class="jumbo"></div><p id="headline-unit" class="note"></p><div class="total-comparison"><span id="headline-change"></span><p id="headline-base"></p></div><p class="note">Proyecto de ley presentado por el Ejecutivo, pendiente de tratamiento en el Congreso.</p><p id="real-note" class="note" hidden>Pesos de agosto de 2026 · escenario de inflación. <a href="#metodo">Ver el cálculo.</a></p></article>
         </div>
         <div id="overview-stats" class="overview-stats"></div>
-        <nav class="decision-links" aria-label="Lecturas del presupuesto"><a href="#carteras">Ver por ministerio →</a><a href="#programas">Explorar políticas y programas →</a></nav>
+        <nav class="decision-links" aria-label="Lecturas del presupuesto"><a href="#prioridades">Prioridades, jubilaciones y AUH →</a><a href="#carteras">Ver por ministerio →</a><a href="#programas">Explorar políticas y programas →</a></nav>
         <section id="attention" class="attention" aria-label="Asuntos para revisar"></section>
       </section>
       <section id="escala" class="chapter"><p class="eyebrow">Las prioridades / En perspectiva</p><h2 tabindex="-1">Qué mirar detrás del total</h2><div id="scale" class="scale-grid"></div></section>
 <section id="historia" class="chapter"><p class="eyebrow">Panorama / Historia</p><h2 tabindex="-1">La evolución del gasto</h2><p>La serie reúne lo ejecutado en 2023–2025, lo autorizado hoy para 2026 y lo propuesto para 2027. Cada barra identifica su etapa.</p><p><a href="#historia-ejecucion">Ver la historia completa desde 2007 →</a></p><div id="history-chart"></div><p id="history-note" class="note"></p></section>
 </div>
+<div data-page="prioridades" hidden><section id="prioridades" class="chapter"><p role="status">Cargando prioridades y prestaciones…</p></section></div>
 <div data-page="gasto" hidden><nav class="section-nav" aria-label="Explorar el gasto"><a href="#distribucion">Distribución</a><a href="#carteras">Por ministerio</a><a href="#comparacion">Comparación</a><a href="#cambios">Ranking de cambios</a><a href="#programas">Programas</a><a href="#finalidades">Finalidades</a></nav>
 <section id="distribucion" class="chapter">
     <p class="eyebrow">Gasto / Distribución</p><h2 tabindex="-1">Cómo se reparte el presupuesto</h2><p>Cada vista responde una pregunta: qué se financia, quién lo administra o dónde se registra. Los importes corresponden al mismo presupuesto.</p>
