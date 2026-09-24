@@ -80,7 +80,8 @@
     "management_reports": "reports/manifest.json",
     "annual_fiscal_accounts": "data/annual_fiscal_accounts.json",
     "reclamos_nacion_evidencia": "data/reclamos_nacion/evidencia_verificada.json",
-    "pba_execution_latest": "data/pba_execution_latest.json"
+    "pba_execution_latest": "data/pba_execution_latest.json",
+    "pba_comparison": "data/pba_comparison.json"
   },
   "notes": {
     "cross_section_fiscal_scope": "La capa estructural general conserva el corte 3T25. La nueva sala del gobernador usa 4T25 y 1T26 y un ranking homogéneo de 23 jurisdicciones; La Pampa no integra esos informes.",
@@ -104,7 +105,8 @@
     "debt_schedule_scope": "PBA: julio–diciembre de 2026 y años completos 2027–2041, valuados al 30/06/2026. El documento no contiene una apertura mensual.",
     "historical_series_gaps": "CABA y Santiago del Estero no tienen serie propia homogénea de recaudación 1984-2024 en la fuente histórica principal; sus datos corrientes se muestran por separado.",
     "government_results_scope": "Capa federal comparable para las 24 jurisdicciones: homicidios 2025, Aprender 2024, mortalidad infantil 2024, NBI 2022 y esfuerzo presupuestario APNF 2024. Se separan resultados, contexto estructural y gasto; no se calcula un ranking compuesto ni se atribuye causalidad.",
-    "mixed_vintages": "El ranking conserva el corte común al 1T26. Las actualizaciones provinciales y mensuales indican su propio período."
+    "mixed_vintages": "El ranking conserva el corte común al 1T26. Las actualizaciones provinciales y mensuales indican su propio período.",
+    "pba_comparison": "PBA: recaudación mensual 2025 completa, conciliada con 2026. Recaudación deflactada mes a mes; gasto semestral con IPC promedio. Fuentes y métodos en pba_comparison.json."
   },
   "missing_top_mensual_2026_provinces": [],
   "missing_ron_2026_provinces": [],
@@ -118,6 +120,7 @@
     "debt_service_schedule_pba": "2026-06-30",
     "municipal_legal_transfers_pba": "2026-03-31",
     "execution_pba": "2026-06-30",
-    "historical_own_revenue_pba": "2025"
+    "historical_own_revenue_pba": "2025",
+    "pba_comparison_reviewed": "2026-09-24"
   }
 }

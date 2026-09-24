@@ -5,7 +5,7 @@ function renderLatestPbaUpdate(){
  let note=document.getElementById('pbaLatestSummary');
  if(currentProvince!=='Buenos Aires'){if(note)note.hidden=true;return;}
  if(!pbaExecutionLatest){
-  if(!pbaExecutionRequest)pbaExecutionRequest=fetch('data/pba_execution_latest.json?v=20260915-9').then(r=>{if(!r.ok)throw Error('PBA execution');return r.json();}).then(d=>{pbaExecutionLatest=d;renderBudgetExecution();}).catch(()=>{pbaExecutionRequest=null;});
+  if(!pbaExecutionRequest)pbaExecutionRequest=fetch('data/pba_execution_latest.json?v=20260924').then(r=>{if(!r.ok)throw Error('PBA execution');return r.json();}).then(d=>{pbaExecutionLatest=d;renderBudgetExecution();}).catch(()=>{pbaExecutionRequest=null;});
   return;
  }
  if(!note){note=document.createElement('p');note.id='pbaLatestSummary';note.className='latest-update';document.querySelector('#governorRoom > .profile-reading')?.after(note);}
