@@ -1,6 +1,6 @@
 {
   "province": "Buenos Aires",
-  "reviewed_at": "2026-09-15",
+  "reviewed_at": "2026-09-24",
   "period": "2026-H1",
   "period_label": "Enero–junio 2026",
   "scope": "Administración Pública no Financiera (APNF)",
@@ -32,7 +32,10 @@
       "municipal_current_transfers": 2138442,
       "financial_pct": -5.439614842490757,
       "primary_pct": -2.557209860972803,
-      "capital_pct": 6.3240373663964125
+      "capital_pct": 6.3240373663964125,
+      "operating": 871058,
+      "other_transfers": 2123153,
+      "other_losses": 2321
     },
     {
       "year": 2026,
@@ -49,7 +52,10 @@
       "municipal_current_transfers": 2774742,
       "financial_pct": -4.2232962109181305,
       "primary_pct": -0.7197310841662632,
-      "capital_pct": 4.491352921730518
+      "capital_pct": 4.491352921730518,
+      "operating": 1085872,
+      "other_transfers": 2787650,
+      "other_losses": 2
     }
   ],
   "methodology": "Importes corrientes del cuadro de la página 13. Comparación entre primeros semestres; no reemplaza el ranking común al 1T26. El RON presupuestario no es el mismo total bruto de distribución automática del registro nacional. Diferencias de componentes de hasta $1 millón por redondeo."

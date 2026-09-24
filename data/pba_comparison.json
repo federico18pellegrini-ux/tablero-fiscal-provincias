@@ -1,0 +1,339 @@
+{
+  "reviewed_at": "2026-09-24",
+  "revenue_period": "Enero–julio 2026",
+  "revenue_cutoff": "2026-07",
+  "revenue": [
+    {
+      "tax": "Total",
+      "previous": 7584640.762531191,
+      "current": 9817368.385172391,
+      "real_change_pct": -2.488086962637037,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "real_change_pct": 4.409205376938852
+        },
+        {
+          "period": "2026-02",
+          "real_change_pct": 7.687756507073895
+        },
+        {
+          "period": "2026-03",
+          "real_change_pct": -4.894975562550618
+        },
+        {
+          "period": "2026-04",
+          "real_change_pct": -2.5402168716356144
+        },
+        {
+          "period": "2026-05",
+          "real_change_pct": -13.37877758376207
+        },
+        {
+          "period": "2026-06",
+          "real_change_pct": 2.072320288541185
+        },
+        {
+          "period": "2026-07",
+          "real_change_pct": -8.542305732919797
+        }
+      ]
+    },
+    {
+      "tax": "Iibb",
+      "previous": 5768140.934400661,
+      "current": 7491037.995281443,
+      "real_change_pct": -2.3448650641912594,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "real_change_pct": 2.4076582610460084
+        },
+        {
+          "period": "2026-02",
+          "real_change_pct": -5.729244581795845
+        },
+        {
+          "period": "2026-03",
+          "real_change_pct": -2.551954585880023
+        },
+        {
+          "period": "2026-04",
+          "real_change_pct": -1.144630934760671
+        },
+        {
+          "period": "2026-05",
+          "real_change_pct": -8.747831566477672
+        },
+        {
+          "period": "2026-06",
+          "real_change_pct": 0.5718277071945499
+        },
+        {
+          "period": "2026-07",
+          "real_change_pct": -1.3735977201755345
+        }
+      ]
+    },
+    {
+      "tax": "Sellos",
+      "previous": 786499.4290258,
+      "current": 951532.3554859,
+      "real_change_pct": -8.681346161150083,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "real_change_pct": 5.335463353807168
+        },
+        {
+          "period": "2026-02",
+          "real_change_pct": -4.1610122846099
+        },
+        {
+          "period": "2026-03",
+          "real_change_pct": -2.8443022933479556
+        },
+        {
+          "period": "2026-04",
+          "real_change_pct": -9.950519599483343
+        },
+        {
+          "period": "2026-05",
+          "real_change_pct": -11.377809604699019
+        },
+        {
+          "period": "2026-06",
+          "real_change_pct": -17.061870322077578
+        },
+        {
+          "period": "2026-07",
+          "real_change_pct": -18.693740367739696
+        }
+      ]
+    },
+    {
+      "tax": "Inmobiliario",
+      "previous": 423141.2988962189,
+      "current": 642496.4593533761,
+      "real_change_pct": 16.00255714264993,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "real_change_pct": 67.04604436356571
+        },
+        {
+          "period": "2026-02",
+          "real_change_pct": 511.6945966819565
+        },
+        {
+          "period": "2026-03",
+          "real_change_pct": -19.97802691713848
+        },
+        {
+          "period": "2026-04",
+          "real_change_pct": -6.092716154471933
+        },
+        {
+          "period": "2026-05",
+          "real_change_pct": -64.46021639403705
+        },
+        {
+          "period": "2026-06",
+          "real_change_pct": 21.37346037985497
+        },
+        {
+          "period": "2026-07",
+          "real_change_pct": -25.6004684912698
+        }
+      ]
+    },
+    {
+      "tax": "Automotores",
+      "previous": 415221.40553536464,
+      "current": 434366.4760406013,
+      "real_change_pct": -20.543835664224254,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "real_change_pct": 54.044693813981695
+        },
+        {
+          "period": "2026-02",
+          "real_change_pct": 41.33864368542599
+        },
+        {
+          "period": "2026-03",
+          "real_change_pct": -9.93484681500788
+        },
+        {
+          "period": "2026-04",
+          "real_change_pct": -5.22666982376585
+        },
+        {
+          "period": "2026-05",
+          "real_change_pct": -38.34930246337906
+        },
+        {
+          "period": "2026-06",
+          "real_change_pct": 17.691822038141435
+        },
+        {
+          "period": "2026-07",
+          "real_change_pct": -55.75905712632354
+        }
+      ]
+    },
+    {
+      "tax": "Otros",
+      "previous": 191637.6946731469,
+      "current": 297935.09901107074,
+      "real_change_pct": 16.565236366540503,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "real_change_pct": 8.361065763111576
+        },
+        {
+          "period": "2026-02",
+          "real_change_pct": 14.45186966612182
+        },
+        {
+          "period": "2026-03",
+          "real_change_pct": 11.362059833490612
+        },
+        {
+          "period": "2026-04",
+          "real_change_pct": 1.3288547883613333
+        },
+        {
+          "period": "2026-05",
+          "real_change_pct": 18.893104559463005
+        },
+        {
+          "period": "2026-06",
+          "real_change_pct": 42.34629604045153
+        },
+        {
+          "period": "2026-07",
+          "real_change_pct": 18.811023804890013
+        }
+      ]
+    }
+  ],
+  "spending_period": "Enero–junio 2026",
+  "spending": [
+    {
+      "key": "income",
+      "label": "Ingresos",
+      "previous": 15837261,
+      "current": 20743442,
+      "real_change_pct": -1.4240763671058199,
+      "share_pct": null
+    },
+    {
+      "key": "spending",
+      "label": "Gasto total",
+      "previous": 16698747,
+      "current": 21619499,
+      "real_change_pct": -2.5612175897694267,
+      "share_pct": 100.0
+    },
+    {
+      "key": "personnel",
+      "label": "Personal",
+      "previous": 6878339,
+      "current": 9069150,
+      "real_change_pct": -0.7676865554555712,
+      "share_pct": 41.94893692957455
+    },
+    {
+      "key": "pensions",
+      "label": "Jubilaciones",
+      "previous": 3172905,
+      "current": 4204316,
+      "real_change_pct": -0.2740024777392769,
+      "share_pct": 19.446870623597707
+    },
+    {
+      "key": "municipal_current_transfers",
+      "label": "Transferencias a municipios",
+      "previous": 2138442,
+      "current": 2774742,
+      "real_change_pct": -2.344830088124894,
+      "share_pct": 12.834441723187018
+    },
+    {
+      "key": "other_transfers",
+      "label": "Otras transferencias corrientes",
+      "previous": 2123153,
+      "current": 2787650,
+      "real_change_pct": -1.1840474426187741,
+      "share_pct": 12.894147084536971
+    },
+    {
+      "key": "operating",
+      "label": "Bienes y servicios",
+      "previous": 871058,
+      "current": 1085872,
+      "real_change_pct": -6.178651987186534,
+      "share_pct": 5.022651079934831
+    },
+    {
+      "key": "capital",
+      "label": "Gasto de capital",
+      "previous": 1056035,
+      "current": 971008,
+      "real_change_pct": -30.79864417097422,
+      "share_pct": 4.491352921730518
+    },
+    {
+      "key": "interest",
+      "label": "Intereses",
+      "previous": 456494,
+      "current": 726760,
+      "real_change_pct": 19.81909918698639,
+      "share_pct": 3.3615950119843205
+    },
+    {
+      "key": "other_losses",
+      "label": "Otras pérdidas",
+      "previous": 2321,
+      "current": 2,
+      "real_change_pct": -99.93514776274588,
+      "share_pct": 9.250908173219e-06
+    }
+  ],
+  "revenue_method": "Variación interanual del acumulado: cada flujo mensual se ajusta por IPC nacional observado a pesos de junio de 2026 antes de sumar. No se usa el promedio simple de variaciones.",
+  "spending_method": "Variación interanual del acumulado semestral ajustada por la relación de IPC promedio de enero–junio de cada año. Es una aproximación con datos semestrales; no una deflación de flujos mensuales.",
+  "semester_ipc_ratio": 1.3287090479014902,
+  "sources": [
+    {
+      "file": "recaudacion-2025.xlsx",
+      "url": "https://www.ec.gba.gov.ar/areas/hacienda/PolTributaria/Recaudacion/Recursos_OrigenProvincial_anosanteriores.xlsx",
+      "sha256": "322a8e69d5da65de2eb52dd0ea3622ec1789d4bc839811be1745c44328132b24"
+    },
+    {
+      "file": "recaudacion-2026.xlsx",
+      "url": "https://www.ec.gba.gov.ar/areas/hacienda/PolTributaria/Recaudacion/Recaudaci%C3%B3n%20Provincial%202026_Prensa.xlsx",
+      "sha256": "f2348439a3e05d4c07f97493bd4d76f7b3f8bdb64044d2b0247f855f4cbaab52"
+    }
+  ],
+  "execution_source": {
+    "file": "execution-pba-q2.pdf",
+    "url": "https://www.ec.gba.gov.ar/areas/hacienda/Presupuesto/ejecucion_presupuestaria/Ejecuci%C3%B3n%20Presupuestaria%20II%20trim%202026.pdf",
+    "sha256": "29806a0174f9f85e8fad24b973de5067a6473632c16b0b7ccbe82770a63b36ed",
+    "bytes": 587246,
+    "pages": 13,
+    "publisher": "Dirección Provincial de Presupuesto Público, PBA",
+    "page": 13
+  },
+  "ipc_source": {
+    "source": "INDEC, IPC nacional, nivel general, diciembre 2016=100",
+    "url": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_09_26.xls",
+    "sheet": "Índices IPC Cobertura Nacional",
+    "latest_period": "2026-08",
+    "retrieved": "2026-09-15",
+    "constant_price_base": "2026-06",
+    "method": "Factor = índice junio 2026 / índice del mes. Se utilizan índices publicados, no se encadenan tasas mensuales redondeadas. Los flujos anuales sin apertura mensual no se deflactan con el índice de diciembre."
+  }
+}

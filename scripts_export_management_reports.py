@@ -20,7 +20,7 @@ INPUTS=['data/annual_fiscal_accounts.json','data/budget_execution_2026.json',
  'data/fiscal_history.json','data/provincial_debt_services.json','data/debt_history.json',
  'data/government_results_provinces.json','informacion_consolidada_2026_normalizado.csv',
  'informacion_consolidada_2025_normalizado.csv','data/ipc_national_index.csv',
- 'data/ron_2025_import.json','data/meta.json','data/pba_execution_latest.json','data/debt/pba_debt_profile_2026q1.json','dashboard_reclamos_nacion_provincias.json']
+ 'data/ron_2025_import.json','data/meta.json','data/pba_execution_latest.json','data/debt/pba_debt_profile_2026q1.json','dashboard_reclamos_nacion_provincias.json','data/pba_comparison.json']
 BUILD_INPUTS=INPUTS+['scripts_export_management_reports.py','assets/report-fonts/Lato-Regular.ttf','assets/report-fonts/Lato-Bold.ttf']
 INK='#172E46';TEAL='#14796F';BLUE='#3679AA';MUTED='#536578';PALE='#EDF4F6';LINE='#D5E1E6';RUST='#A94F38';GOLD='#BB8B3A'
 MM=72/25.4;W,H=A4
@@ -95,7 +95,7 @@ class ReportData:
     if r['category_normalized'] in ['Total | (1) + (2)','CFI | Neta','Financiamiento Educativo','Compensación Consenso Fiscal']:
      if k in self.ron:raise ValueError(f'Duplicate RON aggregate: {k}')
      self.ron[k]=float(r['value_millions'])
-  self.transfer_cut=max(k[1] for k in self.ron);self.reviewed=max(self.annual['reviewed_at'],self.budget['reviewed_at'],self.services['reviewed_at'])
+  self.transfer_cut=max(k[1] for k in self.ron);self.reviewed=max(self.annual['reviewed_at'],self.budget['reviewed_at'],self.services['reviewed_at'],self.latest_pba['reviewed_at'])
  def annual_row(self,province,year):
   return next((r for r in self.annual['rows'] if r['province']==province and r['year']==year and r['status']=='observed'),None)
  def transfers(self,province,through=None,category='Total | (1) + (2)'):
@@ -217,9 +217,12 @@ class Report:
   self.paragraph(text,18,219,174,10.5,14.3,max_end=245)
   self.rect(18,248,174,20,PALE,r=2)
   decision=('Ordenar los pagos y corregir el desequilibrio sin interrumpir los servicios esenciales.' if f is not None and f<0 else 'Preservar el margen fiscal y asignar recursos a prioridades con resultados medibles.' if f is not None else 'Completar la información antes de comprometer nuevos gastos permanentes.')
-  self.paragraph('<b>Decisión de gestión.</b> '+decision+' El saldo fiscal no equivale a dinero disponible en la cuenta bancaria.',22,251,166,10.2,13.2,max_end=266)
+  if m['latest_execution']:
+   changes={r['key']:r['real_change_pct'] for r in jsonfile('data/pba_comparison.json')['spending']}
+   self.paragraph(f'<b>Detrás del ajuste.</b> Capital {pct(changes["capital"])}; personal {pct(changes["personnel"])}; jubilaciones {pct(changes["pensions"])}; municipios {pct(changes["municipal_current_transfers"])}; intereses +{pct(changes["interest"])} real. Menos déficit convive con menos recursos reales para inversión.',22,251,166,10.2,13.2,max_end=266)
+  else:self.paragraph('<b>Decisión de gestión.</b> '+decision+' El saldo fiscal no equivale a dinero disponible en la cuenta bancaria.',22,251,166,10.2,13.2,max_end=266)
   basis='Santiago del Estero 2025 registra compromiso. Trimestre según DNAP.' if m['province']=='Santiago del Estero' else 'Ingresos percibidos; gastos devengados.'
-  self.note(('DNAP: cierre 2025. Presupuesto PBA: primer semestre 2026. ' if m['latest_execution'] else 'DNAP. ')+ 'APNF, incluye seguridad social. '+basis+' Datos provisorios.',271)
+  self.note(('DNAP: cierre 2025. PBA: primer semestre 2026. Variaciones reales: IPC promedio semestral INDEC. ' if m['latest_execution'] else 'DNAP. ')+ 'APNF, incluye seguridad social. '+basis+' Datos provisorios.',271)
 
  def page_investment(self):
   m=self.m;a=m['annual'];year=self.d.year;cap=m['metrics']['capital']

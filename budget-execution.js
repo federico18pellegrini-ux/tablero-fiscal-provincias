@@ -39,7 +39,7 @@ function renderBudgetExecution(){
   budgetParagraph(host,'Gasto de capital: obras, equipamiento, transferencias de capital e inversión financiera. El gráfico muestra su peso en el gasto total.');
  }
  managementSource(host,b.source_url,'Fuente: presupuesto provincial 2026 · archivo oficial');managementSource(host,e.source_url,semester?'PBA · ejecución APNF, primer semestre de 2026':'DNAP · ejecución APNF, primer trimestre de 2026');if(!semester)managementSource(host,old.source_url,'DNAP · ejecución APNF, primer trimestre de 2025');managementSource(host,'data/budget_execution_2026.json','Ver coberturas, celdas de origen y metodología');
- renderExecutionChanges(province,ratios,previous,semester);renderProposalEstimator(province);renderManagementSourceReview();renderVerifiedManagement();
+ renderExecutionChanges(province,ratios,previous,semester);renderPbaComparison();renderProposalEstimator(province);renderManagementSourceReview();renderVerifiedManagement();
 }
 let managementReviewRequest=null;
 function renderManagementSourceReview(){
