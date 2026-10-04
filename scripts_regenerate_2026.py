@@ -120,7 +120,7 @@ def province_rows(sheet, name_column: int, universe: set[str]) -> dict[str, int]
 
 
 def import_top(path: Path, universe: list[str]) -> tuple[list[dict[str, object]], dict[str, list[str]]]:
-    workbook = openpyxl.load_workbook(path, data_only=True, read_only=True)
+    workbook = openpyxl.load_workbook(path, data_only=True, read_only=False)
     total_sheet = workbook["TOTAL"]
     universe_set = set(universe)
     total_rows = province_rows(total_sheet, 2, universe_set)

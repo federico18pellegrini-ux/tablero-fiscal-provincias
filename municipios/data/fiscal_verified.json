@@ -1517,6 +1517,39 @@
       "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos."
     },
     {
+      "id": "06448",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.laprida.gov.ar/",
+      "amounts": {
+        "ingresos_corrientes": "11482875001.39",
+        "gastos_corrientes": "11256415194.69",
+        "ingresos_capital": "610861690.60",
+        "gastos_capital": "577283016.71",
+        "ingresos_totales": "12093736691.99",
+        "gastos_totales": "11833698211.40",
+        "resultado_financiero": "260038480.59",
+        "personal_devengado": "7493025146.40"
+      },
+      "documents": [
+        {
+          "url": "https://www.laprida.gov.ar/uploads/SEF_SEM_2026.pdf",
+          "sha256": "06b6d45854222f6dac025764c6b2ef8f61265e15e8070f0945329cab9bd2d0fa",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 163491,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06448.pdf"
+        }
+      ],
+      "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
+      "verifiedAt": "2026-10-04"
+    },
+    {
       "id": "06476",
       "inicio": "2026-01-02",
       "fin": "2026-06-30",
@@ -1765,6 +1798,39 @@
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
     },
     {
+      "id": "06609",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.pehuajo.gob.ar/p/situacion-economico-financiera.html",
+      "amounts": {
+        "ingresos_corrientes": "26934651346.05",
+        "gastos_corrientes": "25446602867.30",
+        "ingresos_capital": "672594696.02",
+        "gastos_capital": "886946553.62",
+        "ingresos_totales": "27607246042.07",
+        "gastos_totales": "26333549420.92",
+        "resultado_financiero": "1273696621.15",
+        "personal_devengado": "17915434555.99"
+      },
+      "documents": [
+        {
+          "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjykoF6Zo7gndspxaSrVca_JJnnaM6UdJ4WIE4im5aLZ83UIZpw2Q9JI-Ss_FB1garIB6HzgQd_xVLBeWMQdPRM9USkZXQWHqFqCXxNr2dcIuicmd4ChJaqUYFpw_sMF0DE6gZmz-JleptZLv4GsO7BbgutOVPJt6qidDX4_kBxZ7y9z2hlp0kc6rMHzzbu/s3509/pdf%20contaduria-im%C3%A1genes-0.jpg",
+          "sha256": "bbbed3c07ffc1cf4f08899a2953efef3b0f3344a58c2df5bf21edd4d89133664",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 1011005,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06609.jpg"
+        }
+      ],
+      "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
+      "verifiedAt": "2026-10-04"
+    },
+    {
       "id": "06616",
       "inicio": "2026-01-01",
       "fin": "2026-06-30",
@@ -1825,6 +1891,50 @@
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06638",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://pilar.gov.ar/publicaciones/",
+      "amounts": {
+        "ingresos_corrientes": "242909328239.12",
+        "gastos_corrientes": "170123529334.22",
+        "ingresos_capital": "7010877015.18",
+        "gastos_capital": "18727905297.46",
+        "ingresos_totales": "249920205254.30",
+        "gastos_totales": "188851434631.68",
+        "resultado_financiero": "61068770622.62",
+        "personal_devengado": "73710344960.66"
+      },
+      "documents": [
+        {
+          "url": "https://pilar.gov.ar/wp-content/uploads/2026/07/CAIF-2DO-TRIM-2026-Base-Devengado.pdf",
+          "sha256": "043067a9d77f2f9de1511ff19a10bea97e6c4f4eed657972d3ae3d8c68190d2f",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 49995,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06638.pdf"
+        },
+        {
+          "url": "https://pilar.gov.ar/wp-content/uploads/2026/07/2026-Situacion-Economico-Financiero-1er-Semestre.pdf",
+          "sha256": "36b22a27e5920f6ac4f49e6f6cd15024deb89e029da1f47e4bea413e1800e3c2",
+          "pages": 11,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto, gastos en personal devengados. Se cotejan ingresos corrientes y de capital con CAIF.",
+          "bytes": 7672139,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06638-personal.pdf"
+        }
+      ],
+      "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06644",
@@ -1918,6 +2028,39 @@
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El subtotal de capital sin importe impreso se obtiene de la igualdad entre el total y el componente corriente; se conserva la operación en la verificación."
+    },
+    {
+      "id": "06665",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://digestos.miramallo.com.ar/documento/L3f4b1DSJ8kyWFSu",
+      "amounts": {
+        "ingresos_corrientes": "20642726365.17",
+        "gastos_corrientes": "19157544939.75",
+        "ingresos_capital": "10594263.04",
+        "gastos_capital": "1815925575.62",
+        "ingresos_totales": "20653320628.21",
+        "gastos_totales": "20973470515.37",
+        "resultado_financiero": "-320149887.16",
+        "personal_devengado": "5782708977.24"
+      },
+      "documents": [
+        {
+          "url": "https://digestos.miramallo.com.ar/api/documents/L3f4b1DSJ8kyWFSu/download",
+          "sha256": "16a6e74a935f9199d92c6c9d0a7a6e8a07ea3e9900ede6733fc41c1e4c6e5c8d",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 61288,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06665.pdf"
+        }
+      ],
+      "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06672",
@@ -2932,223 +3075,6 @@
   "budgetExecutions": [],
   "otherPeriods": [
     {
-      "id": "06112",
-      "inicio": "2026-01-01",
-      "fin": "2026-08-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/regimen_provincial_fiscal_municipal.html",
-      "amounts": {
-        "ingresos_corrientes": "28124752418.13",
-        "gastos_corrientes": "28102173124.21",
-        "ingresos_capital": "2193153402.48",
-        "gastos_capital": "1590810520.58",
-        "ingresos_totales": "30317905820.61",
-        "gastos_totales": "29692983644.79",
-        "resultado_financiero": "624922175.82",
-        "personal_devengado": "18370303611.89"
-      },
-      "documents": [
-        {
-          "url": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/informacion_economica/SITUACION-ECONOMICO-FINANCIERA-2026.pdf",
-          "sha256": "890380541fc70d1c458e5cc7ba1169ddaf353f67e3f4da38149925829bc41fbc",
-          "pages": 9,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 374682
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
-    },
-    {
-      "id": "06224",
-      "inicio": "2025-01-01",
-      "fin": "2025-12-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://chivilcoy.gov.ar/2025-situacion-economica-financiera/",
-      "amounts": {
-        "ingresos_corrientes": "49437860552.49",
-        "gastos_corrientes": "51852473643.73",
-        "ingresos_capital": "239974965.16",
-        "gastos_capital": "2007325668.10",
-        "ingresos_totales": "49677835517.65",
-        "gastos_totales": "53859799311.83",
-        "resultado_financiero": "-4181963794.18",
-        "personal_devengado": "30405845947.77"
-      },
-      "documents": [
-        {
-          "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/situacioneconomica/2025-situacion-economica-financiera.pdf",
-          "sha256": "abd5630e4caa9d84d89f6d5185e2e9e745579880743ae8a0fb5a2b6615255a4b",
-          "pages": 2,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 306318
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
-    },
-    {
-      "id": "06322",
-      "inicio": "2025-01-01",
-      "fin": "2025-12-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://www.lamadrid.gob.ar/transparencia/",
-      "amounts": {
-        "ingresos_corrientes": "21791848776.90",
-        "gastos_corrientes": "21976131617.22",
-        "ingresos_capital": "1428771867.17",
-        "gastos_capital": "1878809559.03",
-        "ingresos_totales": "23220620644.07",
-        "gastos_totales": "23854941176.25",
-        "resultado_financiero": "-634320532.18",
-        "personal_devengado": "14645240206.59"
-      },
-      "documents": [
-        {
-          "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/03/Situacion-Economico-Financiera-2025.pdf",
-          "sha256": "1a1584d1ec1e13ab6bba4ea5891115a30eec5a4d481abe2786526fe37c1ff087",
-          "pages": 5,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 328450
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre."
-    },
-    {
-      "id": "06441",
-      "inicio": "2026-01-02",
-      "fin": "2026-03-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://www.laplata.gob.ar/descargas/presupuestos/2026/Situacion%20Econmico%20Financiera%20-%201er%20Trimestre%202026.pdf",
-      "amounts": {
-        "ingresos_corrientes": "93978825337.73",
-        "gastos_corrientes": "92323127134.56",
-        "ingresos_capital": "12571247.02",
-        "gastos_capital": "30368152197.40",
-        "ingresos_totales": "93991396584.75",
-        "gastos_totales": "122691279331.96",
-        "resultado_financiero": "-28699882747.21",
-        "personal_devengado": "25906859006.86"
-      },
-      "documents": [
-        {
-          "url": "https://www.laplata.gob.ar/descargas/presupuestos/2026/Situacion%20Econmico%20Financiera%20-%201er%20Trimestre%202026.pdf",
-          "sha256": "40cf6b9ebc902de79b499c21a9f297124d2dcab6289c72913bfa786b94794a4f",
-          "pages": 9,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 136459
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
-    },
-    {
-      "id": "06560",
-      "inicio": "2026-01-01",
-      "fin": "2026-03-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://moreno2.moreno.gob.ar/php/trees-docs-economia.php",
-      "amounts": {
-        "ingresos_corrientes": "70567041032.85",
-        "gastos_corrientes": "56062261636.54",
-        "ingresos_capital": "4206202332.36",
-        "gastos_capital": "2769189121.51",
-        "ingresos_totales": "74773243365.21",
-        "gastos_totales": "58831450758.05",
-        "resultado_financiero": "15941792607.16",
-        "personal_devengado": "28701621655.74"
-      },
-      "documents": [
-        {
-          "url": "https://moreno.gob.ar/docs/documento_974_situacion_econ-financiera_primer_trimestre_2026.pdf",
-          "sha256": "b0cca3cc3a7733b81e9146bf9544f1ad720e54c30be00bc791495e490e0fbf10",
-          "pages": 7,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 94808
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
-    },
-    {
-      "id": "06700",
-      "inicio": "2025-01-02",
-      "fin": "2025-12-30",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://drive.google.com/uc?export=download&id=1a9pxkIUN8Pgn0JEr4sYkw7b-NTVIurRV",
-      "amounts": {
-        "ingresos_corrientes": "30115110824.64",
-        "gastos_corrientes": "27389861161.20",
-        "ingresos_capital": "535641457.23",
-        "gastos_capital": "1453604842.40",
-        "ingresos_totales": "30650752281.87",
-        "gastos_totales": "28843466003.60",
-        "resultado_financiero": "1807286278.27",
-        "personal_devengado": "20736362474.02"
-      },
-      "documents": [
-        {
-          "url": "https://drive.google.com/uc?export=download&id=1a9pxkIUN8Pgn0JEr4sYkw7b-NTVIurRV",
-          "sha256": "aae797ca6c0ff7f3651dbcdc26ca523751cd1397dcd3a39fdc9867206f3a6671",
-          "pages": 5,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 598780
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre."
-    },
-    {
-      "id": "06119",
-      "inicio": "2026-01-02",
-      "fin": "2026-03-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://brandsen.gob.ar/transparencia_gestion",
-      "amounts": {
-        "ingresos_corrientes": "5168211418.32",
-        "gastos_corrientes": "4968976487.48",
-        "ingresos_capital": "53264980.99",
-        "gastos_capital": "65498265.95",
-        "ingresos_totales": "5221476399.31",
-        "gastos_totales": "5034474753.43",
-        "resultado_financiero": "187001645.88",
-        "personal_devengado": "3206320333.39"
-      },
-      "documents": [
-        {
-          "url": "https://brandsen.gob.ar/img/pdf/SituacionEconimicaFinacieraal31demarzode2026.pdf",
-          "sha256": "1a11ee4e4b9c5f2a394d23b04dc333a3912e48098b904f1bb849ee9a6b7d67ac",
-          "pages": 4,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 310631
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
-    },
-    {
       "id": "06049",
       "inicio": "2026-01-01",
       "fin": "2026-03-31",
@@ -3211,6 +3137,132 @@
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
     },
     {
+      "id": "06112",
+      "inicio": "2026-01-01",
+      "fin": "2026-08-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/regimen_provincial_fiscal_municipal.html",
+      "amounts": {
+        "ingresos_corrientes": "28124752418.13",
+        "gastos_corrientes": "28102173124.21",
+        "ingresos_capital": "2193153402.48",
+        "gastos_capital": "1590810520.58",
+        "ingresos_totales": "30317905820.61",
+        "gastos_totales": "29692983644.79",
+        "resultado_financiero": "624922175.82",
+        "personal_devengado": "18370303611.89"
+      },
+      "documents": [
+        {
+          "url": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/informacion_economica/SITUACION-ECONOMICO-FINANCIERA-2026.pdf",
+          "sha256": "890380541fc70d1c458e5cc7ba1169ddaf353f67e3f4da38149925829bc41fbc",
+          "pages": 9,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+          "bytes": 374682
+        }
+      ],
+      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06119",
+      "inicio": "2026-01-02",
+      "fin": "2026-03-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://brandsen.gob.ar/transparencia_gestion",
+      "amounts": {
+        "ingresos_corrientes": "5168211418.32",
+        "gastos_corrientes": "4968976487.48",
+        "ingresos_capital": "53264980.99",
+        "gastos_capital": "65498265.95",
+        "ingresos_totales": "5221476399.31",
+        "gastos_totales": "5034474753.43",
+        "resultado_financiero": "187001645.88",
+        "personal_devengado": "3206320333.39"
+      },
+      "documents": [
+        {
+          "url": "https://brandsen.gob.ar/img/pdf/SituacionEconimicaFinacieraal31demarzode2026.pdf",
+          "sha256": "1a11ee4e4b9c5f2a394d23b04dc333a3912e48098b904f1bb849ee9a6b7d67ac",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+          "bytes": 310631
+        }
+      ],
+      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06182",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://mcr.gob.ar/docs/",
+      "amounts": {
+        "ingresos_corrientes": "35535781862.29",
+        "gastos_corrientes": "36774236603.56",
+        "ingresos_capital": "1099863819.30",
+        "gastos_capital": "1837091893.27",
+        "ingresos_totales": "36635645681.59",
+        "gastos_totales": "38611328496.83",
+        "resultado_financiero": "-1975682815.24",
+        "personal_devengado": "28587219249.12"
+      },
+      "documents": [
+        {
+          "url": "https://mcr.gob.ar/wp-content/uploads/2026/03/29-Anexo-I-Estado-de-Situacion-Economico-Financiera.pdf",
+          "sha256": "e664d61e5a99ad911344f42afd3c3975e9563cffd82fd0973a8a5e12b03bc5c3",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 364160,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06182.pdf"
+        }
+      ],
+      "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
+      "verifiedAt": "2026-10-04"
+    },
+    {
+      "id": "06224",
+      "inicio": "2025-01-01",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://chivilcoy.gov.ar/2025-situacion-economica-financiera/",
+      "amounts": {
+        "ingresos_corrientes": "49437860552.49",
+        "gastos_corrientes": "51852473643.73",
+        "ingresos_capital": "239974965.16",
+        "gastos_capital": "2007325668.10",
+        "ingresos_totales": "49677835517.65",
+        "gastos_totales": "53859799311.83",
+        "resultado_financiero": "-4181963794.18",
+        "personal_devengado": "30405845947.77"
+      },
+      "documents": [
+        {
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/situacioneconomica/2025-situacion-economica-financiera.pdf",
+          "sha256": "abd5630e4caa9d84d89f6d5185e2e9e745579880743ae8a0fb5a2b6615255a4b",
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+          "bytes": 306318
+        }
+      ],
+      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
       "id": "06231",
       "inicio": "2024-01-02",
       "fin": "2024-06-30",
@@ -3237,37 +3289,6 @@
           ],
           "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
           "bytes": 3018455
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
-    },
-    {
-      "id": "06588",
-      "inicio": "2026-01-02",
-      "fin": "2026-03-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://www.9dejulio.gov.ar/gobierno_abierto.php",
-      "amounts": {
-        "ingresos_corrientes": "7326163695.66",
-        "gastos_corrientes": "7173115544.06",
-        "ingresos_capital": "90096578.50",
-        "gastos_capital": "293276087.45",
-        "ingresos_totales": "7416260274.16",
-        "gastos_totales": "7466391631.51",
-        "resultado_financiero": "-50131357.35",
-        "personal_devengado": "6013183529.48"
-      },
-      "documents": [
-        {
-          "url": "https://www.9dejulio.gov.ar/pdf/gobierno-abierto/2026/Situacion_Economica_Financiera_1º_trimestre_2026.pdf",
-          "sha256": "0cee1a83efa7162df6213f4d13f07fb77f7d3259bcff6bcae4e6703f311724b7",
-          "pages": 4,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 90444
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
@@ -3366,6 +3387,37 @@
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre."
     },
     {
+      "id": "06322",
+      "inicio": "2025-01-01",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.lamadrid.gob.ar/transparencia/",
+      "amounts": {
+        "ingresos_corrientes": "21791848776.90",
+        "gastos_corrientes": "21976131617.22",
+        "ingresos_capital": "1428771867.17",
+        "gastos_capital": "1878809559.03",
+        "ingresos_totales": "23220620644.07",
+        "gastos_totales": "23854941176.25",
+        "resultado_financiero": "-634320532.18",
+        "personal_devengado": "14645240206.59"
+      },
+      "documents": [
+        {
+          "url": "https://www.lamadrid.gob.ar/wp-content/uploads/2026/03/Situacion-Economico-Financiera-2025.pdf",
+          "sha256": "1a1584d1ec1e13ab6bba4ea5891115a30eec5a4d481abe2786526fe37c1ff087",
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+          "bytes": 328450
+        }
+      ],
+      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre."
+    },
+    {
       "id": "06336",
       "inicio": "2025-01-01",
       "fin": "2025-12-31",
@@ -3428,6 +3480,194 @@
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
     },
     {
+      "id": "06441",
+      "inicio": "2026-01-02",
+      "fin": "2026-03-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.laplata.gob.ar/descargas/presupuestos/2026/Situacion%20Econmico%20Financiera%20-%201er%20Trimestre%202026.pdf",
+      "amounts": {
+        "ingresos_corrientes": "93978825337.73",
+        "gastos_corrientes": "92323127134.56",
+        "ingresos_capital": "12571247.02",
+        "gastos_capital": "30368152197.40",
+        "ingresos_totales": "93991396584.75",
+        "gastos_totales": "122691279331.96",
+        "resultado_financiero": "-28699882747.21",
+        "personal_devengado": "25906859006.86"
+      },
+      "documents": [
+        {
+          "url": "https://www.laplata.gob.ar/descargas/presupuestos/2026/Situacion%20Econmico%20Financiera%20-%201er%20Trimestre%202026.pdf",
+          "sha256": "40cf6b9ebc902de79b499c21a9f297124d2dcab6289c72913bfa786b94794a4f",
+          "pages": 9,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+          "bytes": 136459
+        }
+      ],
+      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06466",
+      "inicio": "2024-01-01",
+      "fin": "2024-12-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://lezama.gov.ar/situacion-financiera/",
+      "amounts": {
+        "ingresos_corrientes": "5686365201.90",
+        "gastos_corrientes": "5519841900.53",
+        "ingresos_capital": "7421871.31",
+        "gastos_capital": "239752251.25",
+        "ingresos_totales": "5693787073.21",
+        "gastos_totales": "5759594151.78",
+        "resultado_financiero": "-65807078.57",
+        "personal_devengado": "3343357173.63"
+      },
+      "documents": [
+        {
+          "url": "https://lezama.gov.ar/wp-content/uploads/2025/06/resena-anual-2024.pdf",
+          "sha256": "e345a9a52793278206e5c58e3bd6231487f63b57bbb9db785ee94b5322ecd548",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+          "bytes": 61850
+        }
+      ],
+      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06511",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.maipu-gba.gob.ar/",
+      "amounts": {
+        "ingresos_corrientes": "15581683595.81",
+        "gastos_corrientes": "12966363155.34",
+        "ingresos_capital": "115017953.60",
+        "gastos_capital": "778793623.70",
+        "ingresos_totales": "15696701549.41",
+        "gastos_totales": "13745156779.04",
+        "resultado_financiero": "1951544770.37",
+        "personal_devengado": "5614889301.01"
+      },
+      "documents": [
+        {
+          "url": "https://www.maipu-gba.gob.ar/sites/default/files/resena_anual_2025.pdf",
+          "sha256": "0659916fd65a8c8ff2ba9869f823b98faf9d29373f12666d8e0bf793317a8be1",
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 38779,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06511.pdf"
+        }
+      ],
+      "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
+      "verifiedAt": "2026-10-04"
+    },
+    {
+      "id": "06560",
+      "inicio": "2026-01-01",
+      "fin": "2026-03-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://moreno2.moreno.gob.ar/php/trees-docs-economia.php",
+      "amounts": {
+        "ingresos_corrientes": "70567041032.85",
+        "gastos_corrientes": "56062261636.54",
+        "ingresos_capital": "4206202332.36",
+        "gastos_capital": "2769189121.51",
+        "ingresos_totales": "74773243365.21",
+        "gastos_totales": "58831450758.05",
+        "resultado_financiero": "15941792607.16",
+        "personal_devengado": "28701621655.74"
+      },
+      "documents": [
+        {
+          "url": "https://moreno.gob.ar/docs/documento_974_situacion_econ-financiera_primer_trimestre_2026.pdf",
+          "sha256": "b0cca3cc3a7733b81e9146bf9544f1ad720e54c30be00bc791495e490e0fbf10",
+          "pages": 7,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+          "bytes": 94808
+        }
+      ],
+      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06588",
+      "inicio": "2026-01-02",
+      "fin": "2026-03-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.9dejulio.gov.ar/gobierno_abierto.php",
+      "amounts": {
+        "ingresos_corrientes": "7326163695.66",
+        "gastos_corrientes": "7173115544.06",
+        "ingresos_capital": "90096578.50",
+        "gastos_capital": "293276087.45",
+        "ingresos_totales": "7416260274.16",
+        "gastos_totales": "7466391631.51",
+        "resultado_financiero": "-50131357.35",
+        "personal_devengado": "6013183529.48"
+      },
+      "documents": [
+        {
+          "url": "https://www.9dejulio.gov.ar/pdf/gobierno-abierto/2026/Situacion_Economica_Financiera_1º_trimestre_2026.pdf",
+          "sha256": "0cee1a83efa7162df6213f4d13f07fb77f7d3259bcff6bcae4e6703f311724b7",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+          "bytes": 90444
+        }
+      ],
+      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06700",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-30",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://drive.google.com/uc?export=download&id=1a9pxkIUN8Pgn0JEr4sYkw7b-NTVIurRV",
+      "amounts": {
+        "ingresos_corrientes": "30115110824.64",
+        "gastos_corrientes": "27389861161.20",
+        "ingresos_capital": "535641457.23",
+        "gastos_capital": "1453604842.40",
+        "ingresos_totales": "30650752281.87",
+        "gastos_totales": "28843466003.60",
+        "resultado_financiero": "1807286278.27",
+        "personal_devengado": "20736362474.02"
+      },
+      "documents": [
+        {
+          "url": "https://drive.google.com/uc?export=download&id=1a9pxkIUN8Pgn0JEr4sYkw7b-NTVIurRV",
+          "sha256": "aae797ca6c0ff7f3651dbcdc26ca523751cd1397dcd3a39fdc9867206f3a6671",
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+          "bytes": 598780
+        }
+      ],
+      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre."
+    },
+    {
       "id": "06749",
       "inicio": "2025-01-01",
       "fin": "2025-12-30",
@@ -3457,6 +3697,39 @@
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06770",
+      "inicio": "2026-01-01",
+      "fin": "2026-03-31",
+      "method": "published_caif",
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "landingUrl": "https://www.sanpedro.net.ar/",
+      "amounts": {
+        "ingresos_corrientes": "8813568407.12",
+        "gastos_corrientes": "8028468440.81",
+        "ingresos_capital": "1524894.49",
+        "gastos_capital": "185528597.63",
+        "ingresos_totales": "8815093301.61",
+        "gastos_totales": "8213997038.44",
+        "resultado_financiero": "601096263.17",
+        "personal_devengado": "5167437010.02"
+      },
+      "documents": [
+        {
+          "url": "https://www.sanpedro.net.ar/legislacion/pdf/boletines/2026-1%20TRIM.%20-%20SIT.%20ECON-FIN.pdf",
+          "sha256": "c48558a7e014871ced66f7d9f9259199da0456ba98e4d8f5c5afbe494f8f89aa",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 226214,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06770.pdf"
+        }
+      ],
+      "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06784",
@@ -3490,36 +3763,38 @@
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre."
     },
     {
-      "id": "06466",
-      "inicio": "2024-01-01",
-      "fin": "2024-12-31",
+      "id": "06875",
+      "inicio": "2026-01-02",
+      "fin": "2026-03-31",
       "method": "published_caif",
       "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://lezama.gov.ar/situacion-financiera/",
+      "landingUrl": "https://www.villarino.gob.ar/transparencia",
       "amounts": {
-        "ingresos_corrientes": "5686365201.90",
-        "gastos_corrientes": "5519841900.53",
-        "ingresos_capital": "7421871.31",
-        "gastos_capital": "239752251.25",
-        "ingresos_totales": "5693787073.21",
-        "gastos_totales": "5759594151.78",
-        "resultado_financiero": "-65807078.57",
-        "personal_devengado": "3343357173.63"
+        "ingresos_corrientes": "7162545504.23",
+        "gastos_corrientes": "7415914257.54",
+        "ingresos_capital": "4844921.25",
+        "gastos_capital": "234448168.57",
+        "ingresos_totales": "7167390425.48",
+        "gastos_totales": "7650362426.11",
+        "resultado_financiero": "-482972000.63",
+        "personal_devengado": "4918377623.75"
       },
       "documents": [
         {
-          "url": "https://lezama.gov.ar/wp-content/uploads/2025/06/resena-anual-2024.pdf",
-          "sha256": "e345a9a52793278206e5c58e3bd6231487f63b57bbb9db785ee94b5322ecd548",
-          "pages": 1,
+          "url": "https://drive.google.com/file/d/1mNfbP9KDXFHlhJAJj4vPaNFF2Jp8p9c-/view",
+          "sha256": "67782c04e6a1133c5c2d2c3999c86303cdca62f6683469ebd422c1f73d314fc7",
+          "pages": 3,
           "consultedPages": [
             1
           ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 61850
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 389974,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06875.pdf"
         }
       ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+      "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
+      "verifiedAt": "2026-10-04"
     }
   ],
-  "updatedAt": "2026-09-11"
+  "updatedAt": "2026-10-04"
 }

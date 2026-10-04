@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "verifiedAt": "2026-09-11",
+  "verifiedAt": "2026-10-04",
   "targetYear": 2026,
   "currency": "ARS",
   "priceBasis": "nominal",
@@ -1136,6 +1136,33 @@
       "components": [],
       "componentField": "current",
       "periodStart": null
+    },
+    {
+      "id": "06182",
+      "year": 2025,
+      "asOf": "2025-12-31",
+      "original": null,
+      "current": "37589325282.48",
+      "modifications": null,
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "note": "Presupuesto vigente anual publicado en la situación económico-financiera. Incluye las partidas de financiamiento presupuestario; no se confunde con gasto fiscal de la CAIF.",
+      "method": "published_current",
+      "documents": [
+        {
+          "url": "https://mcr.gob.ar/wp-content/uploads/2026/03/29-Anexo-I-Estado-de-Situacion-Economico-Financiera.pdf",
+          "sha256": "e664d61e5a99ad911344f42afd3c3975e9563cffd82fd0973a8a5e12b03bc5c3",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
+          "bytes": 364160,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06182.pdf"
+        }
+      ],
+      "components": [],
+      "componentField": "current",
+      "periodStart": "2025-01-02"
     },
     {
       "id": "06189",
@@ -2903,6 +2930,33 @@
       "periodStart": "2026-01-02"
     },
     {
+      "id": "06448",
+      "year": 2026,
+      "asOf": "2026-06-30",
+      "original": null,
+      "current": "26134663767.27",
+      "modifications": null,
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "note": "Presupuesto vigente anual publicado en la situación económico-financiera. Incluye las partidas de financiamiento presupuestario; no se confunde con gasto fiscal de la CAIF.",
+      "method": "published_current",
+      "documents": [
+        {
+          "url": "https://www.laprida.gov.ar/uploads/SEF_SEM_2026.pdf",
+          "sha256": "06b6d45854222f6dac025764c6b2ef8f61265e15e8070f0945329cab9bd2d0fa",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
+          "bytes": 163491,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06448.pdf"
+        }
+      ],
+      "components": [],
+      "componentField": "current",
+      "periodStart": "2026-01-02"
+    },
+    {
       "id": "06455",
       "year": 2026,
       "asOf": "2025-12-29",
@@ -3145,6 +3199,33 @@
       ],
       "componentField": "current",
       "periodStart": "2026-01-01"
+    },
+    {
+      "id": "06511",
+      "year": 2025,
+      "asOf": "2025-12-31",
+      "original": null,
+      "current": "16296828002.08",
+      "modifications": null,
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "note": "Presupuesto vigente anual publicado en la situación económico-financiera. Incluye las partidas de financiamiento presupuestario; no se confunde con gasto fiscal de la CAIF.",
+      "method": "published_current",
+      "documents": [
+        {
+          "url": "https://www.maipu-gba.gob.ar/sites/default/files/resena_anual_2025.pdf",
+          "sha256": "0659916fd65a8c8ff2ba9869f823b98faf9d29373f12666d8e0bf793317a8be1",
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
+          "bytes": 38779,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06511.pdf"
+        }
+      ],
+      "components": [],
+      "componentField": "current",
+      "periodStart": "2025-01-02"
     },
     {
       "id": "06515",
@@ -3630,6 +3711,33 @@
       "periodStart": "2026-01-02"
     },
     {
+      "id": "06609",
+      "year": 2026,
+      "asOf": "2026-06-30",
+      "original": null,
+      "current": "70001697185.46",
+      "modifications": null,
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "note": "Presupuesto vigente anual publicado en la situación económico-financiera. Incluye las partidas de financiamiento presupuestario; no se confunde con gasto fiscal de la CAIF.",
+      "method": "published_current",
+      "documents": [
+        {
+          "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjykoF6Zo7gndspxaSrVca_JJnnaM6UdJ4WIE4im5aLZ83UIZpw2Q9JI-Ss_FB1garIB6HzgQd_xVLBeWMQdPRM9USkZXQWHqFqCXxNr2dcIuicmd4ChJaqUYFpw_sMF0DE6gZmz-JleptZLv4GsO7BbgutOVPJt6qidDX4_kBxZ7y9z2hlp0kc6rMHzzbu/s3509/pdf%20contaduria-im%C3%A1genes-0.jpg",
+          "sha256": "bbbed3c07ffc1cf4f08899a2953efef3b0f3344a58c2df5bf21edd4d89133664",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
+          "bytes": 1011005,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06609.jpg"
+        }
+      ],
+      "components": [],
+      "componentField": "current",
+      "periodStart": "2026-01-02"
+    },
+    {
       "id": "06616",
       "year": 2026,
       "asOf": "2026-06-30",
@@ -3742,13 +3850,13 @@
     {
       "id": "06638",
       "year": 2026,
-      "asOf": "2025-11-28",
+      "asOf": "2026-06-30",
       "original": "488609779242.00",
-      "current": null,
-      "modifications": null,
+      "current": "496152440548.92",
+      "modifications": "7542661306.92",
       "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
       "note": "",
-      "method": "published_original",
+      "method": "published_current",
       "documents": [
         {
           "url": "https://sibom.slyt.gba.gov.ar/bulletins/13973/contents/2316317/download_annex?annex_id=58289",
@@ -3761,11 +3869,22 @@
             3
           ],
           "locator": "Decreto 1668/25 promulga Ordenanza 113/25. Artículo 3: presupuesto de gastos 2026."
+        },
+        {
+          "url": "https://pilar.gov.ar/wp-content/uploads/2026/07/2026-Situacion-Economico-Financiero-1er-Semestre.pdf",
+          "sha256": "36b22a27e5920f6ac4f49e6f6cd15024deb89e029da1f47e4bea413e1800e3c2",
+          "pages": 11,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
+          "bytes": 7672139,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06638-personal.pdf"
         }
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": "2026-01-01"
     },
     {
       "id": "06644",
@@ -3925,6 +4044,33 @@
           "amount": "26948263965.07"
         }
       ],
+      "componentField": "current",
+      "periodStart": "2026-01-02"
+    },
+    {
+      "id": "06665",
+      "year": 2026,
+      "asOf": "2026-06-30",
+      "original": null,
+      "current": "42530627916.25",
+      "modifications": null,
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "note": "Presupuesto vigente anual publicado en la situación económico-financiera. Incluye las partidas de financiamiento presupuestario; no se confunde con gasto fiscal de la CAIF.",
+      "method": "published_current",
+      "documents": [
+        {
+          "url": "https://digestos.miramallo.com.ar/api/documents/L3f4b1DSJ8kyWFSu/download",
+          "sha256": "16a6e74a935f9199d92c6c9d0a7a6e8a07ea3e9900ede6733fc41c1e4c6e5c8d",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
+          "bytes": 61288,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06665.pdf"
+        }
+      ],
+      "components": [],
       "componentField": "current",
       "periodStart": "2026-01-02"
     },
@@ -4624,6 +4770,33 @@
       "components": [],
       "componentField": "current",
       "periodStart": null
+    },
+    {
+      "id": "06770",
+      "year": 2026,
+      "asOf": "2026-03-31",
+      "original": null,
+      "current": "57064156574.39",
+      "modifications": null,
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "note": "Presupuesto vigente anual publicado en la situación económico-financiera. Incluye las partidas de financiamiento presupuestario; no se confunde con gasto fiscal de la CAIF.",
+      "method": "published_current",
+      "documents": [
+        {
+          "url": "https://www.sanpedro.net.ar/legislacion/pdf/boletines/2026-1%20TRIM.%20-%20SIT.%20ECON-FIN.pdf",
+          "sha256": "c48558a7e014871ced66f7d9f9259199da0456ba98e4d8f5c5afbe494f8f89aa",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
+          "bytes": 226214,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06770.pdf"
+        }
+      ],
+      "components": [],
+      "componentField": "current",
+      "periodStart": "2026-01-01"
     },
     {
       "id": "06784",
@@ -5502,6 +5675,33 @@
       "periodStart": "2026-01-01"
     },
     {
+      "id": "06875",
+      "year": 2026,
+      "asOf": "2026-03-31",
+      "original": null,
+      "current": "34236305302.85",
+      "modifications": null,
+      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+      "note": "Presupuesto vigente anual publicado en la situación económico-financiera. Incluye las partidas de financiamiento presupuestario; no se confunde con gasto fiscal de la CAIF.",
+      "method": "published_current",
+      "documents": [
+        {
+          "url": "https://drive.google.com/file/d/1mNfbP9KDXFHlhJAJj4vPaNFF2Jp8p9c-/view",
+          "sha256": "67782c04e6a1133c5c2d2c3999c86303cdca62f6683469ebd422c1f73d314fc7",
+          "pages": 3,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
+          "bytes": 389974,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06875.pdf"
+        }
+      ],
+      "components": [],
+      "componentField": "current",
+      "periodStart": "2026-01-02"
+    },
+    {
       "id": "06882",
       "year": 2026,
       "asOf": "2026-06-30",
@@ -5551,12 +5751,6 @@
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
     {
-      "id": "06182",
-      "municipality": "Coronel de Marina L. Rosales",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
       "id": "06238",
       "municipality": "Dolores",
       "status": "pending",
@@ -5587,12 +5781,6 @@
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
     {
-      "id": "06448",
-      "municipality": "Laprida",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
       "id": "06462",
       "municipality": "Leandro N. Alem",
       "status": "pending",
@@ -5613,12 +5801,6 @@
     {
       "id": "06505",
       "municipality": "Magdalena",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
-      "id": "06511",
-      "municipality": "Maipú",
       "status": "pending",
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
@@ -5647,12 +5829,6 @@
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
     {
-      "id": "06609",
-      "municipality": "Pehuajó",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
       "id": "06630",
       "municipality": "Pila",
       "status": "pending",
@@ -5671,18 +5847,6 @@
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
     {
-      "id": "06665",
-      "municipality": "Ramallo",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
-      "id": "06770",
-      "municipality": "San Pedro",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
       "id": "06778",
       "municipality": "San Vicente",
       "status": "pending",
@@ -5697,12 +5861,6 @@
     {
       "id": "06819",
       "municipality": "Tornquist",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
-      "id": "06875",
-      "municipality": "Villarino",
       "status": "pending",
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     }

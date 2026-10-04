@@ -1,0 +1,488 @@
+{
+  "reviewed": "2026-10-04",
+  "national_refresh": "../../../nacion/data/execution-sources/refresh.json",
+  "pba_capital": "../../../data/pba_capital_detail.json",
+  "municipal_accounts": [
+    {
+      "id": "06448",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "documents": [
+        {
+          "url": "https://www.laprida.gov.ar/uploads/SEF_SEM_2026.pdf",
+          "sha256": "06b6d45854222f6dac025764c6b2ef8f61265e15e8070f0945329cab9bd2d0fa",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 163491,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06448.pdf"
+        }
+      ]
+    },
+    {
+      "id": "06609",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "documents": [
+        {
+          "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjykoF6Zo7gndspxaSrVca_JJnnaM6UdJ4WIE4im5aLZ83UIZpw2Q9JI-Ss_FB1garIB6HzgQd_xVLBeWMQdPRM9USkZXQWHqFqCXxNr2dcIuicmd4ChJaqUYFpw_sMF0DE6gZmz-JleptZLv4GsO7BbgutOVPJt6qidDX4_kBxZ7y9z2hlp0kc6rMHzzbu/s3509/pdf%20contaduria-im%C3%A1genes-0.jpg",
+          "sha256": "bbbed3c07ffc1cf4f08899a2953efef3b0f3344a58c2df5bf21edd4d89133664",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 1011005,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06609.jpg"
+        }
+      ]
+    },
+    {
+      "id": "06638",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "documents": [
+        {
+          "url": "https://pilar.gov.ar/wp-content/uploads/2026/07/CAIF-2DO-TRIM-2026-Base-Devengado.pdf",
+          "sha256": "043067a9d77f2f9de1511ff19a10bea97e6c4f4eed657972d3ae3d8c68190d2f",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 49995,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06638.pdf"
+        },
+        {
+          "url": "https://pilar.gov.ar/wp-content/uploads/2026/07/2026-Situacion-Economico-Financiero-1er-Semestre.pdf",
+          "sha256": "36b22a27e5920f6ac4f49e6f6cd15024deb89e029da1f47e4bea413e1800e3c2",
+          "pages": 11,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, evolución de gastos por objeto, gastos en personal devengados. Se cotejan ingresos corrientes y de capital con CAIF.",
+          "bytes": 7672139,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06638-personal.pdf"
+        }
+      ]
+    },
+    {
+      "id": "06665",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "documents": [
+        {
+          "url": "https://digestos.miramallo.com.ar/api/documents/L3f4b1DSJ8kyWFSu/download",
+          "sha256": "16a6e74a935f9199d92c6c9d0a7a6e8a07ea3e9900ede6733fc41c1e4c6e5c8d",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 61288,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06665.pdf"
+        }
+      ]
+    },
+    {
+      "id": "06182",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "documents": [
+        {
+          "url": "https://mcr.gob.ar/wp-content/uploads/2026/03/29-Anexo-I-Estado-de-Situacion-Economico-Financiera.pdf",
+          "sha256": "e664d61e5a99ad911344f42afd3c3975e9563cffd82fd0973a8a5e12b03bc5c3",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 364160,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06182.pdf"
+        }
+      ]
+    },
+    {
+      "id": "06511",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "documents": [
+        {
+          "url": "https://www.maipu-gba.gob.ar/sites/default/files/resena_anual_2025.pdf",
+          "sha256": "0659916fd65a8c8ff2ba9869f823b98faf9d29373f12666d8e0bf793317a8be1",
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 38779,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06511.pdf"
+        }
+      ]
+    },
+    {
+      "id": "06770",
+      "inicio": "2026-01-01",
+      "fin": "2026-03-31",
+      "documents": [
+        {
+          "url": "https://www.sanpedro.net.ar/legislacion/pdf/boletines/2026-1%20TRIM.%20-%20SIT.%20ECON-FIN.pdf",
+          "sha256": "c48558a7e014871ced66f7d9f9259199da0456ba98e4d8f5c5afbe494f8f89aa",
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 226214,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06770.pdf"
+        }
+      ]
+    },
+    {
+      "id": "06875",
+      "inicio": "2026-01-02",
+      "fin": "2026-03-31",
+      "documents": [
+        {
+          "url": "https://drive.google.com/file/d/1mNfbP9KDXFHlhJAJj4vPaNFF2Jp8p9c-/view",
+          "sha256": "67782c04e6a1133c5c2d2c3999c86303cdca62f6683469ebd422c1f73d314fc7",
+          "pages": 3,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+          "bytes": 389974,
+          "archive": "municipios/data/fiscal-sources/2026-10-04/06875.pdf"
+        }
+      ]
+    }
+  ],
+  "pending_accounts": [
+    {
+      "id": "06028",
+      "name": "Almirante Brown",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06056",
+      "name": "Bahía Blanca",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06091",
+      "name": "Berazategui",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06134",
+      "name": "Cañuelas",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06168",
+      "name": "Castelli",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06175",
+      "name": "Colón",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06238",
+      "name": "Dolores",
+      "portal": {
+        "status": "documents_pending",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06260",
+      "name": "Esteban Echeverría",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06294",
+      "name": "General Arenales",
+      "portal": {
+        "status": "documents_pending",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06343",
+      "name": "General Paz",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06351",
+      "name": "General Pinto",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06408",
+      "name": "Hurlingham",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06420",
+      "name": "La Costa",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06455",
+      "name": "Las Flores",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06462",
+      "name": "Leandro N. Alem",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06469",
+      "name": "Lincoln",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06490",
+      "name": "Lomas de Zamora",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06505",
+      "name": "Magdalena",
+      "portal": {
+        "status": "access_incomplete",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06518",
+      "name": "Mar Chiquita",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06525",
+      "name": "Marcos Paz",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06539",
+      "name": "Merlo",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06547",
+      "name": "Monte",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06553",
+      "name": "Monte Hermoso",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06568",
+      "name": "Morón",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06574",
+      "name": "Navarro",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06630",
+      "name": "Pila",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06648",
+      "name": "Presidente Perón",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06655",
+      "name": "Punta Indio",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06693",
+      "name": "Roque Pérez",
+      "portal": {
+        "status": "documents_pending",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06735",
+      "name": "San Antonio de Areco",
+      "portal": {
+        "status": "documents_pending",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06760",
+      "name": "San Miguel",
+      "portal": {
+        "status": "documents_pending",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06763",
+      "name": "San Nicolás",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06778",
+      "name": "San Vicente",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06812",
+      "name": "Tordillo",
+      "portal": {
+        "status": "access_incomplete",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06819",
+      "name": "Tornquist",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    },
+    {
+      "id": "06861",
+      "name": "Vicente López",
+      "portal": {
+        "status": "account_not_verified",
+        "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+        "reviewedAt": "2026-09-11"
+      }
+    }
+  ]
+}

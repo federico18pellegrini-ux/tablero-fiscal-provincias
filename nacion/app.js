@@ -12,7 +12,7 @@
   const short=v=>!M.finite(v)?'—':Math.abs(v)>=1e6?`${currency(v)}${nf(Math.abs(v)/1e6)} bill.`:Math.abs(v)>=1000?`${currency(v)}${nf(Math.abs(v)/1000)} mil M`:`${currency(v)}${nf(Math.abs(v),0)} M`;
   const params=new URLSearchParams(location.search);
   const state={price:params.get('precios')==='real'?'real':'nominal',base:['law','current','closing'].includes(params.get('base'))?params.get('base'):'current',lens:['topics','jurisdictions','functions','geographies'].includes(params.get('vista'))?params.get('vista'):'topics',rank:'jurisdictions',history:'amount',province:params.get('provincia')||'',programLimit:16};
-  let D,G,dataHash,reportManifest;
+  let D,E,G,dataHash,reportManifest;
   const openPrograms=new Set();
   if(params.get('programa'))openPrograms.add(params.get('programa'));
   $('program-search').value=params.get('buscar')||'';
@@ -150,13 +150,14 @@
     $('history-note').textContent=`${unit()}. 2023–2025: ejecución observada, conciliada con los totales presupuestarios. 2026–2027: autorización y proyecto.${state.price==='real'?' El ajuste anual usa IPC promedio; 2026 y 2027 incluyen el escenario de inflación.':''}`;
   }
   function execution(){
-    const r=D.execution.find(r=>r.name===$('execution-jurisdiction').value)||D.execution[0],cum=M.cumulative(r.months),total=cum.at(-1).cumulative,percent=M.ratio(total,r.current);
-    $('execution-reading').innerHTML=`<div class="metric">${nf(percent)}%</div><p>Se reconocieron gastos por <strong>${money(total)}</strong> sobre ${money(r.current)} de crédito vigente. Por cada $100 autorizados, se devengaron <strong>$${nf(percent)}</strong>.</p><p class="note">Importes nominales. Este porcentaje conserva su significado al cambiar el selector de precios.</p>`;
-    const W=Math.max(320,Math.min(900,$('execution-chart').clientWidth||900)),H=280,L=40,R=20,T=25,B=42,ys=v=>T+(100-v)*(H-T-B)/100,xs=i=>L+i*(W-L-R)/8;
+    const r=E.execution.find(r=>r.name===$('execution-jurisdiction').value)||E.execution[0],cum=M.cumulative(r.months),total=cum.at(-1).cumulative,percent=M.ratio(total,r.current);
+    $('execution-reading').innerHTML=`<div class="metric">${nf(percent)}%</div><p>Se reconocieron gastos por <strong>${money(total)}</strong> sobre ${money(r.current)} de crédito vigente. Por cada $100 autorizados, se devengaron <strong>$${nf(percent)}</strong>.</p><p class="note">Corte ${E.cutoff.split('-').reverse().join('/')} · octubre parcial. Octubre contiene ajustes contables del inicio de mes. Importes nominales. Este porcentaje conserva su significado al cambiar el selector de precios.</p>`;
+    const W=Math.max(320,Math.min(900,$('execution-chart').clientWidth||900)),H=280,L=40,R=20,T=25,B=42,ys=v=>T+(100-v)*(H-T-B)/100,xs=i=>L+i*(W-L-R)/Math.max(1,cum.length-1);
     const points=cum.map((m,i)=>`${xs(i)},${ys(M.ratio(m.cumulative,r.current))}`);
-    const months=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep*'];
-    $('execution-chart').innerHTML=`<svg class="execution-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Gasto devengado acumulado como porcentaje del crédito vigente. Datos completos en la tabla siguiente.">${[0,25,50,75,100].map(v=>`<line class="gridline" x1="${L}" x2="${W-R}" y1="${ys(v)}" y2="${ys(v)}"/><text x="3" y="${ys(v)+4}">${v}%</text>`).join('')}<polyline class="line" points="${points.slice(0,8).join(' ')}"/><polyline class="line partial-line" points="${points.slice(7).join(' ')}"/>${cum.map((m,i)=>`<circle cx="${xs(i)}" cy="${ys(M.ratio(m.cumulative,r.current))}" r="5"><title>${months[i]}: ${nf(M.ratio(m.cumulative,r.current))}%${m.partial?' · mes parcial':''}</title></circle><text x="${xs(i)}" y="${H-12}" text-anchor="middle">${months[i]}</text>`).join('')}</svg>`;
-    $('execution-table').innerHTML=`<table><caption class="sr-only">Detalle mensual 2026 de ${esc(r.name)}</caption><thead><tr><th>Mes</th><th>${state.price==='real'?'Mes · pesos ago. 2026':'Gasto del mes'}</th><th>Acumulado / vigente</th></tr></thead><tbody>${cum.map((m,i)=>`<tr><td>${months[i]}${m.partial?' · parcial':''}</td><td class="${sign(state.price==='real'?m.real:m.accrued)}">${short(state.price==='real'?m.real:m.accrued)}</td><td>${nf(M.ratio(m.cumulative,r.current))}%</td></tr>`).join('')}</tbody></table>${state.price==='real'?'<p class="note">Cada mes se ajusta con su propio IPC. Septiembre queda sin monto real hasta contar con el IPC observado; no se usa la proyección para medir ejecución realizada.</p>':''}`;
+    const partial=cum.findIndex(m=>m.partial);
+    const months=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    $('execution-chart').innerHTML=`<svg class="execution-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Gasto devengado acumulado como porcentaje del crédito vigente. Datos completos en la tabla siguiente.">${[0,25,50,75,100].map(v=>`<line class="gridline" x1="${L}" x2="${W-R}" y1="${ys(v)}" y2="${ys(v)}"/><text x="3" y="${ys(v)+4}">${v}%</text>`).join('')}<polyline class="line" points="${points.slice(0,partial<0?points.length:partial).join(' ')}"/><polyline class="line partial-line" points="${(partial<0?[]:points.slice(Math.max(0,partial-1))).join(' ')}"/>${cum.map((m,i)=>`<circle cx="${xs(i)}" cy="${ys(M.ratio(m.cumulative,r.current))}" r="5"><title>${months[m.month-1]}: ${nf(M.ratio(m.cumulative,r.current))}%${m.partial?' · mes parcial':''}</title></circle><text x="${xs(i)}" y="${H-12}" text-anchor="middle">${months[m.month-1]}</text>`).join('')}</svg>`;
+    $('execution-table').innerHTML=`<table><caption class="sr-only">Detalle mensual 2026 de ${esc(r.name)}</caption><thead><tr><th>Mes</th><th>${state.price==='real'?'Mes · pesos ago. 2026':'Gasto del mes'}</th><th>Acumulado / vigente</th></tr></thead><tbody>${cum.map((m,i)=>`<tr><td>${months[m.month-1]}${m.partial?' · parcial':''}</td><td class="${sign(state.price==='real'?m.real:m.accrued)}">${short(state.price==='real'?m.real:m.accrued)}</td><td>${nf(M.ratio(m.cumulative,r.current))}%</td></tr>`).join('')}</tbody></table>${state.price==='real'?'<p class="note">Cada mes se ajusta con su propio IPC. Los meses posteriores a agosto quedan sin monto real hasta contar con el IPC observado; no se usa la proyección para medir ejecución realizada.</p>':''}`;
   }
   function methodology(){
     $('deflator-method').textContent=D.deflator.method;
@@ -244,12 +245,12 @@
   $('close-report').addEventListener('click',()=>$('report-dialog').close());
   ['report-price','report-base','report-annex','report-scope','report-province','report-portfolio'].forEach(id=>$(id).addEventListener('change',updateReport));
   window.addEventListener('resize',()=>{if(D)execution();});
-  Promise.all([fetch('data/budget.json?v=20260918-programas').then(async r=>{if(!r.ok)throw Error(r.status);const text=await r.text();dataHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo])=>{
-    D=data;G=geo;
+  Promise.all([fetch('data/budget.json?v=20260918-programas').then(async r=>{if(!r.ok)throw Error(r.status);const text=await r.text();dataHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}),fetch('data/execution-latest.json?v=20261004').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo,latest])=>{
+    D=data;G=geo;E=latest;
     window.nationalBudgetContext={data:D,hash:dataHash};window.dispatchEvent(new Event('national:budget-ready'));
     const locations=[...new Set([...D.works_geographies.map(r=>r.name),...G.features.map(f=>f.province)])].sort((a,b)=>a.localeCompare(b,'es'));
     $('province').innerHTML='<option value="">Todo el país</option>'+locations.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('');if(!locations.includes(state.province))state.province='';$('province').value=state.province;
-    $('execution-jurisdiction').innerHTML=D.execution.map(r=>`<option value="${esc(r.name)}">${esc(r.name)}</option>`).join('');
+    $('execution-jurisdiction').innerHTML=E.execution.map(r=>`<option value="${esc(r.name)}">${esc(r.name)}</option>`).join('');
     $('load-state').hidden=true;$('dashboard').hidden=false;$('export-report').disabled=false;render();methodology();
     route();
   }).catch(error=>{console.error('No se pudo cargar el presupuesto',error);$('load-state').innerHTML='No se pudieron cargar los datos. <a href="">Reintentar</a> o consultar los <a href="https://www.mecon.gob.ar/onp/presupuestos/2027">documentos oficiales</a>.';});

@@ -82,8 +82,9 @@ def build():
     get = lambda name: load(RAW / (name + '.json'))
     budget = load(DATA / 'budget.json')
     stages = get('gasto_etapas_total')[0]
+    baseline = load(DATA / 'execution-sources/project-baseline-execution.json')
     for new, old in [('credito_presupuestado', 'law'), ('credito_vigente', 'current'), ('credito_devengado', 'accrued')]:
-        assert abs(stages[new] - budget['total'][old]) < .01
+        assert abs(baseline['total'][0][new] - budget['total'][old]) < .01
     cash = get('resultado_fiscal_comparacion')
     cash_by = {r['indicador']: r for r in cash}
     for year in (2025, 2026):
@@ -132,11 +133,11 @@ def build():
     datasets = {r['dataset']: {'unit': r['unit'], 'scope': r['scope'], 'method': r['method'],
                  'sources': [{'url': s['url'], 'file': s['file']} for s in r['sources']], 'files': r['files'], 'rows': r['rows']} for r in catalog}
     return {
-        'meta': {'reviewed': '2026-09-17', 'execution_cutoff': '2026-09-15', 'real_base': '2026-08',
+        'meta': {'reviewed': stages['corte'], 'execution_cutoff': stages['corte'], 'project_comparison_cutoff': '2026-09-15', 'real_base': '2026-08',
                  'published_datasets': 28, 'pending_datasets': 1, 'money_unit': 'ARS millones',
                  'debt_unit': 'USD millones equivalentes', 'excluded': EXCLUDED},
         'datasets': datasets,
-        'execution': {'total': stages, 'comparison': get('gasto_comparacion_real_total'),
+        'execution': {'total': stages, 'project_baseline': baseline, 'comparison': get('gasto_comparacion_real_total'),
             'functions_comparison': get('gasto_comparacion_real_funcion'), 'monthly': monthly,
             'groups': {k: get('gasto_etapas_' + k) for k in ['jurisdiccion','funcion','objeto','territorio','programa']}},
         'cash': {'reviewed': '2026-09-19', 'cutoff': '2026-08', 'comparison': cash, 'monthly': get('resultado_fiscal_caja_mensual')},

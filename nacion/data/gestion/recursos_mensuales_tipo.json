@@ -1848,54 +1848,54 @@
     "impacto_presupuestario_mes": 9,
     "tipo_id": 11,
     "tipo_desc": "Ingresos impositivos",
-    "recurso_ingresado_percibido": 2666026.16133084,
+    "recurso_ingresado_percibido": 8701822.79377772,
     "periodo": "2026-09",
-    "mes_completo": false,
+    "mes_completo": true,
     "recurso_real_agosto2026": null
   },
   {
     "impacto_presupuestario_mes": 9,
     "tipo_id": 12,
     "tipo_desc": "Ingresos no impositivos",
-    "recurso_ingresado_percibido": 181890.35180641,
+    "recurso_ingresado_percibido": 300831.55082756,
     "periodo": "2026-09",
-    "mes_completo": false,
+    "mes_completo": true,
     "recurso_real_agosto2026": null
   },
   {
     "impacto_presupuestario_mes": 9,
     "tipo_id": 13,
     "tipo_desc": "Aportes y contribuciones",
-    "recurso_ingresado_percibido": 2515448.87740378,
+    "recurso_ingresado_percibido": 4444247.96093033,
     "periodo": "2026-09",
-    "mes_completo": false,
+    "mes_completo": true,
     "recurso_real_agosto2026": null
   },
   {
     "impacto_presupuestario_mes": 9,
     "tipo_id": 14,
     "tipo_desc": "Venta de bienes y servicios de administraciones públicas",
-    "recurso_ingresado_percibido": 10573.52596309,
+    "recurso_ingresado_percibido": 26199.96340466,
     "periodo": "2026-09",
-    "mes_completo": false,
+    "mes_completo": true,
     "recurso_real_agosto2026": null
   },
   {
     "impacto_presupuestario_mes": 9,
     "tipo_id": 16,
     "tipo_desc": "Rentas de la propiedad",
-    "recurso_ingresado_percibido": 209581.76854878,
+    "recurso_ingresado_percibido": 331864.28369966,
     "periodo": "2026-09",
-    "mes_completo": false,
+    "mes_completo": true,
     "recurso_real_agosto2026": null
   },
   {
     "impacto_presupuestario_mes": 9,
     "tipo_id": 17,
     "tipo_desc": "Transferencias corrientes",
-    "recurso_ingresado_percibido": 118.1246337,
+    "recurso_ingresado_percibido": 5011.07688936,
     "periodo": "2026-09",
-    "mes_completo": false,
+    "mes_completo": true,
     "recurso_real_agosto2026": null
   },
   {
@@ -1904,33 +1904,105 @@
     "tipo_desc": "Recursos propios de capital",
     "recurso_ingresado_percibido": 2512.24957658,
     "periodo": "2026-09",
-    "mes_completo": false,
+    "mes_completo": true,
     "recurso_real_agosto2026": null
   },
   {
     "impacto_presupuestario_mes": 9,
     "tipo_id": 22,
     "tipo_desc": "Transferencias de capital",
-    "recurso_ingresado_percibido": 34279.59763801,
+    "recurso_ingresado_percibido": 34281.29764712,
     "periodo": "2026-09",
-    "mes_completo": false,
+    "mes_completo": true,
     "recurso_real_agosto2026": null
   },
   {
     "impacto_presupuestario_mes": 9,
     "tipo_id": 33,
     "tipo_desc": "Recuperación de préstamos de corto plazo",
-    "recurso_ingresado_percibido": 42.70037652,
+    "recurso_ingresado_percibido": 52.94142285,
     "periodo": "2026-09",
-    "mes_completo": false,
+    "mes_completo": true,
     "recurso_real_agosto2026": null
   },
   {
     "impacto_presupuestario_mes": 9,
     "tipo_id": 34,
     "tipo_desc": "Recuperación de préstamos de largo plazo",
-    "recurso_ingresado_percibido": 42.44198648,
+    "recurso_ingresado_percibido": 45.20155236,
     "periodo": "2026-09",
+    "mes_completo": true,
+    "recurso_real_agosto2026": null
+  },
+  {
+    "impacto_presupuestario_mes": 10,
+    "tipo_id": 11,
+    "tipo_desc": "Ingresos impositivos",
+    "recurso_ingresado_percibido": -227391.51407584,
+    "periodo": "2026-10",
+    "mes_completo": false,
+    "recurso_real_agosto2026": null
+  },
+  {
+    "impacto_presupuestario_mes": 10,
+    "tipo_id": 12,
+    "tipo_desc": "Ingresos no impositivos",
+    "recurso_ingresado_percibido": -25562.01116526,
+    "periodo": "2026-10",
+    "mes_completo": false,
+    "recurso_real_agosto2026": null
+  },
+  {
+    "impacto_presupuestario_mes": 10,
+    "tipo_id": 13,
+    "tipo_desc": "Aportes y contribuciones",
+    "recurso_ingresado_percibido": 12835.37280204,
+    "periodo": "2026-10",
+    "mes_completo": false,
+    "recurso_real_agosto2026": null
+  },
+  {
+    "impacto_presupuestario_mes": 10,
+    "tipo_id": 14,
+    "tipo_desc": "Venta de bienes y servicios de administraciones públicas",
+    "recurso_ingresado_percibido": 1888.85150185,
+    "periodo": "2026-10",
+    "mes_completo": false,
+    "recurso_real_agosto2026": null
+  },
+  {
+    "impacto_presupuestario_mes": 10,
+    "tipo_id": 16,
+    "tipo_desc": "Rentas de la propiedad",
+    "recurso_ingresado_percibido": 72118.77991316,
+    "periodo": "2026-10",
+    "mes_completo": false,
+    "recurso_real_agosto2026": null
+  },
+  {
+    "impacto_presupuestario_mes": 10,
+    "tipo_id": 22,
+    "tipo_desc": "Transferencias de capital",
+    "recurso_ingresado_percibido": 3022.18944896,
+    "periodo": "2026-10",
+    "mes_completo": false,
+    "recurso_real_agosto2026": null
+  },
+  {
+    "impacto_presupuestario_mes": 10,
+    "tipo_id": 33,
+    "tipo_desc": "Recuperación de préstamos de corto plazo",
+    "recurso_ingresado_percibido": 8.20728429,
+    "periodo": "2026-10",
+    "mes_completo": false,
+    "recurso_real_agosto2026": null
+  },
+  {
+    "impacto_presupuestario_mes": 10,
+    "tipo_id": 34,
+    "tipo_desc": "Recuperación de préstamos de largo plazo",
+    "recurso_ingresado_percibido": 0.62807237,
+    "periodo": "2026-10",
     "mes_completo": false,
     "recurso_real_agosto2026": null
   }

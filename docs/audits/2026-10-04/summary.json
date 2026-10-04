@@ -7,10 +7,15 @@
     "Buenos Aires: septiembre 1602271.022593948 millones; enero-septiembre 13266974.425482867 millones.",
     "Actualización nominal compartida en Nación; comparación real identificada hasta agosto.",
     "24 informes provinciales, 24 fichas territoriales nacionales y 12 informes nacionales generales actualizados.",
-    "Corregida la etiqueta temporal de la variación real RON: conserva enero-agosto aunque el acumulado nominal llega a septiembre."
+    "Corregida la etiqueta temporal de la variación real RON: conserva enero-agosto aunque el acumulado nominal llega a septiembre.",
+    "Presupuesto Abierto: 15 conjuntos de ejecución, recursos y metas actualizados al 04/10/2026. Octubre parcial; comparación 2027 conserva base 15/09.",
+    "TOP: incorporados los meses adicionales de nueve jurisdicciones y recalculadas las variaciones reales con IPC observado.",
+    "Ocho cuentas municipales: Laprida, Pehuajó, Pilar y Ramallo al 1S2026; Maipú y Coronel Rosales al cierre 2025; Villarino y San Pedro al 1T2026.",
+    "Siete presupuestos municipales incorporados y presupuesto vigente de Pilar actualizado.",
+    "PBA: 53 organismos conciliados con todo el gasto de capital; 28 funciones conciliadas con inversión directa y financiera. Fuente CGP, 1S2025 y 1S2026. Apertura incluida en web y PDF."
   ],
   "validation": {
-    "python_tests": 162,
+    "python_tests": 165,
     "node_tests": 145,
     "responsive_views": 75,
     "viewport_widths": [
@@ -25,18 +30,113 @@
     "municipal_documents_unavailable": 4,
     "source_requests": 192,
     "national_source_requests": 54,
-    "note": "Un archivo fechado sin cambios no prueba vigencia: se revisaron además los índices oficiales. Las páginas accesibles no se consideran por ello datos incorporados."
+    "note": "Un archivo fechado sin cambios no prueba vigencia: se revisaron además los índices oficiales. Las páginas accesibles no se consideran por ello datos incorporados.",
+    "additional_municipal_pages": 133,
+    "additional_municipalities": 59,
+    "pba_capital_checks": 12,
+    "national_execution_checks": 12
   },
   "coverage": {
     "municipios": 135,
-    "fiscal_common_h1_2026": 76,
-    "fiscal_other_only": 15,
-    "without_verified_accounts": 44,
-    "budget_2026": 100,
-    "budget_historical_only": 7,
-    "budget_pending": 28
+    "fiscal_common_h1_2026": 80,
+    "fiscal_other_only": 19,
+    "without_verified_accounts": 36,
+    "budget_2026": 105,
+    "budget_historical_only": 9,
+    "budget_pending": 21
   },
   "open_findings": [
+    {
+      "priority": 2,
+      "dashboard": "Municipios",
+      "issue": "36 municipios sin cuenta fiscal incorporada y 21 sin presupuesto anual. Ver el inventario actualizado por distrito.",
+      "blocked_portals": [
+        {
+          "municipio": "Almirante Brown",
+          "url": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "municipio": "Azul",
+          "url": "https://azuldigital.gob.ar/wp-content/uploads/2026/04/Adm.-Central-Situacion-Economica-Financiera-al-31-03-26.pdf",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "municipio": "Magdalena",
+          "url": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.magdalena.gob.ar'. (_ssl.c:1010)>"
+        },
+        {
+          "municipio": "Navarro",
+          "url": "https://navarro.gob.ar/situacion-economica-financiera/",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "municipio": "Pergamino",
+          "url": "https://datosabiertos.pergamino.gob.ar/dataset/r-a-f-a-m-situacion-economica-financiera-ano-2026",
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        },
+        {
+          "municipio": "Pilar",
+          "url": "http://www.pilar.gob.ar/transparencia",
+          "error": "HTTP Error 301: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Permanently"
+        },
+        {
+          "municipio": "Presidente Perón",
+          "url": "https://www.presidenteperon.gov.ar/control_gestion.php",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "municipio": "San Miguel",
+          "url": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "municipio": "San Vicente",
+          "url": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "municipio": "Tordillo",
+          "url": "https://tordillomunicipio.com/",
+          "error": "The read operation timed out"
+        },
+        {
+          "municipio": "Villarino",
+          "url": "https://www.villarino.gob.ar/economia/",
+          "error": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "priority": 2,
+      "dashboard": "Municipios",
+      "issue": "36 municipios sin cuenta fiscal incorporada y 21 sin presupuesto anual. Ver el inventario actualizado por distrito.",
+      "evidence": "municipal-document-checks.json",
+      "blocked_portals": []
+    },
+    {
+      "priority": 2,
+      "dashboard": "Provincias",
+      "issue": "Ya se abrió el capital por organismo y la inversión directa por función. Falta una ejecución comparable por proyecto y separar las transferencias de capital por función.",
+      "action": "Seguir las publicaciones CGP y el mapa provincial; no sustituir devengado semestral por costos de obra actualizados."
+    }
+  ],
+  "unchanged_cutoffs": {
+    "PBA_revenue": "2026-07",
+    "PBA_execution": "2026-H1",
+    "PBA_debt": "2026-06-30",
+    "provincial_common_execution": "2026-Q1",
+    "municipal_transfers": "2026-07",
+    "national_debt": "2026-08",
+    "observed_CPI": "2026-08"
+  },
+  "schedule": {
+    "frequency": "Cada 15 días a las 09:00, hora argentina",
+    "automation_id": "auditor-a-integral-de-tableros-cada-15-d-as"
+  },
+  "percentage_policy": "No se informa un porcentaje único de terminado: se mide cobertura, actualidad y controles por separado. Pasar pruebas no significa tener todas las fuentes actualizadas.",
+  "closed_findings": [
     {
       "priority": 1,
       "dashboard": "Nación",
@@ -95,98 +195,7 @@
           "available": "2026-08"
         }
       ]
-    },
-    {
-      "priority": 2,
-      "dashboard": "Municipios",
-      "issue": "44 municipios sin cuenta fiscal verificada y 28 sin presupuesto anual verificado. 12 portales no respondieron al barrido.",
-      "blocked_portals": [
-        {
-          "municipio": "Almirante Brown",
-          "url": "https://www.almirantebrown.gov.ar/estado-contable-2023",
-          "error": "HTTP Error 404: Not Found"
-        },
-        {
-          "municipio": "Azul",
-          "url": "https://azuldigital.gob.ar/wp-content/uploads/2026/04/Adm.-Central-Situacion-Economica-Financiera-al-31-03-26.pdf",
-          "error": "HTTP Error 404: Not Found"
-        },
-        {
-          "municipio": "Coronel de Marina L. Rosales",
-          "url": "http://www.rosalesmunicipio.gob.ar/",
-          "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
-        },
-        {
-          "municipio": "Magdalena",
-          "url": "https://www.magdalena.gob.ar/?q=transparencia-publica",
-          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.magdalena.gob.ar'. (_ssl.c:1010)>"
-        },
-        {
-          "municipio": "Navarro",
-          "url": "https://navarro.gob.ar/situacion-economica-financiera/",
-          "error": "HTTP Error 404: Not Found"
-        },
-        {
-          "municipio": "Pergamino",
-          "url": "https://datosabiertos.pergamino.gob.ar/dataset/r-a-f-a-m-situacion-economica-financiera-ano-2026",
-          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
-        },
-        {
-          "municipio": "Pilar",
-          "url": "http://www.pilar.gob.ar/transparencia",
-          "error": "HTTP Error 301: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nMoved Permanently"
-        },
-        {
-          "municipio": "Presidente Perón",
-          "url": "https://www.presidenteperon.gov.ar/control_gestion.php",
-          "error": "HTTP Error 404: Not Found"
-        },
-        {
-          "municipio": "San Miguel",
-          "url": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
-          "error": "HTTP Error 404: Not Found"
-        },
-        {
-          "municipio": "San Vicente",
-          "url": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
-          "error": "HTTP Error 404: Not Found"
-        },
-        {
-          "municipio": "Tordillo",
-          "url": "https://tordillomunicipio.com/",
-          "error": "The read operation timed out"
-        },
-        {
-          "municipio": "Villarino",
-          "url": "https://www.villarino.gob.ar/economia/",
-          "error": "HTTP Error 404: Not Found"
-        }
-      ]
-    },
-    {
-      "priority": 2,
-      "dashboard": "Municipios",
-      "issue": "Cuatro enlaces de PDF no recuperables: dos de General Viamonte, uno de Pergamino y uno de Azul. Se conservan los importes y originales ya validados; un enlace roto no implica un dato inválido.",
-      "evidence": "municipal-document-checks.json"
-    },
-    {
-      "priority": 2,
-      "dashboard": "Provincias",
-      "issue": "Sin nueva base verificable para abrir el recorte de capital bonaerense por función y proyecto. La apertura económica no identifica rutas, escuelas o viviendas."
     }
   ],
-  "unchanged_cutoffs": {
-    "PBA_revenue": "2026-07",
-    "PBA_execution": "2026-H1",
-    "PBA_debt": "2026-06-30",
-    "provincial_common_execution": "2026-Q1",
-    "municipal_transfers": "2026-07",
-    "national_debt": "2026-08",
-    "observed_CPI": "2026-08"
-  },
-  "schedule": {
-    "frequency": "Cada 15 días a las 09:00, hora argentina",
-    "automation_id": "auditor-a-integral-de-tableros-cada-15-d-as"
-  },
-  "percentage_policy": "No se informa un porcentaje único de terminado: se mide cobertura, actualidad y controles por separado. Pasar pruebas no significa tener todas las fuentes actualizadas."
+  "integration_evidence": "integration.json"
 }

@@ -13,15 +13,15 @@ def append_management(report, data):
         url = g['datasets'][key]['sources'][0]['url']
         r.note(f'<link href="{escape(url)}" color="#254b73">{escape(label)}</link>')
 
-    r.section('11 / Caja y pagos', 'La caja tiene superávit; el margen se achica', 'Hacienda: SPN, enero-agosto 2026. Presupuesto Abierto: Administración Nacional, 15/09/2026. INDEC: IPC.')
+    r.section('11 / Caja y pagos', 'La caja tiene superávit; el margen se achica', 'Hacienda: SPN, enero-agosto 2026. Presupuesto Abierto: Administración Nacional, 04/10/2026. INDEC: IPC.')
     r.add(f"El Sector Público Nacional cobró {money(cash_value('ingresos_totales'))} y pagó {money(cash_value('gasto_primario'))} antes de intereses. Después de los intereses quedó un superávit de <b>{money(cash_value('resultado_financiero'))}</b>. Los montos de este cuadro están en {r.units.lower()}.")
     r.table(['Caja / enero-agosto 2026', 'Monto / millones'],
         [[label, num(cash_value(key), 0)] for key, label in [('ingresos_totales','Ingresos cobrados'),('gasto_primario','Gasto antes de intereses'),('resultado_primario','Resultado antes de intereses'),('intereses_netos','Intereses pagados'),('resultado_financiero','Resultado después de intereses')]], [WIDTH-140,140])
     r.add(f"El dato importante está en términos reales. Frente a enero-agosto de 2025, los ingresos cayeron {num(abs(cash['ingresos_totales']['variacion_real_acumulada_pct']))}% y el gasto primario, {num(abs(cash['gasto_primario']['variacion_real_acumulada_pct']))}%. Los ingresos cayeron más rápido que el gasto y achicaron el margen fiscal.")
     r.add('Del gasto reconocido al pago', 'heading')
     t = g['execution']['total']
-    r.add(f"En la Administración Nacional, al 15/09 se reconocieron gastos por {money(t['credito_devengado'])} y se pagaron {money(t['credito_pagado'])}. La diferencia es <b>{money(t['devengado_menos_pagado'])}</b>. Son obligaciones reconocidas pendientes de pago; para saber cuáles están vencidas hacen falta sus fechas.")
-    r.table(['Etapa del presupuesto / al 15/09', 'Millones corrientes'],
+    r.add(f"En la Administración Nacional, al 04/10 se reconocieron gastos por {money(t['credito_devengado'])} y se pagaron {money(t['credito_pagado'])}. La diferencia es <b>{money(t['devengado_menos_pagado'])}</b>. Son obligaciones reconocidas pendientes de pago; para saber cuáles están vencidas hacen falta sus fechas.")
+    r.table(['Etapa del presupuesto / al 04/10', 'Millones corrientes'],
         [[label,num(t[key],0)] for key,label in [('credito_presupuestado','Inicial'),('credito_vigente','Vigente'),('credito_comprometido','Comprometido'),('credito_devengado','Devengado'),('credito_pagado','Pagado')]], [WIDTH-140,140], compact=True)
     c = next(x for x in g['execution']['comparison'] if x['etapa']=='credito_devengado')
     r.note(f"El gasto devengado de enero-agosto fue {num(abs(c['variacion_real_pct']))}% menor en términos reales que un año antes. Se descuenta la inflación mes a mes. Caja del SPN y ejecución de la Administración Nacional tienen distinto alcance y registro; no se suman.")
@@ -48,7 +48,7 @@ def append_management(report, data):
         [[('2026 / abr-dic' if x['periodo']=='2026' else '2036-2089 / 54 años' if x['agrupa_varios_anios'] else x['periodo']), num(x['capital_usd_millones'],0),num(x['intereses_usd_millones'],0),num(x['total_usd_millones'],0)] for x in g['debt']['annual_schedule']], [WIDTH-255,85,85,85], compact=True)
     r.note('La parte del capital que no se refinancia debe cubrirse con caja u otras fuentes. <link href="https://opc.gob.ar/download/52016/" color="#254b73">OPC: cuadro 7, página 14</link>. <link href="https://tablero.federicopellegrini.com.ar/nacion/#deuda-nacional" color="#254b73">Series y documentos de Finanzas</link>.')
 
-    r.section('13 / Nación y provincias', 'Cuánto llega y cuánto permite financiar', 'DNAP: recursos de origen nacional, enero-agosto 2026. PA: transferencias al 15/09. INDEC: población proyectada 2026.')
+    r.section('13 / Nación y provincias', 'Cuánto llega y cuánto permite financiar', 'DNAP: recursos de origen nacional, enero-agosto 2026. PA: transferencias al 04/10. INDEC: población proyectada 2026.')
     ba = next(x for x in g['provinces']['comparison'] if x['provincia_id']==6)
     r.add(f"Buenos Aires recibió {money(ba['ron_2026'])} de recursos de origen nacional en enero-agosto, en pesos corrientes. Después de descontar inflación, esos fondos compraron <b>{num(abs(ba['variacion_real_pct']))}% menos</b> que un año antes. La suba del monto nominal no alcanzó para preservar su poder de compra.")
     latest = next(x for x in g['provinces']['latest']['rows'] if x['province']=='Buenos Aires')
@@ -57,7 +57,7 @@ def append_management(report, data):
     rows = sorted(g['provinces']['comparison'],key=lambda x:-x['variacion_real_pct'])
     r.table(['Provincia','RON','Por habitante','Cambio real','Transfer. presupuesto'],
         [[x['provincia'],num(x['ron_2026'],0),num(x['pesos_por_habitante_2026'],0),pct(x['variacion_real_pct'],True),num(x['presupuestarias_devengado'],0)] for x in rows], [WIDTH-306,78,78,64,86], compact=True)
-    r.note('Por habitante usa la proyección INDEC de 2026. Las transferencias del presupuesto son obligaciones reconocidas a administraciones provinciales al 15/09; no todo el gasto nacional localizado. No se califican como discrecionales sin revisar su norma.')
+    r.note('Por habitante usa la proyección INDEC de 2026. Las transferencias del presupuesto son obligaciones reconocidas a administraciones provinciales al 04/10; no todo el gasto nacional localizado. No se califican como discrecionales sin revisar su norma.')
     link('ron_comparacion_provincias','DNAP: recursos nacionales distribuidos a provincias')
 
     r.section('14 / Prestaciones y obras', 'El gasto tiene que traducirse en servicios y obras', 'ONP / Presupuesto Abierto: metas, segundo trimestre 2026; obras, primer trimestre 2026. Unidades propias de cada medición.')

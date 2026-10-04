@@ -21,7 +21,7 @@ INPUTS=['data/annual_fiscal_accounts.json','data/budget_execution_2026.json',
  'data/government_results_provinces.json','informacion_consolidada_2026_normalizado.csv',
  'informacion_consolidada_2025_normalizado.csv','data/ipc_national_index.csv',
  'data/ron_2025_import.json','data/meta.json','data/pba_execution_latest.json','data/debt/pba_debt_profile_2026q1.json','dashboard_reclamos_nacion_provincias.json','data/pba_comparison.json']
-BUILD_INPUTS=INPUTS+['scripts_export_management_reports.py','assets/report-fonts/Lato-Regular.ttf','assets/report-fonts/Lato-Bold.ttf']
+BUILD_INPUTS=INPUTS+['data/pba_capital_detail.json','scripts_export_management_reports.py','assets/report-fonts/Lato-Regular.ttf','assets/report-fonts/Lato-Bold.ttf']
 INK='#172E46';TEAL='#14796F';BLUE='#3679AA';MUTED='#536578';PALE='#EDF4F6';LINE='#D5E1E6';RUST='#A94F38';GOLD='#BB8B3A'
 MM=72/25.4;W,H=A4
 SITE='https://tablero.federicopellegrini.com.ar/'
@@ -226,6 +226,7 @@ class Report:
   self.note(('DNAP: cierre 2025. PBA: primer semestre 2026. Variaciones reales: IPC promedio semestral INDEC. ' if m['latest_execution'] else 'DNAP. ')+ 'APNF, incluye seguridad social. '+basis+' Datos provisorios.',271)
 
  def page_investment(self):
+  if self.m['province']=='Buenos Aires':return self.page_pba_investment()
   m=self.m;a=m['annual'];year=self.d.year;cap=m['metrics']['capital']
   self.header('02  Gasto, inversión y resultados')
   self.paragraph('Invertir más exige elegir mejor',18,49,174,20,24,bold=True,max_end=62)
@@ -258,6 +259,23 @@ class Report:
   self.paragraph(f'<b>Aprendizaje.</b> {pct(math_metric["value"])} de los estudiantes evaluados alcanzó nivel satisfactorio o avanzado en Matemática ({escape(math_metric["period"])}). Participación: {pct(edu["participation"]["students_pct"])}.',18,244,84,9.6,12.7,max_end=266)
   self.paragraph(f'<b>Salud.</b> {number(infant["value"])} muertes infantiles por cada 1.000 nacidos vivos ({infant["period"]}). El seguimiento del gasto tiene que incluir cobertura y resultados: ejecutar una partida no prueba que el servicio haya mejorado.',108,244,84,9.6,12.7,max_end=268)
   self.note('APNF. Agregado comparable sin La Pampa y Santiago del Estero. Aprender y DEIS: años propios; no se atribuye un resultado al gasto de otro período.',271)
+
+ def page_pba_investment(self):
+  d=jsonfile('data/pba_capital_detail.json');total=d['totals'];self.header('02  Dónde cambió la inversión')
+  self.paragraph('El recorte no fue igual en todas las áreas',18,49,174,18,22,bold=True,max_end=65)
+  self.paragraph(f'El gasto de capital cayó {pct(abs(total["capital"]["real_change_pct"]))} real en el primer semestre. Obras y equipamiento explican {pct(total["direct"]["real_change"]/total["capital"]["real_change"]*100)} de esa reducción. Educación y energía aumentaron su inversión directa; transporte, vivienda y saneamiento la redujeron.',18,70,174,11,15,max_end=96)
+  self.section('A','Obras y equipamiento por función',105)
+  self.text('Cambio real / primer semestre 2026 contra 2025',18,112,9.5,color=MUTED)
+  names={'4-30':'Transporte','3-80':'Ambiente y agua','3-70':'Vivienda y urbanismo','3-40':'Educación y cultura','4-40':'Riego y drenajes','3-10':'Salud','4-10':'Energía y minería'}
+  for i,(key,label) in enumerate(names.items()):
+   r=next(x for x in d['functions'] if x['id']==key)['direct'];v=r['real_change_pct'];self.bar(label,v,124+i*8,max_value=100,color=RUST if v<0 else TEAL,value_label=('+' if v>0 else '')+pct(v))
+  self.section('B','Capital por organismo',190)
+  self.text('Otra apertura del mismo gasto: no se suma al cuadro anterior.',18,197,9,color=MUTED)
+  for i,(key,label) in enumerate([('55','Vialidad'),('84','Cultura y Educación'),('57','Instituto de la Vivienda'),('53','Infraestructura')]):
+   r=next(x for x in d['institutions'] if x['id']==key)['capital'];v=r['real_change_pct'];self.text(label,18,208+i*8,10);self.right(amount(r['current']),148,208+i*8,9.5);self.right(('+' if v>0 else '')+pct(v),192,208+i*8,10,True,RUST if v<0 else TEAL)
+  self.paragraph('La apertura por organismo incluye transferencias y aportes financieros. Para identificar el recorte de cada ruta, escuela u obra hidráulica todavía falta una ejecución semestral por proyecto. El costo actualizado del mapa de obras no reemplaza ese dato.',18,245,174,9.7,12.5,max_end=264)
+  self.note('CGP: APNF, devengado enero-junio 2025 y 2026. Ajuste por IPC promedio semestral. Obras y equipamiento = inversión real directa; no incluye transferencias de capital.',268,max_end=280)
+  self.link('Datos y fuentes de las 28 funciones y 53 organismos',SITE+'data/pba_capital_detail.json',18,279)
 
  def page_agenda(self):
   m=self.m;t=m['transfers'];year=t['through'][:4];month=MONTHS[int(t['through'][-2:])-1]

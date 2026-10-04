@@ -1,6 +1,6 @@
 {
   "project": "Sistema fiscal provincias - capa intermedia normalizada",
-  "generated_at": "2026-10-04T20:01:39.631983Z",
+  "generated_at": "2026-10-04T20:50:23.789211Z",
   "data_cutoff": "2026-09-30",
   "province_universe": [
     "Buenos Aires",
@@ -112,7 +112,7 @@
   "missing_ron_2026_provinces": [],
   "as_of_by_block": {
     "structural_and_ranking": "2026-03-31",
-    "recaudacion_propia_2026_max": "2026-08-31",
+    "recaudacion_propia_2026_max": "2026-09-30",
     "recaudacion_propia_pba": "2026-07-31",
     "transferencias_nacion_2026": "2026-09-30",
     "debt_stock_pba": "2026-06-30",
