@@ -1,6 +1,16 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const {fiscalExecutionRatios,proposalCost}=require('../budget-execution.js');
 const {currentBudgetRatio}=require('../verified-management.js');
+test('RON real change retains its own cutoff when nominal coverage advances',()=>{
+ const html=require('node:fs').readFileSync(require('node:path').join(__dirname,'../index.html'),'utf8');
+ const block=html.slice(html.indexOf('  const ronReal='),html.indexOf("  const ronPeriod="));
+ const run=metric=>require('node:vm').runInNewContext(block+';({value:ronVar,period:ronRealPeriod})',{realDynamics:{provinces:{PBA:{metrics:{ron_total:metric}}}},province:'PBA',toN:x=>x==null?null:Number(x),fullMonthLabel:x=>x});
+ const result=run({real_ytd_pct:-.9,ytd_available_through:'2026-08'});
+ assert.equal(result.value,-.9);assert.equal(result.period,'Enero–2026-08');
+ assert.equal(run({real_ytd_pct:-.9}).value,null);
+ const card=html.match(/\{label:'Variación RON 2026 vs 2025 \(%\)'[^\n]+/)[0];
+ assert.match(card,/period:ronRealPeriod\+/);
+});
 
 test('current credit ratios retain accounting stage and missing values',()=>{
  assert.equal(currentBudgetRatio({credit_ars_m:100,accrued_ars_m:null,committed_ars_m:null}),null);

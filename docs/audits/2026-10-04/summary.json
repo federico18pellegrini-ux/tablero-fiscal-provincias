@@ -6,11 +6,12 @@
     "RON enero-septiembre 2026: 24 jurisdicciones, 216 totales mensuales y 4790 filas de detalle conciliadas con la planilla DNAP y su acumulado.",
     "Buenos Aires: septiembre 1602271.022593948 millones; enero-septiembre 13266974.425482867 millones.",
     "Actualización nominal compartida en Nación; comparación real identificada hasta agosto.",
-    "24 informes provinciales, 24 fichas territoriales nacionales y 12 informes nacionales generales actualizados."
+    "24 informes provinciales, 24 fichas territoriales nacionales y 12 informes nacionales generales actualizados.",
+    "Corregida la etiqueta temporal de la variación real RON: conserva enero-agosto aunque el acumulado nominal llega a septiembre."
   ],
   "validation": {
     "python_tests": 162,
-    "node_tests": 144,
+    "node_tests": 145,
     "responsive_views": 75,
     "viewport_widths": [
       390,
