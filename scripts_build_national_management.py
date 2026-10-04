@@ -143,7 +143,7 @@ def build():
         'resources': revenue_comparison,
         'debt': {'monthly': get('deuda_stock_pagos'), 'schedule': get('vencimientos_perfil_marzo2026'),
                  'annual_schedule': get('vencimientos_anuales_perfil_marzo2026'), 'cutoff_schedule': '2026-03-31'},
-        'provinces': {'comparison': provincial, 'monthly': get('ron_provincias_mensual'), 'history': get('ron_historia_provincias_anual')},
+        'provinces': {'comparison': provincial, 'monthly': get('ron_provincias_mensual'), 'history': get('ron_historia_provincias_anual'), 'latest': load(ROOT / 'data/ron_latest.json')},
         'physical': {'coverage': get('metas_cobertura'), 'works_count': len(get('obras_ejecucion_fisica_financiera')),
                      'works_missing_physical': sum(r['ejecucion_fisica_1t2026_pct'] is None for r in get('obras_ejecucion_fisica_financiera'))},
         'history': history,

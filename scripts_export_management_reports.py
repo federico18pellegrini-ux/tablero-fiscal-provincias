@@ -95,7 +95,7 @@ class ReportData:
     if r['category_normalized'] in ['Total | (1) + (2)','CFI | Neta','Financiamiento Educativo','Compensación Consenso Fiscal']:
      if k in self.ron:raise ValueError(f'Duplicate RON aggregate: {k}')
      self.ron[k]=float(r['value_millions'])
-  self.transfer_cut=max(k[1] for k in self.ron);self.reviewed=max(self.annual['reviewed_at'],self.budget['reviewed_at'],self.services['reviewed_at'],self.latest_pba['reviewed_at'])
+  self.transfer_cut=max(k[1] for k in self.ron);self.reviewed=max(self.annual['reviewed_at'],self.budget['reviewed_at'],self.services['reviewed_at'],self.latest_pba['reviewed_at'],jsonfile('data/meta.json')['sources']['transferencias_nacion_2026'].get('reviewed_at',''))
  def annual_row(self,province,year):
   return next((r for r in self.annual['rows'] if r['province']==province and r['year']==year and r['status']=='observed'),None)
  def transfers(self,province,through=None,category='Total | (1) + (2)'):
@@ -105,6 +105,7 @@ class ReportData:
   complete=all(v is not None for v in now)
   comparable=complete and all(v is not None for v in prev) and all(f'{y}-{m:02}' in self.ipc for y in [year,year-1] for m in range(1,end+1))
   real=nominal=None;current=sum(now) if complete else None
+  if complete and all(v is not None for v in prev) and sum(prev)>0:nominal=100*(sum(now)/sum(prev)-1)
   if comparable and sum(prev)>0:
    # Deflate each monthly flow before adding. A common base cancels in the ratio.
    real_now=sum(v/self.ipc[f'{year}-{m:02}'] for m,v in enumerate(now,1))
@@ -265,7 +266,7 @@ class Report:
   if t['current'] is not None:
    transfer=f'Entre enero y {month} de {year}, ingresaron {amount(t["current"])} por transferencias automáticas nacionales.'
    if t['real_pct'] is not None:transfer+=f' Frente a los mismos meses de {int(year)-1}, '+(f'crecieron {pct(t["real_pct"])}' if t['real_pct']>=0 else f'cayeron {pct(abs(t["real_pct"]))}')+' después de descontar la inflación mes a mes.'
-   else:transfer+=' No hay una base mensual completa para afirmar cuánto variaron en términos reales.'
+   else:transfer+=' El IPC observado llega hasta agosto; septiembre se informa en pesos corrientes.'
   else:transfer='Falta un acumulado mensual completo de transferencias automáticas. No sumamos períodos sueltos como si fueran el total del año.'
   self.paragraph(transfer+' '+self.editorial['federal'],18,62,174,10.5,14.3,max_end=89)
   records=sorted((m.get('claim') or {}).get('records',[]),key=lambda r:r.get('published_at',''),reverse=True)

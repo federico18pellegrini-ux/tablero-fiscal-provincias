@@ -21,17 +21,19 @@ def province_page(r, management, province_id):
     t = territory_data(r.d, management, province_id)
     p, g, o, works = t['province'], t['project'], t['observed'], t['works']
     name = escape(p['provincia'])
+    latest = next(x for x in management['provinces']['latest']['rows'] if x['province']==p['provincia'])
     r.section('Ficha / Nación en la provincia', name,
-              'DNAP: recursos nacionales enero-agosto 2026. Presupuesto Abierto: 15/09/2026. ONP: proyecto 2027, cuadros 6 y planilla 12.', first=True)
+              'DNAP: nominal hasta septiembre; real hasta agosto 2026. Presupuesto Abierto: 15/09/2026. ONP: proyecto 2027.', first=True)
     r.add(f"Los recursos de origen nacional {'perdieron' if p['variacion_real_pct']<0 else 'ganaron'} <b>{num(abs(p['variacion_real_pct']))}% de poder de compra</b> frente a enero-agosto de 2025. Eso {'achica' if p['variacion_real_pct']<0 else 'amplía'} el margen para sostener servicios con esos fondos. El cambio real descuenta la inflación de cada mes.")
     r.add('Qué recibió el gobierno provincial', 'heading')
     r.table(['Concepto / período', 'Monto'], [
-        ['Recursos nacionales / enero-agosto', money(p['ron_2026'])],
+        ['Recursos nacionales / enero-septiembre', money(latest['ytd_nominal'])],
+        ['De ese total, septiembre', money(latest['month_nominal'])],
         ['Transferencias presupuestarias reconocidas / al 15/09', money(p['presupuestarias_devengado'])],
         ['Transferencias presupuestarias pagadas / al 15/09', money(p['presupuestarias_pagado'])],
         ['Diferencia pendiente de pago / al 15/09', money(t['pending'])],
     ], [WIDTH-140, 140], compact=True)
-    r.note('Pesos corrientes. Recursos nacionales incluyen coparticipación y otros regímenes. Las transferencias son del presupuesto nacional. Pendiente de pago no identifica qué parte está vencida. Estos renglones no se suman.')
+    r.note('Pesos corrientes. DNAP: actualizado a septiembre; comparación real hasta agosto por disponibilidad del IPC. Las transferencias presupuestarias son otro concepto. Pendiente de pago no identifica vencimiento. Los renglones no se suman.')
     r.add('El gasto de Nación en el territorio', 'heading')
     r.add(f"Nación reconoció gastos por <b>{money(o['credito_devengado'])}</b> al 15/09, sobre {money(o['credito_vigente'])} autorizados. Incluye jubilaciones, salarios, servicios y transferencias; no es dinero que recibe íntegramente el gobierno provincial.", 'small')
     r.add(f"Para 2027 propone <b>{money(g['project'])}</b> en esta ubicación. Dentro de ese monto figuran <b>{len(works)} partidas de inversión por {money(t['worksTotal'])}</b>.")
@@ -43,7 +45,7 @@ def province_page(r, management, province_id):
     r.add('Las partidas de inversión de mayor monto', 'heading')
     r.table(['Partida propuesta para 2027', 'Monto'], [[w['name'], money(w['project'])] for w in works[:3]], [WIDTH-120, 120], compact=True)
     r.add('Recomendamos seguir por separado los fondos provinciales y la ejecución nacional. Para las obras, el monto propuesto tiene que contrastarse con el cronograma, los contratos y el costo pendiente antes de evaluar si alcanza.', 'small')
-    sources = [(management['datasets']['ron_provincias_mensual']['sources'][0]['url'], 'Recursos nacionales'),
+    sources = [(management['provinces']['latest']['source']['url'], 'Recursos nacionales'),
                (management['datasets']['transferencias_presupuestarias_provincias']['sources'][0]['url'], 'Transferencias y ejecución'),
                (next(s['url'] for s in r.d['sources'] if s['file']==g['source']), 'Proyecto 2027'),
                (SITE+f'?distrito={province_id}#provincias-nacion', 'Abrir esta provincia')]
