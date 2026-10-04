@@ -3521,7 +3521,10 @@ function renderTransfersDependency(province){
   const ronRows=getProvinceRows(info2026,province).filter(r=>r.period_type==='month'&&r.category_normalized==='Total | (1) + (2)');
   const ronCut=ronRows.map(r=>r.period).sort().at(-1);
   const ronMar26=ronRows.length?ronRows.reduce((s,r)=>s+toN(r.value_millions),0):null;
-  const ronVar=toN(realDynamics?.provinces?.[province]?.metrics?.ron_total?.real_ytd_pct);
+  const ronReal=realDynamics?.provinces?.[province]?.metrics?.ron_total;
+  const ronRealCut=ronReal?.ytd_available_through;
+  const ronVar=ronRealCut?toN(ronReal?.real_ytd_pct):null;
+  const ronRealPeriod=ronRealCut?'Enero–'+fullMonthLabel(ronRealCut):'Sin corte';
   const ronPeriod=ronCut?'Enero–'+fullMonthLabel(ronCut):'Sin corte';
   const federalContribution=province==='Buenos Aires'?PBA_FEDERAL_CONTRIBUTION_2025:null;
   const pbaGenerated=toN(federalContribution?.pba_generated_national_taxes_millions);
@@ -3541,8 +3544,8 @@ function renderTransfersDependency(province){
   const items=[
     {label:'Impuestos nacionales / Ingresos Totales (%)',question:'¿Cuánto pesa Nación en la caja?',value:ronShare,display:ronShare===null?null:`$${Number(ronShare).toFixed(1).replace('.',',')} de cada $100`,period:'Últimos 12 meses · 1T26',meaning:'Es la parte de los ingresos provinciales explicada por impuestos de origen nacional, con numerador y denominador del mismo período.',source:'Informe Provincias 1T26, pág. 8'},
     ...(federalContribution?[{kind:'flow',label:'Aporte bonaerense estimado vs recursos automáticos recibidos',question:'¿Cuánto aporta Buenos Aires y cuánto vuelve?',value:pbaReturnPer100,period:federalContribution.period,meaning:'De cada $100 de impuestos nacionales atribuidos a Buenos Aires, $18 volvieron como recursos automáticos. El resto financia al Tesoro nacional, ANSES, otros fondos y jurisdicciones.',source:`${federalContribution.source_contribution} + ${federalContribution.source_received}`}]:[]),
-    {label:'RON acum marzo 2026 ($)',question:'¿Cuánto llegó en 2026?',value:ronMar26,display:formatQuarterTotal(ronMar26),period:ronPeriod,meaning:'Transferencias automáticas acumuladas, en pesos corrientes.',source:'informacion_consolidada_2026_normalizado.csv'},
-    {label:'Variación RON 2026 vs 2025 (%)',question:'¿Creció frente al mismo período de 2025?',value:ronVar,display:ronVar===null?null:`${ronVar>=0?'+':''}${Number(ronVar).toFixed(1).replace('.',',')}% real`,period:ronPeriod+' vs mismos meses de 2025',meaning:'Variación después de descontar inflación mes a mes.',source:'dashboard_real_dynamics_2026.json'},
+    {label:'RON acumulado 2026 ($)',question:'¿Cuánto llegó en 2026?',value:ronMar26,display:formatQuarterTotal(ronMar26),period:ronPeriod,meaning:'Transferencias automáticas acumuladas, en pesos corrientes.',source:'informacion_consolidada_2026_normalizado.csv'},
+    {label:'Variación RON 2026 vs 2025 (%)',question:'¿Creció frente al mismo período de 2025?',value:ronVar,display:ronVar===null?null:`${ronVar>=0?'+':''}${Number(ronVar).toFixed(1).replace('.',',')}% real`,period:ronRealPeriod+' vs mismos meses de 2025',meaning:'Variación después de descontar inflación mes a mes.',source:'dashboard_real_dynamics_2026.json'},
   ];
   section.style.display='block';
   cards.innerHTML=items.map(({kind,label,question,value:val,display,period,meaning,source:fuente})=>{
