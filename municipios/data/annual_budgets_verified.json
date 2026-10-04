@@ -328,13 +328,13 @@
     {
       "id": "06056",
       "year": 2026,
-      "asOf": "2026-01-09",
+      "asOf": "2026-06-30",
       "original": "330961123616.40",
-      "current": null,
-      "modifications": null,
-      "scope": "Administración municipal. Incluye $63.429.400.000 de gastos figurativos; no sumar nuevamente el presupuesto de los organismos receptores.",
-      "note": "",
-      "method": "published_original",
+      "current": "346090320836.14",
+      "modifications": "15129197219.74",
+      "scope": "Administración municipal. Incluye transferencias figurativas a organismos; no sumar nuevamente las cuentas del hospital o de otros receptores.",
+      "note": "Presupuesto vigente a la fecha indicada; el original se conserva cuando está documentado.",
+      "method": "published_current",
       "documents": [
         {
           "url": "https://gobiernoabierto.bahia.gob.ar/wp-content/uploads/2026/04/6-Presupuesto-de-Gastos-por-Objeto-A%C3%B1o-2026.pdf",
@@ -345,11 +345,22 @@
             9
           ],
           "locator": "Total general: crédito original, presupuesto 2026. Fecha del cuadro 09/01/2026."
+        },
+        {
+          "url": "https://gobiernoabierto.bahia.gob.ar/wp-content/uploads/2026/07/Situacion-Economica-Financiera-al-30-06.pdf",
+          "sha256": "f32af68121a2acbf914dd1676a40d5e8492f227112aaa6130b2c94153acb146b",
+          "bytes": 345258,
+          "pages": 7,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1: total de Evolución de Gastos por Objeto, columna Vigente. Crédito anual; no confundir con devengado ni incluir movimientos extrapresupuestarios.",
+          "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06056.pdf"
         }
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": "2026-01-02"
     },
     {
       "id": "06063",
@@ -3201,6 +3212,33 @@
       "periodStart": "2026-01-01"
     },
     {
+      "id": "06505",
+      "year": 2026,
+      "original": null,
+      "documents": [
+        {
+          "url": "https://magdalena.gob.ar/wp-content/uploads/2026/07/Situacion-Economica-Financiera-2do-Trim.-2026.pdf",
+          "sha256": "e26cc56c7ec69bd42643727c6c87531128847da3fb084623b9898b66f56011f0",
+          "bytes": 300497,
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1: total de Evolución de Gastos por Objeto, columna Vigente. Crédito anual; no confundir con devengado ni incluir movimientos extrapresupuestarios.",
+          "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06505.pdf"
+        }
+      ],
+      "asOf": "2026-06-30",
+      "current": "21759481563.71",
+      "modifications": null,
+      "periodStart": "2026-01-05",
+      "method": "published_current",
+      "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
+      "note": "Presupuesto vigente a la fecha indicada; el original se conserva cuando está documentado.",
+      "components": [],
+      "componentField": "current"
+    },
+    {
       "id": "06511",
       "year": 2025,
       "asOf": "2025-12-31",
@@ -3372,13 +3410,13 @@
     {
       "id": "06547",
       "year": 2026,
-      "asOf": "2025-12-26",
+      "asOf": "2026-03-31",
       "original": "15192000000.00",
-      "current": null,
-      "modifications": null,
-      "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
-      "method": "published_original",
-      "note": "Presupuesto aprobado original. No se presume que conserve el mismo monto después de sus modificaciones.",
+      "current": "16125599621.49",
+      "modifications": "933599621.49",
+      "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
+      "method": "published_current",
+      "note": "Presupuesto vigente a la fecha indicada; el original se conserva cuando está documentado.",
       "documents": [
         {
           "url": "https://drive.google.com/file/d/1drebixbXgLLTxSaD7knY6jzpZjVyH8Kx/view?usp=drive_link",
@@ -3390,20 +3428,33 @@
             2
           ],
           "locator": "Ordenanza 4731, artículo 1: presupuesto 2026 de 15.192.000.000 pesos. Sancionada el 26/12/2025. Archivo enlazado por el portal municipal."
+        },
+        {
+          "url": "https://drive.google.com/file/d/1NFOBRy1b3u_2jXYZtO4z7pstOEoo7gMk/view",
+          "sha256": "1eacdeecf12e49acfb8790fd3744bc2b2b4d561f603e2de76c1796c6c1fba173",
+          "bytes": 54095,
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1: total de Evolución de Gastos por Objeto, columna Vigente. Crédito anual; no confundir con devengado ni incluir movimientos extrapresupuestarios.",
+          "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06547.pdf"
         }
       ],
-      "periodStart": null
+      "periodStart": "2026-01-02",
+      "components": [],
+      "componentField": "current"
     },
     {
       "id": "06553",
       "year": 2026,
-      "asOf": "2025-12-23",
+      "asOf": "2026-06-30",
       "original": "28667169000.00",
-      "current": null,
-      "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "sum_disjoint_components",
+      "current": "29615633072.61",
+      "modifications": "948464072.61",
+      "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
+      "note": "Presupuesto vigente a la fecha indicada; el original se conserva cuando está documentado.",
+      "method": "published_current",
       "documents": [
         {
           "url": "https://sibom.slyt.gba.gov.ar/bulletins/15542/contents/2426628",
@@ -3412,20 +3463,22 @@
           "pages": null,
           "consultedPages": [],
           "locator": "Ordenanza 3522, artículo 2: suma de gastos sin afectación 26.948.669.000 y con afectación 1.718.500.000."
-        }
-      ],
-      "components": [
-        {
-          "label": "Sin afectación",
-          "amount": "26948669000.00"
         },
         {
-          "label": "Con afectación",
-          "amount": "1718500000.00"
+          "url": "https://montehermoso.gov.ar/sitio/wp-content/uploads/SITUACION_ECO_FIN_1_SEMESTRE_2026.pdf",
+          "sha256": "31c0c6e7991b36b66b2f2e335c448104aab7388649f94953329129337e1c8032",
+          "bytes": 323601,
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1: total de Evolución de Gastos por Objeto, columna Vigente. Crédito anual; no confundir con devengado ni incluir movimientos extrapresupuestarios.",
+          "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06553.pdf"
         }
       ],
-      "componentField": "original",
-      "periodStart": null
+      "components": [],
+      "componentField": "current",
+      "periodStart": "2026-01-02"
     },
     {
       "id": "06560",
@@ -5592,13 +5645,13 @@
     {
       "id": "06861",
       "year": 2026,
-      "asOf": "2025-11-13",
+      "asOf": "2026-06-30",
       "original": "362143765971.00",
-      "current": null,
-      "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "Presupuesto original del anexo publicado por el municipio; no hay actualización de crédito vigente incorporada.",
-      "method": "published_original",
+      "current": "362143765971.00",
+      "modifications": "0.00",
+      "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
+      "note": "Presupuesto vigente a la fecha indicada; el original se conserva cuando está documentado.",
+      "method": "published_current",
       "documents": [
         {
           "url": "https://www.vicentelopez.gov.ar/boletin_oficial/bulletin/uploads/2026/01/374622c0-e590-11f0-b3ca-61bca5b46900.pdf",
@@ -5609,11 +5662,22 @@
             866
           ],
           "locator": "Anexo oficial del presupuesto de gastos 2026, total general de Crédito Original. Fecha del cuadro 13/11/2025."
+        },
+        {
+          "url": "https://vicentelopez.opendata.junar.com/datasets/201678-transparencia-2026-situacion-economico-financiera-al-30062026.download/",
+          "sha256": "1f7615752d195cde3b49ddf97103bdbd369435ad3bc20a017daa269bb10f06a3",
+          "bytes": 296409,
+          "pages": 12,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1: total de Evolución de Gastos por Objeto, columna Vigente. Crédito anual; no confundir con devengado ni incluir movimientos extrapresupuestarios.",
+          "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06861.pdf"
         }
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": "2026-01-01"
     },
     {
       "id": "06868",
@@ -5795,12 +5859,6 @@
     {
       "id": "06490",
       "municipality": "Lomas de Zamora",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
-      "id": "06505",
-      "municipality": "Magdalena",
       "status": "pending",
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },

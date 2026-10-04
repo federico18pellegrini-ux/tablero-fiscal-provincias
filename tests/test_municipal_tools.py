@@ -12,9 +12,9 @@ class MunicipalTools(unittest.TestCase):
     def test_status_is_mutually_exclusive_and_missing_does_not_mean_zero(self):
         rows=self.coverage['municipalities']
         self.assertEqual(len(rows),135)
-        self.assertEqual(sum(r['comparable'] for r in rows),80)
+        self.assertEqual(sum(r['comparable'] for r in rows),84)
         counts={label:sum(r['fiscalStatus']==label for r in rows) for label in ['Comparable a junio de 2026','Otro período','Ejecución parcial','Cuenta no verificada']}
-        self.assertEqual(list(counts.values()),[80,19,0,36])
+        self.assertEqual(list(counts.values()),[84,21,0,30])
         heras=next(r for r in rows if r['id']=='06329')
         self.assertTrue(heras['comparable'])
         self.assertTrue(any('Préstamos bancarios 2024' in v for v in heras['missing']))
@@ -39,7 +39,7 @@ class MunicipalTools(unittest.TestCase):
             topics = {r['topic'] for r in row['documentsNeeded']}
             self.assertTrue({'Caja libre', 'Calendario futuro de deuda', 'Flujos fiscales mensuales'} <= topics)
         topics = {r['topic']: r['available'] for r in self.coverage['topics']}
-        self.assertEqual(topics['Presupuesto vigente 2026'], 91)
+        self.assertEqual(topics['Presupuesto vigente 2026'], 96)
         self.assertEqual(topics['Presupuesto original 2026'], 22)
         self.assertEqual(topics['Saldo de tesorería'], 2)
         self.assertEqual(topics['Caja libre'], 0)

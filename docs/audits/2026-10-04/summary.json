@@ -12,10 +12,11 @@
     "TOP: incorporados los meses adicionales de nueve jurisdicciones y recalculadas las variaciones reales con IPC observado.",
     "Ocho cuentas municipales: Laprida, Pehuajó, Pilar y Ramallo al 1S2026; Maipú y Coronel Rosales al cierre 2025; Villarino y San Pedro al 1T2026.",
     "Siete presupuestos municipales incorporados y presupuesto vigente de Pilar actualizado.",
-    "PBA: 53 organismos conciliados con todo el gasto de capital; 28 funciones conciliadas con inversión directa y financiera. Fuente CGP, 1S2025 y 1S2026. Apertura incluida en web y PDF."
+    "PBA: 53 organismos conciliados con todo el gasto de capital; 28 funciones conciliadas con inversión directa y financiera. Fuente CGP, 1S2025 y 1S2026. Apertura incluida en web y PDF.",
+    "Seguimiento: Bahía Blanca, Magdalena, Monte Hermoso y Vicente López al 1S2026; Monte al 1T2026 y San Nicolás al cierre 2025. Cinco créditos vigentes incorporados; Magdalena suma presupuesto 2026."
   ],
   "validation": {
-    "python_tests": 165,
+    "python_tests": 168,
     "node_tests": 145,
     "responsive_views": 75,
     "viewport_widths": [
@@ -38,18 +39,18 @@
   },
   "coverage": {
     "municipios": 135,
-    "fiscal_common_h1_2026": 80,
-    "fiscal_other_only": 19,
-    "without_verified_accounts": 36,
-    "budget_2026": 105,
+    "fiscal_common_h1_2026": 84,
+    "fiscal_other_only": 21,
+    "without_verified_accounts": 30,
+    "budget_2026": 106,
     "budget_historical_only": 9,
-    "budget_pending": 21
+    "budget_pending": 20
   },
   "open_findings": [
     {
       "priority": 2,
       "dashboard": "Municipios",
-      "issue": "36 municipios sin cuenta fiscal incorporada y 21 sin presupuesto anual. Ver el inventario actualizado por distrito.",
+      "issue": "30 municipios sin cuenta fiscal incorporada y 20 sin presupuesto anual. Ver inventario actualizado.",
       "blocked_portals": [
         {
           "municipio": "Almirante Brown",
@@ -60,11 +61,6 @@
           "municipio": "Azul",
           "url": "https://azuldigital.gob.ar/wp-content/uploads/2026/04/Adm.-Central-Situacion-Economica-Financiera-al-31-03-26.pdf",
           "error": "HTTP Error 404: Not Found"
-        },
-        {
-          "municipio": "Magdalena",
-          "url": "https://www.magdalena.gob.ar/?q=transparencia-publica",
-          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.magdalena.gob.ar'. (_ssl.c:1010)>"
         },
         {
           "municipio": "Navarro",
@@ -111,7 +107,7 @@
     {
       "priority": 2,
       "dashboard": "Municipios",
-      "issue": "36 municipios sin cuenta fiscal incorporada y 21 sin presupuesto anual. Ver el inventario actualizado por distrito.",
+      "issue": "30 municipios sin cuenta fiscal incorporada y 20 sin presupuesto anual. Ver inventario actualizado.",
       "evidence": "municipal-document-checks.json",
       "blocked_portals": []
     },
