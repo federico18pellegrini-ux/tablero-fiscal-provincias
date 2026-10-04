@@ -17,7 +17,7 @@ from national_portfolios import build_portfolios
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / 'nacion/data'
 OUTPUT = DATA / 'decisions.json'
-INPUTS = ['nacion/data/budget.json', 'nacion/data/gestion/gasto_etapas_programa.json',
+INPUTS = ['nacion/data/execution-sources/project-baseline-execution.json', 'nacion/data/budget.json', 'nacion/data/gestion/gasto_etapas_programa.json',
           'nacion/data/gestion/metas_fisicas_trimestre_2.json', 'nacion/data/gestion/catalogo.json',
           'nacion/data/decision-sources/caif-2027.pdf', 'nacion/data/decision-sources/proyectos-2027.pdf',
           'nacion/data/decision-sources/inversion-1t26.pdf', 'nacion/data/gestion/obras_ejecucion_fisica_financiera.json',
@@ -81,6 +81,7 @@ def parse_caif(path):
 def build():
     b = load(DATA/'budget.json')
     stages = load(DATA/'gestion/gasto_etapas_programa.json')
+    baseline = load(DATA/'execution-sources/project-baseline-execution.json')['programs']
     metas = load(DATA/'gestion/metas_fisicas_trimestre_2.json')
     catalog = {x['dataset']: x for x in load(DATA/'gestion/catalogo.json')}
     inputs = {p: digest(ROOT/p) for p in INPUTS}
@@ -102,8 +103,10 @@ def build():
         execution = execution[0]
         expected_entity='Policía Federal Argentina (PFA)' if key==(41,326,28) else entity
         assert fold(execution['programa_desc'])==fold(name) and fold(execution['servicio_desc'])==fold(expected_entity)
+        snapshot = [r for r in baseline if keys(r)==key]
+        assert len(snapshot)==1
         for old, new in [('law','credito_presupuestado'),('current','credito_vigente'),('accrued','credito_devengado')]:
-            near(program[old],execution[new],.01)
+            near(program[old],snapshot[0][new],.01)
         physical = [r for r in metas if keys(r)==key]
         assert physical and all(r['ejercicio_presupuestario']==2026 and r['trimestre']==2 for r in physical)
         assert all(not r['requiere_revision_clave'] for r in physical), slug
@@ -124,7 +127,7 @@ def build():
     assert announcement['source']['url']=='https://www.argentina.gob.ar/node/512894'
     assert announcement['source']['published']=='2026-09-04' and announcement['assembly_pct']==96
     works['pilot']['announcement']=announcement
-    return {'meta':{'reviewed':'2026-09-18','unit':'ARS millones','execution_cutoff':b['meta']['execution_cutoff'],
+    return {'meta':{'reviewed':'2026-09-18','unit':'ARS millones','execution_cutoff':stages[0]['corte'], 'project_comparison_cutoff':b['meta']['execution_cutoff'],
                     'physical_period':'enero-junio 2026','inputs':inputs},
             'portfolios':build_portfolios(b,load(DATA/'gestion.json'),metas),
             'finance':{'scope':'Administración Nacional','base':'Cierre estimado 2026','project':'Proyecto de ley 2027',

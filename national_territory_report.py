@@ -9,8 +9,10 @@ def territory_data(budget, management, province_id):
     geos = [g for g in budget['geographies'] if g['name'] == p['provincia']]
     observed = [g for g in management['execution']['groups']['territorio'] if g['ubicacion_geografica_id'] == province_id]
     assert len(geos) == len(observed) == 1, 'Ambiguous territorial link'
+    snapshot = [g for g in management['execution']['project_baseline']['territories'] if g['ubicacion_geografica_id'] == province_id]
+    assert len(snapshot) == 1
     for old, new in [('law', 'credito_presupuestado'), ('current', 'credito_vigente'), ('accrued', 'credito_devengado')]:
-        assert abs(geos[0][old] - observed[0][new]) < .01
+        assert abs(geos[0][old] - snapshot[0][new]) < .01
     works = sorted([w for w in budget['works'] if w['province'] == p['provincia']], key=lambda w: (-w['project'], w['id']))
     return dict(province=p, project=geos[0], observed=observed[0], works=works,
                 worksTotal=sum(w['project'] for w in works), pending=p['presupuestarias_devengado']-p['presupuestarias_pagado'])
@@ -23,19 +25,19 @@ def province_page(r, management, province_id):
     name = escape(p['provincia'])
     latest = next(x for x in management['provinces']['latest']['rows'] if x['province']==p['provincia'])
     r.section('Ficha / Nación en la provincia', name,
-              'DNAP: nominal hasta septiembre; real hasta agosto 2026. Presupuesto Abierto: 15/09/2026. ONP: proyecto 2027.', first=True)
+              'DNAP: nominal hasta septiembre; real hasta agosto 2026. Presupuesto Abierto: 04/10/2026. ONP: proyecto 2027.', first=True)
     r.add(f"Los recursos de origen nacional {'perdieron' if p['variacion_real_pct']<0 else 'ganaron'} <b>{num(abs(p['variacion_real_pct']))}% de poder de compra</b> frente a enero-agosto de 2025. Eso {'achica' if p['variacion_real_pct']<0 else 'amplía'} el margen para sostener servicios con esos fondos. El cambio real descuenta la inflación de cada mes.")
     r.add('Qué recibió el gobierno provincial', 'heading')
     r.table(['Concepto / período', 'Monto'], [
         ['Recursos nacionales / enero-septiembre', money(latest['ytd_nominal'])],
         ['De ese total, septiembre', money(latest['month_nominal'])],
-        ['Transferencias presupuestarias reconocidas / al 15/09', money(p['presupuestarias_devengado'])],
-        ['Transferencias presupuestarias pagadas / al 15/09', money(p['presupuestarias_pagado'])],
-        ['Diferencia pendiente de pago / al 15/09', money(t['pending'])],
+        ['Transferencias presupuestarias reconocidas / al 04/10', money(p['presupuestarias_devengado'])],
+        ['Transferencias presupuestarias pagadas / al 04/10', money(p['presupuestarias_pagado'])],
+        ['Diferencia pendiente de pago / al 04/10', money(t['pending'])],
     ], [WIDTH-140, 140], compact=True)
     r.note('Pesos corrientes. DNAP: actualizado a septiembre; comparación real hasta agosto por disponibilidad del IPC. Las transferencias presupuestarias son otro concepto. Pendiente de pago no identifica vencimiento. Los renglones no se suman.')
     r.add('El gasto de Nación en el territorio', 'heading')
-    r.add(f"Nación reconoció gastos por <b>{money(o['credito_devengado'])}</b> al 15/09, sobre {money(o['credito_vigente'])} autorizados. Incluye jubilaciones, salarios, servicios y transferencias; no es dinero que recibe íntegramente el gobierno provincial.", 'small')
+    r.add(f"Nación reconoció gastos por <b>{money(o['credito_devengado'])}</b> al 04/10, sobre {money(o['credito_vigente'])} autorizados. Incluye jubilaciones, salarios, servicios y transferencias; no es dinero que recibe íntegramente el gobierno provincial.", 'small')
     r.add(f"Para 2027 propone <b>{money(g['project'])}</b> en esta ubicación. Dentro de ese monto figuran <b>{len(works)} partidas de inversión por {money(t['worksTotal'])}</b>.")
     r.table(['Base de comparación 2026', 'Cambio en pesos', 'Cambio real'], [
         [label, pct((g['project']/g[key]-1)*100, True), pct((g['project']*r.d['deflator']['annual_factors']['2027']/(g[key]*r.d['deflator']['annual_factors']['2026'])-1)*100, True)]

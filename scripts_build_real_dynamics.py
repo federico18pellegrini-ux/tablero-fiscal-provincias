@@ -352,6 +352,7 @@ def calc_real_dynamics():
             status = 'calculated' if last_real is not None else ('current_without_homogeneous_base' if rows else 'missing')
             p_out['metrics'][metric] = {
                 'last_available_period': last_period,
+                'last_comparable_period': latest_comp_period,
                 'last_available_real_yoy_pct': last_real,
                 'ytd_available_through': ytd_through,
                 'real_ytd_pct': ytd_val,

@@ -7,13 +7,17 @@ def fold(s):
 
 
 def build_portfolios(b, management, physical):
+    for key in ('credito_presupuestado', 'credito_vigente', 'credito_devengado', 'credito_pagado'):
+        assert abs(sum(r[key] for r in management['execution']['groups']['jurisdiccion']) - management['execution']['total'][key]) < .01, key
     result=[]
     for j in b['jurisdictions']:
         rows=[r for r in management['execution']['groups']['jurisdiccion'] if fold(r['jurisdiccion_desc'])==fold(j['name'])]
         assert len(rows)==1, j['name']
         observed=rows[0];code=observed['jurisdiccion_id']
+        snapshot=[r for r in management['execution']['project_baseline']['jurisdictions'] if r['jurisdiccion_id']==code]
+        assert len(snapshot)==1
         for old,new in [('law','credito_presupuestado'),('current','credito_vigente'),('accrued','credito_devengado')]:
-            assert abs(j[old]-observed[new])<.01, (code,old)
+            assert abs(j[old]-snapshot[0][new])<.01, (code,old)
         programs=sorted([p for p in b['programs'] if p['jurisdiction']==j['name']],key=lambda p:(-p['project'],p['id']))
         works=sorted([w for w in b['works'] if w['jurisdiction']==j['name']],key=lambda w:(-w['project'],w['id']))
         metas=[r for r in physical if r['jurisdiccion_id']==code]

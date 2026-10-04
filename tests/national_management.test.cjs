@@ -64,16 +64,16 @@ test('28 published datasets retain sealed CSV and JSON; unreconciled GDP stays o
 });
 test('all execution classifications independently reconcile with the budget already displayed',()=>{
   for(const rows of Object.values(G.execution.groups)){
-    near(sum(rows,'credito_devengado'),D.total.accrued);
-    near(sum(rows,'credito_vigente'),D.total.current);
+    near(sum(rows,'credito_devengado'),G.execution.total.credito_devengado);
+    near(sum(rows,'credito_vigente'),G.execution.total.credito_vigente);
     near(sum(rows,'credito_pagado'),G.execution.total.credito_pagado);
   }
-  near(G.execution.total.devengado_menos_pagado,D.total.accrued-G.execution.total.credito_pagado);
+  near(G.execution.total.devengado_menos_pagado,G.execution.total.credito_devengado-G.execution.total.credito_pagado);
 });
-test('real year-on-year execution uses each observed month and excludes partial September',()=>{
+test('real year-on-year execution uses each observed month and does not deflate months without observed IPC',()=>{
   const rows=read('gasto_mensual_funcion'),ipc=Object.fromEntries(read('ipc_observado').map(r=>[r.periodo,r.indice]));
   for(const r of rows){
-    if(r.periodo==='2026-09'){assert.equal(r.credito_devengado_real_agosto2026,null);continue;}
+    if(!ipc[r.periodo]){assert.equal(r.credito_devengado_real_agosto2026,null);continue;}
     near(r.credito_devengado_real_agosto2026,r.credito_devengado*ipc['2026-08']/ipc[r.periodo]);
   }
   const actual=G.execution.comparison.find(r=>r.etapa==='credito_devengado');
@@ -164,7 +164,7 @@ test('all provincial sheets join IDs only within PA and names only within the pr
   for(const p of G.provinces.comparison){
     const t=M.territory(D,G,p.provincia_id);assert(t);seen.add(t.province.provincia_id);
     assert.equal(t.project.name,p.provincia);
-    for(const [a,b] of [['law','credito_presupuestado'],['current','credito_vigente'],['accrued','credito_devengado']])near(t.project[a],t.observed[b]);
+    for(const [a,b] of [['law','credito_presupuestado'],['current','credito_vigente'],['accrued','credito_devengado']])near(t.project[a],G.execution.project_baseline.territories.find(r=>r.ubicacion_geografica_id===p.provincia_id)[b]);
     near(t.pending,p.presupuestarias_devengado-p.presupuestarias_pagado);
     near(t.worksTotal,D.works.filter(w=>w.province===p.provincia).reduce((s,w)=>s+w.project,0));
     assert(t.works.every(w=>w.province===p.provincia));

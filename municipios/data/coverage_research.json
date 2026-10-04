@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "reviewedAt": "2026-09-11",
-  "scope": "Revisión de 288 URLs enlazadas por los portales de 135 municipios y descarga de 61 documentos candidatos. Se distingue localizar, descargar, validar e incorporar. No constituye revisión manual integral de todas las páginas de cada sitio.",
+  "reviewedAt": "2026-10-04",
+  "scope": "Revisión de 288 URLs enlazadas por los portales de 135 municipios y descarga de 61 documentos candidatos. Se distingue localizar, descargar, validar e incorporar. No constituye revisión manual integral de todas las páginas de cada sitio. Revisión complementaria del 04/10: 133 páginas de 59 municipios, con ocho cuentas incorporadas desde originales oficiales.",
   "pagesReviewed": 288,
   "municipalitiesReviewed": 135,
   "pagesResponded": 242,
@@ -85,6 +85,62 @@
       "state": "classification_pending",
       "url": "https://suipacha.gob.ar/transparencia/",
       "note": "Ejecuciones de recursos y gastos a junio 2026 descargadas. Falta separar las operaciones de financiamiento para obtener el resultado fiscal; el presupuesto anual sí se incorporó."
+    },
+    {
+      "id": "06448",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://www.laprida.gov.ar/",
+      "note": "CAIF incorporada y conciliada del 2026-01-02 al 2026-06-30."
+    },
+    {
+      "id": "06609",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://www.pehuajo.gob.ar/p/situacion-economico-financiera.html",
+      "note": "CAIF incorporada y conciliada del 2026-01-02 al 2026-06-30."
+    },
+    {
+      "id": "06638",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://pilar.gov.ar/publicaciones/",
+      "note": "CAIF incorporada y conciliada del 2026-01-01 al 2026-06-30."
+    },
+    {
+      "id": "06665",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://digestos.miramallo.com.ar/documento/L3f4b1DSJ8kyWFSu",
+      "note": "CAIF incorporada y conciliada del 2026-01-02 al 2026-06-30."
+    },
+    {
+      "id": "06511",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://www.maipu-gba.gob.ar/",
+      "note": "CAIF incorporada y conciliada del 2025-01-02 al 2025-12-31."
+    },
+    {
+      "id": "06182",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://mcr.gob.ar/docs/",
+      "note": "CAIF incorporada y conciliada del 2025-01-02 al 2025-12-31."
+    },
+    {
+      "id": "06875",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://www.villarino.gob.ar/transparencia",
+      "note": "CAIF incorporada y conciliada del 2026-01-02 al 2026-03-31."
+    },
+    {
+      "id": "06770",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://www.sanpedro.net.ar/",
+      "note": "CAIF incorporada y conciliada del 2026-01-01 al 2026-03-31."
     }
   ],
   "seriesReview": [
@@ -536,5 +592,22 @@
     "observationsChecked": 22680,
     "errors": [],
     "method": "84 observaciones mensuales de empleo y salario de 135 municipios contra T1/T2 y T7/T8. Salarios convertidos con IPC mensual a julio 2026; tolerancia 2 centavos. Lezama: código OEDE 06266 homologado a INDEC 06466 mediante el nombre del municipio."
-  }
+  },
+  "rounds": [
+    {
+      "date": "2026-10-04",
+      "pages": 133,
+      "municipalities": 59,
+      "accounts_added": [
+        "06182",
+        "06448",
+        "06511",
+        "06609",
+        "06638",
+        "06665",
+        "06770",
+        "06875"
+      ]
+    }
+  ]
 }

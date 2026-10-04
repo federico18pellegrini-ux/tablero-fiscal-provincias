@@ -24,7 +24,7 @@ class AnnualBudgets(unittest.TestCase):
         municipalities['06028']['annualBudget'] = {'amount': 1}
         _, coverage = apply_annual_budgets(municipalities, REGISTER)
         self.assertEqual(coverage, self.data['annualBudgetCoverage'])
-        self.assertEqual((coverage['available'], coverage['currentYear'], coverage['historical'], coverage['pending']), (107, 100, 7, 28))
+        self.assertEqual((coverage['available'], coverage['currentYear'], coverage['historical'], coverage['pending']), (114, 105, 9, 21))
         self.assertIsNone(municipalities['06028']['annualBudget'])
         for m in municipalities.values():
             b = m['annualBudget']
@@ -43,7 +43,7 @@ class AnnualBudgets(unittest.TestCase):
         self.assertEqual(b['current'], 611294558622.66)
         b = self.municipalities['06638']['annualBudget']
         self.assertEqual(b['original'], 488609779242)
-        self.assertIsNone(b['current'])
+        self.assertEqual(b['current'],496152440548.92)
 
     def test_reject_quarter_movements_bad_reconciliation_and_missing_source(self):
         for mutation in ['quarter', 'sum', 'source', 'coverage']:

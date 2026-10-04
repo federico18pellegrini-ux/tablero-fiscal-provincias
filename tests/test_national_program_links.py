@@ -14,7 +14,7 @@ class NationalProgramLinksTest(unittest.TestCase):
     def setUpClass(cls):
         cls.evidence = json.loads((ROOT / 'nacion/data/program-sources/crosswalk.json').read_text(encoding='utf8'))
         cls.budget = json.loads((ROOT / 'nacion/data/budget.json').read_text(encoding='utf8'))
-        cls.current = json.loads((ROOT / 'nacion/data/gestion/gasto_etapas_programa.json').read_text(encoding='utf8'))
+        cls.current = json.loads((ROOT / 'nacion/data/execution-sources/project-baseline-execution.json').read_text(encoding='utf8'))['programs']
         cls.sources = {s['file']: s for s in cls.evidence['sources']}
 
     def test_archived_originals_and_same_row_codes_names_amounts(self):

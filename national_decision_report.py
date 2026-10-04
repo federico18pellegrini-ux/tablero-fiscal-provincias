@@ -6,7 +6,7 @@ def additional_policy_page(r,d,slug):
     p=next(p for p in d['policies'] if p['slug']==slug);e=p['execution'];f=r.d['deflator']['annual_factors']
     editorial=p['editorial'];real=lambda key:change(p['program']['project']*f['2027'],p['program'][key]*f['2026'])
     r.s['title'].fontSize=23;r.s['title'].leading=28
-    r.section('Ficha / Política pública',p['title'],'ONP: proyecto 2027. Presupuesto Abierto: finanzas al 15/09/2026; prestaciones enero-junio 2026.',first=True)
+    r.section('Ficha / Política pública',p['title'],'ONP: proyecto 2027. Presupuesto Abierto: finanzas al 04/10/2026; prestaciones enero-junio 2026.',first=True)
     r.add(f"El proyecto destina <b>{money(p['program']['project'])}</b>. Frente al vigente de 2026, su poder de compra {'cae' if real('current')<0 else 'sube'} <b>{num(abs(real('current')))}%</b>, con la inflación del escenario del tablero.")
     r.table(['Base de comparación','Cambio nominal','Cambio real'],[[label,pct(change(p['program']['project'],p['program'][k]),True),pct(real(k),True)] for k,label in [('law','Inicial 2026'),('current','Vigente 2026')]], [WIDTH-180,90,90])
     r.note('Montos en pesos corrientes. Real: después de descontar inflación. El cierre estimado no está publicado para este programa.')
@@ -30,7 +30,7 @@ def policy_page(r,d,slug,first=False):
     p=next(p for p in d['policies'] if p['slug']==slug);e=p['execution'];f=r.d['deflator']['annual_factors']
     real=lambda base:change(p['program']['project']*f['2027'],p['program'][base]*f['2026'])
     vaccine=slug=='inmunizaciones';title='Vacunas e inmunizaciones' if vaccine else 'Universidades'
-    r.section('Ficha / Política pública' if first else '17 / Política pública' if vaccine else '18 / Política pública',title,'ONP: proyecto 2027. Presupuesto Abierto: finanzas al 15/09/2026 y prestaciones enero-junio 2026.',first=first)
+    r.section('Ficha / Política pública' if first else '17 / Política pública' if vaccine else '18 / Política pública',title,'ONP: proyecto 2027. Presupuesto Abierto: finanzas al 04/10/2026 y prestaciones enero-junio 2026.',first=first)
     r.note(p['program']['name']+' / '+p['program']['entity'])
     r.add(f"El proyecto destina <b>{money(r.value(p['program']['project']))}</b> a esta política. Frente al vigente, el poder de compra {'cae' if real('current')<0 else 'sube'} <b>{num(abs(real('current')))}%</b>, con la inflación del escenario del tablero.")
     r.table(['Base de 2026','Cambio en pesos','Cambio real'],

@@ -22,13 +22,13 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'nacion/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/nacion/'
 BASES = {'current': 'Vigente 2026', 'law': 'Inicial 2026', 'closing': 'Cierre estimado 2026'}
-INPUTS = ['national_priorities_report.py', 'nacion/data/benefits.json', 'nacion/priorities-model.js', 'nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
+INPUTS = ['nacion/data/execution-latest.json', 'national_priorities_report.py', 'nacion/data/benefits.json', 'nacion/priorities-model.js', 'nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
           'national_decision_report.py', 'national_territory_report.py', 'national_portfolio_report.py', 'nacion/data/decisions.json',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#0a192f', '#254b73', '#64748b', '#e2e8f0', '#f1f5f9', '#b91c1c'])
 PAGE_W, PAGE_H = A4
 WIDTH = PAGE_W - 84
-MONTHS = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre']
+MONTHS = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
 def finite(value):
     return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
@@ -87,7 +87,10 @@ class SourceMarker(Flowable):
 
 class Report:
     def __init__(self, data, mode='nominal', base='current'):
-        self.d, self.mode, self.base = data, mode, base
+        self.d, self.mode, self.base = dict(data), mode, base
+        latest = json.loads((ROOT/'nacion/data/execution-latest.json').read_text(encoding='utf8'))
+        self.d['execution'] = latest['execution']
+        self.d['execution_display_cutoff'] = latest['cutoff']
         self.s = styles()
         self.story = []
         self.units = 'Pesos de agosto de 2026' if mode == 'real' else 'Pesos corrientes'
@@ -250,10 +253,10 @@ class Report:
         contrib = next(r for r in d['resources'] if r['name'].startswith('Aportes'))
         self.add(f"Los aportes y contribuciones equivalen al {pct(ratio(contrib['project'], social['project']))} del gasto de la función Seguridad Social. Para cubrir la diferencia hacen falta impuestos y otros recursos. Esta comparación abarca toda la función Seguridad Social, no sólo ANSES.", 'small')
 
-        self.section('08 / Ejecución', 'Qué parte del presupuesto se usó', f"Presupuesto Abierto: crédito anual y mensual 2026, corte {date(d['meta']['execution_cutoff'])}. INDEC: IPC mensual observado.")
+        self.section('08 / Ejecución', 'Qué parte del presupuesto se usó', f"Presupuesto Abierto: crédito anual y mensual 2026, corte {date(d['execution_display_cutoff'])}. INDEC: IPC mensual observado.")
         ex = d['execution'][0]
         accrued = sum(m['accrued'] for m in ex['months'])
-        self.add(f"Al {date(d['meta']['execution_cutoff'])} se devengó el <b>{pct(ratio(accrued, ex['current']))}</b> del crédito vigente: {money(accrued)} sobre {money(ex['current'])}, en pesos corrientes. Devengar significa reconocer una obligación de pago; no significa necesariamente haberla pagado.")
+        self.add(f"Al {date(d['execution_display_cutoff'])} se devengó el <b>{pct(ratio(accrued, ex['current']))}</b> del crédito vigente: {money(accrued)} sobre {money(ex['current'])}, en pesos corrientes. Devengar significa reconocer una obligación de pago; no significa necesariamente haberla pagado.")
         self.table(['Jurisdicción', 'Vigente', 'Devengado', 'Ejecución'],
                    [[r['name'], num(r['current'], 0), num(sum(m['accrued'] for m in r['months']), 0), pct(ratio(sum(m['accrued'] for m in r['months']), r['current']))] for r in d['execution'][1:]],
                    [WIDTH - 231, 86, 86, 59], compact=True)
@@ -262,7 +265,7 @@ class Report:
         self.table(['Mes 2026', 'Gasto del mes', 'Acumulado / vigente'],
                    [[MONTHS[m['month'] - 1] + (' (parcial)' if m['partial'] else ''), num(m['real'] if self.mode == 'real' else m['accrued'], 0), pct(ratio(sum(x['accrued'] for x in ex['months'][:i+1]), ex['current']))] for i, m in enumerate(ex['months'])],
                    [WIDTH - 235, 105, 130], compact=True)
-        self.note(f"Gasto mensual en millones · {self.units}. Septiembre llega al 15/09 y no es un mes completo. En reales, septiembre queda sin monto porque aún falta su IPC observado. No se usa una proyección para medir gasto real ejecutado.")
+        self.note(f"Gasto mensual en millones · {self.units}. Octubre llega al 04/10 y no es un mes completo. En reales, septiembre y octubre quedan sin monto porque aún falta su IPC observado. No se usa una proyección para medir gasto real ejecutado.")
         self.note('Cuando una partida se ejecuta menos de lo previsto, hay que revisar qué prestación u obra quedó pendiente y si cambió su calendario.')
 
         self.section('09 / Historia y lectura final', 'Mirar más allá de un solo año', 'Presupuesto Abierto: totales anuales de ejecución. ONP: proyecto 2027. INDEC: IPC; 2026-2027, escenario.')
@@ -330,8 +333,8 @@ class Report:
         self.table(['Proyecto / organismo / referencia', 'Ubicación', 'Proyecto 2027'],
                    [[f"{r['id']} · {r['name']}\n{r['entity']} / {r['jurisdiction']} · p. {r['page']}", r['province'], num(self.value(r['project']), 0)] for r in d['works']],
                    [WIDTH - 165, 90, 75], compact=True)
-        self.section('Anexo / Ejecución mensual', 'El detalle de cada jurisdicción', f"Presupuesto Abierto: crédito mensual 2026 al {date(d['meta']['execution_cutoff'])}. INDEC: IPC observado.")
-        self.note(f"Montos del mes en millones · {self.units}. Acumulado / vigente: porcentaje nominal. Septiembre parcial hasta el 15/09, sin IPC observado para expresarlo en reales.")
+        self.section('Anexo / Ejecución mensual', 'El detalle de cada jurisdicción', f"Presupuesto Abierto: crédito mensual 2026 al {date(d['execution_display_cutoff'])}. INDEC: IPC observado.")
+        self.note(f"Montos del mes en millones · {self.units}. Acumulado / vigente: porcentaje nominal. Octubre parcial hasta el 04/10, sin IPC observado para expresarlo en reales.")
         rows = []
         for r in d['execution']:
             cum = 0
@@ -420,7 +423,7 @@ def run(output=OUT, check=False):
     register_fonts()
     data = json.loads((ROOT / 'nacion/data/budget.json').read_text(encoding='utf-8'))
     output.mkdir(parents=True, exist_ok=True)
-    manifest = {'reviewed': data['meta']['reviewed'], 'execution_cutoff': data['meta']['execution_cutoff'], 'inputs': fingerprint(), 'reports': []}
+    manifest = {'reviewed': json.loads((ROOT/'nacion/data/execution-latest.json').read_text(encoding='utf8'))['cutoff'], 'execution_cutoff': json.loads((ROOT/'nacion/data/execution-latest.json').read_text(encoding='utf8'))['cutoff'], 'project_comparison_cutoff': data['meta']['execution_cutoff'], 'inputs': fingerprint(), 'reports': []}
     for mode in ['nominal', 'real']:
         for base in BASES:
             entry = {'price': mode, 'base': base}

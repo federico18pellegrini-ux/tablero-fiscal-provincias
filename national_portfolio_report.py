@@ -10,7 +10,7 @@ def portfolio_pages(r,d,code):
     programs=[next(x for x in r.d['programs'] if x['id']==i) for i in p['program_ids']]
     works=[next(x for x in r.d['works'] if x['id']==i) for i in p['work_ids']]
     real=lambda row,base:change(row['project']*f['2027'] if row['project'] is not None else None,row[base]*f['2026'] if row.get(base) is not None else None)
-    source='ONP: proyecto 2027, cuadro 4 y planillas 7 y 12. Presupuesto Abierto: finanzas al 15/09/2026; metas a junio.'
+    source='ONP: proyecto 2027, cuadro 4 y planillas 7 y 12. Presupuesto Abierto: finanzas al 04/10/2026; metas a junio.'
     r.s['title'].fontSize=22;r.s['title'].leading=27
     r.section('Informe ejecutivo / Ministerio o poder',escape(p['name']),source,first=True)
     if j['project'] is None:
@@ -24,11 +24,11 @@ def portfolio_pages(r,d,code):
     ],[155,125,115,WIDTH-395])
     r.note(p['scope_note']+' Real: después de descontar inflación. Montos en pesos corrientes; s/c: sin comparación.')
     r.add('Cómo avanza el presupuesto de 2026','heading')
-    r.table(['Etapa al 15/09/2026','Monto'],[[label,money(e[k])] for label,k in [
+    r.table(['Etapa al 04/10/2026','Monto'],[[label,money(e[k])] for label,k in [
         ('Presupuesto vigente','credito_vigente'),('Comprometido','credito_comprometido'),
         ('Gasto reconocido','credito_devengado'),('Pagado','credito_pagado')]], [WIDTH-145,145])
     r.add(f"Se reconoció como gasto el <b>{num(ratio(e['credito_devengado'],e['credito_vigente']))}% del vigente</b>. La diferencia entre lo reconocido y lo pagado es {money(e['credito_devengado']-e['credito_pagado'])}. El registro no informa qué parte está vencida.")
-    r.note('El porcentaje mide uso de la autorización anual, no calidad del servicio. Septiembre es parcial y el gasto no se distribuye uniformemente durante el año.')
+    r.note('El porcentaje mide uso de la autorización anual, no calidad del servicio. Octubre es parcial y el gasto no se distribuye uniformemente durante el año.')
     r.note(f'<link href="{SITE}?cartera={code}#carteras" color="#254b73">Abrir esta cartera en el tablero</link>')
 
     r.section('Prioridades / Programas','Dónde se concentra el gasto',source)

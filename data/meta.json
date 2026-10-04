@@ -1,11 +1,17 @@
 {
-  "generated_at": "2026-10-04T20:01:39.631983Z",
+  "generated_at": "2026-10-04T20:28:55.928180Z",
   "structural_cutoff": "2026-03-31",
   "sources": {
     "recaudacion_propia_2026": {
-      "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_16.xlsx",
-      "max_period": "2026-08",
-      "pba_max_period": "2026-07"
+      "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_18.xlsx",
+      "max_period": "2026-09",
+      "pba_max_period": "2026-07",
+      "reviewed_at": "2026-10-04",
+      "original": {
+        "path": "data/top_sources/top_mensual_2026_18.xlsx",
+        "sha256": "0ce607ffaa35de8bc87d3d414c3d5c83c6015c72e03af6f77768c0d91ae1ef2e",
+        "bytes": 142560
+      }
     },
     "transferencias_nacion_2026": {
       "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_6.xlsx",

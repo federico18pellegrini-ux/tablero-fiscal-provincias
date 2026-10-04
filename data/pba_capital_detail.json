@@ -1,0 +1,3208 @@
+{
+  "reviewed": "2026-10-04",
+  "period": "Enero–junio 2026 contra enero–junio 2025",
+  "unit": "ARS millones",
+  "scope": "Administración Pública No Financiera",
+  "basis": "Devengado",
+  "semester_ipc_ratio": 1.3287090479014902,
+  "totals": {
+    "capital": {
+      "previous": 1056035.28,
+      "current": 971007.79,
+      "previous_real": 1403163.6314391836,
+      "real_change": -432155.84143918357,
+      "real_change_pct": -30.798677485385937
+    },
+    "direct": {
+      "previous": 526164.24,
+      "current": 443120.31,
+      "previous_real": 699119.1863702112,
+      "real_change": -255998.8763702112,
+      "real_change_pct": -36.61734384652543
+    },
+    "transfers": {
+      "previous": 267765.7,
+      "current": 266238.31,
+      "previous_real": 355782.7083076761,
+      "real_change": -89544.39830767608,
+      "real_change_pct": -25.168282835780566
+    },
+    "financial": {
+      "previous": 262105.34,
+      "current": 261649.16,
+      "previous_real": 348261.7367612964,
+      "real_change": -86612.5767612964,
+      "real_change_pct": -24.86996635540869
+    }
+  },
+  "functions": [
+    {
+      "id": "1-10",
+      "name": "Legislativa",
+      "direct": {
+        "previous": 503.04,
+        "current": 805.49,
+        "previous_real": 668.3937994563656,
+        "real_change": 137.09620054363438,
+        "real_change_pct": 20.51129149539399
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "1-20",
+      "name": "Judicial",
+      "direct": {
+        "previous": 8678.71,
+        "current": 12214.4,
+        "previous_real": 11531.480501113141,
+        "real_change": 682.9194988868585,
+        "real_change_pct": 5.922218736969098
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "1-30",
+      "name": "Dirección Superior Ejecutiva",
+      "direct": {
+        "previous": 13678.39,
+        "current": 5904.21,
+        "previous_real": 18174.600553725264,
+        "real_change": -12270.390553725265,
+        "real_change_pct": -67.51394902712286
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "1-40",
+      "name": "Relaciones interiores",
+      "direct": {
+        "previous": 7.18,
+        "current": 1.99,
+        "previous_real": 9.5401309639327,
+        "real_change": -7.5501309639327,
+        "real_change_pct": -79.14074756915424
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "1-50",
+      "name": "Asuntos Financieros y Fiscales",
+      "direct": {
+        "previous": 2817.42,
+        "current": 716.0,
+        "previous_real": 3743.5314457386166,
+        "real_change": -3027.5314457386166,
+        "real_change_pct": -80.87367475395335
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "1-60",
+      "name": "Control de la gestión pública",
+      "direct": {
+        "previous": 95.65,
+        "current": 243.88,
+        "previous_real": 127.09102043177755,
+        "real_change": 116.78897956822244,
+        "real_change_pct": 91.8939663647714
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "1-70",
+      "name": "Información y estadísticas básicas",
+      "direct": {
+        "previous": 3.49,
+        "current": 40.3,
+        "previous_real": 4.637194577176201,
+        "real_change": 35.662805422823794,
+        "real_change_pct": 769.0599311564903
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "2-10",
+      "name": "Seguridad",
+      "direct": {
+        "previous": 43555.77,
+        "current": 15989.08,
+        "previous_real": 57872.945687316285,
+        "real_change": -41883.86568731628,
+        "real_change_pct": -72.3720992423853
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "2-20",
+      "name": "Sistema penitenciario",
+      "direct": {
+        "previous": 21844.06,
+        "current": 6510.81,
+        "previous_real": 29024.40016490303,
+        "real_change": -22513.590164903027,
+        "real_change_pct": -77.5678051466744
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "2-30",
+      "name": "Servicios de Justicia",
+      "direct": {
+        "previous": 150.24,
+        "current": 166.32,
+        "previous_real": 199.6252473567199,
+        "real_change": -33.30524735671992,
+        "real_change_pct": -16.683885328996073
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "3-10",
+      "name": "Salud",
+      "direct": {
+        "previous": 12735.52,
+        "current": 15687.5,
+        "previous_real": 16921.800653730388,
+        "real_change": -1234.3006537303881,
+        "real_change_pct": -7.294144866659257
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "3-20",
+      "name": "Promoción y asistencia social",
+      "direct": {
+        "previous": 6522.36,
+        "current": 1216.1,
+        "previous_real": 8666.318745670764,
+        "real_change": -7450.218745670763,
+        "real_change_pct": -85.96751359269471
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "3-30",
+      "name": "Seguridad social",
+      "direct": {
+        "previous": 203.86,
+        "current": 25.6,
+        "previous_real": 270.87062650519783,
+        "real_change": -245.27062650519784,
+        "real_change_pct": -90.54899369108641
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "3-40",
+      "name": "Educación y Cultura",
+      "direct": {
+        "previous": 26262.81,
+        "current": 43593.05,
+        "previous_real": 34895.63327031774,
+        "real_change": 8697.416729682263,
+        "real_change_pct": 24.924083372575723
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "3-50",
+      "name": "Ciencia y Técnica",
+      "direct": {
+        "previous": 7.24,
+        "current": 0.39,
+        "previous_real": 9.61985350680679,
+        "real_change": -9.229853506806789,
+        "real_change_pct": -95.94588420994098
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "3-60",
+      "name": "Asuntos laborales",
+      "direct": {
+        "previous": 36.81,
+        "current": 64.78,
+        "previous_real": 48.90978005325386,
+        "real_change": 15.87021994674614,
+        "real_change_pct": 32.44794789399248
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "3-70",
+      "name": "Vivienda y Urbanismo",
+      "direct": {
+        "previous": 35795.79,
+        "current": 33965.83,
+        "previous_real": 47562.19004978169,
+        "real_change": -13596.360049781688,
+        "real_change_pct": -28.586488627943428
+      },
+      "financial": {
+        "previous": 76015.39,
+        "current": 78399.41,
+        "previous_real": 101002.33647276046,
+        "real_change": -22602.92647276046,
+        "real_change_pct": -22.378617428178295
+      }
+    },
+    {
+      "id": "3-80",
+      "name": "Protección del Medio Ambiente y Agua Potable",
+      "direct": {
+        "previous": 138665.47,
+        "current": 119165.33,
+        "previous_real": 184246.06462051265,
+        "real_change": -65080.73462051265,
+        "real_change_pct": -35.32272711200532
+      },
+      "financial": {
+        "previous": 183454.94,
+        "current": 175799.75,
+        "previous_real": 243758.23866022503,
+        "real_change": -67958.48866022503,
+        "real_change_pct": -27.879463288603944
+      }
+    },
+    {
+      "id": "3-90",
+      "name": "Deportes y Recreación",
+      "direct": {
+        "previous": 0.01,
+        "current": 0.0,
+        "previous_real": 0.013287090479014902,
+        "real_change": -0.013287090479014902,
+        "real_change_pct": -100.0
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "4-10",
+      "name": "Energía, combustibles y minería",
+      "direct": {
+        "previous": 11188.91,
+        "current": 28126.99,
+        "previous_real": 14866.805953155463,
+        "real_change": 13260.184046844539,
+        "real_change_pct": 89.19322743988648
+      },
+      "financial": {
+        "previous": 2635.0,
+        "current": 7450.0,
+        "previous_real": 3501.148341220427,
+        "real_change": 3948.851658779573,
+        "real_change_pct": 112.78732786863542
+      }
+    },
+    {
+      "id": "4-20",
+      "name": "Comunicaciones",
+      "direct": {
+        "previous": 46.31,
+        "current": 395.97,
+        "previous_real": 61.53251600831802,
+        "real_change": 334.43748399168203,
+        "real_change_pct": 543.5134229623773
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "4-30",
+      "name": "Transporte",
+      "direct": {
+        "previous": 187880.14,
+        "current": 144428.91,
+        "previous_real": 249638.0419389987,
+        "real_change": -105209.1319389987,
+        "real_change_pct": -42.14467118946058
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "4-40",
+      "name": "Suelo, riego, desagües y drenajes",
+      "direct": {
+        "previous": 14614.14,
+        "current": 11939.79,
+        "previous_real": 19417.940045299085,
+        "real_change": -7478.150045299084,
+        "real_change_pct": -38.51155183224226
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "4-50",
+      "name": "Agricultura, ganadería y recursos naturales renovables",
+      "direct": {
+        "previous": 121.09,
+        "current": 40.84,
+        "previous_real": 160.89337861039147,
+        "real_change": -120.05337861039146,
+        "real_change_pct": -74.61673043805277
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "4-60",
+      "name": "Industria",
+      "direct": {
+        "previous": 585.96,
+        "current": 1850.75,
+        "previous_real": 778.5703537083573,
+        "real_change": 1072.1796462916427,
+        "real_change_pct": 137.7113373486178
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "4-70",
+      "name": "Comercio, Finanzas, Seguros y Almacenaje",
+      "direct": {
+        "previous": 163.85,
+        "current": 16.97,
+        "previous_real": 217.70897749865918,
+        "real_change": -200.73897749865918,
+        "real_change_pct": -92.2051905277519
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "4-80",
+      "name": "Turismo",
+      "direct": {
+        "previous": 0.0,
+        "current": 9.03,
+        "previous_real": 0.0,
+        "real_change": 9.03,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "5-10",
+      "name": "Servicios de la deuda pública",
+      "direct": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    }
+  ],
+  "institutions": [
+    {
+      "id": "10",
+      "name": "ADMINISTRACIÓN DE JUSTICIA",
+      "capital": {
+        "previous": 7316.77,
+        "current": 11041.28,
+        "previous_real": 9721.858500414188,
+        "real_change": 1319.4214995858129,
+        "real_change_pct": 13.571700303286672
+      },
+      "direct": {
+        "previous": 7316.77,
+        "current": 11041.28,
+        "previous_real": 9721.858500414188,
+        "real_change": 1319.4214995858129,
+        "real_change_pct": 13.571700303286672
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "11",
+      "name": "MINISTERIO PÚBLICO",
+      "capital": {
+        "previous": 996.68,
+        "current": 1026.66,
+        "previous_real": 1324.2977338624573,
+        "real_change": -297.63773386245725,
+        "real_change_pct": -22.47513729366316
+      },
+      "direct": {
+        "previous": 996.68,
+        "current": 1026.66,
+        "previous_real": 1324.2977338624573,
+        "real_change": -297.63773386245725,
+        "real_change_pct": -22.47513729366316
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "12",
+      "name": "FISCALÍA DE ESTADO",
+      "capital": {
+        "previous": 314.43,
+        "current": 142.96,
+        "previous_real": 417.7859859316656,
+        "real_change": -274.8259859316656,
+        "real_change_pct": -65.78152336029217
+      },
+      "direct": {
+        "previous": 314.43,
+        "current": 142.96,
+        "previous_real": 417.7859859316656,
+        "real_change": -274.8259859316656,
+        "real_change_pct": -65.78152336029217
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "13",
+      "name": "JUNTA ELECTORAL",
+      "capital": {
+        "previous": 50.36,
+        "current": 0.07,
+        "previous_real": 66.91378765231904,
+        "real_change": -66.84378765231905,
+        "real_change_pct": -99.8953877781307
+      },
+      "direct": {
+        "previous": 50.36,
+        "current": 0.07,
+        "previous_real": 66.91378765231904,
+        "real_change": -66.84378765231905,
+        "real_change_pct": -99.8953877781307
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "14",
+      "name": "TRIBUNAL DE CUENTAS",
+      "capital": {
+        "previous": 0.05,
+        "current": 0.23,
+        "previous_real": 0.06643545239507452,
+        "real_change": 0.1635645476049255,
+        "real_change_pct": 246.20069813365498
+      },
+      "direct": {
+        "previous": 0.05,
+        "current": 0.23,
+        "previous_real": 0.06643545239507452,
+        "real_change": 0.1635645476049255,
+        "real_change_pct": 246.20069813365498
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "18",
+      "name": "SECRETARÍA GENERAL",
+      "capital": {
+        "previous": 40.83,
+        "current": 82.2,
+        "previous_real": 54.251190425817846,
+        "real_change": 27.948809574182157,
+        "real_change_pct": 51.51741253014323
+      },
+      "direct": {
+        "previous": 40.83,
+        "current": 82.2,
+        "previous_real": 54.251190425817846,
+        "real_change": 27.948809574182157,
+        "real_change_pct": 51.51741253014323
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "35",
+      "name": "CONTADURÍA GENERAL",
+      "capital": {
+        "previous": 74.28,
+        "current": 216.16,
+        "previous_real": 98.69650807812269,
+        "real_change": 117.4634919218773,
+        "real_change_pct": 119.01484075697968
+      },
+      "direct": {
+        "previous": 74.28,
+        "current": 216.16,
+        "previous_real": 98.69650807812269,
+        "real_change": 117.4634919218773,
+        "real_change_pct": 119.01484075697968
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "36",
+      "name": "TESORERÍA GENERAL",
+      "capital": {
+        "previous": 21.1,
+        "current": 38.55,
+        "previous_real": 28.035760910721446,
+        "real_change": 10.51423908927855,
+        "real_change_pct": 37.502956038042434
+      },
+      "direct": {
+        "previous": 21.1,
+        "current": 38.55,
+        "previous_real": 28.035760910721446,
+        "real_change": 10.51423908927855,
+        "real_change_pct": 37.502956038042434
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "37",
+      "name": "MINISTERIO DE PRODUCCIÓN, CIENCIA E INNOVACIÓN TECNOLÓGICA",
+      "capital": {
+        "previous": 430.25,
+        "current": 148.79,
+        "previous_real": 571.6770678596162,
+        "real_change": -422.8870678596162,
+        "real_change_pct": -73.97306829936765
+      },
+      "direct": {
+        "previous": 183.11,
+        "current": 30.01,
+        "previous_real": 243.2999137612419,
+        "real_change": -213.2899137612419,
+        "real_change_pct": -87.66542924900097
+      },
+      "transfers": {
+        "previous": 247.15,
+        "current": 118.79,
+        "previous_real": 328.39044118885334,
+        "real_change": -209.60044118885332,
+        "real_change_pct": -63.8265963010521
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "49",
+      "name": "MINISTERIO DE DESARROLLO AGRARIO",
+      "capital": {
+        "previous": 455.69,
+        "current": 172.92,
+        "previous_real": 605.4794260382301,
+        "real_change": -432.5594260382302,
+        "real_change_pct": -71.44081325249164
+      },
+      "direct": {
+        "previous": 121.09,
+        "current": 40.84,
+        "previous_real": 160.89337861039147,
+        "real_change": -120.05337861039146,
+        "real_change_pct": -74.61673043805277
+      },
+      "transfers": {
+        "previous": 334.6,
+        "current": 132.08,
+        "previous_real": 444.58604742783865,
+        "real_change": -312.50604742783867,
+        "real_change_pct": -70.29146533856574
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "53",
+      "name": "MINISTERIO DE INFRAESTRUCTURA Y SERVICIOS PÚBLICOS",
+      "capital": {
+        "previous": 259473.21,
+        "current": 271851.85,
+        "previous_real": 344764.4018150434,
+        "real_change": -72912.55181504344,
+        "real_change_pct": -21.148515168964288
+      },
+      "direct": {
+        "previous": 142634.9,
+        "current": 158062.59,
+        "previous_real": 189520.28217652426,
+        "real_change": -31457.69217652426,
+        "real_change_pct": -16.59858871844847
+      },
+      "transfers": {
+        "previous": 78118.39,
+        "current": 72651.72,
+        "previous_real": 103796.6116004973,
+        "real_change": -31144.8916004973,
+        "real_change_pct": -30.005692016586096
+      },
+      "financial": {
+        "previous": 38719.92,
+        "current": 41137.54,
+        "previous_real": 51447.50803802187,
+        "real_change": -10309.96803802187,
+        "real_change_pct": -20.03978118901768
+      }
+    },
+    {
+      "id": "72",
+      "name": "CONSEJO DE LA MAGISTRATURA",
+      "capital": {
+        "previous": 0.47,
+        "current": 3.45,
+        "previous_real": 0.6244932525137004,
+        "real_change": 2.8255067474863,
+        "real_change_pct": 452.44792255370487
+      },
+      "direct": {
+        "previous": 0.47,
+        "current": 3.45,
+        "previous_real": 0.6244932525137004,
+        "real_change": 2.8255067474863,
+        "real_change_pct": 452.44792255370487
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "73",
+      "name": "MINISTERIO DE JUSTICIA Y DERECHOS HUMANOS",
+      "capital": {
+        "previous": 22320.07,
+        "current": 6663.66,
+        "previous_real": 29656.878958794616,
+        "real_change": -22993.218958794616,
+        "real_change_pct": -77.53081162296776
+      },
+      "direct": {
+        "previous": 21916.46,
+        "current": 6552.43,
+        "previous_real": 29120.598699971095,
+        "real_change": -22568.168699971095,
+        "real_change_pct": -77.49898596691109
+      },
+      "transfers": {
+        "previous": 403.61,
+        "current": 111.23,
+        "previous_real": 536.2802588235205,
+        "real_change": -425.0502588235205,
+        "real_change_pct": -79.25897920538529
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "74",
+      "name": "MINISTERIO DE SEGURIDAD",
+      "capital": {
+        "previous": 78584.7,
+        "current": 17684.44,
+        "previous_real": 104416.20191662424,
+        "real_change": -86731.76191662424,
+        "real_change_pct": -83.0635096130762
+      },
+      "direct": {
+        "previous": 43555.77,
+        "current": 15989.08,
+        "previous_real": 57872.945687316285,
+        "real_change": -41883.86568731628,
+        "real_change_pct": -72.3720992423853
+      },
+      "transfers": {
+        "previous": 35028.93,
+        "current": 1695.36,
+        "previous_real": 46543.256229307946,
+        "real_change": -44847.896229307946,
+        "real_change_pct": -96.35745296451252
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "78",
+      "name": "MINISTERIO DE DESARROLLO DE LA COMUNIDAD",
+      "capital": {
+        "previous": 8594.72,
+        "current": 16753.72,
+        "previous_real": 11419.882228179895,
+        "real_change": 5333.837771820106,
+        "real_change_pct": 46.706591760274364
+      },
+      "direct": {
+        "previous": 1053.43,
+        "current": 0.0,
+        "previous_real": 1399.701972330867,
+        "real_change": -1399.701972330867,
+        "real_change_pct": -100.0
+      },
+      "transfers": {
+        "previous": 7541.28,
+        "current": 16753.72,
+        "previous_real": 10020.16696875855,
+        "real_change": 6733.55303124145,
+        "real_change_pct": 67.20000826568769
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "80",
+      "name": "MINISTERIO DE GOBIERNO",
+      "capital": {
+        "previous": 1287.92,
+        "current": 1137.49,
+        "previous_real": 1711.2709569732874,
+        "real_change": -573.7809569732874,
+        "real_change_pct": -33.52952112201621
+      },
+      "direct": {
+        "previous": 195.92,
+        "current": 417.49,
+        "previous_real": 260.32067666485995,
+        "real_change": 157.16932333514006,
+        "real_change_pct": 60.37527458392471
+      },
+      "transfers": {
+        "previous": 1092.0,
+        "current": 720.0,
+        "previous_real": 1450.9502803084274,
+        "real_change": -730.9502803084274,
+        "real_change_pct": -50.37734857138246
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "88",
+      "name": "MINISTERIO DE TRABAJO",
+      "capital": {
+        "previous": 36.81,
+        "current": 83.17,
+        "previous_real": 48.90978005325386,
+        "real_change": 34.26021994674614,
+        "real_change_pct": 70.04778984784433
+      },
+      "direct": {
+        "previous": 36.81,
+        "current": 64.78,
+        "previous_real": 48.90978005325386,
+        "real_change": 15.87021994674614,
+        "real_change_pct": 32.44794789399248
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 18.39,
+        "previous_real": 0.0,
+        "real_change": 18.39,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "91",
+      "name": "ASESORÍA GENERAL DE GOBIERNO",
+      "capital": {
+        "previous": 9.64,
+        "current": 17.04,
+        "previous_real": 12.808755221770367,
+        "real_change": 4.231244778229632,
+        "real_change_pct": 33.03400451464642
+      },
+      "direct": {
+        "previous": 9.64,
+        "current": 17.04,
+        "previous_real": 12.808755221770367,
+        "real_change": 4.231244778229632,
+        "real_change_pct": 33.03400451464642
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "92",
+      "name": "DEFENSORÍA DEL PUEBLO",
+      "capital": {
+        "previous": 11.68,
+        "current": 10.44,
+        "previous_real": 15.519321679489405,
+        "real_change": -5.079321679489405,
+        "real_change_pct": -32.729018602677215
+      },
+      "direct": {
+        "previous": 11.68,
+        "current": 10.44,
+        "previous_real": 15.519321679489405,
+        "real_change": -5.079321679489405,
+        "real_change_pct": -32.729018602677215
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "100",
+      "name": "HONORABLE CÁMARA DE DIPUTADOS",
+      "capital": {
+        "previous": 90.23,
+        "current": 642.92,
+        "previous_real": 119.88941739215147,
+        "real_change": 523.0305826078485,
+        "real_change_pct": 436.2608426872617
+      },
+      "direct": {
+        "previous": 90.23,
+        "current": 642.92,
+        "previous_real": 119.88941739215147,
+        "real_change": 523.0305826078485,
+        "real_change_pct": 436.2608426872617
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "102",
+      "name": "HONORABLE CÁMARA DE SENADORES",
+      "capital": {
+        "previous": 412.82,
+        "current": 162.56,
+        "previous_real": 548.5176691546932,
+        "real_change": -385.9576691546932,
+        "real_change_pct": -70.36376234688717
+      },
+      "direct": {
+        "previous": 412.82,
+        "current": 162.56,
+        "previous_real": 548.5176691546932,
+        "real_change": -385.9576691546932,
+        "real_change_pct": -70.36376234688717
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "116",
+      "name": "MINISTERIO DE ECONOMÍA",
+      "capital": {
+        "previous": 8440.18,
+        "current": 2762.97,
+        "previous_real": 11214.543531917201,
+        "real_change": -8451.573531917202,
+        "real_change_pct": -75.36261737148341
+      },
+      "direct": {
+        "previous": 51.32,
+        "current": 47.84,
+        "previous_real": 68.18934833830448,
+        "real_change": -20.34934833830448,
+        "real_change_pct": -29.842415031371537
+      },
+      "transfers": {
+        "previous": 8388.86,
+        "current": 2715.13,
+        "previous_real": 11146.354183578896,
+        "real_change": -8431.224183578895,
+        "real_change_pct": -75.64109344380962
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "124",
+      "name": "MINISTERIO DE SALUD",
+      "capital": {
+        "previous": 5645.56,
+        "current": 7055.34,
+        "previous_real": 7501.306652470737,
+        "real_change": -445.96665247073724,
+        "real_change_pct": -5.945186260634305
+      },
+      "direct": {
+        "previous": 5577.56,
+        "current": 6884.63,
+        "previous_real": 7410.954437213437,
+        "real_change": -526.3244372134368,
+        "real_change_pct": -7.10197912660947
+      },
+      "transfers": {
+        "previous": 68.0,
+        "current": 170.71,
+        "previous_real": 90.35221525730134,
+        "real_change": 80.35778474269867,
+        "real_change_pct": 88.93836693860695
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "127",
+      "name": "SERVICIO DE LA DEUDA PÚBLICA",
+      "capital": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "direct": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "128",
+      "name": "OBLIGACIONES A CARGO DEL TESORO",
+      "capital": {
+        "previous": 235608.78,
+        "current": 277416.11,
+        "previous_real": 313055.5177510317,
+        "real_change": -35639.407751031686,
+        "real_change_pct": -11.384372972264678
+      },
+      "direct": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "transfers": {
+        "previous": 88238.75,
+        "current": 135303.9,
+        "previous_real": 117243.62550051762,
+        "real_change": 18060.274499482373,
+        "real_change_pct": 15.404056657564414
+      },
+      "financial": {
+        "previous": 147370.03,
+        "current": 142112.21,
+        "previous_real": 195811.89225051407,
+        "real_change": -53699.68225051407,
+        "real_change_pct": -27.424116907982675
+      }
+    },
+    {
+      "id": "129",
+      "name": "MINISTERIO DE COMUNICACIÓN PÚBLICA",
+      "capital": {
+        "previous": 138.43,
+        "current": 44.31,
+        "previous_real": 183.9331935010033,
+        "real_change": -139.6231935010033,
+        "real_change_pct": -75.90973159515208
+      },
+      "direct": {
+        "previous": 138.43,
+        "current": 44.31,
+        "previous_real": 183.9331935010033,
+        "real_change": -139.6231935010033,
+        "real_change_pct": -75.90973159515208
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "133",
+      "name": "MINISTERIO DE MUJERES Y DIVERSIDAD",
+      "capital": {
+        "previous": 204.07,
+        "current": 78.13,
+        "previous_real": 271.1496554052571,
+        "real_change": -193.01965540525708,
+        "real_change_pct": -71.1856539580595
+      },
+      "direct": {
+        "previous": 75.59,
+        "current": 35.9,
+        "previous_real": 100.43711693087366,
+        "real_change": -64.53711693087365,
+        "real_change_pct": -64.25624201787039
+      },
+      "transfers": {
+        "previous": 128.48,
+        "current": 42.23,
+        "previous_real": 170.71253847438345,
+        "real_change": -128.48253847438346,
+        "real_change_pct": -75.2625083210646
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "134",
+      "name": "COORDINACIÓN GENERAL UNIDAD GOBERNADOR",
+      "capital": {
+        "previous": 34.14,
+        "current": 14.82,
+        "previous_real": 45.36212689535688,
+        "real_change": -30.54212689535688,
+        "real_change_pct": -67.32957421906748
+      },
+      "direct": {
+        "previous": 34.14,
+        "current": 14.82,
+        "previous_real": 45.36212689535688,
+        "real_change": -30.54212689535688,
+        "real_change_pct": -67.32957421906748
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "135",
+      "name": "JEFATURA DE ASESORES DEL GOBERNADOR",
+      "capital": {
+        "previous": 199.57,
+        "current": 70.58,
+        "previous_real": 265.1704646897004,
+        "real_change": -194.5904646897004,
+        "real_change_pct": -73.38315936407474
+      },
+      "direct": {
+        "previous": 84.91,
+        "current": 19.08,
+        "previous_real": 112.82068525731553,
+        "real_change": -93.74068525731553,
+        "real_change_pct": -83.08820766645466
+      },
+      "transfers": {
+        "previous": 114.66,
+        "current": 51.5,
+        "previous_real": 152.34977943238488,
+        "real_change": -100.84977943238488,
+        "real_change_pct": -66.19620967494969
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "139",
+      "name": "MINISTERIO DE AMBIENTE",
+      "capital": {
+        "previous": 5461.67,
+        "current": 1523.75,
+        "previous_real": 7256.970345652132,
+        "real_change": -5733.220345652132,
+        "real_change_pct": -79.00294575527755
+      },
+      "direct": {
+        "previous": 378.36,
+        "current": 191.27,
+        "previous_real": 502.7303553640079,
+        "real_change": -311.4603553640079,
+        "real_change_pct": -61.95375951358483
+      },
+      "transfers": {
+        "previous": 5083.31,
+        "current": 1332.48,
+        "previous_real": 6754.239990288125,
+        "real_change": -5421.759990288125,
+        "real_change_pct": -80.27194766671063
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "140",
+      "name": "MINISTERIO DE HABITAT Y DESARROLLO URBANO",
+      "capital": {
+        "previous": 20774.34,
+        "current": 20029.94,
+        "previous_real": 27603.053522181846,
+        "real_change": -7573.113522181848,
+        "real_change_pct": -27.43578175543544
+      },
+      "direct": {
+        "previous": 9070.76,
+        "current": 9538.4,
+        "previous_real": 12052.400883342922,
+        "real_change": -2514.000883342922,
+        "real_change_pct": -20.85892186690712
+      },
+      "transfers": {
+        "previous": 11703.58,
+        "current": 10491.54,
+        "previous_real": 15550.652638838923,
+        "real_change": -5059.112638838922,
+        "real_change_pct": -32.533120997143286
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "141",
+      "name": "MINISTERIO DE TRANSPORTE",
+      "capital": {
+        "previous": 1593.77,
+        "current": 2655.27,
+        "previous_real": 2117.6566192739583,
+        "real_change": 537.6133807260417,
+        "real_change_pct": 25.387183919853996
+      },
+      "direct": {
+        "previous": 675.43,
+        "current": 2655.27,
+        "previous_real": 897.4499522241035,
+        "real_change": 1757.8200477758965,
+        "real_change_pct": 195.8683092488425
+      },
+      "transfers": {
+        "previous": 918.34,
+        "current": 0.0,
+        "previous_real": 1220.2066670498546,
+        "real_change": -1220.2066670498546,
+        "real_change_pct": -100.0
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "17",
+      "name": "PATRONATO DE LIBERADOS BONAERENSE",
+      "capital": {
+        "previous": 105.82,
+        "current": 1020.0,
+        "previous_real": 140.6039914489357,
+        "real_change": 879.3960085510644,
+        "real_change_pct": 625.4417100743842
+      },
+      "direct": {
+        "previous": 68.49,
+        "current": 130.19,
+        "previous_real": 91.00328269077306,
+        "real_change": 39.186717309226935,
+        "real_change_pct": 43.060773359552805
+      },
+      "transfers": {
+        "previous": 37.32,
+        "current": 889.81,
+        "previous_real": 49.587421667683614,
+        "real_change": 840.2225783323163,
+        "real_change_pct": 1694.426832601167
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "26",
+      "name": "AGENCIA DE RECAUDACIÓN DE LA PROVINCIA DE BUENOS AIRES (ARBA)",
+      "capital": {
+        "previous": 2774.62,
+        "current": 2131.6,
+        "previous_real": 3686.662698488433,
+        "real_change": -1555.062698488433,
+        "real_change_pct": -42.18076959213067
+      },
+      "direct": {
+        "previous": 2774.62,
+        "current": 631.6,
+        "previous_real": 3686.662698488433,
+        "real_change": -3055.062698488433,
+        "real_change_pct": -82.86797432651048
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 1500.0,
+        "previous_real": 0.0,
+        "real_change": 1500.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "39",
+      "name": "ENTE ADMINISTRADOR ASTILLERO RÍO SANTIAGO",
+      "capital": {
+        "previous": 445.11,
+        "current": 1840.58,
+        "previous_real": 591.4216843114324,
+        "real_change": 1249.1583156885677,
+        "real_change_pct": 211.21280278096512
+      },
+      "direct": {
+        "previous": 445.11,
+        "current": 1840.58,
+        "previous_real": 591.4216843114324,
+        "real_change": 1249.1583156885677,
+        "real_change_pct": 211.21280278096512
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "51",
+      "name": "CORPORACIÓN DE FOMENTO DEL VALLE BONAERENSE DEL RÍO COLORADO",
+      "capital": {
+        "previous": 18.34,
+        "current": 335.26,
+        "previous_real": 24.36852393851333,
+        "real_change": 310.8914760614867,
+        "real_change_pct": 1275.7911675156367
+      },
+      "direct": {
+        "previous": 18.34,
+        "current": 335.26,
+        "previous_real": 24.36852393851333,
+        "real_change": 310.8914760614867,
+        "real_change_pct": 1275.7911675156367
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "55",
+      "name": "DIRECCIÓN DE VIALIDAD",
+      "capital": {
+        "previous": 187715.23,
+        "current": 141763.23,
+        "previous_real": 249418.92452990927,
+        "real_change": -107655.69452990926,
+        "real_change_pct": -43.16260072599248
+      },
+      "direct": {
+        "previous": 187715.23,
+        "current": 141763.23,
+        "previous_real": 249418.92452990927,
+        "real_change": -107655.69452990926,
+        "real_change_pct": -43.16260072599248
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "57",
+      "name": "INSTITUTO DE LA VIVIENDA",
+      "capital": {
+        "previous": 92193.07,
+        "current": 80841.07,
+        "previous_real": 122497.76626281545,
+        "real_change": -41656.69626281544,
+        "real_change_pct": -34.00608642401054
+      },
+      "direct": {
+        "previous": 187.49,
+        "current": 25.18,
+        "previous_real": 249.11965939105042,
+        "real_change": -223.9396593910504,
+        "real_change_pct": -89.89240750346634
+      },
+      "transfers": {
+        "previous": 15990.18,
+        "current": 2416.49,
+        "previous_real": 21246.29684357345,
+        "real_change": -18829.806843573453,
+        "real_change_pct": -88.62630030168793
+      },
+      "financial": {
+        "previous": 76015.39,
+        "current": 78399.41,
+        "previous_real": 101002.33647276046,
+        "real_change": -22602.92647276046,
+        "real_change_pct": -22.378617428178295
+      }
+    },
+    {
+      "id": "59",
+      "name": "ORG. DE CONTROL DE ENERGÍA ELECT. DE LA PCIA DE B.A. (OCEBA)",
+      "capital": {
+        "previous": 14.91,
+        "current": 42.31,
+        "previous_real": 19.81105190421122,
+        "real_change": 22.498948095788784,
+        "real_change_pct": 113.5676601352309
+      },
+      "direct": {
+        "previous": 14.91,
+        "current": 42.31,
+        "previous_real": 19.81105190421122,
+        "real_change": 22.498948095788784,
+        "real_change_pct": 113.5676601352309
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "61",
+      "name": "AUTORIDAD DEL AGUA",
+      "capital": {
+        "previous": 28.88,
+        "current": 31.09,
+        "previous_real": 38.373117303395034,
+        "real_change": -7.283117303395034,
+        "real_change_pct": -18.97973846068186
+      },
+      "direct": {
+        "previous": 28.88,
+        "current": 31.09,
+        "previous_real": 38.373117303395034,
+        "real_change": -7.283117303395034,
+        "real_change_pct": -18.97973846068186
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "62",
+      "name": "COMITÉ DE CUENCA DEL RÍO RECONQUISTA (COMIREC)",
+      "capital": {
+        "previous": 22284.63,
+        "current": 10820.19,
+        "previous_real": 29609.789510136987,
+        "real_change": -18789.599510136984,
+        "real_change_pct": -63.457389670751695
+      },
+      "direct": {
+        "previous": 22284.63,
+        "current": 10820.19,
+        "previous_real": 29609.789510136987,
+        "real_change": -18789.599510136984,
+        "real_change_pct": -63.457389670751695
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "84",
+      "name": "DIRECCIÓN GENERAL DE CULTURA Y EDUCACIÓN",
+      "capital": {
+        "previous": 36587.57,
+        "current": 54709.39,
+        "previous_real": 48614.235299729124,
+        "real_change": 6095.154700270876,
+        "real_change_pct": 12.53779816280447
+      },
+      "direct": {
+        "previous": 23423.6,
+        "current": 37294.29,
+        "previous_real": 31123.149254425345,
+        "real_change": 6171.140745574656,
+        "real_change_pct": 19.828137233564803
+      },
+      "transfers": {
+        "previous": 13163.97,
+        "current": 17415.1,
+        "previous_real": 17491.08604530378,
+        "real_change": -75.98604530377997,
+        "real_change_pct": -0.4344272568722718
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "85",
+      "name": "UNIVERSIDAD PROVINCIAL DEL SUDOESTE (UPSO)",
+      "capital": {
+        "previous": 6.65,
+        "current": 7.85,
+        "previous_real": 8.835915168544911,
+        "real_change": -0.9859151685449117,
+        "real_change_pct": -11.158042486132992
+      },
+      "direct": {
+        "previous": 6.65,
+        "current": 7.85,
+        "previous_real": 8.835915168544911,
+        "real_change": -0.9859151685449117,
+        "real_change_pct": -11.158042486132992
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "87",
+      "name": "UNIVERSIDAD PROVINCIAL DE EZEIZA",
+      "capital": {
+        "previous": 3.79,
+        "current": 0.27,
+        "previous_real": 5.035807291546648,
+        "real_change": -4.765807291546649,
+        "real_change_pct": -94.63839689709265
+      },
+      "direct": {
+        "previous": 3.79,
+        "current": 0.27,
+        "previous_real": 5.035807291546648,
+        "real_change": -4.765807291546649,
+        "real_change_pct": -94.63839689709265
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "98",
+      "name": "COMISIÓN DE INVESTIGACIONES CIENTÍFICAS",
+      "capital": {
+        "previous": 3.5,
+        "current": 20.89,
+        "previous_real": 4.650481667655216,
+        "real_change": 16.239518332344787,
+        "real_change_pct": 349.2007816156555
+      },
+      "direct": {
+        "previous": 3.5,
+        "current": 0.39,
+        "previous_real": 4.650481667655216,
+        "real_change": -4.260481667655216,
+        "real_change_pct": -91.61377190856363
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 20.5,
+        "previous_real": 0.0,
+        "real_change": 20.5,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "103",
+      "name": "INSTITUTO CULTURAL DE LA PROVINCIA DE BUENOS AIRES",
+      "capital": {
+        "previous": 205.72,
+        "current": 53.03,
+        "previous_real": 273.3420253342946,
+        "real_change": -220.3120253342946,
+        "real_change_pct": -80.59939742703493
+      },
+      "direct": {
+        "previous": 169.17,
+        "current": 53.03,
+        "previous_real": 224.77770963349508,
+        "real_change": -171.74770963349508,
+        "real_change_pct": -76.40780303061787
+      },
+      "transfers": {
+        "previous": 36.55,
+        "current": 0.0,
+        "previous_real": 48.56431570079946,
+        "real_change": -48.56431570079946,
+        "real_change_pct": -100.0
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "130",
+      "name": "ORGANISMO PROVINCIAL DE INTEGRACIÓN SOCIAL Y URBANA (OPISU)",
+      "capital": {
+        "previous": 28079.07,
+        "current": 25730.69,
+        "previous_real": 37308.9143656593,
+        "real_change": -11578.224365659302,
+        "real_change_pct": -31.033399289464146
+      },
+      "direct": {
+        "previous": 27367.64,
+        "current": 24597.0,
+        "previous_real": 36363.63088771074,
+        "real_change": -11766.630887710737,
+        "real_change_pct": -32.35823981396568
+      },
+      "transfers": {
+        "previous": 711.43,
+        "current": 1133.69,
+        "previous_real": 945.2834779485571,
+        "real_change": 188.40652205144295,
+        "real_change_pct": 19.931219200013995
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "136",
+      "name": "INSTITUTO UNIVERSITARIO POLICIAL PROVINCIAL COMISARIO GENERAL HONORIS CAUSA JUAN VUCETICH",
+      "capital": {
+        "previous": 5.14,
+        "current": 4.97,
+        "previous_real": 6.82956450621366,
+        "real_change": -1.85956450621366,
+        "real_change_pct": -27.22815641497778
+      },
+      "direct": {
+        "previous": 5.14,
+        "current": 4.97,
+        "previous_real": 6.82956450621366,
+        "real_change": -1.85956450621366,
+        "real_change_pct": -27.22815641497778
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "137",
+      "name": "COMITÉ DE CUENCA DEL RÍO LUJÁN (COMILU)",
+      "capital": {
+        "previous": 24381.57,
+        "current": 11378.27,
+        "previous_real": 32396.012661043536,
+        "real_change": -21017.742661043536,
+        "real_change_pct": -64.87756033728664
+      },
+      "direct": {
+        "previous": 24381.57,
+        "current": 11378.27,
+        "previous_real": 32396.012661043536,
+        "real_change": -21017.742661043536,
+        "real_change_pct": -64.87756033728664
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "138",
+      "name": "ORGANISMO PROVINCIAL DE LA NIÑEZ Y ADOLESCENCIA",
+      "capital": {
+        "previous": 1774.44,
+        "current": 149.17,
+        "previous_real": 2357.7144829583203,
+        "real_change": -2208.5444829583203,
+        "real_change_pct": -93.67311007850152
+      },
+      "direct": {
+        "previous": 1774.44,
+        "current": 149.17,
+        "previous_real": 2357.7144829583203,
+        "real_change": -2208.5444829583203,
+        "real_change_pct": -93.67311007850152
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "142",
+      "name": "INSTITUTO PROVINCIAL DE ASOCIATIVISMO Y COOPERATIVISMO (IPAC)",
+      "capital": {
+        "previous": 580.15,
+        "current": 570.51,
+        "previous_real": 770.8505541400496,
+        "real_change": -200.34055414004956,
+        "real_change_pct": -25.98954532289943
+      },
+      "direct": {
+        "previous": 163.85,
+        "current": 16.57,
+        "previous_real": 217.70897749865918,
+        "real_change": -201.1389774986592,
+        "real_change_pct": -92.388922041535
+      },
+      "transfers": {
+        "previous": 416.31,
+        "current": 553.95,
+        "previous_real": 553.1548637318695,
+        "real_change": 0.7951362681305909,
+        "real_change_pct": 0.1437456886424604
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "76",
+      "name": "CAJA DE RETIROS, JUBILACIONES Y PENSIONES DE LAS POLICÍAS",
+      "capital": {
+        "previous": 52.42,
+        "current": 14.31,
+        "previous_real": 69.65092829099612,
+        "real_change": -55.34092829099612,
+        "real_change_pct": -79.45468875847004
+      },
+      "direct": {
+        "previous": 52.42,
+        "current": 14.31,
+        "previous_real": 69.65092829099612,
+        "real_change": -55.34092829099612,
+        "real_change_pct": -79.45468875847004
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    },
+    {
+      "id": "90",
+      "name": "INSTITUTO DE PREVISIÓN SOCIAL (IPS)",
+      "capital": {
+        "previous": 151.44,
+        "current": 11.3,
+        "previous_real": 201.21969821420169,
+        "real_change": -189.91969821420167,
+        "real_change_pct": -94.38424761577221
+      },
+      "direct": {
+        "previous": 151.44,
+        "current": 11.3,
+        "previous_real": 201.21969821420169,
+        "real_change": -189.91969821420167,
+        "real_change_pct": -94.38424761577221
+      },
+      "transfers": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      },
+      "financial": {
+        "previous": 0.0,
+        "current": 0.0,
+        "previous_real": 0.0,
+        "real_change": 0.0,
+        "real_change_pct": null
+      }
+    }
+  ],
+  "checks": [
+    {
+      "year": 2025,
+      "dimension": "function",
+      "component": "direct",
+      "difference": -0.02000000001862645
+    },
+    {
+      "year": 2025,
+      "dimension": "function",
+      "component": "financial",
+      "difference": -0.009999999980209395
+    },
+    {
+      "year": 2025,
+      "dimension": "institution",
+      "component": "capital",
+      "difference": 0.010000000009313226
+    },
+    {
+      "year": 2025,
+      "dimension": "institution",
+      "component": "direct",
+      "difference": 0.0
+    },
+    {
+      "year": 2025,
+      "dimension": "institution",
+      "component": "transfers",
+      "difference": 0.0
+    },
+    {
+      "year": 2025,
+      "dimension": "institution",
+      "component": "financial",
+      "difference": 0.0
+    },
+    {
+      "year": 2026,
+      "dimension": "function",
+      "component": "direct",
+      "difference": 0.0
+    },
+    {
+      "year": 2026,
+      "dimension": "function",
+      "component": "financial",
+      "difference": 0.0
+    },
+    {
+      "year": 2026,
+      "dimension": "institution",
+      "component": "capital",
+      "difference": -0.030000000027939677
+    },
+    {
+      "year": 2026,
+      "dimension": "institution",
+      "component": "direct",
+      "difference": 0.0
+    },
+    {
+      "year": 2026,
+      "dimension": "institution",
+      "component": "transfers",
+      "difference": 0.010000000009313226
+    },
+    {
+      "year": 2026,
+      "dimension": "institution",
+      "component": "financial",
+      "difference": 0.0
+    }
+  ],
+  "method": "Montos nominales publicados por la CGP. El semestre 2025 se lleva a precios promedio del primer semestre de 2026 mediante IPC nacional promedio. Las diferencias de suma menores a $0,3 millones son redondeos de la fuente.",
+  "coverage": {
+    "institution_capital": "complete",
+    "function_direct_investment": "complete",
+    "function_financial_investment": "complete",
+    "function_capital_transfers": "not_separated_in_source",
+    "project_execution": "not_published_in_these_tables"
+  },
+  "project_note": "El mapa provincial permite identificar obras, pero su monto actualizado no informa cuánto se devengó en cada primer semestre. Falta esa serie comparable por proyecto para repartir el recorte obra por obra.",
+  "projects_url": "https://mapainversionespba.minfra.gba.gob.ar/Mapview",
+  "sources": [
+    {
+      "year": 2025,
+      "id": "10",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/10_Econ2.htm",
+      "sha256": "558b54965ed05c987ebab7b20dcf351047c3c24d608fa4c6fa60ee9e197e81bc",
+      "file": "2025-10-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "11",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/11_Econ2.htm",
+      "sha256": "11a88432840c333723eeb10081221b633cf5e53c14fb5c2ae0beb58ac949984e",
+      "file": "2025-11-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "12",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/12_Econ2.htm",
+      "sha256": "39fb359f07b6672b364f67e93404d17e82fdec136543942955d55ce550587531",
+      "file": "2025-12-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "13",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/13_Econ2.htm",
+      "sha256": "654d87d1dcfab966f04194ce2c51b9124575ffc45ddbb87cccb637e48185cd99",
+      "file": "2025-13-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "14",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/14_Econ2.htm",
+      "sha256": "e926de4f743caf01fa06263fae944a44c90922839cfe11199dfb65feacd9a1fe",
+      "file": "2025-14-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "18",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/18_Econ2.htm",
+      "sha256": "1a0db1b683c97d2ce4280437ff3d9acf183237a190ff619d4d94237f6fa3fc07",
+      "file": "2025-18-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "35",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/35_Econ2.htm",
+      "sha256": "bd9a9bc1c43d0f9bec27e1b2b1efa77b7908030466dbaabacfe18d8c38bfdad8",
+      "file": "2025-35-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "36",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/36_Econ2.htm",
+      "sha256": "e826c4b8c72e7fd5b3b48be71fce6f78f6c9aa42893f67b84d559fa0a29abc60",
+      "file": "2025-36-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "37",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/37_Econ2.htm",
+      "sha256": "60862f581f158c02f0c88dd814c7ebf053abe592057a2cf48c069beb86952567",
+      "file": "2025-37-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "49",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/49_Econ2.htm",
+      "sha256": "a8d3a8d521ee8d38f327674794758d0dbffd5f6f5ae8c491aa7ce166084201e4",
+      "file": "2025-49-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "53",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/53_Econ2.htm",
+      "sha256": "44d9b977f35c9837e1937c9521aad52b0fa43253936c223b5abdec87b979ee5f",
+      "file": "2025-53-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "72",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/72_Econ2.htm",
+      "sha256": "46e42e29fc86956e6ae90edb0a6a1153c82f0f9289a9e2b76c6fd8a105387b93",
+      "file": "2025-72-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "73",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/73_Econ2.htm",
+      "sha256": "5436a1e1c782dd7067ced5417083f3b09f0a99432035cf232afe28d64d882184",
+      "file": "2025-73-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "74",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/74_Econ2.htm",
+      "sha256": "c5742505a67e4fb03112e14e8526c14b27f937c18a0dc09bdddbe03e7f9c1209",
+      "file": "2025-74-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "78",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/78_Econ2.htm",
+      "sha256": "d56e2d32deeb81855c9e573883fd2d464064c5987f46f55d5b7632ce66deec20",
+      "file": "2025-78-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "80",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/80_Econ2.htm",
+      "sha256": "04a59331c3cac54e33af9d7d28411f6e2236e7f19abc493fee65a14ab88b9402",
+      "file": "2025-80-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "88",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/88_Econ2.htm",
+      "sha256": "334ce1d6d279e29232a9beca32fab97c07b56fb0e31df08fe6eaa214156ea22e",
+      "file": "2025-88-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "91",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/91_Econ2.htm",
+      "sha256": "3d5ddd00e951282c023eeb0fda1d6b91bab673a90990f85606609cdad72877a1",
+      "file": "2025-91-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "92",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/92_Econ2.htm",
+      "sha256": "016ff5adf111959e4120152cd6bac178e0a0dfacefded0aea70c975b3a578955",
+      "file": "2025-92-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "100",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/100_Econ2.htm",
+      "sha256": "c6a73c65c5a1b1e8eb49cd9318e479fbb196dbedc8703641dae9c283d4a513e6",
+      "file": "2025-100-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "102",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/102_Econ2.htm",
+      "sha256": "2b432c2de16003b9733b17bffeea2fff87d2ee9dfac20fc029e414f0d048e168",
+      "file": "2025-102-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "116",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/116_Econ2.htm",
+      "sha256": "c0c905889ba43d7b2fc173d10d2e0a4c678fe4a948ceae17a189de65df86f81f",
+      "file": "2025-116-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "124",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/124_Econ2.htm",
+      "sha256": "b8a4e725e6811659fc251980ee46a5d33df9e3d8a4fe025d798ff080945365d6",
+      "file": "2025-124-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "127",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/127_Econ2.htm",
+      "sha256": "a09da8f37cd00bddcff0ce2d4cb3d18e4922fb8aaccda7469ba5c61ec9bd6b9c",
+      "file": "2025-127-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "128",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/128_Econ2.htm",
+      "sha256": "beb289f13f9e83e0cc9ff6f9d11296a966add08a83d22b8c878a28e229c18fd8",
+      "file": "2025-128-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "129",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/129_Econ2.htm",
+      "sha256": "c935228959d90287e9f7fb6e944b20e0ba655943273a8a39eccc1e855c96edca",
+      "file": "2025-129-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "133",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/133_Econ2.htm",
+      "sha256": "86b5ecf781aaf1720a1a7bbb7ba7da92839c7419bde0c46f5ba5ff9db86b2499",
+      "file": "2025-133-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "134",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/134_Econ2.htm",
+      "sha256": "25d869782875a64d4cbcc372cf436c2dbc0bb58b82c450f082af200d0dce2072",
+      "file": "2025-134-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "135",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/135_Econ2.htm",
+      "sha256": "20cd943439f71ff6cd41adaceb3aef30c52dfbaa1be6e9001bd58ffcdf554d35",
+      "file": "2025-135-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "139",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/139_Econ2.htm",
+      "sha256": "257babc4a605feb9bc3c45d11aa3b474bfb95ce2a79928fafae50ad149ac3bc3",
+      "file": "2025-139-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "140",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/140_Econ2.htm",
+      "sha256": "2193bef971a0c42c1bf8ecee5f78a848d93922e823fe149b6464e234d294a474",
+      "file": "2025-140-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "141",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/141_Econ2.htm",
+      "sha256": "2a08d382bcc43ff8517ba3687741107304940aee9cfe394625d5cda9db288cfe",
+      "file": "2025-141-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "17",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/17_Econ2.htm",
+      "sha256": "0233d3a24ac0d35c25dd2191b5df2293f6ef66b562c642abdec0bf5c7597df1e",
+      "file": "2025-17-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "26",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/26_Econ2.htm",
+      "sha256": "951f6185be542cf89e212ef92ae79c5f793f4e4823d214143b801467cf6e37d9",
+      "file": "2025-26-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "39",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/39_Econ2.htm",
+      "sha256": "83f89fa113c91dbca9f1dbb9df5d3177b91e782f96ea9fe5b654808aee28f281",
+      "file": "2025-39-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "51",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/51_Econ2.htm",
+      "sha256": "690aca4f949ef61422138e5b0f349150c960f8618eed502866a4dc69f6e01412",
+      "file": "2025-51-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "55",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/55_Econ2.htm",
+      "sha256": "dba617d43b52445fecabb47cf470e861b47cc78fbd8b9592fe2e7c96375e702d",
+      "file": "2025-55-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "57",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/57_Econ2.htm",
+      "sha256": "6c91bec0a9cfaecf59c44d35cab49fdbb75a46e07b516cd416672d6c9398cc0d",
+      "file": "2025-57-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "59",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/59_Econ2.htm",
+      "sha256": "057c22d8bc8f6cbcc984e75d9f6a912c2e7be5bdc56a84c39f5eb203661675f3",
+      "file": "2025-59-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "61",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/61_Econ2.htm",
+      "sha256": "a197c55a5785e5090792217da02eb634ca5e3ef167180d590ebd0b6461ca67f6",
+      "file": "2025-61-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "62",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/62_Econ2.htm",
+      "sha256": "c1480399f2be296d6ba003c243d5db7edd93b6a1b1eb6c26cdbff9bc8ca9879c",
+      "file": "2025-62-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "84",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/84_Econ2.htm",
+      "sha256": "0d84303daad294650b822ef2488a08df242d1d388dc35413e46d14c26f76ff69",
+      "file": "2025-84-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "85",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/85_Econ2.htm",
+      "sha256": "bb085957c1b9e6eb92b734c78452c2cd9dcb978d9f3322dc14927cf87e2bc3a1",
+      "file": "2025-85-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "87",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/87_Econ2.htm",
+      "sha256": "655d9b72f0ea682324bd5fedd2b6660c0ca0b97d71c6bec1d9895e9df6608015",
+      "file": "2025-87-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "98",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/98_Econ2.htm",
+      "sha256": "bc1b8e1d2e54ba6d37a5baa3a01631bd5c72ce9e90dcb3af5c1534413960c91d",
+      "file": "2025-98-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "103",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/103_Econ2.htm",
+      "sha256": "5bc0749ac63bead079c4817e3c496b55c0dfd27fa26d2ff425e729f338723988",
+      "file": "2025-103-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "130",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/130_Econ2.htm",
+      "sha256": "7ba86ed148a207194c0909b6becbd07c6d277a4a389183e8a49cc560faa82270",
+      "file": "2025-130-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "136",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/136_Econ2.htm",
+      "sha256": "2770964321ccfd8186074ae164b3616fea6035e5b0b6ccba625e9589666cbd5f",
+      "file": "2025-136-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "137",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/137_Econ2.htm",
+      "sha256": "1048482aeb29410f4d5ae07abf0bf7ee4b369a4406af22c878bf3768c1374b3d",
+      "file": "2025-137-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "138",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/138_Econ2.htm",
+      "sha256": "0d7d4be4e0b8a5da0c3a3b2f18bba7793759fdcb050e7a01c6811f2e650129c9",
+      "file": "2025-138-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "142",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/142_Econ2.htm",
+      "sha256": "cf65007724990dfabcdfd604375b893ea01dea3e6059b6c3c2428a735f713fa0",
+      "file": "2025-142-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "76",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/76_Econ2.htm",
+      "sha256": "66d1c77c91e753fed9106145f2d4ed223da5295db9f310028e3c8f13f61c1ea6",
+      "file": "2025-76-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "90",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/90_Econ2.htm",
+      "sha256": "1e10cc366c5050672127d23842f15f4b155abb383faa7791e17f3119893b3d72",
+      "file": "2025-90-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "10",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/10_Econ2.htm",
+      "sha256": "c906e633ea0660fbb409e5382d2f61411c76edaa8aea4b56e8e26d0ccf7eeeb9",
+      "file": "2026-10-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "11",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/11_Econ2.htm",
+      "sha256": "2e62a7daed55b15cc2603435c29e71158b3a0d465f56d5f1f1a6d9b3120b910c",
+      "file": "2026-11-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "12",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/12_Econ2.htm",
+      "sha256": "4ce8f568d552695c1f4c84a301c471ee2fea9a811885d3584ac1459b19139b95",
+      "file": "2026-12-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "13",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/13_Econ2.htm",
+      "sha256": "34dc156760c41223f4ed4b108ab84c50040c31b9bf40381499bb167e2e050132",
+      "file": "2026-13-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "14",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/14_Econ2.htm",
+      "sha256": "a48d650d0dc679678183581c8089aa6ab0fd41f58d21419aeb58a6caefeb5bdc",
+      "file": "2026-14-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "18",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/18_Econ2.htm",
+      "sha256": "ee886d07124595015b05d1acc86979c0520213e1a44251e0571ba3d9cc17706e",
+      "file": "2026-18-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "35",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/35_Econ2.htm",
+      "sha256": "b4f74950b8b61b08e49c59be001a28ab7b4fe89d498f5af1eb866119b9acb8a7",
+      "file": "2026-35-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "36",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/36_Econ2.htm",
+      "sha256": "32028b7475a0b0655b1df83415e83b75ddd3bc40b8bb119c1bc10e465265ec6f",
+      "file": "2026-36-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "37",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/37_Econ2.htm",
+      "sha256": "07a40587f2cd33c7b870e5e7f5b9334d0a241021f55ce0fcf80f40d1f8b5d352",
+      "file": "2026-37-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "49",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/49_Econ2.htm",
+      "sha256": "317fc3bc2b100b2eae1d56c4e3f4a6df13fa5102ffdaca72613d5c91bdb3a2f4",
+      "file": "2026-49-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "53",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/53_Econ2.htm",
+      "sha256": "583109639257f2d74da78d2d4ca711114195be261585f06a1e6a11e03d8c78e4",
+      "file": "2026-53-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "72",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/72_Econ2.htm",
+      "sha256": "e5437db8e7a34d38e062e9ea147de1aaa08df1e79b744d63709c379b31b86c59",
+      "file": "2026-72-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "73",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/73_Econ2.htm",
+      "sha256": "80b807d512aee352521d1bad3ab8e75680deae2f9af5ef0e27aa6db9eb9c90d1",
+      "file": "2026-73-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "74",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/74_Econ2.htm",
+      "sha256": "8ce3f1dfdae3ffa641f988e3fc9a2fce41caf5f894748378b302b042ec159b98",
+      "file": "2026-74-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "78",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/78_Econ2.htm",
+      "sha256": "5bac1c854ff3736dca9cc78ce73d9d945ea109071e71b0864e19280466275ad7",
+      "file": "2026-78-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "80",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/80_Econ2.htm",
+      "sha256": "e2a8f1c5817bf39fcd3764eec1c2e7e344a3e63ab32745a3d70c0b655168232b",
+      "file": "2026-80-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "88",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/88_Econ2.htm",
+      "sha256": "1be767f19e4751a633296c59a8ab03ff793c27e478f57dc23e6ecc65fbf08e30",
+      "file": "2026-88-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "91",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/91_Econ2.htm",
+      "sha256": "4ebcc1b696dc2e9cbcf8a9bda079c4ca9eb99a1c67a1762f9b9077e68ee0f3dc",
+      "file": "2026-91-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "92",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/92_Econ2.htm",
+      "sha256": "64a2262c19fb628e870c9e1f22966a17596693485e21ed61a86be02bf92d25d2",
+      "file": "2026-92-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "100",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/100_Econ2.htm",
+      "sha256": "1a61e7e4016f1634efc30c30fa0263ecd72a192c23b07d4918e03533be5794d3",
+      "file": "2026-100-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "102",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/102_Econ2.htm",
+      "sha256": "082c9c5dbcc2f86c56f65616960cd1a939c39a5063cbd3aa2ec032183817fd00",
+      "file": "2026-102-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "116",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/116_Econ2.htm",
+      "sha256": "511bb47e0dcba06417f030c014817c8d30e6a2dd4ef3cf2aa6c5c45511ee2cda",
+      "file": "2026-116-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "124",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/124_Econ2.htm",
+      "sha256": "c483af4296c0399e9cd56fccbe5cdc9924face4283ebca72e3e0b9be7f15b755",
+      "file": "2026-124-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "127",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/127_Econ2.htm",
+      "sha256": "6de0be9116a675f82bc391a067e60f77cdd59b25095c57ce0163fd83b8b74089",
+      "file": "2026-127-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "128",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/128_Econ2.htm",
+      "sha256": "4ea47ba7e5971edd7e83496d3f9eaee55456a94535462235c4fcd06888d97b0c",
+      "file": "2026-128-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "129",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/129_Econ2.htm",
+      "sha256": "b2b269e3b43bb188489bcd9befc3874472a628575abf849c39f5df1bd8d0677e",
+      "file": "2026-129-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "133",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/133_Econ2.htm",
+      "sha256": "c00c3995d54765aa1b4b5c49613cb934177d8761f66937638dfb417dc7270d46",
+      "file": "2026-133-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "134",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/134_Econ2.htm",
+      "sha256": "ec13f98667146742553a5bd7f059534dec9446417bbb346e046a5a2ecf06f2b9",
+      "file": "2026-134-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "135",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/135_Econ2.htm",
+      "sha256": "adc108071c8d6fb1e93da50ec17f36711d0df99d86b48047aa78c06220f7f604",
+      "file": "2026-135-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "139",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/139_Econ2.htm",
+      "sha256": "a09c73ffd051cbffc40ee58f31470ef86fd46ad7716c9ae63aeb99fbc7925806",
+      "file": "2026-139-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "140",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/140_Econ2.htm",
+      "sha256": "920e8c291aa8f6db3ed9043eca3079a5b65c9353677d3d07ab6223b451958c9b",
+      "file": "2026-140-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "141",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/141_Econ2.htm",
+      "sha256": "53cc3114205a61d10747f9eff473cdfe80e946b1ffbe5acf2502d09a0bfd1bfb",
+      "file": "2026-141-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "17",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/17_Econ2.htm",
+      "sha256": "47ae70d594d425a099743c2bfb660bcd97e20892d1ceece3a5b29e89c7702986",
+      "file": "2026-17-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "26",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/26_Econ2.htm",
+      "sha256": "651ed9afa86adec012e35cf51b75b8b9e999faa187160aa4f3001b4082954b7a",
+      "file": "2026-26-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "39",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/39_Econ2.htm",
+      "sha256": "9032814c670bb9f448ce4ad7d1c48998f41f8438ca40392d5bcfcfe175b8ff82",
+      "file": "2026-39-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "51",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/51_Econ2.htm",
+      "sha256": "551f988251acd8bc8a720faf8fd76907438badb3d50e2ecd20c84e2bc2e91828",
+      "file": "2026-51-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "55",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/55_Econ2.htm",
+      "sha256": "fabdf6cd49f9b84508cd0b3ada7c3a27c5647069c6d1d25e260032e3af722455",
+      "file": "2026-55-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "57",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/57_Econ2.htm",
+      "sha256": "f90470ee77d4bac4c09c1b2d3625b78efb845def69b2a1032e2409884f50d737",
+      "file": "2026-57-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "59",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/59_Econ2.htm",
+      "sha256": "3b23ee408149981af629d8aad183d7b3283c1dc823152032c1cc6e90c765aed8",
+      "file": "2026-59-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "61",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/61_Econ2.htm",
+      "sha256": "2e46ab37271e31259c2c96247ea07d7ac276f8084b6726b0da0ba5821f3b6d0b",
+      "file": "2026-61-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "62",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/62_Econ2.htm",
+      "sha256": "9e041bac0a7d2af93db2a03b4f81f07eb85518411c354842d77bbde6ddad7b50",
+      "file": "2026-62-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "84",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/84_Econ2.htm",
+      "sha256": "7fb8627928e3b796eeb388f2d643daeb24f4ab7aa65bb1a71816e27f62ba7035",
+      "file": "2026-84-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "85",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/85_Econ2.htm",
+      "sha256": "844feb6e21affdc543984794decff460b026db697a7df3712079ea43b1689ed5",
+      "file": "2026-85-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "87",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/87_Econ2.htm",
+      "sha256": "e3a31731ce69cc575c44f6a87bd6be85e42521e8422e15f46c69f17a05ea3c71",
+      "file": "2026-87-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "98",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/98_Econ2.htm",
+      "sha256": "36505c097e5312b582f1a310d5c1b8addc748650723dac8733a651d45b036ad0",
+      "file": "2026-98-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "103",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/103_Econ2.htm",
+      "sha256": "5b6848af4317b8647e549316b4d7979e880bc1a849764c67b6c159e2b26c311b",
+      "file": "2026-103-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "130",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/130_Econ2.htm",
+      "sha256": "20c81328e3984b5fae5ecb0ea0655de8e42711c60de50043f4ecee163719e3ff",
+      "file": "2026-130-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "136",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/136_Econ2.htm",
+      "sha256": "6e2bef3fd8e22e539981958358c6dadb10c562a39d39440439bce6f378b27200",
+      "file": "2026-136-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "137",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/137_Econ2.htm",
+      "sha256": "0997207477cfb439f6eb47b09c059cfdb2d5f30eb724e874346bc69a8a26b1eb",
+      "file": "2026-137-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "138",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/138_Econ2.htm",
+      "sha256": "8bb1adc0bbacba1398963826faa8f10fca0ac28d84a88501c070260bf896a156",
+      "file": "2026-138-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "142",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/142_Econ2.htm",
+      "sha256": "77e2b44ca99b85d6e926cf52088f977bbab105cd2c0cbcd512854bf79fc63878",
+      "file": "2026-142-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "76",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/76_Econ2.htm",
+      "sha256": "a167c11e57c3d729a7402d2de4aafc0c7ebd33ff7f7e7730d346f6d695bfe47e",
+      "file": "2026-76-Econ2.html"
+    },
+    {
+      "year": 2026,
+      "id": "90",
+      "kind": "Econ2",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/90_Econ2.htm",
+      "sha256": "9fcf653a241de7cfe1fef1e06d9ca384a7857637df39589dc8b07241d51af3a2",
+      "file": "2026-90-Econ2.html"
+    },
+    {
+      "year": 2025,
+      "id": "APNF",
+      "kind": "Econ2",
+      "file": "2025-APNF-Econ2.html",
+      "sha256": "54971298fdac911bb4cf5a7f1df0615f86f5e03b7ce87c0d02273a67749f9ba7",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/APNF_Econ2.htm"
+    },
+    {
+      "year": 2025,
+      "id": "APNF",
+      "kind": "FinFun",
+      "file": "2025-APNF-FinFun.html",
+      "sha256": "98002dc7d7b1dd497419131c7d2edd23ac6e640386ff65e68915dcdc7e8d9da3",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2025/06/cuadros/guias/TOMO_I/Html/APNF_FinFun.htm"
+    },
+    {
+      "year": 2026,
+      "id": "APNF",
+      "kind": "Econ2",
+      "file": "2026-APNF-Econ2.html",
+      "sha256": "1e5e565ad37f1bf738c91707e05c0615dc10e880d218e8527cde9d2a894c18f7",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/APNF_Econ2.htm"
+    },
+    {
+      "year": 2026,
+      "id": "APNF",
+      "kind": "FinFun",
+      "file": "2026-APNF-FinFun.html",
+      "sha256": "606c26a19e3a19c410306b166e7761a6fce2bde56d4b6099aa0d969610b564f0",
+      "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/APNF_FinFun.htm"
+    }
+  ]
+}

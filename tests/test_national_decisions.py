@@ -26,9 +26,11 @@ class NationalDecisionsTest(unittest.TestCase):
         policies=subject.build()['policies']
         self.assertEqual([len(p['physical']) for p in policies],[14,13,4,11,11,7])
         for p in policies:
-            self.assertEqual(p['execution']['corte'],'2026-09-15')
+            self.assertEqual(p['execution']['corte'],'2026-10-04')
             self.assertTrue(all(m['trimestre']==2 for m in p['physical']))
-            self.assertAlmostEqual(p['program']['accrued'],p['execution']['credito_devengado'],places=2)
+            baseline=subject.load(subject.DATA/'execution-sources/project-baseline-execution.json')['programs']
+            old=next(r for r in baseline if all(r[k]==p['execution'][k] for k in ['jurisdiccion_id','servicio_id','programa_id']))
+            self.assertAlmostEqual(p['program']['accrued'],old['credito_devengado'],places=2)
             self.assertTrue(all(m['servicio_id']==p['link']['servicio_id'] and m['programa_id']==p['link']['programa_id'] for m in p['physical']))
         self.assertTrue(any(m['ejecutado_acumulado_trim2'] is None for m in policies[1]['physical']))
         self.assertTrue(any('parciales' in c['causa_desvio_comentario'] for m in policies[0]['physical'] for c in m['causas']))

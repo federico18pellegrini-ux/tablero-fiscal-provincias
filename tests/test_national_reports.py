@@ -65,10 +65,10 @@ class NationalReportsTest(unittest.TestCase):
             all_text = ' '.join('\n'.join(texts).split())
             self.assertIn('IPC promedio', all_text)
             self.assertIn('no significa necesariamente haberla pagado', all_text)
-            self.assertIn('69,1%', texts[7])
-            self.assertIn('Septiembre (parcial)', texts[7])
+            self.assertIn('76,0%', texts[7])
+            self.assertIn('Octubre (parcial)', texts[7])
             if entry['price'] == 'real':
-                self.assertRegex(texts[7], r'Septiembre \(parcial\)\s+s/d')
+                self.assertRegex(texts[7], r'Octubre \(parcial\)\s+s/d')
             self.assertGreater(len(reader.pages[9].get('/Annots', [])), 9)
             for phrase in ['LECTURA CENTRAL', 'PRIORIDADES', 'ORGANISMOS', 'FUNCIONES', 'PROGRAMAS', 'TERRITORIO', 'INGRESOS Y ECONOMÍA', 'EJECUCIÓN', 'HISTORIA Y LECTURA FINAL', 'MÉTODO Y FUENTES']:
                 self.assertIn(phrase, all_text)
@@ -132,7 +132,7 @@ class NationalReportsTest(unittest.TestCase):
             self.assertIn(len(pdf.pages),[2,3])
             pages=[x.extract_text() for x in pdf.pages]
             text=' '.join(' '.join(pages).split())
-            for term in [p['name'],reports.money(p['execution']['credito_pagado']),'15/09/2026','Cambio real']:
+            for term in [p['name'],reports.money(p['execution']['credito_pagado']),'04/10/2026','Cambio real']:
                 self.assertIn(term,text)
             for i,page in enumerate(pages):
                 self.assertIn(f'Página {i+1}',page)
