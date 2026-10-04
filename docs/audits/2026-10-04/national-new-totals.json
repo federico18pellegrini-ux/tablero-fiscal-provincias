@@ -1,0 +1,26 @@
+{
+  "credito-anual-2026.zip": {
+    "rows": 84604,
+    "sums": {
+      "('anual', 'credito_presupuestado')": 148069293.52654922,
+      "('anual', 'credito_vigente')": 152474968.84041694,
+      "('anual', 'credito_devengado')": 115836259.72691351,
+      "('anual', 'credito_pagado')": 114078784.21935402
+    }
+  },
+  "recursos-mensual-2026.zip": {
+    "rows": 2948,
+    "sums": {
+      "('1', 'recurso_ingresado_percibido')": 14832493.333029188,
+      "('2', 'recurso_ingresado_percibido')": 10689278.311648535,
+      "('3', 'recurso_ingresado_percibido')": 11054772.347012145,
+      "('4', 'recurso_ingresado_percibido')": 11863037.217083186,
+      "('5', 'recurso_ingresado_percibido')": 37557641.64065524,
+      "('6', 'recurso_ingresado_percibido')": 13922224.520277213,
+      "('7', 'recurso_ingresado_percibido')": 15699837.28571726,
+      "('8', 'recurso_ingresado_percibido')": 13203231.608464817,
+      "('9', 'recurso_ingresado_percibido')": 13846869.319728201,
+      "('10', 'recurso_ingresado_percibido')": -163079.49621843008
+    }
+  }
+}

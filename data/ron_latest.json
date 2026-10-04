@@ -1,0 +1,160 @@
+{
+  "reviewed": "2026-10-04",
+  "period": "2026-09",
+  "real_available_through": "2026-08",
+  "source": {
+    "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_6.xlsx",
+    "path": "data/ron_sources/informacion_consolidada_2026_6.xlsx",
+    "sha256": "a892b464a72e4219350f5a90fbd486edee0b457e6ad6445b447d0adf1f5a8e9b",
+    "bytes": 401278,
+    "reviewed": "2026-10-04",
+    "period": "2026-09",
+    "unit": "ARS millones"
+  },
+  "rows": [
+    {
+      "province": "Buenos Aires",
+      "month_nominal": 1602271.022593948,
+      "ytd_nominal": 13266974.425482867,
+      "ytd_nominal_change_pct": 32.79264366723482
+    },
+    {
+      "province": "CABA",
+      "month_nominal": 154684.53873228424,
+      "ytd_nominal": 1250864.0543581417,
+      "ytd_nominal_change_pct": 31.59954388808317
+    },
+    {
+      "province": "Catamarca",
+      "month_nominal": 181189.07518066862,
+      "ytd_nominal": 1497239.620750117,
+      "ytd_nominal_change_pct": 34.51997297313567
+    },
+    {
+      "province": "Chaco",
+      "month_nominal": 336103.81573183544,
+      "ytd_nominal": 2749881.205644361,
+      "ytd_nominal_change_pct": 32.41028143355869
+    },
+    {
+      "province": "Chubut",
+      "month_nominal": 109915.5513839211,
+      "ytd_nominal": 887623.5549885835,
+      "ytd_nominal_change_pct": 32.954569704176336
+    },
+    {
+      "province": "Corrientes",
+      "month_nominal": 254404.21613745368,
+      "ytd_nominal": 2080726.8064059964,
+      "ytd_nominal_change_pct": 32.54879014713179
+    },
+    {
+      "province": "Córdoba",
+      "month_nominal": 588129.9162649941,
+      "ytd_nominal": 4842623.584017623,
+      "ytd_nominal_change_pct": 32.57896975972401
+    },
+    {
+      "province": "Entre Ríos",
+      "month_nominal": 324777.7199120509,
+      "ytd_nominal": 2659125.905646677,
+      "ytd_nominal_change_pct": 32.304702822974775
+    },
+    {
+      "province": "Formosa",
+      "month_nominal": 243758.4450081542,
+      "ytd_nominal": 1988310.6429729112,
+      "ytd_nominal_change_pct": 32.441871753003504
+    },
+    {
+      "province": "Jujuy",
+      "month_nominal": 190869.78452039944,
+      "ytd_nominal": 1554845.635924539,
+      "ytd_nominal_change_pct": 32.53629084829146
+    },
+    {
+      "province": "La Pampa",
+      "month_nominal": 127352.48581154546,
+      "ytd_nominal": 1035390.2378377228,
+      "ytd_nominal_change_pct": 32.569115249585764
+    },
+    {
+      "province": "La Rioja",
+      "month_nominal": 137927.34407603132,
+      "ytd_nominal": 1118663.2814517394,
+      "ytd_nominal_change_pct": 32.34033805421434
+    },
+    {
+      "province": "Mendoza",
+      "month_nominal": 278588.4884224291,
+      "ytd_nominal": 2275799.028854373,
+      "ytd_nominal_change_pct": 32.466090643006766
+    },
+    {
+      "province": "Misiones",
+      "month_nominal": 227542.9004496063,
+      "ytd_nominal": 1861496.4964896159,
+      "ytd_nominal_change_pct": 32.826472508378224
+    },
+    {
+      "province": "Neuquén",
+      "month_nominal": 120760.96666231254,
+      "ytd_nominal": 978730.0571975806,
+      "ytd_nominal_change_pct": 33.16174262891987
+    },
+    {
+      "province": "Río Negro",
+      "month_nominal": 169682.37322494315,
+      "ytd_nominal": 1379868.6186181155,
+      "ytd_nominal_change_pct": 32.73738280450604
+    },
+    {
+      "province": "Salta",
+      "month_nominal": 263505.3147032166,
+      "ytd_nominal": 2202123.3850571667,
+      "ytd_nominal_change_pct": 33.253849576344095
+    },
+    {
+      "province": "San Juan",
+      "month_nominal": 223497.5889070919,
+      "ytd_nominal": 1823110.1727515373,
+      "ytd_nominal_change_pct": 32.458593318595
+    },
+    {
+      "province": "San Luis",
+      "month_nominal": 150510.1120555971,
+      "ytd_nominal": 1226377.7225356046,
+      "ytd_nominal_change_pct": 32.54978190512983
+    },
+    {
+      "province": "Santa Cruz",
+      "month_nominal": 108742.21722687109,
+      "ytd_nominal": 873967.715103419,
+      "ytd_nominal_change_pct": 32.88705538244345
+    },
+    {
+      "province": "Santa Fe",
+      "month_nominal": 604267.4769540719,
+      "ytd_nominal": 4961689.501973078,
+      "ytd_nominal_change_pct": 32.27834677301691
+    },
+    {
+      "province": "Santiago del Estero",
+      "month_nominal": 277648.75437718653,
+      "ytd_nominal": 2267422.4123572027,
+      "ytd_nominal_change_pct": 32.41471824920899
+    },
+    {
+      "province": "Tierra del Fuego",
+      "month_nominal": 83175.12653053646,
+      "ytd_nominal": 673738.508496701,
+      "ytd_nominal_change_pct": 32.8145655832109
+    },
+    {
+      "province": "Tucumán",
+      "month_nominal": 318613.9615240299,
+      "ytd_nominal": 2636199.5866175033,
+      "ytd_nominal_change_pct": 32.64747652590143
+    }
+  ]
+}

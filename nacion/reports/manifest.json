@@ -8,12 +8,12 @@
     "nacion/data/budget.json": "15de2ef6ffdbef71b241d8e7f7dbf6d3da02628d2f73b7e71557a9bdcaadeb3c",
     "data/ipc_source.json": "173ad760a561b12e77257664a9945410b78094ba2f6b1f80f0630366aeaae510",
     "scripts_export_national_reports.py": "22f034708495a6dcb808dac3ab961a9a4a6b373d290f586b21537a3e086c93d3",
-    "national_management_report.py": "38edd153feec41d9a403deb83e92d8ee0880fb14b65c348c37f0f8a783112f84",
-    "nacion/data/gestion.json": "531b6c9cd824c1d93fbf796613c8aa1649138ac6bf15fe782794bd6e3b495737",
+    "national_management_report.py": "b7d60103f3dff096bb1ae47446ae594a0db0d772135d8bc90fef041fbe427993",
+    "nacion/data/gestion.json": "50002c16dcf38009388e3b93280b9b34d614a84ba9cc6a6775d2c321f121061a",
     "national_decision_report.py": "5a9ac04720d76829e141fd737cea4967393c4f9c43f913d554f7a87bbb5097ad",
-    "national_territory_report.py": "5040b7b077aaaac2b9adb95217fccbb353a19e0d80c6defeb42f1471f865c818",
+    "national_territory_report.py": "224b5a3a1746822d3557fd8cb0d4fdc758ab4f7f1da7caf6a20ccb64b7e2a19c",
     "national_portfolio_report.py": "c84fce113a947e86cfb1e3e9caf73a20b2cf3a6af9cc8f8fbf86bb25bdd2cd24",
-    "nacion/data/decisions.json": "9f498205628ea4652079691903bc1299ed0b3cfb5af0a41cf6376c62e43ff6f0",
+    "nacion/data/decisions.json": "16325babddcadf268f192f608d9697d40d325c6618e4795ef60d307241d80770",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
   },
@@ -24,12 +24,12 @@
       "main": {
         "file": "informe-nacional-nominal-current.pdf",
         "pages": 21,
-        "sha256": "c662e47a5fa04cd0c249f23172fdc31c075b8ec9bbd71991b561a7abca04f685"
+        "sha256": "bc678b33a2d4cd42d07b33a22387a41afff696677a5083d3b0be4dd128dc44e2"
       },
       "full": {
         "file": "informe-nacional-nominal-current-anexo.pdf",
         "pages": 68,
-        "sha256": "6c435467eb6564423a6d26ac79fcfc1836b691c0d0bb512376e698eac2da1099"
+        "sha256": "285a98c4c7c3e0476d239dede5ce6814aabfdd3ba7b51e2ee925791bd81ac0fc"
       }
     },
     {
@@ -38,12 +38,12 @@
       "main": {
         "file": "informe-nacional-nominal-law.pdf",
         "pages": 21,
-        "sha256": "f2a3f9b66927c746f3ca08dcb6e88bfd13c59074dd393359f0a3daba58eaf6a7"
+        "sha256": "2d3e523be363d6a822138e5e46bb40f248671ce0f9adb05fc1132c537c25a1bd"
       },
       "full": {
         "file": "informe-nacional-nominal-law-anexo.pdf",
         "pages": 68,
-        "sha256": "a8d46eac5aecb7840f431e0bb9bd1d19ac96709e324c9c24b63b4c9082c69a59"
+        "sha256": "f38538c8d0b3924521a787735147fdc77292c32dccb7a4fcccdf59e4bf4a911b"
       }
     },
     {
@@ -52,12 +52,12 @@
       "main": {
         "file": "informe-nacional-nominal-closing.pdf",
         "pages": 21,
-        "sha256": "5cf72578272e32c7fb4607b812d59064664a9df1c1b5a76b8b41cd27f5b86041"
+        "sha256": "3e702683bd3daf908dbfc04a6fc2306d4394f847a93ab01357f071fd48c22a19"
       },
       "full": {
         "file": "informe-nacional-nominal-closing-anexo.pdf",
         "pages": 68,
-        "sha256": "fa20e08ee379ecf3136c027fb7934cb9ed70a31b908bd39679993bdac56448d5"
+        "sha256": "2b9bdafbc87358baff0958569132d728e2df4bb81424ef9d11671613b935c2c6"
       }
     },
     {
@@ -66,12 +66,12 @@
       "main": {
         "file": "informe-nacional-real-current.pdf",
         "pages": 21,
-        "sha256": "d04d61cb50b705d355605f359acb244dbc4f68c10e88c7dc5dced1c25c93a594"
+        "sha256": "3517c6d3bff55d87f5d7768a6ebdc69f5566b769e20093a0e043849bd088612f"
       },
       "full": {
         "file": "informe-nacional-real-current-anexo.pdf",
         "pages": 68,
-        "sha256": "a5ab7fd672c9ff2ea50232044c12619c8304e95cd5d03552c780f529bdb0266f"
+        "sha256": "3bae94b0b57f888d9efefc3e68980a66c0fa7eda62c8b3af9d2ba6bd1652e7d2"
       }
     },
     {
@@ -80,12 +80,12 @@
       "main": {
         "file": "informe-nacional-real-law.pdf",
         "pages": 21,
-        "sha256": "3b30816e004f3c0084949be70fcbfa9716c5dc944c369d132f227283d7b91dac"
+        "sha256": "cc296586674a5b86626eee7f8235fc217dec359bb867bdf920a43a7e001360a6"
       },
       "full": {
         "file": "informe-nacional-real-law-anexo.pdf",
         "pages": 68,
-        "sha256": "ff91cc7207783a7a61a5550d267384335e421ce79fc8e27e112d210254d4d618"
+        "sha256": "626407eef62fece06c5eef46f8edbec288364f9a1e4bfc47405b43062a21d400"
       }
     },
     {
@@ -94,12 +94,12 @@
       "main": {
         "file": "informe-nacional-real-closing.pdf",
         "pages": 21,
-        "sha256": "25b8d3b0d98099165c5e6db32a9e51a81ef00d1321ee3da5eca4c29edd4260b6"
+        "sha256": "2ee5d8ed6b97fbe6dee54154afdb4ed1f9b33c8b157b0eed7aad9b42eb492254"
       },
       "full": {
         "file": "informe-nacional-real-closing-anexo.pdf",
         "pages": 68,
-        "sha256": "ed435fa03bdfcdc0ea7ae12ff200686b7cf4b76c74dc5ff57691731309af269a"
+        "sha256": "eff7329693d6cf6794dfc32121ed306833a91c7a2120cc276312543f00368d77"
       }
     }
   ],
@@ -153,168 +153,168 @@
       "province": "CABA",
       "file": "ficha-nacional-provincia-2.pdf",
       "pages": 1,
-      "sha256": "4ce2cae50031dfbfe2402633968444d6e3979fc51e615513392860c07bd12018"
+      "sha256": "0b5d5aabe86e2f2e498c13967af55a68f1de0c9d74b5e72f73e777d71c7bd92d"
     },
     {
       "province_id": 6,
       "province": "Buenos Aires",
       "file": "ficha-nacional-provincia-6.pdf",
       "pages": 1,
-      "sha256": "f512b1301536916e5efd3b8184ba11815d4c9a56f38dddb71b31c9fb93f62712"
+      "sha256": "02cd7a85e1bc89102a4ec300018fbe2b067c212b7589c9bb41aae45dda247a95"
     },
     {
       "province_id": 10,
       "province": "Catamarca",
       "file": "ficha-nacional-provincia-10.pdf",
       "pages": 1,
-      "sha256": "8c453a45a7bc23b5fa6bbf2f30e6320e43723700ef5f2eccd6e2c167df8418df"
+      "sha256": "297974fb691fa1a8920c4f010937ea875da54966f4b52e3de6956651a1e7ec24"
     },
     {
       "province_id": 14,
       "province": "Córdoba",
       "file": "ficha-nacional-provincia-14.pdf",
       "pages": 1,
-      "sha256": "8b7f2af81cfef86b1afd1545b3f05c9965b7e1694fc43c751f49e2a004944d15"
+      "sha256": "e0f4283af2129ed8dc8c75eba33fc0c8088d85715d2e89227d07e04275dae5ec"
     },
     {
       "province_id": 18,
       "province": "Corrientes",
       "file": "ficha-nacional-provincia-18.pdf",
       "pages": 1,
-      "sha256": "a1c26a528adbd3f0026a21bf0681a535c26a37206e799b44d6b9a5f6381ffee9"
+      "sha256": "0a8580d186bbcc52bd113b8fad0bdf2e86f9ea4b4ed704414454b37f9cbf6e21"
     },
     {
       "province_id": 22,
       "province": "Chaco",
       "file": "ficha-nacional-provincia-22.pdf",
       "pages": 1,
-      "sha256": "b6c940fa10e4b81d495a79f0b46d499ef3590ba63f999a75e6cca2494218e997"
+      "sha256": "964ad02c59930bfc1859a943dad9263b7da999f958114aaed6d5c5ba90f8a4b1"
     },
     {
       "province_id": 26,
       "province": "Chubut",
       "file": "ficha-nacional-provincia-26.pdf",
       "pages": 1,
-      "sha256": "92fd297ca872156ffb3c4fefaaaa6b70bcfb53a84240b44278bed439c048d663"
+      "sha256": "68497efd64a693cc00bff6f57be2e4285f5ef212c67f15bf2ddb86f15f0b61ac"
     },
     {
       "province_id": 30,
       "province": "Entre Ríos",
       "file": "ficha-nacional-provincia-30.pdf",
       "pages": 1,
-      "sha256": "5fcbba92a7b0b9ba927bb583ef06cf3e6b74bd41694bb19f4f04d3044a1ec619"
+      "sha256": "f98865c5691d8e4c581cefefa66141aad030d42949815245540281a403de4edf"
     },
     {
       "province_id": 34,
       "province": "Formosa",
       "file": "ficha-nacional-provincia-34.pdf",
       "pages": 1,
-      "sha256": "3b85a2878d732d716e206e1db9b3b3432de1d4ffbf32de3c9a0b554f9e50b844"
+      "sha256": "d09cdefa0c62451fca23b30b3f4f6e19291f9d16cecc4243566b7d68345eafa3"
     },
     {
       "province_id": 38,
       "province": "Jujuy",
       "file": "ficha-nacional-provincia-38.pdf",
       "pages": 1,
-      "sha256": "53481b1025502a29a5c65aa0643dab026d857fb5e2a66e58112c4d8f5f9d4ab0"
+      "sha256": "0e45742db96d6cb2aedd1a8f0e7817b15a225f20f3be3b71b23322aeb9718af3"
     },
     {
       "province_id": 42,
       "province": "La Pampa",
       "file": "ficha-nacional-provincia-42.pdf",
       "pages": 1,
-      "sha256": "c91b3dea450010ce01a6b0c7d1bded46330caac07385099ebae53560970c66ee"
+      "sha256": "731b29e109b0500564629eb614c5dfeb7a7ca909e1802d7d57a83474b6bc017d"
     },
     {
       "province_id": 46,
       "province": "La Rioja",
       "file": "ficha-nacional-provincia-46.pdf",
       "pages": 1,
-      "sha256": "f9fbbb86fcc1ba69986e84a74a3c0e3e3e4a2c8878e63e04f76b53d3d39e22f6"
+      "sha256": "4991eb1ae9a7522a1ef750112a405febb7a8fa3dd0214a1269540ed12fc92c0a"
     },
     {
       "province_id": 50,
       "province": "Mendoza",
       "file": "ficha-nacional-provincia-50.pdf",
       "pages": 1,
-      "sha256": "002e58272d4a1976150af0f3b44f1ada89f2247705e25144c8d13a9fb5885caa"
+      "sha256": "4971c6e5a959da717a759819d7d751d0666a59ae90b6583d92ad2efb67f7245b"
     },
     {
       "province_id": 54,
       "province": "Misiones",
       "file": "ficha-nacional-provincia-54.pdf",
       "pages": 1,
-      "sha256": "11217da1a98d3b5a17bd71fa30d61271c6023e5ef4e973148ddb662c904093bf"
+      "sha256": "969d8a055f8c5f39ec2eef524f435a9611c97fce2329b42b003f9eb2362757f4"
     },
     {
       "province_id": 58,
       "province": "Neuquén",
       "file": "ficha-nacional-provincia-58.pdf",
       "pages": 1,
-      "sha256": "cef8b3f934a6fb57334d5d63215fc49226d27d84ef8554658e23bc757a2a44e3"
+      "sha256": "f0128ddd5995d50320dadccb6d986646c06318055134809fb86fd70e2b1fa834"
     },
     {
       "province_id": 62,
       "province": "Río Negro",
       "file": "ficha-nacional-provincia-62.pdf",
       "pages": 1,
-      "sha256": "2bcd0e7e1004a03b015fd9da6a580ef99d9a2210c3b1956315f4ad80cd2569be"
+      "sha256": "30fd3c37371eb3cc2ddd93ff2cc28497440d6518762ae8743489cb2bd1feb02c"
     },
     {
       "province_id": 66,
       "province": "Salta",
       "file": "ficha-nacional-provincia-66.pdf",
       "pages": 1,
-      "sha256": "8fffea0ebe7d165cf71cd7725c5458032632cc06c85582fb3c6848dfc324f479"
+      "sha256": "674f34d5b31ef5babd7e8db67e6ea2a47a3864d91bdb83e1a85d6d787d03be45"
     },
     {
       "province_id": 70,
       "province": "San Juan",
       "file": "ficha-nacional-provincia-70.pdf",
       "pages": 1,
-      "sha256": "21a943c62623ff7bfbcbca582000399e23185058f859db244016186cff3ed577"
+      "sha256": "ad30c65bda3ce199ea8433733008a30ee2749acdf38b2c1b00960dfda46a0fc5"
     },
     {
       "province_id": 74,
       "province": "San Luis",
       "file": "ficha-nacional-provincia-74.pdf",
       "pages": 1,
-      "sha256": "5083c42197b9249dcff9ccbfed6bee36dfdc6ec3f05d89b2e4b75a2d8e69577d"
+      "sha256": "e4de1c750669b8ac11d0199028ae2da484c894e4eb33e96e82d1aac730878e47"
     },
     {
       "province_id": 78,
       "province": "Santa Cruz",
       "file": "ficha-nacional-provincia-78.pdf",
       "pages": 1,
-      "sha256": "5a3a1f473263defac37fbfafff2274e317c0a5d6c96b8fb4066ca2f23f44984c"
+      "sha256": "aafc13cc5f077e604796b5274176c08b64feca2d451affe2936c31f31e0793d0"
     },
     {
       "province_id": 82,
       "province": "Santa Fe",
       "file": "ficha-nacional-provincia-82.pdf",
       "pages": 1,
-      "sha256": "271f75b0fbb9fd8e09d3de783327a70160d0b879bf86cd6b6fe2a163f6834a44"
+      "sha256": "c814369088318869718ad65eec57762155beaffbe8e74a2b3f56e27131702a43"
     },
     {
       "province_id": 86,
       "province": "Santiago del Estero",
       "file": "ficha-nacional-provincia-86.pdf",
       "pages": 1,
-      "sha256": "21974c40954ef8ea7592bc3258c8c5e740b0e7f6665f6150cea8804d9f2c4059"
+      "sha256": "122823e457c7545a2bfd36bf752b0533fe77262dfe80749b640e243f97f4122f"
     },
     {
       "province_id": 90,
       "province": "Tucumán",
       "file": "ficha-nacional-provincia-90.pdf",
       "pages": 1,
-      "sha256": "a8b20b80d1ecf3f8cafe83161cdf4230da5f88754b3c36580868fee4dbcd3f9a"
+      "sha256": "c8bf3c17aebffa0a48f161f2005823ce0cbace9d9fcb11c5119a15cfff8ee034"
     },
     {
       "province_id": 94,
       "province": "Tierra del Fuego",
       "file": "ficha-nacional-provincia-94.pdf",
       "pages": 1,
-      "sha256": "03bcae9103c504cb734d968e68295c4cfaa427a59b49dd8c8dfe8d33d8968a62"
+      "sha256": "5d7e5d88a7ba48bcb2c1b1bd9ef605a9cce0130965deb43da1c47123462b7103"
     }
   ],
   "portfolios": [

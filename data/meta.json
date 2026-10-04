@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T02:48:47.373909Z",
+  "generated_at": "2026-10-04T20:01:39.631983Z",
   "structural_cutoff": "2026-03-31",
   "sources": {
     "recaudacion_propia_2026": {
@@ -8,9 +8,19 @@
       "pba_max_period": "2026-07"
     },
     "transferencias_nacion_2026": {
-      "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_5.xlsx",
-      "max_period": "2026-08",
-      "pba_max_period": "2026-08"
+      "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_6.xlsx",
+      "max_period": "2026-09",
+      "pba_max_period": "2026-09",
+      "reviewed_at": "2026-10-04",
+      "original": {
+        "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_6.xlsx",
+        "path": "data/ron_sources/informacion_consolidada_2026_6.xlsx",
+        "sha256": "a892b464a72e4219350f5a90fbd486edee0b457e6ad6445b447d0adf1f5a8e9b",
+        "bytes": 401278,
+        "reviewed": "2026-10-04",
+        "period": "2026-09",
+        "unit": "ARS millones"
+      }
     },
     "pba_transferencias_legales_municipios_ltm_1t26": {
       "url": "https://www.gba.gob.ar/economia/direccion_provincial_de_coordinacion_municipal_y_programas_de_desarrollo/transferencias_municipios",

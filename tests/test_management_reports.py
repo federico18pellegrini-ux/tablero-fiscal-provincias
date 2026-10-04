@@ -53,7 +53,7 @@ class ManagementReportTests(unittest.TestCase):
   self.assertAlmostEqual(d.transfers('Buenos Aires','2026-06','Financiamiento Educativo')['real_pct'],18.865246,places=5)
   dashboard=json.loads((ROOT/'dashboard_real_dynamics_2026.json').read_text(encoding='utf-8'))
   for province in d.provinces:
-   report=d.transfers(province);metric=dashboard['provinces'][province]['metrics']['ron_total']
+   metric=dashboard['provinces'][province]['metrics']['ron_total'];report=d.transfers(province,metric['ytd_available_through'])
    self.assertEqual(round(report['real_pct'],1),metric['real_ytd_pct'])
   # A missing January or a missing IPC must not produce a partial "annual" total.
   own=ReportData();del own.ron[('Buenos Aires','2025-01','Total | (1) + (2)')]
@@ -74,7 +74,9 @@ class ManagementReportTests(unittest.TestCase):
   ba=editorial_reading(self.data.model('Buenos Aires'))
   self.assertIn('desbalance antes de intereses',ba['mechanism'])
   self.assertIn('alcanzaron para el gasto sin intereses',ba['quarter'])
-  self.assertIn('compran menos',ba['federal'])
+  self.assertIn('Sin una comparación real completa',ba['federal'])
+  model=self.data.model('Buenos Aires');model['transfers']=self.data.transfers('Buenos Aires','2026-08')
+  self.assertIn('compran menos',editorial_reading(model)['federal'])
   self.assertIn('Corregir el déficit',ba['closing'])
 
  def test_editorial_does_not_impute_a_deficit_or_surplus_to_missing_information(self):

@@ -25,7 +25,7 @@ class PbaSeptemberRefresh(unittest.TestCase):
   self.assertEqual(max(schedule['rows'],key=lambda r:r['total_ars_m'])['year'],2027)
  def test_export_contains_updates_and_monthly_claim_basis(self):
   pdf=PdfReader(ROOT/'reports/informe-buenos-aires.pdf');text=' '.join(' '.join(p.extract_text().split()) for p in pdf.pages)
-  for expected in ['primer semestre de 2026','4,22%','30/06/2026','17,95 billones','19,10 billones','julio-diciembre de 2026','enero y agosto']:
+  for expected in ['primer semestre de 2026','4,22%','30/06/2026','17,95 billones','19,10 billones','julio-diciembre de 2026','enero y septiembre']:
    self.assertIn(expected,text)
   for page in pdf.pages:self.assertIn('tablero.federicopellegrini.com.ar',page.extract_text())
   lp=' '.join(PdfReader(ROOT/'reports/informe-la-pampa.pdf').pages[2].extract_text().split());self.assertIn('por mes',lp)

@@ -184,7 +184,8 @@ def ron_headers(sheet) -> dict[int, str]:
 
 
 def import_ron(path: Path, universe: list[str], year: int = 2026) -> tuple[list[dict[str, object]], dict[str, list[str]]]:
-    workbook = openpyxl.load_workbook(path, data_only=True, read_only=True)
+    # These small sheets are accessed by cell; streaming would reparse XML for every cell.
+    workbook = openpyxl.load_workbook(path, data_only=True, read_only=False)
     universe_set = set(universe)
     monthly_sheets = [(name.lower(), f"{year}-{MONTHS[name]}") for name in MONTHS if name.lower() in workbook.sheetnames]
     monthly_sheets.sort(key=lambda item: item[1])

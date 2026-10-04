@@ -114,8 +114,10 @@
       provinceId=+$('national-province').value;provinceRank=$('national-province-rank').value;
       const model=M.territory(B,D,provinceId);if(!model){$('national-province-reading').textContent='No se pudo verificar la correspondencia de esta provincia.';return;}
       const {province:r,project:g,observed:o,works,worksTotal,pending}=model;
+      const latest=D.provinces.latest?.rows.find(x=>x.province===r.provincia);
       $('national-province-reading').innerHTML=`<h3 class="territory-title">${esc(r.provincia)}</h3><div class="management-stats">${stat('Recursos nacionales',money(price==='real'?r.ron_real_2026:r.ron_2026),`Enero–agosto · ${unit()}`)}${stat('Cambio real',pct(r.variacion_real_pct),'Contra enero–agosto de 2025.',sign(r.variacion_real_pct))}${stat('Transferencias pagadas',money(r.presupuestarias_pagado),'Del presupuesto al gobierno provincial · al 15/09 · pesos corrientes.')}</div>
         <p class="editorial">En ${esc(r.provincia)}, los recursos nacionales ${r.variacion_real_pct<0?'perdieron':'ganaron'} ${num(Math.abs(r.variacion_real_pct))}% de poder de compra. Eso ${r.variacion_real_pct<0?'achica':'amplía'} el margen para sostener servicios con estos fondos. En las transferencias presupuestarias, ${money(pending)} de obligaciones reconocidas todavía no figuran pagadas.</p>`;
+      if(latest)$('national-province-reading').insertAdjacentHTML('beforeend',`<article class="territory-project"><p class="eyebrow">Actualización / Septiembre 2026</p><h3>${money(latest.month_nominal)} recibidos en septiembre</h3><p>Entre enero y septiembre suman <strong>${money(latest.ytd_nominal)}</strong>, en pesos corrientes. La comparación real de arriba llega hasta agosto, último mes con IPC observado.</p><a href="${esc(D.provinces.latest.source.url)}" target="_blank" rel="noopener">Planilla oficial de transferencias</a></article>`);
       const src=B.sources.find(s=>s.file===g.source),workSrc=B.sources.find(s=>s.file==='cap1pl12.pdf');
       const comps=window.BudgetMath.comparisonRows(g,B.deflator.annual_factors).filter(x=>x.base!=='law');
       const top=works.slice(0,5),workLink=new URL(location.href);workLink.search='';workLink.searchParams.set('provincia',r.provincia);workLink.hash='obras';
@@ -188,6 +190,6 @@
   window.addEventListener('hashchange',route);
   window.addEventListener('popstate',route);
   window.addEventListener('national:budget-ready',()=>{if(D&&current==='provincias-nacion')renderProvinces();});
-  fetch('data/gestion.json?v=20260918-opc').then(async r=>{if(!r.ok)throw Error('No se pudieron cargar los nuevos datos de gestión.');const text=await r.text();window.nationalManagementHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;window.nationalManagementContext=D;window.dispatchEvent(new Event('national:management-ready'));$('management-status').hidden=true;downloads();ready();}).catch(e=>{$('management-status').innerHTML=esc(e.message)+' <a href="">Reintentar</a>';});
+  fetch('data/gestion.json?v=20261004-ron').then(async r=>{if(!r.ok)throw Error('No se pudieron cargar los nuevos datos de gestión.');const text=await r.text();window.nationalManagementHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;window.nationalManagementContext=D;window.dispatchEvent(new Event('national:management-ready'));$('management-status').hidden=true;downloads();ready();}).catch(e=>{$('management-status').innerHTML=esc(e.message)+' <a href="">Reintentar</a>';});
   route();
 })();
