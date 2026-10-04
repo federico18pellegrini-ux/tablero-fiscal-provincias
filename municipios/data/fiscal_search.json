@@ -1,13 +1,13 @@
 {
   "version": 1,
   "reviewedAt": "2026-10-04",
-  "scope": "Revisión del 11 de septiembre de 2026 de 288 direcciones enlazadas por los portales de los 135 municipios. Se conservan las cuentas antes verificadas y se agregan documentos nuevos conciliados. No encontrar una cuenta en estos enlaces no demuestra que no esté publicada en otro lugar. Actualización 4/10/2026: 133 páginas revisadas de 59 municipios con faltantes; ocho cuentas nuevas conciliadas. Cada registro conserva su fecha de revisión.",
+  "scope": "Revisión del 11 de septiembre de 2026 de 288 direcciones enlazadas por los portales de los 135 municipios. Se conservan las cuentas antes verificadas y se agregan documentos nuevos conciliados. No encontrar una cuenta en estos enlaces no demuestra que no esté publicada en otro lugar. Actualización 4/10/2026: 133 páginas revisadas de 59 municipios con faltantes; ocho cuentas nuevas conciliadas. Cada registro conserva su fecha de revisión. Seguimiento del 04/10: seis cuentas adicionales y cinco créditos vigentes conciliados; el período del PDF prevalece sobre el título del enlace.",
   "counts": {
-    "comparable_account": 80,
-    "account_not_verified": 29,
-    "other_period": 19,
+    "comparable_account": 84,
+    "account_not_verified": 24,
+    "other_period": 21,
     "documents_pending": 5,
-    "access_incomplete": 2
+    "access_incomplete": 1
   },
   "municipalities": [
     {
@@ -273,14 +273,14 @@
     {
       "id": "06056",
       "municipio": "Bahía Blanca",
-      "reviewedAt": "2026-09-11",
+      "reviewedAt": "2026-10-04",
       "searchedThisRound": true,
-      "status": "account_not_verified",
-      "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "status": "comparable_account",
+      "message": "Cuenta oficial incorporada y conciliada. Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
       "providedUrl": "https://gobiernoabierto.bahia.gob.ar/",
-      "accountUrl": null,
-      "latestPeriodEnd": null,
-      "comparablePeriodEnd": null,
+      "accountUrl": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
+      "latestPeriodEnd": "2026-06-30",
+      "comparablePeriodEnd": "2026-06-30",
       "retrievedPdfCount": 0,
       "checkedPages": [
         {
@@ -2322,14 +2322,14 @@
     {
       "id": "06505",
       "municipio": "Magdalena",
-      "reviewedAt": "2026-09-11",
+      "reviewedAt": "2026-10-04",
       "searchedThisRound": true,
-      "status": "access_incomplete",
-      "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "status": "comparable_account",
+      "message": "Cuenta oficial incorporada y conciliada. Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
       "providedUrl": "https://www.magdalena.gob.ar/?q=transparencia-publica",
-      "accountUrl": null,
-      "latestPeriodEnd": null,
-      "comparablePeriodEnd": null,
+      "accountUrl": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
+      "latestPeriodEnd": "2026-06-30",
+      "comparablePeriodEnd": "2026-06-30",
       "retrievedPdfCount": 0,
       "checkedPages": [
         {
@@ -2511,13 +2511,13 @@
     {
       "id": "06547",
       "municipio": "Monte",
-      "reviewedAt": "2026-09-11",
+      "reviewedAt": "2026-10-04",
       "searchedThisRound": true,
-      "status": "account_not_verified",
-      "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "status": "other_period",
+      "message": "Cuenta oficial incorporada y conciliada. El portal repite el mismo archivo bajo primer trimestre y primer semestre. El PDF termina el 31/03/2026: se incorpora sólo ese trimestre, fuera del ranking semestral.",
       "providedUrl": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
-      "accountUrl": null,
-      "latestPeriodEnd": null,
+      "accountUrl": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
+      "latestPeriodEnd": "2026-03-31",
       "comparablePeriodEnd": null,
       "retrievedPdfCount": 1,
       "checkedPages": [
@@ -2554,14 +2554,14 @@
     {
       "id": "06553",
       "municipio": "Monte Hermoso",
-      "reviewedAt": "2026-09-11",
+      "reviewedAt": "2026-10-04",
       "searchedThisRound": true,
-      "status": "account_not_verified",
-      "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "status": "comparable_account",
+      "message": "Cuenta oficial incorporada y conciliada. Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
       "providedUrl": "https://montehermoso.gov.ar/sitio/",
-      "accountUrl": null,
-      "latestPeriodEnd": null,
-      "comparablePeriodEnd": null,
+      "accountUrl": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
+      "latestPeriodEnd": "2026-06-30",
+      "comparablePeriodEnd": "2026-06-30",
       "retrievedPdfCount": 0,
       "checkedPages": [
         {
@@ -3539,13 +3539,13 @@
     {
       "id": "06763",
       "municipio": "San Nicolás",
-      "reviewedAt": "2026-09-11",
+      "reviewedAt": "2026-10-04",
       "searchedThisRound": true,
-      "status": "account_not_verified",
-      "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "status": "other_period",
+      "message": "Cuenta oficial incorporada y conciliada. Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
       "providedUrl": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
-      "accountUrl": null,
-      "latestPeriodEnd": null,
+      "accountUrl": "https://www.sannicolasciudad.gob.ar/",
+      "latestPeriodEnd": "2025-12-31",
       "comparablePeriodEnd": null,
       "retrievedPdfCount": 0,
       "checkedPages": [
@@ -3938,14 +3938,14 @@
     {
       "id": "06861",
       "municipio": "Vicente López",
-      "reviewedAt": "2026-09-11",
+      "reviewedAt": "2026-10-04",
       "searchedThisRound": true,
-      "status": "account_not_verified",
-      "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "status": "comparable_account",
+      "message": "Cuenta oficial incorporada y conciliada. Recursos de capital sin importe en el cuadro: cero conciliado con ingresos corrientes e ingresos totales. CAIF contrastada con el archivo independiente del mismo período.",
       "providedUrl": "https://www.vicentelopez.gov.ar/",
-      "accountUrl": null,
-      "latestPeriodEnd": null,
-      "comparablePeriodEnd": null,
+      "accountUrl": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
+      "latestPeriodEnd": "2026-06-30",
+      "comparablePeriodEnd": "2026-06-30",
       "retrievedPdfCount": 0,
       "checkedPages": [
         {

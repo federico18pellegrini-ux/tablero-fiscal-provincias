@@ -141,6 +141,48 @@
       "state": "incorporated",
       "url": "https://www.sanpedro.net.ar/",
       "note": "CAIF incorporada y conciliada del 2026-01-01 al 2026-03-31."
+    },
+    {
+      "id": "06056",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2026-01-02 a 2026-06-30."
+    },
+    {
+      "id": "06861",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
+      "note": "Recursos de capital sin importe en el cuadro: cero conciliado con ingresos corrientes e ingresos totales. CAIF contrastada con el archivo independiente del mismo período. Período 2026-01-01 a 2026-06-30."
+    },
+    {
+      "id": "06553",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2026-01-02 a 2026-06-30."
+    },
+    {
+      "id": "06505",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2026-01-05 a 2026-06-30."
+    },
+    {
+      "id": "06547",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
+      "note": "El portal repite el mismo archivo bajo primer trimestre y primer semestre. El PDF termina el 31/03/2026: se incorpora sólo ese trimestre, fuera del ranking semestral. Período 2026-01-02 a 2026-03-31."
+    },
+    {
+      "id": "06763",
+      "topic": "fiscal",
+      "state": "incorporated",
+      "url": "https://www.sannicolasciudad.gob.ar/",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2025-01-02 a 2025-12-31."
     }
   ],
   "seriesReview": [
@@ -608,6 +650,26 @@
         "06770",
         "06875"
       ]
+    },
+    {
+      "date": "2026-10-04",
+      "round": "seguimiento",
+      "accounts_added": [
+        "06056",
+        "06505",
+        "06547",
+        "06553",
+        "06763",
+        "06861"
+      ],
+      "current_budgets_added": [
+        "06056",
+        "06505",
+        "06547",
+        "06553",
+        "06861"
+      ],
+      "period_conflict": "Monte: dos etiquetas del portal apuntan a un PDF de enero-marzo, no al semestre."
     }
   ]
 }

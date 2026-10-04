@@ -1,0 +1,200 @@
+[
+  {
+    "id": "06056",
+    "inicio": "2026-01-02",
+    "fin": "2026-06-30",
+    "method": "published_caif",
+    "scope": "Administración municipal. Incluye transferencias figurativas a organismos; no sumar nuevamente las cuentas del hospital o de otros receptores.",
+    "landingUrl": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
+    "amounts": {
+      "ingresos_corrientes": "161298741757.07",
+      "gastos_corrientes": "151447660118.76",
+      "ingresos_capital": "2194422229.56",
+      "gastos_capital": "13509221329.72",
+      "ingresos_totales": "163493163986.63",
+      "gastos_totales": "164956881448.48",
+      "resultado_financiero": "-1463717461.85",
+      "personal_devengado": "53918582956.51"
+    },
+    "documents": [
+      {
+        "url": "https://gobiernoabierto.bahia.gob.ar/wp-content/uploads/2026/07/Situacion-Economica-Financiera-al-30-06.pdf",
+        "sha256": "f32af68121a2acbf914dd1676a40d5e8492f227112aaa6130b2c94153acb146b",
+        "bytes": 345258,
+        "pages": 7,
+        "consultedPages": [
+          1
+        ],
+        "locator": "Página 1: Cuenta Ahorro Inversión Financiamiento, ingresos percibidos y gastos devengados; personal en columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras.",
+        "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06056.pdf"
+      }
+    ],
+    "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "06861",
+    "inicio": "2026-01-01",
+    "fin": "2026-06-30",
+    "method": "published_caif",
+    "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
+    "landingUrl": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
+    "amounts": {
+      "ingresos_corrientes": "167860564729.38",
+      "gastos_corrientes": "146516477682.32",
+      "ingresos_capital": "0.00",
+      "gastos_capital": "4510768936.23",
+      "ingresos_totales": "167860564729.38",
+      "gastos_totales": "151027246618.55",
+      "resultado_financiero": "16833318110.83",
+      "personal_devengado": "88535377171.38"
+    },
+    "documents": [
+      {
+        "url": "https://vicentelopez.opendata.junar.com/datasets/201678-transparencia-2026-situacion-economico-financiera-al-30062026.download/",
+        "sha256": "1f7615752d195cde3b49ddf97103bdbd369435ad3bc20a017daa269bb10f06a3",
+        "bytes": 296409,
+        "pages": 12,
+        "consultedPages": [
+          1
+        ],
+        "locator": "Página 1: Cuenta Ahorro Inversión Financiamiento, ingresos percibidos y gastos devengados; personal en columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras.",
+        "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06861.pdf"
+      }
+    ],
+    "note": "Recursos de capital sin importe en el cuadro: cero conciliado con ingresos corrientes e ingresos totales. CAIF contrastada con el archivo independiente del mismo período.",
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "06553",
+    "inicio": "2026-01-02",
+    "fin": "2026-06-30",
+    "method": "published_caif",
+    "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
+    "landingUrl": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
+    "amounts": {
+      "ingresos_corrientes": "21828740608.78",
+      "gastos_corrientes": "21714262101.08",
+      "ingresos_capital": "468045258.23",
+      "gastos_capital": "1386749669.04",
+      "ingresos_totales": "22296785867.01",
+      "gastos_totales": "23101011770.12",
+      "resultado_financiero": "-804225903.11",
+      "personal_devengado": "10964895005.55"
+    },
+    "documents": [
+      {
+        "url": "https://montehermoso.gov.ar/sitio/wp-content/uploads/SITUACION_ECO_FIN_1_SEMESTRE_2026.pdf",
+        "sha256": "31c0c6e7991b36b66b2f2e335c448104aab7388649f94953329129337e1c8032",
+        "bytes": 323601,
+        "pages": 4,
+        "consultedPages": [
+          1
+        ],
+        "locator": "Página 1: Cuenta Ahorro Inversión Financiamiento, ingresos percibidos y gastos devengados; personal en columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras.",
+        "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06553.pdf"
+      }
+    ],
+    "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "06505",
+    "inicio": "2026-01-05",
+    "fin": "2026-06-30",
+    "method": "published_caif",
+    "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
+    "landingUrl": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
+    "amounts": {
+      "ingresos_corrientes": "12403905995.44",
+      "gastos_corrientes": "10642201754.58",
+      "ingresos_capital": "1345458118.59",
+      "gastos_capital": "2030222359.20",
+      "ingresos_totales": "13749364114.03",
+      "gastos_totales": "12672424113.78",
+      "resultado_financiero": "1076940000.25",
+      "personal_devengado": "6524383384.15"
+    },
+    "documents": [
+      {
+        "url": "https://magdalena.gob.ar/wp-content/uploads/2026/07/Situacion-Economica-Financiera-2do-Trim.-2026.pdf",
+        "sha256": "e26cc56c7ec69bd42643727c6c87531128847da3fb084623b9898b66f56011f0",
+        "bytes": 300497,
+        "pages": 2,
+        "consultedPages": [
+          1
+        ],
+        "locator": "Página 1: Cuenta Ahorro Inversión Financiamiento, ingresos percibidos y gastos devengados; personal en columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras.",
+        "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06505.pdf"
+      }
+    ],
+    "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "06547",
+    "inicio": "2026-01-02",
+    "fin": "2026-03-31",
+    "method": "published_caif",
+    "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
+    "landingUrl": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
+    "amounts": {
+      "ingresos_corrientes": "2866212920.12",
+      "gastos_corrientes": "3003769214.53",
+      "ingresos_capital": "284439628.53",
+      "gastos_capital": "152844083.49",
+      "ingresos_totales": "3150652548.65",
+      "gastos_totales": "3156613298.02",
+      "resultado_financiero": "-5960749.37",
+      "personal_devengado": "1890796948.84"
+    },
+    "documents": [
+      {
+        "url": "https://drive.google.com/file/d/1NFOBRy1b3u_2jXYZtO4z7pstOEoo7gMk/view",
+        "sha256": "1eacdeecf12e49acfb8790fd3744bc2b2b4d561f603e2de76c1796c6c1fba173",
+        "bytes": 54095,
+        "pages": 4,
+        "consultedPages": [
+          1
+        ],
+        "locator": "Página 1: Cuenta Ahorro Inversión Financiamiento, ingresos percibidos y gastos devengados; personal en columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras.",
+        "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06547.pdf"
+      }
+    ],
+    "note": "El portal repite el mismo archivo bajo primer trimestre y primer semestre. El PDF termina el 31/03/2026: se incorpora sólo ese trimestre, fuera del ranking semestral.",
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "06763",
+    "inicio": "2025-01-02",
+    "fin": "2025-12-31",
+    "method": "published_caif",
+    "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
+    "landingUrl": "https://www.sannicolasciudad.gob.ar/",
+    "amounts": {
+      "ingresos_corrientes": "87993856370.05",
+      "gastos_corrientes": "69430420199.83",
+      "ingresos_capital": "808325921.13",
+      "gastos_capital": "11247508217.36",
+      "ingresos_totales": "88802182291.18",
+      "gastos_totales": "80677928417.19",
+      "resultado_financiero": "8124253873.99",
+      "personal_devengado": "12322852050.83"
+    },
+    "documents": [
+      {
+        "url": "https://www.sannicolasciudad.gob.ar/system/page_attachments/files/000/000/821/original/SITUACION_ECON_FINANC_2025.pdf",
+        "sha256": "de90967f5dac290994817b6bbba5f5e40adb2b1ac7297144f1173a701f0e72fd",
+        "bytes": 1356918,
+        "pages": 4,
+        "consultedPages": [
+          1
+        ],
+        "locator": "Página 1: Cuenta Ahorro Inversión Financiamiento, ingresos percibidos y gastos devengados; personal en columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras.",
+        "archive": "municipios/data/fiscal-sources/2026-10-04-seguimiento/06763.pdf"
+      }
+    ],
+    "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
+    "verifiedAt": "2026-10-04"
+  }
+]

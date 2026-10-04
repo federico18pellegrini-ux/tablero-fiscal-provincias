@@ -623,13 +623,11 @@
     {
       "id": "06056",
       "municipio": "Bahía Blanca",
-      "fiscalStatus": "Cuenta no verificada",
-      "comparable": false,
-      "latestFiscalEnd": null,
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -638,25 +636,23 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://gobiernoabierto.bahia.gob.ar/",
+      "portalReview": "2026-10-04",
+      "portalStatus": "Cuenta oficial incorporada y conciliada. Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
+      "portalUrl": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "budgetYear": 2026,
-      "budgetAsOf": "2026-01-09",
+      "budgetAsOf": "2026-06-30",
       "budgetOriginal2026": true,
-      "budgetCurrent2026": false,
-      "findings": [],
+      "budgetCurrent2026": true,
+      "findings": [
+        {
+          "id": "06056",
+          "topic": "fiscal",
+          "state": "incorporated",
+          "url": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
+          "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2026-01-02 a 2026-06-30."
+        }
+      ],
       "documentsNeeded": [
-        {
-          "topic": "Cuenta fiscal comparable",
-          "state": "Pendiente",
-          "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
-        },
         {
           "topic": "Saldo de tesorería",
           "state": "Pendiente",
@@ -5991,16 +5987,13 @@
     {
       "id": "06505",
       "municipio": "Magdalena",
-      "fiscalStatus": "Cuenta no verificada",
-      "comparable": false,
-      "latestFiscalEnd": null,
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -6009,29 +6002,27 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://www.magdalena.gob.ar/?q=transparencia-publica",
-      "budgetYear": null,
-      "budgetAsOf": null,
+      "portalReview": "2026-10-04",
+      "portalStatus": "Cuenta oficial incorporada y conciliada. Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
+      "portalUrl": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
+      "budgetYear": 2026,
+      "budgetAsOf": "2026-06-30",
       "budgetOriginal2026": false,
-      "budgetCurrent2026": false,
-      "findings": [],
-      "documentsNeeded": [
+      "budgetCurrent2026": true,
+      "findings": [
         {
-          "topic": "Cuenta fiscal comparable",
-          "state": "Pendiente",
-          "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
+          "id": "06505",
+          "topic": "fiscal",
+          "state": "incorporated",
+          "url": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
+          "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2026-01-05 a 2026-06-30."
+        }
+      ],
+      "documentsNeeded": [
         {
           "topic": "Presupuesto original 2026",
           "state": "Pendiente",
           "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
         },
         {
           "topic": "Saldo de tesorería",
@@ -6581,9 +6572,9 @@
     {
       "id": "06547",
       "municipio": "Monte",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2026-03-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
@@ -6591,7 +6582,6 @@
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -6600,24 +6590,27 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portalReview": "2026-10-04",
+      "portalStatus": "Cuenta oficial incorporada y conciliada. El portal repite el mismo archivo bajo primer trimestre y primer semestre. El PDF termina el 31/03/2026: se incorpora sólo ese trimestre, fuera del ranking semestral.",
+      "portalUrl": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "budgetYear": 2026,
-      "budgetAsOf": "2025-12-26",
+      "budgetAsOf": "2026-03-31",
       "budgetOriginal2026": true,
-      "budgetCurrent2026": false,
-      "findings": [],
+      "budgetCurrent2026": true,
+      "findings": [
+        {
+          "id": "06547",
+          "topic": "fiscal",
+          "state": "incorporated",
+          "url": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
+          "note": "El portal repite el mismo archivo bajo primer trimestre y primer semestre. El PDF termina el 31/03/2026: se incorpora sólo ese trimestre, fuera del ranking semestral. Período 2026-01-02 a 2026-03-31."
+        }
+      ],
       "documentsNeeded": [
         {
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
         },
         {
           "topic": "Saldo de tesorería",
@@ -6669,16 +6662,14 @@
     {
       "id": "06553",
       "municipio": "Monte Hermoso",
-      "fiscalStatus": "Cuenta no verificada",
-      "comparable": false,
-      "latestFiscalEnd": null,
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -6687,25 +6678,23 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://montehermoso.gov.ar/sitio/",
+      "portalReview": "2026-10-04",
+      "portalStatus": "Cuenta oficial incorporada y conciliada. Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
+      "portalUrl": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "budgetYear": 2026,
-      "budgetAsOf": "2025-12-23",
+      "budgetAsOf": "2026-06-30",
       "budgetOriginal2026": true,
-      "budgetCurrent2026": false,
-      "findings": [],
+      "budgetCurrent2026": true,
+      "findings": [
+        {
+          "id": "06553",
+          "topic": "fiscal",
+          "state": "incorporated",
+          "url": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
+          "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2026-01-02 a 2026-06-30."
+        }
+      ],
       "documentsNeeded": [
-        {
-          "topic": "Cuenta fiscal comparable",
-          "state": "Pendiente",
-          "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
-        },
         {
           "topic": "Saldo de tesorería",
           "state": "Pendiente",
@@ -9277,9 +9266,9 @@
     {
       "id": "06763",
       "municipio": "San Nicolás",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
@@ -9292,14 +9281,22 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portalReview": "2026-10-04",
+      "portalStatus": "Cuenta oficial incorporada y conciliada. Cuenta oficial conciliada al centavo. Se conserva el período del documento.",
+      "portalUrl": "https://www.sannicolasciudad.gob.ar/",
       "budgetYear": 2026,
       "budgetAsOf": "2025-11-27",
       "budgetOriginal2026": true,
       "budgetCurrent2026": false,
-      "findings": [],
+      "findings": [
+        {
+          "id": "06763",
+          "topic": "fiscal",
+          "state": "incorporated",
+          "url": "https://www.sannicolasciudad.gob.ar/",
+          "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2025-01-02 a 2025-12-31."
+        }
+      ],
       "documentsNeeded": [
         {
           "topic": "Cuenta fiscal comparable",
@@ -10390,13 +10387,11 @@
     {
       "id": "06861",
       "municipio": "Vicente López",
-      "fiscalStatus": "Cuenta no verificada",
-      "comparable": false,
-      "latestFiscalEnd": null,
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -10405,25 +10400,23 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://www.vicentelopez.gov.ar/",
+      "portalReview": "2026-10-04",
+      "portalStatus": "Cuenta oficial incorporada y conciliada. Recursos de capital sin importe en el cuadro: cero conciliado con ingresos corrientes e ingresos totales. CAIF contrastada con el archivo independiente del mismo período.",
+      "portalUrl": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "budgetYear": 2026,
-      "budgetAsOf": "2025-11-13",
+      "budgetAsOf": "2026-06-30",
       "budgetOriginal2026": true,
-      "budgetCurrent2026": false,
-      "findings": [],
+      "budgetCurrent2026": true,
+      "findings": [
+        {
+          "id": "06861",
+          "topic": "fiscal",
+          "state": "incorporated",
+          "url": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
+          "note": "Recursos de capital sin importe en el cuadro: cero conciliado con ingresos corrientes e ingresos totales. CAIF contrastada con el archivo independiente del mismo período. Período 2026-01-01 a 2026-06-30."
+        }
+      ],
       "documentsNeeded": [
-        {
-          "topic": "Cuenta fiscal comparable",
-          "state": "Pendiente",
-          "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
-        },
         {
           "topic": "Saldo de tesorería",
           "state": "Pendiente",
@@ -10701,7 +10694,7 @@
   "topics": [
     {
       "topic": "Cuenta fiscal comparable",
-      "available": 80,
+      "available": 84,
       "total": 135
     },
     {
@@ -10711,7 +10704,7 @@
     },
     {
       "topic": "Presupuesto vigente 2026",
-      "available": 91,
+      "available": 96,
       "total": 135
     },
     {
@@ -10938,6 +10931,48 @@
         "state": "incorporated",
         "url": "https://www.sanpedro.net.ar/",
         "note": "CAIF incorporada y conciliada del 2026-01-01 al 2026-03-31."
+      },
+      {
+        "id": "06056",
+        "topic": "fiscal",
+        "state": "incorporated",
+        "url": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
+        "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2026-01-02 a 2026-06-30."
+      },
+      {
+        "id": "06861",
+        "topic": "fiscal",
+        "state": "incorporated",
+        "url": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
+        "note": "Recursos de capital sin importe en el cuadro: cero conciliado con ingresos corrientes e ingresos totales. CAIF contrastada con el archivo independiente del mismo período. Período 2026-01-01 a 2026-06-30."
+      },
+      {
+        "id": "06553",
+        "topic": "fiscal",
+        "state": "incorporated",
+        "url": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
+        "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2026-01-02 a 2026-06-30."
+      },
+      {
+        "id": "06505",
+        "topic": "fiscal",
+        "state": "incorporated",
+        "url": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
+        "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2026-01-05 a 2026-06-30."
+      },
+      {
+        "id": "06547",
+        "topic": "fiscal",
+        "state": "incorporated",
+        "url": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
+        "note": "El portal repite el mismo archivo bajo primer trimestre y primer semestre. El PDF termina el 31/03/2026: se incorpora sólo ese trimestre, fuera del ranking semestral. Período 2026-01-02 a 2026-03-31."
+      },
+      {
+        "id": "06763",
+        "topic": "fiscal",
+        "state": "incorporated",
+        "url": "https://www.sannicolasciudad.gob.ar/",
+        "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2025-01-02 a 2025-12-31."
       }
     ],
     "seriesReview": [
@@ -10976,6 +11011,26 @@
           "06770",
           "06875"
         ]
+      },
+      {
+        "date": "2026-10-04",
+        "round": "seguimiento",
+        "accounts_added": [
+          "06056",
+          "06505",
+          "06547",
+          "06553",
+          "06763",
+          "06861"
+        ],
+        "current_budgets_added": [
+          "06056",
+          "06505",
+          "06547",
+          "06553",
+          "06861"
+        ],
+        "period_conflict": "Monte: dos etiquetas del portal apuntan a un PDF de enero-marzo, no al semestre."
       }
     ]
   },
@@ -12504,10 +12559,10 @@
       "id": "06056",
       "municipio": "Bahía Blanca",
       "tema": "Cuenta fiscal comparable",
-      "estado": "Pendiente",
+      "estado": "Incorporado",
       "periodo": "enero–junio 2026",
-      "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "documentoNecesario": "",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12517,17 +12572,17 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
       "id": "06056",
       "municipio": "Bahía Blanca",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "2026-01-09",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "estado": "Incorporado",
+      "periodo": "2026-06-30",
+      "documentoNecesario": "",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12537,7 +12592,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12547,7 +12602,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12557,7 +12612,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12567,7 +12622,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12577,7 +12632,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12587,7 +12642,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12597,7 +12652,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12607,7 +12662,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12617,7 +12672,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12627,7 +12682,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12637,7 +12692,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12647,7 +12702,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12657,7 +12712,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12667,7 +12722,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12677,7 +12732,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -12687,7 +12742,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://gobiernoabierto.bahia.gob.ar/",
+      "portal": "https://gobiernoabierto.bahia.gob.ar/economicos/fiscal/",
       "revision": "2026-10-04"
     },
     {
@@ -25424,10 +25479,10 @@
       "id": "06505",
       "municipio": "Magdalena",
       "tema": "Cuenta fiscal comparable",
-      "estado": "Pendiente",
+      "estado": "Incorporado",
       "periodo": "enero–junio 2026",
-      "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "documentoNecesario": "",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25435,19 +25490,19 @@
       "municipio": "Magdalena",
       "tema": "Presupuesto original 2026",
       "estado": "Pendiente",
-      "periodo": "",
+      "periodo": "2026",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
       "id": "06505",
       "municipio": "Magdalena",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "estado": "Incorporado",
+      "periodo": "2026-06-30",
+      "documentoNecesario": "",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25457,7 +25512,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25467,7 +25522,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25477,7 +25532,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25487,7 +25542,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25497,7 +25552,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25507,7 +25562,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25517,7 +25572,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25527,7 +25582,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25537,7 +25592,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25547,7 +25602,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25557,7 +25612,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25567,7 +25622,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25577,7 +25632,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25587,7 +25642,7 @@
       "estado": "Reservado o sin cifra de origen",
       "periodo": "2024-12",
       "documentoNecesario": "Cifra publicada por localización BCRA/DPE; las reservas estadísticas no se completan con cero.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25597,7 +25652,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25607,7 +25662,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://www.magdalena.gob.ar/?q=transparencia-publica",
+      "portal": "https://magdalena.gob.ar/transparencia-fiscal/ejecucion-gastos-2do-trim-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -26757,7 +26812,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26767,17 +26822,17 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
       "id": "06547",
       "municipio": "Monte",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "2025-12-26",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "estado": "Incorporado",
+      "periodo": "2026-03-31",
+      "documentoNecesario": "",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26787,7 +26842,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26797,7 +26852,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26807,7 +26862,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26817,7 +26872,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26827,7 +26882,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26837,7 +26892,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26847,7 +26902,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26857,7 +26912,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26867,7 +26922,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26877,7 +26932,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26887,7 +26942,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26897,7 +26952,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26907,7 +26962,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26917,7 +26972,7 @@
       "estado": "Reservado o sin cifra de origen",
       "periodo": "2024-12",
       "documentoNecesario": "Cifra publicada por localización BCRA/DPE; las reservas estadísticas no se completan con cero.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26927,7 +26982,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
@@ -26937,17 +26992,17 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://monte.gob.ar/transparenciainstitucional/presupuesto/",
+      "portal": "https://monte.gob.ar/transparenciainstitucional/situacioneconomica/",
       "revision": "2026-10-04"
     },
     {
       "id": "06553",
       "municipio": "Monte Hermoso",
       "tema": "Cuenta fiscal comparable",
-      "estado": "Pendiente",
+      "estado": "Incorporado",
       "periodo": "enero–junio 2026",
-      "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "documentoNecesario": "",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -26957,17 +27012,17 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
       "id": "06553",
       "municipio": "Monte Hermoso",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "2025-12-23",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "estado": "Incorporado",
+      "periodo": "2026-06-30",
+      "documentoNecesario": "",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -26977,7 +27032,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -26987,7 +27042,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -26997,7 +27052,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27007,7 +27062,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27017,7 +27072,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27027,7 +27082,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27037,7 +27092,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27047,7 +27102,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27057,7 +27112,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27067,7 +27122,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27077,7 +27132,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27087,7 +27142,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27097,7 +27152,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27107,7 +27162,7 @@
       "estado": "Reservado o sin cifra de origen",
       "periodo": "2024-12",
       "documentoNecesario": "Cifra publicada por localización BCRA/DPE; las reservas estadísticas no se completan con cero.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27117,7 +27172,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -27127,7 +27182,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://montehermoso.gov.ar/sitio/",
+      "portal": "https://montehermoso.gov.ar/sitio/institucional/ejercicios-contables/",
       "revision": "2026-10-04"
     },
     {
@@ -33217,7 +33272,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33227,7 +33282,7 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33237,7 +33292,7 @@
       "estado": "Pendiente",
       "periodo": "2025-11-27",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33247,7 +33302,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33257,7 +33312,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33267,7 +33322,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33277,7 +33332,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33287,7 +33342,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33297,7 +33352,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33307,7 +33362,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33317,7 +33372,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33327,7 +33382,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33337,7 +33392,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33347,7 +33402,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33357,7 +33412,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33367,7 +33422,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33377,7 +33432,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33387,7 +33442,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -33397,7 +33452,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://www.sannicolasciudad.gob.ar/areas/economia-y-finanzas/presupuesto",
+      "portal": "https://www.sannicolasciudad.gob.ar/",
       "revision": "2026-10-04"
     },
     {
@@ -35874,10 +35929,10 @@
       "id": "06861",
       "municipio": "Vicente López",
       "tema": "Cuenta fiscal comparable",
-      "estado": "Pendiente",
+      "estado": "Incorporado",
       "periodo": "enero–junio 2026",
-      "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "documentoNecesario": "",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35887,17 +35942,17 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
       "id": "06861",
       "municipio": "Vicente López",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "2025-11-13",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "estado": "Incorporado",
+      "periodo": "2026-06-30",
+      "documentoNecesario": "",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35907,7 +35962,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35917,7 +35972,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35927,7 +35982,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35937,7 +35992,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35947,7 +36002,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35957,7 +36012,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35967,7 +36022,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35977,7 +36032,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35987,7 +36042,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -35997,7 +36052,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -36007,7 +36062,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -36017,7 +36072,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -36027,7 +36082,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -36037,7 +36092,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -36047,7 +36102,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
@@ -36057,7 +36112,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://www.vicentelopez.gov.ar/",
+      "portal": "https://vicentelopez.opendata.junar.com/dashboards/21681/transparencia-fiscal-municipal/",
       "revision": "2026-10-04"
     },
     {
