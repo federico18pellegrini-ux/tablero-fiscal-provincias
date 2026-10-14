@@ -1,10 +1,10 @@
 {
   "version": 3,
-  "generated": "2026-10-04",
+  "generated": "2026-10-14",
   "input_sha256": {
-    "municipios/data/dashboard.json": "f9559f106f0645b84942618569ab81b238eccfe0634d2c31a2937b50efddc95c",
+    "municipios/data/dashboard.json": "4a1c8260a1a72e5f246baaf43166ff04217498cf56129b7db0feb7143d5a78ee",
     "municipios/data/geografia_original.geojson": "877e30549e9d73487828d158584981635f7746739412669656bb3dfa4645173f",
-    "municipios/data/fuentes.csv": "e2bc33542f7369e29ae8b736c3e3fff8ed92b70388fe401bf55bcdada2d91456",
+    "municipios/data/fuentes.csv": "e9d0cfd4f025cfe2e81a1f3f75ce5e69e2829df7172da0a0e3a9825fe8f72d97",
     "scripts_export_municipal_reports.py": "cf1413936b211e480fc32a97f46e018c25f20da76bc95d002f6c36804ede3e6a",
     "scripts_municipal_editorial.py": "71d2ff36b257b2c2d5812b72adaa7386309b680d68b0de3a6eb6edd89080ff76",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
@@ -17,7 +17,7 @@
       "file": "informe-06007.pdf",
       "pages": 6,
       "bytes": 138047,
-      "sha256": "0ff438ae87f96905dcf1c69baee3e66eb39e242bed22aa8c7444daf4a45578ef",
+      "sha256": "74df525de0162b43c74476eb6e9cd3d1318aa5c69e33c25ee757fcb44dce7dcd",
       "sections": [
         "lectura",
         "cuentas",
@@ -92,7 +92,7 @@
         "file": "informe-06007-breve.pdf",
         "pages": 3,
         "bytes": 70271,
-        "sha256": "f72733065288b08ff44a84859e6e5d5dc3d67086ce6eb2fa369db1864c6f466d"
+        "sha256": "c8e21f5c17edb03ecc7397537f2d866a73ec305639297fd3f8ef7467d9ca5e91"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -106,7 +106,7 @@
       "file": "informe-06014.pdf",
       "pages": 6,
       "bytes": 138073,
-      "sha256": "ba72c08138acf90b5257d7395a56645e38432529ee78b6c6c9f87a017f06e844",
+      "sha256": "40cb06dff20b20a1de7ff752ac2c531c11558e81019639ef23493ff470007f7a",
       "sections": [
         "lectura",
         "cuentas",
@@ -181,7 +181,7 @@
         "file": "informe-06014-breve.pdf",
         "pages": 3,
         "bytes": 70261,
-        "sha256": "2ac2364ecc93b9c61a6b6182569f21121223cc9894869b00cd992bf6a8e45718"
+        "sha256": "eee0e1ed5d8ead9d456a02e319a366ef5146a06a5db5db875c38ee422e8c171f"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -195,7 +195,7 @@
       "file": "informe-06021.pdf",
       "pages": 5,
       "bytes": 116229,
-      "sha256": "03fc0a96b4286d4f94ef38dda80c1d93205202fec31f5ee4141c344dd24d44fb",
+      "sha256": "4c352b9d39ca777687b816dc4980c984b98cea6b90a03298a8221a4e28a1a4a2",
       "sections": [
         "lectura",
         "cuentas",
@@ -259,7 +259,7 @@
         "file": "informe-06021-breve.pdf",
         "pages": 3,
         "bytes": 70665,
-        "sha256": "4b6b9a240ea54b9241ad05805691c5d5611295779f28412904cc093f8b5fa957"
+        "sha256": "41fbee24d94f2179608bba9a392c15001f81d9849902628de8b79a85480853d2"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -272,8 +272,8 @@
       "municipality": "Almirante Brown",
       "file": "informe-06028.pdf",
       "pages": 6,
-      "bytes": 136358,
-      "sha256": "e718038be8109cf33a47da344046eae16367a17cd1849bfee02add03d9137911",
+      "bytes": 137854,
+      "sha256": "67436cfc5c011a0859af1c8b218596b0f4b8679f908c25763b904f9255d9ffae",
       "sections": [
         "lectura",
         "cuentas",
@@ -347,8 +347,8 @@
       "brief": {
         "file": "informe-06028-breve.pdf",
         "pages": 3,
-        "bytes": 68540,
-        "sha256": "872962ae15440e3a9de3edd5c3da37f2c30c24abaaab62d546b5c4c207c6ce0a"
+        "bytes": 70032,
+        "sha256": "2cfda0963f91cd84e5a7f45bbadbcae6bf0a57b1721622cd1a8ef62d8dc71988"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -362,7 +362,7 @@
       "file": "informe-06077.pdf",
       "pages": 6,
       "bytes": 138270,
-      "sha256": "574a52a7bf2f659dea23aade33f90557f9b0c5ac85ddee86976164ff89f3d15e",
+      "sha256": "c2b4049af644e1a00fdf8f55fb83a954dcfce44082aad42366e3555cb7701572",
       "sections": [
         "lectura",
         "cuentas",
@@ -437,7 +437,7 @@
         "file": "informe-06077-breve.pdf",
         "pages": 3,
         "bytes": 70473,
-        "sha256": "48c4bfdb8429b84c6ce538773661beb63fbde86d13c964ab8b0e02dc93940361"
+        "sha256": "10be989c1517531a7082f185123d5633ba2fbe34b8c967bc9753a2113ee03708"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -451,7 +451,7 @@
       "file": "informe-06035.pdf",
       "pages": 6,
       "bytes": 138208,
-      "sha256": "6d725617acb73415caed4cd859c3e26b449beb2ddbb060ea104adce923a6e5da",
+      "sha256": "608ed77ca64c415836aca3fd793204636da8a5f367a50f90457c173a07664488",
       "sections": [
         "lectura",
         "cuentas",
@@ -526,7 +526,7 @@
         "file": "informe-06035-breve.pdf",
         "pages": 3,
         "bytes": 70398,
-        "sha256": "d89927ba2287e56b80d6a130c428b160f6b6049b61612cae4900f70b043ff95d"
+        "sha256": "f742931e668ad45bb01e97a22e61cb35741afadd576044cd0cdeab506744a3fb"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -539,8 +539,8 @@
       "municipality": "Ayacucho",
       "file": "informe-06042.pdf",
       "pages": 6,
-      "bytes": 138097,
-      "sha256": "e54b3c41caddde549f3c3178e7a89bc7e330b0dfba2000d87640887c111ccc5e",
+      "bytes": 138096,
+      "sha256": "cd871dffd10c8b514aa570dde0cdf5b3d6e845a54cb1df840de55aad980233a4",
       "sections": [
         "lectura",
         "cuentas",
@@ -614,8 +614,8 @@
       "brief": {
         "file": "informe-06042-breve.pdf",
         "pages": 3,
-        "bytes": 71580,
-        "sha256": "1dee028c54036a33d70812462a2806d31b934aa3a42cd6956c35da4a9057a379"
+        "bytes": 71579,
+        "sha256": "f78e0263b45d3ae0231b470db21f64f54af892e85afdaec367e722a94bbc33d4"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -629,7 +629,7 @@
       "file": "informe-06049.pdf",
       "pages": 6,
       "bytes": 138657,
-      "sha256": "13f3ee067e39eb45512af7d3f72e634e9fda8bfd8dab1b78861ee9f87ecdd92e",
+      "sha256": "c043b57d427ed42837aa3fa6165afbe865cced06975611d049695a3f013c90b4",
       "sections": [
         "lectura",
         "cuentas",
@@ -704,7 +704,7 @@
         "file": "informe-06049-breve.pdf",
         "pages": 3,
         "bytes": 70876,
-        "sha256": "4ae7f3ec9fa2c192fcac589aca27de57ea9417bb744bee55db050868a93a1505"
+        "sha256": "a92759d6ef0ab350265597dbb89481dbad147cc6c4b3451fe3d0b24b222edc1b"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -717,8 +717,8 @@
       "municipality": "Bahía Blanca",
       "file": "informe-06056.pdf",
       "pages": 6,
-      "bytes": 138818,
-      "sha256": "d7006525b15dc3f57a7757e411a072b68c71827f48dd5aa80ed2f3e7320ccfb5",
+      "bytes": 138819,
+      "sha256": "64f19f05222cec606a0c314a6436d1e2c6ef115b874ae4031fdb4817b5c48b97",
       "sections": [
         "lectura",
         "cuentas",
@@ -792,8 +792,8 @@
       "brief": {
         "file": "informe-06056-breve.pdf",
         "pages": 3,
-        "bytes": 70908,
-        "sha256": "2b7d9a44dbe7b36a9bac21488524c06d1dfe3bc45b5a6a8f7e6d722b64875126"
+        "bytes": 70909,
+        "sha256": "7be688afc33305594129386151657d9454b41a9004eba1519f4ffcbf3193445d"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -807,7 +807,7 @@
       "file": "informe-06063.pdf",
       "pages": 6,
       "bytes": 138102,
-      "sha256": "ec65a92a29c23b7ee9eec7e4097478dff45ff6b5d4f66ea26d7bddb0b9f577d2",
+      "sha256": "946ee28e62ba8e28e50172393d20f6ddfec07188f55f8835a83f6f8cbbb112e6",
       "sections": [
         "lectura",
         "cuentas",
@@ -882,7 +882,7 @@
         "file": "informe-06063-breve.pdf",
         "pages": 3,
         "bytes": 70304,
-        "sha256": "bc85f2776392eed981fca374065a52d61996c512a5b2b92daa3aee2d84c6f126"
+        "sha256": "eb68cd1be910343066b9be32f7d6a4a26334a7cfbbd19d84776ca78a528b0fef"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -896,7 +896,7 @@
       "file": "informe-06070.pdf",
       "pages": 6,
       "bytes": 138136,
-      "sha256": "6274d85d4d04d6060e16d37d37a534a22e724e69bf63fc5c107300eb7c8a8b9b",
+      "sha256": "bcd02eb02b63e4c7322aebb6b3f5703df1ee511c04e00d7c1fb7c1fcb6e157de",
       "sections": [
         "lectura",
         "cuentas",
@@ -971,7 +971,7 @@
         "file": "informe-06070-breve.pdf",
         "pages": 3,
         "bytes": 70355,
-        "sha256": "3cf3ef290ee34beffd17eb1afb6fb8d28227a9298c992f187dc904df81f9418a"
+        "sha256": "9b272d81dcacee5a34347f75743fb455875b066efc68b78fbbbb924f789a4eae"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -984,8 +984,8 @@
       "municipality": "Benito Juárez",
       "file": "informe-06084.pdf",
       "pages": 6,
-      "bytes": 138235,
-      "sha256": "79f725690e36c8b3362e96e4a66031e03f1b86f03f606c236cd933530c7fad50",
+      "bytes": 138232,
+      "sha256": "a04735296c784cb6ef2fff78f72f230a1045c7d24628a4cae8d6917a51a29357",
       "sections": [
         "lectura",
         "cuentas",
@@ -1059,8 +1059,8 @@
       "brief": {
         "file": "informe-06084-breve.pdf",
         "pages": 3,
-        "bytes": 70349,
-        "sha256": "954450b809a7d5ee6be8fb84b21cee3f1433e3ed74f0422761781b8b41716e45"
+        "bytes": 70346,
+        "sha256": "9bb0c24f06ade2ca5f2b144e469312b7d617d38b03d8ef632b3fb8a60377723c"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1073,8 +1073,8 @@
       "municipality": "Berazategui",
       "file": "informe-06091.pdf",
       "pages": 6,
-      "bytes": 136970,
-      "sha256": "7f82cb7ba10fb06ece7fdb5b4714e38dd7d5956d062801635446188a8126a8fd",
+      "bytes": 138326,
+      "sha256": "5ab6b5baf694088e98cb3e46c847d55450966afbed6ac82abed78a99fae4971b",
       "sections": [
         "lectura",
         "cuentas",
@@ -1148,8 +1148,8 @@
       "brief": {
         "file": "informe-06091-breve.pdf",
         "pages": 3,
-        "bytes": 69175,
-        "sha256": "a6f89f8869b3601651b63d46a72a6f0c2ddcc07edeb3c35cfb0c6a64d509d6d6"
+        "bytes": 70527,
+        "sha256": "81178d246185d09abae50d32f7383bd6c6720fb8a5e963af19b4ef3f17ba71f6"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1163,7 +1163,7 @@
       "file": "informe-06098.pdf",
       "pages": 6,
       "bytes": 138350,
-      "sha256": "1348576b7292890d494b0486abf9a00ad233656eb129308ab953a6007b1ec599",
+      "sha256": "786438cb5b13d932534e3b33806bb3256cd1a73e7e2ebd1915fbd81b008ba11b",
       "sections": [
         "lectura",
         "cuentas",
@@ -1238,7 +1238,7 @@
         "file": "informe-06098-breve.pdf",
         "pages": 3,
         "bytes": 70575,
-        "sha256": "ce720399c5881bbbf388cff1e8def9f028f417057df9010de245cf9a5a4eb36e"
+        "sha256": "bda88d88a89a8de955664d167dad4efc6cc2972d95cf0fa6ba7c2a95c594e387"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1252,7 +1252,7 @@
       "file": "informe-06105.pdf",
       "pages": 6,
       "bytes": 138458,
-      "sha256": "d958701783b04b78b420b56a0a1c7fb3066da86e491411e2655967faa7790736",
+      "sha256": "4ef4be339f5b14f790723238afb8778f94ee64ee955236851c74246fdab1ed5b",
       "sections": [
         "lectura",
         "cuentas",
@@ -1327,7 +1327,7 @@
         "file": "informe-06105-breve.pdf",
         "pages": 3,
         "bytes": 70588,
-        "sha256": "efe9ad8fcc4f79295d635314068f3167a38fbcce4d4f41a213badce8aa5cb1a0"
+        "sha256": "df662c98becd68dd39338e46a486e1796b17d35b3610afc0fd6ad77925857c04"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1341,7 +1341,7 @@
       "file": "informe-06112.pdf",
       "pages": 6,
       "bytes": 138778,
-      "sha256": "041323c6fafcab8cd6183bf3e95115e2dd7da2247cbe3f1cb5d3f4eed518651e",
+      "sha256": "2e7bf33b3518efab76636f9ff05d7e7f209296ac2122b43d846c9eb66e1ea43d",
       "sections": [
         "lectura",
         "cuentas",
@@ -1416,7 +1416,7 @@
         "file": "informe-06112-breve.pdf",
         "pages": 3,
         "bytes": 70996,
-        "sha256": "08c146c77d8b50027294dc69e5665569cb8741772fe40477000fabac025a911a"
+        "sha256": "772f50ce1da58573e67af2bd9d68047c5907a1d993d489bb77daa064311aa839"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1430,7 +1430,7 @@
       "file": "informe-06119.pdf",
       "pages": 6,
       "bytes": 138074,
-      "sha256": "f7bd23e27940fb020e3ee132a72029057c3efb41150a32d52918fb07454f1b74",
+      "sha256": "0561f197fe93f954d2f3150dc0b33b8f1c75538c003b9fe88f97b2777625194b",
       "sections": [
         "lectura",
         "cuentas",
@@ -1505,7 +1505,7 @@
         "file": "informe-06119-breve.pdf",
         "pages": 3,
         "bytes": 70294,
-        "sha256": "1a2cec9ec6b6995a4b7a6e9e84c27e9dd7c074305af0ff22394bb27f186e5a05"
+        "sha256": "4ca1f5b67617b2da432f396fb0863abc84d48f579945a48d8817c16fc006606b"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1519,7 +1519,7 @@
       "file": "informe-06126.pdf",
       "pages": 6,
       "bytes": 138119,
-      "sha256": "e27b20ccf76b1e1dde3ebb9d908438c570ec844748a7e2daf0b2f1238e0d8588",
+      "sha256": "609f8ed5684042daa98b92061ad4a2666ad904326cfd9d7081acbec6d123c2e0",
       "sections": [
         "lectura",
         "cuentas",
@@ -1594,7 +1594,7 @@
         "file": "informe-06126-breve.pdf",
         "pages": 3,
         "bytes": 70325,
-        "sha256": "9df67b57fd478babc016cfa5a9613caca4b5f616454e45262d21c815d19f116b"
+        "sha256": "d38634fb29098c3df270fe8b3909d506e2c496a20cbc1a2b5d4ae1ce0654d8ec"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1607,8 +1607,8 @@
       "municipality": "Cañuelas",
       "file": "informe-06134.pdf",
       "pages": 6,
-      "bytes": 136590,
-      "sha256": "b968c23fdbc0493d824e9d2b20dc3dcc65e9a8ecc2c57c107b81fc4458da0327",
+      "bytes": 136589,
+      "sha256": "d24adf24672fb1170e9ac6be3545db5aa2a611c9c4a196797da566f5390b5f4b",
       "sections": [
         "lectura",
         "cuentas",
@@ -1682,8 +1682,8 @@
       "brief": {
         "file": "informe-06134-breve.pdf",
         "pages": 3,
-        "bytes": 68547,
-        "sha256": "c6385a190402a358dbda46da2946c12882545ecd905fade4550fae02e9fb7f3e"
+        "bytes": 68546,
+        "sha256": "a3c19ec41589e9101f6e0e1c0d661414e9d7e948792aeb5f62c06bd2df00e3fb"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1697,7 +1697,7 @@
       "file": "informe-06140.pdf",
       "pages": 6,
       "bytes": 138190,
-      "sha256": "fea6a663d5727db10e05c4ff17c5732c6a17d773bd6260aec51172e1b214fa3d",
+      "sha256": "45b4882013a1292551367f5a26d628bd9977aa09a1015f11871818ff4ad2a706",
       "sections": [
         "lectura",
         "cuentas",
@@ -1772,7 +1772,7 @@
         "file": "informe-06140-breve.pdf",
         "pages": 3,
         "bytes": 70293,
-        "sha256": "86ca07fe714a0cacf7ce0bad001a4f9a9df3aacc398203937d73330df6f699e1"
+        "sha256": "cfef4be9a06bfdbe827510a45327db4d63153bac3ac57efa9fbc8f3658dd5405"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1786,7 +1786,7 @@
       "file": "informe-06147.pdf",
       "pages": 6,
       "bytes": 138160,
-      "sha256": "0bd16e18848432647a46a5b6e25b128365a19458855b732630e3300c3bc3732d",
+      "sha256": "af79d5a79bc574c8249dcfaf1ec1363acfda925e37195729fcb771b99df40609",
       "sections": [
         "lectura",
         "cuentas",
@@ -1861,7 +1861,7 @@
         "file": "informe-06147-breve.pdf",
         "pages": 3,
         "bytes": 70373,
-        "sha256": "2e1c63a7686f3a90fe3ad3668da1bbb765cfeb50aa33f167d7c083f55922df44"
+        "sha256": "9b1d04f61160e57e7cfe2fac66f39a9979f49ff2fced70a831cc536957ad0b09"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1875,7 +1875,7 @@
       "file": "informe-06154.pdf",
       "pages": 6,
       "bytes": 138301,
-      "sha256": "4f18906fc5d3985fe4e53673bdad43fd1d77c863b0d4db69a612fcb5366b43c5",
+      "sha256": "32dce55265a87d52c285fa89963bf913c4465c93c4fa360ed0ab9fff7a05e09c",
       "sections": [
         "lectura",
         "cuentas",
@@ -1950,7 +1950,7 @@
         "file": "informe-06154-breve.pdf",
         "pages": 3,
         "bytes": 70501,
-        "sha256": "47fe509af46290f7dbabe42809c8a34b48e08d8f9368b51175ff2b1b6e390883"
+        "sha256": "3decd18429a864ea52466aa1c4319251ac90bf272ed7d94af2a242a5dbcc6779"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -1963,8 +1963,8 @@
       "municipality": "Carmen de Areco",
       "file": "informe-06161.pdf",
       "pages": 6,
-      "bytes": 138784,
-      "sha256": "eb2c34b741525e11c2dec9d6edf7f614731d108d85479cc630985eb5fe5c0634",
+      "bytes": 138783,
+      "sha256": "732a01c5f98a6305a8f6f4896212e5a7bc844911241c74261296621fdbcc7bb5",
       "sections": [
         "lectura",
         "cuentas",
@@ -2038,8 +2038,8 @@
       "brief": {
         "file": "informe-06161-breve.pdf",
         "pages": 3,
-        "bytes": 70998,
-        "sha256": "01e1b96072587a71f9db688160175ecf840cba72f229513f355eb04dbf9e3b25"
+        "bytes": 70997,
+        "sha256": "ccada005704fe7bce510a5ce5a5047496a9fb30608838cd7a3bab09a29ce502b"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2052,8 +2052,8 @@
       "municipality": "Castelli",
       "file": "informe-06168.pdf",
       "pages": 5,
-      "bytes": 114645,
-      "sha256": "be07572178167310c9206f84a091f25e55990aa3462acf1385b1f9bac7ab6071",
+      "bytes": 116370,
+      "sha256": "5b45247bb16c2edee11f6927886e47b780977a276cd17e4eb0a05b18ac21f559",
       "sections": [
         "lectura",
         "cuentas",
@@ -2116,8 +2116,8 @@
       "brief": {
         "file": "informe-06168-breve.pdf",
         "pages": 3,
-        "bytes": 69109,
-        "sha256": "10dc33b2b7f9881976b0919f64cf514e20162eb8e57304568f145dbc0f1ab41d"
+        "bytes": 70828,
+        "sha256": "39700e8dbf2121907643d1721474bbc4f4550a7608122b2e680f5b8d66ce60fc"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2131,7 +2131,7 @@
       "file": "informe-06210.pdf",
       "pages": 6,
       "bytes": 138217,
-      "sha256": "3d08fab44bd10bb2a22e9f12629d16fdaedd73f3979ed7b2a2dbbdd119555ee2",
+      "sha256": "2c07e74a95045c2cfe4c86ab26f8017ef9b30a51334ddfbfe5685c9b3641f0f1",
       "sections": [
         "lectura",
         "cuentas",
@@ -2206,7 +2206,7 @@
         "file": "informe-06210-breve.pdf",
         "pages": 3,
         "bytes": 70434,
-        "sha256": "45b98569b80b5d6e5d4b187629318c196d0c0ca1dba421211a3465f7d1cf1578"
+        "sha256": "741d1808da1c1f90fdda7934919b36786bcb675d3feb5e66b5b7414539b31715"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2219,8 +2219,8 @@
       "municipality": "Chascomús",
       "file": "informe-06218.pdf",
       "pages": 6,
-      "bytes": 138307,
-      "sha256": "40b4d7bd5f4cce4360b09a4ac36a8bf2ef261a81ec0c9b4458b3f3a549ad3b05",
+      "bytes": 138305,
+      "sha256": "bc78da1dd02dc01e7a0790dd666acfc00ff2fdacae5005c3a3a17cebdb0b7769",
       "sections": [
         "lectura",
         "cuentas",
@@ -2294,8 +2294,8 @@
       "brief": {
         "file": "informe-06218-breve.pdf",
         "pages": 3,
-        "bytes": 70445,
-        "sha256": "058a59b573c235c140611044abd842bffc67564533dfcabac36f86bb7122f575"
+        "bytes": 70443,
+        "sha256": "56590ceef841911d454c572559108706460003307cc58c3d9576919ff0414bcb"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2309,7 +2309,7 @@
       "file": "informe-06224.pdf",
       "pages": 6,
       "bytes": 138612,
-      "sha256": "f33e44f7cba0aa89f0981d6629b8b348fb121c9d9869a8e2df9d7de301e214be",
+      "sha256": "0a2a2fcf731e8879560e93131703dfece6d6d61fcbcfd040d32d3f849d7f7ed7",
       "sections": [
         "lectura",
         "cuentas",
@@ -2384,7 +2384,7 @@
         "file": "informe-06224-breve.pdf",
         "pages": 3,
         "bytes": 70823,
-        "sha256": "6674ce4aec74d9906d33ca3a9a1ba3dea3dc71b374ac1a5a17dadec800cc57ab"
+        "sha256": "dbdc8b6fce909838bd230a1129c5238aa266091bed283afe65bc2479f49e7a92"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2397,8 +2397,8 @@
       "municipality": "Colón",
       "file": "informe-06175.pdf",
       "pages": 6,
-      "bytes": 136921,
-      "sha256": "c87d133faed46d304b89fc6dc9b2d7bf75a4fef1052b76af07d301c971e7859d",
+      "bytes": 138640,
+      "sha256": "866d957b28c8cd30d3d21d7184205d1bf63edc2cb86ef1c4eaa95185375ac389",
       "sections": [
         "lectura",
         "cuentas",
@@ -2472,8 +2472,8 @@
       "brief": {
         "file": "informe-06175-breve.pdf",
         "pages": 3,
-        "bytes": 69152,
-        "sha256": "cbebd8b33803dd330d0cd5c1bb15d162268a3a5b4d7778e553f423adc868db19"
+        "bytes": 70865,
+        "sha256": "ca9cdacf0e508ece566a060b614fe9d43e413cf7f1d80cebe9aeeaba933694b0"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2486,8 +2486,8 @@
       "municipality": "Coronel de Marina L. Rosales",
       "file": "informe-06182.pdf",
       "pages": 6,
-      "bytes": 138372,
-      "sha256": "babd64c1202af6275405882bd95f1555f2d2022186f26028acdf372f75c49695",
+      "bytes": 138371,
+      "sha256": "2e234539a64e1a5f4efcaa5e7d0b28be00a160a2a8942219d4c36bbb93b79e83",
       "sections": [
         "lectura",
         "cuentas",
@@ -2561,8 +2561,8 @@
       "brief": {
         "file": "informe-06182-breve.pdf",
         "pages": 3,
-        "bytes": 70536,
-        "sha256": "bda9805d60c24a514fbae4d25e4cf42786bd33fd470f238e4c3cff1f4014eeb2"
+        "bytes": 70535,
+        "sha256": "f47b4e53dbcb45d25fb1bd638fb00602f20972aa990b3b4599b344f7f87860c6"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2576,7 +2576,7 @@
       "file": "informe-06189.pdf",
       "pages": 6,
       "bytes": 138313,
-      "sha256": "96802ec9ee176cf08fe912fa5eedb60a4457ccd3e5c0a31d8cc7301b44c09130",
+      "sha256": "35ff0157d02c57b12ec56c9d9e784b8d2cbfae1449d9ac490eef8a49b735a665",
       "sections": [
         "lectura",
         "cuentas",
@@ -2651,7 +2651,7 @@
         "file": "informe-06189-breve.pdf",
         "pages": 3,
         "bytes": 70535,
-        "sha256": "c3fa3b4d5eb1ca42e07b5cd159a2c7998c8d2e68df3dfb889efc56b5385b408f"
+        "sha256": "28fd8c34a724a24618fc9ec481e6b2d0dfdf1c83ff0ade9b30f74cc3b0fa89bb"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2664,8 +2664,8 @@
       "municipality": "Coronel Pringles",
       "file": "informe-06196.pdf",
       "pages": 6,
-      "bytes": 138263,
-      "sha256": "752cd4e84f4e19db822e9dce180f6e0730df95485dedc9fb5d8a62b1c6e60c90",
+      "bytes": 138262,
+      "sha256": "c0582b43056a67e307052834e7a14de7520c38084ae9bdb36542400f54c1123d",
       "sections": [
         "lectura",
         "cuentas",
@@ -2739,8 +2739,8 @@
       "brief": {
         "file": "informe-06196-breve.pdf",
         "pages": 3,
-        "bytes": 70467,
-        "sha256": "b38656021326b30eab27be0df638dba0788c239ea1ee4544f6c252b1beb2a136"
+        "bytes": 70466,
+        "sha256": "4929c9fb9d0714093c40521780d14ccaae40cddff67741f8f063ced1e94b460a"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2754,7 +2754,7 @@
       "file": "informe-06203.pdf",
       "pages": 6,
       "bytes": 138228,
-      "sha256": "1dd8f3ff826fa994f0f26777d36e511d77c212ba0be628a29ee3aed9d0a3f8b8",
+      "sha256": "dea432b540372a7e45725ead61f6b58193fe936f47517825f646923e1d0ea1b9",
       "sections": [
         "lectura",
         "cuentas",
@@ -2829,7 +2829,7 @@
         "file": "informe-06203-breve.pdf",
         "pages": 3,
         "bytes": 70347,
-        "sha256": "e49338443c73a12843c0b595db1c60d6d6ad461ce5c9fdcf996d61469527c9ea"
+        "sha256": "ef41c1b9ac90fcb11cc5a3ce81e1b1d6683886406047fd17a096f2c9c29a036c"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2843,7 +2843,7 @@
       "file": "informe-06231.pdf",
       "pages": 6,
       "bytes": 138153,
-      "sha256": "91ff29e627021a1313ae0a0a0e5c9cf316390e5c6e28126f42cd06c1a97dfd55",
+      "sha256": "db49fd881a123aa78478c6e4b2d7b48ed0acb75ac47661d64d26c0ba7c06f545",
       "sections": [
         "lectura",
         "cuentas",
@@ -2918,7 +2918,7 @@
         "file": "informe-06231-breve.pdf",
         "pages": 3,
         "bytes": 70385,
-        "sha256": "78f87675fae3c91d874aac21ff25c1ab76cc99b9402fcd83476cb8817ec2ba1c"
+        "sha256": "85746cb87122411cf5c2b0cbcc68c70e58c886a143bdb75bd8b07c63a6ca2eeb"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -2931,8 +2931,8 @@
       "municipality": "Dolores",
       "file": "informe-06238.pdf",
       "pages": 6,
-      "bytes": 136238,
-      "sha256": "28e0cf167462364dd58d6e37fb9599d629c15759f63dd51f78a828f64dcf858d",
+      "bytes": 138038,
+      "sha256": "77d83a99638237c13472d927921a5e21b8344198d41e7f7f57c08829f146058a",
       "sections": [
         "lectura",
         "cuentas",
@@ -3006,8 +3006,8 @@
       "brief": {
         "file": "informe-06238-breve.pdf",
         "pages": 3,
-        "bytes": 68435,
-        "sha256": "2216e62cd1667c96ef646d3b4daae7af46a00d4dd64b0198036948d9bc863ba0"
+        "bytes": 70229,
+        "sha256": "212700ea9abbf189f42aac1e6014d1f6db748807a7df1d3657d14898fd05c64b"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3021,7 +3021,7 @@
       "file": "informe-06245.pdf",
       "pages": 6,
       "bytes": 138224,
-      "sha256": "99312d10da7070c5a958570b74c2e36a45f45600cbc8ef2d23d594de1558fb25",
+      "sha256": "f427e347281d214c70ae02c6980daab8b5022febfda59032799252538fdf1502",
       "sections": [
         "lectura",
         "cuentas",
@@ -3096,7 +3096,7 @@
         "file": "informe-06245-breve.pdf",
         "pages": 3,
         "bytes": 70429,
-        "sha256": "d3c83aec4eda3c8acac8311a02fb3ee6e8700a3924393ceeb08ed1edc17cc2e4"
+        "sha256": "f0b468c84e9f8cacd3420e5b826ff1367db36fcbd7ff2f467fa407f0beed84f5"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3110,7 +3110,7 @@
       "file": "informe-06252.pdf",
       "pages": 6,
       "bytes": 138994,
-      "sha256": "1e2aae0ba95710c11a66bb14a06b9ab0f99724f63a44c5216b406a072b8c7dc4",
+      "sha256": "4edf73f6b0ffbd88684f3274d0f7d5223220c430a5fd60a58e3bf8a3fd7579cf",
       "sections": [
         "lectura",
         "cuentas",
@@ -3185,7 +3185,7 @@
         "file": "informe-06252-breve.pdf",
         "pages": 3,
         "bytes": 71197,
-        "sha256": "a1c868b570dc6718264b0deef9ad18d4f7c1f57d284e3db690e66d0e84aac427"
+        "sha256": "6c8e2291930d8c734d9796ac744668fcc1647c781c17801cdfb14871184bbd71"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3199,7 +3199,7 @@
       "file": "informe-06260.pdf",
       "pages": 6,
       "bytes": 136489,
-      "sha256": "ee4e61f6265e18c539cfed6d2366a8b7b9a15a0a0c09cd8fb6bcb6b8da5f921a",
+      "sha256": "0cae1a4139e1c680d115acceb88a55d50cb1e74aec37900b555fd2c43c502d5f",
       "sections": [
         "lectura",
         "cuentas",
@@ -3274,7 +3274,7 @@
         "file": "informe-06260-breve.pdf",
         "pages": 3,
         "bytes": 68573,
-        "sha256": "8c02b7651b29ba5c9486f769d1f2cd460b0d36405d23c97785b298da97c7c93f"
+        "sha256": "2162cab0c50e4f4d9b9e9da930c3d828a92375867869db24c4bdaa745caacbeb"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3288,7 +3288,7 @@
       "file": "informe-06266.pdf",
       "pages": 6,
       "bytes": 138435,
-      "sha256": "6cfc1cd48851e7090fd8dc581f6cef0cbd4ebe386cd1a310f046c506e0aba2f1",
+      "sha256": "8ee965c669acba1d5c22d772ad95c3b97f2ce8508b8c407c62c15f9a18115119",
       "sections": [
         "lectura",
         "cuentas",
@@ -3363,7 +3363,7 @@
         "file": "informe-06266-breve.pdf",
         "pages": 3,
         "bytes": 70617,
-        "sha256": "2bf526e2b6494d145309291c98f4c7ed60c485f2d62953e6d9073d662908ec2e"
+        "sha256": "2422d05388711f08a32eac99045802eb1539d78cf8308c9cae7341e5c78e6254"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3376,8 +3376,8 @@
       "municipality": "Ezeiza",
       "file": "informe-06270.pdf",
       "pages": 6,
-      "bytes": 138381,
-      "sha256": "888bb033c223ccf9ca1f11f8ea85b42d09909208e9860ff929ca9729d665a102",
+      "bytes": 138380,
+      "sha256": "a8c1feea756d7c8285a173461a0571cae3e522f90ddbfd702a8213ecd4fc9fc8",
       "sections": [
         "lectura",
         "cuentas",
@@ -3451,8 +3451,8 @@
       "brief": {
         "file": "informe-06270-breve.pdf",
         "pages": 3,
-        "bytes": 70597,
-        "sha256": "a4287b7201bcaecc133ffe7378818150e4a412908d8555770c94eccdfe649395"
+        "bytes": 70596,
+        "sha256": "a0e02ffded97ad9a0b6c81e9caabd4ac40964e94d5fb3abc5952e84aafb4f3d5"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3466,7 +3466,7 @@
       "file": "informe-06274.pdf",
       "pages": 6,
       "bytes": 138259,
-      "sha256": "144eb46efe74d94696c54634f2d5687cf830386bea412b9c49f9a798934a673e",
+      "sha256": "e194ceed00ed6ae1cb9aad03dddb8c98612f6bfe091b4a934c46aff9fed73ec0",
       "sections": [
         "lectura",
         "cuentas",
@@ -3541,7 +3541,7 @@
         "file": "informe-06274-breve.pdf",
         "pages": 3,
         "bytes": 70440,
-        "sha256": "6f1af9cf2141ee3535eb333e1e9d69529bc18c21defc837a1238c376b96191ca"
+        "sha256": "c2ba16ad590f97c5655eb31859660c5cfa9a93ef49cf8a33142e31227d95a6e9"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3555,7 +3555,7 @@
       "file": "informe-06277.pdf",
       "pages": 6,
       "bytes": 138232,
-      "sha256": "68bffb7dcbd76a9e864897459d6792562bb262f909f851293615fc2e6a2ba352",
+      "sha256": "be488c13bd0f7e79ceb0a7decef05e3cd4ef5005bd707c670a7aa85509715495",
       "sections": [
         "lectura",
         "cuentas",
@@ -3630,7 +3630,7 @@
         "file": "informe-06277-breve.pdf",
         "pages": 3,
         "bytes": 70429,
-        "sha256": "a55b591ff0c535282e5e6224e8b59ba1d236637db8a187dfa5037113dc8dcdee"
+        "sha256": "96a2b551b9fc00447c82fa9e3b9933e10dccdeadc80988d46efea4678c630841"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3644,7 +3644,7 @@
       "file": "informe-06280.pdf",
       "pages": 6,
       "bytes": 138198,
-      "sha256": "c9074446475cd4e206a8179a1d4bc2696a9c916b337ef2a9785b37c5c791f23b",
+      "sha256": "b465ce73c8563d95010495b6e0c3292892c53cb2d11632a633f2baf8969e887d",
       "sections": [
         "lectura",
         "cuentas",
@@ -3719,7 +3719,7 @@
         "file": "informe-06280-breve.pdf",
         "pages": 3,
         "bytes": 70375,
-        "sha256": "f6b359a351f9481f2d490f95ec9cb2e05cdaa93ae20bcb7bf31f205ed481f8ff"
+        "sha256": "f011532cd78fc8c6c406304eac7f3dcb6af2f8d8e38e937ebb1c1cfd544f572b"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3733,7 +3733,7 @@
       "file": "informe-06287.pdf",
       "pages": 5,
       "bytes": 115959,
-      "sha256": "0db1c486fdced3544d7f4d3ef3329d1e080ec3872e68add7a82ffe071017e263",
+      "sha256": "d6a3f5a1f63c43f9a9931e11e41553c688cdefed535dff92cf1f7dade5aee55d",
       "sections": [
         "lectura",
         "cuentas",
@@ -3797,7 +3797,7 @@
         "file": "informe-06287-breve.pdf",
         "pages": 3,
         "bytes": 70410,
-        "sha256": "de3b9775ec0058cfec3e374d60555bfa6925e0f8fe56c6f881adad546ff5f78d"
+        "sha256": "c878accd652a97bfe47343e2921f64a2bb1ab476a1a217c8cfb30f34cd4996d4"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3811,7 +3811,7 @@
       "file": "informe-06294.pdf",
       "pages": 6,
       "bytes": 136247,
-      "sha256": "4ff1206fadfac9767c8305b08f5e1152a8d7ced1aba5c1119b3a5f11a93cb33e",
+      "sha256": "0a397766192c58afdedbfd190ae99ea6374317344f5930edcea4595880481d37",
       "sections": [
         "lectura",
         "cuentas",
@@ -3886,7 +3886,7 @@
         "file": "informe-06294-breve.pdf",
         "pages": 3,
         "bytes": 68477,
-        "sha256": "930c88327e80ef9c7449e8f409ee0bb9639ddb5a7f830d9c7e9ed6c3a61fd39b"
+        "sha256": "0bfd5f3e82214ce8f7a451f2023fcb8a8ddc5044c4bcde62b7217f9b7a6ad7b6"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3900,7 +3900,7 @@
       "file": "informe-06301.pdf",
       "pages": 6,
       "bytes": 138259,
-      "sha256": "a986dc56906b346b145b8fe8e54c8763e5a71fdaa5c6b2cc3eeb242148018a25",
+      "sha256": "2d01a4e13338888b7086f7036336a1b75c77926802fff84d60b10fa36c0cf67e",
       "sections": [
         "lectura",
         "cuentas",
@@ -3975,7 +3975,7 @@
         "file": "informe-06301-breve.pdf",
         "pages": 3,
         "bytes": 70470,
-        "sha256": "f229a7a3b25bd25f80e417742da9aefa72085e0e7e0e8f72b1f3825859f35b42"
+        "sha256": "96e0a1e945f50ef24e686eb3c93342924b67a77fd1c9414ee2f3e0b7fb4eac87"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -3989,7 +3989,7 @@
       "file": "informe-06308.pdf",
       "pages": 5,
       "bytes": 116542,
-      "sha256": "c3356d2fe55d47e5b06ef88dffd8e42284edf35856e07d73c454263fe26927ba",
+      "sha256": "36f937d48ce2cd578fbde94636d1b13992269b369f12137d13c3e9e051d85bdb",
       "sections": [
         "lectura",
         "cuentas",
@@ -4053,7 +4053,7 @@
         "file": "informe-06308-breve.pdf",
         "pages": 3,
         "bytes": 71003,
-        "sha256": "c40760ccc4f5c5e7a72afd931c36add7b193a45b884bfe7bbbb2915b73106834"
+        "sha256": "edeed8eb02fb67890958a2c562e719f1ecd3501913be09a61242fe2eb446417a"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4067,7 +4067,7 @@
       "file": "informe-06315.pdf",
       "pages": 5,
       "bytes": 115999,
-      "sha256": "15f7a86247f92d6cd75049de51a009be3721d22fe0ebef3cdfdb817519443ac7",
+      "sha256": "4860ae78ebbc90d247ffacb7fed66dfd64bdc8415ffe978aad52fb84e894c29f",
       "sections": [
         "lectura",
         "cuentas",
@@ -4131,7 +4131,7 @@
         "file": "informe-06315-breve.pdf",
         "pages": 3,
         "bytes": 70427,
-        "sha256": "9228c59a65a292d6f7fdea09612a40b9fd9403c3837e4b924b15fd556f1173d6"
+        "sha256": "c410aa4c6128a6eef2055b6ae3638ae14277a3dd394e27b001909ac2e04ba498"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4145,7 +4145,7 @@
       "file": "informe-06322.pdf",
       "pages": 6,
       "bytes": 138171,
-      "sha256": "71e8701739fe12d2ea52f0dee22dd9645553c8f8931d29ef567c22a5261ba61d",
+      "sha256": "b9d6b533c7365bcd9c95a7e805d6ef10911fe6c6ac95909a58570d6158c482fa",
       "sections": [
         "lectura",
         "cuentas",
@@ -4220,7 +4220,7 @@
         "file": "informe-06322-breve.pdf",
         "pages": 3,
         "bytes": 70392,
-        "sha256": "121bb63fca8bd536cd01402ec39b6e54149a1d30103650edd0e8b7df535c077e"
+        "sha256": "a335e447c22499e1bf950f8e94fd6ff976714a7ce0be7498f944f286e55db95e"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4234,7 +4234,7 @@
       "file": "informe-06329.pdf",
       "pages": 8,
       "bytes": 180759,
-      "sha256": "098c5bd3e9d7010ceded1d2045c54bb64000ecc87bdfa01f8ac6d1b57c22483b",
+      "sha256": "422a50542c4fefc91ae92950161f482ede851f7c12751150307ce567b7f30f25",
       "sections": [
         "lectura",
         "cuentas",
@@ -4331,7 +4331,7 @@
         "file": "informe-06329-breve.pdf",
         "pages": 3,
         "bytes": 70331,
-        "sha256": "5904d4af951f0536349db49ec57deec1f72c0dc18fb2c55fa7d48e6e591c64a2"
+        "sha256": "5ff8a7f4fd6aad7ae2d6b994539dd81dcf159fdd1ba18c613f831c2d02c3be24"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4344,8 +4344,8 @@
       "municipality": "General Lavalle",
       "file": "informe-06336.pdf",
       "pages": 5,
-      "bytes": 115900,
-      "sha256": "ffab81ffde9281ed35b4db1961f3c4a2f01253a15e1dc8500e44aff98492c306",
+      "bytes": 115904,
+      "sha256": "39dfda3ae4df4efd04e81e29bc77eb76b1231c4d376d7cb24ff234fa1d28d92d",
       "sections": [
         "lectura",
         "cuentas",
@@ -4408,8 +4408,8 @@
       "brief": {
         "file": "informe-06336-breve.pdf",
         "pages": 3,
-        "bytes": 70365,
-        "sha256": "e8dab8bfeddfa7589471f6f674abbd00962070272f3796771ed0b2921de325e5"
+        "bytes": 70369,
+        "sha256": "4cf1c364b74fdb35db6275c9f8a8d2ecfd020d495843644a3ba0f95ed47e51de"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4423,7 +4423,7 @@
       "file": "informe-06343.pdf",
       "pages": 5,
       "bytes": 114527,
-      "sha256": "c5190f3fdbe1a292fafbd057328a4b09d5fa561a7a27703058b1d2a6b56e4110",
+      "sha256": "d910dd335decf37cbd3d002673c660dc7ad0d5de6848596182bc6281868c20f4",
       "sections": [
         "lectura",
         "cuentas",
@@ -4487,7 +4487,7 @@
         "file": "informe-06343-breve.pdf",
         "pages": 3,
         "bytes": 68985,
-        "sha256": "c356b30a9f40d82ddcd48357bddb334f4640b21c74697567cb4a1fbdc0562102"
+        "sha256": "bdc367ac347cf6bb9685d6a9229fd4a48f309f2189d7aaa222cfc7a1b3a56503"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4501,7 +4501,7 @@
       "file": "informe-06351.pdf",
       "pages": 5,
       "bytes": 114637,
-      "sha256": "d221f5490f79fb5d51d16e78352bc1dcea2b233477e3be14cef1343c6cef69a2",
+      "sha256": "2b39f22ea06008d1e6b3419ed76fa2169d2a8e984e24b856a191928500aa20e3",
       "sections": [
         "lectura",
         "cuentas",
@@ -4565,7 +4565,7 @@
         "file": "informe-06351-breve.pdf",
         "pages": 3,
         "bytes": 69071,
-        "sha256": "d1c344b96e4ee980abf5f2313a399fe9c767d9cc57193bfd4ce3d336b62ae8e7"
+        "sha256": "e5166f375bd93502cb80d4b3385e5e395cb653d64eead29ac841b6f7bb2b1e2c"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4579,7 +4579,7 @@
       "file": "informe-06357.pdf",
       "pages": 6,
       "bytes": 138384,
-      "sha256": "e215fcf385553e76d3226328022c6d2f59915b4471d61c049c66c57c2d2d04cf",
+      "sha256": "bf0a39a8757906771e17e93e7b4114687892d40bc8fdcdc5a066a7b52027fc9e",
       "sections": [
         "lectura",
         "cuentas",
@@ -4654,7 +4654,7 @@
         "file": "informe-06357-breve.pdf",
         "pages": 3,
         "bytes": 70547,
-        "sha256": "5809144015339d5e99fa33e29de0418dd0dffa3918c62d1a6a933239fea98680"
+        "sha256": "03753da01ed55eace5514f2bdd01b8f58c9faa7d04bac53a5d14a287f7580efc"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4668,7 +4668,7 @@
       "file": "informe-06364.pdf",
       "pages": 6,
       "bytes": 138338,
-      "sha256": "c23a8a2a639e4c3cbc5f7f3b8de025b8cbb8990c7edd08e75d860df124363bf2",
+      "sha256": "c18d4e27860685893fdde8f29125e218f829490d8ea918e7ef41dce7f136f544",
       "sections": [
         "lectura",
         "cuentas",
@@ -4743,7 +4743,7 @@
         "file": "informe-06364-breve.pdf",
         "pages": 3,
         "bytes": 70419,
-        "sha256": "762362ad58e787a192711b4edd5d34e66c44da105f788a3bb7c0c4e24478ae6a"
+        "sha256": "8139549eb3470fa292983cf21099bf8fbd9bf1a666f552339e755733fe0435ea"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4757,7 +4757,7 @@
       "file": "informe-06371.pdf",
       "pages": 6,
       "bytes": 139564,
-      "sha256": "b6f21479e44c50cb3adb1306303d9e020a00dcfc9b31efb6b94598ae2393e2ed",
+      "sha256": "8c5f92e57b01804ad73833d56baa26944f6b50f3146d95db005c3493a23b4ea8",
       "sections": [
         "lectura",
         "cuentas",
@@ -4832,7 +4832,7 @@
         "file": "informe-06371-breve.pdf",
         "pages": 3,
         "bytes": 71645,
-        "sha256": "a1197e1db323bdd6a7d43d0f068c12abc5ee68cbd3692628bc52dc77b57bdf9a"
+        "sha256": "403270b5a4ff70a0ca0ca9d1ad4cb8dfa3475835d7f36bd7da6579bf03f1d961"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4846,7 +4846,7 @@
       "file": "informe-06385.pdf",
       "pages": 5,
       "bytes": 116889,
-      "sha256": "a1ec0037719152417eb928f571fccc17a958dec396de7ec3ea7a3c1080ff3ade",
+      "sha256": "77f73f87d514cfa9a7eccce67d381e1917524e74d69663718aba518a4976d1ab",
       "sections": [
         "lectura",
         "cuentas",
@@ -4910,7 +4910,7 @@
         "file": "informe-06385-breve.pdf",
         "pages": 3,
         "bytes": 71321,
-        "sha256": "6f35d5e5b497840f84f830eb2d2c81f75f8b55d9618d230456f62c16590c7c10"
+        "sha256": "48bb69820c0c8aaa063f05de65ffee5ce10c12f509d7ebeab0aafe4821538046"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4924,7 +4924,7 @@
       "file": "informe-06392.pdf",
       "pages": 6,
       "bytes": 138169,
-      "sha256": "e0259409639c5bc90f4b220e633c1550e7472ab75af1496fb409c7423b045823",
+      "sha256": "0adc1f1a7f037e7f04df1e098839725d1cc59e9c518105dda4ba683200d331a4",
       "sections": [
         "lectura",
         "cuentas",
@@ -4999,7 +4999,7 @@
         "file": "informe-06392-breve.pdf",
         "pages": 3,
         "bytes": 70369,
-        "sha256": "d4fcfda9f440cfed9f0dd6f875f2ab435c14f6521306395329e514ac9b76b853"
+        "sha256": "8d5d8d568f110d7c44be8bf7f6570a085f4f191d4a697dfb56611a89f06256e4"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5013,7 +5013,7 @@
       "file": "informe-06399.pdf",
       "pages": 6,
       "bytes": 138391,
-      "sha256": "8f137dede066da77e0165777369932bbaee84e60b097d487203ea9d7aad3cbc7",
+      "sha256": "071d78de16fbb67dc5229cf8d782da6ce76288d2ece904781ffb9faf2342edc2",
       "sections": [
         "lectura",
         "cuentas",
@@ -5088,7 +5088,7 @@
         "file": "informe-06399-breve.pdf",
         "pages": 3,
         "bytes": 70521,
-        "sha256": "6fc5062b4cb033d82ca97ba7bc2fd8683e1e356526c831e62e10edbe862b7cfe"
+        "sha256": "b068ed2ef68fadd78dc22b21fc9ff85eabb567543cec59df90af2b6b272ee180"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5101,8 +5101,8 @@
       "municipality": "Hipólito Yrigoyen",
       "file": "informe-06406.pdf",
       "pages": 5,
-      "bytes": 116039,
-      "sha256": "10666f35a2a2f995d989264d58aba9c9be8dc12f903a71c840900a0f1b7ae013",
+      "bytes": 116038,
+      "sha256": "1e3bf0a7f81875546c4848902b673916951a6ca2bfa29bf162eeb21741a3ee5f",
       "sections": [
         "lectura",
         "cuentas",
@@ -5165,8 +5165,8 @@
       "brief": {
         "file": "informe-06406-breve.pdf",
         "pages": 3,
-        "bytes": 70481,
-        "sha256": "54c3e2d919b01258a047d05c6190fe6246a6cec8d88d5f8cae9f3873a1cbfc4d"
+        "bytes": 70480,
+        "sha256": "e205d7e7ad21bb3dccc387ee600031573405ad05e6986ff98303d49be3f4e01f"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5180,7 +5180,7 @@
       "file": "informe-06408.pdf",
       "pages": 6,
       "bytes": 136274,
-      "sha256": "5e58b4e80c188c10b90419bfea6c62e386b93e57d197332ebd861f37a9a68eb8",
+      "sha256": "dcd98781f6b1faf87b250f3d706a3c00a19cd09750b499a2eb88f9a87e1321a2",
       "sections": [
         "lectura",
         "cuentas",
@@ -5255,7 +5255,7 @@
         "file": "informe-06408-breve.pdf",
         "pages": 3,
         "bytes": 68480,
-        "sha256": "78f1a94d6d97f53deae5d7beeb1c98dfa308c8c3bf79f58a4421402ea5c05705"
+        "sha256": "416e1d4444f7550eb662b9624c54bcc9f77c2dcfa3ee3fc6fc7f6832ed8e3f04"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5269,7 +5269,7 @@
       "file": "informe-06410.pdf",
       "pages": 6,
       "bytes": 138532,
-      "sha256": "d3d312c0840c4a70b22cada18263aba4d85518355845f26a2e5057399b69285e",
+      "sha256": "d3de8038d827f4173c5bba576a10c2a378ddead546dc043d67d733e0e4211cc3",
       "sections": [
         "lectura",
         "cuentas",
@@ -5344,7 +5344,7 @@
         "file": "informe-06410-breve.pdf",
         "pages": 3,
         "bytes": 70739,
-        "sha256": "bbd6464c395ff677c986bc00dfaa08c335cc6a70c717c395338664706c83b15a"
+        "sha256": "6a06c76b3043f43059d47b9cb245fdf8909417ca0c8eea362b3eeb24e1ce7f95"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5358,7 +5358,7 @@
       "file": "informe-06412.pdf",
       "pages": 6,
       "bytes": 138240,
-      "sha256": "fbeb9fcf80b842d94fbfecac2159e84b15d8a177e64e4758072614abac8adea5",
+      "sha256": "555a8d28bce5e2891a50b23aa6fef1816283fe02fd04500c99620a565abdf7c0",
       "sections": [
         "lectura",
         "cuentas",
@@ -5433,7 +5433,7 @@
         "file": "informe-06412-breve.pdf",
         "pages": 3,
         "bytes": 70430,
-        "sha256": "bc6895de8419d0d9c8b65fd45c4e4490db9b886517992df73f316feae02d7618"
+        "sha256": "ca0c0a1aa4fa66fa00c033317a12f67e79e11c4810fa81d103f842803c76cf05"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5447,7 +5447,7 @@
       "file": "informe-06413.pdf",
       "pages": 6,
       "bytes": 138487,
-      "sha256": "6099af8f77c165ea67dd3bf3cab5718a9082d9519d8b65c33c267f3ec2f15f66",
+      "sha256": "a5aa1f0c68ffb44459f7d9ce8c28e116008bde979ea3770644dac82dda4e1935",
       "sections": [
         "lectura",
         "cuentas",
@@ -5522,7 +5522,7 @@
         "file": "informe-06413-breve.pdf",
         "pages": 3,
         "bytes": 70609,
-        "sha256": "21ecc45a419a9a025f64a290be7b56483e4686c8b07e8677e4712f696a94dea6"
+        "sha256": "01805b8113bff7a07896a80fc638e198f9883380b2afa3f117271a72c7b452dd"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5536,7 +5536,7 @@
       "file": "informe-06420.pdf",
       "pages": 6,
       "bytes": 136192,
-      "sha256": "19d1fa42d2f0841ad4e9f202018cae966818e94aff2697b64fbd07924eabf1d5",
+      "sha256": "405217a7147ed6b4a23b2215b0b33199ad5e41a0f5f0ac5601799e455c449fa5",
       "sections": [
         "lectura",
         "cuentas",
@@ -5611,7 +5611,7 @@
         "file": "informe-06420-breve.pdf",
         "pages": 3,
         "bytes": 68405,
-        "sha256": "d27cd94609fea9c79c1243df411213f30111b11bd513268c0c3e9a5e6ffa0f7b"
+        "sha256": "b862be0c88ddfc08d0a3d6a23c164375eace0d89bb53d70112a03e0b32f2719d"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5625,7 +5625,7 @@
       "file": "informe-06427.pdf",
       "pages": 6,
       "bytes": 138191,
-      "sha256": "85bb08b8740591345652691f1481c80385448e2c95647026986031d4c01eadda",
+      "sha256": "a4475c4f4342f9aac7ba3ad411385e8442b9c7e66d16d0d6b8bdcad03f5e3c2c",
       "sections": [
         "lectura",
         "cuentas",
@@ -5700,7 +5700,7 @@
         "file": "informe-06427-breve.pdf",
         "pages": 3,
         "bytes": 70371,
-        "sha256": "e58fa87ad900e7dc89af7f49af6bf2e34016900f553ee8515414aba7bb9dbc6a"
+        "sha256": "50f173d2f1480220fef647d059aa174373c5705db09265eab5815bc2dae7a246"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5714,7 +5714,7 @@
       "file": "informe-06441.pdf",
       "pages": 6,
       "bytes": 138726,
-      "sha256": "34e5c892d7dbef35f58febb7d6e5f080fdbb866a7bbd7fed0d666db82b560b20",
+      "sha256": "eae40cebd54a3f9f841694d868af5b126bba8aa7f66226c21e82dc6204031b0d",
       "sections": [
         "lectura",
         "cuentas",
@@ -5789,7 +5789,7 @@
         "file": "informe-06441-breve.pdf",
         "pages": 3,
         "bytes": 70919,
-        "sha256": "97db9780f940cfa66b276dc6dfaf7aad04bdd840e718d1cadd444e4a000ad183"
+        "sha256": "3e9188159e7d4dcec42deab3259be3add185e7b1604d8c2d6e2456aafe7f4a62"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5802,8 +5802,8 @@
       "municipality": "Lanús",
       "file": "informe-06434.pdf",
       "pages": 6,
-      "bytes": 138871,
-      "sha256": "644312372732021dcd494082482cbbf72c1b09a692e93c2b15bd97cda2392fa2",
+      "bytes": 138870,
+      "sha256": "3d4066d262a7b3d5b2aaf3dee02dc3f8602a47c1ae76a49dd7ca94bc80b07513",
       "sections": [
         "lectura",
         "cuentas",
@@ -5877,8 +5877,8 @@
       "brief": {
         "file": "informe-06434-breve.pdf",
         "pages": 3,
-        "bytes": 70983,
-        "sha256": "875252b178bbdab0dafcc6eb44b8901f4a606002b9ab2c8107e16c01a58f7057"
+        "bytes": 70982,
+        "sha256": "bc4606cbb338a0d6d4f1738129f2c52aca7c8cc42dd4b4fdfaaf5c2ec051ec16"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5892,7 +5892,7 @@
       "file": "informe-06448.pdf",
       "pages": 5,
       "bytes": 115874,
-      "sha256": "0c04856056ef5065c6b41e3ceda811b42b218de829ba690ff8cc890b161c14bf",
+      "sha256": "0b55280e1736149afb3fe6c55843a76bb9a09cf6972503e0603b3ad0fce821c6",
       "sections": [
         "lectura",
         "cuentas",
@@ -5956,7 +5956,7 @@
         "file": "informe-06448-breve.pdf",
         "pages": 3,
         "bytes": 70333,
-        "sha256": "93f8f5f5f8f3260208ed83406aa41db3c35829b6ed16302f284c5a0d9d6b49f9"
+        "sha256": "d4b63cf95b36b9b42eff120757ebe887f39c901b37922cc1a0414470bcadae65"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -5969,8 +5969,8 @@
       "municipality": "Las Flores",
       "file": "informe-06455.pdf",
       "pages": 6,
-      "bytes": 136849,
-      "sha256": "000caf9e540ba4c70224444fedea08537298b918e032fdae27f5e1603c0347d3",
+      "bytes": 138285,
+      "sha256": "1924f59fa160657a0f91796c2c66368ea3d70915dc90e141f79b10b616b0da50",
       "sections": [
         "lectura",
         "cuentas",
@@ -6044,8 +6044,8 @@
       "brief": {
         "file": "informe-06455-breve.pdf",
         "pages": 3,
-        "bytes": 69073,
-        "sha256": "e4dc0f3987a64b15edd1c771c89392056ab99f52302a959b2f660a38517b0c5d"
+        "bytes": 70505,
+        "sha256": "89649913fde01d1763c4775e34f3c2d996eab47f1d6c1af6be1393b64ded4d33"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6059,7 +6059,7 @@
       "file": "informe-06462.pdf",
       "pages": 6,
       "bytes": 136268,
-      "sha256": "54309b43b43b1d7db21c739bb3d6270fe31d35713c0dcdd6e763de6562ef28ac",
+      "sha256": "23ade649cee07dd0b1ae6cb0e8710b2cafb1b978bec1b4eb2b7c39fa17290338",
       "sections": [
         "lectura",
         "cuentas",
@@ -6134,7 +6134,7 @@
         "file": "informe-06462-breve.pdf",
         "pages": 3,
         "bytes": 68497,
-        "sha256": "62db74b554ebc32d7048f701ff30ced03ff39a84287586bf7046afe5a0b3103a"
+        "sha256": "a55bffda878fe65eec804ea67567578e623056b5f2a07bf3a1dcde7d6139422a"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6148,7 +6148,7 @@
       "file": "informe-06466.pdf",
       "pages": 5,
       "bytes": 116129,
-      "sha256": "717700cccb6e98d543ed5597f967c9ae5f9aaea7e01c8d1e1e3cdc73c188bf30",
+      "sha256": "17115c490ba80cf482da558d515b8e0d0f13585c6466807a5022929437794c99",
       "sections": [
         "lectura",
         "cuentas",
@@ -6212,7 +6212,7 @@
         "file": "informe-06466-breve.pdf",
         "pages": 3,
         "bytes": 70599,
-        "sha256": "1cf1189e2f99dcbbd22a341fcc21f76a59829a2911088e60579299bce15a64b1"
+        "sha256": "d4b87f835dbb22d78880ebe9f2939f270fb01b5428f9b13bf548c44576eaaf87"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6225,8 +6225,8 @@
       "municipality": "Lincoln",
       "file": "informe-06469.pdf",
       "pages": 6,
-      "bytes": 136197,
-      "sha256": "c17cdd3d7f735cf46fd4274eb25ee6c72c849f13b3588b293c963da78685bf12",
+      "bytes": 138072,
+      "sha256": "130271b70839643c597506b5808deef17e0ce0a12e60c47e44e0137c93250f27",
       "sections": [
         "lectura",
         "cuentas",
@@ -6300,8 +6300,8 @@
       "brief": {
         "file": "informe-06469-breve.pdf",
         "pages": 3,
-        "bytes": 68425,
-        "sha256": "7d58057d9985ccae08234fa9e401ed4f9ce2bc57602d68aaa5f28fbc6dae7938"
+        "bytes": 70294,
+        "sha256": "b13a9bba86b4a801ee314407388d68156b13cc04299e5da2ed37fd4b7c1accf8"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6315,7 +6315,7 @@
       "file": "informe-06476.pdf",
       "pages": 5,
       "bytes": 116447,
-      "sha256": "ff7998e6ff13da7f3671ed108e1be4619b760be30396ab8e0704233b1b6b48c1",
+      "sha256": "9fa7a0ef641e1936532ec41a15649b08c1f87952dec43ac0a11e32f5d70b7673",
       "sections": [
         "lectura",
         "cuentas",
@@ -6379,7 +6379,7 @@
         "file": "informe-06476-breve.pdf",
         "pages": 3,
         "bytes": 70840,
-        "sha256": "cc8959f14bbe8cb787d129f80b496374e0f9b0388e9912aac448096f6624190b"
+        "sha256": "cb7ebf02a55f4b5c4deb63e63998224f82322ce9ab3e29c570c33fbec0c76d0e"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6393,7 +6393,7 @@
       "file": "informe-06483.pdf",
       "pages": 6,
       "bytes": 138303,
-      "sha256": "bb106132457df552870cf9ba4ffcb01c13d81d82a2aa388ff8a1024068ef3f22",
+      "sha256": "6989c19cb237649b36a741c98b567c26052560111e50ea319cbf4ab8e27fb982",
       "sections": [
         "lectura",
         "cuentas",
@@ -6468,7 +6468,7 @@
         "file": "informe-06483-breve.pdf",
         "pages": 3,
         "bytes": 70529,
-        "sha256": "a9c8ede8cfb42baad483274e2661ef273e14a207988841d3998f4960e43dc3b4"
+        "sha256": "2f4faa0b8ff692520d21b3e2daad99a180f1dde5187e87b45deeb22b72fad974"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6482,7 +6482,7 @@
       "file": "informe-06490.pdf",
       "pages": 6,
       "bytes": 136380,
-      "sha256": "e34d55275b20c4a7adfb806b1fa1e90993c84c0913cbc3845e200c311d42e966",
+      "sha256": "f9212ef218eeab8e5bdc97433e3851d4ff82ffa779e8c855ffcacd093b6ac9f5",
       "sections": [
         "lectura",
         "cuentas",
@@ -6557,7 +6557,7 @@
         "file": "informe-06490-breve.pdf",
         "pages": 3,
         "bytes": 68564,
-        "sha256": "8114b4c216bef249a97b2ee142c0235af76a7241ceee134d417540799d7d1fc4"
+        "sha256": "b121eb461494dea8136efbc37c11de31f10c06ee1cf71c910388c3e9058e3136"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6571,7 +6571,7 @@
       "file": "informe-06497.pdf",
       "pages": 6,
       "bytes": 139137,
-      "sha256": "a2c369c2ea7be66e248835414e1e411c15e55caae13ed5172219f8b70a4d8169",
+      "sha256": "38591d27caa20d1cebba294ac12ae38e0e23d471bc7f122b108e3fb37b83e8b0",
       "sections": [
         "lectura",
         "cuentas",
@@ -6646,7 +6646,7 @@
         "file": "informe-06497-breve.pdf",
         "pages": 3,
         "bytes": 71261,
-        "sha256": "03a2b72bb24391f469f2712d8351763232e3806aa6b868a06ccca2b5d1777d47"
+        "sha256": "e7a2e8e3b3b2e89bd507fd32948a3d2cd2699c6c6ceb67154a4ea1e088818e88"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6659,8 +6659,8 @@
       "municipality": "Magdalena",
       "file": "informe-06505.pdf",
       "pages": 5,
-      "bytes": 115899,
-      "sha256": "1ec4bc81e70153260e647cb2c4f62ea52db68bee58ac0dc9b22ac4a6c1df2297",
+      "bytes": 115897,
+      "sha256": "b62ef5b92a296eac302e7a822285e09e815820c97f8720450d7b9bd23f3081e5",
       "sections": [
         "lectura",
         "cuentas",
@@ -6723,8 +6723,8 @@
       "brief": {
         "file": "informe-06505-breve.pdf",
         "pages": 3,
-        "bytes": 70339,
-        "sha256": "1024ba8c3b0563e774363e68e028f549db5441c93e10e0141cfd0a7704355ebf"
+        "bytes": 70337,
+        "sha256": "7e8acd33334774f598789fe175f716f3ff79883900b6c4dde4c2f3fb02eeb501"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6738,7 +6738,7 @@
       "file": "informe-06511.pdf",
       "pages": 5,
       "bytes": 116282,
-      "sha256": "01fecd36c4879a2390216301a8fb7c7c0165411be460da771b4552bc2f8cfbac",
+      "sha256": "4ab6589c49a4a9f5dd7550f8e57e01565c9bd40930f1775184f1e0947415c038",
       "sections": [
         "lectura",
         "cuentas",
@@ -6802,7 +6802,7 @@
         "file": "informe-06511-breve.pdf",
         "pages": 3,
         "bytes": 70695,
-        "sha256": "fa332e3edcb4861841caa7e26f2ecfee02f2732d477d13c9e86157d60a1e5f6e"
+        "sha256": "0b7e62f05b3401fb85d5cb994e354c5d691a25cf8bbf9c2efb404bcbcbe9d6e5"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6816,7 +6816,7 @@
       "file": "informe-06515.pdf",
       "pages": 6,
       "bytes": 138388,
-      "sha256": "636a6dca7a09d91c5b0f9e5db3757f00bd802956404cab816e3a08c29e09dd9c",
+      "sha256": "93808ebcca73209b3a65caa8dfe5a0c5b62521efd17e0f2fefb212a8e12b4a57",
       "sections": [
         "lectura",
         "cuentas",
@@ -6891,7 +6891,7 @@
         "file": "informe-06515-breve.pdf",
         "pages": 3,
         "bytes": 70559,
-        "sha256": "a80329011d96ae56da6de8ef28370fd2b33ded57c91eb2805816454695fe66e0"
+        "sha256": "8f57668d99cf399750ba11e5e54f92aafbfeea73e1f569f47918f423923549b2"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6904,8 +6904,8 @@
       "municipality": "Mar Chiquita",
       "file": "informe-06518.pdf",
       "pages": 6,
-      "bytes": 136903,
-      "sha256": "bb571caeeab321aa425cab3ee5bd76ebdf48571fc00f26fde7aec453ebb9ac24",
+      "bytes": 136902,
+      "sha256": "958b3d1835149ba4e8d875bec55146b031ecd2bc77f9ca3d26cb849595c847ff",
       "sections": [
         "lectura",
         "cuentas",
@@ -6979,8 +6979,8 @@
       "brief": {
         "file": "informe-06518-breve.pdf",
         "pages": 3,
-        "bytes": 69095,
-        "sha256": "7d2b0450e0ce52da2f234b6254b8bfdc9504599243af45015d70b56c59685528"
+        "bytes": 69094,
+        "sha256": "219944311f4deebdfed851d68947a15b9cc6aa8fee3cf21cac0b7fe2ed78c1f7"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -6993,8 +6993,8 @@
       "municipality": "Marcos Paz",
       "file": "informe-06525.pdf",
       "pages": 6,
-      "bytes": 136243,
-      "sha256": "44abbf46915f5eca813541a11d13cbf2f2e11ee95788f763e12f86d34fa8ca03",
+      "bytes": 137763,
+      "sha256": "5d69cf9c1826dda31640b2f0aaf6f6e5a7aefbe0141498d21b3510ade26f9eaf",
       "sections": [
         "lectura",
         "cuentas",
@@ -7068,8 +7068,8 @@
       "brief": {
         "file": "informe-06525-breve.pdf",
         "pages": 3,
-        "bytes": 68433,
-        "sha256": "8181a7eb89efbc0f966e43803a85bdfa9b5b5761ae26a1e79aac0419cf29e9d4"
+        "bytes": 69949,
+        "sha256": "9e6f80eac12129eb52776ded3d93a38b88d084703348c0936dc7c6b263ef1a2f"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7083,7 +7083,7 @@
       "file": "informe-06532.pdf",
       "pages": 6,
       "bytes": 138569,
-      "sha256": "0188b5cb44c1dcfb37b607697c250f62dc7041431ff374a14c016f0d4df2107b",
+      "sha256": "13c699a7753c7e83debfc15f6eb4247358bea7635f43eb09cc40bf60e61b47f7",
       "sections": [
         "lectura",
         "cuentas",
@@ -7158,7 +7158,7 @@
         "file": "informe-06532-breve.pdf",
         "pages": 3,
         "bytes": 70766,
-        "sha256": "6a021150eea7be61320925666666d40d8f45c08e484b8581beaeffe13422de5a"
+        "sha256": "20f5448899055ba6ee54355b5376b14a06980de63e64cf31985b50064105fd8e"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7171,8 +7171,8 @@
       "municipality": "Merlo",
       "file": "informe-06539.pdf",
       "pages": 6,
-      "bytes": 136326,
-      "sha256": "19997d5ffc879ab966edba8688103458938c986cdf4e36a3d6b4f194eba9790d",
+      "bytes": 136324,
+      "sha256": "1df9f6ac0be7a841bcd2f26693a7faccd125de4989eed9d326ce5a29deb318b4",
       "sections": [
         "lectura",
         "cuentas",
@@ -7246,8 +7246,8 @@
       "brief": {
         "file": "informe-06539-breve.pdf",
         "pages": 3,
-        "bytes": 68534,
-        "sha256": "45497df90b88341b68b3cedaa14f7fc808db9c2facca36b069eed9676b27431d"
+        "bytes": 68532,
+        "sha256": "a7014684fb8296e1379bfe4b3addb8dae8448f87140ed7d7ac92a501fd01d959"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7261,7 +7261,7 @@
       "file": "informe-06547.pdf",
       "pages": 5,
       "bytes": 116295,
-      "sha256": "be9fd281648183eb88ca2a1c62abcc43a440e370edec9f3830a91a72600689e1",
+      "sha256": "65db1384b1a19e54bc329f4335798f5a7393ad9e23f57ddfdc9a269347966198",
       "sections": [
         "lectura",
         "cuentas",
@@ -7325,7 +7325,7 @@
         "file": "informe-06547-breve.pdf",
         "pages": 3,
         "bytes": 70720,
-        "sha256": "302852e6fe1d711144c3b0ac53524ab94e36345712381df493bd9be19bc558f4"
+        "sha256": "11acbdb46ae59c471e9aa7daacf07e878768f858622f0c1fefe2219eda9037d5"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7338,8 +7338,8 @@
       "municipality": "Monte Hermoso",
       "file": "informe-06553.pdf",
       "pages": 5,
-      "bytes": 116085,
-      "sha256": "5dcd74631ae101fb67b579f1c4a9cb3fe7bc384d1e10b550316edf7d4b5d363a",
+      "bytes": 116083,
+      "sha256": "92e769c6371f9dba315c1d5acd091e2db6a4b460217166fc2b6d3e53dcae9479",
       "sections": [
         "lectura",
         "cuentas",
@@ -7402,8 +7402,8 @@
       "brief": {
         "file": "informe-06553-breve.pdf",
         "pages": 3,
-        "bytes": 70529,
-        "sha256": "2f2b12ee62eaf46103796f7ec85d4048b9bbc382d80381cfbb3cba041b5470ee"
+        "bytes": 70527,
+        "sha256": "f25570e33f8ea5fdc039546abf99866cd77d195d357d931f3ea290d150287693"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7416,8 +7416,8 @@
       "municipality": "Moreno",
       "file": "informe-06560.pdf",
       "pages": 6,
-      "bytes": 138571,
-      "sha256": "fcc5fff8707cd1a719ab4481b991d4df35dfe3295e6ddb4ff6f023dc2696e0ad",
+      "bytes": 138570,
+      "sha256": "1e279dfdcf4ab46b3d2d40f640697f4edfde45e96366a6f2453720eafd56a561",
       "sections": [
         "lectura",
         "cuentas",
@@ -7491,8 +7491,8 @@
       "brief": {
         "file": "informe-06560-breve.pdf",
         "pages": 3,
-        "bytes": 70772,
-        "sha256": "28e07d818a4f42ba984541000f2dbbe7d135927e215177c4f8f84c3ef9e154e1"
+        "bytes": 70771,
+        "sha256": "6ffbcc3bc00ce8c88bfec09883dec8a8262cf989bb75e7def839064f1200ec30"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7505,8 +7505,8 @@
       "municipality": "Morón",
       "file": "informe-06568.pdf",
       "pages": 6,
-      "bytes": 136330,
-      "sha256": "f6a9d45128d44fdf976624b742c4c4ede08c8ffbd164a7807219d8f0eae79fd8",
+      "bytes": 138148,
+      "sha256": "2e04528b2a19d57bc1186af7ad67aa999650645a62696e008921ac739feca2ce",
       "sections": [
         "lectura",
         "cuentas",
@@ -7580,8 +7580,8 @@
       "brief": {
         "file": "informe-06568-breve.pdf",
         "pages": 3,
-        "bytes": 68539,
-        "sha256": "c92893fc594f2d16a8b1e77365daa8d32bf33776968b1958dc8ea1605637151c"
+        "bytes": 70351,
+        "sha256": "46d7eb1c80cfaed6503ee30dd008c6ecf94e6199ca378cc0be52488e60aa78b0"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7594,8 +7594,8 @@
       "municipality": "Navarro",
       "file": "informe-06574.pdf",
       "pages": 6,
-      "bytes": 136264,
-      "sha256": "4703d9dfef385f6aba224b30880e8245d11bfecb2390abfeade7ad3e9fb81052",
+      "bytes": 137906,
+      "sha256": "a22f50884d6312486d69d769d956d22c896d825e98ea99aa39581b286f5551e3",
       "sections": [
         "lectura",
         "cuentas",
@@ -7669,8 +7669,8 @@
       "brief": {
         "file": "informe-06574-breve.pdf",
         "pages": 3,
-        "bytes": 68487,
-        "sha256": "dc3666d5a6a81dbf4ba299d0c06ff828a3b8f4227ebc4d931ea23ad916b6713d"
+        "bytes": 70123,
+        "sha256": "cd9f8a25f9bd93a484070856b75ac0499447e61e0c43a7a74de06164152aed97"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7684,7 +7684,7 @@
       "file": "informe-06581.pdf",
       "pages": 6,
       "bytes": 138236,
-      "sha256": "e3b9967f591aad3ceb2ba46f5fbec3555564e7ddea09defc5d39f5490def18de",
+      "sha256": "28bad93f4455c6bada85038bf893216b23cc1f55edb604d72d36d0fe7068724a",
       "sections": [
         "lectura",
         "cuentas",
@@ -7759,7 +7759,7 @@
         "file": "informe-06581-breve.pdf",
         "pages": 3,
         "bytes": 70443,
-        "sha256": "1f2f4a987099b16190cd37440be572fb25bb3b841745081b03d853ba1290b7ed"
+        "sha256": "eadc152998caaea520e3f110e8ae665b862467724d63a192287c8745ab1711ac"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7773,7 +7773,7 @@
       "file": "informe-06588.pdf",
       "pages": 6,
       "bytes": 138196,
-      "sha256": "8a86da29adb43a60d8e3c3b358ab21b979f4573dd6959990e55a90686efe06be",
+      "sha256": "d0bd788959da0143a06675b006fb6271069c26a77f24a123b8af1193e3d00a83",
       "sections": [
         "lectura",
         "cuentas",
@@ -7848,7 +7848,7 @@
         "file": "informe-06588-breve.pdf",
         "pages": 3,
         "bytes": 70396,
-        "sha256": "47334046971fe44dea7dca98926658765af681b87d2ff8a4ddd7973adaa72c34"
+        "sha256": "e53c7135156fe62c18be56997a4e7f55c982357a0f8de2dd7b3d9c4aaf4f26fc"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7862,7 +7862,7 @@
       "file": "informe-06595.pdf",
       "pages": 6,
       "bytes": 138527,
-      "sha256": "d78a02d0fbf943b828f1cb288296fa4a0ac78656d55024ff9bbeac4ef6bb7162",
+      "sha256": "f9007ff45266dd0e3e6ed52d2da7018f3b17cd640ed172e84fc323f0b003e430",
       "sections": [
         "lectura",
         "cuentas",
@@ -7937,7 +7937,7 @@
         "file": "informe-06595-breve.pdf",
         "pages": 3,
         "bytes": 70627,
-        "sha256": "149898d06c24529a152b0ac9796c7e1760c1a1baa8c586e92c8274240a14f965"
+        "sha256": "d0160a3ddbe775f8d61d1b0f4a4e7a0161f61bf036ab4c938f5e31b06b588fa4"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -7951,7 +7951,7 @@
       "file": "informe-06602.pdf",
       "pages": 6,
       "bytes": 138150,
-      "sha256": "794715aba247a9af9d63c62985830dfdb4de8f23b3835844f227faadccdd225e",
+      "sha256": "89c3b731457ee306dbd0184f8e3d9447fe7ad817ec2ab3f2f6b560fa7f8149c7",
       "sections": [
         "lectura",
         "cuentas",
@@ -8026,7 +8026,7 @@
         "file": "informe-06602-breve.pdf",
         "pages": 3,
         "bytes": 70366,
-        "sha256": "4c9dfc0ebb7ef1224ddc3b6e9f0e7acaa396cf6aaf2ced184d0169048f2e156b"
+        "sha256": "22dbdc0a123a570bc248b8c7ec507d39e2f0c25048f8cfc088383c9cac303acc"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8039,8 +8039,8 @@
       "municipality": "Pehuajó",
       "file": "informe-06609.pdf",
       "pages": 6,
-      "bytes": 139349,
-      "sha256": "adf1227eecf893705bc13150441d01f8cc35938be0ae608579dfe8e03d9eccdb",
+      "bytes": 139348,
+      "sha256": "8daa56191d9218437fd345e9137fe82823e92e233e1b438a0126a1b326bc99e2",
       "sections": [
         "lectura",
         "cuentas",
@@ -8114,8 +8114,8 @@
       "brief": {
         "file": "informe-06609-breve.pdf",
         "pages": 3,
-        "bytes": 71560,
-        "sha256": "7ea609d17c1a18c31e61fad2dd5d20a867e61b0c433b7071229105312f7b64e1"
+        "bytes": 71559,
+        "sha256": "c9b12fa82371a3975ddcd2b234bd5b9190bf1df78d5c54df46df7efcc72e67b5"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8129,7 +8129,7 @@
       "file": "informe-06616.pdf",
       "pages": 5,
       "bytes": 115891,
-      "sha256": "84cda83d68ee3e5c4b229eb05bce9ea0ed7d607b765e2651eef1b37bc88c47ea",
+      "sha256": "7278c9317e980c274cfcb1015de3696e72d3438ffc37011fbccb37af095d3b0a",
       "sections": [
         "lectura",
         "cuentas",
@@ -8193,7 +8193,7 @@
         "file": "informe-06616-breve.pdf",
         "pages": 3,
         "bytes": 70369,
-        "sha256": "f00b0343a55f7a2ba6eb45b35ddad81f6769374ff0706dedb379e10952b31e43"
+        "sha256": "c41e06b0a2f4d78e2c6e3f3db5d7053e46f28a917ec8fa790079624b8173666c"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8207,7 +8207,7 @@
       "file": "informe-06623.pdf",
       "pages": 6,
       "bytes": 138487,
-      "sha256": "e4f601e545cf92374b662e71dd667f05df48abe9d25925c43db148cbd3745bbe",
+      "sha256": "69262ffb87d34b6f51f6f934ae0bb8417a2f617517eb07c4181e8da861056a22",
       "sections": [
         "lectura",
         "cuentas",
@@ -8282,7 +8282,7 @@
         "file": "informe-06623-breve.pdf",
         "pages": 3,
         "bytes": 70700,
-        "sha256": "d1e1fc14181676ff5291007c9875784d2fcf2235e902071fe25ebcd090d82770"
+        "sha256": "0922140ee628a43040f27e97c7160d5980d7729b888b16c0defae52c11a58d7d"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8295,8 +8295,8 @@
       "municipality": "Pila",
       "file": "informe-06630.pdf",
       "pages": 5,
-      "bytes": 113901,
-      "sha256": "0bf103ae5ab0f03c2d3e1d6b97777af7af8a7f7a536dbf9ef2bbfe9a91635c7c",
+      "bytes": 113900,
+      "sha256": "10f2fba5e65315beb58400bfca3e7a939a3c5619558566629848cdb292630303",
       "sections": [
         "lectura",
         "cuentas",
@@ -8359,8 +8359,8 @@
       "brief": {
         "file": "informe-06630-breve.pdf",
         "pages": 3,
-        "bytes": 68388,
-        "sha256": "b673685d2527e9c1ba359d9e38112a60caa98beae485d82e955a4cd5eb5691de"
+        "bytes": 68387,
+        "sha256": "d318142541250548f5a26551ddcf5050ac100d460f17aec6228f1c3139ca9967"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8374,7 +8374,7 @@
       "file": "informe-06638.pdf",
       "pages": 6,
       "bytes": 139475,
-      "sha256": "ae4121b5f3d3424113adc0f072946b670a4642373ebe8dfee47a4e544b996cb5",
+      "sha256": "6e57735b5a2721e86726f7da0af4d4af19a7ac96102beac451a6d9acd3fc13ea",
       "sections": [
         "lectura",
         "cuentas",
@@ -8449,7 +8449,7 @@
         "file": "informe-06638-breve.pdf",
         "pages": 3,
         "bytes": 71680,
-        "sha256": "ce8608ee90fd319fe0ad6a68c4f4f848b6521cfc334fd1142130254298a70b98"
+        "sha256": "78e51a02f5c407e2e743f9ad2a1b577c6334f1de3803efff2ad94ab1f923a1b9"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8463,7 +8463,7 @@
       "file": "informe-06644.pdf",
       "pages": 6,
       "bytes": 138368,
-      "sha256": "4d62086db2c7f9d4381591f7250971d8a93e8f0d57d879c6fc2204d455c1faad",
+      "sha256": "e8a945fbbe5b374756d05b1afb40ba8a1633705afcf144cb0114e5fb6c15131a",
       "sections": [
         "lectura",
         "cuentas",
@@ -8538,7 +8538,7 @@
         "file": "informe-06644-breve.pdf",
         "pages": 3,
         "bytes": 70587,
-        "sha256": "84ebea9cf3f199745e6aa14c355e976dd4a7640bb633892ceae6afb4191b9bf8"
+        "sha256": "da2166c225c991d98cabfc255041084753f8e2f8b2cfe3bbbc44e14747ae2127"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8551,8 +8551,8 @@
       "municipality": "Presidente Perón",
       "file": "informe-06648.pdf",
       "pages": 5,
-      "bytes": 114139,
-      "sha256": "a6cd3cb672d877579095ef564ba2aaa1b1a10655c7e95f98cdf21a689fbbb9f6",
+      "bytes": 115585,
+      "sha256": "7a114790cc41ed58994b00c99b8bcdc151c265858748e385e0720730fd390c40",
       "sections": [
         "lectura",
         "cuentas",
@@ -8615,8 +8615,8 @@
       "brief": {
         "file": "informe-06648-breve.pdf",
         "pages": 3,
-        "bytes": 68561,
-        "sha256": "6778057741b5ba37339c3b11ba1216640fd3ef8ebf6089eb0840bbc7342889c8"
+        "bytes": 70003,
+        "sha256": "66e200d2171da95ea674259bc6b2ca15422873a0b73d07886c4ae7b8ace865ca"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8630,7 +8630,7 @@
       "file": "informe-06651.pdf",
       "pages": 6,
       "bytes": 138321,
-      "sha256": "5133e599d7d8c464755d8cfd96221185dd7f970210654aed7f0803d8ba740418",
+      "sha256": "d045284141954a11d2d9e84aa021dc8a6a96a5e1d21383c731d6774d393451d4",
       "sections": [
         "lectura",
         "cuentas",
@@ -8705,7 +8705,7 @@
         "file": "informe-06651-breve.pdf",
         "pages": 3,
         "bytes": 70573,
-        "sha256": "970df9fb57d2b582d4f66a751f35df8581c8f68abb98ab183f6ca0f28e59f173"
+        "sha256": "eda189465d1cfe4fdfa723c763a4b189086b257c53636a410db4aaf0958d1e8d"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8719,7 +8719,7 @@
       "file": "informe-06655.pdf",
       "pages": 5,
       "bytes": 114035,
-      "sha256": "eeb4f95f846aa9ac13d79d9b5c89cfd13b38984ee23378f61a02f6ddc6b9e181",
+      "sha256": "2e33a2be9bd381f2267496bf8ba3c64370ecfa407a515743a707e826d7f4a3ef",
       "sections": [
         "lectura",
         "cuentas",
@@ -8783,7 +8783,7 @@
         "file": "informe-06655-breve.pdf",
         "pages": 3,
         "bytes": 68498,
-        "sha256": "3fb862e3b21eaab31c17df4bbd0a17b683fba3f93b55eb6d5e19b830e2bccf99"
+        "sha256": "bfb49c426253eff44784911039dec1ae390da97d523d261db9285be555edca03"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8796,8 +8796,8 @@
       "municipality": "Quilmes",
       "file": "informe-06658.pdf",
       "pages": 6,
-      "bytes": 138459,
-      "sha256": "b8d41afebadfabfcc7b29154aefad855066d975024dba9c129e589690410d57d",
+      "bytes": 138458,
+      "sha256": "c838aa9cb1707c7e90bca4f89f81166135a41ab63dbc8da857c8d4c856febed8",
       "sections": [
         "lectura",
         "cuentas",
@@ -8871,8 +8871,8 @@
       "brief": {
         "file": "informe-06658-breve.pdf",
         "pages": 3,
-        "bytes": 70653,
-        "sha256": "7c5a7faf2da8f1f28b487f552361b3cf0723b46233731fb345ebe268b5e57b74"
+        "bytes": 70652,
+        "sha256": "1f1640ca909e45289ba501f0d4913ea3c323a94ac2e738605b9431cdb1e8206d"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8886,7 +8886,7 @@
       "file": "informe-06665.pdf",
       "pages": 6,
       "bytes": 138223,
-      "sha256": "73cfc6c71df787cf2422e148b80644a4aac09cbcc957e260ebde8e0428571648",
+      "sha256": "4840fca3f7a00eac6e544dcb12c666d46ddd37062167548ec15654b31821e6fc",
       "sections": [
         "lectura",
         "cuentas",
@@ -8961,7 +8961,7 @@
         "file": "informe-06665-breve.pdf",
         "pages": 3,
         "bytes": 70446,
-        "sha256": "288f24022b25ca3257139cc194c6af9e56176517646427715b0425ac78f659a5"
+        "sha256": "f6ef473fb0c4b6a240e1811bae434b22130cf8856bd1c30e946255b043539316"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -8975,7 +8975,7 @@
       "file": "informe-06672.pdf",
       "pages": 5,
       "bytes": 116329,
-      "sha256": "20e28a772eccbb87b1c8cf4f8eaeb9bfe52e99c7e2fce1cab4d2fc325ae2a401",
+      "sha256": "353863ade5ba6f65a1f473ba50f85bba4875bf7f65fd2c2deccb7cbf48ecb3a8",
       "sections": [
         "lectura",
         "cuentas",
@@ -9039,7 +9039,7 @@
         "file": "informe-06672-breve.pdf",
         "pages": 3,
         "bytes": 70791,
-        "sha256": "998c00f03c67a3866fad583d689bbe8ba689bf017c930557b1b15cac3774ad57"
+        "sha256": "0048808c867977dc5fa7a5fc96c2e36b937a5306c8602243e465031a4b6ee061"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9053,7 +9053,7 @@
       "file": "informe-06679.pdf",
       "pages": 6,
       "bytes": 138171,
-      "sha256": "8bedb7a80b3b8e51c2cdf88d40cee8dcf32d929488cfd9a7a13e948f54595fd2",
+      "sha256": "1cbad5578526c29d1dcb043b3292a8036e95eb8948ed5ef70404a54b36ddb414",
       "sections": [
         "lectura",
         "cuentas",
@@ -9128,7 +9128,7 @@
         "file": "informe-06679-breve.pdf",
         "pages": 3,
         "bytes": 70396,
-        "sha256": "c57d08db6d4c5c518ee1cb67319d7968e08de7afdc7d30e9c3da2cf3b56931d9"
+        "sha256": "59a45c689aede9e2a5caa41e714445641033acf78843b43a8e3e7f8ddce41151"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9142,7 +9142,7 @@
       "file": "informe-06686.pdf",
       "pages": 6,
       "bytes": 138502,
-      "sha256": "eebd7fbef7a7173ee49564462b32c5ddcf55cac436ce72adea6237d9ca7f0e9d",
+      "sha256": "8b5bb3f6ac33a0fb33616657375d8a4366a408bbcaa2c74dd5845e9964495eb1",
       "sections": [
         "lectura",
         "cuentas",
@@ -9217,7 +9217,7 @@
         "file": "informe-06686-breve.pdf",
         "pages": 3,
         "bytes": 70713,
-        "sha256": "1aafa5f428de589e7c9827f6a2e867d0fc27aab250c84f86f306030932e22d73"
+        "sha256": "0707b4fb5b1b3f5f52695488dc05175a153921cb507f45ad16445865d335fee8"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9231,7 +9231,7 @@
       "file": "informe-06693.pdf",
       "pages": 7,
       "bytes": 158180,
-      "sha256": "f2ad1f5808c5433cbd7091c24693645a481208d00bf6b4a271f3cad2a2b14aad",
+      "sha256": "3e9710d879af19f03d16b89f6055153bbc545291c204fd10c3db5ebbe628bb83",
       "sections": [
         "lectura",
         "cuentas",
@@ -9317,7 +9317,7 @@
         "file": "informe-06693-breve.pdf",
         "pages": 3,
         "bytes": 69070,
-        "sha256": "940a7c546022851ea7d350a90e8de2a89741eab4d26d80a86f5dea6a2dd7c9f8"
+        "sha256": "8ae1f9f7ab967595ae2d1a61228d8adea6ea8858a878a8d804761032c213a285"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9331,7 +9331,7 @@
       "file": "informe-06700.pdf",
       "pages": 6,
       "bytes": 138135,
-      "sha256": "7d6a26b41f2b3b14339290e180e64f0f67572ed7e2b6e12e634b7a5465e20aa3",
+      "sha256": "fdcda34413fc56eb3edbf64c5e797fe572c866b8a1b4aec8023f2bf16b45b0e9",
       "sections": [
         "lectura",
         "cuentas",
@@ -9406,7 +9406,7 @@
         "file": "informe-06700-breve.pdf",
         "pages": 3,
         "bytes": 70360,
-        "sha256": "2143249c3b82749cc131d159b9e41ca6f3f06fc2b5dac700716cc9034e358b7f"
+        "sha256": "59e2b244483e38b673c88005545539c4e65d2adece2f34ecbe6eb6864b20226f"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9420,7 +9420,7 @@
       "file": "informe-06707.pdf",
       "pages": 6,
       "bytes": 138233,
-      "sha256": "20f1edb75a7e61e05292cbad44672caa11daf895bdc580163b277a329f33f398",
+      "sha256": "6eeb175b4767fa187635884bb8fa8807b6c9ee22ed5638c33a6ab18a8f0477e9",
       "sections": [
         "lectura",
         "cuentas",
@@ -9495,7 +9495,7 @@
         "file": "informe-06707-breve.pdf",
         "pages": 3,
         "bytes": 70454,
-        "sha256": "5b1c8fb5fd37c3fe959182149a79cc61d3b38d895005f05f30bc2ca8e456a002"
+        "sha256": "965ba13ed0bf72f887a3bef7817ceb20f3de85951303d52f34dd4faacad1946c"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9508,8 +9508,8 @@
       "municipality": "Salliqueló",
       "file": "informe-06721.pdf",
       "pages": 6,
-      "bytes": 137967,
-      "sha256": "290437ed6927a72e5469da4bb03a4ec416f09777b57ef336ff1924fb9c27a267",
+      "bytes": 137965,
+      "sha256": "a885a109d65c30a23e106a98006d1fad27638a085befe52f3905108bd4683439",
       "sections": [
         "lectura",
         "cuentas",
@@ -9583,8 +9583,8 @@
       "brief": {
         "file": "informe-06721-breve.pdf",
         "pages": 3,
-        "bytes": 70211,
-        "sha256": "a222cfc51bb6538e02380f8bcb87051b3ccd6163071cde3d2584cb8b14c6c842"
+        "bytes": 70209,
+        "sha256": "a57c5ad2b100773fbe574702c61ca957adab84c6a798ea0ce103396f75466d90"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9598,7 +9598,7 @@
       "file": "informe-06714.pdf",
       "pages": 6,
       "bytes": 138385,
-      "sha256": "ddee63f9baa31a97ae28d10a1de4092fe5b730d33fb9b3ae07ded96a5b2107b0",
+      "sha256": "adef5e6962bd5f5020b7dfa66733c666e102728b2a210f400bd33fc0969c777b",
       "sections": [
         "lectura",
         "cuentas",
@@ -9673,7 +9673,7 @@
         "file": "informe-06714-breve.pdf",
         "pages": 3,
         "bytes": 70597,
-        "sha256": "d2ea85134ea2760edd1377d142248b102277a54e6f868ae55398c7d38c6e3bc0"
+        "sha256": "064696e9148627626ad580a4b0011de48719cc6b81dd03122569edb389fb011c"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9687,7 +9687,7 @@
       "file": "informe-06728.pdf",
       "pages": 6,
       "bytes": 138262,
-      "sha256": "0fc8e002fe35698109f6bf7f4ac750bc085ff211838304c858ffc35febf17b55",
+      "sha256": "d5085bbc102ec40033967cac256a8c4326a63243b243c4c59653b7e9c5ddea89",
       "sections": [
         "lectura",
         "cuentas",
@@ -9762,7 +9762,7 @@
         "file": "informe-06728-breve.pdf",
         "pages": 3,
         "bytes": 70447,
-        "sha256": "2c07fa0f1039d1fd1868b8784a45735c173ed38832052c136c533762c33a5b3d"
+        "sha256": "97e03f0076fce053cceccefa50cefc12ed23b2632708a926519e419b32d0d7c0"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9775,8 +9775,8 @@
       "municipality": "San Antonio de Areco",
       "file": "informe-06735.pdf",
       "pages": 6,
-      "bytes": 136937,
-      "sha256": "cf0178171655c451dea8ca5b8887ebe5f7b1621b4e4b1005412f101bf2aff0ee",
+      "bytes": 138328,
+      "sha256": "f96d3a6798da9244fcaf23d98626de6155307f51cc32dd6c0462ca35d22db12f",
       "sections": [
         "lectura",
         "cuentas",
@@ -9850,8 +9850,8 @@
       "brief": {
         "file": "informe-06735-breve.pdf",
         "pages": 3,
-        "bytes": 69139,
-        "sha256": "26abaed299fd1413891762a764008ddda99ccbeb61467847e655bb6c7e239de4"
+        "bytes": 70526,
+        "sha256": "9760ad928c60e9577338bd93033509666af820357334b33d13e2998e347ad4ba"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9865,7 +9865,7 @@
       "file": "informe-06742.pdf",
       "pages": 5,
       "bytes": 115976,
-      "sha256": "5479b2dbcd78bc28a412071065ee4f1e4ff823b8b5aedae417043c97935b1dbf",
+      "sha256": "43275179ba5013f7f73bf4f96064dfb0a385f8c14a1d68edfa72e51edfdfddea",
       "sections": [
         "lectura",
         "cuentas",
@@ -9929,7 +9929,7 @@
         "file": "informe-06742-breve.pdf",
         "pages": 3,
         "bytes": 70440,
-        "sha256": "34f57e115440cb2f0dc6ef688f81b6a51b1b1eb9bd1f823a13a325b9deb894b0"
+        "sha256": "42840c27e54c086affe1a09660b1e19ff9e5fe8355c466fa203a13159bb808d7"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9943,7 +9943,7 @@
       "file": "informe-06749.pdf",
       "pages": 6,
       "bytes": 138403,
-      "sha256": "46c02424ff7e8b003cabf9bcb268963ec61c1d4b711065cd2c897f4dfaaf8856",
+      "sha256": "c7c6ba8a9a08590852b55669e21cd9a2a39ab734b1b0a926845138b1d473a948",
       "sections": [
         "lectura",
         "cuentas",
@@ -10018,7 +10018,7 @@
         "file": "informe-06749-breve.pdf",
         "pages": 3,
         "bytes": 70597,
-        "sha256": "d64e51cce21f7fc6893dfb8fbe0bc044b8e0c9e1b2f84a3248ff9f3207845152"
+        "sha256": "30a2fcb024437cd413587fc9b65df01d76f261ac0ea767f5b5ad30b8affbb6a9"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10031,8 +10031,8 @@
       "municipality": "San Isidro",
       "file": "informe-06756.pdf",
       "pages": 6,
-      "bytes": 138946,
-      "sha256": "cb848edc0faabcc23d56437986eacca9dd96ddd2242011b496bf1c1cb17194ae",
+      "bytes": 138944,
+      "sha256": "7ac95408143405871521269ad78fa37b5448e943480481c75814713189f3601c",
       "sections": [
         "lectura",
         "cuentas",
@@ -10106,8 +10106,8 @@
       "brief": {
         "file": "informe-06756-breve.pdf",
         "pages": 3,
-        "bytes": 71134,
-        "sha256": "bf62659eb877fb678df9f4877c72fb88f458802ef0b726f9e44f8418d879b9cb"
+        "bytes": 71132,
+        "sha256": "0d811a645be829690b94e4296685ab77be8000562af9eacfa3c9380c65ea6737"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10121,7 +10121,7 @@
       "file": "informe-06760.pdf",
       "pages": 6,
       "bytes": 136886,
-      "sha256": "3c752e64067b7ee4b88b9651cb9cbb976cfd66e9d97e9678aae8c55f751c6ddc",
+      "sha256": "77cb4d5ce974362212ec38ff55f7ce31a241d313638cd590b62329810efbcf52",
       "sections": [
         "lectura",
         "cuentas",
@@ -10196,7 +10196,7 @@
         "file": "informe-06760-breve.pdf",
         "pages": 3,
         "bytes": 69084,
-        "sha256": "da6a7417456373fc89c12f4e76d07f134ced0b8cb272dcb54f15aaaa2b5d565c"
+        "sha256": "33d835d091f1b186d691a0280539b723166b4f78080a73a423163bbb43ce18c5"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10209,8 +10209,8 @@
       "municipality": "San Nicolás",
       "file": "informe-06763.pdf",
       "pages": 6,
-      "bytes": 138481,
-      "sha256": "50ee4046c8236ed77bbdb68ea475ef1f88395cfb7fc501132b9ec12d85ee1335",
+      "bytes": 138480,
+      "sha256": "7f010ce8ed76fedbd4391cc4089503720f2c70537160af27ce5bc694ab7d81e7",
       "sections": [
         "lectura",
         "cuentas",
@@ -10284,8 +10284,8 @@
       "brief": {
         "file": "informe-06763-breve.pdf",
         "pages": 3,
-        "bytes": 70565,
-        "sha256": "6fa2ec6e702e0b46ec9947affe9d701bb91365d97cbdf782039214b6352a35a4"
+        "bytes": 70564,
+        "sha256": "4102c50a1eb2408ddbd42093c7ed957c4b965df040c720c7955e8a957a208a2e"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10299,7 +10299,7 @@
       "file": "informe-06770.pdf",
       "pages": 6,
       "bytes": 138166,
-      "sha256": "620c36619f3d82ec186ef3c0959a085d87e94df10d8fc1a1440f334f740588f7",
+      "sha256": "12d828e8b0f1987c523531fa8ef4a8d62088a268dfafd52cdf42e22b5debb18b",
       "sections": [
         "lectura",
         "cuentas",
@@ -10374,7 +10374,7 @@
         "file": "informe-06770-breve.pdf",
         "pages": 3,
         "bytes": 70389,
-        "sha256": "60c4a0eb622eb9aff7a1909e4de265aa1bce3d4a782646ca6b1ca2de548a871e"
+        "sha256": "e27c1faaf1b097e1a4a355db6cffd46a123ad467179838776d41c26f44d53602"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10387,8 +10387,8 @@
       "municipality": "San Vicente",
       "file": "informe-06778.pdf",
       "pages": 6,
-      "bytes": 136280,
-      "sha256": "5061166456fb3d0e91a9fe1757a3d6b0d141825b99a4c8857e967d304da34190",
+      "bytes": 137763,
+      "sha256": "422485f97ec3f48ea10c12dd2d5a914ad7151affd65c4832d8a51aeb314c9012",
       "sections": [
         "lectura",
         "cuentas",
@@ -10462,8 +10462,8 @@
       "brief": {
         "file": "informe-06778-breve.pdf",
         "pages": 3,
-        "bytes": 68480,
-        "sha256": "a276491b94d371816cf6c738d11a35126b92cc57004ce005d263f3ba04ddd3c2"
+        "bytes": 69959,
+        "sha256": "e83e3964b6b3f4eee3a1bed78828b26c3d93e7a579e557e90a2e3705c28546d5"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10477,7 +10477,7 @@
       "file": "informe-06784.pdf",
       "pages": 5,
       "bytes": 116533,
-      "sha256": "ee661e0be85acd44e7529c967cda653a3ae1b77619eb13869084217fcb077367",
+      "sha256": "ab60b03192f63fa88ee0f7a6a456a82e140c789119b1c1131641bf1bf46bc0dd",
       "sections": [
         "lectura",
         "cuentas",
@@ -10541,7 +10541,7 @@
         "file": "informe-06784-breve.pdf",
         "pages": 3,
         "bytes": 70991,
-        "sha256": "26b4c7bcfdbac81293bd938114e37f8a951570d73c1699eeb1e1ab0de9fd579b"
+        "sha256": "6ec43783a89f2da834ec9c4bbee2abb776aeffbcfc03457c926cb285472d5e2a"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10555,7 +10555,7 @@
       "file": "informe-06791.pdf",
       "pages": 6,
       "bytes": 138573,
-      "sha256": "0c5c5fc476f83df0b15e9fd4c19973cebb008310464f2cd6ae19db7c9ede1d19",
+      "sha256": "295638af91225ffe205019ec75aa58e530d6fc43787d36aa0518a914603fa2c8",
       "sections": [
         "lectura",
         "cuentas",
@@ -10630,7 +10630,7 @@
         "file": "informe-06791-breve.pdf",
         "pages": 3,
         "bytes": 70790,
-        "sha256": "600c59121aa7e655134394bf848ad5c9fd4b164a1f08f049692807e08b6e9ab3"
+        "sha256": "f541b81f81454071726339dfed2b54c9d5517d9f13e3fcbd0960e27beef1ccc6"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10644,7 +10644,7 @@
       "file": "informe-06798.pdf",
       "pages": 5,
       "bytes": 115831,
-      "sha256": "daa8494a523da48aab14fb0a05ad48b8442721cf9e79d8d57e1ecbb68bf9ad52",
+      "sha256": "1968cf1484512d7118bd0677940dcfbbaa126d9a5f8657c91d21315654d54ffd",
       "sections": [
         "lectura",
         "cuentas",
@@ -10708,7 +10708,7 @@
         "file": "informe-06798-breve.pdf",
         "pages": 3,
         "bytes": 70273,
-        "sha256": "4a6ca6ac87a6a8b01d69fb0936bd98e1528effb4cbff363a94d05db1507941f8"
+        "sha256": "da9c983098c7dc6856fb10f740b1f07800fcf4bcc4460aa38fffed1376fb1edb"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10721,8 +10721,8 @@
       "municipality": "Tigre",
       "file": "informe-06805.pdf",
       "pages": 9,
-      "bytes": 207987,
-      "sha256": "c48e955ea2da0ffd49adbcfdf4dc0a5d92df58b958c20d0ae0480294e2acc32e",
+      "bytes": 207986,
+      "sha256": "850ad3e4e22ca1f99ef858a6e9fa8e18f3d096c8ee57227f2eb1934aaf9e678b",
       "sections": [
         "lectura",
         "cuentas",
@@ -10829,8 +10829,8 @@
       "brief": {
         "file": "informe-06805-breve.pdf",
         "pages": 3,
-        "bytes": 71781,
-        "sha256": "6608df4a705b67ff5d4b0f6ea3dbefe65f5f477f4da25d9ae8b85f640094cb8e"
+        "bytes": 71780,
+        "sha256": "75a7d2af6276148c3935a659601203180535eb170b6470d33f412efa67fb6439"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10844,7 +10844,7 @@
       "file": "informe-06812.pdf",
       "pages": 5,
       "bytes": 113883,
-      "sha256": "375b53d5f9715660208ce6b65d018994a74ccac851d429bf1c3e14802d1bf9f8",
+      "sha256": "28fa49b1b015c0dc393f0149bfe084bd29f6b4a1e9815b647a79982330bbf269",
       "sections": [
         "lectura",
         "cuentas",
@@ -10908,7 +10908,7 @@
         "file": "informe-06812-breve.pdf",
         "pages": 3,
         "bytes": 68366,
-        "sha256": "ae14e426c28c83134a418564fd7e0b15dc64eb0fc046858b30deca42135f863b"
+        "sha256": "f1203e909921fd2407476787d2d310754596166bd54cd07ff0829c9b3468b290"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10921,8 +10921,8 @@
       "municipality": "Tornquist",
       "file": "informe-06819.pdf",
       "pages": 6,
-      "bytes": 136221,
-      "sha256": "691323491bdb8a810f9c88f5fc5be2d294fdfe0f04d092af301098246db71ae3",
+      "bytes": 137747,
+      "sha256": "4d513bb6783229066e2d246408285736c472eac8e6e3a7764f8e3f918a09f6d1",
       "sections": [
         "lectura",
         "cuentas",
@@ -10996,8 +10996,8 @@
       "brief": {
         "file": "informe-06819-breve.pdf",
         "pages": 3,
-        "bytes": 68460,
-        "sha256": "12eb7627afe72e8d1434994a1ddcf63b0b18a9b955de73b437d389c9efd9619b"
+        "bytes": 69982,
+        "sha256": "dd18cbdb51242b495e93a7de4fbdaeec42b463d93152d116c78412ced4c48eb3"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -11011,7 +11011,7 @@
       "file": "informe-06826.pdf",
       "pages": 6,
       "bytes": 138270,
-      "sha256": "ba2eba1f9c0a4461fdc56f3285b9b725d38d28c9f4f6ed84015cc198c3fcff19",
+      "sha256": "96537b1ef8393faba08212093947c13678140d521d09ef599a9a7db4e644101a",
       "sections": [
         "lectura",
         "cuentas",
@@ -11086,7 +11086,7 @@
         "file": "informe-06826-breve.pdf",
         "pages": 3,
         "bytes": 70459,
-        "sha256": "2468ffcf483b5cd2ce93b47d22f443fa69ae7f49f94fa1969d00ebb2532609f2"
+        "sha256": "9211a437ef534703902b70747c800debb1b2fabaffcb604584e5b3701172fc65"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -11100,7 +11100,7 @@
       "file": "informe-06833.pdf",
       "pages": 6,
       "bytes": 138221,
-      "sha256": "2307954910c57f2ef95d8f6fa164509356b868cb0f7729aeaaee51025112be8e",
+      "sha256": "db3584d2d3a3809acc5656d4d6f9c253cd73f4b4a3f58b1efa264d9e95746916",
       "sections": [
         "lectura",
         "cuentas",
@@ -11175,7 +11175,7 @@
         "file": "informe-06833-breve.pdf",
         "pages": 3,
         "bytes": 70396,
-        "sha256": "8829fa671958fb9df4dee6718744633074130af426362aa37e4555e9e19ce64e"
+        "sha256": "6b9f7364cece234a900d5b16f41fba2e1669e447fdaf6a80e81fb7f558825c5b"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -11188,8 +11188,8 @@
       "municipality": "Tres de Febrero",
       "file": "informe-06840.pdf",
       "pages": 6,
-      "bytes": 138203,
-      "sha256": "3a6e1ba96d4075649d302d8759aeff5acae8f992e7a54e46ab96da1460cbad95",
+      "bytes": 138201,
+      "sha256": "d4d8459979290b93a247983165b0d424b64f131cb49b07373ebb6ec8b3dd8423",
       "sections": [
         "lectura",
         "cuentas",
@@ -11263,8 +11263,8 @@
       "brief": {
         "file": "informe-06840-breve.pdf",
         "pages": 3,
-        "bytes": 70396,
-        "sha256": "dba3e152db6f39268855583ab67898a8e79600ee89b310cb96c8036002f46553"
+        "bytes": 70394,
+        "sha256": "bd564b77aab072f81853f3fda8f22e7dd6b7956b9df84a7fa7918823d225ffca"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -11278,7 +11278,7 @@
       "file": "informe-06847.pdf",
       "pages": 5,
       "bytes": 115912,
-      "sha256": "48d63bc0023e8342e8f73a0c40933da065e21499edbefd883f8fc1daf261cd15",
+      "sha256": "19ca6fd87e291291f6621dfb3117f5556af8874facdeba8cfd527a954aaf846d",
       "sections": [
         "lectura",
         "cuentas",
@@ -11342,7 +11342,7 @@
         "file": "informe-06847-breve.pdf",
         "pages": 3,
         "bytes": 70369,
-        "sha256": "115ed55ca2dba4b45b087a3c558f44d9a04734cf81ef75ee2de971e249696738"
+        "sha256": "ab06d8db8b03ae43851bfff313310c2958f7c492243ea0e234bbdf002d64a5a8"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -11356,7 +11356,7 @@
       "file": "informe-06854.pdf",
       "pages": 6,
       "bytes": 138960,
-      "sha256": "ee0e1fc86d8760b46a0b070de8dbb65a6517d7b38aaa529f796f635f66ccf166",
+      "sha256": "14a07d46e5404ae5d7d0ec99687774b9cc2a9b57d87d565a4e43d88116c5a7ff",
       "sections": [
         "lectura",
         "cuentas",
@@ -11431,7 +11431,7 @@
         "file": "informe-06854-breve.pdf",
         "pages": 3,
         "bytes": 71159,
-        "sha256": "ce813835bc3b5be1984b57a11dc7070ebe5fa98766c4ee2523ee4821c02a045d"
+        "sha256": "5b44a20ed297f69ef508318140eb4d8aed626462346daee151ed26546f5c9d59"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -11445,7 +11445,7 @@
       "file": "informe-06861.pdf",
       "pages": 6,
       "bytes": 138784,
-      "sha256": "73b4c57e64113e5207903b7bffeb1e3eaffe9af6085ad0d9cb8526f6c86c6d1a",
+      "sha256": "7c77c1af3b556bc755d66e843f4d63537b8a4c4f9f57ff0c9631af815a64b4b3",
       "sections": [
         "lectura",
         "cuentas",
@@ -11520,7 +11520,7 @@
         "file": "informe-06861-breve.pdf",
         "pages": 3,
         "bytes": 70959,
-        "sha256": "3d1d9a11bcae8446fc9297dcc651adc2001ab3878b140f56a4c869978e09dfc1"
+        "sha256": "4df6dd5230ba39678866f5ef74d0c6023ed81588229f26e9e44f3031762874c9"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -11533,8 +11533,8 @@
       "municipality": "Villa Gesell",
       "file": "informe-06868.pdf",
       "pages": 6,
-      "bytes": 138121,
-      "sha256": "0c5c48131a796ce38c03de853fb5f126b16b58d5c2306196ecee5ead91ea675c",
+      "bytes": 138119,
+      "sha256": "306f4a4ca533e22819a94c39311c1bb81d8f80f798816fdd653f156e6de97acf",
       "sections": [
         "lectura",
         "cuentas",
@@ -11608,8 +11608,8 @@
       "brief": {
         "file": "informe-06868-breve.pdf",
         "pages": 3,
-        "bytes": 70310,
-        "sha256": "fb5934531defd0d843b49469cc5881bd56ca26cbb5d8337fb0ec0e3ad7a9ade5"
+        "bytes": 70308,
+        "sha256": "55daf6fd89d19b3e260b7e693b7d080517afca75433164c44d0243035b99c999"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -11622,8 +11622,8 @@
       "municipality": "Villarino",
       "file": "informe-06875.pdf",
       "pages": 6,
-      "bytes": 138281,
-      "sha256": "cb2a4415268b8feb58c9158e222954a070ce1e320cae8907cb3a461acdcfc22f",
+      "bytes": 138280,
+      "sha256": "a7a2a2aff158ced10ee928e8e7f682376a8880eca535d246c22b48d0782a3e10",
       "sections": [
         "lectura",
         "cuentas",
@@ -11697,8 +11697,8 @@
       "brief": {
         "file": "informe-06875-breve.pdf",
         "pages": 3,
-        "bytes": 70495,
-        "sha256": "57a599ea21af2619dfa2f477ddad2c8ed5179cfcfce4fafa6164533bc8dfc211"
+        "bytes": 70494,
+        "sha256": "299e78a8a9a5dea7b1be98028573bdf432894264d7a93b93805695478cf60675"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -11712,7 +11712,7 @@
       "file": "informe-06882.pdf",
       "pages": 6,
       "bytes": 138701,
-      "sha256": "1b61951d8488f909dfe37b8471b0becadc73fd10bb89aadc4787bbfb211fd1eb",
+      "sha256": "428df9c7622029d27a778dbca1104fc6c005596ee78900195b88842eb3337683",
       "sections": [
         "lectura",
         "cuentas",
@@ -11787,7 +11787,7 @@
         "file": "informe-06882-breve.pdf",
         "pages": 3,
         "bytes": 70799,
-        "sha256": "92624863fe87fb081de729a13ad714b8f72b651ce432cfcbbbd839208b7a1cb3"
+        "sha256": "4891c128a58a2a42858cda1fa11f0fc532699081f1736823bd8e5d6be8181cdf"
       },
       "populationYear": 2022,
       "crimeYears": [

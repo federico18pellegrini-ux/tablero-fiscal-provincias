@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-04",
+  "generated": "2026-10-14",
   "scope": "Datos incorporados; no certifica que un municipio no publique información en otro sitio.",
   "commonPending": [
     "Caja libre, vencimientos futuros, antigüedad de proveedores y flujos fiscales mensuales: todavía no hay una serie comparable para los 135. Un saldo en tesorería no resuelve esos faltantes.",
@@ -236,9 +236,9 @@
     {
       "id": "06028",
       "municipio": "Almirante Brown",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
@@ -253,9 +253,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
@@ -916,9 +916,9 @@
     {
       "id": "06091",
       "municipio": "Berazategui",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua",
@@ -931,9 +931,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "budgetYear": 2026,
       "budgetAsOf": "2025-11-19",
       "budgetOriginal2026": true,
@@ -1742,9 +1742,9 @@
     {
       "id": "06168",
       "municipio": "Castelli",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
@@ -1761,9 +1761,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://www.castelli.gob.ar/",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "budgetYear": 2026,
       "budgetAsOf": "2025-12-23",
       "budgetOriginal2026": true,
@@ -2061,9 +2061,9 @@
     {
       "id": "06175",
       "municipio": "Colón",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
@@ -2075,9 +2075,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "http://www.municipalidaddecolon.com/index.php",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "budgetYear": 2026,
       "budgetAsOf": "2025-12-26",
       "budgetOriginal2026": true,
@@ -2523,9 +2523,9 @@
     {
       "id": "06238",
       "municipio": "Dolores",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
@@ -2540,9 +2540,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://dolores.gob.ar/resena-trimestral/",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
@@ -5320,9 +5320,9 @@
     {
       "id": "06455",
       "municipio": "Las Flores",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2023-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion",
@@ -5335,9 +5335,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://lasflores.gob.ar/transparencia",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "budgetYear": 2026,
       "budgetAsOf": "2025-12-29",
       "budgetOriginal2026": true,
@@ -5580,9 +5580,9 @@
     {
       "id": "06469",
       "municipio": "Lincoln",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Presupuesto anual 2026: pendiente de documento oficial verificado",
@@ -5596,9 +5596,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
@@ -6328,9 +6328,9 @@
     {
       "id": "06525",
       "municipio": "Marcos Paz",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2024-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Presupuesto anual 2026: pendiente de documento oficial verificado",
@@ -6344,9 +6344,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://www.marcospaz.gov.ar/",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
@@ -6824,9 +6824,9 @@
     {
       "id": "06568",
       "municipio": "Morón",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2023-12-30",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Agricultura, ganaderia y pesca",
@@ -6841,9 +6841,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
@@ -6910,9 +6910,9 @@
     {
       "id": "06574",
       "municipio": "Navarro",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
@@ -6927,9 +6927,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
@@ -7769,9 +7769,9 @@
     {
       "id": "06648",
       "municipio": "Presidente Perón",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
@@ -7790,9 +7790,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
@@ -8867,9 +8867,9 @@
     {
       "id": "06735",
       "municipio": "San Antonio de Areco",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion",
@@ -8882,9 +8882,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://areco.ar/transparencia/presupuestos/",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "budgetYear": 2026,
       "budgetAsOf": "2025-12-19",
       "budgetOriginal2026": true,
@@ -9439,9 +9439,9 @@
     {
       "id": "06778",
       "municipio": "San Vicente",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
@@ -9456,9 +9456,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
@@ -9930,9 +9930,9 @@
     {
       "id": "06819",
       "municipio": "Tornquist",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
@@ -9947,9 +9947,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://tornquist.gob.ar/gobierno-abierto",
+      "portalReview": "2026-10-14",
+      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalUrl": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
@@ -11612,7 +11612,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11622,7 +11622,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11632,7 +11632,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11642,7 +11642,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11652,7 +11652,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11662,7 +11662,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11672,7 +11672,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11682,7 +11682,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11692,7 +11692,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11702,7 +11702,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11712,7 +11712,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11722,7 +11722,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11732,7 +11732,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11742,7 +11742,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11752,7 +11752,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11762,7 +11762,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11772,7 +11772,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11782,7 +11782,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -11792,7 +11792,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13322,7 +13322,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13332,7 +13332,7 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13342,7 +13342,7 @@
       "estado": "Pendiente",
       "periodo": "2025-11-19",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13352,7 +13352,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13362,7 +13362,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13372,7 +13372,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13382,7 +13382,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13392,7 +13392,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13402,7 +13402,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13412,7 +13412,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13422,7 +13422,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13432,7 +13432,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13442,7 +13442,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13452,7 +13452,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13462,7 +13462,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13472,7 +13472,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13482,7 +13482,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13492,7 +13492,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -13502,7 +13502,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://berazategui.gob.ar/responsabilidad-fiscal/",
+      "portal": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15412,7 +15412,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15422,7 +15422,7 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15432,7 +15432,7 @@
       "estado": "Pendiente",
       "periodo": "2025-12-23",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15442,7 +15442,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15452,7 +15452,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15462,7 +15462,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15472,7 +15472,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15482,7 +15482,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15492,7 +15492,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15502,7 +15502,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15512,7 +15512,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15522,7 +15522,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15532,7 +15532,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15542,7 +15542,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15552,7 +15552,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15562,7 +15562,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15572,7 +15572,7 @@
       "estado": "Reservado o sin cifra de origen",
       "periodo": "2024-12",
       "documentoNecesario": "Cifra publicada por localización BCRA/DPE; las reservas estadísticas no se completan con cero.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15582,7 +15582,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -15592,7 +15592,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://www.castelli.gob.ar/",
+      "portal": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16172,7 +16172,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16182,7 +16182,7 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16192,7 +16192,7 @@
       "estado": "Pendiente",
       "periodo": "2025-12-26",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16202,7 +16202,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16212,7 +16212,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16222,7 +16222,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16232,7 +16232,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16242,7 +16242,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16252,7 +16252,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16262,7 +16262,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16272,7 +16272,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16282,7 +16282,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16292,7 +16292,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16302,7 +16302,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16312,7 +16312,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16322,7 +16322,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16332,7 +16332,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16342,7 +16342,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -16352,7 +16352,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "http://www.municipalidaddecolon.com/index.php",
+      "portal": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17312,7 +17312,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17322,7 +17322,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17332,7 +17332,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17342,7 +17342,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17352,7 +17352,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17362,7 +17362,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17372,7 +17372,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17382,7 +17382,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17392,7 +17392,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17402,7 +17402,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17412,7 +17412,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17422,7 +17422,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17432,7 +17432,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17442,7 +17442,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17452,7 +17452,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17462,7 +17462,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17472,7 +17472,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17482,7 +17482,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -17492,7 +17492,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://dolores.gob.ar/resena-trimestral/",
+      "portal": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -23962,7 +23962,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -23972,7 +23972,7 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -23982,7 +23982,7 @@
       "estado": "Pendiente",
       "periodo": "2025-12-29",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -23992,7 +23992,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24002,7 +24002,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24012,7 +24012,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24022,7 +24022,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24032,7 +24032,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24042,7 +24042,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24052,7 +24052,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24062,7 +24062,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24072,7 +24072,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24082,7 +24082,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24092,7 +24092,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24102,7 +24102,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24112,7 +24112,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24122,7 +24122,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24132,7 +24132,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24142,7 +24142,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://lasflores.gob.ar/transparencia",
+      "portal": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -24532,7 +24532,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24542,7 +24542,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24552,7 +24552,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24562,7 +24562,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24572,7 +24572,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24582,7 +24582,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24592,7 +24592,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24602,7 +24602,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24612,7 +24612,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24622,7 +24622,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24632,7 +24632,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24642,7 +24642,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24652,7 +24652,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24662,7 +24662,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24672,7 +24672,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24682,7 +24682,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24692,7 +24692,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24702,7 +24702,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -24712,7 +24712,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://www.lincoln.gob.ar/?q=transparencia",
+      "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
     {
@@ -26242,7 +26242,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26252,7 +26252,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26262,7 +26262,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26272,7 +26272,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26282,7 +26282,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26292,7 +26292,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26302,7 +26302,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26312,7 +26312,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26322,7 +26322,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26332,7 +26332,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26342,7 +26342,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26352,7 +26352,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26362,7 +26362,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26372,7 +26372,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26382,7 +26382,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26392,7 +26392,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26402,7 +26402,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26412,7 +26412,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -26422,7 +26422,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://www.marcospaz.gov.ar/",
+      "portal": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
       "revision": "2026-10-04"
     },
     {
@@ -27382,7 +27382,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27392,7 +27392,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27402,7 +27402,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27412,7 +27412,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27422,7 +27422,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27432,7 +27432,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27442,7 +27442,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27452,7 +27452,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27462,7 +27462,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27472,7 +27472,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27482,7 +27482,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27492,7 +27492,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27502,7 +27502,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27512,7 +27512,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27522,7 +27522,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27532,7 +27532,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27542,7 +27542,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27552,7 +27552,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27562,7 +27562,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "http://www.moron.gob.ar/estados-contables-del-ejercicio-2021/",
+      "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27572,7 +27572,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27582,7 +27582,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27592,7 +27592,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27602,7 +27602,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27612,7 +27612,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27622,7 +27622,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27632,7 +27632,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27642,7 +27642,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27652,7 +27652,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27662,7 +27662,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27672,7 +27672,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27682,7 +27682,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27692,7 +27692,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27702,7 +27702,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27712,7 +27712,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27722,7 +27722,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27732,7 +27732,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27742,7 +27742,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -27752,7 +27752,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://navarro.gob.ar/situacion-economica-financiera/",
+      "portal": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29662,7 +29662,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29672,7 +29672,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29682,7 +29682,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29692,7 +29692,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29702,7 +29702,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29712,7 +29712,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29722,7 +29722,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29732,7 +29732,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29742,7 +29742,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29752,7 +29752,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29762,7 +29762,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29772,7 +29772,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29782,7 +29782,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29792,7 +29792,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29802,7 +29802,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29812,7 +29812,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29822,7 +29822,7 @@
       "estado": "Reservado o sin cifra de origen",
       "periodo": "2024-12",
       "documentoNecesario": "Cifra publicada por localización BCRA/DPE; las reservas estadísticas no se completan con cero.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29832,7 +29832,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -29842,7 +29842,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://www.presidenteperon.gov.ar/control_gestion.php",
+      "portal": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32322,7 +32322,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32332,7 +32332,7 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32342,7 +32342,7 @@
       "estado": "Pendiente",
       "periodo": "2025-12-19",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32352,7 +32352,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32362,7 +32362,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32372,7 +32372,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32382,7 +32382,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32392,7 +32392,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32402,7 +32402,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32412,7 +32412,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32422,7 +32422,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32432,7 +32432,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32442,7 +32442,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32452,7 +32452,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32462,7 +32462,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32472,7 +32472,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32482,7 +32482,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32492,7 +32492,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -32502,7 +32502,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://areco.ar/transparencia/presupuestos/",
+      "portal": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33652,7 +33652,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33662,7 +33662,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33672,7 +33672,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33682,7 +33682,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33692,7 +33692,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33702,7 +33702,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33712,7 +33712,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33722,7 +33722,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33732,7 +33732,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33742,7 +33742,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33752,7 +33752,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33762,7 +33762,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33772,7 +33772,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33782,7 +33782,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33792,7 +33792,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33802,7 +33802,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33812,7 +33812,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33822,7 +33822,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -33832,7 +33832,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "http://www.sanvicente.gob.ar/situacioneconomicofinanciera/",
+      "portal": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34792,7 +34792,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34802,7 +34802,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34812,7 +34812,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34822,7 +34822,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34832,7 +34832,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34842,7 +34842,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34852,7 +34852,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34862,7 +34862,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34872,7 +34872,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34882,7 +34882,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34892,7 +34892,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34902,7 +34902,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34912,7 +34912,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34922,7 +34922,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34932,7 +34932,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34942,7 +34942,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34952,7 +34952,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34962,7 +34962,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {
@@ -34972,7 +34972,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://tornquist.gob.ar/gobierno-abierto",
+      "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
     {

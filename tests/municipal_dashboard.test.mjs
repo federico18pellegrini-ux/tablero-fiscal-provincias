@@ -210,7 +210,7 @@ test('all fiscal observations retain primary documents, page locations and conte
   const audit=JSON.parse(fs.readFileSync(new URL('../municipios/data/fiscal_verified.json',import.meta.url)));
   assert.equal(audit.records.length,84);
   assert.deepEqual(audit.records.map(r=>r.id).sort(),rows.filter(m=>m.fiscal).map(m=>m.id).sort());
-  assert.equal(audit.otherPeriods.length,25);
+  assert.equal(audit.otherPeriods.length,39);
   for(const r of [...audit.records,...audit.budgetExecutions,...audit.otherPeriods]){
     assert.match(r.landingUrl,/^https?:\/\//);
     assert.ok(r.documents.length>0);
@@ -243,8 +243,8 @@ test('accounts belong to the municipality, not the separately published agency',
 });
 
 test('other periods stay visible and downloadable without entering June rankings',()=>{
-  assert.equal(data.fiscalCoverage.withAccounts,105);
-  assert.equal(data.fiscalCoverage.otherPeriods,21);
+  assert.equal(data.fiscalCoverage.withAccounts,119);
+  assert.equal(data.fiscalCoverage.otherPeriods,35);
   const lp=rows.find(m=>m.id==='06441'),b=rows.find(m=>m.id==='06112');
   assert.equal(lp.fiscal,null);
   assert.equal(lp.fiscalOther.fin,'2026-03-31');
@@ -269,7 +269,7 @@ test('portal review covers every municipality and preserves pending accounts',()
     if(m.fiscalSearch.status==='comparable_account')assert.ok(m.fiscal);
     if(m.fiscalSearch.status==='other_period'){assert.ok(m.fiscalOther);assert.equal(m.fiscal,null);}
   }
-  assert.equal(rows.filter(m=>!m.fiscal&&!m.fiscalOther&&!m.fiscalExecution).length,30);
+  assert.equal(rows.filter(m=>!m.fiscal&&!m.fiscalOther&&!m.fiscalExecution).length,16);
 });
 
 test('ASAP scores retain all 135 municipalities, zero scores, ties, and point changes',()=>{

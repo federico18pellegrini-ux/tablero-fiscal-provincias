@@ -14,7 +14,7 @@ class MunicipalTools(unittest.TestCase):
         self.assertEqual(len(rows),135)
         self.assertEqual(sum(r['comparable'] for r in rows),84)
         counts={label:sum(r['fiscalStatus']==label for r in rows) for label in ['Comparable a junio de 2026','Otro período','Ejecución parcial','Cuenta no verificada']}
-        self.assertEqual(list(counts.values()),[84,21,0,30])
+        self.assertEqual(list(counts.values()),[84,35,0,16])
         heras=next(r for r in rows if r['id']=='06329')
         self.assertTrue(heras['comparable'])
         self.assertTrue(any('Préstamos bancarios 2024' in v for v in heras['missing']))

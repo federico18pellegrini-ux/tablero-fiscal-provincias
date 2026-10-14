@@ -1,0 +1,177 @@
+{
+  "reviewed": "2026-10-14",
+  "discoverySource": "https://municipiosargentinos.net/",
+  "primaryEvidence": "municipios/data/fiscal-sources/2026-10-14/register.json",
+  "before": {
+    "withAccounts": 105,
+    "comparable": 84,
+    "missing": 30
+  },
+  "after": {
+    "fiscal": 84,
+    "budgetOnly": 0,
+    "otherPeriods": 35,
+    "withAccounts": 119,
+    "verifiedAt": "2026-10-14"
+  },
+  "newMunicipalities": [
+    {
+      "id": "06028",
+      "name": "Almirante Brown",
+      "periodStart": "2025-01-02",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06091",
+      "name": "Berazategui",
+      "periodStart": "2025-01-01",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06168",
+      "name": "Castelli",
+      "periodStart": "2025-01-02",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06175",
+      "name": "Colón",
+      "periodStart": "2025-01-01",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06238",
+      "name": "Dolores",
+      "periodStart": "2025-01-01",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06455",
+      "name": "Las Flores",
+      "periodStart": "2023-01-01",
+      "periodEnd": "2023-12-31"
+    },
+    {
+      "id": "06469",
+      "name": "Lincoln",
+      "periodStart": "2025-01-02",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06525",
+      "name": "Marcos Paz",
+      "periodStart": "2024-01-02",
+      "periodEnd": "2024-12-31"
+    },
+    {
+      "id": "06568",
+      "name": "Morón",
+      "periodStart": "2023-01-02",
+      "periodEnd": "2023-12-30"
+    },
+    {
+      "id": "06574",
+      "name": "Navarro",
+      "periodStart": "2025-01-02",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06648",
+      "name": "Presidente Perón",
+      "periodStart": "2025-01-02",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06735",
+      "name": "San Antonio de Areco",
+      "periodStart": "2025-01-01",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06778",
+      "name": "San Vicente",
+      "periodStart": "2025-01-01",
+      "periodEnd": "2025-12-31"
+    },
+    {
+      "id": "06819",
+      "name": "Tornquist",
+      "periodStart": "2025-01-02",
+      "periodEnd": "2025-12-31"
+    }
+  ],
+  "remaining": [
+    {
+      "id": "06134",
+      "name": "Cañuelas"
+    },
+    {
+      "id": "06260",
+      "name": "Esteban Echeverría"
+    },
+    {
+      "id": "06294",
+      "name": "General Arenales"
+    },
+    {
+      "id": "06343",
+      "name": "General Paz"
+    },
+    {
+      "id": "06351",
+      "name": "General Pinto"
+    },
+    {
+      "id": "06408",
+      "name": "Hurlingham"
+    },
+    {
+      "id": "06420",
+      "name": "La Costa"
+    },
+    {
+      "id": "06462",
+      "name": "Leandro N. Alem"
+    },
+    {
+      "id": "06490",
+      "name": "Lomas de Zamora"
+    },
+    {
+      "id": "06518",
+      "name": "Mar Chiquita"
+    },
+    {
+      "id": "06539",
+      "name": "Merlo"
+    },
+    {
+      "id": "06630",
+      "name": "Pila"
+    },
+    {
+      "id": "06655",
+      "name": "Punta Indio"
+    },
+    {
+      "id": "06693",
+      "name": "Roque Pérez"
+    },
+    {
+      "id": "06760",
+      "name": "San Miguel"
+    },
+    {
+      "id": "06812",
+      "name": "Tordillo"
+    }
+  ],
+  "verification": {
+    "pythonTests": 43,
+    "javascriptTests": 36,
+    "pdfReportsChecked": 135,
+    "accountingIdentities": "All 14 reconcile to the cent",
+    "periodRanking": "2023-2025 accounts excluded from 1S2026",
+    "sourceDifference": "Use fiscal CAIF expenditure, not budget expenditure including financing"
+  }
+}
