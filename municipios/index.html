@@ -9,8 +9,10 @@
   <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260917-marca">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20261004-integrated"></script>
-  <script defer src="../analytics.js?v=20260917-inicio"></script>
+  <script defer src="app.js?v=20261014-gestion"></script>
+  <script defer src="structure.js?v=20261014"></script>
+  <link rel="stylesheet" href="structure.css?v=20261014">
+  <script defer src="../analytics.js?v=20261014-gestion"></script>
   <link rel="preload" href="../assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/brand/playfair-display.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../brand.css?v=20260918-municipios-pba">
@@ -26,6 +28,7 @@
     <nav class="main-nav" aria-label="Vistas del tablero">
       <button data-view="panorama" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-8H9v8H4a1 1 0 0 1-1-1Z"/></svg>Panorama</button>
       <button data-view="recursos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18M5 9v10m5-10v10m4-10v10m5-10v10M3 21h18M3 6l9-4 9 4Z"/></svg>Recursos</button>
+      <button data-view="gestion"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"/></svg>Gestión</button>
       <button data-view="empleo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12l9 3 9-3M12 12v5"/></svg>Empleo</button>
       <button data-view="simular"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg>Simular</button>
       <button data-view="rankings" class="general-ranking"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h17M8 7h12M8 12h8M8 17h4"/></svg><span>Ranking <span class="nav-ranking-tail">general</span></span></button>
@@ -105,6 +108,10 @@
         </section>
         <section class="panel fiscal-panel" id="fiscal-panel"></section>
         <div id="management-panel"></div>
+      </section>
+      <section id="gestion" class="view" aria-label="Gestión municipal y comparación" hidden>
+        <div class="section-heading"><div><div class="eyebrow">Cómo se organiza el municipio</div><h2>Gestión y comparación</h2><p>Personal, pagos pendientes, gastos y control de cuentas.</p></div></div>
+        <div id="structure-content" aria-live="polite"></div>
       </section>
       <section id="empleo" class="view" aria-label="Economía y empleo municipal" hidden>
         <div class="section-heading"><div><div class="eyebrow">La economía detrás del presupuesto</div><h2>Trabajo, salarios y actividad</h2><p>Empleo privado registrado por lugar del establecimiento.</p></div></div>

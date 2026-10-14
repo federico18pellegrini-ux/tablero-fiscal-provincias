@@ -1,0 +1,35 @@
+{
+  "06805": {
+    "workforce": {
+      "sha256": "2c818acdb2dcd16648ea293d97854118365c915943dcc4de1f80a97de57b204f",
+      "file": "structure-sources/06805-workforce.pdf",
+      "page": 6,
+      "verifiedAt": "2026-10-14",
+      "locator": "Artículo 24: 3.670 cargos permanentes y funcionales; contratación temporal autorizada por separado.",
+      "expected": {
+        "type": "c",
+        "period": "2026",
+        "total": null,
+        "categories": [
+          [
+            "permanente",
+            3670
+          ]
+        ]
+      }
+    }
+  },
+  "06329": {
+    "hcd": {
+      "sha256": "949e957b0382955dc7383fe18ea7fb05d6b9122ab2fe6d9302b3f30151898bd5",
+      "file": "structure-sources/06329-hcd.pdf",
+      "page": 2,
+      "verifiedAt": "2026-10-14",
+      "locator": "Total H.C.D. devengado 109.927.681,64 / gasto presupuestario devengado 9.840.459.615,08 × 100 = 1,1171%; redondea 1,12%.",
+      "expected": {
+        "value": 1.12,
+        "period": "2024"
+      }
+    }
+  }
+}
