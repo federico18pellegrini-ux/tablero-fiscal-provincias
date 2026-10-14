@@ -55,6 +55,7 @@ class MunicipalFiscalImportTests(unittest.TestCase):
             self.apply(self.audit)
 
     def test_other_period_keeps_its_dates_without_becoming_a_semester(self):
+        self.audit['otherPeriods'][0]['inicio'] = '2026-01-01'
         self.audit['otherPeriods'][0]['fin'] = '2026-06-30'
         with self.assertRaisesRegex(ValueError, 'Comparable account placed outside'):
             self.apply(self.audit)

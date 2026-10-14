@@ -3207,6 +3207,39 @@
   "budgetExecutions": [],
   "otherPeriods": [
     {
+      "id": "06028",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+      "amounts": {
+        "ingresos_corrientes": "222546250120.79",
+        "gastos_corrientes": "217719147401.19",
+        "ingresos_capital": "23898554954.82",
+        "gastos_capital": "33893570990.30",
+        "ingresos_totales": "246444805075.61",
+        "gastos_totales": "251612718391.49",
+        "resultado_financiero": "-5167913315.88",
+        "personal_devengado": "51672555054.54"
+      },
+      "documents": [
+        {
+          "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+          "sha256": "d15f85b3cff01baaa8cc8d0fbf8aaadac52672042045266aef6895d01086054e",
+          "bytes": 413440,
+          "pages": 17,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06028.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
+    },
+    {
       "id": "06049",
       "inicio": "2026-01-01",
       "fin": "2026-03-31",
@@ -3269,6 +3302,39 @@
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
     },
     {
+      "id": "06091",
+      "inicio": "2025-01-01",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
+      "amounts": {
+        "ingresos_corrientes": "154786990131.87",
+        "gastos_corrientes": "130577721394.16",
+        "ingresos_capital": "945396706.02",
+        "gastos_capital": "16638000212.57",
+        "ingresos_totales": "155732386837.89",
+        "gastos_totales": "147215721606.73",
+        "resultado_financiero": "8516665231.16",
+        "personal_devengado": "66808100563.50"
+      },
+      "documents": [
+        {
+          "url": "https://berazategui.gob.ar/descargas/ejercicio-economico/semestre-2-2025.pdf",
+          "sha256": "017b95bff3c4b2c67e3907c4685660579801e7af50654e06b4e9d48bb32ec6f5",
+          "bytes": 3376312,
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06091.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
+    },
+    {
       "id": "06112",
       "inicio": "2026-01-01",
       "fin": "2026-08-31",
@@ -3329,6 +3395,72 @@
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06168",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
+      "amounts": {
+        "ingresos_corrientes": "13997233276.30",
+        "gastos_corrientes": "13664021534.79",
+        "ingresos_capital": "703531448.69",
+        "gastos_capital": "1553647788.50",
+        "ingresos_totales": "14700764724.99",
+        "gastos_totales": "15217669323.29",
+        "resultado_financiero": "-516904598.30",
+        "personal_devengado": "6045467376.54"
+      },
+      "documents": [
+        {
+          "url": "https://www.castelli.gob.ar/wp-content/uploads/2026/03/Situacion-Economica-y-Financiera.pdf",
+          "sha256": "25bf0b329b37f55ef9344adaf4f1a0ef7b999ce76dc7fbf53d74bc1bd40187d7",
+          "bytes": 320779,
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06168.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
+    },
+    {
+      "id": "06175",
+      "inicio": "2025-01-01",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
+      "amounts": {
+        "ingresos_corrientes": "23157815172.14",
+        "gastos_corrientes": "21407752643.03",
+        "ingresos_capital": "1164614887.73",
+        "gastos_capital": "2300369824.10",
+        "ingresos_totales": "24322430059.87",
+        "gastos_totales": "23708122467.13",
+        "resultado_financiero": "614307592.74",
+        "personal_devengado": "12954047078.31"
+      },
+      "documents": [
+        {
+          "url": "https://www.municipalidadcolonpba.gob.ar/estados/Situacion_Economico_Financiera_al_31-12-25.pdf",
+          "sha256": "81118ba25fa96148d36e5be744295d1de65df0d913b34361c0007607bc037399",
+          "bytes": 325325,
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06175.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
     },
     {
       "id": "06182",
@@ -3424,6 +3556,39 @@
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06238",
+      "inicio": "2025-01-01",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
+      "amounts": {
+        "ingresos_corrientes": "30979946309.67",
+        "gastos_corrientes": "28531682489.29",
+        "ingresos_capital": "505295212.70",
+        "gastos_capital": "6101621516.19",
+        "ingresos_totales": "31485241522.37",
+        "gastos_totales": "34633304005.48",
+        "resultado_financiero": "-3148062483.11",
+        "personal_devengado": "13799761872.74"
+      },
+      "documents": [
+        {
+          "url": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
+          "sha256": "92116d6545ac66162aa2503f867cd9b554ae7ec9d5865b64bd2843fc7d9c0877",
+          "bytes": 797879,
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06238.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
     },
     {
       "id": "06245",
@@ -3643,6 +3808,39 @@
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
     },
     {
+      "id": "06455",
+      "inicio": "2023-01-01",
+      "fin": "2023-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
+      "amounts": {
+        "ingresos_corrientes": "4723451962.62",
+        "gastos_corrientes": "4661645685.11",
+        "ingresos_capital": "1107910384.19",
+        "gastos_capital": "2417459211.91",
+        "ingresos_totales": "5831362346.81",
+        "gastos_totales": "7079104897.02",
+        "resultado_financiero": "-1247742550.21",
+        "personal_devengado": "2596938866.82"
+      },
+      "documents": [
+        {
+          "url": "https://lasflores.gob.ar/wp-content/uploads/2024/04/Situacion-Ec-Fin-anual-para-publicar.rpt_.pdf",
+          "sha256": "fc595c39ab166cad333187e8a598ed83c3ae38bcb2a3d5d4f55063e6abacf29b",
+          "bytes": 64400,
+          "pages": 6,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06455.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
+    },
+    {
       "id": "06466",
       "inicio": "2024-01-01",
       "fin": "2024-12-31",
@@ -3672,6 +3870,39 @@
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
+    },
+    {
+      "id": "06469",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
+      "amounts": {
+        "ingresos_corrientes": "41418566799.91",
+        "gastos_corrientes": "43410870103.91",
+        "ingresos_capital": "1043018884.95",
+        "gastos_capital": "2997194499.15",
+        "ingresos_totales": "42461585684.86",
+        "gastos_totales": "46408064603.06",
+        "resultado_financiero": "-3946478918.20",
+        "personal_devengado": "28866677743.98"
+      },
+      "documents": [
+        {
+          "url": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
+          "sha256": "6229bf81a51bc0a9d082092b6907cbc69908d57af8131585831dd25a09426c07",
+          "bytes": 85803,
+          "pages": 8,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06469.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
     },
     {
       "id": "06511",
@@ -3705,6 +3936,39 @@
       ],
       "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
       "verifiedAt": "2026-10-04"
+    },
+    {
+      "id": "06525",
+      "inicio": "2024-01-02",
+      "fin": "2024-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
+      "amounts": {
+        "ingresos_corrientes": "28859660011.28",
+        "gastos_corrientes": "25088951447.03",
+        "ingresos_capital": "3942449356.87",
+        "gastos_capital": "5015504781.86",
+        "ingresos_totales": "32802109368.15",
+        "gastos_totales": "30104456228.89",
+        "resultado_financiero": "2697653139.26",
+        "personal_devengado": "7423186126.10"
+      },
+      "documents": [
+        {
+          "url": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
+          "sha256": "670e8bec1d282287eff00e87a46cf6b2d5a69b2beb51fde0fab690f5047b19d6",
+          "bytes": 5548604,
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06525.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
     },
     {
       "id": "06547",
@@ -3771,6 +4035,72 @@
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
     },
     {
+      "id": "06568",
+      "inicio": "2023-01-02",
+      "fin": "2023-12-30",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
+      "amounts": {
+        "ingresos_corrientes": "41134347817.87",
+        "gastos_corrientes": "39574528359.13",
+        "ingresos_capital": "3367202398.52",
+        "gastos_capital": "4645064163.61",
+        "ingresos_totales": "44501550216.39",
+        "gastos_totales": "44219592522.74",
+        "resultado_financiero": "281957693.65",
+        "personal_devengado": "21713636241.21"
+      },
+      "documents": [
+        {
+          "url": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
+          "sha256": "98f09e1004b962cb64b6e7b4d914bdba01bed8b0cddea3e610b28eea2b38097e",
+          "bytes": 242346,
+          "pages": 8,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06568.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
+    },
+    {
+      "id": "06574",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
+      "amounts": {
+        "ingresos_corrientes": "16716218230.20",
+        "gastos_corrientes": "17805625727.77",
+        "ingresos_capital": "42880273.63",
+        "gastos_capital": "1587761577.16",
+        "ingresos_totales": "16759098503.83",
+        "gastos_totales": "19393387304.93",
+        "resultado_financiero": "-2634288801.10",
+        "personal_devengado": "8454332204.16"
+      },
+      "documents": [
+        {
+          "url": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
+          "sha256": "c1a3cabf36bd922df7d4d7c55a8882621ef37d70fb2034bdd990072696c75cf7",
+          "bytes": 441543,
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06574.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
+    },
+    {
       "id": "06588",
       "inicio": "2026-01-02",
       "fin": "2026-03-31",
@@ -3802,6 +4132,39 @@
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo."
     },
     {
+      "id": "06648",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
+      "amounts": {
+        "ingresos_corrientes": "28360851369.78",
+        "gastos_corrientes": "25093302469.02",
+        "ingresos_capital": "557054945.06",
+        "gastos_capital": "2219275490.87",
+        "ingresos_totales": "28917906314.84",
+        "gastos_totales": "27312577959.89",
+        "resultado_financiero": "1605328354.95",
+        "personal_devengado": "9435632278.11"
+      },
+      "documents": [
+        {
+          "url": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
+          "sha256": "01906319dc57f2ee741fedd8614ee79bebbe765270c40dbb7472b33604bfc264",
+          "bytes": 2334159,
+          "pages": 3,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06648.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
+    },
+    {
       "id": "06700",
       "inicio": "2025-01-02",
       "fin": "2025-12-30",
@@ -3831,6 +4194,39 @@
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre."
+    },
+    {
+      "id": "06735",
+      "inicio": "2025-01-01",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
+      "amounts": {
+        "ingresos_corrientes": "24940626100.95",
+        "gastos_corrientes": "24639293611.98",
+        "ingresos_capital": "73377158.22",
+        "gastos_capital": "846452140.82",
+        "ingresos_totales": "25014003259.17",
+        "gastos_totales": "25485745752.80",
+        "resultado_financiero": "-471742493.63",
+        "personal_devengado": "15259317512.32"
+      },
+      "documents": [
+        {
+          "url": "https://areco.ar/wp-content/uploads/2023/01/Estado-Situacion-Economico-Financiera-2.pdf",
+          "sha256": "6607df8ae8b099f25cddbce7ebe7181e077fe17061ae0cfaa17d8ac1a55b3928",
+          "bytes": 100393,
+          "pages": 7,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06735.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
     },
     {
       "id": "06749",
@@ -3930,6 +4326,39 @@
       "verifiedAt": "2026-10-04"
     },
     {
+      "id": "06778",
+      "inicio": "2025-01-01",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
+      "amounts": {
+        "ingresos_corrientes": "53810451752.55",
+        "gastos_corrientes": "51064357345.13",
+        "ingresos_capital": "6717388619.64",
+        "gastos_capital": "7935467705.21",
+        "ingresos_totales": "60527840372.19",
+        "gastos_totales": "58999825050.34",
+        "resultado_financiero": "1528015321.85",
+        "personal_devengado": "24920599914.13"
+      },
+      "documents": [
+        {
+          "url": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
+          "sha256": "a2113127bb514937786ad28692bd29da9b0f259fc86911cdd07d687f5ffdc5c2",
+          "bytes": 335297,
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06778.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
+    },
+    {
       "id": "06784",
       "inicio": "2025-01-02",
       "fin": "2025-12-31",
@@ -3959,6 +4388,39 @@
         }
       ],
       "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre."
+    },
+    {
+      "id": "06819",
+      "inicio": "2025-01-02",
+      "fin": "2025-12-31",
+      "method": "published_caif",
+      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
+      "landingUrl": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
+      "amounts": {
+        "ingresos_corrientes": "28400590711.85",
+        "gastos_corrientes": "28462447359.20",
+        "ingresos_capital": "2514118185.28",
+        "gastos_capital": "3487493787.04",
+        "ingresos_totales": "30914708897.13",
+        "gastos_totales": "31949941146.24",
+        "resultado_financiero": "-1035232249.11",
+        "personal_devengado": "16601229904.50"
+      },
+      "documents": [
+        {
+          "url": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
+          "sha256": "4baa5c3b5a5614132ae980fc60540a270a6617674e8242614010743d07164b15",
+          "bytes": 335707,
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-10-14/06819.pdf",
+          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+        }
+      ],
+      "verifiedAt": "2026-10-14",
+      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
     },
     {
       "id": "06875",
@@ -3994,5 +4456,5 @@
       "verifiedAt": "2026-10-04"
     }
   ],
-  "updatedAt": "2026-10-04"
+  "updatedAt": "2026-10-14"
 }
