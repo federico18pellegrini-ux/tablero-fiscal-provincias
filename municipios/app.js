@@ -113,7 +113,7 @@ function transparencyStatus(component, score) {
   if(component.id==='presupuesto')return score===30?'Presupuesto vigente publicado.':score===20?'Presupuesto publicado de forma parcial.':score===0?'No recibió puntos por presupuesto vigente.':'Puntaje publicado fuera de la escala metodológica.';
   return score===component.max?'Información completa y al día en el relevamiento.':score===0?'Sin puntaje: información ausente o fuera del período admitido.':'Información parcial o de un trimestre anterior.';
 }
-const VALID_VIEWS = ['panorama', 'rankings', 'recursos', 'empleo', 'simular', 'informe'];
+const VALID_VIEWS = ['panorama', 'rankings', 'recursos', 'gestion', 'empleo', 'simular', 'informe'];
 const BUDGET_BASES = {
   junio:{field:'current',asOf:'2026-06-30',label:'Vigente · junio 2026',period:'Ejercicio 2026 · vigente al 30 de junio',note:'Compara presupuestos anuales vigentes en la misma fecha: 30 de junio de 2026. Quedan fuera los que sólo tienen otro corte o el presupuesto original.'},
   vigente:{field:'current',label:'Vigente · último corte 2026',period:'Ejercicio 2026 · último vigente disponible de cada municipio',note:'Amplía la muestra usando el último presupuesto vigente verificado de 2026. Los cortes son distintos: mirá la fecha debajo de cada municipio. No representa una comparación a una misma fecha.'},
@@ -416,6 +416,8 @@ function renderHeader(){
 }
 function renderView(){
   renderHeader();
+  window.municipalStructureContext={view:state.view,municipality:current(),rows};
+  window.dispatchEvent(new CustomEvent('municipal:structure',{detail:window.municipalStructureContext}));
   for(const view of VALID_VIEWS){$(view).hidden=view!==state.view;document.querySelector(`[data-view="${view}"]`)?.setAttribute('aria-current',view===state.view?'page':'false');}
   if(state.view==='panorama')renderOverview();
   if(state.view==='rankings')renderRanking();

@@ -118,6 +118,8 @@ function renderHeader(){
 }
 function renderView(){
   renderHeader();
+  window.municipalStructureContext={view:state.view,municipality:current(),rows};
+  window.dispatchEvent(new CustomEvent('municipal:structure',{detail:window.municipalStructureContext}));
   for(const view of VALID_VIEWS){$(view).hidden=view!==state.view;document.querySelector(`[data-view="${view}"]`)?.setAttribute('aria-current',view===state.view?'page':'false');}
   if(state.view==='panorama')renderOverview();
   if(state.view==='rankings')renderRanking();

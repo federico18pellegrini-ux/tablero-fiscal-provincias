@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-14",
+  "feature": "Municipal management and population peers",
+  "externalSource": "https://municipiosargentinos.net/",
+  "coverage": {
+    "workforce": 92,
+    "floatingDebt": 36,
+    "councilExpense": 105,
+    "advertising": 22,
+    "officialDecisionLinks": 130
+  },
+  "primaryContrasts": [
+    "Tigre: 3670 permanent budgeted positions 2026, article 24, page 6; total remains unknown",
+    "General Las Heras: council share 2024, 109927681.64 / 9840459615.08 * 100 = 1.1171%, page 2"
+  ],
+  "limitations": [
+    "External survey numeric data is explicitly attributed and pending comprehensive independent verification.",
+    "No unverified sanctions or criminal allegations republished. Tribunal section links to decisions only.",
+    "New external data excluded from fiscal rankings and PDFs.",
+    "Peers selected by population, not identical service responsibilities. At least three valid observations for median."
+  ],
+  "validation": {
+    "javascriptTests": 41,
+    "pythonTests": 43,
+    "browserMunicipalities": [
+      "06805",
+      "06329",
+      "06028"
+    ],
+    "viewports": [
+      390,
+      820
+    ],
+    "overflow": false,
+    "download": "gestion-06329.csv contains period, source and verification state",
+    "browserErrors": []
+  }
+}
