@@ -1,4 +1,4 @@
-export const REPORT_TOPICS=['lectura','cuentas','economia','poblacion','deudas','detalle-fiscal','caja','historia','bancos'];
+export const REPORT_TOPICS=['lectura','cuentas','economia','gestion-verificada','poblacion','deudas','detalle-fiscal','caja','historia','bancos'];
 export const DEFAULT_REPORT_TOPICS=['lectura','cuentas','economia'];
 export function validReportEntry(entry){
   if(!entry||!/^06\d{3}$/.test(entry.id)||entry.file!==`informe-${entry.id}.pdf`||!Number.isInteger(entry.pages)||entry.pages<3||entry.pages>100||!/^[a-f0-9]{64}$/.test(entry.sha256))return false;

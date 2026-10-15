@@ -63,6 +63,7 @@ def build(folder):
             observation = row['workforce'] if key == 'workforce' else row['indicators'][key]
             assert all(observation.get(field) == value for field, value in evidence['expected'].items()), 'Recheck changed observation against primary document'
             assert hashlib.sha256((ROOT / 'municipios/data' / evidence['file']).read_bytes()).hexdigest() == evidence['sha256']
+            observation.update(evidence.get('confirmed', {}))
             observation['verification'] = 'primary_document'
             observation['evidence'] = evidence
     assert len(rows) == 135 and len({m['id'] for m in rows}) == 135
@@ -71,7 +72,7 @@ def build(folder):
                 verification='external_survey',
                 note='Relevamiento de Municipios Argentinos con enlaces a documentos oficiales. '
                      'Los importes y dotaciones todavía no tienen contraste independiente integral. '
-                     'No integran los rankings fiscales verificados ni los informes PDF.',
+                     'Sólo los registros contrastados con documentos originales integran los rankings de gestión y los informes PDF.',
                 coverage={**{k: sum(k in m['indicators'] for m in rows) for k in ('flo', 'hcd', 'pub')},
                           'workforce': sum(m['workforce'] is not None for m in rows),
                           'decisions': sum(bool(m['decisions']) for m in rows)}, municipalities=rows)

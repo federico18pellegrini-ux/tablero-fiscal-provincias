@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-14",
+  "municipalities": 71,
+  "observations": 94,
+  "byCategory": {
+    "workforce": 5,
+    "hcd": 63,
+    "pub": 3,
+    "flo": 23
+  },
+  "officialURLsAttempted": 252,
+  "retrievedResponses": 230,
+  "retrievedDoesNotMeanVerified": true,
+  "corrections": [
+    "Guaminí: deuda flotante corresponde a 31/12/2025, no marzo 2026",
+    "Castelli: 695 omite 75 jornalizados; conservar categorías sin presentar total completo"
+  ],
+  "comparability": [
+    "Ituzaingó y Rojas: cierre 30/12/2025 excluido del ranking al 31/12",
+    "Cargos autorizados no equivalen a empleados efectivos; alcance visible por municipio"
+  ],
+  "validation": {
+    "pythonMunicipalTests": 43,
+    "javascriptMunicipalTests": 42,
+    "reportsChecked": 135,
+    "browserPDF": "Tigre: breve más gestión, 4 páginas; fuentes oficiales y 31 partidas de publicidad"
+  },
+  "pendingExternalObservations": 161
+}
