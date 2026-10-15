@@ -35,7 +35,7 @@ const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;',
 const number = (v, digits = 1) => isNumber(v) ? new Intl.NumberFormat('es-AR', {maximumFractionDigits:digits}).format(v) : 'Sin dato';
 const money = v => isNumber(v) ? '$' + number(v / 1e6) + ' millones' : 'Sin dato';
 const sourceLinks = sources => (sources || []).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)} ↗</a>`).join(' · ');
-const verifiedNote = observation => observation?.evidence ? `<p class="small-note">Contrastado con el original · página ${observation.evidence.page}${observation.evidence.periodEnd?" · cierre "+observation.evidence.periodEnd.split("-").reverse().join("/"):""}. <a href="data/${esc(observation.evidence.file)}" target="_blank" rel="noopener">Documento conservado ↗</a></p>` : '';
+const verifiedNote = observation => observation?.evidence ? `<p class="small-note">Contrastado con el original · ${observation.evidence.components ? observation.evidence.components.length+" partidas" : "página "+observation.evidence.page}${observation.evidence.periodEnd?" · cierre "+observation.evidence.periodEnd.split("-").reverse().join("/"):""}. <a href="data/${esc(observation.evidence.file)}" target="_blank" rel="noopener">Documento conservado ↗</a></p>` : '';
 let structure, failure;
 const ready = fetch('data/structure.json?v=20261014-verificados').then(r => {if (!r.ok) throw Error('datos'); return r.json();}).then(d => {structure=d;}).catch(() => {failure=true;});
 
