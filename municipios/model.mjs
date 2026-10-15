@@ -1,5 +1,9 @@
 const metric = (id, label, group, field, unit, period, note, ascending = true) => ({id, label, group, field, unit, period, note, ascending});
 export const METRICS = [
+  ...['2025','2024'].map(year=>({...metric(`concejo-${year}`,`Concejo sobre gasto · ${year}`,'Gestión','verifiedStructure.hcd.value','%',`Ejercicio ${year} · cierre al 31 de diciembre`,'Gasto devengado del Concejo sobre gasto presupuestario devengado de Ejecutivo y Concejo. Puede incluir aplicaciones financieras. Sólo documentos oficiales contrastados; no mide calidad de gestión.',false),structure:{key:'hcd',period:year}})),
+  ...['2026-06','2025-12','2024-12','2026-03'].map(period=>({...metric(`flotante-${period}`,`Deuda flotante · ${period}`,'Gestión','verifiedStructure.flo.value','millions',`Saldo al cierre de ${period}`,'Gastos registrados pendientes de pago. No se suman otra vez al déficit. Montos corrientes del mismo cierre; una cifra mayor también puede reflejar un municipio más grande.',false),structure:{key:'flo',period}})),
+  ...['2025','2024'].map(year=>({...metric(`publicidad-${year}`,`Publicidad · ${year}`,'Gestión','verifiedStructure.pub.value','millions',`Ejercicio ${year} · cierre al 31 de diciembre`,'Publicidad devengada identificada en la ejecución oficial. Importes corrientes; se conserva el alcance de la partida y de los organismos incluidos.',false),structure:{key:'pub',period:year}})),
+  {...metric('cargos-permanentes-2026','Cargos permanentes · 2026','Gestión','verifiedStructure.workforce.permanent','jobs','Presupuesto 2026','Cargos permanentes autorizados, no empleados efectivos. Se excluyen temporarios y jornalizados. El alcance puede incluir funcionarios o concejales: se detalla debajo de cada municipio.',false),structure:{key:'workforce',period:'2026',type:'c'}},
   {...metric('presupuesto-total', 'Presupuesto total', 'Presupuesto', 'annualBudget.current', 'millions', 'Ejercicio 2026 · vigente al 30 de junio', 'Autorización anual para gastar, en pesos corrientes. No es gasto ejecutado ni dinero disponible. Los organismos y servicios incluidos pueden diferir entre municipios.', false), budget:true},
   {...metric('presupuesto-habitante', 'Presupuesto por habitante', 'Presupuesto', 'annualBudget.current', 'money', 'Ejercicio 2026 · vigente al 30 de junio · población 2022', 'Presupuesto anual dividido por la población del Censo 2022. Ayuda a comparar municipios de distinto tamaño; los organismos y servicios incluidos pueden diferir. No es dinero que recibe cada vecino.', false), budget:true, perCapita:true},
   metric('recursos', 'Cambio de transferencias', 'Recursos', 'variacion_transferencias_real_pct', '%', 'Ene–jul 2026 vs. ene–jul 2025', 'Transferencias provinciales totales, descontando la inflación mes a mes. No son todos los ingresos municipales.'),
@@ -82,6 +86,7 @@ export const RANKING_READINGS = {
 export function rankingReading(meta) {
   return RANKING_READINGS[meta.id] || contextReading('Este indicador necesita contexto para interpretar si el resultado es favorable o desfavorable.');
 }
+for(const meta of METRICS.filter(m=>m.structure))RANKING_READINGS[meta.id]=meta.structure.key==='flo'?{...burdenReading(meta.note,'Pagos pendientes'),positive:'Sin saldo informado'}:contextReading(meta.note);
 export function rankingAssessment(meta, value) {
   if(!finite(value))return {tone:'muted',label:'Sin dato'};
   const reading=rankingReading(meta);
@@ -124,6 +129,10 @@ export function rankingMetric(meta, basis='junio') {
 }
 export function metricValue(m, meta) {
   let value;
+  if(meta.structure){
+    const record=m.verifiedStructure?.[meta.structure.key];
+    if(!record||record.verification!=='primary_document'||record.period!==meta.structure.period||!record.evidence?.rankingEligible||(meta.structure.type&&record.type!==meta.structure.type))return null;
+  }
   if(meta.budget){
     const b=m.annualBudget,config=BUDGET_BASES[meta.budgetBasis]||BUDGET_BASES.junio;
     if(!b||b.year!==2026||(config.asOf&&b.asOf!==config.asOf))return null;
@@ -133,12 +142,14 @@ export function metricValue(m, meta) {
   return meta.perCapita?(finite(m.poblacion_2022)&&m.poblacion_2022>0?value/m.poblacion_2022:null):value;
 }
 export function metricExportUnit(meta) {
+  if(meta.structure?.key==='workforce')return 'cargos presupuestados permanentes';
   if(meta.budget||meta.perCapita)return meta.perCapita?'ARS corrientes por habitante Censo 2022':'ARS corrientes';
   if(meta.id==='salario-nivel')return 'ARS de julio de 2026';
   return ({millions:'ARS corrientes',money:'ARS (ver período y criterio)',rate:'hechos por 100.000 habitantes',density:'puestos por 1.000 habitantes',branches:'locales por 10.000 habitantes',jobs:'puestos',households:'hogares',score:'puntaje sobre 100',points:'puntos'})[meta.unit]||meta.unit;
 }
 export function rankingExportRows(ranked,meta) {
   return [['Municipio','Puesto','Valor','Unidad','Período','Municipios con datos','Criterio','Tipo de presupuesto','Corte o fecha del documento','Cobertura institucional','Documento'],...ranked.map(r=>{
+    if(meta.structure){const x=r.m.verifiedStructure[meta.structure.key];return [r.m.municipio,r.rank,r.value,metricExportUnit(meta),meta.period,ranked.length,meta.note,'',x.evidence.periodEnd||x.period,x.evidence.scope||'',x.sources.map(s=>s.url).join(' | ')];}
     const b=meta.budget?r.m.annualBudget:null,config=meta.budget?(BUDGET_BASES[meta.budgetBasis]||BUDGET_BASES.junio):null;
     return [r.m.municipio,r.rank,r.value,metricExportUnit(meta),meta.period,ranked.length,meta.note+(config?' '+config.note:''),b?(config.field==='original'?'Original':'Vigente'):'',b?.asOf??'',b?.scope??(meta.group==='Cuentas'?r.m.fiscal?.scope:'')??'',b?.documents?.map(d=>d.url).join(' | ')??''];
   })];

@@ -2,11 +2,11 @@
   "version": 3,
   "generated": "2026-10-14",
   "input_sha256": {
-    "municipios/data/dashboard.json": "4a1c8260a1a72e5f246baaf43166ff04217498cf56129b7db0feb7143d5a78ee",
+    "municipios/data/dashboard.json": "5352fe65acfa7de2e8251433e666c8fa8715e4d622413e48857b0ff0cfba10a3",
     "municipios/data/geografia_original.geojson": "877e30549e9d73487828d158584981635f7746739412669656bb3dfa4645173f",
     "municipios/data/fuentes.csv": "e9d0cfd4f025cfe2e81a1f3f75ce5e69e2829df7172da0a0e3a9825fe8f72d97",
     "scripts_export_municipal_reports.py": "cf1413936b211e480fc32a97f46e018c25f20da76bc95d002f6c36804ede3e6a",
-    "scripts_municipal_editorial.py": "71d2ff36b257b2c2d5812b72adaa7386309b680d68b0de3a6eb6edd89080ff76",
+    "scripts_municipal_editorial.py": "62ff1d56f234356e37c463119df83a497c3b574457e1264ef49061409a3a8181",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
   },
@@ -15,13 +15,14 @@
       "id": "06007",
       "municipality": "Adolfo Alsina",
       "file": "informe-06007.pdf",
-      "pages": 6,
-      "bytes": 138047,
-      "sha256": "74df525de0162b43c74476eb6e9cd3d1318aa5c69e33c25ee757fcb44dce7dcd",
+      "pages": 7,
+      "bytes": 158735,
+      "sha256": "c68e0ebb6e3b5d5327f5d7e5a53853bf0337bdabb5680e4e78548f50796e4f6f",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -58,13 +59,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -74,7 +85,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -84,7 +95,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -104,13 +115,14 @@
       "id": "06014",
       "municipality": "Adolfo Gonzales Chaves",
       "file": "informe-06014.pdf",
-      "pages": 6,
-      "bytes": 138073,
-      "sha256": "40cb06dff20b20a1de7ff752ac2c531c11558e81019639ef23493ff470007f7a",
+      "pages": 7,
+      "bytes": 158689,
+      "sha256": "217d4a4aa41321cff053f20f54802baad8494f3c56ff14a5873b1a749dbe8cee",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -147,13 +159,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -163,7 +185,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -173,7 +195,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -193,13 +215,14 @@
       "id": "06021",
       "municipality": "Alberti",
       "file": "informe-06021.pdf",
-      "pages": 5,
-      "bytes": 116229,
-      "sha256": "4c352b9d39ca777687b816dc4980c984b98cea6b90a03298a8221a4e28a1a4a2",
+      "pages": 6,
+      "bytes": 136874,
+      "sha256": "409fcfc879f375be0b48a9c6ab0642820c2871032d19e225a0e34b3bfef50730",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -235,13 +258,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -251,7 +284,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -271,13 +304,14 @@
       "id": "06028",
       "municipality": "Almirante Brown",
       "file": "informe-06028.pdf",
-      "pages": 6,
-      "bytes": 137854,
-      "sha256": "67436cfc5c011a0859af1c8b218596b0f4b8679f908c25763b904f9255d9ffae",
+      "pages": 7,
+      "bytes": 158514,
+      "sha256": "485e5c166ec0375988da874698d67b45fadccbf30fe645b3e4a8173d2ae18d5d",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -314,13 +348,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -330,7 +374,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -340,7 +384,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -360,13 +404,14 @@
       "id": "06077",
       "municipality": "Arrecifes",
       "file": "informe-06077.pdf",
-      "pages": 6,
-      "bytes": 138270,
-      "sha256": "c2b4049af644e1a00fdf8f55fb83a954dcfce44082aad42366e3555cb7701572",
+      "pages": 7,
+      "bytes": 158923,
+      "sha256": "b7a1d99c63e820d194ff95bece740df5683731d936f7e1eca4af7cdbdd745fde",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -403,13 +448,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -419,7 +474,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -429,7 +484,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -716,13 +771,14 @@
       "id": "06056",
       "municipality": "Bahía Blanca",
       "file": "informe-06056.pdf",
-      "pages": 6,
-      "bytes": 138819,
-      "sha256": "64f19f05222cec606a0c314a6436d1e2c6ef115b874ae4031fdb4817b5c48b97",
+      "pages": 7,
+      "bytes": 160542,
+      "sha256": "49adbcf12ce43e261d8853514c8ee18cfeddadcc3229213ca950ae1958518ba4",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -759,13 +815,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -775,7 +841,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -785,7 +851,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -894,13 +960,14 @@
       "id": "06070",
       "municipality": "Baradero",
       "file": "informe-06070.pdf",
-      "pages": 6,
-      "bytes": 138136,
-      "sha256": "bcd02eb02b63e4c7322aebb6b3f5703df1ee511c04e00d7c1fb7c1fcb6e157de",
+      "pages": 7,
+      "bytes": 158799,
+      "sha256": "640ecab7ac5f67c5395907b33ed176ba0b117d24cd296cfa321b350eff0ff63a",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -937,13 +1004,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -953,7 +1030,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -963,7 +1040,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -1161,13 +1238,14 @@
       "id": "06098",
       "municipality": "Berisso",
       "file": "informe-06098.pdf",
-      "pages": 6,
-      "bytes": 138350,
-      "sha256": "786438cb5b13d932534e3b33806bb3256cd1a73e7e2ebd1915fbd81b008ba11b",
+      "pages": 7,
+      "bytes": 158957,
+      "sha256": "7307b9f69236c7153a19420c17b28c5fb7d9072a01b3a4fad6a2b816fe94858f",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -1204,13 +1282,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -1220,7 +1308,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -1230,7 +1318,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -1250,13 +1338,14 @@
       "id": "06105",
       "municipality": "Bolívar",
       "file": "informe-06105.pdf",
-      "pages": 6,
-      "bytes": 138458,
-      "sha256": "4ef4be339f5b14f790723238afb8778f94ee64ee955236851c74246fdab1ed5b",
+      "pages": 7,
+      "bytes": 159097,
+      "sha256": "bbe90bbaf7976c175eef6dbdada69a008e5b4e48858f33edacd052b9256f4fe5",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -1293,13 +1382,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -1309,7 +1408,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -1319,7 +1418,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -1339,13 +1438,14 @@
       "id": "06112",
       "municipality": "Bragado",
       "file": "informe-06112.pdf",
-      "pages": 6,
-      "bytes": 138778,
-      "sha256": "2e7bf33b3518efab76636f9ff05d7e7f209296ac2122b43d846c9eb66e1ea43d",
+      "pages": 7,
+      "bytes": 160195,
+      "sha256": "0282f24d11788aa287da75d7139a7b11d62ef37b41ab4e8e852c6667ba2faef8",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -1382,13 +1482,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -1398,7 +1508,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -1408,7 +1518,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -1428,13 +1538,14 @@
       "id": "06119",
       "municipality": "Brandsen",
       "file": "informe-06119.pdf",
-      "pages": 6,
-      "bytes": 138074,
-      "sha256": "0561f197fe93f954d2f3150dc0b33b8f1c75538c003b9fe88f97b2777625194b",
+      "pages": 7,
+      "bytes": 158682,
+      "sha256": "d0d00de45a71834740ec38640170eb62a8b9c6bedd058d5a873e56cbae29ae9d",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -1471,13 +1582,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -1487,7 +1608,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -1497,7 +1618,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -1695,13 +1816,14 @@
       "id": "06140",
       "municipality": "Capitán Sarmiento",
       "file": "informe-06140.pdf",
-      "pages": 6,
-      "bytes": 138190,
-      "sha256": "45b4882013a1292551367f5a26d628bd9977aa09a1015f11871818ff4ad2a706",
+      "pages": 7,
+      "bytes": 158866,
+      "sha256": "d362ba1f7cd9453c0afb5c138c72284418b4f8b581f5cac0178fab6b5a6ee1ad",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -1738,13 +1860,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -1754,7 +1886,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -1764,7 +1896,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -1784,13 +1916,14 @@
       "id": "06147",
       "municipality": "Carlos Casares",
       "file": "informe-06147.pdf",
-      "pages": 6,
-      "bytes": 138160,
-      "sha256": "af79d5a79bc574c8249dcfaf1ec1363acfda925e37195729fcb771b99df40609",
+      "pages": 7,
+      "bytes": 158815,
+      "sha256": "68414b55ebe95665bc897948391266952c2f19a800d6f31b2ac9af9fb5a64e78",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -1827,13 +1960,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -1843,7 +1986,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -1853,7 +1996,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -1873,13 +2016,14 @@
       "id": "06154",
       "municipality": "Carlos Tejedor",
       "file": "informe-06154.pdf",
-      "pages": 6,
-      "bytes": 138301,
-      "sha256": "32dce55265a87d52c285fa89963bf913c4465c93c4fa360ed0ab9fff7a05e09c",
+      "pages": 7,
+      "bytes": 158803,
+      "sha256": "ba5a47065fd0d074d7c971fa0f32e1ff551454ee3a8a981ef6c6437b7d361f08",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -1916,13 +2060,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -1932,7 +2086,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -1942,7 +2096,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -1962,13 +2116,14 @@
       "id": "06161",
       "municipality": "Carmen de Areco",
       "file": "informe-06161.pdf",
-      "pages": 6,
-      "bytes": 138783,
-      "sha256": "732a01c5f98a6305a8f6f4896212e5a7bc844911241c74261296621fdbcc7bb5",
+      "pages": 7,
+      "bytes": 159431,
+      "sha256": "cf254bfc244f7e6799994c5236586d586c94f5215546ddc3780add441e702f3f",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -2005,13 +2160,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -2021,7 +2186,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -2031,7 +2196,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -2051,13 +2216,14 @@
       "id": "06168",
       "municipality": "Castelli",
       "file": "informe-06168.pdf",
-      "pages": 5,
-      "bytes": 116370,
-      "sha256": "5b45247bb16c2edee11f6927886e47b780977a276cd17e4eb0a05b18ac21f559",
+      "pages": 6,
+      "bytes": 137501,
+      "sha256": "1e32f719f899e270f22c95645a056b3920bbfe0914cf468f52d4f6a9e54b4b09",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -2093,13 +2259,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -2109,7 +2285,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -2218,13 +2394,14 @@
       "id": "06218",
       "municipality": "Chascomús",
       "file": "informe-06218.pdf",
-      "pages": 6,
-      "bytes": 138305,
-      "sha256": "bc78da1dd02dc01e7a0790dd666acfc00ff2fdacae5005c3a3a17cebdb0b7769",
+      "pages": 7,
+      "bytes": 158979,
+      "sha256": "2f162d34e4f9286af56c2f41ed494d3e63321c3b48269ec8689327b25940c564",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -2261,13 +2438,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -2277,7 +2464,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -2287,7 +2474,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -2307,13 +2494,14 @@
       "id": "06224",
       "municipality": "Chivilcoy",
       "file": "informe-06224.pdf",
-      "pages": 6,
-      "bytes": 138612,
-      "sha256": "0a2a2fcf731e8879560e93131703dfece6d6d61fcbcfd040d32d3f849d7f7ed7",
+      "pages": 7,
+      "bytes": 159811,
+      "sha256": "2753e37f31aae1f59b1a028cbf3058a11711e302ae2a1257ebb641b47ee36b43",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -2350,13 +2538,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -2366,7 +2564,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -2376,7 +2574,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -2396,13 +2594,14 @@
       "id": "06175",
       "municipality": "Colón",
       "file": "informe-06175.pdf",
-      "pages": 6,
-      "bytes": 138640,
-      "sha256": "866d957b28c8cd30d3d21d7184205d1bf63edc2cb86ef1c4eaa95185375ac389",
+      "pages": 7,
+      "bytes": 160255,
+      "sha256": "11e8f4eb3ec05613cca8a23ecdf0ecfe95703539460e36b1a33dbd6a1fa83a31",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -2439,13 +2638,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -2455,7 +2664,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -2465,7 +2674,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -2485,13 +2694,14 @@
       "id": "06182",
       "municipality": "Coronel de Marina L. Rosales",
       "file": "informe-06182.pdf",
-      "pages": 6,
-      "bytes": 138371,
-      "sha256": "2e234539a64e1a5f4efcaa5e7d0b28be00a160a2a8942219d4c36bbb93b79e83",
+      "pages": 7,
+      "bytes": 159038,
+      "sha256": "8d81e05214f4885571b37d7f3a826c557162500c3151886ec239613a76c703b8",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -2528,13 +2738,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -2544,7 +2764,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -2554,7 +2774,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -2574,13 +2794,14 @@
       "id": "06189",
       "municipality": "Coronel Dorrego",
       "file": "informe-06189.pdf",
-      "pages": 6,
-      "bytes": 138313,
-      "sha256": "35ff0157d02c57b12ec56c9d9e784b8d2cbfae1449d9ac490eef8a49b735a665",
+      "pages": 7,
+      "bytes": 159560,
+      "sha256": "5d87b7d16bef34cd192580bc5562b7fc90fdab84ba3f1a93b038f4ccaa9b3f7a",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -2617,13 +2838,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -2633,7 +2864,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -2643,7 +2874,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -2663,13 +2894,14 @@
       "id": "06196",
       "municipality": "Coronel Pringles",
       "file": "informe-06196.pdf",
-      "pages": 6,
-      "bytes": 138262,
-      "sha256": "c0582b43056a67e307052834e7a14de7520c38084ae9bdb36542400f54c1123d",
+      "pages": 7,
+      "bytes": 159531,
+      "sha256": "0991d15e44eb1daae5ccabe4c5d6b407b38e90135ae64f2b34e4183534191556",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -2706,13 +2938,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -2722,7 +2964,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -2732,7 +2974,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -2841,13 +3083,14 @@
       "id": "06231",
       "municipality": "Daireaux",
       "file": "informe-06231.pdf",
-      "pages": 6,
-      "bytes": 138153,
-      "sha256": "db49fd881a123aa78478c6e4b2d7b48ed0acb75ac47661d64d26c0ba7c06f545",
+      "pages": 7,
+      "bytes": 159353,
+      "sha256": "e1e917340f8e038dae60760ed1aceec70d94275e454ce45d16196f20d995c3d2",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -2884,13 +3127,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -2900,7 +3153,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -2910,7 +3163,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -3108,13 +3361,14 @@
       "id": "06252",
       "municipality": "Escobar",
       "file": "informe-06252.pdf",
-      "pages": 6,
-      "bytes": 138994,
-      "sha256": "4edf73f6b0ffbd88684f3274d0f7d5223220c430a5fd60a58e3bf8a3fd7579cf",
+      "pages": 7,
+      "bytes": 159735,
+      "sha256": "e3f3d50f57f9f75c502329a78c1e7eccf1293cc3870562c383f39a82ca206d78",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -3151,13 +3405,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -3167,7 +3431,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -3177,7 +3441,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -3642,13 +3906,14 @@
       "id": "06280",
       "municipality": "General Alvarado",
       "file": "informe-06280.pdf",
-      "pages": 6,
-      "bytes": 138198,
-      "sha256": "b465ce73c8563d95010495b6e0c3292892c53cb2d11632a633f2baf8969e887d",
+      "pages": 7,
+      "bytes": 159341,
+      "sha256": "c8c5c8cf09c9c00fc269a8617c728d80fb4515bcd757ff628b9c1d88a5bc8c18",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -3685,13 +3950,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -3701,7 +3976,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -3711,7 +3986,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -3731,13 +4006,14 @@
       "id": "06287",
       "municipality": "General Alvear",
       "file": "informe-06287.pdf",
-      "pages": 5,
-      "bytes": 115959,
-      "sha256": "d6a3f5a1f63c43f9a9931e11e41553c688cdefed535dff92cf1f7dade5aee55d",
+      "pages": 6,
+      "bytes": 136533,
+      "sha256": "164ba5f67684fe3dc5df216ec3b9a7a7e3ad45a69af6beafea83a95a89b53ef1",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -3773,13 +4049,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -3789,7 +4075,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -3898,13 +4184,14 @@
       "id": "06301",
       "municipality": "General Belgrano",
       "file": "informe-06301.pdf",
-      "pages": 6,
-      "bytes": 138259,
-      "sha256": "2d01a4e13338888b7086f7036336a1b75c77926802fff84d60b10fa36c0cf67e",
+      "pages": 7,
+      "bytes": 159524,
+      "sha256": "e608da3bb4b850534df158604289aa748645380b4df4f0a1ae05dfe2db10d61b",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -3941,13 +4228,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -3957,7 +4254,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -3967,7 +4264,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -3987,13 +4284,14 @@
       "id": "06308",
       "municipality": "General Guido",
       "file": "informe-06308.pdf",
-      "pages": 5,
-      "bytes": 116542,
-      "sha256": "36f937d48ce2cd578fbde94636d1b13992269b369f12137d13c3e9e051d85bdb",
+      "pages": 6,
+      "bytes": 137742,
+      "sha256": "934a84f9f2d46a06673f71d693f087e99dd271d7aa4de3c4d78431e47ab655d6",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -4029,13 +4327,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -4045,7 +4353,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -4065,13 +4373,14 @@
       "id": "06315",
       "municipality": "General Juan Madariaga",
       "file": "informe-06315.pdf",
-      "pages": 5,
-      "bytes": 115999,
-      "sha256": "4860ae78ebbc90d247ffacb7fed66dfd64bdc8415ffe978aad52fb84e894c29f",
+      "pages": 6,
+      "bytes": 136588,
+      "sha256": "58d2e0dc10e999dd22bf0451eabe18036145c6a5175464d1efcaa6a86cebf638",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -4107,13 +4416,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -4123,7 +4442,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -4143,13 +4462,14 @@
       "id": "06322",
       "municipality": "General La Madrid",
       "file": "informe-06322.pdf",
-      "pages": 6,
-      "bytes": 138171,
-      "sha256": "b9d6b533c7365bcd9c95a7e805d6ef10911fe6c6ac95909a58570d6158c482fa",
+      "pages": 7,
+      "bytes": 158815,
+      "sha256": "d22a97b791583d0b62f48a6f92a6bc80583d29275e2a549cb4ee7394fbfa6a68",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -4186,13 +4506,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -4202,7 +4532,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -4212,7 +4542,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -4232,13 +4562,14 @@
       "id": "06329",
       "municipality": "General Las Heras",
       "file": "informe-06329.pdf",
-      "pages": 8,
-      "bytes": 180759,
-      "sha256": "422a50542c4fefc91ae92950161f482ede851f7c12751150307ce567b7f30f25",
+      "pages": 9,
+      "bytes": 201379,
+      "sha256": "c423524c3812063481017facb7e973ab2616458acbdac829808c0766cbe0c758",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "detalle-fiscal",
@@ -4277,13 +4608,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -4293,7 +4634,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -4303,7 +4644,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         },
         {
@@ -4313,7 +4654,7 @@
           "default": false,
           "required": false,
           "pages": [
-            6
+            7
           ]
         },
         {
@@ -4323,7 +4664,7 @@
           "default": false,
           "required": false,
           "pages": [
-            7
+            8
           ]
         }
       ],
@@ -4343,13 +4684,14 @@
       "id": "06336",
       "municipality": "General Lavalle",
       "file": "informe-06336.pdf",
-      "pages": 5,
-      "bytes": 115904,
-      "sha256": "39dfda3ae4df4efd04e81e29bc77eb76b1231c4d376d7cb24ff234fa1d28d92d",
+      "pages": 6,
+      "bytes": 136546,
+      "sha256": "6dba2ea5e77059acbc144a62c7518bb886ef8d9b98b26266f26ba2d4b541b8f9",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -4385,13 +4727,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -4401,7 +4753,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -4577,13 +4929,14 @@
       "id": "06357",
       "municipality": "General Pueyrredon",
       "file": "informe-06357.pdf",
-      "pages": 6,
-      "bytes": 138384,
-      "sha256": "bf0a39a8757906771e17e93e7b4114687892d40bc8fdcdc5a066a7b52027fc9e",
+      "pages": 7,
+      "bytes": 159691,
+      "sha256": "08ec57908a3927f7cdb9c3c838d494edfbc247378e827f9c1433eee5a4d66727",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -4620,13 +4973,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -4636,7 +4999,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -4646,7 +5009,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -4755,13 +5118,14 @@
       "id": "06371",
       "municipality": "General San Martín",
       "file": "informe-06371.pdf",
-      "pages": 6,
-      "bytes": 139564,
-      "sha256": "8c5f92e57b01804ad73833d56baa26944f6b50f3146d95db005c3493a23b4ea8",
+      "pages": 7,
+      "bytes": 160186,
+      "sha256": "09447e1494ae5a8fe404a0c75c72154af4a3396534c3c2f6502377cdf9ade2c6",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -4798,13 +5162,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -4814,7 +5188,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -4824,7 +5198,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -4922,13 +5296,14 @@
       "id": "06392",
       "municipality": "General Villegas",
       "file": "informe-06392.pdf",
-      "pages": 6,
-      "bytes": 138169,
-      "sha256": "0adc1f1a7f037e7f04df1e098839725d1cc59e9c518105dda4ba683200d331a4",
+      "pages": 7,
+      "bytes": 158817,
+      "sha256": "f8bde30d81dffbedf3887d7a4aef70d9d4402a9997b23dcfb5ba436c2742f8d1",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -4965,13 +5340,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -4981,7 +5366,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -4991,7 +5376,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -5011,13 +5396,14 @@
       "id": "06399",
       "municipality": "Guaminí",
       "file": "informe-06399.pdf",
-      "pages": 6,
-      "bytes": 138391,
-      "sha256": "071d78de16fbb67dc5229cf8d782da6ce76288d2ece904781ffb9faf2342edc2",
+      "pages": 7,
+      "bytes": 159534,
+      "sha256": "6849a1acff18621bf0c154f4a2f70b64c5e330b863a6b01fc3a8a85f8cb5b5df",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -5054,13 +5440,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -5070,7 +5466,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -5080,7 +5476,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -5267,13 +5663,14 @@
       "id": "06410",
       "municipality": "Ituzaingó",
       "file": "informe-06410.pdf",
-      "pages": 6,
-      "bytes": 138532,
-      "sha256": "d3de8038d827f4173c5bba576a10c2a378ddead546dc043d67d733e0e4211cc3",
+      "pages": 7,
+      "bytes": 159249,
+      "sha256": "6d6466328121d1167faa99cb9d421299fac37dec54cf5194cd48411aae757622",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -5310,13 +5707,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -5326,7 +5733,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -5336,7 +5743,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -5356,13 +5763,14 @@
       "id": "06412",
       "municipality": "José C. Paz",
       "file": "informe-06412.pdf",
-      "pages": 6,
-      "bytes": 138240,
-      "sha256": "555a8d28bce5e2891a50b23aa6fef1816283fe02fd04500c99620a565abdf7c0",
+      "pages": 7,
+      "bytes": 158889,
+      "sha256": "3c0556755ee2743874a78f38d0afcff4079752f5ed4eb09b49c0c92a3ffd1d30",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -5399,13 +5807,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -5415,7 +5833,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -5425,7 +5843,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -5445,13 +5863,14 @@
       "id": "06413",
       "municipality": "Junín",
       "file": "informe-06413.pdf",
-      "pages": 6,
-      "bytes": 138487,
-      "sha256": "a5aa1f0c68ffb44459f7d9ce8c28e116008bde979ea3770644dac82dda4e1935",
+      "pages": 7,
+      "bytes": 159122,
+      "sha256": "477035d04f6f1ae7fc9db15c9f929c3cd30d2165cfe86b948f6f6907ed6e5292",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -5488,13 +5907,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -5504,7 +5933,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -5514,7 +5943,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -5623,13 +6052,14 @@
       "id": "06427",
       "municipality": "La Matanza",
       "file": "informe-06427.pdf",
-      "pages": 6,
-      "bytes": 138191,
-      "sha256": "a4475c4f4342f9aac7ba3ad411385e8442b9c7e66d16d0d6b8bdcad03f5e3c2c",
+      "pages": 7,
+      "bytes": 158766,
+      "sha256": "f17e082736edfc1ba7a12062be5a0168cee5f79e5d5d35e4d7b22494b47e88f5",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -5666,13 +6096,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -5682,7 +6122,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -5692,7 +6132,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -5801,13 +6241,14 @@
       "id": "06434",
       "municipality": "Lanús",
       "file": "informe-06434.pdf",
-      "pages": 6,
-      "bytes": 138870,
-      "sha256": "3d4066d262a7b3d5b2aaf3dee02dc3f8602a47c1ae76a49dd7ca94bc80b07513",
+      "pages": 7,
+      "bytes": 159550,
+      "sha256": "349c89f638c0b6aac8312fed54b9f7b851b0be3646e967a2f3b0cbcc06c8e391",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -5844,13 +6285,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -5860,7 +6311,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -5870,7 +6321,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -5968,13 +6419,14 @@
       "id": "06455",
       "municipality": "Las Flores",
       "file": "informe-06455.pdf",
-      "pages": 6,
-      "bytes": 138285,
-      "sha256": "1924f59fa160657a0f91796c2c66368ea3d70915dc90e141f79b10b616b0da50",
+      "pages": 7,
+      "bytes": 158794,
+      "sha256": "0099bb8850df7c8ffac8323d2dd22d9bb7187ec6b033b9023e7ee823e0de596b",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -6011,13 +6463,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -6027,7 +6489,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -6037,7 +6499,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -6146,13 +6608,14 @@
       "id": "06466",
       "municipality": "Lezama",
       "file": "informe-06466.pdf",
-      "pages": 5,
-      "bytes": 116129,
-      "sha256": "17115c490ba80cf482da558d515b8e0d0f13585c6466807a5022929437794c99",
+      "pages": 6,
+      "bytes": 136731,
+      "sha256": "4473810d5edd6606fb9c9ae2953a4a0b74ebd3b8fb2a8cce92aaa0fe2d94080a",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -6188,13 +6651,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -6204,7 +6677,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -6224,13 +6697,14 @@
       "id": "06469",
       "municipality": "Lincoln",
       "file": "informe-06469.pdf",
-      "pages": 6,
-      "bytes": 138072,
-      "sha256": "130271b70839643c597506b5808deef17e0ce0a12e60c47e44e0137c93250f27",
+      "pages": 7,
+      "bytes": 158740,
+      "sha256": "11dd12f31fba36ca7a4bd7b0a601ea9f706a5e48d81c83aec9c391e026595860",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -6267,13 +6741,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -6283,7 +6767,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -6293,7 +6777,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -6313,13 +6797,14 @@
       "id": "06476",
       "municipality": "Lobería",
       "file": "informe-06476.pdf",
-      "pages": 5,
-      "bytes": 116447,
-      "sha256": "9fa7a0ef641e1936532ec41a15649b08c1f87952dec43ac0a11e32f5d70b7673",
+      "pages": 6,
+      "bytes": 137124,
+      "sha256": "6943a2fa3a9044ceb48f3c113443df0dab6e1eed6d1a49290f281f54a1688271",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -6355,13 +6840,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -6371,7 +6866,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -6391,13 +6886,14 @@
       "id": "06483",
       "municipality": "Lobos",
       "file": "informe-06483.pdf",
-      "pages": 6,
-      "bytes": 138303,
-      "sha256": "6989c19cb237649b36a741c98b567c26052560111e50ea319cbf4ab8e27fb982",
+      "pages": 7,
+      "bytes": 158898,
+      "sha256": "84e6d04b7d87aa500b17926b1c08eb3fa5cbdde38d6680936d0939e0f74efdff",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -6434,13 +6930,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -6450,7 +6956,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -6460,7 +6966,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -6658,13 +7164,14 @@
       "id": "06505",
       "municipality": "Magdalena",
       "file": "informe-06505.pdf",
-      "pages": 5,
-      "bytes": 115897,
-      "sha256": "b62ef5b92a296eac302e7a822285e09e815820c97f8720450d7b9bd23f3081e5",
+      "pages": 6,
+      "bytes": 137109,
+      "sha256": "f28a3d5804b7b0580d7f4911584a67f2021b947f7333a2bd83243cecb3f0cfb1",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -6700,13 +7207,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -6716,7 +7233,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -6736,13 +7253,14 @@
       "id": "06511",
       "municipality": "Maipú",
       "file": "informe-06511.pdf",
-      "pages": 5,
-      "bytes": 116282,
-      "sha256": "4ab6589c49a4a9f5dd7550f8e57e01565c9bd40930f1775184f1e0947415c038",
+      "pages": 6,
+      "bytes": 136926,
+      "sha256": "f5d529809fe2856f44bbcec057875dfd990827b9a9a8e84ccdb76e9319423ab4",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -6778,13 +7296,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -6794,7 +7322,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -6814,13 +7342,14 @@
       "id": "06515",
       "municipality": "Malvinas Argentinas",
       "file": "informe-06515.pdf",
-      "pages": 6,
-      "bytes": 138388,
-      "sha256": "93808ebcca73209b3a65caa8dfe5a0c5b62521efd17e0f2fefb212a8e12b4a57",
+      "pages": 7,
+      "bytes": 158916,
+      "sha256": "e530559f6d738f6714e9238fe1f1a3d31b96df292408b81287a85f1a3cc245f4",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -6857,13 +7386,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -6873,7 +7412,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -6883,7 +7422,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -7081,13 +7620,14 @@
       "id": "06532",
       "municipality": "Mercedes",
       "file": "informe-06532.pdf",
-      "pages": 6,
-      "bytes": 138569,
-      "sha256": "13c699a7753c7e83debfc15f6eb4247358bea7635f43eb09cc40bf60e61b47f7",
+      "pages": 7,
+      "bytes": 159332,
+      "sha256": "12ce4b34f250d11e2c629027e6a49c76a6af8dc7565d4134849ac0353dc886ca",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -7124,13 +7664,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -7140,7 +7690,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -7150,7 +7700,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -7337,13 +7887,14 @@
       "id": "06553",
       "municipality": "Monte Hermoso",
       "file": "informe-06553.pdf",
-      "pages": 5,
-      "bytes": 116083,
-      "sha256": "92e769c6371f9dba315c1d5acd091e2db6a4b460217166fc2b6d3e53dcae9479",
+      "pages": 6,
+      "bytes": 137261,
+      "sha256": "39a5c8d7327b7018986f2786b12e696b59a1d5d71b481c4a53e7428acf53f659",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -7379,13 +7930,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -7395,7 +7956,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -7593,13 +8154,14 @@
       "id": "06574",
       "municipality": "Navarro",
       "file": "informe-06574.pdf",
-      "pages": 6,
-      "bytes": 137906,
-      "sha256": "a22f50884d6312486d69d769d956d22c896d825e98ea99aa39581b286f5551e3",
+      "pages": 7,
+      "bytes": 158500,
+      "sha256": "7a6a40967ddb8dfd78505cc935c678e04bc22b20e8e0dc0af154ef750fc25953",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -7636,13 +8198,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -7652,7 +8224,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -7662,7 +8234,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -7682,13 +8254,14 @@
       "id": "06581",
       "municipality": "Necochea",
       "file": "informe-06581.pdf",
-      "pages": 6,
-      "bytes": 138236,
-      "sha256": "28bad93f4455c6bada85038bf893216b23cc1f55edb604d72d36d0fe7068724a",
+      "pages": 7,
+      "bytes": 159477,
+      "sha256": "b6f6b1e462e92011515fa2fd544327038ed694047f498cf41b95440577fadf0d",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -7725,13 +8298,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -7741,7 +8324,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -7751,7 +8334,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -7860,13 +8443,14 @@
       "id": "06595",
       "municipality": "Olavarría",
       "file": "informe-06595.pdf",
-      "pages": 6,
-      "bytes": 138527,
-      "sha256": "f9007ff45266dd0e3e6ed52d2da7018f3b17cd640ed172e84fc323f0b003e430",
+      "pages": 7,
+      "bytes": 159199,
+      "sha256": "16a268bd67d2247ad2f6955ddb864b7679b749b70d2e7b77b6157aeb405305a6",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -7903,13 +8487,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -7919,7 +8513,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -7929,7 +8523,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -8127,13 +8721,14 @@
       "id": "06616",
       "municipality": "Pellegrini",
       "file": "informe-06616.pdf",
-      "pages": 5,
-      "bytes": 115891,
-      "sha256": "7278c9317e980c274cfcb1015de3696e72d3438ffc37011fbccb37af095d3b0a",
+      "pages": 6,
+      "bytes": 136530,
+      "sha256": "77b45817ae78387684ccd8a8386eba7b79e8c540d93b3a7137cf701a6c352311",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -8169,13 +8764,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -8185,7 +8790,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -8628,13 +9233,14 @@
       "id": "06651",
       "municipality": "Puan",
       "file": "informe-06651.pdf",
-      "pages": 6,
-      "bytes": 138321,
-      "sha256": "d045284141954a11d2d9e84aa021dc8a6a96a5e1d21383c731d6774d393451d4",
+      "pages": 7,
+      "bytes": 158939,
+      "sha256": "888d133e78897bfd154ffb914639f13486813923f17634d094451df111276ae4",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -8671,13 +9277,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -8687,7 +9303,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -8697,7 +9313,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -9140,13 +9756,14 @@
       "id": "06686",
       "municipality": "Rojas",
       "file": "informe-06686.pdf",
-      "pages": 6,
-      "bytes": 138502,
-      "sha256": "8b5bb3f6ac33a0fb33616657375d8a4366a408bbcaa2c74dd5845e9964495eb1",
+      "pages": 7,
+      "bytes": 159154,
+      "sha256": "bcf937001038525678d571ff76c608eeea306d1e2b1e69b6ae74670950d46f95",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -9183,13 +9800,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -9199,7 +9826,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -9209,7 +9836,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -9418,13 +10045,14 @@
       "id": "06707",
       "municipality": "Saladillo",
       "file": "informe-06707.pdf",
-      "pages": 6,
-      "bytes": 138233,
-      "sha256": "6eeb175b4767fa187635884bb8fa8807b6c9ee22ed5638c33a6ab18a8f0477e9",
+      "pages": 7,
+      "bytes": 159438,
+      "sha256": "c1eb292d0653f8680a858ba2c01b3c39155fb5c17e04cfe2fd40d99cc558f604",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -9461,13 +10089,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -9477,7 +10115,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -9487,7 +10125,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -9596,13 +10234,14 @@
       "id": "06714",
       "municipality": "Salto",
       "file": "informe-06714.pdf",
-      "pages": 6,
-      "bytes": 138385,
-      "sha256": "adef5e6962bd5f5020b7dfa66733c666e102728b2a210f400bd33fc0969c777b",
+      "pages": 7,
+      "bytes": 158999,
+      "sha256": "3cdbf914b3160aaa65d7a2c2bcac111b0c0162f62dc424259444937adaf44d42",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -9639,13 +10278,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -9655,7 +10304,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -9665,7 +10314,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -9685,13 +10334,14 @@
       "id": "06728",
       "municipality": "San Andrés de Giles",
       "file": "informe-06728.pdf",
-      "pages": 6,
-      "bytes": 138262,
-      "sha256": "d5085bbc102ec40033967cac256a8c4326a63243b243c4c59653b7e9c5ddea89",
+      "pages": 7,
+      "bytes": 158929,
+      "sha256": "960a26761a5832c1110edbaa745e225d097b7fd5ec51cb7c5b541451b396128e",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -9728,13 +10378,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -9744,7 +10404,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -9754,7 +10414,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -9774,13 +10434,14 @@
       "id": "06735",
       "municipality": "San Antonio de Areco",
       "file": "informe-06735.pdf",
-      "pages": 6,
-      "bytes": 138328,
-      "sha256": "f96d3a6798da9244fcaf23d98626de6155307f51cc32dd6c0462ca35d22db12f",
+      "pages": 7,
+      "bytes": 158962,
+      "sha256": "f224918cef3fdcd89f9a3e9606a9c6bf682f126311713de2c393701af8fde689",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -9817,13 +10478,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -9833,7 +10504,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -9843,7 +10514,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -9863,13 +10534,14 @@
       "id": "06742",
       "municipality": "San Cayetano",
       "file": "informe-06742.pdf",
-      "pages": 5,
-      "bytes": 115976,
-      "sha256": "43275179ba5013f7f73bf4f96064dfb0a385f8c14a1d68edfa72e51edfdfddea",
+      "pages": 6,
+      "bytes": 136744,
+      "sha256": "f9b08a77ab81aab3fe081f78dd1fb4eaed5403c45e8e16b34aa3590fde999c59",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -9905,13 +10577,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -9921,7 +10603,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -10297,13 +10979,14 @@
       "id": "06770",
       "municipality": "San Pedro",
       "file": "informe-06770.pdf",
-      "pages": 6,
-      "bytes": 138166,
-      "sha256": "12d828e8b0f1987c523531fa8ef4a8d62088a268dfafd52cdf42e22b5debb18b",
+      "pages": 7,
+      "bytes": 158837,
+      "sha256": "a805cdbb03dd5c2fae6a50cb35e9a58d212a9af0888c2dba02979133b0e50687",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -10340,13 +11023,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -10356,7 +11049,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -10366,7 +11059,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -10475,13 +11168,14 @@
       "id": "06784",
       "municipality": "Suipacha",
       "file": "informe-06784.pdf",
-      "pages": 5,
-      "bytes": 116533,
-      "sha256": "ab60b03192f63fa88ee0f7a6a456a82e140c789119b1c1131641bf1bf46bc0dd",
+      "pages": 6,
+      "bytes": 137174,
+      "sha256": "d175726b15c7cf5da4b154f57e49be2a810d87a5e72ff3ce5ae44a9ec7093aeb",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -10517,13 +11211,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -10533,7 +11237,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -10553,13 +11257,14 @@
       "id": "06791",
       "municipality": "Tandil",
       "file": "informe-06791.pdf",
-      "pages": 6,
-      "bytes": 138573,
-      "sha256": "295638af91225ffe205019ec75aa58e530d6fc43787d36aa0518a914603fa2c8",
+      "pages": 7,
+      "bytes": 160050,
+      "sha256": "208a91a2d306f9da00489d4e289c1e933ddce28ce5714b81268fb8d4170eb77b",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -10596,13 +11301,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -10612,7 +11327,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -10622,7 +11337,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -10642,13 +11357,14 @@
       "id": "06798",
       "municipality": "Tapalqué",
       "file": "informe-06798.pdf",
-      "pages": 5,
-      "bytes": 115831,
-      "sha256": "1968cf1484512d7118bd0677940dcfbbaa126d9a5f8657c91d21315654d54ffd",
+      "pages": 6,
+      "bytes": 137090,
+      "sha256": "97cecf8b569b3dd55c3f21999960a6cbed4b2f2cedf8abad29de50d547494638",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -10684,13 +11400,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -10700,7 +11426,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -10720,13 +11446,14 @@
       "id": "06805",
       "municipality": "Tigre",
       "file": "informe-06805.pdf",
-      "pages": 9,
-      "bytes": 207986,
-      "sha256": "850ad3e4e22ca1f99ef858a6e9fa8e18f3d096c8ee57227f2eb1934aaf9e678b",
+      "pages": 10,
+      "bytes": 229793,
+      "sha256": "2da19aa2b0985f0d2fe545ce331835d407a57df302894ec16019fb040db3184a",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "detalle-fiscal",
@@ -10766,13 +11493,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -10782,7 +11519,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -10792,7 +11529,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         },
         {
@@ -10802,7 +11539,7 @@
           "default": false,
           "required": false,
           "pages": [
-            6
+            7
           ]
         },
         {
@@ -10812,7 +11549,7 @@
           "default": false,
           "required": false,
           "pages": [
-            7
+            8
           ]
         },
         {
@@ -10822,7 +11559,7 @@
           "default": false,
           "required": false,
           "pages": [
-            8
+            9
           ]
         }
       ],
@@ -10920,13 +11657,14 @@
       "id": "06819",
       "municipality": "Tornquist",
       "file": "informe-06819.pdf",
-      "pages": 6,
-      "bytes": 137747,
-      "sha256": "4d513bb6783229066e2d246408285736c472eac8e6e3a7764f8e3f918a09f6d1",
+      "pages": 7,
+      "bytes": 158415,
+      "sha256": "33fd2f01f74f78e962a520886b6d08893a9e1bc187694ed637cef6293ee3f625",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -10963,13 +11701,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -10979,7 +11727,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -10989,7 +11737,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -11276,13 +12024,14 @@
       "id": "06847",
       "municipality": "Tres Lomas",
       "file": "informe-06847.pdf",
-      "pages": 5,
-      "bytes": 115912,
-      "sha256": "19ca6fd87e291291f6621dfb3117f5556af8874facdeba8cfd527a954aaf846d",
+      "pages": 6,
+      "bytes": 136536,
+      "sha256": "755f533be670e69713eaf2f45b3bdc394c4519d48b579a633f960b33836a428d",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas"
       ],
@@ -11318,13 +12067,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -11334,7 +12093,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         }
       ],
@@ -11532,13 +12291,14 @@
       "id": "06868",
       "municipality": "Villa Gesell",
       "file": "informe-06868.pdf",
-      "pages": 6,
-      "bytes": 138119,
-      "sha256": "306f4a4ca533e22819a94c39311c1bb81d8f80f798816fdd653f156e6de97acf",
+      "pages": 7,
+      "bytes": 158774,
+      "sha256": "15937002902dee6affc207e92b9a19bd0813b4ca64dfb0f52a07df5dd52b8e95",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -11575,13 +12335,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -11591,7 +12361,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -11601,7 +12371,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
@@ -11710,13 +12480,14 @@
       "id": "06882",
       "municipality": "Zárate",
       "file": "informe-06882.pdf",
-      "pages": 6,
-      "bytes": 138701,
-      "sha256": "428df9c7622029d27a778dbca1104fc6c005596ee78900195b88842eb3337683",
+      "pages": 7,
+      "bytes": 159350,
+      "sha256": "78565d2ebfabcbc12ee41f9013a84976ef5da749ba43c2b7441b6a2cf095dde1",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
+        "gestion-verificada",
         "poblacion",
         "deudas",
         "bancos"
@@ -11753,13 +12524,23 @@
           ]
         },
         {
+          "id": "gestion-verificada",
+          "label": "Gestión municipal verificada",
+          "description": "Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.",
+          "default": false,
+          "required": false,
+          "pages": [
+            3
+          ]
+        },
+        {
           "id": "poblacion",
           "label": "Población, servicios y seguridad",
           "description": "Carencias, salud, vivienda y delitos registrados.",
           "default": false,
           "required": false,
           "pages": [
-            3
+            4
           ]
         },
         {
@@ -11769,7 +12550,7 @@
           "default": false,
           "required": false,
           "pages": [
-            4
+            5
           ]
         },
         {
@@ -11779,7 +12560,7 @@
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],

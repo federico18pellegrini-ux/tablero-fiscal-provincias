@@ -11,6 +11,7 @@ TOPICS = [
     ('lectura','Diagnóstico y decisiones','La situación del municipio y tres prioridades concretas.',True),
     ('cuentas','Cuentas, presupuesto y transferencias','Ingresos, gastos, autorización anual y fondos provinciales.',True),
     ('economia','Trabajo, salarios y actividad','Empleo formal, sectores, remuneraciones y producción local.',True),
+    ('gestion-verificada','Gestión municipal verificada','Personal, deuda flotante, Concejo y publicidad contrastados con documentos oficiales.',False),
     ('poblacion','Población, servicios y seguridad','Carencias, salud, vivienda y delitos registrados.',False),
     ('deudas','Deudas de las personas','Personas con crédito, atrasos y alcance del relevamiento.',False),
     ('detalle-fiscal','Detalle de ejecución presupuestaria','Partidas, pagos, origen de recursos y conciliaciones disponibles.',False),
@@ -207,8 +208,36 @@ class EditorialReport(Report):
         self.p(f"En 2024 había {number(m['sucursales_2024'],0)} sucursales informadas. La relación entre préstamos y depósitos de ese corte era {pct(m.get('prestamos_sobre_depositos_2024_pct'),1)}. Ese cociente no permite seguir el destino de cada depósito ni afirmar que el ahorro local se presta fuera del municipio.")
         self.p('Los rankings bancarios conservan 2024 como corte común entre municipios. Los datos más nuevos de una ficha no se usan para compararla contra cifras viejas de otra. Los importes faltantes permanecen como tales.','small')
 
+    def verified_structure(self):
+        records=self.m.get('verifiedStructure',{})
+        refs=[]
+        for key,x in records.items():
+            refs.append(source_link(x['sources'][0]['url'], {'hcd':'Concejo','flo':'Deuda flotante','pub':'Publicidad','workforce':'Personal'}[key]+(' · '+str(len(x['evidence']['components']))+' partidas' if x['evidence'].get('components') else ' · pág. '+str(x['evidence']['page']))))
+        self.section('Personal, gastos y pagos pendientes',False,'Documentos oficiales municipales · '+' · '.join(refs))
+        self.p('Esta apertura permite ver cómo se organiza el gasto y qué compromisos quedan por atender. Cada cifra corresponde al período indicado y fue contrastada con su documento original.')
+        for key in ['workforce','flo','hcd','pub']:
+            x=records.get(key)
+            if not x:continue
+            e=x['evidence'];period=(date(e['periodStart'])+' al '+date(e['periodEnd'])) if e.get('periodStart') else date(e['periodEnd']) if e.get('periodEnd') else x['period']
+            if key=='workforce':
+                self.h('Cargos de personal · '+period)
+                categories='; '.join(label+': '+number(value,0) for label,value in x['categories'])
+                self.p(escaped(categories)+'. '+('Total informado: '+number(x['total'],0)+'. ' if finite(x.get('total')) else 'No se presenta un total completo de dotación. '))
+                self.p('Son puestos autorizados en el presupuesto, no personas que efectivamente trabajan. '+escaped(e.get('scope','')),'small')
+            elif key=='flo':
+                self.h('Pagos pendientes · '+period)
+                self.p('<b>Deuda flotante: '+money(x['value'])+' millones.</b> Son gastos registrados que aún no se pagaron a la fecha del documento. Permite dimensionar compromisos de caja; no se suma otra vez al déficit, porque esos gastos pueden estar ya incluidos.')
+            elif key=='hcd':
+                self.h('Gasto del Concejo · '+period)
+                self.p('<b>El Concejo representó '+pct(x['value'],2)+' del gasto presupuestario.</b> Se calcula sobre los gastos devengados de Ejecutivo y Concejo incluidos en el estado. Este total puede incluir aplicaciones financieras y diferir del gasto fiscal de otras páginas.')
+            else:
+                self.h('Publicidad · '+period)
+                self.p('<b>Se registraron '+money(x['value'])+' millones.</b> '+escaped(e.get('scope',''))+' Es gasto devengado: no necesariamente ya pagado.')
+        self.p('Un monto mayor no demuestra por sí solo una peor gestión. Para evaluarlo también hay que mirar tamaño del municipio, servicios a cargo, cobertura del documento y resultados obtenidos. Los registros todavía sin contraste quedan fuera de esta página.','small')
+
     def render_module(self):
         methods={'lectura':self.core_overview,'cuentas':self.core_accounts,'economia':self.core_economy,'poblacion':self.community,'deudas':self.debt_brief,'detalle-fiscal':self.detail_accounts,'caja':self.cash,'historia':self.history,'bancos':self.banking}
+        methods['gestion-verificada']=self.verified_structure
         methods[self.topic]()
         doc=BaseDocTemplate(self.path,pagesize=(WIDTH,HEIGHT),title=f'{self.m["municipio"]} - Informe municipal',author='Federico Pellegrini',pageCompression=1)
         frame=Frame(MARGIN,104,CONTENT,HEIGHT-45-104,id='body',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)
@@ -237,6 +266,7 @@ def write_pdf(writer,path,m):
 def build_editorial(path,brief_path,m,data,geography):
     writer=PdfWriter();modules=[];g=m.get('management');count=0
     for key,label,description,default in TOPICS:
+        if key=='gestion-verificada' and not m.get('verifiedStructure'):continue
         available=not(key=='historia' and not g or key=='caja' and not(g or m.get('publicDebt')) or key=='detalle-fiscal' and not(g or m.get('fiscalExecution')) or key=='bancos' and not(finite(m.get('prestamos_2024_ars')) or (g and any(r['status']=='verified' for r in g['banking']['records']))))
         if not available:continue
         buffer=io.BytesIO();report=EditorialReport(buffer,m,data,geography,key);pages=report.render_module();buffer.seek(0)

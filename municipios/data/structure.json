@@ -7,7 +7,7 @@
     "fuentes.js": "c5a500bff28070e252b23d49ded96f594e9b077f1cd5b799fd7d62816e922184"
   },
   "verification": "external_survey",
-  "note": "Relevamiento de Municipios Argentinos con enlaces a documentos oficiales. Los importes y dotaciones todavía no tienen contraste independiente integral. No integran los rankings fiscales verificados ni los informes PDF.",
+  "note": "Relevamiento de Municipios Argentinos con enlaces a documentos oficiales. Los importes y dotaciones todavía no tienen contraste independiente integral. Sólo los registros contrastados con documentos originales integran los rankings de gestión y los informes PDF.",
   "coverage": {
     "flo": 36,
     "hcd": 105,
@@ -103,7 +103,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "c59ae411b8f87a8928d15dec0d21bb1d18327ebd67fbee55cb0423b543ccdd8a",
+            "file": "structure-sources/06007-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 305098902.99 / Total General presupuestario 20712133646.45 × 100 = 1.473044%.",
+            "expected": {
+              "value": 1.47,
+              "period": "2024"
+            },
+            "periodStart": "2024-01-02",
+            "periodEnd": "2024-12-31",
+            "numerator": 305098902.99,
+            "denominator": 20712133646.45,
+            "calculatedValue": 1.4730442947015894,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 43594000,
@@ -188,7 +206,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "30c75ff6e229c3dd63ded04f1d29fdd007bd975ed7d9804cc43fbc7096c0f227",
+            "file": "structure-sources/06014-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 313691106.42 / Total General presupuestario 18900764161.82 × 100 = 1.659674%.",
+            "expected": {
+              "value": 1.66,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 313691106.42,
+            "denominator": 18900764161.82,
+            "calculatedValue": 1.6596742001239484,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -231,7 +267,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "e75c64e2f063a5722f35e05f5ece97679860700192cc3c928922d5b08c363b99",
+            "file": "structure-sources/06021-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 224612420.74 / Total General presupuestario 20721101214.00 × 100 = 1.083979%.",
+            "expected": {
+              "value": 1.08,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 224612420.74,
+            "denominator": 20721101214.0,
+            "calculatedValue": 1.0839791689654164,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -285,7 +339,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "d15f85b3cff01baaa8cc8d0fbf8aaadac52672042045266aef6895d01086054e",
+            "file": "structure-sources/06028-hcd-verified.pdf",
+            "page": 3,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 3813618588.26 / Total General presupuestario 251782649785.07 × 100 = 1.514647%.",
+            "expected": {
+              "value": 1.51,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 3813618588.26,
+            "denominator": 251782649785.07,
+            "calculatedValue": 1.514647094037429,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -324,7 +396,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "7f9c5842fcdccd440c3f0fce69c2bf308e7c056d4a8b2b02c8918e395b33a39b",
+            "file": "structure-sources/06077-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 370069106.18 / Total General presupuestario 21792683007.54 × 100 = 1.698135%.",
+            "expected": {
+              "value": 1.7,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 370069106.18,
+            "denominator": 21792683007.54,
+            "calculatedValue": 1.6981346723207997,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -475,7 +565,7 @@
       "municipality": "Bahía Blanca",
       "indicators": {
         "flo": {
-          "value": 6461936367,
+          "value": 6461936366.93,
           "period": "2026-06",
           "sources": [
             {
@@ -486,7 +576,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "9ade0374dfb9d39e13752e9933c76dae947655533d17aafa8774d5f89419d376",
+            "file": "structure-sources/06056-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2026-06-30. 1.3. DEUDA FLOTANTE                                                       6,461,936,366.93",
+            "expected": {
+              "value": 6461936367,
+              "period": "2026-06"
+            },
+            "periodEnd": "2026-06-30",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 6461936366.93,
+              "period": "2026-06"
+            }
+          }
         },
         "hcd": {
           "value": 1.35,
@@ -500,10 +608,28 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "12f1bf4e00d202c286b5d884be0e84b82147e80b152ce85161bb69eb13fa64cc",
+            "file": "structure-sources/06056-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 3801128830.66 / Total General presupuestario 280651275504.94 × 100 = 1.354396%.",
+            "expected": {
+              "value": 1.35,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 3801128830.66,
+            "denominator": 280651275504.94,
+            "calculatedValue": 1.3543957082757292,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
-          "value": 922670491,
+          "value": 922670491.49,
           "period": "2024",
           "sources": [
             {
@@ -514,7 +640,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "afe6ef3eccb7c11c67cffe220ac02209277f0a880b951161a5ebaecc2a85434d",
+            "file": "structure-sources/06056-pub-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Objeto 3.6.0.0 Publicidad y propaganda, columna Devengado. Sin duplicar los totales de objeto o jurisdicción.",
+            "expected": {
+              "value": 922670491,
+              "period": "2024"
+            },
+            "periodStart": "2024-01-02",
+            "periodEnd": "2024-12-31",
+            "scope": "Objeto Publicidad y propaganda de la ejecución municipal publicada.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 922670491.49
+            }
+          }
         }
       },
       "workforce": {
@@ -650,7 +794,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "f4deee8be54be624d7d224ce9312d6a336b99152e0e78b6ef00ac990888b9207",
+            "file": "structure-sources/06070-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 639606685.17 / Total General presupuestario 29113520136.68 × 100 = 2.196940%.",
+            "expected": {
+              "value": 2.2,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 639606685.17,
+            "denominator": 29113520136.68,
+            "calculatedValue": 2.1969403980254594,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -823,7 +985,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "92631cf67f1fba9a21c7dfbc662122d2e99becd0541f869ae2925d99d7d4d4e5",
+            "file": "structure-sources/06098-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 1600587282.12 / Total General presupuestario 60550263596.50 × 100 = 2.643403%.",
+            "expected": {
+              "value": 2.64,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 1600587282.12,
+            "denominator": 60550263596.5,
+            "calculatedValue": 2.64340266590106,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -866,7 +1046,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "f46ee5ba183f7b23a17770268cfc785e95976c9946ccd1403e42ba53112bf74b",
+            "file": "structure-sources/06105-hcd-verified.pdf",
+            "page": 3,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 406457681.09 / Total General presupuestario 47208351910.18 × 100 = 0.860987%.",
+            "expected": {
+              "value": 0.86,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 406457681.09,
+            "denominator": 47208351910.18,
+            "calculatedValue": 0.8609868056045217,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -909,7 +1107,7 @@
       "municipality": "Bragado",
       "indicators": {
         "flo": {
-          "value": 2495130719,
+          "value": 2495130719.27,
           "period": "2025-12",
           "sources": [
             {
@@ -920,7 +1118,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "a23538041273199f1a6b2a78d57d5b23fa60c04441b6ebfe12ca20ba268e1d24",
+            "file": "structure-sources/06112-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. 1.3. DEUDA FLOTANTE                                                                                                                       2,495,130,719.27     2,495,130,719.27",
+            "expected": {
+              "value": 2495130719,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 2495130719.27,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.17,
@@ -934,7 +1150,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "06bee908436f90e919a05df4d458bc946e909df6f94d2ff87ac49037f5cd52f1",
+            "file": "structure-sources/06112-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 442168622.73 / Total General presupuestario 37941719253.72 × 100 = 1.165389%.",
+            "expected": {
+              "value": 1.17,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 442168622.73,
+            "denominator": 37941719253.72,
+            "calculatedValue": 1.165389000359143,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -992,7 +1226,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "2e13a64a6086421d5d4c0d62c939825415fd4b1f15c3468d0f17b12ec7ea0911",
+            "file": "structure-sources/06119-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 214809614.11 / Total General presupuestario 23513406004.20 × 100 = 0.913562%.",
+            "expected": {
+              "value": 0.91,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 214809614.11,
+            "denominator": 23513406004.2,
+            "calculatedValue": 0.9135623059952709,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -1085,7 +1337,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "51b5c3e4349e137d6b8a179b7d54b24df350155117aceab9a59c51c1859d0c9e",
+            "file": "structure-sources/06140-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 337073702.03 / Total General presupuestario 13936343624.83 × 100 = 2.418667%.",
+            "expected": {
+              "value": 2.42,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 337073702.03,
+            "denominator": 13936343624.83,
+            "calculatedValue": 2.418666696976709,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -1143,7 +1413,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "0049603a66adf1cbad08a5efa4851dbff9c1237311d5a2e864107b875f6c3414",
+            "file": "structure-sources/06147-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 455835986.84 / Total General presupuestario 35358415981.85 × 100 = 1.289187%.",
+            "expected": {
+              "value": 1.29,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 455835986.84,
+            "denominator": 35358415981.85,
+            "calculatedValue": 1.2891866736167916,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -1239,7 +1527,27 @@
             "official": true
           }
         ],
-        "verification": "external_survey"
+        "verification": "primary_document",
+        "evidence": {
+          "sha256": "0b6a507cbf93f732e39aa6dfac35dfdf8d8dfcd156916f88f3df1b8ccb99e86d",
+          "file": "structure-sources/06154-workforce-verified.pdf",
+          "page": 10,
+          "verifiedAt": "2026-10-14",
+          "locator": "Artículo 12: 530 cargos de planta permanente.",
+          "expected": {
+            "type": "c",
+            "period": "2026",
+            "total": null,
+            "categories": [
+              [
+                "permanente",
+                530
+              ]
+            ]
+          },
+          "scope": "Planta permanente según Formulario 6.",
+          "rankingEligible": true
+        }
       },
       "decisions": [
         {
@@ -1276,7 +1584,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "38ef82635d853928c34c6eb5ff9e6e22732863adf7432ef143d6a8f98822d5f8",
+            "file": "structure-sources/06161-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 168770430.65 / Total General presupuestario 11406043936.19 × 100 = 1.479658%.",
+            "expected": {
+              "value": 1.48,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 168770430.65,
+            "denominator": 11406043936.19,
+            "calculatedValue": 1.4796579041267042,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -1343,13 +1669,31 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "25bf0b329b37f55ef9344adaf4f1a0ef7b999ce76dc7fbf53d74bc1bd40187d7",
+            "file": "structure-sources/06168-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 170218197.20 / Total General presupuestario 16273620292.11 × 100 = 1.045976%.",
+            "expected": {
+              "value": 1.05,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 170218197.2,
+            "denominator": 16273620292.11,
+            "calculatedValue": 1.0459762126963692,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
         "type": "c",
         "period": "2026",
-        "total": 695,
+        "total": null,
         "categories": [
           [
             "permanente",
@@ -1358,6 +1702,10 @@
           [
             "temporaria",
             187
+          ],
+          [
+            "jornalizada",
+            75
           ]
         ],
         "sources": [
@@ -1369,7 +1717,48 @@
             "official": true
           }
         ],
-        "verification": "external_survey"
+        "verification": "primary_document",
+        "evidence": {
+          "sha256": "8bc9e145e70fd94ccd51fd35862c04ea60788b8ae5282960fc49dc5f918af38d",
+          "file": "structure-sources/06168-workforce-verified.txt",
+          "page": 1,
+          "verifiedAt": "2026-10-14",
+          "locator": "Artículo 5: 508 cargos permanentes (incluye concejales), 187 temporarios mensualizados y 75 jornalizados. La suma 695 del relevamiento omitía la categoría jornalizada; no se presenta como total de dotación.",
+          "expected": {
+            "type": "c",
+            "period": "2026",
+            "total": 695,
+            "categories": [
+              [
+                "permanente",
+                508
+              ],
+              [
+                "temporaria",
+                187
+              ]
+            ]
+          },
+          "scope": "Los 508 permanentes incluyen concejales; temporarios y jornalizados separados.",
+          "rankingEligible": true,
+          "confirmed": {
+            "total": null,
+            "categories": [
+              [
+                "permanente",
+                508
+              ],
+              [
+                "temporaria",
+                187
+              ],
+              [
+                "jornalizada",
+                75
+              ]
+            ]
+          }
+        }
       },
       "decisions": [
         {
@@ -1489,7 +1878,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "f1841c6dbe4714b10d439a7fe44d8a8dcd0e1cd72315c1bc1e7860227173b8ae",
+            "file": "structure-sources/06218-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 670635080.13 / Total General presupuestario 45939785799.34 × 100 = 1.459813%.",
+            "expected": {
+              "value": 1.46,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 670635080.13,
+            "denominator": 45939785799.34,
+            "calculatedValue": 1.4598132500209324,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -1524,7 +1931,7 @@
       "municipality": "Chivilcoy",
       "indicators": {
         "flo": {
-          "value": 2774745201,
+          "value": 2774745201.0,
           "period": "2025-12",
           "sources": [
             {
@@ -1535,7 +1942,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "28057c32e503fe30a3c677c0725ace0d1e6501e56b7b3dee7afbd6db1b77eb03",
+            "file": "structure-sources/06224-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. DEUDA FLOTANTE                                               2774745201",
+            "expected": {
+              "value": 2774745201,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 2774745201.0,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.64,
@@ -1549,7 +1974,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "abd5630e4caa9d84d89f6d5185e2e9e745579880743ae8a0fb5a2b6615255a4b",
+            "file": "structure-sources/06224-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 907691473.33 / Total General presupuestario 55457102139.83 × 100 = 1.636745%.",
+            "expected": {
+              "value": 1.64,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 907691473.33,
+            "denominator": 55457102139.83,
+            "calculatedValue": 1.6367452288461433,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -1601,7 +2044,7 @@
       "municipality": "Colón",
       "indicators": {
         "flo": {
-          "value": 1066219615,
+          "value": 1066219614.92,
           "period": "2025-12",
           "sources": [
             {
@@ -1612,7 +2055,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "62b3df846e7420553abfd09d1c5be16cd5dbc54726c39dfd8b1d835578fe7c17",
+            "file": "structure-sources/06175-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. DEUDA FLOTANTE                                              $ 1,066,219,614.92",
+            "expected": {
+              "value": 1066219615,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 1066219614.92,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.67,
@@ -1626,10 +2087,28 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "81118ba25fa96148d36e5be744295d1de65df0d913b34361c0007607bc037399",
+            "file": "structure-sources/06175-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 411625741.26 / Total General presupuestario 24604815389.13 × 100 = 1.672948%.",
+            "expected": {
+              "value": 1.67,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 411625741.26,
+            "denominator": 24604815389.13,
+            "calculatedValue": 1.672947895564579,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
-          "value": 58294548,
+          "value": 58294548.0,
           "period": "2025",
           "sources": [
             {
@@ -1640,7 +2119,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "49417921f0680dd27f003b154f1a8393328b1428063bb63a7be36e3ccc45cc60",
+            "file": "structure-sources/06175-pub-verified.pdf",
+            "page": 8,
+            "verifiedAt": "2026-10-14",
+            "locator": "Objeto 3.6.0.0 Publicidad y propaganda, columna Devengado. Sin duplicar los totales de objeto o jurisdicción.",
+            "expected": {
+              "value": 58294548,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "scope": "Objeto Publicidad y propaganda de la ejecución municipal publicada.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 58294548.0
+            }
+          }
         }
       },
       "workforce": null,
@@ -1660,7 +2157,7 @@
       "municipality": "Coronel Dorrego",
       "indicators": {
         "flo": {
-          "value": 510942925,
+          "value": 510942925.48,
           "period": "2025-12",
           "sources": [
             {
@@ -1671,7 +2168,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "b8dd5bc520a90fa5021bd57b90c8dcd9ca58db92892f1a3b69299b41f941065e",
+            "file": "structure-sources/06189-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. 1.3. DEUDA FLOTANTE                                                $    510,942,925.48",
+            "expected": {
+              "value": 510942925,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 510942925.48,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.88,
@@ -1685,7 +2200,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "be2691f3a0645ab6cecd8150ecbb0525dc7e10e4931efcf044321ab79fa1cb5a",
+            "file": "structure-sources/06189-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 474156025.87 / Total General presupuestario 25261445035.59 × 100 = 1.876995%.",
+            "expected": {
+              "value": 1.88,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 474156025.87,
+            "denominator": 25261445035.59,
+            "calculatedValue": 1.8769948639200074,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -1696,7 +2229,7 @@
       "municipality": "Coronel Pringles",
       "indicators": {
         "flo": {
-          "value": 1079362331,
+          "value": 1079362330.6,
           "period": "2025-12",
           "sources": [
             {
@@ -1707,7 +2240,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "0ca13a5aa17a5c605a2b134e5d16a5ec39bf062cebbf49b337b31921858ee100",
+            "file": "structure-sources/06196-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. 1.3. DEUDA FLOTANTE                                                          1.079.362.330,60",
+            "expected": {
+              "value": 1079362331,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 1079362330.6,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.18,
@@ -1721,7 +2272,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "07ca32a715b110a8473a19cb11627ff1f2ae8e37e51c8e11ad59ff1140af1cca",
+            "file": "structure-sources/06196-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 382364012.40 / Total General presupuestario 32466048376.12 × 100 = 1.177735%.",
+            "expected": {
+              "value": 1.18,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 382364012.4,
+            "denominator": 32466048376.12,
+            "calculatedValue": 1.1777349924767657,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 41415183,
@@ -1821,7 +2390,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "e664d61e5a99ad911344f42afd3c3975e9563cffd82fd0973a8a5e12b03bc5c3",
+            "file": "structure-sources/06182-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 1689750165.22 / Total General presupuestario 39674537467.23 × 100 = 4.259029%.",
+            "expected": {
+              "value": 4.26,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 1689750165.22,
+            "denominator": 39674537467.23,
+            "calculatedValue": 4.259029274419857,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -1873,7 +2460,7 @@
       "municipality": "Daireaux",
       "indicators": {
         "flo": {
-          "value": 1238807961,
+          "value": 1238807960.95,
           "period": "2026-06",
           "sources": [
             {
@@ -1884,7 +2471,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "90c658d1fe99fde91d4dd33e7b43417d59e79c4918cff409b3a7b264b6634936",
+            "file": "structure-sources/06231-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2026-06-30. 1.3. DEUDA FLOTANTE                                                      1,238,807,960.95  1,238,807,960.95",
+            "expected": {
+              "value": 1238807961,
+              "period": "2026-06"
+            },
+            "periodEnd": "2026-06-30",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 1238807960.95,
+              "period": "2026-06"
+            }
+          }
         },
         "hcd": {
           "value": 0.87,
@@ -1898,7 +2503,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "f5c828631fcf7d2d048cd2623e2f3298c756178494951601e7b64d2582de748d",
+            "file": "structure-sources/06231-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 245521054.44 / Total General presupuestario 28214479737.97 × 100 = 0.870195%.",
+            "expected": {
+              "value": 0.87,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 245521054.44,
+            "denominator": 28214479737.97,
+            "calculatedValue": 0.870195221461365,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -2052,7 +2675,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "6c81c165ba3c3222adfd74d7dccca96c805088c3a192b489acaa30d95fa49680",
+            "file": "structure-sources/06252-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 2641030088.95 / Total General presupuestario 263645690143.79 × 100 = 1.001735%.",
+            "expected": {
+              "value": 1.0,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 2641030088.95,
+            "denominator": 263645690143.79,
+            "calculatedValue": 1.0017345959684019,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -2348,7 +2989,7 @@
       "municipality": "General Alvarado",
       "indicators": {
         "flo": {
-          "value": 4922275938,
+          "value": 4922275938.0,
           "period": "2025-12",
           "sources": [
             {
@@ -2359,7 +3000,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "af8d62ee0f8670b5999d424836cc5ccf5868592d87dc30aee90596adec51e3c9",
+            "file": "structure-sources/06280-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. DEUDA FLOTANTE                                                   4.922.275.938",
+            "expected": {
+              "value": 4922275938,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 4922275938.0,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.57,
@@ -2373,7 +3032,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "3e26a80debee86a5e341825066ecea567d002fd9e0b4e00e3788bfad45b03c13",
+            "file": "structure-sources/06280-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 514037318.61 / Total General presupuestario 32736594424.64 × 100 = 1.570222%.",
+            "expected": {
+              "value": 1.57,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 514037318.61,
+            "denominator": 32736594424.64,
+            "calculatedValue": 1.5702223387754017,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -2420,7 +3097,7 @@
       "municipality": "General Alvear",
       "indicators": {
         "flo": {
-          "value": 582535867,
+          "value": 582535866.74,
           "period": "2024-12",
           "sources": [
             {
@@ -2431,7 +3108,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "c0b6f333c5379c3eb099f239c11a2775324084b23f197fa3d41a8a0b93e2340e",
+            "file": "structure-sources/06287-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2024-12-31. 1.3. DEUDA FLOTANTE                                                          582.535.866,74  582.535.866,74",
+            "expected": {
+              "value": 582535867,
+              "period": "2024-12"
+            },
+            "periodEnd": "2024-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 582535866.74,
+              "period": "2024-12"
+            }
+          }
         }
       },
       "workforce": null,
@@ -2483,7 +3178,7 @@
       "municipality": "General Belgrano",
       "indicators": {
         "flo": {
-          "value": 2670034163,
+          "value": 2670034162.87,
           "period": "2025-12",
           "sources": [
             {
@@ -2494,7 +3189,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "bcaa1e562b01cd35fb53a6ee7992ac24e99b7f3b6ed8acc0862072b4e843d565",
+            "file": "structure-sources/06301-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. DEUDA FLOTANTE                                                     2,670,034,162.87",
+            "expected": {
+              "value": 2670034163,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 2670034162.87,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 0.88,
@@ -2508,7 +3221,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "a57d17d8d0a6e3440560357ef64c4f41ea0b0f3a499b779750398c5a1da80f88",
+            "file": "structure-sources/06301-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 199408920.54 / Total General presupuestario 22700141396.71 × 100 = 0.878448%.",
+            "expected": {
+              "value": 0.88,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 199408920.54,
+            "denominator": 22700141396.71,
+            "calculatedValue": 0.878447922658759,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -2556,7 +3287,7 @@
       "municipality": "General Guido",
       "indicators": {
         "flo": {
-          "value": 160912015,
+          "value": 160912015.41,
           "period": "2025-12",
           "sources": [
             {
@@ -2567,7 +3298,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "0518df7f18a53ab3c1cfee71aea75836e474530beeb0c44320b2befb6738941e",
+            "file": "structure-sources/06308-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. 1.3. DEUDA FLOTANTE                                                          160,912,015.41",
+            "expected": {
+              "value": 160912015,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 160912015.41,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 2.05,
@@ -2581,7 +3330,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "4d2adf7c2b26d259f25799f72d777120ad075d04f6c01aad380ef600b4a82050",
+            "file": "structure-sources/06308-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 149491818.77 / Total General presupuestario 7292763690.82 × 100 = 2.049865%.",
+            "expected": {
+              "value": 2.05,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 149491818.77,
+            "denominator": 7292763690.82,
+            "calculatedValue": 2.0498651143485924,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -2640,7 +3407,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "fa2a455b9366b7357a105f9e1d602938d76a34990a5d7b70bba6c06ffa42aafc",
+            "file": "structure-sources/06315-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 330393364.40 / Total General presupuestario 28677072342.27 × 100 = 1.152117%.",
+            "expected": {
+              "value": 1.15,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 330393364.4,
+            "denominator": 28677072342.27,
+            "calculatedValue": 1.1521167867369786,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 33011800,
@@ -2697,7 +3482,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "1a1584d1ec1e13ab6bba4ea5891115a30eec5a4d481abe2786526fe37c1ff087",
+            "file": "structure-sources/06322-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 366754977.52 / Total General presupuestario 24173976862.93 × 100 = 1.517148%.",
+            "expected": {
+              "value": 1.52,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 366754977.52,
+            "denominator": 24173976862.93,
+            "calculatedValue": 1.5171478801338918,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 14608500,
@@ -2752,7 +3555,13 @@
             "expected": {
               "value": 1.12,
               "period": "2024"
-            }
+            },
+            "periodStart": "2024-01-02",
+            "periodEnd": "2024-12-31",
+            "numerator": 109927681.64,
+            "denominator": 9840459615.08,
+            "rankingEligible": true,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado; gasto presupuestario devengado."
           }
         }
       },
@@ -2820,7 +3629,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "7846fe42d9bd0974977e156ff3f79caa38fe5ffaefecd55fd317e2d030447756",
+            "file": "structure-sources/06336-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 151820273.98 / Total General presupuestario 10793581648.08 × 100 = 1.406579%.",
+            "expected": {
+              "value": 1.41,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 151820273.98,
+            "denominator": 10793581648.08,
+            "calculatedValue": 1.406579196137422,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -2911,7 +3738,7 @@
       "municipality": "General Pueyrredón",
       "indicators": {
         "flo": {
-          "value": 30903978818,
+          "value": 30903978818.21,
           "period": "2026-06",
           "sources": [
             {
@@ -2922,7 +3749,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "3eedd068a89b81ed9ef38ca5d9936238dfd685fcf96920cec03727b9b74bc820",
+            "file": "structure-sources/06357-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2026-06-30. 1.3. DEUDA FLOTANTE                                                                                                                                           30.903.978.818,21",
+            "expected": {
+              "value": 30903978818,
+              "period": "2026-06"
+            },
+            "periodEnd": "2026-06-30",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 30903978818.21,
+              "period": "2026-06"
+            }
+          }
         },
         "hcd": {
           "value": 2.0,
@@ -2936,7 +3781,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "f0089fdeb8313112e3e0a5662b93174ff73f29b024ebf31b0679657f7a54eb73",
+            "file": "structure-sources/06357-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 7345177772.69 / Total General presupuestario 367862824651.91 × 100 = 1.996717%.",
+            "expected": {
+              "value": 2.0,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 7345177772.69,
+            "denominator": 367862824651.91,
+            "calculatedValue": 1.9967165150869406,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 274559342,
@@ -3037,7 +3900,7 @@
       "municipality": "General San Martín",
       "indicators": {
         "flo": {
-          "value": 4126792549,
+          "value": 4126792548.61,
           "period": "2025-12",
           "sources": [
             {
@@ -3048,7 +3911,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "62fd79fc0fb41bb15ee66d0b7a2337270dd9996f5f2dc5f5f86d0e475c9d1134",
+            "file": "structure-sources/06371-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. 1.3. DEUDA FLOTANTE                                                      4.126.792.548,61",
+            "expected": {
+              "value": 4126792549,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 4126792548.61,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.81,
@@ -3137,7 +4018,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "d27f85ae61d614f161bb0b5f5169e2cb46956a49e87fda349e33c00cae1721f2",
+            "file": "structure-sources/06392-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 486740082.54 / Total General presupuestario 42887999529.98 × 100 = 1.134910%.",
+            "expected": {
+              "value": 1.13,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 486740082.54,
+            "denominator": 42887999529.98,
+            "calculatedValue": 1.134909736696285,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -3172,8 +4071,8 @@
       "municipality": "Guaminí",
       "indicators": {
         "flo": {
-          "value": 2628769005,
-          "period": "2026-03",
+          "value": 2628769005.24,
+          "period": "2025-12",
           "sources": [
             {
               "organization": "Municipalidad de Guaminí - Transparencia (Rendiciones trimestrales, Ley 13.295)",
@@ -3183,7 +4082,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "34235611eafd69835e0787c3868383efebb7f9085f164efd0d3a84c263586759",
+            "file": "structure-sources/06399-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. 2. DEUDA FLOTANTE                                                           2,628,769,005.24     2,628,769,005.24",
+            "expected": {
+              "value": 2628769005,
+              "period": "2026-03"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 2628769005.24,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.23,
@@ -3197,7 +4114,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "a026dbb5829c282436ffe6f69817854a88e07e1332dbf61cec4f6668596842c0",
+            "file": "structure-sources/06399-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 307673643.38 / Total General presupuestario 25037901220.14 × 100 = 1.228832%.",
+            "expected": {
+              "value": 1.23,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 307673643.38,
+            "denominator": 25037901220.14,
+            "calculatedValue": 1.228831604833209,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -3323,7 +4258,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "41545d579402447b6ca81d4b90dbbd9f39420103f3989f7d9e5037493928af4f",
+            "file": "structure-sources/06410-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 1795828036.93 / Total General presupuestario 83287627552.08 × 100 = 2.156176%.",
+            "expected": {
+              "value": 2.16,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-30",
+            "numerator": 1795828036.93,
+            "denominator": 83287627552.08,
+            "calculatedValue": 2.1561762409513507,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": false
+          }
         }
       },
       "workforce": {
@@ -3382,7 +4335,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "d34576354e7876d163901458b34b52ad64a7014768158d924b32fb6602470507",
+            "file": "structure-sources/06412-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 1759494548.78 / Total General presupuestario 159165993240.21 × 100 = 1.105446%.",
+            "expected": {
+              "value": 1.11,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 1759494548.78,
+            "denominator": 159165993240.21,
+            "calculatedValue": 1.105446278417405,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -3421,7 +4392,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "d81bfdf0a18ad8753c3c00ff6564935ba4874dee0589a502c37c70a24ef0a39f",
+            "file": "structure-sources/06413-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 574441504.50 / Total General presupuestario 60680478407.41 × 100 = 0.946666%.",
+            "expected": {
+              "value": 0.95,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 574441504.5,
+            "denominator": 60680478407.41,
+            "calculatedValue": 0.9466660770918576,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 103499517,
@@ -3510,7 +4499,7 @@
       "municipality": "La Matanza",
       "indicators": {
         "flo": {
-          "value": 32910441452,
+          "value": 32910441452.24,
           "period": "2026-06",
           "sources": [
             {
@@ -3521,7 +4510,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "c3aa9c0502e8955d192a231e87c0ac7c313a0c445c64fd599cc8dacdd597c10d",
+            "file": "structure-sources/06427-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2026-06-30. DEUDA FLOTANTE                            $      32,910,441,452.24",
+            "expected": {
+              "value": 32910441452,
+              "period": "2026-06"
+            },
+            "periodEnd": "2026-06-30",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 32910441452.24,
+              "period": "2026-06"
+            }
+          }
         },
         "hcd": {
           "value": 1.24,
@@ -3685,7 +4692,7 @@
       "municipality": "Lanús",
       "indicators": {
         "flo": {
-          "value": 6435563015,
+          "value": 6435563015.45,
           "period": "2026-03",
           "sources": [
             {
@@ -3696,7 +4703,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "5ddcea51580a33a2a4e58b92dd84043caf239b5027c51dd74da94b2916d5e056",
+            "file": "structure-sources/06434-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2026-03-31. 1.3. DEUDA FLOTANTE                                                               6,435,563,015.45",
+            "expected": {
+              "value": 6435563015,
+              "period": "2026-03"
+            },
+            "periodEnd": "2026-03-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 6435563015.45,
+              "period": "2026-03"
+            }
+          }
         },
         "hcd": {
           "value": 1.0,
@@ -3812,7 +4837,27 @@
             "official": true
           }
         ],
-        "verification": "external_survey"
+        "verification": "primary_document",
+        "evidence": {
+          "sha256": "d7c034f3ed292f32d553962de219716a76909ae3f94724f084afd96c914e1524",
+          "file": "structure-sources/06455-workforce-verified.pdf",
+          "page": 5,
+          "verifiedAt": "2026-10-14",
+          "locator": "Artículo 7: 650 cargos de planta permanente del Departamento Ejecutivo de la Administración Central.",
+          "expected": {
+            "type": "c",
+            "period": "2026",
+            "total": null,
+            "categories": [
+              [
+                "permanente",
+                650
+              ]
+            ]
+          },
+          "scope": "Sólo planta permanente del Ejecutivo de Administración Central; no incluye el Concejo.",
+          "rankingEligible": true
+        }
       },
       "decisions": [
         {
@@ -3861,7 +4906,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "e345a9a52793278206e5c58e3bd6231487f63b57bbb9db785ee94b5322ecd548",
+            "file": "structure-sources/06466-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 59143826.03 / Total General presupuestario 5819392818.12 × 100 = 1.016323%.",
+            "expected": {
+              "value": 1.02,
+              "period": "2024"
+            },
+            "periodStart": "2024-01-01",
+            "periodEnd": "2024-12-31",
+            "numerator": 59143826.03,
+            "denominator": 5819392818.12,
+            "calculatedValue": 1.0163229718028706,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -3912,7 +4975,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "6229bf81a51bc0a9d082092b6907cbc69908d57af8131585831dd25a09426c07",
+            "file": "structure-sources/06469-hcd-verified.pdf",
+            "page": 3,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 709877485.85 / Total General presupuestario 47136370203.59 × 100 = 1.506008%.",
+            "expected": {
+              "value": 1.51,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 709877485.85,
+            "denominator": 47136370203.59,
+            "calculatedValue": 1.5060079568789841,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -3970,7 +5051,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "527acfe9053977048805c7b9d4545ff44ef0cd623c2a59a53bb2c3b66ada46c7",
+            "file": "structure-sources/06476-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 313938445.72 / Total General presupuestario 27172992787.89 × 100 = 1.155333%.",
+            "expected": {
+              "value": 1.16,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 313938445.72,
+            "denominator": 27172992787.89,
+            "calculatedValue": 1.1553326060569626,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -4041,7 +5140,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "1a79c0e9752ac3798d3a88c360413c21da3e2f7e9b7100475f0ecd6ff270b42d",
+            "file": "structure-sources/06483-hcd-verified.pdf",
+            "page": 3,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 331252906.19 / Total General presupuestario 19211642464.39 × 100 = 1.724230%.",
+            "expected": {
+              "value": 1.72,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 331252906.19,
+            "denominator": 19211642464.39,
+            "calculatedValue": 1.7242300173137113,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -4205,7 +5322,7 @@
       "municipality": "Magdalena",
       "indicators": {
         "flo": {
-          "value": 92601018,
+          "value": 92601018.3,
           "period": "2025-12",
           "sources": [
             {
@@ -4216,7 +5333,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "f0387a28dfd72dc0784d3f11b398c8ce8c5e058e7acf6477f47fc6274ab7d6b4",
+            "file": "structure-sources/06505-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. 1.3. DEUDA FLOTANTE                                                         92,601,018.30                       -                         -                           -                         -                           -                         -                           -                         -                           -                         -                         -                         -                         -                         -                         -                         -",
+            "expected": {
+              "value": 92601018,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 92601018.3,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 2.0,
@@ -4230,7 +5365,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "4907091d859a64e7eed5bf2d7f7b03161ffa7810a9f9a47c7ae761ee014c170f",
+            "file": "structure-sources/06505-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 394874761.27 / Total General presupuestario 19781806812.01 × 100 = 1.996151%.",
+            "expected": {
+              "value": 2.0,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 394874761.27,
+            "denominator": 19781806812.01,
+            "calculatedValue": 1.9961511353465564,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -4261,7 +5414,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "0659916fd65a8c8ff2ba9869f823b98faf9d29373f12666d8e0bf793317a8be1",
+            "file": "structure-sources/06511-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 249099065.04 / Total General presupuestario 13970431800.94 × 100 = 1.783045%.",
+            "expected": {
+              "value": 1.78,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 249099065.04,
+            "denominator": 13970431800.94,
+            "calculatedValue": 1.7830448520799433,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -4314,7 +5485,27 @@
             "official": true
           }
         ],
-        "verification": "external_survey"
+        "verification": "primary_document",
+        "evidence": {
+          "sha256": "13ef72e25f6567d54e4c08a7312f4922515d376476639a90200b6eb24da08c4c",
+          "file": "structure-sources/06515-workforce-verified.pdf",
+          "page": 8,
+          "verifiedAt": "2026-10-14",
+          "locator": "Artículo 11: 900 cargos de planta permanente y funcional.",
+          "expected": {
+            "type": "c",
+            "period": "2026",
+            "total": null,
+            "categories": [
+              [
+                "permanente",
+                900
+              ]
+            ]
+          },
+          "scope": "Planta permanente y funcional; temporarios autorizados por separado.",
+          "rankingEligible": true
+        }
       },
       "decisions": [
         {
@@ -4457,7 +5648,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "ca974f4c5887d03ae9e304bd80b91066fe47ea17db33ffcb8a4ed6f6d97bfc86",
+            "file": "structure-sources/06532-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 772368312.26 / Total General presupuestario 51870076091.13 × 100 = 1.489044%.",
+            "expected": {
+              "value": 1.49,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 772368312.26,
+            "denominator": 51870076091.13,
+            "calculatedValue": 1.489044108790267,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -4570,7 +5779,7 @@
       "municipality": "Monte Hermoso",
       "indicators": {
         "flo": {
-          "value": 430011609,
+          "value": 430011609.46,
           "period": "2025-12",
           "sources": [
             {
@@ -4581,7 +5790,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "a8df43d576fbc6543d5a059205d1d1a675a3d65ca1f2339bec5a3b4c420b9015",
+            "file": "structure-sources/06553-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. DEUDA FLOTANTE                                             $ 430,011,609.46",
+            "expected": {
+              "value": 430011609,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 430011609.46,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 0.73,
@@ -4595,7 +5822,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "77616b7a3e53fe5706305297fa2186422612b5bbd1de578053673b69f15fd0d3",
+            "file": "structure-sources/06553-hcd-verified.pdf",
+            "page": 3,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 218515559.15 / Total General presupuestario 30064319149.35 × 100 = 0.726827%.",
+            "expected": {
+              "value": 0.73,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 218515559.15,
+            "denominator": 30064319149.35,
+            "calculatedValue": 0.7268269009003132,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -4778,7 +6023,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "c1a3cabf36bd922df7d4d7c55a8882621ef37d70fb2034bdd990072696c75cf7",
+            "file": "structure-sources/06574-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 260499320.18 / Total General presupuestario 19950246615.97 × 100 = 1.305745%.",
+            "expected": {
+              "value": 1.31,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 260499320.18,
+            "denominator": 19950246615.97,
+            "calculatedValue": 1.3057448621786587,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -4830,7 +6093,7 @@
       "municipality": "Necochea",
       "indicators": {
         "flo": {
-          "value": 2923719474,
+          "value": 2923719474.02,
           "period": "2026-06",
           "sources": [
             {
@@ -4841,7 +6104,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "628b85b78263f5427877b429100b4d79b5a312ba20203a1e23f3894669357009",
+            "file": "structure-sources/06581-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2026-06-30. DEUDA FLOTANTE                                                  2,923,719,474.02  2,192,789,605.52                     730,929,868.51                                                                                                                                                                                         0.00",
+            "expected": {
+              "value": 2923719474,
+              "period": "2026-06"
+            },
+            "periodEnd": "2026-06-30",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 2923719474.02,
+              "period": "2026-06"
+            }
+          }
         },
         "hcd": {
           "value": 1.84,
@@ -4855,7 +6136,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "cd769ebe0d96baf158418dfd96bc9af8d350588e30de9e4d19dbdeccdcb92a73",
+            "file": "structure-sources/06581-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 1530905811.15 / Total General presupuestario 83258171876.47 × 100 = 1.838745%.",
+            "expected": {
+              "value": 1.84,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 1530905811.15,
+            "denominator": 83258171876.47,
+            "calculatedValue": 1.8387454067828948,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -4926,7 +6225,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "22e0b1ea73c2104bc960f2935c9e26a12c02529de8155c7e2f30049e7f4fbd8f",
+            "file": "structure-sources/06595-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 1306920522.95 / Total General presupuestario 122169404746.43 × 100 = 1.069761%.",
+            "expected": {
+              "value": 1.07,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 1306920522.95,
+            "denominator": 122169404746.43,
+            "calculatedValue": 1.069760899353314,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 86375015,
@@ -5127,7 +6444,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "467ad316556a7f89d98de7dff041a52820d79145f019956c42fc29e22c8fc92e",
+            "file": "structure-sources/06616-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 162707740.54 / Total General presupuestario 12436271431.18 × 100 = 1.308332%.",
+            "expected": {
+              "value": 1.31,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 162707740.54,
+            "denominator": 12436271431.18,
+            "calculatedValue": 1.3083321752857695,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -5454,7 +6789,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "e239da5ea487bdc4960e18a6ce22f814275a02a58b66b5ab24473629c060db2c",
+            "file": "structure-sources/06651-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 331764763.31 / Total General presupuestario 32016112444.42 × 100 = 1.036243%.",
+            "expected": {
+              "value": 1.04,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 331764763.31,
+            "denominator": 32016112444.42,
+            "calculatedValue": 1.0362431225400772,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -5689,7 +7042,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "1da93e9a4738f42d41c79691d2d23e274ba8e26feae7c413871ab100841ab359",
+            "file": "structure-sources/06686-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 369135577.67 / Total General presupuestario 32515955617.65 × 100 = 1.135244%.",
+            "expected": {
+              "value": 1.14,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-30",
+            "numerator": 369135577.67,
+            "denominator": 32515955617.65,
+            "calculatedValue": 1.1352444381786195,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": false
+          }
         }
       },
       "workforce": {
@@ -5860,7 +7231,7 @@
       "municipality": "Saladillo",
       "indicators": {
         "flo": {
-          "value": 1727098179,
+          "value": 1727098179.16,
           "period": "2025-12",
           "sources": [
             {
@@ -5871,7 +7242,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "dafd0dda4fdc660e1d716952fd65df5fb47eafbcad290ee7bb31a99754d7c2e7",
+            "file": "structure-sources/06707-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. 1.3. DEUDA FLOTANTE                                                        1.727.098.179,16    1.727.098.179,16           0,00                  0,00              0,00                 0,00           0,00              0,00          0,00                  0,00",
+            "expected": {
+              "value": 1727098179,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 1727098179.16,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.54,
@@ -5885,7 +7274,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "a940a8bca0916f7ad595f11b6596495c855df2c3e2715a67718d8fba2c2ab725",
+            "file": "structure-sources/06707-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 407862671.01 / Total General presupuestario 26459674994.91 × 100 = 1.541450%.",
+            "expected": {
+              "value": 1.54,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 407862671.01,
+            "denominator": 26459674994.91,
+            "calculatedValue": 1.5414500408204552,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -6016,7 +7423,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "7b09e0ff317acc78517376605edf40b8645d90bdd314b1298025a8a7cdbd17a7",
+            "file": "structure-sources/06714-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 251825453.19 / Total General presupuestario 27342854867.25 × 100 = 0.920992%.",
+            "expected": {
+              "value": 0.92,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 251825453.19,
+            "denominator": 27342854867.25,
+            "calculatedValue": 0.9209918072294083,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 38609836,
@@ -6076,7 +7501,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "8ee50da86ef639907378c2bbb50cb3becde93ada1f591e490b29c419569842c9",
+            "file": "structure-sources/06728-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 524102932.44 / Total General presupuestario 26583409720.92 × 100 = 1.971541%.",
+            "expected": {
+              "value": 1.97,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 524102932.44,
+            "denominator": 26583409720.92,
+            "calculatedValue": 1.971541416026679,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -6139,7 +7582,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "6607df8ae8b099f25cddbce7ebe7181e077fe17061ae0cfaa17d8ac1a55b3928",
+            "file": "structure-sources/06735-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 249102362.81 / Total General presupuestario 28674026903.10 × 100 = 0.868739%.",
+            "expected": {
+              "value": 0.87,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 249102362.81,
+            "denominator": 28674026903.1,
+            "calculatedValue": 0.8687386799622103,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 12486898,
@@ -6225,7 +7686,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "774680460269a700d4aa731f53b2b7b7f32f3822367429833216e935a4c3ca1d",
+            "file": "structure-sources/06742-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 170866030.14 / Total General presupuestario 16596195541.00 × 100 = 1.029549%.",
+            "expected": {
+              "value": 1.03,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 170866030.14,
+            "denominator": 16596195541.0,
+            "calculatedValue": 1.0295493911112623,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -6451,7 +7930,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "44a7d96d086d17ed5f66518ab7437e970299ceafc27493366d62a15110b28bab",
+            "file": "structure-sources/06770-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 929400469.57 / Total General presupuestario 50319109311.16 × 100 = 1.847013%.",
+            "expected": {
+              "value": 1.85,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 929400469.57,
+            "denominator": 50319109311.16,
+            "calculatedValue": 1.8470129584823023,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -6542,7 +8039,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "6472b495689976076e9d999bf8099d6e6ac08e4609ed52327b4047ac9fdf35c6",
+            "file": "structure-sources/06784-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 194780092.67 / Total General presupuestario 10964466580.14 × 100 = 1.776467%.",
+            "expected": {
+              "value": 1.78,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 194780092.67,
+            "denominator": 10964466580.14,
+            "calculatedValue": 1.7764666547737606,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -6585,7 +8100,7 @@
       "municipality": "Tandil",
       "indicators": {
         "flo": {
-          "value": 7276927896,
+          "value": 7276927896.15,
           "period": "2026-06",
           "sources": [
             {
@@ -6596,7 +8111,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "a6f887c0e0f09bac50503c7ed49f8bcbda99bfe4424c7788949161bb591d1941",
+            "file": "structure-sources/06791-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2026-06-30. 1.3. DEUDA FLOTANTE                                $ 7,276,927,896.15",
+            "expected": {
+              "value": 7276927896,
+              "period": "2026-06"
+            },
+            "periodEnd": "2026-06-30",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 7276927896.15,
+              "period": "2026-06"
+            }
+          }
         },
         "hcd": {
           "value": 1.67,
@@ -6610,7 +8143,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "cd1ec42bb6161ecacc76c4b266c9acae560d921c262bc2491994899a934ae02d",
+            "file": "structure-sources/06791-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 2020828703.38 / Total General presupuestario 121267472508.25 × 100 = 1.666423%.",
+            "expected": {
+              "value": 1.67,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 2020828703.38,
+            "denominator": 121267472508.25,
+            "calculatedValue": 1.6664227113684753,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         },
         "pub": {
           "value": 124683571,
@@ -6659,7 +8210,7 @@
       "municipality": "Tapalqué",
       "indicators": {
         "flo": {
-          "value": 836026512,
+          "value": 836026511.69,
           "period": "2025-12",
           "sources": [
             {
@@ -6670,7 +8221,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "670af4ebfe7d1e6c9e45e03305507d7e7990513d09ab10e23970a979baa7bf31",
+            "file": "structure-sources/06798-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2025-12-31. 2. DEUDA FLOTANTE                                                     836,026,511.69",
+            "expected": {
+              "value": 836026512,
+              "period": "2025-12"
+            },
+            "periodEnd": "2025-12-31",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 836026511.69,
+              "period": "2025-12"
+            }
+          }
         },
         "hcd": {
           "value": 1.16,
@@ -6684,7 +8253,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "7aaf25ed064e405e067f359740362d3618f44642c024cb02ddf20352323faa4c",
+            "file": "structure-sources/06798-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 257528498.47 / Total General presupuestario 22240408338.58 × 100 = 1.157931%.",
+            "expected": {
+              "value": 1.16,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 257528498.47,
+            "denominator": 22240408338.58,
+            "calculatedValue": 1.1579306213693494,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -6743,10 +8330,28 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "58aa0a98ab91117bd90cb3b8ba82a9f1ba62abc9394db611bdc592a0d15b7af6",
+            "file": "structure-sources/06805-hcd-verified.pdf",
+            "page": 2,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado: Concejo 5.578.617.259,48 / total presupuestario 400.156.205.161,65 × 100.",
+            "expected": {
+              "value": 1.39,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "numerator": 5578617259.48,
+            "denominator": 400156205161.65,
+            "calculatedValue": 1.3941098969654664,
+            "rankingEligible": true,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado; gasto presupuestario devengado."
+          }
         },
         "pub": {
-          "value": 2644657260,
+          "value": 2644657260.08,
           "period": "2025",
           "sources": [
             {
@@ -6757,7 +8362,197 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "2510ac72ce9e7a549a9cd020efae288213ee6242983747c31c5b54d9eccba209",
+            "file": "structure-sources/06805-pub-verified.pdf",
+            "page": 285,
+            "verifiedAt": "2026-10-14",
+            "locator": "Suma de importes devengados en las 31 filas de partida 3.6.1 PUBLICIDAD de las 312 páginas. Extracción por coordenadas de la columna Devengado; no incluye totales ni columnas pagado/compromiso.",
+            "expected": {
+              "value": 2644657260,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-01",
+            "periodEnd": "2025-12-31",
+            "components": [
+              {
+                "page": 7,
+                "amounts": []
+              },
+              {
+                "page": 17,
+                "amounts": [
+                  3500.0
+                ]
+              },
+              {
+                "page": 27,
+                "amounts": [
+                  90750.0
+                ]
+              },
+              {
+                "page": 29,
+                "amounts": [
+                  308669.72
+                ]
+              },
+              {
+                "page": 48,
+                "amounts": []
+              },
+              {
+                "page": 49,
+                "amounts": []
+              },
+              {
+                "page": 67,
+                "amounts": []
+              },
+              {
+                "page": 96,
+                "amounts": []
+              },
+              {
+                "page": 114,
+                "amounts": [
+                  19491600.0
+                ]
+              },
+              {
+                "page": 125,
+                "amounts": [
+                  175100.0
+                ]
+              },
+              {
+                "page": 131,
+                "amounts": [
+                  17886533.0
+                ]
+              },
+              {
+                "page": 139,
+                "amounts": [
+                  33642753.0
+                ]
+              },
+              {
+                "page": 140,
+                "amounts": [
+                  1143813.0
+                ]
+              },
+              {
+                "page": 161,
+                "amounts": [
+                  4172500.0
+                ]
+              },
+              {
+                "page": 167,
+                "amounts": []
+              },
+              {
+                "page": 168,
+                "amounts": [
+                  90750.01
+                ]
+              },
+              {
+                "page": 173,
+                "amounts": []
+              },
+              {
+                "page": 199,
+                "amounts": [
+                  14225000.0
+                ]
+              },
+              {
+                "page": 233,
+                "amounts": [
+                  2318200.0
+                ]
+              },
+              {
+                "page": 237,
+                "amounts": [
+                  2785955.2
+                ]
+              },
+              {
+                "page": 254,
+                "amounts": [
+                  570000.0
+                ]
+              },
+              {
+                "page": 259,
+                "amounts": [
+                  1468000.0
+                ]
+              },
+              {
+                "page": 267,
+                "amounts": [
+                  130400000.0
+                ]
+              },
+              {
+                "page": 271,
+                "amounts": []
+              },
+              {
+                "page": 274,
+                "amounts": [
+                  476000.0
+                ]
+              },
+              {
+                "page": 276,
+                "amounts": [
+                  6222824.0
+                ]
+              },
+              {
+                "page": 282,
+                "amounts": [
+                  4492000.0
+                ]
+              },
+              {
+                "page": 285,
+                "amounts": [
+                  2330858694.15
+                ]
+              },
+              {
+                "page": 289,
+                "amounts": [
+                  5848618.0
+                ]
+              },
+              {
+                "page": 305,
+                "amounts": [
+                  500000.0
+                ]
+              },
+              {
+                "page": 311,
+                "amounts": [
+                  67486000.0
+                ]
+              }
+            ],
+            "scope": "Partida 3.6.1 Publicidad en todas las jurisdicciones de la ejecución publicada.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 2644657260.08
+            }
+          }
         }
       },
       "workforce": {
@@ -6796,7 +8591,9 @@
                 3670
               ]
             ]
-          }
+          },
+          "scope": "Planta permanente y funcional de la ordenanza; contratación temporal autorizada aparte.",
+          "rankingEligible": true
         }
       },
       "decisions": [
@@ -6878,7 +8675,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "4baa5c3b5a5614132ae980fc60540a270a6617674e8242614010743d07164b15",
+            "file": "structure-sources/06819-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 341946559.08 / Total General presupuestario 33764466299.43 × 100 = 1.012741%.",
+            "expected": {
+              "value": 1.01,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 341946559.08,
+            "denominator": 33764466299.43,
+            "calculatedValue": 1.012740897627553,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": null,
@@ -7052,7 +8867,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "87c92041dff2bec6b757bcb281d8506eaca559b7c6ed9261ef18d35055272f0b",
+            "file": "structure-sources/06847-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 103320822.40 / Total General presupuestario 11567848624.13 × 100 = 0.893172%.",
+            "expected": {
+              "value": 0.89,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 103320822.4,
+            "denominator": 11567848624.13,
+            "calculatedValue": 0.8931723240609972,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -7206,7 +9039,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "1fff165e730a02844a1d1ca3714f2b226054baee414ffd8b1cc0cd279fcccf7f",
+            "file": "structure-sources/06868-hcd-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Columna Devengado. Total H.C.D. 574330131.10 / Total General presupuestario 44913506425.69 × 100 = 1.278747%.",
+            "expected": {
+              "value": 1.28,
+              "period": "2025"
+            },
+            "periodStart": "2025-01-02",
+            "periodEnd": "2025-12-31",
+            "numerator": 574330131.1,
+            "denominator": 44913506425.69,
+            "calculatedValue": 1.2787470335905233,
+            "scope": "Departamento Ejecutivo y Concejo incluidos en el estado municipal; sin sumar extrapresupuestarios ni entes separados.",
+            "rankingEligible": true
+          }
         }
       },
       "workforce": {
@@ -7310,7 +9161,7 @@
       "municipality": "Zárate",
       "indicators": {
         "flo": {
-          "value": 3355329523,
+          "value": 3355329523.45,
           "period": "2026-06",
           "sources": [
             {
@@ -7321,7 +9172,25 @@
               "official": true
             }
           ],
-          "verification": "external_survey"
+          "verification": "primary_document",
+          "evidence": {
+            "sha256": "1efa965998f76363eff676e450d3f5f33b5ab36b2c758a2bc3440a53e51dedc7",
+            "file": "structure-sources/06882-flo-verified.pdf",
+            "page": 1,
+            "verifiedAt": "2026-10-14",
+            "locator": "Fila Deuda flotante, primera columna Saldo al 2026-06-30. DEUDA FLOTANTE                                                     3,355,329,523.45",
+            "expected": {
+              "value": 3355329523,
+              "period": "2026-06"
+            },
+            "periodEnd": "2026-06-30",
+            "scope": "Saldo de deuda flotante del municipio en Planilla C; incluye las categorías publicadas bajo ese total.",
+            "rankingEligible": true,
+            "confirmed": {
+              "value": 3355329523.45,
+              "period": "2026-06"
+            }
+          }
         },
         "pub": {
           "value": 96769250,

@@ -98,6 +98,16 @@
       "file": "municipios/data/public_debt_verified.json",
       "sha256": "d167f43f113cbcc56932a2e517fb5653ad493539403643817f7d4ed7337989e9",
       "encoding": "UTF-8/LF"
+    },
+    {
+      "file": "municipios/data/structure.json",
+      "sha256": "dbe30ccc2d9f83513a7bf4337e1e3e2cb82b1f6d56f58c2657793ee80bdda021",
+      "encoding": "UTF-8/LF"
+    },
+    {
+      "file": "municipios/data/structure_verified.json",
+      "sha256": "dc3eba6d87a8a8243c38201e2c44423d144f2df68c566422ee1a04db36a4a0cd",
+      "encoding": "UTF-8/LF"
     }
   ],
   "coverage": 135,

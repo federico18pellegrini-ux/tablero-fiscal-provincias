@@ -97,7 +97,7 @@ test('per-capita budgets use the requested numerator and preserve missing and ze
   for(let i=1;i<ranked.length;i++)assert.ok(ranked[i-1].value<=ranked[i].value);
 });
 test('new rankings retain the audited denominators, units and partial fiscal coverage',()=>{
-  assert.equal(METRICS.length,36);
+  assert.equal(METRICS.length,45);
   for(const id of ['ingresos-habitante','gasto-habitante']){
     const meta=metric(id),field=id==='ingresos-habitante'?'ingresos_totales':'gastos_totales';
     assert.equal(rankMunicipalities(rows,meta).length,84);

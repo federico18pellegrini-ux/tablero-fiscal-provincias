@@ -39,6 +39,23 @@ test('external data remains attributed and distinct from verified fiscal account
     if(!x?.evidence)continue;
     const proof=x.evidence;
     assert.equal(createHash('sha256').update(readFileSync(new URL('../municipios/data/'+proof.file,import.meta.url))).digest('hex'),proof.sha256);
-    for(const [key,value] of Object.entries(proof.expected))assert.deepEqual(x[key],value);
+    for(const [key,value] of Object.entries({...proof.expected,...proof.confirmed}))assert.deepEqual(x[key],value);
   }
+});
+test('verified rankings exclude external observations, other dates and non-comparable closing dates',async()=>{
+  const {METRICS,metricValue,rankMunicipalities}=await import('../municipios/model.mjs');
+  const data=JSON.parse(readFileSync(new URL('../municipios/data/dashboard.json',import.meta.url)));
+  const m=data.municipalities.find(m=>m.id==='06805'), meta=METRICS.find(x=>x.id==='publicidad-2025');
+  assert.equal(metricValue(m,meta),2644657260.08);
+  assert.equal(metricValue({...m,verifiedStructure:{}},meta),null);
+  const changed=structuredClone(m);changed.verifiedStructure.pub.period='2024';assert.equal(metricValue(changed,meta),null);
+  changed.verifiedStructure.pub.period='2025';changed.verifiedStructure.pub.verification='external_survey';assert.equal(metricValue(changed,meta),null);
+  const council=METRICS.find(x=>x.id==='concejo-2025');
+  assert.ok(!rankMunicipalities(data.municipalities,council).some(r=>['06410','06686'].includes(r.m.id)));
+  const guamini=data.municipalities.find(m=>m.id==='06399');
+  assert.equal(guamini.verifiedStructure.flo.period,'2025-12');
+  assert.equal(metricValue(guamini,METRICS.find(x=>x.id==='flotante-2026-03')),null);
+  const castelli=data.municipalities.find(m=>m.id==='06168');
+  assert.equal(castelli.verifiedStructure.workforce.total,null);
+  assert.equal(metricValue(castelli,METRICS.find(x=>x.id==='cargos-permanentes-2026')),508);
 });
