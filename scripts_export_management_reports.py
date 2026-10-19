@@ -46,40 +46,32 @@ def date_label(raw):
  return '/'.join(reversed(raw[:10].split('-')))
 
 def editorial_reading(m):
- """Professional interpretation follows the observed balance, never the province name."""
- f=m['metrics']['financial'];p=m['metrics']['primary'];qf=m['qfinancial'];qp=m['qprimary']
+ """Explain the balance once; recommendations use the same cutoff as the cover."""
+ f=m['metrics']['financial'];p=m['metrics']['primary']
  if f is None:
-  opening='Sin ese cierre, no se puede afirmar cuánto margen hay para nuevas decisiones. Recomendamos reunir la ejecución, la caja y los pagos pendientes: son tres datos distintos y hacen falta los tres para ordenar una gestión.'
+  opening='Con la información disponible no se puede calcular un déficit ni un superávit comparable.'
   mechanism=''
  elif f<0:
-  opening='El faltante se cubre con financiamiento, uso de caja o pagos pendientes. Recomendamos ordenar las prioridades para evitar que la falta de fondos termine frenando servicios e inversión.'
-  mechanism=('Refinanciar alivia vencimientos, pero no corrige el desbalance antes de intereses. Hace falta revisar gastos recurrentes y recaudación.' if p<0 else 'La prioridad es cuidar ese resultado antes de intereses y revisar el costo y el calendario de la deuda. Cubrir el rojo con nuevos compromisos, sin evaluar cómo se pagarán, puede agrandar la presión sobre los presupuestos siguientes.')
+  opening='Ese faltante necesita financiamiento, uso de ahorros o queda como una obligación pendiente de pago.'
+  mechanism=('El gasto habitual y la recaudación necesitan una revisión conjunta.' if p is not None and p<0 else 'Conviene revisar el costo de la deuda y cuánto capital debe devolverse en cada fecha.')
  elif f>0:
-  opening='El superávit abre un margen para financiar prioridades o reducir obligaciones. Antes de sumar gastos permanentes, hay que revisar si los ingresos se repetirán y qué pagos siguen pendientes.'
-  mechanism='Recomendamos identificar qué explica el saldo antes de ampliar compromisos. Si depende de recursos extraordinarios o de una inversión postergada, el margen puede achicarse. Si se sostiene con ingresos recurrentes, permite planificar con mayor previsibilidad.'
+  opening='Es un saldo favorable. Para saber cuánto puede utilizarse, hay que descontar los compromisos pendientes y revisar la caja.'
+  mechanism='Antes de ampliar gastos permanentes, conviene verificar si el excedente depende de ingresos que pueden repetirse.'
  else:
-  opening='El cierre no deja un excedente para absorber imprevistos. Una caída de ingresos o un gasto adicional puede llevarlo a déficit. Recomendamos ordenar los compromisos y construir una reserva de liquidez antes de sumar gastos permanentes.'
-  mechanism='El equilibrio contable deja poco espacio para absorber un desvío. Recomendamos seguir la recaudación y los compromisos de pago durante el año, y definir qué medidas se activarían si los ingresos quedan por debajo de lo previsto.'
- if qf is None:
-  quarter='Sin ese dato no podemos saber si la situación anual se sostiene. La prioridad es contar con una ejecución actualizada para decidir sobre salarios, proveedores e inversión con información del mismo período.'
- elif qf<0 and qp is not None and qp>=0:
-  quarter='Los ingresos alcanzaron para el gasto sin intereses, pero el pago de intereses llevó el cierre a déficit. La gestión tiene que cuidar ese margen operativo y ordenar el financiamiento.'
- elif qf<0:
-  quarter='Los recursos tampoco cubrieron el gasto antes de intereses. La prioridad es revisar ese desbalance y el orden de los pagos, junto con las condiciones de financiamiento.'
- elif qf>0:
-  quarter='El saldo favorable permite programar prioridades, siempre que se contraste con la caja y los pagos pendientes. No conviene convertir un buen comienzo en nuevos compromisos permanentes sin mirar el resto del año.'
- else:
-  quarter='El corte no deja un excedente. Conviene revisar cómo se distribuyen ingresos y pagos durante el resto del año antes de asumir compromisos nuevos.'
- if m['transfers']['real_pct'] is None:
-  federal='Sin una comparación real completa, el aumento en pesos no alcanza para decir que hay más recursos disponibles para prestar servicios.'
- elif m['transfers']['real_pct']<0:
-  federal='Eso significa que estos fondos compran menos que un año atrás. La caída le pone un límite al presupuesto y exige revisar las previsiones de recursos y pagos.'
- elif m['transfers']['real_pct']>0:
-  federal='Estos fondos ganaron poder de compra. Ese alivio mejora el punto de partida, aunque por sí solo no permite concluir que todos los ingresos de la provincia crecieron al mismo ritmo.'
- else:
-  federal='El poder de compra de estos fondos se mantuvo estable. Eso no garantiza que alcance para cubrir nuevas obligaciones ni que el resto de los ingresos haya seguido el mismo recorrido.'
- closing=('Corregir el déficit exige explicar qué se prioriza, cómo se financia y qué mejora concreta se espera. Recomendamos evaluar cada medida con esos tres criterios.' if f is not None and f<0 else 'El margen fiscal tiene que traducirse en servicios que funcionen y compromisos que se puedan sostener. Recomendamos evaluar cada decisión por su costo, financiamiento y resultado.' if f is not None else 'La información que falta le pone un límite al diagnóstico. Completarla permite discutir prioridades y asumir compromisos con costos y financiamiento verificables.')
- return dict(opening=opening,mechanism=mechanism,quarter=quarter,federal=federal,closing=closing)
+  opening='Ingresos y gastos se igualaron. Una caída de la recaudación puede volver negativo ese saldo.'
+  mechanism='El seguimiento mensual permite detectar a tiempo un desvío.'
+ return dict(opening=opening,mechanism=mechanism,quarter='',federal='Una variación real descuenta la inflación: muestra si los recursos ganaron o perdieron poder de compra.',closing='')
+
+def current_fiscal_balance(model,data):
+ recent=next((r for r in data.q2['ltm'] if r['province']==model['province']),None)
+ return recent['financial_pct'] if recent else None
+
+def management_priorities(model,data):
+ f=current_fiscal_balance(model,data)
+ one=('Corregir el desequilibrio. El gasto supera los ingresos: cuantificar qué combinación de recursos y ahorro puede cerrar esa diferencia.' if f is not None and f<0 else 'Cuidar el excedente. Verificar qué ingresos se repetirán antes de convertir el saldo favorable en gastos permanentes.' if f is not None and f>0 else 'Prever imprevistos. Con ingresos y gastos equilibrados, identificar cómo cubrir una caída de recursos.' if f is not None else 'Completar las cuentas. Reunir ingresos y gastos del mismo período para conocer el resultado antes de comprometer recursos.')
+ two=('Programar vencimientos. Cruzar el calendario publicado con ingresos y pagos de salarios para anticipar meses exigentes.' if model['projection'] else 'Armar el calendario de deuda. Sin fechas y montos futuros no se puede medir cuánto competirán esos pagos con los servicios.')
+ three='Elegir inversión con resultados. Priorizar proyectos con costo de obra y funcionamiento conocido, y una mejora concreta que pueda medirse.'
+ return [one,two,three]
 
 class ReportData:
  def __init__(self):
@@ -196,8 +188,9 @@ class Report:
    lead=('En los doce meses a junio de 2026' if recent else f'En {yyear}')+', por cada $100 de ingresos, '+(f'faltaron {per100(f)} para cubrir los gastos y los intereses.' if f<0 else f'quedaron {per100(f)} después de cubrir los gastos y los intereses.')
    self.paragraph(lead+' '+self.editorial['opening'],18,67,174,11,15,max_end=91)
   else:
-   self.paragraph(f'Falta el cierre {yyear} para evaluar las cuentas',18,49,174,18,22,bold=True,max_end=68)
-   self.paragraph(f'La fuente comparable no informa la ejecución completa de {m["province"]} para {yyear}. Un casillero vacío no indica equilibrio ni gasto cero. '+self.editorial['opening'],18,67,174,11,15,max_end=91)
+   yyear='· 12 MESES'
+   self.paragraph('Falta un cierre comparable a junio de 2026',18,49,174,18,22,bold=True,max_end=68)
+   self.paragraph(f'La fuente comparable no informa la ejecución completa de {m["province"]} al corte actual. '+self.editorial['opening'],18,67,174,11,15,max_end=91)
   self.kpi(18,94,55,'INGRESOS '+str(yyear),amount(a['income']).split(' ')[0] if a else 'Sin dato',('billones de pesos corrientes' if a and a['income']>=1e6 else 'mil millones de pesos corrientes'))
   self.kpi(77.5,94,55,'GASTO TOTAL '+str(yyear),amount(a['spending']).split(' ')[0] if a else 'Sin dato',('billones de pesos corrientes' if a and a['spending']>=1e6 else 'mil millones de pesos corrientes'))
   self.kpi(137,94,55,'SALDO / INGRESOS',pct(f,2),'Después de intereses',RUST if f is not None and f<0 else TEAL)
@@ -211,8 +204,8 @@ class Report:
    explanation=(f'El desequilibrio empieza antes de los intereses: faltaron {per100(p)} por cada $100 ingresados. La deuda suma presión, pero no explica todo el déficit.' if p<0 else f'Antes de los intereses quedaron {per100(p)} por cada $100 ingresados. '+('Los intereses absorbieron ese margen y el cierre terminó en déficit.' if f<0 else 'Ese margen permitió afrontar los intereses y conservar un saldo positivo.' if f>0 else 'Los intereses absorbieron ese margen y el cierre quedó equilibrado.'))
    self.paragraph(explanation+' '+self.editorial['mechanism'],18,177,174,10.5,14.3,max_end=203)
   else:
-   self.paragraph('No calculamos una composición del gasto ni un saldo con información incompleta. La primera decisión es obtener el cierre, la caja disponible y las obligaciones pendientes.',18,146,174,11,15,max_end=174)
-  self.section('B','El trimestre y el semestre, por separado',211)
+   self.paragraph('La provincia publica compromisos mensuales: montos reservados para determinados gastos. La página siguiente muestra esa información por separado, porque no permite reconstruir por sí sola el resultado fiscal.',18,146,174,11,15,max_end=174)
+  self.section('B','Qué pasó en el último trimestre',211)
   if m['latest_execution']:
    latest=m['latest_execution']['rows'][1];prev=m['latest_execution']['rows'][0]
    text=f'Entre enero y junio ingresaron {amount(latest["income"])} y se gastaron {amount(latest["spending"])}. Faltaron {amount(abs(latest["financial"]))}: {pct(abs(latest["financial_pct"]),2)} de los ingresos, frente a {pct(abs(prev["financial_pct"]),2)} un año antes. El déficit se achicó en proporción a los recursos, pero todavía hay que financiarlo. Antes de intereses, el saldo también fue negativo ({pct(latest["primary_pct"],2)}).'
@@ -224,8 +217,8 @@ class Report:
   semester=next((r for r in self.d.q2['official_semesters'] if r['province']==m['province'] and r['period']=='2026-H1'),None)
   if recent:
    q=self.d.q2['quarters'][m['province']]
-   text=f'En abril-junio de 2026, el saldo financiero fue {pct(q["financial_pct"])} de los ingresos y el primario, {pct(q["primary_pct"])}. '
-   if semester and semester['income'] is not None:text+=f'La DNAP registra {amount(semester["income"])} de ingresos y {amount(semester["spending"])} de gastos en enero-junio, con sus adecuaciones metodológicas.'
+   text=f'En abril-junio de 2026, el resultado después de intereses fue {pct(q["financial_pct"])} de los ingresos. Antes de intereses fue {pct(q["primary_pct"])}. '
+   if semester and semester['income'] is not None:text+=f'La DNAP registra {amount(semester["income"])} de ingresos y {amount(semester["spending"])} de gastos en enero-junio, según su criterio de registro. Son seis meses; abril-junio comprende tres.'
   else:text='La Pampa sigue sin ejecución completa en el corte de junio. No se calcula un saldo ni se reemplaza el faltante por cero.'
   self.paragraph(text,18,219,174,10.5,14.3,max_end=245)
   self.rect(18,248,174,20,PALE,r=2)
@@ -233,33 +226,33 @@ class Report:
   if m['latest_execution']:
    changes={r['key']:r['real_change_pct'] for r in jsonfile('data/pba_comparison.json')['spending']}
    self.paragraph(f'<b>Detrás del ajuste.</b> Capital {pct(changes["capital"])}; personal {pct(changes["personnel"])}; jubilaciones {pct(changes["pensions"])}; municipios {pct(changes["municipal_current_transfers"])}; intereses +{pct(changes["interest"])} real. Menos déficit convive con menos recursos reales para inversión.',22,251,166,10.2,13.2,max_end=266)
-  else:self.paragraph('<b>Decisión de gestión.</b> '+decision+' El saldo fiscal no equivale a dinero disponible en la cuenta bancaria.',22,251,166,10.2,13.2,max_end=266)
+  else:self.paragraph('<b>Cómo leer el resultado.</b> El primario compara ingresos y gastos sin intereses; el financiero también los descuenta. Ninguno equivale al saldo de la cuenta bancaria.',22,251,166,10.2,13.2,max_end=266)
   basis='Santiago del Estero 2025 registra compromiso. Trimestre según DNAP.' if m['province']=='Santiago del Estero' else 'Ingresos percibidos; gastos devengados.'
-  self.note(('PBA: primer semestre de 2026. Variaciones reales: IPC promedio semestral INDEC. ' if m['latest_execution'] else '')+ 'APNF. Doce meses: julio 2025-junio 2026. Informe fiscal, pp. 6 y 8; conciliación DNAP. Datos provisorios.',271)
+  self.note(('PBA: primer semestre de 2026. Variaciones reales: IPC promedio semestral INDEC. ' if m['latest_execution'] else '')+ 'Administración Pública no Financiera (APNF), incluida seguridad social. Doce meses: julio 2025-junio 2026. Informe fiscal, pp. 6 y 8; DNAP. Datos provisorios.',271)
 
  def page_investment(self):
   if self.m['province']=='La Pampa':return self.page_lapampa_commitments()
   if self.m['province']=='Buenos Aires':return self.page_pba_investment()
   m=self.m;a=m['annual'];year=self.d.year;cap=m['metrics']['capital']
   self.header('02  Gasto, inversión y resultados')
-  self.paragraph('Invertir más exige elegir mejor',18,49,174,20,24,bold=True,max_end=62)
+  self.paragraph('Cuánto pesa la inversión en el gasto',18,49,174,20,24,bold=True,max_end=62)
   lead=(f'En {year}, ${number(cap)} de cada $100 gastados se destinaron a capital. Incluye obras, equipamiento, transferencias de capital e inversión financiera.' if a else f'No hay un cierre {year} comparable para medir cuánto se destinó a capital. Las prioridades deben apoyarse en proyectos, costos y resultados verificables.')
-  lead+=' Recomendamos priorizar proyectos que resuelvan una necesidad y prever los recursos para que funcionen.'
+  lead+=' La proporción indica cuánto se destina a capital, no la calidad de las obras.'
   self.paragraph(lead,18,65,174,11,15,max_end=94)
   self.section('A','Cómo se distribuye el gasto '+str(year),102)
   if a:
    known=sum(a[k] for k in ['personnel','pensions','current_transfers','capital']);interest=a['spending']-a['primary_spend']
-   composition=[('Personal',a['personnel'],BLUE),('Seguridad social',a['pensions'],BLUE),('Transferencias',a['current_transfers'],BLUE),('Capital',a['capital'],TEAL),('Intereses',interest,GOLD),('Otros gastos',a['spending']-known-interest,MUTED)]
+   composition=[('Personal',a['personnel'],BLUE),('Jubilaciones y pensiones',a['pensions'],BLUE),('Transferencias',a['current_transfers'],BLUE),('Capital',a['capital'],TEAL),('Intereses',interest,GOLD),('Otros gastos',a['spending']-known-interest,MUTED)]
    for i,(label,value,color) in enumerate(composition):self.bar(label,ratio(value,a['spending']),113+i*9,max_value=100,color=color,value_label=pct(ratio(value,a['spending'])))
   else:
    self.paragraph('Sin información anual homogénea. No se clasifica a la provincia en un ranking con datos de otro año.',18,108,174,11,15,max_end=132)
-  self.section('B','Capital: comparar el mismo período',171)
+  self.section('B','Cómo cambió la inversión',171)
   self.text('Año',18,177,9.5,True,MUTED);self.text('Capital / gasto total',60,177,9.5,True,MUTED)
   for i,row in enumerate(m['history']):
    self.text(str(year-2+i),18,187+i*8,10.5);self.text(pct(ratio(row['capital'],row['spending'])) if row else 'Sin dato',60,187+i*8,10.5,True)
   if a and a['basis']=='devengado':
    comparison='por debajo' if cap<m['benchmark'] else 'por encima' if cap>m['benchmark'] else 'al mismo nivel'
-   comparator=f'La provincia está {comparison} del {pct(m["benchmark"])} del agregado de {m["benchmark_n"]} jurisdicciones. Eso describe cuánto pesa la inversión, no su eficiencia. Con gasto total constante, sumar un punto a capital exige reasignar {amount(a["spending"]/100)}. La meta necesita proyectos y financiamiento.'
+   comparator=f'La provincia está {comparison} del {pct(m["benchmark"])} del agregado de {m["benchmark_n"]} jurisdicciones. Con el mismo gasto total, destinar $1 más a capital por cada $100 requiere reasignar {amount(a["spending"]/100)}. Es una referencia de costo, no una meta recomendada.'
   else:comparator='La comparación exige el mismo año y criterio de registro. La Pampa no informa 2025 y Santiago del Estero registra compromiso; se excluyen del agregado comparable.'
   self.paragraph(comparator,106,179,86,9.5,12.4,max_end=211)
   qtext=(f'Enero-marzo: {pct(m["qpcapital"])} en {int(self.d.quarter[:4])-1} y {pct(m["qcapital"])} en {self.d.quarter[:4]}. '+('La inversión perdió participación en el gasto.' if m['qcapital']<m['qpcapital'] else 'La inversión ganó participación en el gasto.' if m['qcapital']>m['qpcapital'] else 'La participación no cambió.')+' Esto no mide la variación real de los montos.' if m['qcapital'] is not None and m['qpcapital'] is not None else 'Sin dos primeros trimestres completos, no se calcula una variación comparable.')
@@ -272,9 +265,9 @@ class Report:
   self.section('C','El presupuesto tiene que mejorar servicios',238)
   edu=next(p for p in m['pillars'] if p['id']=='education');math_metric=next(r for r in edu['metrics'] if r['id']=='math_high')
   health=next(p for p in m['pillars'] if p['id']=='health');infant=next(r for r in health['metrics'] if r['id']=='infant_mortality')
-  self.paragraph(f'<b>Aprendizaje.</b> {pct(math_metric["value"])} de los estudiantes evaluados alcanzó nivel satisfactorio o avanzado en Matemática ({escape(math_metric["period"])}). Participación: {pct(edu["participation"]["students_pct"])}.',18,244,84,9.6,12.7,max_end=266)
-  self.paragraph(f'<b>Salud.</b> {number(infant["value"])} muertes infantiles por cada 1.000 nacidos vivos ({infant["period"]}). El seguimiento del gasto tiene que incluir cobertura y resultados: ejecutar una partida no prueba que el servicio haya mejorado.',108,244,84,9.6,12.7,max_end=268)
-  self.note('APNF. Agregado comparable sin La Pampa y Santiago del Estero. Aprender y DEIS: años propios; no se atribuye un resultado al gasto de otro período.',271)
+  self.paragraph(f'<b>Aprendizaje.</b> {pct(math_metric["value"])} de los estudiantes evaluados alcanzó nivel satisfactorio o avanzado en Matemática ({escape(math_metric["period"])}). Participó el {pct(edu["participation"]["students_pct"])} de la matrícula prevista.',18,244,84,9.6,12.7,max_end=266)
+  self.paragraph(f'<b>Salud.</b> {number(infant["value"])} muertes antes del primer año de vida por cada 1.000 nacidos vivos ({infant["period"]}). Una tasa menor indica un mejor resultado.',108,244,84,9.6,12.7,max_end=268)
+  self.note('Fuentes: cuentas provinciales (DNAP), Aprender y estadísticas vitales (DEIS). Agregado fiscal de 22 jurisdicciones: excluye La Pampa y Santiago del Estero. Cada indicador conserva su año.',271)
 
  def page_lapampa_commitments(self):
   d=jsonfile('data/fiscal_local_updates.json')['lapampa'];self.header('02  Información provincial verificada')
@@ -282,7 +275,7 @@ class Report:
   self.paragraph('La Contaduría General publica compromisos mensuales. Permiten seguir los recursos reservados para gastos corrientes y de capital. No equivalen a obligaciones devengadas ni a pagos realizados.',18,67,174,11,15,max_end=96)
   for i,r in enumerate(d['rows']):
    y=110+i*55;self.section(chr(65+i),('Junio' if r['period'].endswith('06') else 'Agosto')+' de 2026 · sólo ese mes',y)
-   self.paragraph(f'Gasto corriente comprometido: <b>{amount(r["current_millions"])}</b>.<br/>Gasto de capital comprometido: <b>{amount(r["capital_millions"])}</b>.<br/>Contribuciones figurativas: {amount(r["figurative_millions"])}; se mantienen separadas.',18,y+9,174,11,16,max_end=y+44)
+   self.paragraph(f'Gasto corriente comprometido: <b>{amount(r["current_millions"])}</b>.<br/>Gasto de capital comprometido: <b>{amount(r["capital_millions"])}</b>.<br/>Transferencias entre organismos públicos: {amount(r["figurative_millions"])}; se muestran aparte para evitar contarlas dos veces.',18,y+9,174,11,16,max_end=y+44)
   self.section('C','Qué falta para evaluar el resultado',226)
   self.paragraph('Falta conciliar ingresos y gastos devengados del mismo período y con el mismo alcance institucional. Estos cuadros no alcanzan para calcular déficit ni para ubicar a La Pampa en el ranking fiscal comparable.',18,237,174,11,15,max_end=267)
   self.link('Contaduría General: documentos originales y alcance',SITE+'data/fiscal_local_updates.json',18,279)
@@ -307,15 +300,15 @@ class Report:
  def page_agenda(self):
   m=self.m;t=m['transfers'];year=t['through'][:4];month=MONTHS[int(t['through'][-2:])-1]
   self.header('03  Recursos, deuda y agenda de gestión')
-  self.section('A','La relación con Nación, con números claros',54)
+  self.section('A','Recursos recibidos de Nación e impuestos propios',54)
   if t['current'] is not None:
    transfer=f'Entre enero y {month} de {year}, ingresaron {amount(t["current"])} por transferencias automáticas nacionales.'
    if t['real_pct'] is not None:transfer+=f' Frente a los mismos meses de {int(year)-1}, '+(f'crecieron {pct(t["real_pct"])}' if t['real_pct']>=0 else f'cayeron {pct(abs(t["real_pct"]))}')+' después de descontar la inflación mes a mes.'
-   else:transfer+=' El IPC observado llega hasta agosto; septiembre se informa en pesos corrientes.'
+   else:transfer+=' Falta una serie completa para calcular la variación ajustada por inflación.'
   else:transfer='Falta un acumulado mensual completo de transferencias automáticas. No sumamos períodos sueltos como si fueran el total del año.'
   own=jsonfile('dashboard_real_dynamics_2026.json')['provinces'].get(m['province'],{}).get('metrics',{}).get('own_revenue',{})
   own_value=own.get('real_ytd_pct');own_cut=own.get('ytd_available_through')
-  own_reading=(f' La recaudación propia {"creció" if own_value>=0 else "cayó"} {pct(abs(own_value))} real en enero–{MONTHS[int(own_cut[-2:])-1]} de 2026 frente a los mismos meses de 2025 (DNAP e IPC INDEC).' if own_value is not None and own_cut else ' '+self.editorial['federal'])
+  own_reading=(f' La recaudación propia {"creció" if own_value>=0 else "cayó"} {pct(abs(own_value))} descontando la inflación, en enero–{MONTHS[int(own_cut[-2:])-1]} de 2026 frente a los mismos meses de 2025 (DNAP e IPC INDEC).' if own_value is not None and own_cut else ' '+self.editorial['federal'])
   self.paragraph(transfer+own_reading,18,62,174,10.5,14.3,max_end=89)
   records=sorted((m.get('claim') or {}).get('records',[]),key=lambda r:r.get('published_at',''),reverse=True)
   record=next((r for r in records if r.get('amount')),None)
@@ -331,7 +324,7 @@ class Report:
   self.paragraph(federal,18,92,174,10.5,14.3,max_end=113)
   self.section('B','La deuda importa por cuánto y cuándo se paga',120)
   projection=m['projection'];debt=m['debt'];rank=next((r for r in self.d.q2['ranking'] if r['province']==m['province']),None);debt_ratio=rank['debt_income_pct'] if rank else None
-  stock=(f'Por cada $100 de ingresos de doce meses, había ${number(debt_ratio)} de deuda al {'2T26'}. Ese dato no dice cuánto hay que pagar este año. ' if debt_ratio is not None else 'Falta el monto total de deuda comparable al último corte. ')
+  stock=(f'Por cada $100 de ingresos de doce meses, había ${number(debt_ratio)} de deuda al 30/06/2026. Ese dato no dice cuánto hay que pagar este año. ' if debt_ratio is not None else 'Falta el monto total de deuda comparable al último corte. ')
   if m['latest_debt']:
    latest=m['latest_debt'];stock=f'Al 30/06/2026, la deuda era {amount(latest["total_ars_m"])}: equivalía al {pct(latest["debt_to_ltm_income_pct"])} de los ingresos de doce meses. '
   if projection:
@@ -348,15 +341,12 @@ class Report:
    source_date=('Valuación: '+date_label(projection['as_of']) if projection.get('as_of') else 'Publicado '+date_label(projection['publication_date']) if projection.get('publication_date') else projection.get('reference_label','Fecha de valuación no informada'))
    self.note('Miles de millones de pesos. '+projection.get('scope','')+'. '+source_date+'.',190,max_end=202)
   else:
-   self.paragraph(stock+'La serie histórica muestra capital e intereses registrados en años anteriores. Todavía falta un calendario futuro verificado: con esos datos no se puede saber qué año concentrará más vencimientos.',18,128,174,10.5,14.3,max_end=155)
+   self.paragraph(stock+'Falta un calendario futuro verificado. Los pagos de años anteriores no permiten identificar cuánto vencerá en los próximos.',18,128,174,10.5,14.3,max_end=155)
    self.rect(18,162,174,35,PALE,r=2)
-   self.paragraph('<b>Qué hace falta para decidir.</b> Reunir vencimientos por mes y moneda, caja de libre disponibilidad y financiamiento confirmado. Así se puede detectar si los pagos de deuda compiten con salarios, proveedores o inversión.',22,166,166,10.5,14.3,max_end=193)
+   self.paragraph('<b>Deuda y déficit son distintos.</b> El déficit es lo que faltó para cubrir el gasto de un período. La deuda es el capital acumulado que debe devolverse. Para evaluar el esfuerzo de pago hace falta conocer sus vencimientos.',22,166,166,10.5,14.3,max_end=193)
   self.section('C','Tres prioridades para ordenar la gestión',211)
-  f=m['metrics']['financial'];cap=m['metrics']['capital']
-  one=('Separar el déficit fiscal de los vencimientos de capital.' if f is not None and f<0 else 'Distinguir el superávit de la caja de libre disponibilidad.' if f is not None else 'Obtener el cierre fiscal y las obligaciones pendientes.')
-  agenda='<b>1. Ordenar los pagos.</b> '+one+' Integrar ingresos, salarios y vencimientos para anticipar faltantes. <b>2. Priorizar la inversión.</b> Elegir proyectos por su impacto y costo de funcionamiento. <b>3. Medir servicios.</b> Vincular el presupuesto con metas concretas de aprendizaje y salud.'
-  y=self.paragraph(agenda,18,219,174,10.3,13.7,max_end=245)+3
-  self.paragraph('Cada prioridad necesita un responsable, un plazo y financiamiento identificado.',18,y,174,10.3,13.7,max_end=259)
+  agenda='<br/>'.join('<b>'+str(i)+'.</b> '+escape(text) for i,text in enumerate(management_priorities(m,self.d),1))
+  self.paragraph(agenda,18,219,174,10.3,13.7,max_end=258)
   self.note('Referencias: DNAP; presupuesto y deuda provinciales; comunicados oficiales sobre Nación; IPC INDEC; Aprender; DEIS. Importes corrientes; transferencias reales ajustadas mes a mes. Documentos y cálculos en el enlace inferior.',262,max_end=275)
   self.link('Datos y método del informe',SITE+'reports/metodologia.html',18,279)
   self.link('Abrir el tablero',SITE,152,279)
