@@ -2343,11 +2343,14 @@
       "page": 15,
       "field": "quarter_real_tax_change",
       "reported": -228.4,
-      "reason": "Variación inferior a -100%; requiere conciliación del dato base. No incorporada."
+      "reason": "La cifra -228,4% no se reproduce. Se verificó una serie provincial alternativa: abril–junio 2026 creció aproximadamente 10,1% real con IPC observado. No se sustituye la cobertura APNF por la serie tributaria provincial.",
+      "verification_status": "alternative_official_series_verified",
+      "verification_file": "data/fiscal_local_updates.json"
     },
     {
       "province": "La Pampa",
-      "reason": "La fuente no publica ejecución completa; no se imputa cero."
+      "reason": "DNAP incompleta. Se localizaron compromisos mensuales de Contaduría General a agosto; no son devengado ni prueban igual cobertura APNF. Se publican separados, sin completar el ranking.",
+      "verification_file": "data/fiscal_local_updates.json"
     }
   ],
   "methodology": "LTM: julio 2025-junio 2026. Trimestre: abril-junio 2026. DNAP semestral: enero-junio, con adecuaciones metodológicas; no se intercambian sus cifras con la ejecución provincial. El documento recibido se conserva localmente; no se distribuye el PDF."

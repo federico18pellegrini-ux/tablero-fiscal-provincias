@@ -3371,6 +3371,12 @@
           "pages": 10,
           "consultedPages": [
             1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
             8,
             9,
             10
@@ -3390,7 +3396,13 @@
           "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
         }
       ],
-      "verifiedAt": "2026-10-19"
+      "verifiedAt": "2026-10-19",
+      "financialBreakdown": {
+        "source_financing": "1065321903.89",
+        "prior_liabilities": "16647521570.98",
+        "supplier_advances": "5266544986.17",
+        "note": "Recursos: fuentes financieras, pág. 2. Gastos: adelantos a proveedores, pág. 8; cancelación de cuentas a pagar anteriores, págs. 9–10. No se suman estos conceptos al gasto corriente o de capital. Falta conciliar la clasificación económica y los insumos de obras para completar la cuenta fiscal."
+      }
     },
     {
       "id": "06693",
