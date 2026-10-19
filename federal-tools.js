@@ -120,14 +120,14 @@ async function exportFiscalTextPdf(all=false){
         line(`Por cada $100 ingresados, ${row.financial_pct<0?'faltaron':'quedaron'} $${fnum(Math.abs(row.financial_pct))} después de intereses.`);
         const change=fiscalChange(province,period);line(change===null?'Sin corte anterior comparable.':`Cambio frente al corte anterior: ${fnum(change)} puntos porcentuales. Las revisiones de la fuente pueden afectar esta variación.`);
       }else line('Sin información homogénea para el último corte. No se completa con cero ni con datos de un período anterior.');
-      if(quarter)line(`Trimestre enero-marzo de 2026: primario ${fnum(quarter.primary_pct)}%; financiero ${fnum(quarter.financial_pct)}%. Este dato no debe confundirse con los últimos 12 meses.`);
+      if(quarter)line(`Trimestre abril-junio de 2026: primario ${fnum(quarter.primary_pct)}%; financiero ${fnum(quarter.financial_pct)}%. Este dato no debe confundirse con los últimos 12 meses.`);
       line('Deuda y capacidad de pago',14,true);
-      line(debt?`Stock al 1T26: USD ${fnum(debt.total)} millones, convertido al tipo de cambio oficial del cierre. Bonos: ${fnum(debt.bonds)}; Nación: ${fnum(debt.nation)}; organismos: ${fnum(debt.multilateral)}; bancos: ${fnum(debt.banks)} millones.`:'Stock homogéneo no disponible para este corte.');
+      line(debt?`Stock al 2T26: USD ${fnum(debt.total)} millones, convertido al tipo de cambio oficial del cierre. Bonos: ${fnum(debt.bonds)}; Nación: ${fnum(debt.nation)}; organismos: ${fnum(debt.multilateral)}; bancos: ${fnum(debt.banks)} millones.`:'Stock homogéneo no disponible para este corte.');
       line('El saldo fiscal no acredita caja disponible. Completar caja libre, deuda flotante, vencimientos y financiamiento efectivamente utilizable antes de definir compromisos.');
       line('Evolución de los últimos cuatro cortes',14,true);
       for(const p of historyPeriods().slice(-4)){const r=historyRow(province,p);line(`${periodName(p)} | primario: ${fnum(r?.primary_pct)}% | financiero: ${fnum(r?.financial_pct)}%`,10);}
-      line('Fuentes y alcance',14,true);line('Informes fiscales provinciales: resultados anuales, página 8; trimestre, página 6; deuda, página 21 del informe 1T26. La historia conserva los valores publicados en cada informe.',9);
-      line('Montos de deuda en millones de dólares; resultados en porcentaje de ingresos. La Pampa no integra el corte comparable 1T26. Este informe separa datos observados de necesidades de información para la gestión.',9);
+      line('Fuentes y alcance',14,true);line('Informes fiscales provinciales: resultados anuales, página 8; trimestre, página 6; deuda, página 21 del informe 2T26. La historia conserva los valores publicados en cada informe.',9);
+      line('Montos de deuda en millones de dólares; resultados en porcentaje de ingresos. La Pampa no integra el corte comparable 2T26. Este informe separa datos observados de necesidades de información para la gestión.',9);
       line('https://tablero.federicopellegrini.com.ar/',9);
     }
     const pages=doc.getNumberOfPages();for(let i=1;i<=pages;i++){doc.setPage(i);doc.setFontSize(8);doc.text(`Consultora Pellegrini | ${i} / ${pages}`,18,287);}

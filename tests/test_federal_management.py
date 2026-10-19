@@ -4,10 +4,10 @@ ROOT=Path(__file__).resolve().parents[1]
 class FederalManagementTests(unittest.TestCase):
     def test_history_coverage_identities_and_latest(self):
         d=json.loads((ROOT/'data/fiscal_history.json').read_text(encoding='utf-8'))
-        rows=d['rows'];self.assertEqual(len(rows),422)
-        self.assertEqual(len({r['period'] for r in rows}),18)
+        rows=d['rows'];self.assertEqual(len(rows),445)
+        self.assertEqual(len({r['period'] for r in rows}),19)
         self.assertEqual(len({r['province'] for r in rows}),24)
-        self.assertEqual(len({(r['province'],r['period']) for r in rows}),422)
+        self.assertEqual(len({(r['province'],r['period']) for r in rows}),445)
         for r in rows:
             self.assertLessEqual(abs(r['income']-r['primary_spend']-r['primary']),2)
             self.assertLessEqual(abs(r['primary']+r['interest_signed']-r['financial']),2)

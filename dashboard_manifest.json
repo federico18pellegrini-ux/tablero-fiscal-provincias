@@ -81,10 +81,12 @@
     "annual_fiscal_accounts": "data/annual_fiscal_accounts.json",
     "reclamos_nacion_evidencia": "data/reclamos_nacion/evidencia_verificada.json",
     "pba_execution_latest": "data/pba_execution_latest.json",
-    "pba_comparison": "data/pba_comparison.json"
+    "pba_comparison": "data/pba_comparison.json",
+    "ranking_fiscal_latest": "data/fiscal/ranking_2t26.csv",
+    "fiscal_q2": "data/fiscal_q2_2026.json"
   },
   "notes": {
-    "cross_section_fiscal_scope": "La capa estructural general conserva el corte 3T25. La nueva sala del gobernador usa 4T25 y 1T26 y un ranking homogéneo de 23 jurisdicciones; La Pampa no integra esos informes.",
+    "cross_section_fiscal_scope": "La capa histórica conserva sus cortes. El resumen y ranking usan 2T26 para 23 jurisdicciones; La Pampa no tiene ejecución completa.",
     "monthly_scope_2026": "Importación directa desde planillas oficiales DNAP. No se imputan datos ni se crean placeholders en cero.",
     "ron_annual_scope": "serie_ron_2003_2025 es anual por provincia y categoría",
     "ron_category_normalization": "serie_ron_2003_2025 tiene columna category_normalized que unifica variantes históricas de nombres de categorías. Usar category_normalized para filtrar, no category.",
@@ -105,13 +107,13 @@
     "debt_schedule_scope": "PBA: julio–diciembre de 2026 y años completos 2027–2041, valuados al 30/06/2026. El documento no contiene una apertura mensual.",
     "historical_series_gaps": "CABA y Santiago del Estero no tienen serie propia homogénea de recaudación 1984-2024 en la fuente histórica principal; sus datos corrientes se muestran por separado.",
     "government_results_scope": "Capa federal comparable para las 24 jurisdicciones: homicidios 2025, Aprender 2024, mortalidad infantil 2024, NBI 2022 y esfuerzo presupuestario APNF 2024. Se separan resultados, contexto estructural y gasto; no se calcula un ranking compuesto ni se atribuye causalidad.",
-    "mixed_vintages": "El ranking conserva el corte común al 1T26. Las actualizaciones provinciales y mensuales indican su propio período.",
+    "mixed_vintages": "El ranking usa el corte común al 2T26. Las actualizaciones provinciales y mensuales indican su propio período.",
     "pba_comparison": "PBA: recaudación mensual 2025 completa, conciliada con 2026. Recaudación deflactada mes a mes; gasto semestral con IPC promedio. Fuentes y métodos en pba_comparison.json."
   },
   "missing_top_mensual_2026_provinces": [],
   "missing_ron_2026_provinces": [],
   "as_of_by_block": {
-    "structural_and_ranking": "2026-03-31",
+    "structural_and_ranking": "2026-06-30",
     "recaudacion_propia_2026_max": "2026-09-30",
     "recaudacion_propia_pba": "2026-07-31",
     "transferencias_nacion_2026": "2026-09-30",

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "06351",
+    "year": 2026,
+    "asOf": "2026-03-31",
+    "original": "21980000000.00",
+    "current": "23130109390.63",
+    "modifications": "1150109390.63",
+    "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
+    "method": "published_current",
+    "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
+    "documents": [
+      {
+        "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSPORFINALIDADYFUNCIONAL310320261776692403.zip",
+        "sha256": "572944732c909c0709958e2b6646d6619eafc999f26e2431e1363c0d5879ea09",
+        "bytes": 361941,
+        "pages": 2,
+        "consultedPages": [
+          1,
+          2
+        ],
+        "locator": "PDF dentro del ZIP oficial: Gastos por finalidad y función, Totales Generales, aprobado/modificaciones/vigente; período enero–marzo.",
+        "extractedPdfSha256": "be4815a57e64b024d34bc7bbac3403a3d4adbcc9d9a90c8196846ab2b3a39792",
+        "extractedPdfBytes": 369576,
+        "container": "ZIP oficial; páginas y localización corresponden al PDF contenido."
+      }
+    ],
+    "periodStart": "2026-01-01",
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "06760",
+    "year": 2026,
+    "asOf": "2026-04-09",
+    "original": "221558017532.24",
+    "current": null,
+    "modifications": null,
+    "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
+    "note": "",
+    "method": "published_original",
+    "documents": [
+      {
+        "url": "https://www.msm.gov.ar/wp-content/uploads/2026/04/1.2-Presupuesto-de-Gastos-Aprobado-2026.pdf",
+        "sha256": "b00152358ee0bdb6bfc53e53535281b82d8dc42439e1a7aae809d3d4530465aa",
+        "bytes": 666590,
+        "pages": 62,
+        "consultedPages": [
+          62
+        ],
+        "locator": "Total general presupuesto 2026, columna Crédito Original. Documento publicado como presupuesto aprobado."
+      }
+    ],
+    "components": [],
+    "componentField": "current",
+    "periodStart": null,
+    "verifiedAt": "2026-10-04"
+  }
+]

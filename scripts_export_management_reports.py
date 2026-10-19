@@ -21,7 +21,7 @@ INPUTS=['data/annual_fiscal_accounts.json','data/budget_execution_2026.json',
  'data/government_results_provinces.json','informacion_consolidada_2026_normalizado.csv',
  'informacion_consolidada_2025_normalizado.csv','data/ipc_national_index.csv',
  'data/ron_2025_import.json','data/meta.json','data/pba_execution_latest.json','data/debt/pba_debt_profile_2026q1.json','dashboard_reclamos_nacion_provincias.json','data/pba_comparison.json']
-BUILD_INPUTS=INPUTS+['data/pba_capital_detail.json','scripts_export_management_reports.py','assets/report-fonts/Lato-Regular.ttf','assets/report-fonts/Lato-Bold.ttf']
+BUILD_INPUTS=INPUTS+['data/fiscal_q2_2026.json','data/pba_capital_detail.json','scripts_export_management_reports.py','assets/report-fonts/Lato-Regular.ttf','assets/report-fonts/Lato-Bold.ttf']
 INK='#172E46';TEAL='#14796F';BLUE='#3679AA';MUTED='#536578';PALE='#EDF4F6';LINE='#D5E1E6';RUST='#A94F38';GOLD='#BB8B3A'
 MM=72/25.4;W,H=A4
 SITE='https://tablero.federicopellegrini.com.ar/'
@@ -83,6 +83,7 @@ def editorial_reading(m):
 
 class ReportData:
  def __init__(self):
+  self.q2=jsonfile('data/fiscal_q2_2026.json')
   self.annual=jsonfile(INPUTS[0]);self.budget=jsonfile(INPUTS[1]);self.history=jsonfile(INPUTS[2]);self.services=jsonfile(INPUTS[3]);self.debt=jsonfile(INPUTS[4]);self.results=jsonfile(INPUTS[5])
   self.latest_pba=jsonfile('data/pba_execution_latest.json');self.pba_debt=jsonfile('data/debt/pba_debt_profile_2026q1.json');self.claims=jsonfile('dashboard_reclamos_nacion_provincias.json');
   self.provinces=self.results['province_universe'];self.year=max(r['year'] for r in self.annual['rows']);self.quarter=max(r['period'] for r in self.budget['executions'])
@@ -95,7 +96,7 @@ class ReportData:
     if r['category_normalized'] in ['Total | (1) + (2)','CFI | Neta','Financiamiento Educativo','Compensación Consenso Fiscal']:
      if k in self.ron:raise ValueError(f'Duplicate RON aggregate: {k}')
      self.ron[k]=float(r['value_millions'])
-  self.transfer_cut=max(k[1] for k in self.ron);self.reviewed=max(self.annual['reviewed_at'],self.budget['reviewed_at'],self.services['reviewed_at'],self.latest_pba['reviewed_at'],jsonfile('data/meta.json')['sources']['transferencias_nacion_2026'].get('reviewed_at',''))
+  self.transfer_cut=max(k[1] for k in self.ron);self.reviewed=max(self.q2['reviewed_at'],self.annual['reviewed_at'],self.budget['reviewed_at'],self.services['reviewed_at'],self.latest_pba['reviewed_at'],jsonfile('data/meta.json')['sources']['transferencias_nacion_2026'].get('reviewed_at',''))
  def annual_row(self,province,year):
   return next((r for r in self.annual['rows'] if r['province']==province and r['year']==year and r['status']=='observed'),None)
  def transfers(self,province,through=None,category='Total | (1) + (2)'):
@@ -183,12 +184,16 @@ class Report:
 
  def page_accounts(self):
   m=self.m;a=m['annual'];f=m['metrics']['financial'];p=m['metrics']['primary'];yyear=self.d.year
+  recent=next((r for r in self.d.q2['ltm'] if r['province']==m['province']),None)
+  if recent:
+   a={**recent,'spending':recent['primary_spend']-recent['interest_signed']};f=recent['financial_pct'];p=recent['primary_pct'];yyear='· 12 MESES'
+   self.editorial=editorial_reading({**m,'metrics':{**m['metrics'],'financial':f,'primary':p}})
   self.header('01  Las cuentas y el margen de maniobra')
   if a:
    title='Los ingresos no alcanzan para cubrir el gasto' if f<0 else 'Hay superávit. Ahora hay que sostenerlo'
    if f==0:title='Las cuentas cierran sin margen de sobra'
    self.paragraph(title,18,49,174,18,22,bold=True,max_end=68)
-   lead=f'En {yyear}, por cada $100 de ingresos, '+(f'faltaron {per100(f)} para cubrir los gastos y los intereses.' if f<0 else f'quedaron {per100(f)} después de cubrir los gastos y los intereses.')
+   lead=('En los doce meses a junio de 2026' if recent else f'En {yyear}')+', por cada $100 de ingresos, '+(f'faltaron {per100(f)} para cubrir los gastos y los intereses.' if f<0 else f'quedaron {per100(f)} después de cubrir los gastos y los intereses.')
    self.paragraph(lead+' '+self.editorial['opening'],18,67,174,11,15,max_end=91)
   else:
    self.paragraph(f'Falta el cierre {yyear} para evaluar las cuentas',18,49,174,18,22,bold=True,max_end=68)
@@ -207,7 +212,7 @@ class Report:
    self.paragraph(explanation+' '+self.editorial['mechanism'],18,177,174,10.5,14.3,max_end=203)
   else:
    self.paragraph('No calculamos una composición del gasto ni un saldo con información incompleta. La primera decisión es obtener el cierre, la caja disponible y las obligaciones pendientes.',18,146,174,11,15,max_end=174)
-  self.section('B','Qué muestra el primer semestre de 2026' if m['latest_execution'] else 'Qué muestra el comienzo de '+self.d.quarter[:4],211)
+  self.section('B','El trimestre y el semestre, por separado',211)
   if m['latest_execution']:
    latest=m['latest_execution']['rows'][1];prev=m['latest_execution']['rows'][0]
    text=f'Entre enero y junio ingresaron {amount(latest["income"])} y se gastaron {amount(latest["spending"])}. Faltaron {amount(abs(latest["financial"]))}: {pct(abs(latest["financial_pct"]),2)} de los ingresos, frente a {pct(abs(prev["financial_pct"]),2)} un año antes. El déficit se achicó en proporción a los recursos, pero todavía hay que financiarlo. Antes de intereses, el saldo también fue negativo ({pct(latest["primary_pct"],2)}).'
@@ -215,6 +220,13 @@ class Report:
    qp=m['qprimary'];qf=m['qfinancial']
    text=f'En enero-marzo de {self.d.quarter[:4]}, el saldo antes de intereses fue {pct(qp)} de los ingresos y después de intereses, {pct(qf)}. '+self.editorial['quarter']+' El trimestre no anticipa el cierre anual.'
   else:text=f'Todavía no hay ejecución comparable de enero-marzo de {self.d.quarter[:4]}. No usamos un trimestre anterior como si fuera actual. '+self.editorial['quarter']
+  recent=next((r for r in self.d.q2['ltm'] if r['province']==m['province']),None)
+  semester=next((r for r in self.d.q2['official_semesters'] if r['province']==m['province'] and r['period']=='2026-H1'),None)
+  if recent:
+   q=self.d.q2['quarters'][m['province']]
+   text=f'En abril-junio de 2026, el saldo financiero fue {pct(q["financial_pct"])} de los ingresos y el primario, {pct(q["primary_pct"])}. '
+   if semester and semester['income'] is not None:text+=f'La DNAP registra {amount(semester["income"])} de ingresos y {amount(semester["spending"])} de gastos en enero-junio, con sus adecuaciones metodológicas.'
+  else:text='La Pampa sigue sin ejecución completa en el corte de junio. No se calcula un saldo ni se reemplaza el faltante por cero.'
   self.paragraph(text,18,219,174,10.5,14.3,max_end=245)
   self.rect(18,248,174,20,PALE,r=2)
   decision=('Ordenar los pagos y corregir el desequilibrio sin interrumpir los servicios esenciales.' if f is not None and f<0 else 'Preservar el margen fiscal y asignar recursos a prioridades con resultados medibles.' if f is not None else 'Completar la información antes de comprometer nuevos gastos permanentes.')
@@ -223,7 +235,7 @@ class Report:
    self.paragraph(f'<b>Detrás del ajuste.</b> Capital {pct(changes["capital"])}; personal {pct(changes["personnel"])}; jubilaciones {pct(changes["pensions"])}; municipios {pct(changes["municipal_current_transfers"])}; intereses +{pct(changes["interest"])} real. Menos déficit convive con menos recursos reales para inversión.',22,251,166,10.2,13.2,max_end=266)
   else:self.paragraph('<b>Decisión de gestión.</b> '+decision+' El saldo fiscal no equivale a dinero disponible en la cuenta bancaria.',22,251,166,10.2,13.2,max_end=266)
   basis='Santiago del Estero 2025 registra compromiso. Trimestre según DNAP.' if m['province']=='Santiago del Estero' else 'Ingresos percibidos; gastos devengados.'
-  self.note(('DNAP: cierre 2025. PBA: primer semestre 2026. Variaciones reales: IPC promedio semestral INDEC. ' if m['latest_execution'] else 'DNAP. ')+ 'APNF, incluye seguridad social. '+basis+' Datos provisorios.',271)
+  self.note(('PBA: primer semestre de 2026. Variaciones reales: IPC promedio semestral INDEC. ' if m['latest_execution'] else '')+ 'APNF. Doce meses: julio 2025-junio 2026. Informe fiscal, pp. 6 y 8; conciliación DNAP. Datos provisorios.',271)
 
  def page_investment(self):
   if self.m['province']=='Buenos Aires':return self.page_pba_investment()
@@ -300,8 +312,8 @@ class Report:
   else:federal='Las transferencias automáticas se distribuyen por ley. Los envíos discrecionales y los reclamos pendientes se analizan por separado.'
   self.paragraph(federal,18,92,174,10.5,14.3,max_end=113)
   self.section('B','La deuda importa por cuánto y cuándo se paga',120)
-  projection=m['projection'];debt=m['debt'];debt_ratio=debt.get('ratios',{}).get('debt_income_pct') if debt else None
-  stock=(f'Por cada $100 de ingresos de doce meses, había ${number(debt_ratio)} de deuda al {quarter_label(self.d.quarter)}. Ese dato no dice cuánto hay que pagar este año. ' if debt_ratio is not None else 'Falta el monto total de deuda comparable al último corte. ')
+  projection=m['projection'];debt=m['debt'];rank=next((r for r in self.d.q2['ranking'] if r['province']==m['province']),None);debt_ratio=rank['debt_income_pct'] if rank else None
+  stock=(f'Por cada $100 de ingresos de doce meses, había ${number(debt_ratio)} de deuda al {'2T26'}. Ese dato no dice cuánto hay que pagar este año. ' if debt_ratio is not None else 'Falta el monto total de deuda comparable al último corte. ')
   if m['latest_debt']:
    latest=m['latest_debt'];stock=f'Al 30/06/2026, la deuda era {amount(latest["total_ars_m"])}: equivalía al {pct(latest["debt_to_ltm_income_pct"])} de los ingresos de doce meses. '
   if projection:
@@ -343,14 +355,14 @@ def build(output,province=None):
  output.mkdir(parents=True,exist_ok=True);data=ReportData();entries=[];layouts={}
  for name in ([province] if province else data.provinces):
   model=data.model(name);file=f'informe-{slug(name)}.pdf';layouts[name]=Report(output/file,model,data).build()
-  entries.append(dict(province=name,file=file,pages=3,sha256=hashlib.sha256((output/file).read_bytes()).hexdigest(),annual_year=data.year,quarter=data.quarter,transfer_cutoff=data.transfer_cut,annual_available=model['annual'] is not None,forward_debt_calendar=model['projection'] is not None))
- manifest=dict(schema_version=1,author='Federico Pellegrini',title='Informe de gestión provincial',reviewed_at=data.reviewed,method='Tres páginas por jurisdicción. Se usa el último año completo común, sin sustituir faltantes por años anteriores. Cuentas APNF y trimestres separados. Transferencias: total legal (1)+(2), mes a mes en pesos constantes con IPC nacional observado para variaciones reales. No equivale a la vista, unidad o perfil transitorios de la pantalla. Los informes se regeneran desde los archivos de datos del tablero.',input_sha256=fingerprints(),sources=[dict(label='Cuentas anuales APNF',url=data.annual['source_url']),dict(label='PBA: ejecución enero-junio 2026',url=data.latest_pba['source']['url']),dict(label='PBA: deuda al 30/06/2026',url=data.pba_debt['latest_official_stock']['source']['url']),dict(label='Reclamos, acuerdos y cobros: documentos oficiales por provincia',url=SITE+'dashboard_reclamos_nacion_provincias.json'),dict(label='Ejecución trimestral APNF',url='https://www.argentina.gob.ar/economia/sechacienda/coordinacion-fiscal-provincial/ejecucion-presupuestaria-provincial/ejecuciones'),dict(label='Recursos nacionales 2025',url=jsonfile('data/ron_2025_import.json')['source_url']),dict(label='Recursos nacionales 2026',url=jsonfile('data/meta.json')['sources']['transferencias_nacion_2026']['url']),dict(label='Datos de deuda y calendarios',url=SITE+'data/provincial_debt_services.json'),dict(label='Resultados y referencias por indicador',url=SITE+'data/government_results_provinces.json'),dict(label='IPC observado',url=SITE+'data/ipc_national_index.csv')],reports=entries)
+  entries.append(dict(province=name,file=file,pages=3,sha256=hashlib.sha256((output/file).read_bytes()).hexdigest(),annual_year=data.year,quarter=data.q2['period'],transfer_cutoff=data.transfer_cut,annual_available=model['annual'] is not None,forward_debt_calendar=model['projection'] is not None))
+ manifest=dict(schema_version=1,author='Federico Pellegrini',title='Informe de gestión provincial',reviewed_at=data.reviewed,method='Tres páginas por jurisdicción. La portada usa los doce meses a junio de 2026; la composición anual conserva 2025. No se sustituyen faltantes por años anteriores. Cuentas APNF, trimestre y semestre separados. Transferencias: total legal (1)+(2), mes a mes en pesos constantes con IPC nacional observado para variaciones reales. No equivale a la vista, unidad o perfil transitorios de la pantalla. Los informes se regeneran desde los archivos de datos del tablero.',input_sha256=fingerprints(),sources=[dict(label='Cuentas anuales APNF',url=data.annual['source_url']),dict(label='PBA: ejecución enero-junio 2026',url=data.latest_pba['source']['url']),dict(label='PBA: deuda al 30/06/2026',url=data.pba_debt['latest_official_stock']['source']['url']),dict(label='Reclamos, acuerdos y cobros: documentos oficiales por provincia',url=SITE+'dashboard_reclamos_nacion_provincias.json'),dict(label='Ejecución trimestral APNF',url='https://www.argentina.gob.ar/economia/sechacienda/coordinacion-fiscal-provincial/ejecucion-presupuestaria-provincial/ejecuciones'),dict(label='Recursos nacionales 2025',url=jsonfile('data/ron_2025_import.json')['source_url']),dict(label='Recursos nacionales 2026',url=jsonfile('data/meta.json')['sources']['transferencias_nacion_2026']['url']),dict(label='Datos de deuda y calendarios',url=SITE+'data/provincial_debt_services.json'),dict(label='Resultados y referencias por indicador',url=SITE+'data/government_results_provinces.json'),dict(label='IPC observado',url=SITE+'data/ipc_national_index.csv')],reports=entries)
  (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  links=''.join(f'<li><a href="{escape(s["url"])}">{escape(s["label"])}</a></li>' for s in manifest['sources'])
  method='''<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cómo leer el informe · Federico Pellegrini</title>
 <style>body{margin:0;background:#f3f6f8;color:#172e46;font:17px/1.65 system-ui,sans-serif}main{max-width:760px;padding:32px 24px;margin:auto}h1{font-size:34px;line-height:1.2}h2{font-size:22px;margin-top:30px}a{color:#175c91}li{margin:9px 0}.credit{color:#14796f;font-weight:650}footer{border-top:1px solid #d5e1e6;margin-top:30px;padding-top:16px;font-size:14px}</style>
 <main><p class="credit">Federico Pellegrini · Informe de gestión provincial</p><h1>Qué datos usa el informe y cómo se comparan</h1>
-<p>El informe tiene tres páginas para cada provincia. Cada bloque indica su período. El cierre anual, la ejecución de 2026 y las transferencias mensuales responden a preguntas distintas; no se suman entre sí. Buenos Aires agrega el primer semestre de 2026 según el informe provincial. El ranking común conserva marzo de 2026.</p>
+<p>El informe tiene tres páginas para cada provincia. Cada bloque indica su período. El cierre anual, la ejecución de 2026 y las transferencias mensuales responden a preguntas distintas; no se suman entre sí. Buenos Aires agrega el primer semestre de 2026 según el informe provincial. El ranking y el cierre de doce meses llegan a junio de 2026. La ejecución DNAP enero-junio incluye adecuaciones metodológicas y se distingue del informe provincial.</p>
 <h2>Cuentas y gasto</h2><p>Se utiliza la Administración Pública no Financiera (APNF), que incluye seguridad social. Los ingresos se registran cuando se perciben y los gastos cuando se devengan. El resultado primario excluye intereses; el financiero los incluye. Ninguno acredita por sí solo caja disponible.</p>
 <p>La Pampa no tiene cierre 2025 completo. Santiago del Estero informa compromiso en vez de devengado. Por eso el agregado comparable de gasto de capital incluye 22 jurisdicciones. Es la suma de su gasto de capital dividida por la suma de su gasto total. No mide eficiencia y las responsabilidades provinciales pueden diferir.</p>
 <h2>Pesos e inflación</h2><p>Los montos fiscales se muestran en pesos corrientes de cada período. Para medir la variación real de las transferencias, cada mes se lleva a precios de una misma fecha con el IPC nacional observado; después se suman los mismos meses de ambos años. Si falta un mes o un índice, no se completa con cero ni con un supuesto.</p>

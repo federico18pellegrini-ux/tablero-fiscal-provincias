@@ -6,7 +6,7 @@ function readingPeriod(value){
 }
 function buildProfileReadings(profile,c={}){
  const role=normalizeReadingProfile(profile),choose=(g,m,p)=>({governor:g,hacienda:m,press:p}[role]);
- const {province='La provincia',rf=null,rp=null,debt=null,period='últimos 12 meses al 31/03/2026'}=c;
+ const {province='La provincia',rf=null,rp=null,debt=null,period='últimos 12 meses al 30/06/2026'}=c;
  const n=v=>v.toLocaleString('es-AR',{maximumFractionDigits:2});
  const financial=Number.isFinite(rf)?`${province}: resultado financiero de ${n(rf)}% de los ingresos (${period}).`:`${province}: falta un resultado financiero comparable para ${period}.`;
  const debtFact=Number.isFinite(debt)?`Por cada $100 de ingresos anuales, la deuda equivale a $${n(debt)}. Ese total se devuelve a lo largo del tiempo.`:'Falta el dato para comparar la deuda total con los ingresos de un año.';
@@ -103,17 +103,17 @@ function renderProfileReadings(){
  const cross={...(crossFiscal?.[currentProvince]||{}),...(latestFiscalRanking?.[currentProvince]||{})};
  const q=dashboardPeriod==='quarter'?latestFiscalDetails?.quarters?.[currentProvince]:null;
  const rf=toN(q?q.financial_pct:cross.resultado_financiero_ltm_pct),rp=toN(q?q.primary_pct:cross.resultado_primario_ltm_pct);
- const debt=toN(currentProvince==='Buenos Aires'?(pbaDebtProfile?.latest_official_stock||pbaDebtProfile?.latest_stock)?.debt_to_ltm_income_pct:cross.deuda_total_sobre_ingresos_pct);
+ const debt=toN(cross.deuda_total_sobre_ingresos_pct);
  const kicker=document.querySelector('.gov-kicker');if(kicker)kicker.textContent=PROFILE_CONFIG[dashboardProfile].label;
  const headline=document.getElementById('governorRoomTitle');if(headline){headline.textContent=currentProvince+': '+(rf===null?'resultado fiscal sin dato comparable':rf<0?'las cuentas cierran con déficit':rf>0?'las cuentas cierran con superávit':'las cuentas cierran en equilibrio');headline.dataset.tone=rf===null?'neutral':rf<0?'negative':rf>0?'positive':'neutral';}
  const debtRank=toN(latestFiscalRanking?.[currentProvince]?.rank_deuda_total),debtTotal=Object.values(latestFiscalRanking||{}).filter(row=>toN(row.rank_deuda_total)!==null).length;
- const status=document.getElementById('governorStatus');if(status){status.textContent=rf===null?'Resultado comparable pendiente':q?'Resultado de enero–marzo de 2026':'Resultado de los últimos 12 meses al 31/03/2026';status.className='gov-status';}
+ const status=document.getElementById('governorStatus');if(status){status.textContent=rf===null?'Resultado comparable pendiente':q?'Resultado de abril–junio de 2026':'Resultado de los últimos 12 meses al 30/06/2026';status.className='gov-status';}
  const debtData=typeof provincialServicesData!=='undefined'?provincialServicesData:null;
  const projection=debtData?.projections?.[currentProvince];
  const debtScheduleStatus=debtData?(projection?'verified':'missing'):'loading';
  const mapPeriod=document.getElementById('mapPeriod')?.value,mapMetric=document.getElementById('mapMetric')?.value;
  const context={schedulePartial:currentProvince==='Buenos Aires'&&!!pbaDebtProfile?.latest_official_stock,province:currentProvince,rf,rp,debt,projection,debtScheduleStatus,
-  period:q?'enero–marzo 2026':'últimos 12 meses al 31/03/2026',
+  period:q?'abril–junio 2026':'últimos 12 meses al 30/06/2026',
   autonomy:toN(cross.autonomia_fiscal_pct),priceMode:displayMode,
   rank:isPartialStructural(cross)?null:toN(cross.ranking_general),rankTotal:structuralUniverseCount(),
   claim:NationClaims.summaryModel(reclamosNacionData,currentProvince),
