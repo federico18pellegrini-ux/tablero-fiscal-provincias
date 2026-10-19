@@ -61,7 +61,7 @@ test('all ranking indicators explain their colors and missing data never becomes
 });
 
 test('budget rankings compare one exercise and type without silently mixing cutoff dates',()=>{
-  for(const [basis,count] of [['junio',80],['vigente',96],['original',22]]){
+  for(const [basis,count] of [['junio',79],['vigente',96],['original',23]]){
     const meta=rankingMetric(metric('presupuesto-total'),basis),ranked=rankMunicipalities(rows,meta);
     assert.equal(ranked.length,count);
     for(const [i,r] of ranked.entries()){
@@ -210,7 +210,7 @@ test('all fiscal observations retain primary documents, page locations and conte
   const audit=JSON.parse(fs.readFileSync(new URL('../municipios/data/fiscal_verified.json',import.meta.url)));
   assert.equal(audit.records.length,84);
   assert.deepEqual(audit.records.map(r=>r.id).sort(),rows.filter(m=>m.fiscal).map(m=>m.id).sort());
-  assert.equal(audit.otherPeriods.length,40);
+  assert.equal(audit.otherPeriods.length,49);
   for(const r of [...audit.records,...audit.budgetExecutions,...audit.otherPeriods]){
     assert.match(r.landingUrl,/^https?:\/\//);
     assert.ok(r.documents.length>0);
@@ -250,7 +250,7 @@ test('other periods stay visible and downloadable without entering June rankings
   assert.equal(lp.fiscalOther.fin,'2026-03-31');
   assert.equal(metricValue(lp,metric('deficit')),null);
   assert.equal(b.fiscal.fin,'2026-06-30');
-  assert.equal(b.fiscalOther.fin,'2026-08-31');
+  assert.equal(b.fiscalOther.fin,'2026-09-30');
   assert.notEqual(b.fiscal.resultado_financiero,b.fiscalOther.resultado_financiero);
   assert.equal(metricValue(b,metric('resultado-pesos')),b.fiscal.resultado_financiero);
   assert.equal(fiscalExportRows(lp).length,8);

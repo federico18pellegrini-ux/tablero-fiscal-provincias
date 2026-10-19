@@ -1,32 +1,30 @@
 [
   {
     "dataset": "ipc_observado",
-    "rows": 117,
+    "rows": 118,
     "unit": "IPC diciembre 2016=100",
     "scope": "IPC nacional, nivel general",
     "method": "Solo observaciones publicadas por INDEC. Monto real mensual = nominal × IPC agosto 2026 / IPC mes. No se deflactan meses futuros.",
     "status": "listo_para_integrar",
     "sources": [
       {
-        "file": "ipc-original.xls",
-        "url": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_09_26.xls",
-        "resolved_url": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_09_26.xls",
-        "retrieved_at": "2026-09-18T00:10:47.623342+00:00",
-        "bytes": 2380800,
-        "sha256": "f57bf8516dd7e88c733d20d39941590e160f3825a4fe8f660fc6cd3d1c79197c",
-        "content_type": "application/vnd.ms-excel",
-        "member": null,
-        "normalized_from_sha256": "f57bf8516dd7e88c733d20d39941590e160f3825a4fe8f660fc6cd3d1c79197c"
+        "file": "ipc-septiembre-2026.csv",
+        "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+        "path": "data/ipc-sources/2026-09-divisiones.csv",
+        "retrieved_at": "2026-10-19",
+        "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
+        "bytes": 1242105,
+        "content_type": "text/csv"
       }
     ],
     "files": {
       "csv": {
         "path": "data/gestion/ipc_observado.csv",
-        "sha256": "cc6d84e4ec48f8bd6ba6ff5d175f6b2bd77ded4ff77358c987a0ebafe12d52e1"
+        "sha256": "ba295bbbcaedbd4445c714a6c6f9e3e15efcf7b1779c450bea8ad88f0d484b2e"
       },
       "json": {
         "path": "data/gestion/ipc_observado.json",
-        "sha256": "1da974c9a84123944529e6a1a1d039be52442a44e4df4e6f49fe1b6ca3a33b1a"
+        "sha256": "b3aab3e7248f54f499ead1b06d80d7d4b0c4e9a02efe6edffea146d6ec86bddd"
       }
     }
   },
@@ -281,7 +279,7 @@
     "rows": 638,
     "unit": "ARS millones corrientes y constantes de agosto 2026",
     "scope": "Administración Nacional",
-    "method": "Octubre 2026 parcial hasta el día 4, sin deflactor observado. Solo se suman flujos; no se suman créditos mensuales repetidos.",
+    "method": "Octubre 2026 parcial al corte informado, sin deflactor observado. Solo se suman flujos; no se suman créditos mensuales repetidos.",
     "status": "listo_para_integrar",
     "sources": [
       {
@@ -316,16 +314,26 @@
         "sha256": "f57bf8516dd7e88c733d20d39941590e160f3825a4fe8f660fc6cd3d1c79197c",
         "content_type": "application/vnd.ms-excel",
         "member": null
+      },
+      {
+        "file": "ipc-septiembre-2026.csv",
+        "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+        "path": "data/ipc-sources/2026-09-divisiones.csv",
+        "retrieved_at": "2026-10-19",
+        "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
+        "bytes": 1242105,
+        "content_type": "text/csv",
+        "member": null
       }
     ],
     "files": {
       "csv": {
         "path": "data/gestion/gasto_mensual_funcion.csv",
-        "sha256": "bb82bab040510af321b742176515282ee48b999406b07112f0a9cd1e7a4c10b1"
+        "sha256": "0cf6cc77af9b58145a32de9106a24dbce2fb0793fd0150451891ca7e46d791a8"
       },
       "json": {
         "path": "data/gestion/gasto_mensual_funcion.json",
-        "sha256": "9cb18a6cee4970dff39428acb592e8017e05d79caed23e9019441f5c9db7ac6d"
+        "sha256": "6c93bfa2e8c7a9c67211d6151add4c9efe4358aa904271ea159377dd719a3bf7"
       }
     }
   },
@@ -368,6 +376,16 @@
         "bytes": 2380800,
         "sha256": "f57bf8516dd7e88c733d20d39941590e160f3825a4fe8f660fc6cd3d1c79197c",
         "content_type": "application/vnd.ms-excel",
+        "member": null
+      },
+      {
+        "file": "ipc-septiembre-2026.csv",
+        "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+        "path": "data/ipc-sources/2026-09-divisiones.csv",
+        "retrieved_at": "2026-10-19",
+        "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
+        "bytes": 1242105,
+        "content_type": "text/csv",
         "member": null
       }
     ],
@@ -422,6 +440,16 @@
         "sha256": "f57bf8516dd7e88c733d20d39941590e160f3825a4fe8f660fc6cd3d1c79197c",
         "content_type": "application/vnd.ms-excel",
         "member": null
+      },
+      {
+        "file": "ipc-septiembre-2026.csv",
+        "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+        "path": "data/ipc-sources/2026-09-divisiones.csv",
+        "retrieved_at": "2026-10-19",
+        "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
+        "bytes": 1242105,
+        "content_type": "text/csv",
+        "member": null
       }
     ],
     "files": {
@@ -475,16 +503,26 @@
         "sha256": "f57bf8516dd7e88c733d20d39941590e160f3825a4fe8f660fc6cd3d1c79197c",
         "content_type": "application/vnd.ms-excel",
         "member": null
+      },
+      {
+        "file": "ipc-septiembre-2026.csv",
+        "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+        "path": "data/ipc-sources/2026-09-divisiones.csv",
+        "retrieved_at": "2026-10-19",
+        "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
+        "bytes": 1242105,
+        "content_type": "text/csv",
+        "member": null
       }
     ],
     "files": {
       "csv": {
         "path": "data/gestion/transferencias_presupuestarias_provincias.csv",
-        "sha256": "44610395607260e5281bd3c51661785062470b99011ebad1a8744eed691cc1c1"
+        "sha256": "2c691ad71fdd1234114e350cc564524fc68d375446a86d239795f5b5d570f21e"
       },
       "json": {
         "path": "data/gestion/transferencias_presupuestarias_provincias.json",
-        "sha256": "52225de6e1fb0cbce59a02599768e4e7de225de1a48330b9261feec7254f0fba"
+        "sha256": "85d1bcaee223eef3b096b037410c2f4de66947de2ce03b5d15c2e681620e8f40"
       }
     }
   },
@@ -560,16 +598,26 @@
         "sha256": "f57bf8516dd7e88c733d20d39941590e160f3825a4fe8f660fc6cd3d1c79197c",
         "content_type": "application/vnd.ms-excel",
         "member": null
+      },
+      {
+        "file": "ipc-septiembre-2026.csv",
+        "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+        "path": "data/ipc-sources/2026-09-divisiones.csv",
+        "retrieved_at": "2026-10-19",
+        "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
+        "bytes": 1242105,
+        "content_type": "text/csv",
+        "member": null
       }
     ],
     "files": {
       "csv": {
         "path": "data/gestion/recursos_mensuales_tipo.csv",
-        "sha256": "e35f944bbc7ebab5b0c697ae31fcbe51f4a72276902be55c633baef1dd5efe8a"
+        "sha256": "17fa819689223fb929b55694ed121cb8c4809a8286b2deec6a6025881a62aeb4"
       },
       "json": {
         "path": "data/gestion/recursos_mensuales_tipo.json",
-        "sha256": "07017c36c0b485a50d419bac708ca32e387c20ce92bf703813209c6b604138bc"
+        "sha256": "1eb8793443905a89d56b8997b4c20d553528c7e7b1e1bd11f1a4181924a7d1d0"
       }
     }
   },

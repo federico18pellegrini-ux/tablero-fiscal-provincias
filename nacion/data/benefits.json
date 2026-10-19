@@ -5,12 +5,12 @@
     "publisher": "Secretaría de Trabajo, Empleo y Seguridad Social · IMSS",
     "source": "https://www.argentina.gob.ar/trabajo/seguridadsocial/imss",
     "latest_nominal": "2026-09",
-    "latest_real": "2026-08",
+    "latest_real": "2026-09",
     "missing_months": [
       "2024-01",
       "2024-02"
     ],
-    "ipc_sha256": "1da974c9a84123944529e6a1a1d039be52442a44e4df4e6f49fe1b6ca3a33b1a",
+    "ipc_sha256": "b3aab3e7248f54f499ead1b06d80d7d4b0c4e9a02efe6edffea146d6ec86bddd",
     "method": "Variación real = (monto final / monto inicial) / (IPC final / IPC inicial) - 1. IPC nacional observado. No se usa inflación proyectada en las prestaciones.",
     "scope": "Mínima con bono completo para quien cumple el tope. AUH general: derecho mensual al 100%, no depósito neto ni adicional por zona. No incluye aguinaldo.",
     "corrections": [
@@ -329,7 +329,7 @@
       "bonus": 70000,
       "minimum_bonus": 498633,
       "auh": 154031,
-      "ipc": null,
+      "ipc": 12514.1508,
       "source": "https://www.argentina.gob.ar/sites/default/files/202609_indicadores_monetarios_de_seguridad_social.pdf"
     }
   ]

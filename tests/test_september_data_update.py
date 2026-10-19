@@ -24,7 +24,7 @@ class SeptemberDataUpdate(unittest.TestCase):
         self.assertAlmostEqual(result['nominal_millones'],result['real_agosto2026'],places=4)
 
     def test_municipal_stocks_keep_leasing_separate_and_future_profile_partial(self):
-        municipalities={'06042':{},'06693':{}}
+        municipalities={r['id']:{} for r in json.loads((ROOT/'municipios/data/public_debt_verified.json').read_text(encoding='utf8'))['records']}
         apply_public_debt(municipalities,ROOT/'municipios/data/public_debt_verified.json')
         roque=municipalities['06693']['publicDebt']
         self.assertAlmostEqual(roque['consolidated']+roque['floating'],473299043.79,places=2)

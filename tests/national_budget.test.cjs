@@ -90,7 +90,7 @@ test('legacy deep links resolve to a visible view and unknown anchors safely ope
 });
 test('overview contrasts nominal and real changes against the selected base while keeping execution fixed',()=>{
   const current=M.budgetOverview(D.total,'current',D.deflator.annual_factors),closing=M.budgetOverview(D.total,'closing',D.deflator.annual_factors);
-  near(current.nominalChange,32.547,.001);near(current.realChange,10.001,.01);
+  near(current.nominalChange,32.547,.001);near(current.realChange,10.0829315018,.000001);
   assert.ok(closing.realChange<current.realChange);near(current.execution,closing.execution);
   const fall=M.budgetOverview({project:110,current:100,accrued:50},'current',{'2026':1,'2027':.8});
   assert.ok(fall.nominalChange>0);assert.ok(fall.realChange<0);assert.equal(fall.execution,50);

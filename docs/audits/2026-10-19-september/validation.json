@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-19",
+  "python_tests": 171,
+  "javascript_tests": 151,
+  "validators": 11,
+  "municipal_candidates_reviewed": 18,
+  "municipalities_with_verified_updates": 16,
+  "new_fiscal_periods": 11,
+  "fiscal_ranking_period": "2026-01-01/2026-06-30",
+  "fiscal_coverage": {
+    "first_semester": 84,
+    "other_only": 35,
+    "missing": 16
+  },
+  "visual_sample": [
+    "Giles brief PDF page 1",
+    "Las Heras PDF treasury page 8",
+    "Alberti PDF debt page 7",
+    "National real/current PDF page 1"
+  ],
+  "browser_sample": {
+    "municipality": "Giles, Las Heras, Alberti",
+    "mobile_width": 390,
+    "tablet_width": 820,
+    "horizontal_overflow": false
+  },
+  "scope": "Manual review of the 18 candidates and national September CPI. This is not a reconciliation of every historical observation."
+}

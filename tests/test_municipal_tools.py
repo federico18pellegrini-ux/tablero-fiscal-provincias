@@ -28,7 +28,7 @@ class MunicipalTools(unittest.TestCase):
             for s in m['sectors']:
                 if s['jobs'] is None:self.assertIn(s['name'],text)
             if m['crecimiento_poblacion_2010_2022_pct'] is None:self.assertIn('límites territoriales',text)
-        self.assertIn('2026-08-31',next(r for r in self.coverage['municipalities'] if r['id']=='06112')['latestFiscalEnd'])
+        self.assertIn('2026-09-30',next(r for r in self.coverage['municipalities'] if r['id']=='06112')['latestFiscalEnd'])
 
     def test_checked_in_outputs_are_current(self):
         for p,expected in outputs().items():
@@ -40,7 +40,7 @@ class MunicipalTools(unittest.TestCase):
             self.assertTrue({'Caja libre', 'Calendario futuro de deuda', 'Flujos fiscales mensuales'} <= topics)
         topics = {r['topic']: r['available'] for r in self.coverage['topics']}
         self.assertEqual(topics['Presupuesto vigente 2026'], 96)
-        self.assertEqual(topics['Presupuesto original 2026'], 22)
+        self.assertEqual(topics['Presupuesto original 2026'], 23)
         self.assertEqual(topics['Saldo de tesorería'], 2)
         self.assertEqual(topics['Caja libre'], 0)
 

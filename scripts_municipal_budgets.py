@@ -58,7 +58,7 @@ def apply_annual_budgets(municipalities, path):
         m['annualBudget'] = {**record, **{k: float(v) if v is not None else None for k, v in amounts.items()},
                              'amount': float(amounts[chosen]), 'basis': chosen,
                              'perCapita': float(amounts[chosen] / Decimal(str(population))),
-                             'historical': budget_year < year, 'verifiedAt': audit['verifiedAt'],
+                             'historical': budget_year < year, 'verifiedAt': record.get('verifiedAt', audit['verifiedAt']),
                              'components': [{'label': p['label'], 'amount': float(p['amount'])} for p in parts]}
         # Keep the detailed accounts and the new summary on the same ceiling.
         detail = m.get('management', {}).get('budget') if m.get('management') else None
@@ -67,7 +67,7 @@ def apply_annual_budgets(municipalities, path):
     pending = [r['id'] for r in audit['pending']]
     if len(set(pending)) != len(pending) or set(pending) & seen or seen | set(pending) != set(municipalities):
         raise ValueError('Annual budget coverage must identify every municipality exactly once')
-    coverage = {'targetYear': year, 'verifiedAt': audit['verifiedAt'], 'available': len(seen),
+    coverage = {'targetYear': year, 'verifiedAt': record.get('verifiedAt', audit['verifiedAt']), 'available': len(seen),
                 'currentYear': sum(r['year'] == year for r in audit['records']),
                 'historical': sum(r['year'] < year for r in audit['records']), 'pending': len(pending)}
     return audit, coverage

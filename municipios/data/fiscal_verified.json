@@ -3407,38 +3407,6 @@
       "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
     },
     {
-      "id": "06112",
-      "inicio": "2026-01-01",
-      "fin": "2026-08-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/regimen_provincial_fiscal_municipal.html",
-      "amounts": {
-        "ingresos_corrientes": "28124752418.13",
-        "gastos_corrientes": "28102173124.21",
-        "ingresos_capital": "2193153402.48",
-        "gastos_capital": "1590810520.58",
-        "ingresos_totales": "30317905820.61",
-        "gastos_totales": "29692983644.79",
-        "resultado_financiero": "624922175.82",
-        "personal_devengado": "18370303611.89"
-      },
-      "documents": [
-        {
-          "url": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/informacion_economica/SITUACION-ECONOMICO-FINANCIERA-2026.pdf",
-          "sha256": "890380541fc70d1c458e5cc7ba1169ddaf353f67e3f4da38149925829bc41fbc",
-          "pages": 9,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 374682
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo.",
-      "verifiedAt": "2026-09-07"
-    },
-    {
       "id": "06119",
       "inicio": "2026-01-02",
       "fin": "2026-03-31",
@@ -4447,38 +4415,6 @@
       "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
     },
     {
-      "id": "06784",
-      "inicio": "2025-01-02",
-      "fin": "2025-12-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://suipacha.gob.ar/transparencia/",
-      "amounts": {
-        "ingresos_corrientes": "10029935299.99",
-        "gastos_corrientes": "10099156268.45",
-        "ingresos_capital": "12337996.20",
-        "ingresos_totales": "10042273296.19",
-        "gastos_totales": "10444342310.35",
-        "resultado_financiero": "-402069014.16",
-        "gastos_capital": "345186041.90",
-        "personal_devengado": "5667573031.80"
-      },
-      "documents": [
-        {
-          "url": "https://suipacha.gob.ar/wp-content/uploads/2026/04/Situacion-Economica-Financiera-2025.pdf",
-          "sha256": "6472b495689976076e9d999bf8099d6e6ac08e4609ed52327b4047ac9fdf35c6",
-          "pages": 2,
-          "consultedPages": [
-            1
-          ],
-          "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
-          "bytes": 89287
-        }
-      ],
-      "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre.",
-      "verifiedAt": "2026-09-07"
-    },
-    {
       "id": "06819",
       "inicio": "2025-01-02",
       "fin": "2025-12-31",
@@ -4576,6 +4512,368 @@
       ],
       "verifiedAt": "2026-10-19",
       "note": "CAIF enero–septiembre conciliada al centavo. Se conserva enero–junio en el ranking común. Personal sin apertura en este documento."
+    },
+    {
+      "id": "06077",
+      "inicio": "2026-01-02",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://arrecifes.gob.ar/2026-2/rendicion-de-cuentas/",
+      "amounts": {
+        "ingresos_corrientes": "19771049685.31",
+        "gastos_corrientes": "18291259114.08",
+        "ingresos_capital": "135002695.82",
+        "gastos_capital": "657763478.07",
+        "ingresos_totales": "19906052381.13",
+        "gastos_totales": "18949022592.15",
+        "resultado_financiero": "957029788.98",
+        "personal_devengado": "10582870002.94"
+      },
+      "documents": [
+        {
+          "url": "https://arrecifes.gob.ar/wp-content/uploads/2026/10/Situacion-Economico-Financiera-del-02-01-26-al-30-09-26.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06077.pdf",
+          "sha256": "1f1cdf248cd3cd5fc1477b312e260e3cad182103cf52812cad6a6a7a61ec5b8c",
+          "bytes": 337051,
+          "pages": 6,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06105",
+      "inicio": "2026-01-02",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://www.bolivar.gob.ar/transparencia-fiscal/",
+      "amounts": {
+        "ingresos_corrientes": "39958292227.12",
+        "gastos_corrientes": "37669521634.63",
+        "ingresos_capital": "345268817.70",
+        "gastos_capital": "1145230279.77",
+        "ingresos_totales": "40303561044.82",
+        "gastos_totales": "38814751914.40",
+        "resultado_financiero": "1488809130.42",
+        "personal_devengado": "25588068838.20"
+      },
+      "documents": [
+        {
+          "url": "https://www.bolivar.gob.ar/archivos/2026-3er-trimestre-sit-economica.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06105.pdf",
+          "sha256": "f38f207b59a38bc1896387aeca3f9e6f1aa4186e06dcb2fc50cb5a2378f1b4cf",
+          "bytes": 105687,
+          "pages": 7,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06112",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/regimen_provincial_fiscal_municipal.html",
+      "amounts": {
+        "ingresos_corrientes": "32037304371.45",
+        "gastos_corrientes": "32187148004.19",
+        "ingresos_capital": "2609052301.45",
+        "gastos_capital": "1905579633.80",
+        "ingresos_totales": "34646356672.90",
+        "gastos_totales": "34092727637.99",
+        "resultado_financiero": "553629034.91"
+      },
+      "documents": [
+        {
+          "url": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/planillas_2026/3er_trimestre/3- CAIF (Cuenta de Ahorro Inversion Financiera) - (Planilla A) - 3er.TRIMESTRE.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06112.pdf",
+          "sha256": "b7bbe1cae5b9bb51a1b6007342394b0dd5480ebe9bc26e0fef0ca5304ade2337",
+          "bytes": 392277,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06196",
+      "inicio": "2026-01-02",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://www.ciudadabierta.coronelpringles.gov.ar/transparencia/siteconomicafinanciera/situacioneconomica.php",
+      "amounts": {
+        "ingresos_corrientes": "30345978763.73",
+        "gastos_corrientes": "27588612230.11",
+        "ingresos_capital": "1236635522.21",
+        "gastos_capital": "4377027460.61",
+        "ingresos_totales": "31582614285.94",
+        "gastos_totales": "31965639690.72",
+        "resultado_financiero": "-383025404.78",
+        "personal_devengado": "16095007894.90"
+      },
+      "documents": [
+        {
+          "url": "https://www.ciudadabierta.coronelpringles.gov.ar/transparencia/siteconomicafinanciera/2026/Situación Económico-Financiera al 30-09-26.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06196.pdf",
+          "sha256": "005e444a642059255e47f0c6e22cbb3faef9810c711e53c6fdb8cd9a3ad5b353",
+          "bytes": 342649,
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06476",
+      "inicio": "2026-01-02",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://www.loberia.gov.ar/?q=reportes-economicos",
+      "amounts": {
+        "ingresos_corrientes": "25151121550.37",
+        "gastos_corrientes": "23994744038.15",
+        "ingresos_capital": "276645431.19",
+        "gastos_capital": "1341884735.93",
+        "ingresos_totales": "25427766981.56",
+        "gastos_totales": "25336628774.08",
+        "resultado_financiero": "91138207.48"
+      },
+      "documents": [
+        {
+          "url": "https://www.loberia.gov.ar/sites/default/files/cuenta_ahorro_inversion_financiamiento_de_ejecucion_presupuestaria_al_30-09-2026_firmado.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06476.pdf",
+          "sha256": "9dc9f60b39357f58b9922e07fa1393ada0c01d9fde2629ed2188da1a2c4086cf",
+          "bytes": 741351,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06581",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://necochea.gov.ar/transparencia/",
+      "amounts": {
+        "ingresos_corrientes": "72242640263.48",
+        "gastos_corrientes": "66041640985.39",
+        "ingresos_capital": "1510875595.69",
+        "gastos_capital": "531466889.34",
+        "ingresos_totales": "73753515859.17",
+        "gastos_totales": "66573107874.73",
+        "resultado_financiero": "7180407984.44",
+        "personal_devengado": "40954725565.38"
+      },
+      "documents": [
+        {
+          "url": "https://necochea.gov.ar/descargas/transparencia/economica/2026/Planilla%20F%20-%20Situacion%20Economico-Financiera%20Trimiestre%20III%20-%202026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06581.pdf",
+          "sha256": "4f20f6eccff8a40748caa41894728a3ccfd2781ca1a5b60c684bb621d73e3a11",
+          "bytes": 344792,
+          "pages": 9,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06638",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://pilar.gov.ar/publicaciones/",
+      "amounts": {
+        "ingresos_corrientes": "381712833307.37",
+        "gastos_corrientes": "280684386217.42",
+        "ingresos_capital": "9129690724.60",
+        "gastos_capital": "26980749754.21",
+        "ingresos_totales": "390842524031.97",
+        "gastos_totales": "307665135971.63",
+        "resultado_financiero": "83177388060.34"
+      },
+      "documents": [
+        {
+          "url": "https://pilar.gov.ar/wp-content/uploads/2026/10/CAIF-3ER-TRIM-2026-Base-Devengado-1.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06638.pdf",
+          "sha256": "6fac00fe46cf073a5da996e28f30a4f8abbb207db7b6ad4f5c208391cf866705",
+          "bytes": 49956,
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06714",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://salto.gob.ar/responsabilidad-fiscal/",
+      "amounts": {
+        "ingresos_corrientes": "24095919907.13",
+        "gastos_corrientes": "24273107380.64",
+        "ingresos_capital": "425143030.39",
+        "gastos_capital": "1033369162.42",
+        "ingresos_totales": "24521062937.52",
+        "gastos_totales": "25306476543.06",
+        "resultado_financiero": "-785413605.54",
+        "personal_devengado": "15379375235.83"
+      },
+      "documents": [
+        {
+          "url": "https://salto.gob.ar/wp-content/uploads/2026/10/Estado-Situacion-Patrimonial-al-30-09-2026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06714.pdf",
+          "sha256": "25f20c2f0da7fc03c6e0988813a63d019e03ed98e0439a86c3db70a440c211b3",
+          "bytes": 94841,
+          "pages": 3,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06742",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://www.hcdsancayetano.gob.ar/situacion-economica-financiera.php",
+      "amounts": {
+        "ingresos_corrientes": "15266485377.75",
+        "gastos_corrientes": "14675275070.27",
+        "ingresos_capital": "584977257.19",
+        "gastos_capital": "1195483896.38",
+        "ingresos_totales": "15851462634.94",
+        "gastos_totales": "15870758966.65",
+        "resultado_financiero": "-19296331.71",
+        "personal_devengado": "9957603629.74"
+      },
+      "documents": [
+        {
+          "url": "https://www.hcdsancayetano.gob.ar/economia/economia/Periodo-2026/Setiembre/PlanillaF_Situacion economico financiera al 30-09-2026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06742.pdf",
+          "sha256": "3e4ef50ce11f37a9632c640feb2ce185429eb8b2e4af87ba75321c65f5c42144",
+          "bytes": 81251,
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06784",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en la CAIF municipal publicada; no se agregan entes separados.",
+      "landingUrl": "https://suipacha.gob.ar/transparencia/",
+      "amounts": {
+        "ingresos_corrientes": "9926937116.36",
+        "gastos_corrientes": "8571435459.21",
+        "ingresos_capital": "57900774.46",
+        "gastos_capital": "631474145.21",
+        "ingresos_totales": "9984837890.82",
+        "gastos_totales": "9202909604.42",
+        "resultado_financiero": "781928286.40",
+        "personal_devengado": "5277859769.90"
+      },
+      "documents": [
+        {
+          "url": "https://suipacha.gob.ar/wp-content/uploads/2026/07/SITUACION-ECONOMICO-FINANCIERA-AL-30-09-26.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06784.pdf",
+          "sha256": "f4a7b8419d42628a1df58c78b01917f9eadce2b25bd2d730b99d013302fed7f2",
+          "bytes": 302424,
+          "pages": 4,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Cuenta Ahorro Inversión Financiamiento; ingresos corrientes y de capital, gastos corrientes y de capital, totales y resultado. Flujos financieros excluidos."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cierre acumulado a septiembre. El ranking común conserva el semestre. Ingresos percibidos y gastos fiscales devengados; no incluye fuentes ni aplicaciones financieras."
+    },
+    {
+      "id": "06728",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Municipalidad y Concejo según CAIF publicada.",
+      "landingUrl": "https://www.sanandresdegiles.gob.ar/?q=situacion-economica-financiera",
+      "amounts": {
+        "ingresos_corrientes": "19990019521.22",
+        "gastos_corrientes": "20502668394.43",
+        "ingresos_capital": "191578901.25",
+        "gastos_capital": "414847663.31",
+        "ingresos_totales": "20181598422.47",
+        "gastos_totales": "20917516057.74",
+        "resultado_financiero": "-735917635.27",
+        "personal_devengado": "15157602765.34"
+      },
+      "verifiedAt": "2026-10-19",
+      "documents": [
+        {
+          "url": "https://www.sanandresdegiles.gob.ar/sites/default/files/bootstrap/05-sitecofciera-30-09-2026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-september/06728.pdf",
+          "sha256": "2f0167335d5b24f944b72c48f75561976148fc4cd51c2612ba0469a5527da380",
+          "bytes": 69186,
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, CAIF. Lectura visual ampliada por codificación de fuentes ilegible; ingresos, gastos y resultado conciliados al centavo."
+        }
+      ],
+      "note": "Acumulado enero–septiembre; se conserva junio para el ranking comparable."
     }
   ],
   "updatedAt": "2026-10-19"

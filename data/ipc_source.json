@@ -1,9 +1,13 @@
 {
   "source": "INDEC, IPC nacional, nivel general, diciembre 2016=100",
-  "url": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_09_26.xls",
-  "sheet": "Índices IPC Cobertura Nacional",
-  "latest_period": "2026-08",
-  "retrieved": "2026-09-15",
+  "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+  "latest_period": "2026-09",
+  "retrieved": "2026-10-19",
   "constant_price_base": "2026-06",
-  "method": "Factor = índice junio 2026 / índice del mes. Se utilizan índices publicados, no se encadenan tasas mensuales redondeadas. Los flujos anuales sin apertura mensual no se deflactan con el índice de diciembre."
+  "method": "Factor = índice junio 2026 / índice del mes. Se utilizan índices publicados, no se encadenan tasas mensuales redondeadas. Los flujos anuales sin apertura mensual no se deflactan con el índice de diciembre.",
+  "archive": "data/ipc-sources/2026-09-divisiones.csv",
+  "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
+  "filter": "Codigo=0; Region=Nacional; Periodo=202609",
+  "previousObservationsUnchanged": true,
+  "precisionNote": "Se conservan índices históricos XLS de mayor precisión. El CSV redondea ocho meses de 2024 a tres decimales; diferencia máxima 0,0005 puntos de índice."
 }

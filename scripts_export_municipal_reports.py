@@ -96,7 +96,7 @@ def source_catalog():
         'nbi':source_link(find('nbi-catalog-1.xlsx'),'INDEC / DPE, NBI 2022'),
         'pbg':source_link(find('pbg-data.xlsx'),'DPE Buenos Aires, producto municipal 2021-2023'),
         'oede':source_link('https://www.argentina.gob.ar/sites/default/files/departamento_serie_empleo_remuneraciones_3.xlsx','OEDE / SIPA, empleo privado y remuneraciones 2019-2025'),
-        'ipc':source_link('https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_08_26.xls','INDEC, IPC nacional, julio de 2026'),
+        'ipc':source_link('https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv','INDEC, IPC nacional; base julio de 2026'),
         'transfers':source_link('https://www.gba.gob.ar/node/11822','Ministerio de Economía PBA, transferencias municipales 2025-2026'),
         'banks':'DPE / BCRA, 2023-2024: '+source_link(find('bancos-1.xlsx'),'préstamos')+', '+source_link(find('bancos-2.xlsx'),'depósitos')+' y '+source_link(find('bancos-0.xlsx'),'sucursales'),
         'credit':source_link('https://mapadeladeuda.ar/','CEC / FES, Mapa de la Deuda, sobre Central de Deudores del BCRA, julio de 2026'),
@@ -352,7 +352,7 @@ class Report:
     def public_debt(self):
         d=self.m.get('publicDebt')
         if not d:return
-        self.section('La deuda del municipio',sources=source_link(d['documents'][0]['url'],'Planilla C, al 30/06/2026'))
+        self.section('La deuda del municipio',sources=source_link(d['documents'][0]['url'],'Planilla C, al '+date(d['date'])))
         self.p('Millones de pesos corrientes. Obligaciones del gobierno municipal, distintas de las deudas de los vecinos.')
         self.table(['Concepto','Millones de pesos'],[(label,money(d[key],2)) for key,label in [('consolidated','Deuda consolidada'),('floating','Deuda flotante'),('leasing','Leasing, informado por separado')] if finite(d.get(key))])
         self.p(escaped(d['reading']))

@@ -63,7 +63,7 @@ def outputs():
     assert max(indices) == source['latest_period'] and data['priceBase'] in indices
     prices = {'generated': data['generated'], 'series': source['source'], 'source': source['url'],
               'sourceSha256': hashlib.sha256(raw.encode()).hexdigest(), 'latest': max(indices),
-              'bases': ['2024-12', '2025-12', data['priceBase']], 'indices': indices}
+              'bases': list(dict.fromkeys(['2024-12', '2025-12', data['priceBase'], max(indices)])), 'indices': indices}
     contents = {M/'data/deflator.json': json.dumps(prices, ensure_ascii=False, indent=2)+'\n',
                 M/'data/cobertura.json': json.dumps(cov, ensure_ascii=False, indent=2)+'\n',
                 M/'data/matriz_faltantes.csv': matrix_csv(cov)}

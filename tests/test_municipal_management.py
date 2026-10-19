@@ -55,10 +55,14 @@ class MunicipalManagement(unittest.TestCase):
     def test_treasury_components_and_liabilities_do_not_invent_free_cash(self):
         for ident in ['06329','06805']:
             t=self.rows[ident]['management']['treasury']
-            self.assertAlmostEqual(t['currentLiabilities']+t['nonCurrentLiabilities'],t['liabilities'],places=2)
+            if 'liabilities' in t:self.assertAlmostEqual(t['currentLiabilities']+t['nonCurrentLiabilities'],t['liabilities'],places=2)
             self.assertNotIn('freeCash',t)
         h=self.rows['06329']['management']['treasury']
-        self.assertAlmostEqual(h['available']+h['transitory'],h['closing'],places=2)
+        self.assertEqual(h['date'],'2026-09-30')
+        self.assertEqual(h['closing'],1971417252.27)
+        self.assertNotIn('liabilities',h) # June liabilities are not a September balance.
+        prior=self.rows['06329']['management']['treasuryHistory'][-1]
+        self.assertAlmostEqual(prior['available']+prior['transitory'],prior['closing'],places=2)
         t=self.rows['06805']['management']['treasury']
         self.assertEqual(t['date'],'2025-12-31')
         self.assertAlmostEqual(t['unearmarkedAccounts']+t['earmarkedAccounts'],t['budgetCash'],places=2)

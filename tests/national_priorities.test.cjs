@@ -45,10 +45,10 @@ test('missing and zero bases cannot manufacture percentage changes or total shar
   assert.equal(m.rows[0].delta,null);assert.equal(m.rows[1].shareAfter,null);
   assert.equal(M.ranked(m.rows).at(-1).id,b.functions[0].id);
 });
-test('benefits preserve nominal September without inventing observed September inflation',()=>{
-  assert.equal(H.rows.length,32);assert.equal(H.meta.latest_real,'2026-08');
-  assert.equal(H.rows.at(-1).ipc,null);
-  assert.equal(M.benefitChange(H.rows,'2025-08','2026-09','auh'),null);
+test('benefits use verified September IPC and preserve genuinely absent months',()=>{
+  assert.equal(H.rows.length,32);assert.equal(H.meta.latest_real,'2026-09');
+  assert.equal(H.rows.at(-1).ipc,12514.1508);
+  assert.ok(Number.isFinite(M.benefitChange(H.rows,'2025-08','2026-09','auh')));
   assert.equal(H.rows.find(r=>r.period==='2024-01'),undefined);
 });
 test('minimum and bonus are summed; official table typos do not enter the result',()=>{

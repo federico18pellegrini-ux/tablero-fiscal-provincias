@@ -100,7 +100,7 @@ def build_budget():
         for c in FLOWS:t[c+'_real_agosto2026']=t[c]*ANCHOR/t.periodo.map(IPC)
         transfers.append(t)
     m=pd.concat(monthly,ignore_index=True)
-    save('gasto_mensual_funcion',m,['credito-mensual-2025.csv','credito-mensual-2026.csv','ipc-original.xls'],'ARS millones corrientes y constantes de agosto 2026','Administración Nacional','Octubre 2026 parcial hasta el día 4, sin deflactor observado. Solo se suman flujos; no se suman créditos mensuales repetidos.')
+    save('gasto_mensual_funcion',m,['credito-mensual-2025.csv','credito-mensual-2026.csv','ipc-original.xls','ipc-septiembre-2026.csv'],'ARS millones corrientes y constantes de agosto 2026','Administración Nacional','Octubre 2026 parcial al corte informado, sin deflactor observado. Solo se suman flujos; no se suman créditos mensuales repetidos.')
     cmpkeys=['finalidad_id','funcion_id'];valcols=FLOWS+[c+'_real_agosto2026' for c in FLOWS]
     yearframes={y:grouped(m[(m.anio==y)&(m.impacto_presupuestario_mes<=8)],cmpkeys,valcols).set_index(cmpkeys) for y in [2025,2026]}
     cmp=yearframes[2026].join(yearframes[2025],how='outer',lsuffix='_2026',rsuffix='_2025').reset_index()
@@ -113,13 +113,13 @@ def build_budget():
         cmp[c+'_variacion_nominal_pct']=(cmp[c+'_2026']/cmp[c+'_2025']-1)*100
         cmp[c+'_variacion_real_pct']=(cmp[c+'_real_agosto2026_2026']/cmp[c+'_real_agosto2026_2025']-1)*100
     cmp['periodo_comparacion']='Enero–agosto de cada año'
-    save('gasto_comparacion_real_funcion',cmp,['credito-mensual-2025.csv','credito-mensual-2026.csv','ipc-original.xls'],'ARS millones y porcentaje','Mismas funciones presupuestarias, enero–agosto','Cada mes se deflacta por su IPC antes de acumular. Unión por finalidad y función; conserva ambos nombres. La función 5.1 agrega la aclaración intereses y gastos en 2026, sin cambiar de código.')
+    save('gasto_comparacion_real_funcion',cmp,['credito-mensual-2025.csv','credito-mensual-2026.csv','ipc-original.xls','ipc-septiembre-2026.csv'],'ARS millones y porcentaje','Mismas funciones presupuestarias, enero–agosto','Cada mes se deflacta por su IPC antes de acumular. Unión por finalidad y función; conserva ambos nombres. La función 5.1 agrega la aclaración intereses y gastos en 2026, sin cambiar de código.')
     totals=[]
     for c in FLOWS:
         x=m[(m.anio==2026)&(m.impacto_presupuestario_mes<=8)];y=m[(m.anio==2025)&(m.impacto_presupuestario_mes<=8)]
         totals.append(dict(etapa=c,nominal_2026=x[c].sum(),nominal_2025=y[c].sum(),real_2026=x[c+'_real_agosto2026'].sum(),real_2025=y[c+'_real_agosto2026'].sum(),variacion_real_pct=yoy(x[c+'_real_agosto2026'].sum(),y[c+'_real_agosto2026'].sum()),periodo='enero–agosto'))
-    save('gasto_comparacion_real_total',totals,['credito-mensual-2025.csv','credito-mensual-2026.csv','ipc-original.xls'],'ARS millones y porcentaje','Administración Nacional','Comparación enero–agosto de 2025 y 2026, precios de agosto 2026.')
-    save('transferencias_presupuestarias_provincias',pd.concat(transfers),['credito-mensual-2025.csv','credito-mensual-2026.csv','ipc-original.xls'],'ARS millones','Transferencias presupuestarias a administraciones públicas provinciales','Objeto 5.7.1 y 5.8.1. Excluye transferencias a municipios y otros destinatarios. Conserva destinos sin provincia identificada. No se las denomina discrecionales sin identificar su norma.')
+    save('gasto_comparacion_real_total',totals,['credito-mensual-2025.csv','credito-mensual-2026.csv','ipc-original.xls','ipc-septiembre-2026.csv'],'ARS millones y porcentaje','Administración Nacional','Comparación enero–agosto de 2025 y 2026, precios de agosto 2026.')
+    save('transferencias_presupuestarias_provincias',pd.concat(transfers),['credito-mensual-2025.csv','credito-mensual-2026.csv','ipc-original.xls','ipc-septiembre-2026.csv'],'ARS millones','Transferencias presupuestarias a administraciones públicas provinciales','Objeto 5.7.1 y 5.8.1. Excluye transferencias a municipios y otros destinatarios. Conserva destinos sin provincia identificada. No se las denomina discrecionales sin identificar su norma.')
     for part in [7,8]:
         x=a[(a.inciso_id==5)&(a.principal_id==part)&(a.parcial_id==1)].credito_devengado.sum()
         y=transfers[1].query('principal_id==@part').credito_devengado.sum()
@@ -138,7 +138,7 @@ def build_revenue():
         g['periodo']=g.impacto_presupuestario_mes.map(lambda m:f'{y}-{int(m):02}');g['mes_completo']=g.periodo<CUTOFF[:7]
         g['recurso_real_agosto2026']=g[cols[-1]]*ANCHOR/g.periodo.map(IPC);months.append(g)
         if y==2026:check('Recursos mensual vs anual',g[cols[-1]].sum(),a[cols[-1]].sum())
-    save('recursos_mensuales_tipo',pd.concat(months),['recursos-mensual-2025.csv','recursos-mensual-2026.csv','ipc-original.xls'],'ARS millones corrientes y constantes de agosto 2026','Recursos de Administración Nacional','Octubre 2026 es parcial, sin ajuste real hasta contar con IPC observado.')
+    save('recursos_mensuales_tipo',pd.concat(months),['recursos-mensual-2025.csv','recursos-mensual-2026.csv','ipc-original.xls','ipc-septiembre-2026.csv'],'ARS millones corrientes y constantes de agosto 2026','Recursos de Administración Nacional','Octubre 2026 es parcial, sin ajuste real hasta contar con IPC observado.')
 
 
 def build_physical():

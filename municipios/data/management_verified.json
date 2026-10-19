@@ -940,6 +940,18 @@
       "file": "BCRA-Loc2026.xls",
       "title": "BCRA, préstamos y depósitos por localización 2026",
       "retrieved": "2026-09-09"
+    },
+    {
+      "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/10/2026-BALTES-3TRI.pdf",
+      "file": "municipios/data/fiscal-sources/2026-10-19-september/06329-treasury.pdf",
+      "sha256": "757d22975e000543cdeacfc58799179e2dbe0a8a910b75e2142f3ccc0e54af1f",
+      "bytes": 232090,
+      "pages": 7,
+      "consultedPages": [
+        7
+      ],
+      "retrieved": "2026-10-19",
+      "title": "Balance de Tesorería, tercer trimestre 2026"
     }
   ],
   "municipalities": [
@@ -1435,31 +1447,31 @@
         "reading": "Al cierre de junio se había devengado el 48,0% del presupuesto anual vigente. Quedaban $164,4 millones de esos gastos sin pagar. Esa cifra mide obligaciones registradas en el semestre; no toda la deuda municipal. Los ingresos de libre disponibilidad tampoco equivalen al saldo de caja que queda libre."
       },
       "treasury": {
-        "date": "2026-06-30",
+        "date": "2026-09-30",
+        "verifiedAt": "2026-10-19",
         "documents": [
           {
-            "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/07/SITECOFIN-1SEM-2026.pdf",
-            "sha256": "135ed8813ecbdc9fb40b32da86a34c0c9e240ceec5017726419014f65124dbfc",
-            "bytes": 319494,
-            "file": "06329--SITECOFIN-1SEM-2026.pdf",
-            "title": "SITECOFIN-1SEM-2026",
-            "retrieved": "2026-09-09",
-            "pages": 5,
+            "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/10/2026-BALTES-3TRI.pdf",
+            "file": "municipios/data/fiscal-sources/2026-10-19-september/06329-treasury.pdf",
+            "sha256": "757d22975e000543cdeacfc58799179e2dbe0a8a910b75e2142f3ccc0e54af1f",
+            "bytes": 232090,
+            "pages": 7,
             "consultedPages": [
-              1,
-              3
-            ]
+              7
+            ],
+            "retrieved": "2026-10-19",
+            "title": "Balance de Tesorería, tercer trimestre 2026"
           }
         ],
         "amounts": {
-          "closing": "1718889847.93",
-          "available": "1637017470.98",
-          "transitory": "81872376.95",
-          "liabilities": "574895931.29",
-          "currentLiabilities": "574895931.29",
-          "nonCurrentLiabilities": "0.00"
+          "closing": "1971417252.27"
         },
-        "reading": "Tesorería informa $1.718,9 millones: $1.637,0 millones de disponibilidades y $81,9 millones de movimientos transitorios. Incluye fondos afectados, como educación, y valores en cartera. Por eso no se puede disponer libremente de todo ese saldo. Los pasivos contables suman $574,9 millones; el informe no los desglosa por fecha de vencimiento. No se suman a los gastos pendientes del semestre: pueden superponerse."
+        "reconciliation": {
+          "opening": "1718889847.93",
+          "netMovement": "249507404.34",
+          "accountingAdjustments": "3020000.00"
+        },
+        "reading": "Tesorería cerró septiembre con $1.971,4 millones. El saldo inicial de julio, más los ingresos netos de egresos y los ajustes contables, coincide con ese cierre. Incluye fondos con destino asignado: no es caja libre. Este balance no permite actualizar los pasivos ni calcular el resultado fiscal de enero a septiembre."
       },
       "banking": {
         "records": [
@@ -1607,7 +1619,36 @@
         "Presupuesto original de 2026 y detalle de sus modificaciones; el presupuesto vigente sí está incorporado.",
         "Préstamos y depósitos bancarios 2025 y junio de 2026: sin cifras verificables para Las Heras."
       ],
-      "historyReading": "Los cortes de mitad de año y los cierres anuales se leen por separado. Un superávit en junio no asegura cerrar el año con superávit. Los importes históricos están en pesos de cada período: para seguir el equilibrio se muestra el resultado como porcentaje de los ingresos, sin presentarlo como una variación real."
+      "historyReading": "Los cortes de mitad de año y los cierres anuales se leen por separado. Un superávit en junio no asegura cerrar el año con superávit. Los importes históricos están en pesos de cada período: para seguir el equilibrio se muestra el resultado como porcentaje de los ingresos, sin presentarlo como una variación real.",
+      "treasuryHistory": [
+        {
+          "date": "2026-06-30",
+          "documents": [
+            {
+              "url": "https://gobiernodelasheras.com/wp-content/uploads/2026/07/SITECOFIN-1SEM-2026.pdf",
+              "sha256": "135ed8813ecbdc9fb40b32da86a34c0c9e240ceec5017726419014f65124dbfc",
+              "bytes": 319494,
+              "file": "06329--SITECOFIN-1SEM-2026.pdf",
+              "title": "SITECOFIN-1SEM-2026",
+              "retrieved": "2026-09-09",
+              "pages": 5,
+              "consultedPages": [
+                1,
+                3
+              ]
+            }
+          ],
+          "amounts": {
+            "closing": "1718889847.93",
+            "available": "1637017470.98",
+            "transitory": "81872376.95",
+            "liabilities": "574895931.29",
+            "currentLiabilities": "574895931.29",
+            "nonCurrentLiabilities": "0.00"
+          },
+          "reading": "Tesorería informa $1.718,9 millones: $1.637,0 millones de disponibilidades y $81,9 millones de movimientos transitorios. Incluye fondos afectados, como educación, y valores en cartera. Por eso no se puede disponer libremente de todo ese saldo. Los pasivos contables suman $574,9 millones; el informe no los desglosa por fecha de vencimiento. No se suman a los gastos pendientes del semestre: pueden superponerse."
+        }
+      ]
     },
     {
       "id": "06805",

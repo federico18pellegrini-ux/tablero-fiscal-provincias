@@ -9,7 +9,7 @@
   <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260917-marca">
   <script defer src="vendor/d3.v7.min.js"></script>
-  <script defer src="app.js?v=20261014-verificados"></script>
+  <script defer src="app.js?v=20261019-septiembre"></script>
   <script defer src="structure.js?v=20261014-verificados"></script>
   <link rel="stylesheet" href="structure.css?v=20261014">
   <script defer src="../analytics.js?v=20261014-verificados"></script>
@@ -99,12 +99,12 @@
           <div class="eyebrow">Pesos e inflación</div><h2>¿Subió el monto o también su poder de compra?</h2>
           <p>Los pesos corrientes son los importes de cada fecha. Los pesos reales descuentan la inflación para comparar cuánto permiten comprar. Elegí cómo mirar estos seis indicadores.</p>
           <div class="choices" role="group" aria-label="Unidad de este comparador"><button data-price-mode="nominal" aria-pressed="false">Pesos corrientes</button><button data-price-mode="real" aria-pressed="true">Ajustados por inflación</button></div>
-          <p class="price-label">Expresar los importes ajustados a precios de:</p><div class="choices" role="group" aria-label="Mes base de los pesos constantes"><button data-price-base="2024-12" aria-pressed="false">Diciembre 2024</button><button data-price-base="2025-12" aria-pressed="false">Diciembre 2025</button><button data-price-base="2026-07" aria-pressed="true">Julio 2026</button></div>
+          <p class="price-label">Expresar los importes ajustados a precios de:</p><div class="choices" role="group" aria-label="Mes base de los pesos constantes"><button data-price-base="2024-12" aria-pressed="false">Diciembre 2024</button><button data-price-base="2025-12" aria-pressed="false">Diciembre 2025</button><button data-price-base="2026-07" aria-pressed="true">Julio 2026</button><button data-price-base="2026-09" aria-pressed="false">Septiembre 2026</button></div>
           <div class="choices" id="price-indicators" role="group" aria-label="Variable para comparar con y sin inflación"></div><p id="price-current-unit" class="price-unit" aria-live="polite"></p><div id="price-cards" class="price-grid"></div>
           <button class="button button-quiet" id="download-prices">Descargar esta comparación ↓</button>
           <div class="price-calculator"><h3>Pasar un importe a pesos de otra fecha</h3><p>Por ejemplo: cuánto se necesita en julio de 2026 para comprar lo mismo que con $100.000 en diciembre de 2025.</p><div class="price-inputs"><label>Importe en pesos<input id="price-amount" type="number" step="any" value="100000"></label><label>Mes del importe<input id="price-from" type="month" value="2025-12"></label><label>Mes al que se lleva<input id="price-to" type="month" value="2026-07"></label></div><p id="price-calculation" class="price-calculation" aria-live="polite"></p></div>
           <p><strong>Las cuentas fiscales acumuladas siguen en pesos corrientes.</strong> Para ajustarlas con precisión hace falta saber en qué mes se cobró o se registró cada importe. Aplicar el IPC del cierre a todo el semestre puede distorsionar el resultado. El producto municipal ya está a precios constantes de 2004 y conserva esa metodología.</p>
-          <p class="data-sources">Deflactor: <a href="https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_08_26.xls" target="_blank" rel="noopener">IPC nacional, nivel general, INDEC</a>. Es una referencia general de poder de compra; no mide exactamente el costo de las obras o de cada servicio municipal. <a href="metodologia.html#deflactor">Ver cálculo y alcance</a> · <a id="municipal-coverage-link" href="cobertura.html">Qué datos faltan en este municipio</a></p>
+          <p class="data-sources">Deflactor: <a href="https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv" target="_blank" rel="noopener">IPC nacional, nivel general, INDEC</a>. Es una referencia general de poder de compra; no mide exactamente el costo de las obras o de cada servicio municipal. <a href="metodologia.html#deflactor">Ver cálculo y alcance</a> · <a id="municipal-coverage-link" href="cobertura.html">Qué datos faltan en este municipio</a></p>
         </section>
         <section class="panel fiscal-panel" id="fiscal-panel"></section>
         <div id="management-panel"></div>

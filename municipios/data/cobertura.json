@@ -166,7 +166,6 @@
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-        "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
         "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
         "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
@@ -197,13 +196,8 @@
           "request": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles."
         },
         {
-          "topic": "Stock de deuda municipal",
-          "state": "Pendiente",
-          "request": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces."
-        },
-        {
           "topic": "Calendario futuro de deuda",
-          "state": "Pendiente",
+          "state": "Perfil publicado parcial",
           "request": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año."
         },
         {
@@ -324,7 +318,7 @@
       "municipio": "Arrecifes",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
@@ -1070,7 +1064,7 @@
       "municipio": "Bolívar",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
@@ -1142,8 +1136,9 @@
       "municipio": "Bragado",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-08-31",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
+        "Gasto en personal: otro período",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Construccion",
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
@@ -2308,7 +2303,7 @@
       "municipio": "Coronel Pringles",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Construccion",
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
@@ -2386,7 +2381,6 @@
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-        "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
         "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
         "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
@@ -2417,13 +2411,8 @@
           "request": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles."
         },
         {
-          "topic": "Stock de deuda municipal",
-          "state": "Pendiente",
-          "request": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces."
-        },
-        {
           "topic": "Calendario futuro de deuda",
-          "state": "Pendiente",
+          "state": "Perfil publicado parcial",
           "request": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año."
         },
         {
@@ -3422,7 +3411,6 @@
       "latestFiscalEnd": "2026-06-30",
       "missing": [
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -3435,16 +3423,11 @@
       "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal.",
       "portalUrl": "https://gestion.generalbelgrano.gob.ar/",
       "budgetYear": 2026,
-      "budgetAsOf": "2026-06-30",
-      "budgetOriginal2026": false,
+      "budgetAsOf": "2026-09-30",
+      "budgetOriginal2026": true,
       "budgetCurrent2026": true,
       "findings": [],
       "documentsNeeded": [
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
-        },
         {
           "topic": "Saldo de tesorería",
           "state": "Pendiente",
@@ -5676,8 +5659,9 @@
       "municipio": "Lobería",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
+        "Gasto en personal: otro período",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
@@ -6999,7 +6983,7 @@
       "municipio": "Necochea",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
@@ -7625,8 +7609,9 @@
       "municipio": "Pilar",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
+        "Gasto en personal: otro período",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -8724,7 +8709,7 @@
       "municipio": "Salto",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
@@ -8797,7 +8782,7 @@
       "municipio": "San Andrés de Giles",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
@@ -8949,7 +8934,7 @@
       "municipio": "San Cayetano",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Préstamos bancarios 2023: reservado o sin dato de origen",
         "Depósitos bancarios 2023: reservado o sin dato de origen",
@@ -9528,7 +9513,7 @@
       "municipio": "Suipacha",
       "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": "2025-12-31",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
@@ -9701,7 +9686,6 @@
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-        "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
         "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
         "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
@@ -9732,13 +9716,8 @@
           "request": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles."
         },
         {
-          "topic": "Stock de deuda municipal",
-          "state": "Pendiente",
-          "request": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces."
-        },
-        {
           "topic": "Calendario futuro de deuda",
-          "state": "Pendiente",
+          "state": "Perfil publicado parcial",
           "request": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año."
         },
         {
@@ -10700,7 +10679,7 @@
     },
     {
       "topic": "Presupuesto original 2026",
-      "available": 22,
+      "available": 23,
       "total": 135
     },
     {
@@ -10720,7 +10699,7 @@
     },
     {
       "topic": "Stock de deuda municipal",
-      "available": 3,
+      "available": 6,
       "total": 135
     },
     {
@@ -11470,9 +11449,9 @@
       "id": "06021",
       "municipio": "Alberti",
       "tema": "Stock de deuda municipal",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
+      "estado": "Incorporado",
+      "periodo": "2026-09-30",
+      "documentoNecesario": "",
       "portal": "https://alberti.gov.ar/transparencia",
       "revision": "2026-10-04"
     },
@@ -11480,7 +11459,7 @@
       "id": "06021",
       "municipio": "Alberti",
       "tema": "Calendario futuro de deuda",
-      "estado": "Pendiente",
+      "estado": "Perfil publicado parcial",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
       "portal": "https://alberti.gov.ar/transparencia",
@@ -16980,9 +16959,9 @@
       "id": "06203",
       "municipio": "Coronel Suárez",
       "tema": "Stock de deuda municipal",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
+      "estado": "Incorporado",
+      "periodo": "2026-09-30",
+      "documentoNecesario": "",
       "portal": "https://www.coronelsuarez.gob.ar/transparencia-fiscal/",
       "revision": "2026-10-04"
     },
@@ -16990,7 +16969,7 @@
       "id": "06203",
       "municipio": "Coronel Suárez",
       "tema": "Calendario futuro de deuda",
-      "estado": "Pendiente",
+      "estado": "Perfil publicado parcial",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
       "portal": "https://www.coronelsuarez.gob.ar/transparencia-fiscal/",
@@ -19410,9 +19389,9 @@
       "id": "06301",
       "municipio": "General Belgrano",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
+      "estado": "Incorporado",
       "periodo": "2026",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "documentoNecesario": "",
       "portal": "https://gestion.generalbelgrano.gob.ar/",
       "revision": "2026-10-04"
     },
@@ -19421,7 +19400,7 @@
       "municipio": "General Belgrano",
       "tema": "Presupuesto vigente 2026",
       "estado": "Incorporado",
-      "periodo": "2026-06-30",
+      "periodo": "2026-09-30",
       "documentoNecesario": "",
       "portal": "https://gestion.generalbelgrano.gob.ar/",
       "revision": "2026-10-04"
@@ -20191,7 +20170,7 @@
       "municipio": "General Las Heras",
       "tema": "Saldo de tesorería",
       "estado": "Incorporado",
-      "periodo": "2026-06-30",
+      "periodo": "2026-09-30",
       "documentoNecesario": "",
       "portal": "https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/",
       "revision": "2026-10-04"
@@ -34270,9 +34249,9 @@
       "id": "06798",
       "municipio": "Tapalqué",
       "tema": "Stock de deuda municipal",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
+      "estado": "Incorporado",
+      "periodo": "2026-09-30",
+      "documentoNecesario": "",
       "portal": "https://www.municipiodetapalque.gob.ar/2026-transparencia",
       "revision": "2026-10-04"
     },
@@ -34280,7 +34259,7 @@
       "id": "06798",
       "municipio": "Tapalqué",
       "tema": "Calendario futuro de deuda",
-      "estado": "Pendiente",
+      "estado": "Perfil publicado parcial",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
       "portal": "https://www.municipiodetapalque.gob.ar/2026-transparencia",
