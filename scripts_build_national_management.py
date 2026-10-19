@@ -140,7 +140,7 @@ def build():
         'execution': {'total': stages, 'project_baseline': baseline, 'comparison': get('gasto_comparacion_real_total'),
             'functions_comparison': get('gasto_comparacion_real_funcion'), 'monthly': monthly,
             'groups': {k: get('gasto_etapas_' + k) for k in ['jurisdiccion','funcion','objeto','territorio','programa']}},
-        'cash': {'reviewed': '2026-09-19', 'cutoff': '2026-08', 'comparison': cash, 'monthly': get('resultado_fiscal_caja_mensual')},
+        'cash': {'latest': verified_cash_latest(), 'reviewed': '2026-09-19', 'cutoff': '2026-08', 'comparison': cash, 'monthly': get('resultado_fiscal_caja_mensual')},
         'resources': revenue_comparison,
         'debt': {'monthly': get('deuda_stock_pagos'), 'schedule': get('vencimientos_perfil_marzo2026'),
                  'annual_schedule': get('vencimientos_anuales_perfil_marzo2026'), 'cutoff_schedule': '2026-03-31'},
@@ -150,6 +150,16 @@ def build():
         'history': history,
         'updates': build_updates(stages['credito_presupuestado'], stages['credito_vigente']),
     }
+
+def verified_cash_latest():
+    data=load(DATA / 'cash-latest.json')
+    source=ROOT / data['source']['path']
+    assert sha256(source.read_bytes()).hexdigest()==data['source']['sha256'], 'Cash source changed'
+    values=data['values']
+    for field in ['month','ytd']:
+        assert abs(values['ingresos_totales'][field]-values['gasto_primario'][field]-values['resultado_primario'][field])<.01
+        assert abs(values['resultado_primario'][field]-values['intereses_netos'][field]-values['resultado_financiero'][field])<.01
+    return data
 
 def run(folder=None, check=False):
     if folder:

@@ -1,0 +1,38 @@
+{
+  "period": "2026-09",
+  "reviewed": "2026-10-19",
+  "unit": "ARS millones corrientes",
+  "scope": "Sector Público Nacional, base caja",
+  "source": {
+    "url": "https://www.argentina.gob.ar/sites/default/files/2026/10/imig_septiembre_2026_0.xlsx",
+    "path": "nacion/data/management-sources/imig-septiembre2026.xlsx",
+    "sha256": "add3e8179e4bfde0c33cf1f1b99464cda87643f7712cd45c632076d9e4663801"
+  },
+  "values": {
+    "ingresos_totales": {
+      "month": 15884584.6,
+      "ytd": 128260051.7,
+      "cell": "Septiembre!G8/L8"
+    },
+    "gasto_primario": {
+      "month": 14456944.599999998,
+      "ytd": 114554728,
+      "cell": "Septiembre!G28/L28"
+    },
+    "resultado_primario": {
+      "month": 1427640.0000000019,
+      "ytd": 13705323.700000003,
+      "cell": "Septiembre!G72/L72"
+    },
+    "intereses_netos": {
+      "month": 450466.6,
+      "ytd": 10391530.499999998,
+      "cell": "Septiembre!G74/L74"
+    },
+    "resultado_financiero": {
+      "month": 977173.4,
+      "ytd": 3313793.200000005,
+      "cell": "Septiembre!G76/L76"
+    }
+  }
+}

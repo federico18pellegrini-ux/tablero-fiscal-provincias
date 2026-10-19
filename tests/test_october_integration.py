@@ -25,7 +25,7 @@ class OctoberIntegration(unittest.TestCase):
 
     def test_current_execution_and_frozen_project_baseline_have_distinct_dates(self):
         g=load('nacion/data/gestion.json');e=load('nacion/data/execution-latest.json')
-        self.assertEqual(e['cutoff'],'2026-10-04')
+        self.assertEqual(e['cutoff'],'2026-10-19')
         self.assertEqual(g['execution']['project_baseline']['total'][0]['corte'],'2026-09-15')
         self.assertAlmostEqual(sum(m['accrued'] for m in e['execution'][0]['months']),g['execution']['total']['credito_devengado'],places=5)
         self.assertEqual(len(e['execution'][0]['months']),10)

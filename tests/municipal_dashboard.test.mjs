@@ -210,7 +210,7 @@ test('all fiscal observations retain primary documents, page locations and conte
   const audit=JSON.parse(fs.readFileSync(new URL('../municipios/data/fiscal_verified.json',import.meta.url)));
   assert.equal(audit.records.length,84);
   assert.deepEqual(audit.records.map(r=>r.id).sort(),rows.filter(m=>m.fiscal).map(m=>m.id).sort());
-  assert.equal(audit.otherPeriods.length,39);
+  assert.equal(audit.otherPeriods.length,40);
   for(const r of [...audit.records,...audit.budgetExecutions,...audit.otherPeriods]){
     assert.match(r.landingUrl,/^https?:\/\//);
     assert.ok(r.documents.length>0);

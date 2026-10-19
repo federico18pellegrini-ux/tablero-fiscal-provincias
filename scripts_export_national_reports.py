@@ -265,7 +265,7 @@ class Report:
         self.table(['Mes 2026', 'Gasto del mes', 'Acumulado / vigente'],
                    [[MONTHS[m['month'] - 1] + (' (parcial)' if m['partial'] else ''), num(m['real'] if self.mode == 'real' else m['accrued'], 0), pct(ratio(sum(x['accrued'] for x in ex['months'][:i+1]), ex['current']))] for i, m in enumerate(ex['months'])],
                    [WIDTH - 235, 105, 130], compact=True)
-        self.note(f"Gasto mensual en millones · {self.units}. Octubre llega al 04/10 y no es un mes completo. En reales, septiembre y octubre quedan sin monto porque aún falta su IPC observado. No se usa una proyección para medir gasto real ejecutado.")
+        self.note(f"Gasto mensual en millones · {self.units}. Octubre llega al {date(d['execution_display_cutoff'])} y no es un mes completo. En reales, septiembre y octubre quedan sin monto porque aún falta su IPC observado. No se usa una proyección para medir gasto real ejecutado.")
         self.note('Cuando una partida se ejecuta menos de lo previsto, hay que revisar qué prestación u obra quedó pendiente y si cambió su calendario.')
 
         self.section('09 / Historia y lectura final', 'Mirar más allá de un solo año', 'Presupuesto Abierto: totales anuales de ejecución. ONP: proyecto 2027. INDEC: IPC; 2026-2027, escenario.')

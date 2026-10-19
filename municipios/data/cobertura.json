@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-14",
+  "generated": "2026-10-19",
   "scope": "Datos incorporados; no certifica que un municipio no publique información en otro sitio.",
   "commonPending": [
     "Caja libre, vencimientos futuros, antigüedad de proveedores y flujos fiscales mensuales: todavía no hay una serie comparable para los 135. Un saldo en tesorería no resuelve esos faltantes.",
@@ -3581,8 +3581,9 @@
       "municipio": "General Juan Madariaga",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
+        "Gasto en personal: otro período",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
