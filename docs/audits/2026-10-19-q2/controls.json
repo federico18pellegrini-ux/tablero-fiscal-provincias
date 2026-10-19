@@ -1,0 +1,160 @@
+{
+  "reviewed_at": "2026-10-19",
+  "source_pdf_sha256": "d3ca60c7f4671cc6bba09616a62cc84620c3ae46e58689c9faef4c11eb71c2c4",
+  "ltm_checks": 115,
+  "ltm_checks_matched": 115,
+  "official_debt_ratio_checks": [
+    {
+      "province": "Buenos Aires",
+      "reported": 45.6,
+      "official_ratio": 45.56137672160756,
+      "matches_rounding": true
+    },
+    {
+      "province": "CABA",
+      "reported": 19.7,
+      "official_ratio": 19.67909533694961,
+      "matches_rounding": true
+    },
+    {
+      "province": "Córdoba",
+      "reported": 32.6,
+      "official_ratio": 32.61483398958281,
+      "matches_rounding": true
+    },
+    {
+      "province": "Santa Fe",
+      "reported": 16.0,
+      "official_ratio": 15.988648640577575,
+      "matches_rounding": true
+    },
+    {
+      "province": "Neuquén",
+      "reported": 11.3,
+      "official_ratio": 11.306172819062246,
+      "matches_rounding": true
+    },
+    {
+      "province": "Entre Ríos",
+      "reported": 18.3,
+      "official_ratio": 18.340175631597116,
+      "matches_rounding": true
+    },
+    {
+      "province": "Mendoza",
+      "reported": 24.3,
+      "official_ratio": 24.326386137683798,
+      "matches_rounding": true
+    },
+    {
+      "province": "Chaco",
+      "reported": 13.1,
+      "official_ratio": 13.0931044394003,
+      "matches_rounding": true
+    },
+    {
+      "province": "Tucumán",
+      "reported": 3.3,
+      "official_ratio": 3.3409614512339614,
+      "matches_rounding": true
+    },
+    {
+      "province": "Misiones",
+      "reported": 2.8,
+      "official_ratio": 2.7723099702963294,
+      "matches_rounding": true
+    },
+    {
+      "province": "Santiago del Estero",
+      "reported": 0.5,
+      "official_ratio": 0.4748779733399557,
+      "matches_rounding": true
+    },
+    {
+      "province": "Salta",
+      "reported": 11.8,
+      "official_ratio": 11.771470466668879,
+      "matches_rounding": true
+    },
+    {
+      "province": "Corrientes",
+      "reported": 2.0,
+      "official_ratio": 1.9951047183837511,
+      "matches_rounding": true
+    },
+    {
+      "province": "Chubut",
+      "reported": 46.4,
+      "official_ratio": 46.443073143503504,
+      "matches_rounding": true
+    },
+    {
+      "province": "Formosa",
+      "reported": 1.0,
+      "official_ratio": 0.978420674671583,
+      "matches_rounding": true
+    },
+    {
+      "province": "San Juan",
+      "reported": 10.0,
+      "official_ratio": 10.03889079970692,
+      "matches_rounding": true
+    },
+    {
+      "province": "Río Negro",
+      "reported": 14.7,
+      "official_ratio": 14.710774698618756,
+      "matches_rounding": true
+    },
+    {
+      "province": "Jujuy",
+      "reported": 26.2,
+      "official_ratio": 26.174309831037473,
+      "matches_rounding": true
+    },
+    {
+      "province": "Santa Cruz",
+      "reported": 1.7,
+      "official_ratio": 1.6639864525382246,
+      "matches_rounding": true
+    },
+    {
+      "province": "Catamarca",
+      "reported": 3.5,
+      "official_ratio": 3.490046099622921,
+      "matches_rounding": true
+    },
+    {
+      "province": "San Luis",
+      "reported": 0.0,
+      "official_ratio": 0.01061247665749342,
+      "matches_rounding": true
+    },
+    {
+      "province": "Tierra del Fuego",
+      "reported": 15.5,
+      "official_ratio": 15.453632213213881,
+      "matches_rounding": true
+    },
+    {
+      "province": "La Rioja",
+      "reported": 38.3,
+      "official_ratio": 38.270126676650605,
+      "matches_rounding": true
+    }
+  ],
+  "coverage": "23 complete jurisdictions; La Pampa missing. Source PDF not distributed.",
+  "excluded": [
+    {
+      "province": "Neuquén",
+      "page": 15,
+      "field": "quarter_real_tax_change",
+      "reported": -228.4,
+      "reason": "Variación inferior a -100%; requiere conciliación del dato base. No incorporada."
+    },
+    {
+      "province": "La Pampa",
+      "reason": "La fuente no publica ejecución completa; no se imputa cero."
+    }
+  ]
+}

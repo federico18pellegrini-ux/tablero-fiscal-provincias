@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-19",
+  "scope": {
+    "provincial": "23 jurisdictions with complete Q2 fiscal source; La Pampa missing",
+    "municipal": "16 without complete accounts plus General Las Heras and General Belgrano"
+  },
+  "verified": {
+    "ltm_official_checks": 115,
+    "ltm_matches": 115,
+    "official_debt_ratio_checks": 23,
+    "official_debt_ratio_matches": 23,
+    "python_tests": 175,
+    "javascript_tests": 151,
+    "provincial_pdfs": 24,
+    "municipal_pdf_packages": 135
+  },
+  "municipal_updates": {
+    "complete_caif": [
+      "General Belgrano: 2026-01-02/2026-09-30"
+    ],
+    "partial_budget_executions": [
+      "General Pinto: enero-septiembre",
+      "San Miguel: enero-marzo",
+      "Roque Pérez: abril-junio"
+    ],
+    "annual_budget_updates": [
+      "General Pinto",
+      "San Miguel"
+    ],
+    "remaining_no_execution": 13,
+    "remaining_partial": 3,
+    "las_heras": "Se conserva CAIF semestral y tesorería de septiembre. No se encontró nueva CAIF al 30/09."
+  },
+  "pending": [
+    "La Pampa: ejecución completa al segundo trimestre.",
+    "Neuquén: variación trimestral de recaudación de -228,4% en página 15 excluida; requiere reconstrucción de la base.",
+    "Rigidez del gasto: el piso ampliado con transferencias municipales conserva marzo y se identifica con su fecha.",
+    "Variaciones reales trimestrales del informe: no reemplazan las series mensuales oficiales ya actualizadas.",
+    "Apertura del recorte bonaerense por proyecto: el informe no la contiene. Se conserva apertura oficial por función y organismo."
+  ],
+  "visual_review": [
+    "Resumen provincial en celular de 390 px y escritorio",
+    "Ejecución semestral de Córdoba y PBA",
+    "PDF PBA página 1 y Córdoba página 3",
+    "PDF General Belgrano breve y General Pinto cuentas/ejecución"
+  ],
+  "publication_status": "local_validated_pending_deployment"
+}

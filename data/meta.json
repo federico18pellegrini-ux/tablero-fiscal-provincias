@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-10-04T20:28:55.928180Z",
-  "structural_cutoff": "2026-03-31",
+  "structural_cutoff": "2026-06-30",
   "sources": {
     "recaudacion_propia_2026": {
       "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_18.xlsx",
@@ -66,6 +66,11 @@
       "url": "https://www.argentina.gob.ar/sites/default/files/serie_top_1984_2025_0.xlsx",
       "period": "1984–2025",
       "scope": "Ampliación PBA 2025; las restantes provincias conservan la serie histórica previa."
+    },
+    "fiscal_q2": {
+      "file": "data/fiscal_q2_2026.json",
+      "cutoff": "2026-06-30",
+      "reviewed_at": "2026-10-19"
     }
   },
   "rules": {

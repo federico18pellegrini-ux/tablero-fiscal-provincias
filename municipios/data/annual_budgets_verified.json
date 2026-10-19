@@ -2214,31 +2214,33 @@
     {
       "id": "06351",
       "year": 2026,
-      "asOf": "2026-03-31",
+      "asOf": "2026-09-30",
       "original": "21980000000.00",
-      "current": "23130109390.63",
-      "modifications": "1150109390.63",
+      "current": "24587075515.80",
+      "modifications": "2607075515.80",
       "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
       "method": "published_current",
-      "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
+      "note": "Presupuesto anual aprobado y vigente, conciliado con sus modificaciones. No es caja ni gasto ejecutado.",
       "documents": [
         {
-          "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSPORFINALIDADYFUNCIONAL310320261776692403.zip",
-          "sha256": "572944732c909c0709958e2b6646d6619eafc999f26e2431e1363c0d5879ea09",
-          "bytes": 361941,
-          "pages": 2,
+          "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSAL300920261791471099.zip",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-60e33de4f7-0.pdf",
+          "sha256": "7fbbc3ad5faf0b665d2ef02136b2f5ad39f9028dcf49493a39e1f464ccdb1727",
+          "bytes": 720107,
+          "pages": 64,
           "consultedPages": [
             1,
-            2
+            64
           ],
-          "locator": "PDF dentro del ZIP oficial: Gastos por finalidad y función, Totales Generales, aprobado/modificaciones/vigente; período enero–marzo.",
-          "extractedPdfSha256": "be4815a57e64b024d34bc7bbac3403a3d4adbcc9d9a90c8196846ab2b3a39792",
-          "extractedPdfBytes": 369576,
-          "container": "ZIP oficial; páginas y localización corresponden al PDF contenido."
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF.",
+          "container": "ZIP oficial; archivo y hash corresponden al PDF contenido.",
+          "containerArchive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-60e33de4f7.zip",
+          "containerSha256": "23b1acb4623411f985ea94b05f88282e5f8bc1d267b9c646a4b05195e63d479c"
         }
       ],
       "periodStart": "2026-01-01",
-      "verifiedAt": "2026-10-04"
+      "verifiedAt": "2026-10-19",
+      "components": []
     },
     {
       "id": "06357",
@@ -4818,29 +4820,33 @@
     {
       "id": "06760",
       "year": 2026,
-      "asOf": "2026-04-09",
+      "asOf": "2026-03-31",
       "original": "221558017532.24",
-      "current": null,
-      "modifications": null,
+      "current": "221558017532.24",
+      "modifications": "0.00",
       "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "published_original",
+      "note": "Presupuesto anual aprobado y vigente, conciliado con sus modificaciones. No es caja ni gasto ejecutado.",
+      "method": "published_current",
       "documents": [
         {
-          "url": "https://www.msm.gov.ar/wp-content/uploads/2026/04/1.2-Presupuesto-de-Gastos-Aprobado-2026.pdf",
-          "sha256": "b00152358ee0bdb6bfc53e53535281b82d8dc42439e1a7aae809d3d4530465aa",
-          "bytes": 666590,
-          "pages": 62,
+          "url": "https://www.msm.gov.ar/wp-content/uploads/2026/04/3.4-Estado-de-Ejeucion-de-Gastos-por-Objeto-4to-Trimestre-2026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06760-5996c82ac1.pdf",
+          "sha256": "15d38c070e7a79ffcbb31ddc3f26024710b92eef83c56c04f08682b47f6b111e",
+          "bytes": 454821,
+          "pages": 10,
           "consultedPages": [
-            62
+            1,
+            8,
+            9,
+            10
           ],
-          "locator": "Total general presupuesto 2026, columna Crédito Original. Documento publicado como presupuesto aprobado."
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
         }
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null,
-      "verifiedAt": "2026-10-04"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-19"
     },
     {
       "id": "06763",

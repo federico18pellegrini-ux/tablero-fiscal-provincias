@@ -1377,8 +1377,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://www.canuelas.gov.ar",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -2787,8 +2787,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -3337,8 +3337,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "El portal de gobierno abierto no pudo recuperarse. No se incorporan cifras sin el documento original.",
       "portalUrl": "https://www.generalarenales.gob.ar/gobierno-abierto/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -3408,7 +3408,7 @@
       "municipio": "General Belgrano",
       "fiscalStatus": "Comparable a junio de 2026",
       "comparable": true,
-      "latestFiscalEnd": "2026-06-30",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
@@ -3419,8 +3419,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Cuenta ahorro-inversión-financiamiento al 30/09/2026 incorporada y conciliada. El ranking semestral conserva junio.",
       "portalUrl": "https://gestion.generalbelgrano.gob.ar/",
       "budgetYear": 2026,
       "budgetAsOf": "2026-09-30",
@@ -3743,8 +3743,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Cuenta de enero–junio de 2026 incorporada y conciliada. Integra la muestra del ranking fiscal.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Revisado el portal 2026: mantiene CAIF del primer semestre y balance de tesorería a septiembre. No se localizó CAIF enero–septiembre ni ejecuciones que permitan reconstruirla.",
       "portalUrl": "https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/",
       "budgetYear": 2026,
       "budgetAsOf": "2026-06-30",
@@ -3901,9 +3901,9 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "http://generalpaz.gob.ar/",
+      "portalReview": "2026-10-19",
+      "portalStatus": "El enlace anterior correspondía a Estación General Paz, Córdoba. Se verificó el sitio de Ranchos; la página de transparencia muestra contenido ajeno a las cuentas públicas. No se incorporan cifras de otra jurisdicción.",
+      "portalUrl": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "budgetYear": 2026,
       "budgetAsOf": "2025-12-01",
       "budgetOriginal2026": true,
@@ -3970,9 +3970,9 @@
     {
       "id": "06351",
       "municipio": "General Pinto",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Ejecución parcial",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
@@ -3988,11 +3988,11 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Ejecución enero–septiembre 2026 incorporada con cobros, devengado y pagos; falta apertura económica verificable para calcular resultado fiscal.",
       "portalUrl": "http://www.pinto.gob.ar/",
       "budgetYear": 2026,
-      "budgetAsOf": "2026-03-31",
+      "budgetAsOf": "2026-09-30",
       "budgetOriginal2026": true,
       "budgetCurrent2026": true,
       "findings": [
@@ -4603,8 +4603,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://www.hurlingham.gob.ar/gobierno-abierto/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -4920,8 +4920,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Se revisó el portal y dos boletines oficiales 2026 (6 y 48 páginas); no se localizó una cuenta fiscal utilizable.",
       "portalUrl": "http://www.lacosta.gov.ar/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -5399,8 +5399,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://municipioalem.gob.ar/?q=transparencia",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -5830,8 +5830,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "No se pudo recuperar el portal con una conexión verificable; la consulta alternativa tampoco devolvió el contenido.",
       "portalUrl": "https://www.lomasdezamora.gov.ar/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -6249,8 +6249,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://www.marchiquita.gob.ar/secretaria-de-economia/",
       "budgetYear": 2026,
       "budgetAsOf": "2025-11-28",
@@ -6488,8 +6488,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://www.merlo.gob.ar/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -7533,8 +7533,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://pila.gob.ar/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -7943,8 +7943,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://puntaindio.gov.ar/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -8394,9 +8394,9 @@
     {
       "id": "06693",
       "municipio": "Roque Pérez",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Ejecución parcial",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2026-06-30",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
@@ -8407,8 +8407,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Ejecución abril–junio 2026 incorporada. Es el segundo trimestre aislado, no el semestre. Falta conciliar la cuenta económica y el primer trimestre.",
       "portalUrl": "https://roqueperez.gob.ar/situacion-economica-financiera",
       "budgetYear": 2026,
       "budgetAsOf": "2026-03-31",
@@ -9173,13 +9173,12 @@
     {
       "id": "06760",
       "municipio": "San Miguel",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Ejecución parcial",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2026-03-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -9188,24 +9187,19 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
-      "portalUrl": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portalReview": "2026-10-19",
+      "portalStatus": "Nuevo portal de transparencia localizado. Ejecución enero–marzo 2026 incorporada; el PDF corrige la etiqueta errónea de cuarto trimestre en el enlace. Falta conciliar la apertura económica.",
+      "portalUrl": "https://www.msm.gov.ar/transparencia/",
       "budgetYear": 2026,
-      "budgetAsOf": "2026-04-09",
+      "budgetAsOf": "2026-03-31",
       "budgetOriginal2026": true,
-      "budgetCurrent2026": false,
+      "budgetCurrent2026": true,
       "findings": [],
       "documentsNeeded": [
         {
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
         },
         {
           "topic": "Saldo de tesorería",
@@ -9831,8 +9825,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-10-19",
+      "portalStatus": "El portal municipal devolvió error 522; no se pudo verificar una cuenta fiscal.",
       "portalUrl": "https://tordillomunicipio.com/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -10684,7 +10678,7 @@
     },
     {
       "topic": "Presupuesto vigente 2026",
-      "available": 96,
+      "available": 97,
       "total": 135
     },
     {
@@ -20522,7 +20516,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20532,7 +20526,7 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20542,7 +20536,7 @@
       "estado": "Pendiente",
       "periodo": "2025-12-01",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20552,7 +20546,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20562,7 +20556,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20572,7 +20566,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20582,7 +20576,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20592,7 +20586,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20602,7 +20596,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20612,7 +20606,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20622,7 +20616,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20632,7 +20626,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20642,7 +20636,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20652,7 +20646,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20662,7 +20656,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20672,7 +20666,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20682,7 +20676,7 @@
       "estado": "Reservado o sin cifra de origen",
       "periodo": "2024-12",
       "documentoNecesario": "Cifra publicada por localización BCRA/DPE; las reservas estadísticas no se completan con cero.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20692,7 +20686,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20702,7 +20696,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "http://generalpaz.gob.ar/",
+      "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -20730,7 +20724,7 @@
       "municipio": "General Pinto",
       "tema": "Presupuesto vigente 2026",
       "estado": "Incorporado",
-      "periodo": "2026-03-31",
+      "periodo": "2026-09-30",
       "documentoNecesario": "",
       "portal": "http://www.pinto.gob.ar/",
       "revision": "2026-10-04"
@@ -33062,7 +33056,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33072,17 +33066,17 @@
       "estado": "Incorporado",
       "periodo": "2026",
       "documentoNecesario": "",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
       "id": "06760",
       "municipio": "San Miguel",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "2026-04-09",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "estado": "Incorporado",
+      "periodo": "2026-03-31",
+      "documentoNecesario": "",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33092,7 +33086,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33102,7 +33096,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33112,7 +33106,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33122,7 +33116,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33132,7 +33126,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33142,7 +33136,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33152,7 +33146,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33162,7 +33156,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33172,7 +33166,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33182,7 +33176,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33192,7 +33186,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33202,7 +33196,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33212,7 +33206,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33222,7 +33216,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33232,7 +33226,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {
@@ -33242,7 +33236,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
+      "portal": "https://www.msm.gov.ar/transparencia/",
       "revision": "2026-10-04"
     },
     {

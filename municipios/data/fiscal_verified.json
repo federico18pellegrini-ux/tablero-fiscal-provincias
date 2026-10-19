@@ -3274,7 +3274,177 @@
       "verifiedAt": "2026-09-07"
     }
   ],
-  "budgetExecutions": [],
+  "budgetExecutions": [
+    {
+      "id": "06351",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_budget_execution",
+      "scope": "Totales presupuestarios publicados. La apertura económica y el tratamiento de las operaciones financieras siguen pendientes; no se calcula resultado fiscal.",
+      "landingUrl": "https://pinto.cloudnetworkengine.com/listado-acotado-pdf.php?idCategoria=166",
+      "amounts": {
+        "recursos_presupuestarios_percibidos": "18615487946.67",
+        "gastos_presupuestarios_devengados": "17835150905.27",
+        "gastos_presupuestarios_pagados": "17536697823.14",
+        "presupuesto_vigente": "24587075515.80"
+      },
+      "documents": [
+        {
+          "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDERECURSOSAL300920261791471203.zip",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-0ce891b072-0.pdf",
+          "sha256": "6921c1c087936bbf0bfcca14139a0630eef5fbf44b9fd677e704fe623b4e3f6a",
+          "bytes": 430880,
+          "pages": 8,
+          "consultedPages": [
+            1,
+            8
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF.",
+          "container": "ZIP oficial; archivo y hash corresponden al PDF contenido.",
+          "containerArchive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-0ce891b072.zip",
+          "containerSha256": "767a90192ef849de73da56e4677f30caed7ce351105c51bba2c5efd501747029"
+        },
+        {
+          "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSAL300920261791471099.zip",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-60e33de4f7-0.pdf",
+          "sha256": "7fbbc3ad5faf0b665d2ef02136b2f5ad39f9028dcf49493a39e1f464ccdb1727",
+          "bytes": 720107,
+          "pages": 64,
+          "consultedPages": [
+            1,
+            64
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF.",
+          "container": "ZIP oficial; archivo y hash corresponden al PDF contenido.",
+          "containerArchive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-60e33de4f7.zip",
+          "containerSha256": "23b1acb4623411f985ea94b05f88282e5f8bc1d267b9c646a4b05195e63d479c"
+        },
+        {
+          "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSPORFINALIDADYFUNCIONAL300920261791471057.zip",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-a643daca52-0.pdf",
+          "sha256": "dcc071068c943647b714f847f485a7b64798ee90dcb1dc8ed159454fb6005be1",
+          "bytes": 370194,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF.",
+          "container": "ZIP oficial; archivo y hash corresponden al PDF contenido.",
+          "containerArchive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-a643daca52.zip",
+          "containerSha256": "b25d7ba8695516059085a575f56b2d45fa11d34d84ab8e0fd0f63fa25c4e7d2e"
+        }
+      ],
+      "verifiedAt": "2026-10-19"
+    },
+    {
+      "id": "06760",
+      "inicio": "2026-01-02",
+      "fin": "2026-03-31",
+      "method": "published_budget_execution",
+      "scope": "Totales presupuestarios publicados. La apertura económica y el tratamiento de las operaciones financieras siguen pendientes; no se calcula resultado fiscal.",
+      "landingUrl": "https://www.msm.gov.ar/transparencia/",
+      "amounts": {
+        "recursos_presupuestarios_percibidos": "48862110550.74",
+        "gastos_presupuestarios_devengados": "59490814873.55",
+        "gastos_presupuestarios_pagados": "54352945910.79",
+        "presupuesto_vigente": "221558017532.24"
+      },
+      "documents": [
+        {
+          "url": "https://www.msm.gov.ar/wp-content/uploads/2026/04/3.2-Estado-de-Ejecucion-de-Recursos-por-Caracter-Economico-1er-Trimestre-2026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06760-05949d77bd.pdf",
+          "sha256": "54349b74c7e10d14f1fb44e2102cb548e3a106b15e91ce168634134b5c9b5117",
+          "bytes": 386032,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
+        },
+        {
+          "url": "https://www.msm.gov.ar/wp-content/uploads/2026/04/3.4-Estado-de-Ejeucion-de-Gastos-por-Objeto-4to-Trimestre-2026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06760-5996c82ac1.pdf",
+          "sha256": "15d38c070e7a79ffcbb31ddc3f26024710b92eef83c56c04f08682b47f6b111e",
+          "bytes": 454821,
+          "pages": 10,
+          "consultedPages": [
+            1,
+            8,
+            9,
+            10
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
+        },
+        {
+          "url": "https://www.msm.gov.ar/wp-content/uploads/2026/04/4.1-Estado-de-Ejecucion-de-Gastos-por-Finalidad-y-Funcion-1er-Trimestre-2026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06760-dc79b94ab5.pdf",
+          "sha256": "71e4c7f67262d710abdbd9756cd28a1cb83039796bc3810809dd32de46a0afe7",
+          "bytes": 378330,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
+        }
+      ],
+      "verifiedAt": "2026-10-19"
+    },
+    {
+      "id": "06693",
+      "inicio": "2026-04-01",
+      "fin": "2026-06-30",
+      "method": "published_budget_execution",
+      "scope": "Totales presupuestarios publicados. La apertura económica y el tratamiento de las operaciones financieras siguen pendientes; no se calcula resultado fiscal.",
+      "landingUrl": "https://roqueperez.gob.ar/ejecucion-trimestral-recursos-y-gastos",
+      "amounts": {
+        "recursos_presupuestarios_percibidos": "5273105856.75",
+        "gastos_presupuestarios_devengados": "4821089118.53",
+        "gastos_presupuestarios_pagados": "4773476156.56"
+      },
+      "documents": [
+        {
+          "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestariarecursos22026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06693-8c9642622a.pdf",
+          "sha256": "ec71f4da05fd00e0d61c8b586c1b29096da16f19292c56a361174abadecbf535",
+          "bytes": 445680,
+          "pages": 9,
+          "consultedPages": [
+            1,
+            9
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
+        },
+        {
+          "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastos22026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06693-6f17fd39f6.pdf",
+          "sha256": "09382729e69affd4b03e76b292da612254f229e56cb6fa77203d8bcc3b4858f6",
+          "bytes": 1805544,
+          "pages": 260,
+          "consultedPages": [
+            1,
+            260
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
+        },
+        {
+          "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastosporfinalidadfuncion22026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06693-9b7cc7b876.pdf",
+          "sha256": "a8b068f8fc38bdeee0de58dd64cd8d8fb3e114f381d89f630a78f3f182fa8e2c",
+          "bytes": 386715,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
+        }
+      ],
+      "verifiedAt": "2026-10-19"
+    }
+  ],
   "otherPeriods": [
     {
       "id": "06028",
@@ -4874,6 +5044,39 @@
         }
       ],
       "note": "Acumulado enero–septiembre; se conserva junio para el ranking comparable."
+    },
+    {
+      "id": "06301",
+      "inicio": "2026-01-02",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Administración municipal y H.C.D. según CAIF publicada; fuentes y aplicaciones financieras excluidas.",
+      "landingUrl": "https://generalbelgrano.gob.ar/",
+      "amounts": {
+        "ingresos_corrientes": "18974053065.13",
+        "gastos_corrientes": "18057288480.49",
+        "ingresos_capital": "209871918.75",
+        "gastos_capital": "942257028.55",
+        "ingresos_totales": "19183924983.88",
+        "gastos_totales": "18999545509.04",
+        "resultado_financiero": "184379474.84",
+        "personal_devengado": "10504540239.89"
+      },
+      "verifiedAt": "2026-10-19",
+      "documents": [
+        {
+          "url": "https://generalbelgrano.gob.ar/gobiernoabierto/2026/Información Financiera/Situacion economico-financiera al 30092026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06301-c0bb6b46da.pdf",
+          "sha256": "2e9afefd4fbeb4588f838c4eff892b84527c470267e9b95c1f42b438f9e747b4",
+          "bytes": 308803,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
+        }
+      ]
     }
   ],
   "updatedAt": "2026-10-19"

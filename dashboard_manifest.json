@@ -81,7 +81,9 @@
     "annual_fiscal_accounts": "data/annual_fiscal_accounts.json",
     "reclamos_nacion_evidencia": "data/reclamos_nacion/evidencia_verificada.json",
     "pba_execution_latest": "data/pba_execution_latest.json",
-    "pba_comparison": "data/pba_comparison.json"
+    "pba_comparison": "data/pba_comparison.json",
+    "ranking_fiscal_latest": "data/fiscal/ranking_2t26.csv",
+    "fiscal_q2": "data/fiscal_q2_2026.json"
   },
   "notes": {
     "cross_section_fiscal_scope": "La capa estructural general conserva el corte 3T25. La nueva sala del gobernador usa 4T25 y 1T26 y un ranking homogéneo de 23 jurisdicciones; La Pampa no integra esos informes.",
@@ -111,7 +113,7 @@
   "missing_top_mensual_2026_provinces": [],
   "missing_ron_2026_provinces": [],
   "as_of_by_block": {
-    "structural_and_ranking": "2026-03-31",
+    "structural_and_ranking": "2026-06-30",
     "recaudacion_propia_2026_max": "2026-09-30",
     "recaudacion_propia_pba": "2026-07-31",
     "transferencias_nacion_2026": "2026-09-30",

@@ -2,9 +2,9 @@
   "version": 3,
   "generated": "2026-10-19",
   "input_sha256": {
-    "municipios/data/dashboard.json": "e05422636dfbbbedf7af662009717877f0fc762a8ecf17e96c7a96b202a72034",
+    "municipios/data/dashboard.json": "d10deef97cb225d77896749ae5d426a6c58340b8b19dc293107b6b9a4ca6b68c",
     "municipios/data/geografia_original.geojson": "877e30549e9d73487828d158584981635f7746739412669656bb3dfa4645173f",
-    "municipios/data/fuentes.csv": "430d889dc8b0d7a435c9e81870221ebd8a6577d4f76ca292ea7d67166fe40c71",
+    "municipios/data/fuentes.csv": "c94f29f5c3f0b20a118414deae527739e6100d9529f9c66287f0ebf69d34a96d",
     "scripts_export_municipal_reports.py": "b80c80bcc99c9bf2d0cfbaf77a95fd71a44c6bcf4bb216a06ef1cc8148683557",
     "scripts_municipal_editorial.py": "62ff1d56f234356e37c463119df83a497c3b574457e1264ef49061409a3a8181",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
@@ -4207,8 +4207,8 @@
       "municipality": "General Belgrano",
       "file": "informe-06301.pdf",
       "pages": 7,
-      "bytes": 159574,
-      "sha256": "98ae3e7c33474e3994c768ef2ab128f270e5da2f00766f189cf27efa3778035b",
+      "bytes": 159556,
+      "sha256": "9c065b379ceeb927c8c934765dd4bda074d5b1fd47674badbdffd44c2128dcf2",
       "sections": [
         "lectura",
         "cuentas",
@@ -4293,8 +4293,8 @@
       "brief": {
         "file": "informe-06301-breve.pdf",
         "pages": 3,
-        "bytes": 70512,
-        "sha256": "cbbfe7529d6b3daac5d023a2c68c210157346bcb5958e64da13f8c8fee88df6d"
+        "bytes": 70494,
+        "sha256": "56543b857631aed68cb008ad26aa62310ba05ae4e4dcfc1809cbfbd39dfa5a0d"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -4873,15 +4873,16 @@
       "id": "06351",
       "municipality": "General Pinto",
       "file": "informe-06351.pdf",
-      "pages": 5,
-      "bytes": 114673,
-      "sha256": "c665ce78ecab6d329f2670588dcf4bd8c9528844669e15c173b0c493cceff0b3",
+      "pages": 6,
+      "bytes": 136218,
+      "sha256": "4982f938347599bd791757f849d5a2aa8cfcbd588e1b8223d687cfb60ad9524e",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
         "poblacion",
-        "deudas"
+        "deudas",
+        "detalle-fiscal"
       ],
       "modules": [
         {
@@ -4933,13 +4934,23 @@
           "pages": [
             4
           ]
+        },
+        {
+          "id": "detalle-fiscal",
+          "label": "Detalle de ejecución presupuestaria",
+          "description": "Partidas, pagos, origen de recursos y conciliaciones disponibles.",
+          "default": false,
+          "required": false,
+          "pages": [
+            5
+          ]
         }
       ],
       "brief": {
         "file": "informe-06351-breve.pdf",
         "pages": 3,
-        "bytes": 69107,
-        "sha256": "2a9d12a818b03e61cd6e57135a0998c7953666d97c124eee8078f2c2fe063b15"
+        "bytes": 69111,
+        "sha256": "9f82a827ae97ca30e51ede811ba5dcfd81198d75ab78d95f29c8195668f5038f"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -9878,15 +9889,16 @@
       "id": "06693",
       "municipality": "Roque Pérez",
       "file": "informe-06693.pdf",
-      "pages": 7,
-      "bytes": 158226,
-      "sha256": "394d73d352c991fe318eb5155853906c8da51d6d7f5f6e21abecc9017a24f8e4",
+      "pages": 8,
+      "bytes": 179832,
+      "sha256": "75ef6fd8ff3a7e1d3c2d4e094bf3c788b3655c66c6bc98e569c96908927031d0",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
         "poblacion",
         "deudas",
+        "detalle-fiscal",
         "caja",
         "bancos"
       ],
@@ -9942,13 +9954,23 @@
           ]
         },
         {
+          "id": "detalle-fiscal",
+          "label": "Detalle de ejecución presupuestaria",
+          "description": "Partidas, pagos, origen de recursos y conciliaciones disponibles.",
+          "default": false,
+          "required": false,
+          "pages": [
+            5
+          ]
+        },
+        {
           "id": "caja",
           "label": "Caja y deuda municipal",
           "description": "Saldos, obligaciones y límites de la información disponible.",
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         },
         {
@@ -9958,15 +9980,15 @@
           "default": false,
           "required": false,
           "pages": [
-            6
+            7
           ]
         }
       ],
       "brief": {
         "file": "informe-06693-breve.pdf",
         "pages": 3,
-        "bytes": 69108,
-        "sha256": "02257504f0d4f21352f8a123324b1957e91b1e8bca291454b80c58a86aec9aa9"
+        "bytes": 69130,
+        "sha256": "bbc98f94366ae5d6ae83c72a12f7e7a1a1c51910d8747595da2dc4678a2c2312"
       },
       "populationYear": 2022,
       "crimeYears": [
@@ -10823,15 +10845,16 @@
       "id": "06760",
       "municipality": "San Miguel",
       "file": "informe-06760.pdf",
-      "pages": 6,
-      "bytes": 136913,
-      "sha256": "17e299e26242be1a58e70e851942632be407ee81f0b85811b4b9691863426817",
+      "pages": 7,
+      "bytes": 158751,
+      "sha256": "2d9155822c491408eb5a6bc4502a321926f5b597a99b164dbd0668d66efeb2de",
       "sections": [
         "lectura",
         "cuentas",
         "economia",
         "poblacion",
         "deudas",
+        "detalle-fiscal",
         "bancos"
       ],
       "modules": [
@@ -10886,21 +10909,31 @@
           ]
         },
         {
+          "id": "detalle-fiscal",
+          "label": "Detalle de ejecución presupuestaria",
+          "description": "Partidas, pagos, origen de recursos y conciliaciones disponibles.",
+          "default": false,
+          "required": false,
+          "pages": [
+            5
+          ]
+        },
+        {
           "id": "bancos",
           "label": "Crédito y depósitos bancarios",
           "description": "Saldos por localización financiera y fechas de cada serie.",
           "default": false,
           "required": false,
           "pages": [
-            5
+            6
           ]
         }
       ],
       "brief": {
         "file": "informe-06760-breve.pdf",
         "pages": 3,
-        "bytes": 69104,
-        "sha256": "11bfc9d773e347a69281265210e4b088e3921cf3ed86933dc7eff60da77bab5e"
+        "bytes": 69116,
+        "sha256": "850cf63b1b1bba82225a398eaf5d1565c263b144b33a75f20e5117e03141dc6d"
       },
       "populationYear": 2022,
       "crimeYears": [

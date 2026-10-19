@@ -60,7 +60,7 @@ def apply_verified_fiscal(municipalities, path):
             comparable = end.isoformat() == audit['periodEnd'] and date(2026, 1, 1) <= start <= date(2026, 1, 5)
             if start > end or end > date.fromisoformat(audit['verifiedAt']):
                 raise ValueError(f'Invalid fiscal period: {ident}')
-            if target != 'fiscalOther' and not comparable:
+            if target == 'fiscal' and not comparable:
                 raise ValueError(f'Non-comparable fiscal period: {ident}')
             if target == 'fiscalOther' and comparable:
                 raise ValueError(f'Comparable account placed outside semester ranking: {ident}')
