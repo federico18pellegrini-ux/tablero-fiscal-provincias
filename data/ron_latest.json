@@ -1,7 +1,7 @@
 {
   "reviewed": "2026-10-04",
   "period": "2026-09",
-  "real_available_through": "2026-08",
+  "real_available_through": "2026-09",
   "source": {
     "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_6.xlsx",
     "path": "data/ron_sources/informacion_consolidada_2026_6.xlsx",
@@ -156,5 +156,6 @@
       "ytd_nominal": 2636199.5866175033,
       "ytd_nominal_change_pct": 32.64747652590143
     }
-  ]
+  ],
+  "ipc_reviewed": "2026-10-19"
 }
