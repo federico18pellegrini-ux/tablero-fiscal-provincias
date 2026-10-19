@@ -4,9 +4,9 @@ ROOT=Path(__file__).resolve().parents[1]
 def read(name):return json.loads((ROOT/'data'/name).read_text(encoding='utf-8'))
 class HistoryNationalExpansionTests(unittest.TestCase):
     def test_debt_history_units_and_reconciliation(self):
-        d=read('debt_history.json');rows=d['rows'];self.assertEqual(len(rows),420)
-        self.assertEqual(len({(r['province'],r['period']) for r in rows}),420)
-        self.assertEqual(len(d['reports']),18)
+        d=read('debt_history.json');rows=d['rows'];self.assertEqual(len(rows),443)
+        self.assertEqual(len({(r['province'],r['period']) for r in rows}),443)
+        self.assertEqual(len(d['reports']),19)
         history={(r['province'],r['period']):r for r in read('fiscal_history.json')['rows']}
         for r in rows:
             self.assertEqual(r['currency'],'ARS' if r['period']<='2024-Q2' else 'USD')

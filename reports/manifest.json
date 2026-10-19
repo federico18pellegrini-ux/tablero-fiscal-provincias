@@ -9,7 +9,7 @@
     "data/budget_execution_2026.json": "d7a680b808ed094af4e371f3a0c3d8b56737f3731514abeb09c0a85f315dbe84",
     "data/fiscal_history.json": "90a121b2f7ba8296cfc84b7f95f066012a0d070a0c4f15debb9d4a3da6542319",
     "data/provincial_debt_services.json": "7a4f1b85e6ca36c75ba387655f07088840c031a37456e3aa1775418628fc0245",
-    "data/debt_history.json": "fa6ab73051827800a86518675031a806cb478a5fe96d7c2bffcad7a179be7ffe",
+    "data/debt_history.json": "597180a90df90528fbea49ba14809d2489030bf5a3def66fb6e067efd844a049",
     "data/government_results_provinces.json": "408a08c42670bb2c6e47016270e4565eb298c785df0941543ee037c262a8be7b",
     "informacion_consolidada_2026_normalizado.csv": "fb8401601291321da2d53712eb03e4426e217f347c863b55d6ca75bd179e8234",
     "informacion_consolidada_2025_normalizado.csv": "34082ab763023c68b5c51ee34d29cded09c904febf8edf7ac616850d186710f2",
@@ -22,7 +22,7 @@
     "data/pba_comparison.json": "2a2e4258edc3d9e971ac6ff1e8d359e2d9208f1f9ffc1eb034b908bb635674a1",
     "data/fiscal_q2_2026.json": "724ea5332bdf9befb4375ad22359eb8795551f2f4532412ee63c64cb60e99725",
     "data/pba_capital_detail.json": "4c2cfc3617d6996f4b59b758dc093ff18ac7e282bdf5d2d1bf0c1486c7bdfffe",
-    "scripts_export_management_reports.py": "076002816034dced44f8c47ed4ede76ccc08489498016d63803a2dfb50984e24",
+    "scripts_export_management_reports.py": "6fc43da98927e92e434c3ef05cf3c790372384c98e5998f01d0aaf2830f11b65",
     "assets/report-fonts/Lato-Regular.ttf": "d636e4683231f931eda222d588e944d082bfd3bdba02f928bee461c0f185b251",
     "assets/report-fonts/Lato-Bold.ttf": "8a0aace75d33794eece4b28187bfc1df0bbd2888b5d8a56e01788c8d65d16be1"
   },
@@ -75,7 +75,7 @@
       "pages": 3,
       "sha256": "04c74ca9b6790612c94fba9b45fe476f42e50ca9634f9b28d2fd63ddb6b88964",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": true
@@ -86,7 +86,7 @@
       "pages": 3,
       "sha256": "1e743ef7b0877414ebd793debe1fed4cd8fe2029a93d854f30caaac08b785419",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -97,7 +97,7 @@
       "pages": 3,
       "sha256": "a4d73b21ff502e263c7c2f75c97063bca15d821e8bf208407f814f5a9f444a10",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -108,7 +108,7 @@
       "pages": 3,
       "sha256": "5d487ce39bcad3f50f99b990665c34da9340bf027ebe8da006b0389b1d64ca1f",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -119,7 +119,7 @@
       "pages": 3,
       "sha256": "e9b2db67b0258fcf6e6d8834a5c64e4e0da340f7e733da846e85165dbbaa9adf",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -130,7 +130,7 @@
       "pages": 3,
       "sha256": "eab0d45cba50b3abe3ba0b65d0967a504540614477c028eb7b879d3576b6dabc",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -141,7 +141,7 @@
       "pages": 3,
       "sha256": "3380e0dccf6ed01723aa0a59e98e58b422dd21c1a3e0819d72b2999e1a5bef29",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": true
@@ -152,7 +152,7 @@
       "pages": 3,
       "sha256": "fbeeba08ce1aebef4d0b9515cc763a635d6bb4f8c1292f6c54b17de3f20c26d3",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": true
@@ -163,7 +163,7 @@
       "pages": 3,
       "sha256": "63b6b78a483fab6d59d4d77186ef4bb4f0570b596d67b34b864c9597e19a3dc5",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -174,7 +174,7 @@
       "pages": 3,
       "sha256": "54de453b561b522e22110c22ebf92efd33c0f6a473957eaee585cd9499e07c6d",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -185,7 +185,7 @@
       "pages": 3,
       "sha256": "c7c04d7871de70ca7bbef789563e4db780aae0929d7836c288391a09b7ddaa63",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": false,
       "forward_debt_calendar": false
@@ -196,7 +196,7 @@
       "pages": 3,
       "sha256": "b1edbdf5a1cdee67d259d37c109d16d1aa56ebca2b81921afebfe71503e05594",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -207,7 +207,7 @@
       "pages": 3,
       "sha256": "4f6999cb8391ce8b7fe77b8a89acf1ad2746828d9c71c2f25c2e1ec705a3196c",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -218,7 +218,7 @@
       "pages": 3,
       "sha256": "8c9734f95516781032995d85449b8b7b005822275104afefa5069ee0d62eb743",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -229,7 +229,7 @@
       "pages": 3,
       "sha256": "9f89b9b8a35f207bd855e0a5c85e05c9733c5f472fd308fa8b4120a4bdd066bf",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": true
@@ -240,7 +240,7 @@
       "pages": 3,
       "sha256": "57eedd83ce5b4eb4372bb81d4d2f640e5f63bd4d2bdfc886622232dadfdef442",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -251,7 +251,7 @@
       "pages": 3,
       "sha256": "40c778afde09f84f3d63ca2d6f9a958f6a0a136703faba545210736e6d7f4ba5",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -262,7 +262,7 @@
       "pages": 3,
       "sha256": "9dcbcef047662d88474ba597894f237cd653b19811f49fee1588044900c3a4ff",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -273,7 +273,7 @@
       "pages": 3,
       "sha256": "7c9eba11333e1d6df9b1c439a2e8c5393be150d231ff2857254452df145093f9",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -284,7 +284,7 @@
       "pages": 3,
       "sha256": "10fdb4776309ba3256776815a69cb9a186ed847809e970e41c7012f8d58b355d",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -295,7 +295,7 @@
       "pages": 3,
       "sha256": "a3392bd4b7fd468e1a531fd65c8c6958fb36b11c9824ce41b5a597fe4772954f",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": true
@@ -306,7 +306,7 @@
       "pages": 3,
       "sha256": "a2f44b0ac3084a9592d9fa0f92bc1b0200ca93400a8573b9ef315e3f66b23846",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -317,7 +317,7 @@
       "pages": 3,
       "sha256": "d9341979deba7a970f777a491f3535e39cd400fe3547feb80119d5b062383bfa",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false
@@ -328,7 +328,7 @@
       "pages": 3,
       "sha256": "2916f30e4c3043260821fc3aad1c443d0f9e110487d387af04f20634fde96110",
       "annual_year": 2025,
-      "quarter": "2026-Q1",
+      "quarter": "2026-Q2",
       "transfer_cutoff": "2026-09",
       "annual_available": true,
       "forward_debt_calendar": false

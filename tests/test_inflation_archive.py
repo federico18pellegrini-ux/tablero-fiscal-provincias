@@ -22,9 +22,9 @@ class InflationArchiveTests(unittest.TestCase):
   self.assertEqual(selected,{(r['province'],r['year']):r for r in a['annual_ratios']})
  def test_rank_gaps_are_not_zero_or_backfilled(self):
   a=json.loads((ROOT/'data/fiscal_archive.json').read_text(encoding='utf-8'));v=json.loads((ROOT/'data/fiscal_archive_vintages.json').read_text(encoding='utf-8'))
-  self.assertEqual(len(a['rank_history']),1080)
+  self.assertEqual(len(a['rank_history']),1104)
   self.assertEqual(min(r['period'] for r in a['rank_history']),'2015-Q1')
-  self.assertEqual(len({(r['province'],r['period']) for r in a['rank_history']}),1080)
+  self.assertEqual(len({(r['province'],r['period']) for r in a['rank_history']}),1104)
   self.assertTrue(all(r['rank'] is None or 1<=r['rank']<=24 for r in v['rank_vintages']))
   self.assertTrue(all('Source rank is zero' in e['reason'] for e in a['exceptions']))
   lp=next(r for r in a['rank_history'] if r['province']=='La Pampa' and r['period']=='2026-Q1');self.assertIsNone(lp['rank'])

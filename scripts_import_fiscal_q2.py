@@ -12,6 +12,19 @@ ROOT=Path(__file__).resolve().parent
 def read(p):return json.loads((ROOT/p).read_text(encoding='utf-8'))
 def write(p,v):
  path=ROOT/p;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(v,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+def update_histories(rank,debt,sha):
+ d=read('data/debt_history.json');d['rows']=[r for r in d['rows'] if r['period']!='2026-Q2'];d['reports']=[r for r in d['reports'] if r['period']!='2026-Q2']
+ mapping=dict(salary_share_ex_ss='salary_primary_ex_ss_pct',capital_share_ex_ss='capital_primary_ex_ss_pct',autonomy_ex_ss='autonomy_ex_ss_pct',iibb_own_share='iibb_own_tax_pct',debt_income_pct='debt_income_pct',market_debt_share='bonds_banks_debt_pct',financial_pct='financial_result_pct')
+ for row in rank:
+  p=row['province'];d['rows'].append(dict(**debt[p],province=p,period='2026-Q2',currency='USD',unit='millions',source_title='Informe fiscal provincias 2T26',source_page=21,ratio_source_page=23,publication_date=None,received_at='2026-10-19',ratios={k:row[v] for k,v in mapping.items()}))
+ d['reports'].append(dict(period='2026-Q2',currency='USD',debt_rows=23,ratio_rows=23,sha256=sha));write('data/debt_history.json',d)
+ new=[dict(report_period='2026-Q2',publication_date=None,received_at='2026-10-19',source_sha256=sha,province=row['province'],period='2026-Q2',rank=row['general_rank'],source_page=23) for row in rank]
+ new.append(dict(report_period='2026-Q2',publication_date=None,received_at='2026-10-19',source_sha256=sha,province='La Pampa',period='2026-Q2',rank=None,source_page=24))
+ for path,key in [('data/fiscal_archive.json','rank_history'),('data/fiscal_archive_vintages.json','rank_vintages')]:
+  d=read(path);d[key]=[x for x in d[key] if x.get('report_period')!='2026-Q2']+new;write(path,d)
+ p=ROOT/'data/fiscal_rank_history.csv';rows=list(csv.DictReader(p.read_text(encoding='utf8').splitlines()));keys=list(rows[0]);rows=[x for x in rows if x['report_period']!='2026-Q2']+[{k:x.get(k) for k in keys} for x in new]
+ with p.open('w',encoding='utf8',newline='') as f:
+  w=csv.DictWriter(f,fieldnames=keys,lineterminator='\n');w.writeheader();w.writerows(rows)
 def build(pdf_path,cache):
  sha=hashlib.sha256(pdf_path.read_bytes()).hexdigest()
  with pdfplumber.open(pdf_path) as pdf:
@@ -73,5 +86,6 @@ def build(pdf_path,cache):
  hist=read('data/fiscal_history.json');hist['rows']=[r for r in hist['rows'] if r['period']!='2026-Q2']+fiscal;write('data/fiscal_history.json',hist)
  with (ROOT/'data/fiscal/ranking_2t26.csv').open('w',encoding='utf-8',newline='') as out:
   w=csv.DictWriter(out,fieldnames=headers,lineterminator='\n');w.writeheader();w.writerows(rank)
+ update_histories(rank,debt,sha)
  print('Validated: 23 LTM identities, 23 rankings, 23 quarterly results, 23 debt compositions, 48 official semester records including explicit missing La Pampa')
 if __name__=='__main__':build(Path(sys.argv[1]),Path(sys.argv[2]))
