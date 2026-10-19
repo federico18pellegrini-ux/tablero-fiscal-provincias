@@ -7,6 +7,7 @@ function currentBudgetRatio(row){
  return null;
 }
 function renderVerifiedManagement(){
+ renderLocalFiscalUpdates();
  if(!verifiedManagementData){
   if(!verifiedManagementRequest)verifiedManagementRequest=Promise.all(['current_budget_execution.json','management_evidence_audit.json'].map(f=>fetch('data/'+f+'?v=20260907-9').then(r=>{if(!r.ok)throw Error(f);return r.json();}))).then(([budgets,audit])=>{verifiedManagementData={budgets,audit};renderVerifiedManagement();}).catch(()=>{verifiedManagementRequest=null;const parent=document.getElementById('budgetExecution');if(parent&&!parent.querySelector('#currentBudgetExecution')){const p=document.createElement('p');p.id='currentBudgetExecution';p.textContent='No se pudo cargar la revisión del presupuesto vigente. Cambiá de provincia para reintentar.';parent.prepend(p);}});
   return;
@@ -46,3 +47,23 @@ function renderVerifiedManagement(){
  }
 }
 if(typeof module!=='undefined')module.exports={currentBudgetRatio};
+
+let localFiscalUpdates=null,localFiscalUpdatesRequest=null;
+function renderLocalFiscalUpdates(){
+ const parent=document.getElementById('budgetExecution');if(!parent)return;
+ if(!localFiscalUpdates){if(!localFiscalUpdatesRequest)localFiscalUpdatesRequest=fetch('data/fiscal_local_updates.json?v=20261019').then(r=>{if(!r.ok)throw Error('local fiscal');return r.json();}).then(d=>{localFiscalUpdates=d;renderLocalFiscalUpdates();}).catch(()=>{localFiscalUpdatesRequest=null;});return;}
+ let host=document.getElementById('localFiscalUpdates');if(!host){host=document.createElement('section');host.id='localFiscalUpdates';parent.append(host);}host.replaceChildren();
+ if(!['Neuquén','La Pampa'].includes(currentProvince))return;
+ const h=document.createElement('h3');h.textContent=currentProvince==='Neuquén'?'Recaudación propia: comparación verificada':'La Pampa: compromisos mensuales publicados';host.append(h);
+ if(currentProvince==='Neuquén'){
+  const d=localFiscalUpdates.neuquen;
+  budgetParagraph(host,'Entre abril y junio de 2026, la recaudación tributaria provincial aumentó aproximadamente '+fnum(d.real_change_pct)+'% frente al mismo trimestre de 2025, descontando la inflación mes a mes.','profile-explanation');
+  host.append(completionTable('Recaudación tributaria provincial',['Período','Millones de pesos corrientes'],[['Abril–junio 2025',fnum(d.nominal_2025)],['Abril–junio 2026',fnum(d.nominal_2026)]]));
+  budgetParagraph(host,'Cálculo con los seis informes mensuales provinciales y el IPC nacional observado. Los importes de origen están redondeados; la serie provincial es provisoria y tiene una cobertura distinta de la cuenta fiscal APNF.');
+ }else{
+  const d=localFiscalUpdates.lapampa;
+  host.append(completionTable('Compromisos del mes, en millones de pesos corrientes',['Mes','Corrientes','Capital'],d.rows.map(r=>[r.period,fnum(r.current_millions),fnum(r.capital_millions)])));
+  budgetParagraph(host,'Un compromiso reserva recursos para un gasto. Todavía no significa que se haya recibido el bien o servicio ni que se haya pagado. Estos importes corresponden a cada mes y no se usan para calcular el déficit provincial.');
+ }
+ managementSource(host,'data/fiscal_local_updates.json','Documentos oficiales, importes y método de cálculo');
+}

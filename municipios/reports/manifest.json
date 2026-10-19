@@ -2,11 +2,11 @@
   "version": 3,
   "generated": "2026-10-19",
   "input_sha256": {
-    "municipios/data/dashboard.json": "d10deef97cb225d77896749ae5d426a6c58340b8b19dc293107b6b9a4ca6b68c",
+    "municipios/data/dashboard.json": "370beaf8995805bc05326ded8e9d7dbd28aa69877914f15186677845019938a3",
     "municipios/data/geografia_original.geojson": "877e30549e9d73487828d158584981635f7746739412669656bb3dfa4645173f",
     "municipios/data/fuentes.csv": "c94f29f5c3f0b20a118414deae527739e6100d9529f9c66287f0ebf69d34a96d",
-    "scripts_export_municipal_reports.py": "b80c80bcc99c9bf2d0cfbaf77a95fd71a44c6bcf4bb216a06ef1cc8148683557",
-    "scripts_municipal_editorial.py": "62ff1d56f234356e37c463119df83a497c3b574457e1264ef49061409a3a8181",
+    "scripts_export_municipal_reports.py": "72af84119fe875bd5223b178a14905032336c2ecd2e15060a21056c9407815ed",
+    "scripts_municipal_editorial.py": "bff6272ac8136b072c0460825a3192b6bcd6922ed13eded7953acaa2c9a86e51",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
   },
@@ -10846,8 +10846,8 @@
       "municipality": "San Miguel",
       "file": "informe-06760.pdf",
       "pages": 7,
-      "bytes": 158751,
-      "sha256": "2d9155822c491408eb5a6bc4502a321926f5b597a99b164dbd0668d66efeb2de",
+      "bytes": 158804,
+      "sha256": "7b9f4b9cd9be71e88f1984d26ba9bb2a902cf03293dbaec9ebb473ad4bb607c5",
       "sections": [
         "lectura",
         "cuentas",

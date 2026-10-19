@@ -316,6 +316,8 @@ class Report:
             self.table(['Concepto','Millones de pesos corrientes'],[(label,money(e.get(key),2)) for label,key in fields],[CONTENT*.65,CONTENT*.35])
             self.panel('Qué significa para la gestión',f"De los gastos registrados, {money(e.get('devengado_no_pagado_del_periodo'))} millones permanecían sin pagar al cierre. Esto permite seguir obligaciones del período; no representa toda la deuda municipal ni demuestra que todos esos pagos estén vencidos.")
             self.p('Los totales presupuestarios incluyen operaciones financieras que deben separarse antes de calcular el resultado fiscal. Por ese motivo, estos datos no se usan como un déficit o superávit en el ranking.')
+            if e.get('financialBreakdown'):
+                b=e['financialBreakdown'];self.table(['Operaciones financieras identificadas','Millones de pesos'],[(label,money(float(b[key]),2)) for label,key in [('Fuentes financieras dentro de los recursos','source_financing'),('Cancelación de cuentas a pagar anteriores','prior_liabilities'),('Adelantos a proveedores y contratistas','supplier_advances')]],[CONTENT*.65,CONTENT*.35]);self.p(escaped(b['note']),'small')
         if not accounts and not e:
             self.section('Las cuentas que faltan verificar',sources=source_link(SITE+'data/fiscal_verified.json','Registro de cuentas municipales verificadas y documentos disponibles'))
             self.p(escaped(m.get('fiscalSearch',{}).get('message','Todavía no hay una cuenta completa verificada para este municipio.')))

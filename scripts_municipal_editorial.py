@@ -160,6 +160,10 @@ class EditorialReport(Report):
             self.p(f"Del {date(e['inicio'])} al {date(e['fin'])}. Millones de pesos corrientes. Los totales incluyen operaciones financieras: no se restan sin conciliación para calcular déficit.")
             self.table(['Concepto','Millones de pesos'],[(label,money(e.get(key),2)) for key,label in [('presupuesto_vigente','Autorización anual vigente'),('recursos_presupuestarios_percibidos','Recursos cobrados'),('gastos_presupuestarios_devengados','Gastos devengados'),('gastos_presupuestarios_pagados','Gastos pagados'),('devengado_no_pagado_del_periodo','Gastos del período sin pagar')]])
             self.p('Devengado significa obligación registrada, aunque no se haya pagado. Lo devengado y no pagado del período no representa toda la deuda ni demuestra que esas facturas estén vencidas.')
+            if e.get('financialBreakdown'):
+                b=e['financialBreakdown'];self.h('Movimientos financieros identificados')
+                self.table(['Concepto','Millones de pesos'],[(label,money(float(b[key]),2)) for label,key in [('Fuentes financieras dentro de los recursos','source_financing'),('Cancelación de cuentas a pagar anteriores','prior_liabilities'),('Adelantos a proveedores y contratistas','supplier_advances')]])
+                self.p(escaped(b['note']),'small')
 
     def cash(self):
         if self.m.get('publicDebt'):

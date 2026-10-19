@@ -1,0 +1,224 @@
+[
+  {
+    "id": "06134",
+    "municipio": "Cañuelas",
+    "url": "https://www.canuelas.gov.ar",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://www.canuelas.gov.ar/",
+    "sha256": "598ad8807958f9caa79deb55b6320b51620720e7466b60ad04875dc4c8cfb787",
+    "links": []
+  },
+  {
+    "id": "06260",
+    "municipio": "Esteban Echeverría",
+    "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+    "sha256": "092ad240de439b0d4b3cb5a7c1aa218a0875c932ef5a27b03b34e811fbb090a7",
+    "links": [
+      {
+        "text": "Hacienda",
+        "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/"
+      },
+      {
+        "text": "Hacienda",
+        "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/"
+      }
+    ]
+  },
+  {
+    "id": "06294",
+    "municipio": "General Arenales",
+    "url": "https://www.generalarenales.gob.ar/gobierno-abierto/",
+    "reviewedAt": "2026-10-19",
+    "error": "HTTPConnectionPool(host='0.0.0.0', port=80): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPConnection(host='0.0.0.0', port=80): Failed to establish a new connection: [WinError 10049] La dirección solicitada no es válida en este contexto\"))"
+  },
+  {
+    "id": "06343",
+    "municipio": "General Paz",
+    "url": "https://municipalidaddegeneralpaz.gob.ar/",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://municipalidaddegeneralpaz.gob.ar/",
+    "sha256": "689949bf06435722b7dc85216694e9f250e7e4a76fe10ca660c5002af6851ddd",
+    "links": [
+      {
+        "text": "Transparencia",
+        "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+      },
+      {
+        "text": "Transparencia",
+        "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+      }
+    ]
+  },
+  {
+    "id": "06408",
+    "municipio": "Hurlingham",
+    "url": "https://www.hurlingham.gob.ar/gobierno-abierto/",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://www.hurlingham.gob.ar/gobierno-abierto/",
+    "sha256": "a92901c5542e07ec4924cc3c6f0e36a4cb9a86672ca3023726d06645dadfc7a9",
+    "links": [
+      {
+        "text": "",
+        "url": "https://www.hurlingham.gob.ar/wp-content/uploads/2019/09/Municipio-de-Hurlingham-Gobierno-Abierto-Base-de-datos-de-proveedores.pdf"
+      },
+      {
+        "text": "PROVEEDORES",
+        "url": "https://www.hurlingham.gob.ar/wp-content/uploads/2019/09/Municipio-de-Hurlingham-Gobierno-Abierto-Base-de-datos-de-proveedores.pdf"
+      }
+    ]
+  },
+  {
+    "id": "06420",
+    "municipio": "La Costa",
+    "url": "http://www.lacosta.gov.ar/",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://lacosta.gob.ar/",
+    "sha256": "c29e47c0c3af60111a57360208803a79b919cb9dd4bc89b853137b63c838dc0a",
+    "links": []
+  },
+  {
+    "id": "06462",
+    "municipio": "Leandro N. Alem",
+    "url": "https://municipioalem.gob.ar/?q=transparencia",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://municipioalem.gob.ar/?q=transparencia",
+    "sha256": "6e00947607e183f01169a4f2e4739904f1dd7ba8ff3d1b72d707b4da4835247e",
+    "links": [
+      {
+        "text": "Transparencia",
+        "url": "https://municipioalem.gob.ar/?q=gobierno-abierto"
+      },
+      {
+        "text": "Transparencia",
+        "url": "https://municipioalem.gob.ar/?q=transparencia"
+      },
+      {
+        "text": "",
+        "url": "https://twitter.com/share?url=https://municipioalem.gob.ar/?q=transparencia&text=Transparencia "
+      },
+      {
+        "text": "",
+        "url": "https://www.facebook.com/sharer.php?u=https://municipioalem.gob.ar/?q=transparencia&t=Transparencia"
+      }
+    ]
+  },
+  {
+    "id": "06490",
+    "municipio": "Lomas de Zamora",
+    "url": "https://www.lomasdezamora.gov.ar/",
+    "reviewedAt": "2026-10-19",
+    "error": "HTTPSConnectionPool(host='www.lomasdezamora.gov.ar', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
+  },
+  {
+    "id": "06518",
+    "municipio": "Mar Chiquita",
+    "url": "https://www.marchiquita.gob.ar/secretaria-de-economia/",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://www.marchiquita.gob.ar/secretaria-de-economia/",
+    "sha256": "30063ed20cd120cb095611205be889d3c5cec911d8da2390a8eaef5a06d9308d",
+    "links": []
+  },
+  {
+    "id": "06539",
+    "municipio": "Merlo",
+    "url": "https://www.merlo.gob.ar/",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://www.merlo.gob.ar/",
+    "sha256": "099f8102774f5e26af64841be001c5a4e0a8cf9fa3b8665b57d4c2ec9c7101c2",
+    "links": [
+      {
+        "text": "Transparencia",
+        "url": "https://www.merlo.gob.ar/transparencia/"
+      }
+    ]
+  },
+  {
+    "id": "06630",
+    "municipio": "Pila",
+    "url": "https://pila.gob.ar/",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://pila.gob.ar/",
+    "sha256": "2af8f1f0104452f27c54126ed486a85ba9036889c1092eb045581c19f8416ff3",
+    "links": [
+      {
+        "text": "Digesto Municipal Ordenanzas, decretos, resoluciones y boletines oficiales.",
+        "url": "https://pila.gob.ar/digesto.php"
+      },
+      {
+        "text": "Decretos Rubricados 3/2026",
+        "url": "https://pila.gob.ar/descargar_digesto.php?id=6"
+      },
+      {
+        "text": "Ver Online",
+        "url": "https://pila.gob.ar/descargar_digesto.php?id=6"
+      },
+      {
+        "text": "",
+        "url": "https://pila.gob.ar/descargar_digesto.php?id=6&forzar=1"
+      },
+      {
+        "text": "Decretos Rubricados 2/2026",
+        "url": "https://pila.gob.ar/descargar_digesto.php?id=5"
+      },
+      {
+        "text": "Ver Online",
+        "url": "https://pila.gob.ar/descargar_digesto.php?id=5"
+      },
+      {
+        "text": "",
+        "url": "https://pila.gob.ar/descargar_digesto.php?id=5&forzar=1"
+      },
+      {
+        "text": "Decretos Rubricados 1/2026",
+        "url": "https://pila.gob.ar/descargar_digesto.php?id=4"
+      },
+      {
+        "text": "Ver Online",
+        "url": "https://pila.gob.ar/descargar_digesto.php?id=4"
+      },
+      {
+        "text": "",
+        "url": "https://pila.gob.ar/descargar_digesto.php?id=4&forzar=1"
+      },
+      {
+        "text": "Explorar Digesto Completo",
+        "url": "https://pila.gob.ar/digesto.php"
+      },
+      {
+        "text": "Digesto Municipal",
+        "url": "https://pila.gob.ar/digesto.php"
+      }
+    ]
+  },
+  {
+    "id": "06655",
+    "municipio": "Punta Indio",
+    "url": "https://puntaindio.gov.ar/",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://puntaindio.gov.ar/",
+    "sha256": "ad2b5608811b319b19b7245d2dfdd6278813d64c7be91349d922890019160d48",
+    "links": []
+  },
+  {
+    "id": "06812",
+    "municipio": "Tordillo",
+    "url": "https://tordillomunicipio.org/index.php/transparencia/",
+    "reviewedAt": "2026-10-19",
+    "status": 200,
+    "final": "https://tordillomunicipio.org/index.php/transparencia-2/",
+    "sha256": "ba8a31d6b48a168acc6e94f4d3e859f579b565fb2b7c1411954192a2cc8ad7ad",
+    "links": []
+  }
+]

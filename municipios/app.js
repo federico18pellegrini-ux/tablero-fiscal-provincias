@@ -626,7 +626,7 @@ function renderFiscal(m,chosen){
     $('fiscal-panel').innerHTML=`<span class="coverage-tag">Cuenta pendiente de verificación</span><h3>Qué falta para completar las cuentas</h3><p>${escape(m.fiscalSearch?.message||`Todavía no verificamos una cuenta completa de ${m.municipio}.`)} Con las transferencias solas no podemos calcular el déficit ni la inversión total.</p><p>El ranking compara ${count} municipios en enero–junio de 2026. Las fichas también conservan ${data.fiscalCoverage.otherPeriods} cuentas de otros períodos, siempre con sus fechas.</p><div class="fiscal-choices"><button id="fiscal-ranking">Ver el ranking de cuentas →</button><a class="text-button" href="metodologia.html#revision-portales">Ver el alcance de la revisión ↗</a></div>`;
     $('fiscal-ranking').onclick=()=>{scopePeers=false;state.metric='deficit';rankAscending=true;showAll=false;navigate('rankings');};
   }
-
+  if(!f&&e?.financialBreakdown){const b=e.financialBreakdown;$('fiscal-panel').insertAdjacentHTML('beforeend',`<div class="fiscal-reading"><h3>Movimientos financieros identificados</h3><p>Los recursos incluyen ${millions(Number(b.source_financing))} de fuentes financieras. El gasto bruto incluye ${millions(Number(b.prior_liabilities))} de cancelación de cuentas a pagar anteriores y ${millions(Number(b.supplier_advances))} de adelantos a proveedores.</p><p>${escape(b.note)}</p></div>`);}
 }
 function renderAnnualBudget(m,id,detailed){
   const host=$(id),b=m.annualBudget,coverage=data.annualBudgetCoverage;

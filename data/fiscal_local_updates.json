@@ -1,0 +1,164 @@
+{
+  "reviewed_at": "2026-10-19",
+  "neuquen": {
+    "rows": [
+      {
+        "period": "2025-04",
+        "nominal_millions": 129597,
+        "real_june2026_millions": 178515.875794967,
+        "document": {
+          "url": "https://www.economianqn.gob.ar/contenido/file/11444",
+          "file": "nqn-11444.pdf",
+          "sha256": "726c416cbec3201bfb885c6579e591fe9aeb3a7fd22119e0969bd0a9d8672c0f",
+          "pages": 9,
+          "bytes": 364504,
+          "archive": "data/fiscal/official-local/nqn-11444.pdf",
+          "consultedPages": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "period": "2025-05",
+        "nominal_millions": 132837,
+        "real_june2026_millions": 180272.78564920934,
+        "document": {
+          "url": "https://www.economianqn.gob.ar/contenido/file/11489",
+          "file": "nqn-11489.pdf",
+          "sha256": "e7f31252b6543fa8321436916a47469edf68798adc8f9dd63707f4274c3be5b0",
+          "pages": 9,
+          "bytes": 366257,
+          "archive": "data/fiscal/official-local/nqn-11489.pdf",
+          "consultedPages": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "period": "2025-06",
+        "nominal_millions": 144367,
+        "real_june2026_millions": 192798.8533880847,
+        "document": {
+          "url": "https://www.economianqn.gob.ar/contenido/file/11526",
+          "file": "nqn-11526.pdf",
+          "sha256": "1906fbf76e1502cd6cb2a6f4e7ae70c9459859913302973007315a91cb70233e",
+          "pages": 9,
+          "bytes": 370462,
+          "archive": "data/fiscal/official-local/nqn-11526.pdf",
+          "consultedPages": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "period": "2026-04",
+        "nominal_millions": 182835,
+        "real_june2026_millions": 190289.93443548598,
+        "document": {
+          "url": "https://www.economianqn.gob.ar/contenido/file/12461",
+          "file": "nqn-12461.pdf",
+          "sha256": "437ad4c3c671d6b6630aaf31ee4bed2f60437e02afa44bf19fcef2078628dc78",
+          "pages": 7,
+          "bytes": 486110,
+          "archive": "data/fiscal/official-local/nqn-12461.pdf",
+          "consultedPages": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "period": "2026-05",
+        "nominal_millions": 204009,
+        "real_june2026_millions": 207858.3876148441,
+        "document": {
+          "url": "https://www.economianqn.gob.ar/contenido/file/12683",
+          "file": "nqn-12683.pdf",
+          "sha256": "ef383842387b88d574a66c6979beab7b872b807eac73777b29949fa030af5464",
+          "pages": 7,
+          "bytes": 423623,
+          "archive": "data/fiscal/official-local/nqn-12683.pdf",
+          "consultedPages": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "period": "2026-06",
+        "nominal_millions": 209036,
+        "real_june2026_millions": 209036.0,
+        "document": {
+          "url": "https://www.economianqn.gob.ar/contenido/file/12824",
+          "file": "nqn-12824.pdf",
+          "sha256": "815a57338fd8c811110e7ff1cefc495dc8e6ae729ea02622174a363186d08a05",
+          "pages": 7,
+          "bytes": 441832,
+          "archive": "data/fiscal/official-local/nqn-12824.pdf",
+          "consultedPages": [
+            2,
+            3
+          ]
+        }
+      }
+    ],
+    "quarter": "2026-Q2",
+    "real_change_pct": 10.079417267988045,
+    "nominal_2025": 406801,
+    "nominal_2026": 595880,
+    "method": "Recaudación tributaria provincial publicada en millones redondeados. Suma abril–junio de cada año, deflactando cada mes por IPC nacional observado a pesos de junio de 2026. No se reutilizan las variaciones reales de los informes, que usaban IPC estimado. Serie provincial provisoria; no sustituye la cobertura APNF.",
+    "note": "La caída de 228,4% del informe recibido no se reproduce con los seis meses oficiales. Se conserva el dato rechazado en el registro de auditoría."
+  },
+  "lapampa": {
+    "rows": [
+      {
+        "period": "2026-06",
+        "current_millions": 191224.43283266,
+        "capital_millions": 39577.44966241,
+        "figurative_millions": 668.9894663,
+        "financial_applications_millions": 0.0,
+        "gross_millions": 231470.87196137,
+        "document": {
+          "url": "https://contaduriageneral.lapampa.gob.ar/images/pdf/InfoPres/EjePresupuestaria/2026/INFORME_CLAS_ECON-FIN-FUN_JUNIO_2026.pdf",
+          "file": "INFORME_CLAS_ECON-FIN-FUN_JUNIO_2026.pdf",
+          "sha256": "ca75d3e9047aa11904942a35642920272c79ba65e2dfeca12226218dd8ff83b2",
+          "pages": 2,
+          "archive": "data/fiscal/official-local/INFORME_CLAS_ECON-FIN-FUN_JUNIO_2026.pdf",
+          "consultedPages": [
+            1,
+            2
+          ],
+          "bytes": 398570
+        },
+        "nonfinancial_millions": 230801.88249507
+      },
+      {
+        "period": "2026-08",
+        "current_millions": 159742.77391358,
+        "capital_millions": 35244.89674599,
+        "figurative_millions": 413.4342265,
+        "financial_applications_millions": 0.0,
+        "gross_millions": 195401.10488607,
+        "document": {
+          "url": "https://contaduriageneral.lapampa.gob.ar/images/pdf/InfoPres/EjePresupuestaria/2026/INFORME_CLAS_ECON-FIN-FUN_AGOSTO_2026.pdf",
+          "file": "INFORME_CLAS_ECON-FIN-FUN_AGOSTO_2026.pdf",
+          "sha256": "e36cd584a29f32f88b8140ec8e171cefd067d4cdc2b2f17f90b06f471ce26310",
+          "pages": 2,
+          "archive": "data/fiscal/official-local/INFORME_CLAS_ECON-FIN-FUN_AGOSTO_2026.pdf",
+          "consultedPages": [
+            1,
+            2
+          ],
+          "bytes": 397791
+        },
+        "nonfinancial_millions": 194987.67065957
+      }
+    ],
+    "basis": "compromiso",
+    "scope": "Organismos incluidos en la publicación de Contaduría General; no acreditada su equivalencia con el consolidado APNF.",
+    "note": "Son compromisos de cada mes, no un acumulado ni gastos devengados. Las contribuciones figurativas se muestran separadas para evitar sumarlas al gasto corriente y de capital. No permiten calcular déficit ni incorporar la provincia al ranking APNF."
+  }
+}
