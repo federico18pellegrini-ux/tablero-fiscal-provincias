@@ -4334,13 +4334,13 @@
     {
       "id": "06693",
       "year": 2026,
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "original": "17050281000.00",
-      "current": "18637075477.07",
-      "modifications": "1586794477.07",
+      "current": "19763071313.44",
+      "modifications": "2712790313.44",
       "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
       "method": "published_current",
-      "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
+      "note": "Crédito vigente de la CAIF firmada a junio; original anual corroborado en ejecución de marzo. Modificaciones calculadas como vigente menos original.",
       "documents": [
         {
           "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastosporfinalidadfuncion12026.pdf",
@@ -4352,10 +4352,22 @@
             2
           ],
           "locator": "Gastos por finalidad y función, Totales Generales, aprobado/modificaciones/vigente; período enero–marzo. El archivo abril–junio se conserva separado."
+        },
+        {
+          "url": "https://roqueperez.gob.ar/sites/default/files/situacioneconomicofinanciera.jpg",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-deep/06693-junio.jpg",
+          "sha256": "b7200e44db4c56694ba12a2e8fe1d3a45a779dc460066d8b926772f013346d0f",
+          "bytes": 594967,
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "format": "image/jpeg",
+          "locator": "Imagen firmada, encabezado 02/01/2026–30/06/2026, cuadro CAIF superior derecho; personal, columna devengado. Transcripción visual, identidades conciliadas al centavo."
         }
       ],
       "periodStart": "2026-01-01",
-      "verifiedAt": "2026-10-04"
+      "verifiedAt": "2026-10-19"
     },
     {
       "id": "06700",

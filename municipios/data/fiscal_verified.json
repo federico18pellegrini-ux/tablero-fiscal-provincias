@@ -2310,6 +2310,40 @@
       "verifiedAt": "2026-09-07"
     },
     {
+      "id": "06693",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Departamento Ejecutivo y H.C.D. según cuenta municipal publicada. Excluye fuentes y aplicaciones financieras.",
+      "landingUrl": "https://roqueperez.gob.ar/situacion-economica-financiera",
+      "amounts": {
+        "ingresos_corrientes": "8992704063.75",
+        "gastos_corrientes": "7444455031.70",
+        "ingresos_capital": "577786432.59",
+        "gastos_capital": "1241329988.20",
+        "ingresos_totales": "9570490496.34",
+        "gastos_totales": "8685785019.90",
+        "resultado_financiero": "884705476.44",
+        "personal_devengado": "4840448497.74"
+      },
+      "documents": [
+        {
+          "url": "https://roqueperez.gob.ar/sites/default/files/situacioneconomicofinanciera.jpg",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-deep/06693-junio.jpg",
+          "sha256": "b7200e44db4c56694ba12a2e8fe1d3a45a779dc460066d8b926772f013346d0f",
+          "bytes": 594967,
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "format": "image/jpeg",
+          "locator": "Imagen firmada, encabezado 02/01/2026–30/06/2026, cuadro CAIF superior derecho; personal, columna devengado. Transcripción visual, identidades conciliadas al centavo."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cuenta semestral firmada. Reemplaza la ejecución aislada de abril–junio para la lectura fiscal y el ranking comparable."
+    },
+    {
       "id": "06707",
       "inicio": "2026-01-01",
       "fin": "2026-06-30",
@@ -3276,68 +3310,6 @@
   ],
   "budgetExecutions": [
     {
-      "id": "06351",
-      "inicio": "2026-01-01",
-      "fin": "2026-09-30",
-      "method": "published_budget_execution",
-      "scope": "Totales presupuestarios publicados. La apertura económica y el tratamiento de las operaciones financieras siguen pendientes; no se calcula resultado fiscal.",
-      "landingUrl": "https://pinto.cloudnetworkengine.com/listado-acotado-pdf.php?idCategoria=166",
-      "amounts": {
-        "recursos_presupuestarios_percibidos": "18615487946.67",
-        "gastos_presupuestarios_devengados": "17835150905.27",
-        "gastos_presupuestarios_pagados": "17536697823.14",
-        "presupuesto_vigente": "24587075515.80"
-      },
-      "documents": [
-        {
-          "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDERECURSOSAL300920261791471203.zip",
-          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-0ce891b072-0.pdf",
-          "sha256": "6921c1c087936bbf0bfcca14139a0630eef5fbf44b9fd677e704fe623b4e3f6a",
-          "bytes": 430880,
-          "pages": 8,
-          "consultedPages": [
-            1,
-            8
-          ],
-          "locator": "Totales de las columnas identificadas; período según encabezado del PDF.",
-          "container": "ZIP oficial; archivo y hash corresponden al PDF contenido.",
-          "containerArchive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-0ce891b072.zip",
-          "containerSha256": "767a90192ef849de73da56e4677f30caed7ce351105c51bba2c5efd501747029"
-        },
-        {
-          "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSAL300920261791471099.zip",
-          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-60e33de4f7-0.pdf",
-          "sha256": "7fbbc3ad5faf0b665d2ef02136b2f5ad39f9028dcf49493a39e1f464ccdb1727",
-          "bytes": 720107,
-          "pages": 64,
-          "consultedPages": [
-            1,
-            64
-          ],
-          "locator": "Totales de las columnas identificadas; período según encabezado del PDF.",
-          "container": "ZIP oficial; archivo y hash corresponden al PDF contenido.",
-          "containerArchive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-60e33de4f7.zip",
-          "containerSha256": "23b1acb4623411f985ea94b05f88282e5f8bc1d267b9c646a4b05195e63d479c"
-        },
-        {
-          "url": "https://pinto.cloudnetworkengine.com/upload/ESTADODEEJECUCIONDEGASTOSPORFINALIDADYFUNCIONAL300920261791471057.zip",
-          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-a643daca52-0.pdf",
-          "sha256": "dcc071068c943647b714f847f485a7b64798ee90dcb1dc8ed159454fb6005be1",
-          "bytes": 370194,
-          "pages": 2,
-          "consultedPages": [
-            1,
-            2
-          ],
-          "locator": "Totales de las columnas identificadas; período según encabezado del PDF.",
-          "container": "ZIP oficial; archivo y hash corresponden al PDF contenido.",
-          "containerArchive": "municipios/data/fiscal-sources/2026-10-19-missing/06351-a643daca52.zip",
-          "containerSha256": "b25d7ba8695516059085a575f56b2d45fa11d34d84ab8e0fd0f63fa25c4e7d2e"
-        }
-      ],
-      "verifiedAt": "2026-10-19"
-    },
-    {
       "id": "06760",
       "inicio": "2026-01-02",
       "fin": "2026-03-31",
@@ -3403,58 +3375,6 @@
         "supplier_advances": "5266544986.17",
         "note": "Recursos: fuentes financieras, pág. 2. Gastos: adelantos a proveedores, pág. 8; cancelación de cuentas a pagar anteriores, págs. 9–10. No se suman estos conceptos al gasto corriente o de capital. Falta conciliar la clasificación económica y los insumos de obras para completar la cuenta fiscal."
       }
-    },
-    {
-      "id": "06693",
-      "inicio": "2026-04-01",
-      "fin": "2026-06-30",
-      "method": "published_budget_execution",
-      "scope": "Totales presupuestarios publicados. La apertura económica y el tratamiento de las operaciones financieras siguen pendientes; no se calcula resultado fiscal.",
-      "landingUrl": "https://roqueperez.gob.ar/ejecucion-trimestral-recursos-y-gastos",
-      "amounts": {
-        "recursos_presupuestarios_percibidos": "5273105856.75",
-        "gastos_presupuestarios_devengados": "4821089118.53",
-        "gastos_presupuestarios_pagados": "4773476156.56"
-      },
-      "documents": [
-        {
-          "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestariarecursos22026.pdf",
-          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06693-8c9642622a.pdf",
-          "sha256": "ec71f4da05fd00e0d61c8b586c1b29096da16f19292c56a361174abadecbf535",
-          "bytes": 445680,
-          "pages": 9,
-          "consultedPages": [
-            1,
-            9
-          ],
-          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
-        },
-        {
-          "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastos22026.pdf",
-          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06693-6f17fd39f6.pdf",
-          "sha256": "09382729e69affd4b03e76b292da612254f229e56cb6fa77203d8bcc3b4858f6",
-          "bytes": 1805544,
-          "pages": 260,
-          "consultedPages": [
-            1,
-            260
-          ],
-          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
-        },
-        {
-          "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastosporfinalidadfuncion22026.pdf",
-          "archive": "municipios/data/fiscal-sources/2026-10-19-missing/06693-9b7cc7b876.pdf",
-          "sha256": "a8b068f8fc38bdeee0de58dd64cd8d8fb3e114f381d89f630a78f3f182fa8e2c",
-          "bytes": 386715,
-          "pages": 2,
-          "consultedPages": [
-            1,
-            2
-          ],
-          "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
-        }
-      ],
-      "verifiedAt": "2026-10-19"
     }
   ],
   "otherPeriods": [
@@ -5089,6 +5009,44 @@
           "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
         }
       ]
+    },
+    {
+      "id": "06351",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Departamento Ejecutivo y H.C.D. según cuenta municipal publicada. Excluye fuentes y aplicaciones financieras.",
+      "landingUrl": "https://pinto.cloudnetworkengine.com/listado-acotado-pdf.php?_pagi_pg=3&idCategoria=166",
+      "amounts": {
+        "ingresos_corrientes": "18367489104.50",
+        "gastos_corrientes": "16990168095.24",
+        "ingresos_capital": "247998842.17",
+        "gastos_capital": "786480971.04",
+        "ingresos_totales": "18615487946.67",
+        "gastos_totales": "17776649066.28",
+        "resultado_financiero": "838838880.39",
+        "personal_devengado": "7111367762.51"
+      },
+      "documents": [
+        {
+          "url": "https://pinto.cloudnetworkengine.com/upload/SITUACIONECONOMICAFINANCIERAAL300920261791471300.zip",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-deep/06351-septiembre.pdf",
+          "sha256": "7195c405d63725d6a6797d2ffc020b0eaf64eb1581d5809765a1938b1f719bcd",
+          "bytes": 300965,
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "Página 1, Cuenta Ahorro Inversión Financiamiento y gasto en personal devengado.",
+          "container": "ZIP oficial; archivo y hash corresponden al PDF contenido.",
+          "member": "SITUACIONECONOMICAFINANCIERAAL300920261791471300.pdf",
+          "containerArchive": "municipios/data/fiscal-sources/2026-10-19-deep/06351-septiembre.zip",
+          "containerSha256": "6888fb40a5745f61ead49e8fa0809b75dab7c73043ce5f3002afb4338a745c71"
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Cuenta completa a septiembre. No integra el ranking fiscal del primer semestre. La CAIF excluye 58.501.838,99 pesos del devengado presupuestario bruto como movimientos financieros."
     }
   ],
   "updatedAt": "2026-10-19"

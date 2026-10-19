@@ -1,0 +1,26 @@
+{
+  "id": "06693",
+  "year": 2026,
+  "asOf": "2026-03-31",
+  "original": "17050281000.00",
+  "current": "18637075477.07",
+  "modifications": "1586794477.07",
+  "scope": "Administración municipal y Concejo Deliberante según el documento publicado. No se agregan cuentas separadas de otros organismos.",
+  "method": "published_current",
+  "note": "Autorización anual de gasto. El vigente incorpora las modificaciones hasta el corte indicado; no es caja disponible ni gasto ejecutado.",
+  "documents": [
+    {
+      "url": "https://roqueperez.gob.ar/sites/default/files/estadoejecucionpresupuestogastosporfinalidadfuncion12026.pdf",
+      "sha256": "f793b2a7869018544bb972053fe501dd8604711ec0ac3520bfc63f964db69747",
+      "bytes": 386545,
+      "pages": 2,
+      "consultedPages": [
+        1,
+        2
+      ],
+      "locator": "Gastos por finalidad y función, Totales Generales, aprobado/modificaciones/vigente; período enero–marzo. El archivo abril–junio se conserva separado."
+    }
+  ],
+  "periodStart": "2026-01-01",
+  "verifiedAt": "2026-10-04"
+}

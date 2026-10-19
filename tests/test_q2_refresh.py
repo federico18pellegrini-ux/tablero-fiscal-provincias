@@ -27,7 +27,8 @@ class Q2Refresh(unittest.TestCase):
    if p['province']!='La Pampa':self.assertIn('doce meses a junio de 2026',text)
  def test_partial_municipal_executions_never_become_fiscal_balances(self):
   d=read('municipios/data/dashboard.json');ms={m['id']:m for m in d['municipalities']}
-  for code in ['06351','06693','06760']:
+  for code in ['06760']:
    m=ms[code];self.assertIsNone(m['fiscal']);self.assertIsNone(m['fiscalOther']);self.assertIsNotNone(m['fiscalExecution']);self.assertNotIn('resultado_financiero',m['fiscalExecution'])
-  self.assertEqual(ms['06693']['fiscalExecution']['inicio'],'2026-04-01')
+  self.assertEqual(ms['06693']['fiscal']['inicio'],'2026-01-02')
+  self.assertEqual(ms['06351']['fiscalOther']['fin'],'2026-09-30')
   belgrano=ms['06301']['fiscalOther'];self.assertEqual(belgrano['fin'],'2026-09-30');self.assertAlmostEqual(belgrano['ingresos_totales']-belgrano['gastos_totales'],belgrano['resultado_financiero'],places=2)
