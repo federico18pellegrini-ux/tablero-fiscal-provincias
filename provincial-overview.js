@@ -1,3 +1,19 @@
+// Keep an observed spending floor distinct from money available to spend.
+function overviewCommittedDescription(row){
+ const number=value=>value===null||value===undefined||String(value).trim()===''?null:Number(value);
+ if(!row||[row.total_rigid_pct,row.observed_floor_pct].every(v=>number(v)===null))return 'Faltan componentes comparables del gasto.';
+ const components=[['personal',row.personnel_pct],['jubilaciones',row.social_security_spending_pct],['intereses',row.interest_pct],['transferencias a municipios',row.automatic_transfers_pct]].filter(([,v])=>number(v)>0).map(([name])=>name);
+ const names=components.length>1?components.slice(0,-1).join(', ')+(components.at(-1)==='intereses'?' e ':' y ')+components.at(-1):components[0]||'los componentes informados';
+ return 'Como mínimo, esta parte de los ingresos se destina a '+names+'. El resto debe cubrir otros gastos.';
+}
+function overviewServiceMetric(pillars){
+ for(const pillar of pillars||[]){
+  if(pillar.indicator_type!=='resultado')continue;
+  const metric=(pillar.metrics||[]).find(m=>m.value!==null&&m.value!==undefined&&m.display&&m.status==='auditado');
+  if(metric)return {...metric,pillarLabel:pillar.label};
+ }
+ return null;
+}
 /* Executive reading uses the same observations as the detailed sections. */
 function initProvincialOverview(){
  const labels={summary:'Resumen',income:'Ingresos y gasto',debt:'Deuda y vencimientos',federal:'Relación con Nación',results:'Servicios y resultados',comparison:'Comparación'};
@@ -35,18 +51,30 @@ function initProvincialOverview(){
   const floor=rigid?toN(rigid.total_rigid_pct)??toN(rigid.observed_floor_pct):null;
   const peak=(province==='Buenos Aires'?debtScheduleRows:[]).filter(r=>Number(r.year)>=2027).reduce((a,b)=>Number(b.total_service_ars_m)>Number(a?.total_service_ars_m||0)?b:a,null);
   const pillars=governmentResults?.provinces?.[province]?.pillars||[];
-  const metric=pillars.filter(p=>p.indicator_type==='resultado').flatMap(p=>p.metrics||[]).find(m=>m.value!==null&&m.display);
+  const metric=overviewServiceMetric(pillars);
   const rows=[
    {key:'accounts',q:'¿Alcanzan los ingresos?',value:text('kResFin'),description:text('kResFinReading'),period:document.querySelector('#kResFin')?.closest('.kcard')?.querySelector('.pulse-tag')?.textContent||'',view:'income',link:'Ver ingresos y gasto',tone:/[-−]/.test(text('kResFin'))?'negative':/[1-9]/.test(text('kResFin'))?'positive':'neutral'},
-   {key:'margin',q:'¿Cuánto margen hay?',value:floor===null?'Sin dato':floor.toLocaleString('es-AR',{maximumFractionDigits:1})+'%',description:floor===null?'Faltan componentes comparables del gasto.':'De los ingresos destinados a personal, jubilaciones e intereses'+(toN(rigid.automatic_transfers_pct)!==null?' y transferencias a municipios.':'.')+' El resto también debe cubrir otros gastos.',period:rigid?'Doce meses al '+date(rigid.cutoff):'',view:'income',link:'Ver composición del gasto'},
-   {key:'debt',q:peak?'¿Qué vence y cuándo?':'¿Cuánto pesa la deuda?',value:peak?'$'+(Number(peak.total_service_ars_m)/1e6).toLocaleString('es-AR',{maximumFractionDigits:2})+' billones':text('kDebt'),description:peak?peak.year+': el mayor pago anual del calendario publicado. Incluye capital e intereses.':'Deuda provincial respecto de los ingresos de un año. El detalle distingue stock y calendario disponible.',period:peak?'Valuación al '+date(peak.valuation_date):(/[0-9]/.test(text('kDebt'))?'Stock al 30/06/2026 · comparación provincial':'Sin stock comparable disponible'),view:'debt',link:'Ver deuda y vencimientos'},
-   {key:'nation',q:'¿Qué recibe de Nación?',value:text('kRonYtd'),description:'Transferencias nacionales acumuladas. En el detalle: evolución, comparación por habitante y reclamos publicados.',period:[document.getElementById('kRonYtd')?.closest('.kcard')?.querySelector('.k-lbl')?.textContent,document.getElementById('kRonYtd')?.closest('.kcard')?.querySelector('.pulse-tag')?.textContent].filter(Boolean).join(' · '),view:'federal',link:'Ver relación con Nación'},
-   {key:'services',q:'¿Cómo están los servicios?',value:metric?.display||'Sin dato comparable',description:metric?metric.label:'Faltan resultados oficiales comparables para esta provincia.',period:metric?metric.period+(metric.rank?' · Puesto '+metric.rank+' de '+metric.rank_total:''):'',view:'results',link:'Ver salud, educación y seguridad'}
+   {key:'margin',q:'¿Cuánto ingreso está comprometido?',value:floor===null?'Sin dato':floor.toLocaleString('es-AR',{maximumFractionDigits:1})+'%',description:overviewCommittedDescription(rigid),period:rigid?'Doce meses al '+date(rigid.cutoff):'',view:'income',target:'rigidSpendSection',link:'Ver composición del gasto'},
+   {key:'debt',q:peak?'¿Qué vence y cuándo?':'¿Cuánto pesa la deuda?',value:peak?'$'+(Number(peak.total_service_ars_m)/1e6).toLocaleString('es-AR',{maximumFractionDigits:2})+' billones':text('kDebt'),description:peak?'Capital e intereses previstos para '+peak.year+'.':(/[0-9]/.test(text('kDebt'))?'Deuda acumulada como porcentaje de los ingresos de un año. No es lo que vence este año.':'No hay un stock de deuda comparable para esta provincia.'),period:peak?'Valuación al '+date(peak.valuation_date):(/[0-9]/.test(text('kDebt'))?'Stock al '+date(latestFiscalDetails?.cutoff)+' · ingresos de doce meses':'Sin stock comparable disponible'),view:'debt',link:'Ver deuda y vencimientos'},
+   {key:'nation',q:'¿Qué recibe de Nación?',value:text('kRonYtd'),description:'Fondos recibidos de Nación durante el período indicado.',period:[document.getElementById('kRonYtd')?.closest('.kcard')?.querySelector('.k-lbl')?.textContent,document.getElementById('kRonYtd')?.closest('.kcard')?.querySelector('.pulse-tag')?.textContent].filter(Boolean).join(' · '),view:'federal',link:'Ver relación con Nación'},
+   {key:'services',q:metric?.id==='homicide_rate'?'Seguridad: homicidios':metric?.pillarLabel||'Servicios y resultados',value:metric?.display||'Sin dato comparable',description:metric?(metric.id==='homicide_rate'?'Víctimas por cada 100.000 habitantes. Una tasa más baja es mejor.':metric.label):'Faltan resultados oficiales comparables para esta provincia.',period:metric?metric.period+(metric.rank?' · Puesto '+metric.rank+' de '+metric.rank_total+(metric.direction==='lower_is_better'?' · 1 = menor tasa':metric.direction==='higher_is_better'?' · 1 = mayor valor':''):''):'',view:'results',link:'Ver salud, educación y seguridad'}
   ];
-  grid.replaceChildren();
-  for(const row of rows){const card=document.createElement('article');card.className='province-decision-card';card.dataset.key=row.key;const h=document.createElement('h3');h.textContent=row.q;const value=document.createElement('strong');value.className='decision-value '+(row.tone||'neutral');value.textContent=row.value;const description=document.createElement('p');description.textContent=row.description;const period=document.createElement('small');period.textContent=row.period;const link=document.createElement('button');link.type='button';link.textContent=row.link+' →';link.onclick=()=>{route(row.view);document.querySelector(`[data-view-panel="${row.view}"]`)?.scrollIntoView({block:'start',behavior:'instant'});};card.append(h,value,description,period,link);grid.append(card);}
+  for(const row of rows){
+   let card=grid.querySelector(`[data-key="${row.key}"]`);
+   if(!card){
+    card=document.createElement('article');card.className='province-decision-card';card.dataset.key=row.key;
+    for(const tag of ['h3','strong','p','small','button'])card.append(document.createElement(tag));
+    card.lastElementChild.type='button';grid.append(card);
+   }
+   const [h,value,description,period,link]=card.children;
+   h.textContent=row.q;value.className='decision-value '+(row.tone||'neutral');value.textContent=row.value;
+   description.textContent=row.description;period.textContent=row.period;link.textContent=row.link+' →';
+   link.onclick=()=>{route(row.view);(row.target?document.getElementById(row.target):document.querySelector(`[data-view-panel="${row.view}"]`))?.scrollIntoView({block:'start',behavior:'instant'});};
+  }
  }
  const observer=new MutationObserver(refresh);
  for(const id of ['kResFin','kDebt','kRonYtd','rigidSpendValue','governmentResultsGrid']){const node=document.getElementById(id);if(node)observer.observe(node,{subtree:true,childList:true,characterData:true});}
  document.addEventListener('change',refresh);refresh();
 }
+
+if(typeof module!=='undefined')module.exports={overviewCommittedDescription,overviewServiceMetric};
