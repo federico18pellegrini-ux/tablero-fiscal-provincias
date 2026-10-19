@@ -35,7 +35,7 @@
       title:reference.summary_title||summaryTitles[reference.kind],hasAmount:!!reference.amount,
       value:reference.amount?money(reference.amount):'Monto no publicado',
       valueSuffix:reference.amount_basis==='mensual'?'por mes':'',
-      tone:reference.amount?(claim?'negative':reference.kind==='pago'?'positive':'informative'):'neutral',
+      tone:reference.amount?(claim?'informative':reference.kind==='pago'?'positive':'informative'):'neutral',
       recordId:reference.id,context:reference.summary_context||reference.period||reference.title,
       publishedAt:reference.published_at,attribution:claim?'Según la Provincia':'Documento oficial',
     };

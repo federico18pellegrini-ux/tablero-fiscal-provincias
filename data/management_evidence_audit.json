@@ -12,7 +12,7 @@
   "jurisdictions": [
     {
       "province": "Buenos Aires",
-      "reviewed_at": "2026-09-07",
+      "reviewed_at": "2026-10-19",
       "budget_status": "not_verified",
       "budget_as_of": null,
       "budget_finding": "Contaduría publica gasto devengado APNF a junio de 2026. Los cuadros revisados no contienen el crédito vigente total.",
@@ -20,7 +20,7 @@
       "cash_status": "not_verified",
       "cash_finding": "Faltan saldos bancarios conciliados, fondos afectados y pagos exigibles a una misma fecha.",
       "debt_status": "verified",
-      "debt_finding": "Calendario incorporado: Perfil oficial de deuda provincial. Valuado al 31/12/2025. Es el calendario publicado para todo el año; no descuenta pagos posteriores.",
+      "debt_finding": "Calendario oficial valuado al 30/06/2026: julio–diciembre de 2026 y años completos 2027–2041. No descuenta pagos posteriores a la publicación.",
       "sources": [
         {
           "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/images/Cuerpo.htm",
@@ -31,6 +31,11 @@
           "url": "https://www.cgp.gba.gov.ar/static/ejecucion/2026/06/cuadros/guias/TOMO_I/Html/APNF_Econ2.htm",
           "sha256": "1e5e565ad37f1bf738c91707e05c0615dc10e880d218e8527cde9d2a894c18f7",
           "cached_name": "pba-june-gasto"
+        },
+        {
+          "url": "https://www.ec.gba.gov.ar/areas/finanzas/deuda/archivos/Informe%20de%20Deuda%20PBA%20al%2030-Jun-2026.pdf",
+          "sha256": "be453db6b4cee584b04ea93c6082f10b72df0fe3257498a86e8553fa50cadc91",
+          "title": "Informe de deuda al 30/06/2026"
         }
       ]
     },

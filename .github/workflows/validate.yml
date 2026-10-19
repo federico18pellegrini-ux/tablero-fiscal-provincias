@@ -27,7 +27,7 @@ jobs:
       - name: Validate municipal management comparisons and source separation
         run: node --test tests/municipal_structure.test.mjs
       - name: Validate provincial coverage and estimation labels
-        run: node --test tests/provincial_coverage.test.cjs
+        run: node --test tests/provincial_coverage.test.cjs tests/provincial_coherence.test.cjs
       - name: Validate TOP traceability
         run: python scripts_validate_top_traceability.py
       - name: Validate national claims data

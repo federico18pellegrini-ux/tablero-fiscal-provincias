@@ -1,6 +1,8 @@
 /* Price basis is scoped explicitly. Annual source ratios are not real flows. */
 function updatePriceBasisNotice(){
   const basis=displayMode==='real'?`Pesos constantes de ${CONSTANT_PRICE_BASE}`:'Pesos corrientes';
+  const scope=document.getElementById('summaryPriceScope');
+  if(scope)scope.textContent=`Ingresos mensuales: ${basis.toLowerCase()}. Deuda y cuentas fiscales conservan la unidad y fecha indicadas.`;
   const note=document.getElementById('priceBasisNotice');
   if(note)note.textContent=displayMode==='real'?`Ingresos provinciales ajustados por IPC, a precios de ${CONSTANT_PRICE_BASE}.`:'Ingresos provinciales en pesos de cada mes.';
   for(const id of ['kTopYtd','kRonYtd']){const card=document.getElementById(id)?.closest('.kcard');if(!card)continue;const tag=card.querySelector('.pulse-tag');if(tag)tag.textContent='Flujo acumulado · '+basis;}

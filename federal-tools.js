@@ -23,7 +23,7 @@ function initFederalTools(){
   for(const [button,panel] of [['openHistory','fiscalHistoryPanel'],['openMap','fiscalMapPanel'],['openNation','nationalPanel'],['openGuide','fiscalGuide']]){
     const trigger=document.getElementById(button);trigger.setAttribute('aria-controls',panel);trigger.setAttribute('aria-expanded','false');
     document.getElementById(panel).addEventListener('toggle',()=>trigger.setAttribute('aria-expanded',String(document.getElementById(panel).open)));
-    trigger.onclick=()=>{const p=document.getElementById(panel),open=!p.open;for(const other of host.querySelectorAll(':scope > details'))other.open=false;p.open=open;if(open)p.scrollIntoView({behavior:'smooth',block:'start'});};
+    trigger.onclick=()=>{if(button==='openNation'){location.href='nacion/';return;}const p=document.getElementById(panel),open=!p.open;for(const other of host.querySelectorAll(':scope > details'))other.open=false;p.open=open;if(open)p.scrollIntoView({behavior:'smooth',block:'start'});};
   }
   const periods=historyPeriods();document.getElementById('mapPeriod').innerHTML=periods.map(p=>`<option value="${p}">${periodName(p)}</option>`).join('');document.getElementById('mapPeriod').value=periods.at(-1)||'';
   document.getElementById('mapPeriod').onchange=()=>{renderFiscalMap();renderProfileReadings();};
@@ -31,7 +31,7 @@ function initFederalTools(){
   initCompositionExplorer();
   initManagementDesign();
   renderProfileReadings();
-  renderFiscalHistory(currentProvince);renderFiscalMap();renderNationalPanel();
+  renderFiscalHistory(currentProvince);renderFiscalMap();
   fetch('data/debt_history.json?v=20260907-2').then(r=>{if(!r.ok)throw Error('debt');return r.json();}).then(d=>{debtHistory=d;renderComposition(currentProvince);}).catch(()=>{debtHistory={rows:[],failed:true};renderComposition(currentProvince);});
   for(const [id,all] of [['downloadPdf',false],['downloadPdfAll',true]]){
     const old=document.getElementById(id);if(!old)continue;
@@ -46,10 +46,11 @@ function renderFiscalHistory(province){
   renderComposition(province);
   const periods=historyPeriods(), rows=periods.map(p=>historyRow(province,p));
   const latest=rows.at(-1),change=fiscalChange(province,periods.at(-1));
+  let eventNote=document.getElementById('historyEventNote');if(!eventNote){eventNote=document.createElement('p');eventNote.id='historyEventNote';eventNote.className='federal-note';document.getElementById('historyReading').after(eventNote);}eventNote.textContent='Diciembre de 2023: cambio de gobierno nacional. Cada punto acumula doce meses; el hito ubica la fecha y no atribuye por sí solo los cambios fiscales.';
   document.getElementById('historyReading').textContent=latest?`Al ${periodName(latest.period)}, el saldo después de intereses fue ${fnum(latest.financial_pct)}% de los ingresos. ${change===null?'No hay un corte anterior comparable.':`Cambió ${fnum(change)} puntos porcentuales frente al corte anterior (${change>0?'mejoró':change<0?'empeoró':'sin cambio'}).`}`:'Sin información para esta jurisdicción en el último corte. Los datos anteriores se conservan abajo.';
   document.getElementById('historyRows').innerHTML=periods.map((p,i)=>`<tr><th scope="row">${periodName(p)}</th><td>${fnum(rows[i]?.primary_pct)}</td><td>${fnum(rows[i]?.financial_pct)}</td><td>${fnum(fiscalChange(province,p))} ${fiscalChange(province,p)===null?'':'pp'}</td></tr>`).join('');
   fiscalHistoryChart?.destroy();
-  if(typeof Chart!=='undefined')fiscalHistoryChart=new Chart(document.getElementById('fiscalHistoryChart'),{type:'line',data:{labels:periods.map(periodName),datasets:[{label:'Antes de intereses',data:rows.map(r=>r?.primary_pct??null),borderColor:'#68b7ff',spanGaps:false},{label:'Después de intereses',data:rows.map(r=>r?.financial_pct??null),borderColor:'#ffb05c',spanGaps:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#d9e1ee'}}},scales:{x:{ticks:{color:'#c4ccd8'}},y:{title:{display:true,text:'% de ingresos',color:'#c4ccd8'},ticks:{color:'#c4ccd8'}}}}});
+  if(typeof Chart!=='undefined')fiscalHistoryChart=new Chart(document.getElementById('fiscalHistoryChart'),{type:'line',data:{labels:periods.map(p=>p==='2023-Q4'?[periodName(p),'Cambio de gobierno nacional']:periodName(p)),datasets:[{label:'Antes de intereses',data:rows.map(r=>r?.primary_pct??null),borderColor:'#68b7ff',spanGaps:false},{label:'Después de intereses',data:rows.map(r=>r?.financial_pct??null),borderColor:'#ffb05c',spanGaps:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#d9e1ee'}}},scales:{x:{ticks:{color:'#c4ccd8'}},y:{title:{display:true,text:'% de ingresos',color:'#c4ccd8'},ticks:{color:'#c4ccd8'}}}}});
 }
 
 function chooseFiscalProvince(province){
@@ -152,7 +153,7 @@ function renderComposition(province){
   const series=debt?[{label:'Deuda / ingresos',data:rows.map(r=>r?.ratios?.debt_income_pct??null)}]:fields.map(([key,label])=>({label,data:rows.map(r=>ratio(r,key))}));
   const colors=['#68b7ff','#ffb05c','#6bd5b5','#d6a3ff','#f6d273'];
   compositionChart?.destroy();
-  if(typeof Chart!=='undefined')compositionChart=new Chart(document.getElementById('compositionChart'),{type:'line',data:{labels:periods.map(periodName),datasets:series.map((s,i)=>({...s,borderColor:colors[i],spanGaps:false,pointRadius:2}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#d9e1ee'}}},scales:{x:{ticks:{color:'#c4ccd8'}},y:{title:{display:true,text:'% de ingresos',color:'#c4ccd8'},ticks:{color:'#c4ccd8'}}}}});
+  if(typeof Chart!=='undefined')compositionChart=new Chart(document.getElementById('compositionChart'),{type:'line',data:{labels:periods.map(p=>p==='2023-Q4'?[periodName(p),'Cambio de gobierno nacional']:periodName(p)),datasets:series.map((s,i)=>({...s,borderColor:colors[i],spanGaps:false,pointRadius:2}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#d9e1ee'}}},scales:{x:{ticks:{color:'#c4ccd8'}},y:{title:{display:true,text:'% de ingresos',color:'#c4ccd8'},ticks:{color:'#c4ccd8'}}}}});
   document.getElementById('compositionReading').textContent=debt?(debtHistory?.failed?'No se pudo cargar la historia de deuda. No se reemplaza por cero.':!debtHistory?'Cargando historia de deuda…':'El gráfico compara el stock de deuda con los ingresos de los últimos 12 meses. Un 50% equivale a la mitad de los ingresos de un año; no indica cuánto vence ni qué caja hay disponible.'):mode==='income'?'Por cada $100 de ingresos, cuánto aporta cada fuente. La dependencia de tributos nacionales ayuda a evaluar la exposición a cambios en la recaudación y distribución federal.':'Por cada $100 de ingresos, cuánto se destina a cada componente del gasto primario. La suma puede superar $100 si hay déficit; los intereses se muestran aparte. Capital no equivale exclusivamente a obra pública.';
   const headers=debt?['Cierre','Deuda / ingresos (%)','Stock (millones)','Moneda del stock','Bonos','Nación','Organismos','Bancos','Consolidada']:['Cierre',...fields.map(f=>f[1]),...(mode==='spend'?['Intereses']:[])];
   const table=document.getElementById('compositionTable');table.replaceChildren();

@@ -9,7 +9,7 @@ function currentBudgetRatio(row){
 function renderVerifiedManagement(){
  renderLocalFiscalUpdates();
  if(!verifiedManagementData){
-  if(!verifiedManagementRequest)verifiedManagementRequest=Promise.all(['current_budget_execution.json','management_evidence_audit.json'].map(f=>fetch('data/'+f+'?v=20260907-9').then(r=>{if(!r.ok)throw Error(f);return r.json();}))).then(([budgets,audit])=>{verifiedManagementData={budgets,audit};renderVerifiedManagement();}).catch(()=>{verifiedManagementRequest=null;const parent=document.getElementById('budgetExecution');if(parent&&!parent.querySelector('#currentBudgetExecution')){const p=document.createElement('p');p.id='currentBudgetExecution';p.textContent='No se pudo cargar la revisión del presupuesto vigente. Cambiá de provincia para reintentar.';parent.prepend(p);}});
+  if(!verifiedManagementRequest)verifiedManagementRequest=Promise.all(['current_budget_execution.json','management_evidence_audit.json'].map(f=>fetch('data/'+f+'?v=20261019-coherence').then(r=>{if(!r.ok)throw Error(f);return r.json();}))).then(([budgets,audit])=>{verifiedManagementData={budgets,audit};renderVerifiedManagement();}).catch(()=>{verifiedManagementRequest=null;const parent=document.getElementById('budgetExecution');if(parent&&!parent.querySelector('#currentBudgetExecution')){const p=document.createElement('p');p.id='currentBudgetExecution';p.textContent='No se pudo cargar la revisión del presupuesto vigente. Cambiá de provincia para reintentar.';parent.prepend(p);}});
   return;
  }
  const province=currentProvince,{budgets,audit}=verifiedManagementData,b=budgets.records.find(r=>r.province===province),a=audit.jurisdictions.find(r=>r.province===province);
@@ -67,3 +67,4 @@ function renderLocalFiscalUpdates(){
  }
  managementSource(host,'data/fiscal_local_updates.json','Documentos oficiales, importes y método de cálculo');
 }
+
