@@ -26,6 +26,34 @@ METRICS = [
     'wages',
     'capital_expenditure',
 ]
+TAX_COMPONENTS = {'Iibb', 'Inmobiliario', 'Automotores', 'Sellos', 'Otros'}
+
+
+def own_revenue_totals(rows):
+    """Sum mutually exclusive taxes; never add a published Total a second time."""
+    grouped = defaultdict(dict)
+    for row in rows:
+        if row.get('period_type') != 'month' or row.get('tax') not in TAX_COMPONENTS | {'Total'}:
+            continue
+        value = to_float(row.get('value_millions'))
+        if value is None:
+            continue
+        key = (row['province'].strip(), row['period'].strip())
+        tax = row['tax']
+        if tax in grouped[key]:
+            raise ValueError(f'Duplicate tax observation: {key} {tax}')
+        grouped[key][tax] = value
+    result = {}
+    for key, taxes in grouped.items():
+        if TAX_COMPONENTS <= taxes.keys():
+            total = sum(taxes[tax] for tax in TAX_COMPONENTS)
+            if 'Total' in taxes and abs(total - taxes['Total']) > .02:
+                raise ValueError(f'Tax total does not reconcile: {key}')
+            result[key] = total
+        elif 'Total' in taxes:
+            result[key] = taxes['Total']
+        # Partial components alone are not a total.
+    return result
 
 
 def parse_deflator_from_index_html():
@@ -68,27 +96,8 @@ def prefill_inputs():
     # A) own_revenue (2026 vs mismo período 2025)
     top_rows = read_csv(TOP_FILE)
     top_2025_rows = read_csv(TOP_2025_FILE) if TOP_2025_FILE.exists() else []
-    own_totals = defaultdict(float)
-    own_totals_2025 = defaultdict(float)
-    for r in top_rows:
-        if r.get('period_type') != 'month':
-            continue
-        province = (r.get('province') or '').strip()
-        period = (r.get('period') or '').strip()
-        val = to_float(r.get('value_millions'))
-        if not province or not period or val is None:
-            continue
-        own_totals[(province, period)] += val
-
-    for r in top_2025_rows:
-        if r.get('period_type') != 'month':
-            continue
-        province = (r.get('province') or '').strip()
-        period = (r.get('period') or '').strip()
-        val = to_float(r.get('value_millions'))
-        if not province or not period or val is None:
-            continue
-        own_totals_2025[(province, period)] += val
+    own_totals = own_revenue_totals(top_rows)
+    own_totals_2025 = own_revenue_totals(top_2025_rows)
 
     for (province, period), value in sorted(own_totals.items()):
         prev_period = f"{int(period[:4]) - 1:04d}-{period[5:7]}"
@@ -327,8 +336,8 @@ def calc_real_dynamics():
                 curr_year = max(by_year)
                 seq = sorted(by_year[curr_year], key=lambda x: x[0])
                 months = [int(p.split('-')[1]) for p, _, _ in seq]
-                expected = list(range(months[0], months[-1] + 1))
-                if months == expected:
+                expected = list(range(1, months[-1] + 1))
+                if months == expected and seq[-1][0] == last_period:
                     lastp = seq[-1][0]
                     f_last = to_float(deflactor.get(lastp, {}).get('factor_to_latest'))
                     if f_last:

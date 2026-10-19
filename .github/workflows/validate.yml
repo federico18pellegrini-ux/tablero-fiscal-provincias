@@ -26,6 +26,8 @@ jobs:
         run: node --test tests/management_math.test.cjs tests/profile_readings.test.cjs tests/budget_execution.test.cjs tests/analytics.test.cjs tests/municipal_dashboard.test.mjs tests/municipal_reports.test.mjs tests/nation_claims.test.cjs tests/national_budget.test.cjs tests/national_report.test.cjs tests/national_management.test.cjs tests/national_decisions.test.cjs tests/national_priorities.test.cjs
       - name: Validate municipal management comparisons and source separation
         run: node --test tests/municipal_structure.test.mjs
+      - name: Validate provincial coverage and estimation labels
+        run: node --test tests/provincial_coverage.test.cjs
       - name: Validate TOP traceability
         run: python scripts_validate_top_traceability.py
       - name: Validate national claims data
