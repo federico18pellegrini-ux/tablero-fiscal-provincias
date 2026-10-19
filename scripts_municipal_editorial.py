@@ -54,14 +54,14 @@ class EditorialReport(Report):
         self.h('La lectura central')
         resource='Los fondos provinciales perdieron poder de compra. Esto puede presionar sobre los servicios y las obras que se financian con esos recursos.' if r<0 else 'Los fondos provinciales ganaron poder de compra. La mejora amplía los recursos de ese origen, aunque el margen final depende también de los gastos.' if r>0 else 'Los fondos provinciales mantuvieron su poder de compra. El margen para sostener servicios depende de los demás ingresos y de los costos.'
         employment='El empleo formal también retrocedió en su último año disponible.' if j<0 and r<0 else 'El empleo formal retrocedió en su último año disponible.' if j<0 else 'El empleo formal creció en su último año disponible.' if j>0 else 'El empleo formal se mantuvo estable en su último año disponible.'
-        self.p(f'{resource} {employment} Son dos señales para la gestión, con cortes distintos: las transferencias llegan a julio de 2026 y el empleo, a diciembre de 2025. No permiten afirmar cómo está evolucionando el trabajo durante 2026.')
+        self.p(f'{resource} {employment} Las transferencias comparan enero-julio de 2026 con el mismo período de 2025. El empleo compara los promedios de 2025 y 2024; todavía no describe lo ocurrido durante 2026.')
         if f:
             balance=f['resultado_financiero'];status='déficit' if balance<0 else 'superávit' if balance>0 else 'equilibrio'
             self.p(f"Las cuentas muestran <b>{status}</b> al {date(f['fin'])}. Por cada $100 de ingresos se registraron ${number(ratio(f['gastos_totales'],f['ingresos_totales']),1)} de gastos. "+('El faltante exige identificar cómo se financió.' if balance<0 else 'Ese resultado no equivale a caja libre: puede haber obligaciones pendientes y fondos con destino asignado.'))
         else:self.p('<b>La cuenta fiscal está pendiente.</b> Las transferencias son sólo una parte de los ingresos. Sin ingresos y gastos del mismo período no se puede afirmar que hay déficit o superávit.')
         self.h('Tres decisiones que conviene ordenar')
         self.p('<b>1. Revisar recursos y compromisos.</b> '+('La pérdida de poder de compra obliga a actualizar el costo de los servicios y contrastarlo con tasas propias y giros provinciales. Así se identifica qué compra u obra necesita reprogramarse.' if r<0 else 'Antes de asumir gastos permanentes, conviene contrastar los ingresos efectivamente cobrados con los costos de los servicios y el destino obligatorio de cada fondo.'))
-        self.p('<b>2. Armar el calendario de pagos.</b> Reunir saldos bancarios, fondos afectados, facturas pendientes y vencimientos. Esto permite saber qué compromisos se pueden atender y cuándo; el resultado fiscal por sí solo no responde esa pregunta.')
+        self.p('<b>2. Armar el calendario de pagos.</b> Reunir saldos bancarios, fondos con un destino obligatorio, facturas pendientes y vencimientos. Así se identifica qué dinero se puede usar y qué pagos necesitan financiamiento.')
         largest=max((s for s in m['sectors'] if finite(s['jobs'])),key=lambda s:s['jobs'],default=None)
         concentration=(f"El sector «{escaped(largest['name'])}» concentra el {number(ratio(largest['jobs'],m['empleo_dic2025']),1)}% de los puestos registrados. " if largest and m['empleo_dic2025']>0 else '')
         self.p('<b>3. Mirar los sectores que explican el empleo.</b> '+concentration+('La caída de puestos puede afectar los ingresos de las familias vinculadas a esas empresas y el comercio.' if j<0 else 'El crecimiento puede concentrarse en pocas actividades; el total no muestra quiénes participan de la mejora.' if j>0 else 'Un total estable puede esconder cambios entre actividades.')+' Contrastar los sectores con habilitaciones y cobranza ayuda a priorizar trámites, capacitación o infraestructura con una necesidad identificada.')
@@ -72,14 +72,14 @@ class EditorialReport(Report):
         refs=self.refs('transfers','ipc')+(' · '+self.fiscal_refs(f) if f else '')
         if b:refs+=' · '+document_refs(m,b['documents'])
         self.section('Cuentas y recursos',False,refs)
-        self.p('Tres datos distintos: el presupuesto autoriza gasto anual, la cuenta fiscal registra ingresos y gastos de un período, y las transferencias son fondos que llegan de la Provincia. No se suman entre sí.','small')
+        self.p('El presupuesto indica cuánto se puede gastar. La cuenta fiscal muestra lo que se cobró y las obligaciones registradas. Las transferencias provinciales forman parte de esos ingresos.','small')
         self.h('Cuánto tiene autorizado gastar')
         if b:
             kind='vigente' if b['basis']=='current' else 'original'
             self.p(f"Presupuesto <b>{kind} de {b['year']}: {money(b['amount'])} millones</b>. Corte o documento: {date(b['asOf'])}. Equivale a {money(b['perCapita'],0,False)} por habitante del Censo 2022.")
             if b['historical']:self.p(f"Es un dato histórico: falta verificar el presupuesto de 2026.",'small')
             elif b['basis']=='original':self.p('Es el monto inicial; todavía no incorporamos una actualización del vigente.','small')
-            self.p('Es autorización anual, no gasto ejecutado ni saldo en el banco. '+escaped(b['scope']),'small')
+            self.p('Alcance: '+escaped(b['scope']),'small')
         else:self.p('Presupuesto anual pendiente de verificación. No se estima a partir de transferencias ni de gastos parciales.')
         self.h('Qué muestran las cuentas')
         if f:
@@ -113,7 +113,7 @@ class EditorialReport(Report):
         self.p(f"El promedio de empleo {direction(j)} {number(abs(j),1)}% en 2025 frente a 2024. Entre diciembre de 2023 y diciembre de 2025 hubo {number(abs(d),0)} puestos {'menos' if d<0 else 'más' if d>0 else 'de diferencia'}. El promedio y el cierre pueden moverse en distinta dirección; comparan momentos diferentes.")
         self.p('Se cuentan puestos privados registrados por lugar del establecimiento. Quedan fuera el empleo público, informal e independiente. Algunos trabajadores viven en otro municipio: esta serie no mide la desocupación de los vecinos.','small')
         self.p(f"El salario bruto mensual promedio de 2025 fue de <b>{money(w['2025']['nominal'],0,False)}</b> en pesos de ese año. La tabla lo lleva a precios de julio de 2026. Incluye aguinaldo y otros pagos: <b>no es el sueldo de bolsillo ni el salario de un vecino típico.</b>")
-        self.p('El OEDE usa las remuneraciones declaradas al SIPA. Para el promedio real se ajusta cada salario mensual por IPC de julio de 2026 / IPC del mes y luego se promedian los doce meses. El peso de cada sector y los sueldos altos pueden mover el promedio.','small')
+        self.p('Fuente: Observatorio de Empleo y Dinámica Empresarial (OEDE), con salarios declarados al Sistema Integrado Previsional Argentino (SIPA). Cada mes se lleva a precios de julio de 2026 con el IPC y después se promedian los doce meses. Los sueldos altos y la composición por sectores pueden elevar el promedio.','small')
         self.h('Dónde están los puestos')
         names={'Explotacion de minas y canteras':'Minería','Electircidad, gas y agua':'Electricidad, gas y agua','Construccion':'Construcción','Agricultura, ganaderia y pesca':'Agro y pesca'}
         sectors=sorted(m['sectors'],key=lambda s:s['jobs'] if finite(s['jobs']) else -1,reverse=True)
@@ -133,7 +133,7 @@ class EditorialReport(Report):
             ('Deuda en mora / deuda total',pct(d['debtInArrearsPct'],2)),('Deuda promedio por persona con deuda, pesos',money(d['averageDebtARS'],0,False))
         ],[CONTENT*.7,CONTENT*.3])
         self.h('Cómo leerlo')
-        self.p('Tener deuda no significa estar atrasado. La mora cuenta aquí las situaciones 3, 4 y 5 del relevamiento; los atrasos más cortos quedan fuera. El porcentaje de personas en mora cuenta personas. El porcentaje de deuda en mora cuenta dinero: pueden diferir porque no todos deben el mismo monto.')
+        self.p('Tener deuda no significa estar atrasado. Este relevamiento considera mora las situaciones 3, 4 y 5 de la clasificación del BCRA; deja afuera los atrasos más cortos. Hay dos medidas: cuántas personas tienen problemas de pago y cuánto dinero representan sus deudas. Pueden dar porcentajes distintos porque no todos deben lo mismo.')
         self.p('Ninguno de esos porcentajes se calcula sobre todos los habitantes ni cuenta hogares. Una familia puede tener varios deudores. El promedio tampoco indica cuánto debe un vecino típico.')
         self.h('Qué aporta a la gestión')
         self.p('Conviene contrastar esta señal con empleo, ingresos y consultas de defensa del consumidor. Puede orientar la atención de reclamos y la información sobre crédito. Un solo corte no permite atribuir la mora a una causa ni estimar cuánto caerá el consumo local.')
