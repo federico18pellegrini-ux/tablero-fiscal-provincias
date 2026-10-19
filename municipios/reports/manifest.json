@@ -2,9 +2,9 @@
   "version": 3,
   "generated": "2026-10-19",
   "input_sha256": {
-    "municipios/data/dashboard.json": "34af2081438491a7ef59d2fbca724fbb22c00de64d3956175566503eb129f3bd",
+    "municipios/data/dashboard.json": "3220db43e784596bf28f92f2cabbfa1745153b1d69d0ec7192472eee92c7e239",
     "municipios/data/geografia_original.geojson": "877e30549e9d73487828d158584981635f7746739412669656bb3dfa4645173f",
-    "municipios/data/fuentes.csv": "1778ad0f6ef4a56b10c3e46f106d243274880167e37b3dde98c19056855d0e87",
+    "municipios/data/fuentes.csv": "9e66069af3575105b388935b97312d89e643c97eae1cf8c75b1567d0c1e837dc",
     "scripts_export_municipal_reports.py": "72af84119fe875bd5223b178a14905032336c2ecd2e15060a21056c9407815ed",
     "scripts_municipal_editorial.py": "bff6272ac8136b072c0460825a3192b6bcd6922ed13eded7953acaa2c9a86e51",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
@@ -5597,8 +5597,8 @@
       "municipality": "Hurlingham",
       "file": "informe-06408.pdf",
       "pages": 6,
-      "bytes": 136317,
-      "sha256": "ca7223994af7ae7703a48f0fef40644f5f17fb458fdb6a920a6fba96148f8530",
+      "bytes": 138579,
+      "sha256": "c66168413d86151840b4b92334a3ea72a82b723f3d6e74d961532f1ecfc227e1",
       "sections": [
         "lectura",
         "cuentas",
@@ -5672,8 +5672,8 @@
       "brief": {
         "file": "informe-06408-breve.pdf",
         "pages": 3,
-        "bytes": 68516,
-        "sha256": "763cc1d2710c9e6ab41e76ccffa53932e781799ee8fab3f170ef5a42a6d8f98a"
+        "bytes": 70770,
+        "sha256": "4cd7a6b4f64921ccb26fb91e9326210b7746624103b0af8dec59ee81135c008e"
       },
       "populationYear": 2022,
       "crimeYears": [
