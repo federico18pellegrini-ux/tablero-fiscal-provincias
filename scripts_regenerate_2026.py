@@ -119,7 +119,7 @@ def province_rows(sheet, name_column: int, universe: set[str]) -> dict[str, int]
     return result
 
 
-def import_top(path: Path, universe: list[str]) -> tuple[list[dict[str, object]], dict[str, list[str]]]:
+def import_top(path: Path, universe: list[str], year: int = 2026) -> tuple[list[dict[str, object]], dict[str, list[str]]]:
     workbook = openpyxl.load_workbook(path, data_only=True, read_only=False)
     total_sheet = workbook["TOTAL"]
     universe_set = set(universe)
@@ -128,7 +128,7 @@ def import_top(path: Path, universe: list[str]) -> tuple[list[dict[str, object]]
         tax: province_rows(workbook[sheet_name], 2, universe_set)
         for tax, sheet_name in TOP_SHEETS.items()
     }
-    columns = month_columns(total_sheet)
+    columns = {column: f'{year}-{period[-2:]}' for column, period in month_columns(total_sheet).items()}
     source_name = path.name
     rows: list[dict[str, object]] = []
     coverage: dict[str, list[str]] = defaultdict(list)
@@ -158,7 +158,7 @@ def import_top(path: Path, universe: list[str]) -> tuple[list[dict[str, object]]
                     {
                         "province": province,
                         "source": source_name,
-                        "year": 2026,
+                        "year": year,
                         "period_type": "month",
                         "period": period,
                         "tax": tax,
@@ -251,6 +251,7 @@ def write_pba_files(
     ron_rows: list[dict[str, object]],
     top_source: Path,
     ron_source: Path,
+    write_ron: bool = True,
 ) -> None:
     top_by_period: dict[str, dict[str, float]] = defaultdict(dict)
     for row in top_rows:
@@ -280,6 +281,8 @@ def write_pba_files(
         pba_top_rows,
     )
 
+    if not write_ron:
+        return
     periods = sorted({str(row["period"]) for row in ron_rows if row["province"] == "Buenos Aires" and str(row["period"]).startswith("2026-")})
     pba_ron_rows: list[dict[str, object]] = []
     for period in periods:

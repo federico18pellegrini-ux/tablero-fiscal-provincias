@@ -1,6 +1,6 @@
 {
   "project": "Sistema fiscal provincias - capa intermedia normalizada",
-  "generated_at": "2026-10-19T14:52:07.666100Z",
+  "generated_at": "2026-10-19T14:58:06.223901Z",
   "data_cutoff": "2026-09-30",
   "province_universe": [
     "Buenos Aires",
@@ -99,7 +99,7 @@
     "federal_fairness_scope": "Bloque de comparación federal justa. Calcula RON per cápita vs promedio provincial y aporte estimado vs participación recibida, con método visible.",
     "scenarios_scope": "Bloque de escenarios 90/180 días. Requiere inputs explícitos de caja, recursos esperados, gasto, deuda, aguinaldo y financiamiento disponible.",
     "load_priority_2025_2026": "a) comparación federal justa; b) caja y riesgo inmediato; c) atribución del deterioro; d) escenarios; e) dinámica real completa.",
-    "monthly_scope_2025_prepared": "RON 2025: base mensual oficial completa, 24 jurisdicciones y 12 meses, importada con trazabilidad. TOP 2025 y gasto mensual 2025-2026 mantienen los faltantes identificados; no se imputan.",
+    "monthly_scope_2025_prepared": "RON y recaudación propia 2025: 24 jurisdicciones y 12 meses conciliados. Gasto mensual comparable pendiente, sin imputaciones.",
     "reclamos_nacion_scope": "Publicaciones oficiales por jurisdicción: reclamos, anticipos, acuerdos, créditos compensables y cobros separados. Moneda y fecha propias; sin total nacional, sin actualización automática y sin sustituir faltantes por cero.",
     "pba_new_sources_2026_scope": "PBA: TOP mensual, RON mensual/diario y ejecución trimestral se integran como prioridad para 2025-2026 sin romper series históricas nacionales.",
     "national_debt_scope": "Serie mensual de deuda nacional (USD) para contexto macro del bloque Nación.",
@@ -115,7 +115,7 @@
   "as_of_by_block": {
     "structural_and_ranking": "2026-06-30",
     "recaudacion_propia_2026_max": "2026-09-30",
-    "recaudacion_propia_pba": "2026-07-31",
+    "recaudacion_propia_pba": "2026-08-31",
     "transferencias_nacion_2026": "2026-09-30",
     "debt_stock_pba": "2026-06-30",
     "debt_currency_composition_pba": "2026-06-30",

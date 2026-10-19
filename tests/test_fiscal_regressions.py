@@ -145,7 +145,7 @@ class FiscalRegressionTests(unittest.TestCase):
         self.assertAlmostEqual(caba_january['Iibb'], 759579.1, places=6)
         self.assertAlmostEqual(sum(caba_january.values()), 1124942.9, places=6)
         self.assertNotEqual(caba_january['Iibb'], sum(caba_january.values()))
-        self.assertEqual(max(row['period'] for row in top if row['province'] == 'Buenos Aires'), '2026-07')
+        self.assertEqual(max(row['period'] for row in top if row['province'] == 'Buenos Aires'), '2026-08')
 
         with (ROOT / 'informacion_consolidada_2026_normalizado.csv').open(encoding='utf-8', newline='') as source:
             ron = list(csv.DictReader(source))

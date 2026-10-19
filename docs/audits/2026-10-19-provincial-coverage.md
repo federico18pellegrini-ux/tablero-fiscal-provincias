@@ -17,7 +17,16 @@ Para Buenos Aires quedan cuatro bloques completos en ese alcance y dos parciales
 - **Equidad federal**: RON per cápita disponible; falta una estimación homogénea de aportes tributarios territoriales para todas las provincias. La estimación oficial de PBA no se extrapola ni convierte una brecha per cápita en incumplimiento legal.
 - **Dinámica fiscal**: recaudación propia comparable a julio y RON a septiembre disponibles. Faltan series mensuales comparables 2025–2026 de gasto primario, personal e inversión. Hay cuentas semestrales verificadas en otro bloque; no se reparten artificialmente entre meses.
 
-No se completaron estas variables con proxies. Para avanzar se requieren planillas mensuales oficiales comparables y una metodología territorial nacional; no se encontraron nuevas fuentes verificables en esta ronda. Las búsquedas de la página DNAP de recursos provinciales no devolvieron una base mensual 2025 adicional. No se afirma que esa base no exista.
+No se completaron gastos con proxies. Para avanzar se requieren planillas mensuales oficiales de gastos comparables y una metodología territorial nacional.
+
+## Ampliación con las planillas oficiales encontradas en el portal actual
+
+Siguiendo el enlace «Informes tributarios provinciales» desde la página de Coordinación Fiscal Provincial se localizaron `top_mensual_2025_12.xlsx` y `top_mensual_2026_19.xlsx`. Los originales están preservados en `data/top_sources/`; metadatos, hashes, cobertura y revisiones en `data/top_comparable_import.json`.
+
+- Base 2025: 24 jurisdicciones por 12 meses, cinco componentes reconciliados contra el total oficial. PBA conserva el original provincial ya cargado, cuyos componentes coinciden con DNAP.
+- Actualización 2026: 990 observaciones; 40 adicionales y cuatro revisiones de precisión en Chubut septiembre. Buenos Aires avanza a agosto; cada jurisdicción conserva su propio corte.
+- PBA enero–agosto: -2,8% real; agosto contra agosto: -4,8%. El -2,5% corresponde a enero–julio y se conserva en la comparación detallada de ese período.
+- Se incorporó la variación real de recaudación propia, con período explícito, a los 24 informes de tres páginas. La dinámica mensual de ingresos ya tiene base comparable para las 24 jurisdicciones; el bloque sigue parcial por gasto primario, personal e inversión.
 
 ## Verificación
 

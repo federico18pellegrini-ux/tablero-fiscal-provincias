@@ -3,9 +3,9 @@
   "structural_cutoff": "2026-06-30",
   "sources": {
     "recaudacion_propia_2026": {
-      "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_18.xlsx",
+      "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx",
       "max_period": "2026-09",
-      "pba_max_period": "2026-07",
+      "pba_max_period": "2026-08",
       "reviewed_at": "2026-10-04",
       "original": {
         "path": "data/top_sources/top_mensual_2026_18.xlsx",
@@ -71,6 +71,12 @@
       "file": "data/fiscal_q2_2026.json",
       "cutoff": "2026-06-30",
       "reviewed_at": "2026-10-19"
+    },
+    "recaudacion_propia_2025": {
+      "file": "data/top_sources/top_mensual_2025_12.xlsx",
+      "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2025_12.xlsx",
+      "sha256": "35a5488012267388a2c71255504b9cd93ae93970e1b3fb6173bb81b7abdfbe86",
+      "bytes": 145784
     }
   },
   "rules": {
