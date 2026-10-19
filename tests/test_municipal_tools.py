@@ -12,9 +12,9 @@ class MunicipalTools(unittest.TestCase):
     def test_status_is_mutually_exclusive_and_missing_does_not_mean_zero(self):
         rows=self.coverage['municipalities']
         self.assertEqual(len(rows),135)
-        self.assertEqual(sum(r['comparable'] for r in rows),84)
+        self.assertEqual(sum(r['comparable'] for r in rows),85)
         counts={label:sum(r['fiscalStatus']==label for r in rows) for label in ['Comparable a junio de 2026','Otro período','Ejecución parcial','Cuenta no verificada']}
-        self.assertEqual(list(counts.values()),[84,35,3,13])
+        self.assertEqual(list(counts.values()),[85,36,1,13])
         heras=next(r for r in rows if r['id']=='06329')
         self.assertTrue(heras['comparable'])
         self.assertTrue(any('Préstamos bancarios 2024' in v for v in heras['missing']))

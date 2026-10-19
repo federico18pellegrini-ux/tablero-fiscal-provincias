@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFD36WBG63"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KFD36WBG63');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendición de Cuentas - Concejal Martín Fernandez - Partido de La Costa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/jpeg" href="../imagen.jpg">
+    <link rel="apple-touch-icon" href="../imagen.jpg">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://concejalmartinfernandez.web.app/html/rendicion_cuentas.html">
+    <meta property="og:title" content="Rendición de Cuentas 2025 - Concejal Martín Fernandez">
+    <meta property="og:description" content="Análisis técnico de la Rendición de Cuentas 2025 del Partido de La Costa. Tablas, gráficos y documentos originales para transparencia y control legislativo.">
+    <meta property="og:image" content="https://concejalmartinfernandez.web.app/imagen.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://concejalmartinfernandez.web.app/html/rendicion_cuentas.html">
+    <meta name="twitter:title" content="Rendición de Cuentas 2025 - Concejal Martín Fernandez">
+    <meta name="twitter:description" content="Análisis técnico de la Rendición de Cuentas 2025 del Partido de La Costa. Tablas, gráficos y documentos originales para transparencia y control legislativo.">
+    <meta name="twitter:image" content="https://concejalmartinfernandez.web.app/imagen.jpg">
+
+    <!-- Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #F4CE00;
+            --primary-dark: #D4B200;
+            --secondary: #000000;
+            --accent: #F4CE00;
+            --success: #28a745;
+            --warning: #F4CE00;
+            --danger: #dc3545;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #000000;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+
+        /* Header (idéntico al resto del sitio) */
+        .header {
+            background: linear-gradient(135deg, #F4CE00 0%, #FFDB4D 100%);
+            color: #000000;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #e7dccc;
+            padding: 0.5rem;
+            object-fit: contain;
+        }
+
+        .header-title h1 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: #000000;
+        }
+
+        .header-title p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            color: #000000;
+        }
+
+        .concejal-info {
+            background: linear-gradient(135deg, #F4CE00 0%, #FFDB4D 50%, #F4CE00 100%);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(244, 206, 0, 0.4);
+            border: 2px solid #FFDB4D;
+        }
+
+        .concejal-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        .concejal-info h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .concejal-info p {
+            font-size: 0.85rem;
+            color: #000000;
+            font-weight: 600;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pro-icon {
+            width: 24px;
+            height: 24px;
+            background: #000000;
+            clip-path: polygon(25% 0%, 25% 100%, 100% 50%);
+            flex-shrink: 0;
+        }
+
+        .btn-volver {
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-volver:hover { background: black; }
+
+        /* Main */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Secciones (iguales al reclamo_alumbrado.html) */
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--gray-200);
+        }
+
+        .step-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-left: 6px solid var(--primary);
+            padding-left: 1rem;
+            color: var(--gray-800);
+        }
+
+        .step-title i {
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        .info-text {
+            margin: 1rem 0;
+            font-size: 1rem;
+            color: var(--gray-700);
+        }
+
+        .info-text strong { color: var(--gray-900); }
+
+        /* Tarjeta hero / intro */
+        .hero-card {
+            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+            border-left: 6px solid var(--primary);
+        }
+
+        /* KPIs */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .kpi-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.3rem 1.4rem;
+            border: 1px solid var(--gray-200);
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .kpi-card.danger { border-left-color: var(--danger); }
+        .kpi-card.warning { border-left-color: #f59e0b; }
+        .kpi-card.success { border-left-color: var(--success); }
+
+        .kpi-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .kpi-value {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            line-height: 1.2;
+        }
+
+        .kpi-value.danger { color: var(--danger); }
+        .kpi-value.warning { color: #b45309; }
+        .kpi-value.success { color: var(--success); }
+
+        .kpi-note {
+            font-size: 0.78rem;
+            color: var(--gray-500);
+            margin-top: 0.25rem;
+        }
+
+        /* Charts */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .chart-card {
+            background: var(--gray-50);
+            border-radius: 16px;
+            padding: 1.3rem 1.4rem;
+            border: 1px solid var(--gray-200);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-card.full {
+            grid-column: 1 / -1;
+        }
+
+        .chart-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 0.25rem;
+        }
+
+        .chart-subtitle {
+            font-size: 0.82rem;
+            color: var(--gray-500);
+            margin-bottom: 1rem;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 280px;
+        }
+
+        .chart-wrapper.tall { min-height: 360px; }
+
+        /* Tablas con búsqueda */
+        .table-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 220px;
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 0.92rem;
+            background: white;
+            color: var(--gray-700);
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(244, 206, 0, 0.2);
+        }
+
+        .filter-select {
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 0.92rem;
+            background: white;
+            color: var(--gray-700);
+            cursor: pointer;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(244, 206, 0, 0.2);
+        }
+
+        .results-info {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            background: white;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+
+        table.data-table thead th {
+            background: var(--gray-800);
+            color: white;
+            padding: 0.75rem 0.85rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+            user-select: none;
+        }
+
+        table.data-table thead th.sortable:hover {
+            background: #111827;
+        }
+
+        table.data-table thead th .sort-icon {
+            margin-left: 0.3rem;
+            font-size: 0.7rem;
+            opacity: 0.6;
+        }
+
+        table.data-table thead th.sorted .sort-icon { opacity: 1; color: var(--primary); font-weight: 700; }
+
+        table.data-table tbody td {
+            padding: 0.7rem 0.85rem;
+            border-top: 1px solid var(--gray-200);
+            color: var(--gray-700);
+            vertical-align: middle;
+        }
+
+        table.data-table tbody tr:nth-child(even) { background: var(--gray-50); }
+        table.data-table tbody tr:hover { background: #FFFBEB; }
+
+        table.data-table td.num,
+        table.data-table th.num {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+
+        table.data-table td.total-row,
+        table.data-table tr.total-row td {
+            background: #FFF9CC !important;
+            font-weight: 700;
+            color: #000;
+            border-top: 2px solid var(--primary);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .badge-danger { background: #fee2e2; color: #991b1b; }
+        .badge-warning { background: #fef3c7; color: #92400e; }
+        .badge-success { background: #d1fae5; color: #065f46; }
+        .badge-info { background: #dbeafe; color: #1e40af; }
+        .badge-gray { background: var(--gray-200); color: var(--gray-700); }
+
+        /* Documentos descargables */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.1rem 1.2rem;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--gray-800);
+            transition: all 0.2s ease;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(244, 206, 0, 0.15);
+            border-color: var(--primary);
+        }
+
+        .doc-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #fee2e2;
+            color: #b91c1c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .doc-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .doc-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .doc-desc {
+            font-size: 0.78rem;
+            color: var(--gray-500);
+            margin-bottom: 0.35rem;
+        }
+
+        .doc-meta {
+            font-size: 0.72rem;
+            color: var(--gray-400);
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .doc-meta span i { margin-right: 0.25rem; color: var(--primary); }
+
+        /* Conclusiones */
+        .conclusion-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .conclusion-list li {
+            padding: 0.6rem 0 0.6rem 2rem;
+            position: relative;
+            margin-bottom: 0.3rem;
+            border-bottom: 1px solid var(--gray-100);
+            color: var(--gray-700);
+        }
+
+        .conclusion-list li:last-child { border-bottom: none; }
+
+        .conclusion-list li::before {
+            content: '\f192';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .recommendation-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .recommendation-list li {
+            padding: 0.6rem 0 0.6rem 2rem;
+            position: relative;
+            margin-bottom: 0.3rem;
+            color: var(--gray-700);
+        }
+
+        .recommendation-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            color: var(--success);
+            font-size: 0.95rem;
+        }
+
+        /* Dictamen banner */
+        .dictamen-banner {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            border-left: 6px solid var(--primary);
+            flex-wrap: wrap;
+        }
+
+        .dictamen-banner > i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-top: 0.2rem;
+        }
+
+        .dictamen-banner .dictamen-body {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .dictamen-banner h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        .dictamen-banner p {
+            font-size: 0.88rem;
+            color: var(--gray-300);
+            margin-bottom: 0;
+        }
+
+        .dictamen-docs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .dictamen-doc {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(244, 206, 0, 0.4);
+            color: #fff;
+            text-decoration: none;
+            padding: 0.6rem 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .dictamen-doc:hover {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(244, 206, 0, 0.3);
+        }
+
+        .dictamen-doc i {
+            font-size: 1rem;
+            color: var(--primary);
+            transition: color 0.2s ease;
+        }
+
+        .dictamen-doc:hover i {
+            color: #000;
+        }
+
+        /* Filtro por año */
+        .year-filter-bar {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .year-filter-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .year-filter-label i {
+            color: var(--primary);
+        }
+
+        .year-pills {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .year-pill {
+            background: var(--gray-100);
+            color: var(--gray-600);
+            border: 1px solid var(--gray-200);
+            padding: 0.45rem 1.1rem;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .year-pill:hover:not(.disabled) {
+            background: var(--gray-50);
+            border-color: var(--primary);
+            color: var(--gray-800);
+        }
+
+        .year-pill.active {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(244, 206, 0, 0.25);
+        }
+
+        .year-pill.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            text-decoration: line-through;
+            text-decoration-color: var(--gray-400);
+        }
+
+        .year-pill .badge-soon {
+            font-size: 0.62rem;
+            background: rgba(0,0,0,0.08);
+            color: var(--gray-500);
+            padding: 0.05rem 0.4rem;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .year-pill.active .badge-soon {
+            background: rgba(0,0,0,0.18);
+            color: #000;
+        }
+
+        .year-content { display: none; }
+        .year-content.active { display: block; }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-800);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .footer-text {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-700);
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+
+        /* Animations */
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-card { animation: fadeIn 0.4s ease forwards; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; text-align: center; }
+            .step-title { font-size: 1.15rem; }
+            .kpi-value { font-size: 1.3rem; }
+            .chart-grid { grid-template-columns: 1fr; }
+            .dictamen-banner { flex-direction: column; text-align: center; }
+            .step-card { padding: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo-section">
+                    <img src="../imagen.jpg" alt="Logo" class="logo-img">
+                    <div class="header-title">
+                        <h1>Rendición de Cuentas</h1>
+                        <p>Partido de La Costa • Buenos Aires</p>
+                    </div>
+                </div>
+            </div>
+            <div class="concejal-info">
+                <span class="pro-icon"></span>
+                <h2>CONCEJAL MARTÍN FERNANDEZ</h2>
+                <p>▶︎ Transparencia y control legislativo</p>
+            </div>
+            <a href="../index.html" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver a Agenda</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- HERO / INTRO -->
+        <div class="step-card hero-card">
+            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <div style="background: var(--primary); border-radius: 60px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <i class="fas fa-chart-line" style="font-size: 1.8rem; color: #000;"></i>
+                </div>
+                <div style="flex: 1; min-width: 280px;">
+                    <p style="font-size: 1rem; font-weight: 500; margin: 0; color: var(--gray-800);">
+                        Soy el Concejal <strong style="color: #000;">Martín Fernández</strong> y en esta sección te presento el <strong>análisis técnico-contable</strong> de la Rendición de Cuentas 2025 del Partido de La Costa.
+                    </p>
+                    <p style="font-size: 0.92rem; margin-top: 0.5rem; color: var(--gray-700);">
+                        Aquí vas a encontrar los <strong>documentos originales</strong> del expediente municipal, <strong>tablas con buscador</strong> para consultar la información por secretaría, proveedor o concepto, y <strong>gráficos</strong> que muestran el estado de los balances. Toda la información surge del Sistema R.A.F.A.M. y del expediente oficial de Rendición de Cuentas 2025 al 31/12/2025.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FILTRO POR AÑO -->
+        <div class="year-filter-bar">
+            <span class="year-filter-label"><i class="fas fa-calendar-alt"></i> Ejercicio:</span>
+            <div class="year-pills">
+                <button type="button" class="year-pill active" data-year="2025">2025</button>
+                <button type="button" class="year-pill disabled" data-year="2024" disabled>2024 <span class="badge-soon">próximamente</span></button>
+                <button type="button" class="year-pill disabled" data-year="2023" disabled>2023 <span class="badge-soon">próximamente</span></button>
+            </div>
+        </div>
+
+        <!-- AÑO 2025 -->
+        <div class="year-content active" data-year="2025">
+        <!-- DICTAMEN -->
+        <div class="dictamen-banner">
+            <i class="fas fa-gavel"></i>
+            <div class="dictamen-body">
+                <h4>DICTAMEN DE DESAPROBACIÓN Y DENUNCIA AL H.T.C.</h4>
+                <p>Se recomienda la <strong style="color: var(--primary);">DESAPROBACIÓN</strong> de la Rendición de Cuentas 2025 y la <strong style="color: var(--primary);">DENUNCIA</strong> al H. Tribunal de Cuentas de la Provincia de Buenos Aires por las irregularidades y observaciones documentadas en el análisis técnico-contable del ejercicio.</p>
+                <div class="dictamen-docs">
+                    <a href="../documentos/denuncia_htc_falta_accesibilidad_rafam_2025.pdf" class="dictamen-doc" target="_blank">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Denuncia al H.T.C. · Desaprobación Rendición 2025</span>
+                    </a>
+                    <a href="../documentos/nota_disidencia_desaprobacion_2026.pdf" class="dictamen-doc" target="_blank">
+                        <i class="fas fa-file-signature"></i>
+                        <span>Nota en disidencia y desaprobación</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- KPIs PRINCIPALES -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-bullseye"></i> INDICADORES CLAVE DEL EJERCICIO 2025</div>
+            <p class="info-text">Los siguientes indicadores sintetizan la situación financiera del municipio al cierre del ejercicio. Todos los datos provienen del Balance General al 31/12/2025 — R.A.F.A.M.</p>
+            <div class="kpi-grid">
+                <div class="kpi-card danger">
+                    <span class="kpi-label">Déficit del ejercicio</span>
+                    <span class="kpi-value danger">$ 5.312,3 M</span>
+                    <span class="kpi-note">Gastos superan ingresos en 4,29%</span>
+                </div>
+                <div class="kpi-card danger">
+                    <span class="kpi-label">Resultado financiero (CAIF)</span>
+                    <span class="kpi-value danger">−$ 15.759,6 M</span>
+                    <span class="kpi-note">Déficit C.A.I.F. consolidado</span>
+                </div>
+                <div class="kpi-card danger">
+                    <span class="kpi-label">Resultado acumulado</span>
+                    <span class="kpi-value danger">−$ 19.995,1 M</span>
+                    <span class="kpi-note">Indicador H. Tribunal de Cuentas</span>
+                </div>
+                <div class="kpi-card danger">
+                    <span class="kpi-label">Caja y Bancos al cierre</span>
+                    <span class="kpi-value danger">−$ 3.288,7 M</span>
+                    <span class="kpi-note">Saldo negativo al 31/12/2025</span>
+                </div>
+                <div class="kpi-card warning">
+                    <span class="kpi-label">Deuda flotante</span>
+                    <span class="kpi-value warning">$ 12.360,6 M</span>
+                    <span class="kpi-note">≈ +435% interanual</span>
+                </div>
+                <div class="kpi-card warning">
+                    <span class="kpi-label">Excedentes afectados sin aplicar</span>
+                    <span class="kpi-value warning">$ 2.372,4 M</span>
+                    <span class="kpi-note">55 de 56 cuentas con saldo</span>
+                </div>
+                <div class="kpi-card success">
+                    <span class="kpi-label">Total ingresos corrientes</span>
+                    <span class="kpi-value">$ 124.016,3 M</span>
+                    <span class="kpi-note">50,13% por coparticipación</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Total gastos corrientes</span>
+                    <span class="kpi-value">$ 129.328,5 M</span>
+                    <span class="kpi-note">88,34% gastos de consumo</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- GRÁFICOS -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-chart-pie"></i> GRÁFICOS DE BALANCES 2025</div>
+            <p class="info-text">Visualización de los principales componentes de ingresos, gastos, ejecución por secretaría y composición de la deuda flotante. <strong>Hacé clic en las leyendas</strong> para mostrar u ocultar series.</p>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <div class="chart-title">Composición de los Ingresos Corrientes</div>
+                    <div class="chart-subtitle">Total: $124.016,3 M · 7 rubros principales</div>
+                    <div class="chart-wrapper"><canvas id="chartIngresos"></canvas></div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-title">Distribución Económica del Gasto Corriente</div>
+                    <div class="chart-subtitle">Total: $129.328,5 M · Por objeto del gasto</div>
+                    <div class="chart-wrapper"><canvas id="chartGastos"></canvas></div>
+                </div>
+
+                <div class="chart-card full">
+                    <div class="chart-title">Ejecución del Gasto por Secretaría</div>
+                    <div class="chart-subtitle">Devengado vs. Pagado por jurisdicción — valores en millones de pesos</div>
+                    <div class="chart-wrapper tall"><canvas id="chartSecretarias"></canvas></div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-title">Composición de la Deuda Flotante</div>
+                    <div class="chart-subtitle">Por clasificación temática — Total: $12.360,6 M</div>
+                    <div class="chart-wrapper"><canvas id="chartDeudaFlotante"></canvas></div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-title">Anatomía del Déficit</div>
+                    <div class="chart-subtitle">Resultados deficitarios del ejercicio 2025 (M$)</div>
+                    <div class="chart-wrapper"><canvas id="chartDeficit"></canvas></div>
+                </div>
+
+                <div class="chart-card full">
+                    <div class="chart-title">Top 10 Proveedores — Deuda Flotante (DNP)</div>
+                    <div class="chart-subtitle">Devengado No Pagado por proveedor — valores en millones de pesos</div>
+                    <div class="chart-wrapper tall"><canvas id="chartProveedores"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABLAS -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-table"></i> TABLAS DE INFORMACIÓN DETALLADA</div>
+            <p class="info-text">Utilizá el buscador y los filtros para encontrar información específica. <strong>Hacé clic en los encabezados</strong> para ordenar por columna. Todas las tablas son navegables y se actualizan en tiempo real.</p>
+        </div>
+
+        <!-- TABLA 1: Gastos por Secretaría -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-building"></i> EJECUCIÓN DEL GASTO POR SECRETARÍA</div>
+            <p class="info-text">Devengado, pagado y deuda flotante por cada una de las 14 secretarias / jurisdicciones del municipio. Fuente: Estado de Ejecución del Presupuesto de Gastos — R.A.F.A.M. (Hojas 1–106).</p>
+
+            <div class="table-toolbar">
+                <input type="text" id="searchSecretarias" class="search-input" placeholder="🔍 Buscar por secretaría...">
+                <span class="results-info" id="resultsSecretarias"></span>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table" id="tableSecretarias">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-key="n">N° <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-key="secretaria">Secretaría <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="devengado">Devengado <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="pagado">Pagado <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="deuda">Deuda Flotante <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="porcentaje">% del total <span class="sort-icon">↕</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodySecretarias"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TABLA 2: Deuda Flotante por Proveedor -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-file-invoice-dollar"></i> DEUDA FLOTANTE POR PROVEEDOR</div>
+            <p class="info-text">Ranking detallado de los 42 proveedores individualizados en el Anexo IX. DNP = Devengado No Pagado. Fuente: Estado de la Deuda Flotante al 31/12/2025.</p>
+
+            <div class="table-toolbar">
+                <input type="text" id="searchProveedores" class="search-input" placeholder="🔍 Buscar por proveedor o clasificación...">
+                <select class="filter-select" id="filterClasificacion">
+                    <option value="">Todas las clasificaciones</option>
+                </select>
+                <select class="filter-select" id="filterRiesgo">
+                    <option value="">Todos los riesgos</option>
+                    <option value="ALTO">Riesgo ALTO</option>
+                    <option value="MEDIO">Riesgo MEDIO</option>
+                </select>
+                <span class="results-info" id="resultsProveedores"></span>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table" id="tableProveedores">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-key="n">N° <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-key="proveedor">Proveedor <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-key="clasificacion">Clasificación <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-key="tipo">Tipo <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="devengado">Devengado <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="pagado">Pagado <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="dnp">DNP <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="pctPago">% Pagado <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-key="riesgo">Riesgo <span class="sort-icon">↕</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyProveedores"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TABLA 3: Composición de Ingresos -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-arrow-down"></i> COMPOSICIÓN DE LOS RECURSOS (INGRESOS)</div>
+            <p class="info-text">Ingresos corrientes por rubro, con porcentaje sobre el total. Fuente: Balance General al 31/12/2025 — R.A.F.A.M.</p>
+
+            <div class="table-toolbar">
+                <input type="text" id="searchIngresos" class="search-input" placeholder="🔍 Buscar por rubro...">
+                <span class="results-info" id="resultsIngresos"></span>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table" id="tableIngresos">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-key="rubro">Rubro <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="monto">Monto ($) <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="pct">% <span class="sort-icon">↕</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyIngresos"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TABLA 4: Composición de Gastos -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-arrow-up"></i> DISTRIBUCIÓN ECONÓMICA DEL GASTO CORRIENTE</div>
+            <p class="info-text">Gastos corrientes por objeto del gasto, con porcentaje sobre el total. Fuente: Balance General al 31/12/2025 — R.A.F.A.M.</p>
+
+            <div class="table-toolbar">
+                <input type="text" id="searchGastos" class="search-input" placeholder="🔍 Buscar por concepto...">
+                <span class="results-info" id="resultsGastos"></span>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table" id="tableGastos">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-key="concepto">Concepto <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="monto">Monto ($) <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="pct">% <span class="sort-icon">↕</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyGastos"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TABLA 5: Cuentas Afectadas -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-piggy-bank"></i> CUENTAS AFECTADAS SIN APLICAR AL CIERRE</div>
+            <p class="info-text">Saldos de cuentas con afectación específica que quedaron sin aplicar al destino legal para el que fueron creados. Fuente: Anexo V — Saldos de Cuentas Afectadas al 31/12/2025. La nota más grave: el Servicio Alimentario Escolar (S.A.E.) acumula más de $1.000 M sin ejecutar en un municipio con caja negativa.</p>
+
+            <div class="table-toolbar">
+                <input type="text" id="searchCuentas" class="search-input" placeholder="🔍 Buscar por cuenta afectada...">
+                <span class="results-info" id="resultsCuentas"></span>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table" id="tableCuentas">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-key="cuenta">Cuenta afectada (destino legal específico) <span class="sort-icon">↕</span></th>
+                            <th class="num sortable" data-key="saldo">Saldo al 31/12/2025 ($) <span class="sort-icon">↕</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyCuentas"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TABLA 6: CAIF -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-balance-scale"></i> CUENTA AHORRO-INVERSIÓN-FINANCIAMIENTO (C.A.I.F.)</div>
+            <p class="info-text">Estado financiero sintético del ejercicio 2025. Fuente: Cuadro Resumen — Resultado del Ejercicio 2025 · Cuenta Ahorro-Inversión · Balance General al 31/12/2025 — R.A.F.A.M.</p>
+
+            <div class="table-wrap">
+                <table class="data-table" id="tableCAIF">
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th class="num">Importe ($)</th>
+                            <th>Observación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyCAIF"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- DOCUMENTOS -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-folder-open"></i> DOCUMENTOS DEL EXPEDIENTE</div>
+            <p class="info-text">Acceso a los documentos originales del expediente de Rendición de Cuentas 2025. Todos los archivos se abren en una nueva pestaña y pueden descargarse.</p>
+
+            <div class="docs-grid">
+                <a href="../documentos/deuda_flotante_31-12-2025.pdf" class="doc-card" target="_blank">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-info">
+                        <div class="doc-title">Deuda Flotante — Detalle al 31/12/2025</div>
+                        <div class="doc-desc">Ranking detallado por proveedor (42 acreedores individualizados).</div>
+                        <div class="doc-meta">
+                            <span><i class="fas fa-file"></i>PDF</span>
+                            <span><i class="fas fa-weight-hanging"></i>28 KB</span>
+                            <span><i class="fas fa-clock"></i>5 págs.</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../documentos/balance_ingresos_gastos_2025.pdf" class="doc-card" target="_blank">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-info">
+                        <div class="doc-title">Balance de Ingresos y Gastos 2025</div>
+                        <div class="doc-desc">Análisis sintético del ejercicio con aperturas por cuenta.</div>
+                        <div class="doc-meta">
+                            <span><i class="fas fa-file"></i>PDF</span>
+                            <span><i class="fas fa-weight-hanging"></i>188 KB</span>
+                            <span><i class="fas fa-clock"></i>2 págs.</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../documentos/MUC_balance_solo_ingresos_y_gastos_2025.pdf" class="doc-card" target="_blank">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-info">
+                        <div class="doc-title">MUC — Balance de Ingresos y Gastos 2025</div>
+                        <div class="doc-desc">Análisis detallado de ingresos y gastos del ejercicio 2025 (MUC).</div>
+                        <div class="doc-meta">
+                            <span><i class="fas fa-file"></i>PDF</span>
+                            <span><i class="fas fa-weight-hanging"></i>145 KB</span>
+                            <span><i class="fas fa-clock"></i>2 págs.</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="../documentos/cuenta_ahorro_inversion_2025.pdf" class="doc-card" target="_blank">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-info">
+                        <div class="doc-title">Cuenta Ahorro-Inversión — Resumen 2025</div>
+                        <div class="doc-desc">Resultado del ejercicio: financiero, ejecutado y acumulado.</div>
+                        <div class="doc-meta">
+                            <span><i class="fas fa-file"></i>PDF</span>
+                            <span><i class="fas fa-weight-hanging"></i>254 KB</span>
+                            <span><i class="fas fa-clock"></i>2 págs.</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../documentos/anexo_gastos_por_secretaria_2025.pdf" class="doc-card" target="_blank">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-info">
+                        <div class="doc-title">Expediente Rendición — Anexo Gastos por Secretaría</div>
+                        <div class="doc-desc">Anexo oficial del expediente R.A.F.A.M. con apertura completa.</div>
+                        <div class="doc-meta">
+                            <span><i class="fas fa-file"></i>PDF</span>
+                            <span><i class="fas fa-weight-hanging"></i>898 KB</span>
+                            <span><i class="fas fa-clock"></i>1 pág.</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../documentos/MUC_EXPEDIENTE_RENDICIÓN_de_cuentas_2025_ANEXO_V_SALDOS_AFECTADOS.pdf" class="doc-card" target="_blank">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-info">
+                        <div class="doc-title">Expediente Rendición — Anexo V Saldos Afectados</div>
+                        <div class="doc-desc">Detalle de saldos afectados del expediente R.A.F.A.M. (Anexo V).</div>
+                        <div class="doc-meta">
+                            <span><i class="fas fa-file"></i>PDF</span>
+                            <span><i class="fas fa-weight-hanging"></i>210 KB</span>
+                            <span><i class="fas fa-clock"></i>4 págs.</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- CONCLUSIONES -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-exclamation-triangle"></i> CONCLUSIONES DEL ANÁLISIS</div>
+            <p class="info-text">El análisis técnico-contable permite concluir que el ejercicio cerró con un cuadro de gravedad extraordinaria, incompatible con cualquier aprobación regular sin previo esclarecimiento integral:</p>
+            <ul class="conclusion-list">
+                <li><strong>Déficit en todos los niveles:</strong> corriente (−$6.190,1 M), de capital (−$9.569,4 M), financiero total (−$15.759,6 M) y acumulado (−$19.995,1 M).</li>
+                <li><strong>Caja y Bancos negativos al cierre:</strong> −$3.288,7 M. El municipio cerró el ejercicio debiendo más de lo que tenía disponible para afrontar sus compromisos inmediatos.</li>
+                <li><strong>$2.372,4 M de fondos afectados sin aplicar</strong>, incluido más de $1.000 M del SAE (Servicio Alimentario Escolar) y $628 M del Fondo de Seguridad.</li>
+                <li><strong>Deuda flotante de $12.360,6 M</strong>, con un crecimiento interanual que supera con holgura el 120% (≈ +435% tomando como base la deuda anterior cancelada en 2025).</li>
+                <li><strong>Ausencia de informe de planta de personal</strong>, dejando aproximadamente el 36% del gasto sin rendición verificable.</li>
+                <li><strong>Caja negativa + excedentes afectados inmovilizados:</strong> indicio técnico de que fondos legalmente destinados a finalidades determinadas fueron absorbidos para sostener erogaciones corrientes, en colisión con el principio de especialidad presupuestaria.</li>
+            </ul>
+        </div>
+
+        <!-- RECOMENDACIONES -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-check-circle"></i> RECOMENDACIONES DEL CONTROL CONCEJIL</div>
+            <p class="info-text">En ejercicio de las facultades que acuerdan al H. Concejo Deliberante los arts. 192 y 195 de la Constitución Provincial y el art. 51 del Decreto-Ley 6769/58 (Ley Orgánica de las Municipalidades):</p>
+            <ul class="recommendation-list">
+                <li><strong>Desaprobar la Rendición de Cuentas 2025</strong> conforme a los arts. 192/195 Const. Prov. y art. 51 Dto-Ley 6769/58.</li>
+                <li><strong>Elevar las observaciones al H. Tribunal de Cuentas de la PBA</strong> (Ley 10.869) para el deslinde de responsabilidades funcionales y contables.</li>
+                <li><strong>Requerir informes urgentes</strong> sobre el destino de los fondos afectados sin aplicar, conciliaciones bancarias, estado de juicios y anexo de subsidios.</li>
+                <li><strong>Exigir el informe completo de planta de personal</strong> y verificar las contrataciones de servicios públicos conforme al art. 151 L.O.M. (licitación pública).</li>
+                <li><strong>Auditar las contrataciones</strong> con los principales acreedores de deuda flotante, en particular Cooperativa de Trabajo de la Industria, FERPEL S.R.L., COVELIA S.A., CEOS Médica y Génesis Salud.</li>
+            </ul>
+        </div>
+
+        <!-- MARCO NORMATIVO -->
+        <div class="step-card">
+            <div class="step-title"><i class="fas fa-book"></i> MARCO NORMATIVO DE CONTROL</div>
+            <p class="info-text">El control concejil sobre la Hacienda Municipal se ejerce en virtud de las siguientes normas:</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div style="background: var(--gray-50); padding: 1rem 1.2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <div style="font-weight: 700; color: var(--gray-800); margin-bottom: 0.3rem;"><i class="fas fa-shield-alt" style="color: var(--primary);"></i> Constitucional</div>
+                    <div style="font-size: 0.85rem; color: var(--gray-600);">Const. Nacional — arts. 1 y 5 · Const. Pcia. Bs. As. — arts. 192 y 195</div>
+                </div>
+                <div style="background: var(--gray-50); padding: 1rem 1.2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <div style="font-weight: 700; color: var(--gray-800); margin-bottom: 0.3rem;"><i class="fas fa-landmark" style="color: var(--primary);"></i> Ley Orgánica Municipal</div>
+                    <div style="font-size: 0.85rem; color: var(--gray-600);">Dto-Ley 6769/58 — arts. 51, 67 y 151 (licitación pública)</div>
+                </div>
+                <div style="background: var(--gray-50); padding: 1rem 1.2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <div style="font-weight: 700; color: var(--gray-800); margin-bottom: 0.3rem;"><i class="fas fa-file-contract" style="color: var(--primary);"></i> R.A.F.A.M.</div>
+                    <div style="font-size: 0.85rem; color: var(--gray-600);">Decreto 2980/00 — arts. 44, 58 y 59 · Ley 13.767 (Adm. Financiera PBA)</div>
+                </div>
+                <div style="background: var(--gray-50); padding: 1rem 1.2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <div style="font-weight: 700; color: var(--gray-800); margin-bottom: 0.3rem;"><i class="fas fa-gavel" style="color: var(--primary);"></i> Tribunal de Cuentas</div>
+                    <div style="font-size: 0.85rem; color: var(--gray-600);">Ley 10.869 — H. Tribunal de Cuentas PBA</div>
+                </div>
+                <div style="background: var(--gray-50); padding: 1rem 1.2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <div style="font-weight: 700; color: var(--gray-800); margin-bottom: 0.3rem;"><i class="fas fa-recycle" style="color: var(--primary);"></i> Normativa sectorial</div>
+                    <div style="font-size: 0.85rem; color: var(--gray-600);">Ley 25.916 (RSU) · Ley 24.557 (ART)</div>
+                </div>
+                <div style="background: var(--gray-50); padding: 1rem 1.2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                    <div style="font-weight: 700; color: var(--gray-800); margin-bottom: 0.3rem;"><i class="fas fa-info-circle" style="color: var(--primary);"></i> Acceso a la información</div>
+                    <div style="font-size: 0.85rem; color: var(--gray-600);">Ordenanza 3068/2006 — Acceso a la información</div>
+                </div>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--gray-500); margin-top: 1.2rem; font-style: italic;">
+                Fuente: Expediente Rendición de Cuentas 2025 (8 cuerpos) · Cuenta Ahorro-Inversión · Balance General al 31/12/2025 · Anexo V Saldos de Cuentas Afectadas · Anexo IX Deuda Flotante · Estado de Ejecución por Secretaría — Sistema R.A.F.A.M. Firmantes oficiales: Cdora. M. E. Florentín (Contadora Municipal), Cdora. E. A. Becht (Sec. de Hacienda) y Juan de Jesús (Intendente).
+            </p>
+        </div>
+        </div>
+        <!-- /AÑO 2025 -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Sitio oficial del Concejal Martín Fernandez • Honorable Concejo Deliberante • Partido de La Costa • Buenos Aires, Argentina</p>
+            <div class="footer-bottom">
+                © 2026 - Todos los derechos reservados
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPT CON TODOS LOS DATOS ========== -->
+    <script src="../js/rendicion_cuentas_data.js?v=1.0"></script>
+    <script src="../js/rendicion_cuentas_app.js?v=1.0"></script>
+    <script>
+        // Filtro por año: muestra/oculta el contenido de cada ejercicio
+        (function () {
+            var pills = document.querySelectorAll('.year-pill');
+            var contents = document.querySelectorAll('.year-content');
+            pills.forEach(function (pill) {
+                pill.addEventListener('click', function () {
+                    if (pill.classList.contains('disabled') || pill.classList.contains('active')) return;
+                    var year = pill.dataset.year;
+                    pills.forEach(function (p) { p.classList.remove('active'); });
+                    pill.classList.add('active');
+                    contents.forEach(function (c) {
+                        c.classList.toggle('active', c.dataset.year === year);
+                    });
+                    // Scroll suave al top del contenido del año
+                    var active = document.querySelector('.year-content.active');
+                    if (active) {
+                        active.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

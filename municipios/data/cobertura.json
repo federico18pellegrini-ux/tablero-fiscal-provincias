@@ -3970,7 +3970,7 @@
     {
       "id": "06351",
       "municipio": "General Pinto",
-      "fiscalStatus": "Ejecución parcial",
+      "fiscalStatus": "Otro período",
       "comparable": false,
       "latestFiscalEnd": "2026-09-30",
       "missing": [
@@ -3989,7 +3989,7 @@
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
       "portalReview": "2026-10-19",
-      "portalStatus": "Ejecución enero–septiembre 2026 incorporada con cobros, devengado y pagos; falta apertura económica verificable para calcular resultado fiscal.",
+      "portalStatus": "Cuenta completa conciliada a septiembre, encontrada en la tercera página del portal. Fuera del ranking semestral.",
       "portalUrl": "http://www.pinto.gob.ar/",
       "budgetYear": 2026,
       "budgetAsOf": "2026-09-30",
@@ -8394,11 +8394,10 @@
     {
       "id": "06693",
       "municipio": "Roque Pérez",
-      "fiscalStatus": "Ejecución parcial",
-      "comparable": false,
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
       "latestFiscalEnd": "2026-06-30",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
@@ -8408,10 +8407,10 @@
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
       "portalReview": "2026-10-19",
-      "portalStatus": "Ejecución abril–junio 2026 incorporada. Es el segundo trimestre aislado, no el semestre. Falta conciliar la cuenta económica y el primer trimestre.",
+      "portalStatus": "CAIF firmada del primer semestre incorporada; integra el ranking fiscal comparable. La imagen oficial estaba fuera de los enlaces PDF.",
       "portalUrl": "https://roqueperez.gob.ar/situacion-economica-financiera",
       "budgetYear": 2026,
-      "budgetAsOf": "2026-03-31",
+      "budgetAsOf": "2026-06-30",
       "budgetOriginal2026": true,
       "budgetCurrent2026": true,
       "findings": [
@@ -8431,11 +8430,6 @@
         }
       ],
       "documentsNeeded": [
-        {
-          "topic": "Cuenta fiscal comparable",
-          "state": "Pendiente",
-          "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
         {
           "topic": "Saldo de tesorería",
           "state": "Pendiente",
@@ -10668,7 +10662,7 @@
   "topics": [
     {
       "topic": "Cuenta fiscal comparable",
-      "available": 84,
+      "available": 85,
       "total": 135
     },
     {
@@ -31153,9 +31147,9 @@
       "id": "06693",
       "municipio": "Roque Pérez",
       "tema": "Cuenta fiscal comparable",
-      "estado": "Pendiente",
+      "estado": "Incorporado",
       "periodo": "enero–junio 2026",
-      "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
+      "documentoNecesario": "",
       "portal": "https://roqueperez.gob.ar/situacion-economica-financiera",
       "revision": "2026-10-04"
     },
@@ -31174,7 +31168,7 @@
       "municipio": "Roque Pérez",
       "tema": "Presupuesto vigente 2026",
       "estado": "Incorporado",
-      "periodo": "2026-03-31",
+      "periodo": "2026-06-30",
       "documentoNecesario": "",
       "portal": "https://roqueperez.gob.ar/situacion-economica-financiera",
       "revision": "2026-10-04"

@@ -61,7 +61,7 @@
   "repositoryInputs": [
     {
       "file": "municipios/data/fiscal_verified.json",
-      "sha256": "26af7dcbd48d279ec186fcf0cff9df6cb5383fff563533f22ef379b52198e15f",
+      "sha256": "7e5ce4af48a1842a6a6f236a27a6a548493562b0fc9925d5201e8155ce52a038",
       "encoding": "UTF-8/LF"
     },
     {
@@ -71,7 +71,7 @@
     },
     {
       "file": "municipios/data/fiscal_search.json",
-      "sha256": "4cb7206589160f0872bb03683b776bbe51d5213037f2cd28fda697e6ecbfc4b0",
+      "sha256": "3f0061378de438ce8320a9db678be783979a4ba9d4145d289f89dbd7baad94e6",
       "encoding": "UTF-8/LF"
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "file": "municipios/data/annual_budgets_verified.json",
-      "sha256": "5136fd85c01188d41d266ec6f0ee04509d53e0e0dc94e98cdcb89f285390d760",
+      "sha256": "a21f534e0bf567f7c5f58ccb957a7ebc4e45be86433579e3b1d5f37d2799c9b9",
       "encoding": "UTF-8/LF"
     },
     {
@@ -112,10 +112,10 @@
   ],
   "coverage": 135,
   "fiscalCoverage": {
-    "fiscal": 84,
-    "budgetOnly": 3,
-    "otherPeriods": 35,
-    "withAccounts": 119,
+    "fiscal": 85,
+    "budgetOnly": 1,
+    "otherPeriods": 36,
+    "withAccounts": 121,
     "verifiedAt": "2026-10-19"
   },
   "transparencyCoverage": 135
