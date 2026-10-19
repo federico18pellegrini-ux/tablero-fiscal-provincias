@@ -5047,6 +5047,52 @@
       ],
       "verifiedAt": "2026-10-19",
       "note": "Cuenta completa a septiembre. No integra el ranking fiscal del primer semestre. La CAIF excluye 58.501.838,99 pesos del devengado presupuestario bruto como movimientos financieros."
+    },
+    {
+      "id": "06408",
+      "inicio": "2021-01-01",
+      "fin": "2021-12-31",
+      "method": "published_caif",
+      "scope": "Departamento Ejecutivo y H.C.D. según cuenta municipal publicada. Excluye fuentes y aplicaciones financieras.",
+      "landingUrl": "https://www.hurlingham.gob.ar/wp-json/wp/v2/media?search=situacion&per_page=100",
+      "amounts": {
+        "ingresos_corrientes": "5991110338.65",
+        "gastos_corrientes": "5555927831.39",
+        "ingresos_capital": "794006975.96",
+        "gastos_capital": "967811769.52",
+        "ingresos_totales": "6785117314.61",
+        "gastos_totales": "6523739600.91",
+        "resultado_financiero": "261377713.70",
+        "personal_devengado": "2339820195.33"
+      },
+      "documents": [
+        {
+          "url": "https://www.hurlingham.gob.ar/wp-content/uploads/2022/03/Situacion-economico-financiera-1-2021-Hurlingham-Municipio.png",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-media/06408-2021-1.png",
+          "sha256": "1e95935bb75a5cbaf0f3724d5ab7549de1ec3abac45afe6797bfda8dd0aae583",
+          "bytes": 67021,
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "format": "image/png",
+          "locator": "Imagen 1 de la situación 01/01/2021–31/12/2021. CAIF y personal en imagen 1; resultado del artículo 43 corroborado en imagen 2. Transcripción visual."
+        },
+        {
+          "url": "https://www.hurlingham.gob.ar/wp-content/uploads/2022/03/Situacion-economico-financiera-2-2021-Hurlingham-Municipio.png",
+          "archive": "municipios/data/fiscal-sources/2026-10-19-media/06408-2021-2.png",
+          "sha256": "5ef578702e7120528d6c4ce72b53e671ef9a92a59ef6f7f1dcd7191bac5dd02a",
+          "bytes": 46292,
+          "pages": 1,
+          "consultedPages": [
+            1
+          ],
+          "format": "image/png",
+          "locator": "Imagen 2 de la situación 01/01/2021–31/12/2021. CAIF y personal en imagen 1; resultado del artículo 43 corroborado en imagen 2. Transcripción visual."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "Antecedente histórico de 2021 recuperado en dos imágenes oficiales. No describe las cuentas actuales ni integra el ranking semestral de 2026. El resultado CAIF coincide con el artículo 43 de la segunda imagen; no se confunde con el resultado del artículo 44 ni con el devengado presupuestario bruto."
     }
   ],
   "updatedAt": "2026-10-19"
