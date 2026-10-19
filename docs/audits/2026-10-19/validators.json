@@ -1,0 +1,57 @@
+[
+  {
+    "script": "scripts_validate_top_traceability.py",
+    "exit": 0,
+    "output": "Reporte generado: C:\\Users\\Usuario\\Documents\\Codex\\2026-09-06\\rev\\work\\tablero-fiscal-provincias\\outputs\\top_2026_traceability_report.csv\r\nFilas auditadas: 190\r\nDiferencias: 0\r\nBuenos Aires 2026-01 IIBB/total: 1086193.526353/1314352.332820 = 82.6%\r\n"
+  },
+  {
+    "script": "scripts_validate_reclamos_nacion.py",
+    "exit": 0,
+    "output": "OK: evidencia y derivados de reclamos Naci�n, 24 jurisdicciones; sin saldos inferidos.\r\n"
+  },
+  {
+    "script": "scripts_export_management_reports.py",
+    "exit": 0,
+    "output": "Fresh reports: 24; all input and PDF hashes verified.\r\n"
+  },
+  {
+    "script": "scripts_export_municipal_reports.py",
+    "exit": 0,
+    "output": "135 informes municipales vigentes y verificados.\r\n"
+  },
+  {
+    "script": "scripts_build_national_management.py",
+    "exit": 0,
+    "output": "Gestión nacional: 28 conjuntos incorporados; serie de PIB separada. Integridad y totales conciliados.\r\n"
+  },
+  {
+    "script": "scripts_build_national_decisions.py",
+    "exit": 0,
+    "output": "Decisiones: 40 renglones CAIF, 6 políticas y 16 carteras conciliadas.\r\n"
+  },
+  {
+    "script": "scripts_build_national_acts.py",
+    "exit": 0,
+    "output": "{'documented_net': 4405675.313867, 'net': 4405675.313866999, 'remaining_net': 4968.41278399858, 'reconciled_programs': 123, 'total_programs': 410}\r\n"
+  },
+  {
+    "script": "scripts_build_national_revenue.py",
+    "exit": 0,
+    "output": "20 meses conciliados; BCRA separado por código presupuestario; septiembre parcial excluido.\r\n"
+  },
+  {
+    "script": "scripts_export_national_reports.py",
+    "exit": 0,
+    "output": "Informes nacionales: 12 versiones generales, 7 fichas temáticas, 24 provinciales y 16 carteras verificadas.\r\n"
+  },
+  {
+    "script": "scripts_build_municipal_tools.py",
+    "exit": 0,
+    "output": "Cobertura de 135 municipios e IPC: verificados.\r\n"
+  },
+  {
+    "script": "scripts_build_national_benefits.py",
+    "exit": 0,
+    "output": "IMSS: 32 meses; IPC observado hasta 2026-08.\r\n"
+  }
+]

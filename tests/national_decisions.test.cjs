@@ -46,7 +46,7 @@ test('partial physical records remain labelled and missing values are never a ze
 });
 test('payments and coverage use their documented program scope',()=>{
   const v=N.policyStats(D.policies[0]),u=N.policyStats(D.policies[1]);
-  near(v.unpaid,23805.85255322);near(v.execution,49.82465207);assert.equal(v.count,14);
+  near(v.unpaid,D.policies[0].execution.credito_devengado-D.policies[0].execution.credito_pagado);near(v.execution,100*D.policies[0].execution.credito_devengado/D.policies[0].execution.credito_vigente);assert.equal(v.count,14);
   assert.equal(u.count,13);assert.equal(u.reported,7);assert.equal(u.comparable,6);
 });
 test('stale policy packages are blocked and new routes preserve old navigation',()=>{

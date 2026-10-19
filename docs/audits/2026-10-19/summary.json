@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-19",
+  "status": "completed_with_prioritized_pending",
+  "scope": "Pruebas de cálculo y cobertura de las 24 jurisdicciones y 135 municipios; 238 URL contrastadas. Conciliación nueva de ejecución nacional y CAIF de Madariaga. No es una nueva conciliación manual de cada dato publicado.",
+  "changes": [
+    "15 conjuntos de ejecución nacional actualizados al 19/10/2026; octubre parcial, comparación del proyecto conserva base 15/09.",
+    "Caja SPN de septiembre: fuente IMIG conciliada, resultado financiero mensual 977173.4 millones; enero-septiembre 3313793.2 millones. Comparación real sigue a agosto.",
+    "Metas físicas segundo trimestre: revisión oficial de 1889 a 1894 registros.",
+    "Madariaga enero-septiembre: ingresos 22914654214.55, gastos 22245319743.42, superávit 669334471.13 pesos. Ranking semestral conserva enero-junio.",
+    "PDF nacionales y municipales regenerados; fechas de ejecución en informes corregidas."
+  ],
+  "sourceChecks": {
+    "changed": 19,
+    "unchanged": 72,
+    "unavailable": 11,
+    "retrieved_not_validated": 136
+  },
+  "coverage": {
+    "provinces": 24,
+    "municipalities": 135,
+    "municipalFiscal": {
+      "Comparable a junio de 2026": 84,
+      "Otro período": 35,
+      "Cuenta no verificada": 16
+    },
+    "municipalBudget2026": 106
+  },
+  "progressCriteria": "Porcentajes de cobertura, no porcentaje de tablero terminado ni de exactitud certificada.",
+  "progress": {
+    "Nacion": {
+      "publishedPackages": 28,
+      "plannedPackages": 29,
+      "coveragePercent": 96.6,
+      "limitations": "PIB histórico y correspondencias parciales; IPC incorporado a agosto. No se certificó vigencia manual de cada paquete."
+    },
+    "Provincias": {
+      "jurisdictionsReviewed": 24,
+      "universeCoveragePercent": 100,
+      "limitations": "100% refiere sólo al universo. Calendarios, caja libre y apertura homogénea por proyecto siguen incompletos; no se incorporó un trimestre nuevo de PBA."
+    },
+    "Municipios": {
+      "accountsCoveragePercent": 88.1,
+      "comparableH1Percent": 62.2,
+      "budget2026Percent": 78.5
+    }
+  },
+  "prioritizedPending": [
+    {
+      "priority": 1,
+      "item": "IPC septiembre: se detectó publicación del 1,9%, pero no se obtuvo la planilla oficial de niveles exactos. URL xls devolvió HTML; se conserva agosto sin encadenar tasa redondeada."
+    },
+    {
+      "priority": 1,
+      "item": "18 municipios con documentos candidatos nuevos localizados en sus portales requieren extracción y conciliación; listado separado. No confundir enlace localizado con dato incorporado."
+    },
+    {
+      "priority": 2,
+      "item": "16 municipios sin cuenta fiscal verificada; 51 fuera del corte común semestral."
+    },
+    {
+      "priority": 2,
+      "item": "161 observaciones del relevamiento externo de gestión aún sin contraste independiente."
+    },
+    {
+      "priority": 2,
+      "item": "PBA: se conserva segundo trimestre; apertura completa verificable de inversión por proyecto y transferencias por función pendiente."
+    }
+  ],
+  "browserScope": "Muestra: Nación/caja, Provincia/resumen y Tigre/gestión; 390, 820 y 1440 px. Provincia requirió esperar carga. Recorrido exhaustivo de selectores no completado (timeout); no se afirma revisión visual individual de las 159 jurisdicciones.",
+  "validation": {
+    "python": 168,
+    "javascript": 151,
+    "validatorsPassed": 11,
+    "exportedReportsChecked": {
+      "provincial": 24,
+      "municipal": 135,
+      "national": 59
+    },
+    "visualPDFSamples": [
+      "Nación nominal/current, página 11",
+      "Madariaga breve, página 2"
+    ],
+    "publication": "Pending deployment verification"
+  }
+}

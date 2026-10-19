@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-14",
+  "generated": "2026-10-19",
   "inputs": [
     {
       "file": "catalogo_rankings_calculados.csv",
@@ -61,7 +61,7 @@
   "repositoryInputs": [
     {
       "file": "municipios/data/fiscal_verified.json",
-      "sha256": "0e1f2529d814b6c4d774a6337040b013d7f65d4e2e251e40cadcaa20eda42b51",
+      "sha256": "301e2362a3bb9e1de0129f75b3a8834e8c01741b8d405d5c56be67b77a36fbcf",
       "encoding": "UTF-8/LF"
     },
     {
@@ -116,7 +116,7 @@
     "budgetOnly": 0,
     "otherPeriods": 35,
     "withAccounts": 119,
-    "verifiedAt": "2026-10-14"
+    "verifiedAt": "2026-10-19"
   },
   "transparencyCoverage": 135
 }

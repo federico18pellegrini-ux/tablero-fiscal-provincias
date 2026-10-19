@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "verifiedAt": "2026-09-07",
+  "verifiedAt": "2026-10-19",
   "periodEnd": "2026-06-30",
   "currency": "ARS",
   "priceBasis": "nominal",
@@ -4454,7 +4454,40 @@
       ],
       "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
       "verifiedAt": "2026-10-04"
+    },
+    {
+      "id": "06315",
+      "inicio": "2026-01-01",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "Administración municipal según CAIF publicada; sin agregar organismos separados.",
+      "landingUrl": "https://www.madariaga.gob.ar/areas/hacienda",
+      "amounts": {
+        "ingresos_corrientes": "22914654214.55",
+        "gastos_corrientes": "21638208721.26",
+        "ingresos_capital": "0.00",
+        "gastos_capital": "607111022.16",
+        "ingresos_totales": "22914654214.55",
+        "gastos_totales": "22245319743.42",
+        "resultado_financiero": "669334471.13"
+      },
+      "documents": [
+        {
+          "url": "https://www.madariaga.gob.ar/uploads_archivos/rendicion_de_cuentas/caif_30-09-2026.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-10-19/06315.pdf",
+          "bytes": 367419,
+          "sha256": "4a1b1b43df5855b8ffa9eb53418edb628354df60e5e8d497230ad69120c758f7",
+          "pages": 3,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "locator": "CAIF, páginas 1 y 2. Capital recibido = ingresos totales menos corrientes = 0; no se interpreta un casillero vacío como cero. Fuentes y aplicaciones financieras excluidas."
+        }
+      ],
+      "verifiedAt": "2026-10-19",
+      "note": "CAIF enero–septiembre conciliada al centavo. Se conserva enero–junio en el ranking común. Personal sin apertura en este documento."
     }
   ],
-  "updatedAt": "2026-10-14"
+  "updatedAt": "2026-10-19"
 }

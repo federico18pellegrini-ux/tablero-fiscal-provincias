@@ -1,12 +1,12 @@
 {
-  "reviewed": "2026-10-04",
-  "execution_cutoff": "2026-10-04",
+  "reviewed": "2026-10-19",
+  "execution_cutoff": "2026-10-19",
   "partial_month": "2026-10",
   "real_comparison_through": "2026-08",
   "checks": [
     {
       "check": "APN anual 2026 credito_presupuestado",
-      "actual": 148069293.52654898,
+      "actual": 148069293.526549,
       "expected": 148069293.526549,
       "tolerance": 0.02,
       "pass_": true,
@@ -14,7 +14,7 @@
     },
     {
       "check": "APN anual 2026 credito_vigente",
-      "actual": 152474968.84041598,
+      "actual": 152474968.840416,
       "expected": 152474968.840416,
       "tolerance": 0.02,
       "pass_": true,
@@ -22,48 +22,48 @@
     },
     {
       "check": "APN anual 2026 credito_devengado",
-      "actual": 115836259.72691363,
-      "expected": 115836259.72691365,
+      "actual": 117476799.88051808,
+      "expected": 117476799.88051808,
       "tolerance": 0.02,
       "pass_": true,
       "required": true
     },
     {
       "check": "Flujos mensuales 2026 vs anual credito_comprometido",
-      "actual": 117730606.13947706,
-      "expected": 117730606.13947704,
+      "actual": 120005238.47156103,
+      "expected": 120005238.47156101,
       "tolerance": 0.02,
       "pass_": true,
       "required": true
     },
     {
       "check": "Flujos mensuales 2026 vs anual credito_devengado",
-      "actual": 115836259.72691363,
-      "expected": 115836259.72691363,
+      "actual": 117476799.88051811,
+      "expected": 117476799.88051808,
       "tolerance": 0.02,
       "pass_": true,
       "required": true
     },
     {
       "check": "Flujos mensuales 2026 vs anual credito_pagado",
-      "actual": 114078784.2193543,
-      "expected": 114078784.2193543,
+      "actual": 116100619.52772152,
+      "expected": 116100619.52772155,
       "tolerance": 0.02,
       "pass_": true,
       "required": true
     },
     {
       "check": "Transferencias provinciales anual vs mensual 7",
-      "actual": 920945.9188053799,
-      "expected": 920945.91880538,
+      "actual": 931358.78286852,
+      "expected": 931358.78286852,
       "tolerance": 0.02,
       "pass_": true,
       "required": true
     },
     {
       "check": "Transferencias provinciales anual vs mensual 8",
-      "actual": 72232.51264719001,
-      "expected": 72232.51264719,
+      "actual": 72685.99066963,
+      "expected": 72685.99066963,
       "tolerance": 0.02,
       "pass_": true,
       "required": true
@@ -86,16 +86,16 @@
     },
     {
       "check": "Recursos APN anual recurso_ingresado_percibido",
-      "actual": 142506306.0873974,
-      "expected": 142506306.08739737,
+      "actual": 148654487.86470997,
+      "expected": 148654487.86470997,
       "tolerance": 0.02,
       "pass_": true,
       "required": true
     },
     {
       "check": "Recursos mensual vs anual",
-      "actual": 142506306.0873974,
-      "expected": 142506306.0873974,
+      "actual": 148654487.86470997,
+      "expected": 148654487.86470997,
       "tolerance": 0.02,
       "pass_": true,
       "required": true
@@ -106,9 +106,9 @@
       "file": "credito-anual-2026.zip",
       "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-anual-2026.zip",
       "resolved_url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-anual-2026.zip",
-      "retrieved_at": "2026-10-04",
-      "bytes": 2793940,
-      "sha256": "7597429b6665b1bd5c836a08856d0d7d897706468e5ad6254203dbfad82193b4",
+      "retrieved_at": "2026-10-19",
+      "bytes": 2791112,
+      "sha256": "e06213546068e0b03c876435343cdd12ae38103eca5b1c2757a464d2fa22c833",
       "content_type": "application/zip",
       "path": "data/execution-sources/credito-anual-2026.zip"
     },
@@ -116,9 +116,9 @@
       "file": "credito-mensual-2026.zip",
       "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-mensual-2026.zip",
       "resolved_url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-mensual-2026.zip",
-      "retrieved_at": "2026-10-04",
-      "bytes": 10211237,
-      "sha256": "fb47649a63399a993f51fe6f748131431ef0c147dc2d4f14111f9fd1ab8634c2",
+      "retrieved_at": "2026-10-19",
+      "bytes": 10709746,
+      "sha256": "305d313dc3f9b4387f558815d295cb4d57dd92207c0dc2b81792bb9d143401c3",
       "content_type": "application/zip",
       "path": "data/execution-sources/credito-mensual-2026.zip"
     },
@@ -126,9 +126,9 @@
       "file": "recursos-anual-2026.zip",
       "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/recursos-anual-2026.zip",
       "resolved_url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/recursos-anual-2026.zip",
-      "retrieved_at": "2026-10-04",
-      "bytes": 20943,
-      "sha256": "bd630f4b98df4bfa54602d5fc6f8b735b62aea17fc0d37c04f61b0baa139d868",
+      "retrieved_at": "2026-10-19",
+      "bytes": 21057,
+      "sha256": "114dd869c6222a185cc260f98ffa64c3ec5b59fae8e3d8469ada407e84450b26",
       "content_type": "application/zip",
       "path": "data/execution-sources/recursos-anual-2026.zip"
     },
@@ -136,9 +136,9 @@
       "file": "recursos-mensual-2026.zip",
       "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/recursos-mensual-2026.zip",
       "resolved_url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/recursos-mensual-2026.zip",
-      "retrieved_at": "2026-10-04",
-      "bytes": 119630,
-      "sha256": "9d0240e1484f890f17d51d07be901cb5ea5e335a1540628d2fced191c4b83f0a",
+      "retrieved_at": "2026-10-19",
+      "bytes": 123697,
+      "sha256": "5111f25ac7e8b00b655899fb025143555fa8a41aa3dcf24757c80e2665701f42",
       "content_type": "application/zip",
       "path": "data/execution-sources/recursos-mensual-2026.zip"
     },
@@ -146,9 +146,9 @@
       "file": "totales-de-presupuesto.zip",
       "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/totales-de-presupuesto.zip",
       "resolved_url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/totales-de-presupuesto.zip",
-      "retrieved_at": "2026-10-04",
-      "bytes": 2206,
-      "sha256": "daab38cea4049aa5a39dde6a878efe07c4ebb973efbd005448603cc5c6a57676",
+      "retrieved_at": "2026-10-19",
+      "bytes": 2203,
+      "sha256": "e837667db4b289c4bcaa48b795168dbeb815ab85029038d594bb99b08cb8452d",
       "content_type": "application/zip",
       "path": "data/execution-sources/totales-de-presupuesto.zip"
     },
@@ -156,9 +156,9 @@
       "file": "ejecucion-fisica-trimestre-1-2026.zip",
       "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/ejecucion-fisica-trimestre-1-2026.zip",
       "resolved_url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/ejecucion-fisica-trimestre-1-2026.zip",
-      "retrieved_at": "2026-10-04",
-      "bytes": 173813,
-      "sha256": "f4c7cc1b95474810bb18d3907d1b9a010511283f4d649b25ab2e2eb5efb7818c",
+      "retrieved_at": "2026-10-19",
+      "bytes": 173811,
+      "sha256": "f7853e7eef3f63a5fe472f8f63f594a3d24f616509ddd93de2f4e3b9eeae6c14",
       "content_type": "application/zip",
       "path": "data/execution-sources/ejecucion-fisica-trimestre-1-2026.zip"
     },
@@ -166,9 +166,9 @@
       "file": "ejecucion-fisica-trimestre-2-2026.zip",
       "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/ejecucion-fisica-trimestre-2-2026.zip",
       "resolved_url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/ejecucion-fisica-trimestre-2-2026.zip",
-      "retrieved_at": "2026-10-04",
-      "bytes": 189958,
-      "sha256": "f9ff7044701716ad492cdf0904b63e6333b3034effc77782d69f1590131553f8",
+      "retrieved_at": "2026-10-19",
+      "bytes": 191290,
+      "sha256": "5271b74797625a0cd873b3deaf6ae0147ab625ecab04df880feec6bdfc9cf8d2",
       "content_type": "application/zip",
       "path": "data/execution-sources/ejecucion-fisica-trimestre-2-2026.zip"
     }

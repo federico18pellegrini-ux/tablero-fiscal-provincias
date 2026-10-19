@@ -75,7 +75,7 @@ class NationalReportsTest(unittest.TestCase):
             self.assertEqual(reader.metadata.author, 'Federico Pellegrini')
             self.assertIn('484.917', all_text)
             self.assertIn('2007', all_text)
-            self.assertIn('1.889', all_text)
+            self.assertIn('1.894', all_text)
             self.assertIn('31/03/2026', all_text)
             self.assertIn('28 conjuntos', all_text)
             self.assertIn('DA 20/2026', texts[10])

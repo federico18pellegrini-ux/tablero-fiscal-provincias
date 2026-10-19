@@ -26,7 +26,7 @@ class NationalDecisionsTest(unittest.TestCase):
         policies=subject.build()['policies']
         self.assertEqual([len(p['physical']) for p in policies],[14,13,4,11,11,7])
         for p in policies:
-            self.assertEqual(p['execution']['corte'],'2026-10-04')
+            self.assertEqual(p['execution']['corte'],'2026-10-19')
             self.assertTrue(all(m['trimestre']==2 for m in p['physical']))
             baseline=subject.load(subject.DATA/'execution-sources/project-baseline-execution.json')['programs']
             old=next(r for r in baseline if all(r[k]==p['execution'][k] for k in ['jurisdiccion_id','servicio_id','programa_id']))
@@ -61,7 +61,7 @@ class NationalDecisionsTest(unittest.TestCase):
         interior=next(r for r in rows if r['id']==30)
         self.assertIsNone(interior['project']['project']);self.assertIsNone(interior['works_total'])
         self.assertGreater(interior['execution']['credito_devengado'],0)
-        self.assertEqual(sum(r['physical']['count'] for r in rows),1889)
+        self.assertEqual(sum(r['physical']['count'] for r in rows),1894)
         self.assertEqual(sum(len(r['program_ids']) for r in rows),394)
         self.assertEqual(sum(len(r['work_ids']) for r in rows),435)
         bad=copy.deepcopy(g);bad['execution']['groups']['jurisdiccion'][0]['credito_vigente']+=1
