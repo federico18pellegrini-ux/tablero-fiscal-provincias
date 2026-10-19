@@ -34,3 +34,6 @@
  .visible-navigation-content .dashboard-command-bar{margin:12px 0 0!important}.visible-navigation-content .management-report-export{margin:8px 0 0!important;padding:8px 0!important}
  .header{row-gap:4px!important;padding-top:6px!important;padding-bottom:6px!important}.header .dashboard-switcher{margin-top:0!important}
 }
+
+/* The five cards carry the explanation; avoid repeating the old overview above them. */
+#summaryView [data-reading="summary"],#summaryView #pbaLatestSummary,#summaryView .gov-status{display:none!important}
