@@ -29,9 +29,9 @@ test('habitual terms and multiple accented words find the intended official prog
 });
 test('all bases are shown simultaneously without inventing a program closing estimate',()=>{
   const total=M.comparisonRows(B.total,B.deflator.annual_factors);
-  near(total[1].real,10.009724);near(total[2].real,3.908370);
+  near(total[1].real,10.0829315018);near(total[2].real,3.97751696444);
   const vaccine=M.comparisonRows(D.policies[0].program,B.deflator.annual_factors);
-  near(vaccine[0].real,42.662761);near(vaccine[1].real,-26.951375);
+  near(vaccine[0].real,42.75769810945);near(vaccine[1].real,-26.90276423977);
   assert.equal(vaccine[2].real,null);assert.equal(vaccine[2].nominal,null);
   near(vaccine[1].nominal,-11.985990);
 });
@@ -61,7 +61,7 @@ test('stale policy packages are blocked and new routes preserve old navigation',
 test('scenarios reproduce the annual base and separate revenue stress from uncovered principal',()=>{
   const rows=Object.fromEntries(D.finance.rows.map(r=>[r.id,r.project]));
   const options={project:B.total.project,base:B.total.current,resources:rows.VI,expenses:rows.VII,capital:rows['XIII.2'],inflation:(B.deflator.annual_average_index['2027']/B.deflator.annual_average_index['2026']-1)*100,revenueDrop:0,coverage:100};
-  const initial=N.scenario(options);near(initial.realChange,10.009724);near(initial.balance,246741);assert.equal(initial.uncovered,0);
+  const initial=N.scenario(options);near(initial.realChange,10.0829315018);near(initial.balance,246741);assert.equal(initial.uncovered,0);
   const stressed=N.scenario({...options,revenueDrop:1,coverage:90});near(stressed.balance,-1776740.74);near(stressed.uncovered,30686492.9);
   assert.ok(N.scenario({...options,inflation:30}).realChange<initial.realChange);
   for(const bad of [{inflation:null},{coverage:101},{revenueDrop:-1},{base:0},{inflation:Infinity}])assert.equal(N.scenario({...options,...bad}),null);

@@ -74,7 +74,7 @@ class ManagementReportTests(unittest.TestCase):
   ba=editorial_reading(self.data.model('Buenos Aires'))
   self.assertIn('desbalance antes de intereses',ba['mechanism'])
   self.assertIn('alcanzaron para el gasto sin intereses',ba['quarter'])
-  self.assertIn('Sin una comparación real completa',ba['federal'])
+  self.assertIn('compran menos',ba['federal'])
   model=self.data.model('Buenos Aires');model['transfers']=self.data.transfers('Buenos Aires','2026-08')
   self.assertIn('compran menos',editorial_reading(model)['federal'])
   self.assertIn('Corregir el déficit',ba['closing'])

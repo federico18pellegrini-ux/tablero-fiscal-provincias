@@ -29,7 +29,7 @@ class PbaSeptemberRefresh(unittest.TestCase):
    self.assertIn(expected,text)
   for page in pdf.pages:self.assertIn('tablero.federicopellegrini.com.ar',page.extract_text())
   lp=' '.join(PdfReader(ROOT/'reports/informe-la-pampa.pdf').pages[2].extract_text().split());self.assertIn('por mes',lp)
- def test_august_price_update_keeps_municipal_price_base(self):
-  self.assertEqual(read('data/ipc_source.json')['latest_period'],'2026-08')
+ def test_september_price_update_keeps_municipal_price_base(self):
+  self.assertEqual(read('data/ipc_source.json')['latest_period'],'2026-09')
   self.assertEqual(read('municipios/data/dashboard.json')['priceBase'],'2026-07')
-  self.assertEqual(read('municipios/data/deflator.json')['latest'],'2026-08')
+  self.assertEqual(read('municipios/data/deflator.json')['latest'],'2026-09')

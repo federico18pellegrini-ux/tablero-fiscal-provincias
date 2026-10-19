@@ -446,5 +446,14 @@
     "bytes": 285041,
     "sha256": "8b1660d0e4b46e21d7819355006e42668c359484339ab82a2a192606170c5f3d",
     "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  },
+  {
+    "file": "ipc-septiembre-2026.csv",
+    "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+    "path": "data/ipc-sources/2026-09-divisiones.csv",
+    "retrieved_at": "2026-10-19",
+    "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
+    "bytes": 1242105,
+    "content_type": "text/csv"
   }
 ]

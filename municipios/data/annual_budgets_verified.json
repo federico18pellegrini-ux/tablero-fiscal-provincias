@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "verifiedAt": "2026-10-04",
+  "verifiedAt": "2026-10-19",
   "targetYear": 2026,
   "currency": "ARS",
   "priceBasis": "nominal",
@@ -64,7 +64,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06014",
@@ -119,7 +120,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06021",
@@ -174,7 +176,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06035",
@@ -229,7 +232,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06042",
@@ -264,7 +268,8 @@
           "locator": "Período enero–marzo y total vigente: 38.324.870.778,06 pesos."
         }
       ],
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06049",
@@ -323,7 +328,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06056",
@@ -360,7 +366,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06063",
@@ -423,7 +430,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06070",
@@ -447,7 +455,8 @@
           "locator": "Gastos por objeto, Total, columna Vigente; período enero–junio de 2026."
         }
       ],
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06077",
@@ -506,7 +515,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06084",
@@ -565,7 +575,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06091",
@@ -592,7 +603,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06098",
@@ -647,7 +659,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06105",
@@ -706,7 +719,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06112",
@@ -761,7 +775,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06119",
@@ -816,7 +831,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06126",
@@ -871,7 +887,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06140",
@@ -930,7 +947,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06147",
@@ -985,7 +1003,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06154",
@@ -1040,7 +1059,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06161",
@@ -1095,7 +1115,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06168",
@@ -1119,7 +1140,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06175",
@@ -1146,7 +1168,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06182",
@@ -1173,7 +1196,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2025-01-02"
+      "periodStart": "2025-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06189",
@@ -1228,7 +1252,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06196",
@@ -1283,7 +1308,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06203",
@@ -1342,7 +1368,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-05"
+      "periodStart": "2026-01-05",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06210",
@@ -1397,7 +1424,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06218",
@@ -1452,7 +1480,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06224",
@@ -1507,7 +1536,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2025-01-01"
+      "periodStart": "2025-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06231",
@@ -1534,7 +1564,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06245",
@@ -1561,7 +1592,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06252",
@@ -1616,7 +1648,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2025-01-02"
+      "periodStart": "2025-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06266",
@@ -1671,7 +1704,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06270",
@@ -1706,7 +1740,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2025-01-01"
+      "periodStart": "2025-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06274",
@@ -1761,7 +1796,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06277",
@@ -1816,7 +1852,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06280",
@@ -1871,7 +1908,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06287",
@@ -1926,62 +1964,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
-    },
-    {
-      "id": "06301",
-      "year": 2026,
-      "asOf": "2026-06-30",
-      "original": null,
-      "current": "24901405614.16",
-      "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "reconciled_objects",
-      "documents": [
-        {
-          "url": "https://gestion.generalbelgrano.gob.ar/gobiernoabierto/2026/Información Financiera/Situacion economico-financiera al 30.06.2026.pdf",
-          "sha256": "c9747fc3f5d07ea78bfcd50b158f137598ee85d4da37d459f49a9e1e5555ca16",
-          "bytes": 401228,
-          "pages": 2,
-          "consultedPages": [
-            1
-          ],
-          "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
-        }
-      ],
-      "components": [
-        {
-          "label": "Gastos en personal",
-          "amount": "13520184562.99"
-        },
-        {
-          "label": "Bienes de consumo",
-          "amount": "3588481126.16"
-        },
-        {
-          "label": "Servicios no personales",
-          "amount": "4898201712.68"
-        },
-        {
-          "label": "Bienes de uso",
-          "amount": "848767184.71"
-        },
-        {
-          "label": "Transferencias",
-          "amount": "886978443.54"
-        },
-        {
-          "label": "Activos financieros",
-          "amount": "101705838.25"
-        },
-        {
-          "label": "Servicio de la deuda y disminución de otros pasivos",
-          "amount": "1057086745.83"
-        }
-      ],
-      "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06308",
@@ -2036,7 +2020,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06315",
@@ -2091,7 +2076,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06322",
@@ -2115,7 +2101,8 @@
           "locator": "Gastos por objeto, Total, columna Vigente; período enero–junio de 2026."
         }
       ],
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06329",
@@ -2171,7 +2158,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06336",
@@ -2195,7 +2183,8 @@
           "locator": "Gastos por objeto, Total, columna Vigente; período enero–junio de 2026."
         }
       ],
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06343",
@@ -2219,7 +2208,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06351",
@@ -2247,7 +2237,8 @@
           "container": "ZIP oficial; páginas y localización corresponden al PDF contenido."
         }
       ],
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06357",
@@ -2306,7 +2297,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06364",
@@ -2341,7 +2333,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06371",
@@ -2380,7 +2373,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06385",
@@ -2435,7 +2429,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06392",
@@ -2490,7 +2485,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06399",
@@ -2545,7 +2541,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06406",
@@ -2600,7 +2597,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06410",
@@ -2659,7 +2657,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2024-01-01"
+      "periodStart": "2024-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06412",
@@ -2714,7 +2713,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06413",
@@ -2765,7 +2765,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06427",
@@ -2824,7 +2825,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06434",
@@ -2879,7 +2881,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06441",
@@ -2938,7 +2941,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06448",
@@ -2965,7 +2969,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06455",
@@ -2989,7 +2994,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06466",
@@ -3040,7 +3046,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2024-01-01"
+      "periodStart": "2024-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06476",
@@ -3099,7 +3106,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06483",
@@ -3154,7 +3162,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06497",
@@ -3209,7 +3218,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06505",
@@ -3236,7 +3246,8 @@
       "scope": "Administración municipal según la CAIF publicada. No se agregan presupuestos separados de otros organismos.",
       "note": "Presupuesto vigente a la fecha indicada; el original se conserva cuando está documentado.",
       "components": [],
-      "componentField": "current"
+      "componentField": "current",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06511",
@@ -3263,7 +3274,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2025-01-02"
+      "periodStart": "2025-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06515",
@@ -3322,7 +3334,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06518",
@@ -3346,7 +3359,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06532",
@@ -3405,7 +3419,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06547",
@@ -3443,7 +3458,8 @@
       ],
       "periodStart": "2026-01-02",
       "components": [],
-      "componentField": "current"
+      "componentField": "current",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06553",
@@ -3478,7 +3494,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06560",
@@ -3537,7 +3554,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06581",
@@ -3592,7 +3610,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06588",
@@ -3647,7 +3666,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06595",
@@ -3706,7 +3726,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-05"
+      "periodStart": "2026-01-05",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06602",
@@ -3761,7 +3782,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06609",
@@ -3788,7 +3810,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06616",
@@ -3843,7 +3866,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06623",
@@ -3898,7 +3922,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06638",
@@ -3937,7 +3962,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06644",
@@ -3992,7 +4018,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06651",
@@ -4047,7 +4074,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06658",
@@ -4098,7 +4126,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06665",
@@ -4125,7 +4154,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06672",
@@ -4188,7 +4218,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06679",
@@ -4243,7 +4274,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06686",
@@ -4294,7 +4326,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06693",
@@ -4319,7 +4352,8 @@
           "locator": "Gastos por finalidad y función, Totales Generales, aprobado/modificaciones/vigente; período enero–marzo. El archivo abril–junio se conserva separado."
         }
       ],
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06700",
@@ -4378,7 +4412,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2025-01-02"
+      "periodStart": "2025-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06707",
@@ -4437,7 +4472,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06714",
@@ -4492,7 +4528,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06721",
@@ -4547,7 +4584,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06728",
@@ -4602,7 +4640,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06735",
@@ -4629,7 +4668,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06742",
@@ -4684,7 +4724,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06749",
@@ -4719,7 +4760,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2025-01-01"
+      "periodStart": "2025-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06756",
@@ -4770,7 +4812,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06760",
@@ -4796,7 +4839,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06763",
@@ -4822,7 +4866,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": null
+      "periodStart": null,
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06770",
@@ -4849,7 +4894,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06784",
@@ -4885,7 +4931,8 @@
           "locator": "Decreto 600/2025 y Ordenanza 2803/2025, artículo 4; aprobado original 13.248.321.462,65 pesos."
         }
       ],
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06791",
@@ -4948,7 +4995,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06798",
@@ -5003,7 +5051,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06805",
@@ -5353,7 +5402,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06826",
@@ -5412,7 +5462,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06833",
@@ -5475,7 +5526,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06840",
@@ -5530,7 +5582,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06847",
@@ -5585,7 +5638,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06854",
@@ -5640,7 +5694,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06861",
@@ -5677,7 +5732,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06868",
@@ -5736,7 +5792,8 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-01"
+      "periodStart": "2026-01-01",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06875",
@@ -5763,7 +5820,8 @@
       ],
       "components": [],
       "componentField": "current",
-      "periodStart": "2026-01-02"
+      "periodStart": "2026-01-02",
+      "verifiedAt": "2026-10-04"
     },
     {
       "id": "06882",
@@ -5798,7 +5856,66 @@
         }
       ],
       "componentField": "current",
-      "periodStart": "2026-01-05"
+      "periodStart": "2026-01-05",
+      "verifiedAt": "2026-10-04"
+    },
+    {
+      "id": "06301",
+      "year": 2026,
+      "asOf": "2026-09-30",
+      "periodStart": "2026-01-01",
+      "original": "23485800000.00",
+      "modifications": "1415605614.16",
+      "current": "24901405614.16",
+      "scope": "Municipalidad según estado por objeto del gasto, incluidos servicios de deuda y otros pasivos presupuestarios.",
+      "note": "Autorización anual; no equivale al gasto fiscal ni a la recaudación.",
+      "method": "reconciled_objects",
+      "documents": [
+        {
+          "url": "https://gestion.generalbelgrano.gob.ar/gobiernoabierto/2026/Recursos y Gastos/Gastos/Ejecucion de Gastos 2026 - Acumulado al 30-09.pdf",
+          "path": "municipios/data/budget-sources/06301-2026q3.pdf",
+          "sha256": "accfa90b46d61afa41f131a67946ffac62fab7522a495bf2c7c3a23ccbd070ab",
+          "bytes": 370109,
+          "page": 1,
+          "locator": "Columnas crédito aprobado, modificaciones y vigente; suma de siete objetos del gasto; total vigente duplicado gráficamente se verifica por componentes.",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ]
+        }
+      ],
+      "components": [
+        {
+          "label": "Personal",
+          "amount": "13520184562.99"
+        },
+        {
+          "label": "Bienes de consumo",
+          "amount": "3588481126.16"
+        },
+        {
+          "label": "Servicios no personales",
+          "amount": "4898201712.68"
+        },
+        {
+          "label": "Bienes de uso",
+          "amount": "848767184.71"
+        },
+        {
+          "label": "Transferencias",
+          "amount": "886978443.54"
+        },
+        {
+          "label": "Activos financieros",
+          "amount": "101705838.25"
+        },
+        {
+          "label": "Servicio de deuda y otros pasivos",
+          "amount": "1057086745.83"
+        }
+      ],
+      "componentField": "current",
+      "verifiedAt": "2026-10-19"
     }
   ],
   "pending": [

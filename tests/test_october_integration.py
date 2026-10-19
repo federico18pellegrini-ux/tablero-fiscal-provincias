@@ -32,7 +32,7 @@ class OctoberIntegration(unittest.TestCase):
         for row in e['execution']:
             for m in row['months']:
                 self.assertEqual(m['partial'],m['month']==10)
-                if m['month']>8:self.assertIsNone(m['real'])
+                if m['month']>9:self.assertIsNone(m['real'])
 
     def test_new_municipal_accounts_keep_originals_and_do_not_mix_periods(self):
         a=load('municipios/data/fiscal_verified.json')

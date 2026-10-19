@@ -42,8 +42,8 @@
 06021;Alberti;Presupuesto vigente 2026;Incorporado;2026-06-30;;https://alberti.gov.ar/transparencia;2026-10-04
 06021;Alberti;Saldo de tesorería;Pendiente;;Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.;https://alberti.gov.ar/transparencia;2026-10-04
 06021;Alberti;Caja libre;Pendiente;;Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.;https://alberti.gov.ar/transparencia;2026-10-04
-06021;Alberti;Stock de deuda municipal;Pendiente;;"Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.";https://alberti.gov.ar/transparencia;2026-10-04
-06021;Alberti;Calendario futuro de deuda;Pendiente;;"Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.";https://alberti.gov.ar/transparencia;2026-10-04
+06021;Alberti;Stock de deuda municipal;Incorporado;2026-09-30;;https://alberti.gov.ar/transparencia;2026-10-04
+06021;Alberti;Calendario futuro de deuda;Perfil publicado parcial;;"Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.";https://alberti.gov.ar/transparencia;2026-10-04
 06021;Alberti;Deuda con proveedores vencida;Pendiente;;Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.;https://alberti.gov.ar/transparencia;2026-10-04
 06021;Alberti;Flujos fiscales mensuales;Pendiente;;"Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.";https://alberti.gov.ar/transparencia;2026-10-04
 06021;Alberti;Cierres fiscales anuales 2021–2025;Sin serie anual incorporada;;"CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.";https://alberti.gov.ar/transparencia;2026-10-04
@@ -593,8 +593,8 @@
 06203;Coronel Suárez;Presupuesto vigente 2026;Incorporado;2026-06-30;;https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
 06203;Coronel Suárez;Saldo de tesorería;Pendiente;;Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.;https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
 06203;Coronel Suárez;Caja libre;Pendiente;;Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.;https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
-06203;Coronel Suárez;Stock de deuda municipal;Pendiente;;"Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.";https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
-06203;Coronel Suárez;Calendario futuro de deuda;Pendiente;;"Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.";https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
+06203;Coronel Suárez;Stock de deuda municipal;Incorporado;2026-09-30;;https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
+06203;Coronel Suárez;Calendario futuro de deuda;Perfil publicado parcial;;"Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.";https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
 06203;Coronel Suárez;Deuda con proveedores vencida;Pendiente;;Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.;https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
 06203;Coronel Suárez;Flujos fiscales mensuales;Pendiente;;"Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.";https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
 06203;Coronel Suárez;Cierres fiscales anuales 2021–2025;Sin serie anual incorporada;;"CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.";https://www.coronelsuarez.gob.ar/transparencia-fiscal/;2026-10-04
@@ -836,8 +836,8 @@
 06294;General Arenales;Empleo industrial;Incorporado;2025-12;;https://www.generalarenales.gob.ar/gobierno-abierto/;2026-10-04
 06294;General Arenales;Desempleo, informalidad y pobreza por ingresos;Sin serie comparable para 135;;"Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.";https://www.generalarenales.gob.ar/gobierno-abierto/;2026-10-04
 06301;General Belgrano;Cuenta fiscal comparable;Incorporado;enero–junio 2026;;https://gestion.generalbelgrano.gob.ar/;2026-10-04
-06301;General Belgrano;Presupuesto original 2026;Pendiente;2026;"Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.";https://gestion.generalbelgrano.gob.ar/;2026-10-04
-06301;General Belgrano;Presupuesto vigente 2026;Incorporado;2026-06-30;;https://gestion.generalbelgrano.gob.ar/;2026-10-04
+06301;General Belgrano;Presupuesto original 2026;Incorporado;2026;;https://gestion.generalbelgrano.gob.ar/;2026-10-04
+06301;General Belgrano;Presupuesto vigente 2026;Incorporado;2026-09-30;;https://gestion.generalbelgrano.gob.ar/;2026-10-04
 06301;General Belgrano;Saldo de tesorería;Pendiente;;Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.;https://gestion.generalbelgrano.gob.ar/;2026-10-04
 06301;General Belgrano;Caja libre;Pendiente;;Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.;https://gestion.generalbelgrano.gob.ar/;2026-10-04
 06301;General Belgrano;Stock de deuda municipal;Pendiente;;"Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.";https://gestion.generalbelgrano.gob.ar/;2026-10-04
@@ -914,7 +914,7 @@
 06329;General Las Heras;Cuenta fiscal comparable;Incorporado;enero–junio 2026;;https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/;2026-10-04
 06329;General Las Heras;Presupuesto original 2026;Pendiente;2026;"Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.";https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/;2026-10-04
 06329;General Las Heras;Presupuesto vigente 2026;Incorporado;2026-06-30;;https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/;2026-10-04
-06329;General Las Heras;Saldo de tesorería;Incorporado;2026-06-30;;https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/;2026-10-04
+06329;General Las Heras;Saldo de tesorería;Incorporado;2026-09-30;;https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/;2026-10-04
 06329;General Las Heras;Caja libre;Pendiente;;Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.;https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/;2026-10-04
 06329;General Las Heras;Stock de deuda municipal;Pendiente;;"Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.";https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/;2026-10-04
 06329;General Las Heras;Calendario futuro de deuda;Pendiente;;"Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.";https://gobiernodelasheras.com/documentos/2026/situacion-economico-financiera-primer-semestre-2026/;2026-10-04
@@ -2322,8 +2322,8 @@
 06798;Tapalqué;Presupuesto vigente 2026;Incorporado;2026-06-30;;https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04
 06798;Tapalqué;Saldo de tesorería;Pendiente;;Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.;https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04
 06798;Tapalqué;Caja libre;Pendiente;;Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.;https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04
-06798;Tapalqué;Stock de deuda municipal;Pendiente;;"Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.";https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04
-06798;Tapalqué;Calendario futuro de deuda;Pendiente;;"Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.";https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04
+06798;Tapalqué;Stock de deuda municipal;Incorporado;2026-09-30;;https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04
+06798;Tapalqué;Calendario futuro de deuda;Perfil publicado parcial;;"Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.";https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04
 06798;Tapalqué;Deuda con proveedores vencida;Pendiente;;Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.;https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04
 06798;Tapalqué;Flujos fiscales mensuales;Pendiente;;"Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.";https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04
 06798;Tapalqué;Cierres fiscales anuales 2021–2025;Sin serie anual incorporada;;"CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.";https://www.municipiodetapalque.gob.ar/2026-transparencia;2026-10-04

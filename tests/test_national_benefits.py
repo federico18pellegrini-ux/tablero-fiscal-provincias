@@ -10,7 +10,7 @@ class NationalBenefitsTests(unittest.TestCase):
         self.assertEqual(data['rows'][-1]['period'], '2026-09')
         self.assertEqual(data['rows'][-1]['minimum_bonus'], 498633)
         self.assertEqual(data['rows'][-1]['auh'], 154031)
-        self.assertIsNone(data['rows'][-1]['ipc'])
+        self.assertEqual(data['rows'][-1]['ipc'], 12514.1508)
         corrections = {r['period']: r for r in data['meta']['corrections']}
         self.assertEqual(corrections['2026-09']['printed_total'], 498663)
         self.assertEqual(corrections['2026-03']['calculated_total'], 439601)

@@ -1,13 +1,14 @@
 {
   "generated": "2026-10-19",
   "series": "INDEC, IPC nacional, nivel general, diciembre 2016=100",
-  "source": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_09_26.xls",
-  "sourceSha256": "62059c462ed84b577ad3f6d1773c1317cca2e0fdb7ca9543558e585ec176dc23",
-  "latest": "2026-08",
+  "source": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+  "sourceSha256": "9557565a51bb85a941e439c5219235742f1d541e7bc614679152e1efa8c53333",
+  "latest": "2026-09",
   "bases": [
     "2024-12",
     "2025-12",
-    "2026-07"
+    "2026-07",
+    "2026-09"
   ],
   "indices": {
     "2016-12": 100.0,
@@ -126,6 +127,7 @@
     "2026-05": 11607.3937,
     "2026-06": 11826.4103,
     "2026-07": 12076.3937,
-    "2026-08": 12276.766
+    "2026-08": 12276.766,
+    "2026-09": 12514.1508
   }
 }

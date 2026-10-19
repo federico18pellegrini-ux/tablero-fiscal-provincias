@@ -1,0 +1,99 @@
+[
+  {
+    "id": "06112",
+    "inicio": "2026-01-01",
+    "fin": "2026-08-31",
+    "method": "published_caif",
+    "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+    "landingUrl": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/regimen_provincial_fiscal_municipal.html",
+    "amounts": {
+      "ingresos_corrientes": "28124752418.13",
+      "gastos_corrientes": "28102173124.21",
+      "ingresos_capital": "2193153402.48",
+      "gastos_capital": "1590810520.58",
+      "ingresos_totales": "30317905820.61",
+      "gastos_totales": "29692983644.79",
+      "resultado_financiero": "624922175.82",
+      "personal_devengado": "18370303611.89"
+    },
+    "documents": [
+      {
+        "url": "https://portalbragado.com.ar/informacion_fiscal_presupuestaria/regimen_provincial_fiscal_municipal/informacion_economica/SITUACION-ECONOMICO-FINANCIERA-2026.pdf",
+        "sha256": "890380541fc70d1c458e5cc7ba1169ddaf353f67e3f4da38149925829bc41fbc",
+        "pages": 9,
+        "consultedPages": [
+          1
+        ],
+        "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+        "bytes": 374682
+      }
+    ],
+    "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo.",
+    "verifiedAt": "2026-09-07"
+  },
+  {
+    "id": "06784",
+    "inicio": "2025-01-02",
+    "fin": "2025-12-31",
+    "method": "published_caif",
+    "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+    "landingUrl": "https://suipacha.gob.ar/transparencia/",
+    "amounts": {
+      "ingresos_corrientes": "10029935299.99",
+      "gastos_corrientes": "10099156268.45",
+      "ingresos_capital": "12337996.20",
+      "ingresos_totales": "10042273296.19",
+      "gastos_totales": "10444342310.35",
+      "resultado_financiero": "-402069014.16",
+      "gastos_capital": "345186041.90",
+      "personal_devengado": "5667573031.80"
+    },
+    "documents": [
+      {
+        "url": "https://suipacha.gob.ar/wp-content/uploads/2026/04/Situacion-Economica-Financiera-2025.pdf",
+        "sha256": "6472b495689976076e9d999bf8099d6e6ac08e4609ed52327b4047ac9fdf35c6",
+        "pages": 2,
+        "consultedPages": [
+          1
+        ],
+        "locator": "CAIF: ingresos y gastos corrientes, de capital y totales; resultado financiero. Personal: columna devengado del cuadro de gastos por objeto.",
+        "bytes": 89287
+      }
+    ],
+    "note": "Importes de la CAIF publicados por el municipio; ingresos, gastos y resultado conciliados al centavo. El documento excluye movimientos de cierre.",
+    "verifiedAt": "2026-09-07"
+  },
+  {
+    "id": "06315",
+    "inicio": "2026-01-01",
+    "fin": "2026-09-30",
+    "method": "published_caif",
+    "scope": "Administración municipal según CAIF publicada; sin agregar organismos separados.",
+    "landingUrl": "https://www.madariaga.gob.ar/areas/hacienda",
+    "amounts": {
+      "ingresos_corrientes": "22914654214.55",
+      "gastos_corrientes": "21638208721.26",
+      "ingresos_capital": "0.00",
+      "gastos_capital": "607111022.16",
+      "ingresos_totales": "22914654214.55",
+      "gastos_totales": "22245319743.42",
+      "resultado_financiero": "669334471.13"
+    },
+    "documents": [
+      {
+        "url": "https://www.madariaga.gob.ar/uploads_archivos/rendicion_de_cuentas/caif_30-09-2026.pdf",
+        "archive": "municipios/data/fiscal-sources/2026-10-19/06315.pdf",
+        "bytes": 367419,
+        "sha256": "4a1b1b43df5855b8ffa9eb53418edb628354df60e5e8d497230ad69120c758f7",
+        "pages": 3,
+        "consultedPages": [
+          1,
+          2
+        ],
+        "locator": "CAIF, páginas 1 y 2. Capital recibido = ingresos totales menos corrientes = 0; no se interpreta un casillero vacío como cero. Fuentes y aplicaciones financieras excluidas."
+      }
+    ],
+    "verifiedAt": "2026-10-19",
+    "note": "CAIF enero–septiembre conciliada al centavo. Se conserva enero–junio en el ranking común. Personal sin apertura en este documento."
+  }
+]

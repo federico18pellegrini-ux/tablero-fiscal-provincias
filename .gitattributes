@@ -3,3 +3,7 @@ data/pba_sources/cgp-1s/*.html binary
 
 # Preserve source document bytes for evidence hashes.
 municipios/data/structure-sources/* -text
+
+data/ipc-sources/* -text
+nacion/data/ipc-sources/* -text
+municipios/data/debt-sources/*.xls -text

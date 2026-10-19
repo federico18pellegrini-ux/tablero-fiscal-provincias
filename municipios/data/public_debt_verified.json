@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-09-19",
+  "reviewedAt": "2026-10-19",
   "records": [
     {
       "id": "06042",
@@ -136,6 +136,161 @@
       "reading": "La deuda pública informada suma $473,3 millones: $183,2 millones consolidados y $290,1 millones de deuda flotante. El leasing figura separado, por $322,4 millones; no se suma sin conciliar su alcance contable.",
       "scheduleStatus": "partial_published",
       "scheduleNote": "Perfil publicado al 30/06/2026. Se muestran 2027–2032; 2026 es un total anual y no identifica lo pendiente desde julio. No se reconstruye un saldo restando pagos ni se fuerza la suma del calendario al stock. Las celdas sin dato siguen vacías. La fuente agrega amortizaciones posteriores en “Resto”: $1.695.721,52 e intereses/comisiones por $99.794,12, sin asignarlos a un año. Los intereses de leasing no están desagregados."
+    },
+    {
+      "id": "06021",
+      "date": "2026-09-30",
+      "consolidated": 426471651.03,
+      "floating": null,
+      "leasing": 121720606.93,
+      "unit": "ARS",
+      "verifiedAt": "2026-10-19",
+      "documents": [
+        {
+          "url": "https://res.cloudinary.com/dshbxjhtw/raw/upload/v1791390438/Ejercicio_2026_Al_30_de_Septiembre_41e466df9e.xls",
+          "path": "municipios/data/debt-sources/06021-2026q3.xls",
+          "sha256": "6d4c0ca7ccce0c712ffb239e24a529ef7ae2e3729081b4d2dbad09e21b58215e",
+          "bytes": 47104,
+          "page": 1,
+          "locator": "Saldo al 30/09/2026; columnas de capital e intereses separadas. Celdas vacías conservadas como faltantes."
+        }
+      ],
+      "components": [
+        {
+          "label": "Instituto de la Vivienda",
+          "amount": 426471651.03
+        }
+      ],
+      "schedule": [
+        {
+          "year": 2027,
+          "capital": 15942865.44,
+          "interest": 94044280.92,
+          "leasing": 93631236.1
+        },
+        {
+          "year": 2028,
+          "capital": 15942865.44,
+          "interest": 94044280.92,
+          "leasing": null
+        },
+        {
+          "year": 2029,
+          "capital": 15942865.44,
+          "interest": 94044280.92,
+          "leasing": null
+        },
+        {
+          "year": 2030,
+          "capital": 15942865.44,
+          "interest": 94044280.92,
+          "leasing": null
+        }
+      ],
+      "scheduleStatus": "partial_published",
+      "reading": "La deuda consolidada corresponde a préstamos registrados. La deuda flotante y el leasing se muestran por separado cuando la planilla informa un monto; un casillero vacío no significa deuda cero.",
+      "scheduleNote": "Perfil publicado al 30/09/2026. Se muestran los años futuros con importes verificables; 2026 no se interpreta como saldo pendiente. El resto de años no se distribuye sin apertura. Las celdas vacías no se completan con cero."
+    },
+    {
+      "id": "06203",
+      "date": "2026-09-30",
+      "consolidated": 4590733.6,
+      "floating": 1302084082.35,
+      "leasing": 436729380.23,
+      "unit": "ARS",
+      "verifiedAt": "2026-10-19",
+      "documents": [
+        {
+          "url": "https://www.coronelsuarez.gob.ar/wp-content/uploads/2026/10/STOCK-DE-DEUDA-Y-PERFIL-DE-VENCIMIENTOS-Planilla-Modelo-30-09-2026.pdf",
+          "path": "municipios/data/debt-sources/06203-2026q3.pdf",
+          "sha256": "fbaae63f9b3320a56572a62b9d4b05b56528ac15affaddfed7b8d8aafa2a3bd4",
+          "bytes": 93890,
+          "page": 1,
+          "locator": "Saldo al 30/09/2026; columnas de capital e intereses separadas. Celdas vacías conservadas como faltantes."
+        }
+      ],
+      "components": [
+        {
+          "label": "Fondo Reactivación Actividad Ovina",
+          "amount": 276189.38
+        },
+        {
+          "label": "Instituto de la Vivienda",
+          "amount": 2589434.6
+        },
+        {
+          "label": "Programa provincial de desendeudamiento",
+          "amount": 1725109.62
+        }
+      ],
+      "schedule": [],
+      "scheduleStatus": "partial_published",
+      "reading": "La deuda consolidada corresponde a préstamos registrados. La deuda flotante y el leasing se muestran por separado cuando la planilla informa un monto; un casillero vacío no significa deuda cero.",
+      "scheduleNote": "La planilla publica vencimientos, pero su asignación por columna requiere una conciliación adicional. Se incorpora el stock verificado; todavía no el calendario."
+    },
+    {
+      "id": "06798",
+      "date": "2026-09-30",
+      "consolidated": 5460851449.5,
+      "floating": 2002269935.18,
+      "leasing": null,
+      "unit": "ARS",
+      "verifiedAt": "2026-10-19",
+      "documents": [
+        {
+          "url": "https://www.municipiodetapalque.gob.ar/sites/default/files/3t_-_modelo_de_stock_de_deuda_y_perfil_vencimientos_30-09-2026.pdf",
+          "path": "municipios/data/debt-sources/06798-2026q3.pdf",
+          "sha256": "3d3e5bbed5882e51966be8d9e550ed9fdca5cc8d0f7835e2769b4674624d7929",
+          "bytes": 328062,
+          "page": 1,
+          "locator": "Saldo al 30/09/2026; columnas de capital e intereses separadas. Celdas vacías conservadas como faltantes."
+        }
+      ],
+      "components": [
+        {
+          "label": "Instituto de la Vivienda",
+          "amount": 5460543714.24
+        },
+        {
+          "label": "Programa provincial de desendeudamiento",
+          "amount": 307735.26
+        }
+      ],
+      "schedule": [
+        {
+          "year": 2027,
+          "capital": 19517837.23,
+          "interest": null
+        },
+        {
+          "year": 2028,
+          "capital": 19517837.23,
+          "interest": null
+        },
+        {
+          "year": 2029,
+          "capital": 19517837.23,
+          "interest": null
+        },
+        {
+          "year": 2030,
+          "capital": 19517837.23,
+          "interest": null
+        },
+        {
+          "year": 2031,
+          "capital": 19453323.76,
+          "interest": null
+        },
+        {
+          "year": 2032,
+          "capital": 19446932.71,
+          "interest": null
+        }
+      ],
+      "scheduleStatus": "partial_published",
+      "reading": "La deuda consolidada corresponde a préstamos registrados. La deuda flotante y el leasing se muestran por separado cuando la planilla informa un monto; un casillero vacío no significa deuda cero.",
+      "scheduleNote": "Perfil publicado al 30/09/2026. Se muestran los años futuros con importes verificables; 2026 no se interpreta como saldo pendiente. El resto de años no se distribuye sin apertura. Las celdas vacías no se completan con cero."
     }
   ]
 }
