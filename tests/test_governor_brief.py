@@ -117,7 +117,8 @@ class GovernorBriefTests(unittest.TestCase):
         self.assertNotIn("type:'bar'", current_chart)
         self.assertNotIn('id="cTopT"', frontend)
         self.assertNotIn("function chartTopTrim", frontend)
-        self.assertIn("const f=DEFLACTOR_YEAR[String(year)] ?? YEAR_DEFLATOR[String(year)]", frontend)
+        self.assertIn("const f=12/months.reduce((sum,f)=>sum+1/f,0)", frontend)
+        self.assertIn("months.every(f=>Number.isFinite(f)&&f>0)", frontend)
         historical_chart = frontend[frontend.index("function chartTopHist"):frontend.index("function chartRonHist")]
         self.assertIn("displayMode==='real'", historical_chart)
         self.assertIn("Serie anual ${hist[0].year}–${hist[hist.length-1].year}", historical_chart)

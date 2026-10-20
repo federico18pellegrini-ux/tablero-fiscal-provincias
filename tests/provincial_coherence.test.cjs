@@ -1,4 +1,31 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+test('annual approximation uses mean CPI, requires twelve months and preserves missing amounts',()=>{
+ const html=fs.readFileSync('index.html','utf8'),factors={};
+ for(let m=1;m<=12;m++)factors[`2020-${String(m).padStart(2,'0')}`]=m<=6?2:1;
+ const ctx={DEFLACTOR_MONTH:factors};vm.createContext(ctx);
+ vm.runInContext(html.match(/function deflateAnnual\(year,value\)\{[\s\S]*?\n\}/)[0],ctx);
+ assert.equal(ctx.deflateAnnual(2020,300),400);
+ assert.equal(ctx.deflateAnnual(2020,null),null);
+ assert.equal(ctx.deflateAnnual(2020,0),0);
+ assert.equal(ctx.deflateAnnual(2019,300),null);
+ delete factors['2020-12'];assert.equal(ctx.deflateAnnual(2020,300),null);
+});
+test('indicator colors follow fiscal sign or favorable ordinal, never a fixed indicator color',()=>{
+ const html=fs.readFileSync('index.html','utf8'),ctx={};vm.createContext(ctx);
+ vm.runInContext(html.slice(html.indexOf('function classifyRankingBand('),html.indexOf('function renderRankingVisual(')),ctx);
+ for(const key of ['resultado_financiero_ltm_pct','resultado_primario_ltm_pct']){
+  assert.equal(ctx.metricValueColor(key,-1.3,1,23),'r');
+  assert.equal(ctx.metricValueColor(key,1.3,23,23),'g');
+  assert.equal(ctx.metricValueColor(key,0,1,23),'');
+ }
+ for(const key of ['autonomia_fiscal_pct','iibb_sobre_reca_propia_pct','deuda_total_sobre_ingresos_pct']){
+  assert.equal(ctx.metricValueColor(key,75,3,23),'g');
+  assert.equal(ctx.metricValueColor(key,75,12,23),'');
+  assert.equal(ctx.metricValueColor(key,75,22,23),'r');
+  assert.equal(ctx.metricValueColor(key,null,3,23),'');
+ }
+ assert.match(html,/metrics-value \$\{valueColor\}/);
+});
 test('rebasing preserves real growth and makes September pesos the unit',()=>{
  const html=fs.readFileSync('index.html','utf8');
  const original=JSON.parse(html.match(/const DEFLACTOR_MONTH = (\{.*?\});/s)[1]);
