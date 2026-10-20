@@ -308,7 +308,7 @@ class Report:
   else:transfer='Falta un acumulado mensual completo de transferencias automáticas. No sumamos períodos sueltos como si fueran el total del año.'
   own=jsonfile('dashboard_real_dynamics_2026.json')['provinces'].get(m['province'],{}).get('metrics',{}).get('own_revenue',{})
   own_value=own.get('real_ytd_pct');own_cut=own.get('ytd_available_through')
-  own_source='DNAP, '+({'Mendoza':'ATM Mendoza','Jujuy':'Rentas Jujuy'}.get(m['province'],'IPC INDEC'))+(' e IPC INDEC' if m['province'] in ['Mendoza','Jujuy'] else '')
+  own_source='DNAP, '+({'Mendoza':'ATM Mendoza','Jujuy':'Rentas Jujuy','Neuquén':'DPR Neuquén','San Juan':'DGR San Juan','Tucumán':'DGR Tucumán'}.get(m['province'],'IPC INDEC'))+(' e IPC INDEC' if m['province'] in ['Mendoza','Jujuy','Neuquén','San Juan','Tucumán'] else '')
   own_reading=(f' La recaudación propia {"creció" if own_value>=0 else "cayó"} {pct(abs(own_value))} descontando la inflación, en enero–{MONTHS[int(own_cut[-2:])-1]} de 2026 frente a los mismos meses de 2025 ({own_source}).' if own_value is not None and own_cut else ' '+self.editorial['federal'])
   self.paragraph(transfer+own_reading,18,62,174,10.5,14.3,max_end=89)
   records=sorted((m.get('claim') or {}).get('records',[]),key=lambda r:r.get('published_at',''),reverse=True)

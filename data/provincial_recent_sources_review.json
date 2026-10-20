@@ -28,7 +28,48 @@
       "excluded_non_tax": 244518866,
       "sha256": "a0646fce8a5855049881cfa7d31842c1b726042e0b7943d264b672c5ff024585",
       "verified_tax_subtotal": 30779771797
+    },
+    {
+      "province": "Neuquén",
+      "period": "2026-09",
+      "source_url": "https://dprneuquen.gob.ar/recaudacion-mensual/",
+      "source_file": "data/revenue-history-sources/neuquen-recaudacion-2026-10-20.html",
+      "sha256": "0e245bbbec3ef92dd9e44c3deb82b56f04cbb68620cb25e624ea5a5bb03259e1",
+      "institution": "DPR Neuquén",
+      "verified_tax_subtotal": 213019871032.38998,
+      "Iibb": 196066692540.78,
+      "Inmobiliario": 3099370377.99,
+      "Sellos": 13021776015.93,
+      "Otros": 832032097.69
+    },
+    {
+      "province": "San Juan",
+      "period": "2026-09",
+      "source_url": "https://recaudacionrentas.sanjuan.gob.ar/2026/REC_09_2026.xlsx",
+      "source_file": "data/revenue-history-sources/san-juan-septiembre-2026.xlsx",
+      "sha256": "b359898e8c71e4d5d9c59d3d453dfaf3e6cd6fa5e979e02d4838aeda987b24b0",
+      "institution": "DGR San Juan",
+      "verified_tax_subtotal": 34109997120.59,
+      "Iibb": 27510107276.73,
+      "Inmobiliario": 508215945.12,
+      "Automotores": 2815501899.5,
+      "Sellos": 2940886347.65,
+      "Otros": 335285651.59
+    },
+    {
+      "province": "Tucumán",
+      "period": "2026-09",
+      "source_url": "https://www.rentastucuman.gob.ar/nomina/rentastuc2/nwx1ut2pa3lo/recaudacion/cuadroI.pdf",
+      "source_file": "data/revenue-history-sources/tucuman-septiembre-2026.pdf",
+      "sha256": "eb54fed44d89bd7fc2ce4e0fd1e1e93fc2c9ef7180d2f1de84dbcb33f67614f4",
+      "institution": "DGR Tucumán",
+      "verified_tax_subtotal": 122739639219,
+      "Iibb": 98903248675,
+      "Inmobiliario": 1033102548,
+      "Automotores": 4525843162,
+      "Sellos": 12990245848,
+      "Otros": 5287198986
     }
   ],
-  "method": "Impuestos publicados comparables con DNAP. Se excluyen ingresos varios de Mendoza y derechos mineros/no tributarios de Jujuy. Los rubros no publicados permanecen ausentes, no se imputan ceros."
+  "method": "Impuestos publicados comparables con DNAP. Se excluyen ingresos varios de Mendoza y derechos mineros/no tributarios de Jujuy. Los rubros no publicados permanecen ausentes, no se imputan ceros. Neuquén: componentes reconciliados contra agosto DNAP. San Juan: Otros conserva el perímetro DNAP (otros ingresos y depósitos judiciales); septiembre no registra importe judicial. Tucumán: Otros suma Salud Pública y Otros Impuestos, reconciliado contra septiembre de 2025; diferencia de un peso entre total publicado y suma de componentes por redondeo."
 }
