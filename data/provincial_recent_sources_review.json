@@ -155,6 +155,22 @@
       "Automotores": 4440256743.09,
       "Sellos": 4072217715.67,
       "Otros": 166130555.75
+    },
+    {
+      "province": "CABA",
+      "period": "2026-09",
+      "source_url": "https://www.agip.gob.ar/filemanager/source/Informe%20recaudaci%C3%B3n%2009-2026.pdf",
+      "source_file": "data/revenue-history-sources/caba-septiembre-2026.pdf",
+      "sha256": "7191e6a871ce58d9fd98ca6250ac94ac2de6bb29fac6afa4d49bfcb5266e82d6",
+      "institution": "AGIP",
+      "Iibb": 818109200000,
+      "Inmobiliario": 82392100000,
+      "Automotores": 31628500000,
+      "Sellos": 84326400000,
+      "Otros": 13299600000,
+      "verified_tax_subtotal": 1029755800000,
+      "reported_total": 1029755700000,
+      "reconciliation": "Informe AGIP, millones de pesos con un decimal. Otros = planes 6.670,0 + gravámenes varios 5.330,5 + publicidad 1.299,1 millones. Misma apertura que DNAP en septiembre 2025 (Otros 8.035,5). La suma de componentes supera el total publicado en 0,1 millones por redondeo; se conservan componentes, sin inventar un ajuste."
     }
   ],
   "method": "Impuestos publicados comparables con DNAP. Se excluyen ingresos varios de Mendoza y derechos mineros/no tributarios de Jujuy. Los rubros no publicados permanecen ausentes, no se imputan ceros. Neuquén: componentes reconciliados contra agosto DNAP. San Juan: Otros conserva el perímetro DNAP (otros ingresos y depósitos judiciales); septiembre no registra importe judicial. Tucumán: Otros suma Salud Pública y Otros Impuestos, reconciliado contra septiembre de 2025; diferencia de un peso entre total publicado y suma de componentes por redondeo."
