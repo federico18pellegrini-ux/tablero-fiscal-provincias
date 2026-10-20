@@ -633,7 +633,7 @@ tr:last-child td{border-bottom:none}
 .metrics-ranking-bar{width:100px;height:6px;background:var(--border);border-radius:999px;overflow:hidden;flex:0 0 auto}
 .metrics-ranking-fill{display:block;height:100%;min-width:6px;max-width:100%;border-radius:999px;transition:width .35s ease}
 .metrics-ranking-fill.top{background:var(--green)}
-.metrics-ranking-fill.mid{background:var(--gold)}
+.metrics-ranking-fill.mid{background:var(--muted)}
 .metrics-ranking-fill.bottom{background:var(--red)}
 .metrics-ranking-text{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
 .fair-value-block{display:inline-flex;align-items:center;gap:6px}
@@ -3351,13 +3351,22 @@ function rankingQuality(rank,total,_direction){
   const goodnessPct=Math.max(0,Math.min(100,(1-relative)*100));
   return {goodnessPct,band:classifyRankingBand(goodnessPct)};
 }
+function metricValueColor(indicatorKey,value,rank,total){
+  if(!Number.isFinite(value)) return '';
+  if(['resultado_financiero_ltm_pct','resultado_primario_ltm_pct'].includes(indicatorKey)){
+    return value<0?'r':value>0?'g':'';
+  }
+  if(!Number.isFinite(rank)||!Number.isFinite(total)||total<=1) return '';
+  const band=rankingQuality(rank,total).band;
+  return band==='top'?'g':band==='bottom'?'r':'';
+}
 function renderRankingVisual(indicatorKey,rankValue,totalValue){
   const rank=toN(rankValue);
   const total=toN(totalValue);
   if(rank===null || total===null || total<=0) return '<span style="color:var(--dim)">—</span>';
   const direction=STRUCTURAL_INDICATOR_DIRECTION[indicatorKey]||'higher_better';
   const quality=rankingQuality(rank,total,direction);
-  const bandText=quality.band==='top'?'top':(quality.band==='mid'?'mid':'bottom');
+  const bandText=quality.band==='top'?'más favorable':(quality.band==='mid'?'intermedio':'menos favorable');
   return `
     <div class="metrics-ranking-cell">
       <div class="metrics-ranking-bar"><div class="metrics-ranking-fill ${quality.band}" style="width:${quality.goodnessPct.toFixed(1)}%"></div></div>
@@ -4236,7 +4245,7 @@ function renderMetrics(c,topYtd,ronYtd){
       .map(([field,label])=>commonMeta[field]?`${label}: ${commonMeta[field]}`:null)
       .filter(Boolean);
     commonMetaContainer.innerHTML=metaParts.length
-      ? `<div class="kpi-meta-header">Últimos 12 meses al 2T26 · porcentajes sobre la base indicada.</div>`
+      ? `<div class="kpi-meta-header">Últimos 12 meses al 2T26 · Verde: posición más favorable; rojo: menos favorable; gris: intermedia. En los resultados, verde indica superávit y rojo déficit. El ranking compara provincias, no mide calidad de gestión.</div>`
       : '';
   }
   document.getElementById('metricsBody').innerHTML=
@@ -4247,11 +4256,12 @@ function renderMetrics(c,topYtd,ronYtd){
         : resolveDataStatus({value:(typeof v==='string'&&v.includes('·'))?null:v,province,source:meta?.fuente});
       const rendered = Number.isFinite(toN(v)) || (typeof v==='string' && !v.startsWith('N/D')) ? v : semanticValueForDisplay({value:v,status});
       pushAuditCell({province,bloque:'Indicadores clave',kpi:n,valor_mostrado:rendered,tipo_dato:status,fuente:meta?.fuente,periodo:meta?.periodo});
+      const valueColor=meta?.indicatorKey?metricValueColor(meta.indicatorKey,toN(c[meta.indicatorKey]),rank,total):'';
       return `
       <tr>
         <td style="font-size:12px"><strong title="${note||''}">${n}</strong></td>
         <td style="font-size:12px;color:var(--dim)">${d}${meta?.periodoEnFila?`<span class="metrics-period">Período: ${meta.periodo}</span>`:''}</td>
-        <td style="font-size:12px"><span class="mono metrics-value ${cls}">${rendered}</span></td>
+        <td style="font-size:12px"><span class="mono metrics-value ${valueColor}">${rendered}</span></td>
         <td>${meta?.indicatorKey?renderRankingVisual(meta.indicatorKey,rank,total):'<span style="color:var(--dim)">—</span>'}</td>
       </tr>
     `;

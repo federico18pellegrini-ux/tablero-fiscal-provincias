@@ -1,4 +1,20 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+test('indicator colors follow fiscal sign or favorable ordinal, never a fixed indicator color',()=>{
+ const html=fs.readFileSync('index.html','utf8'),ctx={};vm.createContext(ctx);
+ vm.runInContext(html.slice(html.indexOf('function classifyRankingBand('),html.indexOf('function renderRankingVisual(')),ctx);
+ for(const key of ['resultado_financiero_ltm_pct','resultado_primario_ltm_pct']){
+  assert.equal(ctx.metricValueColor(key,-1.3,1,23),'r');
+  assert.equal(ctx.metricValueColor(key,1.3,23,23),'g');
+  assert.equal(ctx.metricValueColor(key,0,1,23),'');
+ }
+ for(const key of ['autonomia_fiscal_pct','iibb_sobre_reca_propia_pct','deuda_total_sobre_ingresos_pct']){
+  assert.equal(ctx.metricValueColor(key,75,3,23),'g');
+  assert.equal(ctx.metricValueColor(key,75,12,23),'');
+  assert.equal(ctx.metricValueColor(key,75,22,23),'r');
+  assert.equal(ctx.metricValueColor(key,null,3,23),'');
+ }
+ assert.match(html,/metrics-value \$\{valueColor\}/);
+});
 test('rebasing preserves real growth and makes September pesos the unit',()=>{
  const html=fs.readFileSync('index.html','utf8');
  const original=JSON.parse(html.match(/const DEFLACTOR_MONTH = (\{.*?\});/s)[1]);
