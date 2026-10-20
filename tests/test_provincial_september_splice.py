@@ -17,6 +17,22 @@ class ProvincialSeptember(unittest.TestCase):
         for province in ['Mendoza','Jujuy','Neuquén','San Juan','Tucumán']:
             self.assertEqual(dynamics['provinces'][province]['metrics']['own_revenue']['ytd_available_through'],'2026-09')
 
+    def test_new_provincial_sources_reconcile_and_preserve_missingness(self):
+        import hashlib
+        review=json.loads((ROOT/'data/provincial_recent_sources_review.json').read_text(encoding='utf8'))
+        with (ROOT/'top_mensual_2026_normalizado.csv').open(encoding='utf8') as f: rows=list(csv.DictReader(f))
+        totals=own_revenue_totals(rows)
+        expected={('Chaco','2026-09'):49647427929.12,('Río Negro','2026-09'):81165178752.70,('La Rioja','2026-09'):17346453062.33,('Salta','2026-08'):82325496441.11,('Salta','2026-09'):81832989100.03,('La Pampa','2026-08'):50753032618.22}
+        for item in review['observations']:
+            key=(item['province'],item['period'])
+            if key not in expected: continue
+            self.assertEqual(hashlib.sha256((ROOT/item['source_file']).read_bytes()).hexdigest(),item['sha256'])
+            self.assertAlmostEqual(totals[key],expected[key]/1e6,places=6)
+        salta=[r for r in rows if r['province']=='Salta' and r['period']=='2026-08']
+        self.assertEqual(next(float(r['value_millions']) for r in salta if r['tax']=='Otros'),0)
+        self.assertFalse(any(r['tax']=='Automotores' for r in salta))
+        self.assertNotIn(('La Pampa','2026-09'),totals)
+
     def test_splice_preserves_anchor_and_relative_prices(self):
         html=(ROOT/'index.html').read_text(encoding='utf8')
         factors=json.loads(re.search(r'const DEFLACTOR_MONTH = (\{.*?\});',html)[1])
@@ -29,3 +45,4 @@ class ProvincialSeptember(unittest.TestCase):
         for r in observations:
             self.assertAlmostEqual(factors[r['period']]/factors['2016-12'],anchor/r['index_base_2003'],places=10)
         self.assertIn('IPC San Luis empalmado con IPC nacional en diciembre de 2016',html)
+

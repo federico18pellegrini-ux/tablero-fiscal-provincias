@@ -81,13 +81,21 @@
     "recaudacion_propia_provincial_supplement": {
       "file": "data/provincial_recent_sources_review.json",
       "provinces": [
+        "Chaco",
         "Jujuy",
+        "La Pampa",
+        "La Rioja",
         "Mendoza",
         "Neuquén",
+        "Río Negro",
+        "Salta",
         "San Juan",
         "Tucumán"
       ],
-      "period": "2026-09"
+      "periods": [
+        "2026-08",
+        "2026-09"
+      ]
     }
   },
   "rules": {
