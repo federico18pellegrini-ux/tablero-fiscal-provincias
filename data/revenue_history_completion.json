@@ -1,0 +1,1845 @@
+{
+  "date": "2026-10-20",
+  "ron_existing_totals_checked": 494,
+  "ron_added": [
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 761.0144,
+      "year": "2003",
+      "period_type": "year",
+      "period": "2003",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 524.3614,
+      "year": "2003",
+      "period_type": "year",
+      "period": "2003",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 318.7014,
+      "year": "2003",
+      "period_type": "year",
+      "period": "2003",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 311.5191,
+      "year": "2003",
+      "period_type": "year",
+      "period": "2003",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 1107.8104,
+      "year": "2004",
+      "period_type": "year",
+      "period": "2004",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 812.2634,
+      "year": "2004",
+      "period_type": "year",
+      "period": "2004",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 524.065,
+      "year": "2004",
+      "period_type": "year",
+      "period": "2004",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 516.97,
+      "year": "2004",
+      "period_type": "year",
+      "period": "2004",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 1367.0533,
+      "year": "2005",
+      "period_type": "year",
+      "period": "2005",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 1015.9484,
+      "year": "2005",
+      "period_type": "year",
+      "period": "2005",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 646.2107,
+      "year": "2005",
+      "period_type": "year",
+      "period": "2005",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 638.5745,
+      "year": "2005",
+      "period_type": "year",
+      "period": "2005",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 1688.8211,
+      "year": "2006",
+      "period_type": "year",
+      "period": "2006",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 1244.0719,
+      "year": "2006",
+      "period_type": "year",
+      "period": "2006",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 802.7465,
+      "year": "2006",
+      "period_type": "year",
+      "period": "2006",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 743.6139,
+      "year": "2006",
+      "period_type": "year",
+      "period": "2006",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 2224.3650000000002,
+      "year": "2007",
+      "period_type": "year",
+      "period": "2007",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 1649.2605,
+      "year": "2007",
+      "period_type": "year",
+      "period": "2007",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 1064.2273,
+      "year": "2007",
+      "period_type": "year",
+      "period": "2007",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 951.589,
+      "year": "2007",
+      "period_type": "year",
+      "period": "2007",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 2804.7387,
+      "year": "2008",
+      "period_type": "year",
+      "period": "2008",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 2029.0753,
+      "year": "2008",
+      "period_type": "year",
+      "period": "2008",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 1336.7356,
+      "year": "2008",
+      "period_type": "year",
+      "period": "2008",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 1119.2312,
+      "year": "2008",
+      "period_type": "year",
+      "period": "2008",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 3066.2621999999997,
+      "year": "2009",
+      "period_type": "year",
+      "period": "2009",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 2131.1193,
+      "year": "2009",
+      "period_type": "year",
+      "period": "2009",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 1459.3966,
+      "year": "2009",
+      "period_type": "year",
+      "period": "2009",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 1078.3163,
+      "year": "2009",
+      "period_type": "year",
+      "period": "2009",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 4133.1254,
+      "year": "2010",
+      "period_type": "year",
+      "period": "2010",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 2834.8091,
+      "year": "2010",
+      "period_type": "year",
+      "period": "2010",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 1963.4948,
+      "year": "2010",
+      "period_type": "year",
+      "period": "2010",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 1376.0722,
+      "year": "2010",
+      "period_type": "year",
+      "period": "2010",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 5487.5408,
+      "year": "2011",
+      "period_type": "year",
+      "period": "2011",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 4244.5203,
+      "year": "2011",
+      "period_type": "year",
+      "period": "2011",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 2600.3685,
+      "year": "2011",
+      "period_type": "year",
+      "period": "2011",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 2565.5692,
+      "year": "2011",
+      "period_type": "year",
+      "period": "2011",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 6987.7898000000005,
+      "year": "2012",
+      "period_type": "year",
+      "period": "2012",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 4783.2981,
+      "year": "2012",
+      "period_type": "year",
+      "period": "2012",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 3297.1934,
+      "year": "2012",
+      "period_type": "year",
+      "period": "2012",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 2300.5594,
+      "year": "2012",
+      "period_type": "year",
+      "period": "2012",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 9114.419,
+      "year": "2013",
+      "period_type": "year",
+      "period": "2013",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 6270.7407,
+      "year": "2013",
+      "period_type": "year",
+      "period": "2013",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 4284.222900000001,
+      "year": "2013",
+      "period_type": "year",
+      "period": "2013",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 3046.7674,
+      "year": "2013",
+      "period_type": "year",
+      "period": "2013",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 12571.59577,
+      "year": "2014",
+      "period_type": "year",
+      "period": "2014",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 8631.60245,
+      "year": "2014",
+      "period_type": "year",
+      "period": "2014",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 5846.90643,
+      "year": "2014",
+      "period_type": "year",
+      "period": "2014",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 4291.89509,
+      "year": "2014",
+      "period_type": "year",
+      "period": "2014",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Buenos Aires",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 48131.9741,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Catamarca",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 7611.7963,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Córdoba",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 23673.0396,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Corrientes",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 9627.6735,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Chaco",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 13412.5887,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Chubut",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 4026.4604,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Entre Ríos",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 13341.7967,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Formosa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 10100.2397,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Jujuy",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 7608.1348,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 5220.3501,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "La Rioja",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 5679.3118,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Mendoza",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 10268.2456,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Misiones",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 7953.8736,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Neuquén",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 4462.6982,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Río Negro",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 6811.3333,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Salta",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 9675.9211,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "San Juan",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 9168.1732,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "San Luis",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 6448.2953,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santa Cruz",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 4531.192,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 24611.0173,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 17221.877676843,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 10829.948,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Tucumán",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 12366.401,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Tierra del Fuego",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 3688.1838,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 7974.9034,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 4292.2839,
+      "year": "2015",
+      "period_type": "year",
+      "period": "2015",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 22017.72176427,
+      "year": "2016",
+      "period_type": "year",
+      "period": "2016",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 14280.2716,
+      "year": "2016",
+      "period_type": "year",
+      "period": "2016",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 27881.8469,
+      "year": "2016",
+      "period_type": "year",
+      "period": "2016",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 23133.2724,
+      "year": "2016",
+      "period_type": "year",
+      "period": "2016",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 29642.895112719998,
+      "year": "2017",
+      "period_type": "year",
+      "period": "2017",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 19927.0342,
+      "year": "2017",
+      "period_type": "year",
+      "period": "2017",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 38047.9115,
+      "year": "2017",
+      "period_type": "year",
+      "period": "2017",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 32243.3138,
+      "year": "2017",
+      "period_type": "year",
+      "period": "2017",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 18368.55535551,
+      "year": "2018",
+      "period_type": "year",
+      "period": "2018",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 15754.7476,
+      "year": "2018",
+      "period_type": "year",
+      "period": "2018",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 95550.64817244,
+      "year": "2018",
+      "period_type": "year",
+      "period": "2018",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 80834.6611,
+      "year": "2018",
+      "period_type": "year",
+      "period": "2018",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 41426.3833306,
+      "year": "2018",
+      "period_type": "year",
+      "period": "2018",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 33568.9989,
+      "year": "2018",
+      "period_type": "year",
+      "period": "2018",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 57470.0235,
+      "year": "2018",
+      "period_type": "year",
+      "period": "2018",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 50254.9521,
+      "year": "2018",
+      "period_type": "year",
+      "period": "2018",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 27931.80032685,
+      "year": "2019",
+      "period_type": "year",
+      "period": "2019",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 23879.411,
+      "year": "2019",
+      "period_type": "year",
+      "period": "2019",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 137510.63272079,
+      "year": "2019",
+      "period_type": "year",
+      "period": "2019",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 115066.7714,
+      "year": "2019",
+      "period_type": "year",
+      "period": "2019",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 61401.41584787,
+      "year": "2019",
+      "period_type": "year",
+      "period": "2019",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 49480.2146,
+      "year": "2019",
+      "period_type": "year",
+      "period": "2019",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 84796.45075999999,
+      "year": "2019",
+      "period_type": "year",
+      "period": "2019",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 73881.0554,
+      "year": "2019",
+      "period_type": "year",
+      "period": "2019",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 39015.54982852,
+      "year": "2020",
+      "period_type": "year",
+      "period": "2020",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 32440.1328,
+      "year": "2020",
+      "period_type": "year",
+      "period": "2020",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 188006.48129845,
+      "year": "2020",
+      "period_type": "year",
+      "period": "2020",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 151351.2414,
+      "year": "2020",
+      "period_type": "year",
+      "period": "2020",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 85401.68467505,
+      "year": "2020",
+      "period_type": "year",
+      "period": "2020",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 67562.1158,
+      "year": "2020",
+      "period_type": "year",
+      "period": "2020",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 98140.45227000001,
+      "year": "2020",
+      "period_type": "year",
+      "period": "2020",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 85158.9833,
+      "year": "2020",
+      "period_type": "year",
+      "period": "2020",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 63701.37078508,
+      "year": "2021",
+      "period_type": "year",
+      "period": "2021",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 53541.7772,
+      "year": "2021",
+      "period_type": "year",
+      "period": "2021",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 306499.50770802,
+      "year": "2021",
+      "period_type": "year",
+      "period": "2021",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 249315.6367,
+      "year": "2021",
+      "period_type": "year",
+      "period": "2021",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 139002.32317679998,
+      "year": "2021",
+      "period_type": "year",
+      "period": "2021",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 111408.6687,
+      "year": "2021",
+      "period_type": "year",
+      "period": "2021",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 75401.1205,
+      "year": "2021",
+      "period_type": "year",
+      "period": "2021",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 53545.9429,
+      "year": "2021",
+      "period_type": "year",
+      "period": "2021",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 117179.242766,
+      "year": "2022",
+      "period_type": "year",
+      "period": "2022",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 101942.3706,
+      "year": "2022",
+      "period_type": "year",
+      "period": "2022",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 564255.2893126,
+      "year": "2022",
+      "period_type": "year",
+      "period": "2022",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 476588.6192,
+      "year": "2022",
+      "period_type": "year",
+      "period": "2022",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 255750.2871315,
+      "year": "2022",
+      "period_type": "year",
+      "period": "2022",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 213722.0347,
+      "year": "2022",
+      "period_type": "year",
+      "period": "2022",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 141448.13450000001,
+      "year": "2022",
+      "period_type": "year",
+      "period": "2022",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 106439.2455,
+      "year": "2022",
+      "period_type": "year",
+      "period": "2022",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 257677.6014618,
+      "year": "2023",
+      "period_type": "year",
+      "period": "2023",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 223862.4866,
+      "year": "2023",
+      "period_type": "year",
+      "period": "2023",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 1245282.9613337,
+      "year": "2023",
+      "period_type": "year",
+      "period": "2023",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 1042679.818,
+      "year": "2023",
+      "period_type": "year",
+      "period": "2023",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 561594.3703169,
+      "year": "2023",
+      "period_type": "year",
+      "period": "2023",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 468577.1223,
+      "year": "2023",
+      "period_type": "year",
+      "period": "2023",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 312121.7137,
+      "year": "2023",
+      "period_type": "year",
+      "period": "2023",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 229083.059,
+      "year": "2023",
+      "period_type": "year",
+      "period": "2023",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 762167.5807425,
+      "year": "2024",
+      "period_type": "year",
+      "period": "2024",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "La Pampa",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 675741.905,
+      "year": "2024",
+      "period_type": "year",
+      "period": "2024",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 3662405.6180484,
+      "year": "2024",
+      "period_type": "year",
+      "period": "2024",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santa Fe",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 3149862.637,
+      "year": "2024",
+      "period_type": "year",
+      "period": "2024",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 1653348.5445394,
+      "year": "2024",
+      "period_type": "year",
+      "period": "2024",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 1417040.737,
+      "year": "2024",
+      "period_type": "year",
+      "period": "2024",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "Total | (1) + (2)",
+      "value_millions": 926655.7685,
+      "year": "2024",
+      "period_type": "year",
+      "period": "2024",
+      "category_normalized": "Total | (1) + (2)"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 726367.8828,
+      "year": "2024",
+      "period_type": "year",
+      "period": "2024",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "Santiago del Estero",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 1905685.213,
+      "year": "2025",
+      "period_type": "year",
+      "period": "2025",
+      "category_normalized": "CFI | Neta"
+    },
+    {
+      "province": "CABA",
+      "source": "serie_ron_2003_2025.csv",
+      "category": "CFI | Neta",
+      "value_millions": 871055.1257,
+      "year": "2025",
+      "period_type": "year",
+      "period": "2025",
+      "category_normalized": "CFI | Neta"
+    }
+  ],
+  "own_observations_added": 624,
+  "own_totals_added": [
+    {
+      "province": "Catamarca",
+      "year": "2025"
+    },
+    {
+      "province": "Córdoba",
+      "year": "2025"
+    },
+    {
+      "province": "Corrientes",
+      "year": "2025"
+    },
+    {
+      "province": "Chaco",
+      "year": "2025"
+    },
+    {
+      "province": "Chubut",
+      "year": "2025"
+    },
+    {
+      "province": "Entre Ríos",
+      "year": "2025"
+    },
+    {
+      "province": "Formosa",
+      "year": "2025"
+    },
+    {
+      "province": "Jujuy",
+      "year": "2025"
+    },
+    {
+      "province": "La Rioja",
+      "year": "2025"
+    },
+    {
+      "province": "Mendoza",
+      "year": "2025"
+    },
+    {
+      "province": "Misiones",
+      "year": "2025"
+    },
+    {
+      "province": "Neuquén",
+      "year": "2025"
+    },
+    {
+      "province": "Río Negro",
+      "year": "2025"
+    },
+    {
+      "province": "Salta",
+      "year": "2025"
+    },
+    {
+      "province": "San Juan",
+      "year": "2025"
+    },
+    {
+      "province": "San Luis",
+      "year": "2025"
+    },
+    {
+      "province": "Santa Cruz",
+      "year": "2025"
+    },
+    {
+      "province": "Santa Fe",
+      "year": "2025"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1984"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1985"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1986"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1987"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1988"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1989"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1990"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1991"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1992"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1993"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1994"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1995"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1996"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1997"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1998"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "1999"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2000"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2001"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2002"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2003"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2004"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2005"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2006"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2007"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2008"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2009"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2010"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2011"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2012"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2013"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2014"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2015"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2016"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2017"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2018"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2019"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2020"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2021"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2022"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2023"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2024"
+    },
+    {
+      "province": "Santiago del Estero",
+      "year": "2025"
+    },
+    {
+      "province": "Tucumán",
+      "year": "2025"
+    },
+    {
+      "province": "Tierra del Fuego",
+      "year": "2025"
+    },
+    {
+      "province": "CABA",
+      "year": "1984"
+    },
+    {
+      "province": "CABA",
+      "year": "1985"
+    },
+    {
+      "province": "CABA",
+      "year": "1986"
+    },
+    {
+      "province": "CABA",
+      "year": "1987"
+    },
+    {
+      "province": "CABA",
+      "year": "1988"
+    },
+    {
+      "province": "CABA",
+      "year": "1989"
+    },
+    {
+      "province": "CABA",
+      "year": "1990"
+    },
+    {
+      "province": "CABA",
+      "year": "1991"
+    },
+    {
+      "province": "CABA",
+      "year": "1992"
+    },
+    {
+      "province": "CABA",
+      "year": "1993"
+    },
+    {
+      "province": "CABA",
+      "year": "1994"
+    },
+    {
+      "province": "CABA",
+      "year": "1995"
+    },
+    {
+      "province": "CABA",
+      "year": "1996"
+    },
+    {
+      "province": "CABA",
+      "year": "1997"
+    },
+    {
+      "province": "CABA",
+      "year": "1998"
+    },
+    {
+      "province": "CABA",
+      "year": "1999"
+    },
+    {
+      "province": "CABA",
+      "year": "2000"
+    },
+    {
+      "province": "CABA",
+      "year": "2001"
+    },
+    {
+      "province": "CABA",
+      "year": "2002"
+    },
+    {
+      "province": "CABA",
+      "year": "2003"
+    },
+    {
+      "province": "CABA",
+      "year": "2004"
+    },
+    {
+      "province": "CABA",
+      "year": "2005"
+    },
+    {
+      "province": "CABA",
+      "year": "2006"
+    },
+    {
+      "province": "CABA",
+      "year": "2007"
+    },
+    {
+      "province": "CABA",
+      "year": "2008"
+    },
+    {
+      "province": "CABA",
+      "year": "2009"
+    },
+    {
+      "province": "CABA",
+      "year": "2010"
+    },
+    {
+      "province": "CABA",
+      "year": "2011"
+    },
+    {
+      "province": "CABA",
+      "year": "2012"
+    },
+    {
+      "province": "CABA",
+      "year": "2013"
+    },
+    {
+      "province": "CABA",
+      "year": "2014"
+    },
+    {
+      "province": "CABA",
+      "year": "2015"
+    },
+    {
+      "province": "CABA",
+      "year": "2016"
+    },
+    {
+      "province": "CABA",
+      "year": "2017"
+    },
+    {
+      "province": "CABA",
+      "year": "2018"
+    },
+    {
+      "province": "CABA",
+      "year": "2019"
+    },
+    {
+      "province": "CABA",
+      "year": "2020"
+    },
+    {
+      "province": "CABA",
+      "year": "2021"
+    },
+    {
+      "province": "CABA",
+      "year": "2022"
+    },
+    {
+      "province": "CABA",
+      "year": "2023"
+    },
+    {
+      "province": "CABA",
+      "year": "2024"
+    },
+    {
+      "province": "CABA",
+      "year": "2025"
+    }
+  ],
+  "sources": [
+    {
+      "file": "serie_ron_2003_2025.csv",
+      "sha256": "03fe25c279b8454034860cae76feace703754d16db1d797a887506a211971bac",
+      "url": "https://www.argentina.gob.ar/sites/default/files/serie_ron_2003_2025.csv"
+    },
+    {
+      "file": "serie_top_1984_2025_0.xlsx",
+      "sha256": "db374263b2a446859032097edee135c1edeb2e73e00782a810c75b43e8bf29b8",
+      "url": "https://www.argentina.gob.ar/sites/default/files/serie_top_1984_2025_0.xlsx"
+    },
+    {
+      "file": "SP_IP_Reca_concepto.xlsx",
+      "sha256": "4cf467aabad44a0ebd6541f769dc48f15092b33d2c878ea2465baa1d829baf4f",
+      "url": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2026/07/SP_IP_Reca_concepto.xlsx"
+    }
+  ],
+  "caba_scope": "Histórico publicado: DNAP 1984–2025, coherente con las otras provincias. IDECBA preservado como contraste, sin mezclar bases. Rótulo 1988 entre 1997 y 1999 en IDECBA: excluido de su extracción mensual.",
+  "ron_scope": "Suma de regímenes del archivo DNAP; incluye compensación cuando existe. CFI anterior a 2006 conserva la definición legal del año.",
+  "retrieval": "RON: original preservado y verificado 19/10/2026. TOP histórico e IDECBA: descargados 20/10/2026. TOP mensual 2026_19: descarga del 20/10 idéntica al original ya importado. Sin meses nuevos verificables."
+}

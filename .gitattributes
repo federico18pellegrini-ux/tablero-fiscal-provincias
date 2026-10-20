@@ -5,6 +5,7 @@ data/pba_sources/cgp-1s/*.html binary
 municipios/data/structure-sources/* -text
 
 data/ipc-sources/* -text
+data/revenue-history-sources/* -text
 nacion/data/ipc-sources/* -text
 municipios/data/debt-sources/*.xls -text
 docs/audits/2026-10-19-deep/*.html -text
