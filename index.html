@@ -3758,7 +3758,7 @@ function chartRonMensual(rows){
 function chartTopHist(rows){
   if(!hasChartLib()){noData('cTopH','No se pudo cargar la librería de gráficos');return;}
   const selectedProvince=document.getElementById('psel')?.value||'Buenos Aires';
-  const hasMainHistoricalGap=['CABA','Santiago del Estero'].includes(selectedProvince);
+  const hasMainHistoricalGap=false;
   const hist=rows.map(r=>({year:+r.year,value:toN(r.value_millions)})).sort((a,b)=>a.year-b.year);
   if(!hist.length){
     const topHNote=document.getElementById('topHNote');
@@ -3771,6 +3771,9 @@ function chartTopHist(rows){
     return;
   }
   const isReal=displayMode==='real';
+  const observed=new Map(hist.map(r=>[r.year,r.value]));
+  const firstYear=hist[0].year,lastYear=hist[hist.length-1].year;
+  hist.splice(0,hist.length,...Array.from({length:lastYear-firstYear+1},(_,i)=>({year:firstYear+i,value:observed.get(firstYear+i)??null})));
   if(isReal)hist.splice(0,hist.length,...hist.filter(r=>deflateAnnual(r.year,1)!==null));
   if(!hist.length){noData('cTopH','Sin años con IPC completo para esta serie');return;}
   const values=hist.map(r=>isReal?deflateAnnual(r.year,r.value):r.value);
@@ -3782,6 +3785,7 @@ function chartTopHist(rows){
     ? `${selectedProvince} no tiene serie homogénea 1984–2024 en la fuente principal. Se muestran sólo puntos suplementarios disponibles · ${modeLabel.toLowerCase()}; no deben leerse como una serie anual completa.`
     : `Serie anual ${hist[0].year}–${hist[hist.length-1].year} · ${modeLabel.toLowerCase()}. Para descontar bien la inflación necesitamos saber cuánto se recaudó cada mes. Esta fuente sólo trae el total anual.`;
   if(isReal&&topHNote)topHNote.textContent=`${hist[0].year}–${hist[hist.length-1].year} · Pesos de ${CONSTANT_PRICE_BASE}. Estimación con IPC promedio anual; puede diferir del ajuste mes a mes. Sólo años con 12 meses de IPC.`;
+  if(topHNote)topHNote.textContent+=' Fuente: DNAP, recursos tributarios provinciales.';
   if(topHLeg) topHLeg.innerHTML=`<span class="li"><span class="ld" style="background:${lineColor}"></span>${modeLabel}</span>`;
   charts.cTopH=new Chart(document.getElementById('cTopH'),{
     type:'line',

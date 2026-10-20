@@ -1,4 +1,6 @@
-# Cobertura de series provinciales — 20/10/2026
+# Cobertura inicial de series provinciales — 20/10/2026
+
+**Actualización posterior:** ver [carga verificada de históricos](historicos-verificados-2026-10-20.md). Esta tabla conserva el diagnóstico previo a la incorporación.
 
 Inventario de las bases locales de ingresos; no equivale a una búsqueda exhaustiva de nuevas publicaciones oficiales. CABA puede mostrar puntos suplementarios del código, que no completan una serie larga.
 
