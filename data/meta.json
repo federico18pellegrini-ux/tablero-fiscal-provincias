@@ -81,15 +81,18 @@
     "recaudacion_propia_provincial_supplement": {
       "file": "data/provincial_recent_sources_review.json",
       "provinces": [
+        "Jujuy",
         "Mendoza",
-        "Jujuy"
+        "Neuquén",
+        "San Juan",
+        "Tucumán"
       ],
       "period": "2026-09"
     }
   },
   "rules": {
     "missing_values": "No se imputan. Los meses sin total oficial no se publican.",
-    "top_reconciliation": "DNAP: total mensual reconciliado con cinco componentes. Septiembre de Mendoza y Jujuy: conjunto exacto de impuestos provinciales verificados, sin ingresos no tributarios ni imputación de rubros ausentes.",
+    "top_reconciliation": "DNAP: total mensual reconciliado con cinco componentes. Suplementos provinciales: conjunto exacto de impuestos provinciales verificados, sin ingresos no tributarios ni imputación de rubros ausentes.",
     "mixed_vintages": "Cada vista y tarjeta debe mostrar su fecha de corte específica."
   }
 }
