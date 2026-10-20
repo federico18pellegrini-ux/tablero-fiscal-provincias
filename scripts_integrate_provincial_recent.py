@@ -47,7 +47,7 @@ def build():
     write('data/cobertura.csv',coverage)
     meta_path=ROOT/'data/meta.json'
     meta=json.loads(meta_path.read_text(encoding='utf8'))
-    meta['sources']['recaudacion_propia_provincial_supplement']={'file':'data/provincial_recent_sources_review.json','provinces':sorted({r['province'] for r in observations()}),'period':'2026-09'}
+    meta['sources']['recaudacion_propia_provincial_supplement']={'file':'data/provincial_recent_sources_review.json','provinces':sorted({r['province'] for r in observations()}),'periods':sorted({r['period'] for r in observations()})}
     meta['rules']['top_reconciliation']='DNAP: total mensual reconciliado con cinco componentes. Suplementos provinciales: conjunto exacto de impuestos provinciales verificados, sin ingresos no tributarios ni imputación de rubros ausentes.'
     meta_path.write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     data=json.loads((ROOT/'data/ipc_san_luis_2014_2016_review.json').read_text(encoding='utf8'))
