@@ -33,6 +33,14 @@ class ProvincialSeptember(unittest.TestCase):
         self.assertFalse(any(r['tax']=='Automotores' for r in salta))
         self.assertNotIn(('La Pampa','2026-09'),totals)
 
+    def test_caba_agip_taxonomy_and_rounding(self):
+        from scripts_integrate_provincial_recent import observations
+        row=next(r for r in observations() if r['province']=='CABA')
+        self.assertEqual(row['Otros'],(6670+5330.5+1299.1)*1e6)
+        self.assertEqual(row['verified_tax_subtotal']-row['reported_total'],100000)
+        with (ROOT/'top_mensual_2026_normalizado.csv').open(encoding='utf8') as f: data=list(csv.DictReader(f))
+        self.assertAlmostEqual(own_revenue_totals(data)['CABA','2026-09'],1029755.8,places=6)
+
     def test_splice_preserves_anchor_and_relative_prices(self):
         html=(ROOT/'index.html').read_text(encoding='utf8')
         factors=json.loads(re.search(r'const DEFLACTOR_MONTH = (\{.*?\});',html)[1])
