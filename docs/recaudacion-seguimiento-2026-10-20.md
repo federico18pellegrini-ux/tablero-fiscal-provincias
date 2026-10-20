@@ -23,4 +23,6 @@ El IPC nacional actual comienza en diciembre de 2016. El [archivo oficial de San
 
 Puede construirse una serie empalmada como aproximación identificada: fijar diciembre 2016=100, llevar hacia atrás los índices de San Luis con su cociente respecto de diciembre, y usar desde entonces el nacional. Para flujos anuales se requiere verificar los doce niveles mensuales; no alcanza la inflación diciembre contra diciembre.
 
-No se activa todavía: falta extraer y conciliar todos los niveles, revisar la continuidad anterior a 2016 y elegir/documentar el alcance histórico. No sería correcto etiquetar ese resultado como una serie nacional homogénea ni extender automáticamente el ajuste hasta 1984.
+Se extrajeron y verificaron 36 niveles mensuales, enero 2014 a diciembre 2016, del cuadro 3 (página 5) del informe oficial de diciembre de 2016. Las 35 variaciones consecutivas concilian con las tasas publicadas, dentro de 0,06 puntos porcentuales por redondeo. Original, hash y observaciones: `data/ipc_san_luis_2014_2016_review.json`.
+
+No se activa todavía: resta implementar y rotular el empalme como una alternativa aproximada, separada de la serie nacional, y revisar la continuidad anterior a 2014. No sería correcto etiquetar ese resultado como una serie nacional homogénea ni extender automáticamente el ajuste hasta 1984.

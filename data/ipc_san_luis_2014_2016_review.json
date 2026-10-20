@@ -1,0 +1,190 @@
+{
+  "source_url": "https://estadistica.sanluis.gov.ar/documents/Economia/Precios/IPC%20San%20Luis/2hyudx10.pdf",
+  "source_file": "data\\revenue-history-sources\\ipc-san-luis-diciembre-2016.pdf",
+  "sha256": "f1f21211f61db996edf0d3c5ea58fd7448df5c4fd1bf02f2fb129170fddc3653",
+  "status": "verified_local_index_not_integrated",
+  "coverage": "Ciudad de San Luis. No es IPC nacional.",
+  "table": "Cuadro 3, página 5",
+  "observations": [
+    {
+      "period": "2014-01",
+      "index_base_2003": 585.34,
+      "monthly_change_pct": 4.2
+    },
+    {
+      "period": "2014-02",
+      "index_base_2003": 627.32,
+      "monthly_change_pct": 7.2
+    },
+    {
+      "period": "2014-03",
+      "index_base_2003": 652.39,
+      "monthly_change_pct": 4.0
+    },
+    {
+      "period": "2014-04",
+      "index_base_2003": 665.84,
+      "monthly_change_pct": 2.1
+    },
+    {
+      "period": "2014-05",
+      "index_base_2003": 682.84,
+      "monthly_change_pct": 2.6
+    },
+    {
+      "period": "2014-06",
+      "index_base_2003": 695.13,
+      "monthly_change_pct": 1.8
+    },
+    {
+      "period": "2014-07",
+      "index_base_2003": 708.81,
+      "monthly_change_pct": 2.0
+    },
+    {
+      "period": "2014-08",
+      "index_base_2003": 726.63,
+      "monthly_change_pct": 2.5
+    },
+    {
+      "period": "2014-09",
+      "index_base_2003": 749.11,
+      "monthly_change_pct": 3.1
+    },
+    {
+      "period": "2014-10",
+      "index_base_2003": 758.51,
+      "monthly_change_pct": 1.3
+    },
+    {
+      "period": "2014-11",
+      "index_base_2003": 769.59,
+      "monthly_change_pct": 1.5
+    },
+    {
+      "period": "2014-12",
+      "index_base_2003": 780.99,
+      "monthly_change_pct": 1.5
+    },
+    {
+      "period": "2015-01",
+      "index_base_2003": 792.74,
+      "monthly_change_pct": 1.5
+    },
+    {
+      "period": "2015-02",
+      "index_base_2003": 808.61,
+      "monthly_change_pct": 2.0
+    },
+    {
+      "period": "2015-03",
+      "index_base_2003": 825.24,
+      "monthly_change_pct": 2.1
+    },
+    {
+      "period": "2015-04",
+      "index_base_2003": 840.29,
+      "monthly_change_pct": 1.8
+    },
+    {
+      "period": "2015-05",
+      "index_base_2003": 856.74,
+      "monthly_change_pct": 2.0
+    },
+    {
+      "period": "2015-06",
+      "index_base_2003": 866.13,
+      "monthly_change_pct": 1.1
+    },
+    {
+      "period": "2015-07",
+      "index_base_2003": 886.21,
+      "monthly_change_pct": 2.3
+    },
+    {
+      "period": "2015-08",
+      "index_base_2003": 903.18,
+      "monthly_change_pct": 1.9
+    },
+    {
+      "period": "2015-09",
+      "index_base_2003": 925.23,
+      "monthly_change_pct": 2.4
+    },
+    {
+      "period": "2015-10",
+      "index_base_2003": 938.03,
+      "monthly_change_pct": 1.4
+    },
+    {
+      "period": "2015-11",
+      "index_base_2003": 964.96,
+      "monthly_change_pct": 2.9
+    },
+    {
+      "period": "2015-12",
+      "index_base_2003": 1027.54,
+      "monthly_change_pct": 6.5
+    },
+    {
+      "period": "2016-01",
+      "index_base_2003": 1070.62,
+      "monthly_change_pct": 4.2
+    },
+    {
+      "period": "2016-02",
+      "index_base_2003": 1099.66,
+      "monthly_change_pct": 2.7
+    },
+    {
+      "period": "2016-03",
+      "index_base_2003": 1132.39,
+      "monthly_change_pct": 3.0
+    },
+    {
+      "period": "2016-04",
+      "index_base_2003": 1170.83,
+      "monthly_change_pct": 3.4
+    },
+    {
+      "period": "2016-05",
+      "index_base_2003": 1219.86,
+      "monthly_change_pct": 4.2
+    },
+    {
+      "period": "2016-06",
+      "index_base_2003": 1237.74,
+      "monthly_change_pct": 1.5
+    },
+    {
+      "period": "2016-07",
+      "index_base_2003": 1265.75,
+      "monthly_change_pct": 2.3
+    },
+    {
+      "period": "2016-08",
+      "index_base_2003": 1273.8,
+      "monthly_change_pct": 0.6
+    },
+    {
+      "period": "2016-09",
+      "index_base_2003": 1295.28,
+      "monthly_change_pct": 1.7
+    },
+    {
+      "period": "2016-10",
+      "index_base_2003": 1321.6,
+      "monthly_change_pct": 2.0
+    },
+    {
+      "period": "2016-11",
+      "index_base_2003": 1339.02,
+      "monthly_change_pct": 1.3
+    },
+    {
+      "period": "2016-12",
+      "index_base_2003": 1350.48,
+      "monthly_change_pct": 0.9
+    }
+  ]
+}
