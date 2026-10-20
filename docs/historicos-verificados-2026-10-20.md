@@ -1,5 +1,7 @@
 # Históricos incorporados — 20/10/2026
 
+Actualización posterior: se recuperó La Pampa 2025 sumando los doce meses oficiales. Ver [seguimiento y nuevos hallazgos](recaudacion-seguimiento-2026-10-20.md). El pendiente de La Pampa que se describe abajo corresponde al estado previo.
+
 Se preservaron los originales oficiales y sus hashes en `data/revenue-history-sources/` y `data/revenue_history_completion.json`.
 
 ## Incorporaciones

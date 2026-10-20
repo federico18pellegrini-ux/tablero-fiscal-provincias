@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-20",
+  "status": "verified_components_not_integrated",
+  "unit": "pesos corrientes",
+  "observations": [
+    {
+      "province": "Mendoza",
+      "period": "2026-09",
+      "source_url": "https://rentas.mendoza.gov.ar/portalatm/zoneBottom/datosInteres/recaudacion/recaudacion_por_impuesto_anual.jsp",
+      "source_file": "data\\revenue-history-sources\\mendoza-recaudacion-2026-10-20.html",
+      "Iibb": 125146803487,
+      "Inmobiliario": 3078311658.4,
+      "Automotores": 12442554315,
+      "Sellos": 12427623108,
+      "excluded_ingresos_varios": 3421805588.7,
+      "sha256": "bdc3a3ce5c0d3db49e472f4faabb621874881b043a814cfb96b473dcd233640a",
+      "verified_tax_subtotal": 153095292568.4
+    },
+    {
+      "province": "Jujuy",
+      "period": "2026-09",
+      "source_url": "https://rentasjujuy.gob.ar/wp-content/uploads/2026/10/RECAUDACION-MENSUAL-SEPTIEMBRE-2026-scaled.png",
+      "source_file": "data\\revenue-history-sources\\jujuy-septiembre-2026.png",
+      "Iibb": 26687694312,
+      "Inmobiliario": 417334847,
+      "Sellos": 3674742638,
+      "excluded_minerals": 5129011161,
+      "excluded_non_tax": 244518866,
+      "sha256": "a0646fce8a5855049881cfa7d31842c1b726042e0b7943d264b672c5ff024585",
+      "verified_tax_subtotal": 30779771797
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-20",
+  "province": "La Pampa",
+  "year": 2025,
+  "source_file": "data/top_sources/top_mensual_2025_12.xlsx",
+  "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2025_12.xlsx",
+  "sha256": "35a5488012267388a2c71255504b9cd93ae93970e1b3fb6173bb81b7abdfbe86",
+  "method": "Suma de enero a diciembre, pesos corrientes, millones. Cada total mensual concilia con los cinco componentes, tolerancia 0,05 millones. No se sustituye el vacío de la planilla anual por una estimación.",
+  "months": [
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+  ],
+  "annual_millions": {
+    "Automotores": 24126.82394868,
+    "Iibb": 344809.01097669004,
+    "Inmobiliario": 25787.891090189994,
+    "Otros": 1638.1715372999997,
+    "Sellos": 34734.48455826999,
+    "Total": 431096.38211113005
+  }
+}

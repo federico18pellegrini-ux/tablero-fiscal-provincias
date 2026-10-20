@@ -20,8 +20,15 @@ class HistoryCompletion(unittest.TestCase):
                 self.assertEqual(len(total),1,(province,year))
                 self.assertEqual(len(cfi),1,(province,year))
                 self.assertLessEqual(float(cfi[0]['value_millions']),float(total[0]['value_millions'])+.02)
-    def test_own_history_preserves_lapampa_missing_2025(self):
+    def test_own_history_lapampa_2025_reconciles_monthly_original(self):
         with (ROOT/'serie_top_1984_2024_normalizado.csv').open(encoding='utf8') as f:rows=list(csv.DictReader(f))
         for province in ['CABA','Santiago del Estero']:
             self.assertEqual({int(r['year']) for r in rows if r['province']==province and r['tax']=='Total'},set(range(1984,2026)))
-        self.assertFalse(any(r['province']=='La Pampa' and r['year']=='2025' for r in rows))
+        from scripts_regenerate_2026 import import_top, manifest_universe
+        monthly,coverage=import_top(ROOT/'data/top_sources/top_mensual_2025_12.xlsx',manifest_universe(),2025)
+        self.assertEqual(coverage['La Pampa'],[f'2025-{m:02}' for m in range(1,13)])
+        annual=[r for r in rows if r['province']=='La Pampa' and r['year']=='2025']
+        self.assertEqual(len(annual),6)
+        for row in annual:
+            expected=sum(r['value_millions'] for r in monthly if r['province']=='La Pampa' and (row['tax']=='Total' or row['tax']==r['tax']))
+            self.assertAlmostEqual(float(row['value_millions']),expected,places=5)
