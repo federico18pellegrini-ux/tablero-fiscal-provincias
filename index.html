@@ -1355,7 +1355,7 @@ tr:last-child td{border-bottom:none}
     </div>
     <div class="cc">
       <h3>Transferencias de Nación · histórico anual</h3>
-      <div class="cc-note">Muestra cómo evolucionaron los fondos nacionales recibidos por la provincia. Podés comparar total de recursos nacionales y CFI neta.</div>
+      <div class="cc-note" id="ronHNote">Muestra cómo evolucionaron los fondos nacionales recibidos por la provincia.</div>
       <div class="leg">
         <span class="li"><span class="ld" style="background:#60a5fa"></span>RON total</span>
         <span class="li"><span class="ld" style="background:#4ade80;border:1px dashed #4ade80"></span>CFI neta</span>
@@ -1868,7 +1868,9 @@ let charts={};
 const YEAR_DEFLATOR = {};
 function deflateAnnual(year,value){
   if(value===null||value===undefined||isNaN(value)) return null;
-  const f=DEFLACTOR_YEAR[String(year)] ?? YEAR_DEFLATOR[String(year)];
+  const months=Array.from({length:12},(_,i)=>DEFLACTOR_MONTH[`${year}-${String(i+1).padStart(2,'0')}`]);
+  if(!months.every(f=>Number.isFinite(f)&&f>0))return null;
+  const f=12/months.reduce((sum,f)=>sum+1/f,0);
   return f ? value*f : null;
 }
 
@@ -3757,7 +3759,7 @@ function chartTopHist(rows){
   if(!hasChartLib()){noData('cTopH','No se pudo cargar la librería de gráficos');return;}
   const selectedProvince=document.getElementById('psel')?.value||'Buenos Aires';
   const hasMainHistoricalGap=['CABA','Santiago del Estero'].includes(selectedProvince);
-  const hist=rows.map(r=>({year:+r.year,value:toN(r.value_millions)||0})).sort((a,b)=>a.year-b.year);
+  const hist=rows.map(r=>({year:+r.year,value:toN(r.value_millions)})).sort((a,b)=>a.year-b.year);
   if(!hist.length){
     const topHNote=document.getElementById('topHNote');
     const topHLeg=document.getElementById('topHLeg');
@@ -3769,7 +3771,8 @@ function chartTopHist(rows){
     return;
   }
   const isReal=displayMode==='real';
-  if(isReal){noData('cTopH','Serie anual real pendiente: requiere apertura mensual. Consultar pesos corrientes.');document.getElementById('topHNote').textContent='No se aplica el IPC de diciembre a todo el flujo anual.';return;}
+  if(isReal)hist.splice(0,hist.length,...hist.filter(r=>deflateAnnual(r.year,1)!==null));
+  if(!hist.length){noData('cTopH','Sin años con IPC completo para esta serie');return;}
   const values=hist.map(r=>isReal?deflateAnnual(r.year,r.value):r.value);
   const lineColor=isReal?'#fbbf24':'#60a5fa';
   const modeLabel=isReal?`Pesos constantes de ${CONSTANT_PRICE_BASE}`:'Pesos corrientes';
@@ -3778,6 +3781,7 @@ function chartTopHist(rows){
   if(topHNote) topHNote.textContent=hasMainHistoricalGap
     ? `${selectedProvince} no tiene serie homogénea 1984–2024 en la fuente principal. Se muestran sólo puntos suplementarios disponibles · ${modeLabel.toLowerCase()}; no deben leerse como una serie anual completa.`
     : `Serie anual ${hist[0].year}–${hist[hist.length-1].year} · ${modeLabel.toLowerCase()}. Para descontar bien la inflación necesitamos saber cuánto se recaudó cada mes. Esta fuente sólo trae el total anual.`;
+  if(isReal&&topHNote)topHNote.textContent=`${hist[0].year}–${hist[hist.length-1].year} · Pesos de ${CONSTANT_PRICE_BASE}. Estimación con IPC promedio anual; puede diferir del ajuste mes a mes. Sólo años con 12 meses de IPC.`;
   if(topHLeg) topHLeg.innerHTML=`<span class="li"><span class="ld" style="background:${lineColor}"></span>${modeLabel}</span>`;
   charts.cTopH=new Chart(document.getElementById('cTopH'),{
     type:'line',
@@ -3787,7 +3791,11 @@ function chartTopHist(rows){
 }
 
 function chartRonHist(rows){
-  if(displayMode==='real'){noData('cRonH','Serie anual real pendiente: requiere apertura mensual. Consultar pesos corrientes.');return;}
+  const isReal=displayMode==='real';
+  if(isReal)rows=rows.filter(r=>deflateAnnual(r.year,1)!==null);
+  const note=document.getElementById('ronHNote');
+  if(note)note.textContent=isReal?`Pesos de ${CONSTANT_PRICE_BASE}. Estimación con IPC promedio anual; puede diferir del ajuste mes a mes. Sólo años con 12 meses de IPC.`:'Totales anuales en pesos corrientes. RON incluye la coparticipación federal (CFI neta); no se suman.';
+  const annualValue=(v,y)=>isReal?deflateAnnual(y,v):v;
   if(!hasChartLib()){noData('cRonH','No se pudo cargar la librería de gráficos');return;}
   const years=[...new Set(rows.map(r=>r.year))].map(y=>Number(y)).sort((a,b)=>a-b);
   if(!years.length){noData('cRonH','Sin datos históricos de transferencias');return;}
@@ -3804,8 +3812,8 @@ function chartRonHist(rows){
     data:{
       labels:years,
       datasets:[
-        {label:displayMode==='real'?'RON total (real)':'RON total',data:years.map(y=>valueForMode(getVal(y,'Total | (1) + (2)') ?? getFallback(y,['Total | (1) + (2)','T O T A L | (1) + (2)','T O T A L | (1) + (2) + (3)','T O T A L']), DEFLACTOR_YEAR[String(y)])),borderColor:'#60a5fa',backgroundColor:'rgba(96,165,250,.07)',borderWidth:2.5,pointRadius:2,pointBackgroundColor:'#60a5fa',fill:true,tension:.25,spanGaps:false},
-        {label:displayMode==='real'?'CFI neta (real)':'CFI neta',data:years.map(y=>valueForMode(getVal(y,'CFI | Neta') ?? getFallback(y,['C.F.I. | Neta De | Ley Nº 26.075','COPARTIC. | FEDERAL DE | IMPUESTOS | LEY N° 23.548']), DEFLACTOR_YEAR[String(y)])),borderColor:'#4ade80',borderWidth:1.5,pointRadius:2,pointBackgroundColor:'#4ade80',fill:false,tension:.25,spanGaps:false,borderDash:[4,3]},
+        {label:displayMode==='real'?'RON total (real)':'RON total',data:years.map(y=>annualValue(getVal(y,'Total | (1) + (2)') ?? getFallback(y,['Total | (1) + (2)','T O T A L | (1) + (2)','T O T A L | (1) + (2) + (3)','T O T A L']), y)),borderColor:'#60a5fa',backgroundColor:'rgba(96,165,250,.07)',borderWidth:2.5,pointRadius:2,pointBackgroundColor:'#60a5fa',fill:true,tension:.25,spanGaps:false},
+        {label:displayMode==='real'?'CFI neta (real)':'CFI neta',data:years.map(y=>annualValue(getVal(y,'CFI | Neta') ?? getFallback(y,['C.F.I. | Neta De | Ley Nº 26.075','COPARTIC. | FEDERAL DE | IMPUESTOS | LEY N° 23.548']), y)),borderColor:'#4ade80',borderWidth:1.5,pointRadius:2,pointBackgroundColor:'#4ade80',fill:false,tension:.25,spanGaps:false,borderDash:[4,3]},
       ]
     },
     options:{...BASE_OPTS,scales:{...BASE_OPTS.scales,x:{...BASE_OPTS.scales.x,ticks:{...BASE_OPTS.scales.x.ticks,maxTicksLimit:10,maxRotation:45}},y:{...BASE_OPTS.scales.y,ticks:{...BASE_OPTS.scales.y.ticks,callback:v=>fmtPesosEje(v)}}},plugins:{...BASE_OPTS.plugins,tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+fmtPesosNarrativo(ctx.parsed.y)}}}}
