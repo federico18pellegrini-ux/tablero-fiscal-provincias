@@ -1,6 +1,6 @@
 {
   "date": "2026-10-20",
-  "status": "verified_components_not_integrated",
+  "status": "integrated_tax_components",
   "unit": "pesos corrientes",
   "observations": [
     {
@@ -29,5 +29,6 @@
       "sha256": "a0646fce8a5855049881cfa7d31842c1b726042e0b7943d264b672c5ff024585",
       "verified_tax_subtotal": 30779771797
     }
-  ]
+  ],
+  "method": "Impuestos publicados comparables con DNAP. Se excluyen ingresos varios de Mendoza y derechos mineros/no tributarios de Jujuy. Los rubros no publicados permanecen ausentes, no se imputan ceros."
 }
