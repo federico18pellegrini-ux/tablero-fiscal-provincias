@@ -52,6 +52,11 @@ def own_revenue_totals(rows):
             result[key] = total
         elif 'Total' in taxes:
             result[key] = taxes['Total']
+        else:
+            from scripts_integrate_provincial_recent import verified_subtotal
+            verified = verified_subtotal(*key, taxes)
+            if verified is not None:
+                result[key] = verified
         # Partial components alone are not a total.
     return result
 

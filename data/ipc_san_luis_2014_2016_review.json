@@ -2,7 +2,7 @@
   "source_url": "https://estadistica.sanluis.gov.ar/documents/Economia/Precios/IPC%20San%20Luis/2hyudx10.pdf",
   "source_file": "data\\revenue-history-sources\\ipc-san-luis-diciembre-2016.pdf",
   "sha256": "f1f21211f61db996edf0d3c5ea58fd7448df5c4fd1bf02f2fb129170fddc3653",
-  "status": "verified_local_index_not_integrated",
+  "status": "integrated_historical_splice",
   "coverage": "Ciudad de San Luis. No es IPC nacional.",
   "table": "Cuadro 3, página 5",
   "observations": [
@@ -186,5 +186,6 @@
       "index_base_2003": 1350.48,
       "monthly_change_pct": 0.9
     }
-  ]
+  ],
+  "splice_method": "Factor previo a diciembre 2016 = factor nacional de diciembre 2016 por IPC San Luis diciembre 2016 / IPC San Luis mes. Se conserva diciembre 2016 nacional. Para flujo anual se usa IPC base / promedio de los doce índices, aproximación al ajuste mensual."
 }

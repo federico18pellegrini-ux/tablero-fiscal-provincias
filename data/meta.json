@@ -77,11 +77,19 @@
       "url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2025_12.xlsx",
       "sha256": "35a5488012267388a2c71255504b9cd93ae93970e1b3fb6173bb81b7abdfbe86",
       "bytes": 145784
+    },
+    "recaudacion_propia_provincial_supplement": {
+      "file": "data/provincial_recent_sources_review.json",
+      "provinces": [
+        "Mendoza",
+        "Jujuy"
+      ],
+      "period": "2026-09"
     }
   },
   "rules": {
     "missing_values": "No se imputan. Los meses sin total oficial no se publican.",
-    "top_reconciliation": "Cada total mensual fue reconciliado con IIBB + Sellos + Automotores + Inmobiliario + Otros.",
+    "top_reconciliation": "DNAP: total mensual reconciliado con cinco componentes. Septiembre de Mendoza y Jujuy: conjunto exacto de impuestos provinciales verificados, sin ingresos no tributarios ni imputación de rubros ausentes.",
     "mixed_vintages": "Cada vista y tarjeta debe mostrar su fecha de corte específica."
   }
 }

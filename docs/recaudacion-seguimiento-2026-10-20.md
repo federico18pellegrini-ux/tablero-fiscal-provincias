@@ -1,5 +1,7 @@
 # Recaudación: revisión de pendientes del 20 de octubre
 
+Actualización posterior: septiembre de Mendoza y Jujuy integrado en series, comparaciones y PDF. Empalme 2014–2016 activado y rotulado en ambos gráficos históricos. Los pendientes descriptos abajo corresponden al relevamiento anterior; ver `integracion-septiembre-empalme-2026-10-20.md`.
+
 ## La Pampa 2025: cierre recuperado
 
 La planilla histórica anual DNAP deja vacío 2025. Sin embargo, el archivo mensual oficial `top_mensual_2025_12.xlsx` contiene los doce meses, incluidos noviembre y diciembre. Su descarga actual coincide byte por byte con el original preservado.

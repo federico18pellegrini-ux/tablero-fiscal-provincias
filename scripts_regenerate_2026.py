@@ -472,6 +472,11 @@ def main() -> None:
     write_pba_files(top_rows, ron_rows, args.top_source, args.ron_source)
     write_canonical_files(top_rows, ron_rows, top_coverage, ron_coverage, universe)
     update_manifest(top_coverage, ron_coverage, universe)
+    # Reapply verified provincial supplements; reject conflicting revisions.
+    from scripts_integrate_provincial_recent import build as integrate_provincial
+    integrate_provincial()
+    from scripts_build_real_dynamics import main as build_dynamics
+    build_dynamics()
     # Keep the downloadable report in sync with the same data publication.
     from scripts_export_management_reports import build as build_management_reports
     build_management_reports(ROOT / 'reports')
