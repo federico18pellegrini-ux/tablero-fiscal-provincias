@@ -4,11 +4,13 @@
 
 - Córdoba: DNAP `top_mensual_2026_20.xlsx`, columna K, cinco impuestos y total conciliados: 364.794,59102537 millones. Original preservado y SHA-256 en `data/provincial_recent_sources_review.json`.
 - Tierra del Fuego: AREF `Salida-web-2026-Sep.pdf`, cuadro anual enlazado desde Estadística Tributaria. Septiembre: IIBB 17.339.720.763,21 pesos; Inmobiliario 353.205,06; Sellos 1.961.307.742,93; fondos sociales/previsionales 12.803.424.572,01. Total comparable 32.104.806.283,21 pesos. Fondos en Otros conserva la taxonomía DNAP: agosto concilia exactamente. No usar el total general 41.826.860.177,34 porque incluye regalías y otros ingresos. Automotores no imputado. El cuadro fue revisado visualmente.
-- Santa Cruz: el nuevo portal ASIP publica septiembre con apertura en los datos públicos que alimentan la pantalla. Total general 39.612.046.014,81 pesos; se excluyen tasas varias 784.921.910,61. Total comparable 38.827.124.104,20. Otros = rifas + pesca, igual alcance DNAP.
+- Santa Cruz: el nuevo portal ASIP publica septiembre con apertura en los datos públicos que alimentan la pantalla. Total general 39.612.046.014,81 pesos; se excluyen tasas varias 784.921.910,61 y pesca 3.025.042,46. Total comparable 38.824.099.061,74. Otros = rifas, igual alcance DNAP 2025.
 
 ## Corrección de agosto de Santa Cruz
 
 Las revisiones DNAP 19 y 20 repiten en agosto los componentes de abril. ASIP publica agosto: IIBB 35.376.833.478,94; Sellos 4.101.247.573,33; Inmobiliario rural 839.260,01; rifas 14.850.000; pesca 0. Total comparable 39.493.770.312,28 pesos, excluidas tasas varias. Se reemplaza agosto; las filas anteriores quedan conservadas en `data/revenue-history-sources/santa-cruz-august-revision-2026-10-30.json`. No se revisaron exhaustivamente otros años.
+
+Además, el contraste de enero-septiembre de 2025 con ASIP demuestra que DNAP 2025 incluye rifas, pero no pesca, en Otros. Para comparar el mismo perímetro, todos los meses de 2026 se reconstruyen desde ASIP con IIBB, Sellos, Inmobiliario rural y rifas; se excluyen pesca y tasas varias. Se preservan las filas originales de enero-agosto. No es una revisión de la recaudación total de ASIP sino una normalización explícita del conjunto comparable.
 
 ## Comparaciones y controles
 
