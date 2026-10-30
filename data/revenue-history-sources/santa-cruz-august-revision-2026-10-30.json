@@ -1,0 +1,104 @@
+{
+  "reason": "DNAP agosto repite abril; reemplazo por ASIP del mes correspondiente",
+  "prior_rows": {
+    "top_mensual_2026_normalizado.csv": [
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Automotores",
+        "value_millions": "0.0"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Iibb",
+        "value_millions": "34433.43453663"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Inmobiliario",
+        "value_millions": "0.50724955"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Otros",
+        "value_millions": "26.8555235"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Sellos",
+        "value_millions": "4445.85799293"
+      }
+    ],
+    "data/recaudacion_propia.csv": [
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Automotores",
+        "value_millions": "0.0",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Iibb",
+        "value_millions": "34433.43453663",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Inmobiliario",
+        "value_millions": "0.50724955",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Otros",
+        "value_millions": "26.8555235",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Sellos",
+        "value_millions": "4445.85799293",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      }
+    ]
+  }
+}

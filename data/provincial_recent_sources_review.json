@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-30",
   "status": "integrated_tax_components",
   "unit": "pesos corrientes",
   "observations": [
@@ -171,6 +171,65 @@
       "verified_tax_subtotal": 1029755800000,
       "reported_total": 1029755700000,
       "reconciliation": "Informe AGIP, millones de pesos con un decimal. Otros = planes 6.670,0 + gravámenes varios 5.330,5 + publicidad 1.299,1 millones. Misma apertura que DNAP en septiembre 2025 (Otros 8.035,5). La suma de componentes supera el total publicado en 0,1 millones por redondeo; se conservan componentes, sin inventar un ajuste."
+    },
+    {
+      "province": "Córdoba",
+      "period": "2026-09",
+      "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_20.xlsx",
+      "source_file": "data/revenue-history-sources/dnap-top-mensual-2026-20.xlsx",
+      "sha256": "f8eea7ad94f6e39724a9437cfd3a23dd71b0abd2c09700da0cb056c8084b0455",
+      "institution": "DNAP",
+      "verified_tax_subtotal": 364794591025.37006,
+      "reconciliation_note": "DNAP revisión 20: septiembre columna K. Cinco componentes conciliados con TOTAL. Otros figura cero en la fuente.",
+      "Iibb": 286552205095.37,
+      "Inmobiliario": 28213671358.0,
+      "Sellos": 40421564855.0,
+      "Automotores": 9607149717.0,
+      "Otros": 0.0
+    },
+    {
+      "province": "Tierra del Fuego",
+      "period": "2026-09",
+      "source_url": "https://www.aref.gob.ar/wp-content/uploads/2026/10/Salida-web-2026-Sep.pdf",
+      "source_file": "data/revenue-history-sources/tdf-recaudacion-septiembre-2026.pdf",
+      "sha256": "73bd37f2e21648938ddf0250bce8628e6813fc9e61d93cc1ae5407dd2141193a",
+      "institution": "AREF",
+      "verified_tax_subtotal": 32104806283.21,
+      "reconciliation_note": "AREF: ingresos tributarios 19.301.381.711,20 más fondos 12.803.424.572,01. Otros mantiene el alcance DNAP: fondos sociales y previsionales; excluye otros ingresos 4.739.057.413,04 y regalías 4.982.996.481,09. Agosto concilia con DNAP 20: 20.316.932.283,71 + 13.879.304.581,93 = 34.196.236.865,64. Automotores no imputado.",
+      "Iibb": 17339720763.21,
+      "Inmobiliario": 353205.06,
+      "Sellos": 1961307742.93,
+      "Otros": 12803424572.01
+    },
+    {
+      "province": "Santa Cruz",
+      "period": "2026-08",
+      "source_url": "https://www.asip.gob.ar/recaudacion/",
+      "source_file": "data/revenue-history-sources/asip-recaudacion-2026-10-30.html",
+      "sha256": "3de298a68f1e12d2ab83cc5a0a95444c86c587ab75c2f49285c1e553ef933b5d",
+      "institution": "ASIP",
+      "verified_tax_subtotal": 39493770312.28,
+      "excluded_tasas_varias": 579096261.65,
+      "reconciliation_note": "Portal ASIP: IIBB, Sellos, Inmobiliario rural y Otros (rifas + pesca), siguiendo el alcance DNAP; tasas varias excluidas. Agosto corrige repetición de abril en DNAP revisiones 19 y 20; valores anteriores preservados en auditoría.",
+      "Iibb": 35376833478.94,
+      "Inmobiliario": 839260.01,
+      "Sellos": 4101247573.33,
+      "Otros": 14850000
+    },
+    {
+      "province": "Santa Cruz",
+      "period": "2026-09",
+      "source_url": "https://www.asip.gob.ar/recaudacion/",
+      "source_file": "data/revenue-history-sources/asip-recaudacion-2026-10-30.html",
+      "sha256": "3de298a68f1e12d2ab83cc5a0a95444c86c587ab75c2f49285c1e553ef933b5d",
+      "institution": "ASIP",
+      "verified_tax_subtotal": 38827124104.2,
+      "excluded_tasas_varias": 784921910.61,
+      "reconciliation_note": "Portal ASIP: IIBB, Sellos, Inmobiliario rural y Otros (rifas + pesca), siguiendo el alcance DNAP; tasas varias excluidas. Agosto corrige repetición de abril en DNAP revisiones 19 y 20; valores anteriores preservados en auditoría.",
+      "Iibb": 34724852823.89,
+      "Inmobiliario": 240459.19,
+      "Sellos": 4099005778.66,
+      "Otros": 3025042.46
     }
   ],
   "method": "Impuestos publicados comparables con DNAP. Se excluyen ingresos varios de Mendoza y derechos mineros/no tributarios de Jujuy. Los rubros no publicados permanecen ausentes, no se imputan ceros. Neuquén: componentes reconciliados contra agosto DNAP. San Juan: Otros conserva el perímetro DNAP (otros ingresos y depósitos judiciales); septiembre no registra importe judicial. Tucumán: Otros suma Salud Pública y Otros Impuestos, reconciliado contra septiembre de 2025; diferencia de un peso entre total publicado y suma de componentes por redondeo."
