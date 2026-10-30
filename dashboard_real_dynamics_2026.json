@@ -1,6 +1,6 @@
 {
   "source": "dinámica real 2026",
-  "generated_at": "2026-10-20T20:05:04.686414Z",
+  "generated_at": "2026-10-30T20:59:08.371989Z",
   "methodology": {
     "real_yoy_pct": "((nominal_current / nominal_prev_year) / (ipc_index_current / ipc_index_prev_year) - 1) * 100",
     "real_ytd_pct": "sumas deflactadas a último mes disponible del período",
@@ -281,11 +281,11 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-08",
-          "last_comparable_period": "2026-08",
-          "last_available_real_yoy_pct": -15.8,
-          "ytd_available_through": "2026-08",
-          "real_ytd_pct": -3.5,
+          "last_available_period": "2026-09",
+          "last_comparable_period": "2026-09",
+          "last_available_real_yoy_pct": -7.7,
+          "ytd_available_through": "2026-09",
+          "real_ytd_pct": -4.0,
           "status": "calculated"
         },
         "ron_total": {
@@ -866,10 +866,10 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-08",
-          "last_comparable_period": "2026-08",
-          "last_available_real_yoy_pct": -7.7,
-          "ytd_available_through": "2026-08",
+          "last_available_period": "2026-09",
+          "last_comparable_period": "2026-09",
+          "last_available_real_yoy_pct": -5.2,
+          "ytd_available_through": "2026-09",
           "real_ytd_pct": -3.6,
           "status": "calculated"
         },
@@ -1001,11 +1001,11 @@
       "coverage_note": "La dinámica real 2026 requiere base mensual homogénea. Si falta la serie 2025 comparable del mismo período, el bloque queda compacto.",
       "metrics": {
         "own_revenue": {
-          "last_available_period": "2026-08",
-          "last_comparable_period": "2026-08",
-          "last_available_real_yoy_pct": -6.8,
-          "ytd_available_through": "2026-08",
-          "real_ytd_pct": -5.5,
+          "last_available_period": "2026-09",
+          "last_comparable_period": "2026-09",
+          "last_available_real_yoy_pct": -12.8,
+          "ytd_available_through": "2026-09",
+          "real_ytd_pct": -6.3,
           "status": "calculated"
         },
         "ron_total": {

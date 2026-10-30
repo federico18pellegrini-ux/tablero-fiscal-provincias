@@ -1,0 +1,769 @@
+{
+  "reason": "Agosto DNAP repite abril; normalización de enero-septiembre ASIP al perímetro DNAP 2025: IIBB, Sellos, Inmobiliario, rifas. Pesca y tasas varias excluidas para comparación homogénea.",
+  "prior_rows": {
+    "top_mensual_2026_normalizado.csv": [
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-01",
+        "tax": "Automotores",
+        "value_millions": "0.0"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-01",
+        "tax": "Iibb",
+        "value_millions": "43618.75356179"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-01",
+        "tax": "Inmobiliario",
+        "value_millions": "0.10359775"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-01",
+        "tax": "Otros",
+        "value_millions": "17.62530191"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-01",
+        "tax": "Sellos",
+        "value_millions": "3804.43404185"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-02",
+        "tax": "Automotores",
+        "value_millions": "0.0"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-02",
+        "tax": "Iibb",
+        "value_millions": "33881.241821"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-02",
+        "tax": "Inmobiliario",
+        "value_millions": "0.198362"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-02",
+        "tax": "Otros",
+        "value_millions": "6.10808211"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-02",
+        "tax": "Sellos",
+        "value_millions": "3211.773984"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-03",
+        "tax": "Automotores",
+        "value_millions": "0.0"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-03",
+        "tax": "Iibb",
+        "value_millions": "30440.326054"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-03",
+        "tax": "Inmobiliario",
+        "value_millions": "0.119683"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-03",
+        "tax": "Otros",
+        "value_millions": "25.32422978"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-03",
+        "tax": "Sellos",
+        "value_millions": "3399.989964"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-04",
+        "tax": "Automotores",
+        "value_millions": "0.0"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-04",
+        "tax": "Iibb",
+        "value_millions": "34433.43453663"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-04",
+        "tax": "Inmobiliario",
+        "value_millions": "0.50724955"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-04",
+        "tax": "Otros",
+        "value_millions": "26.8555235"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-04",
+        "tax": "Sellos",
+        "value_millions": "4445.85799293"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-05",
+        "tax": "Automotores",
+        "value_millions": "0.0"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-05",
+        "tax": "Iibb",
+        "value_millions": "34138.65201073"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-05",
+        "tax": "Inmobiliario",
+        "value_millions": "1.28540297"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-05",
+        "tax": "Otros",
+        "value_millions": "16.41970098"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-05",
+        "tax": "Sellos",
+        "value_millions": "3741.49728993"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-06",
+        "tax": "Automotores",
+        "value_millions": "0.0"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-06",
+        "tax": "Iibb",
+        "value_millions": "36455.45360796"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-06",
+        "tax": "Inmobiliario",
+        "value_millions": "1.56072844"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-06",
+        "tax": "Otros",
+        "value_millions": "32.45975406"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-06",
+        "tax": "Sellos",
+        "value_millions": "3810.25582124"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-07",
+        "tax": "Automotores",
+        "value_millions": "0.0"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-07",
+        "tax": "Iibb",
+        "value_millions": "35857.13668731"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-07",
+        "tax": "Inmobiliario",
+        "value_millions": "1.99697371"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-07",
+        "tax": "Otros",
+        "value_millions": "8.990720770000001"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-07",
+        "tax": "Sellos",
+        "value_millions": "3533.45851832"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Automotores",
+        "value_millions": "0.0"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Iibb",
+        "value_millions": "34433.43453663"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Inmobiliario",
+        "value_millions": "0.50724955"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Otros",
+        "value_millions": "26.8555235"
+      },
+      {
+        "province": "Santa Cruz",
+        "source": "top_mensual_2026_19.xlsx",
+        "year": "2026",
+        "period_type": "month",
+        "period": "2026-08",
+        "tax": "Sellos",
+        "value_millions": "4445.85799293"
+      }
+    ],
+    "data/recaudacion_propia.csv": [
+      {
+        "province": "Santa Cruz",
+        "period": "2026-01",
+        "tax": "Automotores",
+        "value_millions": "0.0",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-01",
+        "tax": "Iibb",
+        "value_millions": "43618.75356179",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-01",
+        "tax": "Inmobiliario",
+        "value_millions": "0.10359775",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-01",
+        "tax": "Otros",
+        "value_millions": "17.62530191",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-01",
+        "tax": "Sellos",
+        "value_millions": "3804.43404185",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-02",
+        "tax": "Automotores",
+        "value_millions": "0.0",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-02",
+        "tax": "Iibb",
+        "value_millions": "33881.241821",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-02",
+        "tax": "Inmobiliario",
+        "value_millions": "0.198362",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-02",
+        "tax": "Otros",
+        "value_millions": "6.10808211",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-02",
+        "tax": "Sellos",
+        "value_millions": "3211.773984",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-03",
+        "tax": "Automotores",
+        "value_millions": "0.0",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-03",
+        "tax": "Iibb",
+        "value_millions": "30440.326054",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-03",
+        "tax": "Inmobiliario",
+        "value_millions": "0.119683",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-03",
+        "tax": "Otros",
+        "value_millions": "25.32422978",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-03",
+        "tax": "Sellos",
+        "value_millions": "3399.989964",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-04",
+        "tax": "Automotores",
+        "value_millions": "0.0",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-04",
+        "tax": "Iibb",
+        "value_millions": "34433.43453663",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-04",
+        "tax": "Inmobiliario",
+        "value_millions": "0.50724955",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-04",
+        "tax": "Otros",
+        "value_millions": "26.8555235",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-04",
+        "tax": "Sellos",
+        "value_millions": "4445.85799293",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-05",
+        "tax": "Automotores",
+        "value_millions": "0.0",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-05",
+        "tax": "Iibb",
+        "value_millions": "34138.65201073",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-05",
+        "tax": "Inmobiliario",
+        "value_millions": "1.28540297",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-05",
+        "tax": "Otros",
+        "value_millions": "16.41970098",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-05",
+        "tax": "Sellos",
+        "value_millions": "3741.49728993",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-06",
+        "tax": "Automotores",
+        "value_millions": "0.0",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-06",
+        "tax": "Iibb",
+        "value_millions": "36455.45360796",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-06",
+        "tax": "Inmobiliario",
+        "value_millions": "1.56072844",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-06",
+        "tax": "Otros",
+        "value_millions": "32.45975406",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-06",
+        "tax": "Sellos",
+        "value_millions": "3810.25582124",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-07",
+        "tax": "Automotores",
+        "value_millions": "0.0",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-07",
+        "tax": "Iibb",
+        "value_millions": "35857.13668731",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-07",
+        "tax": "Inmobiliario",
+        "value_millions": "1.99697371",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-07",
+        "tax": "Otros",
+        "value_millions": "8.990720770000001",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-07",
+        "tax": "Sellos",
+        "value_millions": "3533.45851832",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Automotores",
+        "value_millions": "0.0",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Iibb",
+        "value_millions": "34433.43453663",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Inmobiliario",
+        "value_millions": "0.50724955",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Otros",
+        "value_millions": "26.8555235",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "tax": "Sellos",
+        "value_millions": "4445.85799293",
+        "price_basis": "pesos_corrientes",
+        "evidence_status": "auditado",
+        "source_file": "top_mensual_2026_19.xlsx",
+        "source_url": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_19.xlsx"
+      }
+    ]
+  }
+}

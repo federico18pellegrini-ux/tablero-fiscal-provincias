@@ -4,6 +4,25 @@ from scripts_build_real_dynamics import own_revenue_totals
 ROOT=Path(__file__).resolve().parents[1]
 
 class ProvincialSeptember(unittest.TestCase):
+    def test_cordoba_and_fueguino_funds_keep_comparable_scope(self):
+        from scripts_integrate_provincial_recent import observations
+        items={r['province']:r for r in observations() if r['period']=='2026-09'}
+        cordoba=items['Córdoba'];tdf=items['Tierra del Fuego']
+        self.assertAlmostEqual(sum(cordoba[k] for k in ['Iibb','Inmobiliario','Sellos','Automotores','Otros']),364794591025.37,places=2)
+        self.assertAlmostEqual(tdf['Iibb'],7396604613.33+229354172.26+9713761977.62,places=2)
+        self.assertAlmostEqual(tdf['Otros'],11145370406.72+1658054165.29,places=2)
+        self.assertAlmostEqual(tdf['verified_tax_subtotal'],41826860177.34-4739057413.04-4982996481.09,places=2)
+        self.assertNotIn('Automotores',tdf)
+        with (ROOT/'top_mensual_2026_normalizado.csv').open(encoding='utf8') as f:rows=list(csv.DictReader(f))
+        totals=own_revenue_totals(rows)
+        self.assertAlmostEqual(totals['Tierra del Fuego','2026-09'],32104.80628321,places=6)
+        self.assertAlmostEqual(totals['Córdoba','2026-09'],364794.59102537,places=6)
+        self.assertAlmostEqual(totals['Santa Cruz','2026-09'],(39612046014.81-784921910.61-3025042.46)/1e6,places=6)
+        self.assertAlmostEqual(totals['Santa Cruz','2026-08'],(40072866573.93-579096261.65)/1e6,places=6)
+        self.assertNotEqual(totals['Santa Cruz','2026-08'],totals['Santa Cruz','2026-04'])
+        for province in ['Buenos Aires','La Pampa','Santa Fe']:
+            self.assertNotIn((province,'2026-09'),totals)
+
     def test_verified_totals_exclude_non_tax_and_do_not_impute(self):
         with (ROOT/'top_mensual_2026_normalizado.csv').open(encoding='utf8') as f:rows=list(csv.DictReader(f))
         totals=own_revenue_totals(rows)
