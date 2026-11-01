@@ -1,0 +1,2807 @@
+{
+  "reviewed_at": "2026-11-01",
+  "scope": "RON: 24 jurisdicciones; enero-octubre de 2026. No es una auditoría de cada conjunto provincial.",
+  "source": {
+    "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_7.xlsx",
+    "path": "data/ron_sources/informacion_consolidada_2026_7.xlsx",
+    "sha256": "a6abf18e8c79beb0d79db1c243f4455508487c7ddec5f22e08fd80c56522ac9f",
+    "bytes": 431752,
+    "reviewed": "2026-11-01",
+    "period": "2026-10",
+    "unit": "ARS millones"
+  },
+  "validation": {
+    "jurisdictions": 24,
+    "months": 10,
+    "monthly_total_equals_base_plus_compensation": true,
+    "monthly_sum_equals_CONS": true,
+    "prior_monthly_total_revisions": 0,
+    "revisions_other_categories": [
+      {
+        "province": "Buenos Aires",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 196.30424611404703,
+        "current": 206.86889622214798,
+        "delta": 10.564650108100949
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 1141239.657462725,
+        "current": 1141204.649062725,
+        "delta": -35.00839999993332
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 1051139.1416197475,
+        "current": 1051104.1332197476,
+        "delta": -35.00839999993332
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 395.96396515652305,
+        "current": 280.55992537378665,
+        "delta": -115.40403978273639
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 959878.9896311524,
+        "current": 959843.9812311523,
+        "delta": -35.00840000004973
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 1074458.563436374,
+        "current": 1074423.5550363741,
+        "delta": -35.00839999993332
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 215.1510523506832,
+        "current": 173.7822145049301,
+        "delta": -41.36883784575309
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 1592299.8618079647,
+        "current": 1592264.8534079648,
+        "delta": -35.00839999993332
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 522.1075069406367,
+        "current": 363.6239149497982,
+        "delta": -158.48359199083848
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 1137024.5900193297,
+        "current": 1136989.5816193298,
+        "delta": -35.00839999993332
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 265.22979133857507,
+        "current": 216.4901803837792,
+        "delta": -48.739610954795864
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 1403481.3692193297,
+        "current": 1403446.3608193297,
+        "delta": -35.00839999993332
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 1329981.6576136455,
+        "current": 1329946.6492136456,
+        "delta": -35.00839999993332
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 598.7481625041232,
+        "current": 406.59923509096245,
+        "delta": -192.14892741316078
+      },
+      {
+        "province": "Buenos Aires",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 1366996.9934250067,
+        "current": 1366961.9850250068,
+        "delta": -35.00839999993332
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 295.85904785142435,
+        "current": 311.78151201027276,
+        "delta": 15.922464158848413
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 143137.29577918455,
+        "current": 143135.51247918454,
+        "delta": -1.7833000000100583
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 131836.44487844326,
+        "current": 131834.66157844325,
+        "delta": -1.7833000000100583
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 596.77528143633,
+        "current": 422.84461000017154,
+        "delta": -173.9306714361585
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 120390.14673829498,
+        "current": 120388.36343829498,
+        "delta": -1.7832999999955064
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 134761.28171822094,
+        "current": 134759.49841822093,
+        "delta": -1.7833000000100583
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 324.2639257963483,
+        "current": 261.91507080784396,
+        "delta": -62.34885498850434
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 199711.48991859157,
+        "current": 199709.70661859156,
+        "delta": -1.7833000000100583
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 786.8919442385534,
+        "current": 548.0341224651494,
+        "delta": -238.857821773404
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 142608.62117844334,
+        "current": 142606.83787844333,
+        "delta": -1.7833000000100583
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 399.7398685241672,
+        "current": 326.28218648476866,
+        "delta": -73.45768203939855
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 176028.94387844336,
+        "current": 176027.16057844335,
+        "delta": -1.7833000000100583
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 166810.24779851746,
+        "current": 166808.46449851745,
+        "delta": -1.7833000000100583
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 902.400558184701,
+        "current": 612.8041799194974,
+        "delta": -289.5963782652036
+      },
+      {
+        "province": "Catamarca",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 171452.89365836923,
+        "current": 171451.11035836922,
+        "delta": -1.7833000000100583
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 263.9498768661234,
+        "current": 278.15506167626785,
+        "delta": 14.20518481014443
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 259248.23862661226,
+        "current": 259245.43862661227,
+        "delta": -2.7999999999883585
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 238780.2640235325,
+        "current": 238777.46402353252,
+        "delta": -2.7999999999883585
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 532.4115087857962,
+        "current": 377.239714504568,
+        "delta": -155.1717942812282
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 218048.8569829165,
+        "current": 218046.05698291652,
+        "delta": -2.7999999999883585
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 244077.6958126084,
+        "current": 244074.89581260842,
+        "delta": -2.7999999999883585
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 289.2912145375835,
+        "current": 233.66684640377156,
+        "delta": -55.62436813381197
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 361714.78616414836,
+        "current": 361711.9861641484,
+        "delta": -2.7999999999883585
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 702.0235929702201,
+        "current": 488.92721109130093,
+        "delta": -213.09638187891915
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 258290.70922353232,
+        "current": 258287.90922353233,
+        "delta": -2.7999999999883585
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 356.6268797279805,
+        "current": 291.091800535372,
+        "delta": -65.53507919260852
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 318821.22372353234,
+        "current": 318818.42372353235,
+        "delta": -2.7999999999883585
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 302124.4243938403,
+        "current": 302121.6243938403,
+        "delta": -2.7999999999883585
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 805.0743012559948,
+        "current": 546.7116487065821,
+        "delta": -258.3626525494127
+      },
+      {
+        "province": "Chaco",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 310533.13265322434,
+        "current": 310530.33265322435,
+        "delta": -2.7999999999883585
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 276.74694911024477,
+        "current": 291.64084339283784,
+        "delta": 14.893894282593067
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 82188.13161349145,
+        "current": 82186.11491349146,
+        "delta": -2.016699999992852
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 75699.36442575642,
+        "current": 75697.34772575642,
+        "delta": -2.016699999992852
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 558.2243965151843,
+        "current": 395.5294138072736,
+        "delta": -162.69498270791064
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 69127.08362820942,
+        "current": 69125.06692820943,
+        "delta": -2.016699999992852
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 77378.75882943586,
+        "current": 77376.74212943586,
+        "delta": -2.016699999992852
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 303.31690994219304,
+        "current": 244.9957075755605,
+        "delta": -58.32120236663255
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 114672.12642330339,
+        "current": 114670.1097233034,
+        "delta": -2.016699999992852
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 736.0597772134358,
+        "current": 512.6318512226203,
+        "delta": -223.42792599081554
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 81884.57522575645,
+        "current": 81882.55852575645,
+        "delta": -2.016699999992852
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 373.9172077200205,
+        "current": 305.2047936767707,
+        "delta": -68.7124140432498
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 101073.98832575654,
+        "current": 101071.97162575655,
+        "delta": -2.016699999992852
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 95780.76092453003,
+        "current": 95778.74422453003,
+        "delta": -2.016699999992852
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 844.1066892074099,
+        "current": 573.2178496152522,
+        "delta": -270.88883959215764
+      },
+      {
+        "province": "Chubut",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 98446.49372698303,
+        "current": 98444.47702698303,
+        "delta": -2.016699999992852
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 248.52012816197575,
+        "current": 261.8949188292218,
+        "delta": 13.37479066724606
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 193186.11113829497,
+        "current": 193182.89443829498,
+        "delta": -3.2166999999899417
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 177933.91379129043,
+        "current": 177930.69709129044,
+        "delta": -3.2166999999899417
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 501.28826717293276,
+        "current": 355.18736855634944,
+        "delta": -146.10089861658332
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 162485.41356188952,
+        "current": 162482.19686188953,
+        "delta": -3.2166999999899417
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 181881.42084718906,
+        "current": 181878.20414718907,
+        "delta": -3.2166999999899417
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 272.38008431284106,
+        "current": 220.00735633308489,
+        "delta": -52.37272797975618
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 269541.49212069134,
+        "current": 269538.27542069135,
+        "delta": -3.2166999999899417
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 660.9853180107339,
+        "current": 460.34593615187754,
+        "delta": -200.63938185885632
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 192472.58529129013,
+        "current": 192469.36859129014,
+        "delta": -3.2166999999899417
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 335.7795006702193,
+        "current": 274.0754132423737,
+        "delta": -61.70408742784559
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 237578.33549129014,
+        "current": 237575.11879129015,
+        "delta": -3.2166999999899417
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 225136.31910599058,
+        "current": 225133.1024059906,
+        "delta": -3.2166999999899417
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 758.0119790291347,
+        "current": 514.7524621524267,
+        "delta": -243.25951687670806
+      },
+      {
+        "province": "Corrientes",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 231402.26767658966,
+        "current": 231399.05097658967,
+        "delta": -3.2166999999899417
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 196.30424611404703,
+        "current": 206.8688962222615,
+        "delta": 10.564650108214465
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 461447.30342767976,
+        "current": 461436.86172767973,
+        "delta": -10.441700000024866
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 425015.8892255703,
+        "current": 425005.4475255703,
+        "delta": -10.441700000024866
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 395.96396515652305,
+        "current": 280.55992537378665,
+        "delta": -115.40403978273639
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 388115.5854851484,
+        "current": 388105.1437851484,
+        "delta": -10.441700000024866
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 434444.90871493757,
+        "current": 434434.46701493755,
+        "delta": -10.441700000024866
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 215.1510523506832,
+        "current": 173.7822145049301,
+        "delta": -41.36883784575309
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 643829.8456659921,
+        "current": 643819.4039659922,
+        "delta": -10.441699999966659
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 522.1075069406367,
+        "current": 363.6239149497982,
+        "delta": -158.48359199083848
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 459742.9750255703,
+        "current": 459732.5333255703,
+        "delta": -10.441700000024866
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 265.22979133857507,
+        "current": 216.4901803837792,
+        "delta": -48.739610954795864
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 567482.6167255703,
+        "current": 567472.1750255703,
+        "delta": -10.441699999966659
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 537763.6032957812,
+        "current": 537753.1615957812,
+        "delta": -10.441699999966659
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 598.7481625041232,
+        "current": 406.59923509107614,
+        "delta": -192.1489274130471
+      },
+      {
+        "province": "Córdoba",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 552730.4547553592,
+        "current": 552720.0130553592,
+        "delta": -10.441699999966659
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 227.15468483862387,
+        "current": 239.37963571702622,
+        "delta": 12.224950878402353
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 253745.85146548552,
+        "current": 253740.22656548553,
+        "delta": -5.62489999999525
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 233712.52499774506,
+        "current": 233706.90009774506,
+        "delta": -5.62489999999525
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 458.1921761768218,
+        "current": 324.6516705049813,
+        "delta": -133.5405056718405
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 213421.36016419693,
+        "current": 213415.73526419693,
+        "delta": -5.62489999999525
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 238897.46299742284,
+        "current": 238891.83809742285,
+        "delta": -5.62489999999525
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 248.96338443843604,
+        "current": 201.0931752725034,
+        "delta": -47.870209165932636
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 354036.4685312931,
+        "current": 354030.8436312931,
+        "delta": -5.62489999999525
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 604.1599636510987,
+        "current": 420.7696850104451,
+        "delta": -183.3902786406536
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 252808.65569774498,
+        "current": 252803.03079774498,
+        "delta": -5.62489999999525
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 306.9123101377486,
+        "current": 250.51296479797594,
+        "delta": -56.39934533977265
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 312053.77319774503,
+        "current": 312048.14829774504,
+        "delta": -5.62489999999525
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 295711.53916451905,
+        "current": 295705.91426451906,
+        "delta": -5.62489999999525
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 692.8451770726151,
+        "current": 470.4988452019702,
+        "delta": -222.34633187064492
+      },
+      {
+        "province": "Entre Ríos",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 303941.6841309709,
+        "current": 303936.0592309709,
+        "delta": -5.62489999999525
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 305.0077400836948,
+        "current": 321.4225661404487,
+        "delta": 16.414826056753896
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 189180.82894031133,
+        "current": 189179.10384031132,
+        "delta": -1.7251000000105705
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 174244.7394042307,
+        "current": 174243.0143042307,
+        "delta": -1.7251000000105705
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 615.2290465559656,
+        "current": 435.92000932252193,
+        "delta": -179.3090372334437
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 159116.41525701457,
+        "current": 159114.69015701456,
+        "delta": -1.7251000000105705
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 178110.43283340652,
+        "current": 178108.7077334065,
+        "delta": -1.7251000000105705
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 334.2909669809611,
+        "current": 270.014131464336,
+        "delta": -64.27683551662511
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 263953.7150514468,
+        "current": 263951.9899514468,
+        "delta": -1.7250999999814667
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 811.2245859709723,
+        "current": 564.9806906166632,
+        "delta": -246.24389535430907
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 188482.0913042307,
+        "current": 188480.3662042307,
+        "delta": -1.7251000000105705
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 412.1008122134428,
+        "current": 336.37163727266767,
+        "delta": -75.72917494077512
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 232653.0073042307,
+        "current": 232651.2822042307,
+        "delta": -1.7251000000105705
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 220468.85642783876,
+        "current": 220467.13132783875,
+        "delta": -1.7251000000105705
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 930.3050114479785,
+        "current": 631.7535981608513,
+        "delta": -298.55141328712716
+      },
+      {
+        "province": "Formosa",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 226604.94088062263,
+        "current": 226603.21578062262,
+        "delta": -1.7251000000105705
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 246.1303373421243,
+        "current": 259.3765148781842,
+        "delta": 13.24617753605989
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 147642.55180892508,
+        "current": 147639.7768089251,
+        "delta": -2.7749999999941792
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 135986.079798857,
+        "current": 135983.30479885702,
+        "delta": -2.7749999999941792
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 496.46783630819226,
+        "current": 351.77185641372273,
+        "delta": -144.69597989446953
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 124179.58353684342,
+        "current": 124176.80853684343,
+        "delta": -2.7749999999941792
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 139002.95695583665,
+        "current": 139000.18195583666,
+        "delta": -2.7749999999941792
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 269.7608541099408,
+        "current": 217.891746767487,
+        "delta": -51.86910734245379
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 205997.0528608707,
+        "current": 205994.2778608707,
+        "delta": -2.7749999999941792
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 654.6292266120781,
+        "current": 455.9192102226738,
+        "delta": -198.7100163894043
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 147097.2406988571,
+        "current": 147094.4656988571,
+        "delta": -2.7749999999941792
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 332.5506162500285,
+        "current": 271.4398806060739,
+        "delta": -61.11073564395457
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 181569.2517988571,
+        "current": 181566.4767988571,
+        "delta": -2.7749999999941792
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 172060.4568798639,
+        "current": 172057.6818798639,
+        "delta": -2.7749999999941792
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 750.7228709690453,
+        "current": 509.8025584137255,
+        "delta": -240.9203125553198
+      },
+      {
+        "province": "Jujuy",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 176849.2000178503,
+        "current": 176846.4250178503,
+        "delta": -2.7749999999941792
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 218.49516087862222,
+        "current": 230.25407578873347,
+        "delta": 11.758914910111258
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 99493.53979086729,
+        "current": 99491.93979086728,
+        "delta": -1.6000000000058208
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 91630.5997462012,
+        "current": 91628.9997462012,
+        "delta": -1.6000000000058208
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 440.72510905521744,
+        "current": 312.275395202702,
+        "delta": -128.44971385251546
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 83687.07921726796,
+        "current": 83685.47921726796,
+        "delta": -1.6000000000058208
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 93677.35505280136,
+        "current": 93675.75505280135,
+        "delta": -1.6000000000058208
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 239.47247565521147,
+        "current": 193.42716049481086,
+        "delta": -46.045315160400605
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 138815.1194751345,
+        "current": 138813.5194751345,
+        "delta": -1.6000000000058208
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 581.1283555638408,
+        "current": 404.72922707103186,
+        "delta": -176.39912849280898
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 99136.68464620128,
+        "current": 99135.08464620127,
+        "delta": -1.6000000000058208
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 295.21228949700827,
+        "current": 240.96298338377684,
+        "delta": -54.24930611323143
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 122350.71574620128,
+        "current": 122349.11574620128,
+        "delta": -1.6000000000058208
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 115939.7099106678,
+        "current": 115938.1099106678,
+        "delta": -1.6000000000058208
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 666.4327374029787,
+        "current": 452.562626879646,
+        "delta": -213.87011052333264
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 119186.4303817345,
+        "current": 119184.8303817345,
+        "delta": -1.6000000000058208
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 287.8721302697061,
+        "current": 303.3647565967662,
+        "delta": 15.492626327060123
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 107603.56287079316,
+        "current": 107601.87127079316,
+        "delta": -1.6916000000055647
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 99108.16798060514,
+        "current": 99106.47638060513,
+        "delta": -1.6916000000055647
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 580.6649240732687,
+        "current": 411.42963020274476,
+        "delta": -169.23529387052395
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 90503.43340256753,
+        "current": 90501.74180256753,
+        "delta": -1.6916000000055647
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 101306.9089635487,
+        "current": 101305.2173635487,
+        "delta": -1.6916000000055647
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 315.5101990802196,
+        "current": 254.84449413105085,
+        "delta": -60.66570494916874
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 150133.11445864267,
+        "current": 150131.42285864268,
+        "delta": -1.6915999999910127
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 765.6492573677373,
+        "current": 533.2395660711373,
+        "delta": -232.40969129659993
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 107206.13268060506,
+        "current": 107204.44108060506,
+        "delta": -1.6916000000055647
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 388.9486170484685,
+        "current": 317.4739754443695,
+        "delta": -71.47464160409902
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 132329.8017806051,
+        "current": 132328.11018060512,
+        "delta": -1.6915999999910127
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 125399.66311962403,
+        "current": 125397.97151962403,
+        "delta": -1.6916000000055647
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 878.0396372024538,
+        "current": 596.2611114655413,
+        "delta": -281.77852573691257
+      },
+      {
+        "province": "La Rioja",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 128889.76404158643,
+        "current": 128888.07244158642,
+        "delta": -1.6916000000055647
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 223.44459262422973,
+        "current": 235.46987473623415,
+        "delta": 12.025282112004419
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 216710.30557186058,
+        "current": 216705.16397186057,
+        "delta": -5.141600000002654
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 199600.9753826429,
+        "current": 199595.8337826429,
+        "delta": -5.141600000002654
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 450.70857428828475,
+        "current": 319.3491708677093,
+        "delta": -131.35940342057546
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 182271.44020479935,
+        "current": 182266.29860479935,
+        "delta": -5.141600000002654
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 204029.13746587763,
+        "current": 204023.99586587763,
+        "delta": -5.141600000002654
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 244.89709314884098,
+        "current": 197.80874278770665,
+        "delta": -47.08835036113433
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 302362.84436048666,
+        "current": 302357.7027604867,
+        "delta": -5.14159999997355
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 594.2922861249481,
+        "current": 413.8973005054394,
+        "delta": -180.3949856195087
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 215909.89968264318,
+        "current": 215904.75808264318,
+        "delta": -5.141600000002654
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 301.8995454945599,
+        "current": 246.4213643938763,
+        "delta": -55.4781811006836
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 266507.80078264314,
+        "current": 266502.65918264317,
+        "delta": -5.14159999997355
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 252550.82382156493,
+        "current": 252545.68222156493,
+        "delta": -5.141600000002654
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 681.5290138042506,
+        "current": 462.81423985762734,
+        "delta": -218.7147739466232
+      },
+      {
+        "province": "Mendoza",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 259579.72474372145,
+        "current": 259574.58314372145,
+        "delta": -5.141600000002654
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 289.02314773548653,
+        "current": 304.57771923150625,
+        "delta": 15.554571496019719
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 171665.36187934762,
+        "current": 171662.52017934763,
+        "delta": -2.8416999999899417
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 158112.24355148178,
+        "current": 158109.4018514818,
+        "delta": -2.8416999999899417
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 582.9866336193213,
+        "current": 413.07467549429606,
+        "delta": -169.91195812502525
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 144384.6901659087,
+        "current": 144381.8484659087,
+        "delta": -2.8416999999899417
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 161620.00237312214,
+        "current": 161617.16067312215,
+        "delta": -2.8416999999899417
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 316.7717236035102,
+        "current": 255.86345510074986,
+        "delta": -60.908268502760365
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 239514.83253705484,
+        "current": 239511.99083705485,
+        "delta": -2.8416999999899417
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 768.710601556425,
+        "current": 535.3716517782391,
+        "delta": -233.3389497781859
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 171031.32215148158,
+        "current": 171028.4804514816,
+        "delta": -2.8416999999899417
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 390.5037750820527,
+        "current": 318.74335184846933,
+        "delta": -71.76042323358337
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 211112.33845148157,
+        "current": 211109.49675148158,
+        "delta": -2.8416999999899417
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 200056.34974426817,
+        "current": 200053.50804426818,
+        "delta": -2.8416999999899417
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 881.5503590018848,
+        "current": 598.6451802418142,
+        "delta": -282.9051787600706
+      },
+      {
+        "province": "Misiones",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 205624.27825869567,
+        "current": 205621.43655869568,
+        "delta": -2.8416999999899417
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 256.658212325768,
+        "current": 270.4709762719275,
+        "delta": 13.81276394615952
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 90195.14594195699,
+        "current": 90193.69604195698,
+        "delta": -1.4499000000068918
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 83074.1632891906,
+        "current": 83072.7133891906,
+        "delta": -1.4499000000068918
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 517.7035416338181,
+        "current": 366.8183970802023,
+        "delta": -150.88514455361576
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 75861.53017863736,
+        "current": 75860.08027863735,
+        "delta": -1.4499000000068918
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 84917.18487336078,
+        "current": 84915.73497336077,
+        "delta": -1.4499000000068918
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 281.2994908283485,
+        "current": 227.21175622197785,
+        "delta": -54.087734606370645
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 125844.13059974395,
+        "current": 125842.68069974394,
+        "delta": -1.4499000000068918
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 682.6300604031499,
+        "current": 475.4205057781899,
+        "delta": -207.20955462495994
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 89862.01328919054,
+        "current": 89860.56338919053,
+        "delta": -1.4499000000068918
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 346.7749957230083,
+        "current": 283.05033531307276,
+        "delta": -63.72466040993555
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 110921.09488919051,
+        "current": 110919.6449891905,
+        "delta": -1.4499000000068918
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 105112.13619446718,
+        "current": 105110.68629446717,
+        "delta": -1.4499000000068918
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 782.8339736595823,
+        "current": 531.6086375145882,
+        "delta": -251.22533614499412
+      },
+      {
+        "province": "Neuquén",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 108037.5973839139,
+        "current": 108036.1474839139,
+        "delta": -1.4499000000068918
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 238.48142144060083,
+        "current": 251.3159516473617,
+        "delta": 12.83453020676086
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 131125.35748045956,
+        "current": 131124.14078045957,
+        "delta": -1.2166999999899417
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 120772.82973542286,
+        "current": 120771.61303542285,
+        "delta": -1.2167000000044936
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 481.03925984552524,
+        "current": 340.83995190994096,
+        "delta": -140.19930793558427
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 110287.06018641547,
+        "current": 110285.84348641547,
+        "delta": -1.2167000000044936
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 123452.22571191176,
+        "current": 123451.00901191175,
+        "delta": -1.2167000000044936
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 261.3775799858215,
+        "current": 211.12039275739363,
+        "delta": -50.25718722842788
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 182952.06688443013,
+        "current": 182950.85018443014,
+        "delta": -1.2166999999899417
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 634.2855178646362,
+        "current": 441.75075081856227,
+        "delta": -192.5347670460739
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 130641.04723542278,
+        "current": 130639.83053542278,
+        "delta": -1.2167000000044936
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 322.2160442355876,
+        "current": 263.0044279090747,
+        "delta": -59.21161632651291
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 161256.86733542275,
+        "current": 161255.65063542276,
+        "delta": -1.2166999999899417
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 152811.76800992648,
+        "current": 152810.5513099265,
+        "delta": -1.2166999999899417
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 727.3928899120514,
+        "current": 493.95958296059337,
+        "delta": -233.433306951458
+      },
+      {
+        "province": "Río Negro",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 157064.82126091924,
+        "current": 157063.60456091925,
+        "delta": -1.2166999999899417
+      },
+      {
+        "province": "Salta",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 243.97663814711206,
+        "current": 257.10690847512046,
+        "delta": 13.130270328008407
+      },
+      {
+        "province": "Salta",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 199191.896940845,
+        "current": 199188.580240845,
+        "delta": -3.3166999999957625
+      },
+      {
+        "province": "Salta",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 183465.53810524955,
+        "current": 183462.22140524955,
+        "delta": -3.3166999999957625
+      },
+      {
+        "province": "Salta",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 492.1236242476945,
+        "current": 348.693768727652,
+        "delta": -143.4298555200425
+      },
+      {
+        "province": "Salta",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 167536.7735581305,
+        "current": 167533.4568581305,
+        "delta": -3.3166999999957625
+      },
+      {
+        "province": "Salta",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 187535.76553457102,
+        "current": 187532.44883457103,
+        "delta": -3.3166999999957625
+      },
+      {
+        "province": "Salta",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 267.4003822502402,
+        "current": 215.98514197958883,
+        "delta": -51.415240270651395
+      },
+      {
+        "province": "Salta",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 277921.02035236877,
+        "current": 277917.70365236874,
+        "delta": -3.3167000000248663
+      },
+      {
+        "province": "Salta",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 648.9010646521074,
+        "current": 451.92980832367067,
+        "delta": -196.9712563284367
+      },
+      {
+        "province": "Salta",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 198456.18900524967,
+        "current": 198452.87230524968,
+        "delta": -3.3166999999957625
+      },
+      {
+        "province": "Salta",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 329.64071900079364,
+        "current": 269.06471687877416,
+        "delta": -60.576002122019474
+      },
+      {
+        "province": "Salta",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 244964.1905052497,
+        "current": 244960.8738052497,
+        "delta": -3.3166999999957625
+      },
+      {
+        "province": "Salta",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 232135.3756288092,
+        "current": 232132.05892880922,
+        "delta": -3.3166999999957625
+      },
+      {
+        "province": "Salta",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 744.153866687516,
+        "current": 505.34166436417223,
+        "delta": -238.8122023233438
+      },
+      {
+        "province": "Salta",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 238596.12058168964,
+        "current": 238592.80388168964,
+        "delta": -3.3166999999957625
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 226.02574787915486,
+        "current": 238.18994192920786,
+        "delta": 12.164194050052998
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 175668.81901439582,
+        "current": 175666.31071439583,
+        "delta": -2.508299999986775
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 161799.59295475564,
+        "current": 161797.08465475566,
+        "delta": -2.508299999986775
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 455.91500507802914,
+        "current": 323.0381829089954,
+        "delta": -132.87682216903374
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 147751.86350282753,
+        "current": 147749.35520282754,
+        "delta": -2.508299999986775
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 165389.16547686353,
+        "current": 165386.65717686355,
+        "delta": -2.508299999986775
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 247.7260603403314,
+        "current": 200.09376150490436,
+        "delta": -47.63229883542704
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 245100.78470668363,
+        "current": 245098.27640668364,
+        "delta": -2.508299999986775
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 601.1573466943526,
+        "current": 418.6785001114433,
+        "delta": -182.47884658290923
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 175019.99115475558,
+        "current": 175017.4828547556,
+        "delta": -2.508299999986775
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 305.386985452093,
+        "current": 249.26793943427606,
+        "delta": -56.11904601781691
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 216035.8417547556,
+        "current": 216033.3334547556,
+        "delta": -2.508299999986775
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 204721.98738071957,
+        "current": 204719.47908071958,
+        "delta": -2.508299999986775
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 689.4018031091938,
+        "current": 468.1605111515652,
+        "delta": -221.24129195762862
+      },
+      {
+        "province": "San Juan",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 210419.78002879157,
+        "current": 210417.2717287916,
+        "delta": -2.508299999986775
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 221.41997950479276,
+        "current": 233.3363015255614,
+        "delta": 11.916322020768632
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 118613.87040637508,
+        "current": 118612.29530637508,
+        "delta": -1.5751000000018394
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 109249.17928489788,
+        "current": 109247.60418489788,
+        "delta": -1.5751000000018394
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 446.624740868351,
+        "current": 316.45557423259913,
+        "delta": -130.16916663575188
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 99763.96024060244,
+        "current": 99762.38514060243,
+        "delta": -1.5751000000018394
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 111672.90776845471,
+        "current": 111671.3326684547,
+        "delta": -1.5751000000018394
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 242.67810069370756,
+        "current": 196.01641399980838,
+        "delta": -46.661686693899185
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 165495.2830291933,
+        "current": 165493.7079291933,
+        "delta": -1.5750999999872874
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 588.907452465197,
+        "current": 410.1470110306364,
+        "delta": -178.76044143456062
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 118175.77288489786,
+        "current": 118174.19778489786,
+        "delta": -1.5751000000018394
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 299.1640584844866,
+        "current": 244.18856061617652,
+        "delta": -54.97549786831007
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 145870.23618489786,
+        "current": 145868.66108489787,
+        "delta": -1.5750999999872874
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 138230.96695704557,
+        "current": 138229.3918570456,
+        "delta": -1.5750999999872874
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 675.3537353252865,
+        "current": 458.6207180105253,
+        "delta": -216.73301731476118
+      },
+      {
+        "province": "San Luis",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 142078.19451275014,
+        "current": 142076.61941275015,
+        "delta": -1.5750999999872874
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 311.5503656992033,
+        "current": 328.3173010602577,
+        "delta": 16.76693536105438
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 82186.823248169,
+        "current": 82186.11494816901,
+        "delta": -0.7082999999984168
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 75698.05600104992,
+        "current": 75697.34770104992,
+        "delta": -0.7082999999984168
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 628.4261323821935,
+        "current": 445.2707930906878,
+        "delta": -183.1553392915057
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 69125.77529162611,
+        "current": 69125.06699162611,
+        "delta": -0.7082999999984168
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 77377.45038691416,
+        "current": 77376.74208691416,
+        "delta": -0.7082999999984168
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 341.4617379365865,
+        "current": 275.8061201310304,
+        "delta": -65.65561780555606
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 114670.8180104737,
+        "current": 114670.1097104737,
+        "delta": -0.7082999999984168
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 828.6259107878499,
+        "current": 577.0999146771733,
+        "delta": -251.5259961106766
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 81883.26680104993,
+        "current": 81882.55850104993,
+        "delta": -0.7082999999984168
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 420.9406578179131,
+        "current": 343.58704004036696,
+        "delta": -77.35361777754616
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 101072.68000104996,
+        "current": 101071.97170104996,
+        "delta": -0.7082999999984168
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 95779.45250576186,
+        "current": 95778.74420576186,
+        "delta": -0.7082999999984168
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 950.2606932396219,
+        "current": 645.3051469594543,
+        "delta": -304.9555462801676
+      },
+      {
+        "province": "Santa Cruz",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 98445.18529633805,
+        "current": 98444.47699633805,
+        "delta": -0.7082999999984168
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 196.30424611404703,
+        "current": 206.8688962222615,
+        "delta": 10.564650108214465
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 473490.88095359516,
+        "current": 473479.59015359514,
+        "delta": -11.290800000017043
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 436071.3510750454,
+        "current": 436060.0602750454,
+        "delta": -11.290800000017043
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 395.96396515652305,
+        "current": 280.55992537378665,
+        "delta": -115.40403978273639
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 398268.34083933546,
+        "current": 398257.05003933545,
+        "delta": -11.290800000017043
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 445811.8069714805,
+        "current": 445800.51617148047,
+        "delta": -11.290800000017043
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 215.1510523506832,
+        "current": 173.7822145049301,
+        "delta": -41.36883784575309
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 660621.2705107554,
+        "current": 660609.9797107554,
+        "delta": -11.290799999958836
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 522.1075069406367,
+        "current": 363.6239149497982,
+        "delta": -158.48359199083848
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 471792.6167750454,
+        "current": 471781.3259750454,
+        "delta": -11.290800000017043
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 265.22979133857507,
+        "current": 216.4901803837792,
+        "delta": -48.739610954795864
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 582267.5956750454,
+        "current": 582256.3048750454,
+        "delta": -11.290799999958836
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 551757.7832429004,
+        "current": 551746.4924429004,
+        "delta": -11.290799999958836
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 598.7481625041232,
+        "current": 406.59923509107614,
+        "delta": -192.1489274130471
+      },
+      {
+        "province": "Santa Fe",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 567208.8427071903,
+        "current": 567197.5519071904,
+        "delta": -11.290799999958836
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 261.73559781285303,
+        "current": 275.82161514152506,
+        "delta": 14.086017328672028
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 214705.9019353743,
+        "current": 214703.26863537432,
+        "delta": -2.633299999986775
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 197754.62574935093,
+        "current": 197751.99244935095,
+        "delta": -2.633299999986775
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 527.945101486888,
+        "current": 374.0750454749059,
+        "delta": -153.87005601198211
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 180585.17849214628,
+        "current": 180582.5451921463,
+        "delta": -2.633299999986775
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 202141.8809135438,
+        "current": 202139.24761354382,
+        "delta": -2.633299999986775
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 286.86434665732133,
+        "current": 231.70661209067347,
+        "delta": -55.15773456664786
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 299567.1933065555,
+        "current": 299564.5600065555,
+        "delta": -2.633299999986775
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 696.1343076346864,
+        "current": 484.82559416199757,
+        "delta": -211.3087134726888
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 213912.89014935115,
+        "current": 213910.25684935116,
+        "delta": -2.633299999986775
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 353.63513205420855,
+        "current": 288.64982751517226,
+        "delta": -64.98530453903629
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 264043.37414935115,
+        "current": 264040.74084935116,
+        "delta": -2.633299999986775
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 250215.3300279535,
+        "current": 250212.6967279535,
+        "delta": -2.633299999986775
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 798.3205221389225,
+        "current": 542.1252773236024,
+        "delta": -256.19524481532005
+      },
+      {
+        "province": "Santiago del Estero",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 257179.2987707488,
+        "current": 257176.66547074882,
+        "delta": -2.633299999986775
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 229.11192409484138,
+        "current": 241.44220916213078,
+        "delta": 12.330285067289395
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 64094.1882740845,
+        "current": 64093.1882740845,
+        "delta": -1.0
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 59033.920250524956,
+        "current": 59032.920250524956,
+        "delta": -1.0
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 462.1401102046018,
+        "current": 327.4489757581086,
+        "delta": -134.6911344464932
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 53908.524145813055,
+        "current": 53907.524145813055,
+        "delta": -1.0
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 60343.59664345708,
+        "current": 60342.59664345708,
+        "delta": -1.0
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 251.1085345991621,
+        "current": 202.8258600099017,
+        "delta": -48.28267458926041
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 89426.84605523686,
+        "current": 89425.84605523686,
+        "delta": -1.0
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 609.3656040161702,
+        "current": 424.39517458624806,
+        "delta": -184.97042942992215
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 63857.459650524965,
+        "current": 63856.459650524965,
+        "delta": -1.0
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 309.55676723871034,
+        "current": 252.6714666464757,
+        "delta": -56.88530059223464
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 78822.33205052499,
+        "current": 78821.33205052499,
+        "delta": -1.0
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 74694.40625288094,
+        "current": 74693.40625288094,
+        "delta": -1.0
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 698.814958309615,
+        "current": 474.5528175460287,
+        "delta": -224.26214076358633
+      },
+      {
+        "province": "Tierra del Fuego",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 76773.27914816902,
+        "current": 76772.27914816902,
+        "delta": -1.0
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-01",
+        "category": "F.E.D.E.I.",
+        "previous": 201.59337802127695,
+        "current": 212.44267727273717,
+        "delta": 10.849299251460224
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-01",
+        "category": "Subtotal",
+        "previous": 247238.71689065968,
+        "current": 247234.06689065968,
+        "delta": -4.649999999994179
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-02",
+        "category": "Subtotal",
+        "previous": 227719.06549125945,
+        "current": 227714.41549125945,
+        "delta": -4.649999999994179
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-03",
+        "category": "F.E.D.E.I.",
+        "previous": 406.63263734601435,
+        "current": 288.11920381850763,
+        "delta": -118.51343352750672
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-03",
+        "category": "Subtotal",
+        "previous": 207948.1869713793,
+        "current": 207943.5369713793,
+        "delta": -4.649999999994179
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-04",
+        "category": "Subtotal",
+        "previous": 232771.05636143923,
+        "current": 232766.40636143924,
+        "delta": -4.649999999994179
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-05",
+        "category": "F.E.D.E.I.",
+        "previous": 220.94798405034499,
+        "current": 178.4645231410255,
+        "delta": -42.48346090931949
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-05",
+        "category": "Subtotal",
+        "previous": 344957.7797111394,
+        "current": 344953.12971113937,
+        "delta": -4.650000000023283
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-06",
+        "category": "F.E.D.E.I.",
+        "previous": 536.1749330698972,
+        "current": 373.4212315961063,
+        "delta": -162.7537014737909
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-06",
+        "category": "Subtotal",
+        "previous": 246325.5517912593,
+        "current": 246320.9017912593,
+        "delta": -4.649999999994179
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-07",
+        "category": "F.E.D.E.I.",
+        "previous": 272.37602169177694,
+        "current": 222.32319286877865,
+        "delta": -50.05282882299829
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-07",
+        "category": "Subtotal",
+        "previous": 304051.5636912593,
+        "current": 304046.9136912593,
+        "delta": -4.650000000023283
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-08",
+        "category": "Subtotal",
+        "previous": 288128.3613011996,
+        "current": 288123.71130119957,
+        "delta": -4.650000000023283
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-09",
+        "category": "F.E.D.E.I.",
+        "previous": 614.8805594773941,
+        "current": 417.5544591014219,
+        "delta": -197.32610037597215
+      },
+      {
+        "province": "Tucumán",
+        "period": "2026-09",
+        "category": "Subtotal",
+        "previous": 296147.47698131995,
+        "current": 296142.82698131993,
+        "delta": -4.650000000023283
+      }
+    ]
+  },
+  "real_comparison_through": "2026-09",
+  "missing_ipc": "2026-10",
+  "remaining_revenue_september": [
+    "Buenos Aires",
+    "La Pampa",
+    "Santa Fe"
+  ],
+  "checked_sources": [
+    {
+      "url": "https://catalogo.datos.gba.gob.ar/api/3/action/package_show?id=recaudacion",
+      "latest": "2026-08"
+    },
+    {
+      "url": "https://contaduriageneral.lapampa.gob.ar/ejecucion-presupuestaria/ano-2026/informe-de-recursos-mensual",
+      "latest": "2026-08"
+    },
+    {
+      "url": "https://www.santafe.gob.ar/index.php/web/content/view/full/259564/%28subtema%29/217070",
+      "latest": "2026-08"
+    },
+    {
+      "url": "https://www.gba.gob.ar/economia/direccion_provincial_de_presupuesto_publico/ejecucion_presupuestaria",
+      "latest": "2026-Q2"
+    }
+  ]
+}

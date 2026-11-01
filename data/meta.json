@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T20:28:55.928180Z",
+  "generated_at": "2026-11-01T20:17:10.596832Z",
   "structural_cutoff": "2026-06-30",
   "sources": {
     "recaudacion_propia_2026": {
@@ -14,17 +14,17 @@
       }
     },
     "transferencias_nacion_2026": {
-      "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_6.xlsx",
-      "max_period": "2026-09",
-      "pba_max_period": "2026-09",
-      "reviewed_at": "2026-10-04",
+      "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_7.xlsx",
+      "max_period": "2026-10",
+      "pba_max_period": "2026-10",
+      "reviewed_at": "2026-11-01",
       "original": {
-        "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_6.xlsx",
-        "path": "data/ron_sources/informacion_consolidada_2026_6.xlsx",
-        "sha256": "a892b464a72e4219350f5a90fbd486edee0b457e6ad6445b447d0adf1f5a8e9b",
-        "bytes": 401278,
-        "reviewed": "2026-10-04",
-        "period": "2026-09",
+        "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_7.xlsx",
+        "path": "data/ron_sources/informacion_consolidada_2026_7.xlsx",
+        "sha256": "a6abf18e8c79beb0d79db1c243f4455508487c7ddec5f22e08fd80c56522ac9f",
+        "bytes": 431752,
+        "reviewed": "2026-11-01",
+        "period": "2026-10",
         "unit": "ARS millones"
       }
     },

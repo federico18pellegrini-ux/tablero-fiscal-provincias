@@ -342,7 +342,8 @@ def calc_real_dynamics():
                 seq = sorted(by_year[curr_year], key=lambda x: x[0])
                 months = [int(p.split('-')[1]) for p, _, _ in seq]
                 expected = list(range(1, months[-1] + 1))
-                if months == expected and seq[-1][0] == last_period:
+                # Preserve the last fully observed comparison when a newer nominal month lacks IPC.
+                if months == expected:
                     lastp = seq[-1][0]
                     f_last = to_float(deflactor.get(lastp, {}).get('factor_to_latest'))
                     if f_last:
