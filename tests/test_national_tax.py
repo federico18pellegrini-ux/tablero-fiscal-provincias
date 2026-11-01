@@ -37,7 +37,7 @@ class NationalTaxTests(unittest.TestCase):
             for kind in ['main','full']:
                 pages=PdfReader(ROOT/'nacion/reports'/item[kind]['file']).pages
                 text=' '.join(' '.join(p.extract_text() for p in pages[21:23]).split())
-                for phrase in ['3,67%','3,72%','0,05','3,45%','1,13%','7.612','7.827','Tecnología','no mide el costo fiscal']:
+                for phrase in ['3,67%','3,72%','0,05','3,45%','1,13%','7.827','76.173','95,9','componente parcial','supuestos']:
                     self.assertIn(phrase,text)
         focused=next(x for x in m['focused'] if x['scope']=='gasto-tributario')
         self.assertEqual(focused['pages'],2)
