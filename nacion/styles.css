@@ -18,3 +18,13 @@ main{max-width:1336px;margin:auto;padding:26px 38px 0;min-width:0}.controls{disp
 @media(min-width:651px) and (max-width:1000px){.main-nav a{padding-inline:10px;font-size:13px;gap:6px}.main-nav .report-trigger{padding-inline:12px;font-size:13px}}body:has(#report-dialog[open]){overflow:hidden}
 
 .program-group{margin:22px 0;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--soft)}.program-group h4,.correspondence-review h4{font-size:18px;line-height:1.35;margin:0 0 12px}.correspondence-review{padding:22px 0;border-bottom:1px solid var(--border);overflow-wrap:anywhere}.program-group p{font-size:16px}.program-group .note{font-size:14px}.program-group dl{margin-bottom:12px}
+
+/* Keep the PDF action visible while the report options scroll on small screens. */
+#report-dialog{box-sizing:border-box;padding:0;max-height:calc(100dvh - 24px);overflow:hidden}
+#report-dialog[open]{display:flex;flex-direction:column}
+.report-dialog-heading{flex:none;padding:20px 24px 0}
+.report-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 24px 16px}
+.report-actions{flex:none;padding:12px 24px 20px;background:var(--surface);border-top:1px solid var(--border)}
+.report-actions #report-status{margin:0 0 10px}
+.report-actions #download-national-report{box-sizing:border-box;min-height:48px}
+@media(max-width:650px){.report-dialog-heading{padding:16px 20px 0}.report-body{padding:0 20px 12px}.report-actions{padding:12px 20px 16px}#report-title{font-size:25px;margin:12px 0}}
