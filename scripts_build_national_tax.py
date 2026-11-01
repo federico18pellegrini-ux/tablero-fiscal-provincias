@@ -56,6 +56,10 @@ def build():
         r=next(x for x in plans if x['year'].startswith(str(year)))
         values=[dict(id=k,name=n,usd_millions=r[k]['total']) for k,n in sectors]
         rows.append(dict(year=year,sectors=values,total_usd_millions=sum(x['usd_millions'] for x in values)))
+    from scripts_build_rigi_estimate import build as build_rigi
+    estimate=build_rigi()
+    assert estimate==json.loads((ROOT/'nacion/data/rigi-estimate.json').read_text(encoding='utf8'))
+    assert estimate['customs']['investment_2027_usd_millions']==rows[-1]['total_usd_millions']
     return dict(schema_version=1,reviewed='2026-11-01',unit='ARS millones corrientes; porcentajes del PIB',
         scope='Estimaciones nacionales de gasto tributario, no gasto devengado de la Administración Nacional',
         comparison=dict(publication='Mensaje del Proyecto de Presupuesto 2027',pdf_page=44,years=series,norms_by_tax=norms,promotion_selection=promotion,
@@ -67,6 +71,7 @@ def build():
             separata=dict(subset_pct=1.47,amount_ars_millions=5166420,updated_2027_amount=None,
                 reading='Subtotal propuesto para revisión legislativa en el proyecto 2024. Ya forma parte del gasto tributario: no se suma de nuevo ni se traslada a 2027 manteniendo 1,47% fijo.')),
         rigi=dict(fiscal_cost_2027=None,status='Sin cuantificación oficial en el Mensaje 2027',investment_status='Planes de inversión publicados; no ejecución observada',
+            estimate=estimate,
             plans=rows,method='Total calculado sumando los seis sectores publicados, incluida Tecnología. No se suman subsectores: pueden tener diferencias de redondeo. La inversión no es una base para aplicar una tasa fiscal arbitraria.',
             measurement=[dict(tax='Ganancias',need='Utilidades imponibles, alícuotas, amortización acelerada, quebrantos y año de inicio de producción.'),
                 dict(tax='IVA',need='Compras, certificados y recuperos; distinguir alivio definitivo de adelantos o diferimientos.'),

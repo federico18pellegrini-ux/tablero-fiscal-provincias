@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'nacion/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/nacion/'
 BASES = {'current': 'Vigente 2026', 'law': 'Inicial 2026', 'closing': 'Cierre estimado 2026'}
-INPUTS = ['nacion/data/tax-expenditures.json', 'national_tax_report.py', 'nacion/data/execution-latest.json', 'national_priorities_report.py', 'nacion/data/benefits.json', 'nacion/priorities-model.js', 'nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
+INPUTS = ['nacion/data/rigi-estimate.json', 'scripts_build_rigi_estimate.py', 'nacion/data/tax-expenditures.json', 'national_tax_report.py', 'nacion/data/execution-latest.json', 'national_priorities_report.py', 'nacion/data/benefits.json', 'nacion/priorities-model.js', 'nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
           'national_decision_report.py', 'national_territory_report.py', 'national_portfolio_report.py', 'nacion/data/decisions.json',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#0a192f', '#254b73', '#64748b', '#e2e8f0', '#f1f5f9', '#b91c1c'])

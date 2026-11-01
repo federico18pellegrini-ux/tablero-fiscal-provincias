@@ -52,4 +52,7 @@ jobs:
         run: python scripts_build_national_benefits.py --check
 
       - name: Verify tax expenditure vintages and RIGI official plans
-        run: python scripts_build_national_tax.py --check
+        run: |
+          python scripts_build_rigi_estimate.py --check
+          python scripts_build_national_tax.py --check
+          node --test tests/rigi_model.test.cjs
