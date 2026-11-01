@@ -6,7 +6,7 @@
   <meta name="description" content="El Presupuesto Nacional, explicado. Explorá el proyecto 2027, las obras por provincia y la ejecución de 2026 con datos oficiales.">
   <meta name="theme-color" content="#0A192F">
   <link rel="canonical" href="https://tablero.federicopellegrini.com.ar/nacion/">
-  <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260917-marca">
+  <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20261101-download">
   <script defer src="../analytics.js?v=20260922-prioridades"></script>
   <script defer src="math.js?v=20261101-estimate"></script><script defer src="report.js?v=20261101-tax"></script><script defer src="app.js?v=20261101-tax"></script><script defer src="management-model.js?v=20260919-caja"></script><script defer src="management.js?v=20261101-oct"></script>
   <link rel="preload" href="../assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
@@ -100,13 +100,17 @@
 </main>
 <dialog id="report-dialog" aria-labelledby="report-title" aria-describedby="report-description">
   <div class="report-dialog-heading"><p class="eyebrow">Para leer y compartir</p><button id="close-report" aria-label="Cerrar informe">✕</button></div>
+  <div class="report-body">
   <h2 id="report-title">Exportar informe completo</h2>
-  <p id="report-description">Una lectura del presupuesto con análisis, gráficos, cuadros y fuentes. Incluye el proyecto 2027, la gestión de 2026, intereses, poder de compra de jubilaciones y AUH, prestaciones, las 24 jurisdicciones y las fichas integradas. También se puede descargar una ficha breve por tema.</p>
+  <p id="report-description">Elegí qué incluir y descargá el PDF. El informe general reúne el análisis, los gráficos y las fuentes; las fichas permiten compartir un tema puntual.</p>
   <label for="report-scope">Contenido<select id="report-scope"><option value="gasto-tributario">Gasto tributario y RIGI · 2 páginas</option><option value="general" selected>Informe general completo</option><option value="cartera">Informe por ministerio o poder</option><option value="jubilaciones">Ficha de jubilaciones y pensiones de anses</option><option value="alimentacion">Ficha de asistencia alimentaria</option><option value="medicamentos">Ficha de acceso a medicamentos</option><option value="seguridad-federal">Ficha de seguridad federal</option><option value="inmunizaciones">Ficha de vacunas e inmunizaciones</option><option value="educacion-superior">Ficha de universidades</option><option value="reactor-ra10">Ficha de la obra RA-10</option><option value="provincia">Ficha de Nación en una provincia</option></select></label><label id="report-province-label" for="report-province" hidden>Provincia<select id="report-province"></select></label><label id="report-portfolio-label" for="report-portfolio" hidden>Ministerio o poder<select id="report-portfolio"></select></label><div class="report-options"><label for="report-price">Montos<select id="report-price"><option value="nominal">Pesos corrientes</option><option value="real">Pesos de agosto de 2026</option></select></label><label for="report-base">Comparar 2027 con<select id="report-base"><option value="current">Vigente 2026 · 15/09</option><option value="law">Inicial 2026</option><option value="closing">Cierre estimado 2026</option></select></label></div>
   <p id="report-unit-note" class="note"></p>
   <label class="report-annex"><input id="report-annex" type="checkbox"><span><strong>Agregar anexo de programas y proyectos</strong><small>Detalle del proyecto 2027 y ejecución mensual por organismo. Las bases completas de gestión se descargan desde Datos y metodología.</small></span></label>
+  </div>
+  <div class="report-actions">
   <p id="report-status" role="status" aria-live="polite">Preparando el informe…</p>
   <a id="download-national-report" class="button" download hidden>Descargar PDF ↓</a>
+  </div>
 </dialog>
 <footer><div><strong>Federico Pellegrini</strong><span>Entre Mates y Mercados</span></div><p>Datos de ONP, Presupuesto Abierto, OPC e INDEC · Cartografía IGN / Georef.</p><nav><a href="#metodo">Fuentes y metodología</a><a href="../#summary">Provincias</a><a href="../municipios/?municipio=06805&amp;vista=panorama">Municipios PBA</a><a href="../privacidad.html">Privacidad y estadísticas</a></nav></footer>
 <noscript>Para explorar el tablero necesitás activar JavaScript. También podés consultar los <a href="https://www.mecon.gob.ar/onp/presupuestos/2027">documentos oficiales de la ONP</a>.</noscript>
