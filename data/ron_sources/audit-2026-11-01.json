@@ -1,0 +1,47 @@
+{
+  "reviewed_at": "2026-11-01",
+  "scope": "RON: 24 jurisdicciones; enero-octubre de 2026. No es una auditoría de cada conjunto provincial.",
+  "source": {
+    "url": "https://www.argentina.gob.ar/sites/default/files/informacion_consolidada_2026_7.xlsx",
+    "path": "data/ron_sources/informacion_consolidada_2026_7.xlsx",
+    "sha256": "a6abf18e8c79beb0d79db1c243f4455508487c7ddec5f22e08fd80c56522ac9f",
+    "bytes": 431752,
+    "reviewed": "2026-11-01",
+    "period": "2026-10",
+    "unit": "ARS millones"
+  },
+  "validation": {
+    "jurisdictions": 24,
+    "months": 10,
+    "monthly_total_equals_base_plus_compensation": true,
+    "monthly_sum_equals_CONS": true,
+    "prior_monthly_total_revisions": 0,
+    "revisions_other_categories": [],
+    "revision_matching": "province, period, full category and occurrence in source column order; repeated Subtotal headings are distinct columns"
+  },
+  "real_comparison_through": "2026-09",
+  "missing_ipc": "2026-10",
+  "remaining_revenue_september": [
+    "Buenos Aires",
+    "La Pampa",
+    "Santa Fe"
+  ],
+  "checked_sources": [
+    {
+      "url": "https://catalogo.datos.gba.gob.ar/api/3/action/package_show?id=recaudacion",
+      "latest": "2026-08"
+    },
+    {
+      "url": "https://contaduriageneral.lapampa.gob.ar/ejecucion-presupuestaria/ano-2026/informe-de-recursos-mensual",
+      "latest": "2026-08"
+    },
+    {
+      "url": "https://www.santafe.gob.ar/index.php/web/content/view/full/259564/%28subtema%29/217070",
+      "latest": "2026-08"
+    },
+    {
+      "url": "https://www.gba.gob.ar/economia/direccion_provincial_de_presupuesto_publico/ejecucion_presupuestaria",
+      "latest": "2026-Q2"
+    }
+  ]
+}

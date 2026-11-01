@@ -105,7 +105,13 @@ class ReportData:
    real_prev=sum(v/self.ipc[f'{year-1}-{m:02}'] for m,v in enumerate(prev,1))
    real=100*(real_now/real_prev-1) if real_prev>0 else None
    nominal=100*(sum(now)/sum(prev)-1)
-  return dict(current=current,previous=sum(prev) if all(v is not None for v in prev) else None,real_pct=real,nominal_pct=nominal,through=through,complete=complete)
+  real_through=through if real is not None else None
+  if real is None and through not in self.ipc:
+   observed=[p for p in self.ipc if p.startswith(str(year)+'-') and p<through]
+   if observed:
+    earlier=self.transfers(province,max(observed),category)
+    real=earlier['real_pct'];real_through=earlier['real_through']
+  return dict(current=current,previous=sum(prev) if all(v is not None for v in prev) else None,real_pct=real,real_through=real_through,nominal_pct=nominal,through=through,complete=complete)
  def model(self,province):
   if province not in self.provinces:raise ValueError('Unknown province')
   annual=self.annual_row(province,self.year)
@@ -303,7 +309,10 @@ class Report:
   self.section('A','Recursos recibidos de Nación e impuestos propios',54)
   if t['current'] is not None:
    transfer=f'Entre enero y {month} de {year}, ingresaron {amount(t["current"])} por transferencias automáticas nacionales.'
-   if t['real_pct'] is not None:transfer+=f' Frente a los mismos meses de {int(year)-1}, '+(f'crecieron {pct(t["real_pct"])}' if t['real_pct']>=0 else f'cayeron {pct(abs(t["real_pct"]))}')+' después de descontar la inflación mes a mes.'
+   if t['real_pct'] is not None:
+    real_month=MONTHS[int(t['real_through'][-2:])-1]
+    transfer+=f' En enero–{real_month}, '+(f'crecieron {pct(t["real_pct"])}' if t['real_pct']>=0 else f'cayeron {pct(abs(t["real_pct"]))}')+f' real frente a los mismos meses de {int(year)-1}.'
+    if t['real_through']!=t['through']:transfer+=' Octubre aún no tiene IPC publicado.'
    else:transfer+=' Falta una serie completa para calcular la variación ajustada por inflación.'
   else:transfer='Falta un acumulado mensual completo de transferencias automáticas. No sumamos períodos sueltos como si fueran el total del año.'
   own=jsonfile('dashboard_real_dynamics_2026.json')['provinces'].get(m['province'],{}).get('metrics',{}).get('own_revenue',{})

@@ -57,7 +57,9 @@ def append_management(report, data):
     ba = next(x for x in g['provinces']['comparison'] if x['provincia_id']==6)
     r.add(f"Buenos Aires recibió {money(ba['ron_2026'])} de recursos de origen nacional en enero-agosto, en pesos corrientes. Después de descontar inflación, esos fondos compraron <b>{num(abs(ba['variacion_real_pct']))}% menos</b> que un año antes. La suba del monto nominal no alcanzó para preservar su poder de compra.")
     latest = next(x for x in g['provinces']['latest']['rows'] if x['province']=='Buenos Aires')
-    r.note(f"Actualización nominal: septiembre aportó {money(latest['month_nominal'])}; enero-septiembre suma {money(latest['ytd_nominal'])}. El cuadro conserva enero-agosto para comparar con IPC observado. <link href=\"{g['provinces']['latest']['source']['url']}\" color=\"#254b73\">DNAP: cierre de septiembre</link>.")
+    from scripts_export_national_reports import MONTHS
+    latest_month=MONTHS[int(g['provinces']['latest']['period'][-2:])-1].lower()
+    r.note(f"Actualización nominal: {latest_month} aportó {money(latest['month_nominal'])}; enero-{latest_month} suma {money(latest['ytd_nominal'])}. El cuadro conserva la comparación homogénea de enero-agosto. <link href=\"{g['provinces']['latest']['source']['url']}\" color=\"#254b73\">DNAP: cierre de {latest_month}</link>.")
     r.note('RON = coparticipación y otros recursos de origen nacional. RON y transferencias presupuestarias se muestran por separado. RON y transferencias: millones de pesos corrientes; por habitante: pesos. Orden: mayor variación real de RON.')
     rows = sorted(g['provinces']['comparison'],key=lambda x:-x['variacion_real_pct'])
     r.table(['Provincia','RON','Por habitante','Cambio real','Transfer. presupuesto'],
