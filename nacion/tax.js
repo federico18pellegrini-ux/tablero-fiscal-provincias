@@ -1,0 +1,35 @@
+(()=>{
+  'use strict';
+  const root=document.getElementById('gasto-tributario');if(!root)return;
+  const n=(v,d=2)=>v.toLocaleString('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const pp=v=>`${v>0?'+':''}${n(v)} pp`;
+  const table=(heads,rows)=>`<div class="tax-table"><table><thead><tr>${heads.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((c,i)=>i?`<td data-label="${heads[i]}">${c}</td>`:`<th scope="row">${c}</th>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  function render(d){
+    const c=d.comparison,years=c.years,a=years[0],b=years.at(-1),r=d.rigi;
+    root.innerHTML=`<p class="eyebrow">Economía / Gasto tributario y RIGI</p><h2 tabindex="-1">Los beneficios tributarios también tienen costo fiscal</h2>
+      <p class="lead">Una exención o una alícuota reducida deja recursos en manos de sus beneficiarios. Para evaluar el presupuesto hay que mirar cuánto cuesta, a quién alcanza y qué resultado produce.</p>
+      <div class="decision-links"><button class="button" data-export-focus="gasto-tributario">Exportar este análisis · 2 páginas ↓</button><a href="#tax-rigi">Ver RIGI →</a></div>
+      <div class="tax-stats"><article><span>Gasto tributario propuesto · 2027</span><strong>${n(b.total_pct)}% del PIB</strong><p>$${n(b.total/1e6)} billones corrientes.</p></article><article><span>Cambio frente a 2025</span><strong>${pp(c.total_delta_pp)}</strong><p>Mismos criterios y publicación. No mide una variación real en pesos.</p></article><article><span>Costo fiscal del RIGI · 2027</span><strong>Sin cuantificar</strong><p>El Mensaje prevé estimarlo cuando avancen los proyectos.</p></article></div>
+      <h3>Qué cambia dentro del total</h3><p>Estimaciones 2025–2027 del Mensaje 2027. Porcentaje del PIB: cuánto representa el beneficio frente al tamaño de la economía. Un punto porcentual equivale a una centésima parte del PIB.</p>
+      <figure class="tax-chart"><figcaption>Normas de impuestos <i class="tax-key"></i> · Regímenes de promoción <i class="tax-key promotion"></i></figcaption>${years.map(x=>`<div class="tax-chart-row"><b>${x.year}</b><div class="tax-track" role="img" aria-label="${x.year}: normas ${n(x.norms_pct)} y promoción ${n(x.promotion_pct)} por ciento del PIB"><span style="width:${x.norms_pct/4*100}%"></span><span class="promotion" style="width:${x.promotion_pct/4*100}%"></span></div><strong>${n(x.total_pct)}%</strong></div>`).join('')}</figure>
+      ${table(['Concepto / % del PIB','2025','2026','2027','Cambio 2025–27'],[['Total',...years.map(x=>n(x.total_pct)),pp(c.total_delta_pp)],['Normas de impuestos',...years.map(x=>n(x.norms_pct)),pp(b.norms_pct-a.norms_pct)],['Promoción económica',...years.map(x=>n(x.promotion_pct)),pp(b.promotion_pct-a.promotion_pct)]])}
+      <p class="tax-reading">El total baja ${n(-c.total_delta_pp)} puntos del PIB. Dentro de ese total, las dispensas en las normas impositivas suben ${n(b.norms_pct-a.norms_pct)} puntos y los regímenes de promoción bajan ${n(a.promotion_pct-b.promotion_pct)}. La composición cambia aunque el agregado disminuya.</p>
+      <h3>Qué impuestos explican ese movimiento</h3>${table(['Normas de cada impuesto / % del PIB','2025','2027','Cambio'],c.norms_by_tax.map(x=>[x.name,n(x.before),n(x.after),pp(x.delta_pp)]))}
+      <p class="note">Esta apertura excluye regímenes de promoción. Los porcentajes oficiales están redondeados; su suma puede diferir del total.</p>
+      <h3>Qué ocurre con los regímenes de promoción</h3>${table(['Selección de regímenes / % del PIB','2025','2027','Cambio'],c.promotion_selection.map(x=>[x.name,n(x.before),n(x.after),pp(x.delta_pp)]))}<p>El régimen fueguino baja su peso en el PIB, mientras Economía del Conocimiento lo aumenta y el fortalecimiento MiPyME mantiene el porcentaje redondeado. Una baja agregada no significa que todos los incentivos se reduzcan.</p>
+      <h3>Cómo leer la comparación con 2024</h3><p>El proyecto original estimó 2,34% del PIB para 2024. El informe posterior 2024–2026 lo revisó a 3,45% e incluyó Monotributo por 1,13% del PIB. Comparar aquel 2,34% con 3,67% en 2027 mezcla publicaciones y cobertura. No demuestra que se hayan creado beneficios por 1,33 puntos del PIB.</p>
+      <p>La Separata 2024 propuso revisar beneficios por 1,47% del PIB. Ese subtotal ya integra el gasto tributario. Su valor para 2027 requiere revisar cada beneficio: mantener 1,47% fijo sería un supuesto.</p>
+      <h3 id="tax-rigi">RIGI: inversión comprometida y costo fiscal</h3><p>El portal oficial publica planes de inversión. Son compromisos programados; su cumplimiento debe verificarse. La tabla suma los seis sectores publicados, incluida Tecnología.</p>
+      ${table(['Planes / millones de USD','2026','2027'],r.plans[0].sectors.map((x,i)=>[x.name,n(x.usd_millions,0),n(r.plans[1].sectors[i].usd_millions,0)]).concat([['Total sectorial',...r.plans.map(x=>n(x.total_usd_millions,0))]]))}
+      <p class="tax-reading">El Gobierno todavía no publica el costo fiscal del RIGI en el Mensaje 2027. Aplicar 5% o 50% a la inversión no permite medirlo: importa qué impuesto se reduce, cuándo se hubiera pagado y qué actividad se realiza.</p>
+      ${table(['Impuesto','Qué hace falta para medirlo'],r.measurement.map(x=>[x.tax,x.need]))}
+      <h3>Qué pedir para el debate del presupuesto</h3><p>${d.debate}</p><p>Para el RIGI, publicar una estimación anual por impuesto y proyecto permitiría comparar los beneficios con la inversión ejecutada, los empleos y las exportaciones. El monto de gasto tributario tampoco equivale a dinero que se recaudaría íntegramente al eliminar una dispensa.</p>
+      <p class="note">Esta sección usa % del PIB y USD de los planes; no se transforma con los selectores de pesos y base de comparación de gasto de arriba. Revisión: 01/11/2026.</p><nav class="decision-links" aria-label="Fuentes de gasto tributario">${d.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.file==='mensaje2027.pdf'?'Mensaje 2027 · pp. 42–49':s.file==='gastos-2024-2026.pdf'?'Informe 2024–2026 · cuadro 1':s.file==='mensaje2024.pdf'?'Mensaje y Separata 2024':'Planes RIGI · Economía'} ↗</a>`).join('')}<a href="data/tax-expenditures.json">Descargar datos y respaldo</a></nav>`;
+  }
+  fetch('data/tax-expenditures.json?v=20261101').then(async response=>{
+    if(!response.ok)throw Error('No se pudo cargar gasto tributario');const raw=await response.text();const d=JSON.parse(raw);
+    const bytes=new TextEncoder().encode(raw.replace(/\r\n/g,'\n'));
+    window.nationalTaxHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');
+    window.nationalTaxContext=d;render(d);window.dispatchEvent(new Event('national:tax-ready'));
+  }).catch(()=>{root.innerHTML='<h2>Gasto tributario y RIGI</h2><p role="alert">No se pudieron cargar los datos. Recargá la página para volver a intentar.</p>';});
+})();

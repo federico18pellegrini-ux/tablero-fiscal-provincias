@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'nacion/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/nacion/'
 BASES = {'current': 'Vigente 2026', 'law': 'Inicial 2026', 'closing': 'Cierre estimado 2026'}
-INPUTS = ['nacion/data/execution-latest.json', 'national_priorities_report.py', 'nacion/data/benefits.json', 'nacion/priorities-model.js', 'nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
+INPUTS = ['nacion/data/tax-expenditures.json', 'national_tax_report.py', 'nacion/data/execution-latest.json', 'national_priorities_report.py', 'nacion/data/benefits.json', 'nacion/priorities-model.js', 'nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
           'national_decision_report.py', 'national_territory_report.py', 'national_portfolio_report.py', 'nacion/data/decisions.json',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#0a192f', '#254b73', '#64748b', '#e2e8f0', '#f1f5f9', '#b91c1c'])
@@ -362,7 +362,7 @@ class Report:
         canvas.drawString(42, PAGE_H - 31, 'PELLEGRINI / PRESUPUESTO NACIONAL')
         canvas.setFont('Manrope', 7.5)
         canvas.setFillColor(MUTED)
-        canvas.drawRightString(PAGE_W - 42, PAGE_H - 31, 'Proyecto: ' + self.units + ' · ' + BASES[self.base])
+        canvas.drawRightString(PAGE_W - 42, PAGE_H - 31, 'Gasto tributario · % PIB / RIGI · USD' if getattr(self,'tax_only',False) else 'Proyecto: ' + self.units + ' · ' + BASES[self.base])
         canvas.restoreState()
 
     def build(self, path, full=False, focus=None):
@@ -372,7 +372,11 @@ class Report:
             self.main()
             from national_management_report import append_management
             append_management(self, json.loads((ROOT / 'nacion/data/gestion.json').read_text(encoding='utf-8')))
-        if focus and focus.startswith('cartera-'):
+        self.tax_only = focus == 'gasto-tributario'
+        if self.tax_only:
+            from national_tax_report import append_tax
+            append_tax(self,json.loads((ROOT/'nacion/data/tax-expenditures.json').read_text(encoding='utf8')))
+        elif focus and focus.startswith('cartera-'):
             from national_portfolio_report import portfolio_pages
             portfolio_pages(self,decisions,int(focus.split('-')[1]))
         elif focus and focus.startswith('provincia-'):
@@ -383,6 +387,9 @@ class Report:
         if focus is None:
             from national_priorities_report import append_priorities
             append_priorities(self, json.loads((ROOT/'nacion/data/gestion.json').read_text(encoding='utf-8')), decisions, json.loads((ROOT/'nacion/data/benefits.json').read_text(encoding='utf-8')))
+        if focus is None:
+            from national_tax_report import append_tax
+            append_tax(self,json.loads((ROOT/'nacion/data/tax-expenditures.json').read_text(encoding='utf8')))
         if full:
             self.appendix()
         doc = BaseDocTemplate(str(path), pagesize=A4, leftMargin=42, rightMargin=42, topMargin=56, bottomMargin=82,
@@ -412,7 +419,7 @@ def run(output=OUT, check=False):
         for item in manifest['focused'] + manifest['territories'] + manifest['portfolios']:
             path=output/item['file']
             assert hashlib.sha256(path.read_bytes()).hexdigest()==item['sha256'] and len(PdfReader(path).pages)==item['pages']
-        print('Informes nacionales: 12 versiones generales, 7 fichas temáticas, 24 provinciales y 16 carteras verificadas.')
+        print('Informes nacionales: 12 versiones generales, 8 fichas temáticas, 24 provinciales y 16 carteras verificadas.')
         return manifest
     register_fonts()
     data = json.loads((ROOT / 'nacion/data/budget.json').read_text(encoding='utf-8'))
@@ -429,7 +436,7 @@ def run(output=OUT, check=False):
                 print(filename, entry[kind]['pages'], 'páginas')
             manifest['reports'].append(entry)
     manifest['focused']=[]
-    for focus in ['inmunizaciones','educacion-superior','jubilaciones','alimentacion','medicamentos','seguridad-federal','reactor-ra10']:
+    for focus in ['gasto-tributario','inmunizaciones','educacion-superior','jubilaciones','alimentacion','medicamentos','seguridad-federal','reactor-ra10']:
         filename=f'ficha-nacional-{focus}.pdf';path=output/filename
         Report(data,'nominal','current').build(path,focus=focus)
         manifest['focused'].append({'scope':focus,'file':filename,'pages':len(PdfReader(path).pages),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})

@@ -50,7 +50,7 @@ class NationalReportsTest(unittest.TestCase):
         self.assertEqual({(r['price'], r['base']) for r in self.catalog['reports']},
                          {(p, b) for p in ['nominal', 'real'] for b in reports.BASES})
         for entry in self.catalog['reports']:
-            self.assertEqual(entry['main']['pages'], 21)
+            self.assertEqual(entry['main']['pages'], 23)
             self.assertGreater(entry['full']['pages'], entry['main']['pages'])
 
     def test_pdfs_have_all_chapters_units_sources_numbering_and_selected_base(self):
@@ -98,10 +98,10 @@ class NationalReportsTest(unittest.TestCase):
         text='\n'.join(p.extract_text() for p in PdfReader(ROOT/'nacion/reports/informe-nacional-nominal-current.pdf').pages[15:])
         for phrase in ['Cierre y financiamiento','Vacunas e inmunizaciones','Universidades','Reactor RA-10','85,47%','18.254.178','7 de 13','No publicado']:
             self.assertIn(phrase.upper() if phrase=='Cierre y financiamiento' else phrase,text)
-        self.assertEqual(len(self.catalog['focused']),7)
+        self.assertEqual(len(self.catalog['focused']),8)
         for entry in self.catalog['focused']:
             reader=PdfReader(ROOT/'nacion/reports'/entry['file'])
-            self.assertEqual(len(reader.pages),1)
+            self.assertEqual(len(reader.pages),2 if entry['scope']=='gasto-tributario' else 1)
             page=reader.pages[0].extract_text()
             self.assertIn('Federico Pellegrini',page)
             self.assertIn('Página 1',page)

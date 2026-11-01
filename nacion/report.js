@@ -5,7 +5,7 @@
     if(!['nominal','real'].includes(price)||!['current','law','closing'].includes(base))throw Error('Elegí una unidad y una base de comparación válidas.');
     if(!dataHash||manifest?.inputs?.['nacion/data/budget.json']!==dataHash||!managementHash||manifest?.inputs?.['nacion/data/gestion.json']!==managementHash)throw Error('Los informes se están actualizando. Recargá el tablero para descargar la versión que coincide con estos datos.');
     if(!decisionHash||manifest?.inputs?.['nacion/data/decisions.json']!==decisionHash)throw Error('Las fichas se están actualizando. Recargá el tablero para descargar el informe actualizado.');
-    if(!['general','inmunizaciones','educacion-superior','jubilaciones','alimentacion','medicamentos','seguridad-federal','reactor-ra10','provincia','cartera'].includes(scope))throw Error('Seleccioná un contenido válido.');
+    if(!['general','gasto-tributario','inmunizaciones','educacion-superior','jubilaciones','alimentacion','medicamentos','seguridad-federal','reactor-ra10','provincia','cartera'].includes(scope))throw Error('Seleccioná un contenido válido.');
     if(scope==='provincia'&&(!Number.isInteger(provinceId)||!manifest.territories?.some(p=>p.province_id===provinceId)))throw Error('Seleccioná una provincia válida.');
     if(scope==='cartera'&&(!Number.isInteger(portfolioId)||!manifest.portfolios?.some(p=>p.portfolio_id===portfolioId)))throw Error('Seleccioná una cartera válida.');
     const entry=manifest.reports?.find(r=>r.price===price&&r.base===base),pdf=scope==='general'?entry?.[annex?'full':'main']:scope==='provincia'?manifest.territories.find(p=>p.province_id===provinceId):scope==='cartera'?manifest.portfolios.find(p=>p.portfolio_id===portfolioId):manifest.focused?.find(r=>r.scope===scope);
