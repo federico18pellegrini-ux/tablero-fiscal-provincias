@@ -218,6 +218,7 @@
     if(focused)$('report-unit-note').textContent=$('report-scope').value==='cartera'?'Informe ejecutivo en pesos corrientes. Incluye comparaciones reales frente al inicial, vigente y cierre estimado de 2026.':'Ficha breve en pesos corrientes, con comparaciones reales y los cortes propios de cada dato.';
     if(!reportManifest)return;
     try{
+      if(['general','gasto-tributario'].includes($('report-scope').value)&&(!window.nationalTaxHash||reportManifest.inputs['nacion/data/tax-expenditures.json']!==window.nationalTaxHash))throw Error('El análisis fiscal se está actualizando. Recargá el tablero para descargar el informe actualizado.');
       const pdf=window.NationalReport.selectReport(reportManifest,{price:$('report-price').value,base:$('report-base').value,annex:$('report-annex').checked,scope:$('report-scope').value,provinceId:Number($('report-province').value),portfolioId:Number($('report-portfolio').value)},dataHash,window.nationalManagementHash,window.nationalDecisionHash);
       $('download-national-report').href=pdf.href;$('download-national-report').download=pdf.file;$('download-national-report').hidden=false;
       $('report-status').textContent=`${pdf.pages} ${pdf.pages===1?'página':'páginas'} · ${focused?($('report-scope').value==='cartera'?'Informe por cartera':'Ficha breve'):$('report-annex').checked?'Informe y anexo detallado':'Informe con todos los capítulos'} · Federico Pellegrini`;
@@ -239,6 +240,7 @@
     }catch(error){$('report-status').textContent=error.message;}
   }
   $('export-report').addEventListener('click',()=>openReport());
+  window.addEventListener('national:tax-ready',()=>{if($('report-dialog').open)updateReport();});
   document.addEventListener('click',e=>{const b=e.target.closest('[data-export-focus]');if(b)openReport(b.dataset.exportFocus);});
   window.addEventListener('national:decisions-ready',()=>{updateReport();if(D)programs();});
   window.addEventListener('national:management-ready',updateReport);

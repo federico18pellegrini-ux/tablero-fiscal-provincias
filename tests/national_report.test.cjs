@@ -11,7 +11,7 @@ test('exports the selected annual comparison and price basis, with optional full
     const result=selectReport(manifest,{price,base,annex},hash,managementHash,decisionHash);
     assert.equal(result.file,`informe-nacional-${price}-${base}${annex?'-anexo':''}.pdf`);
     assert.equal(result.href,'reports/'+result.file+'?v='+result.sha256.slice(0,16));
-    assert.equal(result.pages,annex?69:21);
+    assert.equal(result.pages,annex?71:23);
   }
 });
 test('refuses outdated reports and unexpected paths instead of exporting wrong data',()=>{
@@ -23,6 +23,8 @@ test('refuses outdated reports and unexpected paths instead of exporting wrong d
 });
 
 test('focused reports stay brief and must match the decisions currently displayed',()=>{
+  const tax=selectReport(manifest,{price:'real',base:'closing',scope:'gasto-tributario'},hash,managementHash,decisionHash);
+  assert.equal(tax.file,'ficha-nacional-gasto-tributario.pdf');assert.equal(tax.pages,2);
   for(const scope of ['inmunizaciones','educacion-superior','jubilaciones','alimentacion','medicamentos','seguridad-federal','reactor-ra10']){
     const r=selectReport(manifest,{price:'real',base:'closing',annex:true,scope},hash,managementHash,decisionHash);
     assert.equal(r.file,`ficha-nacional-${scope}.pdf`);assert.equal(r.pages,1);
