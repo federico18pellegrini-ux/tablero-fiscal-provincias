@@ -118,7 +118,7 @@ class NationalReportsTest(unittest.TestCase):
             self.assertEqual(len(reader.pages),1)
             text=reader.pages[0].extract_text()
             latest=next(x for x in management['provinces']['latest']['rows'] if x['province']==entry['province'])
-            for term in [entry['province'],'Federico Pellegrini','Página 1','no se suman','Cierre estimado','enero-septiembre',money(latest['ytd_nominal']),money(latest['month_nominal']),money(t['worksTotal'])]:
+            for term in [entry['province'],'Federico Pellegrini','Página 1','no se suman','Cierre estimado','enero-octubre',money(latest['ytd_nominal']),money(latest['month_nominal']),money(t['worksTotal'])]:
                 self.assertIn(term,text)
             self.assertGreaterEqual(len(reader.pages[0].get('/Annots',[])),4)
         with self.assertRaises(AssertionError):territory_data(self.data,management,999)

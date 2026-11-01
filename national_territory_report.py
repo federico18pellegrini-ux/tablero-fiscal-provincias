@@ -19,23 +19,24 @@ def territory_data(budget, management, province_id):
 
 
 def province_page(r, management, province_id):
-    from scripts_export_national_reports import WIDTH, SITE, money, num, pct
+    from scripts_export_national_reports import WIDTH, SITE, money, num, pct, MONTHS
     t = territory_data(r.d, management, province_id)
     p, g, o, works = t['province'], t['project'], t['observed'], t['works']
     name = escape(p['provincia'])
     latest = next(x for x in management['provinces']['latest']['rows'] if x['province']==p['provincia'])
+    latest_month=MONTHS[int(management['provinces']['latest']['period'][-2:])-1].lower()
     r.section('Ficha / Nación en la provincia', name,
-              'DNAP: nominal hasta septiembre; real hasta agosto 2026. Presupuesto Abierto: 04/10/2026. ONP: proyecto 2027.', first=True)
+              f'DNAP: nominal hasta {latest_month}; comparación real hasta agosto 2026. Presupuesto Abierto: 04/10/2026. ONP: proyecto 2027.', first=True)
     r.add(f"Los recursos de origen nacional {'perdieron' if p['variacion_real_pct']<0 else 'ganaron'} <b>{num(abs(p['variacion_real_pct']))}% de poder de compra</b> frente a enero-agosto de 2025. Eso {'achica' if p['variacion_real_pct']<0 else 'amplía'} el margen para sostener servicios con esos fondos. El cambio real descuenta la inflación de cada mes.")
     r.add('Qué recibió el gobierno provincial', 'heading')
     r.table(['Concepto / período', 'Monto'], [
-        ['Recursos nacionales / enero-septiembre', money(latest['ytd_nominal'])],
-        ['De ese total, septiembre', money(latest['month_nominal'])],
+        [f'Recursos nacionales / enero-{latest_month}', money(latest['ytd_nominal'])],
+        [f'De ese total, {latest_month}', money(latest['month_nominal'])],
         ['Transferencias presupuestarias reconocidas / al 04/10', money(p['presupuestarias_devengado'])],
         ['Transferencias presupuestarias pagadas / al 04/10', money(p['presupuestarias_pagado'])],
         ['Diferencia pendiente de pago / al 04/10', money(t['pending'])],
     ], [WIDTH-140, 140], compact=True)
-    r.note('Pesos corrientes. DNAP: actualizado a septiembre; comparación real hasta agosto por disponibilidad del IPC. Las transferencias presupuestarias son otro concepto. Pendiente de pago no identifica vencimiento. Los renglones no se suman.')
+    r.note(f'Pesos corrientes. DNAP: actualizado a {latest_month}; comparación homogénea del cuadro: enero-agosto. Las transferencias presupuestarias son otro concepto. Pendiente de pago no identifica vencimiento. Los renglones no se suman.')
     r.add('El gasto de Nación en el territorio', 'heading')
     r.add(f"Nación reconoció gastos por <b>{money(o['credito_devengado'])}</b> al 04/10, sobre {money(o['credito_vigente'])} autorizados. Incluye jubilaciones, salarios, servicios y transferencias; no es dinero que recibe íntegramente el gobierno provincial.", 'small')
     r.add(f"Para 2027 propone <b>{money(g['project'])}</b> en esta ubicación. Dentro de ese monto figuran <b>{len(works)} partidas de inversión por {money(t['worksTotal'])}</b>.")
