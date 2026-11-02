@@ -1,0 +1,272 @@
+{
+  "reviewed_at": "2026-11-01",
+  "scope": "Rediseño de navegación y lectura del tablero nacional. No se actualizan ni reinterpretan los datos oficiales.",
+  "baseline_commit": "747f97c15c838207446ac4391ad6030f2603da48",
+  "preserved": {
+    "data_files_changed": false,
+    "pdf_files_changed": false,
+    "datasets": 28,
+    "works": 435,
+    "policies": 6,
+    "province_sheets": 24,
+    "rigi_approved_projects": 27,
+    "exports": [
+      "12 versiones generales",
+      "8 fichas temáticas",
+      "24 fichas provinciales",
+      "16 informes por cartera",
+      "CSV y originales oficiales"
+    ]
+  },
+  "architecture": {
+    "model": "nacion/navigation-model.js",
+    "controller": "nacion/navigation.js",
+    "primary_sections": [
+      "Resumen",
+      "Presupuesto",
+      "Ejecución",
+      "Territorio",
+      "Ingresos y deuda"
+    ],
+    "sources": "Vista auxiliar dentro de Ingresos y deuda, sin agregar una sexta sección.",
+    "prices": "Constantes por defecto; se respeta precios=nominal. Se preservan moneda, cortes y unidades propios de los stocks, ratios, índices y montos no convertibles.",
+    "legacy": "Los identificadores y enlaces previos se conservan; los casos lectura=project y vista=geographies se redirigen al lugar correspondiente."
+  },
+  "checks": {
+    "javascript_tests": 64,
+    "python_national_tests": 35,
+    "browser_routes_per_viewport": 45,
+    "viewports": [
+      {
+        "size": {
+          "width": 320,
+          "height": 720
+        },
+        "routes": 45,
+        "nav": [
+          {
+            "name": "Resumen",
+            "visible": true,
+            "font": 14
+          },
+          {
+            "name": "Presupuesto",
+            "visible": true,
+            "font": 14
+          },
+          {
+            "name": "Ejecución",
+            "visible": true,
+            "font": 14
+          },
+          {
+            "name": "Territorio",
+            "visible": true,
+            "font": 14
+          },
+          {
+            "name": "Ingresos y deuda",
+            "visible": true,
+            "font": 14
+          }
+        ],
+        "download": "informe-nacional-real-closing.pdf",
+        "errors": []
+      },
+      {
+        "size": {
+          "width": 390,
+          "height": 844
+        },
+        "routes": 45,
+        "nav": [
+          {
+            "name": "Resumen",
+            "visible": true,
+            "font": 14
+          },
+          {
+            "name": "Presupuesto",
+            "visible": true,
+            "font": 14
+          },
+          {
+            "name": "Ejecución",
+            "visible": true,
+            "font": 14
+          },
+          {
+            "name": "Territorio",
+            "visible": true,
+            "font": 14
+          },
+          {
+            "name": "Ingresos y deuda",
+            "visible": true,
+            "font": 14
+          }
+        ],
+        "download": "informe-nacional-real-closing.pdf",
+        "errors": []
+      },
+      {
+        "size": {
+          "width": 768,
+          "height": 1024
+        },
+        "routes": 45,
+        "nav": [
+          {
+            "name": "Resumen",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Presupuesto",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Ejecución",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Territorio",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Ingresos y deuda",
+            "visible": true,
+            "font": 15
+          }
+        ],
+        "download": "informe-nacional-real-closing.pdf",
+        "errors": []
+      },
+      {
+        "size": {
+          "width": 1440,
+          "height": 1000
+        },
+        "routes": 45,
+        "nav": [
+          {
+            "name": "Resumen",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Presupuesto",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Ejecución",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Territorio",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Ingresos y deuda",
+            "visible": true,
+            "font": 15
+          }
+        ],
+        "download": "informe-nacional-real-closing.pdf",
+        "errors": []
+      },
+      {
+        "size": {
+          "width": 844,
+          "height": 390
+        },
+        "routes": 45,
+        "nav": [
+          {
+            "name": "Resumen",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Presupuesto",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Ejecución",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Territorio",
+            "visible": true,
+            "font": 15
+          },
+          {
+            "name": "Ingresos y deuda",
+            "visible": true,
+            "font": 15
+          }
+        ],
+        "download": "informe-nacional-real-closing.pdf",
+        "errors": []
+      }
+    ],
+    "legacy_cold_loads": [
+      {
+        "url": "http://127.0.0.1:8879/nacion/?lectura=project&referencia=closing&precios=real&base=closing&vista=topics#prioridades-2027",
+        "section": "presupuesto",
+        "errors": []
+      },
+      {
+        "url": "http://127.0.0.1:8879/nacion/?precios=nominal&vista=topics&base=current#distribucion",
+        "section": "territorio",
+        "errors": []
+      },
+      {
+        "url": "http://127.0.0.1:8879/nacion/?distrito=94&precios=real&base=current&vista=topics&provincia=Tierra+del+Fuego#obras",
+        "section": "territorio",
+        "errors": []
+      },
+      {
+        "url": "http://127.0.0.1:8879/nacion/?cartera=50&precios=real&base=current&vista=topics#carteras",
+        "section": "presupuesto",
+        "errors": []
+      },
+      {
+        "url": "http://127.0.0.1:8879/nacion/?precios=nominal&base=current&vista=topics#politica-inmunizaciones",
+        "section": "presupuesto",
+        "errors": []
+      },
+      {
+        "url": "http://127.0.0.1:8879/nacion/?precios=real&base=current&vista=topics#rigi-estimation",
+        "section": "finanzas",
+        "errors": []
+      },
+      {
+        "url": "http://127.0.0.1:8879/nacion/?precios=real&base=current&vista=topics#unknown-link",
+        "section": "resumen",
+        "errors": []
+      }
+    ],
+    "downloads_sha256_verified": true,
+    "download_page_counts": [
+      23,
+      71,
+      1,
+      2
+    ],
+    "visual_review": [
+      "Celular 390 px, claro y oscuro",
+      "Tablet 768 px",
+      "Escritorio 1440 px"
+    ],
+    "notes": "La comprobación de identificadores en el arranque impide eliminar un bloque sin asignarlo. Se verificaron filtros de gasto, programas, metas, obras, provincia compartida, RIGI y las once opciones del selector PDF."
+  }
+}

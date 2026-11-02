@@ -8,39 +8,32 @@
   <link rel="canonical" href="https://tablero.federicopellegrini.com.ar/nacion/">
   <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20261101-download">
   <script defer src="../analytics.js?v=20260922-prioridades"></script>
-  <script defer src="math.js?v=20261101-estimate"></script><script defer src="report.js?v=20261101-tax"></script><script defer src="app.js?v=20261101-coherence"></script><script defer src="management-model.js?v=20261101-coherence"></script><script defer src="management.js?v=20261101-coherence"></script>
+  <script defer src="navigation-model.js?v=20261102-five"></script><script defer src="math.js?v=20261102-five"></script><script defer src="report.js?v=20261101-tax"></script><script defer src="app.js?v=20261102-five"></script><script defer src="management-model.js?v=20261101-coherence"></script><script defer src="management.js?v=20261102-five"></script>
   <link rel="preload" href="../assets/brand/geist.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="../assets/brand/playfair-display.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../brand.css?v=20260918-municipios-pba">
 <link rel="stylesheet" href="management.css?v=20261101-coherence">
 <link rel="stylesheet" href="decision.css?v=20260918-cierre">
-<script defer src="decision-model.js?v=20260918-carteras"></script><script defer src="decision.js?v=20261019-integrated"></script>
-<script defer src="portfolios.js?v=20261019-integrated"></script>
-<script defer src="decision-next.js?v=20260918-cierre"></script>
+<script defer src="decision-model.js?v=20260918-carteras"></script><script defer src="decision.js?v=20261102-five"></script>
+<script defer src="portfolios.js?v=20261102-five"></script>
+<script defer src="decision-next.js?v=20261102-five"></script>
 <script defer src="acts.js?v=20260918-cierre"></script>
 <script defer src="planning-model.js?v=20260918-ingresos"></script><script defer src="planning.js?v=20260918-ingresos"></script>
 <link rel="stylesheet" href="priorities.css?v=20260923-lectura">
-<script defer src="priorities-model.js?v=20260923-lectura"></script><script defer src="priorities.js?v=20260923-lectura"></script>
+<script defer src="priorities-model.js?v=20260923-lectura"></script><script defer src="priorities.js?v=20261102-five"></script>
 <link rel="stylesheet" href="tax.css?v=20261101-estimate"><script defer src="tax.js?v=20261101-estimate"></script>
 <script defer src="rigi-model.js?v=20261101"></script><script defer src="rigi-estimate.js?v=20261101"></script>
+<link rel="stylesheet" href="navigation.css?v=20261102-five"><script defer src="navigation.js?v=20261102-five"></script>
 </head>
 <body data-dashboard="nacion">
 <a href="#contenido" class="skip">Saltar al contenido</a>
 <header class="site-header">
-  <div class="header-inner"><a class="brand pellegrini-brand" href="#inicio" aria-label="PELLEGRINI · Presupuesto Nacional, inicio"><span class="brand-identity"><strong class="brand-wordmark">PELLEGRINI</strong><small class="brand-tagline">ESTUDIOS MACROFINANCIEROS</small></span><span class="brand-context">Presupuesto Nacional</span></a><div class="header-actions"><button id="theme" aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro">◐</button></div></div>
+  <div class="header-inner"><a class="brand pellegrini-brand" href="#inicio" aria-label="PELLEGRINI · Presupuesto Nacional, inicio"><span class="brand-identity"><strong class="brand-wordmark">PELLEGRINI</strong><small class="brand-tagline">ESTUDIOS MACROFINANCIEROS</small></span><span class="brand-context">Nación</span></a><div class="header-actions"><button id="theme" aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro">◐</button><button id="export-report" class="report-trigger" aria-label="Exportar informe PDF" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span>PDF</span></button></div></div>
   <nav class="dashboard-switcher" aria-label="Cambiar de tablero"><a href="/nacion/" aria-current="page">Nación</a><a href="/municipios/?municipio=06805&amp;vista=panorama">Municipios PBA</a><a href="/#summary">Provincias</a></nav>
-  <nav class="main-nav" aria-label="Vistas del tablero nacional">
-    <a href="#inicio" data-page-link="panorama" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v11h-6v-8H9v8H3Z"/></svg>Panorama</a>
-    <a href="#prioridades" data-page-link="prioridades"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18M7 16V9m5 7V5m5 11v-4"/></svg>Prioridades</a>
-    <a href="#distribucion" data-page-link="gasto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 7 9-4 9 4M3 9h18M5 10v9m5-9v9m4-9v9m5-9v9M3 21h18"/></svg>Gasto</a>
-    <a href="#obras" data-page-link="obras"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2ZM9 3v16m6-14v16"/></svg>Obras</a>
-    <a href="#recursos" data-page-link="economia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9m8 11V4m8 16V12M2 20h20"/></svg>Economía</a>
-    <a href="#ejecucion" data-page-link="ejecucion"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18M6 15l4-5 5 3 6-8"/></svg>Gestión 2026</a>
-    <button id="export-report" class="report-trigger" aria-label="Exportar informe PDF" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span>Informe<span class="report-pdf-label"> PDF</span></span></button>
-  </nav>
+  <nav class="main-nav" aria-label="Secciones del tablero nacional"><a href="#inicio" data-page-link="resumen">Resumen</a><a href="#distribucion" data-page-link="presupuesto">Presupuesto</a><a href="#ejecucion" data-page-link="ejecucion">Ejecución</a><a href="#obras" data-page-link="territorio">Territorio</a><a href="#recursos" data-page-link="finanzas">Ingresos y deuda</a></nav>
 </header>
 <main id="contenido">
-  <div class="controls" aria-label="Opciones de lectura"><div><span class="control-label">Montos</span><div class="switch" role="group" aria-label="Unidad monetaria"><button data-price="nominal" aria-pressed="true">Corrientes</button><button data-price="real" aria-pressed="false">Constantes</button></div></div><label for="base-select">Comparar 2027 con<select id="base-select"><option value="current">Vigente 2026 · 15/09</option><option value="law">Inicial 2026</option><option value="closing">Cierre estimado 2026</option></select></label><p id="unit-context" class="note">Pesos corrientes: los montos de cada año, sin descontar inflación.</p></div>
+  <div class="controls" aria-label="Opciones de lectura"><div><span class="control-label">Montos</span><div class="switch" role="group" aria-label="Unidad monetaria"><button data-price="nominal" aria-pressed="false">Corrientes</button><button data-price="real" aria-pressed="true">Constantes</button></div></div><label for="base-select">Base 2026<select id="base-select"><option value="current">Vigente · 15/09</option><option value="law">Inicial 2026</option><option value="closing">Cierre estimado</option></select></label><p id="unit-context" class="note">Pesos constantes: montos ajustados por inflación.</p></div>
   <div id="load-state" role="status">Preparando los datos del presupuesto…</div>
   <div id="dashboard" hidden>
     <div data-page="panorama">
@@ -60,9 +53,9 @@
 <div data-page="prioridades" hidden><section id="prioridades" class="chapter"><p role="status">Cargando prioridades y prestaciones…</p></section></div>
 <div data-page="gasto" hidden><nav class="section-nav" aria-label="Explorar el gasto"><a href="#distribucion">Distribución</a><a href="#carteras">Por ministerio</a><a href="#comparacion">Comparación</a><a href="#cambios">Ranking de cambios</a><a href="#programas">Programas</a><a href="#finalidades">Finalidades</a></nav>
 <section id="distribucion" class="chapter">
-    <p class="eyebrow">Gasto / Distribución</p><h2 tabindex="-1">Cómo se reparte el presupuesto</h2><p>Cada vista responde una pregunta: qué se financia, quién lo administra o dónde se registra. Los importes corresponden al mismo presupuesto.</p>
-    <div class="switch lenses" role="group" aria-label="Mirar la distribución por"><button data-lens="topics" aria-pressed="true">Temas</button><button data-lens="jurisdictions" aria-pressed="false">Organismos</button><button data-lens="functions" aria-pressed="false">Funciones</button><button data-lens="geographies" aria-pressed="false">Provincias</button></div>
-    <div id="distribution-note" class="note"></div><div id="composition" class="composition" aria-label="Composición del proyecto"></div><div id="cards" class="cards"></div>
+    <p class="eyebrow">Gasto / Distribución</p><h2 id="distribution-title" tabindex="-1">Cómo cambia el presupuesto</h2><p>Elegí qué comparar y abrí una fila para ver el detalle.</p>
+    <div class="switch lenses" role="group" aria-label="Mirar la distribución por"><button data-lens="topics" aria-pressed="true">Temas</button><button data-lens="jurisdictions" aria-pressed="false">Organismos</button><button data-lens="functions" aria-pressed="false">Funciones</button></div>
+    <div class="budget-filters"><label for="budget-metric">Mostrar<select id="budget-metric"><option value="change">Variación</option><option value="amount">Monto propuesto</option><option value="share">Peso en el total</option></select></label><label for="budget-sort">Ordenar<select id="budget-sort"><option value="cuts">Mayores bajas</option><option value="increases">Mayores subas</option><option value="amount">Mayor presupuesto</option><option value="name">Nombre</option></select></label></div><div id="distribution-note" class="note"></div><div id="composition" class="composition" aria-label="Composición del proyecto"></div><div id="cards" class="budget-rows"></div>
   </section>
 <section id="comparacion" class="chapter">
     <p class="eyebrow">Gasto / Comparación</p><h2 tabindex="-1">Cómo cambia cada área</h2><p>El proyecto se compara con la base de 2026 que elegiste arriba. Para medir el poder de compra, seleccioná pesos constantes.</p>
@@ -82,6 +75,7 @@
     <p><a href="data/decisions.json" download>Descargar financiamiento y fichas ↓</a></p><p><a href="#obra-ra10">Ficha de continuidad: Reactor RA-10 →</a></p><p><a href="#obras-ejecucion">Ver el gasto y el avance físico de obras en 2026 →</a></p><p class="note">Partidas de proyectos de inversión: incluyen construcción, mantenimiento y equipamiento. No representan toda la inversión pública ni transferencias a los gobiernos provinciales.</p>
   </section>
 </div>
+<section id="geografia" class="chapter"><p class="eyebrow">Territorio / Proyecto 2027</p><h2 tabindex="-1">Dónde se registra el gasto</h2><p>Incluye las 24 jurisdicciones y las ubicaciones nacional, interprovincial, binacional y exterior. No equivale a transferencias al gobierno provincial.</p><div id="geography-cards" class="budget-rows"></div></section>
 <div data-page="obra-ficha" hidden><section id="obra-ra10" class="chapter"><p role="status">Cargando la ficha de la obra…</p></section></div>
 <div data-page="carteras" hidden><section id="carteras" class="chapter"><p role="status">Cargando las carteras…</p></section></div>
 <div data-page="politicas" hidden><section id="politica-jubilaciones" class="chapter policy-page" hidden><p role="status">Cargando la ficha…</p></section><section id="politica-alimentacion" class="chapter policy-page" hidden><p role="status">Cargando la ficha…</p></section><section id="politica-medicamentos" class="chapter policy-page" hidden><p role="status">Cargando la ficha…</p></section><section id="politica-seguridad-federal" class="chapter policy-page" hidden><p role="status">Cargando la ficha…</p></section><section id="politica-inmunizaciones" class="chapter policy-page" hidden><p role="status">Cargando la ficha de inmunizaciones…</p></section><section id="politica-educacion-superior" class="chapter policy-page" hidden><p role="status">Cargando la ficha de universidades…</p></section></div>

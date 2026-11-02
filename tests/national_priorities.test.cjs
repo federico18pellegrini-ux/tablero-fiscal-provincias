@@ -64,8 +64,8 @@ test('a nominally frozen bonus loses purchasing power, separately from minimum a
   assert.ok(M.benefitChange(H.rows,a.period,b.period,'minimum_bonus')<M.benefitChange(H.rows,a.period,b.period,'minimum'));
   near(M.benefitIndex(H.rows,a.period,'auh')[0].value,100);
 });
-test('priorities is an independent navigable page',()=>{
-  assert.equal(require('../nacion/math.js').pageForAnchor('prioridades'),'prioridades');
+test('the existing priorities link opens the execution section',()=>{
+  assert.equal(require('../nacion/math.js').pageForAnchor('prioridades'),'ejecucion');
 });
 
 test('share reading distinguishes less spending from greater participation across modes',()=>{

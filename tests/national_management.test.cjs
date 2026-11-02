@@ -139,7 +139,8 @@ test('history uses reconciled annual totals and observed annual average CPI only
   for(const r of D.history.filter(r=>r.year<2026)){near(r.amount,G.history.find(x=>x.ejercicio_presupuestario===r.year).credito_devengado);assert.equal(r.gdp_share,null);assert.equal(r.purposes,null);}
 });
 test('management deep links stay in the right page and missing values remain absent',()=>{
-  for(const anchor of ['caja','deuda-nacional','provincias-nacion','metas','obras-ejecucion','historia-ejecucion'])assert.equal(B.pageForAnchor(anchor),'ejecucion');
+  for(const anchor of ['caja','metas','obras-ejecucion','historia-ejecucion'])assert.equal(B.pageForAnchor(anchor),'ejecucion');
+  assert.equal(B.pageForAnchor('deuda-nacional'),'finanzas');assert.equal(B.pageForAnchor('provincias-nacion'),'territorio');
   assert.equal(M.sum([{x:null}],'x'),null);assert.equal(M.sum([{x:0}],'x'),0);assert.equal(M.sum([],'x'),null);
   assert.equal(M.ratio(20,0),null);assert.equal(M.ratio(null,50),null);
 });

@@ -112,3 +112,20 @@ Hay 24 fichas provinciales de una página, además de tres temáticas y las 12 v
 RA-10 incorpora el anuncio de la CNEA del 04/09: montaje electromecánico de 96% y objetivo de puesta en marcha a principios de 2027 sujeto a licencia. Se conserva el avance global ONP de marzo como una medición distinta. El comunicado no cuantifica costos de terminación ni contratos pendientes.
 
 El estado completo de los pendientes está en [nacion-pendientes-2026-09-18.md](../docs/nacion-pendientes-2026-09-18.md).
+
+
+## Navegación en cinco secciones · noviembre de 2026
+
+El encabezado comparte cinco destinos: **Resumen**, **Presupuesto**, **Ejecución**, **Territorio** e **Ingresos y deuda**. Las cinco opciones quedan visibles en celular; las vistas locales se disponen en filas que se adaptan al ancho, sin una barra horizontal que esconda opciones.
+
+- **Resumen:** diagnóstico, total del proyecto, bases de comparación que se pueden seleccionar, señales centrales e historia breve.
+- **Presupuesto:** exploración por temas, organismos o funciones, con orden por variación, monto o nombre. Cada fila despliega sus importes y fuentes. Se conservan comparación detallada, ranking anterior, programas, las seis fichas de políticas, ministerios/poderes y finalidades.
+- **Ejecución:** presupuesto reconocido y pagado, ritmo mensual por organismo, lectura por función, caja, cambios y normas, ingresos de jubilaciones/AUH, las metas físicas, obras realizadas e historia completa.
+- **Territorio:** mapa y las 435 partidas de inversión con sus fuentes de financiamiento, continuidad del RA-10, las fichas de las 24 jurisdicciones, recursos nacionales y ubicación del gasto. La selección del mapa y la ficha provincial se conservan al cambiar de vista.
+- **Ingresos y deuda:** ingresos, financiamiento, stock y vencimientos de deuda, gasto tributario/RIGI, supuestos y simulador. Fuentes y método es una vista auxiliar de esta sección, accesible desde los enlaces existentes.
+
+`navigation-model.js` es el mapa de destinos y `navigation.js` traslada los bloques existentes conservando sus identificadores. Comprueba durante el arranque que no haya quedado un bloque sin asignar ni se haya perdido un identificador. Los enlaces anteriores siguen siendo válidos; `prioridades` con `lectura=project` abre la lectura del proyecto dentro de Presupuesto, y la vista geográfica anterior abre Territorio.
+
+El arranque sin preferencia usa pesos constantes. `precios=nominal` sigue abriendo pesos corrientes. El selector no cambia el significado de porcentajes, índices, monedas de deuda o etapas presupuestarias: cada bloque conserva su unidad, sus cortes y el uso de IPC observado o del escenario. La reorganización no modifica las bases de datos ni los PDF; el catálogo de informes y sus controles de vigencia permanecen activos.
+
+Pruebas de rutas y compatibilidad: `node --test tests/national_navigation.test.cjs tests/national_budget.test.cjs tests/national_management.test.cjs tests/national_priorities.test.cjs tests/national_decisions.test.cjs`. La revisión de navegador cubre las 45 rutas, filtros, las once opciones del selector PDF y descargas efectivas en celular, tablet, escritorio y celular horizontal.

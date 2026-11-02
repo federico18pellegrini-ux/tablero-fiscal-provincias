@@ -82,11 +82,11 @@ test('common searches find the official program wording',()=>{
   assert.ok(D.programs.filter(p=>M.searchText(p).includes('anses')).some(p=>p.name==='Prestaciones Previsionales'));
 });
 
-test('legacy deep links resolve to a visible view and unknown anchors safely open Panorama',()=>{
-  for(const name of ['distribucion','comparacion','cambios','programas','finalidades'])assert.equal(M.pageForAnchor(name),'gasto');
-  assert.equal(M.pageForAnchor('macro'),'economia');assert.equal(M.pageForAnchor('obras'),'obras');
-  assert.equal(M.pageForAnchor('ejecucion'),'ejecucion');assert.equal(M.pageForAnchor('metodo'),'metodo');
-  for(const name of ['','desconocido','__proto__','toString'])assert.equal(M.pageForAnchor(name),'panorama');
+test('legacy deep links resolve to a visible view and unknown anchors safely open Resumen',()=>{
+  for(const name of ['distribucion','comparacion','cambios','programas','finalidades'])assert.equal(M.pageForAnchor(name),'presupuesto');
+  assert.equal(M.pageForAnchor('macro'),'finanzas');assert.equal(M.pageForAnchor('obras'),'territorio');
+  assert.equal(M.pageForAnchor('ejecucion'),'ejecucion');assert.equal(M.pageForAnchor('metodo'),'finanzas');
+  for(const name of ['','desconocido','__proto__','toString'])assert.equal(M.pageForAnchor(name),'resumen');
 });
 test('overview contrasts nominal and real changes against the selected base while keeping execution fixed',()=>{
   const current=M.budgetOverview(D.total,'current',D.deflator.annual_factors),closing=M.budgetOverview(D.total,'closing',D.deflator.annual_factors);

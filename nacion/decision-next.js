@@ -6,7 +6,7 @@
   const num=(v,d=1)=>M.finite(v)?new Intl.NumberFormat('es-AR',{maximumFractionDigits:d,minimumFractionDigits:d}).format(v):'Sin dato';
   const money=v=>v===0?'$0':M.finite(v)?`${v<0?'−':''}$${num(Math.abs(v)/(Math.abs(v)>=1e6?1e6:1000))} ${Math.abs(v)>=1e6?'billones':'mil millones'}`:'Sin dato';
   const pct=v=>`${v>0?'+':''}${num(v)}%`,sign=v=>v<0?'negative':v>0?'positive':'';
-  let D,B,price=new URLSearchParams(location.search).get('precios')==='real'?'real':'nominal';
+  let D,B,price=new URLSearchParams(location.search).get('precios')==='nominal'?'nominal':'real';
   const val=v=>M.price(v,2027,price,B.deflator.annual_factors);
   const link=(url,label)=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`;
   function attention(){
