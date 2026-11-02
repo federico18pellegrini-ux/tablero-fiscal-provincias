@@ -35,6 +35,17 @@
     const works=budget.works.filter(r=>r.province===province.provincia).sort((a,b)=>b.project-a.project||a.id.localeCompare(b.id));
     return {province,project:geos[0],observed:observed[0],works,worksTotal:works.length?sum(works,'project'):0,pending:delta(province.presupuestarias_devengado,province.presupuestarias_pagado)};
   };
-  const api={finite,ratio,change,cashValue,metaValues,metaStatus,historyValue,rankProvinces,sum,delta,modifications,modificationBalance,territory};
+  const barGeometry=(value,max,diverging=false)=>{
+    if(!finite(value)||!finite(max)||max<=0)return {left:diverging?50:0,width:0};
+    const width=Math.min(1,Math.abs(value)/max)*(diverging?50:100);
+    return {left:diverging?(value<0?50-width:50):0,width};
+  };
+  const physicalSectors=['Seguridad Social','Salud','Educación y Cultura','Promoción y Asistencia Social','Trabajo','Vivienda y Urbanismo','Agua Potable y Alcantarillado'];
+  const orderPhysical=rows=>[...rows].sort((a,b)=>{
+    const rank=r=>{const i=physicalSectors.indexOf(r.funcion_desc);return i<0?physicalSectors.length:i;};
+    const anses=r=>/administraci[oó]n nacional de la seguridad social/i.test(r.servicio_desc||'')?0:1;
+    return rank(a)-rank(b)||anses(a)-anses(b);
+  });
+  const api={barGeometry,orderPhysical,finite,ratio,change,cashValue,metaValues,metaStatus,historyValue,rankProvinces,sum,delta,modifications,modificationBalance,territory};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.NationalManagementMath=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

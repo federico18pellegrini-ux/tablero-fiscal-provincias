@@ -55,3 +55,5 @@
 .physical-status{padding:10px 12px;border-left:3px solid var(--brand-gold);background:var(--s2)}
 @media(max-width:640px){.debt-currency-panels{grid-template-columns:1fr;gap:8px}.norm-timeline li>div{flex-direction:column;gap:6px}.physical-filters label{min-width:100%}}
 @media(max-width:640px){.management-nav{grid-template-columns:repeat(4,minmax(0,1fr));padding:4px;gap:3px;margin-bottom:16px}.management-nav a{font-size:12px;min-height:44px;padding:8px 2px}.management-active .controls{padding:14px;gap:10px;margin-bottom:18px}.management-active .controls .note{margin-top:0}.management-stats article{padding:14px 0}}
+
+.management-track{position:relative}.management-track>span{position:relative}.management-track.is-diverging::before{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;border-left:1px solid var(--muted);z-index:1}

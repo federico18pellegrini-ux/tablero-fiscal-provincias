@@ -1,0 +1,89 @@
+{
+  "reviewed_at": "2026-11-01",
+  "scope": "Revisión de los dos prototipos recibidos y correcciones de lectura del tablero nacional; no es una auditoría exhaustiva de registros contra nuevas fuentes.",
+  "attachments": [
+    {
+      "file": "Arquitectura común · dónde va cada bloque-html.zip",
+      "sha256": "2423442963e18c13c45365fef4e9edca3798d4e230c6cf94c61f1c5222ef8dc0"
+    },
+    {
+      "file": "Prototipo · Tablero Nación rediseñado-html.zip",
+      "sha256": "bf73bea579d2d027fc0e4417200edfbf22085be4b513b1856d277ffa90e964a6"
+    }
+  ],
+  "prototype_verified": [
+    "Las cinco secciones navegan en celular y escritorio sin errores de ejecución.",
+    "El lienzo de arquitectura tiene un ancho fijo de 1280 px y desborda en celular; es un documento de diseño.",
+    "Los botones PDF y Descargar datos no implementan exportación. El simulador desplegado no contiene campos editables.",
+    "La navegación horizontal deja secciones fuera de la vista inicial del celular.",
+    "Las bases por función y tema reconstruidas desde porcentajes redondeados no sustituyen los importes originales del tablero.",
+    "El selector Real no transforma todos los importes: la cabecera del prototipo conserva el total de 2027 en pesos corrientes, rotulado como tal.",
+    "La arquitectura debe conservar las transferencias de octubre y el estimador RIGI ya publicados."
+  ],
+  "corrections": [
+    {
+      "block": "Portada / ejecución",
+      "before": "69,1% al 15/09, tomado del snapshot para comparar el proyecto",
+      "after": "77,04661347% al 19/10, tomado del flujo mensual actualizado y su crédito vigente; se conserva 15/09 como base del proyecto 2027."
+    },
+    {
+      "block": "Portada / caja",
+      "after": "3313793,2 millones de superávit financiero acumulado enero-septiembre; la comparación real sigue en enero-agosto."
+    },
+    {
+      "block": "Gestión / tabla",
+      "after": "Se interpola la fecha y queda una referencia por tabla."
+    },
+    {
+      "block": "Ejecución / mensual",
+      "after": "El corte y el mes parcial se obtienen del archivo mensual; septiembre tiene IPC observado y octubre no."
+    },
+    {
+      "block": "Tema editorial t0",
+      "after": "Seguridad social, en la base, el generador y los PDF; no se cambian importes ni funciones."
+    },
+    {
+      "block": "Caja / gráfico",
+      "after": "Las barras negativas terminan a la izquierda de cero y las positivas arrancan a la derecha, con escala común. Se agrega septiembre nominal desde el original de Hacienda."
+    },
+    {
+      "block": "Prestaciones",
+      "after": "Orden inicial por áreas de gestión y ANSES; se conserva el inventario completo y el usuario puede volver al orden de la fuente."
+    }
+  ],
+  "not_confirmed_as_errors": [
+    "Las series históricas ya responden al selector de pesos constantes; el problema es el arranque nominal y la claridad de la unidad, no la ausencia de esa función.",
+    "Un porcentaje de ejecución real/nominal no cambia al seleccionar unidad; las autorizaciones y obligaciones se comparan nominalmente.",
+    "El número total de enlaces depende de la vista, los filtros y el renderizado; no se trata el conteo de 732 como una constante de la aplicación."
+  ],
+  "financing_reference": {
+    "source": "https://www.mecon.gob.ar/onp/documentos/presutexto/proy2027/ley/pdf/anexo_estadistico/cuadros_comparativos/cap1cu01.pdf",
+    "financial_surplus_2027_ars_m": 246741,
+    "financial_applications_2027_ars_m": 326031208,
+    "surplus_per_100_applications": 0.07568017844475797,
+    "wording": "Aproximadamente 8 centavos por cada $100 de aplicaciones financieras. Es una relación del proyecto 2027, no el porcentaje de stock de deuda que puede pagarse con caja actual."
+  },
+  "architecture_recommendation": {
+    "common_sections": [
+      "Resumen",
+      "Presupuesto",
+      "Ejecución",
+      "Territorio",
+      "Ingresos y deuda"
+    ],
+    "principles": [
+      "El año y el nivel se explicitan dentro del bloque; no se obliga a un municipio a mostrar un presupuesto 2027 que no se tiene.",
+      "Mantener rutas históricas y fuentes accesibles; un detalle cerrado no es información eliminada.",
+      "Variaciones reales por defecto en la futura arquitectura; distinguir IPC observado de escenario y conservar denominadores y cortes.",
+      "En celular, las cinco secciones deben ser visibles o anunciar claramente que hay más; evitar una fila horizontal sin indicación de desplazamiento.",
+      "El ritmo lineal del calendario es referencia descriptiva, no una meta ni una evaluación de gestión.",
+      "Usar importes originales y el deflactor del tablero, sin reconstruir bases desde porcentajes redondeados."
+    ]
+  },
+  "remaining": [
+    "Migrar la navegación a cinco secciones y reunir los bloques repetidos según el mapa completo.",
+    "Consolidar las vistas de gasto y territorio sin perder programas, obras, normas, RIGI, prestaciones ni fuentes.",
+    "Unificar el selector de unidad y los rótulos de todas las variables que puedan convertirse; preservar la moneda y el significado de stocks y ratios.",
+    "Agregar interacción a los gráficos y mantener tablas accesibles y descargas."
+  ]
+}
