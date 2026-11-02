@@ -18,7 +18,7 @@ test('closing forecast preserves actual months, seasonality and excludes partial
  const high=P.closing(B,monthly,{...o,pace:10});near(high.observed,r.observed);near(high.remaining,r.remaining*1.1);
  assert.equal(P.closing(B,monthly.slice(1),o),null);assert.equal(P.closing(B,monthly,{...o,monthlyInflation:null}),null);
  const names=monthly.map(r=>r.anio===2025?{...r,funcion_desc:'Previous denomination'}:r);near(P.closing(B,names,o).total,r.total);
- assert.equal(M.pageForAnchor('normas'),'actos');
+ assert.equal(M.pageForAnchor('normas'),'ejecucion');
 });
 test('habitual terms and multiple accented words find the intended official program',()=>{
   for(const [q,id] of [['vacunas','p297'],['VACUNACIÓN salud','p297'],['universidades','p350']])assert.ok(B.programs.filter(p=>M.matchesSearch(p,q)).some(p=>p.id===id));
@@ -52,10 +52,10 @@ test('payments and coverage use their documented program scope',()=>{
 test('stale policy packages are blocked and new routes preserve old navigation',()=>{
   assert.equal(N.inputMatches(D,D.meta.inputs['nacion/data/budget.json']),true);
   assert.equal(N.inputMatches(D,'wrong'),false);assert.equal(N.inputMatches(D,null),false);
-  assert.equal(M.pageForAnchor('financiamiento'),'economia');
-  for(const slug of D.policies.map(p=>p.slug))assert.equal(M.pageForAnchor('politica-'+slug),'politicas');
-  assert.equal(M.pageForAnchor('programas'),'gasto');assert.equal(M.pageForAnchor('__proto__'),'panorama');
-  assert.equal(M.pageForAnchor('escenarios'),'economia');assert.equal(M.pageForAnchor('obra-ra10'),'obra-ficha');
+  assert.equal(M.pageForAnchor('financiamiento'),'finanzas');
+  for(const slug of D.policies.map(p=>p.slug))assert.equal(M.pageForAnchor('politica-'+slug),'presupuesto');
+  assert.equal(M.pageForAnchor('programas'),'presupuesto');assert.equal(M.pageForAnchor('__proto__'),'resumen');
+  assert.equal(M.pageForAnchor('escenarios'),'finanzas');assert.equal(M.pageForAnchor('obra-ra10'),'territorio');
 });
 
 test('scenarios reproduce the annual base and separate revenue stress from uncovered principal',()=>{

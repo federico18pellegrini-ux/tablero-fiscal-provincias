@@ -8,7 +8,7 @@
   const pct=v=>M.finite(v)?`${v>0?'+':''}${num(v)}%`:'Sin comparación';
   const sign=v=>M.finite(v)&&v<0?'negative':M.finite(v)&&v>0?'positive':'';
   const table=(heads,rows)=>`<div class="decision-table-wrap"><table><thead><tr>${heads.map(h=>`<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((v,i)=>i?`<td data-label="${esc(heads[i])}">${v}</td>`:`<th scope="row">${v}</th>`).join('')}</tr>`).join('')}</tbody></table></div>`;
-  let chosen=Number(new URLSearchParams(location.search).get('cartera')||50),price=new URLSearchParams(location.search).get('precios')==='real'?'real':'nominal';
+  let chosen=Number(new URLSearchParams(location.search).get('cartera')||50),price=new URLSearchParams(location.search).get('precios')==='nominal'?'nominal':'real';
   function render(){
     const D=window.nationalDecisionContext,B=window.nationalBudgetContext?.data;
     if(!D||!B||!N.inputMatches(D,window.nationalBudgetContext.hash))return;
