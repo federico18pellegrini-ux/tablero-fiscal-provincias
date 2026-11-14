@@ -58,10 +58,111 @@
       "url": "https://www.argentina.gob.ar/economia/sechacienda/coordinacion-fiscal-provincial/ejecucion-presupuestaria-provincial/ejecuciones"
     },
     "top_september_pending": [
-      "Buenos Aires",
-      "La Pampa",
-      "Santa Fe"
-    ]
+      "La Pampa"
+    ],
+    "top_november_vintage": {
+      "source": "https://www.argentina.gob.ar/sites/default/files/top_mensual_2026_1311.xlsx",
+      "sha256": "10daadb4e195c881b8d12e61de85e8bda904c65b1ee75e78c88adb581ad1c497",
+      "new_periods": [
+        [
+          "Buenos Aires",
+          "2026-09"
+        ],
+        [
+          "Catamarca",
+          "2026-10"
+        ],
+        [
+          "Chaco",
+          "2026-10"
+        ],
+        [
+          "Chubut",
+          "2026-10"
+        ],
+        [
+          "Corrientes",
+          "2026-10"
+        ],
+        [
+          "Córdoba",
+          "2026-10"
+        ],
+        [
+          "Entre Ríos",
+          "2026-10"
+        ],
+        [
+          "Formosa",
+          "2026-10"
+        ],
+        [
+          "Jujuy",
+          "2026-10"
+        ],
+        [
+          "Mendoza",
+          "2026-10"
+        ],
+        [
+          "Misiones",
+          "2026-10"
+        ],
+        [
+          "Neuquén",
+          "2026-10"
+        ],
+        [
+          "Río Negro",
+          "2026-10"
+        ],
+        [
+          "San Juan",
+          "2026-10"
+        ],
+        [
+          "San Luis",
+          "2026-10"
+        ],
+        [
+          "Santa Fe",
+          "2026-09"
+        ],
+        [
+          "Santiago del Estero",
+          "2026-10"
+        ]
+      ],
+      "revisions": [
+        [
+          "Catamarca",
+          "2026-09"
+        ],
+        [
+          "Entre Ríos",
+          "2026-09"
+        ]
+      ],
+      "october_jurisdictions": [
+        "Catamarca",
+        "Chaco",
+        "Chubut",
+        "Corrientes",
+        "Córdoba",
+        "Entre Ríos",
+        "Formosa",
+        "Jujuy",
+        "Mendoza",
+        "Misiones",
+        "Neuquén",
+        "Río Negro",
+        "San Juan",
+        "San Luis",
+        "Santiago del Estero"
+      ],
+      "previous_observations_preserved": "Se conservan fuentes provinciales verificadas, incluido el historial de Santa Cruz; no se interpreta como dato una celda de mes total cero.",
+      "scope_pending": "Santa Cruz: el consolidado incluye Otros y aún falta conciliación con ASIP para excluir los conceptos no tributarios usados en el corte histórico."
+    }
   },
   "municipios": {
     "inventory": 135,

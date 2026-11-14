@@ -20,8 +20,9 @@ class ProvincialSeptember(unittest.TestCase):
         self.assertAlmostEqual(totals['Santa Cruz','2026-09'],(39612046014.81-784921910.61-3025042.46)/1e6,places=6)
         self.assertAlmostEqual(totals['Santa Cruz','2026-08'],(40072866573.93-579096261.65)/1e6,places=6)
         self.assertNotEqual(totals['Santa Cruz','2026-08'],totals['Santa Cruz','2026-04'])
-        for province in ['Buenos Aires','La Pampa','Santa Fe']:
-            self.assertNotIn((province,'2026-09'),totals)
+        self.assertNotIn(('La Pampa','2026-09'),totals)
+        self.assertAlmostEqual(totals['Buenos Aires','2026-09'],1582201.037974436,places=6)
+        self.assertAlmostEqual(totals['Santa Fe','2026-09'],308009.5339686068,places=6)
 
     def test_verified_totals_exclude_non_tax_and_do_not_impute(self):
         with (ROOT/'top_mensual_2026_normalizado.csv').open(encoding='utf8') as f:rows=list(csv.DictReader(f))
@@ -34,7 +35,7 @@ class ProvincialSeptember(unittest.TestCase):
             self.assertNotIn((province,'2026-09'),own_revenue_totals(subset[:-1]))
         dynamics=json.loads((ROOT/'dashboard_real_dynamics_2026.json').read_text(encoding='utf8'))
         for province in ['Mendoza','Jujuy','Neuquén','San Juan','Tucumán']:
-            self.assertEqual(dynamics['provinces'][province]['metrics']['own_revenue']['ytd_available_through'],'2026-09')
+            self.assertGreaterEqual(dynamics['provinces'][province]['metrics']['own_revenue']['ytd_available_through'],'2026-09')
 
     def test_new_provincial_sources_reconcile_and_preserve_missingness(self):
         import hashlib
