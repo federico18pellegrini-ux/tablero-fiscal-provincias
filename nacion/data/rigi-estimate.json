@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "reviewed": "2026-11-01",
+  "reviewed": "2026-11-14",
   "year": 2027,
   "estimate_status": "Escenarios condicionales de derechos de importación; no estimación del costo total",
   "official_fiscal_cost_2027": null,
   "total_estimated_cost_2027": null,
   "registry": {
     "raw_territorial_rows": 33,
-    "project_count": 27,
-    "investment_usd_millions": 76173.0,
-    "last_publication": "2026-10-27",
+    "project_count": 29,
+    "investment_usd_millions": 79417.2825762,
+    "last_publication": "2026-11-13",
     "projects": [
       {
         "id": 408210,
@@ -610,9 +610,60 @@
         "fiscal_cost_2027": null,
         "annual_investment_2027_usd_millions": null,
         "dividend_reduction_from": "2033-09-30"
+      },
+      {
+        "id": 432183,
+        "name": "Transporte, fraccionamiento, almacenamiento y comercialización",
+        "company": "Midstream de Gas del Sur SA",
+        "sector": "Petróleo y gas",
+        "investment_usd_millions": 1849.5811833599998,
+        "investment_scope": "Activos computables declarados",
+        "years_from_notification_usd_millions": [
+          499.351994,
+          606.974509
+        ],
+        "provinces": [
+          "Neuquén",
+          "Buenos Aires"
+        ],
+        "source_url": "https://www.argentina.gob.ar/normativa/nacional/norma-432183",
+        "resolution": "1976/2026",
+        "published": "2026-11-13",
+        "accession_date": "2026-10-14",
+        "resolution_url": "https://www.boletinoficial.gob.ar/detalleAviso/primera/350287/20261113",
+        "resolution_file": "data/rigi-sources/bo-36032.pdf",
+        "checked_status": "Aprobación contrastada en el Boletín Oficial",
+        "fiscal_cost_2027": null,
+        "annual_investment_2027_usd_millions": null,
+        "dividend_reduction_from": "2033-10-14"
+      },
+      {
+        "id": 432184,
+        "name": "Procesamiento en Tratayén",
+        "company": "Procesadora de Gas del Sur SA",
+        "sector": "Petróleo y gas",
+        "investment_usd_millions": 1394.70139284,
+        "investment_scope": "Activos computables declarados",
+        "years_from_notification_usd_millions": [
+          239.429157,
+          360.117888
+        ],
+        "provinces": [
+          "Neuquén"
+        ],
+        "source_url": "https://www.argentina.gob.ar/normativa/nacional/norma-432184",
+        "resolution": "1977/2026",
+        "published": "2026-11-13",
+        "accession_date": "2026-10-14",
+        "resolution_url": "https://www.boletinoficial.gob.ar/detalleAviso/primera/350288/20261113",
+        "resolution_file": "data/rigi-sources/bo-36032.pdf",
+        "checked_status": "Aprobación contrastada en el Boletín Oficial",
+        "fiscal_cost_2027": null,
+        "annual_investment_2027_usd_millions": null,
+        "dividend_reduction_from": "2033-10-14"
       }
     ],
-    "method": "Se cuenta cada resolución una vez. Los montos de Economía están publicados en millones de USD redondeados, son inversión comprometida total y no ejecución ni bases imponibles anuales."
+    "method": "Se cuenta cada resolución una vez. El registro de Economía informa montos redondeados. Para las dos altas del 13 de noviembre se suman los activos computables declarados en el Boletín Oficial. Son montos de los planes, sin identificar ejecución ni bases tributarias anuales."
   },
   "customs": {
     "investment_2027_usd_millions": 7827,
@@ -919,6 +970,12 @@
       "url": "https://biblioteca.afip.gob.ar/search/query/norma.aspx?p=t:RES%7Cn:1%7Co:6%7Ca:2025%7Cf:07/01/2025",
       "sha256": "f9fe36b6dbcf120a0299323a18dde9338d79041f442aeabe4299bcd9b17c8811",
       "path": "data/rigi-sources/arca-res-26.html"
+    },
+    {
+      "file": "bo-36032.pdf",
+      "url": "https://otslist.boletinoficial.gob.ar/ots/download/a6902564dea92c864d69f6aae6e0e753e2ccf960219494ee6dc34b1db392357b/0/",
+      "sha256": "a6902564dea92c864d69f6aae6e0e753e2ccf960219494ee6dc34b1db392357b",
+      "path": "data/rigi-sources/bo-36032.pdf"
     }
   ]
 }

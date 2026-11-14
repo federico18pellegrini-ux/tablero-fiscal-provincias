@@ -68,7 +68,7 @@ class NationalReportsTest(unittest.TestCase):
             self.assertIn('76,0%', texts[7])
             self.assertIn('Octubre (parcial)', texts[7])
             if entry['price'] == 'real':
-                self.assertRegex(texts[7], r'Octubre \(parcial\)\s+s/d')
+                self.assertRegex(texts[7], r'Octubre \(parcial\)\s+1\.560\.512')
             self.assertGreater(len(reader.pages[9].get('/Annots', [])), 9)
             for phrase in ['LECTURA CENTRAL', 'PRIORIDADES', 'ORGANISMOS', 'FUNCIONES', 'PROGRAMAS', 'TERRITORIO', 'INGRESOS Y ECONOMÍA', 'EJECUCIÓN', 'HISTORIA Y LECTURA FINAL', 'MÉTODO Y FUENTES']:
                 self.assertIn(phrase, all_text)

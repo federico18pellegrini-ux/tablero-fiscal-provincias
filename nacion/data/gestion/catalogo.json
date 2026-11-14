@@ -1,30 +1,30 @@
 [
   {
     "dataset": "ipc_observado",
-    "rows": 118,
+    "rows": 119,
     "unit": "IPC diciembre 2016=100",
     "scope": "IPC nacional, nivel general",
     "method": "Solo observaciones publicadas por INDEC. Monto real mensual = nominal × IPC agosto 2026 / IPC mes. No se deflactan meses futuros.",
     "status": "listo_para_integrar",
     "sources": [
       {
-        "file": "ipc-septiembre-2026.csv",
+        "file": "ipc-octubre-2026.csv",
         "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
-        "path": "data/ipc-sources/2026-09-divisiones.csv",
-        "retrieved_at": "2026-10-19",
-        "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
-        "bytes": 1242105,
+        "path": "data/ipc-sources/2026-10-divisiones.csv",
+        "retrieved_at": "2026-11-14",
+        "sha256": "0776b25299b68f70496b6d717fd567becb26c4d2c018df1a82620cdd62546e9d",
+        "bytes": 1252806,
         "content_type": "text/csv"
       }
     ],
     "files": {
       "csv": {
         "path": "data/gestion/ipc_observado.csv",
-        "sha256": "ba295bbbcaedbd4445c714a6c6f9e3e15efcf7b1779c450bea8ad88f0d484b2e"
+        "sha256": "3a4525ecce9feae7c4bbcce83bad8aa5a777296ad944d8a6662eacdbf01d1c65"
       },
       "json": {
         "path": "data/gestion/ipc_observado.json",
-        "sha256": "b3aab3e7248f54f499ead1b06d80d7d4b0c4e9a02efe6edffea146d6ec86bddd"
+        "sha256": "43673519336c367e9c1b85739ea9d7917cb4593d964a4a2c717a39a216e47737"
       }
     }
   },
@@ -279,7 +279,7 @@
     "rows": 638,
     "unit": "ARS millones corrientes y constantes de agosto 2026",
     "scope": "Administración Nacional",
-    "method": "Octubre 2026 parcial al corte informado, sin deflactor observado. Solo se suman flujos; no se suman créditos mensuales repetidos.",
+    "method": "Octubre 2026 conserva el corte parcial al 19/10. Los flujos mensuales se ajustan con IPC observado a pesos de agosto de 2026.",
     "status": "listo_para_integrar",
     "sources": [
       {
@@ -324,16 +324,25 @@
         "bytes": 1242105,
         "content_type": "text/csv",
         "member": null
+      },
+      {
+        "file": "ipc-octubre-2026.csv",
+        "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+        "path": "data/ipc-sources/2026-10-divisiones.csv",
+        "retrieved_at": "2026-11-14",
+        "sha256": "0776b25299b68f70496b6d717fd567becb26c4d2c018df1a82620cdd62546e9d",
+        "bytes": 1252806,
+        "content_type": "text/csv"
       }
     ],
     "files": {
       "csv": {
         "path": "data/gestion/gasto_mensual_funcion.csv",
-        "sha256": "0cf6cc77af9b58145a32de9106a24dbce2fb0793fd0150451891ca7e46d791a8"
+        "sha256": "cebe1165c7faae3c23c6a11ae94c0d6df32f3854f16ba7d5ec7fceb83d38ab5a"
       },
       "json": {
         "path": "data/gestion/gasto_mensual_funcion.json",
-        "sha256": "6c93bfa2e8c7a9c67211d6151add4c9efe4358aa904271ea159377dd719a3bf7"
+        "sha256": "71a2e3bfdcb1778e3e0f5464fcaf055108edc64718cefde7f8116aaa8e0d556c"
       }
     }
   },
@@ -563,7 +572,7 @@
     "rows": 225,
     "unit": "ARS millones corrientes y constantes de agosto 2026",
     "scope": "Recursos de Administración Nacional",
-    "method": "Octubre 2026 es parcial, sin ajuste real hasta contar con IPC observado.",
+    "method": "Octubre 2026 conserva el corte parcial al 19/10. Los flujos mensuales se ajustan con IPC observado a pesos de agosto de 2026.",
     "status": "listo_para_integrar",
     "sources": [
       {
@@ -608,16 +617,25 @@
         "bytes": 1242105,
         "content_type": "text/csv",
         "member": null
+      },
+      {
+        "file": "ipc-octubre-2026.csv",
+        "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+        "path": "data/ipc-sources/2026-10-divisiones.csv",
+        "retrieved_at": "2026-11-14",
+        "sha256": "0776b25299b68f70496b6d717fd567becb26c4d2c018df1a82620cdd62546e9d",
+        "bytes": 1252806,
+        "content_type": "text/csv"
       }
     ],
     "files": {
       "csv": {
         "path": "data/gestion/recursos_mensuales_tipo.csv",
-        "sha256": "17fa819689223fb929b55694ed121cb8c4809a8286b2deec6a6025881a62aeb4"
+        "sha256": "0e3bc6aaf80c58b93efc4050573ed8a992be4d2276fd97bd860072ba30e433a4"
       },
       "json": {
         "path": "data/gestion/recursos_mensuales_tipo.json",
-        "sha256": "1eb8793443905a89d56b8997b4c20d553528c7e7b1e1bd11f1a4181924a7d1d0"
+        "sha256": "5d68d868ec7d0df30c4a961fd49707dfea6a0540e8a0af83690d6a3ac88f040c"
       }
     }
   },

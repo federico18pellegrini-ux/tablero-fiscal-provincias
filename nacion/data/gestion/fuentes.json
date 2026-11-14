@@ -455,5 +455,14 @@
     "sha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
     "bytes": 1242105,
     "content_type": "text/csv"
+  },
+  {
+    "file": "ipc-octubre-2026.csv",
+    "url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+    "path": "data/ipc-sources/2026-10-divisiones.csv",
+    "retrieved_at": "2026-11-14",
+    "sha256": "0776b25299b68f70496b6d717fd567becb26c4d2c018df1a82620cdd62546e9d",
+    "bytes": 1252806,
+    "content_type": "text/csv"
   }
 ]

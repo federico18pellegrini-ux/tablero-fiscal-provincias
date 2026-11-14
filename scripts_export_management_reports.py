@@ -312,7 +312,7 @@ class Report:
    if t['real_pct'] is not None:
     real_month=MONTHS[int(t['real_through'][-2:])-1]
     transfer+=f' En enero–{real_month}, '+(f'crecieron {pct(t["real_pct"])}' if t['real_pct']>=0 else f'cayeron {pct(abs(t["real_pct"]))}')+f' real frente a los mismos meses de {int(year)-1}.'
-    if t['real_through']!=t['through']:transfer+=' Octubre aún no tiene IPC publicado.'
+    if t['real_through']!=t['through']:transfer+=f' La comparación real llega hasta {real_month}.'
    else:transfer+=' Falta una serie completa para calcular la variación ajustada por inflación.'
   else:transfer='Falta un acumulado mensual completo de transferencias automáticas. No sumamos períodos sueltos como si fueran el total del año.'
   own=jsonfile('dashboard_real_dynamics_2026.json')['provinces'].get(m['province'],{}).get('metrics',{}).get('own_revenue',{})

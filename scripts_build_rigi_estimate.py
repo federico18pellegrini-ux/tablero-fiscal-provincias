@@ -7,6 +7,7 @@ import json
 import re
 import math
 from pathlib import Path
+from pypdf import PdfReader
 
 ROOT=Path(__file__).resolve().parent
 SRC=ROOT/'nacion/data/rigi-sources'
@@ -62,6 +63,31 @@ def build():
             checked_status='Registro y resolución ARCA conciliados',
             fiscal_cost_2027=None,annual_investment_2027_usd_millions=None)
         r['dividend_reduction_from']=dt.date(int(date[:4])+7,int(date[5:7]),int(date[8:10])).isoformat() if date else None
+    # The two acts are newer than the archived Economy and ARCA tables.
+    bulletin=PdfReader(SRC/'bo-36032.pdf')
+    for identity, number, pages, name, company, provinces in [
+        (432183,1976,range(37,41),'Transporte, fraccionamiento, almacenamiento y comercialización',
+         'Midstream de Gas del Sur SA',['Neuquén','Buenos Aires']),
+        (432184,1977,range(41,45),'Procesamiento en Tratayén',
+         'Procesadora de Gas del Sur SA',['Neuquén']),
+    ]:
+        act=' '.join(' '.join(bulletin.pages[i].extract_text().split()) for i in pages)
+        assert f'Resolución {number}/2026' in act and company in act
+        assert '14 de octubre de 2026' in act and 'ARTÍCULO 2' in act
+        amounts=[float(v.replace('.','').replace(',','.'))/1e6
+                 for v in re.findall(r'USD (\d{1,3}(?:\.\d{3}){2,}(?:,\d{2})?)',act)]
+        total,first_year,second_year=amounts[:3]
+        assert total>first_year+second_year>0
+        registry[identity]=dict(id=identity,name=name,company=company,sector='Petróleo y gas',
+            investment_usd_millions=total,investment_scope='Activos computables declarados',
+            years_from_notification_usd_millions=[first_year,second_year],provinces=provinces,
+            source_url=f'https://www.argentina.gob.ar/normativa/nacional/norma-{identity}',
+            resolution=f'{number}/2026',published='2026-11-13',accession_date='2026-10-14',
+            resolution_url=f'https://www.boletinoficial.gob.ar/detalleAviso/primera/{350287+number-1976}/20261113',
+            resolution_file='data/rigi-sources/bo-36032.pdf',
+            checked_status='Aprobación contrastada en el Boletín Oficial',
+            fiscal_cost_2027=None,annual_investment_2027_usd_millions=None,
+            dividend_reduction_from='2033-10-14')
     projects=sorted(registry.values(),key=lambda x:(x['published'],x['id']))
     assert all(p['accession_date'] for p in projects)
     assert min(p['dividend_reduction_from'] for p in projects)>='2031-01-01'
@@ -85,13 +111,13 @@ def build():
         scenarios.append(dict(name=name,import_share=imports,incremental_share=additional,tariff=rate,
             import_base_usd_millions=annual*imports*additional,
             cost_usd_millions=customs_cost(annual,imports,additional,rate)))
-    return dict(schema_version=1,reviewed='2026-11-01',year=2027,
+    return dict(schema_version=1,reviewed='2026-11-14',year=2027,
         estimate_status='Escenarios condicionales de derechos de importación; no estimación del costo total',
         official_fiscal_cost_2027=None,total_estimated_cost_2027=None,
         registry=dict(raw_territorial_rows=len(rows)-2,project_count=len(projects),
             investment_usd_millions=sum(p['investment_usd_millions'] for p in projects),
             last_publication=max(p['published'] for p in projects),projects=projects,
-            method='Se cuenta cada resolución una vez. Los montos de Economía están publicados en millones de USD redondeados, son inversión comprometida total y no ejecución ni bases imponibles anuales.'),
+            method='Se cuenta cada resolución una vez. El registro de Economía informa montos redondeados. Para las dos altas del 13 de noviembre se suman los activos computables declarados en el Boletín Oficial. Son montos de los planes, sin identificar ejecución ni bases tributarias anuales.'),
         customs=dict(investment_2027_usd_millions=annual,scenarios=scenarios,
             formula='Plan anual × proporción importada × proporción que pagaría arancel sin RIGI × arancel medio contrafactual',
             assumptions='Las tres proporciones/tasas son supuestos de sensibilidad, no datos observados ni un intervalo estadístico. La proporción que pagaría descuenta arancel cero, origen Mercosur y exenciones previas, entre ellas Ley 24.196. No incluye tasa de estadística ni otros impuestos.',

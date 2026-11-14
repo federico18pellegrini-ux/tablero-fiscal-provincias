@@ -14,6 +14,7 @@ def scenario(ipc,anchor='2026-08'):
 def main():
     ipc={r['period']:float(r['ipc_index']) for r in csv.DictReader((ROOT/'data/ipc_national_index.csv').read_text().splitlines())}
     p=ROOT/'nacion/data/budget.json';d=json.loads(p.read_text(encoding='utf-8'));observed,indices,averages,factors=scenario(ipc)
-    d['deflator'].update(observed_through=observed,annual_factors=factors,annual_average_index=averages,monthly_index={k:v for k,v in indices.items() if k>='2026-01'},method='IPC INDEC observado hasta septiembre 2026. Proyección propia desde octubre: variación mensual constante hasta alcanzar los supuestos ONP de diciembre (29% en 2026; 18% en 2027). Montos anuales divididos por IPC promedio anual y multiplicados por IPC agosto 2026. No usa IPC de diciembre como deflactor anual.')
+    following = {'2026-09': 'octubre', '2026-10': 'noviembre', '2026-11': 'diciembre'}[observed]
+    d['deflator'].update(observed_through=observed,annual_factors=factors,annual_average_index=averages,monthly_index={k:v for k,v in indices.items() if k>='2026-01'},method=f'IPC INDEC observado hasta {observed}. Proyección propia desde {following}: variación mensual constante hasta alcanzar los supuestos ONP de diciembre (29% en 2026; 18% en 2027). Montos anuales divididos por IPC promedio anual y multiplicados por IPC agosto 2026. No usa IPC de diciembre como deflactor anual.')
     p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 if __name__=='__main__':main()
