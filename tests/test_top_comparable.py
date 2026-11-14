@@ -16,6 +16,6 @@ class ComparableTOP(unittest.TestCase):
   d=json.loads((R/'dashboard_real_dynamics_2026.json').read_text(encoding='utf-8'))
   for p in manifest_universe():self.assertIsNotNone(d['provinces'][p]['metrics']['own_revenue']['real_ytd_pct'])
   metric=d['provinces']['Buenos Aires']['metrics']['own_revenue']
-  self.assertEqual(metric['ytd_available_through'],'2026-08');self.assertEqual(metric['real_ytd_pct'],-2.8)
+  self.assertEqual(metric['ytd_available_through'],'2026-09');self.assertEqual(metric['real_ytd_pct'],-3.5)
   text=PdfReader(R/'reports/informe-buenos-aires.pdf').pages[2].extract_text()
-  self.assertIn('2,8%',text);self.assertIn('enero-agosto',text.replace('–','-'))
+  self.assertIn('3,5%',text);self.assertIn('enero-septiembre',text.replace('–','-'))
