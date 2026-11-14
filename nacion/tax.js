@@ -26,7 +26,7 @@
       <div id="rigi-estimation"></div><h3>Qué pedir para el debate del presupuesto</h3><p>${d.debate}</p><p>Para el RIGI, publicar una estimación anual por impuesto y proyecto permitiría comparar los beneficios con la inversión ejecutada, los empleos y las exportaciones. El monto de gasto tributario tampoco equivale a dinero que se recaudaría íntegramente al eliminar una dispensa.</p>
       <p class="note">Esta sección usa % del PIB y USD de los planes; no se transforma con los selectores de pesos y base de comparación de gasto de arriba. Revisión: 01/11/2026.</p><nav class="decision-links" aria-label="Fuentes de gasto tributario">${d.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.file==='mensaje2027.pdf'?'Mensaje 2027 · pp. 42–49':s.file==='gastos-2024-2026.pdf'?'Informe 2024–2026 · cuadro 1':s.file==='mensaje2024.pdf'?'Mensaje y Separata 2024':'Planes RIGI · Economía'} ↗</a>`).join('')}<a href="data/tax-expenditures.json">Descargar datos y respaldo</a></nav>`;
   }
-  fetch('data/tax-expenditures.json?v=20261101-estimate').then(async response=>{
+  fetch('data/tax-expenditures.json?v=20261114-audit').then(async response=>{
     if(!response.ok)throw Error('No se pudo cargar gasto tributario');const raw=await response.text();const d=JSON.parse(raw);
     const bytes=new TextEncoder().encode(raw.replace(/\r\n/g,'\n'));
     window.nationalTaxHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');

@@ -6,12 +6,12 @@ R=Path(__file__).resolve().parents[1]
 class SeptemberOfficialVerification(unittest.TestCase):
  def test_official_cpi_and_observed_scenario(self):
   p=R/'data/ipc-sources/2026-09-divisiones.csv';source=json.loads((R/'data/ipc_source.json').read_text(encoding='utf-8'))
-  self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),source['sha256'])
+  self.assertEqual(hashlib.sha256((R/source['archive']).read_bytes()).hexdigest(),source['sha256'])
   rows=list(csv.DictReader(p.read_text(encoding='latin1').splitlines(),delimiter=';'))
   row=next(r for r in rows if r['Codigo']=='0' and r['Region']=='Nacional' and r['Periodo']=='202609')
   self.assertEqual(Decimal(row['Indice_IPC'].replace(',','.')),Decimal('12514.1508'))
   ipc={r['period']:float(r['ipc_index']) for r in csv.DictReader((R/'data/ipc_national_index.csv').read_text().splitlines())}
-  latest,indices,_,_=scenario(ipc);self.assertEqual(latest,'2026-09');self.assertEqual(indices['2026-09'],12514.1508)
+  latest,indices,_,_=scenario(ipc);self.assertEqual(latest,'2026-10');self.assertEqual(indices['2026-10'],12785.9321);self.assertEqual(indices['2026-09'],12514.1508)
   self.assertAlmostEqual(indices['2026-12']/ipc['2025-12'],1.29)
  def test_new_accounts_match_archived_evidence_and_do_not_replace_common_semester(self):
   data=json.loads((R/'municipios/data/fiscal_verified.json').read_text(encoding='utf-8'))

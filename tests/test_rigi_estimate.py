@@ -10,19 +10,19 @@ class RigiEstimateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):cls.data=json.loads((ROOT/'nacion/data/rigi-estimate.json').read_text(encoding='utf8'))
 
-    def test_registry_deduplicates_territorial_rows_and_links_all_27_resolutions(self):
+    def test_registry_deduplicates_territorial_rows_and_links_all_29_resolutions(self):
         d=self.data
         self.assertEqual(build(),d)
         r=d['registry'];self.assertEqual(r['raw_territorial_rows'],33)
-        self.assertEqual(r['project_count'],27);self.assertEqual(r['investment_usd_millions'],76173)
-        self.assertEqual(len({p['id'] for p in r['projects']}),27)
-        self.assertEqual(len({p['resolution'] for p in r['projects']}),27)
+        self.assertEqual(r['project_count'],29);self.assertAlmostEqual(r['investment_usd_millions'],79417.2825762)
+        self.assertEqual(len({p['id'] for p in r['projects']}),29)
+        self.assertEqual(len({p['resolution'] for p in r['projects']}),29)
         for p in r['projects']:
             self.assertTrue((ROOT/'nacion'/p['resolution_file']).exists())
             self.assertIsNone(p['annual_investment_2027_usd_millions'])
             self.assertIsNone(p['fiscal_cost_2027'])
             self.assertGreaterEqual(p['published'],p['accession_date'])
-        self.assertEqual(max(p['published'] for p in r['projects']),'2026-10-27')
+        self.assertEqual(max(p['published'] for p in r['projects']),'2026-11-13')
 
     def test_customs_scenarios_are_not_total_cost_or_a_statistical_interval(self):
         d=self.data;c=d['customs']

@@ -152,7 +152,17 @@ for(const [id,topics] of [['06329',['lectura','poblacion','caja']],['06805',['le
         with tempfile.TemporaryDirectory() as tmp:
             generated=build(Path(tmp),'06329')['reports'][0]
             stored=next(r for r in self.manifest['reports'] if r['id']=='06329')
-            self.assertEqual(generated,stored)
+            # PDF encodings and font subsets can change between library versions.
+            def structure(entry):
+                return {k:v for k,v in entry.items() if k not in {'bytes','sha256','brief'}}
+            self.assertEqual(structure(generated),structure(stored))
+            for field in [None,'brief']:
+                item=stored[field] if field else stored
+                actual=PdfReader(Path(tmp)/item['file'])
+                expected=PdfReader(ROOT/'municipios/reports'/item['file'])
+                self.assertEqual(len(actual.pages),len(expected.pages))
+                for observed,reference in zip(actual.pages,expected.pages):
+                    self.assertEqual(observed.extract_text().split(),reference.extract_text().split())
 
 
 def date_string(value):return '/'.join(reversed(value.split('-')))

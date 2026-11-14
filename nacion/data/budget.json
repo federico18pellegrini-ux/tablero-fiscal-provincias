@@ -14705,14 +14705,14 @@
       "2023": 6.216062255072853,
       "2024": 1.943220746885123,
       "2025": 1.3692324310906918,
-      "2026": 1.0338975214962054,
+      "2026": 1.0328764065320561,
       "2027": 0.8586706939752434
     },
     "annual_average_index": {
       "2023": 1975.006925,
       "2024": 6317.7413166666665,
       "2025": 8966.166533333333,
-      "2026": 11874.258081433129,
+      "2026": 11885.997126432552,
       "2027": 14297.40887413348
     },
     "monthly_index": {
@@ -14725,8 +14725,8 @@
       "2026-07": 12076.3937,
       "2026-08": 12276.766,
       "2026-09": 12514.1508,
-      "2026-10": 12692.405776567237,
-      "2026-11": 12873.199865630302,
+      "2026-10": 12785.9321,
+      "2026-11": 12920.542082190628,
       "2026-12": 13056.569234999999,
       "2027-01": 13237.904487409489,
       "2027-02": 13421.758201841782,
@@ -14745,9 +14745,9 @@
       "inflation_dec_2026": 29,
       "inflation_dec_2027": 18
     },
-    "method": "IPC INDEC observado hasta septiembre 2026. Proyección propia desde octubre: variación mensual constante hasta alcanzar los supuestos ONP de diciembre (29% en 2026; 18% en 2027). Montos anuales divididos por IPC promedio anual y multiplicados por IPC agosto 2026. No usa IPC de diciembre como deflactor anual.",
+    "method": "IPC INDEC observado hasta 2026-10. Proyección propia desde noviembre: variación mensual constante hasta alcanzar los supuestos ONP de diciembre (29% en 2026; 18% en 2027). Montos anuales divididos por IPC promedio anual y multiplicados por IPC agosto 2026. No usa IPC de diciembre como deflactor anual.",
     "source": "../data/ipc_source.json",
-    "observed_through": "2026-09"
+    "observed_through": "2026-10"
   },
   "macro": [
     {

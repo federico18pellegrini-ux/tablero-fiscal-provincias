@@ -204,6 +204,6 @@
   window.addEventListener('hashchange',route);
   window.addEventListener('popstate',route);
   window.addEventListener('national:budget-ready',()=>{if(D&&current==='provincias-nacion')renderProvinces();});
-  fetch('data/gestion.json?v=20261101-oct').then(async r=>{if(!r.ok)throw Error('No se pudieron cargar los nuevos datos de gestión.');const text=await r.text();window.nationalManagementHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;window.nationalManagementContext=D;window.dispatchEvent(new Event('national:management-ready'));$('management-status').hidden=true;downloads();ready();}).catch(e=>{$('management-status').innerHTML=esc(e.message)+' <a href="">Reintentar</a>';});
+  fetch('data/gestion.json?v=20261114-ipc').then(async r=>{if(!r.ok)throw Error('No se pudieron cargar los nuevos datos de gestión.');const text=await r.text();window.nationalManagementHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}).then(data=>{D=data;window.nationalManagementContext=D;window.dispatchEvent(new Event('national:management-ready'));$('management-status').hidden=true;downloads();ready();}).catch(e=>{$('management-status').innerHTML=esc(e.message)+' <a href="">Reintentar</a>';});
   route();
 })();

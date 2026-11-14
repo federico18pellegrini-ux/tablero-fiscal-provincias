@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class SeptemberRON(unittest.TestCase):
  def test_official_totals_and_shared_national_supplement(self):
   d=json.loads((ROOT/'data/ron_latest.json').read_text(encoding='utf8'))
-  self.assertGreaterEqual(d['period'],'2026-09');self.assertEqual(d['real_available_through'],'2026-09')
+  self.assertGreaterEqual(d['period'],'2026-09');self.assertEqual(d['real_available_through'],'2026-10')
   self.assertEqual(len(d['rows']),24)
   p=ROOT/d['source']['path'];self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),d['source']['sha256'])
   w=openpyxl.load_workbook(p,data_only=True)

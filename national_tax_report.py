@@ -44,9 +44,9 @@ def append_tax(r,d):
     r.note(link('mensaje2027.pdf','Mensaje 2027')+' · '+link('gastos-2024-2026.pdf','Estimación revisada de 2024')+' · '+link('mensaje2024.pdf','Mensaje y Separata 2024'))
 
     e=d['rigi']['estimate'];c=e['customs'];registry=e['registry'];middle=c['scenarios'][1]
-    r.section('Debate presupuestario / RIGI','Cuánto podemos estimar','Economía: planes y registro oficial. ARCA: 27 resoluciones y beneficios RIGI. Corte de consulta: 01/11/2026.')
+    r.section('Debate presupuestario / RIGI','Cuánto podemos estimar','Economía y ARCA: registro, planes y beneficios. Boletín Oficial 13/11/2026, resoluciones 1976 y 1977.')
     r.add('El costo fiscal total sigue sin cuantificación oficial. Con los datos públicos podemos simular una parte: los derechos de importación que se dejarían de cobrar bajo supuestos explícitos.','lead')
-    r.add(f'<b>{registry["project_count"]} proyectos aprobados · USD {num(registry["investment_usd_millions"],0)} millones comprometidos.</b> Se cuenta cada proyecto una vez, aunque abarque varias provincias. Son planes completos, no desembolsos. El calendario sectorial prevé USD {num(c["investment_2027_usd_millions"],0)} millones para 2027.')
+    r.add(f'<b>{registry["project_count"]} proyectos aprobados · USD {num(registry["investment_usd_millions"],0)} millones comprometidos.</b> Se cuenta cada proyecto una vez, aunque abarque varias provincias. Las dos altas del 13/11 informan USD 3.244 millones en activos computables. Sus primeros dos años corren desde la notificación. El calendario sectorial prevé USD {num(c["investment_2027_usd_millions"],0)} millones para 2027.')
     r.add('Tres hipótesis para derechos de importación','heading')
     r.note('Costo en millones de USD de 2027. Los porcentajes son supuestos de sensibilidad, no observaciones. No forman un intervalo estadístico ni una previsión central.')
     r.table(['Escenario','Importado','Pagaría sin RIGI','Arancel medio','Costo USD M'],[[x['name'],num(x['import_share']*100,0)+'%',num(x['incremental_share']*100,0)+'%',num(x['tariff']*100,0)+'%',num(x['cost_usd_millions'])] for x in c['scenarios']],[55,70,130,90,WIDTH-345])
@@ -58,7 +58,7 @@ def append_tax(r,d):
         ['Amortización','Adelanta deducciones. Su efecto depende de activos, vida útil, utilidades y quebrantos; no es íntegramente una pérdida definitiva.'],
         ['IVA',f'Adelantar seis meses un crédito hipotético de USD 100 millones, con tasa anual de 8%, tiene valor financiero de USD {num(e["vat_example"]["financial_value_usd_millions"])} millones. No sumarlo a la renuncia aduanera.'],
         ['Exportaciones','Exención luego de dos o tres años desde la adhesión. Faltan exportaciones propias y derechos vigentes por producto para cuantificar.'],
-        ['Dividendos','La baja de 7% a 3,5% exige siete años desde adhesión. Ninguno de los 27 proyectos cumple ese plazo en 2027; solo ese beneficio tiene costo cero para ese año.']],[100,WIDTH-100])
+        ['Dividendos','La baja de 7% a 3,5% exige siete años desde adhesión. Ninguno de los proyectos verificados cumple ese plazo en 2027; solo ese beneficio tiene costo cero para ese año.']],[100,WIDTH-100])
     r.add('Qué falta para cerrar la estimación','heading')
     r.add('Faltan compras por NCM y origen, beneficios previos, utilidades y quebrantos, créditos IVA, exportaciones y pagos bancarios/al exterior. Recomendamos publicar las bases y el costo anual por impuesto y proyecto.')
     r.note('<link href="https://www.arca.gob.ar/rigi/incentivos/default.asp" color="#254b73">ARCA: beneficios por impuesto</link> · <link href="https://biblioteca.afip.gob.ar/cuadroslegislativos/cuadroLegislativo.aspx?i=541" color="#254b73">ARCA: proyectos y resoluciones</link> · <link href="https://tablero.federicopellegrini.com.ar/nacion/#gasto-tributario" color="#254b73">Registro, fuentes y simulador</link>')

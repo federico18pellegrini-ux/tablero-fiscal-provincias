@@ -1,9 +1,9 @@
 {
   "reviewed_at": "2026-09-15",
   "official_sha256": "f57bf8516dd7e88c733d20d39941590e160f3825a4fe8f660fc6cd3d1c79197c",
-  "official_months": 117,
+  "official_months": 119,
   "first_month": "2016-12",
-  "last_month": "2026-09",
+  "last_month": "2026-10",
   "base_month": "2026-06",
   "index_differences": 0,
   "max_factor_error": 4.983746748621343e-11,
@@ -31,5 +31,12 @@
     "totalMonths": 118,
     "historicalPrecision": "Se conservan ocho meses de 2024 del XLS anterior, de mayor precisión que el CSV (diferencia máxima 0,0005).",
     "priorAuditScope": "Los controles restantes conservan su fecha original."
+  },
+  "october_update": {
+    "verifiedAt": "2026-11-14",
+    "nationalIndex": 12785.9321,
+    "sha256": "0776b25299b68f70496b6d717fd567becb26c4d2c018df1a82620cdd62546e9d",
+    "prior_indices_compared": 118,
+    "max_difference": 0.0005
   }
 }
