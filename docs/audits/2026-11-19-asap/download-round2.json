@@ -1,0 +1,43 @@
+[
+  {
+    "key": "escobar-decretos",
+    "url": "https://apiweb.escobar.gob.ar/api/datos.php?que=decretos&anio=2025&q=presupuesto&pagina=1",
+    "status": 200,
+    "finalUrl": "https://apiweb.escobar.gob.ar/api/datos.php?que=decretos&anio=2025&q=presupuesto&pagina=1",
+    "bytes": 7031,
+    "sha256": "5ddb165bb8f93ba7033be4ee27a840a938df90e9450e0d781f141616b7410c41",
+    "file": "work\\asap-nov19\\escobar-decretos.html"
+  },
+  {
+    "key": "brown-sef",
+    "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+    "error": "HTTP Error 502: Bad Gateway"
+  },
+  {
+    "key": "brown-bo107",
+    "url": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n107/",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n107/",
+    "bytes": 166831,
+    "sha256": "f1dd761100b92f248ba7fcf4b28643e6c6b94a53d7a7bb3768c32feb53bd1e4a",
+    "file": "work\\asap-nov19\\brown-bo107.html"
+  },
+  {
+    "key": "brown-bo2025",
+    "url": "https://www.brown.gob.ar/boletin-oficial-2025/",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/boletin-oficial-2025/",
+    "bytes": 225055,
+    "sha256": "132043f29ab478bb5c4c653859db7e33aa38d2e8139e7040a2f404e9bf5a154e",
+    "file": "work\\asap-nov19\\brown-bo2025.html"
+  },
+  {
+    "key": "escobar-hcd",
+    "url": "https://www.hcdescobar.gob.ar/",
+    "status": 200,
+    "finalUrl": "https://hcdescobar.gob.ar/",
+    "bytes": 128916,
+    "sha256": "9c579a2f3b913fb91ec8b236f9f2f00476fc7a223b3ce4def39dd3936df8e52b",
+    "file": "work\\asap-nov19\\escobar-hcd.html"
+  }
+]

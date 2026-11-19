@@ -50,6 +50,13 @@ def apply_annual_budgets(municipalities, path):
             field = record['componentField']
             if field not in ('original', 'current') or amounts[field] is None or any(not v.is_finite() or v < 0 for v in values) or abs(sum(values) - amounts[field]) > Decimal('.02'):
                 raise ValueError('Annual budget components do not reconcile: ' + ident)
+        amendments = []
+        for amendment in record.get('amendments', []):
+            amount = Decimal(amendment['amount'])
+            issued = date.fromisoformat(amendment['asOf'])
+            if not amount.is_finite() or amount <= 0 or issued.year != budget_year or issued > verified or amendment.get('status') != 'sancionada' or not amendment.get('note') or amendment.get('document') not in record['documents']:
+                raise ValueError('Invalid separately documented budget amendment: ' + ident)
+            amendments.append({**amendment, 'amount': float(amount)})
         m = municipalities[ident]
         population = m['poblacion_2022']
         if not isinstance(population, (int, float)) or population <= 0:
@@ -59,7 +66,8 @@ def apply_annual_budgets(municipalities, path):
                              'amount': float(amounts[chosen]), 'basis': chosen,
                              'perCapita': float(amounts[chosen] / Decimal(str(population))),
                              'historical': budget_year < year, 'verifiedAt': record.get('verifiedAt', audit['verifiedAt']),
-                             'components': [{'label': p['label'], 'amount': float(p['amount'])} for p in parts]}
+                             'components': [{'label': p['label'], 'amount': float(p['amount'])} for p in parts],
+                             **({'amendments': amendments} if amendments else {})}
         # Keep the detailed accounts and the new summary on the same ceiling.
         detail = m.get('management', {}).get('budget') if m.get('management') else None
         if detail and detail['fin'] == record['asOf'] and abs(detail['current'] - float(amounts['current'])) > .02:

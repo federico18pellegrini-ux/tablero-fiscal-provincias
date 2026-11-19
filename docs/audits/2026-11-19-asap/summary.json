@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-19",
+  "scope": "Pistas de ASAP contrastadas con documentos municipales oficiales. Revisión focalizada de Escobar y Almirante Brown; no nueva auditoría exhaustiva de 135 municipios.",
+  "publishedData": {
+    "municipality": "Escobar",
+    "originalBudget2026": "299462800000.00",
+    "ordinance": "6440/25",
+    "promulgation": "2564/2025, 01/12/2025",
+    "amendmentSanctioned": "21334744455.67",
+    "amendmentDate": "2026-11-13",
+    "amendmentOrdinance": "6546/26",
+    "currentBudget": null
+  },
+  "checks": [
+    "Recursos corrientes más capital de la ordenanza original suman $299.462.800.000.",
+    "Los 26 rubros de la ampliación suman $21.334.744.455,67.",
+    "Se toma la fecha del decreto original; el catálogo web lo ubica erróneamente en enero.",
+    "La ampliación sancionada no se agrega automáticamente al original para inventar un vigente total.",
+    "El índice de transparencia de ASAP no prueba importes ni se mezcla con el ranking de gestión de 135 municipios."
+  ],
+  "pending": [
+    "Escobar: ejecución 2026 comparable y estado de crédito vigente completo. El catálogo municipal consultado lista presupuestos 2026 y reseñas financieras sólo hasta 2025.",
+    "Brown: presupuesto 2026 aprobado con original recuperable y cuenta reciente. Se mantiene la cuenta 2025 respaldada localmente.",
+    "Brown: files.brown.gob.ar devolvió 502 tanto en el PDF financiero como en el boletín de noviembre. Las rutas alternativas probadas no recuperaron esos documentos.",
+    "El digesto se consultó por palabras, año y fecha; sus resultados no permitieron recuperar la ordenanza presupuestaria 2026. No se afirma que no exista."
+  ],
+  "qa": {
+    "python": {
+      "passed": 208,
+      "failed": 0
+    },
+    "node": {
+      "passed": 166,
+      "failed": 0
+    },
+    "browserWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "pdfVisual": "Página de cuentas del informe completo y breve de Escobar revisada; cifras y ampliación coinciden con el tablero.",
+    "finalMunicipalPython": {
+      "passed": 50,
+      "failed": 0
+    },
+    "reports": "135 familias de informes y breves vigentes; se verificaron versiones con temas seleccionados en el navegador."
+  },
+  "originals": "Los tres documentos incorporados se conservan con hashes en municipios/data/fiscal-sources/2026-11-19-asap. Los cuatro cuerpos escaneados y boletines descargados quedan preservados en work/asap-nov19; no se afirma revisión visual integral de todas sus páginas.",
+  "annualBudgetCoverage": {
+    "targetYear": 2026,
+    "verifiedAt": "2026-11-19",
+    "available": 121,
+    "currentYear": 117,
+    "historical": 4,
+    "pending": 14
+  },
+  "fiscalCoverage": {
+    "fiscal": 87,
+    "budgetOnly": 2,
+    "otherPeriods": 36,
+    "withAccounts": 123,
+    "verifiedAt": "2026-11-19"
+  },
+  "budgets2026Pending": [
+    {
+      "id": "06028",
+      "name": "Almirante Brown"
+    },
+    {
+      "id": "06134",
+      "name": "Cañuelas"
+    },
+    {
+      "id": "06238",
+      "name": "Dolores"
+    },
+    {
+      "id": "06260",
+      "name": "Esteban Echeverría"
+    },
+    {
+      "id": "06270",
+      "name": "Ezeiza"
+    },
+    {
+      "id": "06294",
+      "name": "General Arenales"
+    },
+    {
+      "id": "06408",
+      "name": "Hurlingham"
+    },
+    {
+      "id": "06410",
+      "name": "Ituzaingó"
+    },
+    {
+      "id": "06420",
+      "name": "La Costa"
+    },
+    {
+      "id": "06462",
+      "name": "Leandro N. Alem"
+    },
+    {
+      "id": "06511",
+      "name": "Maipú"
+    },
+    {
+      "id": "06525",
+      "name": "Marcos Paz"
+    },
+    {
+      "id": "06574",
+      "name": "Navarro"
+    },
+    {
+      "id": "06648",
+      "name": "Presidente Perón"
+    },
+    {
+      "id": "06655",
+      "name": "Punta Indio"
+    },
+    {
+      "id": "06700",
+      "name": "Saavedra"
+    },
+    {
+      "id": "06778",
+      "name": "San Vicente"
+    },
+    {
+      "id": "06812",
+      "name": "Tordillo"
+    }
+  ]
+}

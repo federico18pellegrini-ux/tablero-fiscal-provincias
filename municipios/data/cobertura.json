@@ -247,14 +247,23 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-10-14",
-      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalReview": "2026-11-19",
+      "portalStatus": "Página financiera, digesto y boletines oficiales revisados. El servidor files.brown.gob.ar devuelve HTTP 502. Se conserva la cuenta 2025 previamente verificada; falta recuperar documentación reciente y el presupuesto 2026 aprobado.",
       "portalUrl": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "budgetYear": null,
       "budgetAsOf": null,
       "budgetOriginal2026": false,
       "budgetCurrent2026": false,
-      "findings": [],
+      "findings": [
+        {
+          "id": "06028",
+          "topic": "budget",
+          "state": "source_unavailable",
+          "url": "https://www.brown.gob.ar/transparencia-estado-presupuestario/",
+          "note": "El portal y el digesto se revisaron, pero el servidor de archivos oficiales devuelve 502. Se conserva la cuenta 2025 y continúa pendiente el presupuesto 2026 respaldado por un original recuperable.",
+          "reviewedAt": "2026-11-19"
+        }
+      ],
       "documentsNeeded": [
         {
           "topic": "Cuenta fiscal comparable",
@@ -2668,8 +2677,6 @@
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
@@ -2679,20 +2686,21 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-11-19",
+      "portalStatus": "Presupuesto original 2026 aprobado y promulgado incorporado. Se registró por separado la ampliación sancionada el 13/11/2026. La cuenta fiscal más reciente incorporada sigue siendo el cierre 2025; falta ejecución 2026 verificable.",
       "portalUrl": "https://www.escobar.gob.ar/transparencia/",
-      "budgetYear": 2025,
-      "budgetAsOf": "2025-12-31",
-      "budgetOriginal2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2025-12-01",
+      "budgetOriginal2026": true,
       "budgetCurrent2026": false,
       "findings": [
         {
           "id": "06252",
           "topic": "budget",
-          "state": "draft_not_approved",
-          "url": "https://www.escobar.gob.ar/transparencia/",
-          "note": "Los cuatro cuerpos 2026 están disponibles. Las páginas iniciales del cuerpo I dicen proyecto de ordenanza. Falta verificar la norma aprobada o la ejecución 2026; no se cargó el proyecto como presupuesto vigente."
+          "state": "verified_original_budget",
+          "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-O-6440-Presupuesto-26.pdf",
+          "note": "Se recuperó la Ordenanza 6440/25 y el Decreto 2564/2025: presupuesto original 2026 aprobado por $299.462.800.000. La ampliación sancionada de noviembre se registra separadamente; falta el vigente total y una cuenta 2026.",
+          "reviewedAt": "2026-11-19"
         }
       ],
       "documentsNeeded": [
@@ -2700,11 +2708,6 @@
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
         },
         {
           "topic": "Presupuesto vigente 2026",
@@ -10567,7 +10570,7 @@
     },
     {
       "topic": "Presupuesto original 2026",
-      "available": 32,
+      "available": 33,
       "total": 135
     },
     {
@@ -10705,9 +10708,10 @@
       {
         "id": "06252",
         "topic": "budget",
-        "state": "draft_not_approved",
-        "url": "https://www.escobar.gob.ar/transparencia/",
-        "note": "Los cuatro cuerpos 2026 están disponibles. Las páginas iniciales del cuerpo I dicen proyecto de ordenanza. Falta verificar la norma aprobada o la ejecución 2026; no se cargó el proyecto como presupuesto vigente."
+        "state": "verified_original_budget",
+        "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-O-6440-Presupuesto-26.pdf",
+        "note": "Se recuperó la Ordenanza 6440/25 y el Decreto 2564/2025: presupuesto original 2026 aprobado por $299.462.800.000. La ampliación sancionada de noviembre se registra separadamente; falta el vigente total y una cuenta 2026.",
+        "reviewedAt": "2026-11-19"
       },
       {
         "id": "06270",
@@ -10841,6 +10845,14 @@
         "state": "incorporated",
         "url": "https://www.sannicolasciudad.gob.ar/",
         "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2025-01-02 a 2025-12-31."
+      },
+      {
+        "id": "06028",
+        "topic": "budget",
+        "state": "source_unavailable",
+        "url": "https://www.brown.gob.ar/transparencia-estado-presupuestario/",
+        "note": "El portal y el digesto se revisaron, pero el servidor de archivos oficiales devuelve 502. Se conserva la cuenta 2025 y continúa pendiente el presupuesto 2026 respaldado por un original recuperable.",
+        "reviewedAt": "2026-11-19"
       }
     ],
     "seriesReview": [
@@ -10899,6 +10911,23 @@
           "06861"
         ],
         "period_conflict": "Monte: dos etiquetas del portal apuntan a un PDF de enero-marzo, no al semestre."
+      },
+      {
+        "date": "2026-11-19",
+        "scope": "Pistas de ASAP para Escobar y Almirante Brown. Revisión focalizada, no nueva conciliación de los 135 municipios.",
+        "municipalities": [
+          "06252",
+          "06028"
+        ],
+        "incorporated": [
+          "Presupuesto original Escobar 2026",
+          "Ampliación sancionada Escobar 13/11/2026, separada del vigente total"
+        ],
+        "pending": [
+          "Cuenta 2026 de Escobar",
+          "Crédito vigente completo de Escobar",
+          "Presupuesto 2026 y cuenta reciente de Brown"
+        ]
       }
     ]
   },
@@ -17567,9 +17596,9 @@
       "id": "06252",
       "municipio": "Escobar",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "2025",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "https://www.escobar.gob.ar/transparencia/",
       "revision": "2026-10-04"
     },
@@ -17578,7 +17607,7 @@
       "municipio": "Escobar",
       "tema": "Presupuesto vigente 2026",
       "estado": "Pendiente",
-      "periodo": "2025-12-31",
+      "periodo": "2025-12-01",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
       "portal": "https://www.escobar.gob.ar/transparencia/",
       "revision": "2026-10-04"

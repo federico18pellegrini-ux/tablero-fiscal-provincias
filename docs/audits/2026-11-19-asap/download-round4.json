@@ -1,0 +1,61 @@
+[
+  {
+    "key": "escobar-ordenanzas",
+    "url": "https://hcdescobar.gob.ar/ordenanzas/",
+    "error": "<urlopen error [WinError 10054] Se ha forzado la interrupci\u00f3n de una conexi\u00f3n existente por el host remoto>"
+  },
+  {
+    "key": "brown-dic1",
+    "url": "https://www.brown.gob.ar/wp-content/uploads/boletines/PQ-Diciembre-Decretos-2025.pdf",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/wp-content/uploads/boletines/PQ-Diciembre-Decretos-2025.pdf",
+    "bytes": 49973098,
+    "sha256": "693d97c2a4d92cb0edeb42ceee440d82893f83f4d640a591619a0eb58bc5fe10",
+    "file": "work\\asap-nov19\\brown-dic1.pdf"
+  },
+  {
+    "key": "brown-dic2",
+    "url": "https://www.brown.gob.ar/wp-content/uploads/boletines/SQ-Diciembre-Decretos-2025.pdf",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/wp-content/uploads/boletines/SQ-Diciembre-Decretos-2025.pdf",
+    "bytes": 86823768,
+    "sha256": "1996f7f5bae2c985bea351d4a958ee30678f64a12aebf0fa2303514ef5371cca",
+    "file": "work\\asap-nov19\\brown-dic2.pdf"
+  },
+  {
+    "key": "brown-bo104",
+    "url": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n104/",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n104/",
+    "bytes": 166855,
+    "sha256": "0b6ef8e45f0603fab63095c924d6cc9fac33727788310d245d6a58d32279b6ab",
+    "file": "work\\asap-nov19\\brown-bo104.html"
+  },
+  {
+    "key": "brown-bo103",
+    "url": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n103/",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n103/",
+    "bytes": 166854,
+    "sha256": "bd65ccbf9f25b505992f449079e33df6958644b78284454f5f152c0b0c20fa34",
+    "file": "work\\asap-nov19\\brown-bo103.html"
+  },
+  {
+    "key": "brown-media",
+    "url": "https://www.brown.gob.ar/wp-json/wp/v2/media?search=financiera&per_page=100",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/wp-json/wp/v2/media?search=financiera&per_page=100",
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "file": "work\\asap-nov19\\brown-media.html"
+  },
+  {
+    "key": "brown-search",
+    "url": "https://www.brown.gob.ar/wp-json/wp/v2/search?search=contable&per_page=100",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/wp-json/wp/v2/search?search=contable&per_page=100",
+    "bytes": 1724,
+    "sha256": "0581d2ac7f02933ea4b4cfecd68ab3cef6f652e7da8cbec3ed8859c335f7a655",
+    "file": "work\\asap-nov19\\brown-search.html"
+  }
+]

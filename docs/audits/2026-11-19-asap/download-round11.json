@@ -1,0 +1,29 @@
+[
+  {
+    "key": "brown-digesto-word",
+    "url": "https://a.brown.gob.ar/hcd/digesto/buscarporpalabra",
+    "status": 200,
+    "finalUrl": "https://a.brown.gob.ar/hcd/digesto/buscarporpalabra",
+    "bytes": 16252,
+    "sha256": "565653e0707c25cacce64a772d9306ef07a6896bd6f61201dd601e6710f0c9ec",
+    "file": "work\\asap-nov19\\brown-digesto-word.html"
+  },
+  {
+    "key": "brown-digesto-date",
+    "url": "https://a.brown.gob.ar/hcd/digesto/buscarporfecha",
+    "status": 200,
+    "finalUrl": "https://a.brown.gob.ar/hcd/digesto/buscarporfecha",
+    "bytes": 16331,
+    "sha256": "1cc639bbde106754002270c2b5d086f8f1a7aec207a1494007b9aebd19f33c57",
+    "file": "work\\asap-nov19\\brown-digesto-date.html"
+  },
+  {
+    "key": "escobar-ejecucion-search",
+    "url": "https://hcdescobar.gob.ar/wp-json/wp/v2/search?search=ejecucion&per_page=100",
+    "status": 200,
+    "finalUrl": "https://hcdescobar.gob.ar/wp-json/wp/v2/search?search=ejecucion&per_page=100",
+    "bytes": 15040,
+    "sha256": "de75d467dda92505f03898109fadae0fde81bc83f44e3ff3e7d9d0edbbb94a4b",
+    "file": "work\\asap-nov19\\escobar-ejecucion-search.html"
+  }
+]

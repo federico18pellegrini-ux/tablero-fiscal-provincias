@@ -347,6 +347,8 @@ class Report:
         self.p('El presupuesto sirve para conocer la escala de recursos que la gestión prevé utilizar. Para evaluar su ejecución hay que compararlo con gastos del mismo ejercicio y de los mismos organismos. Los ingresos provinciales recibidos son sólo una parte de la financiación municipal.')
         self.p(escaped(b['scope']))
         if b['note']:self.p(escaped(b['note']),'small')
+        for amendment in b.get('amendments', []):
+            self.p(f"Ampliación sancionada el {date(amendment['asOf'])}: {money(amendment['amount'])} millones. "+escaped(amendment['note']),'small')
     def budget_reading(self,b):
         label='vigente' if b['basis']=='current' else 'original publicado'
         self.p(f"El presupuesto {label} de {b['year']} es de {money(b['amount'],1)} millones. Documento o corte: {date(b['asOf'])}. Es la autorización para gastar durante todo el año; no representa gasto ejecutado ni caja libre.")

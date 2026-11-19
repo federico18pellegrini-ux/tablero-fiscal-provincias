@@ -93,10 +93,10 @@
     {
       "id": "06028",
       "municipio": "Almirante Brown",
-      "reviewedAt": "2026-10-14",
+      "reviewedAt": "2026-11-19",
       "searchedThisRound": true,
       "status": "other_period",
-      "message": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "message": "Página financiera, digesto y boletines oficiales revisados. El servidor files.brown.gob.ar devuelve HTTP 502. Se conserva la cuenta 2025 previamente verificada; falta recuperar documentación reciente y el presupuesto 2026 aprobado.",
       "providedUrl": "https://www.almirantebrown.gov.ar/estado-contable-2023",
       "accountUrl": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "latestPeriodEnd": "2025-12-31",
@@ -123,6 +123,37 @@
           "status": 200,
           "sha256": "cf175ad9596d64d1a6a51d3b4499f10dc458988d146d2bd03856f7e0a8ef729f",
           "consulted": "2026-09-11"
+        },
+        {
+          "url": "https://www.brown.gob.ar/transparencia-estado-presupuestario/",
+          "status": 200,
+          "sha256": "6c2755fb9ac39b589edb511dd6bcccbe1a06a61dcb78967a6091f76d0545999d",
+          "consulted": "2026-11-19"
+        },
+        {
+          "url": "https://a.brown.gob.ar/hcd/digesto",
+          "status": 200,
+          "sha256": "db6421c11b9d87faa6dfb5e3a6e420c3163369ff33030547930ab77b7019774a",
+          "consulted": "2026-11-19"
+        },
+        {
+          "url": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n105/",
+          "status": 200,
+          "sha256": "9387154c45ec8b871b36d60f806ea90913c48b4c897e0a1c37928f44d89a440a",
+          "consulted": "2026-11-19"
+        },
+        {
+          "url": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n106/",
+          "status": 200,
+          "sha256": "18dfb883b7567ff9b9b1d7a8808aa6310b1258dd997409f4ce13d681abade968",
+          "consulted": "2026-11-19"
+        },
+        {
+          "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+          "status": null,
+          "sha256": null,
+          "consulted": "2026-11-19",
+          "error": "HTTP Error 502: Bad Gateway"
         }
       ]
     },
@@ -1119,10 +1150,10 @@
     {
       "id": "06252",
       "municipio": "Escobar",
-      "reviewedAt": "2026-09-11",
+      "reviewedAt": "2026-11-19",
       "searchedThisRound": true,
       "status": "other_period",
-      "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "message": "Presupuesto original 2026 aprobado y promulgado incorporado. Se registró por separado la ampliación sancionada el 13/11/2026. La cuenta fiscal más reciente incorporada sigue siendo el cierre 2025; falta ejecución 2026 verificable.",
       "providedUrl": "https://www.escobar.gob.ar/transparencia/",
       "accountUrl": "https://www.escobar.gob.ar/transparencia/",
       "latestPeriodEnd": "2025-12-31",
@@ -1149,6 +1180,18 @@
           "status": 200,
           "sha256": "18e93e2fe4ad8330c738518580c35f472af095322b567c6bb78d30bf1205d2c3",
           "consulted": "2026-09-11"
+        },
+        {
+          "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-O-6440-Presupuesto-26.pdf",
+          "status": 200,
+          "sha256": "2e058e43bdd04766d818ddf88fd23ee2ce775a43d95105ef8363808d9b17d4b3",
+          "consulted": "2026-11-19"
+        },
+        {
+          "url": "https://www.escobar.gob.ar/subidas/decretos/2025/2564-2025.pdf",
+          "status": 200,
+          "sha256": "a2174db9359e4179f68c84956a0707e1657e8a74c9d74b19f057f9544ca98240",
+          "consulted": "2026-11-19"
         }
       ]
     },
