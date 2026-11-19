@@ -20,7 +20,7 @@ class ProvincialSeptember(unittest.TestCase):
         self.assertAlmostEqual(totals['Santa Cruz','2026-09'],(39612046014.81-784921910.61-3025042.46)/1e6,places=6)
         self.assertAlmostEqual(totals['Santa Cruz','2026-08'],(40072866573.93-579096261.65)/1e6,places=6)
         self.assertNotEqual(totals['Santa Cruz','2026-08'],totals['Santa Cruz','2026-04'])
-        self.assertNotIn(('La Pampa','2026-09'),totals)
+        self.assertAlmostEqual(totals['La Pampa','2026-09'],48765.40227457,places=6)
         self.assertAlmostEqual(totals['Buenos Aires','2026-09'],1582201.037974436,places=6)
         self.assertAlmostEqual(totals['Santa Fe','2026-09'],308009.5339686068,places=6)
 
@@ -51,7 +51,7 @@ class ProvincialSeptember(unittest.TestCase):
         salta=[r for r in rows if r['province']=='Salta' and r['period']=='2026-08']
         self.assertEqual(next(float(r['value_millions']) for r in salta if r['tax']=='Otros'),0)
         self.assertFalse(any(r['tax']=='Automotores' for r in salta))
-        self.assertNotIn(('La Pampa','2026-09'),totals)
+        self.assertAlmostEqual(totals['La Pampa','2026-09'],48765.40227457,places=6)
 
     def test_caba_agip_taxonomy_and_rounding(self):
         from scripts_integrate_provincial_recent import observations

@@ -50,7 +50,7 @@ class NationalReportsTest(unittest.TestCase):
         self.assertEqual({(r['price'], r['base']) for r in self.catalog['reports']},
                          {(p, b) for p in ['nominal', 'real'] for b in reports.BASES})
         for entry in self.catalog['reports']:
-            self.assertEqual(entry['main']['pages'], 23)
+            self.assertEqual(entry['main']['pages'], 24)
             self.assertGreater(entry['full']['pages'], entry['main']['pages'])
 
     def test_pdfs_have_all_chapters_units_sources_numbering_and_selected_base(self):
@@ -65,10 +65,10 @@ class NationalReportsTest(unittest.TestCase):
             all_text = ' '.join('\n'.join(texts).split())
             self.assertIn('IPC promedio', all_text)
             self.assertIn('no significa necesariamente haberla pagado', all_text)
-            self.assertIn('76,0%', texts[7])
-            self.assertIn('Octubre (parcial)', texts[7])
+            self.assertIn('85,2%', texts[7])
+            self.assertIn('Noviembre (parcial)', texts[7])
             if entry['price'] == 'real':
-                self.assertRegex(texts[7], r'Octubre \(parcial\)\s+1\.560\.512')
+                self.assertRegex(texts[7], r'Noviembre \(parcial\)\s+s/d')
             self.assertGreater(len(reader.pages[9].get('/Annots', [])), 9)
             for phrase in ['LECTURA CENTRAL', 'PRIORIDADES', 'ORGANISMOS', 'FUNCIONES', 'PROGRAMAS', 'TERRITORIO', 'INGRESOS Y ECONOMÍA', 'EJECUCIÓN', 'HISTORIA Y LECTURA FINAL', 'MÉTODO Y FUENTES']:
                 self.assertIn(phrase, all_text)
@@ -78,10 +78,10 @@ class NationalReportsTest(unittest.TestCase):
             self.assertIn('1.894', all_text)
             self.assertIn('31/03/2026', all_text)
             self.assertIn('28 conjuntos', all_text)
-            self.assertIn('DA 20/2026', texts[10])
-            self.assertIn('DNU 867/2026', texts[10])
+            self.assertIn('DA 20/2026', all_text)
+            self.assertIn('DNU 867/2026', all_text)
             for value in ['105.025', '5.080', '31/07', '31/03', 'Pesos / miles de millones']:
-                self.assertIn(value, texts[11])
+                self.assertIn(value, all_text)
 
     def test_annex_preserves_every_program_and_project_exactly_once(self):
         # Each variant includes all source rows, not just the current UI search/page.
@@ -153,13 +153,13 @@ class PrioritiesPdfTests(unittest.TestCase):
         for entry in manifest['reports']:
             for variant in ['main','full']:
                 pdf=PdfReader(ROOT/'nacion/reports'/entry[variant]['file'])
-                text=' '.join(' '.join(p.extract_text() for p in pdf.pages[19:21]).split())
-                for phrase in ['Qué cambia detrás del gasto total','109,66','108,57','10,21','13,19','12,15','4,1%',
+                text=' '.join(' '.join(p.extract_text() for p in pdf.pages).split())
+                for phrase in ['Qué cambia detrás del gasto total','136,09','134,81','11,40','14,19','10,52','3,3%',
                                'Ganar peso dentro del presupuesto no significa recibir más recursos',
                                'Del presupuesto a las personas','18.254.178','35.966','443.768','Promedio de becarios',
                                'enero–junio 2026','mínima con bono perdió','4,6%','25,1%','IPC observado']:
                     self.assertIn(phrase,text)
-                self.assertGreater(len(pdf.pages[20].get('/Annots',[])),1)
+                self.assertGreater(len(next(p for p in pdf.pages if 'Del presupuesto a las personas' in p.extract_text()).get('/Annots',[])),1)
 
     def test_spending_function_identity_matches_observed_denominator(self):
         from national_priorities_report import spending_rows
@@ -167,9 +167,9 @@ class PrioritiesPdfTests(unittest.TestCase):
         g=json.loads((ROOT/'nacion/data/gestion.json').read_text(encoding='utf-8'))
         rows,totals=spending_rows(b,g)
         self.assertEqual(len(rows),29)
-        self.assertAlmostEqual(totals[1],108570251.22678363,places=5)
+        self.assertAlmostEqual(totals[1],134812231.62659156,places=5)
         intel=next(r for r in rows if r['id']=='2-12')
-        self.assertAlmostEqual(intel['after'],228915.62002183,places=5)
+        self.assertAlmostEqual(intel['after'],306632.5399899969,places=5)
         self.assertAlmostEqual(sum(r['share_after'] for r in rows),100)
 
 if __name__ == '__main__':

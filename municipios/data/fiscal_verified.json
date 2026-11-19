@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "verifiedAt": "2026-10-19",
+  "verifiedAt": "2026-11-19",
   "periodEnd": "2026-06-30",
   "currency": "ARS",
   "priceBasis": "nominal",
@@ -3607,39 +3607,6 @@
       "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
     },
     {
-      "id": "06182",
-      "inicio": "2025-01-02",
-      "fin": "2025-12-31",
-      "method": "published_caif",
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "landingUrl": "https://mcr.gob.ar/docs/",
-      "amounts": {
-        "ingresos_corrientes": "35535781862.29",
-        "gastos_corrientes": "36774236603.56",
-        "ingresos_capital": "1099863819.30",
-        "gastos_capital": "1837091893.27",
-        "ingresos_totales": "36635645681.59",
-        "gastos_totales": "38611328496.83",
-        "resultado_financiero": "-1975682815.24",
-        "personal_devengado": "28587219249.12"
-      },
-      "documents": [
-        {
-          "url": "https://mcr.gob.ar/wp-content/uploads/2026/03/29-Anexo-I-Estado-de-Situacion-Economico-Financiera.pdf",
-          "sha256": "e664d61e5a99ad911344f42afd3c3975e9563cffd82fd0973a8a5e12b03bc5c3",
-          "pages": 4,
-          "consultedPages": [
-            1
-          ],
-          "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
-          "bytes": 364160,
-          "archive": "municipios/data/fiscal-sources/2026-10-04/06182.pdf"
-        }
-      ],
-      "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
-      "verifiedAt": "2026-10-04"
-    },
-    {
       "id": "06224",
       "inicio": "2025-01-01",
       "fin": "2025-12-31",
@@ -5093,7 +5060,39 @@
       ],
       "verifiedAt": "2026-10-19",
       "note": "Antecedente histórico de 2021 recuperado en dos imágenes oficiales. No describe las cuentas actuales ni integra el ranking semestral de 2026. El resultado CAIF coincide con el artículo 43 de la segunda imagen; no se confunde con el resultado del artículo 44 ni con el devengado presupuestario bruto."
+    },
+    {
+      "id": "06182",
+      "inicio": "2026-01-02",
+      "fin": "2026-09-30",
+      "method": "published_caif",
+      "scope": "CAIF municipal a septiembre. Gasto devengado e ingresos percibidos. Se conserva fuera del ranking de junio.",
+      "landingUrl": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
+      "amounts": {
+        "ingresos_corrientes": "33315128997.14",
+        "gastos_corrientes": "31851470047.54",
+        "ingresos_capital": "970317239.43",
+        "gastos_capital": "1791330834.47",
+        "ingresos_totales": "34285446236.57",
+        "gastos_totales": "33642800882.01",
+        "resultado_financiero": "642645354.56",
+        "personal_devengado": "24768504240.02"
+      },
+      "documents": [
+        {
+          "url": "https://mcr.gob.ar/wp-content/uploads/2026/10/SITUACION-ECONOMICA-FINANCIERA-3o-TRIMESTRE.pdf",
+          "sha256": "f1bdd9c68ecc8c4ad860b3dd873318516b5259084d9641e83de7f553f25f9192",
+          "bytes": 926735,
+          "pages": 5,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Página 1, crédito vigente anual por objeto de gasto y CAIF enero–septiembre.",
+          "archive": "municipios/data/fiscal-sources/2026-11-19/mcr-sef.pdf"
+        }
+      ],
+      "verifiedAt": "2026-11-19"
     }
   ],
-  "updatedAt": "2026-10-19"
+  "updatedAt": "2026-11-19"
 }

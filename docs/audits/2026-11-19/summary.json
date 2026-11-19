@@ -1,0 +1,2358 @@
+{
+  "date": "2026-11-19",
+  "scope": "Seguimiento de los pendientes del 14/11. Descarga de los portales de las 12 cuentas y los 29 presupuestos 2026 faltantes, revisión de sus enlaces fiscales y búsqueda de ordenanzas y documentos alternativos. Los resultados son parciales y documentan sólo las páginas consultadas.",
+  "national": {
+    "complete_month": "2026-10",
+    "source_vintage": "2026-11-17",
+    "scope": "Administración Nacional, gastos corrientes y de capital devengados y pagados.",
+    "total_ars_millions": {
+      "credito_devengado": 128237280.51381895,
+      "credito_pagado": 125307722.73188108,
+      "october_accrued": 12385713.0390578,
+      "real": 134812231.6265916,
+      "previous_real": 136093287.09964627,
+      "variacion_real_pct": -0.9413068788004963
+    },
+    "coverage": {
+      "funcion": 29,
+      "jurisdiccion": 16,
+      "objeto": 8,
+      "territorio": 29,
+      "programa": 410
+    },
+    "previous_year": "Se utilizan los registros mensuales oficiales 2025 ya archivados. Los flujos de cada año se ajustan mes a mes con IPC observado.",
+    "comparison": "Las funciones se comparan por denominación y finalidad. Los programas 2026 muestran ejecución sin atribuir variaciones interanuales por coincidencia de nombre.",
+    "publication_note": "Etapas de ejecución y cuadro mensual actualizados al 17/11. Octubre es el último mes completo; noviembre es parcial y se conserva nominal hasta contar con IPC. Las correspondencias para el proyecto 2027 conservan la base original documentada.",
+    "opc_download": "HTTP 410; se recuperó el detalle desde la descarga primaria de Presupuesto Abierto.",
+    "latest_stages": {
+      "credito_presupuestado": 148069293.526549,
+      "credito_vigente": 152474968.84041604,
+      "credito_comprometido": 131675991.14528699,
+      "credito_devengado": 129856523.43019727,
+      "credito_pagado": 128241928.96279684,
+      "porcentaje_ejecucion": 85.16579765043811,
+      "devengado_menos_pagado": 1614594.4674004316
+    },
+    "partial_month": "2026-11"
+  },
+  "provinces": {
+    "new_verified": [
+      {
+        "province": "Santa Cruz",
+        "period": "2026-10",
+        "source_file": "data/revenue-history-sources/asip-recaudacion-2026-11-19.html",
+        "source_url": "https://www.asip.gob.ar/recaudacion",
+        "sha256": "7abcdfa399cb494bdf753edc67e801a5fd5fd0414fd810c2f7ffd6ba7f429da7",
+        "institution": "ASIP",
+        "verified_tax_subtotal": 41831445342.07,
+        "reconciliation": "Se mantiene el perímetro tributario del período previo. Se excluyen pesca y tasas varias en Santa Cruz. En La Pampa se excluyen tasas por servicios, marcas y señales, tránsito, mediación, regalías y fondos nacionales.",
+        "Iibb": 38124714677.64,
+        "Inmobiliario": 737919.97,
+        "Sellos": 3673351994.46,
+        "Otros": 32640750
+      },
+      {
+        "province": "La Pampa",
+        "period": "2026-09",
+        "source_file": "data/revenue-history-sources/la-pampa-septiembre-2026.pdf",
+        "source_url": "https://contaduriageneral.lapampa.gob.ar/images/pdf/InfoPres/EjePresupuestaria/2026/Informe_Recursos_09-2026.pdf",
+        "sha256": "958ec8be36cf5c551599ba1416e44215fb9f6571268cda11c76dba0d80318a6e",
+        "institution": "Contaduría General La Pampa",
+        "verified_tax_subtotal": 48765402274.57,
+        "reconciliation": "Se mantiene el perímetro tributario del período previo. Se excluyen pesca y tasas varias en Santa Cruz. En La Pampa se excluyen tasas por servicios, marcas y señales, tránsito, mediación, regalías y fondos nacionales.",
+        "Iibb": 38397538534.28,
+        "Sellos": 3092270297.69,
+        "Inmobiliario": 4717130346.5,
+        "Automotores": 2270069624.63,
+        "Otros": 288393471.46999997
+      }
+    ],
+    "september_own_revenue_coverage": 24,
+    "october_own_revenue_coverage": 16,
+    "rankings": "Se mantienen los períodos comparables. No se traslada el dato de octubre a una comparación semestral."
+  },
+  "municipalities": {
+    "new_or_updated_2026_budgets": [
+      {
+        "id": "06224",
+        "municipio": "Chivilcoy",
+        "budget": {
+          "id": "06224",
+          "year": 2026,
+          "asOf": "2025-11-27",
+          "original": 64539711923.0,
+          "current": null,
+          "modifications": null,
+          "scope": "Departamento Ejecutivo y Concejo Deliberante. Incluye aplicaciones financieras.",
+          "note": "Artículos 1, 2 y 4. El artículo 4 contiene una errata de año (2025); encabezado, artículos 1 y 7 y publicación identifican el presupuesto 2026.",
+          "method": "sum_disjoint_components",
+          "documents": [
+            {
+              "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2026-LRF_P1OP.pdf",
+              "sha256": "6c2a9178a7e053e0d7817b5d27dddf7690fd5ca2e2c5772c100bfad440a19aae",
+              "bytes": 339808,
+              "pages": 9,
+              "consultedPages": [
+                1,
+                2
+              ],
+              "locator": "Artículos 1, 2 y 4. El artículo 4 contiene una errata de año (2025); encabezado, artículos 1 y 7 y publicación identifican el presupuesto 2026.",
+              "archive": "municipios/data/fiscal-sources/2026-11-19/chiv-2026.pdf"
+            }
+          ],
+          "components": [
+            {
+              "label": "Departamento Ejecutivo",
+              "amount": 63306336777.0
+            },
+            {
+              "label": "Concejo Deliberante",
+              "amount": 1233375146.0
+            }
+          ],
+          "verifiedAt": "2026-11-19",
+          "componentField": "original",
+          "amount": 64539711923.0,
+          "basis": "original",
+          "perCapita": 911075.9881280086,
+          "historical": false
+        }
+      },
+      {
+        "id": "06182",
+        "municipio": "Coronel de Marina L. Rosales",
+        "budget": {
+          "id": "06182",
+          "year": 2026,
+          "asOf": "2026-09-30",
+          "periodStart": "2026-01-02",
+          "original": null,
+          "current": 48245189061.16,
+          "modifications": null,
+          "scope": "Administración municipal y Concejo Deliberante incluidos en la situación económico-financiera.",
+          "note": "Crédito anual vigente al cierre de septiembre. El importe ejecutado es otra medición.",
+          "method": "reconciled_objects",
+          "componentField": "current",
+          "documents": [
+            {
+              "url": "https://mcr.gob.ar/wp-content/uploads/2026/10/SITUACION-ECONOMICA-FINANCIERA-3o-TRIMESTRE.pdf",
+              "sha256": "f1bdd9c68ecc8c4ad860b3dd873318516b5259084d9641e83de7f553f25f9192",
+              "bytes": 926735,
+              "pages": 5,
+              "consultedPages": [
+                1
+              ],
+              "locator": "Página 1, crédito vigente anual por objeto de gasto y CAIF enero–septiembre.",
+              "archive": "municipios/data/fiscal-sources/2026-11-19/mcr-sef.pdf"
+            }
+          ],
+          "components": [
+            {
+              "label": "Personal",
+              "amount": 33041298098.53
+            },
+            {
+              "label": "Consumo",
+              "amount": 2961074661.26
+            },
+            {
+              "label": "Servicios no personales",
+              "amount": 5153356623.16
+            },
+            {
+              "label": "Bienes de uso",
+              "amount": 1904550841.6
+            },
+            {
+              "label": "Transferencias",
+              "amount": 3075680037.0
+            },
+            {
+              "label": "Activos financieros",
+              "amount": 946365783.14
+            },
+            {
+              "label": "Servicios de deuda y otros pasivos",
+              "amount": 1162863016.47
+            }
+          ],
+          "verifiedAt": "2026-11-19",
+          "amount": 48245189061.16,
+          "basis": "current",
+          "perCapita": 714711.7766789624,
+          "historical": false
+        }
+      },
+      {
+        "id": "06490",
+        "municipio": "Lomas de Zamora",
+        "budget": {
+          "id": "06490",
+          "year": 2026,
+          "asOf": "2025-12-12",
+          "original": 480834988472.67,
+          "current": null,
+          "modifications": null,
+          "scope": "Presupuesto general aprobado. Incluye recursos afectados, aplicaciones y gastos figurativos. El total publicado no es un gasto consolidado ejecutado.",
+          "note": "Ordenanza 19523, artículo 1 y cuadros de finalidad y función y clasificación económica. La suma de DE y HCD citada en el digesto sólo corresponde al Tesoro de libre disponibilidad.",
+          "method": "published_original",
+          "documents": [
+            {
+              "url": "https://www.concejoldez.gob.ar/detalle_norma/4875",
+              "sha256": "2f69a65de88fd5419a287c70f7ae86d643e8e5e175c5c7e3c71528850d87e83d",
+              "bytes": 1388934,
+              "pages": 23,
+              "consultedPages": [
+                1,
+                2,
+                3
+              ],
+              "locator": "Ordenanza 19523, artículo 1 y cuadros de finalidad y función y clasificación económica. La suma de DE y HCD citada en el digesto sólo corresponde al Tesoro de libre disponibilidad.",
+              "archive": "municipios/data/fiscal-sources/2026-11-19/lomas-ordenanza.pdf"
+            }
+          ],
+          "components": [],
+          "verifiedAt": "2026-11-19",
+          "amount": 480834988472.67,
+          "basis": "original",
+          "perCapita": 696536.2424150289,
+          "historical": false
+        }
+      },
+      {
+        "id": "06630",
+        "municipio": "Pila",
+        "budget": {
+          "id": "06630",
+          "year": 2026,
+          "asOf": "2025-12-30",
+          "original": 20584000000.0,
+          "current": null,
+          "modifications": null,
+          "scope": "Presupuesto General de Erogaciones municipal aprobado para 2026.",
+          "note": "Ordenanza 2766/25, artículo 2. Importe verificado visualmente en el original escaneado.",
+          "method": "published_original",
+          "documents": [
+            {
+              "url": "https://pila.gob.ar/descargar_digesto.php?id=47",
+              "sha256": "b3b83e268001ff81aceee1ec5ec455c42025e52a1c02957b98d18b8390d71dd7",
+              "bytes": 376871,
+              "pages": 2,
+              "consultedPages": [
+                1
+              ],
+              "locator": "Ordenanza 2766/25, artículo 2. Importe verificado visualmente en el original escaneado.",
+              "archive": "municipios/data/fiscal-sources/2026-11-19/06630-2.pdf"
+            }
+          ],
+          "components": [],
+          "verifiedAt": "2026-11-19",
+          "amount": 20584000000.0,
+          "basis": "original",
+          "perCapita": 4434295.5622576475,
+          "historical": false
+        }
+      },
+      {
+        "id": "06819",
+        "municipio": "Tornquist",
+        "budget": {
+          "id": "06819",
+          "year": 2026,
+          "asOf": "2025-12-22",
+          "original": 31515252000.0,
+          "current": null,
+          "modifications": null,
+          "scope": "Administración Central y Honorable Concejo Deliberante.",
+          "note": "Ordenanza 4002/25, artículos 2 y 3. Recursos y gastos por el mismo total.",
+          "method": "published_original",
+          "documents": [
+            {
+              "url": "https://sibom.slyt.gba.gob.ar/bulletins/14456.pdf",
+              "sha256": "a484bf92fae86bd5159148eb51b4411e0412b7ddf4899f849e51096be463aa80",
+              "bytes": 411443,
+              "pages": 88,
+              "consultedPages": [
+                9,
+                10
+              ],
+              "locator": "Ordenanza 4002/25, artículos 2 y 3. Recursos y gastos por el mismo total.",
+              "archive": "municipios/data/fiscal-sources/2026-11-19/tornquist.pdf"
+            }
+          ],
+          "components": [],
+          "verifiedAt": "2026-11-19",
+          "amount": 31515252000.0,
+          "basis": "original",
+          "perCapita": 2127971.1006076974,
+          "historical": false
+        }
+      }
+    ],
+    "budgets_coverage": {
+      "targetYear": 2026,
+      "verifiedAt": "2026-10-04",
+      "available": 118,
+      "currentYear": 111,
+      "historical": 7,
+      "pending": 17
+    },
+    "pending_2026_budgets": [
+      {
+        "id": "06028",
+        "municipio": "Almirante Brown"
+      },
+      {
+        "id": "06134",
+        "municipio": "Cañuelas"
+      },
+      {
+        "id": "06238",
+        "municipio": "Dolores"
+      },
+      {
+        "id": "06252",
+        "municipio": "Escobar"
+      },
+      {
+        "id": "06260",
+        "municipio": "Esteban Echeverría"
+      },
+      {
+        "id": "06270",
+        "municipio": "Ezeiza"
+      },
+      {
+        "id": "06294",
+        "municipio": "General Arenales"
+      },
+      {
+        "id": "06408",
+        "municipio": "Hurlingham"
+      },
+      {
+        "id": "06410",
+        "municipio": "Ituzaingó"
+      },
+      {
+        "id": "06420",
+        "municipio": "La Costa"
+      },
+      {
+        "id": "06462",
+        "municipio": "Leandro N. Alem"
+      },
+      {
+        "id": "06466",
+        "municipio": "Lezama"
+      },
+      {
+        "id": "06469",
+        "municipio": "Lincoln"
+      },
+      {
+        "id": "06511",
+        "municipio": "Maipú"
+      },
+      {
+        "id": "06525",
+        "municipio": "Marcos Paz"
+      },
+      {
+        "id": "06539",
+        "municipio": "Merlo"
+      },
+      {
+        "id": "06568",
+        "municipio": "Morón"
+      },
+      {
+        "id": "06574",
+        "municipio": "Navarro"
+      },
+      {
+        "id": "06648",
+        "municipio": "Presidente Perón"
+      },
+      {
+        "id": "06655",
+        "municipio": "Punta Indio"
+      },
+      {
+        "id": "06700",
+        "municipio": "Saavedra"
+      },
+      {
+        "id": "06749",
+        "municipio": "San Fernando"
+      },
+      {
+        "id": "06778",
+        "municipio": "San Vicente"
+      },
+      {
+        "id": "06812",
+        "municipio": "Tordillo"
+      }
+    ],
+    "pending_accounts": [
+      {
+        "id": "06134",
+        "municipio": "Cañuelas",
+        "portal": "https://www.canuelas.gov.ar",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06260",
+        "municipio": "Esteban Echeverría",
+        "portal": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06294",
+        "municipio": "General Arenales",
+        "portal": "https://www.generalarenales.gob.ar/gobierno-abierto/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06343",
+        "municipio": "General Paz",
+        "portal": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06420",
+        "municipio": "La Costa",
+        "portal": "http://www.lacosta.gov.ar/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06462",
+        "municipio": "Leandro N. Alem",
+        "portal": "https://municipioalem.gob.ar/?q=transparencia",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06490",
+        "municipio": "Lomas de Zamora",
+        "portal": "https://www.lomasdezamora.gov.ar/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06518",
+        "municipio": "Mar Chiquita",
+        "portal": "https://www.marchiquita.gob.ar/secretaria-de-economia/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06539",
+        "municipio": "Merlo",
+        "portal": "https://www.merlo.gob.ar/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06630",
+        "municipio": "Pila",
+        "portal": "https://pila.gob.ar/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06655",
+        "municipio": "Punta Indio",
+        "portal": "https://puntaindio.gov.ar/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      },
+      {
+        "id": "06812",
+        "municipio": "Tordillo",
+        "portal": "https://tordillomunicipio.com/",
+        "reason": "Sin cierre conciliable en las páginas consultadas en esta revisión."
+      }
+    ],
+    "account_update": {
+      "id": "06182",
+      "municipio": "Coronel de Marina L. Rosales",
+      "period": "enero–septiembre 2026",
+      "status": "Cuenta oficial conciliada, fuera del ranking común de junio."
+    },
+    "partial": "San Miguel conserva la ejecución parcial registrada.",
+    "blocked_sources": "Enlaces de Ezeiza y Lincoln devuelven 404. Tordillo devuelve 522. El antiguo índice de General Paz ofrece normas sin un cierre fiscal verificable en las carpetas consultadas. La ficha presupuestaria de Lomas omite recursos afectados en su desglose; el PDF original permite reconstruir el total.",
+    "rankings": "Presupuestos originales y vigentes se comparan por separado. El conjunto comparable al cierre de junio conserva 85 municipios."
+  },
+  "sources_attempted": [
+    {
+      "key": "06224-0",
+      "url": "https://chivilcoy.gov.ar/secretaria-de-hacienda/",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/secretaria-de-hacienda/",
+      "bytes": 83666,
+      "sha256": "4272df42daacb1697f648fc79103cd75eb8541064b9fd6aaa5fa2ca3a0770102",
+      "file": "06224-0.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/11/la-direccion-de-rentas-de-chivilcoy-intensifica-las-notificaciones-preventivas-y-ofrece-planes-de-pago-flexibles-para-evitar-juicios-de-apremio/"
+        },
+        {
+          "text": "La Dirección de Rentas de Chivilcoy intensifica las notificaciones preventivas y ofrece planes de pago flexibles para evitar juicios de apre",
+          "url": "https://chivilcoy.gov.ar/2026/11/la-direccion-de-rentas-de-chivilcoy-intensifica-las-notificaciones-preventivas-y-ofrece-planes-de-pago-flexibles-para-evitar-juicios-de-apremio/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/08/chivilcoy-solidez-financiera-y-con-menor-presion-fiscal-sobre-sus-vecinos/"
+        },
+        {
+          "text": "Chivilcoy: solidez financiera y con menor presión fiscal sobre sus vecinos",
+          "url": "https://chivilcoy.gov.ar/2026/08/chivilcoy-solidez-financiera-y-con-menor-presion-fiscal-sobre-sus-vecinos/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/08/la-provincia-avalo-la-solidez-financiera-de-chivilcoy-para-acceder-a-un-leasing-de-581-millones/"
+        },
+        {
+          "text": "La Provincia avaló la solidez financiera de Chivilcoy para acceder a un leasing de $581 millones",
+          "url": "https://chivilcoy.gov.ar/2026/08/la-provincia-avalo-la-solidez-financiera-de-chivilcoy-para-acceder-a-un-leasing-de-581-millones/"
+        }
+      ]
+    },
+    {
+      "key": "06224-1",
+      "url": "https://chivilcoy.gov.ar/transparencia/",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/transparencia/",
+      "bytes": 78680,
+      "sha256": "c6925aabc72c377959281ac20280493ceea4c4c9acebd8c2880a0e9575d4ab4b",
+      "file": "06224-1.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2022/05/por-cuarto-ano-consecutivo-chivilcoy-alcanzo-el-nivel-optimo-de-transparencia/"
+        },
+        {
+          "text": "Por cuarto año consecutivo Chivilcoy alcanzó el nivel óptimo de transparencia",
+          "url": "https://chivilcoy.gov.ar/2022/05/por-cuarto-ano-consecutivo-chivilcoy-alcanzo-el-nivel-optimo-de-transparencia/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2021/12/por-tercer-ano-consecutivo-chivilcoy-alcanzo-el-nivel-optimo-de-transparencia/"
+        },
+        {
+          "text": "Por tercer año consecutivo Chivilcoy alcanzó el nivel óptimo de transparencia",
+          "url": "https://chivilcoy.gov.ar/2021/12/por-tercer-ano-consecutivo-chivilcoy-alcanzo-el-nivel-optimo-de-transparencia/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2020/12/por-segundo-ano-consecutivo-chivilcoy-alcanzo-el-nivel-optimo-de-transparencia/"
+        },
+        {
+          "text": "﻿Por segundo año consecutivo Chivilcoy alcanzó el nivel óptimo de transparencia",
+          "url": "https://chivilcoy.gov.ar/2020/12/por-segundo-ano-consecutivo-chivilcoy-alcanzo-el-nivel-optimo-de-transparencia/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/transparencia/ordenanza-de-presupuesto/"
+        },
+        {
+          "text": "Ordenanza de Presupuesto",
+          "url": "https://chivilcoy.gov.ar/transparencia/ordenanza-de-presupuesto/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/transparencia/ordenanzas-fiscal-e-impositiva"
+        },
+        {
+          "text": "Ordenanzas Fiscal e Impositiva",
+          "url": "https://chivilcoy.gov.ar/transparencia/ordenanzas-fiscal-e-impositiva"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/transparencia/presupuesto-anual-y-proyecciones"
+        },
+        {
+          "text": "Presupuesto anual y proyecciones",
+          "url": "https://chivilcoy.gov.ar/transparencia/presupuesto-anual-y-proyecciones"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/transparencia/presupuesto-de-gastos-por-finalidad-y-funcion"
+        },
+        {
+          "text": "Presupuesto de gastos por finalidad y función",
+          "url": "https://chivilcoy.gov.ar/transparencia/presupuesto-de-gastos-por-finalidad-y-funcion"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/transparencia/stock-de-deuda-publica"
+        },
+        {
+          "text": "Stock de deuda pública",
+          "url": "https://chivilcoy.gov.ar/transparencia/stock-de-deuda-publica"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/transparencia/ejecucion-presupuestaria"
+        },
+        {
+          "text": "Ejecución presupuestaria",
+          "url": "https://chivilcoy.gov.ar/transparencia/ejecucion-presupuestaria"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/transparencia/situacion-economica"
+        },
+        {
+          "text": "Situación económica",
+          "url": "https://chivilcoy.gov.ar/transparencia/situacion-economica"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/transparencia/ejecucion-del-gasto-por-finalidad-y-funcion"
+        },
+        {
+          "text": "Ejecución del gasto por finalidad y función",
+          "url": "https://chivilcoy.gov.ar/transparencia/ejecucion-del-gasto-por-finalidad-y-funcion"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/transparencia/planta-de-personal-municipal"
+        },
+        {
+          "text": "Planta de personal municipal",
+          "url": "https://chivilcoy.gov.ar/transparencia/planta-de-personal-municipal"
+        }
+      ]
+    },
+    {
+      "key": "06224-2",
+      "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/situacioneconomica/2025-situacion-economica-financiera.pdf",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/situacioneconomica/2025-situacion-economica-financiera.pdf",
+      "bytes": 306318,
+      "sha256": "abd5630e4caa9d84d89f6d5185e2e9e745579880743ae8a0fb5a2b6615255a4b",
+      "file": "06224-2.pdf"
+    },
+    {
+      "key": "06224-3",
+      "url": "https://chivilcoy.gov.ar/category/hacienda/",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/category/hacienda/",
+      "bytes": 86800,
+      "sha256": "2b3b0e072ef37a3e479a3a6614637f1dc811a214ff005c91575f315fa8a52f22",
+      "file": "06224-3.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/11/la-direccion-de-rentas-de-chivilcoy-intensifica-las-notificaciones-preventivas-y-ofrece-planes-de-pago-flexibles-para-evitar-juicios-de-apremio/"
+        },
+        {
+          "text": "La Dirección de Rentas de Chivilcoy intensifica las notificaciones preventivas y ofrece planes de pago flexibles para evitar juicios de apre",
+          "url": "https://chivilcoy.gov.ar/2026/11/la-direccion-de-rentas-de-chivilcoy-intensifica-las-notificaciones-preventivas-y-ofrece-planes-de-pago-flexibles-para-evitar-juicios-de-apremio/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/08/chivilcoy-solidez-financiera-y-con-menor-presion-fiscal-sobre-sus-vecinos/"
+        },
+        {
+          "text": "Chivilcoy: solidez financiera y con menor presión fiscal sobre sus vecinos",
+          "url": "https://chivilcoy.gov.ar/2026/08/chivilcoy-solidez-financiera-y-con-menor-presion-fiscal-sobre-sus-vecinos/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/08/la-provincia-avalo-la-solidez-financiera-de-chivilcoy-para-acceder-a-un-leasing-de-581-millones/"
+        },
+        {
+          "text": "La Provincia avaló la solidez financiera de Chivilcoy para acceder a un leasing de $581 millones",
+          "url": "https://chivilcoy.gov.ar/2026/08/la-provincia-avalo-la-solidez-financiera-de-chivilcoy-para-acceder-a-un-leasing-de-581-millones/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/08/britos-anuncio-un-aumento-del-5-y-una-suba-del-presentismo-al-40-eleva-al-17-el-incremento-acumulado-durante-el-ano/"
+        },
+        {
+          "text": "Britos anunció un aumento del 5% y una suba del presentismo al 40%. Eleva al 17% el incremento acumulado durante el año",
+          "url": "https://chivilcoy.gov.ar/2026/08/britos-anuncio-un-aumento-del-5-y-una-suba-del-presentismo-al-40-eleva-al-17-el-incremento-acumulado-durante-el-ano/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/08/chivilcoy-entre-los-tres-municipios-bonaerenses-con-menor-presion-fiscal-segun-el-semaforo-fiscal-del-gobierno-nacional/"
+        },
+        {
+          "text": "Chivilcoy, entre los tres municipios bonaerenses con menor presión fiscal según el Semáforo Fiscal implementado por La Libertad Avanza",
+          "url": "https://chivilcoy.gov.ar/2026/08/chivilcoy-entre-los-tres-municipios-bonaerenses-con-menor-presion-fiscal-segun-el-semaforo-fiscal-del-gobierno-nacional/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/07/de-lillo-informo-sobre-la-refinanciacion-de-deudas-del-banco-provincia-para-empleados-municipales-y-otros-trabajadores-y-anuncio-una-capacitacion-financiera-abierta-a-la-comunidad/"
+        },
+        {
+          "text": "De Lillo informó sobre la refinanciación de deudas del Banco Provincia para empleados municipales y otros trabajadores y anunció una capacit",
+          "url": "https://chivilcoy.gov.ar/2026/07/de-lillo-informo-sobre-la-refinanciacion-de-deudas-del-banco-provincia-para-empleados-municipales-y-otros-trabajadores-y-anuncio-una-capacitacion-financiera-abierta-a-la-comunidad/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/05/piensen-en-chivilcoy-y-no-en-bloquear-al-gobierno-municipal-en-una-alianza-entre-lla-y-la-campora-reclamo-britos-por-la-rendicion-de-cuentas-compensaciones-codigos-qr-y-repumes/"
+        },
+        {
+          "text": "“Piensen en Chivilcoy y no en bloquear al gobierno municipal en una alianza entre LLA y La Cámpora” reclamó Britos por la rendición de cuent",
+          "url": "https://chivilcoy.gov.ar/2026/05/piensen-en-chivilcoy-y-no-en-bloquear-al-gobierno-municipal-en-una-alianza-entre-lla-y-la-campora-reclamo-britos-por-la-rendicion-de-cuentas-compensaciones-codigos-qr-y-repumes/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/05/no-hay-una-municipalidad-fundida-los-numeros-son-positivos-y-lo-demostramos-con-el-aumento-del-5-fecha-de-aguinaldo-y-cobrabilidad/"
+        },
+        {
+          "text": "“No hay una Municipalidad fundida. Los números son positivos y lo demostramos con el aumento del 5%, fecha de aguinaldo y cobrabilidad»",
+          "url": "https://chivilcoy.gov.ar/2026/05/no-hay-una-municipalidad-fundida-los-numeros-son-positivos-y-lo-demostramos-con-el-aumento-del-5-fecha-de-aguinaldo-y-cobrabilidad/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/05/el-municipio-anuncio-un-nuevo-aumento-salarial-del-5-y-confirmo-el-pago-del-medio-aguinaldo-para-el-19-de-junio/"
+        },
+        {
+          "text": "El Municipio anunció un nuevo aumento salarial del 5% y confirmó el pago del medio aguinaldo para el 19 de junio",
+          "url": "https://chivilcoy.gov.ar/2026/05/el-municipio-anuncio-un-nuevo-aumento-salarial-del-5-y-confirmo-el-pago-del-medio-aguinaldo-para-el-19-de-junio/"
+        },
+        {
+          "text": "",
+          "url": "https://chivilcoy.gov.ar/2026/04/desde-la-direccion-de-rentas-se-informo-que-las-principales-tasas-municipales-no-registran-aumentos-en-el-segundo-trimestre/"
+        },
+        {
+          "text": "Desde la Dirección de Rentas se informó que las principales tasas municipales no registran aumentos en el segundo trimestre",
+          "url": "https://chivilcoy.gov.ar/2026/04/desde-la-direccion-de-rentas-se-informo-que-las-principales-tasas-municipales-no-registran-aumentos-en-el-segundo-trimestre/"
+        },
+        {
+          "text": "2",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/page/2/"
+        },
+        {
+          "text": "3",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/page/3/"
+        },
+        {
+          "text": "14",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/page/14/"
+        },
+        {
+          "text": "15",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/page/15/"
+        },
+        {
+          "text": "16",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/page/16/"
+        },
+        {
+          "text": "Siguiente »",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/page/2/"
+        },
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/"
+        }
+      ]
+    },
+    {
+      "key": "06182-1",
+      "url": "https://mcr.gob.ar/documentos/ejecucion-presupuestaria-de-gastos-3o-trimestre-2026/",
+      "status": 200,
+      "url_final": "https://mcr.gob.ar/documentos/ejecucion-presupuestaria-de-gastos-3o-trimestre-2026/",
+      "bytes": 63149,
+      "sha256": "e906d30ee2cbf1474c28224ab99989ec6ec3d8078a1f52e4fd41f2bd03b21d73",
+      "file": "06182-1.html",
+      "links": [
+        {
+          "text": "EJECUCION-PRESUPUESTARIA-DE-GASTOS-3o-TRIMESTRE2",
+          "url": "https://mcr.gob.ar/wp-content/uploads/2026/10/EJECUCION-PRESUPUESTARIA-DE-GASTOS-3o-TRIMESTRE2.pdf"
+        }
+      ]
+    },
+    {
+      "key": "06182-2",
+      "url": "https://mcr.gob.ar/documentos/ejecucion-presupuestaria-de-recursos-3o-trimestre-2026/",
+      "status": 200,
+      "url_final": "https://mcr.gob.ar/documentos/ejecucion-presupuestaria-de-recursos-3o-trimestre-2026/",
+      "bytes": 63209,
+      "sha256": "e18a198d0fca4c801c7334578ac4f1268b17ed78825ccfb176186233d655273c",
+      "file": "06182-2.html",
+      "links": [
+        {
+          "text": "EJECUCION-PRESUPUESTARIA-DE-RECURSOS-3o-TRIMESTRE",
+          "url": "https://mcr.gob.ar/wp-content/uploads/2026/10/EJECUCION-PRESUPUESTARIA-DE-RECURSOS-3o-TRIMESTRE.pdf"
+        }
+      ]
+    },
+    {
+      "key": "06182-4",
+      "url": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
+      "status": 200,
+      "url_final": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
+      "bytes": 63093,
+      "sha256": "3b7773966ee7488cc893ed1adacbe5d7f984bfe802af5d3392628e07c15a4263",
+      "file": "06182-4.html",
+      "links": [
+        {
+          "text": "SITUACION-ECONOMICA-FINANCIERA-3o-TRIMESTRE",
+          "url": "https://mcr.gob.ar/wp-content/uploads/2026/10/SITUACION-ECONOMICA-FINANCIERA-3o-TRIMESTRE.pdf"
+        }
+      ]
+    },
+    {
+      "key": "06260-0",
+      "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+      "status": 200,
+      "url_final": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+      "bytes": 230520,
+      "sha256": "3bf2d87f6e453b23b4d59e4f02110942031a729030e68cf182cab02b7f71f82e",
+      "file": "06260-0.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "CALENDARIO FISCAL 2026",
+          "url": "https://www.estebanecheverria.gob.ar/wp-content/uploads/2018/01/Calendario-fiscal-2026.pdf"
+        },
+        {
+          "text": "ORDENANZA FISCAL 2026",
+          "url": "https://www.estebanecheverria.gob.ar/wp-content/uploads/2018/01/Ordenanza-2026_ok.pdf"
+        },
+        {
+          "text": "Hacienda",
+          "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/"
+        }
+      ]
+    },
+    {
+      "key": "06260-3",
+      "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+      "status": 200,
+      "url_final": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+      "bytes": 230520,
+      "sha256": "3bf2d87f6e453b23b4d59e4f02110942031a729030e68cf182cab02b7f71f82e",
+      "file": "06260-3.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "CALENDARIO FISCAL 2026",
+          "url": "https://www.estebanecheverria.gob.ar/wp-content/uploads/2018/01/Calendario-fiscal-2026.pdf"
+        },
+        {
+          "text": "ORDENANZA FISCAL 2026",
+          "url": "https://www.estebanecheverria.gob.ar/wp-content/uploads/2018/01/Ordenanza-2026_ok.pdf"
+        },
+        {
+          "text": "Hacienda",
+          "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/"
+        }
+      ]
+    },
+    {
+      "key": "06270-0",
+      "url": "https://www.ezeiza.gob.ar/areas_de_gobierno-economia_y_hacienda.php",
+      "status": 200,
+      "url_final": "https://www.ezeiza.gob.ar/areas_de_gobierno-economia_y_hacienda.php",
+      "bytes": 28904,
+      "sha256": "dbec4f4441e5b258e135da223ee37963e8304d8585599a2326f57cec9e804b64",
+      "file": "06270-0.html",
+      "links": [
+        {
+          "text": "ECONOMÍA Y HACIENDA",
+          "url": "https://www.ezeiza.gob.ar/areas_de_gobierno-economia_y_hacienda.php"
+        }
+      ]
+    },
+    {
+      "key": "06294-0",
+      "url": "https://www.generalarenales.gob.ar/gobierno-abierto/presupuesto/",
+      "status": 200,
+      "url_final": "https://www.generalarenales.gob.ar/gobierno-abierto/presupuesto/?doing_wp_cron=1795089800.3834819793701171875000",
+      "bytes": 63291,
+      "sha256": "b82bd41574c63f571b24a316d8fa9d1d56cee28f25fd8770d7cb196b5c9ab2b0",
+      "file": "06294-0.html",
+      "links": [
+        {
+          "text": "Presupuesto de Gastos Anual",
+          "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2025/03/Presupuestos-de-Gastos-2025.pdf"
+        },
+        {
+          "text": "Programación de Recursos",
+          "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2025/03/Presupuestos-de-Recursos-2025.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos Anual",
+          "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2024/05/00-Presupuesto-Gastos-2024.pdf"
+        }
+      ]
+    },
+    {
+      "key": "06343-0",
+      "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
+      "status": 200,
+      "url_final": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
+      "bytes": 100368,
+      "sha256": "ca500eba707d787294b33ebf80a9f8848f21d3d6dd29cf2911debb3a7e7eb4ca",
+      "file": "06343-0.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+        }
+      ]
+    },
+    {
+      "key": "06343-1",
+      "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
+      "status": 200,
+      "url_final": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
+      "bytes": 100368,
+      "sha256": "ca500eba707d787294b33ebf80a9f8848f21d3d6dd29cf2911debb3a7e7eb4ca",
+      "file": "06343-1.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+        }
+      ]
+    },
+    {
+      "key": "06462-0",
+      "url": "https://municipioalem.gob.ar/?q=gobierno-abierto",
+      "status": 200,
+      "url_final": "https://municipioalem.gob.ar/?q=gobierno-abierto",
+      "bytes": 24558,
+      "sha256": "f21bc6bcaeac0f8e7df3c40eca86ed7e14fa8c0d708a7a895204a7e76154f145",
+      "file": "06462-0.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://municipioalem.gob.ar/?q=gobierno-abierto"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://municipioalem.gob.ar/?q=transparencia"
+        },
+        {
+          "text": "",
+          "url": "https://twitter.com/share?url=https://municipioalem.gob.ar/?q=gobierno-abierto&text=Transparencia "
+        },
+        {
+          "text": "",
+          "url": "https://www.facebook.com/sharer.php?u=https://municipioalem.gob.ar/?q=gobierno-abierto&t=Transparencia"
+        }
+      ]
+    },
+    {
+      "key": "06462-1",
+      "url": "https://municipioalem.gob.ar/?q=transparencia",
+      "status": 200,
+      "url_final": "https://municipioalem.gob.ar/?q=transparencia",
+      "bytes": 23441,
+      "sha256": "a94cbd4327d5126b50a80e8687c9a851bc71704479f1240a2f987cfa2bc981d3",
+      "file": "06462-1.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://municipioalem.gob.ar/?q=gobierno-abierto"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://municipioalem.gob.ar/?q=transparencia"
+        },
+        {
+          "text": "",
+          "url": "https://twitter.com/share?url=https://municipioalem.gob.ar/?q=transparencia&text=Transparencia "
+        },
+        {
+          "text": "",
+          "url": "https://www.facebook.com/sharer.php?u=https://municipioalem.gob.ar/?q=transparencia&t=Transparencia"
+        }
+      ]
+    },
+    {
+      "key": "06462-2",
+      "url": "https://twitter.com/share?url=https://municipioalem.gob.ar/?q=transparencia&text=Transparencia%20",
+      "status": 200,
+      "url_final": "https://x.com/i/jf/onboarding/web?redirect_after_login=%2Fshare%3Furl%3Dhttps%253A%252F%252Fmunicipioalem.gob.ar%252F%253Fq%253Dtransparencia%26text%3DTransparencia%2B&mode=login",
+      "bytes": 29433,
+      "sha256": "3424fe7f3ba656d818c2ee4687b184e9f804481664617819ef5dda543f26d8fd",
+      "file": "06462-2.html",
+      "links": []
+    },
+    {
+      "key": "06462-3",
+      "url": "https://www.facebook.com/sharer.php?u=https://municipioalem.gob.ar/?q=transparencia&t=Transparencia",
+      "status": 200,
+      "url_final": "https://www.facebook.com/share_channel/?type=reshare&link=https%3A%2F%2Fmunicipioalem.gob.ar%2F%3Fq%3Dtransparencia&app_id=966242223397117&source_surface=external_reshare&display&hashtag",
+      "bytes": 51593,
+      "sha256": "f8369d0cd4d47739bbe631dd6a9e82a5254faf47ee5fe1133ffbfeab2eb0f992",
+      "file": "06462-3.html",
+      "links": [
+        {
+          "text": "¿Olvidaste tu cuenta?",
+          "url": "https://www.facebook.com/recover/initiate?lwv=110&ars=royal_blue_bar"
+        },
+        {
+          "text": "Crear cuenta nueva",
+          "url": "https://www.facebook.com/r.php?r=101"
+        }
+      ]
+    },
+    {
+      "key": "06466-0",
+      "url": "https://lezama.gov.ar/transparencia/",
+      "status": 200,
+      "url_final": "https://lezama.gov.ar/transparencia/",
+      "bytes": 67520,
+      "sha256": "abb68751ed264496fa4ed0e01f4d05c12897a4b34099de841c582889ee0d0657",
+      "file": "06466-0.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://lezama.gov.ar/transparencia/"
+        },
+        {
+          "text": "Presupuesto",
+          "url": "https://lezama.gov.ar/ordenanzas/"
+        },
+        {
+          "text": "Presupuesto",
+          "url": "https://lezama.gov.ar/ordenanzas/"
+        }
+      ]
+    },
+    {
+      "key": "06466-2",
+      "url": "https://lezama.gov.ar/wp-content/uploads/2026/07/Resena-Anual-2026.-1%C2%B0-Semestre.xlsx",
+      "status": 200,
+      "url_final": "https://lezama.gov.ar/wp-content/uploads/2026/07/Resena-Anual-2026.-1%C2%B0-Semestre.xlsx",
+      "bytes": 47945,
+      "sha256": "f359818189319e407c370b374ca6395bc1e391ea1a72367655e99757367e110b",
+      "file": "06466-2.zip"
+    },
+    {
+      "key": "06466-3",
+      "url": "https://lezama.gov.ar/wp-content/uploads/2026/06/Resena-Anual-2025.xlsx",
+      "status": 200,
+      "url_final": "https://lezama.gov.ar/wp-content/uploads/2026/06/Resena-Anual-2025.xlsx",
+      "bytes": 47733,
+      "sha256": "0829c57204456be649dd442b087dd1fda12eb07fc1fcee0feb73aca0fd8b7106",
+      "file": "06466-3.zip"
+    },
+    {
+      "key": "06511-0",
+      "url": "https://www.maipu-gba.gob.ar/?q=hacienda",
+      "status": 200,
+      "url_final": "https://www.maipu-gba.gob.ar/?q=hacienda",
+      "bytes": 43185,
+      "sha256": "ce9a48cbb19c822e6c30d17cebb5f3958d2bffa53d9144c9ec6e158914044b71",
+      "file": "06511-0.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://www.maipu-gba.gob.ar/?q=hacienda"
+        },
+        {
+          "text": "",
+          "url": "https://twitter.com/share?url=https://www.maipu-gba.gob.ar/?q=hacienda&text=Hacienda  "
+        },
+        {
+          "text": "",
+          "url": "https://www.facebook.com/sharer.php?u=https://www.maipu-gba.gob.ar/?q=hacienda&t=Hacienda "
+        },
+        {
+          "text": "fiscal_2026.pdf",
+          "url": "https://www.maipu-gba.gob.ar/sites/default/files/fiscal_2026.pdf"
+        },
+        {
+          "text": "impositiva_2026.pdf",
+          "url": "https://www.maipu-gba.gob.ar/sites/default/files/impositiva_2026.pdf"
+        },
+        {
+          "text": "balancetesoreria_31-3-2026.rpt_.pdf",
+          "url": "https://www.maipu-gba.gob.ar/sites/default/files/balancetesoreria_31-3-2026.rpt_.pdf"
+        },
+        {
+          "text": "balance_tesoreria_al_30-6-2026.pdf",
+          "url": "https://www.maipu-gba.gob.ar/sites/default/files/balance_tesoreria_al_30-6-2026.pdf"
+        },
+        {
+          "text": "balancetesoreria_al_30-9-2026.rpt_.pdf",
+          "url": "https://www.maipu-gba.gob.ar/sites/default/files/balancetesoreria_al_30-9-2026.rpt_.pdf"
+        }
+      ]
+    },
+    {
+      "key": "06539-0",
+      "url": "https://www.merlo.gob.ar/transparencia/",
+      "status": 200,
+      "url_final": "https://www.merlo.gob.ar/transparencia/",
+      "bytes": 147661,
+      "sha256": "e832a18ac3bfb96bc400c44efa0ba3fe3a458b37339759d572d6b74c5fd49e71",
+      "file": "06539-0.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://www.merlo.gob.ar/transparencia/"
+        }
+      ]
+    },
+    {
+      "key": "06630-2",
+      "url": "https://pila.gob.ar/descargar_digesto.php?id=47",
+      "status": 200,
+      "url_final": "https://pila.gob.ar/descargar_digesto.php?id=47",
+      "bytes": 376871,
+      "sha256": "b3b83e268001ff81aceee1ec5ec455c42025e52a1c02957b98d18b8390d71dd7",
+      "file": "06630-2.pdf"
+    },
+    {
+      "key": "tornquist",
+      "url": "https://sibom.slyt.gba.gob.ar/bulletins/14456.pdf",
+      "error": "The read operation timed out"
+    },
+    {
+      "key": "recursos-anual-2026",
+      "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/recursos-anual-2026.zip",
+      "status": 200,
+      "url_final": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/recursos-anual-2026.zip",
+      "bytes": 21143,
+      "sha256": "953ef944ebf331a468b247d7843eeba4c8eb320b8b5c02c1b89cb4e9df8f1f1b",
+      "file": "recursos-anual-2026.zip"
+    },
+    {
+      "key": "recursos-mensual-2026",
+      "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/recursos-mensual-2026.zip",
+      "status": 200,
+      "url_final": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/recursos-mensual-2026.zip",
+      "bytes": 137209,
+      "sha256": "844ace797db6ae365bdc5af8d55fa8627bd314b5428f2a1eebb9882d852e2ff1",
+      "file": "recursos-mensual-2026.zip"
+    },
+    {
+      "key": "totales-de-presupuesto",
+      "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/totales-de-presupuesto.zip",
+      "status": 200,
+      "url_final": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/totales-de-presupuesto.zip",
+      "bytes": 2209,
+      "sha256": "13c96a016445ce8b3828064614d8b7d0667f7b3330d69028afb76437707a81be",
+      "file": "totales-de-presupuesto.zip"
+    },
+    {
+      "key": "mcr-sef",
+      "url": "https://mcr.gob.ar/wp-content/uploads/2026/10/SITUACION-ECONOMICA-FINANCIERA-3o-TRIMESTRE.pdf",
+      "status": 200,
+      "url_final": "https://mcr.gob.ar/wp-content/uploads/2026/10/SITUACION-ECONOMICA-FINANCIERA-3o-TRIMESTRE.pdf",
+      "bytes": 926735,
+      "sha256": "f1bdd9c68ecc8c4ad860b3dd873318516b5259084d9641e83de7f553f25f9192",
+      "file": "mcr-sef.pdf"
+    },
+    {
+      "key": "mcr-gastos",
+      "url": "https://mcr.gob.ar/wp-content/uploads/2026/10/EJECUCION-PRESUPUESTARIA-DE-GASTOS-3o-TRIMESTRE2.pdf",
+      "status": 200,
+      "url_final": "https://mcr.gob.ar/wp-content/uploads/2026/10/EJECUCION-PRESUPUESTARIA-DE-GASTOS-3o-TRIMESTRE2.pdf",
+      "bytes": 2847387,
+      "sha256": "b65ee07f339f11b4020988b6107dd22cbf4ec70269708406eca16bdd121f6332",
+      "file": "mcr-gastos.pdf"
+    },
+    {
+      "key": "generalpaz-frame",
+      "url": "https://municipalidaddegeneralpaz.gob.ar/transparencia/navega.html",
+      "status": 200,
+      "url_final": "https://municipalidaddegeneralpaz.gob.ar/transparencia/navega.html",
+      "bytes": 789,
+      "sha256": "ee1f6edd0d089a095b8c5733733b0f0db15f237a4a01c83e0880e43c3ba2c4d6",
+      "file": "generalpaz-frame.html",
+      "links": []
+    },
+    {
+      "key": "chivilcoy-presupuesto",
+      "url": "https://chivilcoy.gov.ar/transparencia/ordenanza-de-presupuesto/",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/transparencia/ordenanza-de-presupuesto-articulos-y-anexos/",
+      "bytes": 80451,
+      "sha256": "835d5dae468ec119858c0c212397331ccee9a145c110f61af2b21e7e17116738",
+      "file": "chivilcoy-presupuesto.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "Ordenanza de Presupuesto 2026",
+          "url": "https://chivilcoy.gov.ar/2026-lrf_p1op/"
+        },
+        {
+          "text": "Anexos",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2025/12/2026-LRF_P1A.zip"
+        },
+        {
+          "text": "Ordenanza de Presupuesto 2025",
+          "url": "https://chivilcoy.gov.ar/2025-lrf_p1op/"
+        },
+        {
+          "text": "Ordenanza de Presupuesto 2024",
+          "url": "https://chivilcoy.gov.ar/2024-lrf_p10p/"
+        },
+        {
+          "text": "Ordenanza de Presupuesto 2023",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2023-LRF_P1OP.pdf"
+        },
+        {
+          "text": "Anexos",
+          "url": "http://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2023-LRF_P1A.rar"
+        },
+        {
+          "text": "Ordenanza de Presupuesto 2022",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2022-LRF_P1OP.pdf"
+        },
+        {
+          "text": "Anexos",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2022-LRF_P1A.rar"
+        },
+        {
+          "text": "Ordenanza de Presupuesto 2021",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2021-LRF_P1OP.pdf"
+        },
+        {
+          "text": "Anexos",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2021-LRF_P1A.rar"
+        },
+        {
+          "text": "Ordenanza de Presupuesto 2020",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2020-LRF_P1OP.pdf"
+        },
+        {
+          "text": "Anexos",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2020-LRF_P1A.pdf"
+        },
+        {
+          "text": "Ordenanza de Presupuesto 2019",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2019-LRF_P1OP.pdf"
+        },
+        {
+          "text": "Anexos",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2019-LRF_P1A.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2019",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2019/01/2019-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2019",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2019/01/2019-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2018",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2019/01/2018-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2018",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2019/01/2018-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2017",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2017/06/2017-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2017",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2017/06/2017-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2016",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2017/06/2016-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2016",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2017/06/2016-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2015",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2015-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2015",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2015-presupuesto-de-gastos-1.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2014",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2014-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2014",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2014-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Estado de Ejecución de Recursos 2013",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2013-estado-de-ejecucion-de-recursos.pdf"
+        },
+        {
+          "text": "Estado de Ejecución de Gastos 2013",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2013-estado-de-ejecucion-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2013",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2013-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2013",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2013-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2012",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2012-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2012",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2012-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2011",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2011-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2011",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2011-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2010",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2010-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2010",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2010-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2009",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2009-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2009",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2009-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2008",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2008-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2008",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2008-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2007",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2007-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2007",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2007-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2006",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2006-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2006",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2006-presupuesto-de-gastos.pdf"
+        },
+        {
+          "text": "Presupuesto de Recursos 2005",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2005-presupuesto-de-recursos.pdf"
+        },
+        {
+          "text": "Presupuesto de Gastos 2005",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/2016/05/2005-presupuesto-de-gastos.pdf"
+        }
+      ]
+    },
+    {
+      "key": "ezeiza-sef",
+      "url": "https://www.ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt%201er%20Sem%202026.pdf",
+      "status": 404,
+      "url_final": "https://www.ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt%201er%20Sem%202026.pdf",
+      "bytes": 228,
+      "sha256": "105a128119ac844c985e43625a12ce62912845a28da39d42d95fdff86d62feb4"
+    },
+    {
+      "key": "tornquist",
+      "url": "https://sibom.slyt.gba.gob.ar/bulletins/14456.pdf",
+      "status": 200,
+      "url_final": "https://sibom.slyt.gba.gob.ar/bulletins/14456.pdf",
+      "bytes": 411443,
+      "sha256": "a484bf92fae86bd5159148eb51b4411e0412b7ddf4899f849e51096be463aa80",
+      "file": "tornquist.pdf"
+    },
+    {
+      "key": "ef-1",
+      "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/ejecucion-fisica-trimestre-1-2026.zip",
+      "status": 200,
+      "url_final": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/ejecucion-fisica-trimestre-1-2026.zip",
+      "bytes": 173875,
+      "sha256": "b89d142416705cda0cba5ccd70460b5a24d1a47f6b302c91d25770a0bc7b4978",
+      "file": "ef-1.zip"
+    },
+    {
+      "key": "ef-2",
+      "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/ejecucion-fisica-trimestre-2-2026.zip",
+      "status": 200,
+      "url_final": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/ejecucion-fisica-trimestre-2-2026.zip",
+      "bytes": 191368,
+      "sha256": "a631d127b8e90e78a92554502662fad3d4154d046e94a65f483c246a67099fcc",
+      "file": "ef-2.zip"
+    },
+    {
+      "key": "gp-script",
+      "url": "https://municipalidaddegeneralpaz.gob.ar/transparencia/assets/js/script.js",
+      "status": 200,
+      "url_final": "https://municipalidaddegeneralpaz.gob.ar/transparencia/assets/js/script.js",
+      "bytes": 8503,
+      "sha256": "1726b453e5af838725757252da0a9340b07f8707f1b21aab5cb616c937c17643",
+      "file": "gp-script.html",
+      "links": []
+    },
+    {
+      "key": "gp-scan",
+      "url": "https://municipalidaddegeneralpaz.gob.ar/transparencia/scan.php",
+      "status": 200,
+      "url_final": "https://municipalidaddegeneralpaz.gob.ar/transparencia/scan.php",
+      "bytes": 9337,
+      "sha256": "847ee0f800742485d6f54a437e76780b8483643d4ca09593762cff0bf4a91e72",
+      "file": "gp-scan.html",
+      "links": []
+    },
+    {
+      "key": "ezeiza-sef",
+      "url": "https://www.ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt%201er%20Sem%202026.pdf",
+      "status": 404,
+      "url_final": "https://www.ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt%201er%20Sem%202026.pdf",
+      "bytes": 228,
+      "sha256": "105a128119ac844c985e43625a12ce62912845a28da39d42d95fdff86d62feb4"
+    },
+    {
+      "key": "chiv-presup",
+      "url": "https://chivilcoy.gov.ar/transparencia/presupuesto-anual-y-proyecciones",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/transparencia/presupuesto-anual-y-proyecciones-plurianuales/",
+      "bytes": 72903,
+      "sha256": "47fb02c5192579804791ca89cd274bae03a3a4d34db4077a329654c29ab05525",
+      "file": "chiv-presup.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "Presupuesto 2026 y proyecciones",
+          "url": "https://chivilcoy.gov.ar/2026-lrf_p3pa/"
+        },
+        {
+          "text": "Presupuesto 2025 y proyecciones",
+          "url": "https://chivilcoy.gov.ar/2025-lrf_p3pa/"
+        },
+        {
+          "text": "Presupuesto 2024 y proyecciones",
+          "url": "https://chivilcoy.gov.ar/2024-lrf_p3pa/"
+        },
+        {
+          "text": "Presupuesto 2023 y proyecciones",
+          "url": "http://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/presupuestoanual/2023-LRF_P3PA.xlsx"
+        },
+        {
+          "text": "Presupuesto 2022 y proyecciones",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/presupuestoanual/2022-LRF_P3PA.xlsx"
+        },
+        {
+          "text": "Presupuesto 2021 y proyecciones",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/presupuestoanual/2021-LRF_P3PA.xlsx"
+        },
+        {
+          "text": "Presupuesto 2020 y proyecciones",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/presupuestoanual/2020-LRF_P3PA.xlsx"
+        },
+        {
+          "text": "Presupuesto 2019 y proyecciones",
+          "url": "https://www.chivilcoy.gov.ar/wp-content/uploads/transparencia/presupuestoanual/2019-LRF_P3PA.xlsx"
+        }
+      ]
+    },
+    {
+      "key": "arenales-gastos",
+      "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2025/03/Presupuestos-de-Gastos-2025.pdf",
+      "status": 200,
+      "url_final": "https://www.generalarenales.gob.ar/wp-content/uploads/2025/03/Presupuestos-de-Gastos-2025.pdf",
+      "bytes": 493709,
+      "sha256": "0aba18d63e45de1045f2f8b2b4d44c01b7c642cd39085a4a2d228d8f418042e7",
+      "file": "arenales-gastos.pdf"
+    },
+    {
+      "key": "chiv-ordenanza",
+      "url": "https://chivilcoy.gov.ar/2026-lrf_p1op/",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/2026-lrf_p1op/",
+      "bytes": 72548,
+      "sha256": "fe85196cbf63c67718e1aa4803e29531574841b0d7aaab3021bbf1281ed23ed0",
+      "file": "chiv-ordenanza.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "2026-LRF_P1OP",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2026-LRF_P1OP.pdf"
+        },
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/"
+        }
+      ]
+    },
+    {
+      "key": "chiv-proyeccion",
+      "url": "https://chivilcoy.gov.ar/2026-lrf_p3pa/",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/2026-lrf_p3pa/",
+      "bytes": 72595,
+      "sha256": "31391ff100560afbc8abee389af646408643d9cba52fe3636f377fa2e0d42091",
+      "file": "chiv-proyeccion.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "2026-LRF_P3PA",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/presupuestoanual/2026-LRF_P3PA.xlsx"
+        },
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/"
+        }
+      ]
+    },
+    {
+      "key": "ezeiza-nonwww",
+      "url": "https://ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt%201er%20Sem%202026.pdf",
+      "status": 404,
+      "url_final": "https://ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt%201er%20Sem%202026.pdf",
+      "bytes": 228,
+      "sha256": "105a128119ac844c985e43625a12ce62912845a28da39d42d95fdff86d62feb4"
+    },
+    {
+      "key": "ezeiza-raw",
+      "url": "http://www.ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt%201er%20Sem%202026.pdf",
+      "status": 404,
+      "url_final": "https://www.ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt%201er%20Sem%202026.pdf",
+      "bytes": 228,
+      "sha256": "105a128119ac844c985e43625a12ce62912845a28da39d42d95fdff86d62feb4"
+    },
+    {
+      "key": "chiv-2026",
+      "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2026-LRF_P1OP.pdf",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2026-LRF_P1OP.pdf",
+      "bytes": 339808,
+      "sha256": "6c2a9178a7e053e0d7817b5d27dddf7690fd5ca2e2c5772c100bfad440a19aae",
+      "file": "chiv-2026.pdf"
+    },
+    {
+      "key": "lomas-presupuesto",
+      "url": "https://www.concejoldez.gob.ar/detalle_norma/4875",
+      "status": 200,
+      "url_final": "https://www.concejoldez.gob.ar/detalle_norma/4875",
+      "bytes": 14509,
+      "sha256": "9480bf29db5bc7d1e32e3c6b3e0af363c088165695003e3377dc7da2d9e13d38",
+      "file": "lomas-presupuesto.html",
+      "links": [
+        {
+          "text": "ordenanza19523_presup_2026.pdf",
+          "url": "https://www.concejoldez.gob.ar/files/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbDhjIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--221335f1abffa3d948d4915a9f32ad0100b9e2d7/ordenanza19523_presup_2026.pdf"
+        }
+      ]
+    },
+    {
+      "key": "lincoln-presupuesto",
+      "url": "https://www.lincoln.gob.ar/sites/default/files/presupuesto_de_gastos_2026.pdf",
+      "status": 404,
+      "url_final": "https://lincoln.gob.ar/sites/default/files/presupuesto_de_gastos_2026.pdf",
+      "bytes": 12260,
+      "sha256": "0c7e45f5f9ff0cd3d97fd38b98c5745d84f0422df90331c636e5079cccac344a"
+    },
+    {
+      "key": "lincoln-ejecucion",
+      "url": "https://www.lincoln.gob.ar/sites/default/files/2_ejecucion_presupuesto_de_gastos_por_programa_2.pdf",
+      "status": 404,
+      "url_final": "https://lincoln.gob.ar/sites/default/files/2_ejecucion_presupuesto_de_gastos_por_programa_2.pdf",
+      "bytes": 12282,
+      "sha256": "8c586b136c0478e2de66d7052d3a2a020986ad8cd6b3d63c7a755f9781ef9cd5"
+    },
+    {
+      "key": "moron-boletines",
+      "url": "https://www.moron.gob.ar/boletines-oficiales-2025/",
+      "status": 200,
+      "url_final": "https://www.moron.gob.ar/boletines-oficiales-2025/",
+      "bytes": 192997,
+      "sha256": "7371bdfdf85dab4925e4252cfe14c4767f735ef98cc10860b91eda60aa0a810f",
+      "file": "moron-boletines.html",
+      "links": [
+        {
+          "text": "Boletin N° 1 - 1° Quincena Enero 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N%C2%B0-1-1%C2%B0-Quincena-Enero-2026.pdf"
+        },
+        {
+          "text": "Boletin-N° 2-2° Quincena-Enero-2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N%C2%B0-2-2%C2%B0-Quincena-Enero-2026.pdf"
+        },
+        {
+          "text": "Boletín Especial N° 1 Enero 2026 Texto Ordenado Ordenanza Fiscal",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-Especial-N°-1-Enero-2026-Texto-Ordenado-Ordenanza-Fiscal-1.pdf"
+        },
+        {
+          "text": "Boletín Especial N° 2 Enero 2026 Texto Ordenado Ordenanza Impositiva",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-Especial-N°-2-Enero-2026-Texto-Ordenado-Ordenanza-Impositiva.pdf"
+        },
+        {
+          "text": "Boletín N° 3 - 1° Quincena Febrero 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N°-3-1°-Quincena-Febrero-2026.pdf"
+        },
+        {
+          "text": "Boletín N° 4 - 2° Quincena Febrero 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N°-4-2°-Quincena-Febrero-2026.pdf"
+        },
+        {
+          "text": "Boletín N° 5 - 1° Quincena Marzo 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N°-5-1°-Quincena-Marzo-2026.pdf"
+        },
+        {
+          "text": "Boletín N° 6 - 2° Quincena Marzo 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N%C2%B0-6-2%C2%B0-Quincena-Marzo-2026.pdf"
+        },
+        {
+          "text": "Boletín N° 7 - 1° Quincena Abril 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N°-7-1°-Quincena-Abril-2026.pdf"
+        },
+        {
+          "text": "Boletín N° 8 - 2° Quicena Abril 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N%C2%B0-8-2%C2%B0-Quicena-Abril-2026.pdf"
+        },
+        {
+          "text": "Boletín N° 9 - 1° Quincena Mayo 20266",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N°-9-1°-Quincena-Mayo-2026.pdf"
+        },
+        {
+          "text": "Boletín N° 10 - 2° Quincena Mayo 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N°-10-2°-Quincena-Mayo-2026.pdf"
+        },
+        {
+          "text": "Boletín N° 11 - 1° Quincena Junio 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N°-11-1°-Quincena-Junio-2026.pdf"
+        },
+        {
+          "text": "Boletín N° 12 - 2° Quincena Junio 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-N°-12-2°-Quincena-Junio-2026.pdf"
+        },
+        {
+          "text": "Boletín Nº 13 - 1º Quincena Julio 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-No-13-1o-Quincena-Julio-2026.pdf"
+        },
+        {
+          "text": "Boletín Nº 14 - 2º Quincena Julio 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-No-14-2o-Quincena-Julio-2026.pdf"
+        },
+        {
+          "text": "Boletín Nº 15 - 1º Quincena Agosto 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-No-15-1o-Quincena-Agosto-2026-1.pdf"
+        },
+        {
+          "text": "Boletín especial Nº 3 Septiembre de 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-especial-No-3-Septiembre-de-2026-PRESUPUESTO-DE-GASTOS-DEL-MUNICIPIO-2026.pdf"
+        },
+        {
+          "text": "Boletín Nº 16 - 2º Quincena Agosto 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-No-16-2o-Quincena-Agosto-2026-1.pdf"
+        },
+        {
+          "text": "Boletín Especial N° 4 Septiembre 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-Especial-N°-4-Septiembre-2026.pdf"
+        },
+        {
+          "text": "Boletin Nº 17 - 1º Quincena Septiembre 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-No-17-1o-Quincena-Septiembre-2026.pdf"
+        },
+        {
+          "text": "Boletín Nº 18 - 2º Quincena Septiembre 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-No-18-2o-Quincena-Septiembre-2026.pdf"
+        },
+        {
+          "text": "Boletín Nº 19 - 1º Quincena Octubre 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-No-19-1o-Quincena-Octubre-2026.pdf"
+        },
+        {
+          "text": "Boletín Nº 20 - 2º Quincena Octubre 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-No-20-2o-Quincena-Octubre-2026.pdf"
+        },
+        {
+          "text": "Boletín Nº 21 - 1º Quincena Noviembre 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-No-21-1o-Quincena-Noviembre-2026.pdf"
+        },
+        {
+          "text": "Boletín Especial N° 5 Noviembre 2026",
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-Especial-N°-5-Noviembre-2026.pdf"
+        }
+      ]
+    },
+    {
+      "key": "06028",
+      "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+      "status": 502,
+      "url_final": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+      "bytes": 150,
+      "sha256": "61b30d408583991fd69f3dec694e154cb652471e663328ad9c8482c9021ab5db"
+    },
+    {
+      "key": "06134",
+      "url": "https://www.canuelas.gov.ar",
+      "status": 200,
+      "url_final": "https://www.canuelas.gov.ar",
+      "bytes": 98243,
+      "sha256": "7a024f2d62e0dfe04defd8909b062c445d7eb919ff30c53ad19ebf90b815e829",
+      "file": "06134.html",
+      "links": [
+        {
+          "text": "Ordenanza Fiscal 2026",
+          "url": "https://www.canuelas.gov.ar/ordenanza-fiscal-2026"
+        },
+        {
+          "text": "Ordenanza Tributaria 2026",
+          "url": "https://www.canuelas.gov.ar/ordenanza-tributaria-2026"
+        },
+        {
+          "text": "",
+          "url": "https://www.canuelas.gov.ar/ordenanza-fiscal-2026"
+        },
+        {
+          "text": "Ordenanza Fiscal",
+          "url": "https://www.canuelas.gov.ar/ordenanza-fiscal-2026"
+        },
+        {
+          "text": "",
+          "url": "https://www.canuelas.gov.ar/ordenanza-tributaria-2026"
+        },
+        {
+          "text": "Ordenanza Tributaria",
+          "url": "https://www.canuelas.gov.ar/ordenanza-tributaria-2026"
+        },
+        {
+          "text": "",
+          "url": "https://www.canuelas.gov.ar/ordenanza-fiscal-2026"
+        },
+        {
+          "text": "Ordenanza Fiscal",
+          "url": "https://www.canuelas.gov.ar/ordenanza-fiscal-2026"
+        },
+        {
+          "text": "",
+          "url": "https://www.canuelas.gov.ar/ordenanza-tributaria-2026"
+        },
+        {
+          "text": "Ordenanza Tributaria",
+          "url": "https://www.canuelas.gov.ar/ordenanza-tributaria-2026"
+        },
+        {
+          "text": "Expo Cañuelas 2026 generó un impacto económico estimado en 2.200 millones de pesos",
+          "url": "https://www.canuelas.gov.ar/noticias/noviembre-2026/expo-canuelas-2026-genero-un-impacto-economico-estimado-en-2-200-millones-de-pesos"
+        },
+        {
+          "text": "La Expo Cañuelas 2026 cerró con una convocatoria récord: 60 mil personas recorrieron el predio durante la última jornada",
+          "url": "https://www.canuelas.gov.ar/noticias/noviembre-2026/la-expo-canuelas-2026-cerro-con-una-convocatoria-record-60-mil-personas-recorrieron-el-predio-durante-la-ultima-jornada"
+        },
+        {
+          "text": "45 mil personas pasaron por la Expo Cañuelas durante la segunda jornada",
+          "url": "https://www.canuelas.gov.ar/noticias/noviembre-2026/45-mil-personas-pasaron-por-la-expo-canuelas-durante-la-segunda-jornada"
+        },
+        {
+          "text": "Ordenanza Fiscal 2026",
+          "url": "https://www.canuelas.gov.ar/ordenanza-fiscal-2026"
+        },
+        {
+          "text": "Ordenanza Tributaria 2026",
+          "url": "https://www.canuelas.gov.ar/ordenanza-tributaria-2026"
+        }
+      ]
+    },
+    {
+      "key": "06224",
+      "url": "https://chivilcoy.gov.ar/2025-situacion-economica-financiera/",
+      "status": 200,
+      "url_final": "https://chivilcoy.gov.ar/2025-situacion-economica-financiera/",
+      "bytes": 72718,
+      "sha256": "45768dda8591ad5e60d52263c13acd7e5b308b74fdd2999346dad7d0c2bf3139",
+      "file": "06224.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://chivilcoy.gov.ar/transparencia/"
+        },
+        {
+          "text": "2025-situacion-economica-financiera",
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/situacioneconomica/2025-situacion-economica-financiera.pdf"
+        },
+        {
+          "text": "Hacienda",
+          "url": "https://chivilcoy.gov.ar/category/hacienda/"
+        }
+      ]
+    },
+    {
+      "key": "06182",
+      "url": "https://mcr.gob.ar/docs/",
+      "status": 200,
+      "url_final": "https://mcr.gob.ar/docs/",
+      "bytes": 109437,
+      "sha256": "12971571a3a12dd796a2bdbe840d50631369162a4fc098c553413529f9e6c7b0",
+      "file": "06182.html",
+      "links": [
+        {
+          "text": "Economía 2026 , STOCK DE DEUDA Y PERFIL DE VENCIMIENTOS STOCK DE DEUDA 3º TRIMESTRE 2026",
+          "url": "https://mcr.gob.ar/documentos/stock-de-deuda-3o-trimestre-2026/"
+        },
+        {
+          "text": "Economía 2026 , EJECUCION PRESUPUESTARIA DE GASTOS EJECUCION PRESUPUESTARIA DE GASTOS 3º TRIMESTRE – 2026",
+          "url": "https://mcr.gob.ar/documentos/ejecucion-presupuestaria-de-gastos-3o-trimestre-2026/"
+        },
+        {
+          "text": "Economía 2026 , EJECUCION PRESUPUESTARIA DE RECURSOS EJECUCION PRESUPUESTARIA DE RECURSOS 3º TRIMESTRE – 2026",
+          "url": "https://mcr.gob.ar/documentos/ejecucion-presupuestaria-de-recursos-3o-trimestre-2026/"
+        },
+        {
+          "text": "Economía 2026 , GASTO POR FINALIDAD Y FUNCION GASTOS POR FINALIDAD Y FUNCION 3º TRIMESTRE – 2026",
+          "url": "https://mcr.gob.ar/documentos/gastos-por-finalidad-y-funcion-3o-trimestre-2026/"
+        },
+        {
+          "text": "Economía 2026 , Situación Económica Financiera , SITUACION ECONOMICA FINANCIERA SITUACION ECONOMICA FINANCIERA 3º TRIMESTRE – 2026",
+          "url": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/"
+        }
+      ]
+    },
+    {
+      "key": "06238",
+      "url": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
+      "status": 200,
+      "url_final": "https://dolores.gob.ar/wp-content/uploads/2026/03/SIT-ECONOMICA-FINANCIERA-AL-31.12.2025.pdf",
+      "bytes": 797879,
+      "sha256": "92116d6545ac66162aa2503f867cd9b554ae7ec9d5865b64bd2843fc7d9c0877",
+      "file": "06238.pdf"
+    },
+    {
+      "key": "06252",
+      "url": "https://www.escobar.gob.ar/transparencia/",
+      "status": 200,
+      "url_final": "https://www.escobar.gob.ar/transparencia/",
+      "bytes": 46338,
+      "sha256": "23106d76eab2d3ae2ec31f7b12461c75a6dc2cece3ed664265e9b3d1c987eb64",
+      "file": "06252.html",
+      "links": []
+    },
+    {
+      "key": "06260",
+      "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+      "status": 200,
+      "url_final": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/",
+      "bytes": 230520,
+      "sha256": "3bf2d87f6e453b23b4d59e4f02110942031a729030e68cf182cab02b7f71f82e",
+      "file": "06260.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/"
+        },
+        {
+          "text": "CALENDARIO FISCAL 2026",
+          "url": "https://www.estebanecheverria.gob.ar/wp-content/uploads/2018/01/Calendario-fiscal-2026.pdf"
+        },
+        {
+          "text": "ORDENANZA FISCAL 2026",
+          "url": "https://www.estebanecheverria.gob.ar/wp-content/uploads/2018/01/Ordenanza-2026_ok.pdf"
+        },
+        {
+          "text": "Hacienda",
+          "url": "https://www.estebanecheverria.gob.ar/secretaria-de-hacienda/"
+        }
+      ]
+    },
+    {
+      "key": "06270",
+      "url": "https://www.ezeiza.gob.ar/datos_abiertos.php",
+      "status": 200,
+      "url_final": "https://www.ezeiza.gob.ar/datos_abiertos.php",
+      "bytes": 41003,
+      "sha256": "a495221c6d48ea2ea6e9ca947cc18ebc5f744195a750a0ead19a61e5989057e3",
+      "file": "06270.html",
+      "links": [
+        {
+          "text": "ECONOMÍA Y HACIENDA",
+          "url": "https://www.ezeiza.gob.ar/areas_de_gobierno-economia_y_hacienda.php"
+        },
+        {
+          "text": "Año 2026",
+          "url": "https://www.ezeiza.gob.ar/datos_abiertos.php#"
+        },
+        {
+          "text": "Situación Económica 1er semestre",
+          "url": "https://www.ezeiza.gob.ar/descargas/CTA_Sit_Eco.rpt 1er Sem 2026.pdf"
+        },
+        {
+          "text": "Balance de Tesorería 3er trimestre",
+          "url": "https://www.ezeiza.gob.ar/descargas/Balance 3er trimestre 2026 - Tes_BalanceTesoreria.pdf"
+        },
+        {
+          "text": "Balance de Sumas y Saldos 3er trimestre",
+          "url": "https://www.ezeiza.gob.ar/descargas/Balance 3er trimestre 2026 - CTA_Balance_SyS.pdf"
+        },
+        {
+          "text": "Ordenanza Fiscal e Impositiva 2026",
+          "url": "https://www.ezeiza.gob.ar/descargas/Ordenanza Fiscal e Impositiva 2026.pdf"
+        }
+      ]
+    },
+    {
+      "key": "06294",
+      "url": "https://www.generalarenales.gob.ar/gobierno-abierto/",
+      "status": 200,
+      "url_final": "https://www.generalarenales.gob.ar/gobierno-abierto/?doing_wp_cron=1795089718.8101420402526855468750",
+      "bytes": 55409,
+      "sha256": "4c6720f67f01bfb9812b212804f264c49d1160a4d8f3a8676ab4f64c5723ae45",
+      "file": "06294.html",
+      "links": [
+        {
+          "text": "Presupuesto Consultá la ejecución presupuestaria municipal Ver más",
+          "url": "https://www.generalarenales.gob.ar/gobierno-abierto/presupuesto/"
+        }
+      ]
+    },
+    {
+      "key": "06343",
+      "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
+      "status": 200,
+      "url_final": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
+      "bytes": 100368,
+      "sha256": "ca500eba707d787294b33ebf80a9f8848f21d3d6dd29cf2911debb3a7e7eb4ca",
+      "file": "06343.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+        }
+      ]
+    },
+    {
+      "key": "06408",
+      "url": "https://www.hurlingham.gob.ar/gobierno-abierto/",
+      "status": 200,
+      "url_final": "https://www.hurlingham.gob.ar/gobierno-abierto/",
+      "bytes": 170334,
+      "sha256": "f1724c62456f1e33b9b76a0908ce92d098d3c5a2139b067e66e79720b57ae69f",
+      "file": "06408.html",
+      "links": []
+    },
+    {
+      "key": "06410",
+      "url": "https://miituzaingo.gov.ar/es/gobierno-abierto/transparencia/cuentas-claras/2024#main-content",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1085)>"
+    },
+    {
+      "key": "06420",
+      "url": "http://www.lacosta.gov.ar/",
+      "status": 200,
+      "url_final": "https://lacosta.gob.ar/",
+      "bytes": 110454,
+      "sha256": "5c1f9c5883c33aef621a0c1977c24938d062b464599198c63956fb84a051684d",
+      "file": "06420.html",
+      "links": [
+        {
+          "text": "El Partido de La Costa ya cuenta con 54 unidades productivas de alimentos artesanales habilitadas",
+          "url": "https://prensa.lacosta.gob.ar/"
+        }
+      ]
+    },
+    {
+      "key": "06462",
+      "url": "https://municipioalem.gob.ar/?q=transparencia",
+      "status": 200,
+      "url_final": "https://municipioalem.gob.ar/?q=transparencia",
+      "bytes": 23441,
+      "sha256": "1028e6e6228d8dca2ca3d5de5933afbf0fa94561dd65d2cf43da8853d7ed9921",
+      "file": "06462.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://municipioalem.gob.ar/?q=gobierno-abierto"
+        },
+        {
+          "text": "Transparencia",
+          "url": "https://municipioalem.gob.ar/?q=transparencia"
+        },
+        {
+          "text": "",
+          "url": "https://twitter.com/share?url=https://municipioalem.gob.ar/?q=transparencia&text=Transparencia "
+        },
+        {
+          "text": "",
+          "url": "https://www.facebook.com/sharer.php?u=https://municipioalem.gob.ar/?q=transparencia&t=Transparencia"
+        }
+      ]
+    },
+    {
+      "key": "06466",
+      "url": "https://lezama.gov.ar/situacion-financiera/",
+      "status": 200,
+      "url_final": "https://lezama.gov.ar/situacion-financiera/",
+      "bytes": 85062,
+      "sha256": "8775aa0821ee35f7f9e3d39b87b8c67caf0d99d7d416d70adafa306d0adcdb7a",
+      "file": "06466.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://lezama.gov.ar/transparencia/"
+        },
+        {
+          "text": "Presupuesto",
+          "url": "https://lezama.gov.ar/ordenanzas/"
+        },
+        {
+          "text": "Descargar",
+          "url": "https://lezama.gov.ar/wp-content/uploads/2026/07/Resena-Anual-2026.-1°-Semestre.xlsx"
+        },
+        {
+          "text": "Descargar",
+          "url": "https://lezama.gov.ar/wp-content/uploads/2026/06/Resena-Anual-2025.xlsx"
+        }
+      ]
+    },
+    {
+      "key": "06469",
+      "url": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
+      "status": 200,
+      "url_final": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
+      "bytes": 85803,
+      "sha256": "6229bf81a51bc0a9d082092b6907cbc69908d57af8131585831dd25a09426c07",
+      "file": "06469.pdf"
+    },
+    {
+      "key": "06490",
+      "url": "https://www.lomasdezamora.gov.ar/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1085)>"
+    },
+    {
+      "key": "06511",
+      "url": "https://www.maipu-gba.gob.ar/",
+      "status": 200,
+      "url_final": "https://www.maipu-gba.gob.ar/",
+      "bytes": 30425,
+      "sha256": "d07dccfc6c1b56f8b99b65260730289b81fbf8a47edbc2e74fe4dbdffec88f56",
+      "file": "06511.html",
+      "links": [
+        {
+          "text": "Hacienda",
+          "url": "https://www.maipu-gba.gob.ar/?q=hacienda"
+        }
+      ]
+    },
+    {
+      "key": "06518",
+      "url": "https://www.marchiquita.gob.ar/secretaria-de-economia/",
+      "status": 200,
+      "url_final": "https://www.marchiquita.gob.ar/secretaria-de-economia/",
+      "bytes": 69300,
+      "sha256": "76d8e8c6fab334df3bfdd4187659842840a0c4e27a9edb6518f84f2263338bd7",
+      "file": "06518.html",
+      "links": []
+    },
+    {
+      "key": "06525",
+      "url": "https://www.marcospaz.gov.ar/trámites-y-servicios/cuentas-claras/item/download/205_a4333fc70712ead503d574a54bdb731a.html",
+      "error": "'ascii' codec can't encode character '\\xe1' in position 7: ordinal not in range(128)"
+    },
+    {
+      "key": "06539",
+      "url": "https://www.merlo.gob.ar/",
+      "status": 200,
+      "url_final": "https://www.merlo.gob.ar/",
+      "bytes": 213466,
+      "sha256": "c5a73ab05de3dd5dd09df04c49a92e8009bd590e020df6f4d522c5b9267c8aa6",
+      "file": "06539.html",
+      "links": [
+        {
+          "text": "Transparencia",
+          "url": "https://www.merlo.gob.ar/transparencia/"
+        },
+        {
+          "text": "MERLO DISFRUTÓ DE LA ECOAVENTURA 2026",
+          "url": "https://www.merlo.gob.ar/merlo-disfruto-de-la-ecoaventura-2026/"
+        },
+        {
+          "text": "leer más",
+          "url": "https://www.merlo.gob.ar/merlo-disfruto-de-la-ecoaventura-2026/"
+        },
+        {
+          "text": "CULMINÓ LA LIGA MUNICIPAL DE HOCKEY 2026",
+          "url": "https://www.merlo.gob.ar/culmino-la-liga-municipal-de-hockey-2026/"
+        },
+        {
+          "text": "leer más",
+          "url": "https://www.merlo.gob.ar/culmino-la-liga-municipal-de-hockey-2026/"
+        }
+      ]
+    },
+    {
+      "key": "06568",
+      "url": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
+      "status": 200,
+      "url_final": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
+      "bytes": 242346,
+      "sha256": "98f09e1004b962cb64b6e7b4d914bdba01bed8b0cddea3e610b28eea2b38097e",
+      "file": "06568.pdf"
+    },
+    {
+      "key": "06574",
+      "url": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
+      "status": 200,
+      "url_final": "https://navarro.gob.ar/situacion-economica/Segundo-semestre-2025.pdf",
+      "bytes": 441543,
+      "sha256": "c1a3cabf36bd922df7d4d7c55a8882621ef37d70fb2034bdd990072696c75cf7",
+      "file": "06574.pdf"
+    },
+    {
+      "key": "06630",
+      "url": "https://pila.gob.ar/",
+      "status": 200,
+      "url_final": "https://pila.gob.ar/",
+      "bytes": 160408,
+      "sha256": "8f89ff3cb24516ed1f49089bd4aa3d77be88ee21031db65004f0dbbbce037dd4",
+      "file": "06630.html",
+      "links": [
+        {
+          "text": "LICITACIÓN PÚBLICA N° 2/2026",
+          "url": "https://pila.gob.ar/noticia.php?id=50"
+        },
+        {
+          "text": "¡LLEGAN LAS OLIMPIADAS “CIUDAD DE PILA 2026”!",
+          "url": "https://pila.gob.ar/noticia.php?id=49"
+        },
+        {
+          "text": "Presupuesto 2026",
+          "url": "https://pila.gob.ar/descargar_digesto.php?id=47"
+        },
+        {
+          "text": "Impositiva 2026",
+          "url": "https://pila.gob.ar/descargar_digesto.php?id=46"
+        },
+        {
+          "text": "Tarifaria 2026",
+          "url": "https://pila.gob.ar/descargar_digesto.php?id=45"
+        }
+      ]
+    },
+    {
+      "key": "06648",
+      "url": "http://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
+      "status": 200,
+      "url_final": "https://presidenteperon.gob.ar/wp-content/uploads/2026/03/sit-economica-financiera-2025-.pdf",
+      "bytes": 2334159,
+      "sha256": "01906319dc57f2ee741fedd8614ee79bebbe765270c40dbb7472b33604bfc264",
+      "file": "06648.pdf"
+    },
+    {
+      "key": "06655",
+      "url": "https://puntaindio.gov.ar/",
+      "status": 200,
+      "url_final": "https://puntaindio.gov.ar/",
+      "bytes": 36077,
+      "sha256": "ad2b5608811b319b19b7245d2dfdd6278813d64c7be91349d922890019160d48",
+      "file": "06655.html",
+      "links": []
+    },
+    {
+      "key": "06700",
+      "url": "https://drive.google.com/uc?export=download&id=1a9pxkIUN8Pgn0JEr4sYkw7b-NTVIurRV",
+      "status": 200,
+      "url_final": "https://drive.usercontent.google.com/download?id=1a9pxkIUN8Pgn0JEr4sYkw7b-NTVIurRV&export=download",
+      "bytes": 598780,
+      "sha256": "aae797ca6c0ff7f3651dbcdc26ca523751cd1397dcd3a39fdc9867206f3a6671",
+      "file": "06700.pdf"
+    },
+    {
+      "key": "06749",
+      "url": "https://www.sanfernando.gob.ar/situacion-economico-financiera",
+      "status": 200,
+      "url_final": "https://www.sanfernando.gob.ar/situacion-economico-financiera",
+      "bytes": 61418,
+      "sha256": "003cd58413fa01fde40bfdf0772c573c97814bcf1dc0744132da301d552ac94a",
+      "file": "06749.html",
+      "links": []
+    },
+    {
+      "key": "06778",
+      "url": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
+      "status": 200,
+      "url_final": "http://www.sanvicente.gob.ar/documentos/situacioneconomicofinancieradel-01-01-2025-al-31-12-2025.pdf",
+      "bytes": 335297,
+      "sha256": "a2113127bb514937786ad28692bd29da9b0f259fc86911cdd07d687f5ffdc5c2",
+      "file": "06778.pdf"
+    },
+    {
+      "key": "06812",
+      "url": "https://tordillomunicipio.com/",
+      "status": 522,
+      "url_final": "https://tordillomunicipio.com/",
+      "bytes": 16,
+      "sha256": "c8b9f348c8635d7ffcd5d16ad4b9c65289302dc6c4fe2e0210346b23013fb280"
+    },
+    {
+      "key": "06819",
+      "url": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
+      "status": 200,
+      "url_final": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
+      "bytes": 335707,
+      "sha256": "4baa5c3b5a5614132ae980fc60540a270a6617674e8242614010743d07164b15",
+      "file": "06819.pdf"
+    },
+    {
+      "key": "asip",
+      "url": "https://www.asip.gob.ar/recaudacion",
+      "status": 200,
+      "url_final": "https://www.asip.gob.ar/recaudacion",
+      "bytes": 255938,
+      "sha256": "7abcdfa399cb494bdf753edc67e801a5fd5fd0414fd810c2f7ffd6ba7f429da7",
+      "file": "asip.html",
+      "links": []
+    },
+    {
+      "key": "pampa",
+      "url": "https://contaduriageneral.lapampa.gob.ar/images/pdf/InfoPres/EjePresupuestaria/2026/Informe_Recursos_09-2026.pdf",
+      "status": 200,
+      "url_final": "https://contaduriageneral.lapampa.gob.ar/images/pdf/InfoPres/EjePresupuestaria/2026/Informe_Recursos_09-2026.pdf",
+      "bytes": 273005,
+      "sha256": "958ec8be36cf5c551599ba1416e44215fb9f6571268cda11c76dba0d80318a6e",
+      "file": "pampa.pdf"
+    },
+    {
+      "key": "opc",
+      "url": "https://opc.gob.ar/download/53320/",
+      "status": 410,
+      "url_final": "https://opc.gob.ar/download/53320/",
+      "bytes": 8319,
+      "sha256": "0a4198955dc5301e988dd64f2002e700a5f5da7b3d025f957ee08dad73d6429c"
+    },
+    {
+      "key": "credito-anual",
+      "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-anual-2026.zip",
+      "status": 200,
+      "url_final": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-anual-2026.zip",
+      "bytes": 2837329,
+      "sha256": "148abf9794d2f90d97b880bf4dd3d790762696e277854c7ee63428f79febd026",
+      "file": "credito-anual.zip"
+    },
+    {
+      "key": "credito-mensual",
+      "url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-mensual-2026.zip",
+      "status": 200,
+      "url_final": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-mensual-2026.zip",
+      "bytes": 11728238,
+      "sha256": "3c7da9edaece0eb3e587b906df63bbb4373b6b12ef970f581f47c212f928b913",
+      "file": "credito-mensual.zip"
+    }
+  ],
+  "validation": {
+    "expected": "Pruebas de regresión, conciliación mensual por cinco aperturas, huellas de fuentes, manifiestos de PDF y comprobación de navegación y descargas en 320/390/768/1440 px. El estado final de publicación se comprueba en GitHub y por hashes servidos.",
+    "local_browser": [
+      {
+        "width": 320,
+        "errors": [],
+        "nationalDownload": "informe-nacional-real-current.pdf"
+      },
+      {
+        "width": 390,
+        "errors": [],
+        "nationalDownload": "informe-nacional-real-current.pdf"
+      },
+      {
+        "width": 768,
+        "errors": [],
+        "nationalDownload": "informe-nacional-real-current.pdf"
+      },
+      {
+        "width": 1440,
+        "errors": [],
+        "nationalDownload": "informe-nacional-real-current.pdf"
+      }
+    ],
+    "source_reconciliation": "Cada apertura de octubre suma el total de devengado, pagado y real. La foto anual vigente al 17/11 concilia con totales-de-presupuesto y con los flujos mensuales; noviembre parcial conserva real=null."
+  }
+}

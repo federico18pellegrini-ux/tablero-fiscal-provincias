@@ -1,0 +1,33 @@
+{
+  "id": "06182",
+  "inicio": "2025-01-02",
+  "fin": "2025-12-31",
+  "method": "published_caif",
+  "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+  "landingUrl": "https://mcr.gob.ar/docs/",
+  "amounts": {
+    "ingresos_corrientes": "35535781862.29",
+    "gastos_corrientes": "36774236603.56",
+    "ingresos_capital": "1099863819.30",
+    "gastos_capital": "1837091893.27",
+    "ingresos_totales": "36635645681.59",
+    "gastos_totales": "38611328496.83",
+    "resultado_financiero": "-1975682815.24",
+    "personal_devengado": "28587219249.12"
+  },
+  "documents": [
+    {
+      "url": "https://mcr.gob.ar/wp-content/uploads/2026/03/29-Anexo-I-Estado-de-Situacion-Economico-Financiera.pdf",
+      "sha256": "e664d61e5a99ad911344f42afd3c3975e9563cffd82fd0973a8a5e12b03bc5c3",
+      "pages": 4,
+      "consultedPages": [
+        1
+      ],
+      "locator": "Cuenta Ahorro Inversión Financiamiento: ingresos percibidos y gastos devengados. Se excluyen fuentes y aplicaciones financieras. Personal: columna devengado, cuando está publicado.",
+      "bytes": 364160,
+      "archive": "municipios/data/fiscal-sources/2026-10-04/06182.pdf"
+    }
+  ],
+  "note": "CAIF oficial conciliada al centavo. El período se conserva y no se anualiza.",
+  "verifiedAt": "2026-10-04"
+}

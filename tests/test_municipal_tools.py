@@ -39,8 +39,8 @@ class MunicipalTools(unittest.TestCase):
             topics = {r['topic'] for r in row['documentsNeeded']}
             self.assertTrue({'Caja libre', 'Calendario futuro de deuda', 'Flujos fiscales mensuales'} <= topics)
         topics = {r['topic']: r['available'] for r in self.coverage['topics']}
-        self.assertEqual(topics['Presupuesto vigente 2026'], 97)
-        self.assertEqual(topics['Presupuesto original 2026'], 23)
+        self.assertEqual(topics['Presupuesto vigente 2026'], 98)
+        self.assertEqual(topics['Presupuesto original 2026'], 27)
         self.assertEqual(topics['Saldo de tesorería'], 2)
         self.assertEqual(topics['Caja libre'], 0)
 

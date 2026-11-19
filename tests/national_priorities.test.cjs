@@ -23,11 +23,11 @@ test('intelligence function does not substitute or add the SIDE program',()=>{
 test('execution uses full matched months and observed monthly deflation',()=>{
   const model=M.comparisons(B,G,'execution');
   assert.equal(model.rows.filter(r=>r.change!==null).length,29);
-  near(model.total.after,G.execution.functions_comparison.reduce((s,r)=>s+r.credito_devengado_real_agosto2026_2026,0));
-  const intel=model.rows.find(r=>r.id==='2-12');near(intel.after,228915.62002183);
+  near(model.total.after,G.execution.closed.total.real);
+  const intel=model.rows.find(r=>r.id==='2-12');near(intel.after,306632.5399899969);
   const r=model.rows.find(r=>r.id==='1-1');
-  near(r.before,394357.83383495);near(r.after,381661.67835499);
-  near(r.change,-3.21945056,1e-7);
+  near(r.before,490950.69875492);near(r.after,483887.199216574);
+  near(r.change,-1.43873907426,1e-7);
   assert.notEqual(r.after,B.functions.find(f=>f.id===r.id).accrued);
 });
 test('project can be compared to each of three annual bases, using annual mean inflation',()=>{
@@ -79,8 +79,8 @@ test('share reading distinguishes less spending from greater participation acros
 });
 test('interest card distinguishes spending level, change, shares and rest of spending',()=>{
  const model=M.comparisons(B,G),i=M.interestComparison(model);
- near(i.row.after,13192967.29249773);near(i.row.delta,2983748.9437747207);
- near(i.row.shareAfter,12.151549014048062);
+ near(i.row.after,14185456.356186235);near(i.row.delta,2781185.2268085163);
+ near(i.row.shareAfter,10.522380784762685);
  near(i.rest.after+i.row.after,model.total.after);
  assert.ok(i.rest.change<model.total.change);
  const incomplete=structuredClone(model);incomplete.total.after=null;

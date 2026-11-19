@@ -10,14 +10,14 @@
     if(!bases.includes(base))throw new Error('Unknown base');
     // Budget IDs are display IDs (global sequence), while PA function codes restart
     // inside each purpose. Join on the official name AND purpose, never the display ID.
-    const actual=new Map(management.execution.functions_comparison.map(r=>[`${r.finalidad_id}|${r.funcion_desc_2026}`,r]));
+    const actual=new Map(management.execution.closed.groups.funcion.map(r=>[`${r.finalidad_id}|${r.funcion_desc}`,r]));
     const factors=budget.deflator.annual_factors;
     let rows=budget.functions.map(r=>{
       const e=actual.get(`${r.purpose}|${r.name}`);
       let before,after;
       if(mode==='execution'){
-        before=e?.credito_devengado_real_agosto2026_2025??null;
-        after=e?.credito_devengado_real_agosto2026_2026??null;
+        before=e?.credito_devengado_real_agosto2026??null;
+        after=e?.real??null;
       }else if(mode==='amendments'){
         before=r.law;after=r.current;
       }else{

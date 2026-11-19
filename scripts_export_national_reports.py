@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'nacion/reports'
 SITE = 'https://tablero.federicopellegrini.com.ar/nacion/'
 BASES = {'current': 'Vigente 2026', 'law': 'Inicial 2026', 'closing': 'Cierre estimado 2026'}
-INPUTS = ['nacion/data/rigi-estimate.json', 'scripts_build_rigi_estimate.py', 'nacion/data/tax-expenditures.json', 'national_tax_report.py', 'nacion/data/execution-latest.json', 'national_priorities_report.py', 'nacion/data/benefits.json', 'nacion/priorities-model.js', 'nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
+INPUTS = ['nacion/data/execution-closed.json', 'nacion/data/rigi-estimate.json', 'scripts_build_rigi_estimate.py', 'nacion/data/tax-expenditures.json', 'national_tax_report.py', 'nacion/data/execution-latest.json', 'national_priorities_report.py', 'nacion/data/benefits.json', 'nacion/priorities-model.js', 'nacion/data/budget.json', 'data/ipc_source.json', 'scripts_export_national_reports.py', 'national_management_report.py', 'nacion/data/gestion.json',
           'national_decision_report.py', 'national_territory_report.py', 'national_portfolio_report.py', 'nacion/data/decisions.json',
           'municipios/assets/manrope-400.ttf', 'municipios/assets/manrope-700.ttf']
 INK, TEAL, MUTED, LINE, PALE, RED = map(colors.HexColor, ['#0a192f', '#254b73', '#64748b', '#e2e8f0', '#f1f5f9', '#b91c1c'])
@@ -263,8 +263,7 @@ class Report:
         self.table(['Mes 2026', 'Gasto del mes', 'Acumulado / vigente'],
                    [[MONTHS[m['month'] - 1] + (' (parcial)' if m['partial'] else ''), num(m['real'] if self.mode == 'real' else m['accrued'], 0), pct(ratio(sum(x['accrued'] for x in ex['months'][:i+1]), ex['current']))] for i, m in enumerate(ex['months'])],
                    [WIDTH - 235, 105, 130], compact=True)
-        self.note(f"Gasto mensual en millones · {self.units}. Octubre llega al {date(d['execution_display_cutoff'])} y no es un mes completo. Los importes reales usan el IPC observado de cada mes. Octubre conserva el corte parcial también en pesos constantes.")
-        self.note('Cuando una partida se ejecuta menos de lo previsto, hay que revisar qué prestación u obra quedó pendiente y si cambió su calendario.')
+        self.note(f"Gasto mensual en millones · {self.units}. Octubre está completo. Noviembre llega al {date(d['execution_display_cutoff'])} y es parcial. El ajuste real llega a octubre, último mes con IPC observado.")
 
         self.section('09 / Historia y lectura final', 'Mirar más allá de un solo año', 'Presupuesto Abierto: totales anuales de ejecución. ONP: proyecto 2027. INDEC: IPC; 2026-2027, escenario.')
         self.add('Entre 2023 y 2025 se muestra el gasto reconocido al cierre de cada año. En 2026, el presupuesto vigente; en 2027, el proyecto. La diferencia entre una autorización y su ejecución importa porque parte de lo aprobado puede quedar sin usar.')
@@ -392,6 +391,19 @@ class Report:
             append_tax(self,json.loads((ROOT/'nacion/data/tax-expenditures.json').read_text(encoding='utf8')))
         if full:
             self.appendix()
+            closed = json.loads((ROOT / 'nacion/data/execution-closed.json').read_text(encoding='utf8'))
+            self.section('Anexo / Octubre completo', 'Ejecución por programa',
+                         'Presupuesto Abierto: ejecución mensual 2026, revisión 17/11/2026. IPC observado.')
+            self.note('Montos en millones · ' + self.units + '. Enero–octubre completo. '
+                      'Cada fila identifica organismo ejecutor y programa. El cambio interanual individual requiere verificar la continuidad del programa.')
+            real = self.mode == 'real'
+            self.table(['Organismo / programa', 'Octubre', 'Enero–octubre', 'Pagado ene–oct'],
+                       [[f"{x['servicio_desc']} / {x['programa_id']} · {x['programa_desc']}",
+                         num(x['real_octubre'] if real else x['credito_devengado_octubre'], 0),
+                         num(x['real'] if real else x['credito_devengado'], 0),
+                         num(x['paid_real'] if real else x['credito_pagado'], 0)]
+                        for x in sorted(closed['groups']['programa'], key=lambda x: -x['credito_devengado'])],
+                       [WIDTH - 210, 65, 75, 70], compact=True)
         doc = BaseDocTemplate(str(path), pagesize=A4, leftMargin=42, rightMargin=42, topMargin=56, bottomMargin=82,
                                 title='Presupuesto Nacional 2027 - Informe completo', author='Federico Pellegrini',
                                 subject=self.units + ' / ' + self.base_label, invariant=1, pageCompression=1)

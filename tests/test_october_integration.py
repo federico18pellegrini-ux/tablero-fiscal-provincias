@@ -25,13 +25,13 @@ class OctoberIntegration(unittest.TestCase):
 
     def test_current_execution_and_frozen_project_baseline_have_distinct_dates(self):
         g=load('nacion/data/gestion.json');e=load('nacion/data/execution-latest.json')
-        self.assertEqual(e['cutoff'],'2026-10-19')
+        self.assertEqual(e['cutoff'],'2026-11-17')
         self.assertEqual(g['execution']['project_baseline']['total'][0]['corte'],'2026-09-15')
-        self.assertAlmostEqual(sum(m['accrued'] for m in e['execution'][0]['months']),g['execution']['total']['credito_devengado'],places=5)
-        self.assertEqual(len(e['execution'][0]['months']),10)
+        self.assertAlmostEqual(sum(m['accrued'] for m in e['execution'][0]['months']),g['execution']['closed']['latest_stages']['credito_devengado'],places=5)
+        self.assertEqual(len(e['execution'][0]['months']),11)
         for row in e['execution']:
             for m in row['months']:
-                self.assertEqual(m['partial'],m['month']==10)
+                self.assertEqual(m['partial'],m['month']==11)
                 if m['month']==10:self.assertAlmostEqual(m['real'],m['accrued']*12276.766/12785.9321,places=6)
 
     def test_new_municipal_accounts_keep_originals_and_do_not_mix_periods(self):
