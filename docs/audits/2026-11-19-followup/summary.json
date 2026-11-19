@@ -1,0 +1,217 @@
+{
+  "date": "2026-11-19",
+  "scope": "Revisión focalizada de pendientes municipales y fuentes oficiales alternativas; no constituye conciliación nueva de los 135 municipios.",
+  "budgets2026Added": [
+    {
+      "id": "06469",
+      "name": "Lincoln"
+    },
+    {
+      "id": "06466",
+      "name": "Lezama"
+    },
+    {
+      "id": "06568",
+      "name": "Morón"
+    },
+    {
+      "id": "06749",
+      "name": "San Fernando"
+    },
+    {
+      "id": "06539",
+      "name": "Merlo"
+    }
+  ],
+  "semestersAdded": [
+    "06469",
+    "06466"
+  ],
+  "latestAccountAdded": {
+    "id": "06469",
+    "periodEnd": "2026-09-30"
+  },
+  "historicalAccountRecovered": {
+    "id": "06294",
+    "periodEnd": "2024-03-31"
+  },
+  "partialExecutions": [
+    "06630",
+    "06760"
+  ],
+  "budgets2026Missing": [
+    {
+      "id": "06028",
+      "name": "Almirante Brown"
+    },
+    {
+      "id": "06134",
+      "name": "Cañuelas"
+    },
+    {
+      "id": "06238",
+      "name": "Dolores"
+    },
+    {
+      "id": "06252",
+      "name": "Escobar"
+    },
+    {
+      "id": "06260",
+      "name": "Esteban Echeverría"
+    },
+    {
+      "id": "06270",
+      "name": "Ezeiza"
+    },
+    {
+      "id": "06294",
+      "name": "General Arenales"
+    },
+    {
+      "id": "06408",
+      "name": "Hurlingham"
+    },
+    {
+      "id": "06410",
+      "name": "Ituzaingó"
+    },
+    {
+      "id": "06420",
+      "name": "La Costa"
+    },
+    {
+      "id": "06462",
+      "name": "Leandro N. Alem"
+    },
+    {
+      "id": "06511",
+      "name": "Maipú"
+    },
+    {
+      "id": "06525",
+      "name": "Marcos Paz"
+    },
+    {
+      "id": "06574",
+      "name": "Navarro"
+    },
+    {
+      "id": "06648",
+      "name": "Presidente Perón"
+    },
+    {
+      "id": "06655",
+      "name": "Punta Indio"
+    },
+    {
+      "id": "06700",
+      "name": "Saavedra"
+    },
+    {
+      "id": "06778",
+      "name": "San Vicente"
+    },
+    {
+      "id": "06812",
+      "name": "Tordillo"
+    }
+  ],
+  "accountsUnverified": [
+    {
+      "id": "06134",
+      "name": "Cañuelas"
+    },
+    {
+      "id": "06260",
+      "name": "Esteban Echeverría"
+    },
+    {
+      "id": "06343",
+      "name": "General Paz"
+    },
+    {
+      "id": "06420",
+      "name": "La Costa"
+    },
+    {
+      "id": "06462",
+      "name": "Leandro N. Alem"
+    },
+    {
+      "id": "06490",
+      "name": "Lomas de Zamora"
+    },
+    {
+      "id": "06518",
+      "name": "Mar Chiquita"
+    },
+    {
+      "id": "06539",
+      "name": "Merlo"
+    },
+    {
+      "id": "06655",
+      "name": "Punta Indio"
+    },
+    {
+      "id": "06812",
+      "name": "Tordillo"
+    }
+  ],
+  "fiscalCoverage": {
+    "fiscal": 87,
+    "budgetOnly": 2,
+    "otherPeriods": 36,
+    "withAccounts": 123,
+    "verifiedAt": "2026-11-19"
+  },
+  "annualBudgetCoverage": {
+    "targetYear": 2026,
+    "verifiedAt": "2026-11-19",
+    "available": 121,
+    "currentYear": 116,
+    "historical": 5,
+    "pending": 14
+  },
+  "limitations": [
+    "San Miguel: las fuentes por objeto y programa sólo acreditan enero–marzo 2026. Sin clasificación económica completa no se asignan insumos y servicios de obras ni se publica un resultado fiscal.",
+    "Pila: totales presupuestarios enero–junio corroborados entre recursos, objeto y finalidad; falta CAIF y separación económica/financiera del gasto.",
+    "General Arenales: cuenta histórica marzo 2024; su portal muestra presupuestos 2024 y 2025, sin cuenta reciente verificada.",
+    "Saavedra: SIBOM acredita promulgación de la ordenanza 7580/2025 pero el decreto no contiene el monto ni anexos. PDF del boletín agotó tiempo de descarga.",
+    "General Paz: el navegador de archivos oficial devuelve No hay Archivos; portada con contenido ajeno al tema fiscal.",
+    "Leandro N. Alem: página de transparencia sin documentos enlazados.",
+    "Tordillo: HTTP 522. Lomas: error de certificado TLS en la ruta probada; no se desactivó la verificación.",
+    "Punta Indio: sección Ordenanzas sin documentos disponibles.",
+    "Escobar: comunicado oficial con total redondeado de $299 mil millones; no se reemplaza el pendiente de total exacto por una precisión inventada."
+  ],
+  "originals": "Originales descargados conservados en work/municipios-fuentes-nov19; los usados se archivan en municipios/data/fiscal-sources/2026-11-19-followup. Merlo: original completo de 68.870.384 bytes conservado localmente y hash en registro; extracto de páginas 136–140 publicado con hash propio.",
+  "qa": {
+    "python": {
+      "passed": 206,
+      "failed": 0
+    },
+    "node": {
+      "passed": 166,
+      "failed": 0
+    },
+    "browserWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "browser": "8 municipios en Gestión; ranking vigente de Lincoln; descarga PDF personalizada Lezama; sin errores JS ni desborde horizontal.",
+    "visual": "Revisión de las páginas afectadas de 8 informes; originales comprobados en pantalla.",
+    "finalMunicipalPython": {
+      "passed": 48,
+      "failed": 0
+    },
+    "finalMunicipalNode": {
+      "passed": 36,
+      "failed": 0
+    },
+    "reports": "135 familias de informes y versiones breves regeneradas; manifiesto y huellas comprobados.",
+    "sourceHashesChecked": 15
+  }
+}

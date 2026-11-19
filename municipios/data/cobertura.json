@@ -3307,9 +3307,9 @@
     {
       "id": "06294",
       "municipio": "General Arenales",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2024-03-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Presupuesto anual 2026: pendiente de documento oficial verificado",
@@ -3323,8 +3323,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-10-19",
-      "portalStatus": "El portal de gobierno abierto no pudo recuperarse. No se incorporan cifras sin el documento original.",
+      "portalReview": "2026-11-19",
+      "portalStatus": "Se verificó la cuenta de enero–marzo de 2024. Falta una cuenta reciente; el antecedente no integra el ranking 2026.",
       "portalUrl": "https://www.generalarenales.gob.ar/gobierno-abierto/",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -5454,20 +5454,16 @@
     {
       "id": "06466",
       "municipio": "Lezama",
-      "fiscalStatus": "Otro período",
-      "comparable": false,
-      "latestFiscalEnd": "2024-12-31",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-06-30",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
         "Depósitos bancarios 2023: reservado o sin dato de origen",
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
         "Crecimiento de población 2010–2022: límites territoriales sin homologar",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -5476,30 +5472,15 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-09-11",
-      "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "portalReview": "2026-11-19",
+      "portalStatus": "Cuenta enero–junio 2026 conciliada desde la planilla oficial; reemplaza el faltante del semestre.",
       "portalUrl": "https://lezama.gov.ar/situacion-financiera/",
-      "budgetYear": 2024,
-      "budgetAsOf": "2024-12-31",
-      "budgetOriginal2026": false,
-      "budgetCurrent2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2026-06-30",
+      "budgetOriginal2026": true,
+      "budgetCurrent2026": true,
       "findings": [],
       "documentsNeeded": [
-        {
-          "topic": "Cuenta fiscal comparable",
-          "state": "Pendiente",
-          "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
-        },
         {
           "topic": "Saldo de tesorería",
           "state": "Pendiente",
@@ -5550,14 +5531,10 @@
     {
       "id": "06469",
       "municipio": "Lincoln",
-      "fiscalStatus": "Otro período",
-      "comparable": false,
-      "latestFiscalEnd": "2025-12-31",
+      "fiscalStatus": "Comparable a junio de 2026",
+      "comparable": true,
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
-        "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -5566,13 +5543,13 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-10-14",
-      "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "portalReview": "2026-11-19",
+      "portalStatus": "Cuenta enero–junio 2026 conciliada. También se incorporó enero–septiembre, separado del ranking semestral.",
       "portalUrl": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
-      "budgetYear": null,
-      "budgetAsOf": null,
-      "budgetOriginal2026": false,
-      "budgetCurrent2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2026-09-30",
+      "budgetOriginal2026": true,
+      "budgetCurrent2026": true,
       "findings": [
         {
           "id": "06469",
@@ -5583,21 +5560,6 @@
         }
       ],
       "documentsNeeded": [
-        {
-          "topic": "Cuenta fiscal comparable",
-          "state": "Pendiente",
-          "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
-        },
         {
           "topic": "Saldo de tesorería",
           "state": "Pendiente",
@@ -6456,8 +6418,6 @@
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras, Electircidad, gas y agua",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
@@ -6470,9 +6430,9 @@
       "portalReview": "2026-10-19",
       "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://www.merlo.gob.ar/",
-      "budgetYear": null,
-      "budgetAsOf": null,
-      "budgetOriginal2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2025-12-05",
+      "budgetOriginal2026": true,
       "budgetCurrent2026": false,
       "findings": [],
       "documentsNeeded": [
@@ -6480,11 +6440,6 @@
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
         },
         {
           "topic": "Presupuesto vigente 2026",
@@ -6794,8 +6749,6 @@
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Agricultura, ganaderia y pesca",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
@@ -6808,9 +6761,9 @@
       "portalReview": "2026-10-14",
       "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
       "portalUrl": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
-      "budgetYear": null,
-      "budgetAsOf": null,
-      "budgetOriginal2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2026-09-02",
+      "budgetOriginal2026": true,
       "budgetCurrent2026": false,
       "findings": [],
       "documentsNeeded": [
@@ -6818,11 +6771,6 @@
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
         },
         {
           "topic": "Presupuesto vigente 2026",
@@ -7491,9 +7439,9 @@
     {
       "id": "06630",
       "municipio": "Pila",
-      "fiscalStatus": "Cuenta no verificada",
+      "fiscalStatus": "Ejecución parcial",
       "comparable": false,
-      "latestFiscalEnd": null,
+      "latestFiscalEnd": "2026-06-30",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Préstamos bancarios 2023: reservado o sin dato de origen",
@@ -7501,7 +7449,6 @@
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -7510,24 +7457,19 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-10-19",
-      "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
+      "portalReview": "2026-11-19",
+      "portalStatus": "Se verificaron recursos, devengado, pagado y crédito anual a junio. Falta la apertura económica para completar el resultado fiscal.",
       "portalUrl": "https://pila.gob.ar/",
       "budgetYear": 2026,
-      "budgetAsOf": "2025-12-30",
+      "budgetAsOf": "2026-06-30",
       "budgetOriginal2026": true,
-      "budgetCurrent2026": false,
+      "budgetCurrent2026": true,
       "findings": [],
       "documentsNeeded": [
         {
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
         },
         {
           "topic": "Saldo de tesorería",
@@ -8986,8 +8928,6 @@
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Electircidad, gas y agua",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
@@ -9000,9 +8940,9 @@
       "portalReview": "2026-09-11",
       "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
       "portalUrl": "https://www.sanfernando.gob.ar/situacion-economico-financiera",
-      "budgetYear": 2025,
-      "budgetAsOf": "2025-12-30",
-      "budgetOriginal2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2025-12-26",
+      "budgetOriginal2026": true,
       "budgetCurrent2026": false,
       "findings": [],
       "documentsNeeded": [
@@ -9010,11 +8950,6 @@
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
         },
         {
           "topic": "Presupuesto vigente 2026",
@@ -9153,8 +9088,8 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-10-19",
-      "portalStatus": "Nuevo portal de transparencia localizado. Ejecución enero–marzo 2026 incorporada; el PDF corrige la etiqueta errónea de cuarto trimestre en el enlace. Falta conciliar la apertura económica.",
+      "portalReview": "2026-11-19",
+      "portalStatus": "Se revisaron las planillas detalladas de objeto y programa y el índice público de documentos. Sólo se confirmó enero–marzo 2026. Falta la clasificación económica de los gastos.",
       "portalUrl": "https://www.msm.gov.ar/transparencia/",
       "budgetYear": 2026,
       "budgetAsOf": "2026-03-31",
@@ -10627,17 +10562,17 @@
   "topics": [
     {
       "topic": "Cuenta fiscal comparable",
-      "available": 85,
+      "available": 87,
       "total": 135
     },
     {
       "topic": "Presupuesto original 2026",
-      "available": 27,
+      "available": 32,
       "total": 135
     },
     {
       "topic": "Presupuesto vigente 2026",
-      "available": 98,
+      "available": 101,
       "total": 135
     },
     {
@@ -24272,9 +24207,9 @@
       "id": "06466",
       "municipio": "Lezama",
       "tema": "Cuenta fiscal comparable",
-      "estado": "Pendiente",
+      "estado": "Incorporado",
       "periodo": "enero–junio 2026",
-      "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
+      "documentoNecesario": "",
       "portal": "https://lezama.gov.ar/situacion-financiera/",
       "revision": "2026-10-04"
     },
@@ -24282,9 +24217,9 @@
       "id": "06466",
       "municipio": "Lezama",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "2024",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "https://lezama.gov.ar/situacion-financiera/",
       "revision": "2026-10-04"
     },
@@ -24292,9 +24227,9 @@
       "id": "06466",
       "municipio": "Lezama",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "2024-12-31",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
+      "estado": "Incorporado",
+      "periodo": "2026-06-30",
+      "documentoNecesario": "",
       "portal": "https://lezama.gov.ar/situacion-financiera/",
       "revision": "2026-10-04"
     },
@@ -24462,9 +24397,9 @@
       "id": "06469",
       "municipio": "Lincoln",
       "tema": "Cuenta fiscal comparable",
-      "estado": "Pendiente",
+      "estado": "Incorporado",
       "periodo": "enero–junio 2026",
-      "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
+      "documentoNecesario": "",
       "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
@@ -24472,9 +24407,9 @@
       "id": "06469",
       "municipio": "Lincoln",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
@@ -24482,9 +24417,9 @@
       "id": "06469",
       "municipio": "Lincoln",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
+      "estado": "Incorporado",
+      "periodo": "2026-09-30",
+      "documentoNecesario": "",
       "portal": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
       "revision": "2026-10-04"
     },
@@ -26562,9 +26497,9 @@
       "id": "06539",
       "municipio": "Merlo",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "https://www.merlo.gob.ar/",
       "revision": "2026-10-04"
     },
@@ -26573,7 +26508,7 @@
       "municipio": "Merlo",
       "tema": "Presupuesto vigente 2026",
       "estado": "Pendiente",
-      "periodo": "",
+      "periodo": "2025-12-05",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
       "portal": "https://www.merlo.gob.ar/",
       "revision": "2026-10-04"
@@ -27322,9 +27257,9 @@
       "id": "06568",
       "municipio": "Morón",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
     },
@@ -27333,7 +27268,7 @@
       "municipio": "Morón",
       "tema": "Presupuesto vigente 2026",
       "estado": "Pendiente",
-      "periodo": "",
+      "periodo": "2026-09-02",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
       "portal": "http://moron.gob.ar/wp-content/uploads/2022/06/Estado-Situacion-Economico-Financiera-al-30-12-2023.pdf",
       "revision": "2026-10-04"
@@ -29042,9 +28977,9 @@
       "id": "06630",
       "municipio": "Pila",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "2025-12-30",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
+      "estado": "Incorporado",
+      "periodo": "2026-06-30",
+      "documentoNecesario": "",
       "portal": "https://pila.gob.ar/",
       "revision": "2026-10-04"
     },
@@ -32642,9 +32577,9 @@
       "id": "06749",
       "municipio": "San Fernando",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "2025",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "https://www.sanfernando.gob.ar/situacion-economico-financiera",
       "revision": "2026-10-04"
     },
@@ -32653,7 +32588,7 @@
       "municipio": "San Fernando",
       "tema": "Presupuesto vigente 2026",
       "estado": "Pendiente",
-      "periodo": "2025-12-30",
+      "periodo": "2025-12-26",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
       "portal": "https://www.sanfernando.gob.ar/situacion-economico-financiera",
       "revision": "2026-10-04"

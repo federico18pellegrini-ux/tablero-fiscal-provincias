@@ -24,6 +24,28 @@ class MunicipalFiscalImportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unreconciled'):
             self.apply(self.audit)
 
+    def test_workbook_requires_real_sheet_range_and_original_hash(self):
+        for mutation in ['sheet', 'range', 'hash']:
+            audit = copy.deepcopy(self.audit)
+            doc = next(r for r in audit['records'] if r['id'] == '06466')['documents'][0]
+            if mutation == 'sheet': doc['consultedSheets'][0]['sheet'] = 'Hoja inexistente'
+            if mutation == 'range': doc['consultedSheets'][0]['range'] = ''
+            if mutation == 'hash': doc['sha256'] = '0' * 64
+            with self.subTest(mutation=mutation), self.assertRaisesRegex(ValueError, 'Missing or invalid fiscal evidence'):
+                self.apply(audit)
+
+    def test_recovered_accounts_preserve_period_and_financial_exclusions(self):
+        lezama = self.rows['06466']['fiscal']
+        self.assertEqual(lezama['resultado_financiero'], 52486348.25)
+        self.assertEqual(lezama['gastos_totales'], 4885385511.84)
+        self.assertEqual(self.rows['06469']['fiscal']['fin'], '2026-06-30')
+        self.assertEqual(self.rows['06469']['fiscalOther']['fin'], '2026-09-30')
+        self.assertIsNone(self.rows['06294']['fiscal'])
+        self.assertEqual(self.rows['06294']['fiscalOther']['fin'], '2024-03-31')
+        for ident in ['06630', '06760']:
+            self.assertIsNone(self.rows[ident]['fiscal'])
+            self.assertNotIn('resultado_financiero', self.rows[ident]['fiscalExecution'])
+
     def test_every_semester_account_is_in_the_verified_register(self):
         published = {ident for ident, row in self.rows.items() if row.get('fiscal')}
         self.assertEqual(published, {record['id'] for record in self.audit['records']})

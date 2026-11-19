@@ -1,0 +1,90 @@
+[
+  {
+    "key": "pila-46",
+    "url": "https://pila.gob.ar/descargar_digesto.php?id=46",
+    "status": 200,
+    "url_final": "https://pila.gob.ar/descargar_digesto.php?id=46",
+    "bytes": 8141986,
+    "sha256": "20c1b0847cea80f0d9cac218b340ae7fc170fd5f72313eb0fa11000118f4925c",
+    "file": "work\\municipios-fuentes-nov19\\pila-46.pdf"
+  },
+  {
+    "key": "arenales-pres",
+    "url": "https://www.generalarenales.gob.ar/gobierno-abierto/presupuesto/",
+    "status": 200,
+    "url_final": "https://www.generalarenales.gob.ar/gobierno-abierto/presupuesto/",
+    "bytes": 63291,
+    "sha256": "492ca44be322b775123a0e96d23130da3115f3ee6bebf79419af710eb0856438",
+    "file": "work\\municipios-fuentes-nov19\\arenales-pres.html",
+    "links": [
+      {
+        "text": "Presupuesto de Gastos Anual",
+        "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2025/03/Presupuestos-de-Gastos-2025.pdf"
+      },
+      {
+        "text": "Programación de Recursos",
+        "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2025/03/Presupuestos-de-Recursos-2025.pdf"
+      },
+      {
+        "text": "Presupuesto de Gastos Anual",
+        "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2024/05/00-Presupuesto-Gastos-2024.pdf"
+      },
+      {
+        "text": "Programación de Recursos",
+        "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2024/05/00-Programacion-Recursos-2024.pdf"
+      },
+      {
+        "text": "Situación Económico - Financiera",
+        "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2024/05/06-Sit-econom-financiera-2024-03.pdf"
+      },
+      {
+        "text": "Ordenanza Fiscal e Impositiva Anual",
+        "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2024/05/00-Ordenanza-fiscal-e-impositiva-2024.pdf"
+      }
+    ]
+  },
+  {
+    "key": "generalpaz-frame",
+    "url": "https://municipalidaddegeneralpaz.gob.ar/transparencia/navega.html",
+    "status": 200,
+    "url_final": "https://municipalidaddegeneralpaz.gob.ar/transparencia/navega.html",
+    "bytes": 789,
+    "sha256": "ee1f6edd0d089a095b8c5733733b0f0db15f237a4a01c83e0880e43c3ba2c4d6",
+    "file": "work\\municipios-fuentes-nov19\\generalpaz-frame.html",
+    "links": []
+  },
+  {
+    "key": "punta-ordenanzas",
+    "url": "https://puntaindio.gov.ar/pages/documentacion/ordenanza.php",
+    "status": 200,
+    "url_final": "https://puntaindio.gov.ar/pages/documentacion/ordenanza.php",
+    "bytes": 10489,
+    "sha256": "bea53d144596605fdbc624d845759950572d13ad4920e8e09b25733dae81c2ea",
+    "file": "work\\municipios-fuentes-nov19\\punta-ordenanzas.html",
+    "links": []
+  },
+  {
+    "key": "merlo-trans",
+    "url": "https://www.merlo.gob.ar/transparencia/",
+    "status": 200,
+    "url_final": "https://www.merlo.gob.ar/transparencia/",
+    "bytes": 147661,
+    "sha256": "e832a18ac3bfb96bc400c44efa0ba3fe3a458b37339759d572d6b74c5fd49e71",
+    "file": "work\\municipios-fuentes-nov19\\merlo-trans.html",
+    "links": [
+      {
+        "text": "Transparencia",
+        "url": "https://www.merlo.gob.ar/transparencia/"
+      }
+    ]
+  },
+  {
+    "key": "merlo-119",
+    "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN%20OFICIAL%20N%C2%BA%20119%20-%20Enero%202026.pdf",
+    "status": 200,
+    "url_final": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN%20OFICIAL%20N%C2%BA%20119%20-%20Enero%202026.pdf",
+    "bytes": 68870384,
+    "sha256": "e23aa0cc481ace6d60c78e448bd5c091a69124d045db6c6a449dd4db22250214",
+    "file": "work\\municipios-fuentes-nov19\\merlo-119.pdf"
+  }
+]

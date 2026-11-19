@@ -3306,6 +3306,75 @@
       ],
       "note": "Resultado transcripto de la CAIF y conciliado con sus ingresos y gastos. Lectura visual de documento escaneado.",
       "verifiedAt": "2026-09-07"
+    },
+    {
+      "id": "06466",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en el resumen oficial municipal. No se presume consolidación de otros entes.",
+      "landingUrl": "https://lezama.gov.ar/situacion-financiera/",
+      "amounts": {
+        "ingresos_corrientes": "4935552783.42",
+        "gastos_corrientes": "4843064347.96",
+        "ingresos_capital": "2319076.67",
+        "gastos_capital": "42321163.88",
+        "ingresos_totales": "4937871860.09",
+        "gastos_totales": "4885385511.84",
+        "resultado_financiero": "52486348.25",
+        "personal_devengado": "3206639202.67"
+      },
+      "documents": [
+        {
+          "url": "https://lezama.gov.ar/wp-content/uploads/2026/07/Resena-Anual-2026.-1%C2%B0-Semestre.xlsx",
+          "sha256": "f359818189319e407c370b374ca6395bc1e391ea1a72367655e99757367e110b",
+          "bytes": 47945,
+          "locator": "Hoja Situación Económico-Financiera: CAIF J13:J26; personal G30; crédito vigente D30:D36. Valores calculados guardados por el emisor; identidades verificadas al centavo.",
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/lezama-resena.xlsx",
+          "format": "xlsx",
+          "consultedSheets": [
+            {
+              "sheet": "Situación Económico-Financiera",
+              "range": "B8:J36"
+            }
+          ]
+        }
+      ],
+      "note": "CAIF oficial del primer semestre conciliada al centavo. Se excluyen las aplicaciones financieras del gasto fiscal; el total presupuestario devengado es $5.124.142.760,80.",
+      "verifiedAt": "2026-11-19"
+    },
+    {
+      "id": "06469",
+      "inicio": "2026-01-02",
+      "fin": "2026-06-30",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en el resumen oficial municipal. No se presume consolidación de otros entes.",
+      "landingUrl": "https://lincoln.gob.ar/transparencia/transparencia-fiscal",
+      "amounts": {
+        "ingresos_corrientes": "18184514535.74",
+        "gastos_corrientes": "28557662673.74",
+        "ingresos_capital": "337679949.80",
+        "gastos_capital": "815807560.24",
+        "ingresos_totales": "18522194485.54",
+        "gastos_totales": "29373470233.98",
+        "resultado_financiero": "-10851275748.44",
+        "personal_devengado": "19175932411.54"
+      },
+      "documents": [
+        {
+          "url": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=0f4a2fed-83bc-4b70-93ff-b1cc8aa72741",
+          "sha256": "352e2604fdea2b43babd54a30bf25a95bd762895a3dca812d0bcceb6dc8856e6",
+          "bytes": 362989,
+          "locator": "CAIF y personal devengado del semestre, contrastados visualmente.",
+          "pages": 8,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/lincoln-38.pdf"
+        }
+      ],
+      "note": "CAIF conciliada al centavo. El total fiscal excluye aplicaciones financieras y operaciones extrapresupuestarias.",
+      "verifiedAt": "2026-11-19"
     }
   ],
   "budgetExecutions": [
@@ -3366,15 +3435,92 @@
             2
           ],
           "locator": "Totales de las columnas identificadas; período según encabezado del PDF."
+        },
+        {
+          "url": "https://www.msm.gov.ar/wp-content/uploads/2026/04/3.5-Estado-de-Ejecucion-de-Gastos-hasta-partida-Principal-4to-Trimestre-2026.pdf",
+          "sha256": "c1bbf08394b2f4fd407672e5d2cce34ff19df9457a4115f52a9025ed0b7f1ab4",
+          "bytes": 1353957,
+          "locator": "Ejecución por partida principal: el encabezado informa enero–marzo aunque el nombre del archivo dice cuarto trimestre.",
+          "pages": 170,
+          "consultedPages": [
+            1,
+            170
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/sm-13.pdf"
+        },
+        {
+          "url": "https://www.msm.gov.ar/wp-content/uploads/2026/04/3.5-Estado-de-Ejecucion-de-Gastos-hasta-Programa-4to-Trimestre-2026.pdf",
+          "sha256": "81e2dd757616612cc7cffd36f08123719702063da3ccac0011232e64e434479a",
+          "bytes": 774578,
+          "locator": "Ejecución por programa: se contrastan período y totales.",
+          "pages": 64,
+          "consultedPages": [
+            1,
+            64
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/sm-14.pdf"
         }
       ],
-      "verifiedAt": "2026-10-19",
+      "verifiedAt": "2026-11-19",
       "financialBreakdown": {
         "source_financing": "1065321903.89",
         "prior_liabilities": "16647521570.98",
         "supplier_advances": "5266544986.17",
-        "note": "Recursos: fuentes financieras, pág. 2. Gastos: adelantos a proveedores, pág. 8; cancelación de cuentas a pagar anteriores, págs. 9–10. No se suman estos conceptos al gasto corriente o de capital. Falta conciliar la clasificación económica y los insumos de obras para completar la cuenta fiscal."
+        "note": "Se corroboraron las fuentes financieras, los pagos de pasivos anteriores y los anticipos. Las planillas por objeto y programa no publican la clasificación económica completa: los insumos y servicios destinados a obras no se pueden asignar íntegramente a gasto corriente sin más respaldo. El nombre de algunos archivos dice cuarto trimestre, pero sus encabezados corresponden a enero–marzo de 2026."
       }
+    },
+    {
+      "id": "06630",
+      "inicio": "2026-01-01",
+      "fin": "2026-06-30",
+      "method": "published_budget_execution",
+      "scope": "Ejecución presupuestaria oficial. Falta la clasificación económica del gasto y la separación de aplicaciones financieras para completar la CAIF.",
+      "landingUrl": "https://pila.gob.ar/digesto.php",
+      "amounts": {
+        "recursos_presupuestarios_percibidos": "7647392196.67",
+        "gastos_presupuestarios_devengados": "8108901106.97",
+        "gastos_presupuestarios_pagados": "7594338264.57",
+        "presupuesto_vigente": "21682318981.82"
+      },
+      "documents": [
+        {
+          "url": "https://pila.gob.ar/descargar_digesto.php?id=11",
+          "sha256": "98cdd8d604c089a5d2a7928049cf30f0a854108fb4bdd561ea9fa98ebd66f603",
+          "bytes": 451315,
+          "locator": "Recursos percibidos, total general al 30/06/2026.",
+          "pages": 8,
+          "consultedPages": [
+            1,
+            8
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/pila-rec.pdf"
+        },
+        {
+          "url": "https://pila.gob.ar/descargar_digesto.php?id=12",
+          "sha256": "411dc5f974947248c782bdc2e65d1f0c4026dc3c8c1c9ef7d68e5c4c95c653b1",
+          "bytes": 747183,
+          "locator": "Totales generales devengado, pagado y presupuesto vigente.",
+          "pages": 59,
+          "consultedPages": [
+            1,
+            59
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/pila-gas.pdf"
+        },
+        {
+          "url": "https://pila.gob.ar/descargar_digesto.php?id=13",
+          "sha256": "adb109c15f89f07b1292065a226a5f5a5b61da3c89498523a888771623893f55",
+          "bytes": 396180,
+          "locator": "Contraste de los totales de gastos por finalidad y función.",
+          "pages": 2,
+          "consultedPages": [
+            1,
+            2
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/pila-fun.pdf"
+        }
+      ],
+      "verifiedAt": "2026-11-19"
     }
   ],
   "otherPeriods": [
@@ -3994,36 +4140,36 @@
     },
     {
       "id": "06469",
-      "inicio": "2025-01-02",
-      "fin": "2025-12-31",
+      "inicio": "2026-01-02",
+      "fin": "2026-09-30",
       "method": "published_caif",
-      "scope": "Administración municipal según la CAIF publicada; no se suman organismos con cuentas separadas.",
-      "landingUrl": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
+      "scope": "Organismos incluidos en el resumen oficial municipal. No se presume consolidación de otros entes.",
+      "landingUrl": "https://lincoln.gob.ar/transparencia/transparencia-fiscal",
       "amounts": {
-        "ingresos_corrientes": "41418566799.91",
-        "gastos_corrientes": "43410870103.91",
-        "ingresos_capital": "1043018884.95",
-        "gastos_capital": "2997194499.15",
-        "ingresos_totales": "42461585684.86",
-        "gastos_totales": "46408064603.06",
-        "resultado_financiero": "-3946478918.20",
-        "personal_devengado": "28866677743.98"
+        "ingresos_corrientes": "29766067460.53",
+        "gastos_corrientes": "42582558644.32",
+        "ingresos_capital": "348398990.63",
+        "gastos_capital": "1119302098.29",
+        "ingresos_totales": "30114466451.16",
+        "gastos_totales": "43701860742.61",
+        "resultado_financiero": "-13587394291.45",
+        "personal_devengado": "28858405880.60"
       },
       "documents": [
         {
-          "url": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
-          "sha256": "6229bf81a51bc0a9d082092b6907cbc69908d57af8131585831dd25a09426c07",
-          "bytes": 85803,
+          "url": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=5765adb3-2ae8-4c4a-80a6-c939a5ae771a",
+          "sha256": "fb02cbe6f6b53c3ae4ce32cfd345f9beea73ee365564ea595771cb62badb3af6",
+          "bytes": 362998,
+          "locator": "CAIF del acumulado a septiembre; personal columna devengado, verificación visual.",
           "pages": 8,
           "consultedPages": [
             1
           ],
-          "archive": "municipios/data/fiscal-sources/2026-10-14/06469.pdf",
-          "locator": "Página 1: CAIF, renglones I, II, IV, V, VI, VII y VIII; personal: columna Devengado del cuadro por objeto. Se excluyen fuentes y aplicaciones financieras."
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/lincoln-37.pdf"
         }
       ],
-      "verifiedAt": "2026-10-14",
-      "note": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario."
+      "note": "Acumulado a septiembre; se muestra separado del ranking comparable enero–junio. CAIF conciliada al centavo.",
+      "verifiedAt": "2026-11-19"
     },
     {
       "id": "06511",
@@ -5091,6 +5237,39 @@
           "archive": "municipios/data/fiscal-sources/2026-11-19/mcr-sef.pdf"
         }
       ],
+      "verifiedAt": "2026-11-19"
+    },
+    {
+      "id": "06294",
+      "inicio": "2024-01-01",
+      "fin": "2024-03-31",
+      "method": "published_caif",
+      "scope": "Organismos incluidos en el resumen oficial municipal. No se presume consolidación de otros entes.",
+      "landingUrl": "https://www.generalarenales.gob.ar/gobierno-abierto/presupuesto/",
+      "amounts": {
+        "ingresos_corrientes": "1748079530.50",
+        "gastos_corrientes": "1592376608.98",
+        "ingresos_capital": "279336.89",
+        "gastos_capital": "11851530.91",
+        "ingresos_totales": "1748358867.39",
+        "gastos_totales": "1604228139.89",
+        "resultado_financiero": "144130727.50",
+        "personal_devengado": "927222317.41"
+      },
+      "documents": [
+        {
+          "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2024/05/06-Sit-econom-financiera-2024-03.pdf",
+          "sha256": "e4bbcff1e8f1f56a64d6a80190d92223ea2a8946c451f00cc4239008fc1d23fb",
+          "bytes": 64675,
+          "locator": "CAIF y personal de enero–marzo 2024. PDF con codificación de texto dañada: cifras y período comprobados visualmente.",
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/arenales-cuenta.pdf"
+        }
+      ],
+      "note": "Antecedente de marzo de 2024. No describe la ejecución 2026 ni ingresa en su ranking; falta localizar una cuenta reciente.",
       "verifiedAt": "2026-11-19"
     }
   ],

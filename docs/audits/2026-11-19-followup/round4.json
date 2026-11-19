@@ -1,0 +1,360 @@
+[
+  {
+    "key": "pila-rec",
+    "url": "https://pila.gob.ar/descargar_digesto.php?id=11",
+    "status": 200,
+    "url_final": "https://pila.gob.ar/descargar_digesto.php?id=11",
+    "bytes": 451315,
+    "sha256": "98cdd8d604c089a5d2a7928049cf30f0a854108fb4bdd561ea9fa98ebd66f603",
+    "file": "work\\municipios-fuentes-nov19\\pila-rec.pdf"
+  },
+  {
+    "key": "pila-gas",
+    "url": "https://pila.gob.ar/descargar_digesto.php?id=12",
+    "status": 200,
+    "url_final": "https://pila.gob.ar/descargar_digesto.php?id=12",
+    "bytes": 747183,
+    "sha256": "411dc5f974947248c782bdc2e65d1f0c4026dc3c8c1c9ef7d68e5c4c95c653b1",
+    "file": "work\\municipios-fuentes-nov19\\pila-gas.pdf"
+  },
+  {
+    "key": "pila-fun",
+    "url": "https://pila.gob.ar/descargar_digesto.php?id=13",
+    "status": 200,
+    "url_final": "https://pila.gob.ar/descargar_digesto.php?id=13",
+    "bytes": 396180,
+    "sha256": "adb109c15f89f07b1292065a226a5f5a5b61da3c89498523a888771623893f55",
+    "file": "work\\municipios-fuentes-nov19\\pila-fun.pdf"
+  },
+  {
+    "key": "merlo-boletines",
+    "url": "https://www.merlo.gob.ar/boletin-oficial/",
+    "status": 200,
+    "url_final": "https://www.merlo.gob.ar/boletin-oficial/",
+    "bytes": 179820,
+    "sha256": "e67aad68fd2cb84902acb1592fcb782e8c960ac2dd1fe3ce60d85bc27737fb1a",
+    "file": "work\\municipios-fuentes-nov19\\merlo-boletines.html",
+    "links": [
+      {
+        "text": "Transparencia",
+        "url": "https://www.merlo.gob.ar/transparencia/"
+      },
+      {
+        "text": "Boletín Nro 1 – Enero 2016 (Publicado el 15/01/2016)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 1 - Enero 2016.pdf"
+      },
+      {
+        "text": "Boletín Nro 2 – Abril 2016 (Publicado el 15/04/2016)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 2 - Abril 2016.pdf"
+      },
+      {
+        "text": "Boletín Nro 3 – Mayo 2016 (Publicado el 15/05/2016",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 3 - Mayo 2016.pdf"
+      },
+      {
+        "text": "Boletín Nro 4 – Junio 2016 (Publicado el 15/06/2016)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 4 - Junio 2016.pdfhttps://www.merlo.gob.ar/visualizar-boletin"
+      },
+      {
+        "text": "Boletín Nro 5 – Julio 2016 (Publicado el 15/07/2016)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 5 - Julio 2016.pdf"
+      },
+      {
+        "text": "Boletín Nro 6 – Agosto 2016 (Publicado el 15/08/2016)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 6 - Agosto 2016.pdf"
+      },
+      {
+        "text": "Boletín Nro 11 – Enero 2017 (Publicado el 15/01/2017)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 11 - Enero 2017.pdf"
+      },
+      {
+        "text": "Boletín Nro 23 – Enero 2018 (Publicado el 15/01/2018)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 23 - Enero 2018.pdf"
+      },
+      {
+        "text": "Boletín Nro 35 – Enero 2019 (Publicado el 15/01/2019)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 35 - Enero 2019.pdf"
+      },
+      {
+        "text": "Boletín Nro 39 – Mayo 2019 (Publicado el 15/05/2019)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 39 - Mayo 2019.pdf"
+      },
+      {
+        "text": "Boletín Nro 43 – Septiembre 2019 (Publicado el 15/09/2019)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 43 - Septiembre 2019.pdf"
+      },
+      {
+        "text": "Boletín Nro 46 – Diciembre 2019 (Publicado el 15/12/2019)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 46 - Diciembre 2019.pdf"
+      },
+      {
+        "text": "Boletín Nro 47 – Enero 2020 (Publicado el 15/01/2020)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 47 - Enero 2020.pdf"
+      },
+      {
+        "text": "Boletín Nro 57 – Noviembre 2020 (Publicado el 15/11/2020)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 57 - Noviembre 2020.pdf"
+      },
+      {
+        "text": "Boletín Nro 58 – Diciembre 2020 (Publicado el 15/12/2020)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin58Diciembre2020.pdf"
+      },
+      {
+        "text": "Boletín Nro 59 – Enero 2021 (Publicado el 15/01/2021)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Boletin Oficial Nº 59 - Enero 2021.pdf"
+      },
+      {
+        "text": "Boletín Nro 62 – Abril 2021 (Publicado el 15/04/2021)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 62 - Abril 2021.pdf"
+      },
+      {
+        "text": "Boletín Nro 63 – Mayo 2021 (Publicado el 15/05/2021)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 63 - Mayo 2021.pdf"
+      },
+      {
+        "text": "Suplemento Boletín Nro 67 – Septiembre 2021 (Publicado el 20/09/2021)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/Suplemento al Boletín Oficial N° 67 - Septiembre 2021.pdf"
+      },
+      {
+        "text": "Boletín Nro 68 – Octubre 2021 (Publicado el 15/10/2021)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETINOFICIAL68-Octubre2021.pdf"
+      },
+      {
+        "text": "Boletín Nro 70 – Diciembre 2021 (Publicado el 15/12/2021)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 70 - Diciembre 2021.pdf"
+      },
+      {
+        "text": "Boletín Nro 71 – Enero 2022 (Publicado el 15/01/2022)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 71 - Enero 2022.pdf"
+      },
+      {
+        "text": "Boletín Nro 75 – Mayo 2022 (Publicado el 15/05/2022)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 75 - Mayo 2022.pdf"
+      },
+      {
+        "text": "Boletín Nro 76 – Junio 2022 (Publicado el 15/06/2022)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 76 - Junio 2022.pdf"
+      },
+      {
+        "text": "Boletín Nro 79 – Septiembre 2022 (Publicado el 15/09/2022)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 79 - Septiembre 2022.pdf"
+      },
+      {
+        "text": "Boletín Nro 82 – Diciembre 2022 (Publicado el 15/12/2022)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 82 - Diciembre 2022.pdf"
+      },
+      {
+        "text": "Boletín Nro 83 – Enero 2023 (Publicado el 15/01/2023)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 83 - Enero 2023.pdf"
+      },
+      {
+        "text": "Boletín Nro 87 – Mayo 2023 (Publicado el 15/05/2023)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 87 - Mayo 2023.pdf"
+      },
+      {
+        "text": "Boletín Nro 90 – Agosto 2023 (Publicado el 15/08/2023)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 90 - Agosto 2023.pdf"
+      },
+      {
+        "text": "Boletín Nro 94 – Diciembre 2023 (Publicado el 15/12/2023)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 94 - Diciembre 2023.pdf"
+      },
+      {
+        "text": "Boletín Nro 95 – Enero 2024 (Publicado el 15/01/2024)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 95 - Enero 2024.pdf"
+      },
+      {
+        "text": "Boletín Nro 96 – Febrero 2024 (Publicado el 15/02/2024)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 96 - Febrero 2024.pdf"
+      },
+      {
+        "text": "Boletín Nro 99 – Mayo 2024 (Publicado el 15/05/2024)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 99 - Mayo 2024.pdf"
+      },
+      {
+        "text": "Boletín Nro 107 – Enero 2025 (Publicado el 15/01/2025)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 107 - Enero 2025.pdf"
+      },
+      {
+        "text": "Boletín Nro 111 – Mayo 2025 (Publicado el 15/05/2025)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 111 - Mayo 2025.pdf"
+      },
+      {
+        "text": "Boletín Nro 114 – Agosto 2025 (Publicado el 15/08/2025)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 114 - Agosto 2025.pdf"
+      },
+      {
+        "text": "Boletín Nro 118 – Diciembre 2025 (Publicado el 15/12/2025)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 118 - Diciembre 2025.pdf"
+      },
+      {
+        "text": "Boletín Nro 119 – Enero 2026 (Publicado el 15/01/2026)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 119 - Enero 2026.pdf"
+      },
+      {
+        "text": "Boletín Nro 120 – Febrero 2026 (Publicado el 15/02/2026)",
+        "url": "https://www.merlo.gob.ar/no-se-promulgaron-ordenanzas/"
+      },
+      {
+        "text": "Boletín Nro 121 – Marzo 2026 (Publicado el 15/03/2026)",
+        "url": "https://www.merlo.gob.ar/no-se-promulgaron-ordenanzas/"
+      },
+      {
+        "text": "Boletín Nro 122 – Abril 2026 (Publicado el 15/04/2026)",
+        "url": "https://www.merlo.gob.ar/no-se-promulgaron-ordenanzas/"
+      },
+      {
+        "text": "Boletín Nro 123 – Mayo 2026 (Publicado el 15/05/2026)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 123 - Mayo 2026.pdf"
+      },
+      {
+        "text": "Boletín Nro 124 – Junio 2026 (Publicado el 15/06/2026)",
+        "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN OFICIAL Nº 124 - Junio 2026.pdf"
+      },
+      {
+        "text": "MERLO DISFRUTÓ DE LA ECOAVENTURA 2026",
+        "url": "https://www.merlo.gob.ar/merlo-disfruto-de-la-ecoaventura-2026/"
+      },
+      {
+        "text": "CULMINÓ LA LIGA MUNICIPAL DE HOCKEY 2026",
+        "url": "https://www.merlo.gob.ar/culmino-la-liga-municipal-de-hockey-2026/"
+      },
+      {
+        "text": "noviembre 2026",
+        "url": "https://www.merlo.gob.ar/2026/11/"
+      },
+      {
+        "text": "octubre 2026",
+        "url": "https://www.merlo.gob.ar/2026/10/"
+      },
+      {
+        "text": "septiembre 2026",
+        "url": "https://www.merlo.gob.ar/2026/09/"
+      },
+      {
+        "text": "agosto 2026",
+        "url": "https://www.merlo.gob.ar/2026/08/"
+      },
+      {
+        "text": "julio 2026",
+        "url": "https://www.merlo.gob.ar/2026/07/"
+      },
+      {
+        "text": "junio 2026",
+        "url": "https://www.merlo.gob.ar/2026/06/"
+      },
+      {
+        "text": "mayo 2026",
+        "url": "https://www.merlo.gob.ar/2026/05/"
+      },
+      {
+        "text": "abril 2026",
+        "url": "https://www.merlo.gob.ar/2026/04/"
+      },
+      {
+        "text": "marzo 2026",
+        "url": "https://www.merlo.gob.ar/2026/03/"
+      },
+      {
+        "text": "febrero 2026",
+        "url": "https://www.merlo.gob.ar/2026/02/"
+      },
+      {
+        "text": "enero 2026",
+        "url": "https://www.merlo.gob.ar/2026/01/"
+      }
+    ]
+  },
+  {
+    "key": "punta-documentos",
+    "url": "https://puntaindio.gov.ar/pages/documentacion/",
+    "status": 200,
+    "url_final": "https://puntaindio.gov.ar/pages/documentacion/",
+    "bytes": 5621,
+    "sha256": "d74da6a6e770abf37160723f801c13fb9c2a12faae956e905e2a5f57e0c2e5aa",
+    "file": "work\\municipios-fuentes-nov19\\punta-documentos.html",
+    "links": []
+  },
+  {
+    "key": "arenales-trans",
+    "url": "https://generalarenales.gob.ar/gobierno-abierto/",
+    "status": 200,
+    "url_final": "https://www.generalarenales.gob.ar/gobierno-abierto/?doing_wp_cron=1795092665.5973539352416992187500",
+    "bytes": 55409,
+    "sha256": "4c6720f67f01bfb9812b212804f264c49d1160a4d8f3a8676ab4f64c5723ae45",
+    "file": "work\\municipios-fuentes-nov19\\arenales-trans.html",
+    "links": [
+      {
+        "text": "Presupuesto Consultá la ejecución presupuestaria municipal Ver más",
+        "url": "https://www.generalarenales.gob.ar/gobierno-abierto/presupuesto/"
+      }
+    ]
+  },
+  {
+    "key": "generalpaz-trans",
+    "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
+    "status": 200,
+    "url_final": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/",
+    "bytes": 100368,
+    "sha256": "ca500eba707d787294b33ebf80a9f8848f21d3d6dd29cf2911debb3a7e7eb4ca",
+    "file": "work\\municipios-fuentes-nov19\\generalpaz-trans.html",
+    "links": [
+      {
+        "text": "Transparencia",
+        "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+      },
+      {
+        "text": "Transparencia",
+        "url": "https://municipalidaddegeneralpaz.gob.ar/index.php/transparencia/"
+      }
+    ]
+  },
+  {
+    "key": "alem-trans",
+    "url": "https://municipioalem.gob.ar/?q=transparencia",
+    "status": 200,
+    "url_final": "https://municipioalem.gob.ar/?q=transparencia",
+    "bytes": 23441,
+    "sha256": "af377faf16d22337eb54b51a7d392441374e0f4d0a55ba82718b1e4781261221",
+    "file": "work\\municipios-fuentes-nov19\\alem-trans.html",
+    "links": [
+      {
+        "text": "Transparencia",
+        "url": "https://municipioalem.gob.ar/?q=gobierno-abierto"
+      },
+      {
+        "text": "Transparencia",
+        "url": "https://municipioalem.gob.ar/?q=transparencia"
+      },
+      {
+        "text": "",
+        "url": "https://twitter.com/share?url=https://municipioalem.gob.ar/?q=transparencia&text=Transparencia "
+      },
+      {
+        "text": "",
+        "url": "https://www.facebook.com/sharer.php?u=https://municipioalem.gob.ar/?q=transparencia&t=Transparencia"
+      }
+    ]
+  },
+  {
+    "key": "costa-trans",
+    "url": "https://lacosta.gob.ar/transparencia/",
+    "status": 404,
+    "url_final": "https://lacosta.gob.ar/transparencia/",
+    "bytes": 109146,
+    "sha256": "39dc767e62b0301eff34bf773fc2534f26fc09e3a3c6d8acb728c29e4a573cb0"
+  },
+  {
+    "key": "lomas-trans",
+    "url": "https://www.lomasdezamora.gov.ar/transparencia/",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1085)>"
+  },
+  {
+    "key": "tordillo-root",
+    "url": "https://tordillomunicipio.com/",
+    "status": 522,
+    "url_final": "https://tordillomunicipio.com/",
+    "bytes": 16,
+    "sha256": "c8b9f348c8635d7ffcd5d16ad4b9c65289302dc6c4fe2e0210346b23013fb280"
+  }
+]

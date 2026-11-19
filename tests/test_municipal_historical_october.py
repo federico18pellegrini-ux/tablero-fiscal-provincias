@@ -15,8 +15,14 @@ class HistoricalMunicipalAccounts(unittest.TestCase):
         self.assertEqual(len(records), 14)
         for r in records:
             m = municipalities[r['id']]
-            self.assertIsNone(m['fiscal'])
-            self.assertEqual(m['fiscalOther']['fin'], r['fin'])
+            if r['id'] == '06469':
+                # The archived 2025 observation remains intact; new official 2026
+                # statements now support June ranking and a separate September cut.
+                self.assertEqual(m['fiscal']['fin'], '2026-06-30')
+                self.assertEqual(m['fiscalOther']['fin'], '2026-09-30')
+            else:
+                self.assertIsNone(m['fiscal'])
+                self.assertEqual(m['fiscalOther']['fin'], r['fin'])
             a = {k:Decimal(v) for k,v in r['amounts'].items()}
             self.assertEqual(a['ingresos_corrientes']+a['ingresos_capital'], a['ingresos_totales'])
             self.assertEqual(a['gastos_corrientes']+a['gastos_capital'], a['gastos_totales'])

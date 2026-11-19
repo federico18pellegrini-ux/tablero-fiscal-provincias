@@ -1,0 +1,51 @@
+[
+  {
+    "key": "sanfernando-bo",
+    "url": "https://www.sanfernando.gob.ar/uploads/adjuntos/BM%2038-2025_compressed.pdf",
+    "status": 200,
+    "url_final": "https://www.sanfernando.gob.ar/uploads/adjuntos/BM%2038-2025_compressed.pdf",
+    "bytes": 1180223,
+    "sha256": "032a46ca89fd9aa09fe868e84cd0c3fed7ee704e4abc168e6cfeab7cf82c1868",
+    "file": "work\\municipios-fuentes-nov19\\sanfernando-bo.pdf"
+  },
+  {
+    "key": "pila-digesto",
+    "url": "https://pila.gob.ar/digesto.php",
+    "status": 200,
+    "url_final": "https://pila.gob.ar/digesto.php",
+    "bytes": 197545,
+    "sha256": "81ee00e2b88c2c7d7f7ddc0992f2d96e77c18ee7e6a079129e50f9761cadf233",
+    "file": "work\\municipios-fuentes-nov19\\pila-digesto.html",
+    "links": []
+  },
+  {
+    "key": "sm-media-economic",
+    "url": "https://www.msm.gov.ar/wp-json/wp/v2/media?search=economico&per_page=100&_fields=source_url,title,date",
+    "status": 200,
+    "url_final": "https://www.msm.gov.ar/wp-json/wp/v2/media?search=economico&per_page=100&_fields=source_url,title,date",
+    "bytes": 1497,
+    "sha256": "4d1260b750a77f96d32b2398698db013945482880c79c12c1cb68a0c8f44f42d",
+    "file": "work\\municipios-fuentes-nov19\\sm-media-economic.html",
+    "links": []
+  },
+  {
+    "key": "sm-media-situacion",
+    "url": "https://www.msm.gov.ar/wp-json/wp/v2/media?search=situacion&per_page=100&_fields=source_url,title,date",
+    "status": 200,
+    "url_final": "https://www.msm.gov.ar/wp-json/wp/v2/media?search=situacion&per_page=100&_fields=source_url,title,date",
+    "bytes": 364,
+    "sha256": "8d8dfed13a3d1b95df1a972951003f1f69cdf13352fba36d272c1e715c44ae21",
+    "file": "work\\municipios-fuentes-nov19\\sm-media-situacion.html",
+    "links": []
+  },
+  {
+    "key": "sm-media-ejecucion",
+    "url": "https://www.msm.gov.ar/wp-json/wp/v2/media?search=ejecucion&per_page=100&_fields=source_url,title,date",
+    "status": 200,
+    "url_final": "https://www.msm.gov.ar/wp-json/wp/v2/media?search=ejecucion&per_page=100&_fields=source_url,title,date",
+    "bytes": 7732,
+    "sha256": "73f755789924292afd75942a5b1f7ef0c440de1b71135a3cd16d69185bc9d90d",
+    "file": "work\\municipios-fuentes-nov19\\sm-media-ejecucion.html",
+    "links": []
+  }
+]

@@ -1,13 +1,12 @@
 {
   "version": 1,
-  "reviewedAt": "2026-10-19",
+  "reviewedAt": "2026-11-19",
   "scope": "Revisión del 11 de septiembre de 2026 de 288 direcciones enlazadas por los portales de los 135 municipios. Se conservan las cuentas antes verificadas y se agregan documentos nuevos conciliados. No encontrar una cuenta en estos enlaces no demuestra que no esté publicada en otro lugar. Actualización 4/10/2026: 133 páginas revisadas de 59 municipios con faltantes; ocho cuentas nuevas conciliadas. Cada registro conserva su fecha de revisión. Seguimiento del 04/10: seis cuentas adicionales y cinco créditos vigentes conciliados; el período del PDF prevalece sobre el título del enlace. Revisión 14/10/2026: 14 cuentas históricas verificadas en documentos municipales, localizados a partir de Municipios Argentinos; sin incorporarlas al ranking semestral.",
   "counts": {
-    "comparable_account": 85,
-    "other_period": 37,
-    "account_not_verified": 10,
-    "documents_pending": 1,
-    "budget_execution": 1,
+    "comparable_account": 87,
+    "other_period": 36,
+    "account_not_verified": 9,
+    "budget_execution": 2,
     "access_incomplete": 1
   },
   "municipalities": [
@@ -1352,13 +1351,13 @@
     {
       "id": "06294",
       "municipio": "General Arenales",
-      "reviewedAt": "2026-10-19",
+      "reviewedAt": "2026-11-19",
       "searchedThisRound": true,
-      "status": "documents_pending",
-      "message": "El portal de gobierno abierto no pudo recuperarse. No se incorporan cifras sin el documento original.",
+      "status": "other_period",
+      "message": "Se verificó la cuenta de enero–marzo de 2024. Falta una cuenta reciente; el antecedente no integra el ranking 2026.",
       "providedUrl": "https://www.generalarenales.gob.ar/gobierno-abierto/",
       "accountUrl": null,
-      "latestPeriodEnd": null,
+      "latestPeriodEnd": "2024-03-31",
       "comparablePeriodEnd": null,
       "retrievedPdfCount": 0,
       "checkedPages": [
@@ -2135,14 +2134,14 @@
     {
       "id": "06466",
       "municipio": "Lezama",
-      "reviewedAt": "2026-09-11",
+      "reviewedAt": "2026-11-19",
       "searchedThisRound": true,
-      "status": "other_period",
-      "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "status": "comparable_account",
+      "message": "Cuenta enero–junio 2026 conciliada desde la planilla oficial; reemplaza el faltante del semestre.",
       "providedUrl": "https://lezama.gov.ar/situacion-financiera/",
       "accountUrl": "https://lezama.gov.ar/situacion-financiera/",
-      "latestPeriodEnd": "2024-12-31",
-      "comparablePeriodEnd": null,
+      "latestPeriodEnd": "2026-06-30",
+      "comparablePeriodEnd": "2026-06-30",
       "retrievedPdfCount": 0,
       "checkedPages": [
         {
@@ -2178,14 +2177,14 @@
     {
       "id": "06469",
       "municipio": "Lincoln",
-      "reviewedAt": "2026-10-14",
+      "reviewedAt": "2026-11-19",
       "searchedThisRound": true,
-      "status": "other_period",
-      "message": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "status": "comparable_account",
+      "message": "Cuenta enero–junio 2026 conciliada. También se incorporó enero–septiembre, separado del ranking semestral.",
       "providedUrl": "https://www.lincoln.gob.ar/?q=transparencia",
       "accountUrl": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=1f22ca19-efb3-4beb-8df0-94204ef300e4",
-      "latestPeriodEnd": "2025-12-31",
-      "comparablePeriodEnd": null,
+      "latestPeriodEnd": "2026-09-30",
+      "comparablePeriodEnd": "2026-06-30",
       "retrievedPdfCount": 0,
       "checkedPages": [
         {
@@ -2888,13 +2887,13 @@
     {
       "id": "06630",
       "municipio": "Pila",
-      "reviewedAt": "2026-10-19",
+      "reviewedAt": "2026-11-19",
       "searchedThisRound": true,
-      "status": "account_not_verified",
-      "message": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
+      "status": "budget_execution",
+      "message": "Se verificaron recursos, devengado, pagado y crédito anual a junio. Falta la apertura económica para completar el resultado fiscal.",
       "providedUrl": "https://pila.gob.ar/",
       "accountUrl": null,
-      "latestPeriodEnd": null,
+      "latestPeriodEnd": "2026-06-30",
       "comparablePeriodEnd": null,
       "retrievedPdfCount": 0,
       "checkedPages": [
@@ -3504,10 +3503,10 @@
     {
       "id": "06760",
       "municipio": "San Miguel",
-      "reviewedAt": "2026-10-19",
+      "reviewedAt": "2026-11-19",
       "searchedThisRound": true,
       "status": "budget_execution",
-      "message": "Nuevo portal de transparencia localizado. Ejecución enero–marzo 2026 incorporada; el PDF corrige la etiqueta errónea de cuarto trimestre en el enlace. Falta conciliar la apertura económica.",
+      "message": "Se revisaron las planillas detalladas de objeto y programa y el índice público de documentos. Sólo se confirmó enero–marzo 2026. Falta la clasificación económica de los gastos.",
       "providedUrl": "https://www.msm.gov.ar/areas-gestion-publica/gobierno-abierto/datos-abiertos/",
       "accountUrl": "https://www.msm.gov.ar/transparencia/",
       "latestPeriodEnd": null,

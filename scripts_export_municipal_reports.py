@@ -233,9 +233,11 @@ class Report:
     def refs(self,*keys):return ' · '.join(self.sources[k] for k in keys)
     def fiscal_refs(self,f):
         def pages(d):
+            if d.get('format')=='xlsx':
+                return 'planilla, '+', '.join(loc['range'] for loc in d['consultedSheets'])
             values=d['consultedPages']
             return f'{min(values)}-{max(values)}' if len(values)>8 and values==list(range(min(values),max(values)+1)) else ', '.join(map(str,values))
-        return f"Municipalidad de {escaped(self.m['municipio'])}, cuenta al {date(f['fin'])}: "+' · '.join(source_link(d['url'],f"documento {i}, págs. {pages(d)}") for i,d in enumerate(f['documents'],1))
+        return f"Municipalidad de {escaped(self.m['municipio'])}, cuenta al {date(f['fin'])}: "+' · '.join(source_link(d['url'],f"documento {i}, "+('' if d.get('format')=='xlsx' else 'págs. ')+pages(d)) for i,d in enumerate(f['documents'],1))
     def footer(self,c,doc):
         self.pages=doc.page;c.saveState()
         sources=Paragraph(getattr(c,'report_sources',''),self.styles['small'])
