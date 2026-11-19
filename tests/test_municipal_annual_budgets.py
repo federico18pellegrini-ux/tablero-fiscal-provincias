@@ -24,7 +24,8 @@ class AnnualBudgets(unittest.TestCase):
         municipalities['06028']['annualBudget'] = {'amount': 1}
         _, coverage = apply_annual_budgets(municipalities, REGISTER)
         self.assertEqual(coverage, self.data['annualBudgetCoverage'])
-        self.assertEqual((coverage['available'], coverage['currentYear'], coverage['historical'], coverage['pending']), (118, 111, 7, 17))
+        self.assertEqual(coverage['verifiedAt'], self.audit['verifiedAt'])
+        self.assertEqual((coverage['available'], coverage['currentYear'], coverage['historical'], coverage['pending']), (121, 116, 5, 14))
         self.assertIsNone(municipalities['06028']['annualBudget'])
         for m in municipalities.values():
             b = m['annualBudget']

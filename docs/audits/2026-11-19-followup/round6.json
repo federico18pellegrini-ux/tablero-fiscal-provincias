@@ -1,0 +1,25 @@
+[
+  {
+    "key": "saavedra-bo",
+    "url": "https://sibom.slyt.gba.gob.ar/bulletins/14721.pdf",
+    "error": "The read operation timed out"
+  },
+  {
+    "key": "lezama-resena",
+    "url": "https://lezama.gov.ar/wp-content/uploads/2026/07/Resena-Anual-2026.-1%C2%B0-Semestre.xlsx",
+    "status": 200,
+    "url_final": "https://lezama.gov.ar/wp-content/uploads/2026/07/Resena-Anual-2026.-1%C2%B0-Semestre.xlsx",
+    "bytes": 47945,
+    "sha256": "f359818189319e407c370b374ca6395bc1e391ea1a72367655e99757367e110b",
+    "file": "work\\municipios-fuentes-nov19\\lezama-resena.zip"
+  },
+  {
+    "key": "arenales-cuenta",
+    "url": "https://www.generalarenales.gob.ar/wp-content/uploads/2024/05/06-Sit-econom-financiera-2024-03.pdf",
+    "status": 200,
+    "url_final": "https://www.generalarenales.gob.ar/wp-content/uploads/2024/05/06-Sit-econom-financiera-2024-03.pdf",
+    "bytes": 64675,
+    "sha256": "e4bbcff1e8f1f56a64d6a80190d92223ea2a8946c451f00cc4239008fc1d23fb",
+    "file": "work\\municipios-fuentes-nov19\\arenales-cuenta.pdf"
+  }
+]

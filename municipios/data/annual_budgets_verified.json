@@ -3069,55 +3069,95 @@
     },
     {
       "id": "06466",
-      "year": 2024,
-      "asOf": "2024-12-31",
-      "original": null,
-      "current": "6056653138.38",
-      "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "reconciled_objects",
+      "year": 2026,
+      "asOf": "2026-06-30",
+      "original": "10657821953.31",
+      "current": "10922291659.15",
+      "modifications": "264469705.84",
+      "scope": "Presupuesto General de Erogaciones municipal.",
+      "note": "Original según artículos 1 y 2 de la Ordenanza 1225. Vigente según resumen oficial al 30/06/2026; no se usa como total el cuadro comparativo del HCD del artículo 7.",
+      "method": "published_current",
       "documents": [
         {
-          "url": "https://lezama.gov.ar/wp-content/uploads/2025/06/resena-anual-2024.pdf",
-          "sha256": "e345a9a52793278206e5c58e3bd6231487f63b57bbb9db785ee94b5322ecd548",
-          "bytes": 61850,
-          "pages": 1,
+          "url": "https://lezama.gov.ar/wp-content/uploads/2026/07/Ordenanza-1225-Prsesupuesto-2026.pdf",
+          "sha256": "0963299530d9fdaf3d4ff3060045386eb3cacf62bb1e120a546f054fd8b9055d",
+          "bytes": 1716617,
+          "locator": "Ordenanza 1225, arts. 1 y 2: recursos y erogaciones anuales 2026.",
+          "pages": 3,
+          "consultedPages": [
+            1,
+            2,
+            3
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/lezama-3.pdf"
+        },
+        {
+          "url": "https://lezama.gov.ar/wp-content/uploads/2026/07/Resena-Anual-2026.-1%C2%B0-Semestre.xlsx",
+          "sha256": "f359818189319e407c370b374ca6395bc1e391ea1a72367655e99757367e110b",
+          "bytes": 47945,
+          "locator": "Hoja Situación Económico-Financiera: CAIF J13:J26; personal G30; crédito vigente D30:D36. Valores calculados guardados por el emisor; identidades verificadas al centavo.",
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/lezama-resena.xlsx",
+          "format": "xlsx",
+          "consultedSheets": [
+            {
+              "sheet": "Situación Económico-Financiera",
+              "range": "B8:J36"
+            }
+          ]
+        }
+      ],
+      "components": [],
+      "verifiedAt": "2026-11-19",
+      "periodStart": "2026-01-01"
+    },
+    {
+      "id": "06469",
+      "year": 2026,
+      "asOf": "2026-09-30",
+      "original": "54903901500.00",
+      "current": "57238340539.22",
+      "modifications": "2334439039.22",
+      "scope": "Presupuesto municipal anual, Departamento Ejecutivo y Concejo Deliberante.",
+      "note": "Original conciliado entre gastos y recursos. Vigente al 30/09/2026; incluye autorizaciones para aplicaciones financieras, no equivale a gasto fiscal.",
+      "method": "published_current",
+      "documents": [
+        {
+          "url": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=f30c0935-989a-48c6-947c-fdfb5d2ced63",
+          "sha256": "c9098d80d61efa9eb707d7c46be9420ed8f337bce59491239096c1003ceeac03",
+          "bytes": 245334,
+          "locator": "Total general del presupuesto 2026; gastos DE y HCD.",
+          "pages": 47,
+          "consultedPages": [
+            47
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/lincoln-16.pdf"
+        },
+        {
+          "url": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=872a0fb2-3d9d-4fb3-b543-535bfc6d875f",
+          "sha256": "ebd1c0ea79dffbb84c31e88de6a55b2fe7cb8dbacf90c17962421d5578b13bb9",
+          "bytes": 60410,
+          "locator": "Total general inicial del cálculo de recursos 2026.",
+          "pages": 4,
+          "consultedPages": [
+            4
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/lincoln-17.pdf"
+        },
+        {
+          "url": "https://mi.lincoln.gob.ar/modules/transparencia-fiscal/public.php?action=file&uuid=5765adb3-2ae8-4c4a-80a6-c939a5ae771a",
+          "sha256": "fb02cbe6f6b53c3ae4ce32cfd345f9beea73ee365564ea595771cb62badb3af6",
+          "bytes": 362998,
+          "locator": "Total vigente anual de gastos por objeto, sin extrapresupuestarios.",
+          "pages": 8,
           "consultedPages": [
             1
           ],
-          "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/lincoln-37.pdf"
         }
       ],
-      "components": [
-        {
-          "label": "Gastos en personal",
-          "amount": "3279147171.33"
-        },
-        {
-          "label": "Bienes de consumo",
-          "amount": "1443257696.07"
-        },
-        {
-          "label": "Servicios no personales",
-          "amount": "977910580.82"
-        },
-        {
-          "label": "Bienes de uso",
-          "amount": "255397726.26"
-        },
-        {
-          "label": "Transferencias",
-          "amount": "41141297.56"
-        },
-        {
-          "label": "Servicio de la deuda y disminución de otros pasivos",
-          "amount": "59798666.34"
-        }
-      ],
-      "componentField": "current",
-      "periodStart": "2024-01-01",
-      "verifiedAt": "2026-10-04"
+      "components": [],
+      "verifiedAt": "2026-11-19",
+      "periodStart": "2026-01-01"
     },
     {
       "id": "06476",
@@ -3521,6 +3561,47 @@
       "verifiedAt": "2026-10-04"
     },
     {
+      "id": "06539",
+      "year": 2026,
+      "asOf": "2025-12-05",
+      "original": "289220270000.00",
+      "current": null,
+      "modifications": null,
+      "scope": "Presupuesto General de Gastos municipal aprobado para el ejercicio 2026.",
+      "note": "Total exacto aprobado, conciliado con los recursos de origen municipal, provincial libre y provincial afectado.",
+      "method": "published_original",
+      "documents": [
+        {
+          "url": "https://www.merlo.gob.ar/portal/Documentos/Boletin/BOLETIN%20OFICIAL%20N%C2%BA%20119%20-%20Enero%202026.pdf",
+          "sha256": "e23aa0cc481ace6d60c78e448bd5c091a69124d045db6c6a449dd4db22250214",
+          "bytes": 68870384,
+          "locator": "Boletín 119, Ordenanza 6290/25 arts. 2 y 3; sanción 04/12/2025 y promulgación Decreto 5420 del 05/12/2025.",
+          "pages": 264,
+          "consultedPages": [
+            136,
+            137,
+            138,
+            139,
+            140
+          ],
+          "evidenceExcerpt": {
+            "archive": "municipios/data/fiscal-sources/2026-11-19-followup/merlo-119-paginas-136-140.pdf",
+            "sha256": "96856eb8eba7c725574512991ffc038bd7f56b551025b79ff0c5e1d89ddbf8ac",
+            "originalPages": [
+              136,
+              137,
+              138,
+              139,
+              140
+            ]
+          },
+          "originalPreservedLocally": true
+        }
+      ],
+      "components": [],
+      "verifiedAt": "2026-11-19"
+    },
+    {
       "id": "06547",
       "year": 2026,
       "asOf": "2026-03-31",
@@ -3654,6 +3735,38 @@
       "componentField": "current",
       "periodStart": "2026-01-01",
       "verifiedAt": "2026-10-04"
+    },
+    {
+      "id": "06568",
+      "year": 2026,
+      "asOf": "2026-09-02",
+      "original": "279377889163.00",
+      "current": null,
+      "modifications": null,
+      "scope": "Presupuesto General de Gastos municipal, con las jurisdicciones incluidas en la ordenanza.",
+      "note": "Incluye $17.859.943.708,40 de aplicaciones financieras. El total presupuestario no equivale al gasto corriente y de capital ni a lo ejecutado.",
+      "method": "published_original",
+      "documents": [
+        {
+          "url": "https://www.moron.gob.ar/wp-content/uploads/Boletin-especial-No-3-Septiembre-de-2026-PRESUPUESTO-DE-GASTOS-DEL-MUNICIPIO-2026.pdf",
+          "sha256": "96743697d4625c7ca756beed684b1e4591287911ba788de2f931745e75c7bd36",
+          "bytes": 764559,
+          "locator": "Ordenanza 23787/2026, arts. 2 a 7; promulgada por Decreto 1780/2026 el 02/09/2026.",
+          "pages": 7,
+          "consultedPages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/moron-presupuesto.pdf"
+        }
+      ],
+      "components": [],
+      "verifiedAt": "2026-11-19"
     },
     {
       "id": "06581",
@@ -4026,13 +4139,13 @@
     {
       "id": "06630",
       "year": 2026,
-      "asOf": "2025-12-30",
+      "asOf": "2026-06-30",
       "original": "20584000000.00",
-      "current": null,
-      "modifications": null,
+      "current": "21682318981.82",
+      "modifications": "1098318981.82",
       "scope": "Presupuesto General de Erogaciones municipal aprobado para 2026.",
-      "note": "Ordenanza 2766/25, artículo 2. Importe verificado visualmente en el original escaneado.",
-      "method": "published_original",
+      "note": "Ordenanza 2766/25, artículo 2. Importe verificado visualmente en el original escaneado. Vigente anual al 30/06/2026 conciliado con las modificaciones y con la planilla de finalidad y función.",
+      "method": "published_current",
       "documents": [
         {
           "url": "https://pila.gob.ar/descargar_digesto.php?id=47",
@@ -4044,10 +4157,23 @@
           ],
           "locator": "Ordenanza 2766/25, artículo 2. Importe verificado visualmente en el original escaneado.",
           "archive": "municipios/data/fiscal-sources/2026-11-19/06630-2.pdf"
+        },
+        {
+          "url": "https://pila.gob.ar/descargar_digesto.php?id=12",
+          "sha256": "411dc5f974947248c782bdc2e65d1f0c4026dc3c8c1c9ef7d68e5c4c95c653b1",
+          "bytes": 747183,
+          "locator": "Totales generales: original, modificaciones y vigente anual de gastos.",
+          "pages": 59,
+          "consultedPages": [
+            1,
+            59
+          ],
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/pila-gas.pdf"
         }
       ],
       "components": [],
-      "verifiedAt": "2026-11-19"
+      "verifiedAt": "2026-11-19",
+      "periodStart": "2026-01-01"
     },
     {
       "id": "06638",
@@ -4865,39 +4991,36 @@
     },
     {
       "id": "06749",
-      "year": 2025,
-      "asOf": "2025-12-30",
-      "original": null,
-      "current": "184386160862.05",
+      "year": 2026,
+      "asOf": "2025-12-26",
+      "original": "244138924674.82",
+      "current": null,
       "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "reconciled_visual",
+      "scope": "Presupuesto de Gastos municipal aprobado por Ordenanza 13831/25.",
+      "note": "Presupuesto original 2026. No se confunde con el vigente 2025 que antes figuraba como último antecedente.",
+      "method": "published_original",
       "documents": [
         {
-          "url": "https://www.sanfernando.gob.ar/uploads/adjuntos/Situacioìn Economico Financiera - Del 01-01-2025 al 30-12-2025.pdf",
-          "sha256": "34040c7d29b61999d9fb2422bd1a0981b812d2c461b02cdaef2dc459004cc698",
-          "bytes": 610443,
-          "pages": 1,
+          "url": "https://www.sanfernando.gob.ar/uploads/adjuntos/BM%2038-2025_compressed.pdf",
+          "sha256": "032a46ca89fd9aa09fe868e84cd0c3fed7ee704e4abc168e6cfeab7cf82c1868",
+          "bytes": 1180223,
+          "locator": "Boletín 38/2025 del 26/12/2025, Ordenanza 13831/25, arts. 1 y 2: presupuesto y recursos 2026.",
+          "pages": 245,
           "consultedPages": [
-            1
+            1,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245
           ],
-          "locator": "Verificación visual del total anual Vigente y conciliación de sus componentes presupuestarios; no se usan las columnas de ejecución."
+          "archive": "municipios/data/fiscal-sources/2026-11-19-followup/sanfernando-bo.pdf"
         }
       ],
-      "components": [
-        {
-          "label": "Departamento Ejecutivo",
-          "amount": "181381367330.81"
-        },
-        {
-          "label": "Concejo Deliberante",
-          "amount": "3004793531.24"
-        }
-      ],
-      "componentField": "current",
-      "periodStart": "2025-01-01",
-      "verifiedAt": "2026-10-04"
+      "components": [],
+      "verifiedAt": "2026-11-19"
     },
     {
       "id": "06756",
@@ -6077,26 +6200,8 @@
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
     {
-      "id": "06469",
-      "municipality": "Lincoln",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
       "id": "06525",
       "municipality": "Marcos Paz",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
-      "id": "06539",
-      "municipality": "Merlo",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
-      "id": "06568",
-      "municipality": "Morón",
       "status": "pending",
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },

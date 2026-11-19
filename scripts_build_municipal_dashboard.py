@@ -30,6 +30,24 @@ def repository_input(path):
             'sha256': hashlib.sha256(content).hexdigest(), 'encoding': 'UTF-8/LF'}
 
 
+def valid_fiscal_location(document):
+    if document.get('format') == 'xlsx':
+        import zipfile
+        import xml.etree.ElementTree as ET
+        archive = ROOT / document.get('archive', '')
+        locations = document.get('consultedSheets', [])
+        if not archive.is_file() or hashlib.sha256(archive.read_bytes()).hexdigest() != document.get('sha256') or not locations:
+            return False
+        try:
+            with zipfile.ZipFile(archive) as book:
+                tree = ET.fromstring(book.read('xl/workbook.xml'))
+                sheets = {node.attrib['name'] for node in tree.findall('.//{*}sheet')}
+            return all(loc.get('sheet') in sheets and re.fullmatch(r'[A-Z]+[1-9][0-9]*:[A-Z]+[1-9][0-9]*', loc.get('range', '')) for loc in locations)
+        except (OSError, zipfile.BadZipFile, KeyError, ET.ParseError):
+            return False
+    return bool(document.get('consultedPages')) and all(type(page) is int and 1 <= page <= document.get('pages', 0) for page in document['consultedPages'])
+
+
 def apply_verified_fiscal(municipalities, path):
     """Overlay official executions; reject inconsistent amounts or periods before publishing."""
     audit = json.loads(path.read_text(encoding='utf-8'))
@@ -50,9 +68,7 @@ def apply_verified_fiscal(municipalities, path):
             if not documents or any(
                 not document.get('url', '').startswith(('https://', 'http://'))
                 or not re.fullmatch(r'[a-f0-9]{64}', document.get('sha256', ''))
-                or not document.get('consultedPages')
-                or any(type(page) is not int or not 1 <= page <= document.get('pages', 0)
-                       for page in document['consultedPages'])
+                or not valid_fiscal_location(document)
                 for document in documents
             ):
                 raise ValueError(f'Missing or invalid fiscal evidence: {ident}')
