@@ -25,7 +25,7 @@ class AnnualBudgets(unittest.TestCase):
         _, coverage = apply_annual_budgets(municipalities, REGISTER)
         self.assertEqual(coverage, self.data['annualBudgetCoverage'])
         self.assertEqual(coverage['verifiedAt'], self.audit['verifiedAt'])
-        self.assertEqual((coverage['available'], coverage['currentYear'], coverage['historical'], coverage['pending']), (121, 116, 5, 14))
+        self.assertEqual((coverage['available'], coverage['currentYear'], coverage['historical'], coverage['pending']), (121, 117, 4, 14))
         self.assertIsNone(municipalities['06028']['annualBudget'])
         for m in municipalities.values():
             b = m['annualBudget']
@@ -45,6 +45,34 @@ class AnnualBudgets(unittest.TestCase):
         b = self.municipalities['06638']['annualBudget']
         self.assertEqual(b['original'], 488609779242)
         self.assertEqual(b['current'],496152440548.92)
+
+    def test_escobar_approved_original_and_isolated_amendment_do_not_invent_current_credit(self):
+        b = self.municipalities['06252']['annualBudget']
+        self.assertEqual(b['original'], 299462800000)
+        self.assertEqual(b['basis'], 'original')
+        self.assertIsNone(b['current'])
+        self.assertIsNone(b['modifications'])
+        self.assertEqual(b['amendments'][0]['asOf'], '2026-11-13')
+        self.assertEqual(b['amendments'][0]['amount'], 21334744455.67)
+        for suffix in ['', '-breve']:
+            pdf = PdfReader(ROOT/f'municipios/reports/informe-06252{suffix}.pdf')
+            text = ' '.join(p.extract_text() for p in pdf.pages)
+            self.assertIn(money(b['original'])+' millones', text)
+            self.assertIn(money(b['amendments'][0]['amount'])+' millones', text)
+            self.assertNotIn(money(b['original']+b['amendments'][0]['amount']), text)
+
+    def test_amendment_requires_its_own_valid_date_amount_and_document(self):
+        for mutation in ['date', 'amount', 'document']:
+            audit = copy.deepcopy(self.audit)
+            a = next(r for r in audit['records'] if r['id']=='06252')['amendments'][0]
+            if mutation == 'date': a['asOf'] = '2027-01-01'
+            if mutation == 'amount': a['amount'] = '-1'
+            if mutation == 'document': a['document'] = {}
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as tmp:
+                path = Path(tmp)/'audit.json'
+                path.write_text(json.dumps(audit), encoding='utf-8')
+                with self.assertRaisesRegex(ValueError, 'Invalid separately documented budget amendment'):
+                    apply_annual_budgets(copy.deepcopy(self.municipalities), path)
 
     def test_reject_quarter_movements_bad_reconciliation_and_missing_source(self):
         for mutation in ['quarter', 'sum', 'source', 'coverage']:

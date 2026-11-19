@@ -1,0 +1,38 @@
+[
+  {
+    "key": "brown-digesto",
+    "url": "https://a.brown.gob.ar/hcd/digesto",
+    "status": 200,
+    "finalUrl": "https://a.brown.gob.ar/hcd/digesto",
+    "bytes": 19439,
+    "sha256": "db6421c11b9d87faa6dfb5e3a6e420c3163369ff33030547930ab77b7019774a",
+    "file": "work\\asap-nov19\\brown-digesto.html"
+  },
+  {
+    "key": "brown-hcd-trans",
+    "url": "https://a.brown.gob.ar/hcd/transparencia",
+    "status": 200,
+    "finalUrl": "https://a.brown.gob.ar/hcd/transparencia",
+    "bytes": 16943,
+    "sha256": "5bdde8dd78bfbb027a0da92d6941b177b0046229afd70003c2edbb241d5e9cdf",
+    "file": "work\\asap-nov19\\brown-hcd-trans.html"
+  },
+  {
+    "key": "brown-normativa",
+    "url": "https://a.brown.gob.ar/hcd/normativa",
+    "status": 200,
+    "finalUrl": "https://a.brown.gob.ar/hcd/normativa",
+    "bytes": 16707,
+    "sha256": "09aea6ab202789bf201ee00052fb5ba69154c7051d8a997fb921a4540457d73a",
+    "file": "work\\asap-nov19\\brown-normativa.html"
+  },
+  {
+    "key": "escobar-ampliacion-decretos",
+    "url": "https://apiweb.escobar.gob.ar/api/datos.php?que=decretos&anio=2026&q=6546&pagina=1",
+    "status": 200,
+    "finalUrl": "https://apiweb.escobar.gob.ar/api/datos.php?que=decretos&anio=2026&q=6546&pagina=1",
+    "bytes": 73,
+    "sha256": "37f0ecc8e6cf6804575a6c1cb2bb4ebc91d0e461acae1ec76b269dd69d06f60e",
+    "file": "work\\asap-nov19\\escobar-ampliacion-decretos.html"
+  }
+]

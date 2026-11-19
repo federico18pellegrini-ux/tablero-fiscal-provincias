@@ -40,7 +40,7 @@ class MunicipalTools(unittest.TestCase):
             self.assertTrue({'Caja libre', 'Calendario futuro de deuda', 'Flujos fiscales mensuales'} <= topics)
         topics = {r['topic']: r['available'] for r in self.coverage['topics']}
         self.assertEqual(topics['Presupuesto vigente 2026'], 101)
-        self.assertEqual(topics['Presupuesto original 2026'], 32)
+        self.assertEqual(topics['Presupuesto original 2026'], 33)
         self.assertEqual(topics['Saldo de tesorería'], 2)
         self.assertEqual(topics['Caja libre'], 0)
 
@@ -55,9 +55,9 @@ class MunicipalTools(unittest.TestCase):
         self.assertEqual(heras['Presupuesto original 2026']['estado'], 'Pendiente')
         self.assertEqual(heras['Presupuesto vigente 2026']['estado'], 'Incorporado')
 
-    def test_located_draft_and_broken_link_are_not_verified_data(self):
+    def test_approved_source_resolves_draft_while_broken_links_stay_pending(self):
         by_id = {r['id']: r for r in self.coverage['municipalities']}
-        self.assertFalse(by_id['06252']['budgetOriginal2026'])
-        self.assertTrue(any(f['state'] == 'draft_not_approved' for f in by_id['06252']['findings']))
+        self.assertTrue(by_id['06252']['budgetOriginal2026'])
+        self.assertTrue(any(f['state'] == 'verified_original_budget' for f in by_id['06252']['findings']))
         self.assertFalse(by_id['06270']['comparable'])
         self.assertTrue(any(f['state'] == 'broken_link' for f in by_id['06270']['findings']))

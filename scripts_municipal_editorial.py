@@ -80,6 +80,8 @@ class EditorialReport(Report):
             if b['historical']:self.p(f"Es un dato histórico: falta verificar el presupuesto de 2026.",'small')
             elif b['basis']=='original':self.p('Es el monto inicial; todavía no incorporamos una actualización del vigente.','small')
             self.p('Alcance: '+escaped(b['scope']),'small')
+            for amendment in b.get('amendments', []):
+                self.p(f"El {date(amendment['asOf'])}, el Concejo sancionó una ampliación de {money(amendment['amount'])} millones. "+escaped(amendment['note']),'small')
         else:self.p('Presupuesto anual pendiente de verificación. No se estima a partir de transferencias ni de gastos parciales.')
         self.h('Qué muestran las cuentas')
         if f:

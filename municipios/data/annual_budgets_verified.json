@@ -1607,59 +1607,76 @@
     },
     {
       "id": "06252",
-      "year": 2025,
-      "asOf": "2025-12-31",
-      "original": null,
-      "current": "290495188469.47",
+      "year": 2026,
+      "asOf": "2025-12-01",
+      "original": "299462800000.00",
+      "current": null,
       "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "reconciled_objects",
+      "scope": "Presupuesto General de Gastos de los organismos incluidos en la Ordenanza 6440/25.",
+      "note": "Presupuesto original promulgado el 1 de diciembre de 2025.",
+      "method": "published_original",
       "documents": [
         {
-          "url": "https://www.dropbox.com/scl/fi/35dns77n9k9em9b4rq5xc/Situaci-n-Economica-Financiera-Anual-Cuadros-para-Memoria-Anual-2025.pdf?rlkey=zqu0e0sjcwo5zjk6zzsy8hals&st=jm519m88&dl=1",
-          "sha256": "6c81c165ba3c3222adfd74d7dccca96c805088c3a192b489acaa30d95fa49680",
-          "bytes": 112593,
-          "pages": 4,
+          "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-O-6440-Presupuesto-26.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-11-19-asap/escobar-6440-approved.pdf",
+          "sha256": "2e058e43bdd04766d818ddf88fd23ee2ce775a43d95105ef8363808d9b17d4b3",
+          "bytes": 311454,
+          "pages": 16,
+          "consultedPages": [
+            1,
+            2,
+            16
+          ],
+          "locator": "Ordenanza 6440/25, arts. 1 y 3: recursos y presupuesto de gastos 2026 por $299.462.800.000; sancionada el 26/11/2025."
+        },
+        {
+          "url": "https://www.escobar.gob.ar/subidas/decretos/2025/2564-2025.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-11-19-asap/escobar-promulga.pdf",
+          "sha256": "a2174db9359e4179f68c84956a0707e1657e8a74c9d74b19f057f9544ca98240",
+          "bytes": 22369,
+          "pages": 1,
           "consultedPages": [
             1
           ],
-          "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
+          "locator": "Decreto 2564/2025 del 01/12/2025: promulga la Ordenanza 6440/25. El índice web la ubica en enero por error; se toma la fecha del original."
+        },
+        {
+          "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-6546.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-11-19-asap/escobar-6546.pdf",
+          "sha256": "36dc4d9e5154aacfe68a6cd2f6739725117f47a677299d9bdb8ae9a04524f9ed",
+          "bytes": 396422,
+          "pages": 3,
+          "consultedPages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Ordenanza 6546/26 del 13/11/2026: amplía recursos y gastos por $21.334.744.455,67. Los 26 rubros de recursos suman el importe. Es una ampliación sancionada, no una publicación del crédito vigente total."
         }
       ],
-      "components": [
+      "components": [],
+      "verifiedAt": "2026-11-19",
+      "amendments": [
         {
-          "label": "Gastos en personal",
-          "amount": "87764034269.03"
-        },
-        {
-          "label": "Bienes de consumo",
-          "amount": "20827444798.07"
-        },
-        {
-          "label": "Servicios no personales",
-          "amount": "127852564964.03"
-        },
-        {
-          "label": "Bienes de uso",
-          "amount": "21273504163.33"
-        },
-        {
-          "label": "Transferencias",
-          "amount": "24383547475.18"
-        },
-        {
-          "label": "Activos financieros",
-          "amount": "428870965.17"
-        },
-        {
-          "label": "Servicio de la deuda y disminución de otros pasivos",
-          "amount": "7965221834.66"
+          "asOf": "2026-11-13",
+          "amount": "21334744455.67",
+          "status": "sancionada",
+          "note": "El presupuesto vigente total todavía no está verificado.",
+          "document": {
+            "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-6546.pdf",
+            "archive": "municipios/data/fiscal-sources/2026-11-19-asap/escobar-6546.pdf",
+            "sha256": "36dc4d9e5154aacfe68a6cd2f6739725117f47a677299d9bdb8ae9a04524f9ed",
+            "bytes": 396422,
+            "pages": 3,
+            "consultedPages": [
+              1,
+              2,
+              3
+            ],
+            "locator": "Ordenanza 6546/26 del 13/11/2026: amplía recursos y gastos por $21.334.744.455,67. Los 26 rubros de recursos suman el importe. Es una ampliación sancionada, no una publicación del crédito vigente total."
+          }
         }
-      ],
-      "componentField": "current",
-      "periodStart": "2025-01-02",
-      "verifiedAt": "2026-10-04"
+      ]
     },
     {
       "id": "06266",

@@ -1,0 +1,25 @@
+[
+  {
+    "key": "brown-minio-sef",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "escobar-cuenta2025",
+    "url": "https://hcdescobar.gob.ar/ordenanzas/rendicion-de-cuentas-ejercicio-2025/",
+    "status": 200,
+    "finalUrl": "https://hcdescobar.gob.ar/ordenanzas/rendicion-de-cuentas-ejercicio-2025/",
+    "bytes": 64685,
+    "sha256": "74470a1bfc732593ee06dde3c8f56dfdd27ea5b5554d3fe4ffe5fd6f45344f35",
+    "file": "work\\asap-nov19\\escobar-cuenta2025.html"
+  },
+  {
+    "key": "escobar-bo-art",
+    "url": "https://hcdescobar.gob.ar/ordenanzas/ampliacion-del-calculo-de-recursos-2026/",
+    "status": 200,
+    "finalUrl": "https://hcdescobar.gob.ar/ordenanzas/ampliacion-del-calculo-de-recursos-2026/",
+    "bytes": 64711,
+    "sha256": "cee266531f4198f9b27e61556177e9dcf634b36e2555abe76aefd8bdef22fbfe",
+    "file": "work\\asap-nov19\\escobar-bo-art.html"
+  }
+]

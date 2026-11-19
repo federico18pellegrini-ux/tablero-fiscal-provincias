@@ -1,0 +1,35 @@
+[
+  {
+    "key": "escobar-ordenanzas2",
+    "url": "https://www.hcdescobar.gob.ar/ordenanzas/",
+    "status": 200,
+    "finalUrl": "https://hcdescobar.gob.ar/ordenanzas/",
+    "bytes": 130912,
+    "sha256": "0b2d4df46fc232582690f470cae00fe160734161367abb6195a77bf8bb68813a",
+    "file": "work\\asap-nov19\\escobar-ordenanzas2.html"
+  },
+  {
+    "key": "escobar-media6440",
+    "url": "https://hcdescobar.gob.ar/wp-json/wp/v2/media?search=6440&per_page=100",
+    "status": 200,
+    "finalUrl": "https://hcdescobar.gob.ar/wp-json/wp/v2/media?search=6440&per_page=100",
+    "bytes": 1693,
+    "sha256": "bb83b2056ea03be2422fd197b806ab8b9a02029a927c0326ef59c5d7a6999141",
+    "file": "work\\asap-nov19\\escobar-media6440.html"
+  },
+  {
+    "key": "brown-nov2",
+    "url": "https://www.brown.gob.ar/wp-content/uploads/boletines/SQ-Noviembre-Decretos-2025.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "brown-sef2",
+    "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+    "error": "HTTP Error 502: Bad Gateway"
+  },
+  {
+    "key": "brown-contable",
+    "url": "https://www.brown.gob.ar/estado-contable-2023/",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

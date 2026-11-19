@@ -1,0 +1,21 @@
+[
+  {
+    "key": "escobar-6440-approved",
+    "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-O-6440-Presupuesto-26.pdf",
+    "status": 200,
+    "finalUrl": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-O-6440-Presupuesto-26.pdf",
+    "bytes": 311454,
+    "sha256": "2e058e43bdd04766d818ddf88fd23ee2ce775a43d95105ef8363808d9b17d4b3",
+    "file": "work\\asap-nov19\\escobar-6440-approved.pdf"
+  },
+  {
+    "key": "brown-http-sef",
+    "url": "http://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+    "error": "HTTP Error 502: Bad Gateway"
+  },
+  {
+    "key": "brown-nov2-files",
+    "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/boletin_oficial/SQ-Noviembre-Decretos-2025.pdf",
+    "error": "HTTP Error 502: Bad Gateway"
+  }
+]

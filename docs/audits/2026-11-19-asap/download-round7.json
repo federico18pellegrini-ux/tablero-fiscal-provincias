@@ -1,0 +1,29 @@
+[
+  {
+    "key": "brown-search-budget",
+    "url": "https://www.brown.gob.ar/wp-json/wp/v2/search?search=presupuesto&per_page=100",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/wp-json/wp/v2/search?search=presupuesto&per_page=100",
+    "bytes": 4045,
+    "sha256": "dc7b1626b953b5033648badcbdd0c54c573b7a85c7f1051f2ce299179bced1cd",
+    "file": "work\\asap-nov19\\brown-search-budget.html"
+  },
+  {
+    "key": "brown-search-finance",
+    "url": "https://www.brown.gob.ar/wp-json/wp/v2/search?search=financiera&per_page=100",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/wp-json/wp/v2/search?search=financiera&per_page=100",
+    "bytes": 2259,
+    "sha256": "e8380bd0059271cd8bdbb35e6dcaf059fc2b642244153891d8eda2c0a1d9d158",
+    "file": "work\\asap-nov19\\brown-search-finance.html"
+  },
+  {
+    "key": "brown-search-state",
+    "url": "https://www.brown.gob.ar/wp-json/wp/v2/search?search=estado&per_page=100",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/wp-json/wp/v2/search?search=estado&per_page=100",
+    "bytes": 48662,
+    "sha256": "7ea4372c9ac3814f350b4c3084087a3aa732c7e006c0c9d5835596cf8b6b32c4",
+    "file": "work\\asap-nov19\\brown-search-state.html"
+  }
+]

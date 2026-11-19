@@ -1,0 +1,29 @@
+[
+  {
+    "key": "brown-financial-page",
+    "url": "https://www.brown.gob.ar/transparencia-estado-presupuestario/",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/transparencia-estado-presupuestario/",
+    "bytes": 195870,
+    "sha256": "6c2755fb9ac39b589edb511dd6bcccbe1a06a61dcb78967a6091f76d0545999d",
+    "file": "work\\asap-nov19\\brown-financial-page.html"
+  },
+  {
+    "key": "brown-hacienda",
+    "url": "https://www.brown.gob.ar/desarrollo-economico-hacienda/",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/desarrollo-economico-hacienda/",
+    "bytes": 196076,
+    "sha256": "2f709153d2d9a05d0c776311b07f0b49063b6bd0c7f7a98b4e40fee61a74e08e",
+    "file": "work\\asap-nov19\\brown-hacienda.html"
+  },
+  {
+    "key": "escobar-hcd-cuentas",
+    "url": "https://hcdescobar.gob.ar/wp-json/wp/v2/search?search=cuentas&per_page=100",
+    "status": 200,
+    "finalUrl": "https://hcdescobar.gob.ar/wp-json/wp/v2/search?search=cuentas&per_page=100",
+    "bytes": 28601,
+    "sha256": "272292d1266ebbcacb0a88c4808dc19b87b8969730189d0db0c6386781d9970d",
+    "file": "work\\asap-nov19\\escobar-hcd-cuentas.html"
+  }
+]

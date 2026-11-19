@@ -1,0 +1,141 @@
+{
+  "budget": {
+    "id": "06252",
+    "year": 2025,
+    "asOf": "2025-12-31",
+    "original": null,
+    "current": "290495188469.47",
+    "modifications": null,
+    "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
+    "note": "",
+    "method": "reconciled_objects",
+    "documents": [
+      {
+        "url": "https://www.dropbox.com/scl/fi/35dns77n9k9em9b4rq5xc/Situaci-n-Economica-Financiera-Anual-Cuadros-para-Memoria-Anual-2025.pdf?rlkey=zqu0e0sjcwo5zjk6zzsy8hals&st=jm519m88&dl=1",
+        "sha256": "6c81c165ba3c3222adfd74d7dccca96c805088c3a192b489acaa30d95fa49680",
+        "bytes": 112593,
+        "pages": 4,
+        "consultedPages": [
+          1
+        ],
+        "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
+      }
+    ],
+    "components": [
+      {
+        "label": "Gastos en personal",
+        "amount": "87764034269.03"
+      },
+      {
+        "label": "Bienes de consumo",
+        "amount": "20827444798.07"
+      },
+      {
+        "label": "Servicios no personales",
+        "amount": "127852564964.03"
+      },
+      {
+        "label": "Bienes de uso",
+        "amount": "21273504163.33"
+      },
+      {
+        "label": "Transferencias",
+        "amount": "24383547475.18"
+      },
+      {
+        "label": "Activos financieros",
+        "amount": "428870965.17"
+      },
+      {
+        "label": "Servicio de la deuda y disminución de otros pasivos",
+        "amount": "7965221834.66"
+      }
+    ],
+    "componentField": "current",
+    "periodStart": "2025-01-02",
+    "verifiedAt": "2026-10-04"
+  },
+  "search": [
+    {
+      "id": "06028",
+      "municipio": "Almirante Brown",
+      "reviewedAt": "2026-10-14",
+      "searchedThisRound": true,
+      "status": "other_period",
+      "message": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
+      "providedUrl": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+      "accountUrl": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+      "latestPeriodEnd": "2025-12-31",
+      "comparablePeriodEnd": null,
+      "retrievedPdfCount": 0,
+      "checkedPages": [
+        {
+          "url": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+          "finalUrl": "https://www.almirantebrown.gov.ar/estado-contable-2023",
+          "status": 404,
+          "sha256": "f8b3e5af76b6b9589e77f737f9880d2cad04e35862dff37731c7fb89624ad340",
+          "consulted": "2026-09-11"
+        },
+        {
+          "url": "https://www.brown.gob.ar/?page_id=5256",
+          "finalUrl": "https://www.brown.gob.ar/transparencia/",
+          "status": 200,
+          "sha256": "330efb6f4e8207b2b544b5124e856dfb56a4f49f6700d12e24cfc7aecbc4f331",
+          "consulted": "2026-09-11"
+        },
+        {
+          "url": "https://www.almirantebrown.gov.ar/",
+          "finalUrl": "https://www.brown.gob.ar/",
+          "status": 200,
+          "sha256": "cf175ad9596d64d1a6a51d3b4499f10dc458988d146d2bd03856f7e0a8ef729f",
+          "consulted": "2026-09-11"
+        }
+      ]
+    },
+    {
+      "id": "06252",
+      "municipio": "Escobar",
+      "reviewedAt": "2026-09-11",
+      "searchedThisRound": true,
+      "status": "other_period",
+      "message": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
+      "providedUrl": "https://www.escobar.gob.ar/transparencia/",
+      "accountUrl": "https://www.escobar.gob.ar/transparencia/",
+      "latestPeriodEnd": "2025-12-31",
+      "comparablePeriodEnd": null,
+      "retrievedPdfCount": 4,
+      "checkedPages": [
+        {
+          "url": "https://www.escobar.gob.ar/transparencia/",
+          "finalUrl": "https://www.escobar.gob.ar/transparencia/",
+          "status": 200,
+          "sha256": "a52a1c493d2c0304636cd5d0aa64de5b00d156213b68e2600895e0475b36fb50",
+          "consulted": "2026-09-11"
+        },
+        {
+          "url": "https://www.dropbox.com/scl/fi/jz5zcgz2trfgim8m6p9x2/Presupuesto-2026-Cuerpo-1.pdf?rlkey=7wk1906drj00srnf23ras3soy&st=vewhyid7&dl=1",
+          "finalUrl": "https://uca879dfd6e287aa478df1ecc67b.dl.dropboxusercontent.com/cd/0/get/DH_mzXs_3N4k8qU6e2F1iGLqN7Lg7l8s35gsaoR7pi3s8Z2w-g55XbRKRWhZno33F-_zRluPop1O8lDXROUDmFjSXTdktZ0W9bGyYvUNH3_3PlUGJs2vUA7d1V1E5Ip-anO_56GuColdITc3_A3gT2Hr/file?dl=1",
+          "status": 200,
+          "sha256": "021af5c7b45782730752b1b6e72e519c2bfe0ac3576b7d1c68e54ba5cde9b75c",
+          "consulted": "2026-09-11"
+        },
+        {
+          "url": "https://www.dropbox.com/scl/fi/ka7spkyie2hefb6a9karq/Presupuesto-2026-Cuerpo-2.pdf?rlkey=1oegz1xakobj10j99xpqirm9o&st=8g5c2e47&dl=1",
+          "finalUrl": "https://uc8cc79033024cd2e88e11ab5fa4.dl.dropboxusercontent.com/cd/0/get/DH_PS4Am8UMsbQY8Isz7-XhCOiJNIb2zHPSVH0iVCjyqObrayvtGlT2ecnT-5yqonK-d244Fp9Uq-9QJfi0zPlKoPMfR1-FiNgHRzi3cvcTkR91OWeB6ZGcc2Im33iEqEOaZMFemCjokl7issfgHpkRh/file?dl=1",
+          "status": 200,
+          "sha256": "18e93e2fe4ad8330c738518580c35f472af095322b567c6bb78d30bf1205d2c3",
+          "consulted": "2026-09-11"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "06252",
+      "topic": "budget",
+      "state": "draft_not_approved",
+      "url": "https://www.escobar.gob.ar/transparencia/",
+      "note": "Los cuatro cuerpos 2026 están disponibles. Las páginas iniciales del cuerpo I dicen proyecto de ordenanza. Falta verificar la norma aprobada o la ejecución 2026; no se cargó el proyecto como presupuesto vigente."
+    }
+  ]
+}

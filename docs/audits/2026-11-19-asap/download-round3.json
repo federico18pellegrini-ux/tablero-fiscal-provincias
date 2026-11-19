@@ -1,0 +1,48 @@
+[
+  {
+    "key": "escobar-6440",
+    "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-6440.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "escobar-6546",
+    "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-6546.pdf",
+    "status": 200,
+    "finalUrl": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-6546.pdf",
+    "bytes": 396422,
+    "sha256": "36dc4d9e5154aacfe68a6cd2f6739725117f47a677299d9bdb8ae9a04524f9ed",
+    "file": "work\\asap-nov19\\escobar-6546.pdf"
+  },
+  {
+    "key": "escobar-promulga",
+    "url": "https://www.escobar.gob.ar/subidas/decretos/2025/2564-2025.pdf",
+    "status": 200,
+    "finalUrl": "https://www.escobar.gob.ar/subidas/decretos/2025/2564-2025.pdf",
+    "bytes": 22369,
+    "sha256": "a2174db9359e4179f68c84956a0707e1657e8a74c9d74b19f057f9544ca98240",
+    "file": "work\\asap-nov19\\escobar-promulga.pdf"
+  },
+  {
+    "key": "brown-bo105",
+    "url": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n105/",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n105/",
+    "bytes": 166839,
+    "sha256": "9387154c45ec8b871b36d60f806ea90913c48b4c897e0a1c37928f44d89a440a",
+    "file": "work\\asap-nov19\\brown-bo105.html"
+  },
+  {
+    "key": "brown-bo106",
+    "url": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n106/",
+    "status": 200,
+    "finalUrl": "https://www.brown.gob.ar/boletin_oficial/boletin-2025-n106/",
+    "bytes": 166839,
+    "sha256": "18dfb883b7567ff9b9b1d7a8808aa6310b1258dd997409f4ce13d681abade968",
+    "file": "work\\asap-nov19\\brown-bo106.html"
+  },
+  {
+    "key": "brown-a-sef",
+    "url": "https://a.brown.gob.ar/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

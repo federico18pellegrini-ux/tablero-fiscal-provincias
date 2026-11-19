@@ -47,9 +47,10 @@
     {
       "id": "06252",
       "topic": "budget",
-      "state": "draft_not_approved",
-      "url": "https://www.escobar.gob.ar/transparencia/",
-      "note": "Los cuatro cuerpos 2026 están disponibles. Las páginas iniciales del cuerpo I dicen proyecto de ordenanza. Falta verificar la norma aprobada o la ejecución 2026; no se cargó el proyecto como presupuesto vigente."
+      "state": "verified_original_budget",
+      "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-O-6440-Presupuesto-26.pdf",
+      "note": "Se recuperó la Ordenanza 6440/25 y el Decreto 2564/2025: presupuesto original 2026 aprobado por $299.462.800.000. La ampliación sancionada de noviembre se registra separadamente; falta el vigente total y una cuenta 2026.",
+      "reviewedAt": "2026-11-19"
     },
     {
       "id": "06270",
@@ -183,6 +184,14 @@
       "state": "incorporated",
       "url": "https://www.sannicolasciudad.gob.ar/",
       "note": "Cuenta oficial conciliada al centavo. Se conserva el período del documento. Período 2025-01-02 a 2025-12-31."
+    },
+    {
+      "id": "06028",
+      "topic": "budget",
+      "state": "source_unavailable",
+      "url": "https://www.brown.gob.ar/transparencia-estado-presupuestario/",
+      "note": "El portal y el digesto se revisaron, pero el servidor de archivos oficiales devuelve 502. Se conserva la cuenta 2025 y continúa pendiente el presupuesto 2026 respaldado por un original recuperable.",
+      "reviewedAt": "2026-11-19"
     }
   ],
   "seriesReview": [
@@ -670,6 +679,23 @@
         "06861"
       ],
       "period_conflict": "Monte: dos etiquetas del portal apuntan a un PDF de enero-marzo, no al semestre."
+    },
+    {
+      "date": "2026-11-19",
+      "scope": "Pistas de ASAP para Escobar y Almirante Brown. Revisión focalizada, no nueva conciliación de los 135 municipios.",
+      "municipalities": [
+        "06252",
+        "06028"
+      ],
+      "incorporated": [
+        "Presupuesto original Escobar 2026",
+        "Ampliación sancionada Escobar 13/11/2026, separada del vigente total"
+      ],
+      "pending": [
+        "Cuenta 2026 de Escobar",
+        "Crédito vigente completo de Escobar",
+        "Presupuesto 2026 y cuenta reciente de Brown"
+      ]
     }
   ]
 }

@@ -2,11 +2,11 @@
   "version": 3,
   "generated": "2026-11-19",
   "input_sha256": {
-    "municipios/data/dashboard.json": "098c3acfc87f5e87c87bd082a3d93cf7f2d58978f3d38a613926e29dd270d0c8",
+    "municipios/data/dashboard.json": "0c25acd40d2d9a78965ab103d2c35442b55fc04df39ca89e17b831848f7fab47",
     "municipios/data/geografia_original.geojson": "877e30549e9d73487828d158584981635f7746739412669656bb3dfa4645173f",
-    "municipios/data/fuentes.csv": "538539ba167ac7bc09b1679f4112fe441d29ea201eb43b93c9d1693215502e1e",
-    "scripts_export_municipal_reports.py": "a1e1b2d55f7b6115e5fc29efeaaf4f49b98475ddabe4851edd1a4679a755a60f",
-    "scripts_municipal_editorial.py": "10a8b3a2e1f487b3581e7920e40cadde40e42df2fc810dbf3d8431bc17671eab",
+    "municipios/data/fuentes.csv": "d1ee3c98322d94e174b48453ecfad2386f1f88a9831fdf440a4204de6f6c4b8b",
+    "scripts_export_municipal_reports.py": "7f566bf2220086b9ce329409cc261dfb866a9aa7113872344865c13977ef9ca8",
+    "scripts_municipal_editorial.py": "23cb8500b921249caffd88ac31edb44b587788bde94585b054aed1a9f557db3e",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
   },
@@ -3384,8 +3384,8 @@
       "municipality": "Escobar",
       "file": "informe-06252.pdf",
       "pages": 7,
-      "bytes": 160658,
-      "sha256": "e77f5db79a979edaa254cc079c173d8847e96b4165c939cf5a8cdb8319dabdd1",
+      "bytes": 161145,
+      "sha256": "44a3e3b14379b2c72ebad66929196f33af3632827365ebfe6aa3222b949a6d6c",
       "sections": [
         "lectura",
         "cuentas",
@@ -3470,8 +3470,8 @@
       "brief": {
         "file": "informe-06252-breve.pdf",
         "pages": 3,
-        "bytes": 71342,
-        "sha256": "6aad317d4d98a0b27d0973669cd9058413493f89a211347a4e9e1c6983a1c1b0"
+        "bytes": 71825,
+        "sha256": "25eaa29fb7962161ca5897bd7f86b68fd01fbd90df897ed1a4b586017699692f"
       },
       "populationYear": 2022,
       "crimeYears": [
