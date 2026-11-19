@@ -54,7 +54,9 @@ def enrich_coverage(data, cov):
              'Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.')
         item('Flujos fiscales mensuales', False, '',
              'Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.')
-        history = g.get('history') or []
+        history = [*(g.get('history') or []), *m.get('fiscalHistory', [])]
+        if m.get('fiscalHistory'):
+            history += [f for f in [m.get('fiscal'), m.get('fiscalOther')] if f and f['fin'][5:7]=='12']
         years = sorted({int(r['fin'][:4]) for r in history if r['fin'][5:7] == '12' and r['inicio'][5:7] == '01'})
         complete_history = all(y in years for y in range(2021, 2026))
         item('Cierres fiscales anuales 2021–2025', complete_history, ', '.join(map(str, years)),

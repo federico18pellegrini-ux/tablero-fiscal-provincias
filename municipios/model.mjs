@@ -173,7 +173,7 @@ export function csv(rows) {
 }
 export function fiscalPeriods(m) {
   const unique=new Map();
-  for(const f of [m.fiscal,m.fiscalOther,...(m.management?.history||[])].filter(Boolean)) {
+  for(const f of [m.fiscal,m.fiscalOther,...(m.fiscalHistory||[]),...(m.management?.history||[])].filter(Boolean)) {
     const key=f.inicio+'/'+f.fin;if(!unique.has(key))unique.set(key,f);
   }
   return [...unique.values()].sort((a,b)=>b.fin.localeCompare(a.fin)||a.inicio.localeCompare(b.inicio));

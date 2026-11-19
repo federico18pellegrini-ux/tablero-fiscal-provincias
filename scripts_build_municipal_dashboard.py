@@ -350,6 +350,9 @@ def build(folder):
     annual_budget_path = ROOT / 'municipios/data/annual_budgets_verified.json'
     annual_budgets, annual_coverage = apply_annual_budgets(municipalities, annual_budget_path)
     write_budget_catalog(ROOT, municipalities, annual_coverage)
+    from scripts_municipal_fiscal_context import apply_fiscal_context
+    context_path = ROOT / 'municipios/data/fiscal_context_verified.json'
+    fiscal_context = apply_fiscal_context(municipalities, context_path, valid_fiscal_location)
     from scripts_municipal_structure import apply_structure
     apply_structure(municipalities)
     data = {'version': 6, 'generated': max('2026-10-04', fiscal_coverage['verifiedAt']), 'priceBase': '2026-07', 'populationYear': 2022, 'summary': summary, 'fiscalCoverage': fiscal_coverage, 'transparency': transparency, 'community': community, 'provincialRevenue': controls['recaudacion_real_ene_jul_2026_vs2025_pct'], 'municipalities': list(municipalities.values())}
@@ -360,7 +363,7 @@ def build(folder):
     overlay = repository_input(fiscal_path)
     transparency_input = repository_input(transparency_path)
     search_input = repository_input(search_path)
-    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path), repository_input(management_path), repository_input(annual_budget_path), repository_input(public_debt_path), repository_input(ROOT / "municipios/data/structure.json"), repository_input(ROOT / "municipios/data/structure_verified.json")], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
+    (target.parent / 'build-manifest.json').write_text(json.dumps({'generated': data['generated'], 'inputs': manifest, 'repositoryInputs': [overlay, transparency_input, search_input, repository_input(community_path), repository_input(debt_path), repository_input(management_path), repository_input(annual_budget_path), repository_input(public_debt_path), repository_input(context_path), repository_input(ROOT / "municipios/data/structure.json"), repository_input(ROOT / "municipios/data/structure_verified.json")], 'coverage': 135, 'fiscalCoverage': fiscal_coverage, 'transparencyCoverage': transparency['coverage']}, indent=2), encoding='utf-8')
     (target.parent / 'fuentes.csv').write_bytes((folder / 'fuentes_y_huellas.csv').read_bytes())
     fiscal_audit = json.loads(fiscal_path.read_text(encoding='utf-8'))
     with (target.parent / 'fuentes.csv').open('a', encoding='utf-8', newline='') as source_file:
@@ -380,6 +383,11 @@ def build(folder):
         for record in annual_budgets['records']:
             for index, document in enumerate(record['documents'], 1):
                 writer.writerow([f"presupuesto-{record['id']}-{record['year']}-{index}", document['url'], document['sha256'], document['bytes'], annual_budgets['verifiedAt']])
+    with (target.parent / 'fuentes.csv').open('a', encoding='utf-8', newline='') as source_file:
+        writer = csv.writer(source_file)
+        for r in fiscal_context['history'] + fiscal_context['supplements']:
+            for i, d in enumerate(r['documents'], 1):
+                writer.writerow([f"contexto-{r['id']}-{r['fin']}-{i}",d['url'],d['sha256'],d['bytes'],r['verifiedAt']])
     # Serve a conventional deferred script on static hosts, independent of .mjs MIME configuration.
     bundle_app()
     print(f'{target.name}: {len(municipalities)} municipalities; {target.stat().st_size:,} bytes')

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
 import {rankingMetric,rankingReading,rankingAssessment,RANKING_READINGS,rankingExportRows,metricExportUnit} from '../municipios/model.mjs';
-import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv,fiscalExportRows,annualBudgetExportRows,adjustPrice,priceComparisons,municipalContextExportRows} from '../municipios/model.mjs';
+import {METRICS,TRANSPARENCY_COMPONENTS,transparencyStatus,metricValue,rankMunicipalities,peers,simulate,readState,csv,fiscalPeriods,fiscalExportRows,annualBudgetExportRows,adjustPrice,priceComparisons,municipalContextExportRows} from '../municipios/model.mjs';
 const require=createRequire(import.meta.url),d3=require('../municipios/vendor/d3.v7.min.js');
 const data=JSON.parse(fs.readFileSync(new URL('../municipios/data/dashboard.json',import.meta.url)));
 const geometry=JSON.parse(fs.readFileSync(new URL('../municipios/data/geografia_original.geojson',import.meta.url)));
@@ -435,3 +435,13 @@ test('annual budgets export original and current amounts with their own year and
   }
 });
 
+
+test('recovered Brown history is selectable and exportable without promoting secondary Escobar data',()=>{
+ const brown=rows.find(m=>m.id==='06028'),escobar=rows.find(m=>m.id==='06252');
+ assert.deepEqual(fiscalPeriods(brown).map(f=>f.fin.slice(0,4)),['2025','2024','2022','2021']);
+ assert.equal(fiscalExportRows(brown).filter(r=>r[1]==='Resultado financiero').length,4);
+ assert.equal(escobar.fiscal,null);assert.equal(escobar.fiscalOther.fin,'2025-12-31');
+ assert.equal(escobar.fiscalSupplement.sourceType,'secondary_credit_report');
+ assert.equal(escobar.fiscalSupplement.figures.resultado_financiero,26853);
+ assert.ok(!fiscalExportRows(escobar).some(r=>r[4].includes('2026-06-30')));
+});

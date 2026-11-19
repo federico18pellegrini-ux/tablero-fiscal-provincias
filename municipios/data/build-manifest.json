@@ -71,7 +71,7 @@
     },
     {
       "file": "municipios/data/fiscal_search.json",
-      "sha256": "5aaca751b58487cc4b6f27e8f0e462363e717160d3d3eb7dd07dcefb94dff8e8",
+      "sha256": "e7584c75ae1e03f45d377c9dc6ab401cb0c8404eb82689c6d48a932107a40576",
       "encoding": "UTF-8/LF"
     },
     {
@@ -97,6 +97,11 @@
     {
       "file": "municipios/data/public_debt_verified.json",
       "sha256": "5f0dd1a0386de4b8b2fd67e7cb4582f8f37dbdf67ccdae88c2e68a1c7300b8cb",
+      "encoding": "UTF-8/LF"
+    },
+    {
+      "file": "municipios/data/fiscal_context_verified.json",
+      "sha256": "efeed2be736efef91ec4f72a260ef3177cfa0ee955b8c4e6c521eaf7d8878196",
       "encoding": "UTF-8/LF"
     },
     {

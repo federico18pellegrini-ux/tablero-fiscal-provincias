@@ -1,0 +1,96 @@
+[
+  {
+    "key": "brown-fin-0",
+    "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/situacion%20economico%20financiera%20-%20Primer%20Trimestre%202025.pdf",
+    "error": "HTTP Error 502: Bad Gateway"
+  },
+  {
+    "key": "brown-fin-1",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/situacion%20economico%20financiera%20-%20Primer%20Trimestre%202025.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "brown-fin-2",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/sit%20ec%20financ%20marzo%202024.pdf",
+    "status": 200,
+    "finalUrl": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/sit%20ec%20financ%20marzo%202024.pdf",
+    "bytes": 304226,
+    "sha256": "12e2fa111c2e8bb800593a95668fafa93591ad72efaee03e8d9065bc30dbbd77",
+    "file": "work\\municipal-alternativas-nov19\\brown-fin-2.pdf"
+  },
+  {
+    "key": "brown-fin-3",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION_EC_FINANCIERA_1_SEMESTRE_2021.pdf",
+    "status": 200,
+    "finalUrl": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION_EC_FINANCIERA_1_SEMESTRE_2021.pdf",
+    "bytes": 156414,
+    "sha256": "8f8505305a22f7b5fb1c1f0b673fcab8671ad01ed13739d7e2ef9a772f6cd915",
+    "file": "work\\municipal-alternativas-nov19\\brown-fin-3.pdf"
+  },
+  {
+    "key": "brown-fin-4",
+    "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/sit%20ec%20financ%20sept%2024-3.pdf",
+    "error": "HTTP Error 502: Bad Gateway"
+  },
+  {
+    "key": "brown-fin-5",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/sit%20ec%20financ%20sept%2024-3.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "brown-fin-6",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION%20ECONOMICO%20FIANCIERA.pdf",
+    "status": 200,
+    "finalUrl": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION%20ECONOMICO%20FIANCIERA.pdf",
+    "bytes": 392820,
+    "sha256": "483c57ffa18b26d964aac7ffa638396424924d7f348f114d1a1d22099749e473",
+    "file": "work\\municipal-alternativas-nov19\\brown-fin-6.pdf"
+  },
+  {
+    "key": "brown-fin-7",
+    "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACIONECFINANCIERAPRIMERSEMESTRE2023_0001_NEW.pdf",
+    "error": "HTTP Error 502: Bad Gateway"
+  },
+  {
+    "key": "brown-fin-8",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACIONECFINANCIERAPRIMERSEMESTRE2023_0001_NEW.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "brown-fin-9",
+    "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACIONECFINANCIERAANUAL2023_0001_NEW.pdf",
+    "error": "HTTP Error 502: Bad Gateway"
+  },
+  {
+    "key": "brown-fin-10",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACIONECFINANCIERAANUAL2023_0001_NEW.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "brown-fin-11",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/situacion_economico_financiera_anual_2022.pdf",
+    "status": 200,
+    "finalUrl": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/situacion_economico_financiera_anual_2022.pdf",
+    "bytes": 155011,
+    "sha256": "9e9fc69152b2e793dca615f87c1e422111ef12c911e925648e8ec3e15e24a902",
+    "file": "work\\municipal-alternativas-nov19\\brown-fin-11.pdf"
+  },
+  {
+    "key": "brown-fin-12",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION_EC_FINANCIERA_1_SEMESTRE_2021.pdf",
+    "status": 200,
+    "finalUrl": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION_EC_FINANCIERA_1_SEMESTRE_2021.pdf",
+    "bytes": 156414,
+    "sha256": "8f8505305a22f7b5fb1c1f0b673fcab8671ad01ed13739d7e2ef9a772f6cd915",
+    "file": "work\\municipal-alternativas-nov19\\brown-fin-12.pdf"
+  },
+  {
+    "key": "brown-fin-13",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/Situaci%C3%B3n%20Econ-Finan%202021.pdf",
+    "status": 200,
+    "finalUrl": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/Situaci%C3%B3n%20Econ-Finan%202021.pdf",
+    "bytes": 152144,
+    "sha256": "5ed0d4ee29312cfe53b0ed9f6e1c3e18ef924d17cf85158ca75dd910f2b7f808",
+    "file": "work\\municipal-alternativas-nov19\\brown-fin-13.pdf"
+  }
+]

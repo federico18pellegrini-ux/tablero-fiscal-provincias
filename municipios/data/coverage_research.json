@@ -190,7 +190,15 @@
       "topic": "budget",
       "state": "source_unavailable",
       "url": "https://www.brown.gob.ar/transparencia-estado-presupuestario/",
-      "note": "El portal y el digesto se revisaron, pero el servidor de archivos oficiales devuelve 502. Se conserva la cuenta 2025 y continúa pendiente el presupuesto 2026 respaldado por un original recuperable.",
+      "note": "Los enlaces recientes de files.brown.gob.ar devuelven 502. Se recuperaron originales oficiales de 2021, 2022 y 2024 desde otro alojamiento municipal; falta documentación reciente y el presupuesto 2026.",
+      "reviewedAt": "2026-11-19"
+    },
+    {
+      "id": "06252",
+      "topic": "account",
+      "state": "secondary_report_available",
+      "url": "https://moodyslocal.com.ar/wp-content/uploads/2026/10/IR-MESC-20261014-1.pdf",
+      "note": "Tabla 2T-2026 publicada por Moody’s a partir de información municipal, con cifras redondeadas. Se muestra como complemento; no reemplaza la CAIF oficial ni entra al ranking comparable.",
       "reviewedAt": "2026-11-19"
     }
   ],
@@ -695,6 +703,22 @@
         "Cuenta 2026 de Escobar",
         "Crédito vigente completo de Escobar",
         "Presupuesto 2026 y cuenta reciente de Brown"
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "scope": "Fuentes alternativas Brown y Escobar: archivos municipales, Tribunal de Cuentas, normas públicas y publicaciones de calificadora. Los originales históricos se separan de la observación secundaria.",
+      "municipalities": [
+        "06028",
+        "06252"
+      ],
+      "incorporated": [
+        "Brown: cierres anuales oficiales 2021, 2022 y 2024",
+        "Escobar: información complementaria Moody’s 2T-2026, sin promoción al ranking"
+      ],
+      "pending": [
+        "Brown: presupuesto y cuenta 2026",
+        "Escobar: CAIF oficial y crédito vigente total"
       ]
     }
   ]

@@ -1,0 +1,21 @@
+[
+  {
+    "key": "brown-minio-nov2",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/boletin_oficial/SQ-Noviembre-Decretos-2025.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "brown-minio-nov1",
+    "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/boletin_oficial/PQ-Noviembre-Decretos-2025.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "escobar-moodys",
+    "url": "https://moodyslocal.com.ar/wp-content/uploads/2026/10/IR-MESC-20261014-1.pdf",
+    "status": 200,
+    "finalUrl": "https://moodyslocal.com.ar/wp-content/uploads/2026/10/IR-MESC-20261014-1.pdf",
+    "bytes": 130725,
+    "sha256": "4e6eba9646ea75a8b309f5f686c5e08e4957761601e88f14695649edc9862f2b",
+    "file": "work\\municipal-alternativas-nov19\\escobar-moodys.pdf"
+  }
+]

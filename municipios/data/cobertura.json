@@ -248,7 +248,7 @@
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
       "portalReview": "2026-11-19",
-      "portalStatus": "Página financiera, digesto y boletines oficiales revisados. El servidor files.brown.gob.ar devuelve HTTP 502. Se conserva la cuenta 2025 previamente verificada; falta recuperar documentación reciente y el presupuesto 2026 aprobado.",
+      "portalStatus": "Se recuperaron cuentas anuales oficiales de 2021, 2022 y 2024 y se mantiene el cierre 2025. Los enlaces recientes en files.brown.gob.ar siguen devolviendo 502; faltan el presupuesto 2026 respaldado y la cuenta reciente.",
       "portalUrl": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "budgetYear": null,
       "budgetAsOf": null,
@@ -260,7 +260,7 @@
           "topic": "budget",
           "state": "source_unavailable",
           "url": "https://www.brown.gob.ar/transparencia-estado-presupuestario/",
-          "note": "El portal y el digesto se revisaron, pero el servidor de archivos oficiales devuelve 502. Se conserva la cuenta 2025 y continúa pendiente el presupuesto 2026 respaldado por un original recuperable.",
+          "note": "Los enlaces recientes de files.brown.gob.ar devuelven 502. Se recuperaron originales oficiales de 2021, 2022 y 2024 desde otro alojamiento municipal; falta documentación reciente y el presupuesto 2026.",
           "reviewedAt": "2026-11-19"
         }
       ],
@@ -312,7 +312,7 @@
         },
         {
           "topic": "Cierres fiscales anuales 2021–2025",
-          "state": "Sin serie anual incorporada",
+          "state": "Historia parcial",
           "request": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
         },
         {
@@ -2687,7 +2687,7 @@
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
       "portalReview": "2026-11-19",
-      "portalStatus": "Presupuesto original 2026 aprobado y promulgado incorporado. Se registró por separado la ampliación sancionada el 13/11/2026. La cuenta fiscal más reciente incorporada sigue siendo el cierre 2025; falta ejecución 2026 verificable.",
+      "portalStatus": "El presupuesto original 2026 está aprobado y documentado. Se agregó una tabla 2T-2026 de Moody’s, identificada como fuente secundaria con cifras redondeadas y fuera del ranking. Falta recuperar la cuenta oficial 2026 y el crédito vigente completo.",
       "portalUrl": "https://www.escobar.gob.ar/transparencia/",
       "budgetYear": 2026,
       "budgetAsOf": "2025-12-01",
@@ -2700,6 +2700,14 @@
           "state": "verified_original_budget",
           "url": "https://hcdescobar.gob.ar/wp-content/uploads/ordenanzas/O-O-6440-Presupuesto-26.pdf",
           "note": "Se recuperó la Ordenanza 6440/25 y el Decreto 2564/2025: presupuesto original 2026 aprobado por $299.462.800.000. La ampliación sancionada de noviembre se registra separadamente; falta el vigente total y una cuenta 2026.",
+          "reviewedAt": "2026-11-19"
+        },
+        {
+          "id": "06252",
+          "topic": "account",
+          "state": "secondary_report_available",
+          "url": "https://moodyslocal.com.ar/wp-content/uploads/2026/10/IR-MESC-20261014-1.pdf",
+          "note": "Tabla 2T-2026 publicada por Moody’s a partir de información municipal, con cifras redondeadas. Se muestra como complemento; no reemplaza la CAIF oficial ni entra al ranking comparable.",
           "reviewedAt": "2026-11-19"
         }
       ],
@@ -10851,7 +10859,15 @@
         "topic": "budget",
         "state": "source_unavailable",
         "url": "https://www.brown.gob.ar/transparencia-estado-presupuestario/",
-        "note": "El portal y el digesto se revisaron, pero el servidor de archivos oficiales devuelve 502. Se conserva la cuenta 2025 y continúa pendiente el presupuesto 2026 respaldado por un original recuperable.",
+        "note": "Los enlaces recientes de files.brown.gob.ar devuelven 502. Se recuperaron originales oficiales de 2021, 2022 y 2024 desde otro alojamiento municipal; falta documentación reciente y el presupuesto 2026.",
+        "reviewedAt": "2026-11-19"
+      },
+      {
+        "id": "06252",
+        "topic": "account",
+        "state": "secondary_report_available",
+        "url": "https://moodyslocal.com.ar/wp-content/uploads/2026/10/IR-MESC-20261014-1.pdf",
+        "note": "Tabla 2T-2026 publicada por Moody’s a partir de información municipal, con cifras redondeadas. Se muestra como complemento; no reemplaza la CAIF oficial ni entra al ranking comparable.",
         "reviewedAt": "2026-11-19"
       }
     ],
@@ -10927,6 +10943,22 @@
           "Cuenta 2026 de Escobar",
           "Crédito vigente completo de Escobar",
           "Presupuesto 2026 y cuenta reciente de Brown"
+        ]
+      },
+      {
+        "date": "2026-11-19",
+        "scope": "Fuentes alternativas Brown y Escobar: archivos municipales, Tribunal de Cuentas, normas públicas y publicaciones de calificadora. Los originales históricos se separan de la observación secundaria.",
+        "municipalities": [
+          "06028",
+          "06252"
+        ],
+        "incorporated": [
+          "Brown: cierres anuales oficiales 2021, 2022 y 2024",
+          "Escobar: información complementaria Moody’s 2T-2026, sin promoción al ranking"
+        ],
+        "pending": [
+          "Brown: presupuesto y cuenta 2026",
+          "Escobar: CAIF oficial y crédito vigente total"
         ]
       }
     ]
@@ -11596,8 +11628,8 @@
       "id": "06028",
       "municipio": "Almirante Brown",
       "tema": "Cierres fiscales anuales 2021–2025",
-      "estado": "Sin serie anual incorporada",
-      "periodo": "",
+      "estado": "Historia parcial",
+      "periodo": "2021, 2022, 2024, 2025",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
       "portal": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
       "revision": "2026-10-04"

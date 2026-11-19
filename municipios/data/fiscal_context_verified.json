@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "verifiedAt": "2026-11-19",
+  "history": [
+    {
+      "id": "06028",
+      "inicio": "2021-01-04",
+      "fin": "2021-12-31",
+      "amounts": {
+        "ingresos_corrientes": "14267419335.92",
+        "gastos_corrientes": "13235843958.46",
+        "ingresos_capital": "3519764564.99",
+        "gastos_capital": "4205263355.82",
+        "ingresos_totales": "17787183900.91",
+        "gastos_totales": "17441107314.28",
+        "resultado_financiero": "346076586.63"
+      },
+      "scope": "Administración municipal incluida en la CAIF publicada. No se presume consolidación de otros organismos.",
+      "note": "Importes originales en pesos corrientes; se excluyen fuentes y aplicaciones financieras.",
+      "documents": [
+        {
+          "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/Situaci%C3%B3n%20Econ-Finan%202021.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-11-19-alternativas/brown-cuenta-2021.pdf",
+          "sha256": "5ed0d4ee29312cfe53b0ed9f6e1c3e18ef924d17cf85158ca75dd910f2b7f808",
+          "bytes": 152144,
+          "pages": 15,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF de la página 1: ingresos y gastos corrientes y de capital, totales y resultado. Se conserva el período del encabezado."
+        }
+      ],
+      "verifiedAt": "2026-11-19"
+    },
+    {
+      "id": "06028",
+      "inicio": "2022-01-03",
+      "fin": "2022-12-30",
+      "amounts": {
+        "ingresos_corrientes": "24512879062.76",
+        "gastos_corrientes": "20801456570.10",
+        "ingresos_capital": "7829681170.19",
+        "gastos_capital": "9672034484.32",
+        "ingresos_totales": "32342560232.95",
+        "gastos_totales": "30473491054.42",
+        "resultado_financiero": "1869069178.53"
+      },
+      "scope": "Administración municipal incluida en la CAIF publicada. No se presume consolidación de otros organismos.",
+      "note": "Importes originales en pesos corrientes; se excluyen fuentes y aplicaciones financieras.",
+      "documents": [
+        {
+          "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/situacion_economico_financiera_anual_2022.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-11-19-alternativas/brown-cuenta-2022.pdf",
+          "sha256": "9e9fc69152b2e793dca615f87c1e422111ef12c911e925648e8ec3e15e24a902",
+          "bytes": 155011,
+          "pages": 16,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF de la página 1: ingresos y gastos corrientes y de capital, totales y resultado. Se conserva el período del encabezado."
+        }
+      ],
+      "verifiedAt": "2026-11-19"
+    },
+    {
+      "id": "06028",
+      "inicio": "2024-01-02",
+      "fin": "2024-12-31",
+      "amounts": {
+        "ingresos_corrientes": "148764847563.20",
+        "gastos_corrientes": "134745066518.03",
+        "ingresos_capital": "15942860159.22",
+        "gastos_capital": "24086854578.22",
+        "ingresos_totales": "164707707722.42",
+        "gastos_totales": "158831921096.25",
+        "resultado_financiero": "5875786626.17"
+      },
+      "scope": "Administración municipal incluida en la CAIF publicada. No se presume consolidación de otros organismos.",
+      "note": "Importes originales en pesos corrientes; se excluyen fuentes y aplicaciones financieras. El documento excluye movimientos de cierre.",
+      "documents": [
+        {
+          "url": "https://minio.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION%20ECONOMICO%20FIANCIERA.pdf",
+          "archive": "municipios/data/fiscal-sources/2026-11-19-alternativas/brown-cuenta-2024.pdf",
+          "sha256": "483c57ffa18b26d964aac7ffa638396424924d7f348f114d1a1d22099749e473",
+          "bytes": 392820,
+          "pages": 14,
+          "consultedPages": [
+            1
+          ],
+          "locator": "CAIF de la página 1: ingresos y gastos corrientes y de capital, totales y resultado. Se conserva el período del encabezado."
+        }
+      ],
+      "verifiedAt": "2026-11-19"
+    }
+  ],
+  "supplements": [
+    {
+      "id": "06252",
+      "provider": "Moody’s Local Argentina",
+      "sourceType": "secondary_credit_report",
+      "publishedAt": "2026-10-14",
+      "fin": "2026-06-30",
+      "periodLabel": "2T-2026, según el informe",
+      "unit": "ARS_millions",
+      "priceBasis": "nominal",
+      "precision": "rounded_to_millions",
+      "figures": {
+        "ingresos_operativos": 157885,
+        "ingresos_capital": 1864,
+        "gastos_operativos": 127244,
+        "gastos_capital": 5653,
+        "personal": 51389,
+        "resultado_financiero": 26853
+      },
+      "reportedFinancialResultPct": 16.8,
+      "note": "Cifras redondeadas publicadas por una calificadora a partir de información municipal. No reemplazan la cuenta oficial ni se usan en el ranking fiscal comparable.",
+      "documents": [
+        {
+          "url": "https://moodyslocal.com.ar/wp-content/uploads/2026/10/IR-MESC-20261014-1.pdf",
+          "sha256": "4e6eba9646ea75a8b309f5f686c5e08e4957761601e88f14695649edc9862f2b",
+          "bytes": 130725,
+          "pages": 5,
+          "consultedPages": [
+            2,
+            3
+          ],
+          "locator": "Anexo I, columna 2T-2026. Importes publicados en millones de ARS y redondeados. El resultado informado difiere en $1 millón de la resta de los componentes redondeados; no se fuerza su conciliación.",
+          "originalPreservedLocally": true
+        }
+      ],
+      "verifiedAt": "2026-11-19"
+    }
+  ]
+}
