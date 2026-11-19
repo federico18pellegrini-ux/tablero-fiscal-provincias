@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-19",
+  "scope": "Revisión focalizada de alternativas oficiales para Brown y Escobar. No se afirma nueva conciliación de los 135 municipios.",
+  "incorporated": {
+    "officialHistory": {
+      "municipality": "Almirante Brown",
+      "annualYears": [
+        2021,
+        2022,
+        2024
+      ],
+      "latestOfficialAccountRetained": "2025-12-31"
+    },
+    "secondaryObservation": {
+      "municipality": "Escobar",
+      "provider": "Moody’s Local Argentina",
+      "publishedAt": "2026-10-14",
+      "sourcePeriod": "2T-2026",
+      "unit": "Millones de ARS corrientes, redondeados",
+      "reportedFinancialResultMillions": 26853,
+      "excludedFromCommonRanking": true,
+      "originalMunicipal2026AccountRecovered": false
+    }
+  },
+  "controls": [
+    "Tres identidades fiscales conciliadas al centavo en cada cierre anual de Brown.",
+    "Seis importes de 2025 reproducidos por Moody’s coinciden con el original municipal de Escobar al redondear a millones.",
+    "La resta de componentes redondeados 2T-2026 da 26.852 millones frente a 26.853 publicados: se preserva el resultado informado sin forzar exactitud.",
+    "No se modifican fiscal ni fiscalOther con los datos de la calificadora. La cobertura comparable sigue en 87 municipios.",
+    "Los tres originales municipales se conservan con sus hashes. El PDF de Moody’s queda conservado localmente en work/municipal-alternativas-nov19, con URL y hash; se enlaza al editor y no se redistribuye el informe completo."
+  ],
+  "pending": [
+    "Brown: presupuesto original 2026 aprobado con original recuperable y ejecución fiscal 2026.",
+    "Brown: cuenta anual 2023 para completar 2021–2025.",
+    "Escobar: CAIF municipal oficial 2026 y crédito vigente total.",
+    "Los datos complementarios de Moody’s no cierran el pendiente del original municipal."
+  ],
+  "sourcesUnavailable": [
+    "files.brown.gob.ar sigue devolviendo 502. Las rutas alternativas de boletines de noviembre no recuperaron los documentos.",
+    "El portal de datos abiertos de Escobar lista 0 conjuntos en Economía y Finanzas. Las rutas CKAN no corresponden a su sistema.",
+    "El dominio histórico buenosairesabierta.org enlazado en la página del Tribunal actualmente devuelve contenido ajeno a las cuentas públicas. Se descartó y no se siguieron sus enlaces.",
+    "Se revisaron 51 normas públicas del digesto de Brown alrededor de la sesión presupuestaria. No se localizó allí el presupuesto aprobado; no se afirma que no exista."
+  ],
+  "qa": {
+    "status": "passed-local",
+    "pythonTests": 212,
+    "nodeTests": 167,
+    "municipalReportFamiliesChecked": 135,
+    "browserWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "browserDownloadChecks": 8,
+    "visualPdfReview": [
+      "Brown historia página 7",
+      "Escobar cuentas página 2",
+      "Escobar complemento página 7"
+    ],
+    "publication": "pending"
+  }
+}

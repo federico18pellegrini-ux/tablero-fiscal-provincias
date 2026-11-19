@@ -1,0 +1,29 @@
+[
+  {
+    "key": "htc-abierta",
+    "url": "http://www.buenosairesabierta.org",
+    "status": 200,
+    "finalUrl": "https://www.theashleysinpuertorico.com/about",
+    "bytes": 138268,
+    "sha256": "b839291714f81a9b14ce2ecc5e143c4af0770d3d8f6d711d57b2aabb17c12451",
+    "file": "work\\municipal-alternativas-nov19\\htc-abierta.html"
+  },
+  {
+    "key": "htc-abierta-https",
+    "url": "https://www.buenosairesabierta.org",
+    "status": 200,
+    "finalUrl": "https://www.theashleysinpuertorico.com/about",
+    "bytes": 138268,
+    "sha256": "b839291714f81a9b14ce2ecc5e143c4af0770d3d8f6d711d57b2aabb17c12451",
+    "file": "work\\municipal-alternativas-nov19\\htc-abierta-https.html"
+  },
+  {
+    "key": "brown-13570",
+    "url": "https://a.brown.gob.ar/hcd/digesto/13570",
+    "status": 200,
+    "finalUrl": "https://a.brown.gob.ar/hcd/digesto/13570",
+    "bytes": 15073,
+    "sha256": "e53647d69300e5645feb1a174c6cf5878a90a36a9cf691ebe3ee107ce8eb5d05",
+    "file": "work\\municipal-alternativas-nov19\\brown-13570.html"
+  }
+]

@@ -2,11 +2,11 @@
   "version": 3,
   "generated": "2026-11-19",
   "input_sha256": {
-    "municipios/data/dashboard.json": "0c25acd40d2d9a78965ab103d2c35442b55fc04df39ca89e17b831848f7fab47",
+    "municipios/data/dashboard.json": "b25a94c2956dbf788a6491d1cb529a21cfd41b0b6857f1d9e99f87696eaa0550",
     "municipios/data/geografia_original.geojson": "877e30549e9d73487828d158584981635f7746739412669656bb3dfa4645173f",
-    "municipios/data/fuentes.csv": "d1ee3c98322d94e174b48453ecfad2386f1f88a9831fdf440a4204de6f6c4b8b",
+    "municipios/data/fuentes.csv": "08f7a0ad775554444ddb20a9daf54bc133cc871c71c5f9695f23b2e7396b0ba5",
     "scripts_export_municipal_reports.py": "7f566bf2220086b9ce329409cc261dfb866a9aa7113872344865c13977ef9ca8",
-    "scripts_municipal_editorial.py": "23cb8500b921249caffd88ac31edb44b587788bde94585b054aed1a9f557db3e",
+    "scripts_municipal_editorial.py": "37b097cf911fb39f76d8e2ceeeb1f9a4192d14937db232a160cd289166a4e3ae",
     "municipios/assets/manrope-400.ttf": "a13d9b41b0a471ce58f0e46d377fa3cc76615e4632c3b15eb397caadf7a13f0a",
     "municipios/assets/manrope-700.ttf": "b9584e099e0e7f1e1e914c3037aabb9010c50346a3ce8df5eeeeecc0563044d8"
   },
@@ -315,9 +315,9 @@
       "id": "06028",
       "municipality": "Almirante Brown",
       "file": "informe-06028.pdf",
-      "pages": 7,
-      "bytes": 159921,
-      "sha256": "92839de8cfe4b99341e3c13759366e57843f9467f6a019f27b930e9b44560abc",
+      "pages": 8,
+      "bytes": 181943,
+      "sha256": "3815c9c4f500544fd2c9bdf81898d54d21a669b812e2c437df1feaa30ed503b5",
       "sections": [
         "lectura",
         "cuentas",
@@ -325,6 +325,7 @@
         "gestion-verificada",
         "poblacion",
         "deudas",
+        "historia",
         "bancos"
       ],
       "modules": [
@@ -389,13 +390,23 @@
           ]
         },
         {
+          "id": "historia",
+          "label": "Historia de las cuentas",
+          "description": "Resultados de distintos años con sus períodos exactos.",
+          "default": false,
+          "required": false,
+          "pages": [
+            6
+          ]
+        },
+        {
           "id": "bancos",
           "label": "Crédito y depósitos bancarios",
           "description": "Saldos por localización financiera y fechas de cada serie.",
           "default": false,
           "required": false,
           "pages": [
-            6
+            7
           ]
         }
       ],
@@ -3383,9 +3394,9 @@
       "id": "06252",
       "municipality": "Escobar",
       "file": "informe-06252.pdf",
-      "pages": 7,
-      "bytes": 161145,
-      "sha256": "44a3e3b14379b2c72ebad66929196f33af3632827365ebfe6aa3222b949a6d6c",
+      "pages": 8,
+      "bytes": 182596,
+      "sha256": "a0ed5fa7fcd7ece00d513ea89b623cf98402f6dae307e992e4655ce403efc984",
       "sections": [
         "lectura",
         "cuentas",
@@ -3393,6 +3404,7 @@
         "gestion-verificada",
         "poblacion",
         "deudas",
+        "detalle-fiscal",
         "bancos"
       ],
       "modules": [
@@ -3457,21 +3469,31 @@
           ]
         },
         {
+          "id": "detalle-fiscal",
+          "label": "Detalle de ejecución presupuestaria",
+          "description": "Partidas, pagos, origen de recursos y conciliaciones disponibles.",
+          "default": false,
+          "required": false,
+          "pages": [
+            6
+          ]
+        },
+        {
           "id": "bancos",
           "label": "Crédito y depósitos bancarios",
           "description": "Saldos por localización financiera y fechas de cada serie.",
           "default": false,
           "required": false,
           "pages": [
-            6
+            7
           ]
         }
       ],
       "brief": {
         "file": "informe-06252-breve.pdf",
         "pages": 3,
-        "bytes": 71825,
-        "sha256": "25eaa29fb7962161ca5897bd7f86b68fd01fbd90df897ed1a4b586017699692f"
+        "bytes": 72554,
+        "sha256": "a77f9202c6ae7f656489971c43aec1999976acfeaa9b9ec0dde84e106d161dac"
       },
       "populationYear": 2022,
       "crimeYears": [

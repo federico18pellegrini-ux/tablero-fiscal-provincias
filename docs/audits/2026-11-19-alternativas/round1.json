@@ -1,0 +1,22 @@
+[
+  {
+    "key": "escobar-ckan",
+    "url": "https://datos.escobar.gob.ar/api/3/action/package_search?q=presupuesto&rows=100",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "escobar-ckan-all",
+    "url": "https://datos.escobar.gob.ar/api/3/action/package_list",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "escobar-rating",
+    "url": "https://www.escobar.gob.ar/cuentas-ordenadas-y-mayor-autonomia-economica-escobar-mejoro-su-calificacion-financiera/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "brown-sef",
+    "url": "https://files.brown.gob.ar/brown-web/bundles/site/pdf/estado_presupuestario/SITUACION-ECONOMICO-FINANCIERA.pdf",
+    "error": "HTTP Error 502: Bad Gateway"
+  }
+]

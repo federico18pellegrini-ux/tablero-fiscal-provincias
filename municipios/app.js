@@ -175,7 +175,7 @@ function csv(rows) {
 }
 function fiscalPeriods(m) {
   const unique=new Map();
-  for(const f of [m.fiscal,m.fiscalOther,...(m.management?.history||[])].filter(Boolean)) {
+  for(const f of [m.fiscal,m.fiscalOther,...(m.fiscalHistory||[]),...(m.management?.history||[])].filter(Boolean)) {
     const key=f.inicio+'/'+f.fin;if(!unique.has(key))unique.set(key,f);
   }
   return [...unique.values()].sort((a,b)=>b.fin.localeCompare(a.fin)||a.inicio.localeCompare(b.inicio));
@@ -394,7 +394,7 @@ async function downloadSelectedReport(event){
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,3500);}
 const current=()=>byId.get(state.id);
 const currentMetric=()=>rankingMetric(METRICS.find(m=>m.id===state.metric),state.budgetBasis);
-const latestFiscal=m=>[m.fiscal,m.fiscalOther].filter(Boolean).sort((a,b)=>b.fin.localeCompare(a.fin))[0];
+const latestFiscal=m=>[m.fiscal,m.fiscalOther,...(m.fiscalHistory||[])].filter(Boolean).sort((a,b)=>b.fin.localeCompare(a.fin))[0];
 function persist(){
   const url=new URL(location.href);url.search='';url.searchParams.set('municipio',state.id);url.searchParams.set('vista',state.view);if(state.view==='rankings')url.searchParams.set('indicador',state.metric);url.hash='';
   if(state.view==='rankings'&&currentMetric().budget)url.searchParams.set('presupuesto',state.budgetBasis);
@@ -578,6 +578,7 @@ function renderResources(){
   const parts=[['Cambio del total repartido','Con la participación de 2025',m.efecto_masa_observada_ars_jul26],['Cambio de participación','Sobre el total repartido en 2026',m.efecto_participacion_observada_ars_jul26],['Diferencia total de coparticipación','Ene–jul 2026 menos ene–jul 2025',m.copart_2026_ene_jul_ars_jul26-m.copart_2025_ene_jul_ars_jul26]];
   $('decomposition').innerHTML=parts.map(([l,c,v],i)=>`<div class="decomp-row ${i===2?'total':''}"><span>${l}<small>${c}</small></span><strong class="${tone(v)}">${signedMillions(v)}</strong></div>`).join('');
   $('revenue-stats').innerHTML=[['Recaudación propia PBA',data.provincialRevenue.total_provincial],['Ingresos Brutos PBA',data.provincialRevenue.ingresos_brutos],['Coparticipación a municipios',data.summary.copart_real_change_pct]].map(([l,v])=>`<div><span class="stat-label">${l}</span><strong class="stat-value ${tone(v)}">${pct(v)}</strong><span class="stat-context">Real · ene–jul 2026 vs. 2025</span></div>`).join('');
+  renderFiscalSupplement(m);
   renderFiscal(m);
   renderManagement(m);
   renderPublicDebt(m);
@@ -609,6 +610,12 @@ function priceExport(){
   return [['Municipio','Indicador','Valor anterior','Período anterior','Valor actual','Período actual','Unidad de importes','Variación %','Criterio'],...priceComparisons(current(),priceMode,priceBase,deflator).filter(r=>r.id===priceIndicator).map(r=>[current().municipio,r.label,r.previous,r.previousPeriod,r.current,r.currentPeriod,unit,r.change,r.method])];
 }
 function fiscalDate(date){return new Intl.DateTimeFormat('es-AR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(date+'T12:00:00Z'));}
+function renderFiscalSupplement(m){
+  const host=$('fiscal-supplement'),s=m.fiscalSupplement;host.hidden=!s;if(!s){host.innerHTML='';return;}
+  const labels={ingresos_operativos:'Ingresos operativos',ingresos_capital:'Ingresos de capital',gastos_operativos:'Gastos operativos',gastos_capital:'Gastos de capital',personal:'Gasto en personal, incluido en los operativos',resultado_financiero:'Resultado financiero publicado'};
+  host.innerHTML=`<span class="coverage-tag">Información complementaria · ${escape(s.provider)}</span><h3>Ejecución 2026 de ${escape(m.municipio)}</h3><p>${escape(s.periodLabel)}. Informe del ${fiscalDate(s.publishedAt)}. Millones de pesos corrientes, redondeados.</p>${detailTable('fiscal-supplement-values','Los datos publicados',['Concepto','Millones de pesos'],Object.entries(labels).map(([key,label])=>[label,`<span class="${key==='resultado_financiero'?tone(s.figures[key]):''}">${num(s.figures[key],0)}</span>`]))}<p>${escape(s.note)}</p><p><a href="${escape(s.documents[0].url)}" target="_blank" rel="noopener">Ver informe de la calificadora ↗</a></p>`;
+}
+
 function renderFiscal(m,chosen){
   const f=chosen||latestFiscal(m),e=m.fiscalExecution,count=data.fiscalCoverage.fiscal,periods=fiscalPeriods(m);
   if(f){

@@ -71,6 +71,8 @@ class EditorialReport(Report):
         m=self.m;f=latest_fiscal(m);b=m.get('annualBudget')
         refs=self.refs('transfers','ipc')+(' · '+self.fiscal_refs(f) if f else '')
         if b:refs+=' · '+document_refs(m,b['documents'])
+        if m.get('fiscalSupplement'):
+            s=m['fiscalSupplement'];refs+=' · '+source_link(s['documents'][0]['url'],s['provider']+', informe '+date(s['publishedAt'])+', págs. 2–3')
         self.section('Cuentas y recursos',False,refs)
         self.p('El presupuesto indica cuánto se puede gastar. La cuenta fiscal muestra lo que se cobró y las obligaciones registradas. Las transferencias provinciales forman parte de esos ingresos.','small')
         self.h('Cuánto tiene autorizado gastar')
@@ -83,7 +85,10 @@ class EditorialReport(Report):
             for amendment in b.get('amendments', []):
                 self.p(f"El {date(amendment['asOf'])}, el Concejo sancionó una ampliación de {money(amendment['amount'])} millones. "+escaped(amendment['note']),'small')
         else:self.p('Presupuesto anual pendiente de verificación. No se estima a partir de transferencias ni de gastos parciales.')
-        self.h('Qué muestran las cuentas')
+        if m.get('fiscalSupplement'):
+            s=m['fiscalSupplement'];self.h('Avance 2026 · información complementaria')
+            self.p(f"{escaped(s['provider'])} publica un resultado financiero de {money(s['figures']['resultado_financiero']*1e6)} millones para {escaped(s['periodLabel'])}. Es una fuente secundaria con cifras redondeadas; falta recuperar la cuenta oficial del período y no se incorpora al ranking fiscal.",'small')
+        self.h('Última cuenta oficial incorporada' if m.get('fiscalSupplement') else 'Qué muestran las cuentas')
         if f:
             self.p(f"Del {date(f['inicio'])} al {date(f['fin'])}. Millones de pesos corrientes, sin ajuste por inflación.",'small')
             self.table(['Concepto','Ingresos cobrados','Gastos registrados'],[
@@ -167,6 +172,12 @@ class EditorialReport(Report):
                 self.table(['Concepto','Millones de pesos'],[(label,money(float(b[key]),2)) for label,key in [('Fuentes financieras dentro de los recursos','source_financing'),('Cancelación de cuentas a pagar anteriores','prior_liabilities'),('Adelantos a proveedores y contratistas','supplier_advances')]])
                 self.p(escaped(b['note']),'small')
 
+        if self.m.get('fiscalSupplement'):
+            s=self.m['fiscalSupplement'];self.section('Ejecución 2026 · fuente complementaria',False,source_link(s['documents'][0]['url'],s['provider']+', informe '+date(s['publishedAt'])+', págs. 2–3'))
+            self.p(f"{escaped(s['provider'])}. Informe del {date(s['publishedAt'])}; corte {escaped(s['periodLabel'])}. Millones de pesos corrientes, redondeados.")
+            self.table(['Concepto publicado','Millones de pesos'],[(label,number(s['figures'][key],0)) for key,label in [('ingresos_operativos','Ingresos operativos'),('ingresos_capital','Ingresos de capital'),('gastos_operativos','Gastos operativos'),('gastos_capital','Gastos de capital'),('personal','Gasto en personal, incluido en operativos'),('resultado_financiero','Resultado financiero publicado')]])
+            self.p(escaped(s['note']))
+
     def cash(self):
         if self.m.get('publicDebt'):
             self.public_debt()
@@ -188,6 +199,13 @@ class EditorialReport(Report):
         self.p(source_link(SITE+'auditoria-distritos.html#'+self.m['id'],'Consultar el detalle de los faltantes y sus documentos'),'small')
 
     def history(self):
+        if not self.m.get('management'):
+            records=sorted([*self.m.get('fiscalHistory',[]),*[f for f in [self.m.get('fiscal'),self.m.get('fiscalOther')] if f and f['fin'][5:7]=='12']],key=lambda f:f['fin'])
+            self.section('Historia de las cuentas',False,' · '.join(self.fiscal_refs(f) for f in records))
+            self.p('Cierres anuales verificados. Los años sin una cuenta incorporada quedan ausentes; no se completan con cero.')
+            self.table(['Período exacto','Ingresos','Gastos','Resultado','% ingresos'],[(date(f['inicio'])+' a '+date(f['fin']),money(f['ingresos_totales']),money(f['gastos_totales']),money(f['resultado_financiero']),pct(f['resultado_sobre_ingresos_pct'],1)) for f in records],[CONTENT*.3,CONTENT*.18,CONTENT*.18,CONTENT*.18,CONTENT*.16],True)
+            self.p('Millones de pesos corrientes. La comparación de montos no descuenta inflación. Estos antecedentes no reemplazan las cuentas recientes ni se mezclan con el ranking enero–junio 2026.','small')
+            return
         g=self.m['management'];portal='https://gobiernodelasheras.com/category/documentos/' if self.m['id']=='06329' else 'https://www.tigre.gob.ar/gobierno/informacion_gestion'
         self.section('Historia de las cuentas',False,source_link(portal,'Publicaciones oficiales del municipio')+' · '+source_link(SITE+'auditoria-distritos.html#'+self.m['id'],'documentos, períodos y conciliaciones'))
         self.p(escaped(g['historyReading']))
@@ -273,7 +291,7 @@ def build_editorial(path,brief_path,m,data,geography):
     writer=PdfWriter();modules=[];g=m.get('management');count=0
     for key,label,description,default in TOPICS:
         if key=='gestion-verificada' and not m.get('verifiedStructure'):continue
-        available=not(key=='historia' and not g or key=='caja' and not(g or m.get('publicDebt')) or key=='detalle-fiscal' and not(g or m.get('fiscalExecution')) or key=='bancos' and not(finite(m.get('prestamos_2024_ars')) or (g and any(r['status']=='verified' for r in g['banking']['records']))))
+        available=not(key=='historia' and not(g or m.get('fiscalHistory')) or key=='caja' and not(g or m.get('publicDebt')) or key=='detalle-fiscal' and not(g or m.get('fiscalExecution') or m.get('fiscalSupplement')) or key=='bancos' and not(finite(m.get('prestamos_2024_ars')) or (g and any(r['status']=='verified' for r in g['banking']['records']))))
         if not available:continue
         buffer=io.BytesIO();report=EditorialReport(buffer,m,data,geography,key);pages=report.render_module();buffer.seek(0)
         pdf=PdfReader(buffer)
