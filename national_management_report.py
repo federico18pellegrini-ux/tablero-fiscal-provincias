@@ -7,6 +7,22 @@ def append_management(report, data):
     from scripts_export_national_reports import ROOT, WIDTH, finite, num, money, pct, ratio
     r, g = report, data
     execution_date = '/'.join(reversed(g['meta']['execution_cutoff'].split('-')))
+    closed = g['execution']['closed']
+    actual = closed['total']
+    r.section('Gestión / Octubre completo', 'Dónde creció y dónde cayó el gasto',
+              'Presupuesto Abierto: ejecución mensual, actualización 17/11/2026. INDEC: IPC observado hasta octubre.')
+    r.add(f"Entre enero y octubre se reconocieron gastos por <b>{money(actual['real'] if r.mode == 'real' else actual['credito_devengado'])}</b> en {('pesos de agosto de 2026' if r.mode == 'real' else 'pesos corrientes')}, "
+          f"un <b>{num(abs(actual['variacion_real_pct']))}% menos en términos reales</b> que en los mismos meses de 2025. "
+          'El ajuste por inflación se realiza mes a mes. El cuadro permite identificar en qué funciones se concentró la variación.')
+    real = r.mode == 'real'
+    r.table(['Función', 'Enero–octubre', 'Cambio real'],
+            [[x['funcion_desc'], num(x['real'] if real else x['credito_devengado'], 0), pct(x['variacion_real_pct'])]
+             for x in sorted(closed['groups']['funcion'], key=lambda x: -x['credito_devengado'])],
+            [WIDTH - 180, 100, 80], compact=True)
+    r.note('Montos en millones. ' + ('Pesos de agosto de 2026.' if real else 'Pesos corrientes.') +
+           ' Variaciones contra enero–octubre de 2025, con IPC observado. Incluye intereses entre organismos, según el alcance de Presupuesto Abierto.')
+    r.note('El tablero permite abrir este mismo cierre por organismo, objeto y 410 programas. '
+           'El crédito vigente y las etapas de ejecución actuales corresponden al ' + '/'.join(reversed(closed['source_cutoff'].split('-'))) + '.')
     cash = {x['indicador']: x for x in g['cash']['comparison']}
     def cash_value(key):
         return cash[key]['enero_agosto_real_2026' if r.mode == 'real' else 'enero_agosto_2026']
@@ -24,12 +40,13 @@ def append_management(report, data):
         [[label, num(cash_value(key), 0)] for key, label in [('ingresos_totales','Ingresos cobrados'),('gasto_primario','Gasto antes de intereses'),('resultado_primario','Resultado antes de intereses'),('intereses_netos','Intereses pagados'),('resultado_financiero','Resultado después de intereses')]], [WIDTH-140,140])
     r.add(f"El dato importante está en términos reales. Frente a enero-agosto de 2025, los ingresos cayeron {num(abs(cash['ingresos_totales']['variacion_real_acumulada_pct']))}% y el gasto primario, {num(abs(cash['gasto_primario']['variacion_real_acumulada_pct']))}%. Los ingresos cayeron más rápido que el gasto y achicaron el margen fiscal.")
     r.add('Del gasto reconocido al pago', 'heading')
-    t = g['execution']['total']
-    r.add(f"En la Administración Nacional, al {execution_date} se reconocieron gastos por {money(t['credito_devengado'])} y se pagaron {money(t['credito_pagado'])}. La diferencia es <b>{money(t['devengado_menos_pagado'])}</b>. Son obligaciones reconocidas pendientes de pago; para saber cuáles están vencidas hacen falta sus fechas.")
-    r.table([f'Etapa del presupuesto / al {execution_date}', 'Millones corrientes'],
+    t = closed['latest_stages']
+    latest_stage_date = '/'.join(reversed(closed['source_cutoff'].split('-')))
+    r.add(f"En la Administración Nacional, al {latest_stage_date} se reconocieron gastos por {money(t['credito_devengado'])} y se pagaron {money(t['credito_pagado'])}. La diferencia es <b>{money(t['devengado_menos_pagado'])}</b>. Son obligaciones reconocidas pendientes de pago; para saber cuáles están vencidas hacen falta sus fechas.")
+    r.table([f'Etapa del presupuesto / al {latest_stage_date}', 'Millones corrientes'],
         [[label,num(t[key],0)] for key,label in [('credito_presupuestado','Inicial'),('credito_vigente','Vigente'),('credito_comprometido','Comprometido'),('credito_devengado','Devengado'),('credito_pagado','Pagado')]], [WIDTH-140,140], compact=True)
-    c = next(x for x in g['execution']['comparison'] if x['etapa']=='credito_devengado')
-    r.note(f"El gasto devengado de enero-agosto fue {num(abs(c['variacion_real_pct']))}% menor en términos reales que un año antes. Se descuenta la inflación mes a mes. Caja del SPN y ejecución de la Administración Nacional tienen distinto alcance y registro; no se suman.")
+    c = closed['total']
+    r.note(f"El gasto devengado de enero-octubre fue {num(abs(c['variacion_real_pct']))}% menor en términos reales que un año antes. Se descuenta la inflación mes a mes. Caja del SPN y ejecución de la Administración Nacional tienen distinto alcance y registro; no se suman.")
     link('resultado_fiscal_comparacion','Hacienda: informe de ingresos y gastos')
     acts = g['updates']['modifications']['acts']
     sequence = '; '.join(f"{x['title']}: {'+' if x['spending_ars_millions']>0 else ''}{num(x['spending_ars_millions'],0)}" for x in acts)

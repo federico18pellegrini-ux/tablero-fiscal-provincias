@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19",
+  "generated": "2026-11-19",
   "scope": "Datos incorporados; no certifica que un municipio no publique información en otro sitio.",
   "commonPending": [
     "Caja libre, vencimientos futuros, antigüedad de proveedores y flujos fiscales mensuales: todavía no hay una serie comparable para los 135. Un saldo en tesorería no resuelve esos faltantes.",
@@ -1976,8 +1976,6 @@
       "latestFiscalEnd": "2025-12-31",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
@@ -1990,9 +1988,9 @@
       "portalReview": "2026-09-11",
       "portalStatus": "Se revisaron los portales enlazados. Falta incorporar una cuenta comparable de enero–junio de 2026; esto no prueba que el municipio no la publique.",
       "portalUrl": "https://chivilcoy.gov.ar/2025-situacion-economica-financiera/",
-      "budgetYear": 2025,
-      "budgetAsOf": "2025-12-31",
-      "budgetOriginal2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2025-11-27",
+      "budgetOriginal2026": true,
       "budgetCurrent2026": false,
       "findings": [],
       "documentsNeeded": [
@@ -2000,11 +1998,6 @@
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
         },
         {
           "topic": "Presupuesto vigente 2026",
@@ -2136,13 +2129,11 @@
       "municipio": "Coronel de Marina L. Rosales",
       "fiscalStatus": "Otro período",
       "comparable": false,
-      "latestFiscalEnd": "2025-12-31",
+      "latestFiscalEnd": "2026-09-30",
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Agricultura, ganaderia y pesca",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
         "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-        "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
         "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
@@ -2151,13 +2142,13 @@
         "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
         "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres."
       ],
-      "portalReview": "2026-10-04",
+      "portalReview": "2026-11-19",
       "portalStatus": "Cuenta oficial incorporada con su período original. No integra el ranking del primer semestre de 2026.",
-      "portalUrl": "https://mcr.gob.ar/docs/",
-      "budgetYear": 2025,
-      "budgetAsOf": "2025-12-31",
+      "portalUrl": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
+      "budgetYear": 2026,
+      "budgetAsOf": "2026-09-30",
       "budgetOriginal2026": false,
-      "budgetCurrent2026": false,
+      "budgetCurrent2026": true,
       "findings": [
         {
           "id": "06182",
@@ -2177,11 +2168,6 @@
           "topic": "Presupuesto original 2026",
           "state": "Pendiente",
           "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
-        },
-        {
-          "topic": "Presupuesto vigente 2026",
-          "state": "Pendiente",
-          "request": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual."
         },
         {
           "topic": "Saldo de tesorería",
@@ -5819,8 +5805,6 @@
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Sin rama, Explotacion de minas y canteras",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
@@ -5833,9 +5817,9 @@
       "portalReview": "2026-10-19",
       "portalStatus": "No se pudo recuperar el portal con una conexión verificable; la consulta alternativa tampoco devolvió el contenido.",
       "portalUrl": "https://www.lomasdezamora.gov.ar/",
-      "budgetYear": null,
-      "budgetAsOf": null,
-      "budgetOriginal2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2025-12-12",
+      "budgetOriginal2026": true,
       "budgetCurrent2026": false,
       "findings": [],
       "documentsNeeded": [
@@ -5843,11 +5827,6 @@
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
         },
         {
           "topic": "Presupuesto vigente 2026",
@@ -7522,8 +7501,6 @@
         "Préstamos bancarios 2024: reservado o sin dato de origen",
         "Depósitos bancarios 2024: reservado o sin dato de origen",
         "Sectores de empleo con reserva o sin cifra: Electircidad, gas y agua, Construccion",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
@@ -7536,9 +7513,9 @@
       "portalReview": "2026-10-19",
       "portalStatus": "Portal y enlaces públicos revisados el 19/10/2026. No se localizó una cuenta de ingresos y gastos verificable; no equivale a afirmar que no exista en otro sitio.",
       "portalUrl": "https://pila.gob.ar/",
-      "budgetYear": null,
-      "budgetAsOf": null,
-      "budgetOriginal2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2025-12-30",
+      "budgetOriginal2026": true,
       "budgetCurrent2026": false,
       "findings": [],
       "documentsNeeded": [
@@ -7546,11 +7523,6 @@
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
         },
         {
           "topic": "Presupuesto vigente 2026",
@@ -9904,8 +9876,6 @@
       "missing": [
         "Cuenta de ingresos y gastos, sin financiamiento, enero–junio de 2026",
         "Sectores de empleo con reserva o sin cifra: Explotacion de minas y canteras, Electircidad, gas y agua",
-        "Presupuesto anual 2026: pendiente de documento oficial verificado",
-        "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
         "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
         "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
         "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
@@ -9918,9 +9888,9 @@
       "portalReview": "2026-10-14",
       "portalStatus": "Cuenta oficial conciliada al centavo. Se conserva el período original; no integra el ranking enero–junio 2026. El gasto fiscal de la CAIF excluye las aplicaciones financieras del total presupuestario.",
       "portalUrl": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
-      "budgetYear": null,
-      "budgetAsOf": null,
-      "budgetOriginal2026": false,
+      "budgetYear": 2026,
+      "budgetAsOf": "2025-12-22",
+      "budgetOriginal2026": true,
       "budgetCurrent2026": false,
       "findings": [],
       "documentsNeeded": [
@@ -9928,11 +9898,6 @@
           "topic": "Cuenta fiscal comparable",
           "state": "Pendiente",
           "request": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento."
-        },
-        {
-          "topic": "Presupuesto original 2026",
-          "state": "Pendiente",
-          "request": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos."
         },
         {
           "topic": "Presupuesto vigente 2026",
@@ -10667,12 +10632,12 @@
     },
     {
       "topic": "Presupuesto original 2026",
-      "available": 23,
+      "available": 27,
       "total": 135
     },
     {
       "topic": "Presupuesto vigente 2026",
-      "available": 97,
+      "available": 98,
       "total": 135
     },
     {
@@ -15957,9 +15922,9 @@
       "id": "06224",
       "municipio": "Chivilcoy",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "2025",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "https://chivilcoy.gov.ar/2025-situacion-economica-financiera/",
       "revision": "2026-10-04"
     },
@@ -15968,7 +15933,7 @@
       "municipio": "Chivilcoy",
       "tema": "Presupuesto vigente 2026",
       "estado": "Pendiente",
-      "periodo": "2025-12-31",
+      "periodo": "2025-11-27",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
       "portal": "https://chivilcoy.gov.ar/2025-situacion-economica-financiera/",
       "revision": "2026-10-04"
@@ -16330,7 +16295,7 @@
       "estado": "Pendiente",
       "periodo": "enero–junio 2026",
       "documentoNecesario": "Cuenta ahorro-inversión-financiamiento (CAIF) enero–junio 2026, o ejecuciones por carácter económico conciliadas que excluyan financiamiento.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16338,19 +16303,19 @@
       "municipio": "Coronel de Marina L. Rosales",
       "tema": "Presupuesto original 2026",
       "estado": "Pendiente",
-      "periodo": "2025",
+      "periodo": "2026",
       "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
       "id": "06182",
       "municipio": "Coronel de Marina L. Rosales",
       "tema": "Presupuesto vigente 2026",
-      "estado": "Pendiente",
-      "periodo": "2025-12-31",
-      "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "estado": "Incorporado",
+      "periodo": "2026-09-30",
+      "documentoNecesario": "",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16360,7 +16325,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Estado de tesorería conciliado: bancos, efectivo, valores y fondos afectados. El saldo total no equivale a caja libre.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16370,7 +16335,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Caja de libre disponibilidad conciliada, descontando fondos afectados y obligaciones exigibles.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16380,7 +16345,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de deuda consolidada y flotante, contratos, moneda y corte; separar pasivos contables y evitar sumarlos dos veces.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16390,7 +16355,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Planilla de vencimientos futuros de capital e intereses, por contrato y fecha; separar lo ya pagado del año.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16400,7 +16365,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Antigüedad y vencimiento de facturas pendientes, conciliados con la deuda flotante. Pendiente no significa vencida.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16410,7 +16375,7 @@
       "estado": "Pendiente",
       "periodo": "",
       "documentoNecesario": "Ingresos percibidos y gastos devengados por mes, sin acumulación; necesarios para ajustar cada flujo por IPC.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16420,7 +16385,7 @@
       "estado": "Sin serie anual incorporada",
       "periodo": "",
       "documentoNecesario": "CAIF de cierre anual 2021–2025 con los mismos organismos; no anualizar semestres.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16430,7 +16395,7 @@
       "estado": "Incorporado",
       "periodo": "2025-01 a 2026-07",
       "documentoNecesario": "",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16440,7 +16405,7 @@
       "estado": "Incorporado",
       "periodo": "2019-01 a 2025-12",
       "documentoNecesario": "",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16450,7 +16415,7 @@
       "estado": "Incorporado",
       "periodo": "Censo 2022",
       "documentoNecesario": "",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16460,7 +16425,7 @@
       "estado": "Incorporado",
       "periodo": "2021–2023; precios 2004",
       "documentoNecesario": "",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16470,7 +16435,7 @@
       "estado": "Incorporado",
       "periodo": "2024–2025",
       "documentoNecesario": "",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16480,7 +16445,7 @@
       "estado": "Incorporado",
       "periodo": "2026-07",
       "documentoNecesario": "",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16490,7 +16455,7 @@
       "estado": "Incorporado",
       "periodo": "2024-12",
       "documentoNecesario": "",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16500,7 +16465,7 @@
       "estado": "Incorporado",
       "periodo": "2025-12",
       "documentoNecesario": "",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -16510,7 +16475,7 @@
       "estado": "Sin serie comparable para 135",
       "periodo": "",
       "documentoNecesario": "Encuesta representativa del municipio con metodología y muestra; los datos por aglomerado no representan automáticamente cada partido.",
-      "portal": "https://mcr.gob.ar/docs/",
+      "portal": "https://mcr.gob.ar/documentos/situacion-economica-financiera-3o-trimestre-2026/",
       "revision": "2026-10-04"
     },
     {
@@ -25077,9 +25042,9 @@
       "id": "06490",
       "municipio": "Lomas de Zamora",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "https://www.lomasdezamora.gov.ar/",
       "revision": "2026-10-04"
     },
@@ -25088,7 +25053,7 @@
       "municipio": "Lomas de Zamora",
       "tema": "Presupuesto vigente 2026",
       "estado": "Pendiente",
-      "periodo": "",
+      "periodo": "2025-12-12",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
       "portal": "https://www.lomasdezamora.gov.ar/",
       "revision": "2026-10-04"
@@ -29067,9 +29032,9 @@
       "id": "06630",
       "municipio": "Pila",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "https://pila.gob.ar/",
       "revision": "2026-10-04"
     },
@@ -29078,7 +29043,7 @@
       "municipio": "Pila",
       "tema": "Presupuesto vigente 2026",
       "estado": "Pendiente",
-      "periodo": "",
+      "periodo": "2025-12-30",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
       "portal": "https://pila.gob.ar/",
       "revision": "2026-10-04"
@@ -34767,9 +34732,9 @@
       "id": "06819",
       "municipio": "Tornquist",
       "tema": "Presupuesto original 2026",
-      "estado": "Pendiente",
-      "periodo": "",
-      "documentoNecesario": "Ordenanza de presupuesto 2026 aprobada y total de erogaciones; identificar los organismos incluidos.",
+      "estado": "Incorporado",
+      "periodo": "2026",
+      "documentoNecesario": "",
       "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"
     },
@@ -34778,7 +34743,7 @@
       "municipio": "Tornquist",
       "tema": "Presupuesto vigente 2026",
       "estado": "Pendiente",
-      "periodo": "",
+      "periodo": "2025-12-22",
       "documentoNecesario": "Crédito anual vigente 2026 y modificaciones, con fecha de corte y saldo inicial anual.",
       "portal": "https://tornquist.gob.ar/gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf",
       "revision": "2026-10-04"

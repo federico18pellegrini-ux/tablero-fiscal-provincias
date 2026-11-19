@@ -137,7 +137,7 @@ def build():
                  'published_datasets': 28, 'pending_datasets': 1, 'money_unit': 'ARS millones',
                  'debt_unit': 'USD millones equivalentes', 'excluded': EXCLUDED},
         'datasets': datasets,
-        'execution': {'total': stages, 'project_baseline': baseline, 'comparison': get('gasto_comparacion_real_total'),
+        'execution': {'closed': load(DATA / 'execution-closed.json'), 'total': stages, 'project_baseline': baseline, 'comparison': get('gasto_comparacion_real_total'),
             'functions_comparison': get('gasto_comparacion_real_funcion'), 'monthly': monthly,
             'groups': {k: get('gasto_etapas_' + k) for k in ['jurisdiccion','funcion','objeto','territorio','programa']}},
         'cash': {'latest': verified_cash_latest(), 'reviewed': '2026-09-19', 'cutoff': '2026-08', 'comparison': cash, 'monthly': get('resultado_fiscal_caja_mensual')},

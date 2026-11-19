@@ -280,7 +280,7 @@
   $('close-report').addEventListener('click',()=>$('report-dialog').close());
   ['report-price','report-base','report-annex','report-scope','report-province','report-portfolio'].forEach(id=>$(id).addEventListener('change',updateReport));
   window.addEventListener('resize',()=>{if(D)execution();});
-  Promise.all([fetch('data/budget.json?v=20261114-ipc').then(async r=>{if(!r.ok)throw Error(r.status);const text=await r.text();dataHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}),fetch('data/execution-latest.json?v=20261114-ipc').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo,latest])=>{
+  Promise.all([fetch('data/budget.json?v=20261119-close').then(async r=>{if(!r.ok)throw Error(r.status);const text=await r.text();dataHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text.replace(/\r\n/g,'\n')))),b=>b.toString(16).padStart(2,'0')).join('');return JSON.parse(text);}),fetch('../data/province_geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}),fetch('data/execution-latest.json?v=20261119-close').then(r=>{if(!r.ok)throw Error(r.status);return r.json();})]).then(([data,geo,latest])=>{
     D=data;G=geo;E=latest;
     window.nationalBudgetContext={data:D,hash:dataHash};window.dispatchEvent(new Event('national:budget-ready'));
     const locations=[...new Set([...D.works_geographies.map(r=>r.name),...G.features.map(f=>f.province)])].sort((a,b)=>a.localeCompare(b,'es'));

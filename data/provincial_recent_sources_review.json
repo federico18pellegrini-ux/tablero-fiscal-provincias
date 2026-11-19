@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-30",
+  "date": "2026-11-19",
   "status": "integrated_tax_components",
   "unit": "pesos corrientes",
   "observations": [
@@ -344,6 +344,35 @@
       "Inmobiliario": 240459.19,
       "Sellos": 4099005778.66,
       "Otros": 0
+    },
+    {
+      "province": "Santa Cruz",
+      "period": "2026-10",
+      "source_file": "data/revenue-history-sources/asip-recaudacion-2026-11-19.html",
+      "source_url": "https://www.asip.gob.ar/recaudacion",
+      "sha256": "7abcdfa399cb494bdf753edc67e801a5fd5fd0414fd810c2f7ffd6ba7f429da7",
+      "institution": "ASIP",
+      "verified_tax_subtotal": 41831445342.07,
+      "reconciliation": "Se mantiene el perímetro tributario del período previo. Se excluyen pesca y tasas varias en Santa Cruz. En La Pampa se excluyen tasas por servicios, marcas y señales, tránsito, mediación, regalías y fondos nacionales.",
+      "Iibb": 38124714677.64,
+      "Inmobiliario": 737919.97,
+      "Sellos": 3673351994.46,
+      "Otros": 32640750
+    },
+    {
+      "province": "La Pampa",
+      "period": "2026-09",
+      "source_file": "data/revenue-history-sources/la-pampa-septiembre-2026.pdf",
+      "source_url": "https://contaduriageneral.lapampa.gob.ar/images/pdf/InfoPres/EjePresupuestaria/2026/Informe_Recursos_09-2026.pdf",
+      "sha256": "958ec8be36cf5c551599ba1416e44215fb9f6571268cda11c76dba0d80318a6e",
+      "institution": "Contaduría General La Pampa",
+      "verified_tax_subtotal": 48765402274.57,
+      "reconciliation": "Se mantiene el perímetro tributario del período previo. Se excluyen pesca y tasas varias en Santa Cruz. En La Pampa se excluyen tasas por servicios, marcas y señales, tránsito, mediación, regalías y fondos nacionales.",
+      "Iibb": 38397538534.28,
+      "Sellos": 3092270297.69,
+      "Inmobiliario": 4717130346.5,
+      "Automotores": 2270069624.63,
+      "Otros": 288393471.46999997
     }
   ],
   "method": "Impuestos publicados comparables con DNAP. Se excluyen ingresos varios de Mendoza y derechos mineros/no tributarios de Jujuy. Los rubros no publicados permanecen ausentes, no se imputan ceros. Neuquén: componentes reconciliados contra agosto DNAP. San Juan: Otros conserva el perímetro DNAP (otros ingresos y depósitos judiciales); septiembre no registra importe judicial. Tucumán: Otros suma Salud Pública y Otros Impuestos, reconciliado contra septiembre de 2025; diferencia de un peso entre total publicado y suma de componentes por redondeo."

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "06224",
+    "year": 2025,
+    "asOf": "2025-12-31",
+    "original": null,
+    "current": "49970420006.55",
+    "modifications": null,
+    "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
+    "note": "",
+    "method": "reconciled_objects",
+    "documents": [
+      {
+        "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/situacioneconomica/2025-situacion-economica-financiera.pdf",
+        "sha256": "abd5630e4caa9d84d89f6d5185e2e9e745579880743ae8a0fb5a2b6615255a4b",
+        "bytes": 306318,
+        "pages": 2,
+        "consultedPages": [
+          1
+        ],
+        "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
+      }
+    ],
+    "components": [
+      {
+        "label": "Gastos en personal",
+        "amount": "26103834224.28"
+      },
+      {
+        "label": "Bienes de consumo",
+        "amount": "7358158568.47"
+      },
+      {
+        "label": "Servicios no personales",
+        "amount": "9723103379.20"
+      },
+      {
+        "label": "Bienes de uso",
+        "amount": "1725432651.33"
+      },
+      {
+        "label": "Transferencias",
+        "amount": "3296057920.98"
+      },
+      {
+        "label": "Activos financieros",
+        "amount": "165501002.18"
+      },
+      {
+        "label": "Servicio de la deuda y disminución de otros pasivos",
+        "amount": "1598332260.11"
+      }
+    ],
+    "componentField": "current",
+    "periodStart": "2025-01-01",
+    "verifiedAt": "2026-10-04"
+  },
+  {
+    "id": "06182",
+    "year": 2025,
+    "asOf": "2025-12-31",
+    "original": null,
+    "current": "37589325282.48",
+    "modifications": null,
+    "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
+    "note": "Presupuesto vigente anual publicado en la situación económico-financiera. Incluye las partidas de financiamiento presupuestario; no se confunde con gasto fiscal de la CAIF.",
+    "method": "published_current",
+    "documents": [
+      {
+        "url": "https://mcr.gob.ar/wp-content/uploads/2026/03/29-Anexo-I-Estado-de-Situacion-Economico-Financiera.pdf",
+        "sha256": "e664d61e5a99ad911344f42afd3c3975e9563cffd82fd0973a8a5e12b03bc5c3",
+        "pages": 4,
+        "consultedPages": [
+          1
+        ],
+        "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
+        "bytes": 364160,
+        "archive": "municipios/data/fiscal-sources/2026-10-04/06182.pdf"
+      }
+    ],
+    "components": [],
+    "componentField": "current",
+    "periodStart": "2025-01-02",
+    "verifiedAt": "2026-10-04"
+  }
+]

@@ -5,11 +5,11 @@ from xml.sax.saxutils import escape
 
 def spending_rows(budget, management):
     from scripts_export_national_reports import change, ratio
-    actual = {(str(r['finalidad_id']), r['funcion_desc_2026']): r for r in management['execution']['functions_comparison']}
+    actual = {(str(r['finalidad_id']), r['funcion_desc']): r for r in management['execution']['closed']['groups']['funcion']}
     rows = []
     for f in budget['functions']:
         r = actual[(f['purpose'], f['name'])]
-        a, b = r['credito_devengado_real_agosto2026_2025'], r['credito_devengado_real_agosto2026_2026']
+        a, b = r['credito_devengado_real_agosto2026'], r['real']
         rows.append(dict(id=f['id'], name=f['name'], before=a, after=b, change=change(b, a)))
     totals = [sum(r[k] for r in rows) for k in ('before', 'after')]
     for r in rows:
@@ -24,12 +24,12 @@ def append_priorities(r, management, decisions, benefits):
     interest = by_id['5-29']
     rest_change = change(after-interest['after'], before-interest['before'])
     billions = lambda v: '$' + num(v / 1e6, 2) + ' billones'
-    r.section('Lectura del gasto / 2026', 'Qué cambia detrás del gasto total', 'Presupuesto Abierto: devengado enero-agosto 2025/2026. IPC nacional observado, aplicado mes a mes.')
+    r.section('Lectura del gasto / 2026', 'Qué cambia detrás del gasto total', 'Presupuesto Abierto: devengado enero-octubre 2025/2026. IPC nacional observado, aplicado mes a mes.')
     r.note('Administración Nacional: administración central, organismos descentralizados y seguridad social. Gastos corrientes y de capital.')
-    r.add('<b>Enero–agosto de cada año · pesos de agosto de 2026.</b> Esta comparación usa inflación observada, independientemente de la unidad elegida para el proyecto 2027.', 'small')
+    r.add('<b>Enero–octubre de cada año · pesos de agosto de 2026.</b> Esta comparación usa inflación observada, independientemente de la unidad elegida para el proyecto 2027.', 'small')
     r.add(f"El gasto reconocido pasa de <b>{billions(before)} a {billions(after)}</b>: {pct(change(after,before),True)} real. Dentro de ese total, los intereses y otros gastos de deuda crecen {pct(interest['change'],True)}. El resto del gasto cae {num(abs(rest_change))}% en términos reales.")
     r.add('Cuánto absorben los intereses', 'heading')
-    r.table(['Intereses y otros gastos de deuda', 'Ene–ago 2025', 'Ene–ago 2026'], [
+    r.table(['Intereses y otros gastos de deuda', 'Ene–oct 2025', 'Ene–oct 2026'], [
         ['Monto real', billions(interest['before']), billions(interest['after'])],
         ['Participación en el gasto', num(interest['share_before'],2)+'%', num(interest['share_after'],2)+'%']], [WIDTH-210,105,105])
     r.add(f"El aumento es de <b>{billions(interest['after']-interest['before'])}</b>. Su peso pasa de {num(interest['share_before'],2)} a {num(interest['share_after'],2)} de cada $100 del gasto. Este cuadro no incluye devolución de capital; las amortizaciones se muestran en el capítulo de financiamiento.", 'small')
@@ -49,7 +49,7 @@ def append_priorities(r, management, decisions, benefits):
     labels = [('minimum','Mínima sin bono'),('minimum_bonus','Mínima con bono completo'),('bonus','Bono previsional'),('auh','AUH general por hijo')]
     r.table(['Prestación', 'Agosto 2025', 'Agosto 2026', 'Cambio real'], [[label,'$'+num(a[k],0),'$'+num(b[k],0),pct(0 if abs(real(k))<.05 else real(k),True)] for k,label in labels], [WIDTH-225,75,75,75])
     r.add(f"La mínima con bono perdió <b>{num(abs(real('minimum_bonus')))}% de poder de compra</b>. La mínima sin bono y la AUH prácticamente lo mantuvieron. El bono siguió en ${num(b['bonus'],0)} mientras los precios subieron: por eso perdió {num(abs(real('bonus')))}% de poder de compra y afectó el ingreso total de quienes lo cobran.")
-    r.note('Mínima con bono completo para quien cumple el tope; sin aguinaldo. AUH al 100% del derecho mensual, no necesariamente lo depositado. Septiembre tiene monto nominal publicado, pero aún no IPC observado en esta serie.')
+    r.note('Mínima con bono completo para quien cumple el tope; sin aguinaldo. AUH al 100% del derecho mensual, no necesariamente lo depositado. Esta tabla conserva la comparación de agosto. El IPC nacional ya está disponible hasta octubre.')
     r.add('Qué prestaciones se registraron', 'heading')
     specs = [('inmunizaciones',1110,'Dosis','Vacunas distribuidas','Dosis acumuladas'),('educacion-superior',4883,'Becario','Becarios Manuel Belgrano','Promedio de becarios'),('alimentacion',685,'Persona','Asistencia en espacios comunitarios','Promedio de personas')]
     physical = []
@@ -60,5 +60,5 @@ def append_priorities(r, management, decisions, benefits):
         value=matches[0]['ejecutado_acumulado_trim2']
         physical.append([label,num(value,0) if finite(value) else 'Sin dato',method])
     r.table(['Programa / enero–junio 2026', 'Registro', 'Unidad y acumulación'],physical,[WIDTH-215,75,140])
-    r.add('Son prestaciones de programas específicos, no toda la actividad de cada área ni resultados finales en salud, educación o bienestar. Las dosis distribuidas no equivalen a personas vacunadas. Los promedios no se suman como personas únicas. El gasto llega a agosto y estas prestaciones, a junio: no se calcula un costo por prestación mezclando ambos períodos.','small')
+    r.add('Son prestaciones de programas específicos, no toda la actividad de cada área ni resultados finales en salud, educación o bienestar. Las dosis distribuidas no equivalen a personas vacunadas. Los promedios no se suman como personas únicas. El gasto llega a octubre y estas prestaciones, a junio: no se calcula un costo por prestación mezclando ambos períodos.','small')
     r.note(f'<link href="{escape(b["source"])}" color="#254b73">IMSS: agosto 2026</link> · <link href="{SITE}#prioridades" color="#254b73">Series, fuentes y fichas de cada programa</link>.')

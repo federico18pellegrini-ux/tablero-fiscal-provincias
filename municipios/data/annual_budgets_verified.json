@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "verifiedAt": "2026-10-19",
+  "verifiedAt": "2026-11-19",
   "targetYear": 2026,
   "currency": "ARS",
   "priceBasis": "nominal",
@@ -1173,31 +1173,60 @@
     },
     {
       "id": "06182",
-      "year": 2025,
-      "asOf": "2025-12-31",
+      "year": 2026,
+      "asOf": "2026-09-30",
+      "periodStart": "2026-01-02",
       "original": null,
-      "current": "37589325282.48",
+      "current": "48245189061.16",
       "modifications": null,
-      "scope": "Informe municipal publicado. No se presume consolidación de todos los organismos descentralizados.",
-      "note": "Presupuesto vigente anual publicado en la situación económico-financiera. Incluye las partidas de financiamiento presupuestario; no se confunde con gasto fiscal de la CAIF.",
-      "method": "published_current",
+      "scope": "Administración municipal y Concejo Deliberante incluidos en la situación económico-financiera.",
+      "note": "Crédito anual vigente al cierre de septiembre. El importe ejecutado es otra medición.",
+      "method": "reconciled_objects",
+      "componentField": "current",
       "documents": [
         {
-          "url": "https://mcr.gob.ar/wp-content/uploads/2026/03/29-Anexo-I-Estado-de-Situacion-Economico-Financiera.pdf",
-          "sha256": "e664d61e5a99ad911344f42afd3c3975e9563cffd82fd0973a8a5e12b03bc5c3",
-          "pages": 4,
+          "url": "https://mcr.gob.ar/wp-content/uploads/2026/10/SITUACION-ECONOMICA-FINANCIERA-3o-TRIMESTRE.pdf",
+          "sha256": "f1bdd9c68ecc8c4ad860b3dd873318516b5259084d9641e83de7f553f25f9192",
+          "bytes": 926735,
+          "pages": 5,
           "consultedPages": [
             1
           ],
-          "locator": "Página 1, evolución de gastos por objeto: total presupuestario, columna vigente. Autorización anual al corte indicado; no es gasto realizado.",
-          "bytes": 364160,
-          "archive": "municipios/data/fiscal-sources/2026-10-04/06182.pdf"
+          "locator": "Página 1, crédito vigente anual por objeto de gasto y CAIF enero–septiembre.",
+          "archive": "municipios/data/fiscal-sources/2026-11-19/mcr-sef.pdf"
         }
       ],
-      "components": [],
-      "componentField": "current",
-      "periodStart": "2025-01-02",
-      "verifiedAt": "2026-10-04"
+      "components": [
+        {
+          "label": "Personal",
+          "amount": "33041298098.53"
+        },
+        {
+          "label": "Consumo",
+          "amount": "2961074661.26"
+        },
+        {
+          "label": "Servicios no personales",
+          "amount": "5153356623.16"
+        },
+        {
+          "label": "Bienes de uso",
+          "amount": "1904550841.60"
+        },
+        {
+          "label": "Transferencias",
+          "amount": "3075680037.00"
+        },
+        {
+          "label": "Activos financieros",
+          "amount": "946365783.14"
+        },
+        {
+          "label": "Servicios de deuda y otros pasivos",
+          "amount": "1162863016.47"
+        }
+      ],
+      "verifiedAt": "2026-11-19"
     },
     {
       "id": "06189",
@@ -1485,59 +1514,40 @@
     },
     {
       "id": "06224",
-      "year": 2025,
-      "asOf": "2025-12-31",
-      "original": null,
-      "current": "49970420006.55",
+      "year": 2026,
+      "asOf": "2025-11-27",
+      "original": "64539711923.00",
+      "current": null,
       "modifications": null,
-      "scope": "El monto corresponde a los organismos incluidos en el documento municipal. Puede haber hospitales o entes con presupuesto separado. Los giros entre organismos ya incluidos no se cuentan dos veces.",
-      "note": "",
-      "method": "reconciled_objects",
+      "scope": "Departamento Ejecutivo y Concejo Deliberante. Incluye aplicaciones financieras.",
+      "note": "Artículos 1, 2 y 4. El artículo 4 contiene una errata de año (2025); encabezado, artículos 1 y 7 y publicación identifican el presupuesto 2026.",
+      "method": "sum_disjoint_components",
       "documents": [
         {
-          "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/situacioneconomica/2025-situacion-economica-financiera.pdf",
-          "sha256": "abd5630e4caa9d84d89f6d5185e2e9e745579880743ae8a0fb5a2b6615255a4b",
-          "bytes": 306318,
-          "pages": 2,
+          "url": "https://chivilcoy.gov.ar/wp-content/uploads/transparencia/ordenanzapresupuesto/2026-LRF_P1OP.pdf",
+          "sha256": "6c2a9178a7e053e0d7817b5d27dddf7690fd5ca2e2c5772c100bfad440a19aae",
+          "bytes": 339808,
+          "pages": 9,
           "consultedPages": [
-            1
+            1,
+            2
           ],
-          "locator": "Evolución de gastos por objeto: total y rubros de la columna Vigente. Se concilia únicamente el crédito anual; no se incorporan columnas de ejecución."
+          "locator": "Artículos 1, 2 y 4. El artículo 4 contiene una errata de año (2025); encabezado, artículos 1 y 7 y publicación identifican el presupuesto 2026.",
+          "archive": "municipios/data/fiscal-sources/2026-11-19/chiv-2026.pdf"
         }
       ],
       "components": [
         {
-          "label": "Gastos en personal",
-          "amount": "26103834224.28"
+          "label": "Departamento Ejecutivo",
+          "amount": "63306336777.00"
         },
         {
-          "label": "Bienes de consumo",
-          "amount": "7358158568.47"
-        },
-        {
-          "label": "Servicios no personales",
-          "amount": "9723103379.20"
-        },
-        {
-          "label": "Bienes de uso",
-          "amount": "1725432651.33"
-        },
-        {
-          "label": "Transferencias",
-          "amount": "3296057920.98"
-        },
-        {
-          "label": "Activos financieros",
-          "amount": "165501002.18"
-        },
-        {
-          "label": "Servicio de la deuda y disminución de otros pasivos",
-          "amount": "1598332260.11"
+          "label": "Concejo Deliberante",
+          "amount": "1233375146.00"
         }
       ],
-      "componentField": "current",
-      "periodStart": "2025-01-01",
-      "verifiedAt": "2026-10-04"
+      "verifiedAt": "2026-11-19",
+      "componentField": "original"
     },
     {
       "id": "06231",
@@ -1966,6 +1976,64 @@
       "componentField": "current",
       "periodStart": "2026-01-01",
       "verifiedAt": "2026-10-04"
+    },
+    {
+      "id": "06301",
+      "year": 2026,
+      "asOf": "2026-09-30",
+      "periodStart": "2026-01-01",
+      "original": "23485800000.00",
+      "modifications": "1415605614.16",
+      "current": "24901405614.16",
+      "scope": "Municipalidad según estado por objeto del gasto, incluidos servicios de deuda y otros pasivos presupuestarios.",
+      "note": "Autorización anual; no equivale al gasto fiscal ni a la recaudación.",
+      "method": "reconciled_objects",
+      "documents": [
+        {
+          "url": "https://gestion.generalbelgrano.gob.ar/gobiernoabierto/2026/Recursos y Gastos/Gastos/Ejecucion de Gastos 2026 - Acumulado al 30-09.pdf",
+          "path": "municipios/data/budget-sources/06301-2026q3.pdf",
+          "sha256": "accfa90b46d61afa41f131a67946ffac62fab7522a495bf2c7c3a23ccbd070ab",
+          "bytes": 370109,
+          "page": 1,
+          "locator": "Columnas crédito aprobado, modificaciones y vigente; suma de siete objetos del gasto; total vigente duplicado gráficamente se verifica por componentes.",
+          "pages": 1,
+          "consultedPages": [
+            1
+          ]
+        }
+      ],
+      "components": [
+        {
+          "label": "Personal",
+          "amount": "13520184562.99"
+        },
+        {
+          "label": "Bienes de consumo",
+          "amount": "3588481126.16"
+        },
+        {
+          "label": "Servicios no personales",
+          "amount": "4898201712.68"
+        },
+        {
+          "label": "Bienes de uso",
+          "amount": "848767184.71"
+        },
+        {
+          "label": "Transferencias",
+          "amount": "886978443.54"
+        },
+        {
+          "label": "Activos financieros",
+          "amount": "101705838.25"
+        },
+        {
+          "label": "Servicio de deuda y otros pasivos",
+          "amount": "1057086745.83"
+        }
+      ],
+      "componentField": "current",
+      "verifiedAt": "2026-10-19"
     },
     {
       "id": "06308",
@@ -3168,6 +3236,34 @@
       "verifiedAt": "2026-10-04"
     },
     {
+      "id": "06490",
+      "year": 2026,
+      "asOf": "2025-12-12",
+      "original": "480834988472.67",
+      "current": null,
+      "modifications": null,
+      "scope": "Presupuesto general aprobado. Incluye recursos afectados, aplicaciones y gastos figurativos. El total publicado no es un gasto consolidado ejecutado.",
+      "note": "Ordenanza 19523, artículo 1 y cuadros de finalidad y función y clasificación económica. La suma de DE y HCD citada en el digesto sólo corresponde al Tesoro de libre disponibilidad.",
+      "method": "published_original",
+      "documents": [
+        {
+          "url": "https://www.concejoldez.gob.ar/detalle_norma/4875",
+          "sha256": "2f69a65de88fd5419a287c70f7ae86d643e8e5e175c5c7e3c71528850d87e83d",
+          "bytes": 1388934,
+          "pages": 23,
+          "consultedPages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Ordenanza 19523, artículo 1 y cuadros de finalidad y función y clasificación económica. La suma de DE y HCD citada en el digesto sólo corresponde al Tesoro de libre disponibilidad.",
+          "archive": "municipios/data/fiscal-sources/2026-11-19/lomas-ordenanza.pdf"
+        }
+      ],
+      "components": [],
+      "verifiedAt": "2026-11-19"
+    },
+    {
       "id": "06497",
       "year": 2026,
       "asOf": "2026-06-30",
@@ -3926,6 +4022,32 @@
       "componentField": "current",
       "periodStart": "2026-01-02",
       "verifiedAt": "2026-10-04"
+    },
+    {
+      "id": "06630",
+      "year": 2026,
+      "asOf": "2025-12-30",
+      "original": "20584000000.00",
+      "current": null,
+      "modifications": null,
+      "scope": "Presupuesto General de Erogaciones municipal aprobado para 2026.",
+      "note": "Ordenanza 2766/25, artículo 2. Importe verificado visualmente en el original escaneado.",
+      "method": "published_original",
+      "documents": [
+        {
+          "url": "https://pila.gob.ar/descargar_digesto.php?id=47",
+          "sha256": "b3b83e268001ff81aceee1ec5ec455c42025e52a1c02957b98d18b8390d71dd7",
+          "bytes": 376871,
+          "pages": 2,
+          "consultedPages": [
+            1
+          ],
+          "locator": "Ordenanza 2766/25, artículo 2. Importe verificado visualmente en el original escaneado.",
+          "archive": "municipios/data/fiscal-sources/2026-11-19/06630-2.pdf"
+        }
+      ],
+      "components": [],
+      "verifiedAt": "2026-11-19"
     },
     {
       "id": "06638",
@@ -5424,6 +5546,33 @@
       "verifiedAt": "2026-10-04"
     },
     {
+      "id": "06819",
+      "year": 2026,
+      "asOf": "2025-12-22",
+      "original": "31515252000.00",
+      "current": null,
+      "modifications": null,
+      "scope": "Administración Central y Honorable Concejo Deliberante.",
+      "note": "Ordenanza 4002/25, artículos 2 y 3. Recursos y gastos por el mismo total.",
+      "method": "published_original",
+      "documents": [
+        {
+          "url": "https://sibom.slyt.gba.gob.ar/bulletins/14456.pdf",
+          "sha256": "a484bf92fae86bd5159148eb51b4411e0412b7ddf4899f849e51096be463aa80",
+          "bytes": 411443,
+          "pages": 88,
+          "consultedPages": [
+            9,
+            10
+          ],
+          "locator": "Ordenanza 4002/25, artículos 2 y 3. Recursos y gastos por el mismo total.",
+          "archive": "municipios/data/fiscal-sources/2026-11-19/tornquist.pdf"
+        }
+      ],
+      "components": [],
+      "verifiedAt": "2026-11-19"
+    },
+    {
       "id": "06826",
       "year": 2026,
       "asOf": "2026-06-30",
@@ -5876,64 +6025,6 @@
       "componentField": "current",
       "periodStart": "2026-01-05",
       "verifiedAt": "2026-10-04"
-    },
-    {
-      "id": "06301",
-      "year": 2026,
-      "asOf": "2026-09-30",
-      "periodStart": "2026-01-01",
-      "original": "23485800000.00",
-      "modifications": "1415605614.16",
-      "current": "24901405614.16",
-      "scope": "Municipalidad según estado por objeto del gasto, incluidos servicios de deuda y otros pasivos presupuestarios.",
-      "note": "Autorización anual; no equivale al gasto fiscal ni a la recaudación.",
-      "method": "reconciled_objects",
-      "documents": [
-        {
-          "url": "https://gestion.generalbelgrano.gob.ar/gobiernoabierto/2026/Recursos y Gastos/Gastos/Ejecucion de Gastos 2026 - Acumulado al 30-09.pdf",
-          "path": "municipios/data/budget-sources/06301-2026q3.pdf",
-          "sha256": "accfa90b46d61afa41f131a67946ffac62fab7522a495bf2c7c3a23ccbd070ab",
-          "bytes": 370109,
-          "page": 1,
-          "locator": "Columnas crédito aprobado, modificaciones y vigente; suma de siete objetos del gasto; total vigente duplicado gráficamente se verifica por componentes.",
-          "pages": 1,
-          "consultedPages": [
-            1
-          ]
-        }
-      ],
-      "components": [
-        {
-          "label": "Personal",
-          "amount": "13520184562.99"
-        },
-        {
-          "label": "Bienes de consumo",
-          "amount": "3588481126.16"
-        },
-        {
-          "label": "Servicios no personales",
-          "amount": "4898201712.68"
-        },
-        {
-          "label": "Bienes de uso",
-          "amount": "848767184.71"
-        },
-        {
-          "label": "Transferencias",
-          "amount": "886978443.54"
-        },
-        {
-          "label": "Activos financieros",
-          "amount": "101705838.25"
-        },
-        {
-          "label": "Servicio de deuda y otros pasivos",
-          "amount": "1057086745.83"
-        }
-      ],
-      "componentField": "current",
-      "verifiedAt": "2026-10-19"
     }
   ],
   "pending": [
@@ -5992,12 +6083,6 @@
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
     {
-      "id": "06490",
-      "municipality": "Lomas de Zamora",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
       "id": "06525",
       "municipality": "Marcos Paz",
       "status": "pending",
@@ -6022,12 +6107,6 @@
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     },
     {
-      "id": "06630",
-      "municipality": "Pila",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
       "id": "06648",
       "municipality": "Presidente Perón",
       "status": "pending",
@@ -6048,12 +6127,6 @@
     {
       "id": "06812",
       "municipality": "Tordillo",
-      "status": "pending",
-      "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
-    },
-    {
-      "id": "06819",
-      "municipality": "Tornquist",
       "status": "pending",
       "note": "Todavía no se incorporó un total anual respaldado por un documento oficial. No se estima a partir de transferencias ni de gastos parciales."
     }

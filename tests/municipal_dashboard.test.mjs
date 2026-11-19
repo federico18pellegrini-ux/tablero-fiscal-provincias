@@ -61,7 +61,7 @@ test('all ranking indicators explain their colors and missing data never becomes
 });
 
 test('budget rankings compare one exercise and type without silently mixing cutoff dates',()=>{
-  for(const [basis,count] of [['junio',80],['vigente',97],['original',23]]){
+  for(const [basis,count] of [['junio',80],['vigente',98],['original',27]]){
     const meta=rankingMetric(metric('presupuesto-total'),basis),ranked=rankMunicipalities(rows,meta);
     assert.equal(ranked.length,count);
     for(const [i,r] of ranked.entries()){
