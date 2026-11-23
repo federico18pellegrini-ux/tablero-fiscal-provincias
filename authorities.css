@@ -1,0 +1,9 @@
+.district-authority{font-size:16px;line-height:1.5;font-weight:400;margin:8px 0 12px;color:var(--text-secondary,#526178);max-width:100%;overflow-wrap:anywhere}
+.district-authority[hidden]{display:none!important}
+.municipality-heading .district-authority{font-size:16px;line-height:1.5;margin:8px 0 10px}
+.district-authority a{color:inherit;text-decoration:none;text-underline-offset:3px}
+.district-authority a:hover,.district-authority a:focus-visible{text-decoration:underline}
+.district-authority .authority-name{font-weight:650;color:var(--text-primary,#0a192f)}
+[data-theme=dark] .district-authority{color:#bbc7d8}
+[data-theme=dark] .district-authority .authority-name{color:#eef3fa}
+@media(max-width:640px){.district-authority{font-size:16px;line-height:1.55;margin:8px 0 12px}.district-authority .authority-party{display:inline}}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUCCA ENCABEZÓ LA APERTURA DE SESIONES DEL HCD Y MARCÓ EL RUMBO DE GESTIÓN PARA BOLÍVAR, Bolívar Municipio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<link href="/css/styles.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154759763-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+gtag('config', 'UA-154759763-1');
+</script></head>
+
+<body>
+    
+<header id="mainheader">
+    <div id="headerwrapper">
+        <div id="upper" class="flex justify-between items-center p-5 gap-3">
+            <a class="block img100" href="/" id="logo" aria-label="Inicio">
+                <img src="/images/logo_blanco.png" alt="Bolívar Municipio">
+            </a>
+            <nav id="headredes">
+                <ul class="flex gap-2">
+                    <li><a href="/buscar/" id="verbuscador" aria-label="Buscar noticias"
+                            aria-expanded="false" aria-controls="buscador"><i class="ti ti-search"></i></a></li>
+                    <li><a href="https://www.facebook.com/gobierno.bolivar/" target="_blank"><i
+                                class="ti ti-brand-facebook-filled"></i></a></li>
+                    <li><a href="https://www.instagram.com/gobiernobolivar/p/Bj4ozpchJVp/" target="_blank"><i
+                                class="ti ti-brand-instagram"></i></a></li>
+                    <li><a href="https://www.twitter.com/gobiernobolivar/" target="_blank"><i
+                                class="ti ti-brand-x"></i></a>
+                    </li>
+                    <li><a href="https://www.youtube.com/user/gobiernobolivar/" target="_blank"><i
+                                class="ti ti-brand-youtube-filled"></i></a></li>
+                </ul>
+            </nav>
+            <a href="#" id="vermenu"><i class="ti ti-menu-2"></i></a>
+
+            <!-- BUSCADOR -->
+            <form id="buscador" class="cut-tr-sm cut-br" action="/buscar/" method="get"
+                role="search">
+                <input type="search" name="q" id="qbuscador" placeholder="Buscar noticias..."
+                    aria-label="Buscar noticias" autocomplete="off" maxlength="80" value="">
+                <button type="submit" aria-label="Buscar"><i class="ti ti-search"></i></button>
+            </form>
+        </div>
+
+        <!-- NAV -->
+        <nav id="mainnav">
+            <ul id="mainul">
+                <li class="lipadre">
+                    <a class="cut-tr-md" href="bolivar">Bolívar</a>
+                    <ul>
+                        <li><a href="/el-partido">El Partido</a></li>
+                        <li><a href="/alertas-y-avisos">Alertas y avisos</a></li>
+                        <li><a href="/noticias">Noticias</a></li>
+                    </ul>
+                </li>
+                <li class="lipadre">
+                    <a class="cut-tr-md" href="atencion-a-la-comunidad">Atención a la comunidad</a>
+                    <ul>
+                        <!-- <li><a href="/guia-de-tramites">Guía de Trámites</a></li> -->
+                        <!-- <li><a href="">Servicios municipales</a></li> -->
+                        <li><a href="/rentas">Pago de tasas</a></li>
+                        <li><a href="/guia-de-servicios/#farmacias">Farmacia de turno</a></li>
+                        <li><a href="https://embo.bolivar.gob.ar/" target="_blank">Estacionamiento</a></li>
+                        <!-- <li><a href="">Reclamos y consultas</a></li> -->
+                        <li><a href="http://proveedores.bolivar.gob.ar:8083/login" target="_blank">Proveedores</a></li>
+                        <li><a href="https://www.bolivar.gob.ar/rrhh" target="_blank">Personal Municipal</a></li>
+                    </ul>
+                </li>
+                <li class="lipadre">
+                    <a class="cut-tr-md" href="atencion-a-la-comunidad">Gobierno abierto</a>
+                    <ul>
+                        <li><a href="/transparencia-fiscal">Transparencia fiscal</a></li>
+                        <li><a href="/boletin-oficial">Boletín Oficial</a></li>
+                        <li><a href="https://www.hcdbolivar.gob.ar/">HCD</a></li>
+                    </ul>
+                </li>
+                <li class="lipadre">
+                    <a class="cut-tr-md" href="atencion-a-la-comunidad">Turismo</a>
+                    <ul>
+                        <li><a href="/guia-de-servicios">Guía de servicios</a></li>
+                        <li><a href="/experiencias">Experiencias</a></li>
+                        <li><a href="/agenda">Agenda</a></li>
+                        <li><a href="/cine-avenida">Cartelera de cine</a></li>
+                        <!-- <li><a href="">Eventos destacados</a></li> -->
+                    </ul>
+                </li>
+                <li class="lipadre">
+                    <a class="cut-tr-md" href="atencion-a-la-comunidad">Municipio</a>
+                    <ul>
+                        <li><a href="/autoridades">Autoridades</a></li>
+                        <li><a href="/participacion-ciudadana">Participación ciudadana</a></li>
+                        <li><a href="/enlaces-institucionales">Enlaces institucionales</a></li>
+                        <li><a href="/programas">Programas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+
+    <section id="content">
+        <section id="noticia">
+            <h1 class="tit1 color-azul">BUCCA ENCABEZÓ LA APERTURA DE SESIONES DEL HCD Y MARCÓ EL RUMBO DE GESTIÓN PARA BOLÍVAR</h1>
+            <figure class="img100 cut-tr-md cut-br overflow-hidden mb-3 img-noticia"><img
+                    src="/imagenes/20260320103613-bucca-encabez-la-apertura-de-sesiones-.jpg" alt="BUCCA ENCABEZÓ LA APERTURA DE SESIONES DEL HCD Y MARCÓ EL RUMBO DE GESTIÓN PARA BOLÍVAR" />
+                <div class="data-noticia">
+                    <ul>
+                                                <li><i class="ti ti-calendar"></i> 20 de Marzo de 2026</li>
+                    </ul>
+                </div>
+            </figure>
+            <article id="descripcion"><p>El intendente Eduardo “Bali” Bucca encabezó la apertura del 107° Período de Sesiones Ordinarias del Honorable Concejo Deliberante de Bolívar, donde brindó su mensaje anual, repasó los primeros meses de gestión desde su asunción el pasado 10 de diciembre de 2025 y trazó las principales líneas de acción para el desarrollo del distrito.</p>
+
+<p> </p>
+
+<p>En un discurso centrado en la planificación, el ordenamiento y la participación, el jefe comunal puso especial énfasis en la necesidad de construir una visión de ciudad compartida, que trascienda a la gestión municipal y se consolide como un compromiso colectivo.</p>
+
+<p> </p>
+
+<p>“La misión y la visión de una ciudad tiene que ser una y tiene que ser compartida, no solamente por la gestión municipal, sino fundamentalmente por la comunidad, las instituciones y cada vecino y vecina”, expresó Bucca, quien destacó que sin una visión clara “es muy difícil trazar un programa de gestión”.</p>
+
+<p> </p>
+
+<p>En ese sentido, remarcó la importancia de la infraestructura como base del desarrollo, recordando el impulso a obras estratégicas como la ampliación de redes de energía y gas, y reafirmando el compromiso de avanzar en cordón cuneta, pavimento, mejorados y extensión de servicios básicos en los barrios, acompañando el crecimiento urbano con una mirada integral que mejore la calidad de vida.</p>
+
+<p> </p>
+
+<p>El intendente también destacó la implementación de una metodología de trabajo basada en planificación, procesos claros e indicadores de gestión, que permitan evaluar resultados, corregir desvíos y optimizar el funcionamiento de cada área municipal.</p>
+
+<p> </p>
+
+<p>Uno de los anuncios centrales fue el próximo ingreso al Concejo Deliberante de un nuevo Código de Convivencia, un proyecto de ordenanza de alrededor de 300 artículos que busca actualizar la normativa vigente, derogar más de 60 ordenanzas obsoletas y ordenar la vida cotidiana de la comunidad. La iniciativa será abierta a la participación de instituciones, fuerzas políticas y vecinos, con el objetivo de construir un marco normativo consensuado y representativo.</p>
+
+<p> </p>
+
+<p>“Queremos que sea un código de toda la comunidad, que se debata, que se conozca y que se cumpla”, señaló, al tiempo que reafirmó su convicción de que la participación ciudadana debe ser un eje central de la gestión.</p>
+
+<p> </p>
+
+<p>Durante su mensaje, Bucca repasó además acciones en distintas áreas de gobierno. En materia ambiental, subrayó la responsabilidad comunitaria en la gestión de residuos y el trabajo en el saneamiento de la planta de tratamiento de residuos sólidos urbanos.</p>
+
+<p>En materia de salud, informó sobre el avance de dos importantes proyectos de infraestructura en el Hospital: la modernización de los servicios de Clínica Médica y Cirugía, y la construcción de una nueva área de Esterilización, fundamentales para optimizar la calidad de atención y fortalecer el sistema sanitario local.</p>
+
+<p> </p>
+
+<p>En seguridad, valoró el trabajo de la Dirección de Protección Ciudadana y Defensa Civil, junto con la incorporación de nuevas cámaras de vigilancia, el reordenamiento del tránsito y el acompañamiento a la Justicia para el esclarecimiento de hechos delictivos.</p>
+
+<p> </p>
+
+<p>Asimismo, mencionó el Plan de Reconstrucción y Mantenimiento de Caminos Rurales, desarrollado en articulación con la Universidad Nacional del Centro de la Provincia de Buenos Aires, instituciones agropecuarias y productores locales; y el avance del Plan Hídrico, que incluye limpieza de bocas de tormenta y mantenimiento de canales para mejorar el escurrimiento del agua.</p>
+
+<p> </p>
+
+<p>En el plano social y comunitario, el intendente reafirmó la importancia de un Estado presente, cercano a las instituciones y a quienes más lo necesitan, promoviendo la organización vecinal para el acceso a servicios como gas y mejoras urbanas.</p>
+
+<p> </p>
+
+<p>También destacó el impulso a la cultura y la educación, con una agenda activa orientada a fortalecer el desarrollo de los hacedores culturales y garantizar el acceso a formación de calidad en la ciudad. En ese sentido, remarcó el acompañamiento a lo largo de todo el recorrido educativo, desde los Jardines Maternales Municipales hasta el fortalecimiento del CRUB, generando oportunidades concretas para jóvenes de Bolívar y la región. Asimismo, puso en valor el rol de los centros de formación profesional, por su alta convocatoria y su aporte clave al desarrollo local. “Nuestra mirada es estar muy cerca de la educación”, expresó.</p>
+
+<p> </p>
+
+<p>En materia productiva, subrayó la importancia de promover carreras vinculadas a la generación de valor agregado, alineadas con el perfil y las necesidades del distrito. En ese marco, destacó que Bolívar cuenta con condiciones estratégicas, como la línea de 132 kV, que permiten proyectar el crecimiento de empresas e industrias. “Estamos transitando el paso de pueblo a ciudad y tenemos un gran potencial de desarrollo”, afirmó, al tiempo que remarcó la apuesta al desarrollo agroindustrial, el acompañamiento al comercio y la industria y el impulso al emprendedurismo local como ejes centrales de la gestión.</p>
+
+<p> </p>
+
+<p>Finalmente, Bucca convocó a todos los sectores a trabajar de manera conjunta: instituciones, fuerzas políticas y comunidad en general, para construir el futuro del distrito. “Los invito a participar, a acercar iniciativas, a debatir, a organizarnos y a construir entre todos la ciudad que queremos”, expresó.</p>
+
+<p> </p>
+
+<p>El intendente cerró su mensaje agradeciendo el acompañamiento de la comunidad y reafirmando su identidad y cercanía con los vecinos: “Somos de la calle, estamos en la calle. Naturalmente venimos de ahi. Hoy estamos frente a una situación muy compleja pero ¿qué vamos a hacer? Vamos a redoblar la apuesta y vamos a ir para adelante”. Y finalmente, dejó inaugurado el 107° Período de Sesiones Ordinarias del Honorable Concejo Deliberante de Bolívar.</p>
+</article>
+        </section>
+
+    </section>
+
+    <footer id="mainfooter">
+    <div id="datafooter" class="cut-tr-md flex justify-start gap-4 p-4 items-center cut-br flow-wrap">
+        <figure class="img100"><img alt="Eduardo Bucca Intendente"
+                src="/images/eduardo-bucca-intendente.png" /></figure>
+        <figure class="img100"><img alt="Bolívar Municipio" src="/images/logo_azul.png" />
+        </figure>
+        <address>
+            <ul>
+                <li><i class="ti ti-brand-instagram"></i> @bolivarmunicipio</li>
+                <li><i class="ti ti-brand-facebook-filled"></i> Bolívar Municipio</li>
+                <li><i class="ti ti-brand-whatsapp"></i> (02314) 466474</li>
+                <li><i class="ti ti-map-pin"></i> Belgrano 11</li>
+            </ul>
+        </address>
+    </div>
+    <nav>
+        <ul class="flex gap-3 items-center">
+            <li><a class="cut-tr-sm p-1 bg-celeste color-azul block pr-3" href="https://www.bolivar.gob.ar/rrhh"
+                    target="_blank">Personal Municipal</a></li>
+            <li><a class="cut-tr-sm p-1 bg-celeste color-azul block pr-3"
+                    href="http://proveedores.bolivar.gob.ar:8083/login" target="_blank">Portal de proveedores</a>
+            </li>
+            <li>
+                <a href="https://wa.me/5492314466474" id="whatsapp-flotante" target="_blank" rel="noopener"
+                    aria-label="Escribinos por WhatsApp">
+                    <i class="ti ti-brand-whatsapp"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+
+<script src="/js/funciones.min.js?v=1"></script></body>
+
+</html>

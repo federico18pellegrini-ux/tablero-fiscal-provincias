@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title id="metaTitle">Municipalidad de Laprida</title>	
+
+
+        <meta name="description" id="metaDescription" content="">
+
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="https://www.laprida.gov.ar/assets/img/favicon.ico" type="image/x-icon" />
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/animate/animate.min.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/magnific-popup/magnific-popup.min.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/css/theme.css?t=33">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/css/theme-elements.css?t=33">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/css/theme-blog.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/css/theme-shop.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/css/custom.css">
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/vendor/rs-plugin/css/navigation.css">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/css/skins/default.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="https://www.laprida.gov.ar/assets/css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="https://www.laprida.gov.ar/assets/vendor/modernizr/modernizr.min.js"></script>
+		
+
+
+	</head>
+	<body>
+
+		<div class="body">
+			<header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 17, 'stickySetTop': '-25px', 'stickyChangeLogo': true}">
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-logo">
+									<a href="https://www.laprida.gov.ar/home">
+										<img alt="Municipalidad de Laprida" width="180" data-sticky-width="180"  data-sticky-top="15" src="https://www.laprida.gov.ar/assets/img/laprida_blanco.png">
+									</a>
+								</div>
+							</div>
+							<ul class="header-social-icons social-icons hidden-xs" style="float:right;">
+								<li ><a href="https://www.facebook.com/GobiernoMunicipalLaprida/" target="_blank" title="Facebook"><img src="https://www.laprida.gov.ar/assets/img/facebook_header.png" height="15px"></li>
+								<li ><a href="https://www.instagram.com/laprida_gobiernomunicipal/" target="_blank" title="Instagram"><img src="https://www.laprida.gov.ar/assets/img/ig_header.png" height="15px"></a></li>
+								<li ><a href="http://bit.ly/LAPRIDA" target="_blank" title="Youtube"><img src="https://www.laprida.gov.ar/assets/img/yt_header.png" height="15px"></a></li>
+							</ul>
+							<div class="header-row">
+									<div class="header-nav">
+										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+											<i class="fa fa-bars"></i>
+										</button>
+										
+										<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse" >
+											<nav>
+												<ul class="nav nav-pills" id="mainNav">
+																																						<li class="dropdown">
+														<a class="dropdown-toggle" href="">
+															MUNICIPIO														</a>
+																												<ul class="dropdown-menu">
+																														    															        <li><a href="https://laprida.gov.ar/contenido/estructura_organica">Organigrama</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/hcd">HCD</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/consejo_escolar">Consejo Escolar</a></li>
+																																													</ul>
+																											</li>
+																										<li class="dropdown">
+														<a class="dropdown-toggle" href="">
+															LEGISLACIONES														</a>
+																												<ul class="dropdown-menu">
+																														    															        <li><a href="https://laprida.gov.ar/contenido/archivo/boletin">Boletín oficial </a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/archivo/ordenanza">Ordenanzas Municipales</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/archivo/textosordenados">Textos Ordenados</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/archivo/ddjj">Declaraciones juradas</a></li>
+																																														    															        <li><a href="https://www.laprida.gov.ar/uploads/ANEXO_DIGESTO_AMBIENTAL_Y_SOSTENIBLE_LAPRIDA.pdf">Digesto Ambiental</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/archivo/licitacion">Licitaciones</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/padron_vehicular">Padron Vehicular - Ord. 2739</a></li>
+																																													</ul>
+																											</li>
+																										<li class="dropdown">
+														<a class="dropdown-toggle" href="">
+															TURISMO														</a>
+																												<ul class="dropdown-menu">
+																														    															        <li><a href="https://laprida.gov.ar/contenido/p/ubicacion">Ubicación</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/p/historia">Historia</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/p/descripcion_distrito">Descripción del distrito</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/p/sanjorge">San Jorge</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/p/obras_de_salamone">Obras de Salamone</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/p/complejo_el_paraiso">Complejo “El Paraíso”</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/p/turismo_ambiental">Turismo ambiental</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/eventos">Eventos</a></li>
+																																													</ul>
+																											</li>
+																										<li class="dropdown">
+														<a class="dropdown-toggle" href="">
+															PROVEEDORES														</a>
+																												<ul class="dropdown-menu">
+																														    															        <li><a href="https://laprida.gov.ar/contenido/p/nuevoproveedor">Nuevo proveedor</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/p/gestiondeproveedores">Gestión de proveedores</a></li>
+																																													</ul>
+																											</li>
+																										<li class="dropdown">
+														<a class="dropdown-toggle" href="">
+															PERSONAL														</a>
+																												<ul class="dropdown-menu">
+																														    															        <li><a href="http://45.182.115.67:8085/login">Sueldos</a></li>
+																																													</ul>
+																											</li>
+																										<li class="dropdown">
+														<a class="dropdown-toggle" href="">
+															SALUD														</a>
+																												<ul class="dropdown-menu">
+																														    															        <li><a href="http://45.182.115.67:8000/portal/Login.aspx?ReturnUrl=%2fportal">Médicos</a></li>
+																																														    															        <li><a href="https://vmcloud.visualmedica.com/viewer/index.php">Tomografías</a></li>
+																																														    															        <li><a href="https://laprida.gov.ar/contenido/p/medicosespecialistas">Médicos especialistas</a></li>
+																																													</ul>
+																											</li>
+																										<li class="dropdown">
+														<a class="dropdown-toggle" href="https://laprida.gov.ar/noticias">
+															NOTICIAS														</a>
+																											</li>
+																									</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			
+<div role="main" class="main">
+
+	<section class="page-header" style='border-bottom: 5px solid #CCC;'>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Organigrama</h1>
+				</div>
+			</div>
+		</div>
+			
+	</section>
+
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="heading-primary mt-xl">Estructura Org&aacute;nica</h3>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<ul class="history">
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Alfredo_Fisher.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>INTENDENTE MUNICIPAL</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Intendente Municipal: </strong>Alfredo Fisher</h4><br>
+								<b>Direcci&oacute;n:</b> Avda. San Mart&iacute;n 1160 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421 301- 420 535 / 420 057 / 420 347<br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Cristian_Sampayo.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE GOBIERNO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Secretario de Gobierno: </strong>Cristian Sampayo</h4><br>
+								<b>Direcci&oacute;n:</b> Avda. San Mart&iacute;n 1160 - (7414) Laprida<br>
+								<b>Tel:</b>(02285) 421 301- 420 535 / 420 057 / 420 347 | Int. 19<br>
+								<b>Email: </b> laprida.gobierno@gmail.com<br>
+							</div>
+						</div>
+					</li>
+					
+					<!--li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/1.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+							<h4 class="heading-primary"><strong>SECRETARIA DE GOBIERNO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Directora de Asistencia Social Directa: </strong></h4><br>
+								<b>Direcci&oacute;n:</b> Santamarina 821- (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421321<br>
+								<b>Email: </b><br>
+							</div>
+						</div>
+					</li-->
+					
+					<!--li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Alejandra_Casemayor.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE GOBIERNO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Directora de Cultura: </strong></h4><br>
+								<b>Direcci&oacute;n:</b> Santamarina 1322 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421301/420535/420347 Int. 32/38<br>
+								<b>Email: </b>culturalaprida2@gmail.com<br>
+							</div>
+						</div>
+					</li-->
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Viviana_Lopez.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE GOBIERNO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Directora de Educaci&oacute;n: </strong>Viviana L&oacute;pez</h4><br>
+								<b>Direcci&oacute;n:</b> Rivadavia 1358 - (7414) Laprida<br>
+								<b>Tel:</b>  (02285) 420900 <br>
+								<b>Email: </b> educacionlaprida@gmail.com <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Agustin_Bernadaz.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE GOBIERNO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Director de Deportes: </strong>Agustin Bernadaz</h4><br>
+								<b>Direcci&oacute;n:</b> Avda. San Mart&iacute;n esq. M&aacute;ximo Paz - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421403<br> 
+								<b>Email: </b> laprida.deporte@gmail.com <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Gerardo_Couchez.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE GOBIERNO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Director de Vivienda Social y H&aacute;bitat: </strong>Gerardo Couchez</h4><br>
+								<b>Direcci&oacute;n:</b> Santamarina 830 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 420856/420556<br>
+								<b>Email: </b> laprida.vivienda@gmail.com<br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Estefanía_Alvarez.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE GOBIERNO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Directora de Políticas Comunitarias e Inclusión: </strong>Estefanía Álvarez</h4><br>
+								<b>Direcci&oacute;n:</b> Santamarina 830 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 420856 <br>
+								<b>Email: </b> laprida.derechos@gmail.com<br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Marcos_Lavandera.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE GOBIERNO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Subsecretario de Desarrollo Local: </strong>Marcos Lavandera</h4><br>
+								<b>Direcci&oacute;n:</b> Avenida San Martín 1753 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421501 / 420087 <br>
+								<b>Email: </b> laprida.produccion@gmail.com<br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Sergio_Ferraro.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE ECONOMIA Y FINANZAS</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Secretario de Economia y Finanzas: </strong>Sergio Ferraro</h4><br>
+								<b>Direcci&oacute;n:</b> Avenida San Mart&iacute;n 1160 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421 301- 420 535 / 420 057 / 420 347 | Int. 12 <br>
+								<b>Email: </b> laprida.hacienda@gmail.com<br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Maria_Alonso.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE ECONOMIA Y FINANZAS</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Directora de Gestión de Personal: </strong>María Alonso</h4><br>
+								<b>Direcci&oacute;n:</b> Avenida San Mart&iacute;n 1160 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421 301 / 420 535 / 420 057 / 420 347  <br>
+								<b>Email: </b> recursoshumanoslaprida@gmail.com<br>
+							</div>
+						</div>
+					</li>
+
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Carolina_Locati.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE ECONOMIA Y FINANZAS</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Tesorera: </strong>Carolina Locati</h4><br>
+								<b>Direcci&oacute;n:</b> Avenida San Martín 1160 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421 301- 420 535 / 420 057 / 420 347 | Int. 48 <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Ricardo_Maitini.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE ECONOMIA Y FINANZAS</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Contador público: </strong>Ricardo Maitini</h4><br>
+								<b>Direcci&oacute;n:</b> Avenida San Martín 1160 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421 301- 420 535 / 420 057 / 420 347 | Int. 48 <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Bonifacio_Molina.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE ECONOMIA Y FINANZAS</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Jefe de Compras: </strong>Bonifacio Molina</h4><br>
+								<b>Direcci&oacute;n:</b> Avenida San Martín 1160 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421 301- 420 535 / 420 057 / 420 347 | Int. 21 / 35<br>
+								<b>Email: </b> laprida.jefe.de.compras@gmail.com<br>
+							</div>
+						</div>
+					</li>
+
+
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Juan_Errobidart.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE INFRAESTRUCTURA, VIVIENDAS Y SERVICIOS PUBLICOS </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Secretario de Infraestructura, Viviendas y Servicios Públicos: </strong>Juan Errobidart</h4><br>
+								<b>Direcci&oacute;n:</b> Avenida San Mart&iacute;n 1160 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421 301- 420 535 / 420 057 / 420 347 | Int. 14 / 34 <br>
+								<b>Email: mlobraspublicas@gmail.com</b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Marcos_Lacal.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE INFRAESTRUCTURA, VIVIENDAS Y SERVICIOS PUBLICOS </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Subsecretario de Obras Sanitarias: </strong>Marcos Lacal</h4><br>
+								<b>Direcci&oacute;n:</b> Benito Martínez 1105 - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 421496 <br>
+								<b>Email: laprida.obras.sanitarias@gmail.com</b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Manuel_Pardal.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE INFRAESTRUCTURA, VIVIENDAS Y SERVICIOS PUBLICOS </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Subsecretario de Servicios Públicos y Medio Ambiente: </strong>Manuel Pardal </h4><br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Maria_Castex.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE INFRAESTRUCTURA, VIVIENDAS Y SERVICIOS PUBLICOS </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Directora de Administración y Compras Viales: </strong>Maria Castex  </h4><br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Fernando_Fernandez.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE INFRAESTRUCTURA, VIVIENDAS Y SERVICIOS PUBLICOS </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Director de Ambiente y Sustentabilidad: </strong>Fernando Fernandez  </h4><br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Rodolfo_Angeli.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE INFRAESTRUCTURA, VIVIENDAS Y SERVICIOS PUBLICOS </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Director de Servicios Públicos y Mantenimientos de Obras: </strong>Rodolfo Angeli  </h4><br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Silvio_Portarrieu.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE INFRAESTRUCTURA, VIVIENDAS Y SERVICIOS PUBLICOS </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Director de Caminos Rurales: </strong>Silvio Portarrieu   </h4><br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Jose_Diaz.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE INFRAESTRUCTURA, VIVIENDAS Y SERVICIOS PUBLICOS </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Director de Taller Vial: </strong>José Díaz </h4><br>
+							</div>
+						</div>
+					</li>
+
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Fernando_Vecini.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE SALUD</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Secretario de Salud: </strong>Fernando Vecini</h4><br>
+								<b>Direcci&oacute;n:</b> Sancholuz y Lavalle - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 420182 / 420340 Int. 41 <br>
+								<b>Email: lapridasecretariadesalud@gmail.com </b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<!--li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Romina_Simon.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE SALUD</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Dirección Administrativa Hospital Municipal: </strong>Romina Simón</h4><br>
+								<b>Direcci&oacute;n:</b> Sancholuz y Lavalle - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 420182 / 420340 Int. 41 <br>
+								<b>Email: lapridasecretariadesalud@gmail.com </b> <br>
+							</div>
+						</div>
+					</li-->
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Fernando_Andreatta.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE SALUD</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Director Médico Hospital Municipal: </strong>Fernando Andreatta</h4><br>
+								<b>Direcci&oacute;n:</b> Sancholuz y Lavalle - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 420182 / 420340 <br>
+								<b>Email: laprida.hospital@gmail.com </b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Silvio_Schwab.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE SALUD</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Director de Atención Primaria de la Salud : </strong>Silvio Schwab</h4><br>
+								<b>Direcci&oacute;n:</b> Sancholuz y Lavalle - (7414) Laprida<br>
+								<b>Tel:</b> (02285) 420182 / 420340 <br>
+								<b>Email: apslaprida@yahoo.com.ar</b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Daniel_Bayones.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE PROTECCION CIUDADANA Y ORDEN PUBLICO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Secretario de Protección Ciudadana y Orden Publico: </strong>Daniel Bayonés</h4><br>
+								<b>Direcci&oacute;n:</b> Independencia 1456 - (7414) Laprida<br>
+								<b>Tel:</b>(02285) 419394 <br>
+								<b>Email: lapridaseguridad@gmail.com</b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Josefina_Aguado.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE PROTECCION CIUDADANA Y ORDEN PUBLICO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Directora de Protección Ciudadana y prevención Vial: </strong>Josefina Aguado</h4><br>
+								<b>Direcci&oacute;n:</b> Independencia 1456 - (7414) Laprida<br>
+								<b>Tel:</b>(02285) 419394 <br>
+								<b>Email: lapridaseguridad@gmail.com</b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/1.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>SECRETARIA DE PROTECCION CIUDADANA Y ORDEN PUBLICO</strong> </h4><br>
+								<h4 class="heading-primary"><strong>Direcci&oacute;n de Bromatología y Tenencia Responsable de Mascotas: </strong>Dra Carola Vera</h4><br>
+								<b>Direcci&oacute;n:</b> Acceso Papa Francisco KM 2 - (7414) Laprida<br>
+								<b>Tel:</b> (2284) 586380 <br>
+								<b>Email: mlbromato@gmail.com</b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Karina_Pais.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>JUEZA DE FALTAS </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Jueza de Faltas: </strong>Karina Pais</h4><br>
+								<b>Direcci&oacute;n:</b> Santamarina 1133 - (7414) Laprida<br>
+								<b>Tel:</b>  (02285) 420472 / 421963 <br>
+								<b>Email: juezadefaltaslaprida@gmail.com</b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Leticia_Locati.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>ASESORIA LETRADA  </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Asesora Letrada: </strong>Leticia Locati</h4><br>
+								<b>Direcci&oacute;n:</b> Avenida San Martín 1160 - (7414) Laprida<br>
+								<b>Tel:</b>  (02285) 421 301- 420 535 / 420 057 / 420 347 | Int. 13/24<br>
+								<b>Email: laprida.asesoria@gmail.com</b> <br>
+							</div>
+						</div>
+					</li>
+					
+					<li class="appear-animation" data-appear-animation="fadeInUp">
+						<div class="thumb">
+							<img src="https://www.laprida.gov.ar/uploads/organigrama/Valeria_Errobidart.jpg" alt="" />
+						</div>
+						<div class="featured-box">
+							<div class="box-content">
+								<h4 class="heading-primary"><strong>DELEGACIÓN SAN JORGE   </strong> </h4><br>
+								<h4 class="heading-primary"><strong>Delegada San Jorge: </strong>Valeria Errobidart</h4><br>
+								<b>Direcci&oacute;n:</b>D'Elia 703 - (7414) San Jorge<br>
+								<b>Tel:</b> (02286) 492009 / 492040 <br>
+								<b>Email: mlsanjorge@laprida.net</b> <br>
+							</div>
+						</div>
+					</li>
+					
+					
+
+				</ul>
+
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<footer id="footer" style="margin-top:0px">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-2">
+				&nbsp;
+			</div>
+
+			<div class="col-md-4">
+				<div class="contact-details">
+				<img src="https://www.laprida.gov.ar/assets/img/laprida_blanco.png" width="50%"><br><br>
+					<ul class="contact">
+						<li><p><i class="fa fa-map-marker"></i> <strong>Direcci&oacute;n:</strong> Av. San Mart&iacute;n 1160</p></li>
+						<li><p><i class="fa fa-phone"></i> <strong>Tel&eacute;fono:</strong> (02285) 421-301</p></li>
+						<li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@laprida.gob.ar">info@laprida.gob.ar</a></p></li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="col-md-4" style="text-align:center">
+				<b>REDES SOCIALES</b><br>
+				<ul class="header-social-icons social-icons hidden-xs" >
+					<li ><a href="https://www.facebook.com/GobiernoMunicipalLaprida/" target="_blank" title="Facebook"><img src="https://www.laprida.gov.ar/assets/img/facebook_header.png" height="15px"></li>
+					<li ><a href="https://www.instagram.com/laprida_gobiernomunicipal/" target="_blank" title="Instagram"><img src="https://www.laprida.gov.ar/assets/img/ig_header.png" height="15px"></a></li>
+					<li ><a href="https://www.youtube.com/hashtag/lapridaambientalysostenible" target="_blank" title="Youtube"><img src="https://www.laprida.gov.ar/assets/img/yt_header.png" height="15px"></a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-2">
+				&nbsp;
+			</div>
+		</div>
+	</div>
+				
+	</footer>
+</div>
+
+
+		<!-- Vendor -->
+		<script src="https://www.laprida.gov.ar/assets/vendor/jquery/jquery.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/jquery.appear/jquery.appear.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/jquery-cookie/jquery-cookie.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/common/common.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/jquery.validation/jquery.validation.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/isotope/jquery.isotope.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/vide/vide.min.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="https://www.laprida.gov.ar/assets/js/theme.js"></script>
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="https://www.laprida.gov.ar/assets/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="https://www.laprida.gov.ar/assets/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		
+		<!-- Theme Custom -->
+		<script src="https://www.laprida.gov.ar/assets/js/custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="https://www.laprida.gov.ar/assets/js/theme.init.js"></script>
+		
+		<script src="https://www.laprida.gov.ar/assets/js/examples/examples.gallery.js"></script>	
+		<script src="https://www.laprida.gov.ar/assets/js/examples/examples.carousels.js"></script>	
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
+
+		 <script src="https://www.laprida.gov.ar/assets/js/accordion.js"></script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74934652-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-74934652-1');
+		</script>
+		
+	</body>
+</html>
