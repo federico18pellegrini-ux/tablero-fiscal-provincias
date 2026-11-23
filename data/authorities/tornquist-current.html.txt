@@ -1,0 +1,1339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="INSPIRO" />
+    <meta name="description" content="Themeforest Template Polo, html template">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    <title>Gobierno Abierto | Tornquist Municipio</title>
+	<!-- DataTables css -->
+    <link href='plugins/datatables/datatables.min.css' rel='stylesheet' />
+    <!-- Stylesheets & Fonts -->
+    <link href="css/plugins.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<script type="text/javascript" src="https://provincianet.s1gateway.com/pe/QJ7VrawFtVRB"></script>
+</head>
+
+<body>
+    <!-- Body Inner -->
+    <div class="body-inner">
+        
+				<!-- Topbar -->
+		<div id="topbar" class="d-none d-xl-block d-lg-block topbar-fullwidth">
+        <!--<div id="topbar" class="topbar-transparent dark">-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="top-menu">
+                            <li><a href="#">Teléfonos: 494-1075/494-1105/494-1204<!--Phone: +1 (234) 567-890--></a></li>
+                            <li><a href="#">Email: info@tornquist.gov.ar<!--contact@inspiro-media.com--></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 d-none d-sm-block">
+                        <div class="social-icons social-icons-colored-hover">
+                            <ul>
+                                <li class="social-facebook"><a href="https://www.facebook.com/tornquistmunicipio/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="social-twitter"><a href="https://twitter.com/TornquistMun" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li class="social-google"><a href="https://www.instagram.com/tornquistmunicipio/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <!--<li class="social-pinterest"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                <li class="social-vimeo"><a href="#"><i class="fab fa-vimeo"></i></a></li>
+                                <li class="social-linkedin"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li class="social-dribbble"><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                <li class="social-youtube"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li class="social-rss"><a href="#"><i class="fa fa-rss"></i></a></li>-->
+								<li class="social-rss" title="Iniciar Sesión"><a href="iniciar-sesion"><i class="fa fa-sign-in-alt"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end: Topbar -->		<!-- Header -->
+        <header id="header" data-fullwidth="true">
+		<!--<header id="header" data-transparent="true" data-fullwidth="true">-->
+            <div class="header-inner">
+                <div class="container">
+                    <!--Logo-->
+                    <div id="logo">
+                        <a href="inicio">
+                            <span><img class="img-fluid" src="images/municipalidad.png" alt="Tonquist Municipio"><!--POLO--></span>
+                            <!--<span class="logo-dark"><img class="img-fluid" src="images/municipalidad.png" alt="Tonquist Municipio"><!--POLO--</span>-->
+                        </a>
+                    </div>
+                    <!--End: Logo-->
+                    <!-- Search -->
+                    <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
+                        <form class="search-form" action="search-results-page.html" method="get">
+                            <input class="form-control" name="q" type="text" placeholder="Buscar..." />
+                            <span class="text-muted">Escriba lo que desee y presione "Enter" o "ESC" para cerrar</span>
+                        </form>
+                    </div>
+                    <!-- end: search -->
+                    <!--Header Extras-->
+                    <div class="header-extras">
+                        <ul>
+                            <li>
+                                <a id="btn-search" href="#"> <i class="icon-search"></i></a>
+                            </li>
+                            <li>
+                                <div class="p-dropdown">
+                                    <a href="#"><i class="icon-globe"></i><span>ES</span></a>
+                                    <ul class="p-dropdown-content">
+                                        <li><a href="#">Inglés</a></li>
+                                        <li><a href="#">Portugués</a></li>
+                                        <li><a href="#">Francés</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end: Header Extras-->
+                    <!--Navigation Resposnive Trigger-->
+                    <div id="mainMenu-trigger">
+                        <a class="lines-button x"><span class="lines"></span></a>
+                    </div>
+                    <!--end: Navigation Resposnive Trigger-->
+                    <!--Navigation-->
+                    <div id="mainMenu">
+                        <div class="container">
+                            <nav>
+                                <ul>
+                                    <li><a href="inicio">Inicio</a></li>
+                                    <li class="dropdown"><a href="#">Secretarías</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown-submenu"><a href="#">Autoridades Municipales</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="autoridades-municipales">Integrantes</a></li>
+                                                    <li><a href="honorable-concejo-deliberante">Honorable Concejo Deliberante</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown-submenu"><a href="secretaria-de-gobierno-y-gestion-publica">Secretaría de Gobierno y Gestión Pública</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="subsecretaria-de-comunicacion-e-innovacion-publica">Subsecretaría de Comunicación e Innovación Pública</a></li>
+                                                </ul>
+                                            </li>
+											<!--<li><a href="secretaria-de-hacienda">Secretaría de Hacienda</a></li>-->
+											<li class="dropdown-submenu"><a href="secretaria-de-hacienda">Secretaría de Hacienda</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="area-de-compras">Área de Compras</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown-submenu"><a href="secretaria-de-desarrollo">Secretaría de Desarrollo<!--<span class="badge bg-danger">NEW</span>--></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="subsecretaria-de-cultura">Subsecretaría de Cultura</a></li>
+                                                    <li><a href="subsecretaria-de-deportes">Subsecretaría de Deportes</a></li>
+                                                    <li><a href="subsecretaria-de-desarrollo-social">Subsecretaría de Desarrollo Social</a></li>
+                                                    <li><a href="subsecretaria-de-infancias-y-juventudes">Subsecretaría de Infancias y Juventudes</a></li>
+                                                    <li><a href="direccion-de-genero-y-diversidades">Dirección de Género y Diversidades</a></li>
+                                                </ul>
+                                            </li>
+											<li><a href="secretaria-de-salud">Secretaría de Salud</a></li>
+											<li><a href="secretaria-de-obras-y-servicios-publicos">Secretaría de Obras y Servicios Públicos</a></li>
+											<!--<li><a href="secretaria-de-seguridad">Secretaría de Seguridad</a></li>-->
+											<li class="dropdown-submenu"><a href="secretaria-de-seguridad">Secretaría de Seguridad</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="turnos">Turnos Licencia de Conducir</a></li>
+                                                </ul>
+                                            </li>
+											<li><a href="secretaria-de-turismo">Secretaría de Turismo</a></li>
+                                            <li class="dropdown-submenu"><a href="secretaria-de-ambiente-y-desarrollo-productivo">Secretaría de Ambiente y Desarrollo Productivo</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="subsecretaria-de-ambiente-y-desarrollo-sostenible">Subsecretaría de Ambiente y Desarrollo Sostenible</a></li>
+                                                    <li><a href="oficina-de-empleo">Oficina de Empleo</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!--<li class="dropdown"><a href="#">Trámites</a>
+                                        <ul class="dropdown-menu">
+											<li><a href="area-de-compras">Área de Compras</a></li>
+											<li><a href="turnos">Turnos Licencia de Conducir</a></li>
+											<li><a href="https://tornquist.gob.ar/gestion/documentos/secretarias/secretaria-de-ambiente-y-desarrollo-productivo/Guia-de-Arbolado-Urbano.pdf">Atención Ciudadana</a></li>
+											<li><a href="https://tasas.tornquist.gob.ar/tasas-web" target="_blank">Factura Digital</a></li>
+                                        </ul>
+                                    </li>-->
+									<li><a href="https://tor-bue-gestion.paisdigital.modernizacion.gob.ar/#/reclamos" target="_blank">Atención Ciudadana</a></li>
+									<li><a href="https://tasas.tornquist.gob.ar/tasas-web" target="_blank">Tasas Web</a></li>
+									<li><a href="gobierno-abierto">Gobierno Abierto</a></li>
+									<li><a href="https://portalempleado.tornquist.gob.ar/" target="_blank">Portal del Empleado</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!--end: Navigation-->
+                </div>
+            </div>
+        </header>
+        <!-- end: Header -->		
+        <!-- Page title -->
+        <section id="page-title" data-bg-parallax="images/parallax/sierras2.jpg">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Gobierno Abierto</h1>
+                    <!--<span>Our awesome clients!</span>-->
+                </div>
+                <div class="breadcrumb" style="margin-bottom: 300px;">
+                    <ul>
+                        <li><a href="inicio">Inicio</a></li>
+                        <li class="active"><a href="#">Gobierno Abierto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- end: Page title -->
+        <!-- Page Content -->
+        <section id="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="content col-lg-12">
+						<div class="card">
+                            <!--<div class="card-header">
+                                <span class="h4">Recordatorio de Vencimientos</span>
+                                <p class="text-muted">Registrate con tus datos para recibir mensualmente notificaciones de vencimiento de tus tasas.</p>
+                            </div>-->
+                            <div class="card-body">
+                                <p>Desde el año 2015, uno de los objetivos centrales de la actual gestión de gobierno municipal, es la apertura y transparencia de sus actos.</p>
+								<p>En tal sentido, se han ido trazando líneas que reflejan las distintas iniciativas, dependientes de la Secretaría de Desarrollo, ejecutadas por la Dirección de Comunicación y Modernización municipal.</p>
+								<p>Dentro de las principales funciones que se desarrollan en esta área encontramos:</p>
+								<ul style= "list-style-type: square;">
+									<li><b>Participación Ciudadana</b>: Presupuesto Participativo 2016 y 2017. En ambos periodos se brindó la posibilidad, por primera vez en la historia de nuestro distrito, a la ciudadanía de ejercer el control de cómo se utilizan los recursos públicos. </li>
+									<li><b>Apertura y Transparencia de Datos</b>: brinda a los vecinos la posibilidad de acceder a la información pública y rendición de cuentas, a través de la web municipal. Asimismo se dispone de los datos de los actuales funcionarios de gobierno. </li>
+									<li><b>Generación de Informes Anuales</b>: con el fin socializar aún más los actos de gobierno, año tras año se desarrollan informes que ponen de manifiesto cada una de las acciones realizadas por las secretarías y direcciones municipales. </li>
+								</ul>
+                            </div>
+                        </div>
+                        <!-- Accordion -->
+                        <div class="accordion">
+                            <div class="ac-item ac-active">
+                                <h5 class="ac-title" style="color: #5dae75">Datos <strong>Económicos</strong></h5>
+                                <div class="ac-content">
+                                    <div class="tabs">
+										<ul class="nav nav-tabs" id="myTab" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="presupuesto-tab" data-bs-toggle="tab" href="#presupuesto" role="tab" aria-controls="presupuesto" aria-selected="true">Presupuesto y Cálculo de Recursos</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="situacion-tab" data-bs-toggle="tab" href="#situacion" role="tab" aria-controls="situacion" aria-selected="false">Situación Económico-Financiera</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="codigo-tab" data-bs-toggle="tab" href="#codigo" role="tab" aria-controls="codigo" aria-selected="false">Código Tributario</a>
+											</li>
+										</ul>
+										<div class="tab-content" id="myTabContent">
+											<div class="tab-pane fade show active" id="presupuesto" role="tabpanel" aria-labelledby="presupuesto-tab">
+																										<!-- DataTable -->
+														<div class="row mb-3">
+															<div class="col-lg-6">
+																<!--<h4>Tabla con Documentos</h4>
+																<p>Ordenados de mayor a menor.</p>-->
+															</div>
+															<div class="col-lg-6 text-end">
+																<!--<div id="export_buttons" class="mt-2"></div>-->
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-lg-12">
+																<table id="pycdr" class="table table-bordered table-hover" style="width:100%">
+																	<thead>
+																		<tr>
+																			<th>Año</th>
+																			<th>Descripción</th>
+																			<th class="noExport">Acciones</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																																						<tr>
+																					<td>2026</td>
+																					<td>Presupuesto General de Gastos y Recursos Ejercicio 2026</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/presupuesto-ejercicio-2026.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2025</td>
+																					<td>Presupuesto General de Gastos y Recursos Ejercicio 2025</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/presupuesto-ejercicio-2025.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2024</td>
+																					<td>Presupuesto General de Gastos y Recursos Ejercicio 2024</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/presupuesto-ejercicio-2024.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2023</td>
+																					<td>Presupuesto General de Gastos y Recursos Ejercicio 2023</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/presupuesto-ejercicio-2023.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2022</td>
+																					<td>Proyecto del Cálculo de Recursos y Presupuesto de Gastos 2022 [588 al 638]</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/588-a-638.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2022</td>
+																					<td>Proyecto del Cálculo de Recursos y Presupuesto de Gastos 2022 [541 al 587]</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/541-a-587.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2022</td>
+																					<td>Proyecto del Cálculo de Recursos y Presupuesto de Gastos 2022 [486 al 540]</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/486-a-540.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2022</td>
+																					<td>Proyecto del Cálculo de Recursos y Presupuesto de Gastos 2022 [430 al 485]</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/430-a-485.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2022</td>
+																					<td>Proyecto del Cálculo de Recursos y Presupuesto de Gastos 2022 [369 al 429]</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/369-a-429.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2022</td>
+																					<td>Proyecto del Cálculo de Recursos y Presupuesto de Gastos 2022 [1 al 5 y 317 al 368]</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/presupuesto-y-calculo-de-recursos/1-a-5-y-de-317-a-368.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																			</tbody>
+																	<!--<tfoot>
+																		<tr>
+																			<th>Name</th>
+																			<th>Position</th>
+																			<th>Office</th>
+																			<th>Age</th>
+																			<th>Date</th>
+																			<th>Salary</th>
+																			<th>Status</th>
+																			<th>Actions</th>
+																		</tr>
+																	</tfoot>-->
+																</table>
+															</div>
+														</div>
+														<!-- end: DataTable -->
+																							</div>
+											<div class="tab-pane fade" id="situacion" role="tabpanel" aria-labelledby="situacion-tab">
+																										<div class="tabs">
+															<ul class="nav nav-tabs" id="myTab" role="tablist">
+																																			<li class="nav-item">
+																				<a class="nav-link active" id="twenty-sixth-tab" data-bs-toggle="tab" href="#twenty-sixth" role="tab" aria-controls="twenty-sixth" aria-selected="true">2026</a>
+																			</li>
+																																			<li class="nav-item">
+																				<a class="nav-link" id="twenty-fifth-tab" data-bs-toggle="tab" href="#twenty-fifth" role="tab" aria-controls="twenty-fifth" aria-selected="false">2025</a>
+																			</li>
+																																			<li class="nav-item">
+																				<a class="nav-link" id="twenty-fourth-tab" data-bs-toggle="tab" href="#twenty-fourth" role="tab" aria-controls="twenty-fourth" aria-selected="false">2024</a>
+																			</li>
+																																			<li class="nav-item">
+																				<a class="nav-link" id="twenty-third-tab" data-bs-toggle="tab" href="#twenty-third" role="tab" aria-controls="twenty-third" aria-selected="false">2023</a>
+																			</li>
+																																			<li class="nav-item">
+																				<a class="nav-link" id="twenty-second-tab" data-bs-toggle="tab" href="#twenty-second" role="tab" aria-controls="twenty-second" aria-selected="false">2022</a>
+																			</li>
+																																			<li class="nav-item">
+																				<a class="nav-link" id="twenty-first-tab" data-bs-toggle="tab" href="#twenty-first" role="tab" aria-controls="twenty-first" aria-selected="false">2021</a>
+																			</li>
+																																			<li class="nav-item">
+																				<a class="nav-link" id="twentieth-tab" data-bs-toggle="tab" href="#twentieth" role="tab" aria-controls="twentieth" aria-selected="false">2020</a>
+																			</li>
+																																			<li class="nav-item">
+																				<a class="nav-link" id="nineteenth-tab" data-bs-toggle="tab" href="#nineteenth" role="tab" aria-controls="nineteenth" aria-selected="false">2019</a>
+																			</li>
+																															</ul>
+															<div class="tab-content" id="myTabContent">
+																																			<div class="tab-pane fade show active" id="twenty-sixth" role="tabpanel" aria-labelledby="twenty-sixth-tab">
+																																											<h4>Las Autoridades firmantes al 30/06/2026 son:</h4>
+																																																												
+																						<table class="table table-bordered table-hover">
+																							<thead>
+																								<tr>
+																									<th scope="col">Al</th>
+																									<th scope="col">Intendente Municipal</th>
+																									<th scope="col">Secretario/a de Hacienda</th>
+																									<th scope="col">Contador/a Municipal</th>
+																									<th scope="col">Tesorero/a Municipal</th>
+																									<th scope="col">Acciones</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																																																		<tr>
+																											<td>30/06/2026</td>
+																											<td>Estefania Bordoni</td>
+																											<td>Andrés Villalba</td>
+																											<td>Cra. Alina Campoy</td>
+																											<td>Maria Pamela Nazón</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-30-06-2026.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																															</tbody>
+																						</table>
+																				
+																																							</div>
+																																			<div class="tab-pane fade" id="twenty-fifth" role="tabpanel" aria-labelledby="twenty-fifth-tab">
+																																											<h4>Las Autoridades firmantes al 30/06/2025 y 31/12/2025 son:</h4>
+																																																												
+																						<table class="table table-bordered table-hover">
+																							<thead>
+																								<tr>
+																									<th scope="col">Al</th>
+																									<th scope="col">Intendente Municipal</th>
+																									<th scope="col">Secretario/a de Hacienda</th>
+																									<th scope="col">Contador/a Municipal</th>
+																									<th scope="col">Tesorero/a Municipal</th>
+																									<th scope="col">Acciones</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																																																		<tr>
+																											<td>31/12/2025</td>
+																											<td>Estefania Bordoni</td>
+																											<td>Andrés Villalba [Interino]</td>
+																											<td>Patricia B. Pelizza [Interina]</td>
+																											<td>María Pamela Nazón</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2025.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																																		<tr>
+																											<td>30/06/2025</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>Patricia B. Pelizza [Interina]</td>
+																											<td>María Pamela Nazón [Interina]</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-30-06-2025.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																															</tbody>
+																						</table>
+																				
+																																							</div>
+																																			<div class="tab-pane fade" id="twenty-fourth" role="tabpanel" aria-labelledby="twenty-fourth-tab">
+																																											<h4>Las Autoridades firmantes al 30/06/2024 y 31/12/2024 son:</h4>
+																																																												
+																						<table class="table table-bordered table-hover">
+																							<thead>
+																								<tr>
+																									<th scope="col">Al</th>
+																									<th scope="col">Intendente Municipal</th>
+																									<th scope="col">Secretario/a de Hacienda</th>
+																									<th scope="col">Contador/a Municipal</th>
+																									<th scope="col">Tesorero/a Municipal</th>
+																									<th scope="col">Acciones</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																																																		<tr>
+																											<td>31/12/2024</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>José Gastón Márquez</td>
+																											<td>María de los Angeles Elizalde</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2024.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																																		<tr>
+																											<td>30/06/2024</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>José Gastón Márquez</td>
+																											<td>María de los Angeles Elizalde</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-30-06-2024.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																															</tbody>
+																						</table>
+																				
+																																							</div>
+																																			<div class="tab-pane fade" id="twenty-third" role="tabpanel" aria-labelledby="twenty-third-tab">
+																																											<h4>Las Autoridades firmantes al 30/06/2023 y 31/12/2023 son:</h4>
+																																																												
+																						<table class="table table-bordered table-hover">
+																							<thead>
+																								<tr>
+																									<th scope="col">Al</th>
+																									<th scope="col">Intendente Municipal</th>
+																									<th scope="col">Secretario/a de Hacienda</th>
+																									<th scope="col">Contador/a Municipal</th>
+																									<th scope="col">Tesorero/a Municipal</th>
+																									<th scope="col">Acciones</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																																																		<tr>
+																											<td>31/12/2023</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>José Gastón Márquez</td>
+																											<td>María de los Angeles Elizalde</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2023.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																																		<tr>
+																											<td>30/06/2023</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>José Gastón Márquez</td>
+																											<td>María de los Angeles Elizalde</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-30-06-2023.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																															</tbody>
+																						</table>
+																				
+																																							</div>
+																																			<div class="tab-pane fade" id="twenty-second" role="tabpanel" aria-labelledby="twenty-second-tab">
+																																											<h4>Las Autoridades firmantes al 30/06/2022 y 31/06/2022 son:</h4>
+																																																												
+																						<table class="table table-bordered table-hover">
+																							<thead>
+																								<tr>
+																									<th scope="col">Al</th>
+																									<th scope="col">Intendente Municipal</th>
+																									<th scope="col">Secretario/a de Hacienda</th>
+																									<th scope="col">Contador/a Municipal</th>
+																									<th scope="col">Tesorero/a Municipal</th>
+																									<th scope="col">Acciones</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																																																		<tr>
+																											<td>31/12/2022</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>José Gastón Márquez</td>
+																											<td>María de los Angeles Elizalde</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2022.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																																		<tr>
+																											<td>30/06/2022</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>José Gastón Márquez</td>
+																											<td>María de los Angeles Elizalde</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-30-06-2022.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																															</tbody>
+																						</table>
+																				
+																																							</div>
+																																			<div class="tab-pane fade" id="twenty-first" role="tabpanel" aria-labelledby="twenty-first-tab">
+																																											<h4>Las Autoridades firmantes al 30/06/2021 y 31/12/2021 son:</h4>
+																																																												
+																						<table class="table table-bordered table-hover">
+																							<thead>
+																								<tr>
+																									<th scope="col">Al</th>
+																									<th scope="col">Intendente Municipal</th>
+																									<th scope="col">Secretario/a de Hacienda</th>
+																									<th scope="col">Contador/a Municipal</th>
+																									<th scope="col">Tesorero/a Municipal</th>
+																									<th scope="col">Acciones</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																																																		<tr>
+																											<td>31/12/2021</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>José Gastón Márquez</td>
+																											<td>María Teresa Spialtini</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2021.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																																		<tr>
+																											<td>30/06/2021</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>José Gastón Márquez</td>
+																											<td>María Teresa Spialtini</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-30-06-2021.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																															</tbody>
+																						</table>
+																				
+																																							</div>
+																																			<div class="tab-pane fade" id="twentieth" role="tabpanel" aria-labelledby="twentieth-tab">
+																																											<h4>Las Autoridades firmantes al 30/06/2020 y 31/12/2021 son:</h4>
+																																																												
+																						<table class="table table-bordered table-hover">
+																							<thead>
+																								<tr>
+																									<th scope="col">Al</th>
+																									<th scope="col">Intendente Municipal</th>
+																									<th scope="col">Secretario/a de Hacienda</th>
+																									<th scope="col">Contador/a Municipal</th>
+																									<th scope="col">Tesorero/a Municipal</th>
+																									<th scope="col">Acciones</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																																																		<tr>
+																											<td>31/12/2020</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>José Gastón Márquez</td>
+																											<td>María Teresa Spialtini</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2020.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																																		<tr>
+																											<td>30/06/2020</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>María Pamela Nazón</td>
+																											<td>María Teresa Spialtini</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-30-06-2020.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																															</tbody>
+																						</table>
+																				
+																																							</div>
+																																			<div class="tab-pane fade" id="nineteenth" role="tabpanel" aria-labelledby="nineteenth-tab">
+																																											<h4>Las Autoridades firmantes al 30/06/2019 y 31/12/2019 son:</h4>
+																																																												
+																						<table class="table table-bordered table-hover">
+																							<thead>
+																								<tr>
+																									<th scope="col">Al</th>
+																									<th scope="col">Intendente Municipal</th>
+																									<th scope="col">Secretario/a de Hacienda</th>
+																									<th scope="col">Contador/a Municipal</th>
+																									<th scope="col">Tesorero/a Municipal</th>
+																									<th scope="col">Acciones</th>
+																								</tr>
+																							</thead>
+																							<tbody>
+																																																		<tr>
+																											<td>31/12/2019</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Estefanía Bordoni</td>
+																											<td>Andrea González</td>
+																											<td>María Teresa Spialtini</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-31-12-2019.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																																		<tr>
+																											<td>30/06/2019</td>
+																											<td>Sergio F. Bordoni</td>
+																											<td>Ezequiel Gabella</td>
+																											<td>Andrea González</td>
+																											<td>María Teresa Spialtini</td>
+																											<td>
+																												<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																													<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/situacion-economica-financiera/CTA_Sit_Eco-30-06-2019.pdf">
+																													<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																												</form>
+																											</td>
+																										</tr>
+																																															</tbody>
+																						</table>
+																				
+																																							</div>
+																															</div>
+														</div>
+												
+												
+														
+														
+																							</div>
+											<div class="tab-pane fade" id="codigo" role="tabpanel" aria-labelledby="codigo-tab">
+																										<!-- DataTable -->
+														<div class="row mb-3">
+															<div class="col-lg-6">
+																<!--<h4>Tabla con Documentos</h4>
+																<p>Ordenados de mayor a menor.</p>-->
+															</div>
+															<div class="col-lg-6 text-end">
+																<div id="export_buttons_ct" class="mt-2"></div>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-lg-12">
+																<table id="tributario" class="table table-bordered table-hover" style="width:100%">
+																	<thead>
+																		<tr>
+																			<th>Año</th>
+																			<th>Descripción</th>
+																			<th class="noExport">Acciones</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																																						<tr>
+																					<td>2025</td>
+																					<td>Código Tributario 2025</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/codigo-tributario/codigo-tributario-2025.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2024</td>
+																					<td>Código Tributario 2024</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/codigo-tributario/codigo-tributario-2024.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2023</td>
+																					<td>Código Tributario 2023</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/codigo-tributario/codigo-tributario-2023.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																						<tr>
+																					<td>2022</td>
+																					<td>Código Tributario 2022</td>
+																					<td>
+																						<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																							<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/codigo-tributario/ORDENANZA-DEFINITVA-Codigo-Tributario-Municipal-2022.pdf">
+																							<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>-->
+																							<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																							<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																						</form>
+																						<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																						<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																					</td>
+																				</tr>
+																																			</tbody>
+																	<!--<tfoot>
+																		<tr>
+																			<th>Name</th>
+																			<th>Position</th>
+																			<th>Office</th>
+																			<th>Age</th>
+																			<th>Date</th>
+																			<th>Salary</th>
+																			<th>Status</th>
+																			<th>Actions</th>
+																		</tr>
+																	</tfoot>-->
+																</table>
+															</div>
+														</div>
+														<!-- end: DataTable -->
+																							</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                            <div class="ac-item">
+                                <h5 class="ac-title" style="color: #5dae75">Informes de <strong>Gestión</strong></h5>
+                                <div class="ac-content">
+                                    											<!-- DataTable -->
+											<div class="row mb-3">
+												<div class="col-lg-6">
+													<!--<h4>Tabla con Documentos</h4>
+													<p>Ordenados de mayor a menor.</p>-->
+												</div>
+												<div class="col-lg-6 text-end">
+													<div id="export_buttons_inf" class="mt-2"></div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-12">
+													<table id="tributario" class="table table-bordered table-hover" style="width:100%">
+														<thead>
+															<tr>
+																<th>Año</th>
+																<th>Descripción</th>
+																<th class="noExport">Acciones</th>
+															</tr>
+														</thead>
+														<tbody>
+																																<tr>
+																		<td>2024</td>
+																		<td>Informe de Gestión Año 2024</td>
+																		<td>
+																			<a class="btn btn-xs btn-primary" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2024.pdf" target="_blank"><i class="icon-eye"></i> Abrir</a>
+																			<a class="btn btn-xs btn-danger" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2024.pdf" download ><i class="icon-save"></i> Descargar</a>
+																			<!--<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																				<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2024.pdf">
+																				<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>--
+																				<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																				<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																			</form>
+																			<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																		</td>
+																	</tr>
+																																<tr>
+																		<td>2023</td>
+																		<td>Informe de Gestión Año 2023</td>
+																		<td>
+																			<a class="btn btn-xs btn-primary" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2023.pdf" target="_blank"><i class="icon-eye"></i> Abrir</a>
+																			<a class="btn btn-xs btn-danger" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2023.pdf" download ><i class="icon-save"></i> Descargar</a>
+																			<!--<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																				<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2023.pdf">
+																				<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>--
+																				<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																				<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																			</form>
+																			<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																		</td>
+																	</tr>
+																																<tr>
+																		<td>2022</td>
+																		<td>Informe de Gestión Año 2022</td>
+																		<td>
+																			<a class="btn btn-xs btn-primary" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2022.pdf" target="_blank"><i class="icon-eye"></i> Abrir</a>
+																			<a class="btn btn-xs btn-danger" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2022.pdf" download ><i class="icon-save"></i> Descargar</a>
+																			<!--<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																				<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2022.pdf">
+																				<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>--
+																				<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																				<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																			</form>
+																			<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																		</td>
+																	</tr>
+																																<tr>
+																		<td>2021</td>
+																		<td>Informe de Gestión Año 2021</td>
+																		<td>
+																			<a class="btn btn-xs btn-primary" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2021.pdf" target="_blank"><i class="icon-eye"></i> Abrir</a>
+																			<a class="btn btn-xs btn-danger" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2021.pdf" download ><i class="icon-save"></i> Descargar</a>
+																			<!--<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																				<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2021.pdf">
+																				<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>--
+																				<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																				<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																			</form>
+																			<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																		</td>
+																	</tr>
+																																<tr>
+																		<td>2020</td>
+																		<td>Informe de Gestión Año 2020</td>
+																		<td>
+																			<a class="btn btn-xs btn-primary" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2020.pdf" target="_blank"><i class="icon-eye"></i> Abrir</a>
+																			<a class="btn btn-xs btn-danger" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2020.pdf" download ><i class="icon-save"></i> Descargar</a>
+																			<!--<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																				<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2020.pdf">
+																				<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>--
+																				<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																				<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																			</form>
+																			<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																		</td>
+																	</tr>
+																																<tr>
+																		<td>2019</td>
+																		<td>Informe de Gestión Año 2019</td>
+																		<td>
+																			<a class="btn btn-xs btn-primary" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2019.pdf" target="_blank"><i class="icon-eye"></i> Abrir</a>
+																			<a class="btn btn-xs btn-danger" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2019.pdf" download ><i class="icon-save"></i> Descargar</a>
+																			<!--<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																				<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2019.pdf">
+																				<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>--
+																				<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																				<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																			</form>
+																			<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																		</td>
+																	</tr>
+																																<tr>
+																		<td>2018</td>
+																		<td>Informe de Gestión Año 2018</td>
+																		<td>
+																			<a class="btn btn-xs btn-primary" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2018.pdf" target="_blank"><i class="icon-eye"></i> Abrir</a>
+																			<a class="btn btn-xs btn-danger" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2018.pdf" download ><i class="icon-save"></i> Descargar</a>
+																			<!--<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																				<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2018.pdf">
+																				<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>--
+																				<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																				<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																			</form>
+																			<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																		</td>
+																	</tr>
+																																<tr>
+																		<td>2017</td>
+																		<td>Informe de Gestión Año 2017</td>
+																		<td>
+																			<a class="btn btn-xs btn-primary" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2017.pdf" target="_blank"><i class="icon-eye"></i> Abrir</a>
+																			<a class="btn btn-xs btn-danger" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2017.pdf" download ><i class="icon-save"></i> Descargar</a>
+																			<!--<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																				<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2017.pdf">
+																				<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>--
+																				<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																				<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																			</form>
+																			<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																		</td>
+																	</tr>
+																																<tr>
+																		<td>2016</td>
+																		<td>Informe de Gestión Año 2016</td>
+																		<td>
+																			<a class="btn btn-xs btn-primary" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2016.pdf" target="_blank"><i class="icon-eye"></i> Abrir</a>
+																			<a class="btn btn-xs btn-danger" href="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2016.pdf" download ><i class="icon-save"></i> Descargar</a>
+																			<!--<form action="ver-en-linea" method="post" target="_blank" style="margin-top: -15px; margin-bottom: -15px;">
+																				<input type="hidden" name="documento" value="gestion/documentos/gobierno-abierto/informes-de-gestion/INFORME-DE-GESTION-2016.pdf">
+																				<!--<button class="ms-2 text-reset" type="submit" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></button>--
+																				<button name="abrir" class="btn btn-xs btn-slide" data-width="75" type="submit"><i class="icon-eye"></i><span>Abrir</span></button>
+																				<!--<button name="descargar" class="btn btn-xs btn-slide btn-dark" data-width="105" type="submit"><i class="icon-save"></i><span>Descargar</span></button>-->
+																			</form>
+																			<!--<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Abrir"><i class="icon-eye"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Descargar"><i class="icon-save"></i></a>
+																			<a class="ms-2 text-reset" href="#" data-bs-toggle="tooltip" data-bs-original-title="Settings"><i class="icon-settings"></i></a>-->
+																		</td>
+																	</tr>
+																													</tbody>
+														<!--<tfoot>
+															<tr>
+																<th>Name</th>
+																<th>Position</th>
+																<th>Office</th>
+																<th>Age</th>
+																<th>Date</th>
+																<th>Salary</th>
+																<th>Status</th>
+																<th>Actions</th>
+															</tr>
+														</tfoot>-->
+													</table>
+												</div>
+											</div>
+											<!-- end: DataTable -->
+									                                </div>
+                            </div>
+                            <div class="ac-item">
+                                <h5 class="ac-title" style="color: #5dae75">Licitaciones <strong>Públicas</strong></h5>
+                                <div class="ac-content">
+                                    <br>
+									<p>La <b>Oficina de Compras</b> desarrolla todas las operaciones relacionadas a la compra y contrataciones de bienes y servicios de la gestión municipal, garantizando que las mismas se ejecuten bajo la normativa vigente, asegurando que respondan a lo requerido por el Tribunal de Cuentas de la Provincia de Buenos Aires. <br>Asimismo, tiene como función la regularización de las licitaciones del ámbito municipal, y la creación y actualización del Registro de Proveedores.</p>
+							
+									<h6><strong>Proveedores</strong></h6>
+									<p>Para ser proveedor del Municipio de Tornquist es requisito: </p>
+									<ul style= "list-style-type: square;">
+										<li>Constancia Inscripción AFIP.</li>
+										<li>Constancia Inscripción ARBA.</li>
+										<li>De ser una Sociedad copia del Acta Constitutiva y Acta de Cargos Vigente.</li>
+										<li>De ser Profesional copia Matrícula.</li>
+										<li>Constancia de Libre Deuda si reside en el Distrito de Tornquist (se solicita en Recaudación Central).</li>
+										<li>Deberá tener coincidencia el Rubro a Inscribirse con la Actividad Principal, o Secundaria otorgada por AFIP y ARBA.</li>
+										<li>Abonar por única vez $ 2400.</li>
+									</ul>
+									
+									<p>En caso de ser Proveedor en ejercicios anteriores citar Número. El reempadronamiento es SIN CARGO</p>
+									<p>Los interesados deberán enviar toda la información solicitada a <a href="mailto:compras@tornquist.gov.ar" style="color: #5dae75">compras@tornquist.gov.ar</a></p>
+									<p><b><a href="area-de-compras.php" style="color: #5dae75" target="_blank">Formulario de Alta</a></b></p>
+									<p><b>Teléfono: <a style="color: #5dae75">4941075 - Interno 111</a></b></p>
+									<p><b>Email: <a href="ver-en-linea" style="color: #5dae75" target="_blank">compras@tornquist.gov.ar </a></b>
+										<form action="ver-en-linea" method="post" target="_blank">
+											<input type="hidden" name="documento" value="gestion/documentos/doc.pdf">
+											<button class="btn btn-sm btn-outline-primary" type="submit"><span class="fa-solid fa-plus me-sm-2"></span><span class="d-none d-sm-inline">Registrar Atención</span></button>
+										</form>
+									</p>
+                                </div>
+                            </div>
+							<div class="ac-item">
+                                <h5 class="ac-title" style="color: #5dae75"><strong>Personal</strong></h5>
+                                <div class="ac-content">
+                                    <br>
+									<p>El <b>Departamento de Tesorería</b> es el encargado de administrar y controlar los fondos pertenecientes al Municipio de Tornquist, bajo los lineamientos de las normativas vigentes, garantizando la eficiencia y eficacia financiera de la gestión municipal.<br>
+									El objetivo de esta dependencia municipal, es controlar las transacciones financieras, fortaleciendo la transparencia de la gestión de gobierno.</p>
+									<p><b>Teléfono: <a style="color: #5dae75">4941075 - Internos 112/108</a></b></p>
+									<p><b>Email: <a href="mailto:tesoreria@tornquist.gov.ar" style="color: #5dae75">tesoreria@tornquist.gov.ar </a></b></p>
+                                </div>
+                            </div>
+							<div class="ac-item">
+                                <h5 class="ac-title" style="color: #5dae75"><strong>Género</strong></h5>
+                                <div class="ac-content">
+                                    <br>
+									<p>El <b>Area de Contaduría</b> es la encargada de registrar y aprobar todas las transacciones que se generen dentro del ámbito municipal.<br>Asimismo, es la responsable de la elaboración del presupuesto, y el control de los recursos asignados por secretaria. </p>
+									<p><b>Teléfono: <a style="color: #5dae75">4941075 - Interno 136</a></b></p>
+									<p><b>Email: <a href="mailto:contaduriatornquist@gmail.com" style="color: #5dae75">contaduriatornquist@gmail.com</a></b></p>
+                                </div>
+                            </div>
+							<div class="ac-item">
+                                <h5 class="ac-title" style="color: #5dae75"><strong>Turismo</strong></h5>
+                                <div class="ac-content">
+                                    <br>
+									<p>El <b>Area de Contaduría</b> es la encargada de registrar y aprobar todas las transacciones que se generen dentro del ámbito municipal.<br>Asimismo, es la responsable de la elaboración del presupuesto, y el control de los recursos asignados por secretaria. </p>
+									<p><b>Teléfono: <a style="color: #5dae75">4941075 - Interno 136</a></b></p>
+									<p><b>Email: <a href="mailto:contaduriatornquist@gmail.com" style="color: #5dae75">contaduriatornquist@gmail.com</a></b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end: Accordion -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end: Page Content -->
+        <!-- Footer -->
+        		<!-- Footer -->
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="widget">
+                                <div class="widget-title"><img class="img-fluid" src="images/municipalidad.png" alt="Tonquist Municipio"></div>
+								<ul class="list">
+									<li><a href="inicio">Inicio</a></li>
+									<li><a href="https://tor-bue-gestion.paisdigital.modernizacion.gob.ar/#/reclamos" target="blank">Atención Ciudadana</a></li>
+									<li><a href="https://tasas.tornquist.gob.ar/tasas-web" target="_blank">Factura Digital</a></li>
+									<li><a href="gobierno-abierto">Gobierno Abierto</a></li>
+								</ul>
+                                <!--<p class="mb-5">Built with love in Fort Worth, Texas, USA<br> All rights reserved. Copyright © 2021. INSPIRO.</p>
+                                <a href="https://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923" class="btn btn-inverted" target="_blank">Purchase Now</a>-->
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="widget">
+                                        <div class="widget-title">Contacto</div>
+                                        <ul class="list">
+                                            <li><a href="#">Municipalidad de Tornquist</a></li>
+                                            <li><a href="#">Sarmiento 53</a></li>
+                                            <li><a href="#">Tornquist (8160) Buenos Aires, Argentina</a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"><i class="icon icon-phone"></i> +54 (291) 494-1075/1105</a></li>
+                                            <li><a href="#"><i class="fa fa-fax"></i> +54 (291) 494-1204</a></li>
+											<li><a href="#"><i class="icon icon-mail"></i> info@tornquist.gov.ar</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="widget">
+                                        <div class="widget-title">Teléfonos Útiles</div>
+                                        <p><i class="fa fa-medkit"></i> Emergencias: 107</p>
+										<p><i class="fa fa-fire"></i> Bomberos: 100</p>
+										<p><i class="icon icon-shield"></i> Policía: 101 - 911</p>
+                                    </div>
+                                </div>
+                                <!--<div class="col-lg-3">
+                                    <div class="widget">
+                                        <div class="widget-title">Pages</div>
+                                        <ul class="list">
+                                            <li><a href="#">Portfolio</a></li>
+                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="#">Shop</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="widget">
+                                        <div class="widget-title">Support</div>
+                                        <ul class="list">
+                                            <li><a href="#">Help Desk</a></li>
+                                            <li><a href="#">Documentation</a></li>
+                                            <li><a href="#">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-content">
+                <div class="container">
+                    <div class="copyright-text text-center">&copy; 2025 Municipalidad de Tornquist - Todos los Derechos Reservados. Desarrollado por:<a href="https://api.whatsapp.com/send?phone=2914746427" target="_blank" rel="noopener"> MC </a><!--<a href="https://www.inspiro-media.com" target="_blank" rel="noopener"> INSPIRO</a>--> </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end: Footer -->        <!-- end: Footer -->
+    </div>
+    <!-- end: Body Inner -->
+    <!-- Scroll top -->
+    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    <!--Plugins-->
+    <script src="js/jquery.js"></script>
+    <script src="js/plugins.js"></script>
+    <!--Template functions-->
+    <script src="js/functions.js"></script>
+	<!--Datatables plugin files-->
+    <script src='plugins/datatables/datatables.min.js'></script>
+    
+	<script>
+        $(document).ready(function() {
+            var table = $('#pycdr').DataTable({
+				"ordering": false,
+                buttons: [{
+                    extend: 'print',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'pdf',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'excel',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'csv',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'copy',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }]
+            });
+            table.buttons().container().appendTo('#export_buttons');
+            $("#export_buttons .btn").removeClass('btn-secondary').addClass('btn-light');
+        });
+    </script>
+	
+	<script>
+        $(document).ready(function() {
+            var table = $('#tributario').DataTable({
+				"ordering": false,
+                buttons: [{
+                    extend: 'print',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'pdf',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'excel',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'csv',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'copy',
+                    title: 'Test Data export',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }]
+            });
+            table.buttons().container().appendTo('#export_buttons_ct');
+            $("#export_buttons_ct .btn").removeClass('btn-secondary').addClass('btn-light');
+        });
+    </script>
+	
+</body>
+
+</html>

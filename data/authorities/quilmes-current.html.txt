@@ -1,0 +1,2247 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- SCRIPT EPICA 
+      
+    <script type="text/javascript">
+      !function(e,p,i,c,a,A,I){e.epica||(a=e.epica=function(){a.queue.push(arguments)}, 
+      a.queue=[],A=p.createElement(i),A.async=!0,A.src='https://cdn.epica.ai/epica.js/v1/'+c+
+      '/epica.min.js',I=p.getElementsByTagName(i)[0],I.parentNode.insertBefore(A,I))}
+      (window,document,'script','284a80ce9d2ca754a1988c4f7d53140b');
+      epica('page');
+      
+      var title = 'EVA MIERI Y FUNCIONARIOS RECORRIERON LA OFICINA DE ATENCIÓN A LA COMUNIDAD ';
+      var cate = 'Integración Social';
+      epica('track', 'News', {title: title, category: cate});
+    </script>
+-->
+
+
+    <!-- Google Tag Manager 
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-W7JR4WZ');</script>
+		<!- End Google Tag Manager -->
+    <title>Quilmes Municipio - Noticias</title>
+    <meta name="description" content="EVA MIERI Y FUNCIONARIOS RECORRIERON LA OFICINA DE ATENCIÓN A LA COMUNIDAD ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url" content="content=" http://www.quilmes.gov.ar/noticias/noticia.php?id_noti=6056" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="EVA MIERI Y FUNCIONARIOS RECORRIERON LA OFICINA DE ATENCIÓN A LA COMUNIDAD " />
+    <meta property="og:description" content="Más y mejores servicios para vecinos y vecinas" />
+    <meta property="og:image" content="http://www.quilmes.gov.ar/noticias/fotos/6056.jpeg" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300italic,400,400italic|Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../css/extCss.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+
+
+
+</head>
+
+<body class="detalle-noticia noticias">
+    <style>
+        body.detalle-noticia.noticias {
+            background-color: #f5f5f5;
+            background-image: url('../fondos-quilmes-desktop.png');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        body.detalle-noticia.noticias .hero-principal__epigrafe {
+            display: none;
+        }
+
+        /* Layout y estilos detalle (según screenshot) */
+        /* Evita que estilos legacy de .contenedor-sitio limiten el ancho */
+        body.detalle-noticia.noticias .contenedor-sitio.detalle-noticia {
+            max-width: none !important;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        body.detalle-noticia.noticias .ns-container {
+            max-width: 1340px;
+            background-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 40px;
+            box-sizing: border-box;
+            display: block;
+            clear: both;
+        }
+
+        body.detalle-noticia.noticias .ns-layout {
+            display: grid !important;
+            width: 100%;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+            gap: 60px;
+            align-items: start;
+        }
+
+        body.detalle-noticia.noticias .ns-meta-fecha {
+            margin: 0 0 18px;
+            font-family: "Poppins", Arial, sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #7A61A1;
+        }
+
+        body.detalle-noticia.noticias .ns-titulo {
+            margin: 0 0 12px;
+            font-family: "Poppins", Arial, sans-serif;
+            font-weight: 700;
+            font-size: 52px;
+            line-height: 1.15;
+            color: #424242;
+        }
+
+        body.detalle-noticia.noticias .ns-open-lightbox {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        body.detalle-noticia.noticias .ns-volanta {
+            margin: 0 0 10px;
+            font-family: "Poppins", Arial, sans-serif;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 1.2;
+            color: #7A61A1;
+            text-transform: uppercase;
+        }
+
+        body.detalle-noticia.noticias .ns-main {
+            padding-bottom: 40px;
+        }
+
+        body.detalle-noticia.noticias .ns-imagen-principal {
+            margin: 0 0 24px;
+            padding: 0;
+            border: 0;
+            border-bottom: 8px solid #7A61A1;
+            box-sizing: border-box;
+        }
+
+        body.detalle-noticia.noticias .ns-imagen-principal img {
+            display: block;
+            width: 100%;
+            height: auto;
+            vertical-align: top;
+        }
+
+        body.detalle-noticia.noticias .ns-contenido {
+            font-family: "Lato", Arial, sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            color: #424242;
+            text-align: justify;
+        }
+
+        body.detalle-noticia.noticias .ns-contenido p {
+            margin: 0 0 16px;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        body.detalle-noticia.noticias .ns-contenido p span {
+            font-size: 18px !important;
+        }
+
+        body.detalle-noticia.noticias .ns-slider {
+            margin: 40px auto;
+        }
+
+        body.detalle-noticia.noticias .ns-slider .swiper {
+            width: 100%;
+        }
+
+        body.detalle-noticia.noticias .ns-slider__wrap {
+            position: relative;
+        }
+
+        body.detalle-noticia.noticias .ns-slider__main {
+            border-radius: 18px;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+
+        body.detalle-noticia.noticias .ns-slider__nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            background: rgba(122, 97, 161, 0.92);
+            color: #fff;
+            font-family: "Poppins", Arial, sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            transition: background 0.2s ease, opacity 0.2s ease;
+        }
+
+        body.detalle-noticia.noticias .ns-slider__nav:hover {
+            background: rgba(122, 97, 161, 1);
+        }
+
+        body.detalle-noticia.noticias .ns-slider__nav:focus {
+            outline: none;
+        }
+
+        body.detalle-noticia.noticias .ns-slider__nav.swiper-button-disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        body.detalle-noticia.noticias .ns-slider__prev {
+            left: 12px;
+        }
+
+        body.detalle-noticia.noticias .ns-slider__next {
+            right: 12px;
+        }
+
+        body.detalle-noticia.noticias .ns-slider__main .swiper-slide {
+            position: relative;
+            height: 420px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.detalle-noticia.noticias .ns-slider__main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        body.detalle-noticia.noticias .ns-thumbs {
+            margin-top: 12px;
+        }
+
+        body.detalle-noticia.noticias .ns-thumbs .swiper-wrapper {
+            justify-content: center;
+        }
+
+        body.detalle-noticia.noticias .ns-thumbs .swiper-slide {
+            border-radius: 12px;
+            overflow: hidden;
+            opacity: 0.6;
+            cursor: pointer;
+            width: auto;
+        }
+
+        body.detalle-noticia.noticias .ns-thumbs .swiper-slide-thumb-active {
+            opacity: 1;
+            outline: 2px solid rgba(122, 97, 161, 0.55);
+            outline-offset: 2px;
+        }
+
+        body.detalle-noticia.noticias .ns-thumbs img {
+            width: auto;
+            height: 72px;
+            object-fit: contain;
+            display: block;
+        }
+
+        body.detalle-noticia.noticias .ns-sidebar__titulo {
+            margin: 0 0 14px;
+            font-family: "Poppins", Arial, sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 1.2;
+            color: #7A61A1;
+        }
+
+        body.detalle-noticia.noticias .ns-sidebar__divider {
+            height: 1px;
+            background: #E6E0F0;
+            width: 100%;
+            margin: 0 0 18px;
+        }
+
+        body.detalle-noticia.noticias .ns-sidebar__grupo+.ns-sidebar__grupo {
+            margin-top: 28px;
+        }
+
+        body.detalle-noticia.noticias .ns-sidebar__grupo--busqueda {
+            margin-bottom: 28px;
+        }
+
+        body.detalle-noticia.noticias .ns-busqueda {
+            position: relative;
+            width: 100%;
+            margin: 0;
+        }
+
+        body.detalle-noticia.noticias .ns-busqueda input[type="text"] {
+            width: 100%;
+            height: 44px;
+            padding: 0 52px 0 22px;
+            border: none;
+            border-radius: 999px;
+            background: #fff;
+            color: #424242;
+            font-family: "Lato", Arial, sans-serif;
+            font-size: 16px;
+            font-style: italic;
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.95), inset 0 0 0 4px rgba(219, 162, 204, 0.9);
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        body.detalle-noticia.noticias .ns-busqueda input[type="text"]::placeholder {
+            color: #7a61a1;
+            font-style: italic;
+        }
+
+        body.detalle-noticia.noticias .ns-busqueda__btn {
+            position: absolute;
+            top: 50%;
+            right: 6px;
+            transform: translateY(-50%);
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 0 50% 50% 0;
+            background: #7a61a1;
+            color: #fff;
+            padding: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.detalle-noticia.noticias .ns-busqueda__btn svg {
+            width: 25px;
+            height: 25px;
+            fill: currentColor;
+            stroke: currentColor;
+        }
+
+        body.detalle-noticia.noticias .ns-card {
+            background: #ffffff;
+            border: 3px solid #F1F1F1;
+            border-radius: 22px;
+            overflow: hidden;
+            margin: 0 0 18px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+        }
+
+        body.detalle-noticia.noticias .ns-sidebar__grupo .ns-card:last-child {
+            margin-bottom: 0;
+        }
+
+        body.detalle-noticia.noticias .ns-card__texto {
+            padding: 14px 16px 18px;
+        }
+
+        body.detalle-noticia.noticias .ns-card__fecha {
+            margin: 0 0 10px;
+            font-family: "Poppins", Arial, sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 12px;
+            text-transform: uppercase;
+            color: #9A9A99;
+        }
+
+        body.detalle-noticia.noticias .ns-card__titulo {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-clamp: 3;
+            overflow: hidden;
+            text-decoration: none;
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.2;
+            color: #424242;
+        }
+
+        body.detalle-noticia.noticias .ns-card__media {
+            width: 100%;
+            display: block;
+            background: #f3f3f3;
+            border: none;
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body.detalle-noticia.noticias .ns-card__media::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            background: #7A61A1;
+        }
+
+        body.detalle-noticia.noticias .ns-card__media img {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        /* Lightbox */
+        body.detalle-noticia.noticias .ns-lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.78);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            padding: 20px;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox.is-open {
+            display: flex;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__panel {
+            width: min(1100px, 100%);
+            background: transparent;
+            position: relative;
+            padding: 0 90px;
+            box-sizing: border-box;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__bar {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin: 0 0 12px;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__img {
+            width: 100%;
+            max-height: 78vh;
+            object-fit: contain;
+            display: block;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__btn {
+            height: 44px;
+            border-radius: 12px;
+            border: none;
+            background: rgba(122, 97, 161, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            color: #fff;
+            font-family: "Poppins", Arial, sans-serif;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__btn:hover {
+            background: rgba(122, 97, 161, 1);
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__btn:focus {
+            outline: none;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__close {
+            width: 44px;
+            font-size: 26px;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__download {
+            padding: 0 14px;
+            font-size: 14px;
+            gap: 8px;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            font-size: 24px;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__prev {
+            left: 12px;
+        }
+
+        body.detalle-noticia.noticias .ns-lightbox__next {
+            right: 12px;
+        }
+
+        @media (max-width: 900px) {
+            body.detalle-noticia.noticias .ns-lightbox__panel {
+                padding: 0 56px;
+            }
+
+            body.detalle-noticia.noticias .ns-lightbox__img {
+                max-height: 70vh;
+            }
+
+            body.detalle-noticia.noticias .ns-lightbox__bar {
+                margin-bottom: 10px;
+            }
+
+            body.detalle-noticia.noticias .ns-lightbox__download {
+                font-size: 13px;
+                padding: 0 12px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            body.detalle-noticia.noticias {
+                background-image: url('../fondos-quilmes-mobile.png');
+                background-attachment: scroll;
+            }
+
+            body.detalle-noticia.noticias .contenedor-sitio.detalle-noticia {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            body.detalle-noticia.noticias .ns-container {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            body.detalle-noticia.noticias .ns-layout {
+                display: flex !important;
+                flex-direction: column;
+                gap: 28px;
+            }
+
+            body.detalle-noticia.noticias .ns-main,
+            body.detalle-noticia.noticias .ns-sidebar {
+                width: 100%;
+                min-width: 0;
+            }
+
+            body.detalle-noticia.noticias .ns-meta-fecha {
+                font-size: 14px;
+                line-height: 1.4;
+                margin-bottom: 16px;
+            }
+
+            body.detalle-noticia.noticias .ns-slider__main .swiper-slide {
+                height: 220px;
+            }
+
+            body.detalle-noticia.noticias .ns-slider__nav {
+                width: 36px;
+                height: 36px;
+                font-size: 20px;
+                border-radius: 10px;
+            }
+
+            body.detalle-noticia.noticias .ns-slider__prev {
+                left: 8px;
+            }
+
+            body.detalle-noticia.noticias .ns-slider__next {
+                right: 8px;
+            }
+
+            body.detalle-noticia.noticias .ns-slider {
+                margin: 28px auto;
+            }
+
+            body.detalle-noticia.noticias .ns-thumbs img {
+                height: 58px;
+            }
+
+            body.detalle-noticia.noticias .ns-thumbs {
+                margin-top: 10px;
+            }
+
+            body.detalle-noticia.noticias .ns-sidebar__titulo {
+                font-size: 22px;
+            }
+
+            body.detalle-noticia.noticias .ns-sidebar__divider {
+                margin-bottom: 14px;
+            }
+
+            body.detalle-noticia.noticias .ns-card {
+                border-radius: 20px;
+            }
+
+            body.detalle-noticia.noticias .ns-card__media img {
+                height: 190px;
+            }
+
+            body.detalle-noticia.noticias .ns-card__texto {
+                padding: 12px 14px 16px;
+            }
+
+            body.detalle-noticia.noticias .ns-card__titulo {
+                font-size: 17px;
+                line-height: 20px;
+            }
+
+            body.detalle-noticia.noticias .ns-contenido p {
+                font-size: 16px;
+                text-align: justify;
+            }
+
+            body.detalle-noticia.noticias .ns-contenido p span {
+                font-size: 16px !important;
+            }
+
+            body.detalle-noticia.noticias .breadcrumb-componente__contenedor {
+                min-width: 0;
+                flex-wrap: nowrap;
+                overflow: hidden;
+            }
+
+            body.detalle-noticia.noticias .breadcrumb-componente__list {
+                display: flex;
+                flex-wrap: nowrap !important;
+                align-items: center;
+                min-width: 0;
+                width: 100%;
+                flex: 1 1 auto;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            body.detalle-noticia.noticias .breadcrumb-componente__item {
+                white-space: nowrap;
+            }
+
+            body.detalle-noticia.noticias .breadcrumb-componente__enlace {
+                display: inline;
+                white-space: nowrap;
+            }
+
+            body.detalle-noticia.noticias .breadcrumb-componente__separador,
+            body.detalle-noticia.noticias .breadcrumb-componente__item:not(.breadcrumb-componente__item--actual) {
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
+
+            body.detalle-noticia.noticias .breadcrumb-componente__item--actual {
+                display: block;
+                flex: 1 1 auto;
+                min-width: 0;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+        }
+    </style>
+
+    <!--[if lt IE 8]>
+				<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+    <style>
+.site-preheader {
+  width: 100%;
+  background-color: #7a61a1;
+  color: #fff;
+  padding: 8px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.site-preheader .contenedor-sitio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.site-preheader a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+}
+.site-preheader a:hover {
+  color: rgba(255,255,255,0.9);
+}
+.site-preheader a .text {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+.site-preheader a .text::after {
+  content: '';
+  width: 0;
+  transition: width 0.3s ease;
+  height: 1.5px;
+  background-color: #fff;
+  display: flex;
+  bottom: 3px;
+  right: 0;
+  left: 0;
+  position: absolute;
+  margin: 0 auto;
+}
+.site-preheader a:hover .text::after {
+  width: 100%;
+}
+.site-preheader a .arrow-right {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid #fff;
+  vertical-align: middle;
+  scale: 0.7;
+}
+.site-preheader-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.site-preheader-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0.9;
+}
+.site-preheader-social a:hover {
+  opacity: 1;
+}
+.site-preheader-social svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.site-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.site-navbar {
+  background: #fff;
+  position: relative;
+  z-index: 1100;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  min-height: 64px;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.site-navbar-logo {
+  display: flex;
+  align-items: center;
+}
+.site-navbar-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+.site-navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.site-navbar-menu > li {
+  position: relative;
+}
+.site-navbar-menu > li:hover {
+  z-index: 1101;
+}
+.site-navbar-menu > li > a {
+  color: #424242;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 8.9px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+.site-navbar-menu > li > a:last-child::after {
+  content: '';
+  width: 0;
+  transition: width 0.3s ease;
+  height: 1.5px;
+  background-color: #7a61a1;
+  display: flex;
+  bottom: 10.9px;
+  right: 0;
+  left: 0;
+  position: absolute;
+  margin: 0 auto;
+}
+.site-navbar-menu > li > a:last-child:hover::after {
+  width: 70%;
+}
+.site-navbar-menu .arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid currentColor;
+  margin-left: 2px;
+}
+.site-navbar-menu .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-radius: 4px;
+  padding: 7px 0 5px 0;
+  margin-top: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 1101;
+  list-style: none;
+}
+.site-navbar-menu > li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.site-navbar-menu .dropdown a {
+  display: block;
+  padding: 9px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.site-navbar-menu .dropdown a:hover {
+  background: #7a61a1;
+  color: #FFFFFF;
+  border-radius: 0;
+}
+.site-navbar-menu .dropdown a:last-child:hover {
+  border-radius: 0;
+}
+
+/* ----- Hamburger (solo móvil) ----- */
+.site-navbar-toggler {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #7a61a1;
+  flex-shrink: 0;
+}
+.site-navbar-menu a:focus,
+.site-navbar-menu a:active,
+.site-navbar-menu a:focus-visible,
+.site-navbar-toggler:focus,
+.site-navbar-toggler:active,
+.site-navbar-toggler:focus-visible {
+  outline: none;
+}
+.site-navbar-toggler-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+.site-navbar-toggler-icon .hamburger-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 24px;
+  height: 18px;
+  transition: opacity 0.2s ease;
+}
+.site-navbar-toggler-icon .hamburger-lines span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+}
+.site-navbar-toggler-icon .toggler-close-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.site-navbar-toggler-icon .toggler-close-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+.site-header.has-menu-open .site-navbar-toggler-icon .hamburger-lines {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.site-header.has-menu-open .site-navbar-toggler-icon .toggler-close-icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ----- Mobile: menú hamburger (fixed, debajo de pre-header + navbar) ----- */
+@media (max-width: 768px) {
+  .site-header {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .site-preheader {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .site-preheader-social {
+    gap: 10px;
+  }
+  .site-preheader-social svg {
+    width: 20px;
+    height: 20px;
+  }
+  .site-navbar {
+    flex-wrap: wrap;
+  }
+  .site-navbar-toggler {
+    display: flex;
+  }
+  .site-navbar-menu {
+    position: fixed;
+    top: var(--mobile-header-height, 0px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 24px 5vw 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #fff;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+  .site-header.has-menu-open .site-navbar-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .site-header.has-menu-open .site-navbar,
+  body.site-nav-open .site-preheader {
+    position: relative;
+    z-index: 1100;
+  }
+  .site-navbar-menu > li {
+    position: static;
+    border-bottom: 1px solid #eee;
+  }
+  .site-navbar-menu > li > a {
+    padding: 12.9px 0;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .site-navbar-menu > li > a:last-child::after,
+  .site-navbar-menu > li > a:last-child:hover::after {
+    display: none;
+  }
+  .site-navbar-menu .arrow-down {
+    transition: transform 0.25s ease;
+  }
+  .site-navbar-menu > li.is-expanded > a .arrow-down {
+    transform: rotate(180deg);
+  }
+  .site-navbar-menu .dropdown {
+    position: static;
+    min-width: auto;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: max-height 0.3s ease;
+    background: #f8f8f8;
+    border-radius: 0;
+  }
+  .site-navbar-menu > li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .site-navbar-menu > li.is-expanded .dropdown {
+    max-height: 800px;
+  }
+  .site-navbar-menu .dropdown a {
+    padding: 11.9px 16px 11.9px 24px;
+    font-size: 14px;
+    white-space: normal;
+    border-bottom: 1px solid #eee;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .site-navbar-menu .dropdown a:last-child {
+    border-bottom: none;
+  }
+  .site-navbar-menu .dropdown a:hover {
+    background: transparent;
+    color: #333;
+  }
+  .site-navbar-menu .dropdown a:active {
+    background: #7a61a1;
+    color: #fff;
+  }
+  .site-navbar-menu > li > a.is-active,
+  .site-navbar-menu .dropdown a.is-active {
+    background: transparent;
+    color: #333;
+  }
+  .site-navbar-menu > li > a.is-active {
+    padding-left: 0;
+    padding-right: 0;
+    color: #424242;
+  }
+}
+</style>
+
+<div class="site-preheader">
+  <div class="contenedor-sitio">
+    <a href="https://mi.quilmes.gov.ar/"><div class="text">Trámites online</div> <span class="arrow-right"></span></a>
+    <div class="site-preheader-social">
+      <a href="https://www.facebook.com/MunicipalidadDeQuilmesOficial" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/QuilmesMuni" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.youtube.com/channel/UCy11pQzRHH3WFlSRK_0klJA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.instagram.com/quilmesmunicipio/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C8.333.014 7.941 0 7.741 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      <a href="https://wa.me/1544934483?text=Hola%20Quibot" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      <a href="https://www.tiktok.com/@quilmesmuni?_r=1&amp;_t=ZS-97U3HQtJ4JG" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+    </div>
+  </div>
+</div>
+<header class="site-header" id="site-header">
+  <nav class="site-navbar">
+    <a href="/" class="site-navbar-logo">
+      <img src="/img/inicio/logo-quilmes.png" alt="Municipio de Quilmes" />
+    </a>
+    <button type="button" class="site-navbar-toggler" id="site-navbar-toggler" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-navbar-menu">
+      <span class="site-navbar-toggler-icon">
+        <span class="hamburger-lines" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="toggler-close-icon" aria-hidden="true" title="Cerrar menú">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </span>
+    </button>
+    <ul class="site-navbar-menu" id="site-navbar-menu">
+      <li>
+        <a href="/institucional/">Institucional <span class="arrow-down"></span></a>
+        <ul class="dropdown">
+          <li><a href="/institucional/intendenta.php">Intendenta</a></li>
+          <li><a href="/quilmes/la-ciudad.php">Municipio</a></li>
+          <li><a href="https://quilmes.gov.ar/institucional/gobierno_abierto.php">Gobierno Abierto</a></li>
+          <li><a href="/institucional/areas-de-gobierno.php">Áreas de gobierno</a></li>
+          <li><a href="http://hcdquilmes.gob.ar/" target="_blank" rel="noopener">HCD</a></li>
+          <li><a href="/quilmes/puntos-de-interes.php">Puntos de interés</a></li>
+          <li><a href="/quilmes/sig.php">Mapa interactivo</a></li>
+          <li><a href="/institucional/defensoria-del-pueblo.php">Defensoria del Pueblo</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/gestion/">Gestión <span class="arrow-down"></span></a>
+        <ul class="dropdown">
+          <li><a href="/compromisos/index.php">Compromisos</a></li>
+          <li><a href="/gestion/obraspublicas.php">Obras Públicas</a></li>
+          <li><a href="/gestion/seguridad.php">Seguridad</a></li>
+          <li><a href="/gestion/salud.php">Salud</a></li>
+          <li><a href="/gestion/girsu.php">GIRSU</a></li>
+          <li><a href="/gestion/educacion.php">Educación</a></li>
+          <li><a href="/gestion/culturas.php">Culturas</a></li>
+          <li><a href="https://quilmes.gov.ar/agendadeportes/">Deportes</a></li>
+          <li><a href="/gestion/ambiente.php">Ambiente</a></li>
+          <li><a href="https://www.quilmes.gov.ar/gestion/desarrollo_social.php">Desarrollo Social</a></li>
+          <li><a href="/gestion/mujeres_y_diversidades.php">Mujeres y Diversidades</a></li>
+          <li><a href="/gestion/ddhh.php">Derechos Humanos</a></li>
+          <li><a href="https://www.quilmes.gov.ar/gestion/empleo.php">Empleo y Formación Laboral</a></li>
+          <li><a href="https://www.quilmes.gov.ar/gestion/internacionales.php">Internacionales</a></li>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="/servicios/">Servicios <span class="arrow-down"></span></a>
+        <ul class="dropdown">
+          <li><a href="/arqui/index.php">ARQUI</a></li>
+          <li><a href="https://mi.quilmes.gov.ar/">Mi Quilmes Digital</a></li>
+          <li><a href="/servicios/atencion-a-la-comunidad.php">Atención a la comunidad</a></li>
+          <!-- Trámites online: redirige a Mi Quilmes digital -->
+          <!-- Arqui: web de Arqui; botones internos tipo "paga online" / "presenta declaraciones juradas" deberían apuntar al login de Mi Quilmes digital -->
+          <li><a href="/servicios/lealtad-comercial.php">Defensa del consumidor</a></li>
+          <li><a href="https://www.quilmes.gov.ar/servicios/agenda.php">Agenda municipal</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/noticias/">Noticias</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<script>
+(function() {
+  var header = document.getElementById('site-header');
+  var toggler = document.getElementById('site-navbar-toggler');
+  var menu = document.getElementById('site-navbar-menu');
+  if (!header || !toggler || !menu) return;
+
+  function isMobile() { return window.innerWidth <= 768; }
+
+  function setMobileMenuPosition() {
+    var preheader = document.querySelector('.site-preheader');
+    var navbar = document.querySelector('.site-navbar');
+    if (!navbar) return;
+    var top = (window.scrollY > 0)
+      ? navbar.offsetHeight
+      : (preheader ? preheader.offsetHeight + navbar.offsetHeight : navbar.offsetHeight);
+    document.documentElement.style.setProperty('--mobile-header-height', top + 'px');
+  }
+  function openMenu() {
+    setMobileMenuPosition();
+    document.body.classList.add('site-nav-open');
+    document.body.style.overflow = 'hidden';
+    header.classList.add('has-menu-open');
+    toggler.setAttribute('aria-label', 'Cerrar menú');
+    toggler.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    document.body.classList.remove('site-nav-open');
+    document.body.style.overflow = '';
+    header.classList.remove('has-menu-open');
+    toggler.setAttribute('aria-label', 'Abrir menú');
+    toggler.setAttribute('aria-expanded', 'false');
+    menu.querySelectorAll('li.is-expanded').forEach(function(li) { li.classList.remove('is-expanded'); });
+  }
+  function toggleMenu() {
+    if (header.classList.contains('has-menu-open')) closeMenu();
+    else openMenu();
+  }
+
+  toggler.addEventListener('click', function() {
+    if (isMobile()) toggleMenu();
+  });
+
+  menu.addEventListener('click', function(e) {
+    if (!isMobile()) return;
+    var a = e.target.closest('a');
+    if (!a || !menu.contains(a)) return;
+    var li = a.closest('li');
+    var sub = li ? li.querySelector(':scope > .dropdown') : null;
+    var isParentLink = li && li.querySelector(':scope > a') === a;
+    if (isParentLink && sub) {
+      e.preventDefault();
+      li.classList.toggle('is-expanded');
+    } else {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener('resize', function() {
+    if (!isMobile()) closeMenu();
+    else if (header.classList.contains('has-menu-open')) setMobileMenuPosition();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && header.classList.contains('has-menu-open')) closeMenu();
+  });
+
+  function normalizeNavPath(pathname) {
+    var path = (pathname || '/').replace(/\/+$/, '');
+    return (path === '' ? '/' : path).toLowerCase();
+  }
+
+  function normalizeHost(host) {
+    return (host || '').replace(/^www\./i, '').toLowerCase();
+  }
+
+  function hrefToPath(href) {
+    if (!href || href.charAt(0) === '#') return null;
+    try {
+      return new URL(href, window.location.origin);
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function isNavLinkActive(anchor) {
+    var href = anchor.getAttribute('href');
+    var linkUrl = hrefToPath(href);
+    if (!linkUrl) return false;
+    if (normalizeHost(linkUrl.hostname) !== normalizeHost(window.location.hostname)) return false;
+    var linkPath = normalizeNavPath(linkUrl.pathname);
+    var currentPath = normalizeNavPath(window.location.pathname);
+    if (linkPath === currentPath) return true;
+    if (href.charAt(href.length - 1) === '/' && linkPath !== '/') {
+      return currentPath === linkPath || currentPath.indexOf(linkPath + '/') === 0;
+    }
+    return false;
+  }
+
+  menu.querySelectorAll('a[href]').forEach(function(anchor) {
+    if (isNavLinkActive(anchor)) {
+      anchor.classList.add('is-active');
+      var parentItem = anchor.closest('.site-navbar-menu > li');
+      if (parentItem && parentItem.querySelector(':scope > .dropdown') && anchor.closest('.dropdown')) {
+        parentItem.classList.add('is-expanded');
+      }
+    }
+  });
+})();
+</script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7JR4WZ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <style>.breadcrumb-componente{
+                    width:100%;
+                    background:#7a61a1;
+                    font-family:"Poppins",Arial,sans-serif;
+                    border-bottom: 1px solid #FFFFFF;
+                }.breadcrumb-componente__contenedor{max-width:1340px;margin:0 auto;padding:.75rem 40px;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;}.breadcrumb-componente__list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;font-size:.95rem;color:#4a4a4a;}.breadcrumb-componente__item{display:inline-flex;align-items:center;}.breadcrumb-componente__enlace{color:#FFFFFF;text-decoration:none;font-weight:400;font-size:14px;}.breadcrumb-componente__enlace:hover{color:#FFFFFF;text-decoration:underline !important;}.breadcrumb-componente__item--actual{color:#FFFFFF;font-weight:600;font-size:14px;}.breadcrumb-componente__separador{color:#b9b9b9;font-weight:500;font-size:16px;}@media (max-width:768px){.breadcrumb-componente__enlace{font-size:11px;}.breadcrumb-componente__item--actual{font-size:11px;}.breadcrumb-componente__separador{font-size:11px;}.breadcrumb-componente__contenedor{padding:.75rem 25px;}}</style><nav class="breadcrumb-componente" aria-label="Migas de pan"><div class="breadcrumb-componente__contenedor"><ol class="breadcrumb-componente__list"><li class="breadcrumb-componente__item"><a class="breadcrumb-componente__enlace" href="/noticias">Noticias</a></li><li class="breadcrumb-componente__separador" aria-hidden="true">&gt;</li><li class="breadcrumb-componente__item"><a class="breadcrumb-componente__enlace" href="/noticias/index.php?cat=17">Integración Social</a></li><li class="breadcrumb-componente__separador" aria-hidden="true">&gt;</li><li class="breadcrumb-componente__item breadcrumb-componente__item--actual" aria-current="page">EVA MIERI Y FUNCIONARIOS RECORRIERON LA OFICINA DE ATENCIÓN A LA COMUNIDAD </li></ol></div></nav><style>.hero-principal{width:100%;max-width:1340px;margin:0 auto;background:#fff;font-family:"Poppins",Arial,sans-serif;padding-bottom: 60px; padding-top: 60px;}.hero-principal__media{background:#fff;}.hero-principal__media-contenedor{max-width:1340px;margin:0 auto;padding:0; padding-left: 40px; padding-right: 40px;}.hero-principal__imagen-wrap{overflow:hidden;display:flex;align-items:center;justify-content:center;}.hero-principal__imagen-wrap img{display:block;width:100%;max-width:none;height:auto;margin:0 auto;}.hero-principal__epigrafe{width:100%;background:#7a61a1;color:#fff;padding:12px 16px;box-sizing:border-box;}.hero-principal__epigrafe-texto{margin:0;font-family:"Lato",Arial,sans-serif;font-size:14px;font-weight:400;line-height:1.4;color:#fff;}.hero-principal__texto{background:#fff;}.hero-principal__texto-contenedor{max-width:1340px;margin:0 auto;padding:32px 70px;}body.detalle-noticia.noticias .hero-principal__texto-contenedor{padding: 32px 40px;}.hero-principal__pre-titulo{margin:0 0 12px;font-family:"Poppins",Arial,sans-serif;font-weight:600;font-size:25px;line-height:1.2;color:#7a61a1;}.hero-principal__titulo{margin:0 0 16px;font-family:"Poppins",Arial,sans-serif;font-weight:700;font-size:52px;line-height:1.15;color:#424242;}.hero-principal__copy{margin:0 0 24px;font-family:"Lato",Arial,sans-serif;font-weight:400;font-size:18px;line-height:1.6;color:#424242;}.hero-principal__copy:last-child{margin-bottom:0;}@media (max-width:768px){.hero-principal__media-contenedor{padding:0 25px;}.hero-principal__epigrafe{padding:10px 12px;}.hero-principal__epigrafe-texto{font-size:12px;}.hero-principal__texto-contenedor{padding:24px 25px;}.hero-principal__pre-titulo{font-size:16px;margin-bottom:12px;}.hero-principal__titulo{font-size:25px;margin-bottom:12px;}.hero-principal__copy{font-size:16px;}.hero-principal{padding-top:30px;}body.detalle-noticia.noticias .hero-principal__texto-contenedor{padding:0 25px 25px;}}</style><section class="hero-principal" aria-label="Hero principal"><div class="hero-principal__texto"><div class="hero-principal__texto-contenedor"><h1 class="hero-principal__pre-titulo">Más y mejores servicios para vecinos y vecinas</h1><h2 class="hero-principal__titulo">EVA MIERI Y FUNCIONARIOS RECORRIERON LA OFICINA DE ATENCIÓN A LA COMUNIDAD</h2><p class="hero-principal__copy">Funcionarios municipales, encabezados por la intendenta interina de Quilmes, Eva Mieri, recorrieron este jueves la Oficina de Atención a la Comunidad, que funciona en el Palacio Municipal,</p></div></div><div class="hero-principal__media"><div class="hero-principal__media-contenedor"><div class="hero-principal__epigrafe"><p class="hero-principal__epigrafe-texto"></p></div></div></div></section>
+    <div class="contenedor-sitio detalle-noticia">
+        <div class="ns-container">
+            <div class="ns-layout">
+                <main class="ns-main">
+                    <p class="ns-meta-fecha">JUEVES, 7 DE MAYO DE 2026</p>
+
+                                            <figure class="ns-imagen-principal">
+                            <img src="fotos/6056.jpeg" alt="EVA MIERI Y FUNCIONARIOS RECORRIERON LA OFICINA DE ATENCIÓN A LA COMUNIDAD ">
+                        </figure>
+                    
+                    <div class="ns-contenido">
+                        <p>Funcionarios municipales, encabezados por la intendenta interina de Quilmes, Eva Mieri, recorrieron este jueves la Oficina de Atenci&oacute;n a la Comunidad, que funciona en el Palacio Municipal, ubicado en Alberdi 500.</p>
+<div>&nbsp;</div>
+<div>&ldquo;Saludamos a las trabajadoras y los trabajadores de este espacio que todos los d&iacute;as escucha, acompa&ntilde;a y busca soluciones para nuestros vecinos y vecinas. Con atenci&oacute;n presencial, telef&oacute;nica, por redes sociales, WhatsApp y herramientas digitales como QuiBOT y Mi Quilmes Digital, seguimos modernizando el Estado para que hacer un tr&aacute;mite o resolver un reclamo sea cada vez m&aacute;s r&aacute;pido y accesible. Pod&eacute;s comunicarte con nosotros al 0800-999-5656, escribirnos a las redes oficiales del Municipio y registrarte en mi.quilmes.gov.ar, disponible las 24 horas&rdquo;, expres&oacute; Eva, acompa&ntilde;ada por el jefe de Gabinete, Joaqu&iacute;n Desmery, y la coordinadora de Innovaci&oacute;n P&uacute;blica, Sol Bibiloni.</div>
+<div>&nbsp;</div>
+<div>La Oficina de Atenci&oacute;n a la Comunidad funciona de 8 a 14 para atenci&oacute;n presencial, telef&oacute;nica y por redes sociales. Adem&aacute;s, cuenta con atenci&oacute;n digital las 24 horas a trav&eacute;s de QuiBOT, el chatbot con inteligencia artificial disponible tanto en la web oficial del Municipio como v&iacute;a WhatsApp. El espacio se encuentra dividido en tres sectores: Call Center, Centro Presencial y Redes y Medios Digitales.</div>
+<div>&nbsp;</div>
+<div>Las &uacute;ltimas estad&iacute;sticas reflejan una fuerte consolidaci&oacute;n de los canales digitales en la atenci&oacute;n ciudadana. Del total de interacciones registradas, m&aacute;s del 82% se realizan exclusivamente a trav&eacute;s de plataformas virtuales, lo que evidencia una creciente preferencia de los vecinos y vecinas por herramientas &aacute;giles, accesibles y disponibles de manera online.</div>
+<div>&nbsp;</div>
+<div>Asimismo, se destaca la labor que se realiza desde Mi Quilmes Digital, la plataforma que facilita el acceso a turnos, reclamos, tr&aacute;mites y consultas de manera simple, r&aacute;pida y disponible las 24 horas. Solo es necesario registrarse con un usuario y contrase&ntilde;a para comenzar a utilizar el servicio.</div>
+<div>&nbsp;</div>
+<div>Dentro del portal de Mi Quilmes Digital, los vecinos y vecinas pueden acceder a una amplia variedad de servicios y tr&aacute;mites de manera digital. Desde su panel personal pueden gestionar reclamos, consultar su estado en tiempo real, sacar, cancelar y revisar turnos, acceder al servicio de telemedicina, consultar y pagar boletas municipales, as&iacute; como registrarse e inscribirse en talleres. Tambi&eacute;n pueden iniciar distintos tr&aacute;mites online, como la eximici&oacute;n del pago de la Tasa SUM para jubilados.</div>
+<div>&nbsp;</div>
+<div>Adem&aacute;s, se encuentra disponible QuiBOT, el asistente virtual que ayuda a vecinos y vecinas a comunicarse con la Comuna, tanto desde la web oficial del Municipio como v&iacute;a WhatsApp al 11-4493-4483. Esta herramienta permite acceder a informaci&oacute;n, descargar facturas, realizar reclamos y efectuar muchas otras gestiones.</div>
+<div>&nbsp;</div>
+<div>De esta manera, el Municipio reafirma su compromiso con la innovaci&oacute;n del Estado, impulsando herramientas digitales y espacios presenciales que agilicen la resoluci&oacute;n de tr&aacute;mites. A trav&eacute;s de la innovaci&oacute;n constante y la incorporaci&oacute;n de nuevos canales, se busca brindar una atenci&oacute;n cada vez m&aacute;s eficiente, cercana y accesible para cada vecino y vecina de la ciudad.</div>                    </div>
+
+                                            <section class="ns-slider" aria-label="Galería de imágenes">
+                            <div class="ns-slider__wrap">
+                                <div class="swiper ns-slider__main" id="nsSwiperMain">
+                                    <div class="swiper-wrapper">
+                                                                                    <div class="swiper-slide">
+                                                <a href="#" class="ns-open-lightbox" data-index="0" aria-label="Abrir imagen en pantalla completa">
+                                                    <img src="fotos/6056_1.jpeg" alt="EVA MIERI Y FUNCIONARIOS RECORRIERON LA OFICINA DE ATENCIÓN A LA COMUNIDAD ">
+                                                </a>
+                                            </div>
+                                                                                    <div class="swiper-slide">
+                                                <a href="#" class="ns-open-lightbox" data-index="1" aria-label="Abrir imagen en pantalla completa">
+                                                    <img src="fotos/6056_2.jpeg" alt="EVA MIERI Y FUNCIONARIOS RECORRIERON LA OFICINA DE ATENCIÓN A LA COMUNIDAD ">
+                                                </a>
+                                            </div>
+                                                                                    <div class="swiper-slide">
+                                                <a href="#" class="ns-open-lightbox" data-index="2" aria-label="Abrir imagen en pantalla completa">
+                                                    <img src="fotos/6056_3.jpeg" alt="EVA MIERI Y FUNCIONARIOS RECORRIERON LA OFICINA DE ATENCIÓN A LA COMUNIDAD ">
+                                                </a>
+                                            </div>
+                                                                            </div>
+                                </div>
+                                                                    <button type="button" class="ns-slider__nav ns-slider__prev" aria-label="Imagen anterior">‹</button>
+                                    <button type="button" class="ns-slider__nav ns-slider__next" aria-label="Imagen siguiente">›</button>
+                                                            </div>
+
+                                                            <div class="swiper ns-thumbs" id="nsSwiperThumbs" aria-label="Miniaturas">
+                                    <div class="swiper-wrapper">
+                                                                                    <div class="swiper-slide" aria-label="Miniatura 1">
+                                                <img src="fotos/6056_1.jpeg" alt="">
+                                            </div>
+                                                                                    <div class="swiper-slide" aria-label="Miniatura 2">
+                                                <img src="fotos/6056_2.jpeg" alt="">
+                                            </div>
+                                                                                    <div class="swiper-slide" aria-label="Miniatura 3">
+                                                <img src="fotos/6056_3.jpeg" alt="">
+                                            </div>
+                                                                            </div>
+                                </div>
+                                                    </section>
+                                        <style>.compartir{width:100%;background:#E2E2E2;font-family:"Poppins",Arial,sans-serif;padding:28px 0;}.compartir__contenedor{max-width:1340px;margin:0 auto;padding:0 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:16px;}.compartir__titulo{margin:0;font-size:18px;color:#7A61A1;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}.compartir__lista{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:.6rem;}.compartir__btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#7A61A1;color:#FFFFFF;text-decoration:none;cursor:pointer;padding:0;transition:transform .15s ease,background-color .15s ease,color .15s ease,border-color .15s ease; outline:none;border:none;}.compartir__btn:hover{transform:translateY(-2px);}.compartir__btn:focus{outline:none;}.compartir__btn--facebook:hover{background:#1877f2;color:#fff;}.compartir__btn--twitter:hover{background:#000;color:#fff;}.compartir__btn--whatsapp:hover{background:#25d366;color:#fff;}.compartir__btn--copiar:hover{background:#4a4a4a;color:#fff;}.compartir__btn--copiado{background:#2e7d32;color:#fff;}.compartir__btn svg{width:18px;height:18px;fill:currentColor;}@media (max-width:768px){.compartir__contenedor{padding:0 20px;flex-direction:column;justify-content:center;align-items:center;text-align:center;}}</style><section class="compartir" aria-label="Compartir pagina"><div class="compartir__contenedor"><h2 class="compartir__titulo">Compartilo en:</h2><ul class="compartir__lista"><li><a href="https://www.facebook.com/sharer/sharer.php?u=" class="compartir__btn compartir__btn--facebook" aria-label="Compartir en Facebook" data-compartir="facebook" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.7c0-.87.24-1.46 1.5-1.46H16.5V4.6c-.27-.04-1.2-.12-2.27-.12-2.25 0-3.78 1.37-3.78 3.88V10.5H8v3h2.45V21h3.05z"/></svg></a></li><li><a href="https://twitter.com/intent/tweet?url=" class="compartir__btn compartir__btn--twitter" aria-label="Compartir en X (Twitter)" data-compartir="twitter" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li><li><a href="https://api.whatsapp.com/send?text=" class="compartir__btn compartir__btn--whatsapp" aria-label="Compartir por WhatsApp" data-compartir="whatsapp" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.9-7.01zM12.04 20.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.13-.17.25-.64.8-.78.97-.14.17-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.48-.02-.17 0-.43.06-.66.31s-.86.84-.86 2.05.88 2.38 1 2.55c.12.17 1.73 2.64 4.19 3.7.58.25 1.04.4 1.4.51.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg></a></li><li><button type="button" class="compartir__btn compartir__btn--copiar" aria-label="Copiar enlace" data-compartir="copiar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.9 12a3.1 3.1 0 0 1 3.1-3.1h4V7H7a5 5 0 1 0 0 10h4v-1.9H7A3.1 3.1 0 0 1 3.9 12zm4.1 1h8v-2H8v2zm9-6h-4v1.9h4A3.1 3.1 0 0 1 20.1 12 3.1 3.1 0 0 1 17 15.1h-4V17h4a5 5 0 0 0 0-10z"/></svg></button></li></ul></div></section><script>(function(){function feedback(btn){var orig=btn.getAttribute("aria-label");btn.classList.add("compartir__btn--copiado");btn.setAttribute("aria-label","Enlace copiado");setTimeout(function(){btn.classList.remove("compartir__btn--copiado");btn.setAttribute("aria-label",orig);},2000);}function copiarFallback(url,btn){var tmp=document.createElement("textarea");tmp.value=url;tmp.setAttribute("readonly","");tmp.style.position="absolute";tmp.style.left="-9999px";document.body.appendChild(tmp);tmp.select();var ok=false;try{ok=document.execCommand("copy");}catch(err){}document.body.removeChild(tmp);if(ok)feedback(btn);}document.addEventListener("click",function(e){var trigger=e.target&&e.target.closest?e.target.closest("[data-compartir]"):null;if(!trigger)return;var tipo=trigger.getAttribute("data-compartir");var url=window.location.href;var titulo=document.title||"";var enc=encodeURIComponent;if(tipo==="facebook"){e.preventDefault();window.open("https://www.facebook.com/sharer/sharer.php?u="+enc(url),"_blank","noopener,noreferrer,width=600,height=500");}else if(tipo==="twitter"){e.preventDefault();window.open("https://twitter.com/intent/tweet?url="+enc(url)+"&text="+enc(titulo),"_blank","noopener,noreferrer,width=600,height=500");}else if(tipo==="whatsapp"){e.preventDefault();window.open("https://api.whatsapp.com/send?text="+enc(titulo+" "+url),"_blank","noopener,noreferrer");}else if(tipo==="copiar"){e.preventDefault();if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){feedback(trigger);}).catch(function(){copiarFallback(url,trigger);});}else{copiarFallback(url,trigger);}}});})();</script>                </main>
+
+                <aside class="ns-sidebar" aria-label="Búsqueda y noticias relacionadas">
+                    <section class="ns-sidebar__grupo ns-sidebar__grupo--busqueda">
+                        <form class="ns-busqueda" method="get" action="index.php" role="search">
+                            <input
+                                type="text"
+                                name="q"
+                                value=""
+                                placeholder="Buscar noticias..."
+                                aria-label="Buscar noticias">
+                            <button type="submit" class="ns-busqueda__btn" aria-label="Buscar">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </section>
+
+                    <section class="ns-sidebar__grupo">
+                        <h2 class="ns-sidebar__titulo">Noticias Recientes</h2>
+                        <div class="ns-sidebar__divider" aria-hidden="true"></div>
+                                                        <article class="ns-card">
+                                    <a class="ns-card__media" href="noticia.php?id_noti=6285" aria-label="Abrir noticia">
+                                        <img src="fotos/6285.jpg" alt="">
+                                    </a>
+                                    <div class="ns-card__texto">
+                                        <p class="ns-card__fecha">VIERNES, 20 DE NOVIEMBRE DE 2026</p>
+                                        <a class="ns-card__titulo" href="noticia.php?id_noti=6285"> MAYRA Y EVA MIERI ANUNCIARON LA OBRA DE 16 NUEVAS CUADRAS EN QUILMES OESTE</a>
+                                    </div>
+                                </article>
+                                                        <article class="ns-card">
+                                    <a class="ns-card__media" href="noticia.php?id_noti=6284" aria-label="Abrir noticia">
+                                        <img src="fotos/6284.jfif" alt="">
+                                    </a>
+                                    <div class="ns-card__texto">
+                                        <p class="ns-card__fecha">VIERNES, 20 DE NOVIEMBRE DE 2026</p>
+                                        <a class="ns-card__titulo" href="noticia.php?id_noti=6284">MAYRA Y EVA EN EL ACTO DE CIERRE DEL PROYECTO COORDENADAS QUILMES 2026 </a>
+                                    </div>
+                                </article>
+                                                        <article class="ns-card">
+                                    <a class="ns-card__media" href="noticia.php?id_noti=6283" aria-label="Abrir noticia">
+                                        <img src="fotos/6283.jpg" alt="">
+                                    </a>
+                                    <div class="ns-card__texto">
+                                        <p class="ns-card__fecha">JUEVES, 19 DE NOVIEMBRE DE 2026</p>
+                                        <a class="ns-card__titulo" href="noticia.php?id_noti=6283">MAYRA Y FUNCIONARIOS PRESENTES EN EL 50º ANIVERSARIO DE LA EES Nº 6 </a>
+                                    </div>
+                                </article>
+                                            </section>
+
+                    <section class="ns-sidebar__grupo">
+                        <h2 class="ns-sidebar__titulo">Recientes en Integración Social</h2>
+                        <div class="ns-sidebar__divider" aria-hidden="true"></div>
+                                                            <article class="ns-card">
+                                        <a class="ns-card__media" href="noticia.php?id_noti=6284" aria-label="Abrir noticia">
+                                            <img src="fotos/6284.jfif" alt="">
+                                        </a>
+                                        <div class="ns-card__texto">
+                                            <p class="ns-card__fecha">VIERNES, 20 DE NOVIEMBRE DE 2026</p>
+                                            <a class="ns-card__titulo" href="noticia.php?id_noti=6284">MAYRA Y EVA EN EL ACTO DE CIERRE DEL PROYECTO COORDENADAS QUILMES 2026 </a>
+                                        </div>
+                                    </article>
+                                                            <article class="ns-card">
+                                        <a class="ns-card__media" href="noticia.php?id_noti=6282" aria-label="Abrir noticia">
+                                            <img src="fotos/6282.jfif" alt="">
+                                        </a>
+                                        <div class="ns-card__texto">
+                                            <p class="ns-card__fecha">MIéRCOLES, 18 DE NOVIEMBRE DE 2026</p>
+                                            <a class="ns-card__titulo" href="noticia.php?id_noti=6282">EL MUNICIPIO INVITA A LOS FESTEJOS POR EL 154º ANIVERSARIO DE EZPELETA</a>
+                                        </div>
+                                    </article>
+                                                            <article class="ns-card">
+                                        <a class="ns-card__media" href="noticia.php?id_noti=6279" aria-label="Abrir noticia">
+                                            <img src="fotos/6279.jpg" alt="">
+                                        </a>
+                                        <div class="ns-card__texto">
+                                            <p class="ns-card__fecha">LUNES, 16 DE NOVIEMBRE DE 2026</p>
+                                            <a class="ns-card__titulo" href="noticia.php?id_noti=6279">MULTITUDINARIA PRIMERA JORNADA DE LA FIESTA DE LAS COLECTIVIDADES</a>
+                                        </div>
+                                    </article>
+                                            </section>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <style type="text/css">
+    .footer-rd {
+        width: 100%;
+        background: #353433;
+        border-top: 1px solid #fff;
+        color: #757473;
+        box-sizing: border-box;
+    }
+
+    .footer-rd__wrap {
+        width: 100%;
+        padding: 40px 0 90px;
+        border-top: 10px solid #7a61a1;
+        box-sizing: border-box;
+    }
+
+    .footer-rd__inner {
+        max-width: 1340px;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 48px;
+        box-sizing: border-box;
+    }
+
+    .footer-rd__col {
+        min-width: 0;
+    }
+
+    .footer-rd__col--info {
+        flex: 1 1 50%;
+    }
+
+    .footer-rd__col--contact {
+        flex: 0 1 auto;
+        text-align: right;
+        position: relative;
+        z-index: 5;
+    }
+
+    .footer-rd__phones {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+    }
+
+    .footer-rd__phone-line {
+        margin: 0;
+        max-width: 100%;
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.5;
+        color: #757473;
+        text-align: right;
+    }
+
+    .footer-rd__phone-br {
+        display: block;
+    }
+
+    .footer-rd__phone-line a {
+        display: inline !important;
+        width: auto !important;
+        max-width: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        font: inherit;
+        font-weight: inherit;
+        color: #757473 !important;
+        text-decoration: none !important;
+        white-space: nowrap;
+        transition: color 0.2s ease;
+        cursor: pointer;
+    }
+
+    .footer-rd__phone-line a:hover,
+    .footer-rd__phone-line a:focus {
+        color: #c4c4c4 !important;
+        outline: none;
+    }
+
+    .footer-rd__logo {
+        display: block;
+        width: 180px;
+        max-width: 220px;
+        height: 55px;
+        margin: 0 0 20px;
+    }
+
+    .footer-rd__address,
+    .footer-rd__intendenta {
+        margin: 0 0 10px;
+        font-family: "Lato", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.45;
+        color: #757473;
+    }
+
+    .footer-rd__address a,
+    .footer-rd__intendenta a {
+        color: #757473 !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease;
+    }
+
+    .footer-rd__address a:hover,
+    .footer-rd__address a:focus,
+    .footer-rd__intendenta a:hover,
+    .footer-rd__intendenta a:focus {
+        color: #c4c4c4 !important;
+        outline: none;
+    }
+
+    .footer-rd__intranet {
+        display: inline-block;
+        margin-top: 8px;
+        font-family: "Lato", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: #757473 !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease;
+    }
+
+    .footer-rd__intranet:hover,
+    .footer-rd__intranet:focus {
+        color: #c4c4c4 !important;
+        outline: none;
+    }
+
+    .footer-rd__social {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+        margin: 8px 0 14px;
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer-rd__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #757473;
+        color: #353433;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .footer-rd__social-link svg {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-rd__social-link--facebook svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .footer-rd__social-link:hover,
+    .footer-rd__social-link:focus {
+        background-color: #8d8c8b;
+        color: #2a2928;
+        outline: none;
+    }
+
+    .footer-rd__phone-main,
+    .footer-rd__phone-secondary,
+    .footer-rd__phone-secondary a,
+    a.footer-rd__phone-main,
+    a.footer-rd__phone-secondary {
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.5;
+        color: #757473 !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease;
+        cursor: pointer;
+        position: relative;
+        z-index: 5;
+        pointer-events: auto;
+    }
+
+    a.footer-rd__phone-main,
+    a.footer-rd__phone-secondary {
+        display: block;
+        width: max-content;
+        max-width: 100%;
+        padding: 4px 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .footer-rd__col--contact .footer-rd__phones a.footer-rd__phone-main,
+    .footer-rd__col--contact .footer-rd__phones a.footer-rd__phone-secondary {
+        margin-left: auto;
+    }
+
+    .footer-rd__phone-main:hover,
+    .footer-rd__phone-main:focus,
+    .footer-rd__phone-secondary a:hover,
+    .footer-rd__phone-secondary a:focus,
+    a.footer-rd__phone-secondary:hover,
+    a.footer-rd__phone-secondary:focus {
+        color: #c4c4c4 !important;
+        outline: none;
+    }
+
+    .footer-rd-scroll-top {
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        z-index: 120;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #7a61a1;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .footer-rd-scroll-top.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .footer-rd-scroll-top:hover,
+    .footer-rd-scroll-top:focus {
+        background: #6b5390;
+        transform: translateY(-2px);
+        outline: none;
+    }
+
+    .footer-rd-scroll-top__icon {
+        display: block;
+        width: 26px;
+        height: 26px;
+    }
+
+    .footer-rd__mobile {
+        display: none;
+    }
+
+    .footer-rd__mobile-top {
+        background: #7a61a1;
+        border-top: 1px solid #fff;
+        box-sizing: border-box;
+    }
+
+    .footer-rd__mobile-top-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 18px 30px 18px 25px;
+        box-sizing: border-box;
+    }
+
+    .footer-rd__logo--mobile {
+        display: block;
+        width: auto;
+        max-width: 130px;
+        height: auto;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .footer-rd__social--mobile {
+        margin: 0;
+        gap: 5px;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+
+    .footer-rd__social--mobile .footer-rd__social-link {
+        width: 28px;
+        height: 28px;
+        background-color: transparent;
+        color: #fff;
+        box-shadow: none;
+    }
+
+    .footer-rd__social--mobile .footer-rd__social-link svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .footer-rd__social--mobile .footer-rd__social-link--facebook svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer-rd__social--mobile .footer-rd__social-link:hover,
+    .footer-rd__social--mobile .footer-rd__social-link:focus {
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.85);
+        outline: none;
+    }
+
+    .footer-rd__mobile-body {
+        background: #353433;
+        padding: 0 0 100px;
+        box-sizing: border-box;
+    }
+
+    .footer-rd__mobile-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer-rd__mobile-item {
+        margin: 0;
+        padding: 18px 25px;
+        border-bottom: 1px solid #757263;
+        font-family: "Lato", Arial, sans-serif;
+        font-size: 18px;
+        line-height: 1.45;
+        color: #757473;
+        box-sizing: border-box;
+    }
+
+    .footer-rd__mobile-item--address {
+        font-weight: 600;
+    }
+
+    .footer-rd__mobile-item--address a {
+        color: #757473 !important;
+        text-decoration: none !important;
+    }
+
+    .footer-rd__mobile-item--phones {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 8px;
+        font-family: "Poppins", Arial, sans-serif;
+        font-weight: 600;
+        position: relative;
+        z-index: 5;
+    }
+
+    .footer-rd__mobile-item--phones .footer-rd__phone-line {
+        text-align: left;
+    }
+
+    .footer-rd__mobile-item--phones .footer-rd__phone-main,
+    .footer-rd__mobile-item--phones .footer-rd__phone-secondary,
+    .footer-rd__mobile-item--phones a.footer-rd__phone-main,
+    .footer-rd__mobile-item--phones a.footer-rd__phone-secondary {
+        margin: 0;
+        display: block;
+        width: max-content;
+        max-width: 100%;
+        padding: 4px 0;
+        line-height: 1.5;
+    }
+
+    .footer-rd__mobile-item--phones .footer-rd__phone-line a {
+        display: inline !important;
+        width: auto !important;
+        padding: 0 !important;
+    }
+
+    .footer-rd__mobile-item--intranet {
+        font-family: "Poppins", Arial, sans-serif;
+        font-weight: 400;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .footer-rd__mobile-item--intranet .footer-rd__intranet {
+        margin-top: 0;
+    }
+
+    .footer-rd__mobile-item--intendenta {
+        font-weight: 600;
+    }
+
+    .footer-rd__mobile .footer-rd__phone-main,
+    .footer-rd__mobile .footer-rd__phone-secondary,
+    .footer-rd__mobile .footer-rd__phone-secondary a,
+    .footer-rd__mobile .footer-rd__intranet {
+        font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-rd {
+            border-top: 0;
+        }
+
+        .footer-rd__desktop {
+            display: none;
+        }
+
+        .footer-rd__mobile {
+            display: block;
+        }
+
+        .footer-rd-scroll-top {
+            left: 16px;
+            bottom: 16px;
+            width: 56px;
+            height: 56px;
+        }
+
+        .footer-rd-scroll-top__icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-rd__mobile .footer-rd__phone-main,
+        .footer-rd__mobile .footer-rd__phone-secondary,
+        .footer-rd__mobile .footer-rd__phone-secondary a,
+        .footer-rd__mobile .footer-rd__intranet {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .footer-rd__mobile .footer-rd__intranet {
+            font-size: 16px;
+        }
+
+        .footer-rd__mobile .footer-rd__address,
+        .footer-rd__mobile .footer-rd__intendenta {
+            font-size: 16px;
+            color: #757473;
+            font-weight: 600;
+        }
+
+        .footer-rd__mobile .footer-rd__mobile-item--intendenta a,
+        .footer-rd__mobile .footer-rd__mobile-item--address a {
+            color: #757473 !important;
+        }
+
+        .footer-rd__mobile .footer-rd__mobile-item--intendenta a:hover,
+        .footer-rd__mobile .footer-rd__mobile-item--address a:hover {
+            color: #c4c4c4 !important;
+        }
+    }
+</style>
+
+
+<footer class="footer-rd" aria-label="Pie de página">
+    <div class="footer-rd__desktop">
+        <div class="footer-rd__wrap">
+            <div class="footer-rd__inner">
+                <div class="footer-rd__col footer-rd__col--info">
+                    <a href="https://www.quilmes.gov.ar/" target="_blank" rel="noopener noreferrer" style="display: flex; width: max-content"><img src="/layout/logo-footer.png" alt="Quilmes Gobierno" class="footer-rd__logo" loading="lazy"></a>
+                    <p class="footer-rd__address"><a href="https://www.google.com/maps/search/?api=1&amp;query=Municipalidad+de+Quilmes,+Alberdi+500,+B1878+Quilmes" target="_blank" rel="noopener noreferrer">Municipalidad de Quilmes<span style="font-weight: 400;">, Alberdi 500, B1878 Quilmes ></span></a></p>
+                    <p class="footer-rd__intendenta"><a href="https://www.quilmes.gov.ar/institucional/intendenta.php" target="_blank" rel="noopener noreferrer">Mayra Mendoza<span style="font-weight: 400;">, Intendenta ></span></a></p>
+                    <a href="https://arquivirtual.quilmes.gov.ar/municipal/Login_intranet.aspx" class="footer-rd__intranet" target="_blank" rel="noopener noreferrer">Acceso a Intranet &gt;</a>
+                </div>
+
+                <div class="footer-rd__col footer-rd__col--contact">
+                    <ul class="footer-rd__social">
+                                                <li>
+                            <a href="https://www.facebook.com/MunicipalidadDeQuilmesOficial" class="footer-rd__social-link footer-rd__social-link--facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/QuilmesMuni" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCy11pQzRHH3WFlSRK_0klJA" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/quilmesmunicipio/" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C8.333.014 7.941 0 7.741 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/1544934483?text=Hola%20Quibot" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://www.tiktok.com/@quilmesmuni?_r=1&amp;_t=ZS-97U3HQtJ4JG" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+                        </li>
+                        </ul>
+                    <div class="footer-rd__phones">
+                        <p class="footer-rd__phone-line footer-rd__phone-main">Atenci&oacute;n a la comunidad:<br class="footer-rd__phone-br"> <a href="tel:08009995656">0800-999-5656</a> / <a href="tel:44687000">4468-7000</a></p>
+                        <p class="footer-rd__phone-line footer-rd__phone-secondary">SAME y Seguridad:<br class="footer-rd__phone-br"> <a href="tel:147">147</a> / <a href="tel:28217700">2821-7700</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-rd__mobile">
+        <div class="footer-rd__mobile-top">
+            <div class="footer-rd__mobile-top-inner">
+                <a href="https://www.quilmes.gov.ar/" target="_blank" rel="noopener noreferrer" style="display: flex; width: max-content;"><img src="/layout/logo-footer-mobile.png" alt="Quilmes Gobierno" class="footer-rd__logo footer-rd__logo--mobile" loading="lazy"></a>
+                <ul class="footer-rd__social footer-rd__social--mobile">
+                                            <li>
+                            <a href="https://www.facebook.com/MunicipalidadDeQuilmesOficial" class="footer-rd__social-link footer-rd__social-link--facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/QuilmesMuni" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCy11pQzRHH3WFlSRK_0klJA" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/quilmesmunicipio/" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C8.333.014 7.941 0 7.741 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/1544934483?text=Hola%20Quibot" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                        </li>
+                        <li>
+                            <a href="https://www.tiktok.com/@quilmesmuni?_r=1&amp;_t=ZS-97U3HQtJ4JG" class="footer-rd__social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <div class="footer-rd__mobile-body">
+            <ul class="footer-rd__mobile-list">
+                <li class="footer-rd__mobile-item footer-rd__mobile-item--address">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Municipalidad+de+Quilmes,+Alberdi+500,+B1878+Quilmes" target="_blank" rel="noopener noreferrer">Municipalidad de Quilmes,<br><span style="font-weight: 400;">Alberdi 500, B1878 Quilmes ></span></a>
+                </li>
+                <li class="footer-rd__mobile-item footer-rd__mobile-item--phones">
+                    <p class="footer-rd__phone-line footer-rd__phone-main">Atenci&oacute;n a la Comunidad:<br class="footer-rd__phone-br"> <a href="tel:08009995656">0800-999-5656</a> / <a href="tel:44687000">4468-7000</a></p>
+                    <p class="footer-rd__phone-line footer-rd__phone-secondary">SAME y Seguridad:<br class="footer-rd__phone-br"> <a href="tel:147">147</a> / <a href="tel:28217700">2821-7700</a></p>
+                </li>
+                <li class="footer-rd__mobile-item footer-rd__mobile-item--intranet">
+                    <a href="https://arquivirtual.quilmes.gov.ar/municipal/Login_intranet.aspx" class="footer-rd__intranet" target="_blank" rel="noopener noreferrer">Acceso a Intranet &gt;</a>
+                </li>
+                <li class="footer-rd__mobile-item footer-rd__mobile-item--intendenta"><a href="https://www.quilmes.gov.ar/institucional/intendenta.php" target="_blank" rel="noopener noreferrer">Mayra Mendoza<span style="font-weight: 400;">, Intendenta ></span></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<button type="button" class="footer-rd-scroll-top is-hidden" aria-label="Volver arriba" aria-hidden="true">
+    <svg class="footer-rd-scroll-top__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 14L12 8L18 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+</button>
+
+<script>
+    (function() {
+        var scrollBtn = document.querySelector('.footer-rd-scroll-top');
+        if (!scrollBtn) {
+            return;
+        }
+
+        function updateScrollBtn() {
+            var atTop = window.scrollY === 0;
+            scrollBtn.classList.toggle('is-hidden', atTop);
+            scrollBtn.setAttribute('aria-hidden', atTop ? 'true' : 'false');
+        }
+
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('scroll', updateScrollBtn, {
+            passive: true
+        });
+        updateScrollBtn();
+    })();
+</script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" defer></script>
+<script>
+    (function() {
+        function loadWebchat() {
+            var script = document.createElement('script');
+            script.src = 'https://callcenter.quilmes.gov.ar:5278/chat/js/webchat.js';
+            script.async = true;
+            var timeout = setTimeout(function() {
+                if (script.parentNode) {
+                    script.parentNode.removeChild(script);
+                }
+            }, 5000);
+            script.onload = function() {
+                clearTimeout(timeout);
+            };
+            script.onerror = function() {
+                clearTimeout(timeout);
+            };
+            document.head.appendChild(script);
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(loadWebchat, 2000);
+            });
+        } else {
+            setTimeout(loadWebchat, 2000);
+        }
+    })();
+</script>
+<script>
+    (function() {
+        var js = document.createElement('script');
+        js.type = 'text/javascript';
+        js.async = 1;
+        js.src = 'https://go.botmaker.com/rest/webchat/p/KU1JCOXK01/init.js';
+        document.body.appendChild(js);
+    })();
+</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+
+    <script src="../js/vendor/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--<script src="../js/plugins.js"></script>-->
+
+    <script>
+        (function() {
+            var images = ["fotos\/6056_1.jpeg","fotos\/6056_2.jpeg","fotos\/6056_3.jpeg"];
+            if (!images || !images.length) return;
+
+            var thumbs = null;
+            var thumbsEl = document.getElementById('nsSwiperThumbs');
+            if (thumbsEl) {
+                thumbs = new Swiper('#nsSwiperThumbs', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 10,
+                    watchSlidesProgress: true,
+                });
+            }
+
+            var mainOpts = {
+                slidesPerView: 1,
+                spaceBetween: 12,
+                thumbs: thumbs ? {
+                    swiper: thumbs
+                } : undefined,
+            };
+            if (images.length > 1) {
+                mainOpts.navigation = {
+                    nextEl: '.ns-slider__next',
+                    prevEl: '.ns-slider__prev',
+                };
+            }
+            new Swiper('#nsSwiperMain', mainOpts);
+
+            // Lightbox simple con navegación + descarga
+            var lb = document.createElement('div');
+            lb.className = 'ns-lightbox';
+            lb.innerHTML = '' +
+                '<div class="ns-lightbox__panel" role="dialog" aria-modal="true" aria-label="Imagen ampliada">' +
+                '<div class="ns-lightbox__bar">' +
+                '<a class="ns-lightbox__btn ns-lightbox__download" href="#" download>Descargar ↓</a>' +
+                '<button type="button" class="ns-lightbox__btn ns-lightbox__close" aria-label="Cerrar">×</button>' +
+                '</div>' +
+                '<button type="button" class="ns-lightbox__btn ns-lightbox__nav ns-lightbox__prev" aria-label="Anterior">‹</button>' +
+                '<button type="button" class="ns-lightbox__btn ns-lightbox__nav ns-lightbox__next" aria-label="Siguiente">›</button>' +
+                '<img class="ns-lightbox__img" alt="">' +
+                '</div>';
+            document.body.appendChild(lb);
+
+            var imgEl = lb.querySelector('.ns-lightbox__img');
+            var btnClose = lb.querySelector('.ns-lightbox__close');
+            var btnPrev = lb.querySelector('.ns-lightbox__prev');
+            var btnNext = lb.querySelector('.ns-lightbox__next');
+            var linkDl = lb.querySelector('.ns-lightbox__download');
+            var index = 0;
+
+            function render() {
+                var src = images[index];
+                imgEl.src = src;
+                linkDl.href = src;
+                try {
+                    var clean = String(src).split('#')[0].split('?')[0];
+                    var original = clean.substring(clean.lastIndexOf('/') + 1) || 'imagen.jpg';
+                    linkDl.setAttribute('download', 'quilmes.gov.ar-' + original);
+                } catch (e) {
+                    linkDl.setAttribute('download', 'quilmes.gov.ar-imagen.jpg');
+                }
+                btnPrev.style.display = images.length > 1 ? '' : 'none';
+                btnNext.style.display = images.length > 1 ? '' : 'none';
+            }
+
+            function openAt(i) {
+                index = Math.max(0, Math.min(images.length - 1, i));
+                render();
+                lb.classList.add('is-open');
+            }
+
+            function close() {
+                lb.classList.remove('is-open');
+            }
+
+            function prev() {
+                index = (index - 1 + images.length) % images.length;
+                render();
+            }
+
+            function next() {
+                index = (index + 1) % images.length;
+                render();
+            }
+
+            document.addEventListener('click', function(e) {
+                var a = e.target.closest('.ns-open-lightbox');
+                if (a) {
+                    e.preventDefault();
+                    openAt(parseInt(a.getAttribute('data-index') || '0', 10));
+                }
+            });
+            btnClose.addEventListener('click', close);
+            btnPrev.addEventListener('click', prev);
+            btnNext.addEventListener('click', next);
+            lb.addEventListener('click', function(e) {
+                if (e.target === lb) close();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (!lb.classList.contains('is-open')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowLeft') prev();
+                if (e.key === 'ArrowRight') next();
+            });
+        })();
+    </script>
+    <script src="../js/main.js"></script>
+
+    <!-- Google Analytics Autotrack https://github.com/googleanalytics/autotrack -->
+    <!-- <script>
+		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+		ga('create', 'UA-2746094-42', 'auto');
+		
+		// Replace the following lines with the plugins you want to use.
+		ga('require', 'cleanUrlTracker');
+		ga('require', 'eventTracker');
+		ga('require', 'impressionTracker');
+		ga('require', 'mediaQueryTracker');
+		ga('require', 'outboundFormTracker');
+		ga('require', 'outboundLinkTracker');
+		ga('require', 'pageVisibilityTracker');
+		ga('require', 'socialWidgetTracker');
+		ga('require', 'urlChangeTracker');
+		// ...
+		
+		ga('require', 'linkid', 'linkid.js');
+		
+		ga('send', 'pageview');
+		</script>
+		<script async src='https://www.google-analytics.com/analytics.js'></script>
+		<script async src='../js/autotrack-master/autotrack.js'></script> -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"c668620766f34f028aa9011118b8d11f","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+
+</html>

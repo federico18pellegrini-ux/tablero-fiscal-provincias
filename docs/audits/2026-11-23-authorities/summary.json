@@ -1,0 +1,38 @@
+{
+  "reviewedAt": "2026-11-23",
+  "scope": "Identificación de autoridades; no se modifican importes, rankings fiscales ni generadores de PDF.",
+  "municipalNames": 135,
+  "provincialNames": 24,
+  "municipalPartyOrPoliticalSpace": 68,
+  "municipalElectoralAlliance2023": 67,
+  "method": "Autoridad según directorio oficial y reemplazos individualizados. Partido o espacio con fuente propia; cuando sólo consta la alianza electa de 2023, se rotula con ese año. No se hereda automáticamente la afiliación de un antecesor. La fecha de consulta no equivale a un padrón de afiliados actualizado.",
+  "officialDirectory": "135 nombres del directorio de GBA; 19 revisiones individualizadas de reemplazos, retornos o corroboración. No se afirma conciliación individual con actos de asunción de los 135.",
+  "partyEvidence": "Fuentes partidarias y publicaciones de investigación/prensa; no certifica afiliación en un padrón. Las 67 alianzas municipales de 2023 proceden del mayor número de votos válidos a Intendente de la base oficial, excluyendo blancos/nulos. No se presentan como afiliación actual.",
+  "sourceCorrections": [
+    "Se descarta la identificación de Orrego como UCR en el Mapa Político: Producción y Trabajo está documentado en HCDN y corroborado en una fuente actual.",
+    "La noticia de un intendente de Pinto en otra provincia no se aplica a General Pinto PBA.",
+    "Se prioriza el organigrama oficial de Daireaux (María Serra) frente a notas anteriores sobre Etchepare.",
+    "Para General Pueyrredón se conserva Montenegro con corroboración posterior al retorno de octubre; no se usa automáticamente la lista de interinos de diciembre de 2025.",
+    "No se transfiere el partido del antecesor a un reemplazante sin evidencia propia.",
+    "CABA se identifica como Jefe de Gobierno; no como gobernador.",
+    "Las fuentes web originales se conservan como texto sin ejecución; los informes privados se preservan localmente y se enlaza al editor."
+  ],
+  "pending": [
+    "Corroborar partido o espacio actual de los 67 municipios que sólo tienen alianza electa 2023: esa limitación queda visible.",
+    "Actualizar los directorios cuando se documenten nuevos reemplazos o cambios partidarios."
+  ],
+  "checks": {
+    "nodeFocused": 39,
+    "municipalPdfFamiliesUnchangedChecked": 135,
+    "provincialPdfFamiliesUnchangedChecked": 24,
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "individualBrowserCasesPerWidth": 9,
+    "rankingHeader": "sin autoridad individual, para evitar confundir con datos de un único municipio",
+    "publication": "pending"
+  }
+}

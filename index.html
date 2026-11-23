@@ -982,6 +982,7 @@ tr:last-child td{border-bottom:none}
     </div>
   </details>
 </div>
+<p class="district-authority" id="province-authority" hidden></p>
 <div class="profile-purpose" id="profilePurpose">Prioridades de gestión, continuidad de los servicios y decisiones con impacto provincial.</div>
 <div class="view-vintage"><span id="viewAsOfText">Cargando fecha de corte…</span><span class="vintage-badge" id="viewAsOfBadge">Corte</span></div>
 <div class="data-gap" id="viewDataGap" role="status"></div>
@@ -2752,6 +2753,7 @@ function render(province){
   const pulseTitle=document.getElementById('executivePulseTitle');if(pulseTitle)pulseTitle.textContent='Lo central';
   const heroProvince=document.getElementById('heroProvinceSubtitle');
   if(heroProvince)heroProvince.textContent=`Provincia seleccionada: ${province}`;
+  window.dispatchEvent(new CustomEvent('province:selection',{detail:{province}}));
 
   const cross={...((crossFiscal&&crossFiscal[province])||{}),...((latestFiscalRanking&&latestFiscalRanking[province])||{})};
   const isPBA=province==='Buenos Aires';
@@ -5041,6 +5043,8 @@ document.getElementById('downloadPng')?.addEventListener('click',exportCurrentPr
 <script src="budget-execution.js?v=20261019-q2"></script>
 <script src="management-report-export.js?v=20260915-9"></script>
 <script src="provincial-overview.js?v=20261019-3"></script>
+<link rel="stylesheet" href="authorities.css?v=20261123">
+<script src="authorities.js?v=20261123"></script>
 <script>
 /* ── BOOT ────────────────────────────────────────────────────────── */
 loadAll().catch(err=>{
